@@ -146,10 +146,7 @@ class FieldInfo {
 
     // Save in "static" and persistent caches.
     $this->fieldMap = $map;
-    if (lock_acquire('field_info:field_map')) {
-      cache_set('field_info:field_map', $map, 'cache_field');
-      lock_release('field_info:field_map');
-    }
+    cache_set('field_info:field_map', $map, 'cache_field');
 
     return $map;
   }
@@ -177,10 +174,7 @@ class FieldInfo {
       }
 
       // Store in persistent cache.
-      if (lock_acquire('field_info:fields')) {
-        cache_set('field_info:fields', $this->fieldsById, 'cache_field');
-        lock_release('field_info:fields');
-      }
+      cache_set('field_info:fields', $this->fieldsById, 'cache_field');
     }
 
     // Fill the name/ID map.
@@ -237,10 +231,7 @@ class FieldInfo {
         }
 
         // Store in persistent cache.
-        if (lock_acquire('field_info:instances')) {
-          cache_set('field_info:instances', $this->bundleInstances, 'cache_field');
-          lock_release('field_info:instances');
-        }
+        cache_set('field_info:instances', $this->bundleInstances, 'cache_field');
       }
 
       $this->loadedAllInstances = TRUE;
@@ -428,11 +419,7 @@ class FieldInfo {
     foreach ($instances as $instance) {
       $cache['fields'][] = $this->fieldsById[$instance['field_id']];
     }
-
-    if (lock_acquire("field_info:bundle:$entity_type:$bundle")) {
-      cache_set("field_info:bundle:$entity_type:$bundle", $cache, 'cache_field');
-      lock_release("field_info:bundle:$entity_type:$bundle");
-    }
+    cache_set("field_info:bundle:$entity_type:$bundle", $cache, 'cache_field');
 
     return $instances;
   }
@@ -473,10 +460,7 @@ class FieldInfo {
 
     // Store in the 'static' and persistent caches.
     $this->bundleExtraFields[$entity_type][$bundle] = $info;
-    if (lock_acquire("field_info:bundle_extra:$entity_type:$bundle")) {
-      cache_set("field_info:bundle_extra:$entity_type:$bundle", $info, 'cache_field');
-      lock_release("field_info:bundle_extra:$entity_type:$bundle");
-    }
+    cache_set("field_info:bundle_extra:$entity_type:$bundle", $info, 'cache_field');
 
     return $this->bundleExtraFields[$entity_type][$bundle];
   }
@@ -612,12 +596,10 @@ class FieldInfo {
     // Fill in default values.
     $display += array(
       'label' => 'above',
+      'type' => $field_type_info['default_formatter'],
       'settings' => array(),
       'weight' => 0,
     );
-    if (empty($display['type'])) {
-      $display['type'] = $field_type_info['default_formatter'];
-    }
     if ($display['type'] != 'hidden') {
       $formatter_type_info = field_info_formatter_types($display['type']);
       // Fall back to default formatter if formatter type is not available.

@@ -12,13 +12,9 @@ regions[page_top] = Page top
 regions[page_bottom] = Page bottom
 regions[sidebar_first] = First sidebar
 regions_hidden[] = sidebar_first
-
-; Information added by Drupal.org packaging script on 2016-02-24
-version = "7.43"
+scripts[] = js/hide_blocks.js
+; Information added by Drupal.org packaging script on 2014-05-08
+version = "7.28"
 project = "drupal"
-datestamp = "1456343506"
-
-
-; Information added by Acquia.com packaging script
-acquia = "1"
+datestamp = "1399522731"
 

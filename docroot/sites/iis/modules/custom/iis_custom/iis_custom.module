@@ -1,0 +1,611 @@
+<?php
+
+/**
+ * @file
+ * Misc functions for IIS. This module is used for minor hook implementations.
+ */
+
+/**
+ * Implements hook_block_info().
+ */
+function iis_custom_block_info() {
+  $blocks = array(
+    'iis_node_type' => array(
+      'info' => t('Node title'),
+      'cache' => DRUPAL_NO_CACHE,
+    ),
+    'iis_news_page_left_block' => array(
+      'info' => t('News page left block'),
+      'cache' => DRUPAL_NO_CACHE,
+    ),
+    'iis_node_also_available_in_block' => array(
+      'info' => t('Content Language Block'),
+      'cache' => DRUPAL_NO_CACHE,
+    ),
+    'iis_collapse_expand_block' => array(
+      'info' => t('Collapse/Expand Accordians'),
+      'cache' => DRUPAL_NO_CACHE,
+    ),
+    'iis_upcoming_prev_events' => array(
+      'info' => t('Upcoming/prev events'),
+      'cache' => DRUPAL_NO_CACHE,
+    ),
+  );
+  return $blocks;
+}
+
+
+/**
+ * Implements hook_block_view().
+ */
+function iis_custom_block_view($delta = NULL) {
+  $block = array();
+  switch ($delta) {
+    case 'iis_node_type':
+      $block['subject'] = t('Node title');
+      $block['content'] = iis_get_node_type();
+      break;
+    case 'iis_news_page_left_block':
+      $block['subject'] = t('News page left block');
+      $block['content'] = iis_news_left_block();
+      break;
+    case 'iis_node_also_available_in_block':
+      $block['subject'] = t('This Content is also available in');
+      $block['content'] = iis_node_also_available_in();
+      break;
+    case 'iis_collapse_expand_block':
+      $block['subject'] = t('Collapse Expand Accordian');
+      $block['content'] = iis_collapse_expand_accordian();
+      break;
+    case 'iis_upcoming_prev_events':
+      $block['subject'] = t('Upcoming/prev events');
+      $block['content'] = iis_upcoming_prev_events();
+      break;
+  }
+  return $block;
+}
+
+/**
+ * Function to create upcoming/prev events.
+ *   @TODO: The url has to be fixed.
+ */
+function iis_upcoming_prev_events() {
+  $link[] = l(t('All events'), 'content/events');
+  $link[] = l(t('Upcoming events'), 'content/events/event_date/[NOW TO *]');
+  $link[] = l(t('Previous events'), 'content/events/event_date/[* TO NOW]');
+  $theme_args = array('items' => $link, 'title' => t('Listing'), 'type' => 'ul');
+  $content = theme('item_list', $theme_args);
+  return $content;
+}
+
+/**
+ * Function to create the collapse/expand on multimedia and learning centre.
+ * @return $content
+ *   Array containing items to render.
+ */
+function iis_collapse_expand_accordian() {
+  $title = "";
+  $attributes = array(
+    'id' => 'accordion-ex',
+  );
+  $items = array(
+    '0' => array(
+      'data' => t('Collapse all'),
+      'class' => array('collapse'),
+    ),
+    '1' => array(
+      'data' => t('Expand all'),
+      'class' => array('expand'),
+    ),
+  );
+
+  $content = theme_item_list(array('items' => $items, 'title' => $title, 'type' => 'ul', 'attributes' => $attributes,));
+  return $content;
+}
+/**
+ * Function to create available node translations.
+ * @return $content
+ *   Array containing items to render.
+ */
+function iis_node_also_available_in() {
+  global $language;
+
+  $lang_to_show = array();
+  $languages = language_list();
+  $node = menu_get_object();
+  if(!is_object($node)) {
+    return '';
+  }
+  $tnid = $node->tnid;
+  $lang_array = array();
+  $node_languages = translation_node_get_translations($tnid);
+  if(isset($node_languages) && !empty($node_languages)) {
+    foreach($node_languages as $lang_key => $lang_obj) {
+      if($lang_key !== $node->language && $lang_obj->status != 0) {
+	$lang_array[$lang_key] = $lang_obj;
+      }
+    }
+  }
+  $html = array();
+  if(!empty($lang_array) && $node->status != 0) {
+    foreach($lang_array as $lang_key => $lang_obj) {
+      $link = 'node/' . $lang_obj->nid;
+      $html[] = l($languages[$lang_key]->native, $link, array('language' => $languages[$lang_key]));
+      $theme_args = array('items' => $html, 'type' => 'ul');
+      $content = theme('item_list', $theme_args);
+    }
+  }
+  else {
+    $content = '';
+  }
+  return $content;
+}
+
+/**
+ * Function to create the left side block on news landing page.
+ * @return
+ *  array containing items to render.
+ * @TODO
+ *  This function contains dummy text. The text to be removed in next sprint.
+ */
+function iis_news_left_block() {
+  $output = "";
+  // Additions to the site.
+  $additions = array();
+  $additions[] = l(t('Dummy'), 'front');
+  $theme_args = array('items' => $additions, 'title' => t('Additions to the site'), 'type' => 'ul');
+  $content = theme('item_list', $theme_args);
+  $output .= $content;
+
+  // News Archives.
+  $news_archives = array();
+  $news_archives[] = l(t('2014'), '<front>');
+  $theme_args = array('items' => $news_archives, 'title' => t('News Archives'), 'type' => 'ul');
+  $content = theme('item_list', $theme_args);
+  $output .= $content;
+
+  // Events.
+  $events = array();
+  $events[] = l(t('Dummy'), '<front>');
+  $theme_args = array('items' => $events, 'title' => t('Events'), 'type' => 'ul');
+  $content = theme('item_list', $theme_args);
+  $output .= $content;
+
+  return $output;
+}
+
+/**
+ * Function to return the modified node type.
+ * @return
+ *   A string containing the modified node type.
+ */
+function iis_get_node_type() {
+  $node = menu_get_object();
+  switch ($node->type) {
+    case 'news':
+      return '<h1 class="page__title">' . t('News story') . '</h1>';
+      break;
+    case 'publication':
+      return '<h1 class="page__title">' . t('Publication') . '</h1>';
+      break;
+    case 'people':
+      return '<h1 class="page__title">' . t('Biography'). '</h1>';
+      break;
+    case 'event':
+      return '<h1 class="page__title">' . t('Event'). '</h1>';
+      break;
+    case 'article':
+      $tid = $node->field_article_type['und'][0]['tid'];
+      $term_name = db_query('SELECT t.name FROM {taxonomy_term_data} t WHERE t.tid = :tid',
+        array(':tid' => $tid))->fetchField();
+      return '<h1 class="page__title">' . $term_name . '</h1>';
+      break;
+  }
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function iis_custom_views_pre_render(&$view) {
+  $name = $view->name;
+  $display = $view->current_display;
+  if ($name == 'home_page_elements' && $display == 'block_2') {
+    foreach ($view->result as $node) {
+      if ($node->node_type == 'video') {
+        // Unset the body of the video.
+        if (isset($node->field_body)) {
+          unset($node->field_body['0']['rendered']);
+        }
+      }
+    }
+  }
+  if ($view->name == 'solr_search' && $display == 'page_4') {
+    $view->build_info['title'] = iis_custom_return_title(check_plain(arg(1)));
+  }
+}
+
+/**
+ * Function to return the title.
+ */
+function iis_custom_return_title($type) {
+  switch ($type) {
+    case 'video':
+      return t('Videos');
+      break;
+    default:
+      return ucfirst($type);
+      break;
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function iis_custom_form_webform_client_form_alter(&$form, &$form_state) {
+  // Alter the contact us form.
+  // @TODO: please make sure to change the node for this form, when deployed
+  // to production.
+  if ($form['#node']->nid == '68') {
+    unset($form['submitted']['country']['locality_block']);
+    unset($form['submitted']['country']['street_block']);
+    unset($form['submitted']['country']['country']['#ajax']);
+    $form['submitted']['country']['country']['#options']['OT'] = 'Other';
+
+   $form['#validate'][] = 'mywebform_extra_validate_68';
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function iis_custom_form_speech_node_form_alter(&$form, &$form_state) {
+  // Hide the bright cove id and serial id fields, as these fields should
+  // not be visible to users.
+  $form['field_serial_id']['#attributes']['style'][] = 'display:none;';
+  $form['field_brightcove_id']['#attributes']['style'][] = 'display:none;';
+}
+
+/**
+ * Function to perform email validation on contact us form.
+ */
+
+function mywebform_extra_validate_68(&$form, &$form_state) {
+  $temp1 = $form_state['input']['submitted']['email'];
+  $temp2 = $form_state['input']['submitted']['confirm_email'];
+  //check that both email-id's are identical or not
+    if ($temp1 != $temp2) {
+      form_set_error($form_state['input']['submitted']['confirm_email'], 'Email Validation failed');
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function iis_custom_form_views_exposed_form_alter(&$form, &$form_state) {
+  $fid = $form['#id'];
+  if ($fid == 'views-exposed-form-solr-search-page' || $fid == 'views-exposed-form-learning-centre-block'
+      || $fid == 'views-exposed-form-multimedia-block') {
+    $form['text']['#attributes'] = array('placeholder' => t('search'));
+    $form['submit']['#prefix'] = '<i class="fa fa-search">';
+    $form['submit']['#suffix'] = '</i>';
+  }
+}
+
+/**
+ * Implements hook_entity_property_info_alter().
+ */
+function iis_custom_entity_property_info_alter(&$info) {
+  $info['node']['properties']['brightcove_videoid'] = array(
+    'type' => 'integer',
+    'label' => t('Brightcove Video ID'),
+    'getter callback' => 'iis_custom_brightcove_videoid_callback',
+  );
+  $info['node']['properties']['publish_year'] = array(
+    'type' => 'integer',
+    'label' => t('Publish year'),
+    'getter callback' => 'iis_custom_publish_year_callback',
+  );
+  $info['node']['properties']['created_year'] = array(
+    'type' => 'integer',
+    'label' => t('Created year'),
+    'getter callback' => 'iis_custom_created_year_callback',
+  );
+  // Merge field_event_date and field_date into a single field, to be used in solr.
+  $info['node']['properties']['publish_date'] = array(
+    'type' => 'integer',
+    'label' => t('Custom publish date'),
+    'getter callback' => 'iis_custom_publish_date_callback',
+  );
+  // Event date.
+  $info['node']['properties']['event_date'] = array(
+    'type' => 'integer',
+    'label' => t('Event date'),
+    'getter callback' => 'iis_custom_event_date_callback',
+  );
+  // Node title in string format for sorting.
+  $info['node']['properties']['iis_node_title'] = array(
+    'type' => 'string',
+    'label' => t('IIS node title'),
+    'getter callback' => 'iis_custom_get_node_title',
+  );
+  // Surname of faculty.
+  $info['node']['properties']['iis_last_name'] = array(
+    'type' => 'string',
+    'label' => t('IIS last name'),
+    'getter callback' => 'iis_custom_get_last_name',
+  );
+}
+
+/**
+ * Function to create the string version of last name.
+ *   @param: $node: The node object.
+ *   @return: $title: Last name converted to string. Used for sorting.
+ */
+function iis_custom_get_last_name($node) {
+  if ($node->type == 'people') {
+    return (string)$node->field_name['und']['0']['family'];
+  }
+}
+
+
+/**
+ * Function to create the string version of node title.
+ *   @param: $node: The node object.
+ *   @return: $title: The node title converted to string. Used for sorting.
+ */
+function iis_custom_get_node_title($node) {
+  return (string)$node->title;
+}
+
+/**
+ * Event date callback.
+ */
+function iis_custom_event_date_callback($node) {
+  $type = $node->type;
+  switch ($type) {
+    case 'event':
+      return $node->field_event_date[LANGUAGE_NONE][0]['value'];
+      break;
+  }
+}
+
+/**
+ * Getter callback for publish year.
+ */
+function iis_custom_publish_date_callback($node) {
+  $type = $node->type;
+  switch ($type) {
+    case 'event':
+      $date = date_parse($node->field_event_date[LANGUAGE_NONE][0]['value']);
+      $date = mktime($date['hour'], $date['minute'], $date['second'], $date['month'], $date['day'], $date['year']);
+      return intval($date);
+      break;
+    case 'lectures':
+      $date = date_parse($node->field_date[LANGUAGE_NONE][0]['value']);
+      $date = mktime($date['hour'], $date['minute'], $date['second'], $date['month'], $date['day'], $date['year']);
+      return intval($date);
+      break;
+  }
+}
+
+/**
+ * Getter callback for created year.
+ *   @param $node: The node object.
+ *   @return $year: Year of the date.
+ */
+function iis_custom_created_year_callback($node) {
+  return intval(date('Y', $node->created));
+}
+
+/**
+ * Getter callback for publish year.
+ *   @param $node: The node object.
+ *   @return $year: Year of the date.
+ */
+function iis_custom_publish_year_callback($node) {
+  $type = $node->type;
+  switch ($type) {
+    case 'event':
+      $date = date_parse($node->field_event_date[LANGUAGE_NONE][0]['value']);
+      $year = intval($date['year']);
+      return $year;
+      break;
+    case 'lectures':
+    case 'news':
+    case 'video':
+    case 'article':
+      $lang = $node->language;
+      $date = date_parse($node->field_date[LANGUAGE_NONE][0]['value']);
+      $year = intval($date['year']);
+      return $year;
+      break;
+  }
+}
+
+/**
+ * Get Brightcove Video ID
+ *   @param type $node
+ *   @return type
+ */
+function iis_custom_brightcove_videoid_callback($node) {
+  if ($node->type == 'video') {
+    $id = (isset($node->field_brightcove[LANGUAGE_NONE][0]['brightcove_id'])) ? $node->field_brightcove[LANGUAGE_NONE][0]['brightcove_id'] : '';
+    return $id;
+  }
+}
+
+/**
+ * Implements hook_search_api_ajax_settings().
+ */
+/**function iis_custom_search_api_ajax_settings() {
+  $settings = array(
+    // required: CSS ID for the main content (search results html)
+    'content' => '#content .view',
+    // required: array of regions with search-related blocks => CSS ID's
+    'regions' => array(
+      'my_region' => '.region-sidebar-first',
+      'sidebar_first' => '.region-sidebar-first',
+    ),
+    // optional: if you want to show a spinner image on AJAX
+    // 'spinner' => drupal_get_path('module', 'search_api_ajax') .'/spinner.gif',
+    // optional: if you want to scroll-back-to-top on paging search results
+    'scrolltarget' => '#main-content',
+    'scrollspeed' => 1000,
+    // optional: fade main content on AJAX (fade=1 for true)
+    'fade' => 1,
+    'opacity' => 0.3,
+  );
+  return $settings;
+}
+*/
+
+/**
+ * Function to remove duplicate taxonomy terms created during bulk updation using VBO
+ */
+function iis_custom_taxonomy_term_presave($term) {
+  // Change existing term? Nothing to do!
+  if ((isset($term->tid)) && ($term->tid > 0)) {
+    return;
+  }
+  // Lookup the term in the given vocabulary
+  $query = new EntityFieldQuery;
+  $result = $query
+    ->entityCondition('entity_type', 'taxonomy_term')
+    ->propertyCondition('name', $term->name)
+    ->propertyCondition('vid', $term->vid)
+    ->execute();
+  // Term doesn't exist: handle it the normal way
+  if (empty($result['taxonomy_term'])) {
+    return;
+  }
+    // Term exists already: update it
+  $termslist = array_keys($result['taxonomy_term']);
+  $tid = array_shift($termslist);
+  $term->tid = $tid;
+  $original = taxonomy_term_load($tid);
+  $term->original = $original;
+}
+
+/**
+ * Implements hook_entity_info_alter
+ */
+function iis_custom_entity_info_alter(&$entity_info) {
+  // Function to alter the default path of all the taxonomy terms
+  $entity_info['taxonomy_term']['uri callback'] = 'iis_custom_taxonomy_term_uri';
+}
+
+/**
+ * Alter taxonomy term path
+ *   @param type $term
+ *   @return custom url path for taxonomy terms
+ */
+function iis_custom_taxonomy_term_uri($term) {
+  return array('path' => 'content/terms/' . $term->name);
+}
+
+/**
+* Implements hook_perm().
+* Define access permission for content translation request view
+*/
+function iis_custom_perm() {
+  return array('administer translation request');
+}
+
+/**
+* Implements hook_menu().
+* Add content translation request view
+*/
+function iis_custom_menu() {
+  $items = array();
+  $items['admin/workbench/trans-request'] = array(
+    'title' => 'Content Tranlation Request',
+    'description' => 'List of node requested for translation',
+    'access arguments' => array('administer translation request'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  $items['autocomplete/example/textfield'] = array(
+    'page callback' => 'autocomplete_example_textfield',
+    'access callback' => TRUE,
+    'weight' => 1,
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_form_alter().
+ * Adds autocomplete field to word link add form.
+ * @TODO: change this to form_id_alter().
+ */
+function iis_custom_form_alter(&$form, &$form_state, $form_id) {
+  switch ($form_id) {
+    case 'word_link_add_form':
+      $form['word_link_add_form']['text'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Word/Phrase'),
+        '#size' => 30,
+        '#maxlength' => 255,
+        '#description' => t('The word or phrase you wish to convert to a link. This field is case sensitive.'),
+        '#autocomplete_path' => 'autocomplete/example/textfield',
+        '#required' => TRUE,
+    );
+  }
+}
+
+/**
+* Function returns list of terms related to glossary terms vocabulary
+*/
+function autocomplete_example_textfield ($string) {
+  $range_vocab = taxonomy_vocabulary_machine_name_load('glossary_terms');
+  $matches = array();
+  $result = db_select('taxonomy_term_data', 'ttd');
+  $result->fields('ttd', array('tid', 'name'));
+  $result->condition('vid', array($range_vocab->vid), 'IN');
+  $result->condition(db_or()->condition('ttd.name', '%' . db_like($string) . '%', 'LIKE'));
+  $query = $result->execute();
+
+  foreach ($query as $row) {
+    $matches[$row->name] = $row->name;
+  }
+
+  // Return the result to the form in json
+  drupal_json_output($matches);
+}
+
+
+/**
+* Function returns nodequeue title for nodequeue view
+*/
+function nodequeue_load_queue_by_na($qid) {
+  $queue_title = db_query('SELECT title FROM {nodequeue_queue} WHERE qid = :qid', array(':qid' => $qid))->fetchField();
+  return $queue_title;
+}
+
+
+/**
+ * Implements hook_node_presave().
+ */
+function iis_custom_node_presave($node) {
+  if ($node->type == 'speech_quote') {
+    // Search the speech with serial id. Save the node reference.
+    $serial_id = $node->field_serial_id[LANGUAGE_NONE]['0']['value'];
+    $nid = db_query('SELECT entity_id from {field_data_field_serial_id} WHERE
+      field_serial_id_value = :sid AND bundle = :bundle',
+      array(':sid' => $serial_id, ':bundle' => 'speech'))->fetchField();
+    // Save the node reference to the speech.
+    if (!empty($nid)) {
+      $node->field_speech_reference[LANGUAGE_NONE]['0']['nid'] = $nid;
+    }
+  }
+  // The brightcove id would be mapped to brightcove field, if the content
+  // is migrated via feeds.
+  if ($node->type == 'speech') {
+    $brightcove_id = $node->field_brightcove_id;
+    if (isset($brightcove_id)) {
+      $brightcove_id = $node->field_brightcove_id[LANGUAGE_NONE]['0']['value'];
+      $node->field_brightcove[LANGUAGE_NONE]['0']['brightcove_id'] = $brightcove_id;
+      $node->field_brightcove[LANGUAGE_NONE]['0']['player'] = 'full_size';
+    }
+  }
+}

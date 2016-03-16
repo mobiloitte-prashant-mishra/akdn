@@ -1,0 +1,40 @@
+diff --git a/docroot/sites/all/modules/contrib/workbench/workbench.module b/docroot/sites/all/modules/contrib/workbench/workbench.module
+index b4b6731..28be932 100644
+--- a/docroot/sites/all/modules/contrib/workbench/workbench.module
++++ b/docroot/sites/all/modules/contrib/workbench/workbench.module
+@@ -20,7 +20,7 @@ function workbench_menu() {
+     'file' => 'system.admin.inc',
+     'file path' => drupal_get_path('module', 'system'),
+   );
+-  $items['admin/workbench'] = array(
++  $items['workbench'] = array(
+     'title' => 'My Workbench',
+     'description' => 'My Workbench area',
+     'page callback' => 'workbench_content',
+@@ -28,7 +28,7 @@ function workbench_menu() {
+     'weight' => -20,
+     'file' => 'workbench.pages.inc',
+   );
+-  $items['admin/workbench/content'] = array(
++  $items['workbench/content'] = array(
+     'title' => 'My content',
+     'page callback' => 'workbench_content',
+     'access arguments' => array('access workbench'),
+@@ -36,7 +36,7 @@ function workbench_menu() {
+     'type' => MENU_DEFAULT_LOCAL_TASK,
+     'file' => 'workbench.pages.inc',
+   );
+-  $items['admin/workbench/create'] = array(
++  $items['workbench/create'] = array(
+     'title' => 'Create content',
+     'page callback' => 'workbench_create',
+     'access arguments' => array('access workbench'),
+@@ -49,7 +49,7 @@ function workbench_menu() {
+   // This is helpful for the admin_menu module and could have other uses.
+   foreach (node_type_get_types() as $type) {
+     $type_url_str = str_replace('_', '-', $type->type);
+-    $items['admin/workbench/create/node/add/' . $type_url_str] = array(
++    $items['workbench/create/node/add/' . $type_url_str] = array(
+       'title' => $type->name,
+       'title callback' => 'check_plain',
+       'page callback' => 'drupal_goto',

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the akdn image Styles feature.
+ */
+
+include_once 'akdn_image_styles.features.inc';

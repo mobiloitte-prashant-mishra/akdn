@@ -1,0 +1,27 @@
+diff --git a/docroot/sites/akdn/modules/contrib/readmore/js/readmore.js b/docroot/sites/akdn/modules/contrib/readmore/js/readmore.js
+index c3b3439..90f4591 100644
+--- a/docroot/sites/akdn/modules/contrib/readmore/js/readmore.js
++++ b/docroot/sites/akdn/modules/contrib/readmore/js/readmore.js
+@@ -2,16 +2,18 @@
+   Drupal.behaviors.readmore = {
+     attach : function(context, settings) {
+       $('.readmore-summary .readmore-link').click(function(e) {
++        $('.readmore-summary').removeClass("readmore_hide").addClass("readmore_show");
++        $('.readmore-text').removeClass("readmore_show").addClass("readmore_hide");
+         e.preventDefault();
+         var summary = $(this).closest('.readmore-summary');
+-        summary.hide();
+-        summary.next('.readmore-text').slideDown(300);
++        summary.removeClass("readmore_show").addClass("readmore_hide");
++        summary.next('.readmore-text').removeClass("readmore_hide").addClass("readmore_show");
+       });
+       $('.readmore-text .readless-link').click(function(e) {
+         e.preventDefault();
+         var text = $(this).closest('.readmore-text');
+-        text.slideUp(300);
+-        text.prev('.readmore-summary').slideDown(300);
++        text.removeClass("readmore_show").addClass("readmore_hide");
++        text.prev('.readmore-summary').removeClass("readmore_hide").addClass("readmore_show");
+       });
+     }
+   };

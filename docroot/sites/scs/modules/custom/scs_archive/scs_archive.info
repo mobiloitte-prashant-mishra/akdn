@@ -1,0 +1,4 @@
+name = KC content archive
+description = Archive content
+core = 7.x
+dependencies[] = workbench

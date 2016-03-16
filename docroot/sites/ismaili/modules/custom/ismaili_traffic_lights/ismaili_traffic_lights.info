@@ -1,0 +1,6 @@
+name = Ismaili Traffic Lights
+description = Traffic Light for recipes.
+core = 7.x
+package = Ismaili
+configure = admin/config/ismaili-settings/traffic-lights
+scripts[] = js/ismaili_traffic_lights.js

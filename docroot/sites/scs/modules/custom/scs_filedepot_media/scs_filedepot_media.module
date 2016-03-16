@@ -1,0 +1,301 @@
+<?php
+
+/**
+ * @file
+ * KC filedepot customization.
+ */
+
+/**
+ * Implements hook_form_alter().
+ */
+function scs_filedepot_media_form_filedepot_newfile_form_alter(&$form, &$form_state, $form_id) {
+  $default_filter = 'jpg png doc docx xls xlsx pdf ppt pptx';
+  $filter = variable_get('filedepot_filetype_filter', $default_filter);
+
+  $form['filedepot_file'] = array(
+    '#type' => 'media',
+    '#title' => t('Choose a file'),
+    '#description' => '',
+    '#upload_validators' => array(
+      'file_validate_extensions' => array($filter),
+    ),
+    '#tree' => TRUE,
+    '#input' => TRUE,
+    '#media_options' => array(
+      'global' => array(
+        'types' => array(
+          'image' => 'image',
+          'video' => 'video',
+          'audio' => 'audio',
+          'document' => 'document',
+        ),
+        'schemes' => array(
+          'public' => 'public',
+        ),
+        'enabledPlugins' => array(
+          'upload' => 'upload',
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+        ),
+      ),
+    ),
+  );
+  $form['buttons']['submit']['#validate'] = array('scs_filedepot_media_newfile_validate');
+  $form['buttons']['submit']['#submit'] = array('scs_filedepot_media_newfile_submit');
+
+  // Hide unncessary fields.
+  $form['filedepot_version_note']['#access'] = FALSE;
+  $form['filedepot_email_notification']['#access'] = FALSE;
+  $form['filedepot_filename']['#access'] = FALSE;
+  $form['filedepot_filetags']['#access'] = FALSE;
+}
+
+/**
+ * Custom submit handler for filedepot file upload.
+ */
+function scs_filedepot_media_newfile_submit($form, &$form_state) {
+  global $user;
+
+  $filedepot = filedepot_filedepot();
+  module_load_include('php', 'filedepot', 'lib-common');
+
+  $cid = $form_state['values']['filedepot_parentfolder'];
+  // Retrieve the upload location - parent folder node id
+  $folder_nid = db_query("SELECT nid FROM {filedepot_categories} WHERE cid=:cid", array(':cid' => $cid))->fetchField();
+  $node = node_load($folder_nid);
+  $cid_perms = $filedepot->getPermissionObject($cid);
+
+  if ($cid_perms->canUpload() === FALSE) {
+    drupal_set_message(t('Insufficient priviledges to upload to this folder'), 'error');
+    return;
+  }
+  watchdog("filedepot_test", var_export($cid_perms, TRUE));
+  if ($cid_perms->canUploadDirect() === FALSE) { // Admin's have all perms so test for users with upload moderated approval only
+    $moderated = TRUE;
+    $private_destination = 'private://filedepot/' . $node->folder . '/submissions/';
+  }
+  else {
+    $moderated = FALSE;
+    $private_destination = 'private://filedepot/' . $node->folder . '/';
+  }
+
+  // Best to call file_prepare_directory() - even if you believe directory exists
+  file_prepare_directory($private_destination, FILE_CREATE_DIRECTORY || FILE_MODIFY_PERMISSIONS);
+
+  if (isset($form_state['values']['filedepot_file']) AND $form_state['values']['filedepot_file'] > 0) {
+
+    $tags = check_plain($form_state['values']['filedepot_filetags']);
+    $file = file_load($form_state['values']['filedepot_file']['fid']);
+    $ext_parts = explode(".", $file->filename);
+    $ext = end($ext_parts);
+    list($scheme, $target) = explode('://', $file->uri, 2);
+
+    $original_filename = $file->filename;
+    if ($moderated) { // Save record in submission table and set status to 0 -- not online
+      // Generate random file name for newly submitted file to hide it until approved
+      $charset = "abcdefghijklmnopqrstuvwxyz";
+      $moderated_tmpname = '';
+      for ($i = 0; $i < 12; $i++) {
+        $moderated_tmpname .= $charset[(mt_rand(0, (drupal_strlen($charset) - 1)))];
+      }
+      $moderated_tmpname .= '.' . $ext;
+
+      $private_uri = $private_destination . $moderated_tmpname;
+      $file = file_move($file, $private_uri, FILE_EXISTS_RENAME);
+      $file->filename = $original_filename;
+
+      if (isset($form_state['values']['filedepot_filename']) AND !empty($form_state['values']['filedepot_filename'])) {
+        $filetitle = check_plain($form_state['values']['filedepot_filename']);
+        if (strpos('.', $filetitle) === FALSE) {
+          $filetitle = "{$filetitle}.{$ext}";
+        }
+      }
+      else {
+        $filetitle = $original_filename;
+      }
+
+      // Get name of new file in case it was renamed after the file_move()
+      list($scheme, $target) = explode('://', $file->uri, 2);
+      $filename = str_replace("filedepot/{$node->folder}/", '', $target);
+
+      // Update folder node - add the file as an attachment
+      $file->display = 1;
+      $file->description = '';
+
+      // Doing node_save changes the file status to permanent in the file_managed table
+      $node->filedepot_folder_file[LANGUAGE_NONE][] = (array) $file; //the name of the field that requires the files
+      node_save($node);
+
+      $query = db_insert('filedepot_filesubmissions');
+      $query->fields(array(
+        'cid',
+        'fname',
+        'tempname',
+        'title',
+        'description',
+        'drupal_fid',
+        'version_note',
+        'size',
+        'mimetype',
+        'extension',
+        'submitter',
+        'date',
+        'tags',
+        'notify'
+      ));
+      $query->values(array(
+        'cid' => $node->folder,
+        'fname' => $file->filename,
+        'tempname' => $moderated_tmpname,
+        'title' => $filetitle,
+        'description' => check_plain($form_state['values']['filedepot_description']),
+        'drupal_fid' => $file->fid,
+        'version_note' => check_plain($form_state['values']['filedepot_version_note']),
+        'size' => $file->filesize,
+        'mimetype' => $file->filemime,
+        'extension' => $ext,
+        'submitter' => $user->uid,
+        'date' => time(),
+        'tags' => 'TODO',
+        'notify' => 1,
+      ));
+      $newrecid = $query->execute();
+      if ($newrecid > 0) {
+        // Get id for the new file record
+        $newrecid = db_query_range("SELECT id FROM {filedepot_filesubmissions} WHERE cid=:cid AND submitter=:uid ORDER BY id DESC", 0, 1, array(
+          ':cid' => $node->folder,
+          ':uid' => $user->uid
+        ))->fetchField();
+        filedepot_sendNotification($newrecid, FILEDEPOT_NOTIFY_ADMIN);
+      }
+      else {
+        drupal_set_message(t('Issue saving new file - invalid new file submissions record'), 'warning');
+      }
+    }
+    else {
+      $private_uri = $private_destination;
+      if(file_prepare_directory($private_uri, FILE_CREATE_DIRECTORY)) {
+        file_move($file, $private_uri . drupal_basename($file->uri), FILE_EXISTS_RENAME);
+      }
+      $ext_parts = explode(".", $file->filename);
+      $ext = end($ext_parts);
+
+      // Get name of new file in case it was renamed after the file_move()
+      list($scheme, $target) = explode('://', $file->uri, 2);
+      $filename = str_replace("filedepot/{$node->folder}/", '', $target);
+
+      if (isset($form_state['values']['filedepot_filename']) AND !empty($form_state['values']['filedepot_filename'])) {
+        $filetitle = check_plain($form_state['values']['filedepot_filename']);
+        if (strpos('.', $filetitle) === FALSE) {
+          $filetitle = "{$filetitle}.{$ext}";
+        }
+      }
+      else {
+        $filetitle = $original_filename;
+      }
+
+      // Update folder node - add the file as an attachment
+      $file->display = 1;
+      $file->description = '';
+
+      // Doing node_save changes the file status to permanent in the file_managed table
+      $node->filedepot_folder_file[LANGUAGE_NONE][] = (array) $file; //the name of the field that requires the files
+      node_save($node);
+
+      // Update the file usage table
+      file_usage_add($file, 'filedepot', 'node', $node->nid);
+
+      // filedepot_description
+      // Create filedepot record for file and set status of file to 1 - online
+      $query = db_insert('filedepot_files');
+      $query->fields(array(
+        'cid',
+        'fname',
+        'title',
+        'description',
+        'version',
+        'drupal_fid',
+        'size',
+        'mimetype',
+        'extension',
+        'submitter',
+        'status',
+        'date'
+      ));
+      $query->values(array(
+        'cid' => $node->folder,
+        'fname' => $filename,
+        'title' => $filetitle,
+        'description' => check_plain($form_state['values']['filedepot_description']),
+        'version' => 1,
+        'drupal_fid' => $file->fid,
+        'size' => $file->filesize,
+        'mimetype' => $file->filemime,
+        'extension' => $ext,
+        'submitter' => $user->uid,
+        'status' => 1,
+        'date' => time(),
+      ));
+      $newrecid = $query->execute();
+      if ($newrecid > 0) {
+        $query = db_insert('filedepot_fileversions');
+        $query->fields(array('fid', 'fname', 'drupal_fid', 'version', 'notes', 'size', 'date', 'uid', 'status'));
+        $query->values(array(
+          'fid' => $newrecid,
+          'fname' => $filename,
+          'drupal_fid' => $file->fid,
+          'version' => 1,
+          'notes' => check_plain($form_state['values']['filedepot_version_note']),
+          'size' => $file->filesize,
+          'date' => time(),
+          'uid' => $user->uid,
+          'status' => 1,
+        ));
+        $query->execute();
+
+        // Update the file tags if role or group permission set -- we don't support tag access perms at the user level.
+        if (!empty($tags)) {
+          if ($filedepot->checkPermission($node->folder, 'view', 0, FALSE)) {
+            $nexcloud = filedepot_nexcloud();
+            if (!$nexcloud->update_tags($newrecid, $tags)) {
+              drupal_set_message(t('Tags not added - Group or Role assigned view perms required'), 'warning');
+            }
+          }
+          else {
+            drupal_set_message(t('Tags not added - Group or Role assigned view perms required'), 'warning');
+          }
+        }
+        // Update related folders last_modified_date
+        $workspaceParentFolder = filedepot_getTopLevelParent($node->folder);
+        filedepot_updateFolderLastModified($workspaceParentFolder);
+
+        // Send out email notifications of new file added to all users subscribed
+        if ($form_state['values']['filedepot_email_notification']['yes'] === 'yes') {
+          filedepot_sendNotification($newrecid);
+        }
+      }
+      else {
+        drupal_set_message(t('Invalid id returned from insert new file record'), 'error');
+      }
+    }
+
+    // Need to clear the cache as the node will still have the original file name
+    field_cache_clear();
+  }
+}
+
+/**
+ * Custom validation handler for filedepot file upload.
+ */
+function scs_filedepot_media_newfile_validate($form, &$form_state) {
+  if (empty($form_state['values']['filedepot_file']) || $form_state['values']['filedepot_file']['fid'] == 0) {
+    form_set_error('filedepot_file', t('You must select a valid file'));
+  }
+  else {
+    $filedepot = filedepot_filedepot();
+    $file = file_load($form_state['values']['filedepot_file']['fid']);
+  }
+  if ($form_state['values']['filedepot_parentfolder'] == 0) {
+    form_set_error('filedepot_parentfolder', t('You must select a valid folder'));
+  }
+}

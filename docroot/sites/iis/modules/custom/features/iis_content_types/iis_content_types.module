@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the IIS content types feature.
+ */
+
+include_once 'iis_content_types.features.inc';

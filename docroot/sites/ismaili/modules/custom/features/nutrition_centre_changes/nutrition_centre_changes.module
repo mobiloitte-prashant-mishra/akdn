@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Nutrition Centre Changes feature.
+ */
+
+include_once 'nutrition_centre_changes.features.inc';

@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * Execute field collection importer after host entity importer has executed.
+ */
+
+/**
+ * Implements hook_feeds_after_import().
+ */
+function feeds_field_collection_import_feeds_after_import(FeedsSource $source) {
+  switch ($source->importer->id) {
+    case 'basic_page_importer':
+      $source = feeds_source('field_videos_field_collection_importer');
+
+      // Process in the background.
+      $config = array(
+        'process_in_background' => FALSE,
+      );
+      $source->importer->addConfig($config);
+
+      // Execute the import.
+      $source->startImport();
+
+      break;
+  }
+}

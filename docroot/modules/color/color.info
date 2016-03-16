@@ -5,12 +5,8 @@ version = VERSION
 core = 7.x
 files[] = color.test
 
-; Information added by Drupal.org packaging script on 2016-02-24
-version = "7.43"
+; Information added by Drupal.org packaging script on 2014-05-08
+version = "7.28"
 project = "drupal"
-datestamp = "1456343506"
-
-
-; Information added by Acquia.com packaging script
-acquia = "1"
+datestamp = "1399522731"
 

@@ -1,0 +1,25 @@
+diff --git a/plugins/DeployAuthenticatorSession.inc b/plugins/DeployAuthenticatorSession.inc
+index a122b38..7b6c138 100644
+--- a/plugins/DeployAuthenticatorSession.inc
++++ b/plugins/DeployAuthenticatorSession.inc
+@@ -87,9 +87,18 @@ class DeployAuthenticatorSession implements DeployAuthenticator {
+           $pass = $parts['pass'];
+         }
+ 
+-        $token_url = $parts['scheme'] . '://' . ($user ? $user . ':' . $pass . '@' : '') . $parts['host'] . $port . '/services/session/token';
++        if (isset($parts['path'])) {
++          $path = $parts['path'];
++        }
++
++        $token_url = $parts['scheme'] . '://' . (isset($user) ? $user . ':' . $pass . '@' : '') . $parts['host'] . $port . $path . '/user/token';
+ 
+-        $token_response = drupal_http_request($token_url, array('method' => 'GET', 'headers' => $this->service->config['headers']));
++        $token_options = array(
++          'method' => 'POST',
++          'headers' => array('Content-Type' => 'application/json')+$this->service->config['headers'],
++          // 'data' => drupal_json_encode(array()),
++        );
++        $token_response = drupal_http_request($token_url, $token_options);
+         if (isset($token_response->error) || !in_array($token_response->code, array(200, 304))) {
+           throw new DeployAuthenticationException(t('Authentication error: @code @error', array('@code' => $token_response->code, '@error' => t('Failed to retrieve CSRF token.'))));
+         }

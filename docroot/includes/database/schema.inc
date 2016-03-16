@@ -92,8 +92,7 @@ require_once dirname(__FILE__) . '/query.inc';
  *    specification). Each specification is an array containing the name of
  *    the referenced table ('table'), and an array of column mappings
  *    ('columns'). Column mappings are defined by key pairs ('source_column' =>
- *    'referenced_column'). This key is for documentation purposes only; foreign
- *    keys are not created in the database, nor are they enforced by Drupal.
+ *    'referenced_column').
  *  - 'indexes':  An associative array of indexes ('indexname' =>
  *    specification). Each specification is an array of one or more
  *    key column specifiers (see below) that form an index on the
@@ -145,8 +144,6 @@ require_once dirname(__FILE__) . '/query.inc';
  *   'unique keys' => array(
  *     'vid' => array('vid'),
  *   ),
- *   // For documentation purposes only; foreign keys are not created in the
- *   // database.
  *   'foreign keys' => array(
  *     'node_revision' => array(
  *       'table' => 'node_revision',
@@ -419,7 +416,7 @@ abstract class DatabaseSchema implements QueryPlaceholderInterface {
    *   This is most useful for creating NOT NULL columns with no default
    *   value in existing tables.
    * @param $keys_new
-   *   (optional) Keys and indexes specification to be created on the
+   *   Optional keys and indexes specification to be created on the
    *   table along with adding the field. The format is the same as a
    *   table specification but without the 'fields' element. If you are
    *   adding a type 'serial' field, you MUST specify at least one key
@@ -633,7 +630,7 @@ abstract class DatabaseSchema implements QueryPlaceholderInterface {
    * @param $spec
    *   The field specification for the new field.
    * @param $keys_new
-   *   (optional) Keys and indexes specification to be created on the
+   *   Optional keys and indexes specification to be created on the
    *   table along with changing the field. The format is the same as a
    *   table specification but without the 'fields' element.
    *
@@ -657,7 +654,7 @@ abstract class DatabaseSchema implements QueryPlaceholderInterface {
    */
   public function createTable($name, $table) {
     if ($this->tableExists($name)) {
-      throw new DatabaseSchemaObjectExistsException(t('Table @name already exists.', array('@name' => $name)));
+      throw new DatabaseSchemaObjectExistsException(t('Table %name already exists.', array('%name' => $name)));
     }
     $statements = $this->createTableSql($name, $table);
     foreach ($statements as $statement) {

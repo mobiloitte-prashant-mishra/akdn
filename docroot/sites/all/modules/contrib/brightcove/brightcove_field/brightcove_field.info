@@ -1,0 +1,23 @@
+name = Brightcove Field
+description = A field allowing to attach videos to nodes.
+core = 7.x
+package = Fields
+
+dependencies[] = brightcove
+dependencies[] = field
+dependencies[] = entity
+dependencies[] = image
+
+; Information added by drupal.org packaging script on 2013-10-11
+version = "7.x-4.0-alpha2+1-dev"
+core = "7.x"
+project = "brightcove"
+datestamp = "1381494257"
+
+
+; Information added by Drupal.org packaging script on 2014-01-15
+version = "7.x-5.0"
+core = "7.x"
+project = "brightcove"
+datestamp = "1389792505"
+

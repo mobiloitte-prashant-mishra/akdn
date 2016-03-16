@@ -149,17 +149,6 @@ class SearchQuery extends SelectQueryExtender {
     $this->searchExpression = $expression;
     $this->type = $module;
 
-    // Add a search_* tag. This needs to be added before any preExecute methods
-    // for decorated queries are called, as $this->prepared will be set to TRUE
-    // and tags added in the execute method will never get used. For example,
-    // if $query is extended by 'SearchQuery' then 'PagerDefault', the
-    // search-specific tag will be added too late (when preExecute() has
-    // already been called from the PagerDefault extender), and as a
-    // consequence will not be available to hook_query_alter() implementations,
-    // nor will the correct hook_query_TAG_alter() implementations get invoked.
-    // See node_search_execute().
-    $this->addTag('search_' . $module);
-
     return $this;
   }
 
@@ -409,10 +398,10 @@ class SearchQuery extends SelectQueryExtender {
    * used. However, if at least one call to addScore() has taken place, the
    * keyword relevance score is not automatically added.
    *
-   * Note that you must use this method to add ordering to your searches, and
-   * not call orderBy() directly, when using the SearchQuery extender. This is
-   * because of the two-pass system the SearchQuery class uses to normalize
-   * scores.
+   * Also note that if you call orderBy() directly on the query, search scores
+   * will not automatically be used to order search results. Your orderBy()
+   * expression can reference 'calculated_score', which will be the total
+   * calculated score value.
    *
    * @param $score
    *   The score expression, which should evaluate to a number between 0 and 1.
@@ -505,8 +494,9 @@ class SearchQuery extends SelectQueryExtender {
       $this->orderBy('calculated_score', 'DESC');
     }
 
-    // Add useful metadata.
+    // Add tag and useful metadata.
     $this
+      ->addTag('search_' . $this->type)
       ->addMetaData('normalize', $this->normalize)
       ->fields('i', array('type', 'sid'));
 

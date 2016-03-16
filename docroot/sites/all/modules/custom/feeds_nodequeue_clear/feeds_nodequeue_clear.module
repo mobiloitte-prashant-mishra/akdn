@@ -1,0 +1,87 @@
+<?php
+
+/**
+ * @file
+ * Clear nodequeue on feeds import.
+ */
+
+/**
+ * Implements hook_feeds_after_import().
+ */
+function feeds_nodequeue_clear_feeds_after_import(FeedsSource $source) {
+  switch ($source->importer->id) {
+    case 'speech_importer_xml':
+    case 'speech_quotes_importer_xml':
+    case 'speech_quote_importer_xml':
+    case 'speech_importer_iis':
+    case 'banner_item_importer':
+    case 'article_importer':
+    case 'agency_importer':
+    case 'basic_page_importer':
+    case 'event_importer':
+    case 'gallery_importer':
+    case 'geography_importer':
+    case 'person_importer':
+    case 'podcast_importer':
+    case 'projects_importer':
+    case 'publication_importer':
+    case 'events_importer_feeds':
+    case 'press_release_importer_feeds':
+    case 'media_type_importer_feeds':
+      $importer_config = $source->importer->getConfig();
+      $source_config = $source->getConfig();
+      $source_url = $source_config[$importer_config['fetcher']['plugin_key']]['source'];
+
+      // Parse source url and build new url using nodequeue clear endpoint and
+      // query.
+      // @todo try to cleanup this approach of altering the endpoint.
+      $parse = parse_url($source_url);
+      $explode = explode('/', $parse['path']);
+      end($explode);
+      $end = key($explode);
+      $explode[$end] = $source_config[$importer_config['fetcher']['plugin_key']]['endpoint_name'];
+      $new_path = implode('/', $explode);
+      // @todo change this approach of building URL, use API.
+      $url = $parse['scheme'] . '://' . $parse['host'] . $new_path;
+
+      // Clear nodequeue.
+      $data = array(
+        'queue_name' => $source_config[$importer_config['fetcher']['plugin_key']]['queue_name'],
+        'bundle' => $importer_config['processor']['config']['bundle'],
+      );
+      $data = http_build_query($data, '', '&');
+      $options = array(
+        'headers' => array(
+          'Accept' => 'application/xml',
+        ),
+        'method' => 'POST',
+        'data' => $data
+      );
+      $response = drupal_http_request($url, $options);
+
+      if ($response->code == 200) {
+        drupal_set_message(t('Nodequeue cleared'));
+      }
+
+      break;
+  }
+}
+
+/**
+ * Implements hook_feeds_plugins().
+ */
+function feeds_nodequeue_clear_feeds_plugins() {
+  $info = array();
+
+  $info['FeedsNodequeueFetcher'] = array(
+    'name' => t('Nodequeue fetcher'),
+    'description' => t('Similar to HTTP fetcher but the URL source should be from nodequeue.'),
+    'handler' => array(
+      'parent' => 'FeedsHTTPFetcher', // This is the key name, not the class name.
+      'class' => 'FeedsNodequeueFetcher',
+      'file' => 'FeedsNodequeueFetcher.inc',
+    ),
+  );
+
+  return $info;
+}

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AK Publication feature.
+ */
+
+include_once('f_publication.features.inc');

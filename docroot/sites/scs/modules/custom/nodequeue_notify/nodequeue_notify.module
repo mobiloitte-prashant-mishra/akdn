@@ -1,0 +1,43 @@
+<?php
+
+/**
+ * @file
+ * Notify user that node has been pushed to nodequeue.
+ */
+
+/**
+ * Implements hook_nodequeue_add()
+ */
+function nodequeue_notify_nodequeue_add($sqid, $nid) {
+  $node = node_load($nid);
+  $queue = subqueue_load($sqid);
+  $nodequeue_name = $queue->title;
+
+  // Oh God! Forgive me for this dirty code.
+  // Nodequeue does not provides any machine name for queues.
+  if (stripos($nodequeue_name, 'AKDN') !== false) {
+    rules_invoke_component('rules_component_notify_mail', $node, $nodequeue_name);
+  }
+  else if (stripos($nodequeue_name, 'IIS') !== false) {
+    rules_invoke_component('rules_component_notify_mail_iis', $node, $nodequeue_name);
+  }
+  else if (stripos($nodequeue_name, 'Ismaili') !== false) {
+    rules_invoke_component('rules_component_notify_mail_ismaili', $node, $nodequeue_name);
+  }
+}
+
+/**
+ * Implements hook_menu().
+ */
+function nodequeue_notify_menu() {
+  $items['admin/nodequeue-notify'] = array(
+    'title' => 'Administer nodequeue notify',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('nodequeue_notify_administration'),
+    'access arguments' => array('administer nodequeue'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'includes/nodequeue_notify.admin.inc',
+  );
+
+  return $items;
+}

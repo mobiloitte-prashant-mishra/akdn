@@ -1,0 +1,112 @@
+/*
+Copyright (c) 2003-2013, CKSource - Frederico Knabben. All rights reserved.
+For licensing, see LICENSE.html or http://ckeditor.com/license
+*/
+
+body
+{
+	/* Font */
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 14px;
+
+	/* Text color */
+	color: #000;
+
+	/* Remove the background color to make it transparent */
+	background-color: #fff;
+}
+
+ol,ul,dl
+{
+	/* IE7: reset rtl list margin. (#7334) */
+	*margin-right:0px;
+	/* preserved spaces for list items with text direction other than the list. (#6249,#8049)*/
+    padding:0 40px;
+}
+
+
+/* Custom css code for CKeditor (joginder singh)*/
+
+/* line 5502, ../sass/styles.scss */
+.image-full, .image-left-half, .image-left-third,
+.image-right-half, .image-right-third, .media-left-half,
+.media-half-right, .media-right-third, .media-third-left,
+.media-large, .media-original, .file-media-original,
+.media-full, .media-half-left, .media-one-third-left,
+.media-one-third-right, .media-media-full-width {
+  color: #666666;
+  font-size: .813em;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+/* line 5507, ../sass/styles.scss */
+.image-full .imagelink, .image-left-half .imagelink, .image-left-third .imagelink,
+.image-right-half .imagelink, .image-right-third .imagelink, .media-left-half .imagelink,
+.media-half-right .imagelink, .media-right-third .imagelink, .media-third-left .imagelink,
+.media-large .imagelink, .media-original .imagelink, .file-media-original .imagelink,
+.media-full .imagelink, .media-half-left .imagelink, .media-one-third-left .imagelink,
+.media-one-third-right .imagelink, .media-media-full-width .imagelink {
+  line-height: 0;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* line 5523, ../sass/styles.scss */
+.image-full, .media-large, .media-full, .media-media-full-width {
+  width: 633px;
+  float: none;
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+/* line 5529, ../sass/styles.scss */
+.image-full img, .media-large img, .media-full img, .media-media-full-width img {
+  width: 100%;
+}
+
+/* line 5537, ../sass/styles.scss */
+.image-left-half, .media-left-half, .media-half-left {
+  width: 316px;
+  float: left;
+  text-align: left;
+  margin-left: 0;
+  margin-right: 20px;
+}
+
+/* line 5548, ../sass/styles.scss */
+.image-left-third, .media-third-left, .media-one-third-left {
+  width: 211px;
+  float: left;
+  text-align: left;
+  margin-left: 0;
+  margin-right: 20px;
+}
+
+/* line 5562, ../sass/styles.scss */
+.image-right-half, .media-half-right {
+  width: 316px;
+  float: right;
+  text-align: right;
+  margin-left: 20px;
+  margin-right: 0px;
+}
+
+/* line 5573, ../sass/styles.scss */
+.image-right-third, .media-right-third, .media-one-third-right {
+  width: 211px;
+  float: right;
+  text-align: right;
+  margin-left: 20px;
+  margin-right: 0px;
+}
+
+/* line 5587, ../sass/styles.scss */
+.img-tag {
+  font-family: "Arial", Helvetica, sans-serif;
+  font-style: normal;
+  line-height: normal;
+  font-variant: normal;
+  text-transform: uppercase;
+  font-size: .9em;
+  color: #666666;
+}

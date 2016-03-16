@@ -1,0 +1,136 @@
+diff --git a/css/word_link.css b/css/word_link.css
+index 1d31a20..258ba99 100644
+--- a/css/word_link.css
++++ b/css/word_link.css
+@@ -6,3 +6,9 @@ a.word-link {
+ span.word-link {
+   color: #1570a6;
+ }
++
++.tooltip {
++color: white;
++background-color: black;
++padding: 10px;
++}
+diff --git a/word_link.admin.inc b/word_link.admin.inc
+index 2760a47..5535b84 100644
+--- a/word_link.admin.inc
++++ b/word_link.admin.inc
+@@ -284,6 +284,26 @@ function word_link_add_form($form, &$form_state, $id = NULL) {
+     '#description' => t('Use this to add a class for the link. Default value is "word-link".'),
+     '#default_value' => isset($defaults[$id]->class) ? $defaults[$id]->class : 'word-link',
+   );
++  $form['word_link_add_form']['type'] = array(
++    '#type' => 'radios',
++    '#title' => t('Select the type of link'),
++    '#options' => array(
++      0 => t('Link'),
++      1 => t('Popup'),
++      2 => t('Link and Popup'),
++    ),
++    '#default_value' => isset($defaults[$id]->type) ? $defaults[$id]->type : 0,
++  );
++  $form['word_link_add_form']['description'] = array(
++    '#type' => 'textarea',
++    '#description' => t('The Description you want to show in popup'),
++    '#default_value' => isset($defaults[$id]->description) ? $defaults[$id]->description : '',
++    '#states' => array(
++      'visible' => array(
++        ':input[name="type"]' => array('value' => '1'),
++      ),
++    ),
++  );
+   $form['word_link_add_form']['visibility'] = array(
+     '#type' => 'radios',
+     '#title' => t('Show links on specific pages'),
+@@ -357,6 +377,8 @@ function word_link_add_form_save_submit($form, &$form_state) {
+     'class' => trim($form_state['values']['class']),
+     'visibility' => $form_state['values']['visibility'],
+     'except' => trim($form_state['values']['except']),
++    'type' => trim($form_state['values']['type']),
++    'description' => trim($form_state['values']['description']),
+   );
+   if (isset($form_state['values']['id'])) {
+     word_link_add_update_link('update', $values, $form_state['values']['id']);
+diff --git a/word_link.install b/word_link.install
+index 71e769e..19ccbc4 100644
+--- a/word_link.install
++++ b/word_link.install
+@@ -71,6 +71,15 @@ function word_link_schema() {
+         'not null' => TRUE,
+         'default' => 'word-link',
+       ),
++      'type' => array(
++        'type' => 'text',
++        'length' => 255,
++        'not null' => TRUE,
++      ),
++      'description' => array(
++        'type' => 'text',
++        'size' => 'big',
++      ),
+       'visibility' => array(
+         'type' => 'int',
+         'not null' => TRUE,
+@@ -104,3 +113,27 @@ function word_link_update_7001() {
+     );
+   }
+ }
++
++/**
++ * Adding type and description field.
++ */
++function word_link_update_7002() {
++  // Add the type and description field to the db.
++  if (!db_field_exists('word_link', 'type')) {
++    db_add_field('word_link', 'type',
++      array(
++        'type' => 'text',
++        'length' => 255,
++        'not null' => TRUE,
++      )
++    );
++  }
++  if (!db_field_exists('word_link', 'description')) {
++    db_add_field('word_link', 'description',
++      array(
++        'type' => 'text',
++        'size' => 'big',
++      )
++    );
++  }
++}
+diff --git a/word_link.module b/word_link.module
+index 9fd97f0..58d2426 100644
+--- a/word_link.module
++++ b/word_link.module
+@@ -118,6 +118,8 @@ function word_link_init() {
+   if ($css_status) {
+     drupal_add_css(drupal_get_path('module', 'word_link') . '/css/word_link.css');
+   }
++drupal_add_library('jquery_plugin', 'tooltip');
++drupal_add_js(drupal_get_path('module', 'word_link') .'/js/word_link.js');
+ }
+ 
+ /**
+@@ -156,6 +158,7 @@ function _word_link_process($text, $format) {
+  *   String with converted words.
+  */
+ function word_link_replace_text($words, $subject) {
+   // Get disallowed html tags and explode it to array.
+   $disallowed_tags = variable_get('word_link_tags_except', NULL);
+   $disallowed_tags = preg_split('/\s+|<|>/', $disallowed_tags, -1, PREG_SPLIT_NO_EMPTY);
+@@ -210,10 +213,11 @@ function word_link_replace_text($words, $subject) {
+             $word->url,
+             array(
+               'attributes' => array_filter(array(
+-                'class' => array($word->class),
+-                'title' => $word->url_title,
++                'class' => $word->type == 1 ? array($word->class, 'popup-only') : array($word->class),
++                'title' => $word->description,
+                 'target' => '_blank',
+               )),
++              'html' => TRUE,
+               'external' => TRUE,
+             )
+           );

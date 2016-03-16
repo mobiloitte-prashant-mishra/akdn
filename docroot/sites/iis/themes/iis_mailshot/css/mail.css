@@ -1,0 +1,66 @@
+#mimemail-body .logo {
+    text-align: center;
+    border-bottom: 4px solid black;
+}
+#mimemail-body > h2 {
+    font-size: 1.5em;
+}
+#mimemail-body .mail_body > div a {
+    text-decoration: none;
+    color: #063;
+}
+#mimemail-body > div {
+    margin-bottom: 3%;
+}
+#mimemail-body > div > div > div > div > div > div > div > div h2, #mimemail-body ul li > div span a {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+#mimemail-body > div > div > div > div > div > div > div > div img, #mimemail-body ul li img, #mimemail-body > div > div > div > div > div img {
+    float: left;
+    margin-right: 3%;
+}
+#mimemail-body > div > div > div > h2 {
+    display: none;
+}
+#mimemail-body > div > div > div > p {
+    clear: both;
+    border-top: 1px solid black;
+    padding-top:3%;
+    margin-top: 10%;
+}
+#mimemail-body > div > div + div > p {
+    clear: both;
+    border-top: 0;
+    padding-top:0;
+    margin-top: 0;
+}
+#mimemail-body > div > div > div > div > div > div > div > div, #mimemail-body ul li {
+    margin-bottom: 3%;
+    overflow: hidden;
+    border-bottom: 1px solid black;
+    padding-bottom: 3%;
+    clear: both;
+    margin-left: 0;
+}
+#mimemail-body > div > div .submitted, #mimemail-body ul li .submitted {
+    font-size: .9em;
+    margin-bottom: 1;
+}
+#mimemail-body > div .field-name-body p, #mimemail-body ul li p {
+    margin: 0 0 2%;
+    text-align: justify;
+    position: relative;
+    float: left;
+    width: 72%;
+}
+#mimemail-body > div .field-name-body p a, #mimemail-body ul li > div p a {
+    position: absolute;
+    left: 0;
+    bottom: -18px;
+}
+#mimemail-body ul {
+    padding: 0;
+    list-style-type: none;
+}

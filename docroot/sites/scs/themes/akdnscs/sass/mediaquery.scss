@@ -1,0 +1,103 @@
+@import "scs/_mixin.scss";
+@import "scs/_var.scss";
+
+@include min_and_max_width_mediaquery(992px,1200px) {
+    /* communicator resources*/
+    .inner-tile-block:nth-child(7n+1) {
+      clear: none;
+    }
+    .inner-tile-block:nth-child(6n+1) {
+      clear: left;
+    }
+}
+
+@include min_and_max_width_mediaquery(641px,991px) {
+    /* communicator resources*/
+    .inner-tile-block:nth-child(7n+1) {
+      clear: none;
+    }
+    .inner-tile-block:nth-child(4n+1) {
+      clear: left;
+    }
+}
+
+@include min_and_max_width_mediaquery(769px,980px) {
+    .tile-block:nth-child(4n+1){
+        clear: none;
+    }
+}
+@include min_and_max_width_mediaquery(641px,768px) {
+    .workbench-tile-container{
+        width: $full-width;
+    }
+    .latest-addition{
+        width: $full-width;
+    }
+}
+@include min_and_max_width_mediaquery(541px,640px) {
+    .workbench-tile-container{
+        width: $full-width;
+    }
+    .latest-addition{
+        width: $full-width;
+    }
+    .tile-block:nth-child(3n+1){
+        clear: left;
+    }
+    .tile-block:nth-child(4n+1){
+        clear: none;
+    }
+    /* communicator resources*/
+    .inner-tile-block:nth-child(7n+1) {
+      clear: none;
+    }
+    .inner-tile-block:nth-child(3n+1) {
+      clear: left;
+    }
+}
+@include min_and_max_width_mediaquery(361px,540px) {
+    .workbench-tile-container{
+        width: $full-width;
+    }
+    .latest-addition{
+        width: $full-width;
+    }
+    .tile-block:nth-child(2n+1){
+        clear: left;
+    }
+    .tile-block:nth-child(4n+1){
+        clear: both;
+    }
+    /* communicator resources*/
+    .inner-tile-block:nth-child(7n+1) {
+      clear: none;
+    }
+    .inner-tile-block:nth-child(2n+1) {
+      clear: left;
+    }
+}
+@include max_width_mediaquery(360px) {
+    .workbench-tile-container{
+        width: $full-width;
+    }
+    .latest-addition{
+        width: $full-width;
+    }
+    .tile-block{
+        margin: auto;
+        display: block;
+        float: none;
+    }
+    .tile-block:nth-child(4n+1){
+        clear: both;
+    }
+    /* communicator resources*/
+    .inner-tile-block:nth-child(7n+1) {
+        clear: none;
+    }
+    .inner-tile-block {
+        margin: auto;
+        display: block;
+        float: none;
+    }
+}

@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * @file
+ * Services nodequeue clear.
+ */
+
+/**
+ * Implements hook_services_resources().
+ */
+function services_nodequeue_clear_services_resources() {
+  $resource = array(
+    'services_nodequeue_clear' => array(
+      'operations' => array(
+        'create' => array(
+          'file' => array('type' => 'inc', 'module' => 'services_nodequeue_clear', 'name' => 'includes/services_nodequeue_clear.services'),
+          'callback' => 'services_nodequeue_clear_nodequeue_update',
+          'access callback' => 'services_nodequeue_clear_access_callback',
+          'args' => array(
+            array(
+              'name' => 'Queue name',
+              'optional' => FALSE,
+              'source' => array('data' => 'queue_name'),
+              'type' => 'string',
+              'description' => 'Queue name',
+            ),
+            array(
+              'name' => 'Bundle',
+              'optional' => FALSE,
+              'source' => array('data' => 'bundle'),
+              'type' => 'string',
+              'description' => 'Queue name',
+            ),
+          ),
+        ),
+      ),
+    ),
+  );
+
+  return $resource;
+}

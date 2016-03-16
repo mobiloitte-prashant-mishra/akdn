@@ -1,0 +1,13 @@
+diff --git a/docroot/modules/field/field.attach.inc b/docroot/modules/field/field.attach.inc
+index 4a90961..3f647ad 100644
+--- a/docroot/modules/field/field.attach.inc
++++ b/docroot/modules/field/field.attach.inc
+@@ -448,7 +448,7 @@ function _field_invoke_get_instances($entity_type, $bundle, $options) {
+       }
+     }
+   }
+-
++  $instances = array_filter($instances);
+   return $instances;
+ }
+ 
