@@ -29177,6 +29177,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['filters']['language']['field'] = 'language';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+    '***DEFAULT_LANGUAGE***' => '***DEFAULT_LANGUAGE***',
   );
   $handler->display->display_options['filters']['language']['group'] = 1;
 
@@ -29554,6 +29555,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['filters']['language']['field'] = 'language';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+    '***DEFAULT_LANGUAGE***' => '***DEFAULT_LANGUAGE***',
   );
 
   /* Display: Speeches Listing Block */
@@ -29894,9 +29896,9 @@ print $value;
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'field_data_field_feature_image';
   $handler->display->display_options['filters']['language']['field'] = 'language';
-  $handler->display->display_options['filters']['language']['relationship'] = 'field_speech_reference_nid';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+    '***DEFAULT_LANGUAGE***' => '***DEFAULT_LANGUAGE***',
   );
 
   /* Display: Projects Listing Block */
@@ -30284,6 +30286,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['filters']['language']['field'] = 'language';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+    '***DEFAULT_LANGUAGE***' => '***DEFAULT_LANGUAGE***',
   );
 
   /* Display: Galleries Listing Block */
@@ -30680,6 +30683,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['filters']['language']['field'] = 'language';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+    '***DEFAULT_LANGUAGE***' => '***DEFAULT_LANGUAGE***',
   );
 
   /* Display: Podcasts Listing Block */
@@ -31063,6 +31067,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['filters']['language']['field'] = 'language';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+    '***DEFAULT_LANGUAGE***' => '***DEFAULT_LANGUAGE***',
   );
 
   /* Display: Events Listing Block */
@@ -31899,6 +31904,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['filters']['language']['field'] = 'language';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+    '***DEFAULT_LANGUAGE***' => '***DEFAULT_LANGUAGE***',
   );
 
   /* Display: AKDN Approach to Development */
