@@ -22,5 +22,7 @@ $sites = array(
   "akdndev.prod.acquia-sites.com" => 'akdn',
  "akdn3dev.prod.acquia-sites.com" => 'akdn',
  "akdn3stg.prod.acquia-sites.com" => 'akdn',
+ "akdn3.prod.acquia-sites.com" => 'akdn',
+ "akdn-redesign.local" => 'akdn',
 );
 ?>
