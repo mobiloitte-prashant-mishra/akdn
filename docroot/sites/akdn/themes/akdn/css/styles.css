@@ -18306,8 +18306,8 @@ map area {
 
 /* line 7179, ../sass/_akdn-redesign.scss */
 .fb-like.fb_iframe_widget iframe.fb_iframe_widget_lift {
-  width: 50px;
-  height: 20px;
+  width: 50px !important;
+  height: 20px !important;
   overflow: hidden;
 }
 
