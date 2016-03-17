@@ -440,9 +440,9 @@ function akdn_content_types_field_group_info() {
     'label' => 'Customize Right Side Panel',
     'weight' => '4',
     'children' => array(
-      0 => 'field_right_show_block',
-      1 => 'field_specify_a_block_title',
-      2 => 'field_block_add_links',
+      0 => 'field_block_add_links',
+      1 => 'field_right_show_block',
+      2 => 'field_specify_a_block_title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -632,12 +632,12 @@ function akdn_content_types_field_group_info() {
       3 => 'field_hub_page',
       4 => 'field_pages_to_exclude',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-featured-content field-group-fieldset',
+        'classes' => '',
         'required_fields' => 1,
       ),
     ),
