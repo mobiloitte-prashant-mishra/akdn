@@ -346,7 +346,8 @@ function akdn_views_fe_nodequeue_export_fields() {
     'i18n' => 0,
     'subqueues' => 1,
     'types' => array(
-      0 => 'project',
+      0 => 'page',
+      1 => 'project',
     ),
     'roles' => array(),
     'count' => 0,
