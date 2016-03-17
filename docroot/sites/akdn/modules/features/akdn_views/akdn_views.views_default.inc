@@ -35627,11 +35627,11 @@ print l(\'View all projects\',$url);
   $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_node']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['view_node']['text'] = 'More';
-  /* Sort criterion: Content: Publish Date (field_publish_date) */
-  $handler->display->display_options['sorts']['field_publish_date_value']['id'] = 'field_publish_date_value';
-  $handler->display->display_options['sorts']['field_publish_date_value']['table'] = 'field_data_field_publish_date';
-  $handler->display->display_options['sorts']['field_publish_date_value']['field'] = 'field_publish_date_value';
-  $handler->display->display_options['sorts']['field_publish_date_value']['order'] = 'DESC';
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   /* Sort criterion: Content: Sticky */
   $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
   $handler->display->display_options['sorts']['sticky']['table'] = 'node';
