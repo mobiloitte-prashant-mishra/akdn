@@ -10,9 +10,8 @@
   <![endif]-->
 
   <!-- For IE -->
-  <script
-    src="http://s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js"></script>
-  <script type="text/javascript" src="[JS library]"></script>
+  <script src="http://s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js"></script>
+  <!--script type="text/javascript" src="[JS library]"></script-->
   <!--[if (gte IE 6)&(lte IE 8)]>
   <script type="text/javascript" src="selectivizr.js"></script>
   <noscript>
