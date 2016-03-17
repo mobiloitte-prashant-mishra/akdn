@@ -1,0 +1,5 @@
+name = Services nodequeue clear
+description = Services nodequeue clear
+core = 7.x
+dependencies[] = services
+dependencies[] = nodequeue

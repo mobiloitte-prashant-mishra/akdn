@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Nutrition Centre Misc feature.
+ */
+
+include_once 'nutrition_centre_misc.features.inc';

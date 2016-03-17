@@ -1,0 +1,147 @@
+#mimemail-body .logo {
+    text-align: center;
+}
+#mimemail-body {
+    position: relative;
+    width: 99.75%;
+    font: normal 85%/120% Arial,Helvetica,sans-serif;
+    border-left: 1px solid rgb(238, 238, 238);
+    border-right: 1px solid rgb(238, 238, 238);
+}
+#mimemail-body .header {
+    background: rgb(255, 255, 231);
+    border-top: 1px solid rgb(153, 153, 153);
+    border-bottom: 1px solid rgb(153, 153, 153);
+    padding: 10px;
+    margin: 0 0 20px;
+    color: rgb(102, 102, 102);
+}
+#mimemail-body .header .first {
+    margin: 0;
+}
+#mimemail-body .header p:last-child {
+    margin-bottom: 0;
+}
+#mimemail-body .header .last {
+    margin-top: 10px;
+    /*font-style: italic;*/
+}
+#mimemail-body .header .first a {
+    /*font-style: italic;*/
+}
+#mimemail-body > div {
+    margin-bottom: 3%;
+}
+#mimemail-body ul li > div span a {
+    border-bottom: 1px solid rgb(0, 0, 255);
+    margin: 0 0 25px;
+    display: inline-block;
+}
+.field-name-field-newsletter-image .field-label {
+    display: none;
+}
+.field-name-field-newsletter-image img {
+    margin-top: 1px !important;
+    border: 1px solid rgb(102, 102, 102) !important;
+    float: left !important;
+    margin: 0 !important;
+    width: 90px !important;
+}
+.field-name-title-field {
+    color: rgb(180,151,89) !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 1.2em !important;
+    line-height: normal !important;
+    margin-bottom: 5px !important;
+}
+.field-name-title-field a, .node-simplenews a {
+    color: rgb(180,151,89) !important;
+    text-decoration: none !important;
+}
+.node-simplenews .form-item,
+.node-simplenews .field-name-field-simplenews-term {
+    display: inline-block;
+    font-size: 90%;
+}
+.node-simplenews, .node-video {
+    padding-left: 20px;
+}
+.newsletter-footer {
+    margin-top: 10px;
+    padding: 0px 10px 0 10px;
+    font-size: 90%;
+    color: rgb(102, 102, 102);
+}
+.newsletter-footer:before {
+    content: "";
+    background: #333;
+    height: 50px;
+    width: 50px;
+    display: block;
+}
+.newsletter-footer a {
+    font-style: italic;
+}
+#mimemail-body > div > div > div > h2 {
+    display: none;
+}
+#mimemail-body .field-name-field-simplenews-term {
+    padding-bottom: 15px;
+    font-size: 90%;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-left: 2%;
+}
+#mimemail-body .node {
+    margin-bottom: 3% !important;
+    overflow: hidden !important;
+    border-bottom: 1px solid rgb(153, 153, 153) !important;
+    padding-bottom: 3% !important;
+    clear: both !important;
+    margin-right: 2% !important;
+    margin-left: 2% !important;
+    font-size: 1.1em !important;
+}
+#mimemail-body .node:last-child {
+    border-bottom: 0;
+}
+#mimemail-body .node:first-child {
+    background: #333;
+}
+#mimemail-body .node h2 {
+    color: rgb(153, 0, 0);
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0px;
+    padding: 0px;
+}
+#mimemail-body > div > div .submitted, #mimemail-body ul li .submitted {
+    font-size: .9em;
+    margin-bottom: 1;
+}
+#mimemail-body .node .field-name-field-body,
+#mimemail-body .node div,
+.field-name-title-field ~ div {
+    position: relative !important;
+    width: auto !important;
+    margin: 0 0 5px 0 !important;
+    padding: 0 0 0 108px !important;
+    float: none !important;
+    /*text-align: justify;*/
+    font-size: 100% !important;
+    line-height: 130% !important;
+}
+#mimemail-body .node div.field-name-field-newsletter-image {
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    float: left !important;
+}
+#mimemail-body .node .field-name-field-body {
+    display: block;
+    clear: both;
+}
+#mimemail-body ul {
+    padding: 0;
+    list-style-type: none;
+}

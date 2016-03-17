@@ -1,0 +1,102 @@
+diff --git a/acdx_node_reference/acdx_node_reference.module b/acdx_node_reference/acdx_node_reference.module
+index 63077e0..d51cdce 100644
+--- a/acdx_node_reference/acdx_node_reference.module
++++ b/acdx_node_reference/acdx_node_reference.module
+@@ -1,6 +1,50 @@
+ <?php
+-// $Id$
+ 
++define('ACDX_AUTOCOMPLETE_LIMIT_DEFAULT', 10);
++
++/**
++ * Implements hook_menu().
++ */
++function acdx_node_reference_menu() {
++  $items['acdx_node_reference/autocomplete/%/%/%'] = array(
++    'page callback' => 'acdx_node_reference_autocomplete',
++    'page arguments' => array(2, 3, 4),
++    'access callback' => 'reference_autocomplete_access',
++    'access arguments' => array(2, 3, 4),
++    'type' => MENU_CALLBACK,
++  );
++  return $items;
++}
++
++/**
++ * Menu callback for the autocomplete results.
++ */
++function acdx_node_reference_autocomplete($entity_type, $bundle, $field_name, $string = '') {
++  $field = field_info_field($field_name);
++  $instance = field_info_instance($entity_type, $field_name, $bundle);
++
++  $options = array(
++    'string' => $string,
++    'match' => $instance['widget']['settings']['autocomplete_match'],
++    'limit' => $instance['widget']['settings']['autocomplete_limit'],
++  );
++  $references = node_reference_potential_references($field, $options);
++
++  $matches = array();
++  foreach ($references as $id => $row) {
++    // Markup is fine in autocompletion results (might happen when rendered
++    // through Views) but we want to remove hyperlinks.
++    $suggestion = preg_replace('/<a href="([^<]*)">([^<]*)<\/a>/', '$2', $row['rendered']);
++    // Add a class wrapper for a few required CSS overrides.
++    $matches[$row['title'] . " [nid:$id]"] = '<div class="reference-autocomplete">' . $suggestion . '</div>';
++  }
++
++  drupal_json_output($matches);
++}
++
++/**
++ * Implements hook_field_widget_info()
++ */
+ function acdx_node_reference_field_widget_info() {
+   return array(
+     'node_reference_autocomplete_deluxe' => array(
+@@ -10,7 +54,8 @@ function acdx_node_reference_field_widget_info() {
+       'settings'    => array(
+         'autocomplete_match' => 'contains',
+         'size' => 60,
+-        'autocomplete_deluxe_path' => 'node_reference/autocomplete',
++        'autocomplete_deluxe_path' => 'acdx_node_reference/autocomplete',
++        'autocomplete_limit' => 10,
+       ),
+     ),
+   );
+@@ -29,7 +74,7 @@ function acdx_node_reference_field_widget_form(&$form, &$form_state, $field, $in
+         $element['#default_value'] = $items[$delta]['nid'];
+         $value = node_reference_autocomplete_value($element, FALSE, $form_state);
+       }
+-
++      $acdx = array();
+       $acdx = array(
+         '#type' => 'autocomplete_deluxe',
+         '#default_value' => $value,
+@@ -45,4 +90,24 @@ function acdx_node_reference_field_widget_form(&$form, &$form_state, $field, $in
+       break;
+   }
+   return array('nid' => $element);
+-}
+\ No newline at end of file
++}
++
++/**
++ * Implements hook_form_ID_alter().
++ *
++ * Add an option to specify the autocomplete suggestion limit
++ */
++function acdx_node_reference_form_field_ui_field_edit_form_alter(&$form, &$form_state, $form_id) {
++  $field = $form['#field'];
++  $instance = $form['#instance'];
++  if ($instance['widget']['type'] == 'node_reference_autocomplete_deluxe') {
++    // Add a field for the autocomplete suggestion limit
++    $form['instance']['widget']['settings']['autocomplete_limit'] = array(
++      '#type' => 'textfield',
++      '#title' => t('Autocomplete Suggestion Limit'),
++      '#description' => t('Set the number of items in the autocomplete suggestion list.'),
++      '#default_value' => isset($instance['widget']['settings']['autocomplete_limit']) ? $instance['widget']['settings']['autocomplete_limit'] : ACDX_AUTOCOMPLETE_LIMIT_DEFAULT,
++    );
++  }
++}
++

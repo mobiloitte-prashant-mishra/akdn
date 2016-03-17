@@ -1,0 +1,98 @@
+@import "scs/var";
+@import "scs/mixin";
+@import url('modernizer-api.js');
+
+.sidebar-second {
+	#content-column{
+		float: right;
+	}	
+}
+
+.sidebar-second {
+	.region-sidebar-second {
+	  text-align: left;
+	}
+}	
+
+#site-name {
+	a {
+		text-align: left;
+	}
+}
+
+.view-views-newsletter-subscriptions, 
+.view-admin-content, 
+.my-dashboard {
+	.views-field-title {
+		text-align: right;
+	}
+}	
+
+.recent-content {
+	.view-filedepot {
+		li {
+			margin-left: 1.5em;
+			margin-right: 0;   
+			.views-label-name {
+				float: right;
+				&:before {
+					margin-left: 1em;  
+				}
+			}
+		}
+	}
+	.view-filedepot-folderlisting {
+		.views-row {
+			margin-left: 0;
+			margin-right: 4em; 
+		}
+	}	
+}		
+
+.view-views-newsletter-subscriptions, 
+.view-admin-content, .my-dashboard {
+	caption {
+		text-align: right;
+	}
+}
+
+.search-listing-page,
+.listing-page {
+	padding: 0 2em 0 1em; 
+	.image-field {
+		float: right;
+		.field-content {
+			margin: 0 0 0.9em 1.5em;
+		}
+	}
+}
+
+#crumbs {
+	li {
+		float: right;
+		a {
+			margin-right: 0;
+			margin-left: .4em;  
+		}
+	}
+}	
+
+.page-node {
+	.main-header {
+		h1 {
+			padding: 0 2em 0 0;
+			text-align: right;
+			@include mediaquery(small) {
+				padding: 0 .5em;
+			}	
+		}
+	}
+}	
+
+.my-workbench {
+	.right {
+		h3 {
+			text-align: right;
+		}
+	}
+}		

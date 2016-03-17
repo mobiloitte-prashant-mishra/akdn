@@ -1,0 +1,86 @@
+--- simplenews.info	Wed Oct 16 23:56:10 2013
++++ simplenews.info	Wed Aug 20 22:26:51 2014
+@@ -10,12 +10,14 @@
+ files[] = tests/simplenews.test
+ files[] = includes/simplenews.source.inc
+ files[] = includes/views/handlers/simplenews_handler_field_newsletter_status.inc
++files[] = includes/views/handlers/simplenews_handler_field_subscription_status.inc
+ files[] = includes/views/handlers/simplenews_handler_field_newsletter_priority.inc
+ files[] = includes/views/handlers/simplenews_handler_field_category_hyperlinks.inc
+ files[] = includes/views/handlers/simplenews_handler_field_category_new_account.inc
+ files[] = includes/views/handlers/simplenews_handler_field_category_opt_inout.inc
+ files[] = includes/views/handlers/simplenews_handler_field_newsletter_send.inc
+ files[] = includes/views/handlers/simplenews_handler_filter_newsletter_status.inc
++files[] = includes/views/handlers/simplenews_handler_filter_subscription_status.inc
+ files[] = includes/views/handlers/simplenews_handler_filter_newsletter_priority.inc
+ files[] = includes/views/handlers/simplenews_handler_filter_category_hyperlinks.inc
+ files[] = includes/views/handlers/simplenews_handler_filter_category_new_account.inc
+--- includes/views/simplenews.views.inc	Wed Oct 16 23:37:08 2013
++++ includes/views/simplenews.views.inc	Tue Jan 06 22:58:47 2015
+@@ -522,14 +522,13 @@
+ 
+   $data['simplenews_subscription']['status'] = array(
+     'title' => t('Status'),
+-    'help' => t('A flag indicating whether the user is subscribed (1) or unsubscribed (0).'),
++    'help' => t('A flag indicating whether the user is subscribed (1) ,unsubscribed (0) or unconfirmed(2).'),
+     'field' => array(
+-      'handler' => 'views_handler_field_boolean',
++      'handler' => 'simplenews_handler_field_subscription_status',
+       'click sortable' => TRUE,
+     ),
+     'filter' => array(
+-      'handler' => 'views_handler_filter_boolean_operator',
+-      'allow empty' => TRUE,
++      'handler' => 'simplenews_handler_filter_subscription_status',
+     ),
+     'argument' => array(
+       'handler' => 'views_handler_argument_numeric',
+
+--- includes/views/handlers/simplenews_handler_field_subscription_status.inc	Tue Jan 06 23:08:00 2015
++++ includes/views/handlers/simplenews_handler_field_subscription_status.inc	Tue Jan 06 22:59:09 2015
+@@ -0,0 +1,23 @@
++<?php
++
++/**
++ * @file
++ * Views handler for simplenews sent status.
++ */
++
++/**
++ * Display subscription sent status.
++ */
++class simplenews_handler_field_subscription_status extends views_handler_field {
++  function render($values) {
++    switch ($values->{$this->field_alias}) {
++      case SIMPLENEWS_SUBSCRIPTION_STATUS_UNCONFIRMED:
++      default:
++        return t('Not Confirmed');
++      case SIMPLENEWS_SUBSCRIPTION_STATUS_UNSUBSCRIBED:
++        return t('Unsubcribed');
++      case SIMPLENEWS_SUBSCRIPTION_STATUS_SUBSCRIBED:
++        return t('Subcribed');
++    }
++  }
++}
+--- includes/views/handlers/simplenews_handler_filter_subscription_status.inc	Tue Jan 06 23:07:46 2015
++++ includes/views/handlers/simplenews_handler_filter_subscription_status.inc	Tue Jan 06 22:59:25 2015
+@@ -0,0 +1,19 @@
++<?php
++
++/**
++ * @file
++ * Views filter for simplenews sent status.
++ */
++
++/**
++ * Filter based on subscription sent status.
++ */
++class simplenews_handler_filter_subscription_status extends views_handler_filter_in_operator {
++  function get_value_options() {
++    $this->value_options = array(
++      SIMPLENEWS_SUBSCRIPTION_STATUS_SUBSCRIBED => t('Subcribed'),
++      SIMPLENEWS_SUBSCRIPTION_STATUS_UNCONFIRMED => t('Not Confirmed'),
++      SIMPLENEWS_SUBSCRIPTION_STATUS_UNSUBSCRIBED => t('Unsubcribed'),
++    );
++  }
++}

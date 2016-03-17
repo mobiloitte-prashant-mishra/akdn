@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AKDN Press Centre Types feature.
+ */
+
+include_once 'akdn_press_centre_types.features.inc';

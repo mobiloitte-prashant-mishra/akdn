@@ -1,0 +1,7 @@
+name = Filedepot mail
+description = Allows users to mail files
+core = 7.x
+dependencies[] = filedepot
+dependencies[] = mimemail
+dependencies[] = mailsystem
+dependencies[] = f_filedepot

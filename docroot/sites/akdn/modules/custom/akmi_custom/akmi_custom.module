@@ -1,0 +1,290 @@
+<?php
+
+/**
+ * Implements hook_block_info().
+ */
+function akmi_custom_block_info() {
+  $blocks = array(
+    'akmi_homepage_aboutus' => array(
+      'info' => t('AKMI Carousel RHS ABout Us '),
+      'cache' => DRUPAL_NO_CACHE,
+    ),
+    'akmi_social_sharing_block' => array(
+      'info' => t('AKMI Social Sharing Home Page '),
+      'cache' => DRUPAL_NO_CACHE,
+    ),
+    'akmi_news_resources_block' => array(
+      'info' => t('AKMI News and Resource on Home Page'),
+      'cache' => DRUPAL_NO_CACHE,
+    ),
+  );
+
+  return $blocks;
+}
+
+
+/**
+ * Implements hook_block_view().
+ */
+function akmi_custom_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'akmi_homepage_aboutus':
+      if ($content = _akmi_custom_carousel_aboutus()) {
+        $block['content'] = $content;
+        $block['subject'] = t('AKMI Carousel RHS ABout Us ');
+      }
+      break;
+    case 'akmi_social_sharing_block':
+      if ($content = _akmi_custom_social_sharing_block()) {
+        $block['content'] = $content;
+        $block['subject'] = t('AKMI Social Sharing Block Home Page');
+      }
+      break;
+    case 'akmi_news_resources_block':
+      if ($content = _akmi_custom_news_resources_block()) {
+        $block['content'] = $content;
+        $block['subject'] = t('AKMI News & Resources Block on Home Page');
+      }
+      break;
+
+  }
+  return $block;
+}
+
+/*
+ * Get latest socail sharing block
+ */
+function _akmi_custom_social_sharing_block() {
+  //get latest stay connections facebook
+  $content = views_embed_view('facebook_feeds', 'akmi_facebook');
+  //get latest stay connections Twitter
+  $content .= views_embed_view('facebook_feeds', 'akmi_twitter');
+  //get latest stay connections Youtube
+  $content .= views_embed_view('facebook_feeds', 'akmi_youtube');
+  return $content;
+}
+
+
+/*
+ * Get latest News & Resources
+ */
+function _akmi_custom_news_resources_block() {
+  //get latest stay connections facebook
+  $content = views_embed_view('akmi_home_page', 'akmi_home_press_release');
+  //get latest stay connections Twitter
+  $content .= views_embed_view('akmi_home_page', 'akmi_home_in_the_media');
+  //get latest stay connections Youtube
+  $content .= views_embed_view('akmi_home_page', 'akmi_home_video');
+  return $content;
+}
+
+function _akmi_custom_carousel_aboutus() {
+  $content = '';
+  $node = menu_get_object();
+  $content .= '<div class = "whatsnew-right-content">';
+  if (isset($node->field_about_page)) {
+    $about = node_load($node->field_about_page[$node->language][0]['nid']);
+    if (isset($about->nid)) {
+      $content .= '<p class = "whats-new-gold">' . t('ABOUT THE') . '</p>';
+      $content .= '<div class = "grid-whatsnew-block_subtitle">' . $about->field_short_title[$about->language][0]['value'] . '</div>';
+      if (!empty($about->body[$about->language][0]['summary']) && !empty($about->body[$about->language][0]['value'])) {
+        $content .= '<div class="grid-whatsnew-block_body">' . $about->body[$about->language][0]['summary'] . ' <a class = "views-more-link-akaa" href="' .
+          url("node/{$about->nid}") . '">' . t('More') . '</a></div>';
+      }
+      else {
+        if (!empty($about->body[$about->language][0]['summary']) && empty($about->body[$about->language][0]['value'])) {
+          $content .= '<div class="grid-whatsnew-block_body">' . $about->body[$about->language][0]['summary'] . '</div>';
+        }
+        else {
+          $content .= '<div class="grid-whatsnew-block_body">' . text_summary($about->body[$about->language][0]['value'], $about->body[$about->language][0]['format'], 1200) . ' <a class = "views-more-link-akaa" href="' . url("node/{$about->nid}") . '">' . t('More') . '</a></div>';
+        }
+      }
+    }
+  }
+  $content .= '</div>';
+  return $content;
+}
+
+
+/**
+ * Get Related Artist for  an instrument
+ */
+
+function _get_related_artists_list($inst_id) {
+$query = db_select('field_data_field_artist_related_instruments', 'r');
+$query->leftJoin('node', 'n', 'r.entity_id = n.nid');
+$fetch_artist = $query->fields('n',array('title'))
+    ->fields('r', array('entity_id'))
+    ->condition('r.field_artist_related_instruments_nid', $inst_id, '=')
+    ->execute()
+    ->fetchAll();
+ return $fetch_artist;
+}
+
+/**
+ *
+ * Get Artist's Related CD DVD links
+ */
+function _get_related_cd_dvd_list($cd_nid) {
+  $query = db_select('field_data_field_related_artists', 'r');
+  $query->leftJoin('node', 'n', 'r.entity_id = n.nid');
+  $fetch_cd_dvd = $query->fields('n',array('title'))
+    ->fields('r', array('entity_id'))
+    ->condition('r.field_related_artists_nid', $cd_nid, '=')
+    ->condition('n.type','akmi_cd_dvd', '=')
+    ->execute()
+    ->fetchAll();
+  return $fetch_cd_dvd;
+}
+
+
+/**
+ * [akmi_custom_theme description]
+ * @param  [type] $existing [description]
+ * @param  [type] $type     [description]
+ * @param  [type] $theme    [description]
+ * @param  [type] $path     [description]
+ * @return [type]           [description]
+ */
+function akmi_custom_theme($existing, $type, $theme, $path) {
+  $themes['views_view_field__akmi_instrument_views__page__nothing'] = array(
+    'template' => 'templates/views-view-field--akmi-instrument-views--page--nothing',
+    'original hook' => 'views_view_fields',
+    'preprocess functions' => array(
+      'template_preprocess',
+      'template_preprocess_views_view_fields',
+      'akmi_custom_preprocess_views_view_field__akmi_instrument_views__page__nothing',
+    ),
+    'arguments' => array('view' => NULL),
+  );
+  $themes['views_view_field__akmi_artists_views__block_1__nothing'] = array(
+    'template' => 'templates/views-view-field--akmi-artists-views--block-1--nothing',
+    'original hook' => 'views_view_fields',
+    'preprocess functions' => array(
+      'template_preprocess',
+      'template_preprocess_views_view_fields',
+      'akmi_custom_preprocess_views_view_field__akmi_artists_views__block_1__nothing',
+    ),
+    'arguments' => array('view' => NULL),
+  );
+  return $themes;
+}
+
+function akmi_custom_preprocess_views_view_field__akmi_artists_views__block_1__nothing(&$variables) {
+  $row = $variables['row'];
+  $cd_nid = $row->_field_data['nid']['entity']->nid;
+  $get_cd_dvd_list = _get_related_cd_dvd_list($cd_nid);
+  $output = '';
+  if (!empty($get_cd_dvd_list))  {
+    foreach ($get_cd_dvd_list as $value) {
+      $node_load = node_load($value->entity_id);
+      $rows[] = l($value->title, 'akmi/cd-dvd', array('fragment' => 'volume-'.$node_load->field_cd_volume_number['und'][0]['value']));
+    }
+  }
+  if (!empty($rows)) {
+    $output = '<div class="akaa-technicalinfo-label">' . t('CD/DVD') . ':&nbsp;</div><div class="akaa-technicalinfo-link">' . implode(',', $rows) . '</div>';
+    $variables['related_cd_dvd'] = $output;
+  }
+}
+
+function akmi_custom_preprocess_views_view_field__akmi_instrument_views__page__nothing(&$variables) {
+  $row = $variables['row'];
+  $inst_nid = $row->_field_data['nid']['entity']->nid;
+  $get_artist_list = _get_related_artists_list($inst_nid);
+  $output = '';
+  if (!empty($get_artist_list))  {
+    $output .= '<span class="related-heading">'.t('Instrumentalists').'</span>';
+    $output .= '<ul>';
+    foreach ($get_artist_list as $value) {
+      $output .= '<li class="rel_artist_links">';
+      $output .= l($value->title, 'node/'.$value->entity_id);
+      $output .= '</li>';
+    }
+    $output .= '</ul>';
+  }
+  $variables['related_artist'] = $output;
+}
+
+/**
+ * Implements hook_form_alter().
+ *
+ */
+function akmi_custom_form_alter(&$form, &$form_state, $form_id) {
+  //update default text
+  if ($form_id == 'views_exposed_form') {
+    if ($form_state['view']->name == 'akmi_performance' && $form_state['view']->current_display == 'page') {
+      $form['combine']['#attributes']['placeholder'] = t('Enter a Keyword');
+    }
+  }
+  if ($form['#id'] == 'views-exposed-form-akmi-performance-page') {
+    $form['#action'] = '/akmi/performance';
+    $form['view-all'] = array('#markup' => '<a id="view-all-projects" href="/akmi/performance">'.t('View All Performance Programmes').'</a>');
+  }
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function akmi_custom_views_pre_render(&$view) {
+
+  if ($view->name == 'facebook_feeds' && $view->current_display == 'block_2'){
+    $url = 'https://www.youtube.com/feeds/videos.xml';
+    $channel_id =  'UCJ9z0V7erDeLCWHS2iGGg5g';
+    $content =  _akdn_custom_get_latest_youtube_video($url , $channel_id);
+    _akdn_custom_views_render_alter($view, $content);
+  }else if($view->name == 'facebook_feeds' && $view->current_display == 'akaa_youtube_home_page'){
+    $url = 'https://www.youtube.com/feeds/videos.xml';
+    $channel_id = 'UCdXlZQFsArBuxT7bdkjhqvw';
+    //TODO get user Id of AKAA
+    $content =  _akdn_custom_get_latest_youtube_video($url, $channel_id);
+    _akdn_custom_views_render_alter($view, $content);
+  }else if($view->name == 'facebook_feeds' && $view->current_display == 'akmi_twitter'){
+    $url = 'https://www.youtube.com/feeds/videos.xml';
+    $channel_id = 'UCq2a2B38dTDMKW7rgDf0LIA';
+    $content =  _akdn_custom_get_latest_youtube_video($url,$channel_id);
+    _akdn_custom_views_render_alter($view, $content);
+  }
+}
+
+
+
+function _akdn_custom_get_latest_youtube_video($url, $channel_id){
+  $url = $url;
+  $options = array(
+    'channel_id' => $channel_id,
+  );
+  $full_url = url($url, array('query' => $options));
+  $request = drupal_http_request($full_url);
+  $data = new SimpleXMLElement($request->data);
+  $data = drupal_json_decode(drupal_json_encode($data));
+  if(!empty($data['entry'][0])) {
+    $datas = $data['entry'][0];
+    $id = explode(":", $datas['id']);
+    $published = strtotime($datas['published']);
+    $img_url = 'https://img.youtube.com/vi/'.$id[2].'/0.jpg';
+    $output = array(
+      'id' => $id[2],
+      'title' => $datas['title'],
+      'date' => $published,
+      'image_url' => $img_url,
+      'link' => 'http://www.youtube.com/watch?v='.$id,
+    );
+    return $output;
+  } else{
+    return 'Not result found';
+  }
+}
+
+function _akdn_custom_views_render_alter(&$view, $content){
+  foreach ($view->result as $result){
+    $result->node_title = $content['title'];
+    $result->node_created  = $content['date'];
+    $result->field_body[0]['rendered']['#markup'] = $content['title'];
+    $result->field_field_youtube_link[0]['raw']['url'] = $content['link'];
+    $result->field_field_youtube_link[0]['raw']['display_url'] = $content['link'];
+    $result->field_field_youtube_external_id[0]['rendered']['#markup']= $content['id'];
+    $result->field_field_youtube_embed[0]['raw']['url'] = $content['image_url'];
+    $result->field_field_youtube_embed[0]['raw']['display_url'] = $content['image_url'];
+  }
+}

@@ -1,0 +1,12 @@
+name = solr-search-bundle-1
+description = Solr search pages: News, In the media, Projects, Publications
+core = 7.x
+package = Features
+version = 7.x-1.21
+project = solr_search_bundle_1
+dependencies[] = ctools
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = akaa_search_pages
+features[views_view][] = solr_search_pages_1

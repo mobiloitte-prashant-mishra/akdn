@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Path Breadcrumbs Feature feature.
+ */
+
+include_once 'path_breadcrumbs_feature.features.inc';

@@ -1,0 +1,79 @@
+/*
+Error: File to import not found or unreadable: compass/support.
+        on line 133 of _init.scss
+        from line 10 of styles.scss
+
+128:                         background-size: 90%;
+129:                         width: 26px;
+130:                         margin-top: 10px;
+131:                     }
+132:                 }
+133:                 .form-text {
+134:                     width: 194px;
+135:                     padding: 3px 25px 3px 3px;
+136:                     border: 0;
+137:                     font-size: .8em;
+138:                 }
+
+Backtrace:
+_init.scss:133
+styles.scss:10
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/import_node.rb:67:in `rescue in import'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/import_node.rb:45:in `import'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/import_node.rb:28:in `imported_file'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/import_node.rb:37:in `css_import?'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:311:in `visit_import'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:36:in `visit'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/stack.rb:79:in `block in with_base'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/stack.rb:115:in `with_frame'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/stack.rb:79:in `with_base'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:325:in `block (2 levels) in visit_import'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:325:in `map'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:325:in `block in visit_import'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/stack.rb:88:in `block in with_import'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/stack.rb:115:in `with_frame'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/stack.rb:88:in `with_import'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:322:in `visit_import'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:36:in `visit'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/stack.rb:79:in `block in with_base'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/stack.rb:115:in `with_frame'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/stack.rb:79:in `with_base'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:52:in `map'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:36:in `visit'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/root_node.rb:36:in `css_tree'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/engine.rb:378:in `_render_with_sourcemap'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/engine.rb:295:in `render_with_sourcemap'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/plugin/compiler.rb:209:in `each'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/plugin/compiler.rb:293:in `watch'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/plugin.rb:108:in `method_missing'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/exec/sass_scss.rb:384:in `watch_or_update'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/exec/sass_scss.rb:51:in `process_result'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/exec/base.rb:52:in `parse'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/lib/sass/exec/base.rb:19:in `parse!'
+/home/srijan/.rvm/gems/ruby-2.2.1/gems/sass-3.4.15/bin/sass:13:in `<top (required)>'
+/home/srijan/.rvm/gems/ruby-2.2.1/bin/sass:23:in `load'
+/home/srijan/.rvm/gems/ruby-2.2.1/bin/sass:23:in `<main>'
+/home/srijan/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `eval'
+/home/srijan/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: File to import not found or unreadable: compass/support.\A         on line 133 of _init.scss\A         from line 10 of styles.scss\A \A 128:                         background-size: 90%;\A 129:                         width: 26px;\A 130:                         margin-top: 10px;\A 131:                     }\A 132:                 }\A 133:                 .form-text {\A 134:                     width: 194px;\A 135:                     padding: 3px 25px 3px 3px;\A 136:                     border: 0;\A 137:                     font-size: .8em;\A 138:                 }"; }

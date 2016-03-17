@@ -1,0 +1,4 @@
+name = Feeds field collection import
+description = Execute field collection importer after host entity importer has executed
+core = 7.x
+dependencies[] = feeds

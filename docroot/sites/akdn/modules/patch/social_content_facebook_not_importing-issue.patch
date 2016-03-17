@@ -1,0 +1,23 @@
+diff --git a/docroot/sites/akdn/modules/contrib/social_content/social_content.class.inc b/docroot/sites/akdn/modules/contrib/social_content/social_content.class.inc
+index c00ac43..a980d90 100644
+--- a/docroot/sites/akdn/modules/contrib/social_content/social_content.class.inc
++++ b/docroot/sites/akdn/modules/contrib/social_content/social_content.class.inc
+@@ -793,11 +793,15 @@ abstract class SocialContent {
+       ->condition('instance', $this->settings['instance']['id'])
+       ->execute()
+       ->fetchField();
+-
+     if ($exists) {
+-      watchdog('social_content', '%global : %id already exists', array('%global' => $this->getMachineName(), '%id' => $row->id));
++      //TODO find better way to handle node exit;
++      $node_load = node_load($exists);
++      if($node_load->nid >0){
++        watchdog('social_content', '%global : %id already exists', array('%global' => $this->getMachineName(), '%id' => $row->id));
++      }else{
++        return TRUE;
++      }
+     }
+-
+     return !$exists;
+   }
+ 

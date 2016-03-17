@@ -1,0 +1,5 @@
+name = KC filedepot customization
+description = KC filedepot media integration
+core = 7.x
+dependencies[] = filedepot
+dependencies[] = media

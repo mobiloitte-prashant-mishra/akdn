@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * @file
+ * HTML mail customization.
+ */
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function scs_htmlmail_preprocess_htmlmail(&$variables) {
+  $variables['site_name'] = variable_get('site_name', t('AKDN Knowledge Communication Centre'));
+  $variables['site_slogan'] = variable_get('site_slogan', t('Knowledge Communication Centre'));
+}

@@ -1,0 +1,8 @@
+name = f_archive
+description = Archive content settings
+core = 7.x
+package = Features
+dependencies[] = features
+dependencies[] = scs_archive
+features[features_api][] = api:2
+features[user_permission][] = archive content

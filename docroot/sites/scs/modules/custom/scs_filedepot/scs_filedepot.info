@@ -1,0 +1,4 @@
+name = KC filedepot
+description = Customization in filedepot
+core = 7.x
+dependencies[] = filedepot

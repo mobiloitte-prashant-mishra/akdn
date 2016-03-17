@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the hightlight block feature.
+ */
+
+include_once 'hightlight_block.features.inc';

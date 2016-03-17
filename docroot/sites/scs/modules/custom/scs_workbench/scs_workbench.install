@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Install file of scs_workbench file.
+ */
+
+/**
+ * Implements hook_update_N().
+ */
+function scs_workbench_update_7000(&$sandbox = NULL) {
+  $message = t('Weight of workbench customization module updated to 100');
+
+  db_update('system')
+    ->fields(array(
+      'weight' => 100,
+    ))
+    ->condition('name', 'scs_workbench')
+    ->execute();
+
+  return $message;
+}

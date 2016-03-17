@@ -1,0 +1,133 @@
+<?php
+/**
+ * Implements hook_menu().
+ */
+function test_menu() {
+  $items['node/%node/feed'] = array(
+    'title' => 'Node Feed',
+    'page callback' => 'test_node_feed',
+    'page arguments' => array(1),
+    'access callback' => '_test_access',
+    'access arguments' => array(1),
+    'type' => MENU_CALLBACK,
+  );
+  $items['node/%node/feed'] = array(
+    'title' => 'Node Feed',
+    'page callback' => 'test_node_feed',
+    'page arguments' => array(1),
+    'access callback' => '_test_access',
+    'access arguments' => array(1),
+    'type' => MENU_CALLBACK,
+  );
+  $items['admin/structure/taxonomy/feeds'] = array(
+    'title' => 'Enable Term Feed',
+    'description' => 'Enable Term Feeds',
+     'page callback' => 'drupal_get_form',
+    'page arguments' => array('test_enable_feed_terms'),
+    'access arguments' => array('administer taxonomy'),
+  );
+
+  return $items;
+}
+function test_enable_feed_terms($form, &$form_state) {
+  $tids = variable_get('feed_enabled_terms');
+  $tags = taxonomy_term_load_multiple($tids);
+  $form['markup'] = array(
+      '#type' => 'markup',
+      '#markup' => t('Enable Feed for Terms'),
+  );
+  $form['tags'] = array(
+    '#type' => 'textfield',
+    '#title' => 'Select terms',
+    '#autocomplete_path' => 'taxonomy/autocomplete/field_tags',
+    '#default_value' => taxonomy_implode_tags($tags),
+  );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Submit')
+  );
+  return $form;
+}
+function test_enable_feed_terms_submit($form, &$form_state) {
+  $tags = $form_state['values']['tags'];
+  $typed_terms = drupal_explode_tags($tags);
+  $tids = array();
+  foreach ($typed_terms as $typed_term) {
+      if ($possibilities = taxonomy_term_load_multiple(array(), array('name' => trim($typed_term), 'vid' => 1))) {
+      $term = array_pop($possibilities);
+      array_push($tids, $term->tid);
+  }
+  }
+  variable_set('feed_enabled_terms', $tids);
+drupal_set_message('Your Changes have been saved');
+drupal_goto('term-feed-index');
+}
+function test_menu_alter(&$items) {
+  // Example - disable the page at node/add
+  $items['taxonomy/term/%taxonomy_term/feed']['access callback'] = '_test_taxonomy_enable_feed_access';
+  $items['taxonomy/term/%taxonomy_term/feed']['access arguments'] = array(2);
+}
+function _test_taxonomy_enable_feed_access($term) {
+  $enabled_terms = variable_get('feed_enabled_terms');
+  if (in_array($term->tid, $enabled_terms)) {
+    return TRUE;
+  }
+  return FALSE;
+}
+/**
+ * Implements hook_access().
+ */
+function _test_access($node) {
+  if(isset($node->field_exclude_rss[LANGUAGE_NONE]) && ($node->field_exclude_rss[LANGUAGE_NONE][0]['value'] == 0) && user_access('access content')) {
+    return TRUE;
+  }
+  return FALSE;
+}
+/**
+ * Implements hook_node_view_alter().
+ */
+function test_node_view_alter(&$build) {
+  $node = $build['body']['#object'];
+  if (_test_access($node)) {
+    drupal_add_feed('node/' . $node->nid . '/feed', t('!title Feed', array('!title' => $node->title)));
+  }
+}
+function test_node_feed($node) {
+  $channel['title'] = t("!title feed ", array('!title' => $node->title));
+  $channel['link'] = url('node/' . $node->uid, array('absolute' => TRUE));
+  node_feed(array($node->nid), $channel);
+}
+/**
+ * Implements hook_cronapi().
+ */
+function test_cronapi($op, $job = NULL) {
+  $items['nodequeue_scheduler_counter_update'] = array(
+    'description' => 'Update Nodequeue Scheduler Counter',
+    'rule' => '0 */24 * * *', // Every 24 hours
+    'callback' => 'update_nodequeue_scheduler_counter',
+  );
+  return $items;
+}
+function update_nodequeue_scheduler_counter() {
+  $qids = array(16,51,26);
+  foreach ($qids as $qid) {
+      $counter = variable_get('nodequeue_scheduler_counter_' . $qid, 0);
+      variable_set('nodequeue_scheduler_counter_' . $qid, $counter+1);
+  }
+}
+function test_wysiwyg_plugin($editor, $version) {
+  switch ($editor) {
+    case 'ckeditor':
+      if ($version > 4.3) {
+        return array(
+       'test_plugin' => array(
+       'path' => drupal_get_path('module', 'test'),
+       'file' => 'plugin.js',
+       'load' => TRUE,
+        'buttons' => array(
+        'test_plugin_button' => t('Do something awesome'),
+        )));
+       }
+      break;
+}
+}

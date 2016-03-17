@@ -1,0 +1,2930 @@
+@charset "UTF-8";
+/** common rules **/
+/**
+ * variables for all patial files.
+**/
+/*Font-sizes*/
+/*
+ * ##### Sasson - advanced drupal theming. #####
+ *
+ * SASS mixins
+ * http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#mixins
+ *
+*/
+/*===================== Media Queries mixing ======================*/
+/** add css **/
+/*Common class*/
+/* line 3, ../sass/scs/_style.scss */
+#header {
+  border-bottom: 1px solid;
+}
+
+/* line 7, ../sass/scs/_style.scss */
+.sliding-popup-processed {
+  position: relative;
+  /*Listing page theming for all  pages*/
+  /*Person page alignment*/
+  /*language-switcher*/
+  /*Alignment according to AKDN site and Right alignment of text on an article page -> link http://akdnstg.prod.acquia-sites.com/scs/article/media/towards-happier-state-many-ngos-are-helping-bihar-bring-change*/
+  /*post live issue on main header for simple news.*/
+  /*Article section page*/
+  /*single value attribute named "News" theming*/
+}
+/* line 9, ../sass/scs/_style.scss */
+.sliding-popup-processed .breadcrumb {
+  margin: 0px !important;
+}
+/* line 13, ../sass/scs/_style.scss */
+.sliding-popup-processed li.even.first a {
+  margin: 0px 0px !important;
+}
+/* line 17, ../sass/scs/_style.scss */
+.sliding-popup-processed .main-header h1 {
+  margin-bottom: 1em !important;
+  font-weight: inherit !important;
+}
+/* line 22, ../sass/scs/_style.scss */
+.sliding-popup-processed .field-type-text-with-summary.field-label-hidden {
+  font-family: sans-serif !important;
+}
+/* line 25, ../sass/scs/_style.scss */
+.sliding-popup-processed .content-inner {
+  /*Post live issue for alignment on left*/
+}
+/* line 30, ../sass/scs/_style.scss */
+.sliding-popup-processed .content-inner .speech-sidebar span, .sliding-popup-processed .content-inner .speech-sidebar a, .sliding-popup-processed .content-inner .views-field-field-youtube-vimeo-video span, .sliding-popup-processed .content-inner .views-field-field-youtube-vimeo-video a {
+  font-family: sans-serif !important;
+}
+/* line 36, ../sass/scs/_style.scss */
+.sliding-popup-processed .collapsible .field-items p, .sliding-popup-processed .collapsible .region-sidebar-second .view-id-publications_on_speech_page p, .region-sidebar-second .sliding-popup-processed .collapsible .view-id-publications_on_speech_page p,
+.sliding-popup-processed .collapsible .region-sidebar-second .view-events-and-speeches-reference p,
+.region-sidebar-second .sliding-popup-processed .collapsible .view-events-and-speeches-reference p {
+  color: #000000;
+}
+/* line 40, ../sass/scs/_style.scss */
+.sliding-popup-processed .group-right {
+  width: 388px !important p;
+  width-margin-bottom: 20px;
+}
+/* line 46, ../sass/scs/_style.scss */
+.sliding-popup-processed .group-left {
+  width: 45% !important;
+}
+/* line 51, ../sass/scs/_style.scss */
+.sliding-popup-processed .view-grouping-content h3 {
+  font-size: 12px;
+  font-family: sans-serif;
+  margin-top: 0;
+}
+/* line 57, ../sass/scs/_style.scss */
+.sliding-popup-processed .view-grouping-header a {
+  font-size: 14px;
+  text-decoration: none;
+  color: #000 !important;
+  font-weight: bold;
+}
+/* line 62, ../sass/scs/_style.scss */
+.sliding-popup-processed .view-grouping-header a:hover {
+  color: #b49759 !important;
+}
+/* line 68, ../sass/scs/_style.scss */
+.sliding-popup-processed .group-quotes p {
+  font-style: italic !important;
+}
+/* line 71, ../sass/scs/_style.scss */
+.sliding-popup-processed .group-quotes span {
+  display: inline-block;
+  color: #b49759;
+  margin-right: 10px;
+  cursor: pointer;
+}
+/* line 79, ../sass/scs/_style.scss */
+.sliding-popup-processed .field-name-field-media-source-url {
+  margin-top: 5px;
+}
+/* line 81, ../sass/scs/_style.scss */
+.sliding-popup-processed .field-name-field-media-source-url a {
+  color: #b49759;
+  text-decoration: none;
+  word-break: break-all;
+  overflow: hidden;
+  display: block;
+}
+/* line 87, ../sass/scs/_style.scss */
+.sliding-popup-processed .field-name-field-media-source-url a:hover {
+  color: #b49759;
+}
+/* line 93, ../sass/scs/_style.scss */
+.sliding-popup-processed .node-type-person {
+  font-family: sans-serif;
+}
+/* line 95, ../sass/scs/_style.scss */
+.sliding-popup-processed .node-type-person .group-right {
+  font-size: 12px !important;
+  color: #000000 !important;
+  width: 43%;
+}
+/* line 100, ../sass/scs/_style.scss */
+.sliding-popup-processed .node-type-person .group-left {
+  width: 45%;
+}
+/* line 105, ../sass/scs/_style.scss */
+.sliding-popup-processed #block-scs-custom-scs-custom-language-switcher {
+  width: 100%;
+}
+/* line 107, ../sass/scs/_style.scss */
+.sliding-popup-processed #block-scs-custom-scs-custom-language-switcher h2 {
+  font-size: 14px;
+  color: #b49759;
+  font-weight: bold;
+  float: left;
+}
+/* line 114, ../sass/scs/_style.scss */
+.sliding-popup-processed #block-scs-custom-scs-custom-language-switcher ul.language-switcher-locale-url {
+  list-style: none;
+}
+/* line 117, ../sass/scs/_style.scss */
+.sliding-popup-processed #block-scs-custom-scs-custom-language-switcher li {
+  float: left;
+  padding: 4px;
+}
+/* line 120, ../sass/scs/_style.scss */
+.sliding-popup-processed #block-scs-custom-scs-custom-language-switcher li a {
+  color: #000000;
+}
+/* line 122, ../sass/scs/_style.scss */
+.sliding-popup-processed #block-scs-custom-scs-custom-language-switcher li a:hover {
+  color: #b49759;
+}
+/* line 131, ../sass/scs/_style.scss */
+.sliding-popup-processed .node-article {
+  margin: 0 0 2em !important;
+  font-family: sans-serif;
+  font-size: 12px;
+  width: 93%;
+}
+/* line 136, ../sass/scs/_style.scss */
+.sliding-popup-processed .node-article .field-name-field-article-author {
+  display: inline-flex;
+  font-style: italic;
+}
+/* line 139, ../sass/scs/_style.scss */
+.sliding-popup-processed .node-article .field-name-field-article-author .label-inline {
+  margin-right: 3px;
+}
+/* line 143, ../sass/scs/_style.scss */
+.sliding-popup-processed .node-article .field-name-author {
+  display: inline-block;
+}
+/* line 145, ../sass/scs/_style.scss */
+.sliding-popup-processed .node-article .field-name-author .label-inline {
+  float: left;
+  margin-right: 3px;
+}
+/* line 150, ../sass/scs/_style.scss */
+.sliding-popup-processed .node-article .field-name-field-media-source-url {
+  display: inline-flex;
+  margin-right: 3px;
+}
+/* line 153, ../sass/scs/_style.scss */
+.sliding-popup-processed .node-article .field-name-field-media-source-url .label-inline {
+  margin-right: 3px;
+  margin-left: 3px;
+  font-style: italic;
+}
+/* line 158, ../sass/scs/_style.scss */
+.sliding-popup-processed .node-article .field-name-field-media-source-url a {
+  font-style: normal;
+}
+/* line 162, ../sass/scs/_style.scss */
+.sliding-popup-processed .node-article .field-name-field-publish-date {
+  display: block;
+  margin-right: 3px;
+}
+/* line 167, ../sass/scs/_style.scss */
+.sliding-popup-processed .main-header h1 {
+  margin: 0 15px 1em !important;
+  padding-left: 0 !important;
+}
+/* line 173, ../sass/scs/_style.scss */
+.sliding-popup-processed .field-name-field-article-img {
+  font-family: sans-serif !important;
+  font-size: 12px;
+}
+/* line 177, ../sass/scs/_style.scss */
+.sliding-popup-processed .field-name-field-article-img .field-name-field-copyright {
+  margin: 0;
+  font-weight: 100;
+  color: #999999;
+  font-style: italic;
+}
+/* line 182, ../sass/scs/_style.scss */
+.sliding-popup-processed .field-name-field-article-img .field-name-field-copyright h2 {
+  font-weight: 100;
+  margin-top: 2px;
+  font-size: 12px !important;
+}
+/* line 188, ../sass/scs/_style.scss */
+.sliding-popup-processed .field-name-field-article-img .field-items figure, .sliding-popup-processed .field-name-field-article-img .region-sidebar-second .view-id-publications_on_speech_page figure, .region-sidebar-second .sliding-popup-processed .field-name-field-article-img .view-id-publications_on_speech_page figure,
+.sliding-popup-processed .field-name-field-article-img .region-sidebar-second .view-events-and-speeches-reference figure,
+.region-sidebar-second .sliding-popup-processed .field-name-field-article-img .view-events-and-speeches-reference figure {
+  color: #999999;
+  font-style: italic;
+}
+/* line 194, ../sass/scs/_style.scss */
+.sliding-popup-processed .item-list h3 {
+  display: flex;
+  margin: 0 !important;
+}
+/* line 202, ../sass/scs/_style.scss */
+.sliding-popup-processed .views-field-field-related-contacts {
+  clear: left;
+}
+/* line 205, ../sass/scs/_style.scss */
+.sliding-popup-processed .toggled {
+  float: left;
+  margin: 3px;
+}
+
+/* line 220, ../sass/scs/_style.scss */
+.region-highlighted .block-content {
+  text-align: center;
+}
+/* line 223, ../sass/scs/_style.scss */
+.region-highlighted p {
+  font-family: sans-serif;
+  letter-spacing: 9px;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 100;
+}
+
+/* line 232, ../sass/scs/_style.scss */
+body {
+  background: url(../images/bg.png) repeat;
+  font-family: 'Trebuchet MS', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-size: 87.5%;
+}
+
+@font-face {
+  font-family: "FontAwesome";
+  src: url('../fonts/FontAwesome.otf?1441370811');
+  src: url('../fonts/fontawesome-webfont.eot?1441370811');
+  src: url('../fonts/fontawesome-webfont.woff?1441370811');
+  src: url('../fonts/fontawesome-webfont.ttf?1441370811');
+}
+/* line 248, ../sass/scs/_style.scss */
+.field-name-body iframe body {
+  background: none !important;
+  background-color: #fff !important;
+}
+
+/* line 255, ../sass/scs/_style.scss */
+.container {
+  background: #fff;
+  max-width: 100%;
+  padding: 0 !important;
+  width: 960px;
+}
+
+/* line 261, ../sass/scs/_style.scss */
+.print_html {
+  margin: 0 !important;
+}
+
+/* line 266, ../sass/scs/_style.scss */
+.sidebar-second #content-column {
+  float: left;
+  margin: 0 1em;
+  width: 550px;
+}
+@media (max-width: 768px) {
+  /* line 266, ../sass/scs/_style.scss */
+  .sidebar-second #content-column {
+    margin: 0;
+    padding: 0 1em;
+    width: 100% !important;
+  }
+}
+/* line 275, ../sass/scs/_style.scss */
+.sidebar-second #content-column .content-inner {
+  margin-right: 0;
+  width: inherit;
+}
+/* line 280, ../sass/scs/_style.scss */
+.sidebar-second .region-sidebar-second {
+  padding: 0 1em;
+  margin-left: 0;
+  width: 380px;
+}
+@media (max-width: 768px) {
+  /* line 280, ../sass/scs/_style.scss */
+  .sidebar-second .region-sidebar-second {
+    width: 100%;
+  }
+}
+
+/* line 290, ../sass/scs/_style.scss */
+span.kc-reset-filters {
+  position: relative;
+  z-index: 1;
+  width: auto;
+  margin: 5px 0px 8px;
+  display: block;
+}
+
+/* line 297, ../sass/scs/_style.scss */
+span.kc-reset-filters span.kc-reset-filter-text {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* line 301, ../sass/scs/_style.scss */
+span.kc-reset-filters a.akdn-solr-rest-link {
+  text-decoration: none;
+  color: #b49759;
+  font-size: 14px;
+  float: right;
+  margin-right: 2em;
+}
+
+/*Twelve pixel added*/
+/* line 312, ../sass/scs/_style.scss */
+.sidebar-second.page-node #content-column {
+  margin: 0 .8em;
+  padding: 0;
+  width: 685px;
+}
+@media (max-width: 768px) {
+  /* line 312, ../sass/scs/_style.scss */
+  .sidebar-second.page-node #content-column {
+    margin: 0;
+  }
+}
+/* line 320, ../sass/scs/_style.scss */
+.sidebar-second.page-node .region-sidebar-second {
+  margin: 0 1em;
+  padding: 0;
+  width: 220px;
+}
+@media (max-width: 768px) {
+  /* line 320, ../sass/scs/_style.scss */
+  .sidebar-second.page-node .region-sidebar-second {
+    margin: 0;
+    padding: 0 1em;
+    width: 100%;
+  }
+}
+/* line 330, ../sass/scs/_style.scss */
+.sidebar-second.page-node .region-sidebar-second .speech-sidebar .views-row {
+  margin-top: 10px;
+}
+/* line 336, ../sass/scs/_style.scss */
+.sidebar-second.page-node .region-sidebar-second .field-items, .sidebar-second.page-node .region-sidebar-second .view-id-publications_on_speech_page,
+.sidebar-second.page-node .region-sidebar-second .view-events-and-speeches-reference {
+  font-size: 12px;
+  text-decoration: none;
+  color: #000;
+}
+/* line 340, ../sass/scs/_style.scss */
+.sidebar-second.page-node .region-sidebar-second .field-items a, .sidebar-second.page-node .region-sidebar-second .view-id-publications_on_speech_page a,
+.sidebar-second.page-node .region-sidebar-second .view-events-and-speeches-reference a {
+  color: #000;
+  text-decoration: none;
+}
+/* line 343, ../sass/scs/_style.scss */
+.sidebar-second.page-node .region-sidebar-second .field-items a:hover, .sidebar-second.page-node .region-sidebar-second .view-id-publications_on_speech_page a:hover,
+.sidebar-second.page-node .region-sidebar-second .view-events-and-speeches-reference a:hover {
+  color: #b49759;
+  text-decoration: none;
+}
+
+/*Sidebar issue*/
+/* line 358, ../sass/scs/_style.scss */
+.region-sidebar-second .view-id-publications_on_speech_page a,
+.region-sidebar-second .view-events-and-speeches-reference a {
+  color: #000;
+  text-decoration: none;
+}
+/* line 361, ../sass/scs/_style.scss */
+.region-sidebar-second .view-id-publications_on_speech_page a:hover,
+.region-sidebar-second .view-events-and-speeches-reference a:hover {
+  color: #b49759;
+  text-decoration: none;
+}
+
+/* line 371, ../sass/scs/_style.scss */
+.no-sidebars .content-column {
+  padding: 1em;
+  width: 100% !important;
+}
+
+/* line 377, ../sass/scs/_style.scss */
+.region-content-inner {
+  padding: 0 2em;
+}
+
+/* line 381, ../sass/scs/_style.scss */
+#site-name {
+  margin-bottom: 0 !important;
+}
+/* line 383, ../sass/scs/_style.scss */
+#site-name a {
+  color: #C1AA77;
+  display: block;
+  font-family: sans-serif;
+  font-size: 2.4rem;
+  margin-bottom: 0;
+  margin: 0 0 10 .5em;
+  text-decoration: none;
+  margin-left: 12px;
+}
+
+/* line 395, ../sass/scs/_style.scss */
+#site-slogan {
+  margin: -.4em 0 0;
+}
+/* line 397, ../sass/scs/_style.scss */
+#site-slogan a {
+  color: #333;
+  font-size: 1.8rem;
+  margin: 0 0 0 .6em;
+}
+/* line 401, ../sass/scs/_style.scss */
+#site-slogan a:hover {
+  text-decoration: none;
+}
+
+/* line 407, ../sass/scs/_style.scss */
+.page {
+  min-height: 500px;
+}
+
+/* line 412, ../sass/scs/_style.scss */
+.main-header h1 {
+  color: #000;
+  font-family: sans-serif;
+  font-size: 3rem;
+  font-weight: 100;
+  letter-spacing: 9px;
+  margin-bottom: 2em;
+  text-align: center;
+  text-transform: uppercase;
+}
+@media (max-width: 768px) {
+  /* line 412, ../sass/scs/_style.scss */
+  .main-header h1 {
+    letter-spacing: 7px;
+  }
+}
+
+/* line 422, ../sass/scs/_style.scss */
+.page-node .main-header h1 {
+  color: #000;
+  font-size: 2rem;
+  font-weight: bold !important;
+  letter-spacing: 0;
+  margin: 0 0 1em;
+  padding-left: 1em;
+  text-align: left;
+  text-transform: none;
+}
+
+/* line 436, ../sass/scs/_style.scss */
+.content-title a {
+  color: #000;
+  font-family: sans-serif;
+  font-size: 3rem;
+  font-weight: 100;
+  letter-spacing: 9px;
+  margin-bottom: 2em;
+  text-align: center;
+  text-transform: uppercase;
+  display: block;
+}
+/* line 439, ../sass/scs/_style.scss */
+.content-title a:hover {
+  color: #b49759;
+  text-decoration: none;
+}
+
+/* line 451, ../sass/scs/_style.scss */
+.node-type-event #main-content-header h1,
+.node-type-publication #main-content-header h1,
+.node-type-article #main-content-header h1,
+.node-type-speech #main-content-header h1 {
+  font-family: sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0;
+  margin-left: 2em;
+  text-align: left;
+  text-transform: initial;
+}
+
+/* line 464, ../sass/scs/_style.scss */
+.block-views h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+/* line 474, ../sass/scs/_style.scss */
+.message {
+  border: 1px solid #fafafa;
+  padding: 1em .5em;
+}
+/* line 477, ../sass/scs/_style.scss */
+.message .field-content {
+  font-size: 1.4rem;
+  font-family: sans-serif;
+  padding: 0 1em;
+}
+
+/* line 484, ../sass/scs/_style.scss */
+.edit-message {
+  padding: 1em;
+}
+
+/* line 489, ../sass/scs/_style.scss */
+.edit-message a {
+  text-decoration: none;
+  color: #b49759;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+/* line 494, ../sass/scs/_style.scss */
+.edit-message a:hover {
+  color: #b49759;
+  text-decoration: none;
+}
+
+/* line 502, ../sass/scs/_style.scss */
+.my-edit .view-header {
+  border-left: 1px solid #fafafa;
+  border-right: 1px solid #fafafa;
+}
+/* line 505, ../sass/scs/_style.scss */
+.my-edit .view-header p {
+  margin: 0;
+  padding: .5em;
+}
+/* line 510, ../sass/scs/_style.scss */
+.my-edit .form-item-items-per-page {
+  margin-top: 0 !important;
+}
+
+/* line 517, ../sass/scs/_style.scss */
+.need-review table {
+  margin-bottom: 1.5em;
+  width: 100%;
+}
+/* line 520, ../sass/scs/_style.scss */
+.need-review table td, .need-review table tr, .need-review table th {
+  background: none;
+  border: 1px solid #fafafa;
+  font-size: 1.4rem;
+  padding: 1em .5em;
+  text-align: center;
+  width: auto;
+}
+/* line 529, ../sass/scs/_style.scss */
+.need-review table tbody .views-field-moderation-actions {
+  text-align: left;
+}
+/* line 533, ../sass/scs/_style.scss */
+.need-review table .views-field-state {
+  padding-left: 1.5em;
+  text-align: left;
+}
+/* line 537, ../sass/scs/_style.scss */
+.need-review table a {
+  color: #000;
+  text-decoration: none;
+}
+/* line 540, ../sass/scs/_style.scss */
+.need-review table a:hover {
+  color: #b49759;
+}
+/* line 545, ../sass/scs/_style.scss */
+.need-review .view-filters {
+  margin-bottom: 2em;
+}
+/* line 547, ../sass/scs/_style.scss */
+.need-review .view-filters .form-select {
+  height: 1.85em;
+  width: 100%;
+}
+/* line 551, ../sass/scs/_style.scss */
+.need-review .view-filters .form-submit {
+  margin-top: 1.8em;
+}
+
+@media (max-width: 768px) {
+  /* line 559, ../sass/scs/_style.scss */
+  .view-views-newsletter-subscriptions table {
+    table-layout: fixed;
+  }
+}
+/* line 563, ../sass/scs/_style.scss */
+.view-views-newsletter-subscriptions table th, .view-views-newsletter-subscriptions table tr, .view-views-newsletter-subscriptions table td {
+  width: 20%;
+}
+@media (max-width: 768px) {
+  /* line 566, ../sass/scs/_style.scss */
+  .view-views-newsletter-subscriptions table td {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+}
+@media (max-width: 768px) {
+  /* line 572, ../sass/scs/_style.scss */
+  .view-views-newsletter-subscriptions table .views-field-views-conditional,
+  .view-views-newsletter-subscriptions table .views-field-status {
+    display: none;
+  }
+}
+
+/* line 582, ../sass/scs/_style.scss */
+.view-admin-content .fieldset-legend {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+/* line 586, ../sass/scs/_style.scss */
+.view-admin-content .form-select {
+  height: 1.9em;
+}
+/* line 589, ../sass/scs/_style.scss */
+.view-admin-content .fieldset-wrapper {
+  margin-bottom: 1em;
+}
+@media (max-width: 768px) {
+  /* line 592, ../sass/scs/_style.scss */
+  .view-admin-content .form-autocomplete {
+    width: 100%;
+  }
+}
+/* line 598, ../sass/scs/_style.scss */
+.view-admin-content table td, .view-admin-content table tr, .view-admin-content table th {
+  width: 11% !important;
+}
+@media (max-width: 768px) {
+  /* line 598, ../sass/scs/_style.scss */
+  .view-admin-content table td, .view-admin-content table tr, .view-admin-content table th {
+    width: auto;
+  }
+}
+/* line 604, ../sass/scs/_style.scss */
+.view-admin-content table .views-field-views-bulk-operations {
+  width: 3% !important;
+}
+@media (max-width: 768px) {
+  /* line 604, ../sass/scs/_style.scss */
+  .view-admin-content table .views-field-views-bulk-operations {
+    width: auto;
+  }
+}
+@media (max-width: 768px) {
+  /* line 611, ../sass/scs/_style.scss */
+  .view-admin-content table .views-field-language, .view-admin-content table .views-field-name,
+  .view-admin-content table .views-field-status, .view-admin-content table .views-field-state,
+  .view-admin-content table .views-field-created, .view-admin-content table .views-field-changed {
+    display: none;
+  }
+}
+
+/* line 624, ../sass/scs/_style.scss */
+.view-views-newsletter-subscriptions table,
+.view-admin-content table,
+.page-node-translate table,
+.my-dashboard table {
+  margin-bottom: 1.5em;
+  width: 100%;
+}
+/* line 627, ../sass/scs/_style.scss */
+.view-views-newsletter-subscriptions table td, .view-views-newsletter-subscriptions table tr, .view-views-newsletter-subscriptions table th,
+.view-admin-content table td,
+.view-admin-content table tr,
+.view-admin-content table th,
+.page-node-translate table td,
+.page-node-translate table tr,
+.page-node-translate table th,
+.my-dashboard table td,
+.my-dashboard table tr,
+.my-dashboard table th {
+  background: none;
+  border: 1px solid #fafafa;
+  font-size: 1.4rem;
+  padding: 1em .5em;
+  text-align: center;
+  width: 25%;
+}
+/* line 635, ../sass/scs/_style.scss */
+.view-views-newsletter-subscriptions table a,
+.view-admin-content table a,
+.page-node-translate table a,
+.my-dashboard table a {
+  color: #000;
+  text-decoration: none;
+}
+/* line 638, ../sass/scs/_style.scss */
+.view-views-newsletter-subscriptions table a:hover,
+.view-admin-content table a:hover,
+.page-node-translate table a:hover,
+.my-dashboard table a:hover {
+  color: #b49759;
+}
+/* line 643, ../sass/scs/_style.scss */
+.view-views-newsletter-subscriptions .views-field-title,
+.view-admin-content .views-field-title,
+.page-node-translate .views-field-title,
+.my-dashboard .views-field-title {
+  text-align: left;
+}
+/* line 646, ../sass/scs/_style.scss */
+.view-views-newsletter-subscriptions caption,
+.view-admin-content caption,
+.page-node-translate caption,
+.my-dashboard caption {
+  background: #f2edde;
+  border-top: 1px solid #fafafa;
+  border-left: 1px solid #fafafa;
+  border-right: 1px solid #fafafa;
+  color: #000;
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding: .3em .5em;
+  text-align: left;
+}
+/* line 658, ../sass/scs/_style.scss */
+.view-views-newsletter-subscriptions .more-link a,
+.view-admin-content .more-link a,
+.page-node-translate .more-link a,
+.my-dashboard .more-link a {
+  color: #b49759;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+/* line 662, ../sass/scs/_style.scss */
+.view-views-newsletter-subscriptions .more-link a:hover,
+.view-admin-content .more-link a:hover,
+.page-node-translate .more-link a:hover,
+.my-dashboard .more-link a:hover {
+  text-decoration: none;
+}
+/* line 667, ../sass/scs/_style.scss */
+.view-views-newsletter-subscriptions .view-filters,
+.view-admin-content .view-filters,
+.page-node-translate .view-filters,
+.my-dashboard .view-filters {
+  margin-bottom: 2em;
+}
+/* line 669, ../sass/scs/_style.scss */
+.view-views-newsletter-subscriptions .view-filters .form-select,
+.view-admin-content .view-filters .form-select,
+.page-node-translate .view-filters .form-select,
+.my-dashboard .view-filters .form-select {
+  height: 1.85em;
+  width: 100%;
+}
+/* line 673, ../sass/scs/_style.scss */
+.view-views-newsletter-subscriptions .view-filters .form-submit,
+.view-admin-content .view-filters .form-submit,
+.page-node-translate .view-filters .form-submit,
+.my-dashboard .view-filters .form-submit {
+  margin-top: 1.8em;
+}
+/* line 676, ../sass/scs/_style.scss */
+.view-views-newsletter-subscriptions .view-filters .form-item-items-per-page,
+.view-admin-content .view-filters .form-item-items-per-page,
+.page-node-translate .view-filters .form-item-items-per-page,
+.my-dashboard .view-filters .form-item-items-per-page {
+  margin-top: 1.8em;
+}
+
+/* line 683, ../sass/scs/_style.scss */
+#simplenews-admin-newsletter-issues table {
+  margin-bottom: 1.5em;
+  width: 100%;
+}
+/* line 686, ../sass/scs/_style.scss */
+#simplenews-admin-newsletter-issues table td, #simplenews-admin-newsletter-issues table tr, #simplenews-admin-newsletter-issues table th {
+  background: none;
+  border: 1px solid #ccc;
+  font-size: 1.4rem;
+  padding: 1em .5em;
+  text-align: center;
+}
+/* line 693, ../sass/scs/_style.scss */
+#simplenews-admin-newsletter-issues table a {
+  color: #000;
+  text-decoration: none;
+}
+/* line 696, ../sass/scs/_style.scss */
+#simplenews-admin-newsletter-issues table a:hover {
+  color: #b49759;
+}
+/* line 702, ../sass/scs/_style.scss */
+#simplenews-admin-newsletter-issues .form-wrapper legend {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+/* line 707, ../sass/scs/_style.scss */
+#simplenews-admin-newsletter-issues .form-select {
+  float: left;
+  height: 1.9em;
+  margin-right: 1em;
+}
+@media (max-width: 768px) {
+  /* line 707, ../sass/scs/_style.scss */
+  #simplenews-admin-newsletter-issues .form-select {
+    float: none;
+    margin-right: 0;
+  }
+}
+/* line 716, ../sass/scs/_style.scss */
+#simplenews-admin-newsletter-issues .spacer {
+  margin-left: 1em;
+}
+@media (max-width: 768px) {
+  /* line 716, ../sass/scs/_style.scss */
+  #simplenews-admin-newsletter-issues .spacer {
+    margin-left: 12em;
+  }
+}
+/* line 722, ../sass/scs/_style.scss */
+#simplenews-admin-newsletter-issues .fieldset-wrapper {
+  margin-bottom: 1.5em;
+}
+@media (max-width: 768px) {
+  /* line 726, ../sass/scs/_style.scss */
+  #simplenews-admin-newsletter-issues .sticky-header {
+    display: none;
+  }
+  /* line 730, ../sass/scs/_style.scss */
+  #simplenews-admin-newsletter-issues table .select-all, #simplenews-admin-newsletter-issues table th:nth-child(3n),
+  #simplenews-admin-newsletter-issues table th:last-child, #simplenews-admin-newsletter-issues table td:first-child,
+  #simplenews-admin-newsletter-issues table td:last-child, #simplenews-admin-newsletter-issues table td:nth-child(3n) {
+    display: none;
+  }
+}
+
+/* line 739, ../sass/scs/_style.scss */
+.branding-elements {
+  float: left;
+  margin-bottom: 1em;
+}
+
+/* line 744, ../sass/scs/_style.scss */
+.search-box-contact,
+.search-box {
+  float: right;
+  margin-top: 1em;
+  width: 180px;
+}
+@media (max-width: 768px) {
+  /* line 744, ../sass/scs/_style.scss */
+  .search-box-contact,
+  .search-box {
+    margin: 0 0 .5em 0;
+  }
+}
+/* line 752, ../sass/scs/_style.scss */
+.search-box-contact .form-text,
+.search-box .form-text {
+  background: #e8dfcd;
+  border: medium none;
+  color: #000;
+  font-weight: bold;
+  height: auto;
+  padding: .3em .4em;
+  width: 100%;
+}
+/* line 760, ../sass/scs/_style.scss */
+.search-box-contact .form-text:active, .search-box-contact .form-text:focus, .search-box-contact .form-text:visited,
+.search-box .form-text:active,
+.search-box .form-text:focus,
+.search-box .form-text:visited {
+  border: 1px solid #000;
+  box-shadow: none;
+}
+/* line 765, ../sass/scs/_style.scss */
+.search-box-contact .views-reset-button,
+.search-box .views-reset-button {
+  float: right;
+}
+/* line 768, ../sass/scs/_style.scss */
+.search-box-contact .form-submit,
+.search-box .form-submit {
+  background: none;
+  border: medium none;
+  color: #b49759;
+  font-family: sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 0 !important;
+}
+/* line 777, ../sass/scs/_style.scss */
+.search-box-contact .views-exposed-widgets,
+.search-box .views-exposed-widgets {
+  margin-bottom: 0;
+}
+@media (max-width: 768px) {
+  /* line 780, ../sass/scs/_style.scss */
+  .search-box-contact .views-submit-button,
+  .search-box .views-submit-button {
+    display: none;
+  }
+}
+
+/* line 788, ../sass/scs/_style.scss */
+.recent-content .view-filedepot {
+  border: 1px solid #fafafa;
+  border-top: none;
+  display: inline-block;
+  margin-bottom: 2em;
+  width: 100%;
+}
+/* line 794, ../sass/scs/_style.scss */
+.recent-content .view-filedepot a {
+  color: #000;
+}
+/* line 796, ../sass/scs/_style.scss */
+.recent-content .view-filedepot a:hover {
+  color: #b49759;
+  text-decoration: none;
+}
+/* line 801, ../sass/scs/_style.scss */
+.recent-content .view-filedepot .view-header {
+  background: #f2edde;
+  border-top: 1px solid #fafafa;
+  border-bottom: 1px solid #fafafa;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0 0 1em 0;
+  padding: 0.3em 0.5em;
+}
+/* line 810, ../sass/scs/_style.scss */
+.recent-content .view-filedepot li {
+  background: #fafafa;
+  float: left;
+  list-style: none;
+  margin-bottom: 1em;
+  padding: .5em;
+  width: 46.5%;
+}
+@media (max-width: 768px) {
+  /* line 810, ../sass/scs/_style.scss */
+  .recent-content .view-filedepot li {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+/* line 822, ../sass/scs/_style.scss */
+.recent-content .view-filedepot li .views-label-name {
+  float: left;
+  margin-right: 1em;
+  font-size: 0;
+}
+/* line 826, ../sass/scs/_style.scss */
+.recent-content .view-filedepot li .views-label-name:before {
+  content: '\f114';
+  font-family: "FontAwesome";
+  font-size: 2rem;
+  margin-right: 1em;
+}
+/* line 836, ../sass/scs/_style.scss */
+.recent-content.filedepot-list .view-filedepot {
+  border: 1px solid #fafafa;
+}
+/* line 840, ../sass/scs/_style.scss */
+.recent-content .view-filedepot-folderlisting {
+  display: none;
+}
+/* line 842, ../sass/scs/_style.scss */
+.recent-content .view-filedepot-folderlisting .views-row {
+  margin-left: 3em;
+}
+/* line 847, ../sass/scs/_style.scss */
+.recent-content .item-list h3 {
+  display: none;
+}
+
+/* line 853, ../sass/scs/_style.scss */
+.other-resources {
+  margin: 0 0 2em 0;
+}
+
+/* line 857, ../sass/scs/_style.scss */
+.region-content a {
+  text-decoration: none !important;
+}
+
+/* line 862, ../sass/scs/_style.scss */
+.region-inner .file-size {
+  display: none;
+}
+@media (max-width: 768px) {
+  /* line 865, ../sass/scs/_style.scss */
+  .region-inner nav {
+    margin-top: -4em;
+  }
+}
+
+/* line 873, ../sass/scs/_style.scss */
+.menu-wrapper ul.menu {
+  background: #e8dfcd;
+  display: inline-block;
+  padding: 0;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  /* line 873, ../sass/scs/_style.scss */
+  .menu-wrapper ul.menu {
+    display: none;
+  }
+}
+/* line 881, ../sass/scs/_style.scss */
+.menu-wrapper ul.menu li {
+  border-right: 1px solid #b49759;
+  float: left;
+  list-style: none;
+  list-style-image: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+}
+@media (max-width: 768px) {
+  /* line 881, ../sass/scs/_style.scss */
+  .menu-wrapper ul.menu li {
+    border-bottom: 1px solid #b49759;
+    border-right: none;
+    float: none;
+    width: auto;
+  }
+}
+@media (max-width: 768px) {
+  /* line 895, ../sass/scs/_style.scss */
+  .menu-wrapper ul.menu li:nth-child(6n), .menu-wrapper ul.menu li:nth-child(7n), .menu-wrapper ul.menu li:nth-child(8n) {
+    width: auto;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 972px) {
+  /* line 902, ../sass/scs/_style.scss */
+  .menu-wrapper ul.menu li:first-child a {
+    line-height: 1em;
+  }
+}
+@media (max-width: 768px) {
+  /* line 900, ../sass/scs/_style.scss */
+  .menu-wrapper ul.menu li:first-child {
+    width: auto;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 972px) {
+  /* line 913, ../sass/scs/_style.scss */
+  .menu-wrapper ul.menu li:nth-child(6n) a, .menu-wrapper ul.menu li:nth-child(7n) a, .menu-wrapper ul.menu li:nth-child(8n) a, .menu-wrapper ul.menu li:nth-child(5n) a {
+    line-height: 1em;
+  }
+}
+/* line 919, ../sass/scs/_style.scss */
+.menu-wrapper ul.menu a {
+  color: #000;
+  display: block;
+  font-size: 1.4rem;
+  padding: .5em 1em;
+  text-align: center;
+  text-decoration: none;
+  width: auto;
+}
+@media all and (min-width: 768px) and (max-width: 972px) {
+  /* line 919, ../sass/scs/_style.scss */
+  .menu-wrapper ul.menu a {
+    height: 3em;
+    line-height: 2em;
+  }
+}
+/* line 932, ../sass/scs/_style.scss */
+.menu-wrapper ul.menu a:hover {
+  background: #f2edde;
+}
+/* line 935, ../sass/scs/_style.scss */
+.menu-wrapper ul.menu li.last {
+  border-right: none;
+}
+
+/* line 942, ../sass/scs/_style.scss */
+.my-workbench h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding: .5em;
+  margin-bottom: .8em;
+  text-align: center;
+}
+/* line 949, ../sass/scs/_style.scss */
+.my-workbench .right {
+  width: 100% !important;
+}
+/* line 951, ../sass/scs/_style.scss */
+.my-workbench .right h3 {
+  background: #f2edde;
+  border: 1px solid #fafafa;
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding: .5em;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+/* line 963, ../sass/scs/_style.scss */
+.toggle {
+  cursor: pointer;
+  display: none;
+  float: left;
+  margin: 0 1em 0;
+}
+/* line 968, ../sass/scs/_style.scss */
+.toggle:before {
+  content: '\f0c9';
+  font-family: "FontAwesome";
+  font-size: 3rem;
+}
+@media (max-width: 768px) {
+  /* line 963, ../sass/scs/_style.scss */
+  .toggle {
+    display: block;
+  }
+}
+
+/* line 979, ../sass/scs/_style.scss */
+#tasks ul.primary {
+  white-space: inherit;
+}
+
+/* line 985, ../sass/scs/_style.scss */
+.left h3 {
+  display: none;
+}
+
+/* line 992, ../sass/scs/_style.scss */
+.search-listing-page .readmore strong {
+  color: #b49759;
+}
+/* line 997, ../sass/scs/_style.scss */
+.search-listing-page .content-type-name .field-content {
+  font-size: 1.23rem;
+  font-style: italic;
+  line-height: 1.8em;
+  text-transform: capitalize;
+}
+
+/* line 1006, ../sass/scs/_style.scss */
+.search-listing-page,
+.listing-page {
+  padding: 0 1em 0 2em;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  /* line 1006, ../sass/scs/_style.scss */
+  .search-listing-page,
+  .listing-page {
+    padding-left: 0;
+  }
+}
+/* line 1013, ../sass/scs/_style.scss */
+.search-listing-page .image-field,
+.listing-page .image-field {
+  float: left;
+}
+@media only screen and (max-width: 560px) {
+  /* line 1013, ../sass/scs/_style.scss */
+  .search-listing-page .image-field,
+  .listing-page .image-field {
+    float: none;
+  }
+}
+/* line 1018, ../sass/scs/_style.scss */
+.search-listing-page .image-field span,
+.listing-page .image-field span {
+  display: block;
+  margin: 0 1.5em .9em 0;
+}
+/* line 1024, ../sass/scs/_style.scss */
+.search-listing-page .readmore a,
+.listing-page .readmore a {
+  color: #b49759;
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+/* line 1028, ../sass/scs/_style.scss */
+.search-listing-page .readmore a:hover,
+.listing-page .readmore a:hover {
+  text-decoration: none;
+}
+/* line 1033, ../sass/scs/_style.scss */
+.search-listing-page .readmore .title a,
+.listing-page .readmore .title a {
+  color: #000;
+  font-size: 1.4rem;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+/* line 1038, ../sass/scs/_style.scss */
+.search-listing-page .readmore .title a:hover,
+.listing-page .readmore .title a:hover {
+  color: #b49759;
+  text-decoration: none;
+}
+/* line 1045, ../sass/scs/_style.scss */
+.search-listing-page .views-row,
+.listing-page .views-row {
+  margin-bottom: 1.8em;
+  overflow: hidden;
+}
+@media only screen and (max-width: 560px) {
+  /* line 1045, ../sass/scs/_style.scss */
+  .search-listing-page .views-row,
+  .listing-page .views-row {
+    margin-bottom: 1.5em;
+  }
+}
+/* line 1051, ../sass/scs/_style.scss */
+.search-listing-page .views-row:empty,
+.listing-page .views-row:empty {
+  margin-bottom: 0;
+}
+/* line 1055, ../sass/scs/_style.scss */
+.search-listing-page .views-field-created, .search-listing-page .views-label,
+.search-listing-page .views-field-field-event-date,
+.search-listing-page .views-field-field-publish-date,
+.listing-page .views-field-created,
+.listing-page .views-label,
+.listing-page .views-field-field-event-date,
+.listing-page .views-field-field-publish-date {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+/* line 1061, ../sass/scs/_style.scss */
+.search-listing-page .view-filters,
+.listing-page .view-filters {
+  margin-bottom: 2em;
+}
+/* line 1065, ../sass/scs/_style.scss */
+.search-listing-page .views-field-field-media-source-url-1 a,
+.listing-page .views-field-field-media-source-url-1 a {
+  font-size: 1.2rem;
+  color: #b49759;
+}
+/* line 1068, ../sass/scs/_style.scss */
+.search-listing-page .views-field-field-media-source-url-1 a:hover,
+.listing-page .views-field-field-media-source-url-1 a:hover {
+  text-decoration: none;
+}
+
+/* line 1078, ../sass/scs/_style.scss */
+.view .item-list-pager ul li {
+  float: left;
+  margin: 0 0 .5em .2em;
+  padding: 0;
+}
+/* line 1082, ../sass/scs/_style.scss */
+.view .item-list-pager ul li.pager-current {
+  background: #f4efe6;
+  padding: .25em .7em;
+}
+/* line 1088, ../sass/scs/_style.scss */
+.view .item-list-pager ul li.pager-next a, .view .item-list-pager ul li.pager-last a, .view .item-list-pager ul li.pager-first a, .view .item-list-pager ul li.pager-previous a {
+  background: #fff;
+  color: #b49759;
+}
+/* line 1091, ../sass/scs/_style.scss */
+.view .item-list-pager ul li.pager-next a:hover, .view .item-list-pager ul li.pager-last a:hover, .view .item-list-pager ul li.pager-first a:hover, .view .item-list-pager ul li.pager-previous a:hover {
+  background: #f4efe6;
+}
+/* line 1097, ../sass/scs/_style.scss */
+.view .item-list-pager ul a {
+  background: #e8dfcd;
+  border: none;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: .4em .7em;
+}
+/* line 1106, ../sass/scs/_style.scss */
+.view .item-list-pager ul a:hover {
+  background: #f4efe6;
+}
+
+/* line 1116, ../sass/scs/_style.scss */
+.not-logged-in .content-inner {
+  margin-left: 0 !important;
+}
+
+/* line 1121, ../sass/scs/_style.scss */
+#filedepot {
+  background: #f2edde;
+  min-height: 630px !important;
+  padding: 0 0 4.5em;
+}
+/* line 1125, ../sass/scs/_style.scss */
+#filedepot .yui-layout-doc,
+#filedepot .yui-layout-bd,
+#filedepot .yui-layout-unit,
+#filedepot .yui-layout-wrap {
+  height: 100% !important;
+}
+/* line 1131, ../sass/scs/_style.scss */
+#filedepot .filedepottoolbar {
+  background: #e8dfcd;
+  height: 40px;
+}
+/* line 1135, ../sass/scs/_style.scss */
+#filedepot .tagsearchboxcontainer {
+  width: 15% !important;
+}
+/* line 1137, ../sass/scs/_style.scss */
+#filedepot .tagsearchboxcontainer a {
+  color: #000;
+}
+/* line 1141, ../sass/scs/_style.scss */
+#filedepot .yui-resize-handle {
+  display: none;
+}
+/* line 1144, ../sass/scs/_style.scss */
+#filedepot #reportheadercontainer {
+  height: auto;
+}
+/* line 1147, ../sass/scs/_style.scss */
+#filedepot a {
+  color: #000;
+}
+/* line 1149, ../sass/scs/_style.scss */
+#filedepot a:hover {
+  color: #b49759;
+  text-decoration: none;
+}
+/* line 1154, ../sass/scs/_style.scss */
+#filedepot .filedepottoolbar_searchbox {
+  display: none;
+}
+/* line 1156, ../sass/scs/_style.scss */
+#filedepot .filedepottoolbar_searchbox table {
+  background: #e8dfcd;
+}
+/* line 1160, ../sass/scs/_style.scss */
+#filedepot .yui-layout-bd {
+  border: 1px solid #fafafa;
+}
+/* line 1164, ../sass/scs/_style.scss */
+#filedepot .yui-layout-unit-left .yui-layout-bd {
+  margin-left: .5em;
+}
+/* line 1166, ../sass/scs/_style.scss */
+#filedepot .yui-layout-unit-left .yui-layout-bd .ygtvitem:nth-child(6n) {
+  display: none;
+}
+/* line 1173, ../sass/scs/_style.scss */
+#filedepot .yui-layout-unit-left .yui-layout-bd .ygtvitem .ygtvchildren .ygtvitem:first-child .ygtvchildren .ygtvitem:first-child + div {
+  display: none;
+}
+/* line 1184, ../sass/scs/_style.scss */
+#filedepot .yui-layout-bd-noft .floatleft span {
+  padding-left: 0 !important;
+}
+/* line 1191, ../sass/scs/_style.scss */
+#filedepot #edit_activefolder table.plugin .text {
+  display: none;
+}
+/* line 1196, ../sass/scs/_style.scss */
+#filedepot .filedepot-file-search {
+  float: left;
+  margin: .3em 0 0 1em;
+}
+
+@media (max-width: 1024px) {
+  /* line 1203, ../sass/scs/_style.scss */
+  #filedepotmodule .yui-panel-container {
+    display: none;
+  }
+}
+/* line 1209, ../sass/scs/_style.scss */
+#filedepotmodule .first-of-type .yuimenubaritem:last-child,
+#filedepotmodule .first-of-type .yuimenubaritem:first-child + li,
+#filedepotmodule .first-of-type .yuimenubaritem:nth-child(3n) {
+  display: none;
+}
+/* line 1216, ../sass/scs/_style.scss */
+#filedepotmodule #filelisting_container div.oneaction {
+  padding-right: 15px;
+}
+/* line 1223, ../sass/scs/_style.scss */
+#filedepotmodule .yui-panel-container table tr td:empty {
+  display: none;
+}
+/* line 1226, ../sass/scs/_style.scss */
+#filedepotmodule .yui-panel-container table tr .folder {
+  width: 17%;
+}
+/* line 1232, ../sass/scs/_style.scss */
+#filedepotmodule .filedepot-help-text {
+  clear: both;
+  font-size: 1.2rem;
+  margin: 0 .5em .5em 2.6em;
+}
+/* line 1236, ../sass/scs/_style.scss */
+#filedepotmodule .filedepot-help-text span {
+  color: red;
+}
+/* line 1240, ../sass/scs/_style.scss */
+#filedepotmodule .filedepot_perms_leftoption {
+  width: 140px;
+}
+
+/* line 1247, ../sass/scs/_style.scss */
+#mediaBrowser #file-entity-add-upload .form-select {
+  width: 47em;
+}
+
+/* line 1253, ../sass/scs/_style.scss */
+.node-article {
+  /*312 issue post live issue*/
+}
+/* line 1255, ../sass/scs/_style.scss */
+.node-article .group-body-wrapper h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+/* line 1260, ../sass/scs/_style.scss */
+.node-article .group-body-wrapper a {
+  color: #b49759;
+}
+/* line 1262, ../sass/scs/_style.scss */
+.node-article .group-body-wrapper a:hover {
+  text-decoration: none;
+}
+/* line 1268, ../sass/scs/_style.scss */
+.node-article .field-type-node-reference h2 {
+  float: left;
+  margin-top: 4px !important;
+}
+/* line 1272, ../sass/scs/_style.scss */
+.node-article .field-type-node-reference .field-item {
+  margin-left: 7em !important;
+}
+/* line 1278, ../sass/scs/_style.scss */
+.node-article .field-type-link-field h2 {
+  float: left;
+  margin-top: 4px !important;
+  margin-bottom: 0px !important;
+}
+/* line 1283, ../sass/scs/_style.scss */
+.node-article .field-type-link-field .field-items, .node-article .field-type-link-field .region-sidebar-second .view-id-publications_on_speech_page, .region-sidebar-second .node-article .field-type-link-field .view-id-publications_on_speech_page,
+.node-article .field-type-link-field .region-sidebar-second .view-events-and-speeches-reference,
+.region-sidebar-second .node-article .field-type-link-field .view-events-and-speeches-reference {
+  margin-left: 7em !important;
+}
+/* line 1288, ../sass/scs/_style.scss */
+.node-article .field-name-field-read-article-by {
+  float: left;
+  margin-right: 9px;
+  margin-left: -7em;
+}
+/* line 1292, ../sass/scs/_style.scss */
+.node-article .field-name-field-read-article-by .field-items a, .node-article .field-name-field-read-article-by .region-sidebar-second .view-id-publications_on_speech_page a, .region-sidebar-second .node-article .field-name-field-read-article-by .view-id-publications_on_speech_page a,
+.node-article .field-name-field-read-article-by .region-sidebar-second .view-events-and-speeches-reference a,
+.region-sidebar-second .node-article .field-name-field-read-article-by .view-events-and-speeches-reference a {
+  font-style: italic;
+}
+
+/* line 1302, ../sass/scs/_style.scss */
+.no-sidebars .node-article .field-type-image,
+.no-sidebars .node-article .field-type-brightcove-field,
+.no-sidebars .node-article .field-type-file,
+.no-sidebars .node-article .field-name-field-caption,
+.no-sidebars .node-event .field-type-image,
+.no-sidebars .node-event .field-type-brightcove-field,
+.no-sidebars .node-event .field-type-file,
+.no-sidebars .node-event .field-name-field-caption,
+.no-sidebars .node-speech .field-type-image,
+.no-sidebars .node-speech .field-type-brightcove-field,
+.no-sidebars .node-speech .field-type-file,
+.no-sidebars .node-speech .field-name-field-caption {
+  width: 27.3%;
+}
+
+/* line 1313, ../sass/scs/_style.scss */
+.node-publication .field-type-file .file-icon {
+  display: none;
+}
+/* line 1316, ../sass/scs/_style.scss */
+.node-publication .field-type-file a {
+  background: #e8dfcd;
+  color: #000;
+  display: inline-block;
+  line-height: 1.3em;
+  margin-bottom: 0.8em;
+  padding: 5px 35px;
+}
+/* line 1323, ../sass/scs/_style.scss */
+.node-publication .field-type-file a:hover {
+  text-decoration: none;
+}
+/* line 1327, ../sass/scs/_style.scss */
+.node-publication .field-type-file .file-size {
+  float: right;
+  font-size: 1.2rem;
+  margin-top: .5em;
+}
+/* line 1334, ../sass/scs/_style.scss */
+.node-publication .field-name-field-publication-purchase-link a {
+  color: #000;
+}
+/* line 1336, ../sass/scs/_style.scss */
+.node-publication .field-name-field-publication-purchase-link a:hover {
+  color: #b49759;
+  text-decoration: none;
+}
+
+/* line 1345, ../sass/scs/_style.scss */
+.node-speech .field-name-body {
+  margin-bottom: 1.5em;
+}
+
+/* line 1350, ../sass/scs/_style.scss */
+.node-event,
+.node-publication,
+.node-article,
+.node-speech .node-type-person {
+  margin: 0 0 2em !important;
+}
+/* line 1355, ../sass/scs/_style.scss */
+.node-event .field-type-image,
+.node-event .field-type-brightcove-field,
+.node-event .field-type-file,
+.node-event .field-name-field-caption,
+.node-publication .field-type-image,
+.node-publication .field-type-brightcove-field,
+.node-publication .field-type-file,
+.node-publication .field-name-field-caption,
+.node-article .field-type-image,
+.node-article .field-type-brightcove-field,
+.node-article .field-type-file,
+.node-article .field-name-field-caption,
+.node-speech .node-type-person .field-type-image,
+.node-speech .node-type-person .field-type-brightcove-field,
+.node-speech .node-type-person .field-type-file,
+.node-speech .node-type-person .field-name-field-caption {
+  float: left;
+  width: 39%;
+  margin: 0 2em 0 0;
+}
+@media (max-width: 768px) {
+  /* line 1355, ../sass/scs/_style.scss */
+  .node-event .field-type-image,
+  .node-event .field-type-brightcove-field,
+  .node-event .field-type-file,
+  .node-event .field-name-field-caption,
+  .node-publication .field-type-image,
+  .node-publication .field-type-brightcove-field,
+  .node-publication .field-type-file,
+  .node-publication .field-name-field-caption,
+  .node-article .field-type-image,
+  .node-article .field-type-brightcove-field,
+  .node-article .field-type-file,
+  .node-article .field-name-field-caption,
+  .node-speech .node-type-person .field-type-image,
+  .node-speech .node-type-person .field-type-brightcove-field,
+  .node-speech .node-type-person .field-type-file,
+  .node-speech .node-type-person .field-name-field-caption {
+    width: 100%;
+  }
+  /* line 1364, ../sass/scs/_style.scss */
+  .node-event .field-type-image img,
+  .node-event .field-type-brightcove-field img,
+  .node-event .field-type-file img,
+  .node-event .field-name-field-caption img,
+  .node-publication .field-type-image img,
+  .node-publication .field-type-brightcove-field img,
+  .node-publication .field-type-file img,
+  .node-publication .field-name-field-caption img,
+  .node-article .field-type-image img,
+  .node-article .field-type-brightcove-field img,
+  .node-article .field-type-file img,
+  .node-article .field-name-field-caption img,
+  .node-speech .node-type-person .field-type-image img,
+  .node-speech .node-type-person .field-type-brightcove-field img,
+  .node-speech .node-type-person .field-type-file img,
+  .node-speech .node-type-person .field-name-field-caption img {
+    max-width: 100%;
+  }
+}
+/* line 1369, ../sass/scs/_style.scss */
+.node-event .field-type-brightcove-field,
+.node-event .field-type-file,
+.node-publication .field-type-brightcove-field,
+.node-publication .field-type-file,
+.node-article .field-type-brightcove-field,
+.node-article .field-type-file,
+.node-speech .node-type-person .field-type-brightcove-field,
+.node-speech .node-type-person .field-type-file {
+  clear: both;
+  margin-top: 1em;
+}
+/* line 1373, ../sass/scs/_style.scss */
+.node-event .field-type-brightcove-field .media-vimeo-outer-wrapper,
+.node-event .field-type-brightcove-field .media-youtube-outer-wrapper,
+.node-event .field-type-file .media-vimeo-outer-wrapper,
+.node-event .field-type-file .media-youtube-outer-wrapper,
+.node-publication .field-type-brightcove-field .media-vimeo-outer-wrapper,
+.node-publication .field-type-brightcove-field .media-youtube-outer-wrapper,
+.node-publication .field-type-file .media-vimeo-outer-wrapper,
+.node-publication .field-type-file .media-youtube-outer-wrapper,
+.node-article .field-type-brightcove-field .media-vimeo-outer-wrapper,
+.node-article .field-type-brightcove-field .media-youtube-outer-wrapper,
+.node-article .field-type-file .media-vimeo-outer-wrapper,
+.node-article .field-type-file .media-youtube-outer-wrapper,
+.node-speech .node-type-person .field-type-brightcove-field .media-vimeo-outer-wrapper,
+.node-speech .node-type-person .field-type-brightcove-field .media-youtube-outer-wrapper,
+.node-speech .node-type-person .field-type-file .media-vimeo-outer-wrapper,
+.node-speech .node-type-person .field-type-file .media-youtube-outer-wrapper {
+  height: auto !important;
+  width: inherit !important;
+}
+/* line 1378, ../sass/scs/_style.scss */
+.node-event .field-type-brightcove-field img,
+.node-event .field-type-file img,
+.node-publication .field-type-brightcove-field img,
+.node-publication .field-type-file img,
+.node-article .field-type-brightcove-field img,
+.node-article .field-type-file img,
+.node-speech .node-type-person .field-type-brightcove-field img,
+.node-speech .node-type-person .field-type-file img {
+  width: 100%;
+}
+/* line 1381, ../sass/scs/_style.scss */
+.node-event .field-type-brightcove-field audio,
+.node-event .field-type-file audio,
+.node-publication .field-type-brightcove-field audio,
+.node-publication .field-type-file audio,
+.node-article .field-type-brightcove-field audio,
+.node-article .field-type-file audio,
+.node-speech .node-type-person .field-type-brightcove-field audio,
+.node-speech .node-type-person .field-type-file audio {
+  width: 100%;
+}
+/* line 1386, ../sass/scs/_style.scss */
+.node-event .field-name-body p,
+.node-publication .field-name-body p,
+.node-article .field-name-body p,
+.node-speech .node-type-person .field-name-body p {
+  font-size: 1.2rem;
+  margin-bottom: 1.7em;
+}
+/* line 1391, ../sass/scs/_style.scss */
+.node-event .field-name-field-caption,
+.node-publication .field-name-field-caption,
+.node-article .field-name-field-caption,
+.node-speech .node-type-person .field-name-field-caption {
+  clear: left;
+  margin: .5em 2em 1em 0;
+}
+/* line 1394, ../sass/scs/_style.scss */
+.node-event .field-name-field-caption .field-item,
+.node-publication .field-name-field-caption .field-item,
+.node-article .field-name-field-caption .field-item,
+.node-speech .node-type-person .field-name-field-caption .field-item {
+  color: #999;
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: normal;
+}
+/* line 1403, ../sass/scs/_style.scss */
+.node-event .view-mode-full .field-item p,
+.node-publication .view-mode-full .field-item p,
+.node-article .view-mode-full .field-item p,
+.node-speech .node-type-person .view-mode-full .field-item p {
+  font-size: 1.2rem;
+  margin-bottom: 1.7em;
+}
+/* line 1410, ../sass/scs/_style.scss */
+.node-event .field-type-datestamp span,
+.node-publication .field-type-datestamp span,
+.node-article .field-type-datestamp span,
+.node-speech .node-type-person .field-type-datestamp span {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: .7em;
+}
+
+/* line 1419, ../sass/scs/_style.scss */
+.field-type-image-form a.button {
+  margin-right: 1em;
+}
+
+/* line 1424, ../sass/scs/_style.scss */
+.form-submit {
+  margin-right: 1em;
+}
+
+/* line 1429, ../sass/scs/_style.scss */
+.form-item-site-users label {
+  float: left;
+  margin-right: .5em;
+}
+
+/* line 1436, ../sass/scs/_style.scss */
+#filedepot-mail-send-mail-form a {
+  background: #eee;
+  border: 1px solid #b1b1b1;
+  color: #333;
+  font-size: 1.4rem;
+  line-height: 1em;
+  padding: .2em .4em;
+}
+/* line 1443, ../sass/scs/_style.scss */
+#filedepot-mail-send-mail-form a:hover {
+  border-color: #7EB4EA;
+  background: #EAF3FC;
+  text-decoration: none;
+}
+
+/* line 1452, ../sass/scs/_style.scss */
+#filedepot-newfile-form .button {
+  margin-right: 1em;
+}
+
+/*Post live issue for alignment on left*/
+/* line 1458, ../sass/scs/_style.scss */
+.file-image {
+  margin-left: 0;
+}
+/* line 1460, ../sass/scs/_style.scss */
+.file-image h2 {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+/* line 1465, ../sass/scs/_style.scss */
+.file-image .field-item a {
+  color: #000;
+  font-size: 1.2rem;
+  margin-left: 1em;
+}
+/* line 1469, ../sass/scs/_style.scss */
+.file-image .field-item a:hover {
+  color: #b49759;
+  text-decoration: none;
+}
+/* line 1476, ../sass/scs/_style.scss */
+.file-image .field-name-field-title .field-item {
+  font-size: 1.4rem;
+  font-weight: bold;
+  font-family: sans-serif;
+  margin-bottom: 1em;
+}
+
+/* line 1485, ../sass/scs/_style.scss */
+.filter-block {
+  margin: 0 1em 1em 0;
+}
+/* line 1487, ../sass/scs/_style.scss */
+.filter-block h2 {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.4rem;
+  font-weight: bold;
+  line-height: 14px;
+  margin: 0 0 5px;
+}
+/* line 1495, ../sass/scs/_style.scss */
+.filter-block h2:before {
+  content: "►" !important;
+  color: #b49759 !important;
+  font-size: 15px !important;
+  display: inline-block !important;
+  -webkit-transform: rotate(90deg) !important;
+  -moz-transform: rotate(90deg) !important;
+  -ms-transform: rotate(90deg) !important;
+  -o-transform: rotate(90deg) !important;
+  transform: rotate(90deg) !important;
+}
+/* line 1507, ../sass/scs/_style.scss */
+.filter-block h2.active:before {
+  content: "►" !important;
+  color: #b49759 !important;
+  font-size: 15px !important;
+  display: inline-block !important;
+  -webkit-transform: rotate(0) !important;
+  -moz-transform: rotate(0) !important;
+  -ms-transform: rotate(0) !important;
+  -o-transform: rotate(0) !important;
+  transform: rotate(0) !important;
+}
+/* line 1519, ../sass/scs/_style.scss */
+.filter-block ul li {
+  list-style-type: none;
+  list-style-image: none;
+  line-height: 16px;
+  margin-left: 0.2em;
+}
+/* line 1524, ../sass/scs/_style.scss */
+.filter-block ul li a {
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: normal;
+  font-family: sans-serif;
+  line-height: 16px;
+}
+/* line 1530, ../sass/scs/_style.scss */
+.filter-block ul li a:hover {
+  color: #b49759;
+  text-decoration: none;
+}
+/* line 1535, ../sass/scs/_style.scss */
+.filter-block ul li .facetapi-active {
+  margin: 0;
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: normal;
+  font-family: sans-serif;
+}
+/* line 1543, ../sass/scs/_style.scss */
+.filter-block ul .facetapi-checkbox {
+  float: left;
+  margin-right: .5em;
+}
+/* line 1548, ../sass/scs/_style.scss */
+.filter-block .facetapi-limit-link {
+  float: right;
+  color: #b49759;
+  font-size: 1.2rem;
+  margin-right: 1em;
+}
+/* line 1553, ../sass/scs/_style.scss */
+.filter-block .facetapi-limit-link:hover {
+  text-decoration: none;
+}
+
+/* line 1561, ../sass/scs/_style.scss */
+#media-browser-tabset #branding h1 {
+  font-size: 1.4rem;
+}
+
+/* line 1568, ../sass/scs/_style.scss */
+#media-format-form .fieldset-legend {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+/* line 1572, ../sass/scs/_style.scss */
+#media-format-form .button {
+  cursor: pointer;
+  margin-right: 1em;
+}
+
+@media (max-width: 768px) {
+  /* line 1579, ../sass/scs/_style.scss */
+  #user-login .form-text {
+    width: 100%;
+  }
+}
+
+/* line 1586, ../sass/scs/_style.scss */
+.region-header {
+  float: right;
+}
+
+/* line 1590, ../sass/scs/_style.scss */
+.language {
+  clear: both;
+  float: right;
+  margin-bottom: 1em;
+}
+@media (max-width: 768px) {
+  /* line 1590, ../sass/scs/_style.scss */
+  .language {
+    margin-bottom: 0;
+  }
+}
+/* line 1597, ../sass/scs/_style.scss */
+.language ul {
+  display: inline-block;
+  padding: 0;
+}
+@media (max-width: 768px) {
+  /* line 1597, ../sass/scs/_style.scss */
+  .language ul {
+    margin-bottom: 0;
+  }
+}
+/* line 1603, ../sass/scs/_style.scss */
+.language ul li {
+  list-style: none;
+  float: left;
+  margin-right: 1em;
+}
+/* line 1608, ../sass/scs/_style.scss */
+.language ul a {
+  color: #000;
+  font-size: 1.2rem;
+}
+/* line 1611, ../sass/scs/_style.scss */
+.language ul a:hover {
+  color: #b49759;
+  text-decoration: none;
+}
+/* line 1616, ../sass/scs/_style.scss */
+.language ul .locale-untranslated {
+  display: none;
+}
+
+/* line 1622, ../sass/scs/_style.scss */
+.breadcrumb {
+  background: none !important;
+  font-size: 1.2rem;
+}
+/* line 1625, ../sass/scs/_style.scss */
+.breadcrumb a {
+  color: #000;
+  font-size: 1.2rem;
+  margin-right: .4em;
+}
+/* line 1629, ../sass/scs/_style.scss */
+.breadcrumb a:hover {
+  color: #b49759;
+  text-decoration: none;
+}
+
+/* line 1636, ../sass/scs/_style.scss */
+.copyright {
+  border-top: 3px solid #b49759;
+  margin-top: 2em;
+}
+/* line 1639, ../sass/scs/_style.scss */
+.copyright p {
+  border-top: 2px solid #000;
+  font-size: 1.2rem;
+  margin-bottom: 1em;
+  padding-top: 1em;
+}
+
+/* line 1648, ../sass/scs/_style.scss */
+.node-event .field-group-format-title {
+  display: none;
+}
+
+/* line 1654, ../sass/scs/_style.scss */
+.speech-sidebar h2, .speech-sidebar .views-label {
+  font-size: 1.4rem;
+  font-weight: bold;
+  line-height: 14px;
+  margin: 0 0 5px;
+}
+/* line 1660, ../sass/scs/_style.scss */
+.speech-sidebar a {
+  color: #000;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 16px;
+}
+/* line 1665, ../sass/scs/_style.scss */
+.speech-sidebar a:hover {
+  color: #b49759;
+  text-decoration: none;
+}
+/* line 1669, ../sass/scs/_style.scss */
+.speech-sidebar a:before {
+  content: "\f111";
+  font-size: .5rem;
+  position: relative;
+  top: -.3em;
+  vertical-align: middle;
+  display: none;
+}
+/* line 1680, ../sass/scs/_style.scss */
+.speech-sidebar .field-name-field-speech-event {
+  margin-top: 1em;
+}
+/* line 1682, ../sass/scs/_style.scss */
+.speech-sidebar .field-name-field-speech-event .field-item {
+  margin-left: .5em;
+}
+/* line 1687, ../sass/scs/_style.scss */
+.speech-sidebar .item-list ul li {
+  list-style-type: disc;
+  clear: both;
+}
+
+/* line 1697, ../sass/scs/_style.scss */
+.related-event-item {
+  margin: 0;
+}
+/* line 1699, ../sass/scs/_style.scss */
+.related-event-item .views-field {
+  margin-bottom: 1em;
+}
+
+/* line 1705, ../sass/scs/_style.scss */
+.user-profile h2, .user-profile h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+/* line 1709, ../sass/scs/_style.scss */
+.user-profile .email {
+  clear: both;
+}
+/* line 1712, ../sass/scs/_style.scss */
+.user-profile a, .user-profile dd {
+  color: #000;
+  font-size: 1.2rem;
+}
+/* line 1716, ../sass/scs/_style.scss */
+.user-profile a:hover {
+  color: #b49759;
+  text-decoration: none;
+}
+
+/* line 1722, ../sass/scs/_style.scss */
+.node-speech-quote,
+.node-simplenews,
+.node-contact {
+  /*Css to correct contact*/
+  margin: 0 1em 0 0;
+}
+/* line 1726, ../sass/scs/_style.scss */
+.node-speech-quote *[class*="field-name-field-"],
+.node-simplenews *[class*="field-name-field-"],
+.node-contact *[class*="field-name-field-"] {
+  float: left;
+  margin-left: 10px;
+  width: 50%;
+}
+/* line 1732, ../sass/scs/_style.scss */
+.node-speech-quote h2,
+.node-simplenews h2,
+.node-contact h2 {
+  font-size: 1.4rem;
+}
+/* line 1735, ../sass/scs/_style.scss */
+.node-speech-quote .field-item,
+.node-simplenews .field-item,
+.node-contact .field-item {
+  font-size: 1.2rem;
+}
+/* line 1737, ../sass/scs/_style.scss */
+.node-speech-quote .field-item a,
+.node-simplenews .field-item a,
+.node-contact .field-item a {
+  color: #000;
+  font-size: 1.2rem;
+}
+/* line 1740, ../sass/scs/_style.scss */
+.node-speech-quote .field-item a:hover,
+.node-simplenews .field-item a:hover,
+.node-contact .field-item a:hover {
+  color: #b49759;
+  text-decoration: none;
+}
+
+/* line 1749, ../sass/scs/_style.scss */
+.comment-wrapper h2 {
+  font-size: 1.4rem;
+}
+
+/* line 1755, ../sass/scs/_style.scss */
+.node-speech-quote h2 {
+  margin: 0;
+}
+/* line 1758, ../sass/scs/_style.scss */
+.node-speech-quote ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 1765, ../sass/scs/_style.scss */
+.search-switch,
+.search-box-switch {
+  cursor: pointer;
+  color: #b49759;
+  clear: right;
+  font-size: 1.2rem;
+  float: right;
+  margin-bottom: .5em;
+  padding-right: 1em;
+}
+
+/* line 1776, ../sass/scs/_style.scss */
+.search-box-switch {
+  color: #f2edde;
+  float: left;
+  margin-left: 8em;
+}
+
+/* line 1783, ../sass/scs/_style.scss */
+div.region .block.search-box-contact {
+  display: none;
+}
+
+/* line 1790, ../sass/scs/_style.scss */
+.publication-list .views-field-body p {
+  font-size: 1.2rem;
+}
+
+/* line 1796, ../sass/scs/_style.scss */
+.quote-finder {
+  margin-bottom: 15px;
+  display: block;
+}
+/* line 1799, ../sass/scs/_style.scss */
+.quote-finder h3 {
+  font-size: 1.8rem;
+  line-height: 28px;
+  margin: 0 0 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+/* line 1806, ../sass/scs/_style.scss */
+.quote-finder h3:before {
+  content: "►";
+  color: #b49759;
+  font-size: 15px;
+  display: inline-block;
+  -webkit-transform: rotate(90deg);
+}
+/* line 1814, ../sass/scs/_style.scss */
+.quote-finder h3.active:before {
+  content: "►";
+  color: #b49759;
+  font-size: 15px;
+  display: inline-block;
+  -webkit-transform: rotate(0);
+}
+/* line 1822, ../sass/scs/_style.scss */
+.quote-finder ol {
+  list-style: outside none none;
+  padding: 0 0 0  .3em;
+}
+/* line 1825, ../sass/scs/_style.scss */
+.quote-finder ol a {
+  color: #000;
+  font-family: sans-serif;
+  font-size: 1.2rem;
+  font-weight: normal;
+  line-height: 16px;
+}
+/* line 1831, ../sass/scs/_style.scss */
+.quote-finder ol a:hover {
+  color: #b49759;
+  text-decoration: none;
+}
+
+/* line 1839, ../sass/scs/_style.scss */
+#block-print-print-links a {
+  display: block;
+  font-weight: bold;
+  color: #b49759 !important;
+  text-decoration: none !important;
+  margin: 0px 0px 10px;
+}
+
+/*Right section bar*/
+/* line 1850, ../sass/scs/_style.scss */
+.view-id-publications_on_speech_page .views-row-last {
+  margin-top: 7px;
+}
+
+/* line 1863, ../sass/scs/_style.scss */
+.field-name-field-events-reference {
+  margin-top: 5px;
+}
+
+/* line 1868, ../sass/scs/_style.scss */
+.event-reference h2 {
+  background: none;
+  padding-left: 0;
+  text-transform: capitalize;
+}
+/* line 1873, ../sass/scs/_style.scss */
+.event-reference li {
+  margin-left: 0;
+}
+
+/* line 1878, ../sass/scs/_style.scss */
+.page-workbench-drafts .views-table
+.cols-6 {
+  width: 100% !important;
+}
+
+/* line 1883, ../sass/scs/_style.scss */
+.print_mail, .print_pdf {
+  margin: 0;
+}
+
+/* line 1886, ../sass/scs/_style.scss */
+.view-youtube-link-on-event-landing-page {
+  margin-top: 20px;
+  margin-left: 27px;
+}
+
+/* line 1891, ../sass/scs/_style.scss */
+.akdn-solr-quote-listing {
+  font-family: sans-serif !important;
+  line-height: 23px;
+}
+/* line 1894, ../sass/scs/_style.scss */
+.akdn-solr-quote-listing .view-header {
+  font-weight: bold;
+  font-size: 18px;
+}
+/* line 1898, ../sass/scs/_style.scss */
+.akdn-solr-quote-listing .views-field-field-speech-reference-1 a {
+  font-weight: bold;
+  color: black;
+}
+/* line 1902, ../sass/scs/_style.scss */
+.akdn-solr-quote-listing .views-field-field-speech-reference-1 a:hover {
+  color: #b49759 !important;
+  text-decoration: none;
+}
+/* line 1906, ../sass/scs/_style.scss */
+.akdn-solr-quote-listing .show-more-quotes a {
+  color: #b49759 !important;
+  text-decoration: none;
+}
+/* line 1910, ../sass/scs/_style.scss */
+.akdn-solr-quote-listing .show-more-quotes {
+  -webkit-transform: translate(1%, -43%);
+  font-size: 12px !important;
+}
+/* line 1915, ../sass/scs/_style.scss */
+.akdn-solr-quote-listing .views-field-nothing .group-quotes p {
+  font-style: italic;
+}
+
+/*Admin section wraper for Internet explorer purpose*/
+/* line 1922, ../sass/scs/_style.scss */
+#admin-menu {
+  position: absolute !important;
+  margin-top: -29px !important;
+}
+
+/* line 1928, ../sass/scs/_style.scss */
+.admin-menu #edit-comment-body {
+  width: 942px;
+}
+
+/*Event page listing theming*/
+/* line 1938, ../sass/scs/_style.scss */
+.node-type-event .speech-sidebar {
+  font-size: 12px;
+  color: #000;
+}
+/* line 1951, ../sass/scs/_style.scss */
+.node-type-event .item-list li {
+  clear: both;
+}
+/* line 1954, ../sass/scs/_style.scss */
+.node-type-event .item-list a {
+  color: #000;
+  text-decoration: none;
+  margin: 0 !important;
+}
+/* line 1958, ../sass/scs/_style.scss */
+.node-type-event .item-list a:hover {
+  color: #b49759;
+}
+/* line 1963, ../sass/scs/_style.scss */
+.node-type-event .file-image {
+  margin-left: -2px;
+}
+/* line 1969, ../sass/scs/_style.scss */
+.node-type-event .region-content-aside {
+  margin-left: -3px;
+}
+
+/*Admin view*/
+/* line 1975, ../sass/scs/_style.scss */
+th.views-field {
+  width: 10%;
+}
+
+/*Dashboard changes*/
+/* line 1980, ../sass/scs/_style.scss */
+.page-workbench #page-title {
+  display: none;
+}
+
+/* KCA-259 CR: Workbench Tiles */
+/* line 1986, ../sass/scs/_style.scss */
+.workbench-tile-container {
+  width: 75%;
+  display: inline-block;
+}
+/* line 1989, ../sass/scs/_style.scss */
+.workbench-tile-container:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+/* line 1994, ../sass/scs/_style.scss */
+.workbench-tile-container > .view-workbench-tiles-view {
+  display: table;
+  margin: auto;
+}
+
+/* line 1999, ../sass/scs/_style.scss */
+.tile-block {
+  display: inline-block;
+  padding: 10px;
+  float: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: center;
+}
+/* line 2007, ../sass/scs/_style.scss */
+.tile-block:nth-child(4n+1) {
+  clear: left;
+}
+/* line 2010, ../sass/scs/_style.scss */
+.tile-block .views-field-name {
+  word-wrap: break-word;
+  max-width: 150px;
+}
+/* line 2013, ../sass/scs/_style.scss */
+.tile-block .views-field-name a {
+  color: #000;
+  text-decoration: none;
+}
+/* line 2016, ../sass/scs/_style.scss */
+.tile-block .views-field-name a:hover {
+  color: #b49759;
+}
+/* line 2021, ../sass/scs/_style.scss */
+.tile-block:hover {
+  cursor: pointer;
+}
+/* line 2023, ../sass/scs/_style.scss */
+.tile-block:hover > .views-field-name a {
+  color: #b49759;
+}
+
+/* line 2029, ../sass/scs/_style.scss */
+.latest-addition {
+  width: 25%;
+  display: inline-block;
+  float: right;
+}
+/* line 2035, ../sass/scs/_style.scss */
+.latest-addition .item-list .views-field-title {
+  display: inline;
+}
+/* line 2037, ../sass/scs/_style.scss */
+.latest-addition .item-list .views-field-title + .views-field .field-content {
+  font-style: italic;
+  white-space: nowrap;
+}
+/* line 2040, ../sass/scs/_style.scss */
+.latest-addition .item-list .views-field-title + .views-field .field-content:before {
+  content: "(";
+  display: inline-block;
+  font-style: italic;
+  margin-right: 1px;
+}
+/* line 2046, ../sass/scs/_style.scss */
+.latest-addition .item-list .views-field-title + .views-field .field-content:after {
+  content: ")";
+  display: inline-block;
+  font-style: italic;
+  margin-left: 1px;
+}
+/* line 2054, ../sass/scs/_style.scss */
+.latest-addition .item-list a {
+  color: #000;
+  text-decoration: none;
+}
+/* line 2057, ../sass/scs/_style.scss */
+.latest-addition .item-list a:hover {
+  color: #b49759;
+}
+
+/* KCA-274 CR: Communicator Resource Tiles */
+/* line 2068, ../sass/scs/_style.scss */
+.tile-add {
+  color: #000;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 10px;
+}
+/* line 2073, ../sass/scs/_style.scss */
+.tile-add:hover {
+  color: #b49759;
+  text-decoration: none;
+}
+/* line 2076, ../sass/scs/_style.scss */
+.tile-add:hover:before {
+  background: url(../images/add_g.png) no-repeat;
+}
+/* line 2080, ../sass/scs/_style.scss */
+.tile-add:before {
+  content: "";
+  background: url(../images/add_b.png) no-repeat;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  margin: 0 3px 0 0;
+  padding: 0;
+}
+
+/* line 2091, ../sass/scs/_style.scss */
+.view-communication-resources, .view-communication-resources-subtiles {
+  width: 100%;
+}
+/* line 2093, ../sass/scs/_style.scss */
+.view-communication-resources .view-content, .view-communication-resources-subtiles .view-content {
+  display: table;
+  margin: auto;
+}
+
+/* line 2099, ../sass/scs/_style.scss */
+.inner-tile-block {
+  display: inline-block;
+  padding: 10px;
+  float: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: center;
+}
+/* line 2107, ../sass/scs/_style.scss */
+.inner-tile-block:nth-child(7n+1) {
+  clear: left;
+}
+/* line 2110, ../sass/scs/_style.scss */
+.inner-tile-block .views-field-name {
+  word-wrap: break-word;
+  max-width: 110px;
+}
+/* line 2113, ../sass/scs/_style.scss */
+.inner-tile-block .views-field-name a {
+  color: #000;
+  text-decoration: none;
+}
+/* line 2116, ../sass/scs/_style.scss */
+.inner-tile-block .views-field-name a:hover {
+  color: #b49759;
+}
+/* line 2121, ../sass/scs/_style.scss */
+.inner-tile-block:hover {
+  cursor: pointer;
+}
+/* line 2123, ../sass/scs/_style.scss */
+.inner-tile-block:hover > .views-field-name a {
+  color: #b49759;
+}
+
+/*Different language session*/
+/* line 2130, ../sass/scs/_style.scss */
+.node-type-article, .node-type-event, .node-type-speech, .node-type-publication, .node-type-person {
+  /*Upper block on the page for chossing from the ptions of available langauages*/
+  /*Sidebar language switcher*/
+  /*Theming for other languages.*/
+  /*Language text alignment*/
+  /*Content page Theming for Caption and Copyright in Other languages Till line number 2285*/
+  /*Post live issues*/
+  /*Article section page*/
+}
+/* line 2131, ../sass/scs/_style.scss */
+.node-type-article #block-scs-custom-scs-custom-language-switcher, .node-type-event #block-scs-custom-scs-custom-language-switcher, .node-type-speech #block-scs-custom-scs-custom-language-switcher, .node-type-publication #block-scs-custom-scs-custom-language-switcher, .node-type-person #block-scs-custom-scs-custom-language-switcher {
+  width: 100%;
+  font-family: sans-serif;
+  font-size: 12px;
+}
+/* line 2135, ../sass/scs/_style.scss */
+.node-type-article #block-scs-custom-scs-custom-language-switcher h2, .node-type-event #block-scs-custom-scs-custom-language-switcher h2, .node-type-speech #block-scs-custom-scs-custom-language-switcher h2, .node-type-publication #block-scs-custom-scs-custom-language-switcher h2, .node-type-person #block-scs-custom-scs-custom-language-switcher h2 {
+  font-size: 14px;
+  color: #b49759;
+  font-weight: bold;
+  float: left;
+  margin-top: 11px;
+}
+/* line 2144, ../sass/scs/_style.scss */
+.node-type-article #block-scs-custom-scs-custom-language-switcher ul.language-switcher-locale-url, .node-type-event #block-scs-custom-scs-custom-language-switcher ul.language-switcher-locale-url, .node-type-speech #block-scs-custom-scs-custom-language-switcher ul.language-switcher-locale-url, .node-type-publication #block-scs-custom-scs-custom-language-switcher ul.language-switcher-locale-url, .node-type-person #block-scs-custom-scs-custom-language-switcher ul.language-switcher-locale-url {
+  list-style: none;
+}
+/* line 2147, ../sass/scs/_style.scss */
+.node-type-article #block-scs-custom-scs-custom-language-switcher li, .node-type-event #block-scs-custom-scs-custom-language-switcher li, .node-type-speech #block-scs-custom-scs-custom-language-switcher li, .node-type-publication #block-scs-custom-scs-custom-language-switcher li, .node-type-person #block-scs-custom-scs-custom-language-switcher li {
+  float: left;
+  padding: 4px;
+}
+/* line 2150, ../sass/scs/_style.scss */
+.node-type-article #block-scs-custom-scs-custom-language-switcher li a, .node-type-event #block-scs-custom-scs-custom-language-switcher li a, .node-type-speech #block-scs-custom-scs-custom-language-switcher li a, .node-type-publication #block-scs-custom-scs-custom-language-switcher li a, .node-type-person #block-scs-custom-scs-custom-language-switcher li a {
+  color: #000000;
+}
+/* line 2152, ../sass/scs/_style.scss */
+.node-type-article #block-scs-custom-scs-custom-language-switcher li a:hover, .node-type-event #block-scs-custom-scs-custom-language-switcher li a:hover, .node-type-speech #block-scs-custom-scs-custom-language-switcher li a:hover, .node-type-publication #block-scs-custom-scs-custom-language-switcher li a:hover, .node-type-person #block-scs-custom-scs-custom-language-switcher li a:hover {
+  color: #b49759;
+}
+/* line 2160, ../sass/scs/_style.scss */
+.node-type-article .block-scs-custom ul.language-switcher-locale-url, .node-type-event .block-scs-custom ul.language-switcher-locale-url, .node-type-speech .block-scs-custom ul.language-switcher-locale-url, .node-type-publication .block-scs-custom ul.language-switcher-locale-url, .node-type-person .block-scs-custom ul.language-switcher-locale-url {
+  list-style: none;
+  display: inline;
+}
+/* line 2164, ../sass/scs/_style.scss */
+.node-type-article .block-scs-custom li, .node-type-event .block-scs-custom li, .node-type-speech .block-scs-custom li, .node-type-publication .block-scs-custom li, .node-type-person .block-scs-custom li {
+  float: left;
+  padding: 0px;
+}
+/* line 2167, ../sass/scs/_style.scss */
+.node-type-article .block-scs-custom li a, .node-type-event .block-scs-custom li a, .node-type-speech .block-scs-custom li a, .node-type-publication .block-scs-custom li a, .node-type-person .block-scs-custom li a {
+  color: #000000;
+  margin: 4px;
+}
+/* line 2170, ../sass/scs/_style.scss */
+.node-type-article .block-scs-custom li a:hover, .node-type-event .block-scs-custom li a:hover, .node-type-speech .block-scs-custom li a:hover, .node-type-publication .block-scs-custom li a:hover, .node-type-person .block-scs-custom li a:hover {
+  color: #b49759;
+}
+/* line 2177, ../sass/scs/_style.scss */
+.node-type-article .block-scs-custom li.last.active a:after, .node-type-event .block-scs-custom li.last.active a:after, .node-type-speech .block-scs-custom li.last.active a:after, .node-type-publication .block-scs-custom li.last.active a:after, .node-type-person .block-scs-custom li.last.active a:after {
+  display: none;
+}
+/* line 2181, ../sass/scs/_style.scss */
+.node-type-article .block-scs-custom .block-title, .node-type-event .block-scs-custom .block-title, .node-type-speech .block-scs-custom .block-title, .node-type-publication .block-scs-custom .block-title, .node-type-person .block-scs-custom .block-title {
+  margin-top: 10px;
+}
+/* line 2188, ../sass/scs/_style.scss */
+.node-type-article .region-sidebar-second .block-scs-custom ul.language-switcher-locale-url, .node-type-event .region-sidebar-second .block-scs-custom ul.language-switcher-locale-url, .node-type-speech .region-sidebar-second .block-scs-custom ul.language-switcher-locale-url, .node-type-publication .region-sidebar-second .block-scs-custom ul.language-switcher-locale-url, .node-type-person .region-sidebar-second .block-scs-custom ul.language-switcher-locale-url {
+  list-style: none;
+  display: inline;
+}
+/* line 2192, ../sass/scs/_style.scss */
+.node-type-article .region-sidebar-second .block-scs-custom li, .node-type-event .region-sidebar-second .block-scs-custom li, .node-type-speech .region-sidebar-second .block-scs-custom li, .node-type-publication .region-sidebar-second .block-scs-custom li, .node-type-person .region-sidebar-second .block-scs-custom li {
+  float: left;
+  padding: 0px;
+}
+/* line 2195, ../sass/scs/_style.scss */
+.node-type-article .region-sidebar-second .block-scs-custom li a, .node-type-event .region-sidebar-second .block-scs-custom li a, .node-type-speech .region-sidebar-second .block-scs-custom li a, .node-type-publication .region-sidebar-second .block-scs-custom li a, .node-type-person .region-sidebar-second .block-scs-custom li a {
+  color: #000000;
+  margin: 4px;
+}
+/* line 2198, ../sass/scs/_style.scss */
+.node-type-article .region-sidebar-second .block-scs-custom li a:hover, .node-type-event .region-sidebar-second .block-scs-custom li a:hover, .node-type-speech .region-sidebar-second .block-scs-custom li a:hover, .node-type-publication .region-sidebar-second .block-scs-custom li a:hover, .node-type-person .region-sidebar-second .block-scs-custom li a:hover {
+  color: #b49759;
+}
+/* line 2201, ../sass/scs/_style.scss */
+.node-type-article .region-sidebar-second .block-scs-custom li a:after, .node-type-event .region-sidebar-second .block-scs-custom li a:after, .node-type-speech .region-sidebar-second .block-scs-custom li a:after, .node-type-publication .region-sidebar-second .block-scs-custom li a:after, .node-type-person .region-sidebar-second .block-scs-custom li a:after {
+  content: " | ";
+}
+/* line 2207, ../sass/scs/_style.scss */
+.node-type-article .region-sidebar-second .block-scs-custom li.last.active a:after, .node-type-event .region-sidebar-second .block-scs-custom li.last.active a:after, .node-type-speech .region-sidebar-second .block-scs-custom li.last.active a:after, .node-type-publication .region-sidebar-second .block-scs-custom li.last.active a:after, .node-type-person .region-sidebar-second .block-scs-custom li.last.active a:after {
+  display: none;
+}
+/* line 2213, ../sass/scs/_style.scss */
+.node-type-article #admin-
+#admin-menu, .node-type-event #admin-
+#admin-menu, .node-type-speech #admin-
+#admin-menu, .node-type-publication #admin-
+#admin-menu, .node-type-person #admin-
+#admin-menu {
+  position: relative;
+  margin-top: 0 !important;
+}
+/* line 2221, ../sass/scs/_style.scss */
+.node-type-article .field-name-field-article-author, .node-type-event .field-name-field-article-author, .node-type-speech .field-name-field-article-author, .node-type-publication .field-name-field-article-author, .node-type-person .field-name-field-article-author {
+  display: inline-flex;
+  font-style: italic;
+}
+/* line 2224, ../sass/scs/_style.scss */
+.node-type-article .field-name-field-article-author .label-inline, .node-type-event .field-name-field-article-author .label-inline, .node-type-speech .field-name-field-article-author .label-inline, .node-type-publication .field-name-field-article-author .label-inline, .node-type-person .field-name-field-article-author .label-inline {
+  margin-right: 3px;
+}
+/* line 2228, ../sass/scs/_style.scss */
+.node-type-article .field-name-author, .node-type-event .field-name-author, .node-type-speech .field-name-author, .node-type-publication .field-name-author, .node-type-person .field-name-author {
+  display: inline-block;
+}
+/* line 2230, ../sass/scs/_style.scss */
+.node-type-article .field-name-author .label-inline, .node-type-event .field-name-author .label-inline, .node-type-speech .field-name-author .label-inline, .node-type-publication .field-name-author .label-inline, .node-type-person .field-name-author .label-inline {
+  float: left;
+  margin-right: 3px;
+}
+/* line 2235, ../sass/scs/_style.scss */
+.node-type-article .field-name-field-media-source-url, .node-type-event .field-name-field-media-source-url, .node-type-speech .field-name-field-media-source-url, .node-type-publication .field-name-field-media-source-url, .node-type-person .field-name-field-media-source-url {
+  display: inline-flex;
+  margin-right: 3px;
+}
+/* line 2238, ../sass/scs/_style.scss */
+.node-type-article .field-name-field-media-source-url .label-inline, .node-type-event .field-name-field-media-source-url .label-inline, .node-type-speech .field-name-field-media-source-url .label-inline, .node-type-publication .field-name-field-media-source-url .label-inline, .node-type-person .field-name-field-media-source-url .label-inline {
+  margin-right: 3px;
+  margin-left: 3px;
+  font-style: italic;
+}
+/* line 2243, ../sass/scs/_style.scss */
+.node-type-article .field-name-field-media-source-url a, .node-type-event .field-name-field-media-source-url a, .node-type-speech .field-name-field-media-source-url a, .node-type-publication .field-name-field-media-source-url a, .node-type-person .field-name-field-media-source-url a {
+  font-style: normal;
+}
+/* line 2247, ../sass/scs/_style.scss */
+.node-type-article .field-name-field-publish-date, .node-type-event .field-name-field-publish-date, .node-type-speech .field-name-field-publish-date, .node-type-publication .field-name-field-publish-date, .node-type-person .field-name-field-publish-date {
+  display: block;
+  margin-right: 3px;
+}
+/* line 2252, ../sass/scs/_style.scss */
+.node-type-article #block-scs-custom-scs-custom-language-switcher li, .node-type-event #block-scs-custom-scs-custom-language-switcher li, .node-type-speech #block-scs-custom-scs-custom-language-switcher li, .node-type-publication #block-scs-custom-scs-custom-language-switcher li, .node-type-person #block-scs-custom-scs-custom-language-switcher li {
+  padding: 8px;
+  font-size: 14px;
+}
+/* line 2295, ../sass/scs/_style.scss */
+.node-type-article .main-header h1, .node-type-event .main-header h1, .node-type-speech .main-header h1, .node-type-publication .main-header h1, .node-type-person .main-header h1 {
+  margin: 0 15px 1em !important;
+  padding-left: 0 !important;
+}
+/* line 2301, ../sass/scs/_style.scss */
+.node-type-article .field-name-field-speech-image, .node-type-article .field-name-field-event-image, .node-type-article .field-name-field-publications-image, .node-type-article .field-name-field-press-release, .node-type-article .field-name-in-the-media, .node-type-article .field-name-field-person-image, .node-type-article .page-taxonomy-term, .node-type-event .field-name-field-speech-image, .node-type-event .field-name-field-event-image, .node-type-event .field-name-field-publications-image, .node-type-event .field-name-field-press-release, .node-type-event .field-name-in-the-media, .node-type-event .field-name-field-person-image, .node-type-event .page-taxonomy-term, .node-type-speech .field-name-field-speech-image, .node-type-speech .field-name-field-event-image, .node-type-speech .field-name-field-publications-image, .node-type-speech .field-name-field-press-release, .node-type-speech .field-name-in-the-media, .node-type-speech .field-name-field-person-image, .node-type-speech .page-taxonomy-term, .node-type-publication .field-name-field-speech-image, .node-type-publication .field-name-field-event-image, .node-type-publication .field-name-field-publications-image, .node-type-publication .field-name-field-press-release, .node-type-publication .field-name-in-the-media, .node-type-publication .field-name-field-person-image, .node-type-publication .page-taxonomy-term, .node-type-person .field-name-field-speech-image, .node-type-person .field-name-field-event-image, .node-type-person .field-name-field-publications-image, .node-type-person .field-name-field-press-release, .node-type-person .field-name-in-the-media, .node-type-person .field-name-field-person-image, .node-type-person .page-taxonomy-term {
+  font-family: sans-serif !important;
+  font-size: 12px;
+}
+/* line 2305, ../sass/scs/_style.scss */
+.node-type-article .field-name-field-speech-image .field-name-field-copyright, .node-type-article .field-name-field-event-image .field-name-field-copyright, .node-type-article .field-name-field-publications-image .field-name-field-copyright, .node-type-article .field-name-field-press-release .field-name-field-copyright, .node-type-article .field-name-in-the-media .field-name-field-copyright, .node-type-article .field-name-field-person-image .field-name-field-copyright, .node-type-article .page-taxonomy-term .field-name-field-copyright, .node-type-event .field-name-field-speech-image .field-name-field-copyright, .node-type-event .field-name-field-event-image .field-name-field-copyright, .node-type-event .field-name-field-publications-image .field-name-field-copyright, .node-type-event .field-name-field-press-release .field-name-field-copyright, .node-type-event .field-name-in-the-media .field-name-field-copyright, .node-type-event .field-name-field-person-image .field-name-field-copyright, .node-type-event .page-taxonomy-term .field-name-field-copyright, .node-type-speech .field-name-field-speech-image .field-name-field-copyright, .node-type-speech .field-name-field-event-image .field-name-field-copyright, .node-type-speech .field-name-field-publications-image .field-name-field-copyright, .node-type-speech .field-name-field-press-release .field-name-field-copyright, .node-type-speech .field-name-in-the-media .field-name-field-copyright, .node-type-speech .field-name-field-person-image .field-name-field-copyright, .node-type-speech .page-taxonomy-term .field-name-field-copyright, .node-type-publication .field-name-field-speech-image .field-name-field-copyright, .node-type-publication .field-name-field-event-image .field-name-field-copyright, .node-type-publication .field-name-field-publications-image .field-name-field-copyright, .node-type-publication .field-name-field-press-release .field-name-field-copyright, .node-type-publication .field-name-in-the-media .field-name-field-copyright, .node-type-publication .field-name-field-person-image .field-name-field-copyright, .node-type-publication .page-taxonomy-term .field-name-field-copyright, .node-type-person .field-name-field-speech-image .field-name-field-copyright, .node-type-person .field-name-field-event-image .field-name-field-copyright, .node-type-person .field-name-field-publications-image .field-name-field-copyright, .node-type-person .field-name-field-press-release .field-name-field-copyright, .node-type-person .field-name-in-the-media .field-name-field-copyright, .node-type-person .field-name-field-person-image .field-name-field-copyright, .node-type-person .page-taxonomy-term .field-name-field-copyright {
+  margin: 0;
+  font-weight: 100;
+  color: #999999;
+  font-style: italic;
+}
+/* line 2310, ../sass/scs/_style.scss */
+.node-type-article .field-name-field-speech-image .field-name-field-copyright h2, .node-type-article .field-name-field-event-image .field-name-field-copyright h2, .node-type-article .field-name-field-publications-image .field-name-field-copyright h2, .node-type-article .field-name-field-press-release .field-name-field-copyright h2, .node-type-article .field-name-in-the-media .field-name-field-copyright h2, .node-type-article .field-name-field-person-image .field-name-field-copyright h2, .node-type-article .page-taxonomy-term .field-name-field-copyright h2, .node-type-event .field-name-field-speech-image .field-name-field-copyright h2, .node-type-event .field-name-field-event-image .field-name-field-copyright h2, .node-type-event .field-name-field-publications-image .field-name-field-copyright h2, .node-type-event .field-name-field-press-release .field-name-field-copyright h2, .node-type-event .field-name-in-the-media .field-name-field-copyright h2, .node-type-event .field-name-field-person-image .field-name-field-copyright h2, .node-type-event .page-taxonomy-term .field-name-field-copyright h2, .node-type-speech .field-name-field-speech-image .field-name-field-copyright h2, .node-type-speech .field-name-field-event-image .field-name-field-copyright h2, .node-type-speech .field-name-field-publications-image .field-name-field-copyright h2, .node-type-speech .field-name-field-press-release .field-name-field-copyright h2, .node-type-speech .field-name-in-the-media .field-name-field-copyright h2, .node-type-speech .field-name-field-person-image .field-name-field-copyright h2, .node-type-speech .page-taxonomy-term .field-name-field-copyright h2, .node-type-publication .field-name-field-speech-image .field-name-field-copyright h2, .node-type-publication .field-name-field-event-image .field-name-field-copyright h2, .node-type-publication .field-name-field-publications-image .field-name-field-copyright h2, .node-type-publication .field-name-field-press-release .field-name-field-copyright h2, .node-type-publication .field-name-in-the-media .field-name-field-copyright h2, .node-type-publication .field-name-field-person-image .field-name-field-copyright h2, .node-type-publication .page-taxonomy-term .field-name-field-copyright h2, .node-type-person .field-name-field-speech-image .field-name-field-copyright h2, .node-type-person .field-name-field-event-image .field-name-field-copyright h2, .node-type-person .field-name-field-publications-image .field-name-field-copyright h2, .node-type-person .field-name-field-press-release .field-name-field-copyright h2, .node-type-person .field-name-in-the-media .field-name-field-copyright h2, .node-type-person .field-name-field-person-image .field-name-field-copyright h2, .node-type-person .page-taxonomy-term .field-name-field-copyright h2 {
+  font-weight: 100;
+  margin-top: 2px;
+  font-size: 12px !important;
+}
+/* line 2316, ../sass/scs/_style.scss */
+.node-type-article .field-name-field-speech-image .field-items figure, .node-type-article .field-name-field-speech-image .region-sidebar-second .view-id-publications_on_speech_page figure, .region-sidebar-second .node-type-article .field-name-field-speech-image .view-id-publications_on_speech_page figure,
+.node-type-article .field-name-field-speech-image .region-sidebar-second .view-events-and-speeches-reference figure,
+.region-sidebar-second .node-type-article .field-name-field-speech-image .view-events-and-speeches-reference figure, .node-type-article .field-name-field-event-image .field-items figure, .node-type-article .field-name-field-event-image .region-sidebar-second .view-id-publications_on_speech_page figure, .region-sidebar-second .node-type-article .field-name-field-event-image .view-id-publications_on_speech_page figure,
+.node-type-article .field-name-field-event-image .region-sidebar-second .view-events-and-speeches-reference figure,
+.region-sidebar-second .node-type-article .field-name-field-event-image .view-events-and-speeches-reference figure, .node-type-article .field-name-field-publications-image .field-items figure, .node-type-article .field-name-field-publications-image .region-sidebar-second .view-id-publications_on_speech_page figure, .region-sidebar-second .node-type-article .field-name-field-publications-image .view-id-publications_on_speech_page figure,
+.node-type-article .field-name-field-publications-image .region-sidebar-second .view-events-and-speeches-reference figure,
+.region-sidebar-second .node-type-article .field-name-field-publications-image .view-events-and-speeches-reference figure, .node-type-article .field-name-field-press-release .field-items figure, .node-type-article .field-name-field-press-release .region-sidebar-second .view-id-publications_on_speech_page figure, .region-sidebar-second .node-type-article .field-name-field-press-release .view-id-publications_on_speech_page figure,
+.node-type-article .field-name-field-press-release .region-sidebar-second .view-events-and-speeches-reference figure,
+.region-sidebar-second .node-type-article .field-name-field-press-release .view-events-and-speeches-reference figure, .node-type-article .field-name-in-the-media .field-items figure, .node-type-article .field-name-in-the-media .region-sidebar-second .view-id-publications_on_speech_page figure, .region-sidebar-second .node-type-article .field-name-in-the-media .view-id-publications_on_speech_page figure,
+.node-type-article .field-name-in-the-media .region-sidebar-second .view-events-and-speeches-reference figure,
+.region-sidebar-second .node-type-article .field-name-in-the-media .view-events-and-speeches-reference figure, .node-type-article .field-name-field-person-image .field-items figure, .node-type-article .field-name-field-person-image .region-sidebar-second .view-id-publications_on_speech_page figure, .region-sidebar-second .node-type-article .field-name-field-person-image .view-id-publications_on_speech_page figure,
+.node-type-article .field-name-field-person-image .region-sidebar-second .view-events-and-speeches-reference figure,
+.region-sidebar-second .node-type-article .field-name-field-person-image .view-events-and-speeches-reference figure, .node-type-article .page-taxonomy-term .field-items figure, .node-type-article .page-taxonomy-term .region-sidebar-second .view-id-publications_on_speech_page figure, .region-sidebar-second .node-type-article .page-taxonomy-term .view-id-publications_on_speech_page figure,
+.node-type-article .page-taxonomy-term .region-sidebar-second .view-events-and-speeches-reference figure,
+.region-sidebar-second .node-type-article .page-taxonomy-term .view-events-and-speeches-reference figure, .node-type-event .field-name-field-speech-image .field-items figure, .node-type-event .field-name-field-speech-image .region-sidebar-second .view-id-publications_on_speech_page figure, .region-sidebar-second .node-type-event .field-name-field-speech-image .view-id-publications_on_speech_page figure,
+.node-type-event .field-name-field-speech-image .region-sidebar-second .view-events-and-speeches-reference figure,
+.region-sidebar-second .node-type-event .field-name-field-speech-image .view-events-and-speeches-reference figure, .node-type-event .field-name-field-event-image .field-items figure, .node-type-event .field-name-field-event-image .region-sidebar-second .view-id-publications_on_speech_page figure, .region-sidebar-second .node-type-event .field-name-field-event-image .view-id-publications_on_speech_page figure,
+.node-type-event .field-name-field-event-image .region-sidebar-second .view-events-and-speeches-reference figure,
+.region-sidebar-second .node-type-event .field-name-field-event-image .view-events-and-speeches-reference figure, .node-type-event .field-name-field-publications-image .field-items figure, .node-type-event .field-name-field-publications-image .region-sidebar-second .view-id-publications_on_speech_page figure, .region-sidebar-second .node-type-event .field-name-field-publications-image .view-id-publications_on_speech_page figure,
+.node-type-event .field-name-field-publications-image .region-sidebar-second .view-events-and-speeches-reference figure,
+.region-sidebar-second .node-type-event .field-name-field-publications-image .view-events-and-speeches-reference figure, .node-type-event .field-name-field-press-release .field-items figure, .node-type-event .field-name-field-press-release .region-sidebar-second .view-id-publications_on_speech_page figure, .region-sidebar-second .node-type-event .field-name-field-press-release .view-id-publications_on_speech_page figure,
+.node-type-event .field-name-field-press-release .region-sidebar-second .view-events-and-speeches-reference figure,
+.region-sidebar-second .node-type-event .field-name-field-press-release .view-events-and-speeches-reference figure, .node-type-event .field-name-in-the-media .field-items figure, .node-type-event .field-name-in-the-media .region-sidebar-second .view-id-publications_on_speech_page figure, .region-sidebar-second .node-type-event .field-name-in-the-media .view-id-publications_on_speech_page figure,
+.node-type-event .field-name-in-the-media .region-sidebar-second .view-events-and-speeches-reference figure,
+.region-sidebar-second .node-type-event .field-name-in-the-media .view-events-and-speeches-reference figure, .node-type-event .field-name-field-person-image .field-items figure, .node-type-event .field-name-field-person-image .region-sidebar-second .view-id-publications_on_speech_page figure, .region-sidebar-second .node-type-event .field-name-field-person-image .view-id-publications_on_speech_page figure,
+.node-type-event .field-name-field-person-image .region-sidebar-second .view-events-and-speeches-reference figure,
+.region-sidebar-second .node-type-event .field-name-field-person-image .view-events-and-speeches-reference figure, .node-type-event .page-taxonomy-term .field-items figure, .node-type-event .page-taxonomy-term .region-sidebar-second .view-id-publications_on_speech_page figure, .region-sidebar-second .node-type-event .page-taxonomy-term .view-id-publications_on_speech_page figure,
+.node-type-event .page-taxonomy-term .region-sidebar-second .view-events-and-speeches-reference figure,
+.region-sidebar-second .node-type-event .page-taxonomy-term .view-events-and-speeches-reference figure, .node-type-speech .field-name-field-speech-image .field-items figure, .node-type-speech .field-name-field-speech-image .region-sidebar-second .view-id-publications_on_speech_page figure, .region-sidebar-second .node-type-speech .field-name-field-speech-image .view-id-publications_on_speech_page figure,
+.node-type-speech .field-name-field-speech-image .region-sidebar-second .view-events-and-speeches-reference figure,
+.region-sidebar-second .node-type-speech .field-name-field-speech-image .view-events-and-speeches-reference figure, .node-type-speech .field-name-field-event-image .field-items figure, .node-type-speech .field-name-field-event-image .region-sidebar-second .view-id-publications_on_speech_page figure, .region-sidebar-second .node-type-speech .field-name-field-event-image .view-id-publications_on_speech_page figure,
+.node-type-speech .field-name-field-event-image .region-sidebar-second .view-events-and-speeches-reference figure,
+.region-sidebar-second .node-type-speech .field-name-field-event-image .view-events-and-speeches-reference figure, .node-type-speech .field-name-field-publications-image .field-items figure, .node-type-speech .field-name-field-publications-image .region-sidebar-second .view-id-publications_on_speech_page figure, .region-sidebar-second .node-type-speech .field-name-field-publications-image .view-id-publications_on_speech_page figure,
+.node-type-speech .field-name-field-publications-image .region-sidebar-second .view-events-and-speeches-reference figure,
+.region-sidebar-second .node-type-speech .field-name-field-publications-image .view-events-and-speeches-reference figure, .node-type-speech .field-name-field-press-release .field-items figure, .node-type-speech .field-name-field-press-release .region-sidebar-second .view-id-publications_on_speech_page figure, .region-sidebar-second .node-type-speech .field-name-field-press-release .view-id-publications_on_speech_page figure,
+.node-type-speech .field-name-field-press-release .region-sidebar-second .view-events-and-speeches-reference figure,
+.region-sidebar-second .node-type-speech .field-name-field-press-release .view-events-and-speeches-reference figure, .node-type-speech .field-name-in-the-media .field-items figure, .node-type-speech .field-name-in-the-media .region-sidebar-second .view-id-publications_on_speech_page figure, .region-sidebar-second .node-type-speech .field-name-in-the-media .view-id-publications_on_speech_page figure,
+.node-type-speech .field-name-in-the-media .region-sidebar-second .view-events-and-speeches-reference figure,
+.region-sidebar-second .node-type-speech .field-name-in-the-media .view-events-and-speeches-reference figure, .node-type-speech .field-name-field-person-image .field-items figure, .node-type-speech .field-name-field-person-image .region-sidebar-second .view-id-publications_on_speech_page figure, .region-sidebar-second .node-type-speech .field-name-field-person-image .view-id-publications_on_speech_page figure,
+.node-type-speech .field-name-field-person-image .region-sidebar-second .view-events-and-speeches-reference figure,
+.region-sidebar-second .node-type-speech .field-name-field-person-image .view-events-and-speeches-reference figure, .node-type-speech .page-taxonomy-term .field-items figure, .node-type-speech .page-taxonomy-term .region-sidebar-second .view-id-publications_on_speech_page figure, .region-sidebar-second .node-type-speech .page-taxonomy-term .view-id-publications_on_speech_page figure,
+.node-type-speech .page-taxonomy-term .region-sidebar-second .view-events-and-speeches-reference figure,
+.region-sidebar-second .node-type-speech .page-taxonomy-term .view-events-and-speeches-reference figure, .node-type-publication .field-name-field-speech-image .field-items figure, .node-type-publication .field-name-field-speech-image .region-sidebar-second .view-id-publications_on_speech_page figure, .region-sidebar-second .node-type-publication .field-name-field-speech-image .view-id-publications_on_speech_page figure,
+.node-type-publication .field-name-field-speech-image .region-sidebar-second .view-events-and-speeches-reference figure,
+.region-sidebar-second .node-type-publication .field-name-field-speech-image .view-events-and-speeches-reference figure, .node-type-publication .field-name-field-event-image .field-items figure, .node-type-publication .field-name-field-event-image .region-sidebar-second .view-id-publications_on_speech_page figure, .region-sidebar-second .node-type-publication .field-name-field-event-image .view-id-publications_on_speech_page figure,
+.node-type-publication .field-name-field-event-image .region-sidebar-second .view-events-and-speeches-reference figure,
+.region-sidebar-second .node-type-publication .field-name-field-event-image .view-events-and-speeches-reference figure, .node-type-publication .field-name-field-publications-image .field-items figure, .node-type-publication .field-name-field-publications-image .region-sidebar-second .view-id-publications_on_speech_page figure, .region-sidebar-second .node-type-publication .field-name-field-publications-image .view-id-publications_on_speech_page figure,
+.node-type-publication .field-name-field-publications-image .region-sidebar-second .view-events-and-speeches-reference figure,
+.region-sidebar-second .node-type-publication .field-name-field-publications-image .view-events-and-speeches-reference figure, .node-type-publication .field-name-field-press-release .field-items figure, .node-type-publication .field-name-field-press-release .region-sidebar-second .view-id-publications_on_speech_page figure, .region-sidebar-second .node-type-publication .field-name-field-press-release .view-id-publications_on_speech_page figure,
+.node-type-publication .field-name-field-press-release .region-sidebar-second .view-events-and-speeches-reference figure,
+.region-sidebar-second .node-type-publication .field-name-field-press-release .view-events-and-speeches-reference figure, .node-type-publication .field-name-in-the-media .field-items figure, .node-type-publication .field-name-in-the-media .region-sidebar-second .view-id-publications_on_speech_page figure, .region-sidebar-second .node-type-publication .field-name-in-the-media .view-id-publications_on_speech_page figure,
+.node-type-publication .field-name-in-the-media .region-sidebar-second .view-events-and-speeches-reference figure,
+.region-sidebar-second .node-type-publication .field-name-in-the-media .view-events-and-speeches-reference figure, .node-type-publication .field-name-field-person-image .field-items figure, .node-type-publication .field-name-field-person-image .region-sidebar-second .view-id-publications_on_speech_page figure, .region-sidebar-second .node-type-publication .field-name-field-person-image .view-id-publications_on_speech_page figure,
+.node-type-publication .field-name-field-person-image .region-sidebar-second .view-events-and-speeches-reference figure,
+.region-sidebar-second .node-type-publication .field-name-field-person-image .view-events-and-speeches-reference figure, .node-type-publication .page-taxonomy-term .field-items figure, .node-type-publication .page-taxonomy-term .region-sidebar-second .view-id-publications_on_speech_page figure, .region-sidebar-second .node-type-publication .page-taxonomy-term .view-id-publications_on_speech_page figure,
+.node-type-publication .page-taxonomy-term .region-sidebar-second .view-events-and-speeches-reference figure,
+.region-sidebar-second .node-type-publication .page-taxonomy-term .view-events-and-speeches-reference figure, .node-type-person .field-name-field-speech-image .field-items figure, .node-type-person .field-name-field-speech-image .region-sidebar-second .view-id-publications_on_speech_page figure, .region-sidebar-second .node-type-person .field-name-field-speech-image .view-id-publications_on_speech_page figure,
+.node-type-person .field-name-field-speech-image .region-sidebar-second .view-events-and-speeches-reference figure,
+.region-sidebar-second .node-type-person .field-name-field-speech-image .view-events-and-speeches-reference figure, .node-type-person .field-name-field-event-image .field-items figure, .node-type-person .field-name-field-event-image .region-sidebar-second .view-id-publications_on_speech_page figure, .region-sidebar-second .node-type-person .field-name-field-event-image .view-id-publications_on_speech_page figure,
+.node-type-person .field-name-field-event-image .region-sidebar-second .view-events-and-speeches-reference figure,
+.region-sidebar-second .node-type-person .field-name-field-event-image .view-events-and-speeches-reference figure, .node-type-person .field-name-field-publications-image .field-items figure, .node-type-person .field-name-field-publications-image .region-sidebar-second .view-id-publications_on_speech_page figure, .region-sidebar-second .node-type-person .field-name-field-publications-image .view-id-publications_on_speech_page figure,
+.node-type-person .field-name-field-publications-image .region-sidebar-second .view-events-and-speeches-reference figure,
+.region-sidebar-second .node-type-person .field-name-field-publications-image .view-events-and-speeches-reference figure, .node-type-person .field-name-field-press-release .field-items figure, .node-type-person .field-name-field-press-release .region-sidebar-second .view-id-publications_on_speech_page figure, .region-sidebar-second .node-type-person .field-name-field-press-release .view-id-publications_on_speech_page figure,
+.node-type-person .field-name-field-press-release .region-sidebar-second .view-events-and-speeches-reference figure,
+.region-sidebar-second .node-type-person .field-name-field-press-release .view-events-and-speeches-reference figure, .node-type-person .field-name-in-the-media .field-items figure, .node-type-person .field-name-in-the-media .region-sidebar-second .view-id-publications_on_speech_page figure, .region-sidebar-second .node-type-person .field-name-in-the-media .view-id-publications_on_speech_page figure,
+.node-type-person .field-name-in-the-media .region-sidebar-second .view-events-and-speeches-reference figure,
+.region-sidebar-second .node-type-person .field-name-in-the-media .view-events-and-speeches-reference figure, .node-type-person .field-name-field-person-image .field-items figure, .node-type-person .field-name-field-person-image .region-sidebar-second .view-id-publications_on_speech_page figure, .region-sidebar-second .node-type-person .field-name-field-person-image .view-id-publications_on_speech_page figure,
+.node-type-person .field-name-field-person-image .region-sidebar-second .view-events-and-speeches-reference figure,
+.region-sidebar-second .node-type-person .field-name-field-person-image .view-events-and-speeches-reference figure, .node-type-person .page-taxonomy-term .field-items figure, .node-type-person .page-taxonomy-term .region-sidebar-second .view-id-publications_on_speech_page figure, .region-sidebar-second .node-type-person .page-taxonomy-term .view-id-publications_on_speech_page figure,
+.node-type-person .page-taxonomy-term .region-sidebar-second .view-events-and-speeches-reference figure,
+.region-sidebar-second .node-type-person .page-taxonomy-term .view-events-and-speeches-reference figure {
+  color: #999999;
+  font-style: italic;
+}
+/* line 2320, ../sass/scs/_style.scss */
+.node-type-article .field-name-field-speech-image .field .field-label, .node-type-article .field-name-field-event-image .field .field-label, .node-type-article .field-name-field-publications-image .field .field-label, .node-type-article .field-name-field-press-release .field .field-label, .node-type-article .field-name-in-the-media .field .field-label, .node-type-article .field-name-field-person-image .field .field-label, .node-type-article .page-taxonomy-term .field .field-label, .node-type-event .field-name-field-speech-image .field .field-label, .node-type-event .field-name-field-event-image .field .field-label, .node-type-event .field-name-field-publications-image .field .field-label, .node-type-event .field-name-field-press-release .field .field-label, .node-type-event .field-name-in-the-media .field .field-label, .node-type-event .field-name-field-person-image .field .field-label, .node-type-event .page-taxonomy-term .field .field-label, .node-type-speech .field-name-field-speech-image .field .field-label, .node-type-speech .field-name-field-event-image .field .field-label, .node-type-speech .field-name-field-publications-image .field .field-label, .node-type-speech .field-name-field-press-release .field .field-label, .node-type-speech .field-name-in-the-media .field .field-label, .node-type-speech .field-name-field-person-image .field .field-label, .node-type-speech .page-taxonomy-term .field .field-label, .node-type-publication .field-name-field-speech-image .field .field-label, .node-type-publication .field-name-field-event-image .field .field-label, .node-type-publication .field-name-field-publications-image .field .field-label, .node-type-publication .field-name-field-press-release .field .field-label, .node-type-publication .field-name-in-the-media .field .field-label, .node-type-publication .field-name-field-person-image .field .field-label, .node-type-publication .page-taxonomy-term .field .field-label, .node-type-person .field-name-field-speech-image .field .field-label, .node-type-person .field-name-field-event-image .field .field-label, .node-type-person .field-name-field-publications-image .field .field-label, .node-type-person .field-name-field-press-release .field .field-label, .node-type-person .field-name-in-the-media .field .field-label, .node-type-person .field-name-field-person-image .field .field-label, .node-type-person .page-taxonomy-term .field .field-label {
+  font-size: 14px;
+  margin-top: 1px;
+}
+/* line 2326, ../sass/scs/_style.scss */
+.node-type-article .unseprtr:after, .node-type-event .unseprtr:after, .node-type-speech .unseprtr:after, .node-type-publication .unseprtr:after, .node-type-person .unseprtr:after {
+  content: "" !important;
+}
+
+/* line 2330, ../sass/scs/_style.scss */
+.node-article {
+  margin: 0 0 2em !important;
+}
+
+/*Post live issues 2016-01-12*/
+/* line 2337, ../sass/scs/_style.scss */
+.page-contact .region-sidebar-second #block-facetapi-wqnz191thocxur1y8dp8y35cfnirxqn3 .toggle {
+  display: none;
+}
+
+/*Overall content changed post live issue*/
+/* line 2345, ../sass/scs/_style.scss */
+.content, .field-name-field-date-created {
+  margin-left: 4px;
+}
+
+/*KC-post live issue resolved temporarily without refactoring*/
+/* line 2350, ../sass/scs/_style.scss */
+.region-content-aside .block-views:nth-child(2) {
+  margin-top: 4px;
+}
+
+/* line 2354, ../sass/scs/_style.scss */
+.node-speech {
+  width: 92%;
+}
+
+/* line 2357, ../sass/scs/_style.scss */
+.node-event {
+  width: 97%;
+}
+
+/* line 2360, ../sass/scs/_style.scss */
+.node-publication {
+  width: 90%;
+}
+
+/* line 2365, ../sass/scs/_style.scss */
+.main-content-header {
+  width: 94%;
+}
+
+/* line 2369, ../sass/scs/_style.scss */
+#main-content-header {
+  width: 94%;
+}
+
+/* line 2374, ../sass/scs/_style.scss */
+.field-type-text-with-summary p {
+  margin-left: 5px;
+}
+
+/* line 2379, ../sass/scs/_style.scss */
+.field-name-field-publication-file, .block-scs-custom-scs-custom-language-switcher {
+  margin-left: 1px;
+}
+
+/* line 2383, ../sass/scs/_style.scss */
+#block-views-c4523131e584a8c70d20702c5396bb01 {
+  margin-left: 4px;
+}
+
+/*KC-350 ticket post live issue.*/
+/* line 2389, ../sass/scs/_style.scss */
+.view-id-files_listing .views-row {
+  margin-top: 10px;
+}
+/* line 2393, ../sass/scs/_style.scss */
+.view-id-files_listing .field-name-field-copyright .field-label {
+  float: none !important;
+}
+/* line 2396, ../sass/scs/_style.scss */
+.view-id-files_listing .field-name-field-copyright .field-items, .view-id-files_listing .field-name-field-copyright .region-sidebar-second .view-id-publications_on_speech_page, .region-sidebar-second .view-id-files_listing .field-name-field-copyright .view-id-publications_on_speech_page,
+.view-id-files_listing .field-name-field-copyright .region-sidebar-second .view-events-and-speeches-reference,
+.region-sidebar-second .view-id-files_listing .field-name-field-copyright .view-events-and-speeches-reference {
+  float: none !important;
+}
+/* line 2401, ../sass/scs/_style.scss */
+.view-id-files_listing .file-image .field-item a {
+  margin-left: 0 !important;
+}
+
+/*315 contact page*/
+/*KCA-346 issue with contact image caption*/
+/* line 2410, ../sass/scs/_style.scss */
+.node-contact .field-name-field-caption-new, .node-contact .field-name-field-copyright {
+  font-size: 12px !important;
+  font-style: italic;
+  color: #999999;
+  margin-top: 0;
+  margin-left: 0px;
+}
+/* line 2416, ../sass/scs/_style.scss */
+.node-contact .field-name-field-caption-new .field-label, .node-contact .field-name-field-copyright .field-label {
+  font-size: 12px !important;
+  font-style: italic;
+  font-weight: normal;
+}
+/* line 2422, ../sass/scs/_style.scss */
+.node-contact h2.field-label {
+  margin-top: 0;
+}
+/* line 2425, ../sass/scs/_style.scss */
+.node-contact .field {
+  margin-top: 10px;
+}
+/* line 2428, ../sass/scs/_style.scss */
+.node-contact .field-items, .node-contact .region-sidebar-second .view-id-publications_on_speech_page, .region-sidebar-second .node-contact .view-id-publications_on_speech_page,
+.node-contact .region-sidebar-second .view-events-and-speeches-reference,
+.region-sidebar-second .node-contact .view-events-and-speeches-reference {
+  /* padding-left: 14px !important; */
+}
+
+/*Video section alignment (Generic) for all sections*/
+/* line 2437, ../sass/scs/_style.scss */
+.field-name-field-brightcove-video .field-items, .field-name-field-brightcove-video .region-sidebar-second .view-id-publications_on_speech_page, .region-sidebar-second .field-name-field-brightcove-video .view-id-publications_on_speech_page,
+.field-name-field-brightcove-video .region-sidebar-second .view-events-and-speeches-reference,
+.region-sidebar-second .field-name-field-brightcove-video .view-events-and-speeches-reference {
+  margin-left: 5px;
+}
+
+/* liv-changes Jubilee-games event*/
+/* line 2443, ../sass/scs/_style.scss */
+.jubilee-event, .jubilee-event-item {
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+/* line 2447, ../sass/scs/_style.scss */
+.jubilee-event {
+  font-weight: 700;
+  color: #000000;
+}
+
+/* line 2453, ../sass/scs/_style.scss */
+.node-type-person #main-content-header {
+  width: 100%;
+}
+/* line 2456, ../sass/scs/_style.scss */
+.node-type-person #content-column {
+  margin: 0 .8em !important;
+  padding: 0 !important;
+  width: 685px !important;
+}
+/* line 2461, ../sass/scs/_style.scss */
+.node-type-person .field-name-field-person-image {
+  width: 39%;
+  float: left;
+}
+
+/*Media element changes*/
+/* line 2471, ../sass/scs/_style.scss */
+.page-admin-content .media-item .label-wrapper {
+  position: relative !important;
+}
+
+/*Basic page theming*/
+/* line 2480, ../sass/scs/_style.scss */
+.page-taxonomy .views-field-description {
+  font-family: sans-serif !important;
+  font-size: 12px;
+}
+/* line 2483, ../sass/scs/_style.scss */
+.page-taxonomy .views-field-description .media-element-container {
+  margin: 0 auto !important;
+}
+/* line 2485, ../sass/scs/_style.scss */
+.page-taxonomy .views-field-description .media-element-container img {
+  max-width: 40%;
+}
+/* line 2489, ../sass/scs/_style.scss */
+.page-taxonomy .views-field-description .field-name-field-caption-new {
+  height: 8px;
+}
+/* line 2492, ../sass/scs/_style.scss */
+.page-taxonomy .views-field-description .field-name-field-copyright {
+  display: inline-flex;
+  font-weight: 100;
+  color: #999999;
+  font-style: italic;
+}
+/* line 2497, ../sass/scs/_style.scss */
+.page-taxonomy .views-field-description .field-name-field-copyright h2 {
+  margin-top: 2px;
+  font-size: 12px !important;
+}

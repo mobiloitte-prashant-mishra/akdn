@@ -1,0 +1,27 @@
+name = "Content Migrate"
+description = "Migration to Drupal 7."
+package = "Migration"
+core = 7.x
+php = 5.x
+
+dependencies[] = migrate
+files[] = content_migrate_unt_base.inc
+files[] = content_migrate_unt_article.inc
+files[] = content_migrate_unt_primary_category.inc
+files[] = content_migrate_unt_tags.inc
+files[] = content_migrate_unt_geography_term.inc
+files[] = content_migrate_unt_content_author.inc
+files[] = content_migrate_unt_gallery.inc
+files[] = content_migrate_unt_speech.inc
+files[] = content_migrate_unt_recipe.inc
+files[] = content_migrate_unt_attribution_term.inc
+files[] = content_migrate_unt_recipe_type_term.inc
+files[] = content_migrate_unt_events.inc
+files[] = content_migrate_unt_internal_article.inc
+files[] = content_migrate_unt_special_article.inc
+files[] = content_migrate_unt_festival_article.inc
+files[] = content_migrate_unt_redirect_article.inc
+files[] = content_migrate_unt_video_article.inc
+files[] = content_migrate_unt_media.inc
+files[] = content_migrate_unt_general_media.inc
+files[] = content_migrate_unt_process_special.inc

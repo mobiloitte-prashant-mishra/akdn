@@ -1,0 +1,139 @@
+#mimemail-body .logo {
+    text-align: center;
+}
+#mimemail-body {
+    width: 600px;
+    font: normal 85%/120% Arial,Helvetica,sans-serif;
+    border-left: 1px solid rgb(238, 238, 238);
+    border-right: 1px solid rgb(238, 238, 238);
+}
+#mimemail-body .header {
+    background: rgb(255, 255, 231);
+    border-top: 1px solid rgb(153, 153, 153);
+    border-bottom: 1px solid rgb(153, 153, 153);
+    padding: 10px;
+    margin: 0 0 20px;
+    color: rgb(102, 102, 102);
+}
+#mimemail-body .header .first {
+    margin: 0;
+}
+#mimemail-body .header p:last-child {
+    margin-bottom: 0;
+}
+#mimemail-body .header .last {
+    margin-top: 10px;
+    /*font-style: italic;*/
+}
+#mimemail-body .header .first a {
+    /*font-style: italic;*/
+}
+#mimemail-body > div {
+    margin-bottom: 3%;
+}
+#mimemail-body ul li > div span a {
+    border-bottom: 1px solid rgb(0, 0, 255);
+    margin: 0 0 25px;
+    display: inline-block;
+}
+.field-type-image .field-label {
+    display: none;
+}
+.field-type-image img {
+    margin-top: 1px;
+    border: 1px solid rgb(102, 102, 102);
+    float: left;
+    margin-right: 3%;
+    width: 90px;
+}
+.field-name-title {
+    color: rgb(154, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    line-height: normal;
+    margin-bottom: 5px;
+}
+.field-name-title a, .node-simplenews a {
+    color: rgb(154, 0, 0);
+    text-decoration: none;
+}
+.node-simplenews .form-item,
+.node-simplenews .field-name-field-simplenews-term {
+    display: inline-block;
+    font-size: 90%;
+}
+.node-simplenews, .node-video {
+    padding-left: 20px;
+}
+.newsletter-footer {
+    margin-top: 10px;
+    padding: 10px 10px 0 10px;
+    font-size: 90%;
+    border-top: 1px solid rgb(153, 153, 153);
+    color: rgb(102, 102, 102);
+}
+.newsletter-footer:before {
+    content: "";
+    background: #333;
+    height: 50px;
+    width: 50px;
+    display: block;
+}
+.newsletter-footer a {
+    font-style: italic;
+}
+#mimemail-body > div > div > div > h2 {
+    display: none;
+}
+#mimemail-body .field-name-field-simplenews-term {
+    padding-bottom: 15px;
+    font-size: 90%;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-left: 2%;
+}
+#mimemail-body .node {
+    margin-bottom: 3%;
+    overflow: hidden;
+    border-bottom: 1px solid rgb(153, 153, 153);
+    padding-bottom: 3%;
+    clear: both;
+    margin-right: 2%;
+    margin-left: 2%;
+    font-size: 1.1em;
+}
+#mimemail-body .node:last-child {
+    border-bottom: 0;
+}
+#mimemail-body .node:first-child {
+    background: #333;
+}
+#mimemail-body .node h2 {
+    color: rgb(153, 0, 0);
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0px;
+    padding: 0px 0px 5px;
+}
+#mimemail-body > div > div .submitted, #mimemail-body ul li .submitted {
+    font-size: .9em;
+    margin-bottom: 1;
+}
+#mimemail-body .node .field-name-field-body p, #mimemail-body .node div p,
+.field-name-title ~ div p {
+    margin: 0 0 2%;
+    /*text-align: justify;*/
+    position: relative;
+    float: left;
+    width: 80%;
+    font-size: 100%;
+    line-height: 130%;
+}
+#mimemail-body .node .field-name-field-body p a {
+    display: block;
+    clear: both;
+}
+#mimemail-body ul {
+    padding: 0;
+    list-style-type: none;
+}
