@@ -1624,7 +1624,6 @@ function what_we_do_news_and_resources() {
       $site_language = $language->language;
       $output .= '<div class= "type">' . $type . '</div>';
       $output .= '<div class= "date">' . date('d F Y', $node->field_publish_date[key($node->field_publish_date)][0]['value']) . '</div>';
-      //$output .= '<div class= "title">' . l($node->field_short_title[key($node->field_short_title)][0]['value'], 'node/' . $node->nid) . '</div>';
       $output .= '<div class= "title">' . l($node->field_short_title[$site_language][0]['value'], 'node/' . $node->nid) . '</div>';
 
       $output .= '<span class= "read">[' . $read . '</span>';
