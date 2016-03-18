@@ -6611,6 +6611,7 @@ print $output;
   $handler->display->display_options['sorts']['field_akmi_event_date_value']['id'] = 'field_akmi_event_date_value';
   $handler->display->display_options['sorts']['field_akmi_event_date_value']['table'] = 'field_data_field_akmi_event_date';
   $handler->display->display_options['sorts']['field_akmi_event_date_value']['field'] = 'field_akmi_event_date_value';
+  $handler->display->display_options['sorts']['field_akmi_event_date_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Event Year (field_event_akmi_year) */
   $handler->display->display_options['arguments']['field_event_akmi_year_tid']['id'] = 'field_event_akmi_year_tid';
