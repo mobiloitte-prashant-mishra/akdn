@@ -6517,6 +6517,12 @@ print $output;
   $handler->display->display_options['filters']['type']['value'] = array(
     'akmi_event' => 'akmi_event',
   );
+  /* Filter criterion: Content: Event Date -  start date (field_akmi_event_date) */
+  $handler->display->display_options['filters']['field_akmi_event_date_value']['id'] = 'field_akmi_event_date_value';
+  $handler->display->display_options['filters']['field_akmi_event_date_value']['table'] = 'field_data_field_akmi_event_date';
+  $handler->display->display_options['filters']['field_akmi_event_date_value']['field'] = 'field_akmi_event_date_value';
+  $handler->display->display_options['filters']['field_akmi_event_date_value']['operator'] = '>';
+  $handler->display->display_options['filters']['field_akmi_event_date_value']['default_date'] = 'now';
 
   /* Display: AKMI EVENTS Calender page */
   $handler = $view->new_display('page', 'AKMI EVENTS Calender page', 'page');
@@ -6752,10 +6758,10 @@ print $output;
     'image_link' => '',
   );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Global: Random */
-  $handler->display->display_options['sorts']['random']['id'] = 'random';
-  $handler->display->display_options['sorts']['random']['table'] = 'views';
-  $handler->display->display_options['sorts']['random']['field'] = 'random';
+  /* Sort criterion: Content: Event Date -  start date (field_akmi_event_date) */
+  $handler->display->display_options['sorts']['field_akmi_event_date_value']['id'] = 'field_akmi_event_date_value';
+  $handler->display->display_options['sorts']['field_akmi_event_date_value']['table'] = 'field_data_field_akmi_event_date';
+  $handler->display->display_options['sorts']['field_akmi_event_date_value']['field'] = 'field_akmi_event_date_value';
 
   /* Display: Event Calendar home tile attachment */
   $handler = $view->new_display('attachment', 'Event Calendar home tile attachment', 'attachment_2');
