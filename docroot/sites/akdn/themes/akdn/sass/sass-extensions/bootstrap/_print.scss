@@ -21,17 +21,17 @@
         text-decoration: underline;
     }
 
-    a[href]:after {
+    // WE DON'T NEED THIS FOR AKDN AS IT PRINTS ALL THE LINKS
+    /*a[href]:after {
         content: " (" attr(href) ")";
     }
 
     abbr[title]:after {
         content: " (" attr(title) ")";
-    }
+    }*/
 
     // Don't show links that are fragment identifiers,
     // or use the `javascript:` pseudo protocol
-    // WE DON'T NEED THIS FOR AKDN AS SITE BREAKS ON PRINT
     a[href^="#"]:after,
     a[href^="javascript:"]:after {
         content: "";
@@ -83,9 +83,9 @@
             border-top-color: #000 !important;
         }
     }
-    .label {
+    /*.label {
         border: 1px solid #000;
-    }
+    }*/
 
     .table {
         border-collapse: collapse !important;
@@ -110,20 +110,23 @@
         margin: 0 auto !important;
         padding: 0 !important;
     }
-    a[href]:link:after, a[href]:visited:after {    
+    // THIS APPENDS A LINK AFTER EACH ANCHOR TAG
+    /*a[href]:link:after, a[href]:visited:after {    
         content: " ("attr(href) ") ";    
         font-size: 0%;   
-    }
+    }*/
     ul, li {
         padding: 0;
         list-style: none;
     }
+    img {
+        position: relative;
+        page-break-inside: avoid !important;
+    }
     ul, li,
-    img,
     .view-header,
     .pane-title, .block-title,
     .heading, .title {
-        page-break-inside: avoid !important;
         position: relative;
     }
     div {
