@@ -6960,6 +6960,7 @@ map {
             border-bottom: 1px solid #b59759;
             padding: 10px 15px;
             text-transform: uppercase;
+            min-width: 140px;
             a {
                 padding: 0;
             }
@@ -7172,4 +7173,11 @@ map {
         position: relative;
         left: 1em;
     }
+}
+
+// Hide FB Comments
+.fb-like.fb_iframe_widget iframe.fb_iframe_widget_lift {
+    width : 50px !important;
+    height : 20px !important;
+    overflow : hidden;
 }

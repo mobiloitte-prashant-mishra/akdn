@@ -161,12 +161,14 @@
         $('.views-field-field-hub-page-image', context).each(function() {
          var $this = $(this);
          var $rows = $this.next().next().find('.view-id-hub_pages .views-row');
+         var $hreflink = $this.next().find('.hub_pages-title a').attr('href');
          if ($rows.length) {
            $this.addClass('activity-icon-down');
            $this.find('a:last').removeAttr("href");
          }
          else {
            $this.addClass('activity-icon-staright');
+           $this.find('a:last').attr('href',$hreflink);
          }
         });
 
