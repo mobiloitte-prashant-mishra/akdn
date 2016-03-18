@@ -17,10 +17,10 @@ $sites = array(
   "prodlb.theismaili.org" => "ismaili",
   "theismaili.org" => "ismaili",
   "info.akdn.net" => 'scs',
-  "akdnstg.prod.acquia-sites.com" => 'akdn',
-  "akdn.prod.acquia-sites.com" => 'akdn',
+  "akdn.s114.srijan-sites.com" => "akdn",
+  "akdn-stage.s114.srijan-sites.com" => "akdn",
   "akdndev.prod.acquia-sites.com" => 'akdn',
- "akdn3dev.prod.acquia-sites.com" => 'akdn',
- "akdn3stg.prod.acquia-sites.com" => 'akdn',
+  "akdnstg.prod.acquia-sites.com" => 'akdn',
+  "akdn_redesign.local" => 'akdn',
 );
 ?>
