@@ -1605,7 +1605,6 @@ function what_we_do_news_and_resources() {
       }
 
       $output .= '<div class = "what-we-do-inner-wrapper"><div class= "what-we-do-subwrapper">';
-      							dsm('THis is test');
       if (!empty($image)) {
         $accordian_image = array(
           'style_name' => 'social_sharing_image',
@@ -1615,8 +1614,7 @@ function what_we_do_news_and_resources() {
           'alt' => $image[0]['alt'],
           'title' => $image[0]['title'],
         );
-        $img = theme('image_style', $accordian_image);
-        
+        $img = theme('image_style', $accordian_image);        
         if ($name == 'In the media') {
         	$output .= '<div class= "image">' . l($img, $source, array('html' => TRUE)) . '</div>';
         }
@@ -1629,7 +1627,7 @@ function what_we_do_news_and_resources() {
       if ($name == 'In the media') {
       	$output .= '<div class= "title">' . l($node->field_short_title[key($node->field_short_title)][0]['value'], $source) . '</div>';	
       }
-      	else {
+      else {
       	$output .= '<div class= "title">' . l($node->field_short_title[key($node->field_short_title)][0]['value'], 'node/' . $node->nid) . '</div>';
       }
       $output .= '<span class= "read">[' . $read . '</span>';

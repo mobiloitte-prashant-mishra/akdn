@@ -1522,13 +1522,15 @@ print $content;
   $handler->display->display_options['fields']['field_article_img']['field'] = 'field_article_img';
   $handler->display->display_options['fields']['field_article_img']['label'] = '';
   $handler->display->display_options['fields']['field_article_img']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_article_img']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_article_img']['alter']['path'] = '[field_media_source]';
   $handler->display->display_options['fields']['field_article_img']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_article_img']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_article_img']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_article_img']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_article_img']['settings'] = array(
     'image_style' => 'social_sharing_image',
-    'image_link' => 'content',
+    'image_link' => '',
   );
   $handler->display->display_options['fields']['field_article_img']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_article_img']['delta_offset'] = '0';
@@ -1564,13 +1566,15 @@ print $content;
   $handler->display->display_options['fields']['field_short_title']['field'] = 'field_short_title';
   $handler->display->display_options['fields']['field_short_title']['label'] = '';
   $handler->display->display_options['fields']['field_short_title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_short_title']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_short_title']['alter']['path'] = '[field_media_source]';
   $handler->display->display_options['fields']['field_short_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_short_title']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_short_title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_short_title']['type'] = 'title_linked';
   $handler->display->display_options['fields']['field_short_title']['settings'] = array(
     'title_style' => '_none',
-    'title_link' => 'content',
+    'title_link' => '',
     'title_class' => '',
   );
   /* Field: Global: PHP */
@@ -6680,8 +6684,6 @@ print $output;
   $handler->display->display_options['title'] = 'Please Also See:';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'akmi-event-calendar-see-also';
-  $handler->display->display_options['defaults']['group_by'] = FALSE;
-  $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
