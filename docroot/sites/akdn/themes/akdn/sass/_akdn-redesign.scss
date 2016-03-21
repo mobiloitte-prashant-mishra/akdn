@@ -6217,12 +6217,12 @@ map {
 .akaa-technicalinfo-label,
 .akaa-technicalinfo-value, 
 .akaa-technicalinfo-link {
-    display: inline-block;
+    display: inline;
 }
 .akaa-technicalinfo-link {
     color: #b49759;
      a {
-        display: inline-block;
+        display: inline;
         font-size: 16px;
         line-height: 24px;
         color: #b49759;
@@ -7176,7 +7176,8 @@ map {
 }
 
 // Hide FB Comments
-.fb-like.fb_iframe_widget iframe.fb_iframe_widget_lift {
+//.fb-like.fb_iframe_widget iframe.fb_iframe_widget_lift,  {
+.fb_hidecomm {
     width : 50px !important;
     height : 20px !important;
     overflow : hidden;

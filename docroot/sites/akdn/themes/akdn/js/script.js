@@ -802,6 +802,19 @@
     $('.basic-page-custom-block-right').addClass('no_tp_br');
   }
 
+  // Script to remove fb like comment box
+  $('.fb-like iframe').once('fb_hidecomnt').addClass('fb_hidecomm');
+  FB.Event.subscribe('edge.create',
+      function(response) {
+          //alert('You liked the URL: ' + response);
+          $('.fb-like').find('iframe').removeClass('fb_hidecomm');
+          setTimeout(function() {
+            $('.fb-like').find('iframe').addClass('fb_hidecomm');
+          }, 300);
+      }
+  );
+
+
   }
 }
 
