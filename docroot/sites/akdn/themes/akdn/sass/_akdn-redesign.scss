@@ -3735,11 +3735,15 @@ h2.header-name a {
         top: 5px;
         left: 0;
         display: block;
-        height: 97%;
+        height: 96%;
         border-left: 4px solid #b4965a;
     }
     span {
         display: inline-block;
+    }
+    .morelink {
+        font-size: 22px;
+        font-style: italic;
     }
 }
 .what-we-do-body-more-body {
