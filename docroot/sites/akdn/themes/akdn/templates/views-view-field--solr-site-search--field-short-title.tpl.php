@@ -31,8 +31,7 @@ if ($row->{'_entity_properties'}['entity_type'] == 'In the media') {
   ));
   $output .= l(t('More'), $exurl, array(
     'html' => TRUE,
-    'attributes' => array('target' => '_blank'),
-    'class' => array('akdn-solr-more-link')
+    'attributes' => array('class' => array('akdn-solr-more-link'), 'target' => '_blank')
   ));
 }
 else {
