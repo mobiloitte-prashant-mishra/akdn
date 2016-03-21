@@ -1456,7 +1456,7 @@ function what_we_do_news_and_resources() {
         }
 
         if (in_array_r('publications', $load->field_select_news_res_content[key($load->field_select_news_res_content)])) {
-          $publication = akdn_custom_query_get_nid_and_published_date($ntid, 'published');
+          $publication = akdn_custom_query_get_nid_and_published_date($ntid, 'publication');
           $array[$publication[0]->nid] = $publication[0]->date_formatted;
 
         }
@@ -1881,7 +1881,6 @@ function akdn_speech_tools() {
   foreach ($result as $row) {
     $class = "inactive-theme";
     if (isset($_GET['f'])) {
-
       if (array_search('field_speech_themes:' . $row->tid, $_GET['f']) !== FALSE) {
         $class = "active-theme";
       }
@@ -1934,8 +1933,8 @@ function akdn_block_forms($form, &$form_state, $delta) {
       $format = 'Y-m-d';
       $date_filter_flag = 0;
       foreach ($_GET['f'] as $value) {
-       $match = substr($value, 0, 18);
-        $publish_date_filter = strpos($match, 'quote_publish_date') ;
+        $match = substr($value, 0, 18);
+        $publish_date_filter = strpos($match, 'quote_publish_date');
         $publish_time_filter =  strpos($match, 'publish_time');
         if (is_numeric($publish_date_filter) || is_numeric($publish_time_filter)) {
           $date_filter_flag = 1;
