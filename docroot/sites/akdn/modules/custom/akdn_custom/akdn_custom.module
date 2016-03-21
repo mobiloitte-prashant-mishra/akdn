@@ -1605,7 +1605,6 @@ function what_we_do_news_and_resources() {
       }
 
       $output .= '<div class = "what-we-do-inner-wrapper"><div class= "what-we-do-subwrapper">';
-
       if (!empty($image)) {
         $accordian_image = array(
           'style_name' => 'social_sharing_image',
@@ -1615,16 +1614,22 @@ function what_we_do_news_and_resources() {
           'alt' => $image[0]['alt'],
           'title' => $image[0]['title'],
         );
-        $img = theme('image_style', $accordian_image);
-        $output .= '<div class= "image">' . l($img, 'node/' . $node->nid, array('html' => TRUE)) . '</div>';
+        $img = theme('image_style', $accordian_image);        
+        if ($name == 'In the media') {
+        	$output .= '<div class= "image">' . l($img, $source, array('html' => TRUE)) . '</div>';
+        }
+        else {
+        	$output .= '<div class= "image">' . l($img, 'node/' . $node->nid, array('html' => TRUE)) . '</div>';
+        }
       }
-
-      global $language;
-      //Site language
-      $site_language = $language->language;
       $output .= '<div class= "type">' . $type . '</div>';
       $output .= '<div class= "date">' . date('d F Y', $node->field_publish_date[key($node->field_publish_date)][0]['value']) . '</div>';
-      $output .= '<div class= "title">' . l($node->field_short_title[$site_language][0]['value'], 'node/' . $node->nid) . '</div>';
+      if ($name == 'In the media') {
+      	$output .= '<div class= "title">' . l($node->field_short_title[key($node->field_short_title)][0]['value'], $source) . '</div>';	
+      }
+      else {
+      	$output .= '<div class= "title">' . l($node->field_short_title[key($node->field_short_title)][0]['value'], 'node/' . $node->nid) . '</div>';
+      }
       $output .= '<span class= "read">[' . $read . '</span>';
       $output .= '<span class= "readall">' . " | " . $readall . ']</span>';
       $output .= '</div></div>';
@@ -1876,6 +1881,7 @@ function akdn_speech_tools() {
   foreach ($result as $row) {
     $class = "inactive-theme";
     if (isset($_GET['f'])) {
+
       if (array_search('field_speech_themes:' . $row->tid, $_GET['f']) !== FALSE) {
         $class = "active-theme";
       }
@@ -1928,8 +1934,10 @@ function akdn_block_forms($form, &$form_state, $delta) {
       $format = 'Y-m-d';
       $date_filter_flag = 0;
       foreach ($_GET['f'] as $value) {
-        $match = substr($value, 0, 18);
-        if ($match == 'quote_publish_date') {
+       $match = substr($value, 0, 18);
+        $publish_date_filter = strpos($match, 'quote_publish_date') ;
+        $publish_time_filter =  strpos($match, 'publish_time');
+        if (is_numeric($publish_date_filter) || is_numeric($publish_time_filter)) {
           $date_filter_flag = 1;
           break;
         }

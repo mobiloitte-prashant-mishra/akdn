@@ -1522,13 +1522,15 @@ print $content;
   $handler->display->display_options['fields']['field_article_img']['field'] = 'field_article_img';
   $handler->display->display_options['fields']['field_article_img']['label'] = '';
   $handler->display->display_options['fields']['field_article_img']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_article_img']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_article_img']['alter']['path'] = '[field_media_source]';
   $handler->display->display_options['fields']['field_article_img']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_article_img']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_article_img']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_article_img']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_article_img']['settings'] = array(
     'image_style' => 'social_sharing_image',
-    'image_link' => 'content',
+    'image_link' => '',
   );
   $handler->display->display_options['fields']['field_article_img']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_article_img']['delta_offset'] = '0';
@@ -1564,13 +1566,15 @@ print $content;
   $handler->display->display_options['fields']['field_short_title']['field'] = 'field_short_title';
   $handler->display->display_options['fields']['field_short_title']['label'] = '';
   $handler->display->display_options['fields']['field_short_title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_short_title']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_short_title']['alter']['path'] = '[field_media_source]';
   $handler->display->display_options['fields']['field_short_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_short_title']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_short_title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_short_title']['type'] = 'title_linked';
   $handler->display->display_options['fields']['field_short_title']['settings'] = array(
     'title_style' => '_none',
-    'title_link' => 'content',
+    'title_link' => '',
     'title_class' => '',
   );
   /* Field: Global: PHP */
@@ -6517,6 +6521,12 @@ print $output;
   $handler->display->display_options['filters']['type']['value'] = array(
     'akmi_event' => 'akmi_event',
   );
+  /* Filter criterion: Content: Event Date -  start date (field_akmi_event_date) */
+  $handler->display->display_options['filters']['field_akmi_event_date_value']['id'] = 'field_akmi_event_date_value';
+  $handler->display->display_options['filters']['field_akmi_event_date_value']['table'] = 'field_data_field_akmi_event_date';
+  $handler->display->display_options['filters']['field_akmi_event_date_value']['field'] = 'field_akmi_event_date_value';
+  $handler->display->display_options['filters']['field_akmi_event_date_value']['operator'] = '>';
+  $handler->display->display_options['filters']['field_akmi_event_date_value']['default_date'] = 'now';
 
   /* Display: AKMI EVENTS Calender page */
   $handler = $view->new_display('page', 'AKMI EVENTS Calender page', 'page');
@@ -6607,6 +6617,7 @@ print $output;
   $handler->display->display_options['sorts']['field_akmi_event_date_value']['id'] = 'field_akmi_event_date_value';
   $handler->display->display_options['sorts']['field_akmi_event_date_value']['table'] = 'field_data_field_akmi_event_date';
   $handler->display->display_options['sorts']['field_akmi_event_date_value']['field'] = 'field_akmi_event_date_value';
+  $handler->display->display_options['sorts']['field_akmi_event_date_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Event Year (field_event_akmi_year) */
   $handler->display->display_options['arguments']['field_event_akmi_year_tid']['id'] = 'field_event_akmi_year_tid';
@@ -6680,8 +6691,6 @@ print $output;
   $handler->display->display_options['title'] = 'Please Also See:';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'akmi-event-calendar-see-also';
-  $handler->display->display_options['defaults']['group_by'] = FALSE;
-  $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
@@ -6758,10 +6767,10 @@ print $output;
     'image_link' => '',
   );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Global: Random */
-  $handler->display->display_options['sorts']['random']['id'] = 'random';
-  $handler->display->display_options['sorts']['random']['table'] = 'views';
-  $handler->display->display_options['sorts']['random']['field'] = 'random';
+  /* Sort criterion: Content: Event Date -  start date (field_akmi_event_date) */
+  $handler->display->display_options['sorts']['field_akmi_event_date_value']['id'] = 'field_akmi_event_date_value';
+  $handler->display->display_options['sorts']['field_akmi_event_date_value']['table'] = 'field_data_field_akmi_event_date';
+  $handler->display->display_options['sorts']['field_akmi_event_date_value']['field'] = 'field_akmi_event_date_value';
 
   /* Display: Event Calendar home tile attachment */
   $handler = $view->new_display('attachment', 'Event Calendar home tile attachment', 'attachment_2');
@@ -9720,11 +9729,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
   $handler->display->display_options['title'] = 'Previous Cycles';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'time';
-  $handler->display->display_options['cache']['results_lifespan'] = '1800';
-  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
-  $handler->display->display_options['cache']['output_lifespan'] = '1800';
-  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
@@ -11686,12 +11691,21 @@ print $explode[1];
   $handler = $view->new_display('block', 'Custom Content Header', 'custom_content_header');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Short Title */
+  $handler->display->display_options['fields']['field_short_title']['id'] = 'field_short_title';
+  $handler->display->display_options['fields']['field_short_title']['table'] = 'field_data_field_short_title';
+  $handler->display->display_options['fields']['field_short_title']['field'] = 'field_short_title';
+  $handler->display->display_options['fields']['field_short_title']['label'] = '';
+  $handler->display->display_options['fields']['field_short_title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_short_title']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['text'] = '[field_short_title]';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'div';
@@ -11786,6 +11800,7 @@ print $explode[1];
     t('Baisc Page summary'),
     t('<div class = "body-summary">[body-summary]</div>'),
     t('Custom Content Header'),
+    t('[field_short_title]'),
     t('<div class = "basic-page-custom-logo-title">[title]</div>'),
     t('Baisc Page Accordian summary'),
     t('[body-summary]'),
