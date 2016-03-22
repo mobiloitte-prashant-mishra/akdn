@@ -378,6 +378,16 @@
           });
         }
 
+        //icon valign
+        function country_activity_icon_fix() {
+          $('.country-activity-tile .hub-pages-row > .views-field-field-short-title', context).each(function() {
+            var $this = $(this);
+            var $height = $this.height() - 26;
+            var $final_height = $height/2;
+            $('.country_activity_link [class*="activity-icon-"]').css('bottom', + $final_height+'px');
+          });
+        }
+
         function country_activity() {
           $('.country-activity-tile .hub-pages-row').height('auto');
           var ww = $(window).width();
@@ -411,6 +421,7 @@
            listing_equailzer();
            aboutus_equailzer();
            country_activity_title();
+           country_activity_icon_fix()
            country_activity();
            menubar() ;
           setTimeout(function() {
@@ -431,6 +442,7 @@
             listing_equailzer();
             aboutus_equailzer();
             country_activity_title();
+            country_activity_icon_fix()
             country_activity();
             menubar() ;
             menu_noborder();
@@ -804,15 +816,19 @@
 
   // Script to remove fb like comment box
   $('.fb-like iframe').once('fb_hidecomnt').addClass('fb_hidecomm');
-  FB.Event.subscribe('edge.create',
-      function(response) {
-          //alert('You liked the URL: ' + response);
-          $('.fb-like').find('iframe').removeClass('fb_hidecomm');
-          setTimeout(function() {
-            $('.fb-like').find('iframe').addClass('fb_hidecomm');
-          }, 300);
-      }
-  );
+  $(window).load(function() {
+    if($('body').hasClass('front')){
+      FB.Event.subscribe('edge.create',
+          function(response) {
+              //alert('You liked the URL: ' + response);
+              $('.fb-like').find('iframe').removeClass('fb_hidecomm');
+              setTimeout(function() {
+                $('.fb-like').find('iframe').addClass('fb_hidecomm');
+              }, 300);
+          }
+      );
+    }
+  });
 
 
   }
