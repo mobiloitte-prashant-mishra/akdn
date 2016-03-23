@@ -3742,6 +3742,16 @@ h2.header-name a {
         display: inline-block;
     }
     .morelink {
+        &:before {
+            content: "[";
+            display: inline-block;
+            margin-right: 3px;
+        }
+        &:after {
+            content: "]";
+            margin-left: 3px;
+            display: inline-block;
+        }
         font-size: 22px;
         font-style: italic;
     }
