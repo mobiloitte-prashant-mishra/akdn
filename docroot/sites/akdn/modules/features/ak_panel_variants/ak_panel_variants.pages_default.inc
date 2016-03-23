@@ -12879,7 +12879,10 @@ print  \'<div class="sub-navbar">
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'akaa-cycle-pane-body',
+    );
     $pane->extras = array();
     $pane->position = 5;
     $pane->locks = array();
