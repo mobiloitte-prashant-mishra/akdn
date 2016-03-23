@@ -817,7 +817,7 @@
   // Script to remove fb like comment box
   $('.fb-like iframe').once('fb_hidecomnt').addClass('fb_hidecomm');
   $(window).load(function() {
-    if($('body').hasClass('front')){
+    if($('body').hasClass('front') || $('body').hasClass('akaa-body') || $('body').hasClass('akmi-homepage')){
       FB.Event.subscribe('edge.create',
           function(response) {
               //alert('You liked the URL: ' + response);
