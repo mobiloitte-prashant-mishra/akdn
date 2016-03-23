@@ -6,6 +6,22 @@ jQuery(document).ready(function($) {
  * @return {[type]}       [description]
  */
 
+  // Open search filter
+function getUrlVars() {
+  var vars = [], hash;
+  var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+  for (var i = 0; i < hashes.length; i++) {
+    hash = hashes[i].split('=');
+    vars.push(hash[0]);
+    vars[hash[0]] = hash[1];
+  }
+  return vars;
+}
+  var value = getUrlVars()["f[0]"];
+  if (value != undefined) {
+    jQuery('div.akdn-filter-js-wrapper').css('display', 'block');
+  }
+
   jQuery('.accordian-quick-links a').click(function(){
     jQuery('html, body').animate({
         scrollTop: jQuery(jQuery(this).attr('href') ).offset().top
@@ -346,3 +362,4 @@ if(!jQuery(this).children('.image').length > 0) {
  jQuery(this).addClass('hide');
 }
 });
+
