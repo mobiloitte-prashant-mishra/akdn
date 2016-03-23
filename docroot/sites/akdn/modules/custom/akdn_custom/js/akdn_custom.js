@@ -5,7 +5,9 @@ jQuery(document).ready(function($) {
  * @param  {[type]} Basic Page Quick links Scroll
  * @return {[type]}       [description]
  */
-
+ 
+  // Open 'In the media slide link in new tab'
+  jQuery('.slide.In').find("a").attr("target", "_blank");
   jQuery('.accordian-quick-links a').click(function(){
     jQuery('html, body').animate({
         scrollTop: jQuery(jQuery(this).attr('href') ).offset().top
