@@ -6640,7 +6640,7 @@ print $output;
   /* Display: Event Other listing */
   $handler = $view->new_display('block', 'Event Other listing', 'block_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Please Also See:';
+  $handler->display->display_options['title'] = 'Please also see:';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['defaults']['group_by'] = FALSE;
   $handler->display->display_options['defaults']['query'] = FALSE;
@@ -6688,7 +6688,7 @@ print $output;
   /* Display: AKMI Events Views Attachment */
   $handler = $view->new_display('attachment', 'AKMI Events Views Attachment', 'attachment_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Please Also See:';
+  $handler->display->display_options['title'] = 'Please also see:';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'akmi-event-calendar-see-also';
   $handler->display->display_options['defaults']['group_by'] = FALSE;
@@ -6705,7 +6705,7 @@ print $output;
   $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
   $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
   $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
-  $handler->display->display_options['header']['area_text_custom']['content'] = 'Please Also See :';
+  $handler->display->display_options['header']['area_text_custom']['content'] = 'Please also see :';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Event Year */
   $handler->display->display_options['fields']['field_event_akmi_year']['id'] = 'field_event_akmi_year';
@@ -6886,10 +6886,10 @@ print $output;
     t('Event Calendar [field_event_akmi_year]'),
     t('All'),
     t('Event Other listing'),
-    t('Please Also See:'),
+    t('Please also see:'),
     t('[field_performance_year] Concerts sponsored by the Aga Khan Music Initiative'),
     t('AKMI Events Views Attachment'),
-    t('Please Also See :'),
+    t('Please also see :'),
     t('[field_event_akmi_year] Concerts sponsored by the Aga Khan Music Initiative'),
     t('Event Calendar Home block'),
     t('Event Calendar home tile attachment'),
