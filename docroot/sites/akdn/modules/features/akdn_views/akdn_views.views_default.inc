@@ -8473,6 +8473,17 @@ print $content;
   $handler->display->display_options['fields']['nid']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['nid']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['nid']['link_to_node'] = TRUE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid_1']['id'] = 'nid_1';
+  $handler->display->display_options['fields']['nid_1']['table'] = 'node';
+  $handler->display->display_options['fields']['nid_1']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid_1']['label'] = '';
+  $handler->display->display_options['fields']['nid_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['nid_1']['alter']['text'] = 'More';
+  $handler->display->display_options['fields']['nid_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['nid_1']['link_to_node'] = TRUE;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -8483,7 +8494,7 @@ print $content;
   <div class="media-desc">
     <div class="date">Premiere year: [field_performance_year]</div>
     <div class="title">[title]</div>
-    <div class="read-more">[nid]</div>
+    <div class="read-more">[nid_1]</div>
   </div>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -9601,7 +9612,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
   <div class="media-desc">
     <div class="date">Premiere year: [field_performance_year]</div>
     <div class="title">[title]</div>
-    <div class="read-more">[nid]</div>
+    <div class="read-more">[nid_1]</div>
   </div>
 </div>'),
     t('AKMI Performance Home Tile'),
