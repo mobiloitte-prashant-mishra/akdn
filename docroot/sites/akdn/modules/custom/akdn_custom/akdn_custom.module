@@ -1936,7 +1936,8 @@ function akdn_block_forms($form, &$form_state, $delta) {
         $match = substr($value, 0, 18);
         $publish_date_filter = strpos($match, 'quote_publish_date');
         $publish_time_filter =  strpos($match, 'publish_time');
-        if (is_numeric($publish_date_filter) || is_numeric($publish_time_filter)) {
+        $field_publish_date =  strpos($match, 'field_publish_date');
+        if (is_numeric($publish_date_filter) || is_numeric($publish_time_filter) || is_numeric($field_publish_date)) {
           $date_filter_flag = 1;
           break;
         }
@@ -3170,7 +3171,7 @@ function akdn_custom_preprocess_views_view_field__focus_areas__what_we_do_summar
     $output .= '<div class="what-we-do-body-more">';
     $output .= check_markup($explode[0], 'full_html');
     if (!empty($explode[1])) {
-      $output .= '<span><a href="javascript:void(0);" class="morelink">[ More ]</a></span>';
+      $output .= '<span><a href="javascript:void(0);" class="morelink">More</a></span>';
     }
     $output .= '</div>';
     $output .= '<div class="what-we-do-body-more-body collapse">';
