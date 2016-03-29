@@ -183,7 +183,7 @@ function akmi_custom_preprocess_views_view_field__akmi_artists_views__block_1__n
     }
   }
   if (!empty($rows)) {
-    $output = '<div class="akaa-technicalinfo-label">' . t('CD/DVD') . ':&nbsp;</div><div class="akaa-technicalinfo-link">' . implode(',', $rows) . '</div>';
+    $output = '<div class="akaa-technicalinfo-label">' . t('CD/DVD') . ':&nbsp;</div><div class="akaa-technicalinfo-link">' . implode(',&nbsp;', $rows) . '</div>';
     $variables['related_cd_dvd'] = $output;
   }
 }
