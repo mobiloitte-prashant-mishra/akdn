@@ -1732,7 +1732,7 @@ function akdn_press_centre_types_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => 'content',
-          'image_style' => 'mail_shot_image_cache',
+          'image_style' => 'social_sharing_image',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -2787,67 +2787,6 @@ function akdn_press_centre_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_simplenews_term'
-  $field_instances['node-article-field_simplenews_term'] = array(
-    'bundle' => 'article',
-    'default_value' => array(
-      0 => array(
-        'tid' => 9021,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 55,
-      ),
-      'featured_article' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'scs' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_simplenews_term',
-    'label' => 'Newsletter category',
-    'required' => 1,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 25,
-    ),
-  );
-
   // Exported field_instance: 'node-article-field_speeches_reference'
   $field_instances['node-article-field_speeches_reference'] = array(
     'bundle' => 'article',
@@ -3038,13 +2977,9 @@ function akdn_press_centre_types_field_default_field_instances() {
       ),
       'scs' => array(
         'label' => 'hidden',
-        'module' => 'title',
-        'settings' => array(
-          'title_class' => '',
-          'title_link' => 'content',
-          'title_style' => 'h2',
-        ),
-        'type' => 'title_linked',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
         'weight' => 1,
       ),
       'search_index' => array(
@@ -6431,6 +6366,12 @@ function akdn_press_centre_types_field_default_field_instances() {
         'weight' => 29,
       ),
       'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'scs' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
