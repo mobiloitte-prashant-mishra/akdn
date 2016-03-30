@@ -53,6 +53,14 @@ function akdn_content_types_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
+    'instagram' => array(
+      'name' => t('Instagram post'),
+      'base' => 'node_content',
+      'description' => t('A post imported from Instagram.'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'page' => array(
       'name' => t('Basic page'),
       'base' => 'node_content',
