@@ -1616,7 +1616,7 @@ function what_we_do_news_and_resources() {
         );
         $img = theme('image_style', $accordian_image);        
         if ($name == 'In the media') {
-        	$output .= '<div class= "image">' . l($img, $source, array('html' => TRUE)) . '</div>';
+        	$output .= '<div class= "image">' . l($img, $source, array( 'attributes' => array('target'=>'_blank'), 'html' => TRUE)) . '</div>';
         }
         else {
         	$output .= '<div class= "image">' . l($img, 'node/' . $node->nid, array('html' => TRUE)) . '</div>';
@@ -1625,7 +1625,7 @@ function what_we_do_news_and_resources() {
       $output .= '<div class= "type">' . $type . '</div>';
       $output .= '<div class= "date">' . date('d F Y', $node->field_publish_date[key($node->field_publish_date)][0]['value']) . '</div>';
       if ($name == 'In the media') {
-      	$output .= '<div class= "title">' . l($node->field_short_title[key($node->field_short_title)][0]['value'], $source) . '</div>';	
+      	$output .= '<div class= "title">' . l($node->field_short_title[key($node->field_short_title)][0]['value'], $source, $attribute) . '</div>';	
       }
       else {
       	$output .= '<div class= "title">' . l($node->field_short_title[key($node->field_short_title)][0]['value'], 'node/' . $node->nid) . '</div>';

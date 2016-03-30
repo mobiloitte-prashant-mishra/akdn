@@ -1524,6 +1524,7 @@ print $content;
   $handler->display->display_options['fields']['field_article_img']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_article_img']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_article_img']['alter']['path'] = '[field_media_source]';
+  $handler->display->display_options['fields']['field_article_img']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['field_article_img']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_article_img']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_article_img']['element_default_classes'] = FALSE;
@@ -1568,6 +1569,7 @@ print $content;
   $handler->display->display_options['fields']['field_short_title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_short_title']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_short_title']['alter']['path'] = '[field_media_source]';
+  $handler->display->display_options['fields']['field_short_title']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['field_short_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_short_title']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_short_title']['element_default_classes'] = FALSE;
@@ -10990,7 +10992,7 @@ print $explode[1];
   $handler->display->display_options['fields']['image_public_uri']['element_class'] = 'akdn-solr-img-link';
   $handler->display->display_options['fields']['image_public_uri']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['image_public_uri']['link_to_entity'] = 0;
-  /* Field: Indexed Node: Short Title */
+  /* Field: Indexed Node: Brochure Title */
   $handler->display->display_options['fields']['field_short_title']['id'] = 'field_short_title';
   $handler->display->display_options['fields']['field_short_title']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['fields']['field_short_title']['field'] = 'field_short_title';
@@ -11160,7 +11162,7 @@ print $explode[1];
   $handler->display->display_options['fields']['image_public_uri']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['image_public_uri']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['image_public_uri']['link_to_entity'] = 0;
-  /* Field: Indexed Node: Short Title */
+  /* Field: Indexed Node: Brochure Title */
   $handler->display->display_options['fields']['field_short_title']['id'] = 'field_short_title';
   $handler->display->display_options['fields']['field_short_title']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['fields']['field_short_title']['field'] = 'field_short_title';
@@ -11342,7 +11344,7 @@ print $explode[1];
   $handler->display->display_options['fields']['image_public_uri']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['image_public_uri']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['image_public_uri']['link_to_entity'] = 0;
-  /* Field: Indexed Node: Short Title */
+  /* Field: Indexed Node: Brochure Title */
   $handler->display->display_options['fields']['field_short_title']['id'] = 'field_short_title';
   $handler->display->display_options['fields']['field_short_title']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['fields']['field_short_title']['field'] = 'field_short_title';
