@@ -3141,6 +3141,12 @@ function akdn_content_types_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 27,
       ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4720,6 +4726,12 @@ function akdn_content_types_field_default_field_instances() {
         'type' => 'link_default',
         'weight' => 29,
       ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4776,6 +4788,12 @@ function akdn_content_types_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 32,
       ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4819,6 +4837,12 @@ function akdn_content_types_field_default_field_instances() {
         ),
         'type' => 'image',
         'weight' => 24,
+      ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4927,6 +4951,12 @@ function akdn_content_types_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 25,
       ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4968,6 +4998,12 @@ function akdn_content_types_field_default_field_instances() {
         'settings' => array(),
         'type' => 'link_default',
         'weight' => 26,
+      ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -5028,6 +5064,12 @@ function akdn_content_types_field_default_field_instances() {
         'settings' => array(),
         'type' => 'list_default',
         'weight' => 31,
+      ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -5999,6 +6041,12 @@ function akdn_content_types_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 30,
       ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -6044,6 +6092,12 @@ function akdn_content_types_field_default_field_instances() {
         'settings' => array(),
         'type' => 'list_default',
         'weight' => 28,
+      ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -6248,6 +6302,12 @@ function akdn_content_types_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 27,
+      ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -8812,7 +8872,7 @@ function akdn_content_types_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => 'content',
-          'image_style' => 'mail_shot_image_cache',
+          'image_style' => 'social_sharing_image',
         ),
         'type' => 'image',
         'weight' => 0,

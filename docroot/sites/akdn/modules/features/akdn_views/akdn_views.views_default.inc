@@ -6640,7 +6640,7 @@ print $output;
   /* Display: Event Other listing */
   $handler = $view->new_display('block', 'Event Other listing', 'block_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Please Also See:';
+  $handler->display->display_options['title'] = 'Please also see:';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['defaults']['group_by'] = FALSE;
   $handler->display->display_options['defaults']['query'] = FALSE;
@@ -6688,7 +6688,7 @@ print $output;
   /* Display: AKMI Events Views Attachment */
   $handler = $view->new_display('attachment', 'AKMI Events Views Attachment', 'attachment_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Please Also See:';
+  $handler->display->display_options['title'] = 'Please also see:';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'akmi-event-calendar-see-also';
   $handler->display->display_options['defaults']['group_by'] = FALSE;
@@ -6705,7 +6705,7 @@ print $output;
   $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
   $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
   $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
-  $handler->display->display_options['header']['area_text_custom']['content'] = 'Please Also See :';
+  $handler->display->display_options['header']['area_text_custom']['content'] = 'Please also see :';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Event Year */
   $handler->display->display_options['fields']['field_event_akmi_year']['id'] = 'field_event_akmi_year';
@@ -6886,10 +6886,10 @@ print $output;
     t('Event Calendar [field_event_akmi_year]'),
     t('All'),
     t('Event Other listing'),
-    t('Please Also See:'),
+    t('Please also see:'),
     t('[field_performance_year] Concerts sponsored by the Aga Khan Music Initiative'),
     t('AKMI Events Views Attachment'),
-    t('Please Also See :'),
+    t('Please also see :'),
     t('[field_event_akmi_year] Concerts sponsored by the Aga Khan Music Initiative'),
     t('Event Calendar Home block'),
     t('Event Calendar home tile attachment'),
@@ -8473,6 +8473,17 @@ print $content;
   $handler->display->display_options['fields']['nid']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['nid']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['nid']['link_to_node'] = TRUE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid_1']['id'] = 'nid_1';
+  $handler->display->display_options['fields']['nid_1']['table'] = 'node';
+  $handler->display->display_options['fields']['nid_1']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid_1']['label'] = '';
+  $handler->display->display_options['fields']['nid_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['nid_1']['alter']['text'] = 'More';
+  $handler->display->display_options['fields']['nid_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['nid_1']['link_to_node'] = TRUE;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -8483,7 +8494,7 @@ print $content;
   <div class="media-desc">
     <div class="date">Premiere year: [field_performance_year]</div>
     <div class="title">[title]</div>
-    <div class="read-more">[nid]</div>
+    <div class="read-more">[nid_1]</div>
   </div>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -9601,7 +9612,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
   <div class="media-desc">
     <div class="date">Premiere year: [field_performance_year]</div>
     <div class="title">[title]</div>
-    <div class="read-more">[nid]</div>
+    <div class="read-more">[nid_1]</div>
   </div>
 </div>'),
     t('AKMI Performance Home Tile'),
