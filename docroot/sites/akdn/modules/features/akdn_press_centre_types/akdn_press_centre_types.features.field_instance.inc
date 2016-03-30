@@ -1732,7 +1732,7 @@ function akdn_press_centre_types_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => 'content',
-          'image_style' => 'social_sharing_image',
+          'image_style' => 'mail_shot_image_cache',
         ),
         'type' => 'image',
         'weight' => 0,
