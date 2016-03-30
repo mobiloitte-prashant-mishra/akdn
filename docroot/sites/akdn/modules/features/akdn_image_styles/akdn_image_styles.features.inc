@@ -574,7 +574,7 @@ function akdn_image_styles_image_default_styles() {
     'name' => 'mail_shot_image_cache',
     'label' => 'Mail Shot image cache',
     'effects' => array(
-      276 => array(
+      237 => array(
         'label' => 'Scale',
         'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
         'effect callback' => 'image_scale_effect',
@@ -584,8 +584,8 @@ function akdn_image_styles_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => 90,
-          'height' => 90,
+          'width' => 150,
+          'height' => 150,
           'upscale' => 1,
         ),
         'weight' => 1,
