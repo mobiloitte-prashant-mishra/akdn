@@ -363,3 +363,15 @@ if(!jQuery(this).children('.image').length > 0) {
 }
 });
 
+// Show/hide twitter-instagram home page blocks
+var twitter_block = jQuery('.home-page-twitter-pane');
+var instagram_block = jQuery('.home-page-instagram-pane');
+var img = twitter_block.find('img');
+if (img.length) {
+  twitter_block.show();
+  instagram_block.hide();
+}
+else {
+  twitter_block.hide();
+  instagram_block.show();
+}

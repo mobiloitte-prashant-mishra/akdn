@@ -12764,7 +12764,9 @@ print $explode[1];
   $handler->display->display_options['fields']['field_tweet_media']['table'] = 'field_data_field_tweet_media';
   $handler->display->display_options['fields']['field_tweet_media']['field'] = 'field_tweet_media';
   $handler->display->display_options['fields']['field_tweet_media']['label'] = '';
+  $handler->display->display_options['fields']['field_tweet_media']['element_class'] = 'tweet-media';
   $handler->display->display_options['fields']['field_tweet_media']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_tweet_media']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_tweet_media']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_tweet_media']['settings'] = array(
     'image_style' => 'social_sharing_image',
@@ -13661,6 +13663,85 @@ print $explode[1];
     0 => '6496',
   );
   $handler->display->display_options['filters']['field_tags_tid']['vocabulary'] = 'tags';
+
+  /* Display: Instagram Feeds Home Page */
+  $handler = $view->new_display('block', 'Instagram Feeds Home Page', 'block_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'grid-social-block-instagram grid-social-block';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Picture */
+  $handler->display->display_options['fields']['field_instagram_picture']['id'] = 'field_instagram_picture';
+  $handler->display->display_options['fields']['field_instagram_picture']['table'] = 'field_data_field_instagram_picture';
+  $handler->display->display_options['fields']['field_instagram_picture']['field'] = 'field_instagram_picture';
+  $handler->display->display_options['fields']['field_instagram_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_instagram_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_instagram_picture']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_instagram_picture']['settings'] = array(
+    'image_style' => 'social_sharing_image',
+    'image_link' => '',
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['text'] = '<div class="title"><span class="social-icon-image"></span>Aga Khan Development Network <span>@AKDN</span></div>';
+  $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['path'] = 'www.instagram.com/baisane.rahul';
+  $handler->display->display_options['fields']['title']['alter']['external'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['target'] = '_blank';
+  $handler->display->display_options['fields']['title']['element_type'] = 'div';
+  $handler->display->display_options['fields']['title']['element_class'] = 'grid-social-block_title grid-social-block_title-instagram';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Post date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'node';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['label'] = '';
+  $handler->display->display_options['fields']['created']['element_type'] = 'div';
+  $handler->display->display_options['fields']['created']['element_class'] = 'grid-social-block_date grid-social-block_date-instagram';
+  $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['created']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['created']['date_format'] = 'date_only';
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['element_type'] = 'div';
+  $handler->display->display_options['fields']['body']['element_class'] = 'grid-social-block_body grid-social-block_body-instagram';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['element_wrapper_type'] = '0';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'instagram' => 'instagram',
+  );
   $translatables['facebook_feeds'] = array(
     t('Master'),
     t('Youtube feeds'),
@@ -13726,6 +13807,7 @@ print $explode[1];
 <span><a href="https://twitter.com/agakhanmusic" class="twitter-follow-button" data-show-count="false">Follow @agakhanmusic</a></span>
 </div>'),
     t('AKMI Youtube Home page'),
+    t('Instagram Feeds Home Page'),
   );
   $export['facebook_feeds'] = $view;
 
