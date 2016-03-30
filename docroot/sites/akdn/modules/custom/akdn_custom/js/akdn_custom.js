@@ -375,3 +375,7 @@ else {
   twitter_block.hide();
   instagram_block.show();
 }
+
+// Hide Active Languge name
+jQuery('.language-switcher-locale-url').find('.active').hide();
+
