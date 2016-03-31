@@ -6062,9 +6062,9 @@ print $output;
   $handler->display->display_options['fields']['field_audio']['element_class'] = 'akmi-related-artists-audio-icon';
   $handler->display->display_options['fields']['field_audio']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_audio']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_audio']['type'] = 'audiofield_nodownload';
+  $handler->display->display_options['fields']['field_audio']['type'] = 'file_download_link';
   $handler->display->display_options['fields']['field_audio']['settings'] = array(
-    'text' => 'Download',
+    'text' => 'Download [file:name]',
   );
   /* Field: Content: Related Videos */
   $handler->display->display_options['fields']['field_artist_related_videos']['id'] = 'field_artist_related_videos';
@@ -31436,6 +31436,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['label'] = '';
   $handler->display->display_options['fields']['title_field']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['title_field']['alter']['text'] = '[field_short_title]';
   $handler->display->display_options['fields']['title_field']['alter']['max_length'] = '55';
   $handler->display->display_options['fields']['title_field']['alter']['ellipsis'] = FALSE;
