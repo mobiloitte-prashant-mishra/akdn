@@ -31317,6 +31317,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['label'] = '';
   $handler->display->display_options['fields']['title_field']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['title_field']['alter']['text'] = '[field_short_title]';
   $handler->display->display_options['fields']['title_field']['alter']['max_length'] = '55';
   $handler->display->display_options['fields']['title_field']['alter']['ellipsis'] = FALSE;
