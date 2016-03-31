@@ -45,7 +45,7 @@
     border: 1px solid rgb(102, 102, 102) !important;
     float: left !important;
     margin: 0 !important;
-    width: 90px !important;
+    width: 150px !important;
 }
 .field-name-title-field {
     color: rgb(180,151,89) !important;
@@ -125,7 +125,7 @@
     position: relative !important;
     width: auto !important;
     margin: 0 0 5px 0 !important;
-    padding: 0 0 0 108px !important;
+    padding: 0 0 0 168px !important;
     float: none !important;
     /*text-align: justify;*/
     font-size: 100% !important;

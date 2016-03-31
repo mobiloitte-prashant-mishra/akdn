@@ -1524,6 +1524,7 @@ print $content;
   $handler->display->display_options['fields']['field_article_img']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_article_img']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_article_img']['alter']['path'] = '[field_media_source]';
+  $handler->display->display_options['fields']['field_article_img']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['field_article_img']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_article_img']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_article_img']['element_default_classes'] = FALSE;
@@ -1568,6 +1569,7 @@ print $content;
   $handler->display->display_options['fields']['field_short_title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_short_title']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_short_title']['alter']['path'] = '[field_media_source]';
+  $handler->display->display_options['fields']['field_short_title']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['field_short_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_short_title']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_short_title']['element_default_classes'] = FALSE;
@@ -6060,7 +6062,7 @@ print $output;
   $handler->display->display_options['fields']['field_audio']['element_class'] = 'akmi-related-artists-audio-icon';
   $handler->display->display_options['fields']['field_audio']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_audio']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_audio']['type'] = 'file_download_link';
+  $handler->display->display_options['fields']['field_audio']['type'] = 'audiofield_nodownload';
   $handler->display->display_options['fields']['field_audio']['settings'] = array(
     'text' => 'Download',
   );
@@ -8039,6 +8041,11 @@ print $content;
   $handler->display->display_options['fields']['nothing']['element_class'] = 'related-artist';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = '0';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
   $handler->display->display_options['path'] = 'akmi/instruments';
   $translatables['akmi_instrument_views'] = array(
     t('Master'),
@@ -10406,10 +10413,6 @@ print $output;
   $handler->display->display_options['sorts']['field_award_year_value']['table'] = 'field_data_field_award_year';
   $handler->display->display_options['sorts']['field_award_year_value']['field'] = 'field_award_year_value';
   $handler->display->display_options['sorts']['field_award_year_value']['order'] = 'DESC';
-  /* Sort criterion: Global: Random */
-  $handler->display->display_options['sorts']['random']['id'] = 'random';
-  $handler->display->display_options['sorts']['random']['table'] = 'views';
-  $handler->display->display_options['sorts']['random']['field'] = 'random';
   $handler->display->display_options['displays'] = array(
     'current_cycle_year_images' => 'current_cycle_year_images',
     'default' => 0,
@@ -12775,7 +12778,9 @@ print $explode[1];
   $handler->display->display_options['fields']['field_tweet_media']['table'] = 'field_data_field_tweet_media';
   $handler->display->display_options['fields']['field_tweet_media']['field'] = 'field_tweet_media';
   $handler->display->display_options['fields']['field_tweet_media']['label'] = '';
+  $handler->display->display_options['fields']['field_tweet_media']['element_class'] = 'tweet-media';
   $handler->display->display_options['fields']['field_tweet_media']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_tweet_media']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_tweet_media']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_tweet_media']['settings'] = array(
     'image_style' => 'social_sharing_image',
@@ -13672,6 +13677,88 @@ print $explode[1];
     0 => '6496',
   );
   $handler->display->display_options['filters']['field_tags_tid']['vocabulary'] = 'tags';
+
+  /* Display: Instagram Feeds Home Page */
+  $handler = $view->new_display('block', 'Instagram Feeds Home Page', 'block_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'grid-social-block-instagram grid-social-block';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Picture */
+  $handler->display->display_options['fields']['field_instagram_picture']['id'] = 'field_instagram_picture';
+  $handler->display->display_options['fields']['field_instagram_picture']['table'] = 'field_data_field_instagram_picture';
+  $handler->display->display_options['fields']['field_instagram_picture']['field'] = 'field_instagram_picture';
+  $handler->display->display_options['fields']['field_instagram_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_instagram_picture']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_instagram_picture']['element_class'] = 'grid-social-block_picture grid-social-block_picture-instagram';
+  $handler->display->display_options['fields']['field_instagram_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_instagram_picture']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_instagram_picture']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_instagram_picture']['settings'] = array(
+    'image_style' => 'instagram_feed_image',
+    'image_link' => '',
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['text'] = '<div class="title"><span class="social-icon-image"></span>Aga Khan Development Network <span>@AKDN</span></div>';
+  $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['path'] = 'www.instagram.com/baisane.rahul';
+  $handler->display->display_options['fields']['title']['alter']['external'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['target'] = '_blank';
+  $handler->display->display_options['fields']['title']['element_type'] = 'div';
+  $handler->display->display_options['fields']['title']['element_class'] = 'grid-social-block_title grid-social-block_title-instagram';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Post date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'node';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['label'] = '';
+  $handler->display->display_options['fields']['created']['element_type'] = 'div';
+  $handler->display->display_options['fields']['created']['element_class'] = 'grid-social-block_date grid-social-block_date-instagram';
+  $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['created']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['created']['date_format'] = 'date_only';
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['element_type'] = 'div';
+  $handler->display->display_options['fields']['body']['element_class'] = 'grid-social-block_body grid-social-block_body-instagram';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['element_wrapper_type'] = '0';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'instagram' => 'instagram',
+  );
   $translatables['facebook_feeds'] = array(
     t('Master'),
     t('Youtube feeds'),
@@ -13737,6 +13824,7 @@ print $explode[1];
 <span><a href="https://twitter.com/agakhanmusic" class="twitter-follow-button" data-show-count="false">Follow @agakhanmusic</a></span>
 </div>'),
     t('AKMI Youtube Home page'),
+    t('Instagram Feeds Home Page'),
   );
   $export['facebook_feeds'] = $view;
 
@@ -14799,12 +14887,13 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['filters']['type_1']['field'] = 'type';
   $handler->display->display_options['filters']['type_1']['value'] = array(
     'article' => 'article',
+    'page' => 'page',
     'event' => 'event',
     'gallery' => 'gallery',
     'podcast' => 'podcast',
-    'project' => 'project',
     'publication' => 'publication',
     'speech' => 'speech',
+    'project' => 'project',
   );
   $handler->display->display_options['filters']['type_1']['group'] = 2;
   /* Filter criterion: Content: Create Banner Item (field_create_featured_content) */
@@ -31228,6 +31317,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['label'] = '';
   $handler->display->display_options['fields']['title_field']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['title_field']['alter']['text'] = '[field_short_title]';
   $handler->display->display_options['fields']['title_field']['alter']['max_length'] = '55';
   $handler->display->display_options['fields']['title_field']['alter']['ellipsis'] = FALSE;
@@ -33210,6 +33300,80 @@ if ($data->node_type == "featured_content") {
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field: Thematic Area */
+  $handler->display->display_options['fields']['field_focus_area_1']['id'] = 'field_focus_area_1';
+  $handler->display->display_options['fields']['field_focus_area_1']['table'] = 'field_data_field_focus_area';
+  $handler->display->display_options['fields']['field_focus_area_1']['field'] = 'field_focus_area';
+  $handler->display->display_options['fields']['field_focus_area_1']['label'] = '';
+  $handler->display->display_options['fields']['field_focus_area_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_focus_area_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_focus_area_1']['alter']['text'] = '-T';
+  $handler->display->display_options['fields']['field_focus_area_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_focus_area_1']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_focus_area_1']['delta_offset'] = '0';
+  /* Field: Field: Agency */
+  $handler->display->display_options['fields']['field_agency_1']['id'] = 'field_agency_1';
+  $handler->display->display_options['fields']['field_agency_1']['table'] = 'field_data_field_agency';
+  $handler->display->display_options['fields']['field_agency_1']['field'] = 'field_agency';
+  $handler->display->display_options['fields']['field_agency_1']['label'] = '';
+  $handler->display->display_options['fields']['field_agency_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_agency_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_agency_1']['alter']['text'] = '-A';
+  $handler->display->display_options['fields']['field_agency_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_agency_1']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_agency_1']['delta_offset'] = '0';
+  /* Field: Field: Geography */
+  $handler->display->display_options['fields']['field_country_1']['id'] = 'field_country_1';
+  $handler->display->display_options['fields']['field_country_1']['table'] = 'field_data_field_country';
+  $handler->display->display_options['fields']['field_country_1']['field'] = 'field_country';
+  $handler->display->display_options['fields']['field_country_1']['label'] = '';
+  $handler->display->display_options['fields']['field_country_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_country_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_country_1']['alter']['text'] = '-G';
+  $handler->display->display_options['fields']['field_country_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_country_1']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_country_1']['delta_offset'] = '0';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<h2 class="pane-title hide[field_country_1][field_agency_1][field_focus_area_1]">MORE SPOTLIGHTS BY:</h2>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Field: Field: Geography */
+  $handler->display->display_options['fields']['field_country']['id'] = 'field_country';
+  $handler->display->display_options['fields']['field_country']['table'] = 'field_data_field_country';
+  $handler->display->display_options['fields']['field_country']['field'] = 'field_country';
+  $handler->display->display_options['fields']['field_country']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_country']['alter']['text'] = '<a href="/press-centre/projects?f[0]=field_country:[field_country-tid]">[field_country]</a>';
+  $handler->display->display_options['fields']['field_country']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_country']['element_label_type'] = 'span';
+  $handler->display->display_options['fields']['field_country']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_country']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_country']['delta_offset'] = '0';
+  /* Field: Field: Agency */
+  $handler->display->display_options['fields']['field_agency']['id'] = 'field_agency';
+  $handler->display->display_options['fields']['field_agency']['table'] = 'field_data_field_agency';
+  $handler->display->display_options['fields']['field_agency']['field'] = 'field_agency';
+  $handler->display->display_options['fields']['field_agency']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_agency']['alter']['text'] = '<a href="/press-centre/projects?f[0]=field_agency:[field_agency-tid]">[field_agency]</a>';
+  $handler->display->display_options['fields']['field_agency']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_agency']['element_label_type'] = 'span';
+  $handler->display->display_options['fields']['field_agency']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_agency']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_agency']['delta_offset'] = '0';
+  /* Field: Field: Thematic Area */
+  $handler->display->display_options['fields']['field_focus_area']['id'] = 'field_focus_area';
+  $handler->display->display_options['fields']['field_focus_area']['table'] = 'field_data_field_focus_area';
+  $handler->display->display_options['fields']['field_focus_area']['field'] = 'field_focus_area';
+  $handler->display->display_options['fields']['field_focus_area']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_focus_area']['alter']['text'] = '<a href="/press-centre/projects?f[0]=field_focus_area:[field_focus_area-tid]">[field_focus_area]</a>';
+  $handler->display->display_options['fields']['field_focus_area']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_focus_area']['element_label_type'] = 'span';
+  $handler->display->display_options['fields']['field_focus_area']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_focus_area']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_focus_area']['delta_offset'] = '0';
   $translatables['project_pages'] = array(
     t('Master'),
     t('more'),
@@ -33230,6 +33394,7 @@ if ($data->node_type == "featured_content") {
     t('<a href="/press-centre/projects?f[0]=field_focus_area:[field_focus_area-tid]">[field_focus_area]</a>'),
     t('All'),
     t('Block'),
+    t('<h2 class="pane-title hide[field_country_1][field_agency_1][field_focus_area_1]">MORE SPOTLIGHTS BY:</h2>'),
   );
   $export['project_pages'] = $view;
 
