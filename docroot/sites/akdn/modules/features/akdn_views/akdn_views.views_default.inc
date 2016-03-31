@@ -6062,7 +6062,7 @@ print $output;
   $handler->display->display_options['fields']['field_audio']['element_class'] = 'akmi-related-artists-audio-icon';
   $handler->display->display_options['fields']['field_audio']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_audio']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_audio']['type'] = 'file_download_link';
+  $handler->display->display_options['fields']['field_audio']['type'] = 'audiofield_nodownload';
   $handler->display->display_options['fields']['field_audio']['settings'] = array(
     'text' => 'Download',
   );
