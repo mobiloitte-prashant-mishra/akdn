@@ -278,7 +278,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
       'description_field' => 0,
       'entity_translation_sync' => FALSE,
       'file_directory' => '',
-      'file_extensions' => 'mp3',
+      'file_extensions' => 'mp3 aif aiff',
       'filefield_paths' => array(
         'active_updating' => 0,
         'file_name' => array(
