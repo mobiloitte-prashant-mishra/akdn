@@ -13699,10 +13699,13 @@ print $explode[1];
   $handler->display->display_options['fields']['field_instagram_picture']['table'] = 'field_data_field_instagram_picture';
   $handler->display->display_options['fields']['field_instagram_picture']['field'] = 'field_instagram_picture';
   $handler->display->display_options['fields']['field_instagram_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_instagram_picture']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_instagram_picture']['element_class'] = 'grid-social-block_picture grid-social-block_picture-instagram';
   $handler->display->display_options['fields']['field_instagram_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_instagram_picture']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_instagram_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_instagram_picture']['settings'] = array(
-    'image_style' => 'social_sharing_image',
+    'image_style' => 'instagram_feed_image',
     'image_link' => '',
   );
   /* Field: Content: Title */
