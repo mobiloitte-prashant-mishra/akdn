@@ -6062,7 +6062,7 @@ print $output;
   $handler->display->display_options['fields']['field_audio']['element_class'] = 'akmi-related-artists-audio-icon';
   $handler->display->display_options['fields']['field_audio']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_audio']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_audio']['type'] = 'file_download_link';
+  $handler->display->display_options['fields']['field_audio']['type'] = 'audiofield_nodownload';
   $handler->display->display_options['fields']['field_audio']['settings'] = array(
     'text' => 'Download',
   );
@@ -14884,12 +14884,13 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['filters']['type_1']['field'] = 'type';
   $handler->display->display_options['filters']['type_1']['value'] = array(
     'article' => 'article',
+    'page' => 'page',
     'event' => 'event',
     'gallery' => 'gallery',
     'podcast' => 'podcast',
-    'project' => 'project',
     'publication' => 'publication',
     'speech' => 'speech',
+    'project' => 'project',
   );
   $handler->display->display_options['filters']['type_1']['group'] = 2;
   /* Filter criterion: Content: Create Banner Item (field_create_featured_content) */
