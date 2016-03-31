@@ -1614,7 +1614,7 @@ function what_we_do_news_and_resources() {
           'alt' => $image[0]['alt'],
           'title' => $image[0]['title'],
         );
-        $img = theme('image_style', $accordian_image);        
+        $img = theme('image_style', $accordian_image);
         if ($name == 'In the media') {
         	$output .= '<div class= "image">' . l($img, $source, array( 'attributes' => array('target'=>'_blank'), 'html' => TRUE)) . '</div>';
         }
@@ -1625,7 +1625,7 @@ function what_we_do_news_and_resources() {
       $output .= '<div class= "type">' . $type . '</div>';
       $output .= '<div class= "date">' . date('d F Y', $node->field_publish_date[key($node->field_publish_date)][0]['value']) . '</div>';
       if ($name == 'In the media') {
-      	$output .= '<div class= "title">' . l($node->field_short_title[key($node->field_short_title)][0]['value'], $source, $attribute) . '</div>';	
+      	$output .= '<div class= "title">' . l($node->field_short_title[key($node->field_short_title)][0]['value'], $source, $attribute) . '</div>';
       }
       else {
       	$output .= '<div class= "title">' . l($node->field_short_title[key($node->field_short_title)][0]['value'], 'node/' . $node->nid) . '</div>';
@@ -3266,5 +3266,20 @@ function akdn_custom_node_update($node) {
       'language' => $node->language,
     );
     path_save($path);
+  }
+}
+
+/*
+ *
+ implements hook_facet_items_alter(&$build, &$settings)
+ */
+
+function akdn_custom_facet_items_alter(&$build, &$settings) {
+  if ($settings->facet == "entity_type") {
+    foreach($build as $key => $item) {
+      if($key == 'project') {
+        $build[$key]["#markup"] = 'Spotlights';
+      }
+    }
   }
 }

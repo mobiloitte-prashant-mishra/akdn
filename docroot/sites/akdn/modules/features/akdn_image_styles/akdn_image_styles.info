@@ -22,6 +22,7 @@ features[image][] = focus_area_listing
 features[image][] = gallery_thumbnail
 features[image][] = half_width
 features[image][] = inline_half_with
+features[image][] = instagram_feed_image
 features[image][] = mail_shot_image_cache
 features[image][] = mini_feature
 features[image][] = photo_thumb
