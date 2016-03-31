@@ -59,7 +59,7 @@ function _akmi_custom_social_sharing_block() {
   //get latest stay connections facebook
   $content = views_embed_view('facebook_feeds', 'akmi_facebook');
   //get latest stay connections Twitter
-  $content .= views_embed_view('facebook_feeds', 'akmi_twitter');
+  $content .= views_embed_view('award_cycle', 'vimeo_video');
   //get latest stay connections Youtube
   $content .= views_embed_view('facebook_feeds', 'akmi_youtube');
   return $content;

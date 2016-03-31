@@ -6062,9 +6062,9 @@ print $output;
   $handler->display->display_options['fields']['field_audio']['element_class'] = 'akmi-related-artists-audio-icon';
   $handler->display->display_options['fields']['field_audio']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_audio']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_audio']['type'] = 'audiofield_nodownload';
+  $handler->display->display_options['fields']['field_audio']['type'] = 'file_download_link';
   $handler->display->display_options['fields']['field_audio']['settings'] = array(
-    'text' => 'Download',
+    'text' => 'Download [file:name]',
   );
   /* Field: Content: Related Videos */
   $handler->display->display_options['fields']['field_artist_related_videos']['id'] = 'field_artist_related_videos';
@@ -10863,6 +10863,123 @@ print $explode[1];
     0 => '9496',
   );
   $handler->display->display_options['filters']['field_tags_tid']['vocabulary'] = 'tags';
+
+  /* Display: AKMI Vimeo Video */
+  $handler = $view->new_display('block', 'AKMI Vimeo Video', 'vimeo_video');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'AKMI Vimeo Video';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'grid-social-block-facebook grid-social-block';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Video Llink */
+  $handler->display->display_options['fields']['field_short_video_llink']['id'] = 'field_short_video_llink';
+  $handler->display->display_options['fields']['field_short_video_llink']['table'] = 'field_data_field_short_video_llink';
+  $handler->display->display_options['fields']['field_short_video_llink']['field'] = 'field_short_video_llink';
+  $handler->display->display_options['fields']['field_short_video_llink']['label'] = '';
+  $handler->display->display_options['fields']['field_short_video_llink']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_short_video_llink']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_short_video_llink']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_short_video_llink']['type'] = 'link_url';
+  /* Field: Global: PHP */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php
+$node = node_load($row->field_short_video_llink);
+$video = reset($node->field_short_video_llink)[0][\'url\'];
+$explode = explode(\'vimeo.com/\', $video);
+print $explode[1];
+?>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Field: Content: Video Image */
+  $handler->display->display_options['fields']['field_short_video_image']['id'] = 'field_short_video_image';
+  $handler->display->display_options['fields']['field_short_video_image']['table'] = 'field_data_field_short_video_image';
+  $handler->display->display_options['fields']['field_short_video_image']['field'] = 'field_short_video_image';
+  $handler->display->display_options['fields']['field_short_video_image']['label'] = '';
+  $handler->display->display_options['fields']['field_short_video_image']['alter']['text'] = '<img src = "http://img.youtube.com/vi/[php]/0.jpg">
+[php]';
+  $handler->display->display_options['fields']['field_short_video_image']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_short_video_image']['alter']['path'] = 'http://player.vimeo.com/video/[php]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0';
+  $handler->display->display_options['fields']['field_short_video_image']['alter']['link_class'] = 'colorbox-inline';
+  $handler->display->display_options['fields']['field_short_video_image']['alter']['prefix'] = '<span class="youtube-play-button"></span>';
+  $handler->display->display_options['fields']['field_short_video_image']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_short_video_image']['element_class'] = 'grid-social-block_picture grid-social-block_picture-youtube';
+  $handler->display->display_options['fields']['field_short_video_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_short_video_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_short_video_image']['settings'] = array(
+    'image_style' => 'social_sharing_image',
+    'image_link' => '',
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['text'] = '<a class="colorbox-inline" href="http://player.vimeo.com/video/[php]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0">[title]</a>';
+  $handler->display->display_options['fields']['title']['alter']['path'] = 'https://www.youtube.com/embed/[php]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0';
+  $handler->display->display_options['fields']['title']['alter']['link_class'] = 'colorbox-inline init-colorbox-inline-processed cboxElement';
+  $handler->display->display_options['fields']['title']['element_type'] = 'div';
+  $handler->display->display_options['fields']['title']['element_class'] = 'akaa-cycle-title';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['type'] = 'smart_trim_format';
+  $handler->display->display_options['fields']['body']['settings'] = array(
+    'trim_length' => '200',
+    'trim_type' => 'words',
+    'trim_suffix' => '...',
+    'more_link' => '0',
+    'more_text' => 'Read more',
+    'summary_handler' => 'full',
+    'trim_options' => array(
+      'text' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'custom_header_block' => 'custom_header_block',
+  );
+  /* Filter criterion: Field: Tags (field_tags) */
+  $handler->display->display_options['filters']['field_tags_tid']['id'] = 'field_tags_tid';
+  $handler->display->display_options['filters']['field_tags_tid']['table'] = 'field_data_field_tags';
+  $handler->display->display_options['filters']['field_tags_tid']['field'] = 'field_tags_tid';
+  $handler->display->display_options['filters']['field_tags_tid']['value'] = array(
+    0 => '9511',
+  );
+  $handler->display->display_options['filters']['field_tags_tid']['vocabulary'] = 'tags';
   $translatables['award_cycle'] = array(
     t('Master'),
     t('Previous Cycles'),
@@ -10912,6 +11029,8 @@ print $explode[1];
     t('AKMI Short Video'),
     t('AKMI Textbook Home'),
     t('<div class="akaa-icon-title"><a href="[field_header_link_1]">icon</a></div>'),
+    t('AKMI Vimeo Video'),
+    t('<a class="colorbox-inline" href="http://player.vimeo.com/video/[php]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0">[title]</a>'),
   );
   $export['award_cycle'] = $view;
 
@@ -31317,6 +31436,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['label'] = '';
   $handler->display->display_options['fields']['title_field']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['title_field']['alter']['text'] = '[field_short_title]';
   $handler->display->display_options['fields']['title_field']['alter']['max_length'] = '55';
   $handler->display->display_options['fields']['title_field']['alter']['ellipsis'] = FALSE;
@@ -33299,6 +33419,80 @@ if ($data->node_type == "featured_content") {
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field: Thematic Area */
+  $handler->display->display_options['fields']['field_focus_area_1']['id'] = 'field_focus_area_1';
+  $handler->display->display_options['fields']['field_focus_area_1']['table'] = 'field_data_field_focus_area';
+  $handler->display->display_options['fields']['field_focus_area_1']['field'] = 'field_focus_area';
+  $handler->display->display_options['fields']['field_focus_area_1']['label'] = '';
+  $handler->display->display_options['fields']['field_focus_area_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_focus_area_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_focus_area_1']['alter']['text'] = '-T';
+  $handler->display->display_options['fields']['field_focus_area_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_focus_area_1']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_focus_area_1']['delta_offset'] = '0';
+  /* Field: Field: Agency */
+  $handler->display->display_options['fields']['field_agency_1']['id'] = 'field_agency_1';
+  $handler->display->display_options['fields']['field_agency_1']['table'] = 'field_data_field_agency';
+  $handler->display->display_options['fields']['field_agency_1']['field'] = 'field_agency';
+  $handler->display->display_options['fields']['field_agency_1']['label'] = '';
+  $handler->display->display_options['fields']['field_agency_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_agency_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_agency_1']['alter']['text'] = '-A';
+  $handler->display->display_options['fields']['field_agency_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_agency_1']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_agency_1']['delta_offset'] = '0';
+  /* Field: Field: Geography */
+  $handler->display->display_options['fields']['field_country_1']['id'] = 'field_country_1';
+  $handler->display->display_options['fields']['field_country_1']['table'] = 'field_data_field_country';
+  $handler->display->display_options['fields']['field_country_1']['field'] = 'field_country';
+  $handler->display->display_options['fields']['field_country_1']['label'] = '';
+  $handler->display->display_options['fields']['field_country_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_country_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_country_1']['alter']['text'] = '-G';
+  $handler->display->display_options['fields']['field_country_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_country_1']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_country_1']['delta_offset'] = '0';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<h2 class="pane-title hide[field_country_1][field_agency_1][field_focus_area_1]">MORE SPOTLIGHTS BY:</h2>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Field: Field: Geography */
+  $handler->display->display_options['fields']['field_country']['id'] = 'field_country';
+  $handler->display->display_options['fields']['field_country']['table'] = 'field_data_field_country';
+  $handler->display->display_options['fields']['field_country']['field'] = 'field_country';
+  $handler->display->display_options['fields']['field_country']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_country']['alter']['text'] = '<a href="/press-centre/projects?f[0]=field_country:[field_country-tid]">[field_country]</a>';
+  $handler->display->display_options['fields']['field_country']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_country']['element_label_type'] = 'span';
+  $handler->display->display_options['fields']['field_country']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_country']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_country']['delta_offset'] = '0';
+  /* Field: Field: Agency */
+  $handler->display->display_options['fields']['field_agency']['id'] = 'field_agency';
+  $handler->display->display_options['fields']['field_agency']['table'] = 'field_data_field_agency';
+  $handler->display->display_options['fields']['field_agency']['field'] = 'field_agency';
+  $handler->display->display_options['fields']['field_agency']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_agency']['alter']['text'] = '<a href="/press-centre/projects?f[0]=field_agency:[field_agency-tid]">[field_agency]</a>';
+  $handler->display->display_options['fields']['field_agency']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_agency']['element_label_type'] = 'span';
+  $handler->display->display_options['fields']['field_agency']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_agency']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_agency']['delta_offset'] = '0';
+  /* Field: Field: Thematic Area */
+  $handler->display->display_options['fields']['field_focus_area']['id'] = 'field_focus_area';
+  $handler->display->display_options['fields']['field_focus_area']['table'] = 'field_data_field_focus_area';
+  $handler->display->display_options['fields']['field_focus_area']['field'] = 'field_focus_area';
+  $handler->display->display_options['fields']['field_focus_area']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_focus_area']['alter']['text'] = '<a href="/press-centre/projects?f[0]=field_focus_area:[field_focus_area-tid]">[field_focus_area]</a>';
+  $handler->display->display_options['fields']['field_focus_area']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_focus_area']['element_label_type'] = 'span';
+  $handler->display->display_options['fields']['field_focus_area']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_focus_area']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_focus_area']['delta_offset'] = '0';
   $translatables['project_pages'] = array(
     t('Master'),
     t('more'),
@@ -33319,6 +33513,7 @@ if ($data->node_type == "featured_content") {
     t('<a href="/press-centre/projects?f[0]=field_focus_area:[field_focus_area-tid]">[field_focus_area]</a>'),
     t('All'),
     t('Block'),
+    t('<h2 class="pane-title hide[field_country_1][field_agency_1][field_focus_area_1]">MORE SPOTLIGHTS BY:</h2>'),
   );
   $export['project_pages'] = $view;
 
