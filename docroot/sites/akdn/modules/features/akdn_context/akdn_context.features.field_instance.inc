@@ -596,6 +596,12 @@ function akdn_context_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 12,
       ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -792,6 +798,12 @@ function akdn_context_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 24,
       ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -833,6 +845,12 @@ function akdn_context_field_default_field_instances() {
         'settings' => array(),
         'type' => 'link_default',
         'weight' => 26,
+      ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -889,6 +907,12 @@ function akdn_context_field_default_field_instances() {
         'settings' => array(),
         'type' => 'link_default',
         'weight' => 24,
+      ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
