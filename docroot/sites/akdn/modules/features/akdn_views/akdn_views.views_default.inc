@@ -10925,19 +10925,25 @@ print $explode[1];
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['text'] = '<a class="colorbox-inline" href="http://player.vimeo.com/video/[php]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0">[title]</a>';
+  $handler->display->display_options['fields']['title']['alter']['text'] = '<div class="title">
+<a class="colorbox-inline" href="http://player.vimeo.com/video/[php]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0"><span class="social-icon-image"></span>[title]</a>
+</div>';
   $handler->display->display_options['fields']['title']['alter']['path'] = 'https://www.youtube.com/embed/[php]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0';
   $handler->display->display_options['fields']['title']['alter']['link_class'] = 'colorbox-inline init-colorbox-inline-processed cboxElement';
   $handler->display->display_options['fields']['title']['element_type'] = 'div';
-  $handler->display->display_options['fields']['title']['element_class'] = 'akaa-cycle-title';
+  $handler->display->display_options['fields']['title']['element_class'] = 'grid-social-block_title grid-social-block_title-vimeo';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['element_type'] = 'div';
+  $handler->display->display_options['fields']['body']['element_class'] = 'grid-social-block_body grid-social-block_body-vimeo';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['body']['type'] = 'smart_trim_format';
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_length' => '200',
@@ -11030,7 +11036,9 @@ print $explode[1];
     t('AKMI Textbook Home'),
     t('<div class="akaa-icon-title"><a href="[field_header_link_1]">icon</a></div>'),
     t('AKMI Vimeo Video'),
-    t('<a class="colorbox-inline" href="http://player.vimeo.com/video/[php]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0">[title]</a>'),
+    t('<div class="title">
+<a class="colorbox-inline" href="http://player.vimeo.com/video/[php]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0"><span class="social-icon-image"></span>[title]</a>
+</div>'),
   );
   $export['award_cycle'] = $view;
 
