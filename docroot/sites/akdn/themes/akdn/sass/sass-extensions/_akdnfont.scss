@@ -316,3 +316,23 @@
         content: $icon-volume-medium;
     }
 }
+.icon-vimeo {
+    &:before {
+        content: $icon-vimeo;
+    }
+}
+.icon-vimeo-square {
+    &:before {
+        content: $icon-vimeo-square;
+    }
+}
+.icon-vimeo-with-circle {
+    &:before {
+        content: $icon-vimeo-with-circle;
+    }
+}
+.icon-vimeo2 {
+    &:before {
+        content: $icon-vimeo2;
+    }
+}

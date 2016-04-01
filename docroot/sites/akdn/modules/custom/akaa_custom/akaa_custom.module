@@ -139,7 +139,7 @@ function _akaa_see_also_block() {
           $key = $value;
         }
         $output .= '<li class = "rows">';
-        $param = '?f[0]=entity_type:' . $key . '&f[1]=field_cycle_year:' . $cycle_tid;
+        $param = '?f[0]=entity_type:' . $key;
         $url = $path . $param;
         $output .= '<a href="' .$url . '">' . $value . '</a>';
         $output .= '</li>';
@@ -156,25 +156,21 @@ function _akaa_see_also_block() {
 }
 
 function _akaa_node_count($key, $tid, $cid) {
-
   if (is_numeric($key)) {
     $type = 'article';
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'node')
       ->entityCondition('bundle', $type)
       ->fieldCondition('field_tags', 'tid', $tid)
-      ->fieldCondition('field_article_cat', 'tid', $key)
-      ->fieldCondition('field_cycle_year', 'tid', $cid);
+      ->fieldCondition('field_article_cat', 'tid', $key);
     $result = $query->count()->execute();
   }
   else {
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'node')
       ->entityCondition('bundle', $key)
-      ->fieldCondition('field_tags', 'tid', $tid)
-      ->fieldCondition('field_cycle_year', 'tid', $cid);
+      ->fieldCondition('field_tags', 'tid', $tid);
     $result = $query->count()->execute();
-
   }
   return $result;
 }
