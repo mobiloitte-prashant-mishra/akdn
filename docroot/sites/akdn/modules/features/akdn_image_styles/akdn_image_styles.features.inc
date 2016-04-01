@@ -532,7 +532,7 @@ function akdn_image_styles_image_default_styles() {
   // Exported image style: inline_half_with.
   $styles['inline_half_with'] = array(
     'name' => 'inline_half_with',
-    'label' => 'Inline half with',
+    'label' => 'Inline half width',
     'effects' => array(
       217 => array(
         'label' => 'Manual Crop: Custom crop',
