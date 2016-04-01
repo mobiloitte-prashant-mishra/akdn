@@ -524,7 +524,7 @@ search/*',
     'delta' => 'all_areas_of_activity',
     'module' => 'akdn_custom',
     'node_types' => array(),
-    'pages' => '',
+    'pages' => '/akdn-social',
     'roles' => array(),
     'themes' => array(
       'akdn' => array(
