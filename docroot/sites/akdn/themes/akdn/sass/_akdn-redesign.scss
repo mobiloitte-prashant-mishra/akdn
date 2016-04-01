@@ -747,7 +747,8 @@ h1.title {
         }
     }
 }
-.grid-social-block_title-youtube {
+.grid-social-block_title-youtube, 
+.grid-social-block_title-vimeo {
     .title {
         font-weight: bold;
     }
@@ -838,6 +839,33 @@ h1.title {
             border-radius: 0;
         } 
     }
+}
+.grid-social-block_title-vimeo {
+    .title {
+        a {
+            color: #000;
+            text-decoration: none;
+            &:hover, &:focus {
+                text-decoration: none;
+            }
+        }
+    }
+    .social-icon-image {
+        @extend .icon-vimeo;
+        width: 44px;
+        height: 45px;
+        margin: 0 auto;
+        background: #fff;
+        border-radius: 15px;
+        &:before {
+            color: #1ab7ea;
+            line-height: 45px;
+            font-size: 46px;
+        }
+    }
+}
+.grid-social-block_body-vimeo {
+    margin-bottom: 15px;
 }
 .grid-social-block_date {
     @extend %social_wrap;
@@ -7223,4 +7251,11 @@ map {
     width : 50px !important;
     height : 20px !important;
     overflow : hidden;
+}
+
+//akdn logo wrapper
+.akdn-logo-wrap {
+    width: 120px; 
+    height: 55px;
+    background: image-url("akdn-logo.png") no-repeat; 
 }

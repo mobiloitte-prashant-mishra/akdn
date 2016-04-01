@@ -177,7 +177,7 @@ E-mail: akmi@akdn.org';
   $fe_block_boxes->info = 'Site Logo';
   $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'site_logo';
-  $fe_block_boxes->body = '<div style="background-image: url(\'/sites/akdn/themes/akdn/images/akdn-logo.png\'); background-repeat: no-repeat; width: 120px; height: 55px;"><a href="/" title="AKDN"><img src="/sites/akdn/themes/akdn/images/transparent_img.png" style="width: 120px; height: 55px;"></a></div>';
+  $fe_block_boxes->body = '<div class="akdn-logo-wrap"><a href="/" title="AKDN"><img src="/sites/akdn/themes/akdn/images/transparent_img.png" style="width: 120px; height: 55px;"></a></div>';
 
   $export['site_logo'] = $fe_block_boxes;
 
