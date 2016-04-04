@@ -119,7 +119,7 @@ function _akaa_see_also_block() {
     '4' => 'Press Releases',
     'publication' => 'Publications',
     'speech' => 'Speeches',
-    'Video' => 'Videos',
+    'podcast' => 'Videos',
     'gallery' => 'Photographs',
     'event' => 'Events',
     'project' => 'Project Locations'

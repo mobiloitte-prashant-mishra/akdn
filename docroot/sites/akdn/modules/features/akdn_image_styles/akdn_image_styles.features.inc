@@ -532,7 +532,7 @@ function akdn_image_styles_image_default_styles() {
   // Exported image style: inline_half_with.
   $styles['inline_half_with'] = array(
     'name' => 'inline_half_with',
-    'label' => 'Inline half with',
+    'label' => 'Inline half width',
     'effects' => array(
       217 => array(
         'label' => 'Manual Crop: Custom crop',
@@ -758,9 +758,9 @@ function akdn_image_styles_image_default_styles() {
   // Exported image style: publication_listing_image.
   $styles['publication_listing_image'] = array(
     'name' => 'publication_listing_image',
-    'label' => 'Publication Listing Iimage',
+    'label' => 'Publication Listing Image',
     'effects' => array(
-      221 => array(
+      219 => array(
         'label' => 'Manual Crop: Custom crop',
         'help' => 'Crop a freely user-selected area.',
         'effect callback' => 'manualcrop_crop_effect',
@@ -777,7 +777,7 @@ function akdn_image_styles_image_default_styles() {
         ),
         'weight' => 0,
       ),
-      226 => array(
+      220 => array(
         'label' => 'Scale and crop',
         'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
         'effect callback' => 'image_scale_and_crop_effect',

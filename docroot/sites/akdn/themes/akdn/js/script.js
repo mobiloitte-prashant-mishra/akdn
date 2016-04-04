@@ -829,8 +829,8 @@
       );
     }
   });
-
-
+  // To remove extra 10px margin from font-size 
+  jQuery("[style='font-size: x-small;']").css("margin", "0px");
   }
 }
 
