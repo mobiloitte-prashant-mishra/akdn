@@ -28474,6 +28474,7 @@ print $content;
   $handler->display->display_options['fields']['field_image_caption']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_image_caption']['alter']['max_length'] = '75';
   $handler->display->display_options['fields']['field_image_caption']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['field_image_caption']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['field_image_caption']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image_caption']['type'] = 'text_plain';
   /* Field: Content: Images */
@@ -28517,13 +28518,6 @@ print $content;
     'project' => 'project',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Language */
-  $handler->display->display_options['filters']['language']['id'] = 'language';
-  $handler->display->display_options['filters']['language']['table'] = 'node';
-  $handler->display->display_options['filters']['language']['field'] = 'language';
-  $handler->display->display_options['filters']['language']['value'] = array(
-    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
-  );
   $handler->display->display_options['block_description'] = 'Projects Detail Slideshow';
 
   /* Display: Events Details Slideshow */
@@ -28558,6 +28552,7 @@ print $content;
   $handler->display->display_options['fields']['field_image_caption']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_image_caption']['alter']['max_length'] = '75';
   $handler->display->display_options['fields']['field_image_caption']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['field_image_caption']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['field_image_caption']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image_caption']['type'] = 'text_plain';
   /* Field: Global: Custom text */
@@ -28587,13 +28582,6 @@ print $content;
     'event' => 'event',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Language */
-  $handler->display->display_options['filters']['language']['id'] = 'language';
-  $handler->display->display_options['filters']['language']['table'] = 'node';
-  $handler->display->display_options['filters']['language']['field'] = 'language';
-  $handler->display->display_options['filters']['language']['value'] = array(
-    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
-  );
   $handler->display->display_options['block_description'] = 'Events Detail Slideshow';
 
   /* Display: Speech Details Slideshow */
