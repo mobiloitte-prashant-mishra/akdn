@@ -7949,7 +7949,19 @@ if (isset($node->field_about_page)) {
     $pane->type = 'views';
     $pane->subtype = 'hub_pages';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '0',
+            'paths' => 'akdn-social',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
+      ),
+    );
     $pane->configuration = array(
       'override_pager_settings' => 0,
       'use_pager' => 0,
@@ -7990,7 +8002,19 @@ if (isset($node->field_about_page)) {
     $pane->type = 'block';
     $pane->subtype = 'akdn_custom-all_areas_of_activity';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        1 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '0',
+            'paths' => 'akdn-social',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
+      ),
+    );
     $pane->configuration = array(
       'override_title' => 0,
       'override_title_text' => '',
@@ -8012,7 +8036,19 @@ if (isset($node->field_about_page)) {
     $pane->type = 'views';
     $pane->subtype = 'hub_pages';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '1',
+            'paths' => 'akdn-social',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
+      ),
+    );
     $pane->configuration = array(
       'override_pager_settings' => 0,
       'use_pager' => 0,
@@ -8052,7 +8088,19 @@ if (isset($node->field_about_page)) {
     $pane->type = 'block';
     $pane->subtype = 'akdn_custom-right_panel_press_center_block';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '0',
+            'paths' => 'akdn-social',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
+      ),
+    );
     $pane->configuration = array(
       'override_title' => 0,
       'override_title_text' => '',
