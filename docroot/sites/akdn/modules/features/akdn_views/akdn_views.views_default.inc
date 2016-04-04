@@ -28446,7 +28446,6 @@ print $content;
   $handler->display->display_options['fields']['field_image_caption']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_image_caption']['alter']['max_length'] = '75';
   $handler->display->display_options['fields']['field_image_caption']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['field_image_caption']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['field_image_caption']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image_caption']['type'] = 'text_plain';
   /* Field: Content: Images */
@@ -28531,7 +28530,6 @@ print $content;
   $handler->display->display_options['fields']['field_image_caption']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_image_caption']['alter']['max_length'] = '75';
   $handler->display->display_options['fields']['field_image_caption']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['field_image_caption']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['field_image_caption']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image_caption']['type'] = 'text_plain';
   /* Field: Global: Custom text */
