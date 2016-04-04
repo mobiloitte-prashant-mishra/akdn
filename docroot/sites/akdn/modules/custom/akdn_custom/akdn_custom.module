@@ -204,6 +204,22 @@ function akdn_custom_views_query_alter(&$view, &$query) {
     $lang = $language->language;
     $query->where[0]['conditions'][1]['value'][':field_data_field_article_img_field_article_img'] = array($lang);
   }
+  if ($view->name == 'press_center_detail_page_slideshows' && $view->current_display == 'block_1') {
+    global $language;
+    $lang = $language->language;
+    $query->where[0]['conditions'][1]['value'][':field_data_field_project_image_field_project_image'] = array($lang);
+  }
+  if ($view->name == 'press_center_detail_page_slideshows' && $view->current_display == 'block_2') {
+    global $language;
+    $lang = $language->language;
+    $query->where[0]['conditions'][1]['value'][':field_data_field_event_image_field_event_image'] = array($lang);
+  }
+  if ($view->name == 'press_center_detail_page_slideshows' && $view->current_display == 'block_3') {
+    global $language;
+    $lang = $language->language;
+    $query->where[0]['conditions'][1]['value'][':field_data_field_speech_image_field_speech_image'] = array($lang);
+  }
+
 }
 
 /**
