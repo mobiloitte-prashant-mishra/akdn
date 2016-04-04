@@ -210,6 +210,14 @@ function akdn_custom_views_query_alter(&$view, &$query) {
  * Implements hook_views_pre_render().
  */
 function akdn_custom_views_pre_render(&$view) {
+  // Open 'In the media type links in new tab'
+  if ($view->name == 'featured_slideshow' && $view->current_display == 'block_2') {
+    foreach ($view->result as $result) {
+      if ($result->field_field_article_cat[0]['rendered']['#markup'] == 'In the media') {
+            $result->field_field_feature_image[0]['rendered']['#path']['path'] = $result->field_field_media_source[0]['rendered']['#element']['url'];
+      }
+    }
+  }
   //Disabled This as it is not neeed now. handled through function call akdn_custom_nodes_to_exclude_pagewise at the desired block or page view definition
   return '';
   $node = menu_get_object();
@@ -1625,7 +1633,7 @@ function what_we_do_news_and_resources() {
       $output .= '<div class= "type">' . $type . '</div>';
       $output .= '<div class= "date">' . date('d F Y', $node->field_publish_date[key($node->field_publish_date)][0]['value']) . '</div>';
       if ($name == 'In the media') {
-      	$output .= '<div class= "title">' . l($node->field_short_title[key($node->field_short_title)][0]['value'], $source, $attribute) . '</div>';
+       $output .= '<div class= "title">' . l($node->field_short_title[key($node->field_short_title)][0]['value'], $source, $attribute) . '</div>';
       }
       else {
       	$output .= '<div class= "title">' . l($node->field_short_title[key($node->field_short_title)][0]['value'], 'node/' . $node->nid) . '</div>';

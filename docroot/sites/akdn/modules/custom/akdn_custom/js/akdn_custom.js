@@ -379,3 +379,6 @@ else {
 // Hide Active Languge name
 jQuery('.language-switcher-locale-url').find('.active').hide();
 
+// Open 'In the media slide link in new tab'
+jQuery('.slide.In').find("a").attr("target", "_blank");
+

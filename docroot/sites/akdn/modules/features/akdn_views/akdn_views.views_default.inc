@@ -15131,6 +15131,25 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['relationships']['field_feature_image_fid']['field'] = 'field_feature_image_fid';
   $handler->display->display_options['relationships']['field_feature_image_fid']['label'] = 'file_feature_image';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Article Type */
+  $handler->display->display_options['fields']['field_article_cat']['id'] = 'field_article_cat';
+  $handler->display->display_options['fields']['field_article_cat']['table'] = 'field_data_field_article_cat';
+  $handler->display->display_options['fields']['field_article_cat']['field'] = 'field_article_cat';
+  $handler->display->display_options['fields']['field_article_cat']['label'] = '';
+  $handler->display->display_options['fields']['field_article_cat']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_article_cat']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_article_cat']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_article_cat']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Content: Media Source */
+  $handler->display->display_options['fields']['field_media_source']['id'] = 'field_media_source';
+  $handler->display->display_options['fields']['field_media_source']['table'] = 'field_data_field_media_source';
+  $handler->display->display_options['fields']['field_media_source']['field'] = 'field_media_source';
+  $handler->display->display_options['fields']['field_media_source']['label'] = '';
+  $handler->display->display_options['fields']['field_media_source']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_media_source']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_media_source']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_media_source']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_media_source']['type'] = 'link_title_plain';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -15229,9 +15248,18 @@ if ($data->node_type == "featured_content") {
   }
   else { print \' <a class="banner-no-link">More</a>\'; }
 } else {
+  $tid = $data->_field_data[\'nid\'][\'entity\']->field_article_cat[\'und\'][0][\'tid\'];
+  $term = taxonomy_term_load($tid);
+  $name = $term->name;
+  if($name == \'In the media\') {
+  $node_path =  $data->_field_data[\'nid\'][\'entity\']->field_media_source[\'und\'][0][\'url\'];
+  $url =  " <a href=\'$node_path\' target=\'_blank\'>More</a>";
+  print $url;
+} else {
   $node_path = drupal_get_path_alias(\'node/\' . $data->nid);
   $url =  " <a href=\'/$node_path\'>More</a>";
   print $url;
+}
 }
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
@@ -15303,7 +15331,7 @@ print $value;
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_project_image][field_feature_image]</div>
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide [field_article_cat]">[field_project_image][field_feature_image]</div>
 <div class="slide-text"><h3>[title]</h3>
 [php_1]
 [php]
@@ -19573,7 +19601,7 @@ if ($data->node_type == "featured_content") {
     t('Flexslider A/G/FA Block'),
     t('[php_1]'),
     t('[php]| More </a>'),
-    t('<div class="slide">[field_project_image][field_feature_image]</div>
+    t('<div class="slide [field_article_cat]">[field_project_image][field_feature_image]</div>
 <div class="slide-text"><h3>[title]</h3>
 [php_1]
 [php]
