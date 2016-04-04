@@ -2278,7 +2278,7 @@ function akdn_context_context_default_contexts() {
           'module' => 'panels_mini',
           'delta' => 'footer_menus',
           'region' => 'footer_first',
-          'weight' => '-5',
+          'weight' => '-10',
         ),
         'block-5' => array(
           'module' => 'block',
