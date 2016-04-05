@@ -858,6 +858,7 @@ h1.title {
         background: #fff;
         border-radius: 15px;
         &:before {
+            margin-left: -1px;
             color: #1ab7ea;
             line-height: 45px;
             font-size: 46px;
