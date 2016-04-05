@@ -1,0 +1,26 @@
+diff --git a/field_collection.module b/field_collection.module
+index db7b859..bedd037 100644
+--- a/field_collection.module
++++ b/field_collection.module
+@@ -1230,7 +1230,20 @@ function field_collection_field_widget_embed_validate($element, &$form_state, $c
+   $language = $element['#language'];
+ 
+   $field_state = field_form_get_state($field_parents, $field_name, $language, $form_state);
+-  $field_collection_item = $field_state['entity'][$element['#delta']];
++
++  // We have to populate the field_collection_item before we can attach it
++  // to the form.
++  if (isset($field_state['entity'][$element['#delta']])) {
++    $field_collection_item = $field_state['entity'][$element['#delta']];
++  }
++  elseif ($form_state['input'][$field_state['array_parents'][0]][$field_state['array_parents'][1]][$element['#delta']]) {
++    $field_collection_item = clone $field_state['entity'][0];
++    foreach ($form_state['input'][$field_state['array_parents'][0]][$field_state['array_parents'][1]][$element['#delta']] as $key => $value) {
++      if (property_exists($field_collection_item, $key)) {
++        $field_collection_item->{$key} = $value;
++      }
++    }
++  }
+ 
+   // Attach field API validation of the embedded form.
+   field_attach_form_validate('field_collection_item', $field_collection_item, $element, $form_state);
