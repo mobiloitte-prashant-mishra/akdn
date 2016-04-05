@@ -138,6 +138,9 @@ function _akaa_see_also_block() {
           }
           $key = $value;
         }
+        if ($value == "Videos") {
+          $key = 'Video';
+        }
         $output .= '<li class = "rows">';
         $param = '?f[0]=entity_type:' . $key;
         $url = $path . $param;
