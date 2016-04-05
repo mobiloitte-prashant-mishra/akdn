@@ -217,7 +217,6 @@ function akdn_content_types_field_default_field_instances() {
           'photo_thumb' => 'photo_thumb',
           'press_centre_detail' => 'press_centre_detail',
           'publication_listing_image' => 'publication_listing_image',
-          'publications_list_image_style' => 'publications_list_image_style',
           'social_sharing_image' => 'social_sharing_image',
         ),
         'manualcrop_styles_mode' => 'include',
@@ -916,7 +915,6 @@ function akdn_content_types_field_default_field_instances() {
           'photo_thumb' => 'photo_thumb',
           'press_centre_detail' => 'press_centre_detail',
           'publication_listing_image' => 'publication_listing_image',
-          'publications_list_image_style' => 'publications_list_image_style',
           'social_sharing_image' => 'social_sharing_image',
         ),
         'manualcrop_styles_mode' => 'include',
@@ -1054,7 +1052,6 @@ function akdn_content_types_field_default_field_instances() {
           'photo_thumb' => 'photo_thumb',
           'press_centre_detail' => 'press_centre_detail',
           'publication_listing_image' => 'publication_listing_image',
-          'publications_list_image_style' => 'publications_list_image_style',
           'social_sharing_image' => 'social_sharing_image',
         ),
         'manualcrop_styles_mode' => 'include',
@@ -1188,7 +1185,6 @@ function akdn_content_types_field_default_field_instances() {
           'photo_thumb' => 'photo_thumb',
           'press_centre_detail' => 'press_centre_detail',
           'publication_listing_image' => 'publication_listing_image',
-          'publications_list_image_style' => 'publications_list_image_style',
           'social_sharing_image' => 'social_sharing_image',
         ),
         'manualcrop_styles_mode' => 'include',
@@ -1490,7 +1486,6 @@ function akdn_content_types_field_default_field_instances() {
           'photo_thumb' => 'photo_thumb',
           'press_centre_detail' => 'press_centre_detail',
           'publication_listing_image' => 'publication_listing_image',
-          'publications_list_image_style' => 'publications_list_image_style',
           'social_sharing_image' => 'social_sharing_image',
         ),
         'manualcrop_styles_mode' => 'include',
@@ -2568,6 +2563,57 @@ function akdn_content_types_field_default_field_instances() {
       ),
       'type' => 'options_onoff',
       'weight' => 18,
+    ),
+  );
+
+  // Exported field_instance: 'node-agency-field_simplenews_term'
+  $field_instances['node-agency-field_simplenews_term'] = array(
+    'bundle' => 'agency',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 43,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_simplenews_term',
+    'label' => 'Newsletter category',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 40,
     ),
   );
 
@@ -3687,7 +3733,6 @@ function akdn_content_types_field_default_field_instances() {
           'photo_thumb' => 'photo_thumb',
           'press_centre_detail' => 'press_centre_detail',
           'publication_listing_image' => 'publication_listing_image',
-          'publications_list_image_style' => 'publications_list_image_style',
           'social_sharing_image' => 'social_sharing_image',
         ),
         'manualcrop_styles_mode' => 'include',
@@ -5544,7 +5589,6 @@ function akdn_content_types_field_default_field_instances() {
           'photo_thumb' => 'photo_thumb',
           'press_centre_detail' => 'press_centre_detail',
           'publication_listing_image' => 'publication_listing_image',
-          'publications_list_image_style' => 'publications_list_image_style',
           'social_sharing_image' => 'social_sharing_image',
         ),
         'manualcrop_styles_mode' => 'include',
@@ -6184,6 +6228,67 @@ function akdn_content_types_field_default_field_instances() {
       ),
       'type' => 'options_onoff',
       'weight' => 23,
+    ),
+  );
+
+  // Exported field_instance: 'node-geography-field_simplenews_term'
+  $field_instances['node-geography-field_simplenews_term'] = array(
+    'bundle' => 'geography',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 14,
+      ),
+      'email_html' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 13,
+      ),
+      'email_plain' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'email_textalt' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_simplenews_term',
+    'label' => 'Newsletter category',
+    'required' => TRUE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 5,
     ),
   );
 
@@ -7036,7 +7141,6 @@ function akdn_content_types_field_default_field_instances() {
           'photo_thumb' => 'photo_thumb',
           'press_centre_detail' => 'press_centre_detail',
           'publication_listing_image' => 'publication_listing_image',
-          'publications_list_image_style' => 'publications_list_image_style',
           'social_sharing_image' => 'social_sharing_image',
         ),
         'manualcrop_styles_mode' => 'include',
@@ -8716,7 +8820,6 @@ function akdn_content_types_field_default_field_instances() {
           'photo_thumb' => 'photo_thumb',
           'press_centre_detail' => 'press_centre_detail',
           'publication_listing_image' => 'publication_listing_image',
-          'publications_list_image_style' => 'publications_list_image_style',
           'social_sharing_image' => 'social_sharing_image',
         ),
         'manualcrop_styles_mode' => 'include',
@@ -8986,7 +9089,6 @@ function akdn_content_types_field_default_field_instances() {
           'photo_thumb' => 'photo_thumb',
           'press_centre_detail' => 'press_centre_detail',
           'publication_listing_image' => 'publication_listing_image',
-          'publications_list_image_style' => 'publications_list_image_style',
           'social_sharing_image' => 'social_sharing_image',
         ),
         'manualcrop_styles_mode' => 'include',
@@ -9599,6 +9701,79 @@ function akdn_content_types_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-page-field_simplenews_term'
+  $field_instances['node-page-field_simplenews_term'] = array(
+    'bundle' => 'page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'body_only' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 9,
+      ),
+      'email_html' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
+      'email_plain' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'email_textalt' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 20,
+      ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 27,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_simplenews_term',
+    'label' => 'Newsletter category',
+    'required' => TRUE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 10,
     ),
   );
 

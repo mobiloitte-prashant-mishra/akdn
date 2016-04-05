@@ -617,30 +617,6 @@ function akdn_image_styles_image_default_styles() {
     ),
   );
 
-  // Exported image style: medium.
-  $styles['medium'] = array(
-    'name' => 'medium',
-    'label' => 'Medium (220x220)',
-    'effects' => array(
-      241 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
-        'name' => 'image_scale',
-        'data' => array(
-          'width' => 388,
-          'height' => '',
-          'upscale' => 1,
-        ),
-        'weight' => 2,
-      ),
-    ),
-  );
-
   // Exported image style: mini_feature.
   $styles['mini_feature'] = array(
     'name' => 'mini_feature',
@@ -824,38 +800,38 @@ function akdn_image_styles_image_default_styles() {
     'name' => 'publications_list_image_style',
     'label' => 'Publications Detail Page',
     'effects' => array(
-      203 => array(
-        'label' => 'Manual Crop: Crop and scale',
-        'help' => 'Crop and scale a user-selected area, respecting the ratio of the destination width and height.',
-        'effect callback' => 'manualcrop_crop_and_scale_effect',
-        'form callback' => 'manualcrop_crop_and_scale_form',
-        'summary theme' => 'manualcrop_crop_and_scale_summary',
+      227 => array(
+        'label' => 'Manual Crop: Custom crop',
+        'help' => 'Crop a freely user-selected area.',
+        'effect callback' => 'manualcrop_crop_effect',
+        'form callback' => 'manualcrop_crop_form',
+        'summary theme' => 'manualcrop_crop_summary',
         'module' => 'manualcrop',
-        'name' => 'manualcrop_crop_and_scale',
+        'name' => 'manualcrop_crop',
         'data' => array(
-          'width' => 350,
-          'height' => 550,
-          'upscale' => 1,
-          'respectminimum' => 0,
-          'onlyscaleifcrop' => 0,
+          'width' => 370,
+          'height' => '',
+          'keepproportions' => 0,
+          'reuse_crop_style' => '',
           'style_name' => 'publications_list_image_style',
         ),
-        'weight' => 0,
-      ),
-      204 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 350,
-          'height' => 550,
-        ),
         'weight' => 2,
+      ),
+      223 => array(
+        'label' => 'Scale',
+        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
+        'effect callback' => 'image_scale_effect',
+        'dimensions callback' => 'image_scale_dimensions',
+        'form callback' => 'image_scale_form',
+        'summary theme' => 'image_scale_summary',
+        'module' => 'image',
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 370,
+          'height' => '',
+          'upscale' => 1,
+        ),
+        'weight' => 3,
       ),
     ),
   );
