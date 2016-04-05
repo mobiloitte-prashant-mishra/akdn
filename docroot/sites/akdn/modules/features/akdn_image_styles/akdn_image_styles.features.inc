@@ -622,7 +622,7 @@ function akdn_image_styles_image_default_styles() {
     'name' => 'medium',
     'label' => 'Medium (220x220)',
     'effects' => array(
-      220 => array(
+      241 => array(
         'label' => 'Scale',
         'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
         'effect callback' => 'image_scale_effect',
