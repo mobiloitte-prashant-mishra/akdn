@@ -7742,6 +7742,15 @@ if (isset($node->field_about_page)) {
           'context' => 'argument_entity_id:node_1',
           'not' => FALSE,
         ),
+        1 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '1',
+            'paths' => 'akdn-social',
+          ),
+          'context' => 'empty',
+          'not' => TRUE,
+        ),
       ),
       'logic' => 'and',
     ),
