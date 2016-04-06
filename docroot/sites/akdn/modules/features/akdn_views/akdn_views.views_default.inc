@@ -11268,6 +11268,25 @@ print $explode[1];
   $handler->display->display_options['empty']['area']['content'] = 'No results found!';
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Indexed Node: Article Type */
+  $handler->display->display_options['fields']['field_article_cat']['id'] = 'field_article_cat';
+  $handler->display->display_options['fields']['field_article_cat']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['fields']['field_article_cat']['field'] = 'field_article_cat';
+  $handler->display->display_options['fields']['field_article_cat']['label'] = '';
+  $handler->display->display_options['fields']['field_article_cat']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_article_cat']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_article_cat']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['field_article_cat']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_article_cat']['bypass_access'] = 0;
+  /* Field: Indexed Node: Media Source » The URL of the link. */
+  $handler->display->display_options['fields']['field_media_source_url']['id'] = 'field_media_source_url';
+  $handler->display->display_options['fields']['field_media_source_url']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['fields']['field_media_source_url']['field'] = 'field_media_source_url';
+  $handler->display->display_options['fields']['field_media_source_url']['label'] = '';
+  $handler->display->display_options['fields']['field_media_source_url']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_media_source_url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_media_source_url']['display_as_link'] = FALSE;
+  $handler->display->display_options['fields']['field_media_source_url']['link_to_entity'] = 0;
   /* Field: Indexed Node: URL */
   $handler->display->display_options['fields']['url']['id'] = 'url';
   $handler->display->display_options['fields']['url']['table'] = 'search_api_index_akdn';
@@ -11284,6 +11303,7 @@ print $explode[1];
   $handler->display->display_options['fields']['image_public_uri']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['fields']['image_public_uri']['field'] = 'image_public_uri';
   $handler->display->display_options['fields']['image_public_uri']['label'] = '';
+  $handler->display->display_options['fields']['image_public_uri']['exclude'] = TRUE;
   $handler->display->display_options['fields']['image_public_uri']['element_type'] = 'div';
   $handler->display->display_options['fields']['image_public_uri']['element_class'] = 'image';
   $handler->display->display_options['fields']['image_public_uri']['element_label_colon'] = FALSE;
@@ -11450,6 +11470,25 @@ print $explode[1];
   $handler->display->display_options['empty']['area']['content'] = 'No results found!';
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Indexed Node: Article Type */
+  $handler->display->display_options['fields']['field_article_cat']['id'] = 'field_article_cat';
+  $handler->display->display_options['fields']['field_article_cat']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['fields']['field_article_cat']['field'] = 'field_article_cat';
+  $handler->display->display_options['fields']['field_article_cat']['label'] = '';
+  $handler->display->display_options['fields']['field_article_cat']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_article_cat']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_article_cat']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['field_article_cat']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_article_cat']['bypass_access'] = 0;
+  /* Field: Indexed Node: Media Source » The URL of the link. */
+  $handler->display->display_options['fields']['field_media_source_url']['id'] = 'field_media_source_url';
+  $handler->display->display_options['fields']['field_media_source_url']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['fields']['field_media_source_url']['field'] = 'field_media_source_url';
+  $handler->display->display_options['fields']['field_media_source_url']['label'] = '';
+  $handler->display->display_options['fields']['field_media_source_url']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_media_source_url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_media_source_url']['display_as_link'] = FALSE;
+  $handler->display->display_options['fields']['field_media_source_url']['link_to_entity'] = 0;
   /* Field: Indexed Node: URL */
   $handler->display->display_options['fields']['url']['id'] = 'url';
   $handler->display->display_options['fields']['url']['table'] = 'search_api_index_akdn';
@@ -11466,6 +11505,7 @@ print $explode[1];
   $handler->display->display_options['fields']['image_public_uri']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['fields']['image_public_uri']['field'] = 'image_public_uri';
   $handler->display->display_options['fields']['image_public_uri']['label'] = '';
+  $handler->display->display_options['fields']['image_public_uri']['exclude'] = TRUE;
   $handler->display->display_options['fields']['image_public_uri']['element_type'] = 'div';
   $handler->display->display_options['fields']['image_public_uri']['element_class'] = 'image';
   $handler->display->display_options['fields']['image_public_uri']['element_label_colon'] = FALSE;

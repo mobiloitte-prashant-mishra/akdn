@@ -3075,6 +3075,26 @@ function akdn_custom_theme($existing, $type, $theme, $path) {
   //   ),
   //   'arguments' => array('view' => NULL),
   // );
+  $themes['views_view_field__award_cycle_news__page_1__nothing'] = array(
+    'template' => 'templates/views-view-field--award-cycle-news--page-1--nothing',
+    'original hook' => 'views_view_fields',
+    'preprocess functions' => array(
+      'template_preprocess',
+      'template_preprocess_views_view_fields',
+      'akdn_custom_preprocess_views_view_field__award_cycle_news__page_1__nothing',
+    ),
+    'arguments' => array('view' => NULL),
+  );
+  $themes['views_view_field__award_cycle_news__page_2__nothing'] = array(
+    'template' => 'templates/views-view-field--award-cycle-news--page-2--nothing',
+    'original hook' => 'views_view_fields',
+    'preprocess functions' => array(
+      'template_preprocess',
+      'template_preprocess_views_view_fields',
+      'akdn_custom_preprocess_views_view_field__award_cycle_news__page_2__nothing',
+    ),
+    'arguments' => array('view' => NULL),
+  );
   return $themes;
 }
 
@@ -3113,6 +3133,103 @@ function akdn_custom_theme($existing, $type, $theme, $path) {
 //   }
 // }
 
+function akdn_custom_preprocess_views_view_field__award_cycle_news__page_1__nothing(&$variables) {
+  $output = '';
+  $row = $variables['row'];
+  $url = $row->_entity_properties['url'];
+  $field_media_source_url = $row->_entity_properties['field_media_source:url'];
+  $field_article_cat = $row->_entity_properties['field_article_cat'];
+  $image_public_uri = file_create_url($row->_entity_properties['image_public_uri']);
+  $field_short_title_x = $row->_entity_properties;
+  $short_title = $field_short_title_x['entity object']->field_short_title['en'][0]['value'];
+  $field_publish_date_x = $row->_entity_properties;
+  $publish_date = $field_publish_date_x['entity object']->field_publish_date['und'][0]['value'];
+  $field_event_date_x = $row->_entity_properties;
+  $event_date = $field_event_date_x['entity object']->field_event_date['und'][0]['value'];
+  $entity_type_x = $row->_entity_properties['entity_type'];
+  $entity_type = $entity_type_x['entity object']->entity_type['und'][0]['value'];
+  if ($field_article_cat == '2611') {
+    $output .= '<div class="image">
+                  <a href ='.$field_media_source_url.' target="_blank">
+                    <img class="akdn-solr-img-link" src='.$image_public_uri.'>
+                  </a>
+                </div>';
+  }
+  else {
+    $output .= '<div class="image">
+                  <a href ='.$url.'>
+                    <img class="akdn-solr-img-link" src='.$image_public_uri.'>
+                  </a>
+                </div>';
+  }
+  $output .= '<div class="akaa-press-centre-subwrapper">';
+  $output .= '<div class="type">'.$entity_type_x.'</div>';
+  $publish_date = date('j F Y',$publish_date);
+  $output .= '<div class="date">'.$publish_date.'</div>';
+  if($field_article_cat == '2611') {
+    $output .= '<div class="title"><a href ='.$field_media_source_url.' target="_blank">'.$short_title.'</a></div>';
+  }
+  else {
+    $output .= '<div class="title"><a href ='.$url.'>'.$short_title.'</a></div>';
+  }
+  if ($field_article_cat == '2611') {
+   $output .= '<span class="readmore"><a href ='.$field_media_source_url.' target="_blank">More</a></span>';
+  }
+  else {
+    $output .= '<span class="readmore"><a href='.$url.'>More</a></span>';
+  }
+  $output .= '</div>';
+  $variables['nothing'] = $output;
+}
+
+function akdn_custom_preprocess_views_view_field__award_cycle_news__page_2__nothing(&$variables) {
+  $output = '';
+  $row = $variables['row'];
+  $url = $row->_entity_properties['url'];
+  $field_media_source_url = $row->_entity_properties['field_media_source:url'];
+  $field_article_cat = $row->_entity_properties['field_article_cat'];
+  $image_public_uri = file_create_url($row->_entity_properties['image_public_uri']);
+  $field_short_title_x = $row->_entity_properties;
+  $short_title = $field_short_title_x['entity object']->field_short_title['en'][0]['value'];
+  $field_publish_date_x = $row->_entity_properties;
+  $publish_date = $field_publish_date_x['entity object']->field_publish_date['und'][0]['value'];
+  $field_event_date_x = $row->_entity_properties;
+  $event_date = $field_event_date_x['entity object']->field_event_date['und'][0]['value'];
+  $entity_type_x = $row->_entity_properties['entity_type'];
+  $entity_type = $entity_type_x['entity object']->entity_type['und'][0]['value'];
+  if ($field_article_cat == '2611') {
+    $output .= '<div class="image">
+                  <a href ='.$field_media_source_url.' target="_blank">
+                    <img class="akdn-solr-img-link" src='.$image_public_uri.'>
+                  </a>
+                </div>';
+  }
+  else {
+    $output .= '<div class="image">
+                  <a href ='.$url.'>
+                    <img class="akdn-solr-img-link" src='.$image_public_uri.'>
+                  </a>
+                </div>';
+  }
+  $output .= '<div class="akaa-press-centre-subwrapper">';
+  $output .= '<div class="type">'.$entity_type_x.'</div>';
+  $publish_date = date('j F Y',$publish_date);
+  $output .= '<div class="date">'.$publish_date.'</div>';
+  if($field_article_cat == '2611') {
+    $output .= '<div class="title"><a href ='.$field_media_source_url.' target="_blank">'.$short_title.'</a></div>';
+  }
+  else {
+    $output .= '<div class="title"><a href ='.$url.'>'.$short_title.'</a></div>';
+  }
+  if ($field_article_cat == '2611') {
+   $output .= '<span class="readmore"><a href ='.$field_media_source_url.' target="_blank">More</a></span>';
+  }
+  else {
+    $output .= '<span class="readmore"><a href='.$url.'>More</a></span>';
+  }
+  $output .= '</div>';
+  $variables['nothing'] = $output;
+}
 
 function akdn_custom_preprocess_views_view_field__hub_pages__country_hub_subpages__field_short_title(&$variables) {
   $row = $variables['row'];
