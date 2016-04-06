@@ -1,0 +1,4 @@
+name = AKDN AKMI Custom
+description = Collection of custom functionality for AKMI for AKDN.org/akmi
+core = 7.x
+package = Custom

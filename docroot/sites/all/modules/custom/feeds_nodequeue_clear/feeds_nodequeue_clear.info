@@ -1,0 +1,7 @@
+name = Feeds nodequeue clear
+description = Clear nodequeue on feeds import
+core = 7.x
+dependencies[] = nodequeue
+dependencies[] = feeds
+
+files[] = FeedsNodequeueFetcher.inc

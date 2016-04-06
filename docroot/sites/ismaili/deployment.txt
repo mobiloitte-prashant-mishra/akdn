@@ -1,0 +1,2 @@
+1. configure language switch block:- block id - 176
+2. http://akdnstg.prod.acquia-sites.com/ismaili/admin/config/search/facetapi/search_api%40ismaili_index/block/field_cuisine_type/filters?destination=nutrition/recipes%3Ff%5B0%5D%3Dsugar_light%253Am%26f%5B1%5D%3Dsugar_light%253Al%26f%5B2%5D%3Dfat_light%253Am%26f%5B3%5D%3Dfat_light%253Al remove 2 from “do not show facet with only x items"

@@ -1,0 +1,10 @@
+diff --git a/field_collection_feeds.info b/field_collection_feeds.info
+index e48ca05..a6e00ed 100644
+--- a/field_collection_feeds.info
++++ b/field_collection_feeds.info
+@@ -3,4 +3,4 @@ description = Provides feeds integration for field collection.
+ core = 7.x
+ dependencies[] = field_collection
+ dependencies[] = feeds
+-
++files[] = plugins/FeedsFieldCollectionProcessor.inc

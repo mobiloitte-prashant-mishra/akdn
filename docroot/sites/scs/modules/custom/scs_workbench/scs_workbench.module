@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * @file
+ * KC workbench customization.
+ */
+
+/**
+ * Implements hook_menu_alter().
+ */
+function scs_workbench_menu_alter(&$items) {
+  // Only show this tab for users who has access to create any new content.
+  $items['workbench']['title'] = 'Dashboard';
+  $items['workbench/create']['access callback'] = 'scs_workbench_user_node_create_access';
+}
+
+/**
+ * Custom menu access callback for workbench create.
+ *
+ * @param $string string
+ *   Permission string.
+ *
+ * @return boolean
+ *   Access to view workbench create menu.
+ */
+function scs_workbench_user_node_create_access($string) {
+  $content_types = node_type_get_types();
+  $content_types = array_keys($content_types);
+  $access = FALSE;
+
+  foreach ($content_types as $type) {
+    if (user_access('create ' . $type . ' content')) {
+      $access = TRUE;
+    }
+  }
+
+  // Permission string will is "access workbench".
+  // @see workbench_menu().
+  // We check here whether user has access to workbench as well.
+  return $access && user_access($string);
+}

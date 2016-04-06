@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Cookie compliance feature.
+ */
+
+include_once 'f_cookie_compliance.features.inc';

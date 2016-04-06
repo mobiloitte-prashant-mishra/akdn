@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Institutional Space Permissions feature.
+ */
+
+include_once 'institutional_space_permissions.features.inc';

@@ -1,0 +1,4 @@
+name = Webform Custom Filters
+description = Custom module for Ismaili webforms.
+core = 7.x
+package = Ismaili.

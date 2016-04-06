@@ -1,0 +1,7 @@
+name = f_rules
+core = 7.x
+package = Features
+dependencies[] = rules
+features[features_api][] = api:2
+features[rules_config][] = rules_login_redirect_for_admin
+features[rules_config][] = rules_logout_redirect

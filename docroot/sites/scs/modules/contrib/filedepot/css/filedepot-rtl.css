@@ -1,0 +1,69 @@
+body.layout-left-main .outer{margin-right:0px !important;}
+#filedepot{margin:0px 0px 5px 0px;}
+#filedepot_sidecol{float:right;padding-right:3px;margin-left:4px;}
+#filedepot_centercol{float:right;margin-left:0px;}
+.alignleft{text-align:right;}
+.alignright{text-align:left;}
+.floatright{float:left;}
+.floatleft{float:right;}
+.plugin th{text-align:right;}
+.plugin td{padding:2px 5px 2px 5px;}
+.pluginAlert{padding:5px 15px 5px 15px;}
+.pluginInfo{padding:5px 15px 5px 15px;}
+.pluginSubTable th{text-align:right;}
+.pluginTitle{padding-right:6px;padding-left:6px;}
+.pluginCellSubTitle{padding-right:6px;padding-left:6px;}
+#fileProgress{float:right;}
+#filedetails td{text-align:right;}
+#filedetails td.alignright{margin-left:30px;}
+.required{padding-right:5px;}
+#reportheadercontainer{float:right;}
+#filelisting_container .listing_record{padding-right:0px;}
+#filelisting_container .listing_record .filedesc{padding-right:75px;}
+#filelisting_container div.twoactions{padding-left:40px;}
+#filelisting_container div.noactions{padding-left:65px;}
+.listing_record div.tags{float:right;}
+.filedesc div.tags span{padding-right:5px;}
+.filedepot_alert{padding-right:15px;}
+.removetag a{padding:4px 3px 4px 3px;}
+.removetag a:hover{padding:2px 2px 4px 1px;}
+.button-group button:active,.button-group button:hover,.button-group button.hover{border-right-color:#FFF;}
+.filedepottoolbar_searchbox{float:left;}
+.filedepottoolbar_searchform{float:left;}
+.tagsearchboxcontainer{float:left;}
+.filedepottoolbar_searchbox form{margin:5px 10px 0px 0px;}
+.filedepottoolbar .toolbaricons{float:right;}
+.filedepottoolbar .newfoldercmd{right:10px;}
+.filedepottoolbar .uploadcmd{right:50px;}
+.icon-files{padding-right:25px;}
+.icon-fileowned{padding-right:25px;}
+.icon-filelocked{padding-right:25px;}
+.icon-fileflagged{padding-right:25px;}
+.icon-allfolders{padding-right:25px;}
+.icon-filelisting{padding-right:25px;}
+.cancelbutton{float:left;}
+.htmlnodelabel{margin-right:20px;}
+#tagsearchbox{text-align:right;padding-right:5px;}
+.tagcloud span{padding-right:2px;padding-left:2px;}
+#navbardialogs{right:50px;}
+#activefolder_area{float:right;}
+#activefolder a{padding:5px 2px 5px 10px;}
+#activefolder a:hover{padding:4px 1px 5px 10px;border-right:1px solid #666;}
+.filedepot_perms_leftoption{margin-left:5px;float:right;}
+.filedepot_perms_rightoption{float:right;}
+.listing_activetag{float:right;}
+.listing_searchtag{float:right;}
+.deletebuttonborder{padding:5px 3px 5px 0px;}
+.yui-skin-sam .yui-layout .yui-layout-unit div.yui-layout-bd{text-align:right;padding-right:5px;}
+.yui-skin-sam .yui-layout-unit .yui-resize-handle-r{right:5;}
+.yui-layout-unit .yui-resize-handle-r .yui-layout-resize-knob{right:3px;}
+.yui-skin-sam .container-close{left:5px;}
+#filelisting_container div.oneaction{padding-left: 10px;}
+#filedepot_newfolder_link{padding-left:10px;}
+.icon-files { display:block; padding-left:25px; background: transparent url(images/homefolder-16x16.png) no-repeat right 0 !important; }
+.icon-fileowned { display:block;  padding-left:25px; background: transparent url(images/member-16x16.png) no-repeat right 0 !important; }
+.icon-filelocked { display:block;  padding-left:25px; background: transparent url(images/lock-16x16.png) no-repeat right 0 !important; }
+.icon-fileflagged { display:block;  padding-left:25px; background: transparent url(images/staron-16x16.gif) no-repeat right 0 !important; }
+.icon-allfolders { display:block;  padding-left:25px; background: transparent url(images/allfolders-16x16.png) no-repeat right 0 !important; }
+.icon-filelisting { display:block;  padding-left:25px; background: transparent url(images/filelisting-16x16.png) no-repeat right 0 !important; }
+.floatright.action{ padding: 0 60px 0 20px;}

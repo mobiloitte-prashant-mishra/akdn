@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the f_person feature.
+ */
+
+include_once 'f_person.features.inc';

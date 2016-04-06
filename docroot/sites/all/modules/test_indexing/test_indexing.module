@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Test indexing feature.
+ */
+
+include_once 'test_indexing.features.inc';

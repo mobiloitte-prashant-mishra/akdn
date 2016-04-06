@@ -1,0 +1,144 @@
+<?php
+
+/**
+ * @file
+ * Allow users to mail files.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function filedepot_mail_menu() {
+  $items['filedepot/mail/%file'] = array(
+    'title' => 'Useful documents mail',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('filedepot_mail_send_mail_form', 2),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_mail().
+ */
+function filedepot_mail_mail($key, &$message, $params) {
+  $message['subject'] = $params['subject'];
+  $message['body'][] = $params['body'];
+
+  // Add attachment when available.
+  if (isset($params['attachment'])) {
+    $message['params']['attachments'][] = $params['attachment'];
+  }
+}
+
+/**
+ * Render mail send form.
+ */
+function filedepot_mail_send_mail_form($form, &$form_state, $file) {
+  $form = array();
+  $site_users = array();
+
+  $query = db_select('users', 'u')
+            ->fields('u')
+            ->condition('status', 1);
+  $result = $query->execute();
+
+  while ($row = $result->fetchAssoc()) {
+    $site_users[$row['uid']] = format_string('<@user_name> @mail', array(
+      '@user_name' => $row['name'],
+      '@mail' => $row['mail'],
+    ));
+  }
+
+  $form['site_users'] = array(
+    '#type' => 'select',
+    '#multiple' => TRUE,
+    '#options' => $site_users,
+    '#title' => t('Select site users'),
+    '#description' => t('Hold Ctrl key to select multiple items'),
+  );
+
+  $form['emails'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Email address'),
+    '#description' => t('Enter single or comma separated multiple email address(s) where you to send this file'),
+  );
+
+  $form['subject'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Subject (optional)'),
+  );
+
+  $form['body'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Message (optional)'),
+  );
+
+  $form['fid'] = array(
+    '#type' => 'hidden',
+    '#value' => $file->fid,
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Send'),
+  );
+
+  $form['cancel'] = array(
+    '#markup' => l(t('Cancel'), 'filedepot'),
+  );
+
+  return $form;
+}
+
+/**
+ * Validation callback that checks whether email id has been entered.
+ */
+function filedepot_mail_send_mail_form_validate($form, &$form_state) {
+  if (empty($form_state['values']['site_users']) && empty($form_state['values']['emails'])) {
+    form_set_error('site_users', t('Select at least one user'));
+    form_set_error('emails', t('Enter at least one email id'));
+  }
+}
+
+/**
+ * Submit callback that sends file as attachment to email ids.
+ */
+function filedepot_mail_send_mail_form_submit($form, &$form_state) {
+  global $language;
+  $senders = array();
+  $file = file_load($form_state['values']['fid']);
+
+  foreach ($form_state['values']['site_users'] as $uid) {
+    $query = db_select('users', 'u')
+              ->fields('u')
+              ->condition('uid', $uid);
+    $result = $query->execute();
+
+    $data = $result->fetchAssoc();
+    $senders[] = $data['mail'];
+  }
+
+  $attachment = array(
+    'filecontent' => drupal_realpath($file->uri),
+    'filename' => $file->filename,
+    'filemime' => $file->filemime,
+  );
+
+  $params = array(
+    'headers' => array('Content-Type' => 'text/html'),
+    'key' => 'mail_attachment',
+    'to' => empty($senders) ? $form_state['values']['emails'] : implode(', ', $senders) . ', ' . $form_state['values']['emails'],
+    'subject' => empty($form_state['values']['subject']) ? t('[Knowledge Center] Useful Documents') : $form_state['values']['subject'],
+    'body' => empty($form_state['values']['body']) ? t('Please find attachment') : $form_state['values']['body'],
+    'attachment' => $attachment,
+  );
+
+  drupal_mail('filedepot_mail', $params['key'], $params['to'], $language, $params);
+
+  drupal_set_message(t('File sent to %mail', array('%mail' => $params['to'])));
+
+  $form_state['redirect'] = 'filedepot';
+}

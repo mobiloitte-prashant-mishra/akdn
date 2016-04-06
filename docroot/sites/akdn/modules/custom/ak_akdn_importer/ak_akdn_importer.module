@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AKDN importer feature.
+ */
+
+include_once 'ak_akdn_importer.features.inc';

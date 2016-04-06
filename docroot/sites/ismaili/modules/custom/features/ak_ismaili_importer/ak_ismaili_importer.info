@@ -1,0 +1,10 @@
+name = Ismaili importer
+description = Ismaili feeds importer
+core = 7.x
+package = Features
+dependencies[] = ctools
+dependencies[] = feeds
+features[ctools][] = feeds:feeds_importer_default:1
+features[features_api][] = api:2
+features[feeds_importer][] = speech_importer_xml
+features[feeds_importer][] = speech_quote_importer_xml

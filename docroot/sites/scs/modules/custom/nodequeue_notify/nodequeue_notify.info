@@ -1,0 +1,6 @@
+name = Nodequeue notify
+description = Notify user that node has been pushed to nodequeue
+core = 7.x
+dependencies[] = rules
+dependencies[] = nodequeue
+dependencies[] = ak_syndication_source

@@ -1,0 +1,10 @@
+name = Test indexing
+description = An search indexing 
+core = 7.x
+package = Features
+version = 7.x-2.0
+project = test_indexing
+dependencies[] = entity
+dependencies[] = search_api
+features[features_api][] = api:2
+features[search_api_index][] = ismaili_index

@@ -1,0 +1,10 @@
+; $Id: $
+
+name = Exposed facets
+description = "Rewrites facetapi facet URLs to work with Views exposed filters."
+package = FacetAPI
+
+core = "7.x"
+
+files[] = exposed_facets.module
+files[] = plugins/facetapi/url_processor_exposed_facets.inc

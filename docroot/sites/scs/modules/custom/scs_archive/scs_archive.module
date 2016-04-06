@@ -1,0 +1,138 @@
+<?php
+
+/**
+ * @file
+ * Archive content.
+ */
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function scs_archive_form_node_form_alter(&$form, &$form_state, $form_id) {
+  if (!empty($form['field_archive'])) {
+    if (user_access('archive content')) {
+      $node = menu_get_object();
+
+      if (!empty($node->nid)) {
+        // This is node edit form.
+
+        // Do not show archive option if node is published.
+        if ($node->status != 0) {
+          $form['field_archive']['#access'] = FALSE;
+        }
+      }
+
+      // Do not allow archive and workbench published option enabled together.
+      $form['#validate'][] = 'scs_archive_content_archive_validate';
+    }
+    else {
+      $form['field_archive']['#access'] = FALSE;
+    }
+  }
+}
+
+/**
+ * Validation callback to check content archive should only be in draft.
+ */
+function scs_archive_content_archive_validate($form, &$form_state) {
+  $new_state = $form_state['values']['workbench_moderation_state_new'];
+
+  // Archived content should only be in draft.
+  if (!empty($form_state['values']['workbench_moderation_state_new']) &&
+    ($new_state == 'published' || $new_state == 'needs_review' || $new_state == 'reviewed') &&
+    $form_state['values']['field_archive'][LANGUAGE_NONE][0]['value'] == 1) {
+      form_set_error('field_archive', t('Archived content should only be in draft'));
+  }
+}
+
+/**
+ * Implements hook_action_info().
+ */
+function scs_archive_action_info() {
+  return array(
+    'scs_archive_workbench_unpublish' => array(
+      'type' => 'node',
+      'label' => t('Unpublish'),
+      'behavior' => array('changes_property'),
+      'configurable' => FALSE,
+      'vbo_configurable' => FALSE,
+      'triggers' => array('node_update'),
+    ),
+    'scs_archive_workbench_publish' => array(
+      'type' => 'node',
+      'label' => t('Wokbench publish'),
+      'behavior' => array('changes_property'),
+      'configurable' => FALSE,
+      'vbo_configurable' => FALSE,
+      'triggers' => array('node_update'),
+    ),
+  );
+}
+
+/**
+ * Unpublish content in workbench style.
+ *
+ * @see workbench_moderation_node_unpublish_form_submit().
+ *
+ * @param $node object
+ *   Drupal node object.
+ * @param $context array
+ *   Action context.
+ */
+function scs_archive_workbench_unpublish(&$node, $context) {
+  global $user;
+
+  // Remove the moderation record's "published" flag.
+  $query = db_update('workbench_moderation_node_history')
+    ->condition('hid', $node->workbench_moderation['published']->hid)
+    ->fields(array('published' => 0))
+    ->execute();
+
+  // Moderate the revision.
+  workbench_moderation_moderate($node, 'draft');
+
+  // Make sure the 'current' revision is the 'live' revision -- ie, the revision
+  // in {node}.
+  $live_revision = workbench_moderation_node_current_load($node);
+  $live_revision->status = 0;
+  $live_revision->revision = 0;
+  $live_revision->workbench_moderation['updating_live_revision'] = TRUE;
+  // @TODO: do we trust node_save() here?
+  node_save($live_revision);
+
+  drupal_set_message(t('The live revision of this content has been unpublished.'));
+}
+function scs_archive_workbench_publish(&$node, $context) {
+  global $user;
+
+  // Remove the moderation record's "published" flag.
+  $query = db_update('workbench_moderation_node_history')
+    ->condition('hid', $node->workbench_moderation['published']->hid)
+    ->fields(array('published' => 1))
+    ->execute();
+
+  // Moderate the revision.
+  workbench_moderation_moderate($node, 'published');
+
+  // Make sure the 'current' revision is the 'live' revision -- ie, the revision
+  // in {node}.
+  $live_revision = workbench_moderation_node_current_load($node);
+  $live_revision->status = 1;
+  $live_revision->revision = 1;
+  $live_revision->workbench_moderation['updating_live_revision'] = TRUE;
+  // @TODO: do we trust node_save() here?
+  node_save($live_revision);
+
+  drupal_set_message(t('The live revision of this content has been unpublished.'));
+}
+/**
+ * Implements hook_permission().
+ */
+function scs_archive_permission() {
+  return array(
+    'archive content' =>  array(
+      'title' => t('Archive content'),
+      'description' => t('Archive content'),
+    ),
+  );
+}
