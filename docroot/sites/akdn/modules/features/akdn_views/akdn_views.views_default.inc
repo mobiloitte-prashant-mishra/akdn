@@ -8511,7 +8511,7 @@ print $content;
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Sort criterion: Content: Performance Year With AKMI (field_performance_year) */
+  /* Sort criterion: Content: Performance Year (field_performance_year) */
   $handler->display->display_options['sorts']['field_performance_year_tid']['id'] = 'field_performance_year_tid';
   $handler->display->display_options['sorts']['field_performance_year_tid']['table'] = 'field_data_field_performance_year';
   $handler->display->display_options['sorts']['field_performance_year_tid']['field'] = 'field_performance_year_tid';
@@ -28618,7 +28618,6 @@ print $content;
   $handler->display->display_options['fields']['field_image_caption']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_image_caption']['alter']['max_length'] = '75';
   $handler->display->display_options['fields']['field_image_caption']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['field_image_caption']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['field_image_caption']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image_caption']['type'] = 'text_plain';
   /* Field: Content: Image */
@@ -28696,7 +28695,6 @@ print $content;
   $handler->display->display_options['fields']['field_image_caption']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_image_caption']['alter']['max_length'] = '75';
   $handler->display->display_options['fields']['field_image_caption']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['field_image_caption']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['field_image_caption']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image_caption']['type'] = 'text_plain';
   /* Field: Global: Custom text */
