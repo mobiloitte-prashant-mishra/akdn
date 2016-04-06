@@ -3179,7 +3179,7 @@ function akdn_custom_preprocess_views_view_field__award_cycle_news__page_1__noth
     $output .= '<span class="readmore"><a href='.$url.'>More</a></span>';
   }
   $output .= '</div>';
-  $variables['nothing'] = $output;
+  $variables['akaa_press_center_view'] = $output;
 }
 
 function akdn_custom_preprocess_views_view_field__award_cycle_news__page_2__nothing(&$variables) {
@@ -3228,7 +3228,7 @@ function akdn_custom_preprocess_views_view_field__award_cycle_news__page_2__noth
     $output .= '<span class="readmore"><a href='.$url.'>More</a></span>';
   }
   $output .= '</div>';
-  $variables['nothing'] = $output;
+  $variables['akmi_press_center_view'] = $output;
 }
 
 function akdn_custom_preprocess_views_view_field__hub_pages__country_hub_subpages__field_short_title(&$variables) {
