@@ -219,7 +219,16 @@ function akdn_custom_views_query_alter(&$view, &$query) {
     $lang = $language->language;
     $query->where[0]['conditions'][1]['value'][':field_data_field_speech_image_field_speech_image'] = array($lang);
   }
-
+  if ($view->name == 'featured_slideshow' && $view->current_display == 'block_2') {
+    global $language;
+    $lang = $language->language;
+    $query->where[0]['conditions'][2]['value'][':field_data_field_project_image_field_project_image'] = array($lang);
+  }
+  if ($view->name == 'featured_slideshow_manual' && $view->current_display == 'block_4') {
+    global $language;
+    $lang = $language->language;
+    $query->where[0]['conditions'][1]['value'][':field_data_field_project_image_field_project_image'] = array($lang);
+  }
 }
 
 /**
