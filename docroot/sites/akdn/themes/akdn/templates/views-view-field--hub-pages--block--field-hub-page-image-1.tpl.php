@@ -25,16 +25,8 @@
 ?>
 
 <?php
-$count = count($view->result);
-if ($row->field_field_short_title[0]['rendered']['#markup'] == 'Aga Khan Award for Architecture') {
-  print l($output, 'node/9576', array('html' => TRUE));
-}
-elseif ($row->field_field_short_title[0]['rendered']['#markup'] == 'Aga Khan Music Initiative') {
-  print l($output, 'node/22106', array('html' => TRUE));
-}
-
-	if ($count >= 2 && $count!= 2) {
-       print l($output, $row->nid, array('html' => TRUE));
-   }
-
+$count1 = count($view->result);
+if ($count1 == 2 ) {
+    print l($output, $row->nid, array('html' => TRUE));
+} 
 ?>
