@@ -15334,6 +15334,15 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['field_media_source']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_media_source']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_media_source']['type'] = 'link_title_plain';
+  /* Field: Content: Article Type */
+  $handler->display->display_options['fields']['field_article_cat']['id'] = 'field_article_cat';
+  $handler->display->display_options['fields']['field_article_cat']['table'] = 'field_data_field_article_cat';
+  $handler->display->display_options['fields']['field_article_cat']['field'] = 'field_article_cat';
+  $handler->display->display_options['fields']['field_article_cat']['label'] = '';
+  $handler->display->display_options['fields']['field_article_cat']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_article_cat']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_article_cat']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_article_cat']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -15441,9 +15450,9 @@ if ($data->node_type == "featured_content") {
   print $url;
 } else {
   $node_path = drupal_get_path_alias(\'node/\' . $data->nid);
-  $url =  " <a href=\'/$node_path\'>More</a>";
+  $url =  "<a href=\'/$node_path\'>More</a>";
   print $url;
-}
+  }
 }
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
