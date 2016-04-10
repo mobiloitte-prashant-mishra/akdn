@@ -28683,16 +28683,8 @@ print $content;
   $handler->display->display_options['fields']['field_image_caption']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['field_image_caption']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image_caption']['type'] = 'text_plain';
-  /* Field: Content: Images */
-  $handler->display->display_options['fields']['field_project_image']['id'] = 'field_project_image';
-  $handler->display->display_options['fields']['field_project_image']['table'] = 'field_data_field_project_image';
-  $handler->display->display_options['fields']['field_project_image']['field'] = 'field_project_image';
-  $handler->display->display_options['fields']['field_project_image']['label'] = '';
-  $handler->display->display_options['fields']['field_project_image']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_project_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_project_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_project_image']['settings'] = array(
-  /* Field: Entity translation: Image: translated */
+
+  /* Field: Entity translation: Images: translated */
   $handler->display->display_options['fields']['field_project_image_et']['id'] = 'field_project_image_et';
   $handler->display->display_options['fields']['field_project_image_et']['table'] = 'field_data_field_project_image';
   $handler->display->display_options['fields']['field_project_image_et']['field'] = 'field_project_image_et';
@@ -28732,7 +28724,7 @@ print $content;
     'project' => 'project',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Image (field_project_image:language) */
+  /* Filter criterion: Content: Images (field_project_image:language) */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'field_data_field_project_image';
   $handler->display->display_options['filters']['language']['field'] = 'language';
@@ -30522,7 +30514,7 @@ print $value;
     'title_link' => 'content',
     'title_class' => '',
   );
-  /* Field: Entity translation: Image: translated */
+  /* Field: Entity translation: Images: translated */
   $handler->display->display_options['fields']['field_project_image_et']['id'] = 'field_project_image_et';
   $handler->display->display_options['fields']['field_project_image_et']['table'] = 'field_data_field_project_image';
   $handler->display->display_options['fields']['field_project_image_et']['field'] = 'field_project_image_et';
