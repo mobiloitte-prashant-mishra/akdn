@@ -3107,6 +3107,16 @@ function akdn_custom_theme($existing, $type, $theme, $path) {
     ),
     'arguments' => array('view' => NULL),
   );
+  $themes['views_view_field__entity_type'] = array(
+    'template' => 'templates/views-view-field--entity-type',
+    'original hook' => 'views_view_fields',
+    'preprocess functions' => array(
+      'template_preprocess',
+      'template_preprocess_views_view_fields',
+      'akdn_custom_preprocess_views_view_field__entity_type',
+    ),
+    //'arguments' => array('view' => NULL),
+  );
   return $themes;
 }
 
@@ -3373,6 +3383,21 @@ function akdn_custom_preprocess_views_view_field__hub_pages__country_hub_pages__
     $output .= '</div></div>';
   }
   $variables['country_sub_pages'] = $output;
+}
+
+/**
+* [akdn_custom_preprocess_views_view_field__entity_type]
+* @param  [type] &$variable [description]
+* @return [type]             [description]
+*/
+function akdn_custom_preprocess_views_view_field__entity_type(&$variables) {
+  $output = '';
+  $row = $variables['row'];
+  // if(strtolower($row->_entity_properties['entity_type']=='project')){
+  //   $row->_entity_properties['entity_type']='spotlights';
+  // }
+  $output =  $row;
+  $variables['project_to_spotlight_view'] = $output;
 }
 
 /*
