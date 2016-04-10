@@ -199,36 +199,36 @@ function akdn_custom_views_query_alter(&$view, &$query) {
       )
     );
   }
-  if ($view->name == 'press_center_detail_page_slideshows' && $view->current_display == 'press_center_detail_pages') {
-    global $language;
-    $lang = $language->language;
-    $query->where[0]['conditions'][1]['value'][':field_data_field_article_img_field_article_img'] = array($lang);
-  }
-  if ($view->name == 'press_center_detail_page_slideshows' && $view->current_display == 'block_1') {
-    global $language;
-    $lang = $language->language;
-    $query->where[0]['conditions'][1]['value'][':field_data_field_project_image_field_project_image'] = array($lang);
-  }
-  if ($view->name == 'press_center_detail_page_slideshows' && $view->current_display == 'block_2') {
-    global $language;
-    $lang = $language->language;
-    $query->where[0]['conditions'][1]['value'][':field_data_field_event_image_field_event_image'] = array($lang);
-  }
-  if ($view->name == 'press_center_detail_page_slideshows' && $view->current_display == 'block_3') {
-    global $language;
-    $lang = $language->language;
-    $query->where[0]['conditions'][1]['value'][':field_data_field_speech_image_field_speech_image'] = array($lang);
-  }
-  if ($view->name == 'featured_slideshow' && $view->current_display == 'block_2') {
-    global $language;
-    $lang = $language->language;
-    $query->where[0]['conditions'][2]['value'][':field_data_field_project_image_field_project_image'] = array($lang);
-  }
-  if ($view->name == 'featured_slideshow_manual' && $view->current_display == 'block_4') {
-    global $language;
-    $lang = $language->language;
-    $query->where[0]['conditions'][1]['value'][':field_data_field_project_image_field_project_image'] = array($lang);
-  }
+  // if ($view->name == 'press_center_detail_page_slideshows' && $view->current_display == 'press_center_detail_pages') {
+  //   global $language;
+  //   $lang = $language->language;
+  //   $query->where[0]['conditions'][1]['value'][':field_data_field_article_img_field_article_img'] = array($lang);
+  // }
+  // if ($view->name == 'press_center_detail_page_slideshows' && $view->current_display == 'block_1') {
+  //   global $language;
+  //   $lang = $language->language;
+  //   $query->where[0]['conditions'][1]['value'][':field_data_field_project_image_field_project_image'] = array($lang);
+  // }
+  // if ($view->name == 'press_center_detail_page_slideshows' && $view->current_display == 'block_2') {
+  //   global $language;
+  //   $lang = $language->language;
+  //   $query->where[0]['conditions'][1]['value'][':field_data_field_event_image_field_event_image'] = array($lang);
+  // }
+  // if ($view->name == 'press_center_detail_page_slideshows' && $view->current_display == 'block_3') {
+  //   global $language;
+  //   $lang = $language->language;
+  //   $query->where[0]['conditions'][1]['value'][':field_data_field_speech_image_field_speech_image'] = array($lang);
+  // }
+  // if ($view->name == 'featured_slideshow' && $view->current_display == 'block_2') {
+  //   global $language;
+  //   $lang = $language->language;
+  //   $query->where[0]['conditions'][2]['value'][':field_data_field_project_image_field_project_image'] = array($lang);
+  // }
+  // if ($view->name == 'featured_slideshow_manual' && $view->current_display == 'block_4') {
+  //   global $language;
+  //   $lang = $language->language;
+  //   $query->where[0]['conditions'][1]['value'][':field_data_field_project_image_field_project_image'] = array($lang);
+  // }
 }
 
 /**
@@ -826,11 +826,14 @@ function akdn_all_areas_of_activity() {
         }
       }
       else {
-        $output .= '<div class= "all-activities-row">';
-        $output .= '<div class= "all-activities-short-title">';
-        $output .= l($node_load->field_short_title[key($node_load->field_short_title)][0]['value'], 'node/' . $node_load->nid);
-        $output .= '</div>';
-        $output .= '</div>';
+         $title = $node_load->field_short_title[key($node_load->field_short_title)][0]['value'];
+         if ($title != 'Aga Khan Award for Architecture' && $title != 'Aga Khan Music Initiative' ) {
+            $output .= '<div class= "all-activities-row">';
+            $output .= '<div class= "all-activities-short-title">';
+            $output .= l($node_load->field_short_title[key($node_load->field_short_title)][0]['value'], 'node/' . $node_load->nid);
+            $output .= '</div>';
+            $output .= '</div>';
+          }
       }
     }
     $output .= '</div></div>';

@@ -5,8 +5,7 @@ jQuery(document).ready(function($) {
  * @param  {[type]} Basic Page Quick links Scroll
  * @return {[type]}       [description]
  */
-
-  // Open search filter
+ // Open search filter
 function getUrlVars() {
   var vars = [], hash;
   var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
@@ -22,6 +21,8 @@ function getUrlVars() {
     jQuery('div.akdn-filter-js-wrapper').css('display', 'block');
   }
 
+  // Open 'In the media slide link in new tab'
+  jQuery('.slide.In').find("a").attr("target", "_blank");
   jQuery('.accordian-quick-links a').click(function(){
     jQuery('html, body').animate({
         scrollTop: jQuery(jQuery(this).attr('href') ).offset().top
