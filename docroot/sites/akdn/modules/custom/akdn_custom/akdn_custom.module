@@ -827,13 +827,19 @@ function akdn_all_areas_of_activity() {
       }
       else {
          $title = $node_load->field_short_title[key($node_load->field_short_title)][0]['value'];
-         if ($title != 'Aga Khan Award for Architecture' && $title != 'Aga Khan Music Initiative' ) {
             $output .= '<div class= "all-activities-row">';
             $output .= '<div class= "all-activities-short-title">';
+         if ($title == 'Aga Khan Award for Architecture' ) {
+            $output .= l($node_load->field_short_title[key($node_load->field_short_title)][0]['value'], "node/9576");
+          } elseif ($title == 'Aga Khan Music Initiative') {
+                   $output .= l($node_load->field_short_title[key($node_load->field_short_title)][0]['value'], "node/22106");
+                   }
+                   else {
             $output .= l($node_load->field_short_title[key($node_load->field_short_title)][0]['value'], 'node/' . $node_load->nid);
-            $output .= '</div>';
-            $output .= '</div>';
           }
+
+          $output .= '</div>';
+          $output .= '</div>';
       }
     }
     $output .= '</div></div>';
