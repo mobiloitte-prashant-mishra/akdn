@@ -239,11 +239,10 @@ print $output;
     'gallery' => 'gallery',
     'geography' => 'geography',
     'hub_page' => 'hub_page',
-    'person' => 'person',
     'podcast' => 'podcast',
-    'project' => 'project',
     'publication' => 'publication',
     'speech' => 'speech',
+    'project' => 'project',
     'focus_area' => 'focus_area',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
