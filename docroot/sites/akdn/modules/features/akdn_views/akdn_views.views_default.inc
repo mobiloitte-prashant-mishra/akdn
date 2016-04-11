@@ -18281,18 +18281,65 @@ print \'<div>\'.$value.\'</div>\';
 ?>';
   $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['label'] = '';
+  $handler->display->display_options['fields']['title_field']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title_field']['alter']['text'] = '[php_1]';
+  $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field']['type'] = 'text_plain';
+  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['field_project_image']['id'] = 'field_project_image';
+  $handler->display->display_options['fields']['field_project_image']['table'] = 'field_data_field_project_image';
+  $handler->display->display_options['fields']['field_project_image']['field'] = 'field_project_image';
+  $handler->display->display_options['fields']['field_project_image']['label'] = '';
+  $handler->display->display_options['fields']['field_project_image']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_project_image']['alter']['path'] = 'sites/default/files/Projects/Calendars/calendar_dec2007_0.jpg';
+  $handler->display->display_options['fields']['field_project_image']['alter']['rel'] = 'gallery';
+  $handler->display->display_options['fields']['field_project_image']['alter']['link_class'] = 'colorbox init-colorbox-processed cboxElement';
+  $handler->display->display_options['fields']['field_project_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_project_image']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_project_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_project_image']['settings'] = array(
+    'image_style' => '',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_project_image']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_project_image']['delta_offset'] = '0';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_project_image]</a></div>
+  $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_project_image]</div>
 <div class="slide-text">
 [php_1]
 </div>
-
 ';
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'node/[nid]?width=950&height=500&iframe=true';
+  $handler->display->display_options['fields']['nothing']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['replace_spaces'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'colorbox-load';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Field: Colorbox: Colorbox trigger */
+  $handler->display->display_options['fields']['colorbox']['id'] = 'colorbox';
+  $handler->display->display_options['fields']['colorbox']['table'] = 'colorbox';
+  $handler->display->display_options['fields']['colorbox']['field'] = 'colorbox';
+  $handler->display->display_options['fields']['colorbox']['label'] = '';
+  $handler->display->display_options['fields']['colorbox']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['colorbox']['trigger_field'] = 'nothing';
+  $handler->display->display_options['fields']['colorbox']['popup'] = '<div class="slide">[field_project_image]</div>
+<div class="image-caption">
+[php_1]
+</div>';
+  $handler->display->display_options['fields']['colorbox']['gid'] = 1;
+  $handler->display->display_options['fields']['colorbox']['width'] = '700px';
+  $handler->display->display_options['fields']['colorbox']['height'] = '600px';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
@@ -19859,11 +19906,10 @@ if ($data->node_type == "featured_content") {
 '),
     t('AKAA Project Block'),
     t('test'),
-    t('<div class="slide">[field_project_image]</a></div>
+    t('<div class="slide">[field_project_image]</div>
 <div class="slide-text">
 [php_1]
 </div>
-
 '),
     t('Additional Project Images'),
     t('<a href="[field_project_image]" rel="gallery" class="colorbox"></a>'),
