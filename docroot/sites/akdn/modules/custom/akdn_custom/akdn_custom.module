@@ -199,36 +199,6 @@ function akdn_custom_views_query_alter(&$view, &$query) {
       )
     );
   }
-  // if ($view->name == 'press_center_detail_page_slideshows' && $view->current_display == 'press_center_detail_pages') {
-  //   global $language;
-  //   $lang = $language->language;
-  //   $query->where[0]['conditions'][1]['value'][':field_data_field_article_img_field_article_img'] = array($lang);
-  // }
-  // if ($view->name == 'press_center_detail_page_slideshows' && $view->current_display == 'block_1') {
-  //   global $language;
-  //   $lang = $language->language;
-  //   $query->where[0]['conditions'][1]['value'][':field_data_field_project_image_field_project_image'] = array($lang);
-  // }
-  // if ($view->name == 'press_center_detail_page_slideshows' && $view->current_display == 'block_2') {
-  //   global $language;
-  //   $lang = $language->language;
-  //   $query->where[0]['conditions'][1]['value'][':field_data_field_event_image_field_event_image'] = array($lang);
-  // }
-  // if ($view->name == 'press_center_detail_page_slideshows' && $view->current_display == 'block_3') {
-  //   global $language;
-  //   $lang = $language->language;
-  //   $query->where[0]['conditions'][1]['value'][':field_data_field_speech_image_field_speech_image'] = array($lang);
-  // }
-  // if ($view->name == 'featured_slideshow' && $view->current_display == 'block_2') {
-  //   global $language;
-  //   $lang = $language->language;
-  //   $query->where[0]['conditions'][2]['value'][':field_data_field_project_image_field_project_image'] = array($lang);
-  // }
-  // if ($view->name == 'featured_slideshow_manual' && $view->current_display == 'block_4') {
-  //   global $language;
-  //   $lang = $language->language;
-  //   $query->where[0]['conditions'][1]['value'][':field_data_field_project_image_field_project_image'] = array($lang);
-  // }
 }
 
 /**
@@ -3151,7 +3121,7 @@ function akdn_custom_preprocess_views_view_field__award_cycle_news__page_1__noth
   $url = $row->_entity_properties['url'];
   $field_media_source_url = $row->_entity_properties['field_media_source:url'];
   $field_article_cat = $row->_entity_properties['field_article_cat'];
-  $image_public_uri = file_create_url($row->_entity_properties['image_public_uri']);
+  $image_public_uri = $row->_entity_properties['image_public_uri'];
   $field_short_title_x = $row->_entity_properties;
   $short_title = $field_short_title_x['entity object']->field_short_title['en'][0]['value'];
   $field_publish_date_x = $row->_entity_properties;
@@ -3161,18 +3131,36 @@ function akdn_custom_preprocess_views_view_field__award_cycle_news__page_1__noth
   $entity_type_x = $row->_entity_properties['entity_type'];
   $entity_type = $entity_type_x['entity object']->entity_type['und'][0]['value'];
   if ($field_article_cat == '2611') {
-    $output .= '<div class="image">
-                  <a href ='.$field_media_source_url.' target="_blank">
-                    <img class="akdn-solr-img-link" src='.$image_public_uri.'>
-                  </a>
-                </div>';
+    $listing_image = array (
+          'style_name' => 'article_listing_thumbnail',
+          'path' => $image_public_uri,
+          'width' => '',
+          'height' => '',
+          'attributes' => array(
+            'class' => 'akdn-solr-img-link'
+          ),
+        );
+        $output .= '<div class = "image">';
+        $output .= '<a href ='.$field_media_source_url.' target="_blank">';
+        $output .= theme('image_style', $listing_image);
+        $output .= '</a>';
+        $output .= '</div>';
   }
   else {
-    $output .= '<div class="image">
-                  <a href ='.$url.'>
-                    <img class="akdn-solr-img-link" src='.$image_public_uri.'>
-                  </a>
-                </div>';
+        $listing_image = array (
+          'style_name' => 'article_listing_thumbnail',
+          'path' => $image_public_uri,
+          'width' => '',
+          'height' => '',
+          'attributes' => array(
+            'class' => 'akdn-solr-img-link'
+          ),
+        );
+        $output .= '<div class = "image">';
+        $output .= '<a href ='.$url.'>';
+        $output .= theme('image_style', $listing_image);
+        $output .= '</a>';
+        $output .= '</div>';
   }
   $output .= '<div class="akaa-press-centre-subwrapper">';
   $output .= '<div class="type">'.$entity_type_x.'</div>';
@@ -3200,7 +3188,7 @@ function akdn_custom_preprocess_views_view_field__award_cycle_news__page_2__noth
   $url = $row->_entity_properties['url'];
   $field_media_source_url = $row->_entity_properties['field_media_source:url'];
   $field_article_cat = $row->_entity_properties['field_article_cat'];
-  $image_public_uri = file_create_url($row->_entity_properties['image_public_uri']);
+  $image_public_uri = $row->_entity_properties['image_public_uri'];
   $field_short_title_x = $row->_entity_properties;
   $short_title = $field_short_title_x['entity object']->field_short_title['en'][0]['value'];
   $field_publish_date_x = $row->_entity_properties;
@@ -3210,18 +3198,36 @@ function akdn_custom_preprocess_views_view_field__award_cycle_news__page_2__noth
   $entity_type_x = $row->_entity_properties['entity_type'];
   $entity_type = $entity_type_x['entity object']->entity_type['und'][0]['value'];
   if ($field_article_cat == '2611') {
-    $output .= '<div class="image">
-                  <a href ='.$field_media_source_url.' target="_blank">
-                    <img class="akdn-solr-img-link" src='.$image_public_uri.'>
-                  </a>
-                </div>';
+    $listing_image = array (
+          'style_name' => 'article_listing_thumbnail',
+          'path' => $image_public_uri,
+          'width' => '',
+          'height' => '',
+          'attributes' => array(
+            'class' => 'akdn-solr-img-link'
+          ),
+        );
+        $output .= '<div class = "image">';
+        $output .= '<a href ='.$field_media_source_url.' target="_blank">';
+        $output .= theme('image_style', $listing_image);
+        $output .= '</a>';
+        $output .= '</div>';
   }
   else {
-    $output .= '<div class="image">
-                  <a href ='.$url.'>
-                    <img class="akdn-solr-img-link" src='.$image_public_uri.'>
-                  </a>
-                </div>';
+        $listing_image = array (
+          'style_name' => 'article_listing_thumbnail',
+          'path' => $image_public_uri,
+          'width' => '',
+          'height' => '',
+          'attributes' => array(
+            'class' => 'akdn-solr-img-link'
+          ),
+        );
+        $output .= '<div class = "image">';
+        $output .= '<a href ='.$url.'>';
+        $output .= theme('image_style', $listing_image);
+        $output .= '</a>';
+        $output .= '</div>';
   }
   $output .= '<div class="akaa-press-centre-subwrapper">';
   $output .= '<div class="type">'.$entity_type_x.'</div>';
