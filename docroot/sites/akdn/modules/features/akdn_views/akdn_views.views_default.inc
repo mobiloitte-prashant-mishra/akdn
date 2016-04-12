@@ -28728,6 +28728,7 @@ print $content;
   $handler->display->display_options['fields']['field_project_image_et']['table'] = 'field_data_field_project_image';
   $handler->display->display_options['fields']['field_project_image_et']['field'] = 'field_project_image_et';
   $handler->display->display_options['fields']['field_project_image_et']['label'] = '';
+  $handler->display->display_options['fields']['field_project_image_et']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_project_image_et']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_project_image_et']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_project_image_et']['settings'] = array(
@@ -28775,6 +28776,10 @@ print $content;
   /* Display: Events Details Slideshow */
   $handler = $view->new_display('block', 'Events Details Slideshow', 'block_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Event Image (field_event_image:fid) */
   $handler->display->display_options['relationships']['field_event_image_fid']['id'] = 'field_event_image_fid';
@@ -28786,6 +28791,7 @@ print $content;
   $handler->display->display_options['fields']['field_event_image_et']['table'] = 'field_data_field_event_image';
   $handler->display->display_options['fields']['field_event_image_et']['field'] = 'field_event_image_et';
   $handler->display->display_options['fields']['field_event_image_et']['label'] = '';
+  $handler->display->display_options['fields']['field_event_image_et']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_event_image_et']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_event_image_et']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_event_image_et']['settings'] = array(
@@ -28899,9 +28905,9 @@ print $content;
     'speech' => 'speech',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Images (field_gallery_images:language) */
+  /* Filter criterion: Content: Image (field_speech_image:language) */
   $handler->display->display_options['filters']['language']['id'] = 'language';
-  $handler->display->display_options['filters']['language']['table'] = 'field_data_field_gallery_images';
+  $handler->display->display_options['filters']['language']['table'] = 'field_data_field_speech_image';
   $handler->display->display_options['filters']['language']['field'] = 'language';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',

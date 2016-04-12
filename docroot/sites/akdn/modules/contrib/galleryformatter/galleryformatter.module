@@ -172,7 +172,9 @@ function galleryformatter_theme() {
  * Implements hook_field_formatter_view().
  */
 function galleryformatter_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
-   $element = array();
+  global $language;
+  $lang = $language->language;
+  $element = array();
 
   // if there are no images, dont do anything else
   if(empty($items)){
@@ -241,23 +243,27 @@ function galleryformatter_field_formatter_view($entity_type, $entity, $field, $i
   $entity_id =  $ids[0];
 
   foreach ($items as $delta => $item){
-    $caption = reset($item['field_image_caption']);
+    $caption = reset($item['field_image_caption'][$lang]);
+
     if (!empty($caption)) {
-      $renderitems['slides'][$delta]['caption'] = $caption[0]['value'];
+      $renderitems['slides'][$delta]['caption'] = $caption['value'];
     }
-    $copyright = reset($item['field_image_copytight']);
+    else{
+      $renderitems['slides'][$delta]['caption'] = reset($item['field_image_caption']['en'])['value'];
+    }
+    $copyright = reset($item['field_image_copytight'][$lang]);
     if (!empty($copyright)) {
-      $renderitems['slides'][$delta]['copyright'] = $copyright[0]['value'];
+      $renderitems['slides'][$delta]['copyright'] = $copyright['value'];
     }
     /*
      *  prepare slides
      */
     // Grab and sanitize image information
     // $renderitems['slides'][$delta]['description'] = $item['description']; // so far no description in d7 image fields
-    if (!empty($caption[0]['value'])) {
+    if (!empty($caption['value'])) {
       // Sanitize the title
-      if(strpos($caption[0]['value'], '<') !== FALSE) {
-        $item['title'] = strip_tags($caption[0]['value']);
+      if(strpos($caption['value'], '<') !== FALSE) {
+        $item['title'] = strip_tags($caption['value']);
       }
     }
     else {
@@ -292,7 +298,7 @@ function galleryformatter_field_formatter_view($entity_type, $entity, $field, $i
           }
         }
         // if we have more than one image, add the image count to the title so they are not all the same.
-         $item['title'] = $caption[0]['value'];
+         $item['title'] = $caption['value'];
       }
     }
 
