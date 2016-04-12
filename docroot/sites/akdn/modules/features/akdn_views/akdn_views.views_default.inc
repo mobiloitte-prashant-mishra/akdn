@@ -17549,22 +17549,17 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
 $array = $data->field_field_caption;
-if (empty($array)) {
-  if ($data->node_type == \'project\') {
-    $array = $data->field_field_image_caption_1;
-  }
-  else {
-    $array = $data->field_field_caption;
-  }
+if (empty($array) && $data->node_type == \'project\') {
+   $array = $data->field_field_image_caption_1;
 }
-
 if (isset($array[0][\'rendered\'][\'#markup\'])) {
   $val = $array[0][\'rendered\'][\'#markup\'];
-  if (strlen($val) <= 150) {
-  $value = rtrim($val) . "...";
-  } else {
-    $pos = strpos($val, \' \', 135);
+  if (strlen($val) > 125) {
+    $pos = strpos($val, \' \', 100);
     $value = substr($val,0,$pos) . "...";
+  }
+  else {
+    $value = rtrim($val) . "...";
   }
 }
 else {
@@ -28729,6 +28724,7 @@ print $content;
   $handler->display->display_options['fields']['field_image_caption']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['field_image_caption']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image_caption']['type'] = 'text_plain';
+<<<<<<< HEAD
 
   /* Field: Entity translation: Images: translated */
   $handler->display->display_options['fields']['field_project_image_et']['id'] = 'field_project_image_et';
@@ -28738,6 +28734,17 @@ print $content;
   $handler->display->display_options['fields']['field_project_image_et']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_project_image_et']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_project_image_et']['settings'] = array(
+=======
+  /* Field: Content: Images */
+  $handler->display->display_options['fields']['field_project_image']['id'] = 'field_project_image';
+  $handler->display->display_options['fields']['field_project_image']['table'] = 'field_data_field_project_image';
+  $handler->display->display_options['fields']['field_project_image']['field'] = 'field_project_image';
+  $handler->display->display_options['fields']['field_project_image']['label'] = '';
+  $handler->display->display_options['fields']['field_project_image']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_project_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_project_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_project_image']['settings'] = array(
+>>>>>>> d6815a65a4a96c29d4e53b37cf05b8ce699effb6
     'image_style' => 'featured_content',
     'image_link' => 'content',
   );
@@ -30560,6 +30567,7 @@ print $value;
     'title_link' => 'content',
     'title_class' => '',
   );
+<<<<<<< HEAD
   /* Field: Entity translation: Images: translated */
   $handler->display->display_options['fields']['field_project_image_et']['id'] = 'field_project_image_et';
   $handler->display->display_options['fields']['field_project_image_et']['table'] = 'field_data_field_project_image';
@@ -30568,6 +30576,18 @@ print $value;
   $handler->display->display_options['fields']['field_project_image_et']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_project_image_et']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_project_image_et']['settings'] = array(
+=======
+  /* Field: Content: Images */
+  $handler->display->display_options['fields']['field_project_image']['id'] = 'field_project_image';
+  $handler->display->display_options['fields']['field_project_image']['table'] = 'field_data_field_project_image';
+  $handler->display->display_options['fields']['field_project_image']['field'] = 'field_project_image';
+  $handler->display->display_options['fields']['field_project_image']['label'] = '';
+  $handler->display->display_options['fields']['field_project_image']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_project_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_project_image']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_project_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_project_image']['settings'] = array(
+>>>>>>> d6815a65a4a96c29d4e53b37cf05b8ce699effb6
     'image_style' => 'featured_content',
     'image_link' => 'content',
   );
