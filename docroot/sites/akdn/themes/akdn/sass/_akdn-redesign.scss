@@ -2742,8 +2742,6 @@ h2.header-name a {
             }
             .hub_pages-title {
                 @extend %font_times;
-                display: table;
-                width: 100%;
                 height: 100%;
                 padding: 10px 35px 10px 15px;
                 font-size: 22px;
@@ -2752,8 +2750,6 @@ h2.header-name a {
                 background-color: #f4f1e7;
                 text-transform: uppercase;
                 a {
-                    display: table-cell;
-                    vertical-align: middle;
                     color: #000;
                     text-decoration: none;
                     &:hover, &:focus {
@@ -3786,7 +3782,7 @@ h2.header-name a {
         top: 5px;
         left: 0;
         display: block;
-        height: 97%;
+        height: 96%;
         border-left: 4px solid #b4965a;
     }
     span {
@@ -3804,7 +3800,7 @@ h2.header-name a {
             display: inline-block;
         }
         font-size: 22px;
-        font-style: normal;
+        font-style: italic;
     }
 }
 .what-we-do-body-more-body {
@@ -5497,8 +5493,6 @@ map {
     }
 }
 .akaa-cycle-title {
-    display: table;
-    width: 100%;
     height: 100%;
     padding: 10px 35px 10px 15px;
     cursor: pointer;
@@ -5509,13 +5503,11 @@ map {
     }
     a {
         @extend %font_times;
-        display: table-cell;
         font-size: 22px;
         color: #000;
         line-height: 26px;
         text-decoration: none;
         text-transform: uppercase;
-        vertical-align: middle;
         &:hover, &:focus {
             color: #000;
             text-decoration: none;
