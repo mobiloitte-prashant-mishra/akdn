@@ -32,8 +32,9 @@ elseif ($arg[1] == '9576') {
 elseif ($arg[1] == '22106') {
   $channel_id = variable_get('akmi_youtube_channelid') ? variable_get('akmi_youtube_channelid') : 'UCdXlZQFsArBuxT7bdkjhqvw';
 }
-
-$content = _akdn_custom_get_latest_youtube_video($url, $channel_id);
+if(function_exists('_akdn_custom_get_latest_youtube_video')){
+  $content = _akdn_custom_get_latest_youtube_video($url, $channel_id);
+}
 ?>
 <?php
 if ($content['image_url']) {
