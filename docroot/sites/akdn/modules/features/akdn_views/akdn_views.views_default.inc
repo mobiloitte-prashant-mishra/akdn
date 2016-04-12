@@ -28712,6 +28712,20 @@ print $content;
   $handler->display->display_options['relationships']['field_project_image_fid']['table'] = 'field_data_field_project_image';
   $handler->display->display_options['relationships']['field_project_image_fid']['field'] = 'field_project_image_fid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Entity translation: Image: translated */
+  $handler->display->display_options['fields']['field_project_image_et']['id'] = 'field_project_image_et';
+  $handler->display->display_options['fields']['field_project_image_et']['table'] = 'field_data_field_project_image';
+  $handler->display->display_options['fields']['field_project_image_et']['field'] = 'field_project_image_et';
+  $handler->display->display_options['fields']['field_project_image_et']['label'] = '';
+  $handler->display->display_options['fields']['field_project_image_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_project_image_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_project_image_et']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_project_image_et']['settings'] = array(
+    'image_style' => 'featured_content',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_project_image_et']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_project_image_et']['delta_offset'] = '0';
   /* Field: File: Caption */
   $handler->display->display_options['fields']['field_image_caption']['id'] = 'field_image_caption';
   $handler->display->display_options['fields']['field_image_caption']['table'] = 'field_data_field_image_caption';
@@ -28723,30 +28737,31 @@ print $content;
   $handler->display->display_options['fields']['field_image_caption']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['field_image_caption']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image_caption']['type'] = 'text_plain';
-  /* Field: Entity translation: Image: translated */
-  $handler->display->display_options['fields']['field_project_image_et']['id'] = 'field_project_image_et';
-  $handler->display->display_options['fields']['field_project_image_et']['table'] = 'field_data_field_project_image';
-  $handler->display->display_options['fields']['field_project_image_et']['field'] = 'field_project_image_et';
-  $handler->display->display_options['fields']['field_project_image_et']['label'] = '';
-  $handler->display->display_options['fields']['field_project_image_et']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_project_image_et']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_project_image_et']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_project_image_et']['settings'] = array(
-    'image_style' => 'featured_content',
-    'image_link' => 'content',
-  );
-  $handler->display->display_options['fields']['field_project_image_et']['group_rows'] = FALSE;
-  $handler->display->display_options['fields']['field_project_image_et']['delta_offset'] = '0';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_project_image_et]</div>
 <div class="slide-text">
 <div class="caption">[field_image_caption]</div>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Field: Colorbox: Colorbox trigger */
+  $handler->display->display_options['fields']['colorbox']['id'] = 'colorbox';
+  $handler->display->display_options['fields']['colorbox']['table'] = 'colorbox';
+  $handler->display->display_options['fields']['colorbox']['field'] = 'colorbox';
+  $handler->display->display_options['fields']['colorbox']['label'] = '';
+  $handler->display->display_options['fields']['colorbox']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['colorbox']['trigger_field'] = 'nothing';
+  $handler->display->display_options['fields']['colorbox']['popup'] = '<div class="slide">[field_project_image_et]</div>
+<div class="slide-text-colorbox">
+<div class="caption">[field_image_caption]</div>
+</div>';
+  $handler->display->display_options['fields']['colorbox']['gid'] = 1;
+  $handler->display->display_options['fields']['colorbox']['width'] = '800px';
+  $handler->display->display_options['fields']['colorbox']['height'] = '700px';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
