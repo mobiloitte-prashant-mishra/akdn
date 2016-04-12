@@ -32,15 +32,21 @@ elseif ($arg[1] == '9576') {
 elseif ($arg[1] == '22106') {
   $channel_id = variable_get('akmi_youtube_channelid') ? variable_get('akmi_youtube_channelid') : 'UCdXlZQFsArBuxT7bdkjhqvw';
 }
-if(function_exists('_akdn_custom_get_latest_youtube_video')){
+if (function_exists('_akdn_custom_get_latest_youtube_video')) {
   $content = _akdn_custom_get_latest_youtube_video($url, $channel_id);
 }
 ?>
 <?php
-if ($content['image_url']) {
+if ($content['id']) {
   $img_url = $content['image_url'];
   $id = $content['id'];
   $output = '<span class="youtube-play-button"></span>';
   $output .= '<a href="https://www.youtube.com/embed/' . $id . '?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0" class="colorbox-inline"><img src="' . $img_url . '"  width="360" height="240" /></a>';
+  $output .= '<div class="field-content grid-social-block_title grid-social-block_title-youtube"><a href="http://www.youtube.com/watch?v=' . $id . '" target="_blank"><div class="title"><span class="social-icon-image"></span>' . $content['title'] . '</div></a></div>';
+  $output .= '<div class="field-content grid-social-block_date grid-social-block_date-youtube">' . date("d M Y", $content['date']) . '</div>';
+  $output .= '<div class="field-content grid-social-block_body grid-social-block_body-youtube"><p>' . $content['title'] . '</p></div>';
+  $output .= '<div class="field-content grid-social-block_medialink grid-social-block_medialink-youtube"><div class="social_sharing">
+<span class="play-video" id="MNrBAwjEkUI"><a href="https://www.youtube.com/embed/' . $id . '?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0" class="colorbox-inline">' . t('Play') . '</a></span>
+</div></div>';
 }
 print $output; ?>
