@@ -21,14 +21,5 @@
  * regardless of any changes in the aliasing that might happen if
  * the view is modified.
  */
-
-if(strtolower($output) == 'media') {
-  $output = t('In the media');
-}
-
-if(strtolower($row->_entity_properties['entity_type']) == 'project') {
-  $row->_entity_properties['entity_type']= t('Spotlights');
-}
-
 ?>
-<?php print $output; ?>
+<?php print $output;?>
