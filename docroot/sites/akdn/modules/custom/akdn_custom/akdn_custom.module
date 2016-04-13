@@ -3131,7 +3131,8 @@ function akdn_custom_preprocess_views_view_field__award_cycle_news__page_1__noth
   $entity_type_x = $row->_entity_properties['entity_type'];
   $entity_type = $entity_type_x['entity object']->entity_type['und'][0]['value'];
   if ($field_article_cat == '2611') {
-    $listing_image = array (
+    if(!empty($image_public_uri)) {
+      $listing_image = array (
           'style_name' => 'article_listing_thumbnail',
           'path' => $image_public_uri,
           'width' => '',
@@ -3145,9 +3146,27 @@ function akdn_custom_preprocess_views_view_field__award_cycle_news__page_1__noth
         $output .= theme('image_style', $listing_image);
         $output .= '</a>';
         $output .= '</div>';
+    }
+    else {
+      $listing_image = array (
+          'style_name' => 'article_listing_thumbnail',
+          'path' => 'public://media/agency_logos/AKAA-logo.jpg',
+          'width' => '',
+          'height' => '',
+          'attributes' => array(
+            'class' => 'akdn-solr-img-link'
+          ),
+        );
+        $output .= '<div class = "image">';
+        $output .= '<a href ='.$field_media_source_url.' target="_blank">';
+        $output .= theme('image_style', $listing_image);
+        $output .= '</a>';
+        $output .= '</div>';
+    }
   }
   else {
-        $listing_image = array (
+        if(!empty($image_public_uri)) {
+          $listing_image = array (
           'style_name' => 'article_listing_thumbnail',
           'path' => $image_public_uri,
           'width' => '',
@@ -3161,6 +3180,23 @@ function akdn_custom_preprocess_views_view_field__award_cycle_news__page_1__noth
         $output .= theme('image_style', $listing_image);
         $output .= '</a>';
         $output .= '</div>';
+        }
+        else {
+          $listing_image = array (
+          'style_name' => 'article_listing_thumbnail',
+          'path' => 'public://media/agency_logos/AKAA-logo.jpg',
+          'width' => '',
+          'height' => '',
+          'attributes' => array(
+            'class' => 'akdn-solr-img-link'
+          ),
+        );
+        $output .= '<div class = "image">';
+        $output .= '<a href ='.$url.'>';
+        $output .= theme('image_style', $listing_image);
+        $output .= '</a>';
+        $output .= '</div>';
+        }
   }
   $output .= '<div class="akaa-press-centre-subwrapper">';
   $output .= '<div class="type">'.$entity_type_x.'</div>';
@@ -3198,7 +3234,8 @@ function akdn_custom_preprocess_views_view_field__award_cycle_news__page_2__noth
   $entity_type_x = $row->_entity_properties['entity_type'];
   $entity_type = $entity_type_x['entity object']->entity_type['und'][0]['value'];
   if ($field_article_cat == '2611') {
-    $listing_image = array (
+    if(!empty($image_public_uri)) {
+      $listing_image = array (
           'style_name' => 'article_listing_thumbnail',
           'path' => $image_public_uri,
           'width' => '',
@@ -3212,9 +3249,27 @@ function akdn_custom_preprocess_views_view_field__award_cycle_news__page_2__noth
         $output .= theme('image_style', $listing_image);
         $output .= '</a>';
         $output .= '</div>';
+    }
+    else {
+      $listing_image = array (
+          'style_name' => 'article_listing_thumbnail',
+          'path' => 'public://media/missing2.jpg',
+          'width' => '',
+          'height' => '',
+          'attributes' => array(
+            'class' => 'akdn-solr-img-link'
+          ),
+        );
+        $output .= '<div class = "image">';
+        $output .= '<a href ='.$field_media_source_url.' target="_blank">';
+        $output .= theme('image_style', $listing_image);
+        $output .= '</a>';
+        $output .= '</div>';
+    }
   }
   else {
-        $listing_image = array (
+        if(!empty($image_public_uri)) {
+          $listing_image = array (
           'style_name' => 'article_listing_thumbnail',
           'path' => $image_public_uri,
           'width' => '',
@@ -3228,6 +3283,23 @@ function akdn_custom_preprocess_views_view_field__award_cycle_news__page_2__noth
         $output .= theme('image_style', $listing_image);
         $output .= '</a>';
         $output .= '</div>';
+        }
+        else {
+          $listing_image = array (
+          'style_name' => 'article_listing_thumbnail',
+          'path' => 'public://media/missing2.jpg',
+          'width' => '',
+          'height' => '',
+          'attributes' => array(
+            'class' => 'akdn-solr-img-link'
+          ),
+        );
+        $output .= '<div class = "image">';
+        $output .= '<a href ='.$url.'>';
+        $output .= theme('image_style', $listing_image);
+        $output .= '</a>';
+        $output .= '</div>';
+        }
   }
   $output .= '<div class="akaa-press-centre-subwrapper">';
   $output .= '<div class="type">'.$entity_type_x.'</div>';
