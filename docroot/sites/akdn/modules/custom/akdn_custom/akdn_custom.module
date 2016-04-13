@@ -151,6 +151,15 @@ function akdn_custom_preprocess_page(&$vars, $hook) {
     }
     } */
   drupal_add_js(drupal_get_path('module', 'akdn_custom') . '/js/chosen/chosen.jquery.js');
+  drupal_add_js('
+    window.onload=function () {
+      var tt = document.querySelectorAll(".field-add-more-submit")[0];
+      var len = document.querySelectorAll(".fieldset-legend .fieldset-title").length;
+      if(!len){
+        tt.click();
+      }
+    }
+    ', array('type' => 'inline', 'scope' => 'header', 'weight' => -99));
   drupal_add_css(drupal_get_path('module', 'akdn_custom') . '/js/chosen/chosen.css');
 }
 
