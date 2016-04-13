@@ -13241,10 +13241,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['field_youtube_picture']['alter']['alt'] = '[field_youtube_picture-title]';
   $handler->display->display_options['fields']['field_youtube_picture']['alter']['link_class'] = 'colorbox-inline';
   $handler->display->display_options['fields']['field_youtube_picture']['alter']['prefix'] = '<span class="youtube-play-button"></span>';
-  $handler->display->display_options['fields']['field_youtube_picture']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_youtube_picture']['element_class'] = 'grid-social-block_picture grid-social-block_picture-youtube';
   $handler->display->display_options['fields']['field_youtube_picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_youtube_picture']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_youtube_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_youtube_picture']['settings'] = array(
     'image_style' => 'social_sharing_image',
@@ -13514,10 +13511,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['field_youtube_picture']['alter']['alt'] = '[field_youtube_picture-title]';
   $handler->display->display_options['fields']['field_youtube_picture']['alter']['link_class'] = 'colorbox-inline';
   $handler->display->display_options['fields']['field_youtube_picture']['alter']['prefix'] = '<span class="youtube-play-button"></span>';
-  $handler->display->display_options['fields']['field_youtube_picture']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_youtube_picture']['element_class'] = 'grid-social-block_picture grid-social-block_picture-youtube';
   $handler->display->display_options['fields']['field_youtube_picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_youtube_picture']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_youtube_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_youtube_picture']['settings'] = array(
     'image_style' => 'social_sharing_image',
@@ -13907,10 +13901,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['field_youtube_picture']['alter']['alt'] = '[field_youtube_picture-title]';
   $handler->display->display_options['fields']['field_youtube_picture']['alter']['link_class'] = 'colorbox-inline';
   $handler->display->display_options['fields']['field_youtube_picture']['alter']['prefix'] = '<span class="youtube-play-button"></span>';
-  $handler->display->display_options['fields']['field_youtube_picture']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_youtube_picture']['element_class'] = 'grid-social-block_picture grid-social-block_picture-youtube';
   $handler->display->display_options['fields']['field_youtube_picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_youtube_picture']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_youtube_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_youtube_picture']['settings'] = array(
     'image_style' => 'social_sharing_image',
