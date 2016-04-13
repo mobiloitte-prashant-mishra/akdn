@@ -14016,7 +14016,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['field_instagram_picture']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_instagram_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_instagram_picture']['settings'] = array(
-    'image_style' => 'instagram_feed_image',
+    'image_style' => 'standard_listing_aspect_switcher',
     'image_link' => '',
   );
   /* Field: Content: Title */
@@ -28683,7 +28683,6 @@ print $content;
   $handler->display->display_options['fields']['field_image_caption']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['field_image_caption']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image_caption']['type'] = 'text_plain';
-
   /* Field: Entity translation: Images: translated */
   $handler->display->display_options['fields']['field_project_image_et']['id'] = 'field_project_image_et';
   $handler->display->display_options['fields']['field_project_image_et']['table'] = 'field_data_field_project_image';
