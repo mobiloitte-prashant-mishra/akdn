@@ -18412,6 +18412,20 @@ map area {
   background: url('../images/akdn-logo.png?1458165161') no-repeat;
 }
 
+/* Projects Lightbox captions */
+/* line 7265, ../sass/_akdn-redesign.scss */
+#colorbox .slide-text-colorbox,
+#colorbox .image-caption {
+  position: relative;
+  bottom: 40px;
+  width: 100%;
+  padding: 10px 15px;
+  color: #FFF;
+  font-size: 14px;
+  line-height: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 /*
 * Media Queries
 *
