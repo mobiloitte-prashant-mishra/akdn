@@ -15334,15 +15334,6 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['field_media_source']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_media_source']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_media_source']['type'] = 'link_title_plain';
-  /* Field: Content: Article Type */
-  $handler->display->display_options['fields']['field_article_cat']['id'] = 'field_article_cat';
-  $handler->display->display_options['fields']['field_article_cat']['table'] = 'field_data_field_article_cat';
-  $handler->display->display_options['fields']['field_article_cat']['field'] = 'field_article_cat';
-  $handler->display->display_options['fields']['field_article_cat']['label'] = '';
-  $handler->display->display_options['fields']['field_article_cat']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_article_cat']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_article_cat']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_article_cat']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -34080,24 +34071,30 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['header']['php']['table'] = 'views';
   $handler->display->display_options['header']['php']['field'] = 'php';
   $handler->display->display_options['header']['php']['php_output'] = '<?php
-   $output = \'\';
-   $term = nat_get_terms_by_vocabulary(arg(1));
-   $term = array_values($term);
-   $name = $term[0]->name;
-   $tid = $term[0]->tid;
-   $url = \'press-centre/projects\';
-   $str = \'More \'.$name.\' Spotlights\';
-   $str_one = \'All Spotlights\';
-   $query = array(\'query\' => array(\'f[0]\' => \'field_focus_area:\'.$tid));
-   $redirect = l(t($str), $url,  $query);
-   $redirect_one = l(t($str_one), $url);
-   $output .= \'<div class = "what-we-do-sub-navbar">\';
-   $output .= \'<p><span>S</span><span>potlights</span></p>\';
-   $output .= \'<ul><li>\';
-   $output .= $redirect;
-   $output .= \'</li><li>\';
-   $output .= $redirect_one . \'</li></ul></div>\';
-   print $output;
+$output = \'\';
+$term = nat_get_terms_by_vocabulary(arg(1));
+$term = array_values($term);
+if (empty($term)) {
+$object = new stdClass();
+$object->name = "Civil Society";
+$object->tid = 9126;
+$term[] = $object;
+}
+ $name = $term[0]->name;
+ $tid = $term[0]->tid;
+ $url = \'press-centre/projects\';
+ $str = \'More \'.$name.\' Spotlights\';
+ $str_one = \'All Spotlights\';
+ $query = array(\'query\' => array(\'f[0]\' => \'field_focus_area:\'.$tid));
+ $redirect = l(t($str), $url,  $query);
+ $redirect_one = l(t($str_one), $url);
+ $output .= \'<div class = "what-we-do-sub-navbar">\';
+ $output .= \'<p><span>S</span><span>potlights</span></p>\';
+ $output .= \'<ul><li>\';
+ $output .= $redirect;
+ $output .= \'</li><li>\';
+ $output .= $redirect_one . \'</li></ul></div>\';
+ print $output;
 ?>';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
