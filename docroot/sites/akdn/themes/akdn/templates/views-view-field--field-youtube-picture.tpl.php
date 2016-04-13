@@ -26,10 +26,10 @@ $url = 'https://www.youtube.com/feeds/videos.xml';
 if ($arg[0] == 'front') {
   $channel_id = variable_get('akdn_youtube_channelid') ? variable_get('akdn_youtube_channelid') : 'UCJ9z0V7erDeLCWHS2iGGg5g';
 }
-elseif ($arg[1] == '9576') {
+elseif ($arg[1] == '22106') {
   $channel_id = variable_get('akaa_youtube_channelid') ? variable_get('akaa_youtube_channelid') : 'UCq2a2B38dTDMKW7rgDf0LIA';
 }
-elseif ($arg[1] == '22106') {
+elseif ($arg[1] == '9576') {
   $channel_id = variable_get('akmi_youtube_channelid') ? variable_get('akmi_youtube_channelid') : 'UCdXlZQFsArBuxT7bdkjhqvw';
 }
 if (function_exists('_akdn_custom_get_latest_youtube_video')) {
