@@ -25,5 +25,10 @@
 if(strtolower($output) == 'media') {
   $output = t('In the media');
 }
+
+if(strtolower($row->_entity_properties['entity_type']) == 'project') {
+  $row->_entity_properties['entity_type']= t('Spotlights');
+}
+
 ?>
 <?php print $output; ?>
