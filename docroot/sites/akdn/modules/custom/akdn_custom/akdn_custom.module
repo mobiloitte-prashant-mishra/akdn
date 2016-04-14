@@ -3092,15 +3092,15 @@ function akdn_custom_theme($existing, $type, $theme, $path) {
     ),
     'arguments' => array('view' => NULL),
   );
-  $themes['views_view_field__entity_type'] = array(
-    'template' => 'templates/views-view-field--entity-type',
+  $themes['views_view_fields__solr_site_search__page'] = array(
+    'template' => 'templates/views-view-fields--solr-site-search--page',
     'original hook' => 'views_view_fields',
     'preprocess functions' => array(
       'template_preprocess',
       'template_preprocess_views_view_fields',
-      'akdn_custom_preprocess_views_view_field__entity_type',
+      'akdn_custom_preprocess_views_view_fields__solr_site_search__page',
     ),
-    //'arguments' => array('view' => NULL),
+    'arguments' => array('view' => NULL),
   );
   return $themes;
 }
