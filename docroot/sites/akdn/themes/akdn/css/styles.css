@@ -10070,27 +10070,28 @@ button.close {
 /* line 196, ../sass/sass-extensions/_custom-utilities.scss */
 .grid-media-block_description .read-more, .country-city-readmore {
   width: auto;
+  display: inline-block;
   white-space: nowrap;
 }
-/* line 200, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 201, ../sass/sass-extensions/_custom-utilities.scss */
 .grid-media-block_description .read-more a, .country-city-readmore a {
   color: #b5995a;
   padding: 0;
   font-size: 16px;
 }
-/* line 204, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 205, ../sass/sass-extensions/_custom-utilities.scss */
 .grid-media-block_description .read-more a:before, .country-city-readmore a:before {
   content: "[";
   display: inline-block;
   margin-right: 3px;
 }
-/* line 209, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 210, ../sass/sass-extensions/_custom-utilities.scss */
 .grid-media-block_description .read-more a:after, .country-city-readmore a:after {
   content: "]";
   display: inline-block;
   margin-left: 3px;
 }
-/* line 214, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 215, ../sass/sass-extensions/_custom-utilities.scss */
 .grid-media-block_description .read-more a:hover, .country-city-readmore a:hover {
   text-decoration: underline;
   color: #b5995a;
@@ -10101,7 +10102,7 @@ button.close {
 *(5n+4) = 2, 5, 8, 11, 14, ...
 *(3n) = 3, 6, 9, 12, 15, ...
 */
-/* line 243, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 244, ../sass/sass-extensions/_custom-utilities.scss */
 .section-content .grid-18, .whatwedo-left {
   position: relative;
   width: 68.77193%;
@@ -10111,7 +10112,7 @@ button.close {
   border-right: 1px solid #ccc;
 }
 
-/* line 253, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 254, ../sass/sass-extensions/_custom-utilities.scss */
 .section-content .grid-6, .whatwedo-right {
   position: relative;
   width: 31.22807%;
@@ -10120,7 +10121,7 @@ button.close {
   margin: 0 auto 20px;
 }
 
-/* line 262, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 263, ../sass/sass-extensions/_custom-utilities.scss */
 .carousel-left .banner-slideshow-views > .view-content, .whatwedo-body .pane-featured-slideshow, .node-type-agency .pane-featured-slideshow, .akaa-akmi-body .pane-featured-slideshow {
   width: 68.77193%;
   margin: 0 auto 40px;
@@ -10129,7 +10130,7 @@ button.close {
   overflow: hidden;
 }
 
-/* line 271, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 272, ../sass/sass-extensions/_custom-utilities.scss */
 .whatsnew-right, .whatwedo-body .whatsnew-right, .node-type-agency .hub-about-short-title {
   width: 31.22807%;
   height: 460px;
@@ -10141,7 +10142,7 @@ button.close {
   border-bottom: 1px solid #e8dfcd;
 }
 
-/* line 290, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 291, ../sass/sass-extensions/_custom-utilities.scss */
 .press-release-detail .related-block-info {
   margin: 0;
   padding: 0 15px;
@@ -10153,7 +10154,7 @@ button.close {
   clear: left;
 }
 
-/* line 300, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 301, ../sass/sass-extensions/_custom-utilities.scss */
 .press-release-detail .related-block-info h2.pane-title,
 .press-release-detail .related-block-info .views-label-field-country,
 .press-release-detail .related-block-info .views-label-field-agency,
@@ -10168,7 +10169,7 @@ button.close {
   margin: 15px auto 5px;
 }
 
-/* line 310, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 311, ../sass/sass-extensions/_custom-utilities.scss */
 .press-release-detail .related-block-info a, .press-release-speech-detail .views-label-field-speech-speaker + .field-content, .press-release-speech-detail .views-label-field-speech-location + .field-content {
   display: inline-block;
   margin: 0 auto 10px;
@@ -10180,12 +10181,12 @@ button.close {
   line-height: 1;
   text-transform: none;
 }
-/* line 320, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 321, ../sass/sass-extensions/_custom-utilities.scss */
 .press-release-detail .related-block-info a:hover, .press-release-speech-detail .views-label-field-speech-speaker + .field-content:hover, .press-release-speech-detail .views-label-field-speech-location + .field-content:hover {
   text-decoration: none;
 }
 
-/* line 324, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 325, ../sass/sass-extensions/_custom-utilities.scss */
 .press-release-detail .related-block-info ul, .press-release-detail .related-block-info li, .press-release-detail .grid-6 ul, .press-release-detail .grid-6 li, .grid-master-jury-wrapper .grid-about-us-block-description .related-artist ul,
 .grid-steering-committee-wrapper .grid-about-us-block-description .related-artist ul,
 .grid-instrument-listing-wrapper .grid-about-us-block-description .related-artist ul {
@@ -10193,14 +10194,14 @@ button.close {
   list-style: none;
 }
 
-/* line 329, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 330, ../sass/sass-extensions/_custom-utilities.scss */
 .press-release-detail .grid-6 .views-field-php a,
 .press-release-detail .grid-6 .views-field-view-node a,
 .press-release-detail .grid-6 .views-field-nothing a {
   color: #b59757;
   text-decoration: none;
 }
-/* line 332, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 333, ../sass/sass-extensions/_custom-utilities.scss */
 .press-release-detail .grid-6 .views-field-php a:before,
 .press-release-detail .grid-6 .views-field-view-node a:before,
 .press-release-detail .grid-6 .views-field-nothing a:before {
@@ -10208,7 +10209,7 @@ button.close {
   margin-right: 3px;
   display: inline-block;
 }
-/* line 337, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 338, ../sass/sass-extensions/_custom-utilities.scss */
 .press-release-detail .grid-6 .views-field-php a:after,
 .press-release-detail .grid-6 .views-field-view-node a:after,
 .press-release-detail .grid-6 .views-field-nothing a:after {
@@ -10217,7 +10218,7 @@ button.close {
   display: inline-block;
 }
 
-/* line 345, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 346, ../sass/sass-extensions/_custom-utilities.scss */
 .hub-page-rural-development:before, .hub-page-press-center-right:before, .akaa-award-cycle-related-info:before,
 .akaa-projectinfo-map-related-info:before, .see-also-custom:before {
   content: "";
@@ -10228,7 +10229,7 @@ button.close {
   position: relative;
 }
 
-/* line 354, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 355, ../sass/sass-extensions/_custom-utilities.scss */
 .hub-page-rural-development .view-header, .hub-page-press-center-right .press-center-title, .akaa-award-cycle-related-info h2.pane-title,
 .akaa-award-cycle-related-info h2.block-title,
 .akaa-projectinfo-map-related-info h2.pane-title,
@@ -10238,7 +10239,7 @@ button.close {
   line-height: 36px;
   text-transform: uppercase;
 }
-/* line 360, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 361, ../sass/sass-extensions/_custom-utilities.scss */
 .hub-page-rural-development .view-header:first-letter, .hub-page-press-center-right .press-center-title:first-letter, .akaa-award-cycle-related-info h2.pane-title:first-letter,
 .akaa-award-cycle-related-info h2.block-title:first-letter,
 .akaa-projectinfo-map-related-info h2.pane-title:first-letter,
@@ -10246,7 +10247,7 @@ button.close {
   font-size: 36px;
 }
 
-/* line 364, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 365, ../sass/sass-extensions/_custom-utilities.scss */
 .hub-page-rural-development .views-row a, .hub-page-press-center-right li a, .akaa-award-cycle-related-info li a,
 .akaa-projectinfo-map-related-info li a, .akaa-award-cycle-related-info .akaa-award-cycle-related-link,
 .akaa-projectinfo-map-related-info .akaa-award-cycle-related-link, .see-also-custom .view-content {
@@ -10260,7 +10261,7 @@ button.close {
   text-decoration: none;
   clear: both;
 }
-/* line 375, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 376, ../sass/sass-extensions/_custom-utilities.scss */
 .hub-page-rural-development .views-row a:hover, .hub-page-press-center-right li a:hover, .akaa-award-cycle-related-info li a:hover,
 .akaa-projectinfo-map-related-info li a:hover, .akaa-award-cycle-related-info .akaa-award-cycle-related-link:hover,
 .akaa-projectinfo-map-related-info .akaa-award-cycle-related-link:hover, .see-also-custom .view-content:hover, .hub-page-rural-development .views-row a:focus, .hub-page-press-center-right li a:focus, .akaa-award-cycle-related-info li a:focus,
@@ -10270,7 +10271,7 @@ button.close {
   text-decoration: none;
 }
 
-/* line 382, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 383, ../sass/sass-extensions/_custom-utilities.scss */
 .basic-page-custom-block-right:before {
   content: "";
   border-top: 4px solid #b49759;
@@ -10280,19 +10281,19 @@ button.close {
   position: relative;
 }
 
-/* line 391, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 392, ../sass/sass-extensions/_custom-utilities.scss */
 .basic-page-custom-block-right .view-header {
   margin-bottom: 15px;
   font-size: 28px;
   line-height: 35px;
   text-transform: uppercase;
 }
-/* line 397, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 398, ../sass/sass-extensions/_custom-utilities.scss */
 .basic-page-custom-block-right .view-header:first-letter {
   font-size: 34px;
 }
 
-/* line 401, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 402, ../sass/sass-extensions/_custom-utilities.scss */
 .basic-page-custom-block-right .views-row a {
   display: inline-block;
   margin-bottom: 10px;
@@ -10304,13 +10305,13 @@ button.close {
   text-decoration: none;
   clear: both;
 }
-/* line 412, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 413, ../sass/sass-extensions/_custom-utilities.scss */
 .basic-page-custom-block-right .views-row a:hover {
   color: #B49759;
   text-decoration: none;
 }
 
-/* line 417, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 418, ../sass/sass-extensions/_custom-utilities.scss */
 .basic-page-custom-title {
   margin: 0 0 40px;
   padding: 0 15px;
@@ -10321,7 +10322,7 @@ button.close {
   text-transform: none;
 }
 
-/* line 427, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 428, ../sass/sass-extensions/_custom-utilities.scss */
 .basic-page-custom-body {
   width: 100%;
   margin-bottom: 40px;
@@ -10333,23 +10334,23 @@ button.close {
   color: #000;
   line-height: 24px;
 }
-/* line 438, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 439, ../sass/sass-extensions/_custom-utilities.scss */
 .basic-page-custom-body a {
   color: #b5995a;
   text-decoration: none;
 }
-/* line 441, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 442, ../sass/sass-extensions/_custom-utilities.scss */
 .basic-page-custom-body a:hover {
   color: #b5995a;
   text-decoration: underline;
 }
-/* line 445, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 446, ../sass/sass-extensions/_custom-utilities.scss */
 .basic-page-custom-body a:focus {
   color: #b5995a;
   text-decoration: none;
 }
 
-/* line 451, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 452, ../sass/sass-extensions/_custom-utilities.scss */
 .basic-page-custom-summary {
   padding-left: 20px;
   font-size: 22px;
@@ -10360,7 +10361,7 @@ button.close {
   border-left: 4px solid #b4965a;
 }
 
-/* line 461, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 462, ../sass/sass-extensions/_custom-utilities.scss */
 .akaa-projectfinder-wrapper .views-submit-button .form-submit, .akaa-projectfinder-wrapper .views-submit-button a, .akaa-projectfinder-wrapper .views-reset-button .form-submit {
   width: auto;
   margin: 0 0 20px 10px;
