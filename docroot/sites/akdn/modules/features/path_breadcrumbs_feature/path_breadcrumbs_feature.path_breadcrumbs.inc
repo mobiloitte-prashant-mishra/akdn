@@ -1647,13 +1647,11 @@ node/26851/*',
   $path_breadcrumb->data = array(
     'titles' => array(
       0 => 'Press Centre',
-      1 => 'Speeches',
-      2 => '!page_title',
+      1 => '!page_title',
     ),
     'paths' => array(
       0 => '<none>',
-      1 => 'press-centre/speeches',
-      2 => '<none>',
+      1 => '<none>',
     ),
     'home' => 1,
     'translatable' => 0,

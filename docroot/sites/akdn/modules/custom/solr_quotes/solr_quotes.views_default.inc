@@ -65,7 +65,7 @@ function solr_quotes_views_default_views() {
   /* Display: Akdn : Speech quotes */
   $handler = $view->new_display('page', 'Akdn : Speech quotes', 'page');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Quotes Finder';
+  $handler->display->display_options['title'] = 'Speech Quotes';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'akdn-solr-quote-listing page-press-centre quote-finder-wrap';
   $handler->display->display_options['display_description'] = 'Akdn : Speech quotes';
@@ -260,7 +260,7 @@ if (count($static->nid[$nid]) == 1) {
     t('.'),
     t(','),
     t('Akdn : Speech quotes'),
-    t('Quotes Finder'),
+    t('Speech Quotes'),
     t('<h2 class=\'quotes-main-title\'>Quotations by His Highness the Aga Khan </h2>
 <span class=\'quotes-total-records\'>(@total quotations found)</span>'),
     t('<span class=\'quote-date-location\'>[php] - [quotes_location]</span>'),

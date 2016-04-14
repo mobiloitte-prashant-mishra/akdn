@@ -199,36 +199,6 @@ function akdn_custom_views_query_alter(&$view, &$query) {
       )
     );
   }
-  if ($view->name == 'press_center_detail_page_slideshows' && $view->current_display == 'press_center_detail_pages') {
-    global $language;
-    $lang = $language->language;
-    $query->where[0]['conditions'][1]['value'][':field_data_field_article_img_field_article_img'] = array($lang);
-  }
-  if ($view->name == 'press_center_detail_page_slideshows' && $view->current_display == 'block_1') {
-    global $language;
-    $lang = $language->language;
-    $query->where[0]['conditions'][1]['value'][':field_data_field_project_image_field_project_image'] = array($lang);
-  }
-  if ($view->name == 'press_center_detail_page_slideshows' && $view->current_display == 'block_2') {
-    global $language;
-    $lang = $language->language;
-    $query->where[0]['conditions'][1]['value'][':field_data_field_event_image_field_event_image'] = array($lang);
-  }
-  if ($view->name == 'press_center_detail_page_slideshows' && $view->current_display == 'block_3') {
-    global $language;
-    $lang = $language->language;
-    $query->where[0]['conditions'][1]['value'][':field_data_field_speech_image_field_speech_image'] = array($lang);
-  }
-  if ($view->name == 'featured_slideshow' && $view->current_display == 'block_2') {
-    global $language;
-    $lang = $language->language;
-    $query->where[0]['conditions'][2]['value'][':field_data_field_project_image_field_project_image'] = array($lang);
-  }
-  if ($view->name == 'featured_slideshow_manual' && $view->current_display == 'block_4') {
-    global $language;
-    $lang = $language->language;
-    $query->where[0]['conditions'][1]['value'][':field_data_field_project_image_field_project_image'] = array($lang);
-  }
 }
 
 /**
@@ -1133,7 +1103,6 @@ function akdn_basic_page_link_to_style_block() {
       $output .= '</div></div>';
       $output .= '</div>';
     }
-    //die();
     $output .= '</div>';
     return $output;
   }
@@ -1252,18 +1221,14 @@ function akdn_basic_page_accordian_style_block() {
 function akdn_custom_filter_heading() {
   $arg = arg();
   $header_text = t('Filters');
-  $quotes_text = t('Quote finder');
   if ($arg[1] == 'speeches') {
-    $speech_quotes_link = l($quotes_text, 'speech-quotes', array(
-      'attributes' => array('class' => 'not-active')
-    ));
-    $content = '<h2 class="">' . t('Filters') . '<span class="quotes"> | ' . $speech_quotes_link . '</span></h2> ';
+    $content = '<h2 class="not-active">' . t('Filters') . '</h2> ';
   }
   elseif ($arg[0] == 'speech-quotes') {
     $header_text_link = l($header_text, 'press-centre/speeches', array(
       'attributes' => array('class' => 'not-active')
     ));
-    $content = '<h2 class="header-filter">' . $header_text_link . '<span class="active"> | ' . $quotes_text . '</span></h2>';
+    $content = '<h2 class="header-filter">' . $header_text_link . '</h2>';
   }
   else {
     $content = '<h2>' . $header_text . '</h2>';
