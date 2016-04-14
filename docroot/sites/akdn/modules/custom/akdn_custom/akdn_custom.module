@@ -1118,7 +1118,6 @@ function akdn_basic_page_link_to_style_block() {
       $output .= '</div></div>';
       $output .= '</div>';
     }
-    //die();
     $output .= '</div>';
     return $output;
   }
@@ -1237,18 +1236,14 @@ function akdn_basic_page_accordian_style_block() {
 function akdn_custom_filter_heading() {
   $arg = arg();
   $header_text = t('Filters');
-  $quotes_text = t('Quote finder');
   if ($arg[1] == 'speeches') {
-    $speech_quotes_link = l($quotes_text, 'speech-quotes', array(
-      'attributes' => array('class' => 'not-active')
-    ));
-    $content = '<h2 class="">' . t('Filters') . '<span class="quotes"> | ' . $speech_quotes_link . '</span></h2> ';
+    $content = '<h2 class="not-active">' . t('Filters') . '</h2> ';
   }
   elseif ($arg[0] == 'speech-quotes') {
     $header_text_link = l($header_text, 'press-centre/speeches', array(
       'attributes' => array('class' => 'not-active')
     ));
-    $content = '<h2 class="header-filter">' . $header_text_link . '<span class="active"> | ' . $quotes_text . '</span></h2>';
+    $content = '<h2 class="header-filter">' . $header_text_link . '</h2>';
   }
   else {
     $content = '<h2>' . $header_text . '</h2>';
