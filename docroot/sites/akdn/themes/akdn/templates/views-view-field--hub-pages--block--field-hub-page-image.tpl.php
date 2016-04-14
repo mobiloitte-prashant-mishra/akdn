@@ -25,16 +25,43 @@
 ?>
 
 <?php
-$count = count($view->result);
-if ($row->field_field_short_title[0]['rendered']['#markup'] == 'Aga Khan Award for Architecture') {
-  print l($output, 'node/9576', array('html' => TRUE));
-}
-elseif ($row->field_field_short_title[0]['rendered']['#markup'] == 'Aga Khan Music Initiative') {
-  print l($output, 'node/22106', array('html' => TRUE));
-}
 
-	if ($count >= 2 && $count!= 2) {
-       print l($output, $row->nid, array('html' => TRUE));
-   }
+// $count = count($view->result);
+// print $count;
+
+// if ($row->field_field_short_title[0]['rendered']['#markup'] == 'Aga Khan Award for Architecture') {
+//   print l($output, 'node/9576', array('html' => TRUE));
+// }
+// elseif ($row->field_field_short_title[0]['rendered']['#markup'] == 'Aga Khan Music Initiative') {
+//   print l($output, 'node/22106', array('html' => TRUE));
+// }
+
+$count  = count($view->result);
+if ($count == 2) {
+  $image_uri = reset($row->_field_data['nid']['entity']->field_hub_page_image)[0]['uri'];
+
+  $accordian_image = array(
+    'style_name' => 'area_of_activities_two_activies',
+    'path' => $image_uri,
+    'width' => '',
+    'height' => '',
+  );
+  $img = theme('image_style', $accordian_image);
+
+  print l($img, $row->nid, array( 'attributes' => array('target'=>'_blank'), 'html' => TRUE));
+}
+else {
+$image_uri = reset($row->_field_data['nid']['entity']->field_hub_page_image)[0]['uri'];
+
+  $accordian_image = array(
+    'style_name' => 'social_sharing_image',
+    'path' => $image_uri,
+    'width' => '',
+    'height' => '',
+  );
+  $img = theme('image_style', $accordian_image);
+
+  print l($img, $row->nid, array( 'attributes' => array('target'=>'_blank'), 'html' => TRUE));
+}
 
 ?>
