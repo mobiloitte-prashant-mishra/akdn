@@ -1777,6 +1777,8 @@ $icons:(facebook,twitter,youtube,instagram,vimeo,akmi);
         overflow-x: hidden;
         li {
             position: relative;
+            font-size: 12px;
+            line-height: 18px;
             input[type="checkbox"] {
                 margin: 2px 0 0 -18px;
                 position: absolute;
@@ -1792,7 +1794,7 @@ $icons:(facebook,twitter,youtube,instagram,vimeo,akmi);
                 vertical-align: top;
                 font-size: 12px;
                 line-height: 18px;
-                text-transform: capitalize;
+                text-transform: none;
             }
         }
     }
@@ -2426,6 +2428,8 @@ ul.primary li {
                     list-style-type: none;
                     list-style-image: none;
                     position: relative;
+                    font-size: 12px;
+                    line-height: 18px;
                     input[type="checkbox"] {
                         margin: 2px 0 0 -18px;
                         position: absolute;
@@ -2438,7 +2442,7 @@ ul.primary li {
                         vertical-align: top;
                         font-size: 12px;
                         line-height: 18px;
-                        text-transform: capitalize;
+                        text-transform: none;
                     }
                 }
             }
