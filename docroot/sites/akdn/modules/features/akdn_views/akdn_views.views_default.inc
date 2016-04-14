@@ -15584,25 +15584,7 @@ return $exclude_nid;';
   $handler->display->display_options['arguments']['nid_1']['not'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['operator'] = 'OR';
-  $handler->display->display_options['filter_groups']['groups'] = array(
-    1 => 'AND',
-    2 => 'AND',
-  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
-  $handler->display->display_options['filters']['type_1']['table'] = 'node';
-  $handler->display->display_options['filters']['type_1']['field'] = 'type';
-  $handler->display->display_options['filters']['type_1']['value'] = array(
-    'featured_content' => 'featured_content',
-  );
-  $handler->display->display_options['filters']['type_1']['group'] = 1;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = '1';
-  $handler->display->display_options['filters']['status']['group'] = 1;
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -15617,7 +15599,7 @@ return $exclude_nid;';
     'publication' => 'publication',
     'speech' => 'speech',
   );
-  $handler->display->display_options['filters']['type']['group'] = 2;
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Create Banner Item (field_create_featured_content) */
   $handler->display->display_options['filters']['field_create_featured_content_value']['id'] = 'field_create_featured_content_value';
   $handler->display->display_options['filters']['field_create_featured_content_value']['table'] = 'field_data_field_create_featured_content';
@@ -15625,13 +15607,20 @@ return $exclude_nid;';
   $handler->display->display_options['filters']['field_create_featured_content_value']['value'] = array(
     1 => '1',
   );
-  $handler->display->display_options['filters']['field_create_featured_content_value']['group'] = 2;
+  $handler->display->display_options['filters']['field_create_featured_content_value']['group'] = 1;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
   $handler->display->display_options['filters']['status_1']['table'] = 'node';
   $handler->display->display_options['filters']['status_1']['field'] = 'status';
   $handler->display->display_options['filters']['status_1']['value'] = '1';
-  $handler->display->display_options['filters']['status_1']['group'] = 2;
+  $handler->display->display_options['filters']['status_1']['group'] = 1;
+  /* Filter criterion: Content: Slideshow Image (field_feature_image:language) */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'field_data_field_feature_image';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***DEFAULT_LANGUAGE***' => '***DEFAULT_LANGUAGE***',
+  );
 
   /* Display: Flexslider Manual A/G/FA Block */
   $handler = $view->new_display('block', 'Flexslider Manual A/G/FA Block', 'block_4');
