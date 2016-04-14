@@ -7268,3 +7268,18 @@ map {
     height: 55px;
     background: image-url("akdn-logo.png") no-repeat; 
 }
+/* Projects Lightbox captions */
+#colorbox {
+    .slide-text-colorbox, 
+    .image-caption {
+        position: relative;
+        bottom: 40px;
+        width: 100%;
+        padding: 10px 15px;
+        color: #FFF;
+        font-size: 14px;
+        line-height: 20px;
+        background-color: rgba(0,0,0,0.5);
+        
+    }
+}
