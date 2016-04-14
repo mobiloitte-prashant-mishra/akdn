@@ -836,6 +836,59 @@ function akdn_image_styles_image_default_styles() {
     ),
   );
 
+  // Exported image style: social_feeds.
+  $styles['social_feeds'] = array(
+    'name' => 'social_feeds',
+    'label' => 'Social Feeds Vertical',
+    'effects' => array(
+      11 => array(
+        'label' => 'Scale',
+        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
+        'effect callback' => 'image_scale_effect',
+        'dimensions callback' => 'image_scale_dimensions',
+        'form callback' => 'image_scale_form',
+        'summary theme' => 'image_scale_summary',
+        'module' => 'image',
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 360,
+          'height' => 240,
+          'upscale' => 1,
+        ),
+        'weight' => -10,
+      ),
+      17 => array(
+        'label' => 'Define canvas',
+        'help' => 'Define the size of the working canvas and background color, this controls the dimensions of the output image.',
+        'effect callback' => 'canvasactions_definecanvas_effect',
+        'dimensions callback' => 'canvasactions_definecanvas_dimensions',
+        'form callback' => 'canvasactions_definecanvas_form',
+        'summary theme' => 'canvasactions_definecanvas_summary',
+        'module' => 'imagecache_canvasactions',
+        'name' => 'canvasactions_definecanvas',
+        'data' => array(
+          'RGB' => array(
+            'HEX' => '#cccccc',
+          ),
+          'under' => 1,
+          'exact' => array(
+            'width' => 360,
+            'height' => 240,
+            'xpos' => 'center',
+            'ypos' => 'center',
+          ),
+          'relative' => array(
+            'leftdiff' => '',
+            'rightdiff' => '',
+            'topdiff' => '',
+            'bottomdiff' => '',
+          ),
+        ),
+        'weight' => -9,
+      ),
+    ),
+  );
+
   // Exported image style: social_sharing_image.
   $styles['social_sharing_image'] = array(
     'name' => 'social_sharing_image',
@@ -873,6 +926,30 @@ function akdn_image_styles_image_default_styles() {
           'height' => 240,
         ),
         'weight' => -10,
+      ),
+    ),
+  );
+
+  // Exported image style: standard_listing_aspect_switcher.
+  $styles['standard_listing_aspect_switcher'] = array(
+    'name' => 'standard_listing_aspect_switcher',
+    'label' => 'Standard Listing Aspect Switcher',
+    'effects' => array(
+      20 => array(
+        'label' => 'Aspect switcher',
+        'help' => 'Use different effects depending on whether the image is landscape of portrait shaped. This re-uses other preset definitions, and just chooses between them based on the rule.',
+        'effect callback' => 'canvasactions_aspect_effect',
+        'dimensions callback' => 'canvasactions_aspect_dimensions',
+        'form callback' => 'canvasactions_aspect_form',
+        'summary theme' => 'canvasactions_aspect_summary',
+        'module' => 'imagecache_canvasactions',
+        'name' => 'canvasactions_aspect',
+        'data' => array(
+          'portrait' => 'social_feeds',
+          'landscape' => 'social_sharing_image',
+          'ratio_adjustment' => 1,
+        ),
+        'weight' => 1,
       ),
     ),
   );
