@@ -26,16 +26,6 @@
 
 <?php
 
-// $count = count($view->result);
-// print $count;
-
-// if ($row->field_field_short_title[0]['rendered']['#markup'] == 'Aga Khan Award for Architecture') {
-//   print l($output, 'node/9576', array('html' => TRUE));
-// }
-// elseif ($row->field_field_short_title[0]['rendered']['#markup'] == 'Aga Khan Music Initiative') {
-//   print l($output, 'node/22106', array('html' => TRUE));
-// }
-
 $count  = count($view->result);
 if ($count == 2) {
   $image_uri = reset($row->_field_data['nid']['entity']->field_hub_page_image)[0]['uri'];
@@ -48,7 +38,7 @@ if ($count == 2) {
   );
   $img = theme('image_style', $accordian_image);
 
-  print l($img, $row->nid, array( 'attributes' => array('target'=>'_blank'), 'html' => TRUE));
+  print l($img, $row->nid, array('html' => TRUE));
 }
 else {
 $image_uri = reset($row->_field_data['nid']['entity']->field_hub_page_image)[0]['uri'];
@@ -61,7 +51,7 @@ $image_uri = reset($row->_field_data['nid']['entity']->field_hub_page_image)[0][
   );
   $img = theme('image_style', $accordian_image);
 
-  print l($img, $row->nid, array( 'attributes' => array('target'=>'_blank'), 'html' => TRUE));
+  print l($img, $row->nid, array('html' => TRUE));
 }
 
 ?>
