@@ -227,22 +227,22 @@ function akmi_custom_form_alter(&$form, &$form_state, $form_id) {
  * Implements hook_views_pre_render().
  */
 function akmi_custom_views_pre_render(&$view) {
-
-  if ($view->name == 'facebook_feeds' && $view->current_display == 'block_2'){
-    $url = 'https://www.youtube.com/feeds/videos.xml';
-    $channel_id =  'UCJ9z0V7erDeLCWHS2iGGg5g';
-    $content =  _akdn_custom_get_latest_youtube_video($url , $channel_id);
+  if ($view->name == 'facebook_feeds' && $view->current_display == 'block_2') {
+    $url = variable_get('akdn_youtube_url') ? variable_get('akdn_youtube_url') : 'https://www.youtube.com/feeds/videos.xml';
+    $channel_id = variable_get('akdn_youtube_channelid') ? variable_get('akdn_youtube_channelid') : 'UCJ9z0V7erDeLCWHS2iGGg5g';
+    $content = _akdn_custom_get_latest_youtube_video($url, $channel_id);
     _akdn_custom_views_render_alter($view, $content);
-  }else if($view->name == 'facebook_feeds' && $view->current_display == 'akaa_youtube_home_page'){
-    $url = 'https://www.youtube.com/feeds/videos.xml';
-    $channel_id = 'UCdXlZQFsArBuxT7bdkjhqvw';
-    //TODO get user Id of AKAA
-    $content =  _akdn_custom_get_latest_youtube_video($url, $channel_id);
+  }
+  elseif ($view->name == 'facebook_feeds' && $view->current_display == 'akaa_youtube_home_page') {
+    $url = variable_get('akdn_youtube_url') ? variable_get('akdn_youtube_url') : 'https://www.youtube.com/feeds/videos.xml';
+    $channel_id = variable_get('akaa_youtube_channelid') ? variable_get('akaa_youtube_channelid') : 'UCdXlZQFsArBuxT7bdkjhqvw';
+    $content = _akdn_custom_get_latest_youtube_video($url, $channel_id);
     _akdn_custom_views_render_alter($view, $content);
-  }else if($view->name == 'facebook_feeds' && $view->current_display == 'akmi_twitter'){
-    $url = 'https://www.youtube.com/feeds/videos.xml';
-    $channel_id = 'UCq2a2B38dTDMKW7rgDf0LIA';
-    $content =  _akdn_custom_get_latest_youtube_video($url,$channel_id);
+  }
+  elseif ($view->name == 'facebook_feeds' && $view->current_display == 'akmi_twitter') {
+    $url = variable_get('akdn_youtube_url') ? variable_get('akdn_youtube_url') : 'https://www.youtube.com/feeds/videos.xml';
+    $channel_id = variable_get('akmi_youtube_channelid') ? variable_get('akmi_youtube_channelid') : 'UCq2a2B38dTDMKW7rgDf0LIA';
+    $content = _akdn_custom_get_latest_youtube_video($url, $channel_id);
     _akdn_custom_views_render_alter($view, $content);
   }
 }
@@ -258,17 +258,17 @@ function _akdn_custom_get_latest_youtube_video($url, $channel_id){
   $request = drupal_http_request($full_url);
   $data = new SimpleXMLElement($request->data);
   $data = drupal_json_decode(drupal_json_encode($data));
-  if(!empty($data['entry'][0])) {
-    $datas = $data['entry'][0];
+  if(!empty($data['entry'])) {
+    $datas = $data['entry'][0] ? $data['entry'][0] : $data['entry'];
     $id = explode(":", $datas['id']);
     $published = strtotime($datas['published']);
-    $img_url = 'https://img.youtube.com/vi/'.$id[2].'/0.jpg';
+    $img_url = 'https://img.youtube.com/vi/'.$id[2].'/hqdefault.jpg';
     $output = array(
       'id' => $id[2],
       'title' => $datas['title'],
       'date' => $published,
       'image_url' => $img_url,
-      'link' => 'http://www.youtube.com/watch?v='.$id,
+      'link' => 'http://www.youtube.com/watch?v='.$id[2],
     );
     return $output;
   } else{

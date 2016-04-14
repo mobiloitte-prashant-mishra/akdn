@@ -13241,10 +13241,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['field_youtube_picture']['alter']['alt'] = '[field_youtube_picture-title]';
   $handler->display->display_options['fields']['field_youtube_picture']['alter']['link_class'] = 'colorbox-inline';
   $handler->display->display_options['fields']['field_youtube_picture']['alter']['prefix'] = '<span class="youtube-play-button"></span>';
-  $handler->display->display_options['fields']['field_youtube_picture']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_youtube_picture']['element_class'] = 'grid-social-block_picture grid-social-block_picture-youtube';
   $handler->display->display_options['fields']['field_youtube_picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_youtube_picture']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_youtube_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_youtube_picture']['settings'] = array(
     'image_style' => 'social_sharing_image',
@@ -13255,6 +13252,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['text'] = '<div class="title"><span class="social-icon-image"></span>[title]</div>';
   $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
@@ -13273,6 +13271,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['label'] = '';
+  $handler->display->display_options['fields']['created']['exclude'] = TRUE;
   $handler->display->display_options['fields']['created']['element_type'] = 'div';
   $handler->display->display_options['fields']['created']['element_class'] = 'grid-social-block_date grid-social-block_date-youtube';
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
@@ -13283,6 +13282,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['exclude'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['max_length'] = '200';
   $handler->display->display_options['fields']['body']['alter']['more_link_text'] = 'Read';
   $handler->display->display_options['fields']['body']['alter']['more_link_path'] = '[field_facebook_link]';
@@ -13296,6 +13296,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="social_sharing">
 <span class="play-video" id="[field_youtube_external_id]"><a class="colorbox-inline" href="https://www.youtube.com/embed/[field_youtube_external_id]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0">Play</a></span>
 </div>';
@@ -13510,10 +13511,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['field_youtube_picture']['alter']['alt'] = '[field_youtube_picture-title]';
   $handler->display->display_options['fields']['field_youtube_picture']['alter']['link_class'] = 'colorbox-inline';
   $handler->display->display_options['fields']['field_youtube_picture']['alter']['prefix'] = '<span class="youtube-play-button"></span>';
-  $handler->display->display_options['fields']['field_youtube_picture']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_youtube_picture']['element_class'] = 'grid-social-block_picture grid-social-block_picture-youtube';
   $handler->display->display_options['fields']['field_youtube_picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_youtube_picture']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_youtube_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_youtube_picture']['settings'] = array(
     'image_style' => 'social_sharing_image',
@@ -13524,6 +13522,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['text'] = '<div class="title"><span class="social-icon-image"></span>[title]</div>';
   $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
@@ -13542,6 +13541,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['label'] = '';
+  $handler->display->display_options['fields']['created']['exclude'] = TRUE;
   $handler->display->display_options['fields']['created']['element_type'] = 'div';
   $handler->display->display_options['fields']['created']['element_class'] = 'grid-social-block_date grid-social-block_date-youtube';
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
@@ -13552,6 +13552,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['exclude'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['max_length'] = '200';
   $handler->display->display_options['fields']['body']['alter']['more_link_text'] = 'Read';
   $handler->display->display_options['fields']['body']['alter']['more_link_path'] = '[field_facebook_link]';
@@ -13565,6 +13566,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="social_sharing">
 <span class="play-video" id="[field_youtube_external_id]"><a class="colorbox-inline" href="https://www.youtube.com/embed/[field_youtube_external_id]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0">Play</a></span>
 </div>';
@@ -13899,10 +13901,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['field_youtube_picture']['alter']['alt'] = '[field_youtube_picture-title]';
   $handler->display->display_options['fields']['field_youtube_picture']['alter']['link_class'] = 'colorbox-inline';
   $handler->display->display_options['fields']['field_youtube_picture']['alter']['prefix'] = '<span class="youtube-play-button"></span>';
-  $handler->display->display_options['fields']['field_youtube_picture']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_youtube_picture']['element_class'] = 'grid-social-block_picture grid-social-block_picture-youtube';
   $handler->display->display_options['fields']['field_youtube_picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_youtube_picture']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_youtube_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_youtube_picture']['settings'] = array(
     'image_style' => 'social_sharing_image',
@@ -13913,6 +13912,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['text'] = '<div class="title"><span class="social-icon-image"></span>[title]</div>';
   $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
@@ -13931,6 +13931,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['label'] = '';
+  $handler->display->display_options['fields']['created']['exclude'] = TRUE;
   $handler->display->display_options['fields']['created']['element_type'] = 'div';
   $handler->display->display_options['fields']['created']['element_class'] = 'grid-social-block_date grid-social-block_date-youtube';
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
@@ -13941,6 +13942,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['exclude'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['max_length'] = '200';
   $handler->display->display_options['fields']['body']['alter']['more_link_text'] = 'Read';
   $handler->display->display_options['fields']['body']['alter']['more_link_path'] = '[field_facebook_link]';
@@ -13954,6 +13956,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="social_sharing">
 <span class="play-video" id="[field_youtube_external_id]"><a class="colorbox-inline" href="https://www.youtube.com/embed/[field_youtube_external_id]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0">Play</a></span>
 </div>';
