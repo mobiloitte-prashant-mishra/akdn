@@ -18155,21 +18155,8 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['field_project_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_project_image']['type'] = 'cs_adaptive_image';
   $handler->display->display_options['fields']['field_project_image']['settings'] = array(
+    'image_style' => '',
     'image_link' => '',
-    'styles' => array(
-      'breakpoint_1' => '979',
-      'style_1' => 'featured_content_narrow',
-      'breakpoint_2' => '739',
-      'style_2' => 'featured_content_mobile',
-      'breakpoint_3' => '479',
-      'style_3' => 'featured_content_mobile',
-      'breakpoint_4' => '319',
-      'style_4' => 'featured_content_mobile',
-      'breakpoint_5' => '',
-      'style_5' => '',
-      'max_style' => 'featured_content',
-      'fallback_style' => 'featured_content',
-    ),
   );
   $handler->display->display_options['fields']['field_project_image']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_project_image']['delta_offset'] = '0';
@@ -18179,7 +18166,10 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['label'] = '';
   $handler->display->display_options['fields']['title_field']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title_field']['alter']['text'] = '[php_1]';
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field']['type'] = 'text_plain';
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
   /* Field: Content: Caption */
   $handler->display->display_options['fields']['field_caption']['id'] = 'field_caption';
@@ -18278,35 +18268,6 @@ print \'<div>\'.$value.\'</div>\';
 ?>';
   $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
-  $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
-  $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
-  $handler->display->display_options['fields']['title_field']['label'] = '';
-  $handler->display->display_options['fields']['title_field']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['title_field']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['title_field']['alter']['text'] = '[php_1]';
-  $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title_field']['type'] = 'text_plain';
-  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
-  /* Field: Content: Image */
-  $handler->display->display_options['fields']['field_project_image']['id'] = 'field_project_image';
-  $handler->display->display_options['fields']['field_project_image']['table'] = 'field_data_field_project_image';
-  $handler->display->display_options['fields']['field_project_image']['field'] = 'field_project_image';
-  $handler->display->display_options['fields']['field_project_image']['label'] = '';
-  $handler->display->display_options['fields']['field_project_image']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_project_image']['alter']['path'] = 'sites/default/files/Projects/Calendars/calendar_dec2007_0.jpg';
-  $handler->display->display_options['fields']['field_project_image']['alter']['rel'] = 'gallery';
-  $handler->display->display_options['fields']['field_project_image']['alter']['link_class'] = 'colorbox init-colorbox-processed cboxElement';
-  $handler->display->display_options['fields']['field_project_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_project_image']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_project_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_project_image']['settings'] = array(
-    'image_style' => '',
-    'image_link' => '',
-  );
-  $handler->display->display_options['fields']['field_project_image']['group_rows'] = FALSE;
-  $handler->display->display_options['fields']['field_project_image']['delta_offset'] = '0';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -22107,19 +22068,6 @@ print $node_path;
   );
   $handler->display->display_options['fields']['field_hub_page_image']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_hub_page_image']['delta_offset'] = '0';
-  /* Field: Content: Image */
-  $handler->display->display_options['fields']['field_hub_page_image_1']['id'] = 'field_hub_page_image_1';
-  $handler->display->display_options['fields']['field_hub_page_image_1']['table'] = 'field_data_field_hub_page_image';
-  $handler->display->display_options['fields']['field_hub_page_image_1']['field'] = 'field_hub_page_image';
-  $handler->display->display_options['fields']['field_hub_page_image_1']['label'] = '';
-  $handler->display->display_options['fields']['field_hub_page_image_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_hub_page_image_1']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_hub_page_image_1']['settings'] = array(
-    'image_style' => 'area_of_activities_two_activies',
-    'image_link' => 'content',
-  );
-  $handler->display->display_options['fields']['field_hub_page_image_1']['delta_limit'] = '1';
-  $handler->display->display_options['fields']['field_hub_page_image_1']['delta_offset'] = '0';
   /* Field: Content: Short Title */
   $handler->display->display_options['fields']['field_short_title']['id'] = 'field_short_title';
   $handler->display->display_options['fields']['field_short_title']['table'] = 'field_data_field_short_title';
@@ -28740,17 +28688,6 @@ print $content;
   );
   $handler->display->display_options['fields']['field_project_image_et']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_project_image_et']['delta_offset'] = '0';
-  /* Field: File: Caption */
-  $handler->display->display_options['fields']['field_image_caption']['id'] = 'field_image_caption';
-  $handler->display->display_options['fields']['field_image_caption']['table'] = 'field_data_field_image_caption';
-  $handler->display->display_options['fields']['field_image_caption']['field'] = 'field_image_caption';
-  $handler->display->display_options['fields']['field_image_caption']['relationship'] = 'field_project_image_fid';
-  $handler->display->display_options['fields']['field_image_caption']['label'] = '';
-  $handler->display->display_options['fields']['field_image_caption']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_image_caption']['alter']['max_length'] = '75';
-  $handler->display->display_options['fields']['field_image_caption']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['field_image_caption']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image_caption']['type'] = 'text_plain';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -30596,7 +30533,7 @@ print $value;
     'title_link' => 'content',
     'title_class' => '',
   );
-  /* Field: Content: Images */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_project_image']['id'] = 'field_project_image';
   $handler->display->display_options['fields']['field_project_image']['table'] = 'field_data_field_project_image';
   $handler->display->display_options['fields']['field_project_image']['field'] = 'field_project_image';
