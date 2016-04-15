@@ -6106,7 +6106,7 @@ print $output;
   $handler->display->display_options['fields']['field_event_performance']['element_wrapper_class'] = 'akmi-related-artists-row';
   $handler->display->display_options['fields']['field_event_performance']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_event_performance']['delta_offset'] = '0';
-  /* Field: Content: Purchase Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['field_feature_link']['id'] = 'field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['table'] = 'field_data_field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['field'] = 'field_feature_link';
@@ -6533,6 +6533,9 @@ print $output;
   $handler = $view->new_display('page', 'AKMI EVENTS Calender page', 'page');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'akmi-event-calender-table';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Unfiltered text */
   $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
@@ -6618,7 +6621,6 @@ print $output;
   $handler->display->display_options['sorts']['field_akmi_event_date_value']['id'] = 'field_akmi_event_date_value';
   $handler->display->display_options['sorts']['field_akmi_event_date_value']['table'] = 'field_data_field_akmi_event_date';
   $handler->display->display_options['sorts']['field_akmi_event_date_value']['field'] = 'field_akmi_event_date_value';
-  $handler->display->display_options['sorts']['field_akmi_event_date_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Event Year (field_event_akmi_year) */
   $handler->display->display_options['arguments']['field_event_akmi_year_tid']['id'] = 'field_event_akmi_year_tid';
@@ -6751,10 +6753,27 @@ print $output;
 
   /* Display: Event Calendar Home block */
   $handler = $view->new_display('block', 'Event Calendar Home block', 'block_2');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'akaa-award-cycle-block-textbook';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: Unfiltered text */
+  $handler->display->display_options['footer']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['footer']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['footer']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['footer']['area_text_custom']['empty'] = TRUE;
+  $handler->display->display_options['footer']['area_text_custom']['content'] = '
+<div class="akaa-icon-title"><a href="events/[field_event_akmi_year]">icon</a></div>';
+  $handler->display->display_options['footer']['area_text_custom']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Event image */
   $handler->display->display_options['fields']['field_akmi_event_image']['id'] = 'field_akmi_event_image';
@@ -6769,11 +6788,45 @@ print $output;
     'image_style' => 'social_sharing_image',
     'image_link' => '',
   );
+  /* Field: Content: Event Year */
+  $handler->display->display_options['fields']['field_event_akmi_year']['id'] = 'field_event_akmi_year';
+  $handler->display->display_options['fields']['field_event_akmi_year']['table'] = 'field_data_field_event_akmi_year';
+  $handler->display->display_options['fields']['field_event_akmi_year']['field'] = 'field_event_akmi_year';
+  $handler->display->display_options['fields']['field_event_akmi_year']['label'] = '';
+  $handler->display->display_options['fields']['field_event_akmi_year']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_event_akmi_year']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_event_akmi_year']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class = "akaa-cycle-title">
+  <a href = "events/[field_event_akmi_year]">Events Calendar</a>
+</div>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Event Date -  start date (field_akmi_event_date) */
   $handler->display->display_options['sorts']['field_akmi_event_date_value']['id'] = 'field_akmi_event_date_value';
   $handler->display->display_options['sorts']['field_akmi_event_date_value']['table'] = 'field_data_field_akmi_event_date';
   $handler->display->display_options['sorts']['field_akmi_event_date_value']['field'] = 'field_akmi_event_date_value';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'akmi_event' => 'akmi_event',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
 
   /* Display: Event Calendar home tile attachment */
   $handler = $view->new_display('attachment', 'Event Calendar home tile attachment', 'attachment_2');
@@ -6852,11 +6905,10 @@ print $output;
   $handler->display->display_options['filters']['field_akmi_event_date_value']['form_type'] = 'date_text';
   $handler->display->display_options['filters']['field_akmi_event_date_value']['default_date'] = 'now';
   $handler->display->display_options['displays'] = array(
-    'block_2' => 'block_2',
     'default' => 0,
     'page' => 0,
     'block_1' => 0,
-    'block_3' => 0,
+    'block_2' => 0,
   );
   $handler->display->display_options['attachment_position'] = 'after';
   $translatables['akmi_events_views'] = array(
@@ -6893,6 +6945,11 @@ print $output;
     t('Please also see :'),
     t('[field_event_akmi_year] Concerts sponsored by the Aga Khan Music Initiative'),
     t('Event Calendar Home block'),
+    t('
+<div class="akaa-icon-title"><a href="events/[field_event_akmi_year]">icon</a></div>'),
+    t('<div class = "akaa-cycle-title">
+  <a href = "events/[field_event_akmi_year]">Events Calendar</a>
+</div>'),
     t('Event Calendar home tile attachment'),
     t('AKMI Events Calendar Home '),
     t(' <div class = "akaa-cycle-title"><a href = "#">Events Calendar</a></div>'),
@@ -7793,7 +7850,7 @@ print $content;
     0 => '9346',
   );
   $handler->display->display_options['filters']['field_tags_tid']['vocabulary'] = 'tags';
-  /* Filter criterion: Content: Show Block (field_show_block) */
+  /* Filter criterion: Content: Show custom Block (field_show_block) */
   $handler->display->display_options['filters']['field_show_block_value']['id'] = 'field_show_block_value';
   $handler->display->display_options['filters']['field_show_block_value']['table'] = 'field_data_field_show_block';
   $handler->display->display_options['filters']['field_show_block_value']['field'] = 'field_show_block_value';
@@ -7903,7 +7960,7 @@ print $content;
     'readmore_ellipsis' => 0,
     'readmore_wordsafe' => 1,
   );
-  /* Field: Content: Instrument Main Image */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -7977,7 +8034,7 @@ print $content;
   );
   $handler->display->display_options['fields']['fieldset']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset']['fieldset']['classes'] = 'pc-listing-img';
-  /* Field: Content: Instrument Main Image */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -9540,7 +9597,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
   $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Purchase Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['field_feature_link']['id'] = 'field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['table'] = 'field_data_field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['field'] = 'field_feature_link';
@@ -9588,7 +9645,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
     'akmi_performance' => 'akmi_performance',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Purchase Link (field_feature_link:url) */
+  /* Filter criterion: Content: Link (field_feature_link:url) */
   $handler->display->display_options['filters']['field_feature_link_url']['id'] = 'field_feature_link_url';
   $handler->display->display_options['filters']['field_feature_link_url']['table'] = 'field_data_field_feature_link';
   $handler->display->display_options['filters']['field_feature_link_url']['field'] = 'field_feature_link_url';
@@ -11152,7 +11209,7 @@ print $explode[1];
   $handler->display->display_options['fields']['nothing']['alter']['path'] = '[url]';
   $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'akdn-solr-more-link';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Field: Indexed Node: Gallery Date */
+  /* Field: Indexed Node: Publish Date */
   $handler->display->display_options['fields']['field_publish_date']['id'] = 'field_publish_date';
   $handler->display->display_options['fields']['field_publish_date']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['fields']['field_publish_date']['field'] = 'field_publish_date';
@@ -11335,7 +11392,7 @@ print $explode[1];
   $handler->display->display_options['fields']['field_short_title']['settings'] = array(
     'trim_length' => '600',
   );
-  /* Field: Indexed Node: Gallery Date */
+  /* Field: Indexed Node: Publish Date */
   $handler->display->display_options['fields']['field_publish_date']['id'] = 'field_publish_date';
   $handler->display->display_options['fields']['field_publish_date']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['fields']['field_publish_date']['field'] = 'field_publish_date';
@@ -11537,7 +11594,7 @@ print $explode[1];
   $handler->display->display_options['fields']['field_short_title']['settings'] = array(
     'trim_length' => '600',
   );
-  /* Field: Indexed Node: Gallery Date */
+  /* Field: Indexed Node: Publish Date */
   $handler->display->display_options['fields']['field_publish_date']['id'] = 'field_publish_date';
   $handler->display->display_options['fields']['field_publish_date']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['fields']['field_publish_date']['field'] = 'field_publish_date';
@@ -14353,7 +14410,7 @@ print file_create_url($row->uri);
   $handler = $view->new_display('block', 'Manual F/A/G Fact Block', 'manual_fact_blocks');
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Fact Sheet Reference (field_fact_sheet_reference) */
+  /* Relationship: Content: Fact block Reference (field_fact_sheet_reference) */
   $handler->display->display_options['relationships']['field_fact_sheet_reference_nid']['id'] = 'field_fact_sheet_reference_nid';
   $handler->display->display_options['relationships']['field_fact_sheet_reference_nid']['table'] = 'field_data_field_fact_sheet_reference';
   $handler->display->display_options['relationships']['field_fact_sheet_reference_nid']['field'] = 'field_fact_sheet_reference_nid';
@@ -14818,7 +14875,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['field_caption']['settings'] = array(
     'trim_length' => '104',
   );
-  /* Field: Content: Purchase Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['field_feature_link']['id'] = 'field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['table'] = 'field_data_field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['field'] = 'field_feature_link';
@@ -15081,7 +15138,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['type']['label'] = '';
   $handler->display->display_options['fields']['type']['exclude'] = TRUE;
   $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
-  /* Field: Content: Purchase Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['field_feature_link']['id'] = 'field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['table'] = 'field_data_field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['field'] = 'field_feature_link';
@@ -15501,7 +15558,7 @@ print $value;
   $handler->display->display_options['fields']['field_caption']['settings'] = array(
     'trim_length' => '125',
   );
-  /* Field: Content: Purchase Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['field_feature_link']['id'] = 'field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['table'] = 'field_data_field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['field'] = 'field_feature_link';
@@ -15776,7 +15833,7 @@ return $exclude_nid;';
   $handler->display->display_options['fields']['field_caption']['settings'] = array(
     'trim_length' => '150',
   );
-  /* Field: Content: Purchase Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['field_feature_link']['id'] = 'field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['table'] = 'field_data_field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['field'] = 'field_feature_link';
@@ -16182,7 +16239,7 @@ print $value;
 ?>';
   $handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
-  /* Field: Content: Purchase Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['field_feature_link']['id'] = 'field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['table'] = 'field_data_field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['field'] = 'field_feature_link';
@@ -16405,7 +16462,7 @@ print $value;
   $handler->display->display_options['fields']['field_caption']['settings'] = array(
     'trim_length' => '150',
   );
-  /* Field: Content: Purchase Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['field_feature_link']['id'] = 'field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['table'] = 'field_data_field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['field'] = 'field_feature_link';
@@ -16684,7 +16741,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['type']['label'] = '';
   $handler->display->display_options['fields']['type']['exclude'] = TRUE;
   $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
-  /* Field: Content: Purchase Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['field_feature_link']['id'] = 'field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['table'] = 'field_data_field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['field'] = 'field_feature_link';
@@ -16962,7 +17019,7 @@ print $value;
   $handler->display->display_options['fields']['type']['label'] = '';
   $handler->display->display_options['fields']['type']['exclude'] = TRUE;
   $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
-  /* Field: Content: Purchase Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['field_feature_link']['id'] = 'field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['table'] = 'field_data_field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['field'] = 'field_feature_link';
@@ -17225,7 +17282,7 @@ print $value;
   $handler->display->display_options['fields']['type']['label'] = '';
   $handler->display->display_options['fields']['type']['exclude'] = TRUE;
   $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
-  /* Field: Content: Purchase Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['field_feature_link']['id'] = 'field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['table'] = 'field_data_field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['field'] = 'field_feature_link';
@@ -17490,7 +17547,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['type']['label'] = '';
   $handler->display->display_options['fields']['type']['exclude'] = TRUE;
   $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
-  /* Field: Content: Purchase Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['field_feature_link']['id'] = 'field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['table'] = 'field_data_field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['field'] = 'field_feature_link';
@@ -17820,7 +17877,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['type']['label'] = '';
   $handler->display->display_options['fields']['type']['exclude'] = TRUE;
   $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
-  /* Field: Content: Purchase Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['field_feature_link']['id'] = 'field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['table'] = 'field_data_field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['field'] = 'field_feature_link';
@@ -18209,7 +18266,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['type']['label'] = '';
   $handler->display->display_options['fields']['type']['exclude'] = TRUE;
   $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
-  /* Field: Content: Purchase Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['field_feature_link']['id'] = 'field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['table'] = 'field_data_field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['field'] = 'field_feature_link';
@@ -18611,7 +18668,7 @@ print $value;
   $handler->display->display_options['fields']['field_caption']['settings'] = array(
     'trim_length' => '125',
   );
-  /* Field: Content: Purchase Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['field_feature_link']['id'] = 'field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['table'] = 'field_data_field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['field'] = 'field_feature_link';
@@ -19024,7 +19081,7 @@ print $value;
   $handler->display->display_options['fields']['field_caption']['settings'] = array(
     'trim_length' => '125',
   );
-  /* Field: Content: Purchase Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['field_feature_link']['id'] = 'field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['table'] = 'field_data_field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['field'] = 'field_feature_link';
@@ -19257,7 +19314,7 @@ print $value;
   $handler->display->display_options['fields']['type']['label'] = '';
   $handler->display->display_options['fields']['type']['exclude'] = TRUE;
   $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
-  /* Field: Content: Purchase Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['field_feature_link']['id'] = 'field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['table'] = 'field_data_field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['field'] = 'field_feature_link';
@@ -19588,7 +19645,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['type']['label'] = '';
   $handler->display->display_options['fields']['type']['exclude'] = TRUE;
   $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
-  /* Field: Content: Purchase Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['field_feature_link']['id'] = 'field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['table'] = 'field_data_field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['field'] = 'field_feature_link';
@@ -20028,7 +20085,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['field_caption']['settings'] = array(
     'trim_length' => '150',
   );
-  /* Field: Content: Purchase Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['field_feature_link']['id'] = 'field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['table'] = 'field_data_field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['field'] = 'field_feature_link';
@@ -20210,7 +20267,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['field_media_source']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_media_source']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_media_source']['type'] = 'link_plain';
-  /* Field: Content: Purchase Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['field_feature_link']['id'] = 'field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['table'] = 'field_data_field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['field'] = 'field_feature_link';
@@ -20598,7 +20655,7 @@ print $value;
   $handler->display->display_options['fields']['field_caption']['settings'] = array(
     'trim_length' => '150',
   );
-  /* Field: Content: Purchase Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['field_feature_link']['id'] = 'field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['table'] = 'field_data_field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['field'] = 'field_feature_link';
@@ -29187,7 +29244,7 @@ print $content;
   $handler->display->display_options['fields']['field_caption']['settings'] = array(
     'trim_length' => '150',
   );
-  /* Field: Content: Purchase Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['field_feature_link']['id'] = 'field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['table'] = 'field_data_field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['field'] = 'field_feature_link';
@@ -29463,7 +29520,7 @@ print $content;
   $handler->display->display_options['fields']['type']['label'] = '';
   $handler->display->display_options['fields']['type']['exclude'] = TRUE;
   $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
-  /* Field: Content: Purchase Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['field_feature_link']['id'] = 'field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['table'] = 'field_data_field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['field'] = 'field_feature_link';
@@ -29853,7 +29910,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['type']['label'] = '';
   $handler->display->display_options['fields']['type']['exclude'] = TRUE;
   $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
-  /* Field: Content: Purchase Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['field_feature_link']['id'] = 'field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['table'] = 'field_data_field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['field'] = 'field_feature_link';
@@ -30592,7 +30649,7 @@ print $value;
   $handler->display->display_options['fields']['type']['label'] = '';
   $handler->display->display_options['fields']['type']['exclude'] = TRUE;
   $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
-  /* Field: Content: Purchase Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['field_feature_link']['id'] = 'field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['table'] = 'field_data_field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['field'] = 'field_feature_link';
@@ -30983,7 +31040,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['type']['label'] = '';
   $handler->display->display_options['fields']['type']['exclude'] = TRUE;
   $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
-  /* Field: Content: Purchase Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['field_feature_link']['id'] = 'field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['table'] = 'field_data_field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['field'] = 'field_feature_link';
@@ -31371,7 +31428,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['type']['label'] = '';
   $handler->display->display_options['fields']['type']['exclude'] = TRUE;
   $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
-  /* Field: Content: Purchase Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['field_feature_link']['id'] = 'field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['table'] = 'field_data_field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['field'] = 'field_feature_link';
@@ -31740,7 +31797,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['type']['label'] = '';
   $handler->display->display_options['fields']['type']['exclude'] = TRUE;
   $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
-  /* Field: Content: Purchase Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['field_feature_link']['id'] = 'field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['table'] = 'field_data_field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['field'] = 'field_feature_link';
@@ -32151,7 +32208,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['type']['label'] = '';
   $handler->display->display_options['fields']['type']['exclude'] = TRUE;
   $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
-  /* Field: Content: Purchase Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['field_feature_link']['id'] = 'field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['table'] = 'field_data_field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['field'] = 'field_feature_link';
@@ -32540,7 +32597,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['type']['label'] = '';
   $handler->display->display_options['fields']['type']['exclude'] = TRUE;
   $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
-  /* Field: Content: Purchase Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['field_feature_link']['id'] = 'field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['table'] = 'field_data_field_feature_link';
   $handler->display->display_options['fields']['field_feature_link']['field'] = 'field_feature_link';
