@@ -3610,7 +3610,7 @@ function akdn_custom_video_player() {
     $output = '';
     $output .= '<div class="video_player"">
         <video id="video_player_1" class="video-js vjs-default-skin"
-               controls preload="auto" width="auto" height="460"
+               controls preload="auto" width="770" height="460"
                poster="http://video-js.zencoder.com/oceans-clip.png"
                data-setup=\'{"controls":true}\'>
             <source src="' . $entity->field_podcast_video[$entity->language][0]['uri'] . '" type=\'video/mp4\' />
