@@ -18420,6 +18420,11 @@ map area {
   background: url('../images/akdn-logo.png?1458165161') no-repeat;
 }
 
+/* line 7273, ../sass/_akdn-redesign.scss */
+.basic-page-custom-summary-italics {
+  font-style: italic !important;
+}
+
 /*
 * Media Queries
 *
