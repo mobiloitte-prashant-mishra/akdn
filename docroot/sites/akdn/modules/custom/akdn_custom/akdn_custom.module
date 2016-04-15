@@ -3,7 +3,7 @@
 /**
  * Implements hook_init().
  */
-function akdn_custom_init1() {
+function akdn_custom_init() {
   $drupal_get_path = drupal_get_path('module', 'akdn_custom');
 
   if (arg(0) == 'media' && arg(1) == 'browser') {
