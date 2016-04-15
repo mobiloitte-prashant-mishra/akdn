@@ -196,6 +196,7 @@
 %block_read-more-link {
     @extend %no_flt_inline;
     width: auto;
+    display: inline-block;
 	white-space: nowrap;
     a {
         color: #b5995a;
