@@ -3577,8 +3577,7 @@ function akdn_custom_video_player() {
     $youtube_temp = explode('youtube://v/', $entity->field_podcast_video[$entity->language][0]['uri']);
     $youtube_video_id = $youtube_temp[1];
   }
-  if (($video_temp[1]) && (stripos($video_temp, 'brightcove://') !==FALSE)){
-    echo 'brightcove';
+  if (($video_temp[1]) && (stripos($video_temp, 'brightcove://') !== FALSE)) {
     $output = '<script type="text/javascript" src="//admin.brightcove.com/js/BrightcoveExperiences.js"></script>';
     $output .= '<div class="playerbox" height="460">
     <object id="player1" class="BrightcoveExperience">
@@ -3601,10 +3600,22 @@ function akdn_custom_video_player() {
     drupal_add_js($drupal_get_path . '/js/akdn_brightcove.js');
     return $output;
   }
-  elseif(($youtube_temp[1]) && (stripos($youtube_temp, 'youtube://v/') !==FALSE)){
+  elseif (($youtube_temp[1]) && (stripos($youtube_temp, 'youtube://v/') !== FALSE)) {
     $output = '';
-    $output = '<div class="youtube_player"><iframe width="760" height="460" src="https://www.youtube.com/embed/'.$youtube_video_id.'" frameborder="0" allowfullscreen></iframe></div>';
+    $output = '<div class="youtube_player"><iframe width="770" height="460" src="https://www.youtube.com/embed/' . $youtube_video_id . '" frameborder="0" allowfullscreen></iframe></div>';
     return $output;
   }
-
+  else {
+    //@TODO change this later for vimeo and other video file player
+    $output = '';
+    $output .= '<div class="video_player"">
+        <video id="video_player_1" class="video-js vjs-default-skin"
+               controls preload="auto" width="auto" height="460"
+               poster="http://video-js.zencoder.com/oceans-clip.png"
+               data-setup=\'{"controls":true}\'>
+            <source src="' . $entity->field_podcast_video[$entity->language][0]['uri'] . '" type=\'video/mp4\' />
+        </video>
+    </div>';
+    return $output;
+  }
 }
