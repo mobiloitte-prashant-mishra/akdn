@@ -23,10 +23,12 @@
  */
 
 ?>
-
 <?php
-$count1 = count($view->result);
-if ($count1 == 2 ) {
-    print l($output, $row->nid, array('html' => TRUE));
-} 
+if (function_exists('linkify_tweet')) {
+  print linkify_tweet($output);
+}
+else {
+  print $output;
+}
 ?>
+
