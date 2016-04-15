@@ -3570,10 +3570,15 @@ function akdn_custom_video_player() {
   $drupal_get_path = drupal_get_path('module', 'akdn_custom');
   $entity = menu_get_object();
   if (isset($entity->field_podcast_video[$entity->language][0]['uri'])) {
+    //bightcove video
     $video_temp = explode('brightcove://', $entity->field_podcast_video[$entity->language][0]['uri']);
     $video = $video_temp[1];
+    //youtube
+    $youtube_temp = explode('youtube://v/', $entity->field_podcast_video[$entity->language][0]['uri']);
+    $youtube_video_id = $youtube_temp[1];
   }
-  if ($video_temp[1] != " ") {
+  if (($video_temp[1]) && (stripos($video_temp, 'brightcove://') !==FALSE)){
+    echo 'brightcove';
     $output = '<script type="text/javascript" src="//admin.brightcove.com/js/BrightcoveExperiences.js"></script>';
     $output .= '<div class="playerbox" height="460">
     <object id="player1" class="BrightcoveExperience">
@@ -3594,6 +3599,11 @@ function akdn_custom_video_player() {
   </div>';
     //$output .= '<script type="text/javascript">brightcove.createExperiences();</script>';
     drupal_add_js($drupal_get_path . '/js/akdn_brightcove.js');
+    return $output;
+  }
+  elseif(($youtube_temp[1]) && (stripos($youtube_temp, 'youtube://v/') !==FALSE)){
+    $output = '';
+    $output = '<div class="youtube_player"><iframe width="760" height="460" src="https://www.youtube.com/embed/'.$youtube_video_id.'" frameborder="0" allowfullscreen></iframe></div>';
     return $output;
   }
 
