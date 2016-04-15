@@ -18425,6 +18425,12 @@ map area {
   font-style: italic !important;
 }
 
+/* line 7276, ../sass/_akdn-redesign.scss */
+.basic-page-custom-summary-bold {
+  font-style: normal;
+  font-weight: bold !important;
+}
+
 /*
 * Media Queries
 *
