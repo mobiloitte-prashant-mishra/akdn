@@ -3092,16 +3092,6 @@ function akdn_custom_theme($existing, $type, $theme, $path) {
     ),
     'arguments' => array('view' => NULL),
   );
-  $themes['views_view_fields__solr_site_search__page'] = array(
-    'template' => 'templates/views-view-fields--solr-site-search--page',
-    'original hook' => 'views_view_fields',
-    'preprocess functions' => array(
-      'template_preprocess',
-      'template_preprocess_views_view_fields',
-      'akdn_custom_preprocess_views_view_fields__solr_site_search__page',
-    ),
-    'arguments' => array('view' => NULL),
-  );
   return $themes;
 }
 
@@ -3466,4 +3456,11 @@ function akdn_custom_facet_items_alter(&$build, &$settings) {
       }
     }
   }
+}
+
+function akdn_custom_search_api_solr_search_results_alter(array &$results, SearchApiQueryInterface $query, $response) {
+if (strpos($_SERVER['REQUEST_URI'], "agency") !== false) {
+    unset($results['results']['9576']);
+    unset($results['results']['22106']);
+ }
 }
