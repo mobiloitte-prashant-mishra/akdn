@@ -89,6 +89,7 @@
 
     .table {
         border-collapse: collapse !important;
+        page-break-inside : avoid;
 
         td,
         th {
@@ -139,6 +140,43 @@
     .panel-panel.grid-18,
     .panel-panel.grid-6 {
       height: auto !important;
+    }
+    @page {
+      //size : portrait;   /* auto is the initial value */
+      margin: 1cm;
+   }
+   .region-footer-first-inner {
+        .quicklinks_social_block {
+            padding-left: 15px;
+        }
+        .footer-left, 
+        .footer-right {
+            display: none;
+        }
+   }
+   .logo-container {
+        margin: 0 auto 20px !important;
+   }
+   .sub-navbar ul {
+        display: block !important;
+        margin: 0 auto !important;
+    }   
+    .social-box {
+        a {
+            width: 24px !important;
+            height: 24px !important;
+        }
+    }
+    .main-navbar {
+        .nolink {
+            font-size: 12px !important;
+        }
+    }
+    .top-navbar{
+        display: none !important;
+    }
+    .social-icon-image {
+        left: 0 !important;
     }
 }
 @media print and (color) {
