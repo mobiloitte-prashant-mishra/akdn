@@ -935,6 +935,22 @@ function akdn_image_styles_image_default_styles() {
     'name' => 'standard_listing_aspect_switcher',
     'label' => 'Standard Listing Aspect Switcher',
     'effects' => array(
+      21 => array(
+        'label' => 'Scale',
+        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
+        'effect callback' => 'image_scale_effect',
+        'dimensions callback' => 'image_scale_dimensions',
+        'form callback' => 'image_scale_form',
+        'summary theme' => 'image_scale_summary',
+        'module' => 'image',
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 360,
+          'height' => 240,
+          'upscale' => 1,
+        ),
+        'weight' => -10,
+      ),
       20 => array(
         'label' => 'Aspect switcher',
         'help' => 'Use different effects depending on whether the image is landscape of portrait shaped. This re-uses other preset definitions, and just chooses between them based on the rule.',
@@ -949,7 +965,7 @@ function akdn_image_styles_image_default_styles() {
           'landscape' => 'social_sharing_image',
           'ratio_adjustment' => 1,
         ),
-        'weight' => 1,
+        'weight' => -9,
       ),
     ),
   );
