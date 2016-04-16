@@ -3824,7 +3824,7 @@ h2.header-name a {
     }
     .hr-line {
         display: block;
-        border-bottom: 1px solid #cccccc;
+        //border-bottom: 1px solid #cccccc;
         margin: 30px auto 0;
     }
     .lesslink {
@@ -5360,6 +5360,7 @@ map {
         margin: 15px auto 0 !important;
         padding: 0;
         float: left;
+        clear: left;
     }
     .views-reset-button {
         display: inline-block;
@@ -7267,4 +7268,19 @@ map {
     width: 120px; 
     height: 55px;
     background: image-url("akdn-logo.png") no-repeat; 
+}
+/* Projects Lightbox captions */
+#colorbox {
+    .slide-text-colorbox, 
+    .image-caption {
+        position: relative;
+        bottom: 40px;
+        width: 100%;
+        padding: 10px 15px;
+        color: #FFF;
+        font-size: 14px;
+        line-height: 20px;
+        background-color: rgba(0,0,0,0.5);
+        
+    }
 }

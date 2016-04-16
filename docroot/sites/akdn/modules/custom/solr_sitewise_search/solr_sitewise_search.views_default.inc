@@ -238,7 +238,6 @@ print $output;
     'event' => 'event',
     'gallery' => 'gallery',
     'geography' => 'geography',
-    'hub_page' => 'hub_page',
     'podcast' => 'podcast',
     'publication' => 'publication',
     'speech' => 'speech',
