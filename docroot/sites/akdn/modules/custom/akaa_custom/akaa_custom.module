@@ -134,7 +134,7 @@ function _akaa_see_also_block() {
       if ($get_count > 0) {
         if ($key == 2 || $key == 4 || $key == 2611) {
           if ($value == 'Press Releases') {
-            $value = 'Press Release';
+            $value = 'Press Releases';
           }
           $key = $value;
         }
