@@ -51,7 +51,16 @@ $image_uri = reset($row->_field_data['nid']['entity']->field_hub_page_image)[0][
   );
   $img = theme('image_style', $accordian_image);
 
-  print l($img, 'node/'.$row->nid, array('html' => TRUE));
+  if ($row->_field_data['nid']['entity']->title == 'Aga Khan Award for Architecture') {
+    $link = 'architetcure';
+  }
+  elseif ($row->_field_data['nid']['entity']->title == 'Aga Khan Music Initiative') {
+    $link = 'akmi';
+  }
+  else {
+    $link = 'node/'.$row->nid;
+  }
+  print l($img, $link, array('html' => TRUE));
 }
 
 ?>
