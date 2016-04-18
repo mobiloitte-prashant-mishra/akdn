@@ -60,7 +60,8 @@ function akdn_akaa_akmi_types_field_group_info() {
       5 => 'field_event_akmi_year',
       6 => 'field_event_performance',
       7 => 'field_akmi_event_image',
-      8 => 'title',
+      8 => 'field_custom_meta_tags',
+      9 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -283,11 +284,12 @@ function akdn_akaa_akmi_types_field_group_info() {
     'weight' => '4',
     'children' => array(
       0 => 'body',
-      1 => 'field_short_title',
+      1 => 'field_agency_logo',
       2 => 'field_custom_breadcrumbs',
-      3 => 'field_agency_logo',
-      4 => 'title',
-      5 => 'path',
+      3 => 'field_short_title',
+      4 => 'field_custom_meta_tags',
+      5 => 'title',
+      6 => 'path',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -342,8 +344,8 @@ function akdn_akaa_akmi_types_field_group_info() {
     'label' => 'Cutom Page Layout',
     'weight' => '3',
     'children' => array(
-      0 => 'field_basic_page_choose_layout',
-      1 => 'field_basic_page_accordian_style',
+      0 => 'field_basic_page_accordian_style',
+      1 => 'field_basic_page_choose_layout',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -399,9 +401,9 @@ function akdn_akaa_akmi_types_field_group_info() {
     'label' => 'Customize Right Side Panel',
     'weight' => '5',
     'children' => array(
-      0 => 'field_right_show_block',
-      1 => 'field_specify_a_block_title',
-      2 => 'field_block_add_links',
+      0 => 'field_block_add_links',
+      1 => 'field_right_show_block',
+      2 => 'field_specify_a_block_title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -445,6 +447,7 @@ function akdn_akaa_akmi_types_field_group_info() {
       14 => 'field_review_selection_procedure',
       15 => 'field_cycle_year',
       16 => 'field_awards_cycle_links',
+      17 => 'field_custom_meta_tags',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

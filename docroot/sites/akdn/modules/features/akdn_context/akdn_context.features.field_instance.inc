@@ -890,7 +890,7 @@ function akdn_context_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 24,
+      'weight' => 25,
     ),
   );
 
@@ -952,7 +952,61 @@ function akdn_context_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 36,
+      'weight' => 37,
+    ),
+  );
+
+  // Exported field_instance: 'node-speech_theme-field_custom_meta_tags'
+  $field_instances['node-speech_theme-field_custom_meta_tags'] = array(
+    'bundle' => 'speech_theme',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_custom_meta_tags',
+    'label' => 'Custom Meta tags',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
     ),
   );
 
@@ -965,6 +1019,7 @@ function akdn_context_field_default_field_instances() {
   t('At Glance Links');
   t('Body');
   t('Country of Origin');
+  t('Custom Meta tags');
   t('Performance Year With AKMI');
   t('Related Instruments');
   t('Related Videos');

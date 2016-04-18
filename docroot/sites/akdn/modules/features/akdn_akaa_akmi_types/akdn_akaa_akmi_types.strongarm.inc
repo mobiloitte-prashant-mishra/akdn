@@ -96,6 +96,9 @@ function akdn_akaa_akmi_types_strongarm() {
         'path' => array(
           'weight' => '9',
         ),
+        'redirect' => array(
+          'weight' => '30',
+        ),
       ),
       'display' => array(),
     ),
@@ -327,7 +330,7 @@ function akdn_akaa_akmi_types_strongarm() {
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '6',
+          'weight' => '7',
         ),
         'redirect' => array(
           'weight' => '8',

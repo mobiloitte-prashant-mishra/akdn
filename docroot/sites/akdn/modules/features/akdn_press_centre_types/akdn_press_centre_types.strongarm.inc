@@ -389,19 +389,19 @@ function akdn_press_centre_types_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '16',
+          'weight' => '2',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '17',
+          'weight' => '3',
         ),
         'language' => array(
           'weight' => '0',
         ),
         'redirect' => array(
-          'weight' => '18',
+          'weight' => '5',
         ),
       ),
       'display' => array(
@@ -495,13 +495,13 @@ function akdn_press_centre_types_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '6',
+          'weight' => '2',
         ),
         'title' => array(
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '7',
+          'weight' => '3',
         ),
         'language' => array(
           'weight' => '0',
@@ -510,7 +510,7 @@ function akdn_press_centre_types_strongarm() {
           'weight' => '16',
         ),
         'redirect' => array(
-          'weight' => '8',
+          'weight' => '4',
         ),
       ),
       'display' => array(
@@ -586,19 +586,19 @@ function akdn_press_centre_types_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '17',
+          'weight' => '2',
         ),
         'title' => array(
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '18',
+          'weight' => '3',
         ),
         'language' => array(
           'weight' => '0',
         ),
         'redirect' => array(
-          'weight' => '19',
+          'weight' => '4',
         ),
       ),
       'display' => array(
@@ -841,19 +841,22 @@ function akdn_press_centre_types_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '4',
+          'weight' => '5',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '6',
+          'weight' => '8',
         ),
         'redirect' => array(
-          'weight' => '5',
+          'weight' => '7',
         ),
         'workbench_access' => array(
           'weight' => '3',
+        ),
+        'language' => array(
+          'weight' => '6',
         ),
       ),
       'display' => array(),
