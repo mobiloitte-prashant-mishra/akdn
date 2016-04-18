@@ -7751,23 +7751,23 @@ if (isset($node->field_about_page)) {
           'context' => 'empty',
           'not' => TRUE,
         ),
-        2 => array(
+        4 => array(
           'name' => 'path_visibility',
           'settings' => array(
-            'visibility_setting' => '0',
+            'visibility_setting' => '1',
             'paths' => 'terms-conditions',
           ),
           'context' => 'empty',
-          'not' => FALSE,
+          'not' => TRUE,
         ),
-        3 => array(
+        5 => array(
           'name' => 'path_visibility',
           'settings' => array(
-            'visibility_setting' => '0',
+            'visibility_setting' => '1',
             'paths' => 'privacy-policy',
           ),
           'context' => 'empty',
-          'not' => FALSE,
+          'not' => TRUE,
         ),
       ),
       'logic' => 'and',
