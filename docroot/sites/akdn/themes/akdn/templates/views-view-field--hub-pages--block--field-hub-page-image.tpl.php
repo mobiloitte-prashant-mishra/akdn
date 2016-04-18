@@ -52,7 +52,7 @@ $image_uri = reset($row->_field_data['nid']['entity']->field_hub_page_image)[0][
   $img = theme('image_style', $accordian_image);
 
   if ($row->_field_data['nid']['entity']->title == 'Aga Khan Award for Architecture') {
-    $link = 'architetcure';
+    $link = 'architecture';
   }
   elseif ($row->_field_data['nid']['entity']->title == 'Aga Khan Music Initiative') {
     $link = 'akmi';
