@@ -178,19 +178,19 @@ function akdn_content_types_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '10',
+          'weight' => '7',
         ),
         'title' => array(
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '11',
+          'weight' => '8',
         ),
         'language' => array(
           'weight' => '0',
         ),
         'redirect' => array(
-          'weight' => '12',
+          'weight' => '9',
         ),
       ),
       'display' => array(),
