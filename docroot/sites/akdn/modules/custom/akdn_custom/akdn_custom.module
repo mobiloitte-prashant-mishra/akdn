@@ -3104,8 +3104,6 @@ function akdn_custom_theme($existing, $type, $theme, $path) {
       'akdn_custom_preprocess_views_view_fields__solr_site_search__page',
     ),
     'arguments' => array('view' => NULL),
-    ),
-    //'arguments' => array('view' => NULL),
   );
   return $themes;
 }
