@@ -6638,6 +6638,23 @@ print $output;
     'akmi_performance_year' => 'akmi_performance_year',
   );
   $handler->display->display_options['arguments']['field_event_akmi_year_tid']['validate_options']['type'] = 'convert';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'akmi_event' => 'akmi_event',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   $handler->display->display_options['path'] = 'akmi/events/%';
 
   /* Display: Event Other listing */
@@ -6754,7 +6771,6 @@ print $output;
   /* Display: Event Calendar Home block */
   $handler = $view->new_display('block', 'Event Calendar Home block', 'block_2');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['css_class'] = 'akaa-award-cycle-block-textbook';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
@@ -6800,8 +6816,8 @@ print $output;
   $handler->display->display_options['footer']['area_text_custom']['field'] = 'area_text_custom';
   $handler->display->display_options['footer']['area_text_custom']['empty'] = TRUE;
   $handler->display->display_options['footer']['area_text_custom']['content'] = '<div class = "akaa-cycle-title" style="float: left;overflow: hidden;">
-  <a href ="events/[field_event_akmi_year]">Events Calendar</a>
-</div><div class="akaa-icon-title"  style="overflow: hidden;"><a href="events/[field_event_akmi_year]">icon</a></div>';
+  <a href ="[field_event_akmi_year]">Events Calendar</a>
+</div><div class="akaa-icon-title"  style="overflow: hidden;"><a href="[field_event_akmi_year]">icon</a></div>';
   $handler->display->display_options['footer']['area_text_custom']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Event Year */
@@ -6810,6 +6826,8 @@ print $output;
   $handler->display->display_options['fields']['field_event_akmi_year']['field'] = 'field_event_akmi_year';
   $handler->display->display_options['fields']['field_event_akmi_year']['label'] = '';
   $handler->display->display_options['fields']['field_event_akmi_year']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_event_akmi_year']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_event_akmi_year']['alter']['text'] = 'akmi/events/[field_event_akmi_year]';
   $handler->display->display_options['fields']['field_event_akmi_year']['alter']['path'] = 'akmi/events/[field_event_akmi_year]';
   $handler->display->display_options['fields']['field_event_akmi_year']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_event_akmi_year']['type'] = 'taxonomy_term_reference_plain';
@@ -6828,7 +6846,7 @@ print $output;
   $handler->display->display_options['fields']['field_akmi_event_image']['field'] = 'field_akmi_event_image';
   $handler->display->display_options['fields']['field_akmi_event_image']['label'] = '';
   $handler->display->display_options['fields']['field_akmi_event_image']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_akmi_event_image']['alter']['path'] = 'akmi/events/[field_event_akmi_year]';
+  $handler->display->display_options['fields']['field_akmi_event_image']['alter']['path'] = '[field_event_akmi_year]';
   $handler->display->display_options['fields']['field_akmi_event_image']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_akmi_event_image']['element_class'] = 'akaa_cycle_image';
   $handler->display->display_options['fields']['field_akmi_event_image']['element_label_colon'] = FALSE;
@@ -6984,8 +7002,9 @@ print $output;
     t('[field_event_akmi_year] Concerts sponsored by the Aga Khan Music Initiative'),
     t('Event Calendar Home block'),
     t('<div class = "akaa-cycle-title" style="float: left;overflow: hidden;">
-  <a href ="events/[field_event_akmi_year]">Events Calendar</a>
-</div><div class="akaa-icon-title"  style="overflow: hidden;"><a href="events/[field_event_akmi_year]">icon</a></div>'),
+  <a href ="[field_event_akmi_year]">Events Calendar</a>
+</div><div class="akaa-icon-title"  style="overflow: hidden;"><a href="[field_event_akmi_year]">icon</a></div>'),
+    t('akmi/events/[field_event_akmi_year]'),
     t('Event Calendar home tile attachment'),
     t('AKMI Events Calendar Home '),
     t(' <div class = "akaa-cycle-title"><a href = "#">Events Calendar</a></div>'),
@@ -7886,7 +7905,7 @@ print $content;
     0 => '9346',
   );
   $handler->display->display_options['filters']['field_tags_tid']['vocabulary'] = 'tags';
-  /* Filter criterion: Content: Show custom Block (field_show_block) */
+  /* Filter criterion: Content: Show Block (field_show_block) */
   $handler->display->display_options['filters']['field_show_block_value']['id'] = 'field_show_block_value';
   $handler->display->display_options['filters']['field_show_block_value']['table'] = 'field_data_field_show_block';
   $handler->display->display_options['filters']['field_show_block_value']['field'] = 'field_show_block_value';
@@ -7996,7 +8015,7 @@ print $content;
     'readmore_ellipsis' => 0,
     'readmore_wordsafe' => 1,
   );
-  /* Field: Content: Image */
+  /* Field: Content: Instrument Main Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -8070,7 +8089,7 @@ print $content;
   );
   $handler->display->display_options['fields']['fieldset']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset']['fieldset']['classes'] = 'pc-listing-img';
-  /* Field: Content: Image */
+  /* Field: Content: Instrument Main Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
