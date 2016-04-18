@@ -26,9 +26,22 @@ if(strtolower($output) == 'media') {
   $output = t('In the media');
 }
 
+/**
+* for akmi/press-centre and /architecture/press-centre
+*/
 if(strtolower($row->_entity_properties['entity_type']) == 'project') {
   $row->_entity_properties['entity_type']= t('Spotlights');
 }
 
+/**
+* for search page
+*/
+
+if(strtolower($output) == 'project') {
+  $output = t('Spotlights');
+}
+
+print $output;
+
 ?>
-<?php print $output; ?>
+
