@@ -11018,7 +11018,7 @@ print $explode[1];
   $handler->display->display_options['fields']['field_short_video_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_short_video_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_short_video_image']['settings'] = array(
-    'image_style' => 'social_sharing_image',
+    'image_style' => 'standard_listing_aspect_switcher',
     'image_link' => '',
   );
   /* Field: Content: Title */
@@ -12508,7 +12508,7 @@ print $explode[1];
   $handler->display->display_options['fields']['field_header_image']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_header_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_header_image']['settings'] = array(
-    'image_style' => 'social_sharing_image',
+    'image_style' => 'standard_listing_aspect_switcher',
     'image_link' => '',
   );
   /* Field: Content: Logo */
@@ -13186,7 +13186,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['field_tweet_media']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_tweet_media']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_tweet_media']['settings'] = array(
-    'image_style' => 'social_sharing_image',
+    'image_style' => 'standard_listing_aspect_switcher',
     'image_link' => '',
   );
   /* Field: Content: Title */
@@ -13337,7 +13337,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['field_youtube_picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_youtube_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_youtube_picture']['settings'] = array(
-    'image_style' => 'social_sharing_image',
+    'image_style' => 'standard_listing_aspect_switcher',
     'image_link' => '',
   );
   /* Field: Content: Title */
@@ -13465,7 +13465,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['field_facebook_picture']['empty'] = '<img typeof="foaf:Image" src="/sites/akdn/themes/akdn/images/akaa-fb-default.jpg" width="240" height="360" alt="">';
   $handler->display->display_options['fields']['field_facebook_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_facebook_picture']['settings'] = array(
-    'image_style' => 'social_sharing_image',
+    'image_style' => 'standard_listing_aspect_switcher',
     'image_link' => '',
   );
   /* Field: Content: Title */
@@ -13607,7 +13607,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['field_youtube_picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_youtube_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_youtube_picture']['settings'] = array(
-    'image_style' => 'social_sharing_image',
+    'image_style' => 'standard_listing_aspect_switcher',
     'image_link' => '',
   );
   /* Field: Content: Title */
@@ -13736,7 +13736,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['field_facebook_picture']['empty'] = '<img typeof="foaf:Image" src="/sites/akdn/themes/akdn/images/akaa-fb-default.jpg" width="240" height="360" alt="">';
   $handler->display->display_options['fields']['field_facebook_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_facebook_picture']['settings'] = array(
-    'image_style' => 'social_sharing_image',
+    'image_style' => 'standard_listing_aspect_switcher',
     'image_link' => '',
   );
   /* Field: Content: Title */
@@ -13847,7 +13847,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['field_tweet_media']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_tweet_media']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_tweet_media']['settings'] = array(
-    'image_style' => 'social_sharing_image',
+    'image_style' => 'standard_listing_aspect_switcher',
     'image_link' => '',
   );
   /* Field: Content: Title */
@@ -13997,7 +13997,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['field_youtube_picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_youtube_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_youtube_picture']['settings'] = array(
-    'image_style' => 'social_sharing_image',
+    'image_style' => 'standard_listing_aspect_switcher',
     'image_link' => '',
   );
   /* Field: Content: Title */
@@ -14111,7 +14111,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['field_instagram_picture']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_instagram_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_instagram_picture']['settings'] = array(
-    'image_style' => 'instagram_feed_image',
+    'image_style' => 'standard_listing_aspect_switcher',
     'image_link' => '',
   );
   /* Field: Content: Title */
@@ -14122,7 +14122,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['text'] = '<div class="title"><span class="social-icon-image"></span>Aga Khan Development Network <span>@AKDN</span></div>';
   $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['path'] = 'www.instagram.com/baisane.rahul';
+  $handler->display->display_options['fields']['title']['alter']['path'] = 'www.instagram.com/akdn';
   $handler->display->display_options['fields']['title']['alter']['external'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['title']['element_type'] = 'div';
@@ -14145,10 +14145,24 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['alter']['max_length'] = '200';
+  $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['body']['element_type'] = 'div';
   $handler->display->display_options['fields']['body']['element_class'] = 'grid-social-block_body grid-social-block_body-instagram';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['body']['type'] = 'smart_trim_format';
+  $handler->display->display_options['fields']['body']['settings'] = array(
+    'trim_length' => '200',
+    'trim_type' => 'words',
+    'trim_suffix' => '...',
+    'more_link' => '0',
+    'more_text' => 'Read more',
+    'summary_handler' => 'ignore',
+    'trim_options' => array(
+      'text' => 0,
+    ),
+  );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
