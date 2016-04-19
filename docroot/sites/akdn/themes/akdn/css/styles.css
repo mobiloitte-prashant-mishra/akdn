@@ -14786,7 +14786,6 @@ h2.header-name a:active, h2.header-name a:focus {
 /* line 3826, ../sass/_akdn-redesign.scss */
 .what-we-do-body-more-body .hr-line {
   display: block;
-  border-bottom: 1px solid #cccccc;
   margin: 30px auto 0;
 }
 /* line 3831, ../sass/_akdn-redesign.scss */
@@ -16461,6 +16460,7 @@ map area {
   margin: 15px auto 0 !important;
   padding: 0;
   float: left;
+  clear: left;
 }
 /* line 5365, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .views-reset-button {
@@ -18636,6 +18636,20 @@ map area {
   width: 120px;
   height: 55px;
   background: url('../images/akdn-logo.png?1458165161') no-repeat;
+}
+
+/* Projects Lightbox captions */
+/* line 7265, ../sass/_akdn-redesign.scss */
+#colorbox .slide-text-colorbox,
+#colorbox .image-caption {
+  position: relative;
+  bottom: 40px;
+  width: 100%;
+  padding: 10px 15px;
+  color: #FFF;
+  font-size: 14px;
+  line-height: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 /*
