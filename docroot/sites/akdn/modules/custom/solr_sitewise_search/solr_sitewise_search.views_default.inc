@@ -213,16 +213,6 @@ print $output;
   $handler->display->display_options['fields']['entity_type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['entity_type']['link_to_entity'] = 0;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Indexed Node: Sticky in lists */
-  $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
-  $handler->display->display_options['sorts']['sticky']['table'] = 'search_api_index_akdn';
-  $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
-  $handler->display->display_options['sorts']['sticky']['order'] = 'DESC';
-  /* Sort criterion: Indexed Node: Time of Event Start/Article,publication,podcast,speech,gallery,project Publish */
-  $handler->display->display_options['sorts']['event_date_start_time']['id'] = 'event_date_start_time';
-  $handler->display->display_options['sorts']['event_date_start_time']['table'] = 'search_api_index_akdn';
-  $handler->display->display_options['sorts']['event_date_start_time']['field'] = 'event_date_start_time';
-  $handler->display->display_options['sorts']['event_date_start_time']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Indexed Node: Content type */
@@ -235,6 +225,7 @@ print $output;
     'article' => 'article',
     'award_cycle' => 'award_cycle',
     'page' => 'page',
+    'custom_content' => 'custom_content',
     'event' => 'event',
     'gallery' => 'gallery',
     'geography' => 'geography',
@@ -375,11 +366,6 @@ print $output;
   $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'akdn-solr-more-link';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Indexed Node: Time of Event Start/Article,publication,podcast,speech,gallery,project Publish */
-  $handler->display->display_options['sorts']['event_date_start_time']['id'] = 'event_date_start_time';
-  $handler->display->display_options['sorts']['event_date_start_time']['table'] = 'search_api_index_akdn';
-  $handler->display->display_options['sorts']['event_date_start_time']['field'] = 'event_date_start_time';
-  $handler->display->display_options['sorts']['event_date_start_time']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['operator'] = 'OR';
   $handler->display->display_options['filter_groups']['groups'] = array(

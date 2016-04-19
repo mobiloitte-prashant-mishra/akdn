@@ -206,7 +206,7 @@ function akdn_press_centre_types_field_group_info() {
   $field_group->parent_name = 'group_project';
   $field_group->data = array(
     'label' => 'Deprecated',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_summary',
     ),
@@ -540,7 +540,7 @@ function akdn_press_centre_types_field_group_info() {
   $field_group->parent_name = 'group_project';
   $field_group->data = array(
     'label' => 'Banner Item',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'field_caption',
       1 => 'field_create_featured_content',
@@ -1023,7 +1023,7 @@ function akdn_press_centre_types_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Newsletter Details',
-    'weight' => '55',
+    'weight' => '11',
     'children' => array(
       0 => 'field_newsletter_image',
       1 => 'field_newsletter_summary',
@@ -1051,7 +1051,7 @@ function akdn_press_centre_types_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Newsletter Details',
-    'weight' => '66',
+    'weight' => '8',
     'children' => array(
       0 => 'field_newsletter_image',
       1 => 'field_newsletter_summary',
@@ -1079,7 +1079,7 @@ function akdn_press_centre_types_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Newsletter Details',
-    'weight' => '43',
+    'weight' => '8',
     'children' => array(
       0 => 'field_newsletter_image',
       1 => 'field_newsletter_summary',
@@ -1172,6 +1172,7 @@ function akdn_press_centre_types_field_group_info() {
       1 => 'field_publish_date',
       2 => 'title_field',
       3 => 'field_short_title',
+      4 => 'field_custom_meta_tags',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -1196,7 +1197,7 @@ function akdn_press_centre_types_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Podcast',
-    'weight' => '15',
+    'weight' => '1',
     'children' => array(
       0 => 'group_featured_content',
       1 => 'group_media',
@@ -1267,6 +1268,7 @@ function akdn_press_centre_types_field_group_info() {
       6 => 'field_sub_title',
       7 => 'field_short_title',
       8 => 'field_publish_date',
+      9 => 'field_custom_meta_tags',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -1320,7 +1322,7 @@ function akdn_press_centre_types_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Project',
-    'weight' => '5',
+    'weight' => '1',
     'children' => array(
       0 => 'group_deprecated',
       1 => 'group_featured_content',
@@ -1390,6 +1392,7 @@ function akdn_press_centre_types_field_group_info() {
       3 => 'field_publish_date',
       4 => 'title_field',
       5 => 'field_short_title',
+      6 => 'field_custom_meta_tags',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
