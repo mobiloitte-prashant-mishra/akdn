@@ -327,7 +327,7 @@ function akdn_akaa_akmi_types_strongarm() {
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '6',
+          'weight' => '7',
         ),
         'redirect' => array(
           'weight' => '8',

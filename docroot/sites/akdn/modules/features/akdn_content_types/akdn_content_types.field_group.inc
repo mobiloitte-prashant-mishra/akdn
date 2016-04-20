@@ -57,6 +57,7 @@ function akdn_content_types_field_group_info() {
     'children' => array(
       0 => 'field_agency_acronym',
       1 => 'title_field',
+      2 => 'field_custom_meta_tags',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -172,12 +173,12 @@ function akdn_content_types_field_group_info() {
     'label' => 'Agency',
     'weight' => '1',
     'children' => array(
-      0 => 'group_fact_sheet_visibiliity',
-      1 => 'group_agency_deprecated',
-      2 => 'group_agency_details',
-      3 => 'group_agency_footer',
-      4 => 'group_agency_media',
-      5 => 'group_agency_text',
+      0 => 'group_agency_deprecated',
+      1 => 'group_agency_details',
+      2 => 'group_agency_footer',
+      3 => 'group_agency_media',
+      4 => 'group_agency_text',
+      5 => 'group_fact_sheet_visibiliity',
       6 => 'group_news_resouces_visible',
       7 => 'group_social_connection',
     ),
@@ -205,8 +206,8 @@ function akdn_content_types_field_group_info() {
     'weight' => '2',
     'children' => array(
       0 => 'field_akaa_short_video',
-      1 => 'field_akaa_video_thumbnail',
-      2 => 'field_akaa_short_video_title',
+      1 => 'field_akaa_short_video_title',
+      2 => 'field_akaa_video_thumbnail',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -325,6 +326,7 @@ function akdn_content_types_field_group_info() {
       5 => 'field_hub_page_image',
       6 => 'field_more_link',
       7 => 'field_quick_links',
+      8 => 'field_custom_meta_tags',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -661,6 +663,7 @@ function akdn_content_types_field_group_info() {
       1 => 'field_sub_title',
       2 => 'field_add_agency_what_we_do',
       3 => 'field_custom_agency_text',
+      4 => 'field_custom_meta_tags',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -833,6 +836,7 @@ function akdn_content_types_field_group_info() {
       0 => 'field_hub_page_image',
       1 => 'title_field',
       2 => 'field_sub_title',
+      3 => 'field_custom_meta_tags',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -1262,8 +1266,8 @@ function akdn_content_types_field_group_info() {
     'label' => 'Social connections Visibility',
     'weight' => '26',
     'children' => array(
-      0 => 'field_social_sharing_links',
-      1 => 'field_show_social_share',
+      0 => 'field_show_social_share',
+      1 => 'field_social_sharing_links',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
