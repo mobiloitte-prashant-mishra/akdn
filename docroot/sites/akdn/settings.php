@@ -177,21 +177,7 @@
  *   );
  * @endcode
  */
-$databases = array (
-  'default' => 
-  array (
-    'default' => 
-    array (
-      'database' => 'AKDN_DEV',
-      'username' => 'root',
-      'password' => 'root',
-      'host' => 'localhost',
-      'port' => '',
-      'driver' => 'mysql',
-      'prefix' => '',
-    ),
-  ),
-);
+$databases = array();
 
 /**
  * Access control for update.php script.
@@ -223,7 +209,7 @@ $update_free_access = FALSE;
  *   $drupal_hash_salt = file_get_contents('/home/example/salt.txt');
  *
  */
-$drupal_hash_salt = 'WquNviRT4t8xQ_C9_wznGPBsTFLEBD2nfsBKS91Iq5Y';
+$drupal_hash_salt = '';
 
 /**
  * Base URL (optional).
@@ -501,3 +487,6 @@ $conf['404_fast_html'] = '<html xmlns="http://www.w3.org/1999/xhtml"><head><titl
  * Remove the leading hash signs to disable.
  */
 # $conf['allow_authorize_operations'] = FALSE;
+if (file_exists('/var/www/site-php')) {
+  require '/var/www/site-php/akdn3/akdn3-settings.inc';
+}
