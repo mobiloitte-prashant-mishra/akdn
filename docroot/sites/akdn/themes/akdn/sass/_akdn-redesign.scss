@@ -1796,6 +1796,9 @@ $icons:(facebook,twitter,youtube,instagram,vimeo,akmi);
                 font-size: 12px;
                 line-height: 18px;
                 text-transform: none;
+                &:first-letter {
+                    text-transform: capitalize;
+                }
             }
         }
     }
@@ -2444,6 +2447,9 @@ ul.primary li {
                         font-size: 12px;
                         line-height: 18px;
                         text-transform: none;
+                        &:first-letter {
+                            text-transform: capitalize;
+                        }
                     }
                 }
             }
