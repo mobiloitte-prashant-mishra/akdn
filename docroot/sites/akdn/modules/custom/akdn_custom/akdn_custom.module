@@ -3743,4 +3743,3 @@ function akdn_custom_v_p_for_archi() {
     return $output;
   }
  } 
->>>>>>> 35e916f097c077855329dc2fdf3b30c53187b214
