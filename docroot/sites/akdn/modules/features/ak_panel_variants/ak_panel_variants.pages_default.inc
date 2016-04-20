@@ -7096,7 +7096,7 @@ if (isset($node->field_about_page)) {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'pane-email',
+      'css_class' => 'pane-email akaa-projectfinder-mail-share-print',
     );
     $pane->extras = array();
     $pane->position = 9;
@@ -7104,6 +7104,28 @@ if (isset($node->field_about_page)) {
     $pane->uuid = 'd74c6201-99d3-4ead-9670-da5d7aacf655';
     $display->content['new-d74c6201-99d3-4ead-9670-da5d7aacf655'] = $pane;
     $display->panels['left'][9] = 'new-d74c6201-99d3-4ead-9670-da5d7aacf655';
+    $pane = new stdClass();
+    $pane->pid = 'new-1dced188-3d3e-499f-8376-244794f56e83';
+    $pane->panel = 'left';
+    $pane->type = 'block';
+    $pane->subtype = 'block-177';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 10;
+    $pane->locks = array();
+    $pane->uuid = '1dced188-3d3e-499f-8376-244794f56e83';
+    $display->content['new-1dced188-3d3e-499f-8376-244794f56e83'] = $pane;
+    $display->panels['left'][10] = 'new-1dced188-3d3e-499f-8376-244794f56e83';
     $pane = new stdClass();
     $pane->pid = 'new-a2000b04-0bc8-42fc-9c92-026deedadc67';
     $pane->panel = 'left';
@@ -7132,11 +7154,11 @@ if (isset($node->field_about_page)) {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 10;
+    $pane->position = 11;
     $pane->locks = array();
     $pane->uuid = 'a2000b04-0bc8-42fc-9c92-026deedadc67';
     $display->content['new-a2000b04-0bc8-42fc-9c92-026deedadc67'] = $pane;
-    $display->panels['left'][10] = 'new-a2000b04-0bc8-42fc-9c92-026deedadc67';
+    $display->panels['left'][11] = 'new-a2000b04-0bc8-42fc-9c92-026deedadc67';
     $pane = new stdClass();
     $pane->pid = 'new-83e36fd5-94e4-448e-bd85-61a72f3d36f1';
     $pane->panel = 'left';
@@ -7162,11 +7184,11 @@ if (isset($node->field_about_page)) {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 11;
+    $pane->position = 12;
     $pane->locks = array();
     $pane->uuid = '83e36fd5-94e4-448e-bd85-61a72f3d36f1';
     $display->content['new-83e36fd5-94e4-448e-bd85-61a72f3d36f1'] = $pane;
-    $display->panels['left'][11] = 'new-83e36fd5-94e4-448e-bd85-61a72f3d36f1';
+    $display->panels['left'][12] = 'new-83e36fd5-94e4-448e-bd85-61a72f3d36f1';
     $pane = new stdClass();
     $pane->pid = 'new-4314fd76-2f25-48c4-a509-0250ffa17b9a';
     $pane->panel = 'right';
