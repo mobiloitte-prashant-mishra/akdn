@@ -7771,25 +7771,9 @@ if (isset($node->field_about_page)) {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'akdn-social',
-          ),
-          'context' => 'empty',
-          'not' => TRUE,
-        ),
-        4 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'terms-conditions',
-          ),
-          'context' => 'empty',
-          'not' => TRUE,
-        ),
-        5 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'privacy-policy',
+            'paths' => 'akdn-social
+terms-conditions
+privacy-policy',
           ),
           'context' => 'empty',
           'not' => TRUE,
@@ -9577,16 +9561,8 @@ if (isset($node->field_about_page)) {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'terms-conditions',
-          ),
-          'context' => 'empty',
-          'not' => FALSE,
-        ),
-        2 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'privacy-policy',
+            'paths' => 'terms-conditions
+privacy-policy',
           ),
           'context' => 'empty',
           'not' => FALSE,
