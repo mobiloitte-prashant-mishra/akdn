@@ -1654,7 +1654,7 @@ function akdn_content_types_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_custom_meta_tags',
-    'label' => 'Custom Meta tags',
+    'label' => 'Custom Meta Tags',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -3264,7 +3264,7 @@ function akdn_content_types_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_custom_meta_tags',
-    'label' => 'Custom Meta tags',
+    'label' => 'Custom Meta Tags',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -5234,7 +5234,7 @@ function akdn_content_types_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_custom_meta_tags',
-    'label' => 'Custom Meta tags',
+    'label' => 'Custom Meta Tags',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -8774,7 +8774,7 @@ function akdn_content_types_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 20,
+      'weight' => 33,
     ),
   );
 
@@ -8837,7 +8837,65 @@ function akdn_content_types_field_default_field_instances() {
         'display_label' => 0,
       ),
       'type' => 'options_onoff',
-      'weight' => 18,
+      'weight' => 31,
+    ),
+  );
+
+  // Exported field_instance: 'node-page-field_custom_meta_tags'
+  $field_instances['node-page-field_custom_meta_tags'] = array(
+    'bundle' => 'page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'body_only' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 27,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_custom_meta_tags',
+    'label' => 'Custom Meta Tags',
+    'required' => FALSE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 4,
     ),
   );
 
@@ -9037,7 +9095,7 @@ function akdn_content_types_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 19,
+      'weight' => 32,
     ),
   );
 
@@ -9100,7 +9158,7 @@ function akdn_content_types_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -9157,7 +9215,7 @@ function akdn_content_types_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 21,
+      'weight' => 34,
     ),
   );
 
@@ -9702,7 +9760,7 @@ function akdn_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 22,
+      'weight' => 35,
     ),
   );
 
@@ -10354,7 +10412,7 @@ function akdn_content_types_field_default_field_instances() {
   t('Check this box to enable the carousel of projects related to this Geography below the Areas Of Activity listings.');
   t('Create Banner Item');
   t('Custom Agency Text');
-  t('Custom Meta tags');
+  t('Custom Meta Tags');
   t('Description of the agency; will be displayed on the agency\'s page, below the rotating slideshow of images.');
   t('Description of the geography.');
   t('Enable Project Carousel');

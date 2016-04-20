@@ -62,6 +62,7 @@ features[field_base][] = field_caption
 features[field_base][] = field_country_show_block
 features[field_base][] = field_create_featured_content
 features[field_base][] = field_custom_agency_text
+features[field_base][] = field_custom_meta_tags
 features[field_base][] = field_enable_project_slider
 features[field_base][] = field_fact_sheet_reference
 features[field_base][] = field_fact_sheet_upload

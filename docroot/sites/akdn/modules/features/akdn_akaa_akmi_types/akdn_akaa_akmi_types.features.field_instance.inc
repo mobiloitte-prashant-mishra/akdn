@@ -4804,7 +4804,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_custom_meta_tags',
-    'label' => 'Custom Meta tags',
+    'label' => 'Custom Meta Tags',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -6532,7 +6532,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_custom_meta_tags',
-    'label' => 'Custom Meta tags',
+    'label' => 'Custom Meta Tags',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -9869,7 +9869,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
   t('Completed Date Timestamp');
   t('Country');
   t('Create Banner Item');
-  t('Custom Meta tags');
+  t('Custom Meta Tags');
   t('Cycle Images');
   t('Cycle Year');
   t('Description');

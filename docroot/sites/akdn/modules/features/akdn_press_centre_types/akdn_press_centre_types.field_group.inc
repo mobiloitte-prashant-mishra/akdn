@@ -363,6 +363,7 @@ function akdn_press_centre_types_field_group_info() {
       3 => 'field_event_location',
       4 => 'title_field',
       5 => 'field_short_title',
+      6 => 'field_custom_meta_tags',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -669,6 +670,7 @@ function akdn_press_centre_types_field_group_info() {
       2 => 'title_field',
       3 => 'field_short_title',
       4 => 'field_tags',
+      5 => 'field_custom_meta_tags',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -1707,6 +1709,7 @@ function akdn_press_centre_types_field_group_info() {
       0 => 'body',
       1 => 'title_field',
       2 => 'field_short_title',
+      3 => 'field_custom_meta_tags',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
