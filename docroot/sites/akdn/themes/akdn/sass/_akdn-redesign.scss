@@ -7303,3 +7303,14 @@ map {
     font-style: normal;
     font-weight: bold !important;
 }
+
+// spacing between video player and email-print-share
+.custom-video-speech {
+    display: block;
+    margin-top: 30px;
+    float: left;
+    clear: both;
+    .playerbox {
+        height: auto;
+    }
+}
