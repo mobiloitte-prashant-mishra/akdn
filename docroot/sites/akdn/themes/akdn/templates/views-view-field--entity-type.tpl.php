@@ -30,7 +30,7 @@ if(strtolower($output) == 'media') {
 * for akmi/press-centre and /architecture/press-centre
 */
 if(strtolower($row->_entity_properties['entity_type']) == 'project') {
-  $row->_entity_properties['entity_type']= t('Spotlights');
+  $row->_entity_properties['entity_type']= t('Spotlight');
 }
 
 /**
@@ -38,7 +38,7 @@ if(strtolower($row->_entity_properties['entity_type']) == 'project') {
 */
 
 if(strtolower($output) == 'project') {
-  $output = t('Spotlights');
+  $output = t('Spotlight');
 }
 
 print $output;
