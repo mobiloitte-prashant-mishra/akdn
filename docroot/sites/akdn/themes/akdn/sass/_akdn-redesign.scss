@@ -7285,3 +7285,14 @@ map {
         
     }
 }
+
+// spacing between video player and email-print-share
+.custom-video-speech {
+    display: block;
+    margin-top: 30px;
+    float: left;
+    clear: both;
+    .playerbox {
+        height: auto;
+    }
+}

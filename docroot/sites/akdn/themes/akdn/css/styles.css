@@ -18639,7 +18639,7 @@ map area {
 }
 
 /* Projects Lightbox captions */
-/* line 7265, ../sass/_akdn-redesign.scss */
+/* line 7274, ../sass/_akdn-redesign.scss */
 #colorbox .slide-text-colorbox,
 #colorbox .image-caption {
   position: relative;
@@ -18650,6 +18650,18 @@ map area {
   font-size: 14px;
   line-height: 20px;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* line 7289, ../sass/_akdn-redesign.scss */
+.custom-video-speech {
+  display: block;
+  margin-top: 30px;
+  float: left;
+  clear: both;
+}
+/* line 7294, ../sass/_akdn-redesign.scss */
+.custom-video-speech .playerbox {
+  height: auto;
 }
 
 /*
