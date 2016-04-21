@@ -13069,7 +13069,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['field_facebook_picture']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_facebook_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_facebook_picture']['settings'] = array(
-    'image_style' => 'social_sharing_image',
+    'image_style' => 'standard_listing_aspect_switcher',
     'image_link' => '',
   );
   /* Field: Content: Title */
