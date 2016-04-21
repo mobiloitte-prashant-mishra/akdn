@@ -2195,6 +2195,93 @@ function akdn_context_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'remove_footer';
+  $context->description = 'Remove the Footer from social media page';
+  $context->tag = '';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'akdn-social' => 'akdn-social',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'region' => array(
+      'akdn' => array(
+        'disable' => array(
+          'footer_first' => 'footer_first',
+          'page_top' => 0,
+          'page_bottom' => 0,
+          'content' => 0,
+          'user_first' => 0,
+          'user_second' => 0,
+          'branding' => 0,
+          'menu' => 0,
+          'sidebar_first' => 0,
+          'sidebar_second' => 0,
+          'top_upper_branding' => 0,
+          'top_branding' => 0,
+          'header_first' => 0,
+          'header_second' => 0,
+          'preface_first' => 0,
+          'preface_second' => 0,
+          'preface_third' => 0,
+          'postscript_first' => 0,
+          'postscript_second' => 0,
+          'postscript_third' => 0,
+          'postscript_fourth' => 0,
+          'footer_second' => 0,
+        ),
+      ),
+      'akdn_mailshot' => array(
+        'disable' => array(
+          'sidebar_first' => 0,
+          'sidebar_second' => 0,
+          'content' => 0,
+          'header' => 0,
+          'footer' => 0,
+          'highlighted' => 0,
+          'help' => 0,
+          'page_top' => 0,
+          'page_bottom' => 0,
+        ),
+      ),
+      'akdn_museum' => array(
+        'disable' => array(
+          'page_top' => 0,
+          'page_bottom' => 0,
+          'content' => 0,
+          'user_first' => 0,
+          'user_second' => 0,
+          'branding' => 0,
+          'menu' => 0,
+          'sidebar_first' => 0,
+          'sidebar_second' => 0,
+          'header_first' => 0,
+          'header_second' => 0,
+          'preface_first' => 0,
+          'preface_second' => 0,
+          'preface_third' => 0,
+          'postscript_first' => 0,
+          'postscript_second' => 0,
+          'postscript_third' => 0,
+          'postscript_fourth' => 0,
+          'footer_first' => 0,
+          'footer_second' => 0,
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Remove the Footer from social media page');
+  $export['remove_footer'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'search';
   $context->description = '';
   $context->tag = 'layout';

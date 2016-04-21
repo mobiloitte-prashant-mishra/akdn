@@ -312,7 +312,7 @@ function akdn_akaa_akmi_types_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Custom Related Information ',
-    'weight' => '11',
+    'weight' => '4',
     'children' => array(
       0 => 'field_feature_link',
       1 => 'field_specify_a_block_title',
@@ -678,13 +678,14 @@ function akdn_akaa_akmi_types_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'body',
-      1 => 'field_performance_year',
-      2 => 'field_feature_image',
-      3 => 'field_akmi_additional_images',
-      4 => 'field_related_artists',
-      5 => 'field_performance_add_videos',
-      6 => 'field_booking_link',
-      7 => 'title',
+      1 => 'field_akmi_additional_images',
+      2 => 'field_booking_link',
+      3 => 'field_feature_image',
+      4 => 'field_performance_add_videos',
+      5 => 'field_performance_year',
+      6 => 'field_related_artists',
+      7 => 'field_premiere_year',
+      8 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

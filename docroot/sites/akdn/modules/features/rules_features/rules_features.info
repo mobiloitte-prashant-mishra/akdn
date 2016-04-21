@@ -1,0 +1,12 @@
+name = rules_features
+description = Rules for the site
+core = 7.x
+package = AKDN.org
+version = 7.x-1.0-alpha1
+project = rules_features
+dependencies[] = entity
+dependencies[] = rules
+dependencies[] = search_api
+features[features_api][] = api:2
+features[rules_config][] = rules_rule1
+project path = sites/akdn/modules/features

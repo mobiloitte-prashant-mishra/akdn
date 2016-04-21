@@ -1660,7 +1660,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'scs' => array(
         'label' => 'above',
@@ -1768,7 +1768,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -1784,7 +1784,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 7,
+        'weight' => 6,
       ),
       'scs' => array(
         'label' => 'above',
@@ -1830,7 +1830,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -1848,7 +1848,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'scs' => array(
         'label' => 'above',
@@ -1955,7 +1955,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -1971,7 +1971,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 8,
+        'weight' => 7,
       ),
       'scs' => array(
         'label' => 'above',
@@ -2032,7 +2032,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 6,
+        'weight' => 5,
       ),
       'scs' => array(
         'label' => 'above',
@@ -2125,7 +2125,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -2134,7 +2134,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     'bundle' => 'akmi_performance',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'This has to be added in chronological order.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -2177,6 +2177,48 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
         'size' => 40,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-akmi_performance-field_premiere_year'
+  $field_instances['node-akmi_performance-field_premiere_year'] = array(
+    'bundle' => 'akmi_performance',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_premiere_year',
+    'label' => 'Premiere Year',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
       'weight' => 3,
     ),
   );
@@ -2193,7 +2235,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
         'module' => 'node_reference',
         'settings' => array(),
         'type' => 'node_reference_default',
-        'weight' => 5,
+        'weight' => 4,
       ),
       'scs' => array(
         'label' => 'above',
@@ -2227,7 +2269,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete_deluxe',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -2243,7 +2285,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 9,
+        'weight' => 8,
       ),
       'scs' => array(
         'label' => 'above',
@@ -6315,7 +6357,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
         'class' => '',
         'configurable_title' => 0,
         'rel' => '',
-        'target' => '_blank',
+        'target' => 'user',
         'title' => '',
       ),
       'display' => array(
@@ -9770,6 +9812,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
   t('Person Type');
   t('Picture of the person.');
   t('Planner');
+  t('Premiere Year');
   t('Press Kit');
   t('Press Kit File');
   t('Press Kit Label');
@@ -9806,6 +9849,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
   t('The name of the person.');
   t('Thematic Area');
   t('This field is used for capturing the award cycle year.');
+  t('This has to be added in chronological order.');
   t('This is the main image which will be used in the listing tiles on the website.');
   t('This is used incase we have multiple images of the instruments.');
   t('Title');
