@@ -8482,6 +8482,7 @@ print $content;
   $handler->display->display_options['title'] = 'Performance Programmes';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'in-media-container';
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['defaults']['cache'] = FALSE;
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
@@ -8600,6 +8601,12 @@ print $content;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['exposed_block'] = TRUE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Artists (field_related_artists) */
+  $handler->display->display_options['relationships']['field_related_artists_nid']['id'] = 'field_related_artists_nid';
+  $handler->display->display_options['relationships']['field_related_artists_nid']['table'] = 'field_data_field_related_artists';
+  $handler->display->display_options['relationships']['field_related_artists_nid']['field'] = 'field_related_artists_nid';
+  $handler->display->display_options['relationships']['field_related_artists_nid']['delta'] = '0';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Slideshow Image */
   $handler->display->display_options['fields']['field_feature_image']['id'] = 'field_feature_image';
@@ -8694,6 +8701,11 @@ print $content;
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Premiere Year (field_premiere_year) */
+  $handler->display->display_options['sorts']['field_premiere_year_value']['id'] = 'field_premiere_year_value';
+  $handler->display->display_options['sorts']['field_premiere_year_value']['table'] = 'field_data_field_premiere_year';
+  $handler->display->display_options['sorts']['field_premiere_year_value']['field'] = 'field_premiere_year_value';
+  $handler->display->display_options['sorts']['field_premiere_year_value']['order'] = 'DESC';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
