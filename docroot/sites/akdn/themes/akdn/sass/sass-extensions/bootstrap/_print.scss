@@ -274,6 +274,11 @@
         height: auto !important;
         margin-bottom: 20px !important;
     }
+    %carousel-left-block, 
+    %carousel-left-block img {
+        height: 460px !important;
+        overflow: hidden !important;
+    }
     // Project Finder
     .akaa-projectfinder-wrapper {
         .pane-title, .block-title {
@@ -312,5 +317,8 @@
         display: -ms-flex !important;
         display: flex !important;
         height: auto !important;
+    }
+    #backtotop {
+        display: none !important;
     }
 }
