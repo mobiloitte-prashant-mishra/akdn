@@ -6627,6 +6627,9 @@ print $output;
   $handler = $view->new_display('page', 'AKMI EVENTS Calender page', 'page');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'akmi-event-calender-table';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Unfiltered text */
   $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
@@ -6712,7 +6715,6 @@ print $output;
   $handler->display->display_options['sorts']['field_akmi_event_date_value']['id'] = 'field_akmi_event_date_value';
   $handler->display->display_options['sorts']['field_akmi_event_date_value']['table'] = 'field_data_field_akmi_event_date';
   $handler->display->display_options['sorts']['field_akmi_event_date_value']['field'] = 'field_akmi_event_date_value';
-  $handler->display->display_options['sorts']['field_akmi_event_date_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Event Year (field_event_akmi_year) */
   $handler->display->display_options['arguments']['field_event_akmi_year_tid']['id'] = 'field_event_akmi_year_tid';
@@ -6845,16 +6847,82 @@ print $output;
 
   /* Display: Event Calendar Home block */
   $handler = $view->new_display('block', 'Event Calendar Home block', 'block_2');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'akaa-award-cycle-block-textbook';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'title_field' => 'title_field',
+    'field_akmi_event_image' => 'field_akmi_event_image',
+    'field_event_akmi_year' => 'field_event_akmi_year',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'title_field' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_akmi_event_image' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_event_akmi_year' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: Unfiltered text */
+  $handler->display->display_options['footer']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['footer']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['footer']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['footer']['area_text_custom']['empty'] = TRUE;
+  $handler->display->display_options['footer']['area_text_custom']['content'] = '<div class = "akaa-cycle-title" style="float: left;overflow: hidden;">
+  <a href ="events/[field_event_akmi_year]">Events Calendar</a>
+</div><div class="akaa-icon-title"  style="overflow: hidden;"><a href="events/[field_event_akmi_year]">icon</a></div>';
+  $handler->display->display_options['footer']['area_text_custom']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Event Year */
+  $handler->display->display_options['fields']['field_event_akmi_year']['id'] = 'field_event_akmi_year';
+  $handler->display->display_options['fields']['field_event_akmi_year']['table'] = 'field_data_field_event_akmi_year';
+  $handler->display->display_options['fields']['field_event_akmi_year']['field'] = 'field_event_akmi_year';
+  $handler->display->display_options['fields']['field_event_akmi_year']['label'] = '';
+  $handler->display->display_options['fields']['field_event_akmi_year']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_event_akmi_year']['alter']['path'] = 'akmi/events/[field_event_akmi_year]';
+  $handler->display->display_options['fields']['field_event_akmi_year']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_event_akmi_year']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['label'] = '';
+  $handler->display->display_options['fields']['title_field']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['title_field']['alter']['path'] = 'akmi/events/[field_event_akmi_year]';
+  $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
   /* Field: Content: Event image */
   $handler->display->display_options['fields']['field_akmi_event_image']['id'] = 'field_akmi_event_image';
   $handler->display->display_options['fields']['field_akmi_event_image']['table'] = 'field_data_field_akmi_event_image';
   $handler->display->display_options['fields']['field_akmi_event_image']['field'] = 'field_akmi_event_image';
   $handler->display->display_options['fields']['field_akmi_event_image']['label'] = '';
+  $handler->display->display_options['fields']['field_akmi_event_image']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_akmi_event_image']['alter']['path'] = 'akmi/events/[field_event_akmi_year]';
   $handler->display->display_options['fields']['field_akmi_event_image']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_akmi_event_image']['element_class'] = 'akaa_cycle_image';
   $handler->display->display_options['fields']['field_akmi_event_image']['element_label_colon'] = FALSE;
@@ -6868,6 +6936,29 @@ print $output;
   $handler->display->display_options['sorts']['field_akmi_event_date_value']['id'] = 'field_akmi_event_date_value';
   $handler->display->display_options['sorts']['field_akmi_event_date_value']['table'] = 'field_data_field_akmi_event_date';
   $handler->display->display_options['sorts']['field_akmi_event_date_value']['field'] = 'field_akmi_event_date_value';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'akmi_event' => 'akmi_event',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Event Date -  start date (field_akmi_event_date) */
+  $handler->display->display_options['filters']['field_akmi_event_date_value']['id'] = 'field_akmi_event_date_value';
+  $handler->display->display_options['filters']['field_akmi_event_date_value']['table'] = 'field_data_field_akmi_event_date';
+  $handler->display->display_options['filters']['field_akmi_event_date_value']['field'] = 'field_akmi_event_date_value';
+  $handler->display->display_options['filters']['field_akmi_event_date_value']['operator'] = '>';
+  $handler->display->display_options['filters']['field_akmi_event_date_value']['default_date'] = 'now';
 
   /* Display: Event Calendar home tile attachment */
   $handler = $view->new_display('attachment', 'Event Calendar home tile attachment', 'attachment_2');
@@ -6946,11 +7037,10 @@ print $output;
   $handler->display->display_options['filters']['field_akmi_event_date_value']['form_type'] = 'date_text';
   $handler->display->display_options['filters']['field_akmi_event_date_value']['default_date'] = 'now';
   $handler->display->display_options['displays'] = array(
-    'block_2' => 'block_2',
     'default' => 0,
     'page' => 0,
     'block_1' => 0,
-    'block_3' => 0,
+    'block_2' => 0,
   );
   $handler->display->display_options['attachment_position'] = 'after';
   $translatables['akmi_events_views'] = array(
@@ -6987,6 +7077,9 @@ print $output;
     t('Please also see :'),
     t('[field_event_akmi_year] Concerts sponsored by the Aga Khan Music Initiative'),
     t('Event Calendar Home block'),
+    t('<div class = "akaa-cycle-title" style="float: left;overflow: hidden;">
+  <a href ="events/[field_event_akmi_year]">Events Calendar</a>
+</div><div class="akaa-icon-title"  style="overflow: hidden;"><a href="events/[field_event_akmi_year]">icon</a></div>'),
     t('Event Calendar home tile attachment'),
     t('AKMI Events Calendar Home '),
     t(' <div class = "akaa-cycle-title"><a href = "#">Events Calendar</a></div>'),
