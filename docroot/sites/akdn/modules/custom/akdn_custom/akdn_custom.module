@@ -3682,6 +3682,7 @@ function akdn_custom_video_player_speech() {
   else {
     //@TODO change this later for vimeo and other video file player
     $output = '';
+    if (isset($entity->field_speech_video['und'][0]['uri'])) {
     $output .= '<div class="video_player"">
         <video id="video_player_1" class="video-js vjs-default-skin"
                controls preload="auto" width="300" height="200"
@@ -3690,6 +3691,7 @@ function akdn_custom_video_player_speech() {
             <source src="' . $entity->field_speech_video['und'][0]['uri'] . '" type=\'video/mp4\' />
         </video>
     </div>';
+  }
     return $output;
   }
 }
@@ -3741,6 +3743,7 @@ function akdn_custom_v_p_for_archi() {
   else {
     //@TODO change this later for vimeo and other video file player
     $output = '';
+    if (isset($entity->field_podcast_video[$entity->language][0]['uri'])) {
     $output .= '<div class="video_player"">
         <video id="video_player_1" class="video-js vjs-default-skin"
                controls preload="auto" width="300" height="200"
@@ -3749,6 +3752,7 @@ function akdn_custom_v_p_for_archi() {
             <source src="' . $entity->field_podcast_video[$entity->language][0]['uri'] . '" type=\'video/mp4\' />
         </video>
     </div>';
+  }
     return $output;
   }
  } 
