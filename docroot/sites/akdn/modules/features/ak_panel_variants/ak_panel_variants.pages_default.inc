@@ -7119,7 +7119,10 @@ if (isset($node->field_about_page)) {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'custom-video-speech',
+    );
     $pane->extras = array();
     $pane->position = 10;
     $pane->locks = array();
