@@ -9,7 +9,6 @@ dependencies[] = akdn_akaa_akmi_types
 dependencies[] = akdn_content_types
 dependencies[] = akdn_custom
 dependencies[] = akdn_press_centre_types
-dependencies[] = apachesolr_search
 dependencies[] = block
 dependencies[] = context
 dependencies[] = ctools
