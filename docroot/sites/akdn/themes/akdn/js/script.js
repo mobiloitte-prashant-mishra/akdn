@@ -816,7 +816,6 @@
   //Script to Change submit button visibility on Contact Us webform
   $(document).ready(function(){
     if ($("#webform-client-form-4310").length > 0){
-      $("#edit-submit").hide();
       $("#edit-submitted-wrapper-subject").bind("change", function() {
           if ($("#edit-submitted-wrapper-subject").val()==1 || $("#edit-submitted-wrapper-subject").val()==10 || $("#edit-submitted-wrapper-subject").val()==12 || $("#edit-submitted-wrapper-subject").val()==16 || $("#edit-submitted-wrapper-subject").val()==20 ) {
              $("#edit-submit").hide();
