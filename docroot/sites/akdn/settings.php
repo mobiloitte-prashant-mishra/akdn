@@ -231,7 +231,7 @@ $drupal_hash_salt = '';
  * It is not allowed to have a trailing slash; Drupal will add it
  * for you.
  */
-# $base_url = 'http://www.example.com';  // NO trailing slash!
+$base_url = 'http://akdn3.prod.acquia-sites.com';  // NO trailing slash!
 
 /**
  * PHP settings:
@@ -267,7 +267,8 @@ ini_set('session.gc_maxlifetime', 200000);
  * the cookie. The value 0 means "until the browser is closed".
  */
 ini_set('session.cookie_lifetime', 2000000);
-
+ini_set('memory_limit', '250M');
+ini_set ('display_errors', '0');
 /**
  * If you encounter a situation where users post a large amount of text, and
  * the result is stripped out upon viewing but can still be edited, Drupal's
