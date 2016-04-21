@@ -3635,12 +3635,12 @@ function akdn_custom_video_player() {
     </div>';
     return $output;
   }
+}
 function akdn_custom_search_api_solr_search_results_alter(array &$results, SearchApiQueryInterface $query, $response) {
 if (strpos($_SERVER['REQUEST_URI'], "agency") !== false) {
     unset($results['results']['9576']);
     unset($results['results']['22106']);
  }
-}
 }
 
 /*
