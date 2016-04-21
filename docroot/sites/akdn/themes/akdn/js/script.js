@@ -825,7 +825,13 @@
       });
     }
   });
-
+$(window).load(function(){
+  if ($("#webform-client-form-4310").length > 0){
+    if ($("#edit-submitted-wrapper-subject").val()==1) {
+       $("#edit-submit").hide();
+    }
+  }
+});
 
   // Script to remove fb like comment box
   $('.fb-like iframe').once('fb_hidecomnt').addClass('fb_hidecomm');
