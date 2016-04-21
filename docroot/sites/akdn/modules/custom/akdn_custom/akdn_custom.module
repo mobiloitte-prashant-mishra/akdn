@@ -723,7 +723,7 @@ function akdn_custom_block_view($delta = '') {
     case 'akdn_custom_v_p_for_archi':
       $block['subject'] = t('AKDN Custom Video Player Architecture');
       $block['content'] = akdn_custom_v_p_for_archi();
-      break;     
+      break;
   }
 
   return $block;
@@ -3574,7 +3574,7 @@ function akdn_custom_facet_items_alter(&$build, &$settings) {
   if ($settings->facet == "entity_type") {
     foreach($build as $key => $item) {
       if($key == 'project') {
-        $build[$key]["#markup"] = 'Spotlights';
+        $build[$key]["#markup"] = 'Spotlight';
       }
     }
   }
@@ -3635,12 +3635,12 @@ function akdn_custom_video_player() {
     </div>';
     return $output;
   }
+}
 function akdn_custom_search_api_solr_search_results_alter(array &$results, SearchApiQueryInterface $query, $response) {
 if (strpos($_SERVER['REQUEST_URI'], "agency") !== false) {
     unset($results['results']['9576']);
     unset($results['results']['22106']);
  }
-}
 }
 
 /*
@@ -3761,4 +3761,4 @@ function akdn_custom_v_p_for_archi() {
   }
     return $output;
   }
- } 
+ }
