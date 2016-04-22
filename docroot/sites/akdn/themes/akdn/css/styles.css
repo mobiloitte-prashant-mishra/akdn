@@ -584,50 +584,65 @@ th {
     margin-bottom: 20px !important;
   }
 
-  /* line 279, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 277, ../sass/sass-extensions/bootstrap/_print.scss */
+  .carousel-left .banner-slideshow-views > .view-content, .whatwedo-body .pane-featured-slideshow, .node-type-agency .pane-featured-slideshow, .akaa-akmi-body .pane-featured-slideshow,
+  .carousel-left .banner-slideshow-views > .view-content img,
+  .whatwedo-body .pane-featured-slideshow img,
+  .node-type-agency .pane-featured-slideshow img,
+  .akaa-akmi-body .pane-featured-slideshow img {
+    height: 460px !important;
+    overflow: hidden !important;
+  }
+
+  /* line 284, ../sass/sass-extensions/bootstrap/_print.scss */
   .akaa-projectfinder-wrapper .pane-title, .akaa-projectfinder-wrapper .block-title {
     font-size: 16px !important;
   }
-  /* line 281, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 286, ../sass/sass-extensions/bootstrap/_print.scss */
   .akaa-projectfinder-wrapper .pane-title.active:after, .akaa-projectfinder-wrapper .block-title.active:after {
     content: "" !important;
     background: url('../images/arrow-top.png?1460017996') no-repeat !important;
   }
-  /* line 287, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 292, ../sass/sass-extensions/bootstrap/_print.scss */
   .akaa-projectfinder-wrapper .views-exposed-widgets label {
     margin: 0 auto !important;
     font-size: 12px !important;
     line-height: 16px !important;
   }
-  /* line 293, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 298, ../sass/sass-extensions/bootstrap/_print.scss */
   .akaa-projectfinder-wrapper .views-exposed-form {
     display: block !important;
   }
 
-  /* line 298, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 303, ../sass/sass-extensions/bootstrap/_print.scss */
   .akaa-award-cycle-block-short-video .views-field-nothing .play-video a,
   .akaa-icon-title {
     display: none !important;
   }
 
-  /* line 302, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 307, ../sass/sass-extensions/bootstrap/_print.scss */
   .akaa-award-cycle-block {
     margin-bottom: 15px !important;
   }
 
-  /* line 305, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 310, ../sass/sass-extensions/bootstrap/_print.scss */
   .akaa-award-cycle-wrapper,
   .what-we-do-main-wrapper,
   .akaa-projectfinder-wrapper {
     margin-bottom: 20px !important;
   }
 
-  /* line 310, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 315, ../sass/sass-extensions/bootstrap/_print.scss */
   .what-we-do-inner-wrapper,
   .what-we-do-main-wrapper {
     display: -ms-flex !important;
     display: flex !important;
     height: auto !important;
+  }
+
+  /* line 321, ../sass/sass-extensions/bootstrap/_print.scss */
+  #backtotop {
+    display: none !important;
   }
 }
 @font-face {
@@ -18665,6 +18680,18 @@ map area {
 .basic-page-custom-summary-bold {
   font-style: normal;
   font-weight: bold !important;
+}
+
+/* line 7302, ../sass/_akdn-redesign.scss */
+.custom-video-speech {
+  display: block;
+  margin-top: 30px;
+  float: left;
+  clear: both;
+}
+/* line 7307, ../sass/_akdn-redesign.scss */
+.custom-video-speech .playerbox {
+  height: auto;
 }
 
 /*
