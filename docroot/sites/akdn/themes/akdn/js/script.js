@@ -636,7 +636,7 @@
 
   $('.akaa-award-cycle-block .attachment .view-award-cycle .view-content, .akaa-award-cycle-block .attachment .info-akmi-block .view-content', context).hide();
   $('.akaa-award-cycle-block .attachment .view-award-cycle .view-content .views-row .field-content:empty, .akaa-award-cycle-block .attachment .info-akmi-block .view-content .views-row .field-content:empty', context).closest('.views-row').remove();
- 
+
   // AKAA CYCLE CHECK ROW LENGTH
   $('.akaa-award-cycle-block', context).each(function() {
    var $this = $(this).children().find('.attachment .view-award-cycle');
@@ -766,14 +766,14 @@
           $(this).height('auto');
         });
       }
-    } 
+    }
 
     //remove extra div from wrapper from akaa cylce wrapper
     $(window).load(function(){
       $('.akaa-award-cycle-wrapper > p', context).remove();
       $('.akaa-award-cycle-wrapper .panel-separator', context).remove();
 
-      //length of artists  
+      //length of artists
       jQuery('.related-artist').each(function() {
         var $this = jQuery(this);
         var heading_len = $this.find('.related-heading');
@@ -793,10 +793,10 @@
       }
       //Add more link to events
       var event_link = "akmi/events/2016";
-      $('.akmi-homepage .akaa-award-cycle-wrapper .pane-akmi-events-views.akaa-award-cycle-block .attachment .view-content').append('<div class="views-row"><a href="' + event_link + '">More</a></div>');  
+      $('.akmi-homepage .akaa-award-cycle-wrapper .pane-akmi-events-views.akaa-award-cycle-block .attachment .view-content').append('<div class="views-row"><a href="' + event_link + '">More</a></div>');
 
     });
-    $(window).resize(function(){ 
+    $(window).resize(function(){
       vertical_line_eq();
       geo_grid_eq();
     });
@@ -813,6 +813,25 @@
   } else {
     $('.basic-page-custom-block-right').addClass('no_tp_br');
   }
+  //Script to Change submit button visibility on Contact Us webform
+  $(document).ready(function(){
+    if ($("#webform-client-form-4310").length > 0){
+      $("#edit-submitted-wrapper-subject").bind("change", function() {
+          if ($("#edit-submitted-wrapper-subject").val()==1 || $("#edit-submitted-wrapper-subject").val()==10 || $("#edit-submitted-wrapper-subject").val()==12 || $("#edit-submitted-wrapper-subject").val()==16 || $("#edit-submitted-wrapper-subject").val()==20 ) {
+             $("#edit-submit").hide();
+          } else {
+             $("#edit-submit").show();
+          }
+      });
+    }
+  });
+$(window).load(function(){
+  if ($("#webform-client-form-4310").length > 0){
+    if ($("#edit-submitted-wrapper-subject").val()==1) {
+       $("#edit-submit").hide();
+    }
+  }
+});
 
   // Script to remove fb like comment box
   $('.fb-like iframe').once('fb_hidecomnt').addClass('fb_hidecomm');
@@ -829,7 +848,7 @@
       );
     }
   });
-  // To remove extra 10px margin from font-size 
+  // To remove extra 10px margin from font-size
   jQuery("[style='font-size: x-small;']").css("margin", "0px");
   }
 }
