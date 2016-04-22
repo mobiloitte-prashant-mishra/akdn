@@ -68,14 +68,22 @@ function akaa_custom_block_view($delta = '') {
  * Get Rhs block on press Centre
  */
 function akaa_custom_press_centre_rhs(){
-    if(isset($_GET['f'])){
-    foreach($_GET['f'] as $value){
-      $val = explode(':', $value);
-      if($val[0] =='field_cycle_year'){
-        return views_embed_view('akaa_projects', 'block_5', $val[1]);
+  // For RELATED INFORMATION Block On architecture/press-centre?Year_Filter
+  foreach($_GET['f'] as $value) {
+    $val = explode(':', $value);
+    if($val[0] =='field_cycle_year') {
+      $query = new EntityFieldQuery();
+      $query->entityCondition('entity_type', 'node')
+ ->entityCondition('bundle', 'award_cycle')
+ ->fieldCondition('field_cycle_year', 'tid', $val[1], '=');
+      $result = $query->execute();
+      $node_id = reset($result[node])->nid;
+      if (isset($node_id)) {
+        $content = views_embed_view("akaa_projects","block_8", $node_id);
       }
     }
   }
+return $content;
 }
 /*
  * Get latest News & Resources
