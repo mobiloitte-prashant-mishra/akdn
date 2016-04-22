@@ -4,8 +4,40 @@
 // Print styles.
 // Inlined to avoid the additional HTTP request: h5bp.com/r
 // ==========================================================================
-
+@media print and (color) {
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
 @media print {
+    // Pause all animations while clicking on print
+    * {
+        /*CSS transition-property*/
+        -o-transition-property: none !important;
+        -moz-transition-property: none !important;
+        -ms-transition-property: none !important;
+        -webkit-transition-property: none !important;
+        transition-property: none !important;
+        /*CSS transitions*/
+        -webkit-transition:none!important;
+        -moz-transition:none!important;
+        -ms-transition:none!important;
+        -o-transition:none!important;
+        transition:none!important;
+        /*CSS transforms*/
+        -o-transform: none !important;
+        -moz-transform: none !important;
+        -ms-transform: none !important;
+        -webkit-transform: none !important;
+        transform: none !important;
+        /*CSS animations*/
+        -webkit-animation: none !important;
+        -moz-animation: none !important;
+        -o-animation: none !important;
+        -ms-animation: none !important;
+        animation: none !important;
+    }
     // WE DON'T NEED THIS FOR AKDN AS SITE BREAKS ON PRINT
     /**,
     *:before,
@@ -15,63 +47,51 @@
         box-shadow: none !important;
         text-shadow: none !important;
     }*/
-
     a,
     a:visited {
         text-decoration: underline;
     }
-
     // WE DON'T NEED THIS FOR AKDN AS IT PRINTS ALL THE LINKS
     /*a[href]:after {
         content: " (" attr(href) ")";
     }
-
     abbr[title]:after {
         content: " (" attr(title) ")";
     }*/
-
     // Don't show links that are fragment identifiers,
     // or use the `javascript:` pseudo protocol
     a[href^="#"]:after,
     a[href^="javascript:"]:after {
         content: "";
     }
-
     pre,
     blockquote {
         border: 1px solid #999;
         page-break-inside: avoid;
     }
-
     thead {
         display: table-header-group; // h5bp.com/t
     }
-
     tr,
     img {
         page-break-inside: avoid;
     }
-
     img {
         max-width: 100% !important;
     }
-
     p,
     h2,
     h3 {
         orphans: 3;
         widows: 3;
     }
-
     h1,
     h2,
     h3,
     h4 {
         page-break-after: avoid;
     }
-
     // Bootstrap specific changes start
-
     // Bootstrap components
     // NOT NEEDED
     /*.navbar {
@@ -86,9 +106,9 @@
     /*.label {
         border: 1px solid #000;
     }*/
-
     .table {
         border-collapse: collapse !important;
+        page-break-inside : avoid;
 
         td,
         th {
@@ -101,7 +121,6 @@
             border: 1px solid #ddd !important;
         }
     }
-
     // Bootstrap specific changes end
     // Custom changes
     body {
@@ -119,31 +138,187 @@
         padding: 0;
         list-style: none;
     }
-    img {
-        position: relative;
-        page-break-inside: avoid !important;
-    }
     ul, li,
     .view-header,
     .pane-title, .block-title,
     .heading, .title {
         position: relative;
     }
+    img {
+        position: relative;
+        page-break-inside: avoid !important;
+    }
     div {
         position: relative;
         height: auto !important;
     }
+    // Drupal contextual links
     .contextual-links-wrapper {
         display: none !important;
     }
+    // Layout specific
     .panel-panel.grid-18,
     .panel-panel.grid-6 {
       height: auto !important;
     }
-}
-@media print and (color) {
-    * {
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
+    @page {
+      //size : portrait;   /* auto is the initial value */
+        margin: 1cm;
+    }
+    html body.admin-menu {
+        margin-top: 0 !important;
+    }
+   // Footer
+   .region-footer-first-inner {
+        .quicklinks_social_block {
+            padding-left: 15px;
+        }
+        .footer-left, 
+        .footer-right {
+            display: none;
+        }
+   }
+    .social-box {
+        a {
+            width: 24px !important;
+            height: 24px !important;
+        }
+    }
+   .region-footer-second {
+        margin: 10px auto !important;
+   }
+   // Logo & Top and Sub Navigation
+   .logo-container {
+        margin: 0 auto 10px !important;
+   }
+    .top-navbar{
+        display: none !important;
+    }
+    // Homepage Specific
+    // Navigation
+    .main-navbar {
+        margin: 12px 0 0 !important;
+        .nolink {
+            font-size: 13px !important;
+        }
+    }
+    // Social Block
+    .social-block,
+    .pane-facebook-feeds {
+        display: -ms-flex !important;
+        display: flex !important;
+        height: auto !important;
+    }
+    .social-icon-image {
+        left: 0 !important;
+    }
+    .grid-social-block_title {
+            margin-bottom: 10px !important;
+            min-height: 48px !important;
+        .title {
+            font-size: 12px !important;
+            line-height: 16px !important;
+            span:not(.social-icon-image):last-child {
+                margin-top: 0 !important;
+                font-size: 16px !important;
+                line-height: 20px !important;
+            }
+        }
+    }
+    // Facts Block
+    .akdn-facts-block-row {
+        border-right: 0 none !important;
+    }
+    // SubNavbar Titles
+    .pane-breaking-news .view-header, 
+    .sub-navbar .pane-content {
+        font-size: 20px !important;
+        margin-bottom: 10px !important;
+        span:first-child, 
+        p:first-letter {
+            font-size: 24px !important;
+        }
+    }
+   .sub-navbar {
+       ul {
+            display: block !important;
+            margin: 0 auto !important;
+        }
+        a {
+            font-size: 12px !important;
+        }
+    }   
+    // Breaking News Section
+    .breaking-news-text-wrapper .title {
+        font-size: 22px !important;
+        line-height: 28px !important;
+    }
+    .breaking-news-left .date-display-single {
+        font-size: 14px !important;
+    }
+    .basic-page-slideshow, 
+    .banner-slideshow-views-no-title, 
+    .pane-breaking-news .view-content, 
+    .social-block, 
+    .akdn-facts-block {
+        margin-bottom: 20px !important;
+    }
+
+    //AKAA AND AKMI
+    .akaa-logotitle {
+        margin: 0 auto 20px !important;
+    }
+    %carousel-left-block, 
+    %carousel-right-block {
+        width: 100% !important;
+        height: auto !important;
+        margin-bottom: 20px !important;
+    }
+    %carousel-left-block, 
+    %carousel-left-block img {
+        height: 460px !important;
+        overflow: hidden !important;
+    }
+    // Project Finder
+    .akaa-projectfinder-wrapper {
+        .pane-title, .block-title {
+            font-size: 16px !important;
+            &.active:after {
+                content: "" !important;
+                background: image-url('arrow-top.png') no-repeat !important;
+            }
+        }
+        .views-exposed-widgets {
+            label {
+                margin: 0 auto !important;
+                font-size: 12px !important;
+                line-height: 16px !important;
+            }
+        }
+        .views-exposed-form {
+            display: block !important;
+        }
+    } 
+    // News & Resources Block AKMI
+    .akaa-award-cycle-block-short-video .views-field-nothing .play-video a, 
+    .akaa-icon-title {
+        display: none !important;
+    }
+    .akaa-award-cycle-block {
+        margin-bottom: 15px !important;
+    }
+    .akaa-award-cycle-wrapper, 
+    .what-we-do-main-wrapper, 
+    .akaa-projectfinder-wrapper {
+        margin-bottom: 20px !important;
+    }
+    .what-we-do-inner-wrapper, 
+    .what-we-do-main-wrapper {
+        display: -ms-flex !important;
+        display: flex !important;
+        height: auto !important;
+    }
+    #backtotop {
+        display: none !important;
     }
 }
