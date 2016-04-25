@@ -8433,17 +8433,6 @@ print $content;
     'image_style' => 'social_sharing_image',
     'image_link' => 'content',
   );
-  /* Field: Content: Premiere Year */
-  $handler->display->display_options['fields']['field_premiere_year']['id'] = 'field_premiere_year';
-  $handler->display->display_options['fields']['field_premiere_year']['table'] = 'field_data_field_premiere_year';
-  $handler->display->display_options['fields']['field_premiere_year']['field'] = 'field_premiere_year';
-  $handler->display->display_options['fields']['field_premiere_year']['label'] = '';
-  $handler->display->display_options['fields']['field_premiere_year']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_premiere_year']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_premiere_year']['settings'] = array(
-    'thousand_separator' => '',
-    'prefix_suffix' => 1,
-  );
   /* Field: Content: Performance Year */
   $handler->display->display_options['fields']['field_performance_year']['id'] = 'field_performance_year';
   $handler->display->display_options['fields']['field_performance_year']['table'] = 'field_data_field_performance_year';
@@ -8523,17 +8512,12 @@ print $content;
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Premiere Year (field_premiere_year) */
-  $handler->display->display_options['sorts']['field_premiere_year_value']['id'] = 'field_premiere_year_value';
-  $handler->display->display_options['sorts']['field_premiere_year_value']['table'] = 'field_data_field_premiere_year';
-  $handler->display->display_options['sorts']['field_premiere_year_value']['field'] = 'field_premiere_year_value';
-  $handler->display->display_options['sorts']['field_premiere_year_value']['order'] = 'DESC';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Sort criterion: Content: Performance Year With AKMI (field_performance_year) */
+  /* Sort criterion: Content: Performance Year (field_performance_year) */
   $handler->display->display_options['sorts']['field_performance_year_tid']['id'] = 'field_performance_year_tid';
   $handler->display->display_options['sorts']['field_performance_year_tid']['table'] = 'field_data_field_performance_year';
   $handler->display->display_options['sorts']['field_performance_year_tid']['field'] = 'field_performance_year_tid';
@@ -12771,7 +12755,6 @@ print $explode[1];
     t('AKMI Event Calender Page RHS'),
     t('AKMI Event Calender RHS'),
     t('AKAA Press Centre RHS'),
-    t('<h2 class="block-title">RELATED INFORMATION</h2>'),
   );
   $export['custom_header_block'] = $view;
 
