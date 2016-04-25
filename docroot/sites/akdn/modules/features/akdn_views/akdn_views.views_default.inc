@@ -8497,6 +8497,17 @@ print $content;
   $handler->display->display_options['fields']['nid_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['nid_1']['link_to_node'] = TRUE;
+  /* Field: Content: Premiere Year */
+  $handler->display->display_options['fields']['field_premiere_year']['id'] = 'field_premiere_year';
+  $handler->display->display_options['fields']['field_premiere_year']['table'] = 'field_data_field_premiere_year';
+  $handler->display->display_options['fields']['field_premiere_year']['field'] = 'field_premiere_year';
+  $handler->display->display_options['fields']['field_premiere_year']['label'] = '';
+  $handler->display->display_options['fields']['field_premiere_year']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_premiere_year']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_premiere_year']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 1,
+  );
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -8505,7 +8516,7 @@ print $content;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="grid-media-block_image">[field_feature_image]</div>
 <div class="grid-media-block_description">
   <div class="media-desc">
-    <div class="date">Premiere year:[field_premiere_year] </div>
+    <div class="date">Premiere year: [field_premiere_year] </div>
     <div class="title">[title]</div>
     <div class="read-more">[nid_1]</div>
   </div>
@@ -9634,7 +9645,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
     t('<div class="grid-media-block_image">[field_feature_image]</div>
 <div class="grid-media-block_description">
   <div class="media-desc">
-    <div class="date">Premiere year:[field_premiere_year] </div>
+    <div class="date">Premiere year: [field_premiere_year] </div>
     <div class="title">[title]</div>
     <div class="read-more">[nid_1]</div>
   </div>
