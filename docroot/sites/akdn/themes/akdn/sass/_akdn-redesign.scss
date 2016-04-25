@@ -643,10 +643,11 @@ h1.title {
         //margin: 0 0 0 2%;
     }
     .pane-content {
-        background-color: #EAEAEA;
         display: block;
-        float: left;
+        width: 100%;
         height: 100%;
+        float: left;
+        background-color: #EAEAEA;
     }
 }
 //added as this comes in a view-content
@@ -7283,4 +7284,23 @@ map {
         background-color: rgba(0,0,0,0.5);
         
     }
+}
+
+// spacing between video player and email-print-share
+.custom-video-speech {
+    display: block;
+    margin-top: 30px;
+    float: left;
+    clear: both;
+    .playerbox {
+        height: auto;
+    }
+}
+// Shift - Enter code
+.basic-page-custom-summary-italics {
+    font-style: italic !important;
+}
+.basic-page-custom-summary-bold {
+    font-style: normal;
+    font-weight: bold !important;
 }
