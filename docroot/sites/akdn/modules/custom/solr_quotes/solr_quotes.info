@@ -3,6 +3,7 @@ core = 7.x
 package = Features
 version = 7.x-1.8
 project = solr_quotes
+dependencies[] = autocache
 dependencies[] = search_api
 dependencies[] = views
 features[ctools][] = views:views_default:3.0
