@@ -23,8 +23,9 @@
     margin-bottom: 0;
 }
 #mimemail-body .header .last {
-    margin-top: 10px;
-    /*font-style: italic;*/
+    margin: 0 auto;
+    /*margin-top: 10px;
+    font-style: italic;*/
 }
 #mimemail-body .header .first a {
     /*font-style: italic;*/
