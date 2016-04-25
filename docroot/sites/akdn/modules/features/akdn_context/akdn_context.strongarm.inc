@@ -30,6 +30,9 @@ function akdn_context_strongarm() {
         'language' => array(
           'weight' => '3',
         ),
+        'redirect' => array(
+          'weight' => '30',
+        ),
       ),
       'display' => array(),
     ),

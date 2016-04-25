@@ -658,7 +658,7 @@ h1.title {
             display: block;
             float: left;
             height: 100%;
-        } 
+        }
     }
 }
 .grid-social-block_picture {
@@ -748,7 +748,7 @@ h1.title {
         }
     }
 }
-.grid-social-block_title-youtube, 
+.grid-social-block_title-youtube,
 .grid-social-block_title-vimeo {
     .title {
         font-weight: bold;
@@ -838,7 +838,7 @@ h1.title {
             -moz-border-radius: 0;
             -ms-border-radius: 0;
             border-radius: 0;
-        } 
+        }
     }
 }
 .grid-social-block_title-vimeo {
@@ -1778,6 +1778,8 @@ $icons:(facebook,twitter,youtube,instagram,vimeo,akmi);
         overflow-x: hidden;
         li {
             position: relative;
+            font-size: 12px;
+            line-height: 18px;
             input[type="checkbox"] {
                 margin: 2px 0 0 -18px;
                 position: absolute;
@@ -1793,7 +1795,10 @@ $icons:(facebook,twitter,youtube,instagram,vimeo,akmi);
                 vertical-align: top;
                 font-size: 12px;
                 line-height: 18px;
-                text-transform: capitalize;
+                text-transform: none;
+                &:first-letter {
+                    text-transform: capitalize;
+                }
             }
         }
     }
@@ -1826,7 +1831,7 @@ $icons:(facebook,twitter,youtube,instagram,vimeo,akmi);
         }
     }
     .akdn-filter-wrapper {
-        .akdn-solr-rest-link, 
+        .akdn-solr-rest-link,
         .form-submit {
             width: auto;
         }
@@ -1835,7 +1840,7 @@ $icons:(facebook,twitter,youtube,instagram,vimeo,akmi);
         }
         &.filter-speaker-block {
             width: 22%;
-        }   
+        }
         &.filter-speech-theme-block {
             width: 20%;
         }
@@ -1845,7 +1850,7 @@ $icons:(facebook,twitter,youtube,instagram,vimeo,akmi);
         &.filter-agency-block {
             width: 25%;
         }
-    } 
+    }
 }
 /* Publication Listing Page */
 .publication-list-container {
@@ -2427,6 +2432,8 @@ ul.primary li {
                     list-style-type: none;
                     list-style-image: none;
                     position: relative;
+                    font-size: 12px;
+                    line-height: 18px;
                     input[type="checkbox"] {
                         margin: 2px 0 0 -18px;
                         position: absolute;
@@ -2439,7 +2446,10 @@ ul.primary li {
                         vertical-align: top;
                         font-size: 12px;
                         line-height: 18px;
-                        text-transform: capitalize;
+                        text-transform: none;
+                        &:first-letter {
+                            text-transform: capitalize;
+                        }
                     }
                 }
             }
@@ -3037,10 +3047,10 @@ h2.header-name a {
                 text-decoration: none;
             }
         }
-        .views-field-field-short-title a, 
-        .views-field-view-node-2 a, 
-        .views-field-title a, 
-        .views-field-view-node-2 a, 
+        .views-field-field-short-title a,
+        .views-field-view-node-2 a,
+        .views-field-title a,
+        .views-field-view-node-2 a,
         .views-field-title-field a {
             @extend %font_arial;
             display: block;
@@ -3083,8 +3093,8 @@ h2.header-name a {
         .views-field-field-project-image {
             margin: 0 auto 10px;
         }
-        .views-field-field-publish-date, 
-        .views-field-field-publication-date, 
+        .views-field-field-publish-date,
+        .views-field-field-publication-date,
         .views-field-field-event-date {
             display: block;
             margin-bottom: 5px;
@@ -3093,8 +3103,8 @@ h2.header-name a {
             color: #999999;
             line-height: 1;
         }
-        .views-field-php, 
-        .views-field-view-node, 
+        .views-field-php,
+        .views-field-view-node,
         .views-field-nothing {
             @extend %boxbrackets;
             color: #b59757;
@@ -3230,7 +3240,7 @@ h2.header-name a {
     }
 
     .grid-6 {
-        .pane-publications { 
+        .pane-publications {
             .views-row {
                 margin-bottom: 10px;
                 &:last-child {
@@ -3867,7 +3877,7 @@ h2.header-name a {
 .what-we-do-inner-wrapper {
     @extend %block-eq-3;
     margin-bottom: 0;
-    .view-content, 
+    .view-content,
     .views-row {
         height: 100%;
     }
@@ -4522,7 +4532,7 @@ map {
             height: auto;
             margin: 0 auto 30px;
             padding: 0 15px;
-            font-size: 42px; 
+            font-size: 42px;
             background: transparent;
             border: 0 none;
             font-size: 42px;
@@ -4749,7 +4759,7 @@ map {
         position: relative;
         overflow: visible;
         margin-bottom: 10px !important;
-        .field-name-field-image-caption, 
+        .field-name-field-image-caption,
         .field-name-field-image-author,
         .field-name-field-image-copytight {
             @extend %font_arial;
@@ -4772,7 +4782,7 @@ map {
                 float: left;
             }
         }
-        .field-name-field-image-copytight { 
+        .field-name-field-image-copytight {
             font-size: 11px;
         }
         .field-show-hide-block {
@@ -5407,7 +5417,7 @@ map {
             clear: none;
         }
         .attachment {
-            .view-award-cycle, 
+            .view-award-cycle,
             .info-akmi-block {
                 position: relative;
                 height: 100%;
@@ -5491,7 +5501,7 @@ map {
     .view-footer {
         position: relative;
         margin-top: -23px;
-        .akaa-icon-title { 
+        .akaa-icon-title {
             a {
                 background-position: 0 -60px;
             }
@@ -5555,7 +5565,7 @@ map {
     padding: 0 15px;
     clear: both;
 }
-.akaa-akmi-body { 
+.akaa-akmi-body {
     .akaa-cycle-slideshow {
         width: 100%;
         margin-bottom: 40px;
@@ -5563,7 +5573,7 @@ map {
         clear: both;
     }
 }
-.akaa-body, 
+.akaa-body,
 .akmi-performance-body {
     .grid-18 {
         .akaa-projectfinder-wrapper {
@@ -5613,10 +5623,10 @@ map {
 }
 .page-architecture-master-jury,
 .page-architecture-steering-committee,
-.page-architecture-press-centre, 
-.page-architecture-projects-map, 
-.page-akmi-cd-dvd, 
-.page-akmi-instruments, 
+.page-architecture-press-centre,
+.page-architecture-projects-map,
+.page-akmi-cd-dvd,
+.page-akmi-instruments,
 .page-akmi-events {
     //page specific
     .zone-content {
@@ -5650,8 +5660,8 @@ map {
         padding-top: 0 !important;
     }
 }
-.grid-master-jury-wrapper, 
-.grid-steering-committee-wrapper, 
+.grid-master-jury-wrapper,
+.grid-steering-committee-wrapper,
 .grid-instrument-listing-wrapper {
     margin: 0 -15px;
     display: block;
@@ -6073,7 +6083,7 @@ map {
     }
 }
 
-.akaa-award-cycle-related-info, 
+.akaa-award-cycle-related-info,
 .akaa-projectinfo-map-related-info {
     @extend %other_activities_block;
     ul {
@@ -6286,7 +6296,7 @@ map {
     margin-bottom: 8px;
 }
 .akaa-technicalinfo-label,
-.akaa-technicalinfo-value, 
+.akaa-technicalinfo-value,
 .akaa-technicalinfo-link {
     display: inline;
 }
@@ -6563,7 +6573,7 @@ map {
             }
         }
     }
-    td.views-field-field-performance-year, 
+    td.views-field-field-performance-year,
     td.views-field-field-artist-country-origin {
         padding: 10px 15px;
         color: #000;
@@ -6616,11 +6626,11 @@ map {
             text-decoration: none;
             &:hover {
                 color: #b5995a;
-                text-decoration: underline; 
+                text-decoration: underline;
             }
             &:focus {
                 color: #b5995a;
-                text-decoration: none; 
+                text-decoration: none;
             }
         }
     }
@@ -6640,8 +6650,8 @@ map {
         img {
             width: auto;
         }
-    } 
-} 
+    }
+}
 .grid-6 {
     .akdn-menu-active-trail {
         .akdn-menu-active {
@@ -6771,7 +6781,7 @@ map {
         }
     }
 }
-.page-akmi-cd-dvd, 
+.page-akmi-cd-dvd,
 .page-akmi-events {
     .region-inner.region-content-inner {
         margin: 0 -15px;
@@ -6787,7 +6797,7 @@ map {
     margin-bottom: 5px;
 }
 .akmi-related-artists-label,
-.akmi-related-artists-value, 
+.akmi-related-artists-value,
 .akmi-related-artists-link {
     display: inline;
 }
@@ -6873,11 +6883,11 @@ map {
             line-height: normal;
             margin: 0 auto 2px;
         }
-    } 
+    }
 }
 .akaa-technicalinfo-download {
     .akaa-technicalinfo-download-link {
-        a { 
+        a {
             &:after {
                 content: ",";
                 display: inline-block;
@@ -6887,7 +6897,7 @@ map {
             }
         }
         &:last-child {
-            a { 
+            a {
                 &:after {
                     content: "";
                 }
@@ -6895,11 +6905,11 @@ map {
         }
     }
 }
-.file { 
+.file {
     .file-icon {
         width: auto !important;
     }
-} 
+}
 .performance-year-title {
     @extend %font_times;
     width: 100%;
@@ -7077,11 +7087,11 @@ map {
             text-decoration: none;
             &:hover {
                 color: #b5995a;
-                text-decoration: underline; 
+                text-decoration: underline;
             }
             &:focus {
                 color: #b5995a;
-                text-decoration: none; 
+                text-decoration: none;
             }
         }
     }
@@ -7130,15 +7140,15 @@ map {
             text-decoration: none;
             &:hover {
                 color: #b5995a;
-                text-decoration: underline; 
+                text-decoration: underline;
             }
             &:focus {
                 color: #b5995a;
-                text-decoration: none; 
+                text-decoration: none;
             }
         }
     }
-    .akaa-map-project-city, 
+    .akaa-map-project-city,
     .akaa-map-project-country {
         display: block;
         margin-bottom: 3px;
@@ -7158,16 +7168,16 @@ map {
             }
         }
     }
-} 
+}
 .page-press-centre {
-    &.page-press-centre-press-releases, 
-    &.page-press-centre-in-the-media, 
-    &.page-press-centre-publications, 
-    &.page-press-centre-galleries, 
-    &.page-press-centre-speeches, 
-    &.page-press-centre-projects, 
-    &.page-press-centre-videos, 
-    &.page-press-centre-events, 
+    &.page-press-centre-press-releases,
+    &.page-press-centre-in-the-media,
+    &.page-press-centre-publications,
+    &.page-press-centre-galleries,
+    &.page-press-centre-speeches,
+    &.page-press-centre-projects,
+    &.page-press-centre-videos,
+    &.page-press-centre-events,
     &.page-press-centre-news {
         .slide-text {
             display: none !important;
@@ -7179,7 +7189,7 @@ map {
         display: none;
     }
 }
-.see-also-brochure-wrapper, 
+.see-also-brochure-wrapper,
 .see-also-brochure-row {
     @extend %display_full_block;
     line-height: 22px;
@@ -7266,13 +7276,13 @@ map {
 
 //akdn logo wrapper
 .akdn-logo-wrap {
-    width: 120px; 
+    width: 120px;
     height: 55px;
-    background: image-url("akdn-logo.png") no-repeat; 
+    background: image-url("akdn-logo.png") no-repeat;
 }
 /* Projects Lightbox captions */
 #colorbox {
-    .slide-text-colorbox, 
+    .slide-text-colorbox,
     .image-caption {
         position: relative;
         bottom: 40px;
@@ -7282,8 +7292,16 @@ map {
         font-size: 14px;
         line-height: 20px;
         background-color: rgba(0,0,0,0.5);
-        
+
     }
+}
+// Shift - Enter code
+.basic-page-custom-summary-italics {
+    font-style: italic !important;
+}
+.basic-page-custom-summary-bold {
+    font-style: normal;
+    font-weight: bold !important;
 }
 
 // spacing between video player and email-print-share
@@ -7295,12 +7313,4 @@ map {
     .playerbox {
         height: auto;
     }
-}
-// Shift - Enter code
-.basic-page-custom-summary-italics {
-    font-style: italic !important;
-}
-.basic-page-custom-summary-bold {
-    font-style: normal;
-    font-weight: bold !important;
 }

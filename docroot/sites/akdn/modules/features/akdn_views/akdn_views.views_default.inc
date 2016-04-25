@@ -3642,6 +3642,7 @@ return TRUE;
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<h2 class="block-title">Relalated Informations</h2>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
@@ -4872,99 +4873,6 @@ return $cycle_id;';
     'architecture_project' => 'architecture_project',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-
-  /* Display: Related Award Cycle page block */
-  $handler = $view->new_display('block', 'Related Award Cycle page block', 'block_8');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Related Information';
-  $handler->display->display_options['display_description'] = 'Related Award Cycle page block';
-  $handler->display->display_options['defaults']['cache'] = FALSE;
-  $handler->display->display_options['cache']['type'] = 'none';
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<h2 class="block-title">Related Information</h2>';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Cycle Year (field_cycle_year) */
-  $handler->display->display_options['relationships']['field_cycle_year_tid']['id'] = 'field_cycle_year_tid';
-  $handler->display->display_options['relationships']['field_cycle_year_tid']['table'] = 'field_data_field_cycle_year';
-  $handler->display->display_options['relationships']['field_cycle_year_tid']['field'] = 'field_cycle_year_tid';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Taxonomy term: Term ID */
-  $handler->display->display_options['fields']['tid']['id'] = 'tid';
-  $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['tid']['field'] = 'tid';
-  $handler->display->display_options['fields']['tid']['relationship'] = 'field_cycle_year_tid';
-  $handler->display->display_options['fields']['tid']['label'] = '';
-  $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['tid']['separator'] = '';
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div><a href = "/architecture/steering-committee/[nid]" class="akaa-award-cycle-related-link">Steering Committee</a></div>
-<div><a href = "/architecture/master-jury/[nid]" class="akaa-award-cycle-related-link">Master Jury</a></div>';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Field: Content: awards cycle Links */
-  $handler->display->display_options['fields']['field_awards_cycle_links']['id'] = 'field_awards_cycle_links';
-  $handler->display->display_options['fields']['field_awards_cycle_links']['table'] = 'field_data_field_awards_cycle_links';
-  $handler->display->display_options['fields']['field_awards_cycle_links']['field'] = 'field_awards_cycle_links';
-  $handler->display->display_options['fields']['field_awards_cycle_links']['label'] = '';
-  $handler->display->display_options['fields']['field_awards_cycle_links']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_awards_cycle_links']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_awards_cycle_links']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_awards_cycle_links']['multi_type'] = 'ul';
-  $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: awards cycle Links (field_awards_cycle_links:delta) */
-  $handler->display->display_options['sorts']['delta']['id'] = 'delta';
-  $handler->display->display_options['sorts']['delta']['table'] = 'field_data_field_awards_cycle_links';
-  $handler->display->display_options['sorts']['delta']['field'] = 'delta';
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nid */
-  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['table'] = 'node';
-  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['default_action'] = 'not found';
-  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
-  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'award_cycle' => 'award_cycle',
-  );
   $translatables['akaa_projects'] = array(
     t('Master'),
     t('RELATED INFORMATION'),
@@ -5064,6 +4972,7 @@ return $cycle_id;';
     t('Size'),
     t('Completed'),
     t('Related Award Cycle Informations'),
+    t('<h2 class="block-title">Relalated Informations</h2>'),
     t('Cycle Projects Listing Block Recipients'),
     t('<div class = "title">Award Recipients</div>'),
     t('<div class="pc-listing-img">[field_project_image]</div>
@@ -5101,9 +5010,6 @@ return $cycle_id;';
     t('Cycle Projects Listing Block shortlisted'),
     t('<div class ="title">Shortlisted</div>'),
     t('All Projects From This Cycle shortlisted'),
-    t('<h2 class="block-title">Related Information</h2>'),
-    t('<div><a href = "/architecture/steering-committee/[nid]" class="akaa-award-cycle-related-link">Steering Committee</a></div>
-<div><a href = "/architecture/master-jury/[nid]" class="akaa-award-cycle-related-link">Master Jury</a></div>'),
   );
   $export['akaa_projects'] = $view;
 
@@ -6627,9 +6533,6 @@ print $output;
   $handler = $view->new_display('page', 'AKMI EVENTS Calender page', 'page');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'akmi-event-calender-table';
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Unfiltered text */
   $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
@@ -6715,6 +6618,7 @@ print $output;
   $handler->display->display_options['sorts']['field_akmi_event_date_value']['id'] = 'field_akmi_event_date_value';
   $handler->display->display_options['sorts']['field_akmi_event_date_value']['table'] = 'field_data_field_akmi_event_date';
   $handler->display->display_options['sorts']['field_akmi_event_date_value']['field'] = 'field_akmi_event_date_value';
+  $handler->display->display_options['sorts']['field_akmi_event_date_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Event Year (field_event_akmi_year) */
   $handler->display->display_options['arguments']['field_event_akmi_year_tid']['id'] = 'field_event_akmi_year_tid';
@@ -6732,23 +6636,6 @@ print $output;
     'akmi_performance_year' => 'akmi_performance_year',
   );
   $handler->display->display_options['arguments']['field_event_akmi_year_tid']['validate_options']['type'] = 'convert';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'akmi_event' => 'akmi_event',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
   $handler->display->display_options['path'] = 'akmi/events/%';
 
   /* Display: Event Other listing */
@@ -6864,8 +6751,6 @@ print $output;
 
   /* Display: Event Calendar Home block */
   $handler = $view->new_display('block', 'Event Calendar Home block', 'block_2');
-  $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['css_class'] = 'akaa-award-cycle-block-textbook';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
@@ -6922,45 +6807,11 @@ print $output;
     'image_style' => 'social_sharing_image',
     'image_link' => '',
   );
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class = "akaa-cycle-title" style="float: left;overflow: hidden;">
-  <a href ="/[field_event_akmi_year]">Events Calendar</a>
-</div>';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Event Date -  start date (field_akmi_event_date) */
   $handler->display->display_options['sorts']['field_akmi_event_date_value']['id'] = 'field_akmi_event_date_value';
   $handler->display->display_options['sorts']['field_akmi_event_date_value']['table'] = 'field_data_field_akmi_event_date';
   $handler->display->display_options['sorts']['field_akmi_event_date_value']['field'] = 'field_akmi_event_date_value';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'akmi_event' => 'akmi_event',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Event Date -  start date (field_akmi_event_date) */
-  $handler->display->display_options['filters']['field_akmi_event_date_value']['id'] = 'field_akmi_event_date_value';
-  $handler->display->display_options['filters']['field_akmi_event_date_value']['table'] = 'field_data_field_akmi_event_date';
-  $handler->display->display_options['filters']['field_akmi_event_date_value']['field'] = 'field_akmi_event_date_value';
-  $handler->display->display_options['filters']['field_akmi_event_date_value']['operator'] = '>';
-  $handler->display->display_options['filters']['field_akmi_event_date_value']['default_date'] = 'now';
 
   /* Display: Event Calendar home tile attachment */
   $handler = $view->new_display('attachment', 'Event Calendar home tile attachment', 'attachment_2');
@@ -7039,10 +6890,11 @@ print $output;
   $handler->display->display_options['filters']['field_akmi_event_date_value']['form_type'] = 'date_text';
   $handler->display->display_options['filters']['field_akmi_event_date_value']['default_date'] = 'now';
   $handler->display->display_options['displays'] = array(
+    'block_2' => 'block_2',
     'default' => 0,
     'page' => 0,
     'block_1' => 0,
-    'block_2' => 0,
+    'block_3' => 0,
   );
   $handler->display->display_options['attachment_position'] = 'after';
   $translatables['akmi_events_views'] = array(
@@ -8484,6 +8336,8 @@ print $content;
   $handler->display->display_options['title'] = 'Performance Programmes';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'in-media-container';
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['cache'] = FALSE;
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
@@ -8602,6 +8456,12 @@ print $content;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['exposed_block'] = TRUE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Artists (field_related_artists) */
+  $handler->display->display_options['relationships']['field_related_artists_nid']['id'] = 'field_related_artists_nid';
+  $handler->display->display_options['relationships']['field_related_artists_nid']['table'] = 'field_data_field_related_artists';
+  $handler->display->display_options['relationships']['field_related_artists_nid']['field'] = 'field_related_artists_nid';
+  $handler->display->display_options['relationships']['field_related_artists_nid']['delta'] = '0';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Slideshow Image */
   $handler->display->display_options['fields']['field_feature_image']['id'] = 'field_feature_image';
@@ -8681,6 +8541,17 @@ print $content;
   $handler->display->display_options['fields']['nid_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['nid_1']['link_to_node'] = TRUE;
+  /* Field: Content: Premiere Year */
+  $handler->display->display_options['fields']['field_premiere_year']['id'] = 'field_premiere_year';
+  $handler->display->display_options['fields']['field_premiere_year']['table'] = 'field_data_field_premiere_year';
+  $handler->display->display_options['fields']['field_premiere_year']['field'] = 'field_premiere_year';
+  $handler->display->display_options['fields']['field_premiere_year']['label'] = '';
+  $handler->display->display_options['fields']['field_premiere_year']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_premiere_year']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_premiere_year']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 1,
+  );
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -8689,13 +8560,18 @@ print $content;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="grid-media-block_image">[field_feature_image]</div>
 <div class="grid-media-block_description">
   <div class="media-desc">
-    <div class="date">Premiere year: [field_performance_year]</div>
+    <div class="date">Premiere year: [field_premiere_year] </div>
     <div class="title">[title]</div>
     <div class="read-more">[nid_1]</div>
   </div>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Premiere Year (field_premiere_year) */
+  $handler->display->display_options['sorts']['field_premiere_year_value']['id'] = 'field_premiere_year_value';
+  $handler->display->display_options['sorts']['field_premiere_year_value']['table'] = 'field_data_field_premiere_year';
+  $handler->display->display_options['sorts']['field_premiere_year_value']['field'] = 'field_premiere_year_value';
+  $handler->display->display_options['sorts']['field_premiere_year_value']['order'] = 'DESC';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -9818,7 +9694,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
     t('<div class="grid-media-block_image">[field_feature_image]</div>
 <div class="grid-media-block_description">
   <div class="media-desc">
-    <div class="date">Premiere year: [field_performance_year]</div>
+    <div class="date">Premiere year: [field_premiere_year] </div>
     <div class="title">[title]</div>
     <div class="read-more">[nid_1]</div>
   </div>
@@ -12884,7 +12760,7 @@ print $explode[1];
   $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
   $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
   $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
-  $handler->display->display_options['header']['area_text_custom']['content'] = '<h2 class="block-title">RELATED INFORMATION</h2>';
+  $handler->display->display_options['header']['area_text_custom']['content'] = '<h2 class="block-title">[field_header_title]</h2>';
   $handler->display->display_options['header']['area_text_custom']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -12939,7 +12815,6 @@ print $explode[1];
     t('AKMI Event Calender Page RHS'),
     t('AKMI Event Calender RHS'),
     t('AKAA Press Centre RHS'),
-    t('<h2 class="block-title">RELATED INFORMATION</h2>'),
   );
   $export['custom_header_block'] = $view;
 
@@ -13165,7 +13040,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['field_facebook_picture']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_facebook_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_facebook_picture']['settings'] = array(
-    'image_style' => 'standard_listing_aspect_switcher',
+    'image_style' => 'social_sharing_image',
     'image_link' => '',
   );
   /* Field: Content: Title */
@@ -29125,6 +29000,13 @@ print $content;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'field_gallery_images_et' => 'field_gallery_images_et',
+    'field_image_caption' => 'field_image_caption',
+    'field_image_copytight' => 'field_image_copytight',
+    'field_gallery_images_1' => 'field_gallery_images_1',
+    'nothing' => 'nothing',
+  );
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Images (field_gallery_images:fid) */

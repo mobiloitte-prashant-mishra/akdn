@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AKDN Contact Us webform feature.
+ */
+
+include_once 'akdn_contact_us_webform.features.inc';
