@@ -360,9 +360,9 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
     $form['submitted']['what_caused_you_to_be_interested_in_this_website']['#empty_value'] = '';
     $form['submitted']['what_caused_you_to_be_interested_in_this_website']['#empty_option'] = t('- Please Select -');
 
-    $privacy = l('privacy', 'node/29876');
-    $acceptance = l('read and accepted the terms', 'node/29871');
-    $form['submitted']['subscription_settings']['#options'][1] = "I have $acceptance and the $privacy of this website.";
+    $privacy = l('privacy policy', 'node/29876', array('attributes'=>array('target'=>'_blank')));
+    $acceptance = l('terms and conditions', 'node/29871', array('attributes'=>array('target'=>'_blank')));
+    $form['submitted']['subscription_settings']['#options'][1] = "I have read and accepted the $acceptance and the $privacy of this website.";
         $form['#validate'][]='akdn_custom_form_validation';
   }
 
