@@ -8517,11 +8517,11 @@ print $content;
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Sort criterion: Content: Performance Year (field_performance_year) */
-  $handler->display->display_options['sorts']['field_performance_year_tid']['id'] = 'field_performance_year_tid';
-  $handler->display->display_options['sorts']['field_performance_year_tid']['table'] = 'field_data_field_performance_year';
-  $handler->display->display_options['sorts']['field_performance_year_tid']['field'] = 'field_performance_year_tid';
-  $handler->display->display_options['sorts']['field_performance_year_tid']['order'] = 'DESC';
+  /* Sort criterion: Content: Premiere Year (field_premiere_year) */
+  $handler->display->display_options['sorts']['field_premiere_year_value']['id'] = 'field_premiere_year_value';
+  $handler->display->display_options['sorts']['field_premiere_year_value']['table'] = 'field_data_field_premiere_year';
+  $handler->display->display_options['sorts']['field_premiere_year_value']['field'] = 'field_premiere_year_value';
+  $handler->display->display_options['sorts']['field_premiere_year_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
