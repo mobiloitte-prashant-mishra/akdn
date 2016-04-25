@@ -759,7 +759,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 0,
+      'default_image' => 47219,
       'entity_translation_sync' => FALSE,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
@@ -798,6 +798,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
         'allowed_schemes' => array(
           'brightcove' => 0,
           'brightcove-playlist' => 0,
+          'private' => 0,
           'public' => 'public',
           'syndication' => 0,
           'vimeo' => 0,
