@@ -6756,8 +6756,6 @@ print $output;
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
@@ -6933,9 +6931,6 @@ print $output;
     t('Event Calendar Home block'),
     t('<div class="akaa-icon-title"  style="overflow: hidden;"><a href="/[field_event_akmi_year]">icon</a></div>'),
     t('akmi/events/[field_event_akmi_year]'),
-    t('<div class = "akaa-cycle-title" style="float: left;overflow: hidden;">
-  <a href ="/[field_event_akmi_year]">Events Calendar</a>
-</div>'),
     t('Event Calendar home tile attachment'),
     t('AKMI Events Calendar Home '),
     t(' <div class = "akaa-cycle-title"><a href = "#">Events Calendar</a></div>'),
@@ -8577,11 +8572,6 @@ print $content;
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Sort criterion: Content: Performance Year (field_performance_year) */
-  $handler->display->display_options['sorts']['field_performance_year_tid']['id'] = 'field_performance_year_tid';
-  $handler->display->display_options['sorts']['field_performance_year_tid']['table'] = 'field_data_field_performance_year';
-  $handler->display->display_options['sorts']['field_performance_year_tid']['field'] = 'field_performance_year_tid';
-  $handler->display->display_options['sorts']['field_performance_year_tid']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -12792,6 +12782,49 @@ print $explode[1];
   $handler->display->display_options['filters']['field_header_link_url']['field'] = 'field_header_link_url';
   $handler->display->display_options['filters']['field_header_link_url']['operator'] = 'not empty';
   $handler->display->display_options['block_description'] = 'AKAA Press Centre RHS';
+
+  /* Display: Custom Listing Page RHS */
+  $handler = $view->new_display('block', 'Custom Listing Page RHS', 'custom_block_rhs');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'akaa-projectinfo-map-related-info';
+  $handler->display->display_options['display_description'] = 'Custom Listing Page RHS';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Unfiltered text */
+  $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['content'] = '<h2 class="block-title">[field_header_title]</h2>';
+  $handler->display->display_options['header']['area_text_custom']['tokenize'] = TRUE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'custom_header_block' => 'custom_header_block',
+  );
+  /* Filter criterion: Field: Tags (field_tags) */
+  $handler->display->display_options['filters']['field_tags_tid']['id'] = 'field_tags_tid';
+  $handler->display->display_options['filters']['field_tags_tid']['table'] = 'field_data_field_tags';
+  $handler->display->display_options['filters']['field_tags_tid']['field'] = 'field_tags_tid';
+  $handler->display->display_options['filters']['field_tags_tid']['value'] = array(
+    0 => '9326',
+  );
+  $handler->display->display_options['filters']['field_tags_tid']['vocabulary'] = 'tags';
+  /* Filter criterion: Content: header link (field_header_link:url) */
+  $handler->display->display_options['filters']['field_header_link_url']['id'] = 'field_header_link_url';
+  $handler->display->display_options['filters']['field_header_link_url']['table'] = 'field_data_field_header_link';
+  $handler->display->display_options['filters']['field_header_link_url']['field'] = 'field_header_link_url';
+  $handler->display->display_options['filters']['field_header_link_url']['operator'] = 'not empty';
+  $handler->display->display_options['block_description'] = 'Custom Listing Page RHS';
   $translatables['custom_header_block'] = array(
     t('Master'),
     t('more'),
@@ -12815,6 +12848,7 @@ print $explode[1];
     t('AKMI Event Calender Page RHS'),
     t('AKMI Event Calender RHS'),
     t('AKAA Press Centre RHS'),
+    t('Custom Listing Page RHS'),
   );
   $export['custom_header_block'] = $view;
 
