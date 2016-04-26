@@ -46,7 +46,7 @@ function akdn_context_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_custom_meta_tags',
-    'label' => 'Custom Meta Tags',
+    'label' => 'Custom Meta tags',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -886,6 +886,162 @@ function akdn_context_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-akmi_event-field_custom_meta_tags'
+  $field_instances['node-akmi_event-field_custom_meta_tags'] = array(
+    'bundle' => 'akmi_event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 13,
+      ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_custom_meta_tags',
+    'label' => 'Custom Meta tags',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-akmi_performance-field_premiere_year'
+  $field_instances['node-akmi_performance-field_premiere_year'] = array(
+    'bundle' => 'akmi_performance',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 10,
+      ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_premiere_year',
+    'label' => 'Premiere Year',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 31,
+    ),
+  );
+
+  // Exported field_instance: 'node-article-field_custom_meta_tags'
+  $field_instances['node-article-field_custom_meta_tags'] = array(
+    'bundle' => 'article',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 57,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_custom_meta_tags',
+    'label' => 'Custom Meta tags',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 3,
+    ),
+  );
+
   // Exported field_instance: 'node-award_cycle-field_body'
   $field_instances['node-award_cycle-field_body'] = array(
     'bundle' => 'award_cycle',
@@ -1015,6 +1171,9 @@ function akdn_context_field_default_field_instances() {
     'label' => 'Custom Meta Tags',
     'required' => 0,
     'settings' => array(
+    'label' => 'Custom Meta tags',
+    'required' => 0,
+    'settings' => array(
       'entity_translation_sync' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
@@ -1033,6 +1192,13 @@ function akdn_context_field_default_field_instances() {
   // Exported field_instance: 'node-event-field_custom_meta_tags'
   $field_instances['node-event-field_custom_meta_tags'] = array(
     'bundle' => 'event',
+      'weight' => 32,
+    ),
+  );
+
+  // Exported field_instance: 'node-custom_content-field_custom_meta_tags'
+  $field_instances['node-custom_content-field_custom_meta_tags'] = array(
+    'bundle' => 'custom_content',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1115,6 +1281,57 @@ function akdn_context_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_custom_meta_tags',
     'label' => 'Custom Meta Tags',
+    'required' => 0,
+    'settings' => array(
+    'label' => 'Custom Meta tags',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-focus_area-field_custom_meta_tags'
+  $field_instances['node-focus_area-field_custom_meta_tags'] = array(
+    'bundle' => 'focus_area',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 28,
+      ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_custom_meta_tags',
+    'label' => 'Custom Meta tags',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -1230,7 +1447,7 @@ function akdn_context_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_custom_meta_tags',
-    'label' => 'Custom Meta Tags',
+    'label' => 'Custom Meta tags',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -1278,7 +1495,7 @@ function akdn_context_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_custom_meta_tags',
-    'label' => 'Custom Meta Tags',
+    'label' => 'Custom Meta tags',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -1409,6 +1626,7 @@ function akdn_context_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 1,
+      'weight' => 36,
     ),
   );
 
@@ -1451,16 +1669,18 @@ function akdn_context_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_custom_meta_tags',
-    'label' => 'Custom Meta Tags',
-    'required' => FALSE,
+    'label' => 'Custom Meta tags',
+    'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'size' => 60,
@@ -1512,7 +1732,7 @@ function akdn_context_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_custom_meta_tags',
-    'label' => 'Custom Meta Tags',
+    'label' => 'Custom Meta tags',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -1566,7 +1786,7 @@ function akdn_context_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_custom_meta_tags',
-    'label' => 'Custom Meta Tags',
+    'label' => 'Custom Meta tags',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -1620,7 +1840,7 @@ function akdn_context_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_custom_meta_tags',
-    'label' => 'Custom Meta Tags',
+    'label' => 'Custom Meta tags',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -1674,7 +1894,7 @@ function akdn_context_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_custom_meta_tags',
-    'label' => 'Custom Meta Tags',
+    'label' => 'Custom Meta tags',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -1688,7 +1908,7 @@ function akdn_context_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -1728,7 +1948,7 @@ function akdn_context_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_custom_meta_tags',
-    'label' => 'Custom Meta Tags',
+    'label' => 'Custom Meta tags',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -1755,8 +1975,9 @@ function akdn_context_field_default_field_instances() {
   t('At Glance Links');
   t('Body');
   t('Country of Origin');
-  t('Custom Meta Tags');
+  t('Custom Meta tags');
   t('Performance Year With AKMI');
+  t('Premiere Year');
   t('Related Instruments');
   t('Related Videos');
   t('Show Block');
