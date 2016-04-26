@@ -1267,9 +1267,6 @@ function akdn_context_field_default_field_instances() {
     'label' => 'Custom Meta Tags',
     'required' => 0,
     'settings' => array(
-    'label' => 'Custom Meta tags',
-    'required' => 0,
-    'settings' => array(
       'entity_translation_sync' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
