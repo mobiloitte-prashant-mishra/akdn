@@ -1189,12 +1189,6 @@ function akdn_context_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_custom_meta_tags'
-  $field_instances['node-event-field_custom_meta_tags'] = array(
-    'bundle' => 'event',
-      'weight' => 32,
-    ),
-  );
 
   // Exported field_instance: 'node-custom_content-field_custom_meta_tags'
   $field_instances['node-custom_content-field_custom_meta_tags'] = array(
