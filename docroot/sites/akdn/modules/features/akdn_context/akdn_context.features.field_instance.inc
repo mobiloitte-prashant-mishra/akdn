@@ -1168,9 +1168,6 @@ function akdn_context_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_custom_meta_tags',
-    'label' => 'Custom Meta Tags',
-    'required' => 0,
-    'settings' => array(
     'label' => 'Custom Meta tags',
     'required' => 0,
     'settings' => array(
@@ -1191,59 +1188,52 @@ function akdn_context_field_default_field_instances() {
 
 
   // Exported field_instance: 'node-custom_content-field_custom_meta_tags'
-  $field_instances['node-custom_content-field_custom_meta_tags'] = array(
-    'bundle' => 'custom_content',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 50,
+    $field_instances['node-custom_content-field_custom_meta_tags'] = array(
+      'bundle' => 'custom_content',
+      'default_value' => NULL,
+      'deleted' => 0,
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 13,
+        ),
+        'scs' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
       ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'scs' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_custom_meta_tags',
-    'label' => 'Custom Meta Tags',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
+      'ds_extras_field_template' => '',
+      'entity_type' => 'node',
+      'field_name' => 'field_custom_meta_tags',
+      'label' => 'Custom Meta tags',
+      'required' => 0,
       'settings' => array(
-        'size' => 60,
+        'entity_translation_sync' => FALSE,
+        'text_processing' => 0,
+        'user_register_form' => FALSE,
       ),
-      'type' => 'text_textfield',
-      'weight' => 4,
-    ),
-  );
-
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => 60,
+        ),
+        'type' => 'text_textfield',
+        'weight' => 2,
+      ),
+    );
   // Exported field_instance: 'node-focus_area-field_custom_meta_tags'
   $field_instances['node-focus_area-field_custom_meta_tags'] = array(
     'bundle' => 'focus_area',
