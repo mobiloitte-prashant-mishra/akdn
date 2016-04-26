@@ -251,7 +251,8 @@ function galleryformatter_field_formatter_view($entity_type, $entity, $field, $i
     else{
       $renderitems['slides'][$delta]['caption'] = reset($item['field_image_caption']['en'])['value'];
     }
-    $copyright = reset($item['field_image_copytight'][$lang]);
+    $copyright = reset($item['field_image_copytight'][LANGUAGE_NONE]);
+
     if (!empty($copyright)) {
       $renderitems['slides'][$delta]['copyright'] = $copyright['value'];
     }
@@ -273,13 +274,14 @@ function galleryformatter_field_formatter_view($entity_type, $entity, $field, $i
     $item['filename'] = $item['filename'] = '';
 
     // Check if alt attribute is already set and sanitize it, if not use the filename as alt attribute
-    if (isset($item['alt']) && !empty($item['alt'])) {
+
       if(strpos($item['alt'], '<') !== FALSE) {
-        $item['alt'] = strip_tags($item['alt']);
+     //   print 'HERE';
+        $item['alt'] = strip_tags($copyright['value']);
       }
-    }
     else {
-      $item['alt'] = $item['filename'];
+     // print 'HERE1';
+      $item['alt'] = '';
     }
     $renderitems['slides'][$delta]['alt'] = $item['alt'];
 
@@ -299,6 +301,8 @@ function galleryformatter_field_formatter_view($entity_type, $entity, $field, $i
         }
         // if we have more than one image, add the image count to the title so they are not all the same.
          $item['title'] = $caption['value'];
+         $item['alt'] = $copyright['value'];
+      //   print '<pre>';print_r($copyright);die();
       }
     }
 

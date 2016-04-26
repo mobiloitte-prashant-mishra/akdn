@@ -12003,8 +12003,8 @@ print $explode[1];
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_hub_page_image]</div>
 <div class="slide-text">
-[field_image_caption]
-[field_image_copytight]
+<div class="caption">[field_image_caption]</div>
+<div class="caption image-copytight">[field_image_copytight]</div>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
@@ -12201,8 +12201,8 @@ print $explode[1];
     t('image from field_hub_page_image'),
     t('<div class="slide">[field_hub_page_image]</div>
 <div class="slide-text">
-[field_image_caption]
-[field_image_copytight]
+<div class="caption">[field_image_caption]</div>
+<div class="caption image-copytight">[field_image_copytight]</div>
 </div>'),
     t('All'),
     t('Baisc Page summary'),
@@ -28813,6 +28813,12 @@ print $content;
   $handler->display->display_options['fields']['field_image_caption']['label'] = '';
   $handler->display->display_options['fields']['field_image_caption']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_image_caption']['element_label_colon'] = FALSE;
+  /* Field: File: Copyright */
+  $handler->display->display_options['fields']['field_image_copytight']['id'] = 'field_image_copytight';
+  $handler->display->display_options['fields']['field_image_copytight']['table'] = 'field_data_field_image_copytight';
+  $handler->display->display_options['fields']['field_image_copytight']['field'] = 'field_image_copytight';
+  $handler->display->display_options['fields']['field_image_copytight']['relationship'] = 'field_article_img_fid';
+  $handler->display->display_options['fields']['field_image_copytight']['exclude'] = TRUE;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -28821,6 +28827,7 @@ print $content;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_article_img_et]</div>
 <div class="slide-text">
 <div class="caption">[field_image_caption]</div>
+<div class="caption image-copytight">[field_image_copytight]</div>
 </div>
 ';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -28883,6 +28890,12 @@ print $content;
   );
   $handler->display->display_options['fields']['field_project_image_et']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_project_image_et']['delta_offset'] = '0';
+  /* Field: File: Copyright */
+  $handler->display->display_options['fields']['field_image_copytight']['id'] = 'field_image_copytight';
+  $handler->display->display_options['fields']['field_image_copytight']['table'] = 'field_data_field_image_copytight';
+  $handler->display->display_options['fields']['field_image_copytight']['field'] = 'field_image_copytight';
+  $handler->display->display_options['fields']['field_image_copytight']['relationship'] = 'field_project_image_fid';
+  $handler->display->display_options['fields']['field_image_copytight']['exclude'] = TRUE;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -28892,6 +28905,7 @@ print $content;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_project_image_et]</div>
 <div class="slide-text">
 <div class="caption">[field_image_caption]</div>
+<div class="caption image-copytight">[field_image_copytight]</div>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Field: Colorbox: Colorbox trigger */
@@ -28904,6 +28918,7 @@ print $content;
   $handler->display->display_options['fields']['colorbox']['popup'] = '<div class="slide">[field_project_image_et]</div>
 <div class="slide-text-colorbox">
 <div class="caption">[field_image_caption]</div>
+<div class="caption image-copytight">[field_image_copytight]</div>
 </div>';
   $handler->display->display_options['fields']['colorbox']['gid'] = 1;
   $handler->display->display_options['fields']['colorbox']['width'] = '800px';
@@ -28972,6 +28987,12 @@ print $content;
   $handler->display->display_options['fields']['field_image_caption']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['field_image_caption']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image_caption']['type'] = 'text_plain';
+  /* Field: File: Copyright */
+  $handler->display->display_options['fields']['field_image_copytight']['id'] = 'field_image_copytight';
+  $handler->display->display_options['fields']['field_image_copytight']['table'] = 'field_data_field_image_copytight';
+  $handler->display->display_options['fields']['field_image_copytight']['field'] = 'field_image_copytight';
+  $handler->display->display_options['fields']['field_image_copytight']['relationship'] = 'field_event_image_fid';
+  $handler->display->display_options['fields']['field_image_copytight']['exclude'] = TRUE;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -28980,6 +29001,7 @@ print $content;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_event_image_et]</div>
 <div class="slide-text">
 <div class="caption">[field_image_caption]</div>
+<div class="caption image-copytight">[field_image_copytight]</div>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -29039,6 +29061,12 @@ print $content;
   $handler->display->display_options['fields']['field_image_caption']['label'] = '';
   $handler->display->display_options['fields']['field_image_caption']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_image_caption']['element_label_colon'] = FALSE;
+  /* Field: File: Copyright */
+  $handler->display->display_options['fields']['field_image_copytight']['id'] = 'field_image_copytight';
+  $handler->display->display_options['fields']['field_image_copytight']['table'] = 'field_data_field_image_copytight';
+  $handler->display->display_options['fields']['field_image_copytight']['field'] = 'field_image_copytight';
+  $handler->display->display_options['fields']['field_image_copytight']['relationship'] = 'field_speech_image_fid';
+  $handler->display->display_options['fields']['field_image_copytight']['exclude'] = TRUE;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -29047,6 +29075,7 @@ print $content;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_speech_image_et]</div>
 <div class="slide-text">
 <div class="caption">[field_image_caption]</div>
+<div class="caption image-copytight">[field_image_copytight]</div>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -29128,6 +29157,12 @@ print $content;
   $handler->display->display_options['fields']['field_image_caption']['relationship'] = 'field_gallery_images_fid';
   $handler->display->display_options['fields']['field_image_caption']['label'] = '';
   $handler->display->display_options['fields']['field_image_caption']['element_label_colon'] = FALSE;
+  /* Field: File: Copyright */
+  $handler->display->display_options['fields']['field_image_copytight']['id'] = 'field_image_copytight';
+  $handler->display->display_options['fields']['field_image_copytight']['table'] = 'field_data_field_image_copytight';
+  $handler->display->display_options['fields']['field_image_copytight']['field'] = 'field_image_copytight';
+  $handler->display->display_options['fields']['field_image_copytight']['relationship'] = 'field_gallery_images_fid';
+  $handler->display->display_options['fields']['field_image_copytight']['exclude'] = TRUE;
   /* Field: Content: Images */
   $handler->display->display_options['fields']['field_gallery_images_1']['id'] = 'field_gallery_images_1';
   $handler->display->display_options['fields']['field_gallery_images_1']['table'] = 'field_data_field_gallery_images';
@@ -29156,6 +29191,7 @@ print $content;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_gallery_images_et]</div>
 <div class="slide-text">
 <div class="caption">[field_image_caption]</div>
+<div class="caption image-copytight">[field_image_copytight]</div>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -29208,6 +29244,7 @@ print $content;
     t('<div class="slide">[field_article_img_et]</div>
 <div class="slide-text">
 <div class="caption">[field_image_caption]</div>
+<div class="caption image-copytight">[field_image_copytight]</div>
 </div>
 '),
     t('Project Details Slideshow'),
@@ -29215,6 +29252,7 @@ print $content;
     t('<div class="slide">[field_project_image_et]</div>
 <div class="slide-text">
 <div class="caption">[field_image_caption]</div>
+<div class="caption image-copytight">[field_image_copytight]</div>
 </div>'),
     t('Projects Detail Slideshow'),
     t('Events Details Slideshow'),
@@ -29222,6 +29260,7 @@ print $content;
     t('<div class="slide">[field_event_image_et]</div>
 <div class="slide-text">
 <div class="caption">[field_image_caption]</div>
+<div class="caption image-copytight">[field_image_copytight]</div>
 </div>'),
     t('Events Detail Slideshow'),
     t('Speech Details Slideshow'),
@@ -29229,6 +29268,7 @@ print $content;
     t('<div class="slide">[field_speech_image_et]</div>
 <div class="slide-text">
 <div class="caption">[field_image_caption]</div>
+<div class="caption image-copytight">[field_image_copytight]</div>
 </div>'),
     t('Speech Detail Slideshow'),
     t('Photographs Details Slideshow'),
@@ -29236,6 +29276,7 @@ print $content;
     t('<div class="slide">[field_gallery_images_et]</div>
 <div class="slide-text">
 <div class="caption">[field_image_caption]</div>
+<div class="caption image-copytight">[field_image_copytight]</div>
 </div>'),
     t('Gallery/photographs Detail Slideshow'),
   );
