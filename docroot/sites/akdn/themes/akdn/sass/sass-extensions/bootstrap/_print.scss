@@ -169,23 +169,39 @@
         margin-top: 0 !important;
     }
    // Footer
-   .region-footer-first-inner {
-        .quicklinks_social_block {
-            padding-left: 15px;
-        }
-        .footer-left, 
-        .footer-right {
-            display: none;
-        }
+   body:not(.front) {
+       .region-footer-first {
+            display: none !important;
+            .footer-left, 
+            .footer-right {
+                display: none !important;
+            }
+       }
+       .region-footer-second{
+            border-top: 2px solid #000 !important;
+            margin: 0 auto !important;
+            padding: 20px 0 !important;
+       }
    }
-    .social-box {
-        a {
-            width: 24px !important;
-            height: 24px !important;
+   body.front {
+       .region-footer-first-inner {
+            .quicklinks_social_block {
+                padding-left: 15px;
+            }
+            .footer-left, 
+            .footer-right {
+                display: none;
+            }
+       }
+        .social-box {
+            a {
+                width: 24px !important;
+                height: 24px !important;
+            }
         }
-    }
-   .region-footer-second {
-        margin: 10px auto !important;
+       .region-footer-second {
+            margin: 10px auto !important;
+       }
    }
    // Logo & Top and Sub Navigation
    .logo-container {
@@ -281,23 +297,7 @@
     }
     // Project Finder
     .akaa-projectfinder-wrapper {
-        .pane-title, .block-title {
-            font-size: 16px !important;
-            &.active:after {
-                content: "" !important;
-                background: image-url('arrow-top.png') no-repeat !important;
-            }
-        }
-        .views-exposed-widgets {
-            label {
-                margin: 0 auto !important;
-                font-size: 12px !important;
-                line-height: 16px !important;
-            }
-        }
-        .views-exposed-form {
-            display: block !important;
-        }
+        display: none !important;
     } 
     // News & Resources Block AKMI
     .akaa-award-cycle-block-short-video .views-field-nothing .play-video a, 
