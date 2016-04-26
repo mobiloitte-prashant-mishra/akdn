@@ -12786,6 +12786,7 @@ print $explode[1];
   /* Display: Custom Listing Page RHS */
   $handler = $view->new_display('block', 'Custom Listing Page RHS', 'custom_block_rhs');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'akaa-projectinfo-map-related-info';
   $handler->display->display_options['display_description'] = 'Custom Listing Page RHS';
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Unfiltered text */
