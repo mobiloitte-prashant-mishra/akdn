@@ -28445,13 +28445,6 @@ print $content;
     'gallery' => 'gallery',
   );
   $handler->display->display_options['filters']['type_2']['group'] = 1;
-  /* Filter criterion: Content: Language */
-  $handler->display->display_options['filters']['language']['id'] = 'language';
-  $handler->display->display_options['filters']['language']['table'] = 'node';
-  $handler->display->display_options['filters']['language']['field'] = 'language';
-  $handler->display->display_options['filters']['language']['value'] = array(
-    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
-  );
   $handler->display->display_options['block_description'] = 'Recent Photograph';
   $translatables['press_center'] = array(
     t('Master'),
