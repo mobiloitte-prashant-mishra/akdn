@@ -977,7 +977,8 @@ function akdn_akaa_akmi_types_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_architecture_project';
   $strongarm->value = array(
-    0 => 'revision',
+    0 => 'moderation',
+    1 => 'revision',
   );
   $export['node_options_architecture_project'] = $strongarm;
 
