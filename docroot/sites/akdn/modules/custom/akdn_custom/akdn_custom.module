@@ -3112,6 +3112,16 @@ function akdn_custom_theme($existing, $type, $theme, $path) {
     ),
     'arguments' => array('view' => NULL),
   );
+  $themes['views_view_field__solr_quotes__page_1__nothing'] = array(
+    'template' => 'templates/views-view-field--solr-quotes--page-1--nothing',
+    'original hook' => 'views_view_fields',
+    'preprocess functions' => array(
+      'template_preprocess',
+      'template_preprocess_views_view_fields',
+      'akdn_custom_preprocess_views_view_field__solr_quotes__page_1__nothing',
+    ),
+    'arguments' => array('view' => NULL),
+  );
   return $themes;
 }
 
@@ -3747,3 +3757,53 @@ function akdn_custom_v_p_for_archi() {
     return $output;
   }
  }
+
+function akdn_custom_preprocess_views_view_field__solr_quotes__page_1__nothing(&$variables) {
+  $row = $variables['row'];
+  $speech_quote_speech_nid = $row->_entity_properties['speech_quote_speech_nid'];
+  $query = db_query(
+    "SELECT entity_id FROM field_data_field_speech_reference
+    WHERE field_speech_reference_nid ='" . $speech_quote_speech_nid . "'
+    ")->fetchAll();
+  $i = 1;
+  $output_speech_quotes = '';
+  $links_speech_quotes = '';
+  $output = '';
+  foreach($query as $value) {
+    $load = node_load($value->entity_id);
+    if ($i == 1) {
+      $output_speech_quotes .= '<div class = "show-speech-quotes">';
+      $output_speech_quotes .= '<div class = "quotes-title">';
+      $output_speech_quotes .= $load->title;
+      $output_speech_quotes .= '</div>';
+      $output_speech_quotes .= '<div class = "quotes-body">';
+      $output_speech_quotes .= $load->body['en'][0][value];
+      $output_speech_quotes .= '</div>';
+      $output_speech_quotes .= '</div>';
+      $links_speech_quotes  .= '<span class = "read-full">';
+      $links_speech_quotes  .=  l(t("Read full Speech"), "node/" . $speech_quote_speech_nid);
+      $links_speech_quotes  .= '</span>';
+      $links_speech_quotes  .= ' | ';
+      $links_speech_quotes  .= '<span class="show-more-quotes">';
+      $links_speech_quotes  .= t("More quotations");
+      $links_speech_quotes  .= '</span>';
+    }
+    else {
+      $output_speech_quotes .= '<div class = "hidden hide-speech-quotes">';
+      $output_speech_quotes .= '<div class = "quotes-title">';
+      $output_speech_quotes .= $load->title;
+      $output_speech_quotes .= '</div>';
+      $output_speech_quotes .= '<div class = "quotes-body">';
+      $output_speech_quotes .= $load->body['en'][0][value];
+      $output_speech_quotes .= '</div>';
+      $output_speech_quotes .= '</div>';
+    }
+    $i++;
+  }
+  $output .= '<div class = "container">';
+  $output .= $output_speech_quotes;
+  $output .= '<div class = "links">';
+  $output .= $links_speech_quotes;
+  $output .= '</div></div>';
+  $variables['speech_quote_speech_nid'] = $output;
+}
