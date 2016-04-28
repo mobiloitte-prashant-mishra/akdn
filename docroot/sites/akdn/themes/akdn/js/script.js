@@ -580,8 +580,8 @@
       $('.hub-page-rural-development').addClass('hide');
     }
     /**/
-
-    $('.quote-finder-wrap .views-row').not('.views-row-1').addClass('hide');
+    /*For speech-quotes accordion hide class replace with hide-speech-quotes class*/
+    $('.quote-finder-wrap .views-row').not('.views-row-1').addClass('hide-speech-quotes');
     $('.more-quotes').once('quotes_accordion').click(function() {
       if ($(this).hasClass('active')) {
         $(this).removeClass('active');
@@ -590,7 +590,8 @@
         $('.more-quotes').removeClass('active');
         $(this).addClass('active');
       }
-      $('.quote-finder-wrap .views-row.show').addClass('hide').removeClass('show');
+      /*For speech-quotes accordion hide class replace with hide-speech-quotes class*/
+      $('.quote-finder-wrap .views-row.show').addClass('hide-speech-quotes').removeClass('show');
       var parent = $(this).closest('[class*="row-toggle-"]');
       var arr = parent[0].className.toString().split(' ');
       var cls = arr[arr.length-1].toString();
