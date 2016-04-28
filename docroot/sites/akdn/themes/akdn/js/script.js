@@ -580,8 +580,8 @@
       $('.hub-page-rural-development').addClass('hide');
     }
     /**/
-    /*For speech-quotes accordion hide class replace with hide-speech-quotes class*/
-    $('.quote-finder-wrap .views-row').not('.views-row-1').addClass('hide-speech-quotes');
+
+    // Accordion Functionality for Speech-Quotes Page _/\_ DO NOT ALTER
     $('.more-quotes').once('quotes_accordion').click(function() {
       if ($(this).hasClass('active')) {
         $(this).removeClass('active');
@@ -590,13 +590,10 @@
         $('.more-quotes').removeClass('active');
         $(this).addClass('active');
       }
-      /*For speech-quotes accordion hide class replace with hide-speech-quotes class*/
-      $('.quote-finder-wrap .views-row.show').addClass('hide-speech-quotes').removeClass('show');
-      var parent = $(this).closest('[class*="row-toggle-"]');
-      var arr = parent[0].className.toString().split(' ');
-      var cls = arr[arr.length-1].toString();
+      $('.quote-finder-wrap .hide-speech-quotes.show').addClass('hide').removeClass('show');
+      var cls = $(this).closest('.speech-quote-wrapper').find('.hide-speech-quotes')
       if ($(this).hasClass('active')) {
-        $('.'+cls).not('.views-row-1').removeClass('hide').addClass('show');
+        $(cls).removeClass('hide').addClass('show');
       }
     });
 
@@ -818,7 +815,7 @@
   $(document).ready(function(){
     if ($("#webform-client-form-4310").length > 0){
       $("#edit-submitted-wrapper-subject").bind("change", function() {
-          if ($("#edit-submitted-wrapper-subject").val()==0 || $("#edit-submitted-wrapper-subject").val()==1 || $("#edit-submitted-wrapper-subject").val()==10 || $("#edit-submitted-wrapper-subject").val()==12 || $("#edit-submitted-wrapper-subject").val()==16 || $("#edit-submitted-wrapper-subject").val()==20 ) {
+          if ($("#edit-submitted-wrapper-subject").val()==1 || $("#edit-submitted-wrapper-subject").val()==10 || $("#edit-submitted-wrapper-subject").val()==12 || $("#edit-submitted-wrapper-subject").val()==16 || $("#edit-submitted-wrapper-subject").val()==20 ) {
              $("#edit-submit").hide();
           } else {
              $("#edit-submit").show();
@@ -828,7 +825,7 @@
   });
 $(window).load(function(){
   if ($("#webform-client-form-4310").length > 0){
-    if ($("#edit-submitted-wrapper-subject").val()==0) {
+    if ($("#edit-submitted-wrapper-subject").val()==1) {
        $("#edit-submit").hide();
     }
   }

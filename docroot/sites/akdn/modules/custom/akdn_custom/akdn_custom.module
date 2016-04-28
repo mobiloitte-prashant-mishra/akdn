@@ -3784,12 +3784,12 @@ function akdn_custom_preprocess_views_view_field__solr_quotes__page_1__nothing(&
       $links_speech_quotes  .=  l(t("Read full Speech"), "node/" . $speech_quote_speech_nid);
       $links_speech_quotes  .= '</span>';
       $links_speech_quotes  .= ' | ';
-      $links_speech_quotes  .= '<span class="show-more-quotes">';
+      $links_speech_quotes  .= '<span class="more-quotes">';
       $links_speech_quotes  .= t("More quotations");
       $links_speech_quotes  .= '</span>';
     }
     else {
-      $output_speech_quotes .= '<div class = "hidden hide-speech-quotes">';
+      $output_speech_quotes .= '<div class = "hide hide-speech-quotes">';
       $output_speech_quotes .= '<div class = "quotes-title">';
       $output_speech_quotes .= $load->title;
       $output_speech_quotes .= '</div>';
@@ -3800,9 +3800,9 @@ function akdn_custom_preprocess_views_view_field__solr_quotes__page_1__nothing(&
     }
     $i++;
   }
-  $output .= '<div class = "container">';
+  $output .= '<div class = "speech-quote-wrapper">';
   $output .= $output_speech_quotes;
-  $output .= '<div class = "links">';
+  $output .= '<div class = "speech-quote-links">';
   $output .= $links_speech_quotes;
   $output .= '</div></div>';
   $variables['speech_quote_speech_nid'] = $output;
