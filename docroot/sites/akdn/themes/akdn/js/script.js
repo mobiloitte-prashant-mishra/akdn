@@ -583,17 +583,27 @@
 
     // Accordion Functionality for Speech-Quotes Page _/\_ DO NOT ALTER
     $('.more-quotes').once('quotes_accordion').click(function() {
+      var showtxt = "Show more quotations";
+      var lesstxt = "Show less";
       if ($(this).hasClass('active')) {
-        $(this).removeClass('active');
+        $(this).removeClass('active').text(showtxt);
       }
       else {
-        $('.more-quotes').removeClass('active');
-        $(this).addClass('active');
+        $('.more-quotes').removeClass('active').text(showtxt);
+        $(this).addClass('active').text(lesstxt);
       }
       $('.quote-finder-wrap .hide-speech-quotes.show').addClass('hide').removeClass('show');
       var cls = $(this).closest('.speech-quote-wrapper').find('.hide-speech-quotes')
       if ($(this).hasClass('active')) {
         $(cls).removeClass('hide').addClass('show');
+      }
+    });
+
+    // Remove empty speech quotes from DOM
+    jQuery('.speech-quote-wrapper').each(function(){
+      var quoteDiv = jQuery(this).find('.show-speech-quotes');
+      if (!jQuery(quoteDiv).length){
+        jQuery(this).closest('.views-limit-grouping-group').remove();
       }
     });
 
