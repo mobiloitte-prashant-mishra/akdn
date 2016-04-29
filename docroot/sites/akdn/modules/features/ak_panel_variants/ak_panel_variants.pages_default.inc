@@ -9084,43 +9084,6 @@ privacy-policy',
     $display->content['new-1bb0e536-cfbc-4d68-b538-08780072c005'] = $pane;
     $display->panels['right'][0] = 'new-1bb0e536-cfbc-4d68-b538-08780072c005';
     $pane = new stdClass();
-    $pane->pid = 'new-519f27cb-798a-40f9-b319-2cf564cd023c';
-    $pane->panel = 'right';
-    $pane->type = 'views';
-    $pane->subtype = 'custom_header_block';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_pager_settings' => 0,
-      'use_pager' => 0,
-      'nodes_per_page' => '1',
-      'pager_id' => '0',
-      'offset' => '0',
-      'more_link' => 0,
-      'feed_icons' => 0,
-      'panel_args' => 0,
-      'link_to_view' => 0,
-      'args' => '',
-      'url' => '',
-      'display' => 'custom_block_rhs',
-      'override_title' => 1,
-      'override_title_text' => '<none>',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'akmi-custom-header-block',
-    );
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '519f27cb-798a-40f9-b319-2cf564cd023c';
-    $display->content['new-519f27cb-798a-40f9-b319-2cf564cd023c'] = $pane;
-    $display->panels['right'][1] = 'new-519f27cb-798a-40f9-b319-2cf564cd023c';
-    $pane = new stdClass();
     $pane->pid = 'new-a4f2315f-73ba-47c4-bd0e-b690da8c9969';
     $pane->panel = 'right';
     $pane->type = 'views';
@@ -9152,11 +9115,48 @@ privacy-policy',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = 'a4f2315f-73ba-47c4-bd0e-b690da8c9969';
     $display->content['new-a4f2315f-73ba-47c4-bd0e-b690da8c9969'] = $pane;
-    $display->panels['right'][2] = 'new-a4f2315f-73ba-47c4-bd0e-b690da8c9969';
+    $display->panels['right'][1] = 'new-a4f2315f-73ba-47c4-bd0e-b690da8c9969';
+    $pane = new stdClass();
+    $pane->pid = 'new-519f27cb-798a-40f9-b319-2cf564cd023c';
+    $pane->panel = 'right';
+    $pane->type = 'views';
+    $pane->subtype = 'custom_header_block';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '1',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'custom_block_rhs',
+      'override_title' => 1,
+      'override_title_text' => '<none>',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'akmi-custom-header-block',
+    );
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '519f27cb-798a-40f9-b319-2cf564cd023c';
+    $display->content['new-519f27cb-798a-40f9-b319-2cf564cd023c'] = $pane;
+    $display->panels['right'][2] = 'new-519f27cb-798a-40f9-b319-2cf564cd023c';
     $pane = new stdClass();
     $pane->pid = 'new-8cf8ef1a-62d8-4c04-b667-eb495c97993a';
     $pane->panel = 'right';
