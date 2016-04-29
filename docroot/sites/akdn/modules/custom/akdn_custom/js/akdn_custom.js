@@ -194,11 +194,6 @@ jQuery(".view-id-solr_quotes .view-grouping-content").each(function(){
         //$(ap_views_id+" #edit-field-related-artists-nid-wrapper .chzn-choices").prepend("<option>Select Artists</option>");
         // $(ap_views_id+" #edit-field-performance-year-tid-wrapper select, "+ap_views_id+" #edit-field-artist-country-origin-tid-wrapper select, "+ap_views_id+" #edit-field-artist-related-instruments-nid-wrapper select").chosen();
     }
-  //speech-quotes show more quotes
-  jQuery('.show-more-quotes').click(function() {
-    jQuery(this).parent().parent().find('.hide-speech-quotes').toggleClass("hidden");
-    return false;
-  });
 });
 
 (function ($) {
