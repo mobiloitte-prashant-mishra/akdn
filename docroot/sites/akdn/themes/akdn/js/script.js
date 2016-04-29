@@ -846,6 +846,15 @@ $(window).load(function(){
       );
     }
   });
+  
+   // Remove hidden Social Block from DOM/HTML - Required while printing
+ $(window).load(function() {
+   $('.social-block .pane-facebook-feeds').each(function(){
+     if($(this).is( ":hidden" )){
+       $(this).remove();
+     }
+   });
+ });
   // To remove extra 10px margin from font-size
   jQuery("[style='font-size: x-small;']").css("margin", "0px");
   }
