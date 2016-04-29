@@ -21,7 +21,7 @@
  * regardless of any changes in the aliasing that might happen if
  * the view is modified.
  */
-$image_uri = $image_uri = "public://media/missing2.jpg";
+$image_uri = $image_uri = "public://media/missingakdn.jpg";
 if (isset($row->{'_entity_properties'}['image_public_uri'])) {
   $image_path = $row->{'_entity_properties'}['image_public_uri'];
   if (file_exists($image_path)) {
