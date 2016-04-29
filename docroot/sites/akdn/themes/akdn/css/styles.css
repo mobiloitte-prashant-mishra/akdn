@@ -18708,6 +18708,18 @@ map area {
   margin-bottom: 35px;
 }
 
+/* line 7324, ../sass/_akdn-redesign.scss */
+.footer-term-condition-links {
+  margin-top: 3px;
+  font-size: 13px;
+  color: #b2b2b2;
+}
+/* line 7328, ../sass/_akdn-redesign.scss */
+.footer-term-condition-links a {
+  font-size: 13px;
+  color: #b2b2b2;
+}
+
 /*
 * Media Queries
 *
