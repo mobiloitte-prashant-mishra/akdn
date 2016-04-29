@@ -4858,24 +4858,27 @@ map {
 /* Quote Finder */
 .quote-finder-wrap {
     display: block;
-    border-bottom: 1px solid #b5995a;
+    //border-bottom: 1px solid #b5995a;
     margin-bottom: 60px;
     .view-header {
         @extend %font_times;
         margin: 10px auto 40px;
         color: #000;
     }
-    h3 {
+    .views-limit-grouping-group {
         display: block;
-        margin: 20px auto 3px;
-        padding: 20px 0 0;
+        margin: 0 auto 20px;
+        padding: 0px 0 15px;
         font-size: 16px;
         line-height: 1;
-        border-top: 1px solid #b5995a;
-        &:first-child {
+        border-bottom: 1px solid #b5995a;
+        &:last-child {
             margin-top: 0;
             padding: 0;
-            border-top: 0 none;
+            border-bottom: 0 none;
+        }
+        h3 {
+            display: none;
         }
     }
 }
@@ -4896,6 +4899,7 @@ map {
     font-size: 16px;
     font-weight: bold;
     color: #000000;
+    line-height: 24px;
 }
 .quote-date-location {
     @extend %font_arial;
@@ -4903,13 +4907,13 @@ map {
     font-weight: normal;
     color: #999999;
 }
-.quotes-content {
+.quotes-body {
     @extend %font_arial;
+    margin-bottom: 3px;
     font-size: 16px;
     font-weight: normal;
     color: #000000;
-}
-.quotes-body {
+    line-height: 24px;
     p {
         @extend %font_arial;
         font-size: 16px;
@@ -4918,8 +4922,11 @@ map {
         margin: 0 auto;
     }
 }
-.show-more-quotes {
+.speech-quote-links {
+    margin-top: 10px;
     margin-bottom: 10px;
+    font-size: 16px;
+    color: #b5995a;
     a, .more-quotes {
         color: #b5995a;
         font-size: 16px;
@@ -4934,19 +4941,9 @@ map {
         }
     }
     .more-quotes {
-        &:before {
-            content: " | ";
-            color: #b5995a;
-            text-decoration: none;
-        }
         &:hover {
             cursor: pointer;
             text-decoration: none;
-            &:before {
-                content: " | ";
-                cursor: default;
-                text-decoration: none;
-            }
             span {
                 text-decoration: underline;
             }

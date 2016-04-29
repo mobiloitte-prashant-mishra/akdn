@@ -3112,6 +3112,16 @@ function akdn_custom_theme($existing, $type, $theme, $path) {
     ),
     'arguments' => array('view' => NULL),
   );
+  $themes['views_view_field__solr_quotes__page_1__nothing'] = array(
+    'template' => 'templates/views-view-field--solr-quotes--page-1--nothing',
+    'original hook' => 'views_view_fields',
+    'preprocess functions' => array(
+      'template_preprocess',
+      'template_preprocess_views_view_fields',
+      'akdn_custom_preprocess_views_view_field__solr_quotes__page_1__nothing',
+    ),
+    'arguments' => array('view' => NULL),
+  );
   return $themes;
 }
 
@@ -3747,3 +3757,57 @@ function akdn_custom_v_p_for_archi() {
     return $output;
   }
  }
+
+function akdn_custom_preprocess_views_view_field__solr_quotes__page_1__nothing(&$variables) {
+  $row = $variables['row'];
+  $speech_quote_speech_nid = $row->_entity_properties['speech_quote_speech_nid'];
+  $speech_quotes_count = $row->_entity_properties['field_speech_reference:speech_quotes_count'];
+  $query = db_query(
+    "SELECT entity_id FROM field_data_field_speech_reference
+    WHERE field_speech_reference_nid ='" . $speech_quote_speech_nid . "'
+    ")->fetchAll();
+  $i = 1;
+  $output_speech_quotes = '';
+  $links_speech_quotes = '';
+  $output = '';
+  foreach($query as $value) {
+    $load = node_load($value->entity_id);
+    if ($i == 1) {
+      $output_speech_quotes .= '<div class = "show-speech-quotes">';
+      $output_speech_quotes .= '<div class = "quotes-title">';
+      $output_speech_quotes .= $load->title;
+      $output_speech_quotes .= '</div>';
+      $output_speech_quotes .= '<div class = "quotes-body">';
+      $output_speech_quotes .= $load->body['en'][0][value];
+      $output_speech_quotes .= '</div>';
+      $output_speech_quotes .= '</div>';
+      $links_speech_quotes  .= '<span class = "read-full">';
+      $links_speech_quotes  .=  l(t("Read full Speech"), "node/" . $speech_quote_speech_nid);
+      // Display More quotations only if speech count is more than 1
+      if ($speech_quotes_count > 1) {
+      $links_speech_quotes  .= '</span>';
+      $links_speech_quotes  .= ' | ';
+      $links_speech_quotes  .= '<span class="more-quotes">';
+      $links_speech_quotes  .= t("Show more quotations");
+      $links_speech_quotes  .= '</span>';
+      }
+    }
+    else {
+      $output_speech_quotes .= '<div class = "hide hide-speech-quotes">';
+      $output_speech_quotes .= '<div class = "quotes-title">';
+      $output_speech_quotes .= $load->title;
+      $output_speech_quotes .= '</div>';
+      $output_speech_quotes .= '<div class = "quotes-body">';
+      $output_speech_quotes .= $load->body['en'][0][value];
+      $output_speech_quotes .= '</div>';
+      $output_speech_quotes .= '</div>';
+    }
+    $i++;
+  }
+  $output .= '<div class = "speech-quote-wrapper">';
+  $output .= $output_speech_quotes;
+  $output .= '<div class = "speech-quote-links">';
+  $output .= $links_speech_quotes;
+  $output .= '</div></div>';
+  $variables['speech_quote_speech_nid'] = $output;
+}
