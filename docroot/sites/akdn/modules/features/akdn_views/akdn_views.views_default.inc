@@ -4432,12 +4432,19 @@ return $cycle_id;';
   $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['tid']['separator'] = '';
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div><a href = "/architecture/press-centre?f[0]=field_cycle_year:[tid]" class="akaa-award-cycle-related-link">Cycle News</a></div>';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div><a href = "/architecture/press-centre?f[0]=field_cycle_year:[tid]" class="akaa-award-cycle-related-link">Cycle News</a></div>
+<div><a href = "/architecture/steering-committee/[nid]" class="akaa-award-cycle-related-link">Steering Committee</a></div>
+<div><a href = "/architecture/master-jury/[nid]" class="akaa-award-cycle-related-link">Master Jury</a></div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Field: Content: awards cycle Links */
   $handler->display->display_options['fields']['field_awards_cycle_links']['id'] = 'field_awards_cycle_links';
@@ -4454,15 +4461,16 @@ return $cycle_id;';
   $handler->display->display_options['sorts']['delta']['table'] = 'field_data_field_awards_cycle_links';
   $handler->display->display_options['sorts']['delta']['field'] = 'delta';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nid */
-  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['table'] = 'node';
-  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['default_action'] = 'not found';
-  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
-  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Content: Cycle Year (field_cycle_year) */
+  $handler->display->display_options['arguments']['field_cycle_year_tid']['id'] = 'field_cycle_year_tid';
+  $handler->display->display_options['arguments']['field_cycle_year_tid']['table'] = 'field_data_field_cycle_year';
+  $handler->display->display_options['arguments']['field_cycle_year_tid']['field'] = 'field_cycle_year_tid';
+  $handler->display->display_options['arguments']['field_cycle_year_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_cycle_year_tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_cycle_year_tid']['default_argument_options']['argument'] = '7486';
+  $handler->display->display_options['arguments']['field_cycle_year_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_cycle_year_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_cycle_year_tid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -4477,7 +4485,7 @@ return $cycle_id;';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'architecture_project' => 'architecture_project',
+    'award_cycle' => 'award_cycle',
   );
 
   /* Display: All Award Cycles Project Page */
@@ -5002,7 +5010,6 @@ return $cycle_id;';
     t('All Projects From This Cycle'),
     t('Projects From This Cycle'),
     t('Related Award Cycle Project page block'),
-    t('<div><a href = "/architecture/press-centre?f[0]=field_cycle_year:[tid]" class="akaa-award-cycle-related-link">Cycle News</a></div>'),
     t('All Award Cycles Project Page'),
     t('All Cycles'),
     t('Related Information on Jury/steering '),

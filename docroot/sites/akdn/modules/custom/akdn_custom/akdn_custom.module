@@ -208,6 +208,12 @@ function akdn_custom_views_query_alter(&$view, &$query) {
       )
     );
   }
+  if ($view->name == 'akaa_projects' && $view->current_display == 'related_award_links_projects') {
+     $nids = node_load(arg(1));
+     $tid = $nids->field_cycle_year[LANGUAGE_NONE][0]['tid'];
+     //print_r($query->where[0][conditions][0]['value']); exit;
+     $query->where[0][conditions][0]['value']= array(':field_data_field_cycle_year_field_cycle_year_tid2' => $tid);
+  }
 }
 
 /**
