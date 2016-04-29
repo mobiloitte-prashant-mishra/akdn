@@ -14868,7 +14868,7 @@ print $link;  print $link1;
       'url' => '',
       'display' => 'related_award_links_projects',
       'context' => array(
-        0 => 'argument_entity_id:node_1.nid',
+        0 => '',
       ),
       'override_title' => 0,
       'override_title_text' => '',
