@@ -646,8 +646,8 @@ th {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url(../fonts/bootstrap/glyphicons-halflings-regular.eot?1460731959);
-  src: url(../fonts/bootstrap/glyphicons-halflings-regular.eot?&1460731959#iefix) format("embedded-opentype"), url(../fonts/bootstrap/glyphicons-halflings-regular.woff2?1460731959) format("woff2"), url(../fonts/bootstrap/glyphicons-halflings-regular.woff?1460731959) format("woff"), url(../fonts/bootstrap/glyphicons-halflings-regular.ttf?1460731959) format("truetype"), url(../fonts/bootstrap/glyphicons-halflings-regular.svg?1460731959#glyphicons_halflingsregular) format("svg");
+  src: url(../fonts/bootstrap/glyphicons-halflings-regular.eot?1458165161);
+  src: url(../fonts/bootstrap/glyphicons-halflings-regular.eot?&1458165161#iefix) format("embedded-opentype"), url(../fonts/bootstrap/glyphicons-halflings-regular.woff2?1458165161) format("woff2"), url(../fonts/bootstrap/glyphicons-halflings-regular.woff?1458165161) format("woff"), url(../fonts/bootstrap/glyphicons-halflings-regular.ttf?1458165161) format("truetype"), url(../fonts/bootstrap/glyphicons-halflings-regular.svg?1458165161#glyphicons_halflingsregular) format("svg");
 }
 /* line 24, ../sass/sass-extensions/bootstrap/_glyphicons.scss */
 .glyphicon, .location-links h2 .nolink:after, .location-links h2 a:after {
@@ -10281,47 +10281,49 @@ button.close {
 /* line 180, ../sass/sass-extensions/_custom-utilities.scss */
 .grid-media-block_description .title {
   width: 100%;
+  float: none;
+  clear: both;
   font-size: 16px;
   font-weight: normal;
   color: #000;
 }
-/* line 186, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 188, ../sass/sass-extensions/_custom-utilities.scss */
 .grid-media-block_description .title a {
   font-size: 16px;
   font-weight: normal;
   color: #000;
 }
-/* line 190, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 192, ../sass/sass-extensions/_custom-utilities.scss */
 .grid-media-block_description .title a:hover {
   text-decoration: none;
   color: #000;
 }
 
-/* line 196, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 198, ../sass/sass-extensions/_custom-utilities.scss */
 .grid-media-block_description .read-more, .country-city-readmore {
   width: auto;
   display: inline-block;
   white-space: nowrap;
 }
-/* line 201, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 203, ../sass/sass-extensions/_custom-utilities.scss */
 .grid-media-block_description .read-more a, .country-city-readmore a {
   color: #b5995a;
   padding: 0;
   font-size: 16px;
 }
-/* line 205, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 207, ../sass/sass-extensions/_custom-utilities.scss */
 .grid-media-block_description .read-more a:before, .country-city-readmore a:before {
   content: "[";
   display: inline-block;
   margin-right: 3px;
 }
-/* line 210, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 212, ../sass/sass-extensions/_custom-utilities.scss */
 .grid-media-block_description .read-more a:after, .country-city-readmore a:after {
   content: "]";
   display: inline-block;
   margin-left: 3px;
 }
-/* line 215, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 217, ../sass/sass-extensions/_custom-utilities.scss */
 .grid-media-block_description .read-more a:hover, .country-city-readmore a:hover {
   text-decoration: underline;
   color: #b5995a;
@@ -10332,7 +10334,7 @@ button.close {
 *(5n+4) = 2, 5, 8, 11, 14, ...
 *(3n) = 3, 6, 9, 12, 15, ...
 */
-/* line 244, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 246, ../sass/sass-extensions/_custom-utilities.scss */
 .section-content .grid-18, .whatwedo-left {
   position: relative;
   width: 68.77193%;
@@ -10342,7 +10344,7 @@ button.close {
   border-right: 1px solid #ccc;
 }
 
-/* line 254, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 256, ../sass/sass-extensions/_custom-utilities.scss */
 .section-content .grid-6, .whatwedo-right {
   position: relative;
   width: 31.22807%;
@@ -10351,7 +10353,7 @@ button.close {
   margin: 0 auto 20px;
 }
 
-/* line 263, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 265, ../sass/sass-extensions/_custom-utilities.scss */
 .carousel-left .banner-slideshow-views > .view-content, .whatwedo-body .pane-featured-slideshow, .node-type-agency .pane-featured-slideshow, .akaa-akmi-body .pane-featured-slideshow {
   width: 68.77193%;
   margin: 0 auto 40px;
@@ -10360,7 +10362,7 @@ button.close {
   overflow: hidden;
 }
 
-/* line 272, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 274, ../sass/sass-extensions/_custom-utilities.scss */
 .whatsnew-right, .whatwedo-body .whatsnew-right, .node-type-agency .hub-about-short-title {
   width: 31.22807%;
   height: 460px;
@@ -10372,7 +10374,7 @@ button.close {
   border-bottom: 1px solid #e8dfcd;
 }
 
-/* line 291, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 293, ../sass/sass-extensions/_custom-utilities.scss */
 .press-release-detail .related-block-info {
   margin: 0;
   padding: 0 15px;
@@ -10384,7 +10386,7 @@ button.close {
   clear: left;
 }
 
-/* line 301, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 303, ../sass/sass-extensions/_custom-utilities.scss */
 .press-release-detail .related-block-info h2.pane-title,
 .press-release-detail .related-block-info .views-label-field-country,
 .press-release-detail .related-block-info .views-label-field-agency,
@@ -10399,7 +10401,7 @@ button.close {
   margin: 15px auto 5px;
 }
 
-/* line 311, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 313, ../sass/sass-extensions/_custom-utilities.scss */
 .press-release-detail .related-block-info a, .press-release-speech-detail .views-label-field-speech-speaker + .field-content, .press-release-speech-detail .views-label-field-speech-location + .field-content {
   display: inline-block;
   margin: 0 auto 10px;
@@ -10411,12 +10413,12 @@ button.close {
   line-height: 1;
   text-transform: none;
 }
-/* line 321, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 323, ../sass/sass-extensions/_custom-utilities.scss */
 .press-release-detail .related-block-info a:hover, .press-release-speech-detail .views-label-field-speech-speaker + .field-content:hover, .press-release-speech-detail .views-label-field-speech-location + .field-content:hover {
   text-decoration: none;
 }
 
-/* line 325, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 327, ../sass/sass-extensions/_custom-utilities.scss */
 .press-release-detail .related-block-info ul, .press-release-detail .related-block-info li, .press-release-detail .grid-6 ul, .press-release-detail .grid-6 li, .grid-master-jury-wrapper .grid-about-us-block-description .related-artist ul,
 .grid-steering-committee-wrapper .grid-about-us-block-description .related-artist ul,
 .grid-instrument-listing-wrapper .grid-about-us-block-description .related-artist ul {
@@ -10424,14 +10426,14 @@ button.close {
   list-style: none;
 }
 
-/* line 330, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 332, ../sass/sass-extensions/_custom-utilities.scss */
 .press-release-detail .grid-6 .views-field-php a,
 .press-release-detail .grid-6 .views-field-view-node a,
 .press-release-detail .grid-6 .views-field-nothing a {
   color: #b59757;
   text-decoration: none;
 }
-/* line 333, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 335, ../sass/sass-extensions/_custom-utilities.scss */
 .press-release-detail .grid-6 .views-field-php a:before,
 .press-release-detail .grid-6 .views-field-view-node a:before,
 .press-release-detail .grid-6 .views-field-nothing a:before {
@@ -10439,7 +10441,7 @@ button.close {
   margin-right: 3px;
   display: inline-block;
 }
-/* line 338, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 340, ../sass/sass-extensions/_custom-utilities.scss */
 .press-release-detail .grid-6 .views-field-php a:after,
 .press-release-detail .grid-6 .views-field-view-node a:after,
 .press-release-detail .grid-6 .views-field-nothing a:after {
@@ -10448,7 +10450,7 @@ button.close {
   display: inline-block;
 }
 
-/* line 346, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 348, ../sass/sass-extensions/_custom-utilities.scss */
 .hub-page-rural-development:before, .hub-page-press-center-right:before, .akaa-award-cycle-related-info:before,
 .akaa-projectinfo-map-related-info:before, .see-also-custom:before {
   content: "";
@@ -10459,7 +10461,7 @@ button.close {
   position: relative;
 }
 
-/* line 355, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 357, ../sass/sass-extensions/_custom-utilities.scss */
 .hub-page-rural-development .view-header, .hub-page-press-center-right .press-center-title, .akaa-award-cycle-related-info h2.pane-title,
 .akaa-award-cycle-related-info h2.block-title,
 .akaa-projectinfo-map-related-info h2.pane-title,
@@ -10469,7 +10471,7 @@ button.close {
   line-height: 36px;
   text-transform: uppercase;
 }
-/* line 361, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 363, ../sass/sass-extensions/_custom-utilities.scss */
 .hub-page-rural-development .view-header:first-letter, .hub-page-press-center-right .press-center-title:first-letter, .akaa-award-cycle-related-info h2.pane-title:first-letter,
 .akaa-award-cycle-related-info h2.block-title:first-letter,
 .akaa-projectinfo-map-related-info h2.pane-title:first-letter,
@@ -10477,7 +10479,7 @@ button.close {
   font-size: 36px;
 }
 
-/* line 365, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 367, ../sass/sass-extensions/_custom-utilities.scss */
 .hub-page-rural-development .views-row a, .hub-page-press-center-right li a, .akaa-award-cycle-related-info li a,
 .akaa-projectinfo-map-related-info li a, .akaa-award-cycle-related-info .akaa-award-cycle-related-link,
 .akaa-projectinfo-map-related-info .akaa-award-cycle-related-link, .see-also-custom .view-content {
@@ -10491,7 +10493,7 @@ button.close {
   text-decoration: none;
   clear: both;
 }
-/* line 376, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 378, ../sass/sass-extensions/_custom-utilities.scss */
 .hub-page-rural-development .views-row a:hover, .hub-page-press-center-right li a:hover, .akaa-award-cycle-related-info li a:hover,
 .akaa-projectinfo-map-related-info li a:hover, .akaa-award-cycle-related-info .akaa-award-cycle-related-link:hover,
 .akaa-projectinfo-map-related-info .akaa-award-cycle-related-link:hover, .see-also-custom .view-content:hover, .hub-page-rural-development .views-row a:focus, .hub-page-press-center-right li a:focus, .akaa-award-cycle-related-info li a:focus,
@@ -10501,7 +10503,7 @@ button.close {
   text-decoration: none;
 }
 
-/* line 383, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 385, ../sass/sass-extensions/_custom-utilities.scss */
 .basic-page-custom-block-right:before {
   content: "";
   border-top: 4px solid #b49759;
@@ -10511,19 +10513,19 @@ button.close {
   position: relative;
 }
 
-/* line 392, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 394, ../sass/sass-extensions/_custom-utilities.scss */
 .basic-page-custom-block-right .view-header {
   margin-bottom: 15px;
   font-size: 28px;
   line-height: 35px;
   text-transform: uppercase;
 }
-/* line 398, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 400, ../sass/sass-extensions/_custom-utilities.scss */
 .basic-page-custom-block-right .view-header:first-letter {
   font-size: 34px;
 }
 
-/* line 402, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 404, ../sass/sass-extensions/_custom-utilities.scss */
 .basic-page-custom-block-right .views-row a {
   display: inline-block;
   margin-bottom: 10px;
@@ -10535,13 +10537,13 @@ button.close {
   text-decoration: none;
   clear: both;
 }
-/* line 413, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 415, ../sass/sass-extensions/_custom-utilities.scss */
 .basic-page-custom-block-right .views-row a:hover {
   color: #B49759;
   text-decoration: none;
 }
 
-/* line 418, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 420, ../sass/sass-extensions/_custom-utilities.scss */
 .basic-page-custom-title {
   margin: 0 0 40px;
   padding: 0 15px;
@@ -10552,7 +10554,7 @@ button.close {
   text-transform: none;
 }
 
-/* line 428, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 430, ../sass/sass-extensions/_custom-utilities.scss */
 .basic-page-custom-body {
   width: 100%;
   margin-bottom: 40px;
@@ -10564,23 +10566,23 @@ button.close {
   color: #000;
   line-height: 24px;
 }
-/* line 439, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 441, ../sass/sass-extensions/_custom-utilities.scss */
 .basic-page-custom-body a {
   color: #b5995a;
   text-decoration: none;
 }
-/* line 442, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 444, ../sass/sass-extensions/_custom-utilities.scss */
 .basic-page-custom-body a:hover {
   color: #b5995a;
   text-decoration: underline;
 }
-/* line 446, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 448, ../sass/sass-extensions/_custom-utilities.scss */
 .basic-page-custom-body a:focus {
   color: #b5995a;
   text-decoration: none;
 }
 
-/* line 452, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 454, ../sass/sass-extensions/_custom-utilities.scss */
 .basic-page-custom-summary {
   padding-left: 20px;
   font-size: 22px;
@@ -10591,7 +10593,7 @@ button.close {
   border-left: 4px solid #b4965a;
 }
 
-/* line 462, ../sass/sass-extensions/_custom-utilities.scss */
+/* line 464, ../sass/sass-extensions/_custom-utilities.scss */
 .akaa-projectfinder-wrapper .views-submit-button .form-submit, .akaa-projectfinder-wrapper .views-submit-button a, .akaa-projectfinder-wrapper .views-reset-button .form-submit {
   width: auto;
   margin: 0 0 20px 10px;
@@ -10772,7 +10774,7 @@ button.close {
   line-height: 1;
   margin: 8px 1px 0 0;
   color: #b2b2b2;
-  background: #fff url('../images/magnifier.png?1460731959') no-repeat;
+  background: #fff url('../images/magnifier.png?1458165161') no-repeat;
   background-size: contain;
   border-radius: 0;
   border: 0 none;
@@ -11515,7 +11517,7 @@ h1.title {
   padding: 0;
   font-size: 0;
   line-height: 1;
-  background: url('../images/instagram.png?1460731959') no-repeat;
+  background: url('../images/instagram.png?1458165161') no-repeat;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
@@ -12116,32 +12118,32 @@ h1.title {
 
 /* line 1346, ../sass/_akdn-redesign.scss */
 .facebook {
-  background: url('../images/facebook.png?1460731959') no-repeat;
+  background: url('../images/facebook.png?1458165161') no-repeat;
 }
 
 /* line 1346, ../sass/_akdn-redesign.scss */
 .twitter {
-  background: url('../images/twitter.png?1460731959') no-repeat;
+  background: url('../images/twitter.png?1458165161') no-repeat;
 }
 
 /* line 1346, ../sass/_akdn-redesign.scss */
 .youtube {
-  background: url('../images/youtube.png?1460731959') no-repeat;
+  background: url('../images/youtube.png?1458165161') no-repeat;
 }
 
 /* line 1346, ../sass/_akdn-redesign.scss */
 .instagram {
-  background: url('../images/instagram.png?1460731959') no-repeat;
+  background: url('../images/instagram.png?1458165161') no-repeat;
 }
 
 /* line 1346, ../sass/_akdn-redesign.scss */
 .vimeo {
-  background: url('../images/vimeo.png?1460731959') no-repeat;
+  background: url('../images/vimeo.png?1458165161') no-repeat;
 }
 
 /* line 1346, ../sass/_akdn-redesign.scss */
 .akmi {
-  background: url('../images/akmi.png?1460731959') no-repeat;
+  background: url('../images/akmi.png?1458165161') no-repeat;
 }
 
 /* line 1350, ../sass/_akdn-redesign.scss */
@@ -12502,12 +12504,12 @@ h1.title {
   height: 22px;
   margin: 0 auto;
   padding: 0;
-  background: url('../images/arrow-bottom.png?1460731959') no-repeat;
+  background: url('../images/arrow-bottom.png?1458165161') no-repeat;
 }
 /* line 1684, ../sass/_akdn-redesign.scss */
 .akdn-filter-show-hide h2.active:after {
   content: "";
-  background: url('../images/arrow-top.png?1460731959') no-repeat;
+  background: url('../images/arrow-top.png?1458165161') no-repeat;
 }
 
 /* line 1690, ../sass/_akdn-redesign.scss */
@@ -13296,12 +13298,12 @@ ul.primary li {
   height: 22px;
   margin: 0 auto;
   padding: 0;
-  background: url('../images/arrow-bottom.png?1460731959') no-repeat;
+  background: url('../images/arrow-bottom.png?1458165161') no-repeat;
 }
 /* line 2382, ../sass/_akdn-redesign.scss */
 .page-search .akdn-filter-show-hide h2.active:after {
   content: "";
-  background: url('../images/arrow-top.png?1460731959') no-repeat;
+  background: url('../images/arrow-top.png?1458165161') no-repeat;
 }
 /* line 2388, ../sass/_akdn-redesign.scss */
 .page-search .akdn-filter-js-wrapper {
@@ -13507,7 +13509,7 @@ ul.primary li {
   font-size: 0;
   text-transform: uppercase;
   border: 0 none;
-  background: url('../images/submit.png?1460731959') 0 0 no-repeat;
+  background: url('../images/submit.png?1458165161') 0 0 no-repeat;
 }
 /* line 2560, ../sass/_akdn-redesign.scss */
 .node-webform .webform-client-form .form-actions input.form-submit:focus {
@@ -13592,7 +13594,7 @@ ul.primary li {
 .node-webform .webform-subscribe .form-actions input.form-submit {
   width: 180px;
   margin-left: 0 !important;
-  background: url('../images/subscribe.png?1460731959') 0 0 no-repeat;
+  background: url('../images/subscribe.png?1458165161') 0 0 no-repeat;
 }
 
 /* line 2645, ../sass/_akdn-redesign.scss */
@@ -13762,7 +13764,7 @@ h2.header-name a:active, h2.header-name a:focus {
 .geography-page .country-activity-tile .hub-pages-row .country_activity_link a,
 .node-type-agency .country-activity-tile .hub-pages-row .country_activity_link a {
   position: absolute;
-  background: url('../images/arrows.png?1460731959') 0 -30px no-repeat;
+  background: url('../images/arrows.png?1458165161') 0 -30px no-repeat;
   width: 26px;
   height: 26px;
   font-size: 0;
@@ -14018,15 +14020,15 @@ h2.header-name a:active, h2.header-name a:focus {
 }
 /* line 3028, ../sass/_akdn-redesign.scss */
 .press-release-detail .print_mail a {
-  background: url('../images/mail_n.png?1460731959') 0 0 no-repeat;
+  background: url('../images/mail_n.png?1458165161') 0 0 no-repeat;
 }
 /* line 3031, ../sass/_akdn-redesign.scss */
 .press-release-detail .pane-addthis a {
-  background: url('../images/share_n.png?1460731959') 0 0 no-repeat;
+  background: url('../images/share_n.png?1458165161') 0 0 no-repeat;
 }
 /* line 3034, ../sass/_akdn-redesign.scss */
 .press-release-detail .print_html a {
-  background: url('../images/print_n.png?1460731959') 0 0 no-repeat;
+  background: url('../images/print_n.png?1458165161') 0 0 no-repeat;
 }
 /* line 3040, ../sass/_akdn-redesign.scss */
 .press-release-detail .grid-6 a {
@@ -14244,7 +14246,7 @@ h2.header-name a:active, h2.header-name a:focus {
   height: 24px;
   margin-top: -2px;
   margin-left: 5px;
-  background: url('../images/download-icon.jpg?1460731959') 0 0 no-repeat;
+  background: url('../images/download-icon.jpg?1458165161') 0 0 no-repeat;
   background-size: contain;
 }
 /* line 3235, ../sass/_akdn-redesign.scss */
@@ -16351,12 +16353,12 @@ map area {
   height: 22px;
   margin: 0 auto;
   padding: 0;
-  background: url('../images/arrow-bottom.png?1460731959') no-repeat;
+  background: url('../images/arrow-bottom.png?1458165161') no-repeat;
 }
 /* line 5252, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .pane-title.active:after, .akaa-projectfinder-wrapper .block-title.active:after {
   content: "";
-  background: url('../images/arrow-top.png?1460731959') no-repeat;
+  background: url('../images/arrow-top.png?1458165161') no-repeat;
 }
 /* line 5257, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .pane-content, .akaa-projectfinder-wrapper .content {
@@ -16615,7 +16617,7 @@ map area {
   height: 26px;
   font-size: 0;
   cursor: pointer;
-  background: url('../images/arrows.png?1460731959') 0 -60px no-repeat;
+  background: url('../images/arrows.png?1458165161') 0 -60px no-repeat;
 }
 /* line 5493, ../sass/_akdn-redesign.scss */
 .akaa-award-cycle-block-short-video .views-field-nothing .play-video a:hover, .akaa-award-cycle-block-short-video .views-field-nothing .play-video a:focus {
@@ -16673,7 +16675,7 @@ map area {
   height: 26px;
   font-size: 0;
   cursor: pointer;
-  background: url('../images/arrows.png?1460731959') 0 -30px no-repeat;
+  background: url('../images/arrows.png?1458165161') 0 -30px no-repeat;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -17805,15 +17807,15 @@ map area {
 }
 /* line 6498, ../sass/_akdn-redesign.scss */
 .akaa-body .print_mail a {
-  background: url('../images/mail_n.png?1460731959') 0 0 no-repeat;
+  background: url('../images/mail_n.png?1458165161') 0 0 no-repeat;
 }
 /* line 6501, ../sass/_akdn-redesign.scss */
 .akaa-body .pane-addthis a {
-  background: url('../images/share_n.png?1460731959') 0 0 no-repeat;
+  background: url('../images/share_n.png?1458165161') 0 0 no-repeat;
 }
 /* line 6504, ../sass/_akdn-redesign.scss */
 .akaa-body .print_html a {
-  background: url('../images/print_n.png?1460731959') 0 0 no-repeat;
+  background: url('../images/print_n.png?1458165161') 0 0 no-repeat;
 }
 /* line 6507, ../sass/_akdn-redesign.scss */
 .akaa-body .akaa-cycle-pane-body {
@@ -18661,7 +18663,7 @@ map area {
 .akdn-logo-wrap {
   width: 120px;
   height: 55px;
-  background: url('../images/akdn-logo.png?1460731959') no-repeat;
+  background: url('../images/akdn-logo.png?1458165161') no-repeat;
 }
 
 /* Projects Lightbox captions */
