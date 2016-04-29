@@ -3788,7 +3788,7 @@ function akdn_custom_preprocess_views_view_field__solr_quotes__page_1__nothing(&
       $links_speech_quotes  .= '</span>';
       $links_speech_quotes  .= ' | ';
       $links_speech_quotes  .= '<span class="more-quotes">';
-      $links_speech_quotes  .= t("More quotations");
+      $links_speech_quotes  .= t("Show more quotations");
       $links_speech_quotes  .= '</span>';
       }
     }
