@@ -256,11 +256,12 @@ if (count($static->nid[$nid]) == 1) {
   $handler->display->display_options['query']['options']['entity_access'] = 0;
   $handler->display->display_options['query']['options']['parse_mode'] = 'direct';
   $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['type'] = 'load_more';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['effects']['speed'] = 'slow';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'grouping_limit';
   $handler->display->display_options['style_options']['grouping'] = array(
@@ -292,8 +293,7 @@ if (count($static->nid[$nid]) == 1) {
   $handler->display->display_options['header']['result']['id'] = 'result';
   $handler->display->display_options['header']['result']['table'] = 'views';
   $handler->display->display_options['header']['result']['field'] = 'result';
-  $handler->display->display_options['header']['result']['content'] = '<h2 class=\'quotes-main-title\'>Quotations by His Highness the Aga Khan </h2>
-<span class=\'quotes-total-records\'>(@total quotations found)</span>';
+  $handler->display->display_options['header']['result']['content'] = '<h2 class=\'quotes-main-title\'>Quotations by His Highness the Aga Khan </h2>';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Indexed Node: Speech Quote Speech Nid */
   $handler->display->display_options['fields']['speech_quote_speech_nid']['id'] = 'speech_quote_speech_nid';
@@ -303,12 +303,26 @@ if (count($static->nid[$nid]) == 1) {
   $handler->display->display_options['fields']['speech_quote_speech_nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['speech_quote_speech_nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['speech_quote_speech_nid']['link_to_entity'] = 0;
+  /* Field: Node: Quotes count for Speech */
+  $handler->display->display_options['fields']['speech_quotes_count']['id'] = 'speech_quotes_count';
+  $handler->display->display_options['fields']['speech_quotes_count']['table'] = 'entity_node';
+  $handler->display->display_options['fields']['speech_quotes_count']['field'] = 'speech_quotes_count';
+  $handler->display->display_options['fields']['speech_quotes_count']['relationship'] = 'field_speech_reference';
+  $handler->display->display_options['fields']['speech_quotes_count']['label'] = '';
+  $handler->display->display_options['fields']['speech_quotes_count']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['speech_quotes_count']['element_type'] = 'div';
+  $handler->display->display_options['fields']['speech_quotes_count']['element_class'] = 'quotes-count-for-speech';
+  $handler->display->display_options['fields']['speech_quotes_count']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['speech_quotes_count']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['speech_quotes_count']['separator'] = '';
+  $handler->display->display_options['fields']['speech_quotes_count']['link_to_entity'] = 0;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[speech_quote_speech_nid]';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[speech_quotes_count]
+[speech_quote_speech_nid]';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_class'] = 'speech-nid';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -354,7 +368,10 @@ if (count($static->nid[$nid]) == 1) {
 [php_1]
 </div>'),
     t('Akdn : Speech quotes'),
-    t('[speech_quote_speech_nid]'),
+    t('Load more'),
+    t('<h2 class=\'quotes-main-title\'>Quotations by His Highness the Aga Khan </h2>'),
+    t('[speech_quotes_count]
+[speech_quote_speech_nid]'),
   );
   $export['solr_quotes'] = $view;
 
