@@ -639,8 +639,19 @@ th {
     height: auto !important;
   }
 
-  /* line 321, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 322, ../sass/sass-extensions/bootstrap/_print.scss */
   #backtotop {
+    display: none !important;
+  }
+
+  /* line 327, ../sass/sass-extensions/bootstrap/_print.scss */
+  .press-release-detail .grid-18 {
+    width: 100% !important;
+    height: auto !important;
+    border-right: 0 none !important;
+  }
+  /* line 332, ../sass/sass-extensions/bootstrap/_print.scss */
+  .press-release-detail .grid-6 {
     display: none !important;
   }
 }
@@ -18704,13 +18715,13 @@ map area {
   margin-bottom: 35px;
 }
 
-/* line 7324, ../sass/_akdn-redesign.scss */
+/* line 7321, ../sass/_akdn-redesign.scss */
 .footer-term-condition-links {
   margin-top: 3px;
   font-size: 13px;
   color: #b2b2b2;
 }
-/* line 7328, ../sass/_akdn-redesign.scss */
+/* line 7325, ../sass/_akdn-redesign.scss */
 .footer-term-condition-links a {
   font-size: 13px;
   color: #b2b2b2;
