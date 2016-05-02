@@ -3006,16 +3006,27 @@ h2.header-name a {
     .print_html {
         display: inline-block;
         float: left;
-        width: 16px;
-        height: 16px;
-        margin: 0 15px 0 0;
+        width: 18px;
+        height: 20px;
+        margin: 0 12px 0 0;
         a {
-            font-size: 0;
+            @extend .akdnfont;
             display: inline-block;
-            height: 16px;
-            width: 16px;
+            width: 18px;
+            height: 20px;
             float: left;
             padding: 0;
+            color: #b49759;
+            font-size: 0;
+            cursor: pointer;
+            &:before {
+                padding: 0 1px;
+                font-size: 18px;
+            }
+            &:focus, &:hover {
+                color: #b49759;
+                text-decoration: none;
+            }
         }
     }
     .pane-email {
@@ -3026,13 +3037,13 @@ h2.header-name a {
         float: left;
     }
     .print_mail a {
-        background: image-url("mail_n.png") 0 0 no-repeat;
+        @extend .icon-envelope2;
     }
     .pane-addthis a {
-        background: image-url("share_n.png") 0 0 no-repeat;
+        @extend .icon-share;
     }
     .print_html a {
-        background: image-url("print_n.png") 0 0 no-repeat;
+        @extend .icon-print;
     }
 
     /* Right Sidebar */
@@ -6473,16 +6484,27 @@ map {
     .print_html {
         display: inline-block;
         float: left;
-        width: 16px;
-        height: 16px;
-        margin: 0 15px 0 0;
+        width: 18px;
+        height: 20px;
+        margin: 0 12px 0 0;
         a {
-            font-size: 0;
+            @extend .akdnfont;
             display: inline-block;
-            height: 16px;
-            width: 16px;
+            width: 18px;
+            height: 20px;
             float: left;
             padding: 0;
+            color: #b49759;
+            font-size: 0;
+            cursor: pointer;
+            &:before {
+                padding: 0 1px;
+                font-size: 18px;
+            }
+            &:focus, &:hover {
+                color: #b49759;
+                text-decoration: none;
+            }
         }
     }
     .pane-email {
@@ -6493,13 +6515,13 @@ map {
         float: left;
     }
     .print_mail a {
-        background: image-url("mail_n.png") 0 0 no-repeat;
+        @extend .icon-envelope2;
     }
     .pane-addthis a {
-        background: image-url("share_n.png") 0 0 no-repeat;
+        @extend .icon-share;
     }
     .print_html a {
-        background: image-url("print_n.png") 0 0 no-repeat;
+        @extend .icon-print;
     }
     .akaa-cycle-pane-body {
         @extend %font_arial;
