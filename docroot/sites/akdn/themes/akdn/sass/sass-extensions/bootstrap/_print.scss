@@ -318,7 +318,19 @@
         display: flex !important;
         height: auto !important;
     }
+    //back to top button
     #backtotop {
         display: none !important;
+    }
+    //press release sidebar
+    .press-release-detail {
+        .grid-18 {
+            width: 100% !important;
+            height: auto !important;
+            border-right: 0 none !important;
+        }
+        .grid-6 {
+            display: none !important;
+        }
     }
 }
