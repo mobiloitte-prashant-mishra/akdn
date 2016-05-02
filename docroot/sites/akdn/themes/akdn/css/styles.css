@@ -654,6 +654,38 @@ th {
   .press-release-detail .grid-6 {
     display: none !important;
   }
+
+  /* line 337, ../sass/sass-extensions/bootstrap/_print.scss */
+  .gallery-frame,
+  .gallery-slide {
+    width: 100% !important;
+    position: relative !important;
+  }
+
+  /* line 342, ../sass/sass-extensions/bootstrap/_print.scss */
+  .gallery-slide {
+    margin-top: 10px !important;
+  }
+
+  /* line 346, ../sass/sass-extensions/bootstrap/_print.scss */
+  .gallery-thumbs ul {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+  /* line 350, ../sass/sass-extensions/bootstrap/_print.scss */
+  .gallery-thumbs li a {
+    padding-bottom: 5px !important;
+  }
+  /* line 353, ../sass/sass-extensions/bootstrap/_print.scss */
+  .gallery-thumbs .empty,
+  .gallery-thumbs .arrow {
+    display: none !important;
+  }
+
+  /* line 359, ../sass/sass-extensions/bootstrap/_print.scss */
+  .press-release-detail .pane-video-block {
+    display: none !important;
+  }
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
@@ -14031,15 +14063,15 @@ h2.header-name a:active, h2.header-name a:focus {
 }
 /* line 3028, ../sass/_akdn-redesign.scss */
 .press-release-detail .print_mail a {
-  background: url('../images/mail_n.png?1458165161') 0 0 no-repeat;
+  background: url('../images/mail_n.png?1462186403') 0 0 no-repeat;
 }
 /* line 3031, ../sass/_akdn-redesign.scss */
 .press-release-detail .pane-addthis a {
-  background: url('../images/share_n.png?1458165161') 0 0 no-repeat;
+  background: url('../images/share_n.png?1462186403') 0 0 no-repeat;
 }
 /* line 3034, ../sass/_akdn-redesign.scss */
 .press-release-detail .print_html a {
-  background: url('../images/print_n.png?1458165161') 0 0 no-repeat;
+  background: url('../images/print_n.png?1462186403') 0 0 no-repeat;
 }
 /* line 3040, ../sass/_akdn-redesign.scss */
 .press-release-detail .grid-6 a {
@@ -17814,15 +17846,15 @@ map area {
 }
 /* line 6495, ../sass/_akdn-redesign.scss */
 .akaa-body .print_mail a {
-  background: url('../images/mail_n.png?1458165161') 0 0 no-repeat;
+  background: url('../images/mail_n.png?1462186403') 0 0 no-repeat;
 }
 /* line 6498, ../sass/_akdn-redesign.scss */
 .akaa-body .pane-addthis a {
-  background: url('../images/share_n.png?1458165161') 0 0 no-repeat;
+  background: url('../images/share_n.png?1462186403') 0 0 no-repeat;
 }
 /* line 6501, ../sass/_akdn-redesign.scss */
 .akaa-body .print_html a {
-  background: url('../images/print_n.png?1458165161') 0 0 no-repeat;
+  background: url('../images/print_n.png?1462186403') 0 0 no-repeat;
 }
 /* line 6504, ../sass/_akdn-redesign.scss */
 .akaa-body .akaa-cycle-pane-body {
