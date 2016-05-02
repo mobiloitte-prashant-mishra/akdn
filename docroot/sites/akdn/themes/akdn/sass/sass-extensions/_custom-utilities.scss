@@ -180,6 +180,8 @@
 %block_sub-title {
     @extend %l_flt_block;
     width: 100%;
+    float: none;
+    clear: both;
     font-size: 16px;
     font-weight: normal;
     color: #000;

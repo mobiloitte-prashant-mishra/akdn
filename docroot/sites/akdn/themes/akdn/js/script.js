@@ -581,21 +581,29 @@
     }
     /**/
 
-    $('.quote-finder-wrap .views-row').not('.views-row-1').addClass('hide');
+    // Accordion Functionality for Speech-Quotes Page _/\_ DO NOT ALTER
     $('.more-quotes').once('quotes_accordion').click(function() {
+      var showtxt = "Show more quotations";
+      var lesstxt = "Show less";
       if ($(this).hasClass('active')) {
-        $(this).removeClass('active');
+        $(this).removeClass('active').text(showtxt);
       }
       else {
-        $('.more-quotes').removeClass('active');
-        $(this).addClass('active');
+        $('.more-quotes').removeClass('active').text(showtxt);
+        $(this).addClass('active').text(lesstxt);
       }
-      $('.quote-finder-wrap .views-row.show').addClass('hide').removeClass('show');
-      var parent = $(this).closest('[class*="row-toggle-"]');
-      var arr = parent[0].className.toString().split(' ');
-      var cls = arr[arr.length-1].toString();
+      $('.quote-finder-wrap .hide-speech-quotes.show').addClass('hide').removeClass('show');
+      var cls = $(this).closest('.speech-quote-wrapper').find('.hide-speech-quotes')
       if ($(this).hasClass('active')) {
-        $('.'+cls).not('.views-row-1').removeClass('hide').addClass('show');
+        $(cls).removeClass('hide').addClass('show');
+      }
+    });
+
+    // Remove empty speech quotes from DOM
+    jQuery('.speech-quote-wrapper').each(function(){
+      var quoteDiv = jQuery(this).find('.show-speech-quotes');
+      if (!jQuery(quoteDiv).length){
+        jQuery(this).closest('.views-limit-grouping-group').remove();
       }
     });
 
@@ -848,6 +856,15 @@ $(window).load(function(){
       );
     }
   });
+  
+   // Remove hidden Social Block from DOM/HTML - Required while printing
+ $(window).load(function() {
+   $('.social-block .pane-facebook-feeds').each(function(){
+     if($(this).is( ":hidden" )){
+       $(this).remove();
+     }
+   });
+ });
   // To remove extra 10px margin from font-size
   jQuery("[style='font-size: x-small;']").css("margin", "0px");
   }

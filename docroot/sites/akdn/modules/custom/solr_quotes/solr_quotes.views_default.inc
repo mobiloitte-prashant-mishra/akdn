@@ -62,13 +62,13 @@ function solr_quotes_views_default_views() {
     'speech_quote' => 'speech_quote',
   );
 
-  /* Display: Akdn : Speech quotes */
-  $handler = $view->new_display('page', 'Akdn : Speech quotes', 'page');
+  /* Display: Akdn : Speech quotes deprecated */
+  $handler = $view->new_display('page', 'Akdn : Speech quotes deprecated', 'page');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Speech Quotes';
+  $handler->display->display_options['title'] = 'Quotes Finder';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'akdn-solr-quote-listing page-press-centre quote-finder-wrap';
-  $handler->display->display_options['display_description'] = 'Akdn : Speech quotes';
+  $handler->display->display_options['display_description'] = 'Akdn : Speech quotes deprecated';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['cache'] = FALSE;
@@ -237,6 +237,105 @@ if (count($static->nid[$nid]) == 1) {
   $handler->display->display_options['sorts']['speech_quote_speech_nid']['id'] = 'speech_quote_speech_nid';
   $handler->display->display_options['sorts']['speech_quote_speech_nid']['table'] = 'search_api_index_quote_index';
   $handler->display->display_options['sorts']['speech_quote_speech_nid']['field'] = 'speech_quote_speech_nid';
+  $handler->display->display_options['path'] = 'speech-quotes-deprecated';
+
+  /* Display: Akdn : Speech quotes */
+  $handler = $view->new_display('page', 'Akdn : Speech quotes', 'page_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Quotes Finder';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'akdn-solr-quote-listing page-press-centre quote-finder-wrap';
+  $handler->display->display_options['display_description'] = 'Akdn : Speech quotes';
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['cache'] = FALSE;
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['search_api_bypass_access'] = 0;
+  $handler->display->display_options['query']['options']['entity_access'] = 0;
+  $handler->display->display_options['query']['options']['parse_mode'] = 'direct';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'load_more';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['effects']['speed'] = 'slow';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'grouping_limit';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'speech_quote_speech_nid',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+      'grouping-limit' => array(
+        'grouping-limit' => '1',
+        'grouping-offset' => '0',
+      ),
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'field_speech_reference' => 'field_speech_reference',
+    'php' => 'php',
+    'quotes_location' => 'quotes_location',
+    'php_2' => 'php_2',
+    'body' => 'body',
+    'field_speech_themes' => 'field_speech_themes',
+  );
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Result summary */
+  $handler->display->display_options['header']['result']['id'] = 'result';
+  $handler->display->display_options['header']['result']['table'] = 'views';
+  $handler->display->display_options['header']['result']['field'] = 'result';
+  $handler->display->display_options['header']['result']['content'] = '<h2 class=\'quotes-main-title\'>Quotations by His Highness the Aga Khan </h2>';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Indexed Node: Speech Quote Speech Nid */
+  $handler->display->display_options['fields']['speech_quote_speech_nid']['id'] = 'speech_quote_speech_nid';
+  $handler->display->display_options['fields']['speech_quote_speech_nid']['table'] = 'search_api_index_quote_index';
+  $handler->display->display_options['fields']['speech_quote_speech_nid']['field'] = 'speech_quote_speech_nid';
+  $handler->display->display_options['fields']['speech_quote_speech_nid']['label'] = '';
+  $handler->display->display_options['fields']['speech_quote_speech_nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['speech_quote_speech_nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['speech_quote_speech_nid']['link_to_entity'] = 0;
+  /* Field: Node: Quotes count for Speech */
+  $handler->display->display_options['fields']['speech_quotes_count']['id'] = 'speech_quotes_count';
+  $handler->display->display_options['fields']['speech_quotes_count']['table'] = 'entity_node';
+  $handler->display->display_options['fields']['speech_quotes_count']['field'] = 'speech_quotes_count';
+  $handler->display->display_options['fields']['speech_quotes_count']['relationship'] = 'field_speech_reference';
+  $handler->display->display_options['fields']['speech_quotes_count']['label'] = '';
+  $handler->display->display_options['fields']['speech_quotes_count']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['speech_quotes_count']['element_type'] = 'div';
+  $handler->display->display_options['fields']['speech_quotes_count']['element_class'] = 'quotes-count-for-speech';
+  $handler->display->display_options['fields']['speech_quotes_count']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['speech_quotes_count']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['speech_quotes_count']['separator'] = '';
+  $handler->display->display_options['fields']['speech_quotes_count']['link_to_entity'] = 0;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[speech_quotes_count]
+[speech_quote_speech_nid]';
+  $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_class'] = 'speech-nid';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Indexed Node: Quotes Publish Date */
+  $handler->display->display_options['sorts']['quote_publish_date']['id'] = 'quote_publish_date';
+  $handler->display->display_options['sorts']['quote_publish_date']['table'] = 'search_api_index_quote_index';
+  $handler->display->display_options['sorts']['quote_publish_date']['field'] = 'quote_publish_date';
+  $handler->display->display_options['sorts']['quote_publish_date']['order'] = 'DESC';
+  /* Sort criterion: Indexed Node: Speech Quote Speech Nid */
+  $handler->display->display_options['sorts']['speech_quote_speech_nid']['id'] = 'speech_quote_speech_nid';
+  $handler->display->display_options['sorts']['speech_quote_speech_nid']['table'] = 'search_api_index_quote_index';
+  $handler->display->display_options['sorts']['speech_quote_speech_nid']['field'] = 'speech_quote_speech_nid';
   $handler->display->display_options['path'] = 'speech-quotes';
   $translatables['solr_quotes'] = array(
     t('Master'),
@@ -259,8 +358,8 @@ if (count($static->nid[$nid]) == 1) {
     t('Node ID'),
     t('.'),
     t(','),
-    t('Akdn : Speech quotes'),
-    t('Speech Quotes'),
+    t('Akdn : Speech quotes deprecated'),
+    t('Quotes Finder'),
     t('<h2 class=\'quotes-main-title\'>Quotations by His Highness the Aga Khan </h2>
 <span class=\'quotes-total-records\'>(@total quotations found)</span>'),
     t('<span class=\'quote-date-location\'>[php] - [quotes_location]</span>'),
@@ -268,6 +367,11 @@ if (count($static->nid[$nid]) == 1) {
 <div class="quotes-body">[body]</div>
 [php_1]
 </div>'),
+    t('Akdn : Speech quotes'),
+    t('Load more'),
+    t('<h2 class=\'quotes-main-title\'>Quotations by His Highness the Aga Khan </h2>'),
+    t('[speech_quotes_count]
+[speech_quote_speech_nid]'),
   );
   $export['solr_quotes'] = $view;
 

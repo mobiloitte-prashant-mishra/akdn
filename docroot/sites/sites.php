@@ -27,5 +27,7 @@ $sites = array(
   "akdn-redesign.local" => 'akdn',
   "new.akdn.org" => 'akdn',
   "www.akdn.org" => 'akdn',
+  "default" => 'akdn',
+  "akdn3ra.prod.acquia-sites.com" => 'akdn',
 );
 ?>
