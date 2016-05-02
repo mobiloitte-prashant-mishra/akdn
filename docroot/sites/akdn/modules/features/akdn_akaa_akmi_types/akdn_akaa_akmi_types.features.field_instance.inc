@@ -1105,54 +1105,6 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-akmi_event-field_custom_meta_tags'
-  $field_instances['node-akmi_event-field_custom_meta_tags'] = array(
-    'bundle' => 'akmi_event',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 13,
-      ),
-      'scs' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_custom_meta_tags',
-    'label' => 'Custom Meta tags',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 2,
-    ),
-  );
-
   // Exported field_instance: 'node-akmi_event-field_event_akmi_year'
   $field_instances['node-akmi_event-field_event_akmi_year'] = array(
     'bundle' => 'akmi_event',
@@ -2228,48 +2180,6 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
       'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance: 'node-akmi_performance-field_premiere_year'
-  $field_instances['node-akmi_performance-field_premiere_year'] = array(
-    'bundle' => 'akmi_performance',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 9,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_premiere_year',
-    'label' => 'Premiere Year',
-    'required' => 1,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'max' => '',
-      'min' => '',
-      'prefix' => '',
-      'suffix' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'number',
-      'settings' => array(),
-      'type' => 'number',
-      'weight' => 3,
     ),
   );
 
@@ -4817,54 +4727,6 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-award_cycle-field_custom_meta_tags'
-  $field_instances['node-award_cycle-field_custom_meta_tags'] = array(
-    'bundle' => 'award_cycle',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 25,
-      ),
-      'scs' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_custom_meta_tags',
-    'label' => 'Custom Meta Tags',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 32,
-    ),
-  );
-
   // Exported field_instance: 'node-award_cycle-field_cycle_images'
   $field_instances['node-award_cycle-field_cycle_images'] = array(
     'bundle' => 'award_cycle',
@@ -6542,54 +6404,6 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
       'settings' => array(),
       'type' => 'link_field',
       'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance: 'node-custom_content-field_custom_meta_tags'
-  $field_instances['node-custom_content-field_custom_meta_tags'] = array(
-    'bundle' => 'custom_content',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 13,
-      ),
-      'scs' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_custom_meta_tags',
-    'label' => 'Custom Meta Tags',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 2,
     ),
   );
 
@@ -9912,7 +9726,6 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
   t('Completed Date Timestamp');
   t('Country');
   t('Create Banner Item');
-  t('Custom Meta Tags');
   t('Cycle Images');
   t('Cycle Year');
   t('Description');
@@ -9962,7 +9775,6 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
   t('Person Type');
   t('Picture of the person.');
   t('Planner');
-  t('Premiere Year');
   t('Press Kit');
   t('Press Kit File');
   t('Press Kit Label');
