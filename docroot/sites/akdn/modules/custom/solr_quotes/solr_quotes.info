@@ -7,6 +7,7 @@ dependencies[] = autocache
 dependencies[] = search_api
 dependencies[] = views
 dependencies[] = views_limit_grouping
+dependencies[] = views_load_more
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
 features[search_api_index][] = quote_index
