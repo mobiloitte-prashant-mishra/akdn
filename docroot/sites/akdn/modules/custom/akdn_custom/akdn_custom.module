@@ -794,9 +794,9 @@ function akdn_all_areas_of_activity() {
     $node = node_load($nid);
     $key = key($node->menu_node_links);
     $output = '';
-    $output = '<div class = "all-activities-btn">';
-    $output .= '<h2 class = "pane-title">All Areas of Activities</h2>';
-    $output .= '<div class = "all-activities-sidebar">';
+    $output_header = '<div class = "all-activities-btn">';
+    $output_header .= '<h2 class = "pane-title">All Areas of Activities</h2>';
+    $output_header .= '<div class = "all-activities-sidebar">';
     $get_activities = get_areas_of_activities($key);
     //
     foreach ($get_activities as $values) {
@@ -852,7 +852,11 @@ function akdn_all_areas_of_activity() {
           $output .= '</div>';
       }
     }
-    $output .= '</div></div>';
+    $output_base .= '</div></div>';
+    // If area of activity is empty then hide it.
+    if (isset($key1)) {
+      $output = $output_header . $output .$output_base;
+    }
   }
   return $output;
 }
