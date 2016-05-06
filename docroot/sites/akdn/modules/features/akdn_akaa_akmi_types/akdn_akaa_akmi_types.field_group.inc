@@ -318,6 +318,7 @@ function akdn_akaa_akmi_types_field_group_info() {
     'children' => array(
       0 => 'field_feature_link',
       1 => 'field_specify_a_block_title',
+      2 => 'field_right_show_block',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

@@ -2019,7 +2019,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 11,
+      'weight' => 39,
     ),
   );
 
@@ -2233,6 +2233,57 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-akmi_performance-field_right_show_block'
+  $field_instances['node-akmi_performance-field_right_show_block'] = array(
+    'bundle' => 'akmi_performance',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 12,
+      ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_right_show_block',
+    'label' => 'Show Block',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 0,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 36,
+    ),
+  );
+
   // Exported field_instance: 'node-akmi_performance-field_specify_a_block_title'
   $field_instances['node-akmi_performance-field_specify_a_block_title'] = array(
     'bundle' => 'akmi_performance',
@@ -2277,7 +2328,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 38,
     ),
   );
 
