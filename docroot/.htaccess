@@ -55,7 +55,6 @@ DirectoryIndex index.php index.html index.htm
 # Various rewrite rules.
 <IfModule mod_rewrite.c>
   RewriteEngine on
-
   # Set "protossl" to "s" if we were accessed via https://.  This is used later
   # if you enable "www." stripping or enforcement, in order to ensure that
   # you don't bounce between http and https.
@@ -63,7 +62,11 @@ DirectoryIndex index.php index.html index.htm
   RewriteCond %{HTTPS} on
   RewriteRule ^ - [E=protossl:s]
   RewriteRule ^careers/(.*)$ https://krb-xjobs.brassring.com/tgwebhost/jobdetails.aspx?PartnerId=30025&SiteId=5750&type=mail&JobReqLang=140&recordstart=1&JobSiteId=5750&JobSiteInfo=738492_5750&gqid=1029&jobId=$1 [L,R=301]
-RewriteRule ^careers/([0-9]+) https://krb-xjobs.brassring.com/tgwebhost/jobdetails.aspx?PartnerId=30025&SiteId=5750&jobId=$1 [R=301,L]
+  RewriteRule ^careers/([0-9]+) https://krb-xjobs.brassring.com/tgwebhost/jobdetails.aspx?PartnerId=30025&SiteId=5750&jobId=$1 [R=301,L]
+ RewriteRule ^careercentre$ https://krb-xjobs.brassring.com/tgwebhost/searchresults.aspx?PartnerId=30025&SiteId=5750&amp;Function=LinkQuery&LinkId=642 [NC, L]
+ RewriteRule ^careercenter$ https://krb-xjobs.brassring.com/tgwebhost/searchresults.aspx?PartnerId=30025&SiteId=5750&amp;Function=LinkQuery&LinkId=642 [NC, L]
+RewriteRule ^career$ https://krb-xjobs.brassring.com/tgwebhost/searchresults.aspx?PartnerId=30025&SiteId=5750&amp;Function=LinkQuery&LinkId=642 [NC, L]
+RewriteRule ^careers$ https://krb-xjobs.brassring.com/tgwebhost/searchresults.aspx?PartnerId=30025&SiteId=5750&amp;Function=LinkQuery&LinkId=642 [NC, L]
   # Make sure Authorization HTTP header is available to PHP
   # even when running as CGI or FastCGI.
   RewriteRule ^ - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
