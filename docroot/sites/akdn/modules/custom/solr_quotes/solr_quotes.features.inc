@@ -20,7 +20,7 @@ function solr_quotes_default_search_api_index() {
     "name" : "quote_index",
     "machine_name" : "quote_index",
     "description" : null,
-    "server" : "akdn_srijan",
+    "server" : "akdn_acquia",
     "item_type" : "node",
     "options" : {
       "index_directly" : 1,
