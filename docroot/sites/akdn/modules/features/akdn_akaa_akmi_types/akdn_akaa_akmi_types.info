@@ -197,7 +197,6 @@ features[field_instance][] = node-architecture_project-field_project_image
 features[field_instance][] = node-architecture_project-field_reference_cycle
 features[field_instance][] = node-architecture_project-field_region
 features[field_instance][] = node-architecture_project-field_short_title
-features[field_instance][] = node-architecture_project-field_simplenews_term
 features[field_instance][] = node-architecture_project-field_size
 features[field_instance][] = node-architecture_project-field_tags
 features[field_instance][] = node-architecture_project-field_winner
