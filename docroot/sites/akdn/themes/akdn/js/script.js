@@ -865,8 +865,15 @@ $(window).load(function(){
      }
    });
  });
+
   // To remove extra 10px margin from font-size
-  jQuery("[style='font-size: x-small;']").css("margin", "0px");
+  $("[style='font-size: x-small;']").css("margin", "0px");
+
+  // Remove empty li's from gallery formatter in photographs detail page
+  $(window).load(function() {
+    $('.galleryformatter .gallery-thumbs li[class*="empty"]').remove();
+  });
+  
   }
 }
 
