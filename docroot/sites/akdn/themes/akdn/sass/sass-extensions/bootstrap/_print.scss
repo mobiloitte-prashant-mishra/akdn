@@ -343,17 +343,27 @@
         margin-top: 10px !important;
     }
     .gallery-thumbs {
+        width: 100% !important;
+        padding: 0 !important;
         ul {
             width: 100% !important;
             padding: 0 !important;
         }
-        li a {
-            padding-bottom: 5px !important;
-        }
-        .empty,
-        .arrow {
-            display: none !important;
-        }
+        li {
+            img {
+                height: 150px !important;
+            }
+            a {
+                padding-bottom: 5px !important;
+            }
+            .empty,
+            .arrow {
+                display: none !important;
+            }
+            &:nth-child(3n) a {
+                padding-right: 0 !important;
+            }
+        } 
     } 
     // Videos Detail Page 
     .press-release-detail .pane-video-block {
