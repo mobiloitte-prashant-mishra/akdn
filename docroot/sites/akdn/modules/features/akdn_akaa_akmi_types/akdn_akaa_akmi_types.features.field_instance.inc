@@ -3959,67 +3959,6 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-architecture_project-field_simplenews_term'
-  $field_instances['node-architecture_project-field_simplenews_term'] = array(
-    'bundle' => 'architecture_project',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 29,
-      ),
-      'email_html' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 28,
-      ),
-      'email_plain' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'email_textalt' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'scs' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 10,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_simplenews_term',
-    'label' => 'Newsletter category',
-    'required' => TRUE,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 68,
-    ),
-  );
-
   // Exported field_instance: 'node-architecture_project-field_size'
   $field_instances['node-architecture_project-field_size'] = array(
     'bundle' => 'architecture_project',
