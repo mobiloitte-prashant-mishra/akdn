@@ -702,8 +702,13 @@ th {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
+<<<<<<< HEAD
   src: url(../fonts/bootstrap/glyphicons-halflings-regular.eot?1461329602);
   src: url(../fonts/bootstrap/glyphicons-halflings-regular.eot?&1461329602#iefix) format("embedded-opentype"), url(../fonts/bootstrap/glyphicons-halflings-regular.woff2?1461329602) format("woff2"), url(../fonts/bootstrap/glyphicons-halflings-regular.woff?1461329602) format("woff"), url(../fonts/bootstrap/glyphicons-halflings-regular.ttf?1461329602) format("truetype"), url(../fonts/bootstrap/glyphicons-halflings-regular.svg?1461329602#glyphicons_halflingsregular) format("svg");
+=======
+  src: url(../fonts/bootstrap/glyphicons-halflings-regular.eot?1462446989);
+  src: url(../fonts/bootstrap/glyphicons-halflings-regular.eot?&1462446989#iefix) format("embedded-opentype"), url(../fonts/bootstrap/glyphicons-halflings-regular.woff2?1462446989) format("woff2"), url(../fonts/bootstrap/glyphicons-halflings-regular.woff?1462446989) format("woff"), url(../fonts/bootstrap/glyphicons-halflings-regular.ttf?1462446989) format("truetype"), url(../fonts/bootstrap/glyphicons-halflings-regular.svg?1462446989#glyphicons_halflingsregular) format("svg");
+>>>>>>> 162f62f49c0a1a24401c471f806aaee46c09378a
 }
 /* line 24, ../sass/sass-extensions/bootstrap/_glyphicons.scss */
 .glyphicon, .location-links h2 .nolink:after, .location-links h2 a:after {
@@ -10834,7 +10839,11 @@ button.close {
   line-height: 1;
   margin: 8px 1px 0 0;
   color: #b2b2b2;
+<<<<<<< HEAD
   background: #fff url('../images/magnifier.png?1461329602') no-repeat;
+=======
+  background: #fff url('../images/magnifier.png?1462446989') no-repeat;
+>>>>>>> 162f62f49c0a1a24401c471f806aaee46c09378a
   background-size: contain;
   border-radius: 0;
   border: 0 none;
@@ -11576,7 +11585,11 @@ h1.title {
   padding: 0;
   font-size: 0;
   line-height: 1;
+<<<<<<< HEAD
   background: url('../images/instagram.png?1461329602') no-repeat;
+=======
+  background: url('../images/instagram.png?1462446989') no-repeat;
+>>>>>>> 162f62f49c0a1a24401c471f806aaee46c09378a
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
@@ -12177,32 +12190,56 @@ h1.title {
 
 /* line 1345, ../sass/_akdn-redesign.scss */
 .facebook {
+<<<<<<< HEAD
   background: url('../images/facebook.png?1461329602') no-repeat;
+=======
+  background: url('../images/facebook.png?1462446989') no-repeat;
+>>>>>>> 162f62f49c0a1a24401c471f806aaee46c09378a
 }
 
 /* line 1345, ../sass/_akdn-redesign.scss */
 .twitter {
+<<<<<<< HEAD
   background: url('../images/twitter.png?1461329602') no-repeat;
+=======
+  background: url('../images/twitter.png?1462446989') no-repeat;
+>>>>>>> 162f62f49c0a1a24401c471f806aaee46c09378a
 }
 
 /* line 1345, ../sass/_akdn-redesign.scss */
 .youtube {
+<<<<<<< HEAD
   background: url('../images/youtube.png?1461329602') no-repeat;
+=======
+  background: url('../images/youtube.png?1462446989') no-repeat;
+>>>>>>> 162f62f49c0a1a24401c471f806aaee46c09378a
 }
 
 /* line 1345, ../sass/_akdn-redesign.scss */
 .instagram {
+<<<<<<< HEAD
   background: url('../images/instagram.png?1461329602') no-repeat;
+=======
+  background: url('../images/instagram.png?1462446989') no-repeat;
+>>>>>>> 162f62f49c0a1a24401c471f806aaee46c09378a
 }
 
 /* line 1345, ../sass/_akdn-redesign.scss */
 .vimeo {
+<<<<<<< HEAD
   background: url('../images/vimeo.png?1461329602') no-repeat;
+=======
+  background: url('../images/vimeo.png?1462446989') no-repeat;
+>>>>>>> 162f62f49c0a1a24401c471f806aaee46c09378a
 }
 
 /* line 1345, ../sass/_akdn-redesign.scss */
 .akmi {
+<<<<<<< HEAD
   background: url('../images/akmi.png?1461329602') no-repeat;
+=======
+  background: url('../images/akmi.png?1462446989') no-repeat;
+>>>>>>> 162f62f49c0a1a24401c471f806aaee46c09378a
 }
 
 /* line 1349, ../sass/_akdn-redesign.scss */
@@ -12563,12 +12600,20 @@ h1.title {
   height: 22px;
   margin: 0 auto;
   padding: 0;
+<<<<<<< HEAD
   background: url('../images/arrow-bottom.png?1461329602') no-repeat;
+=======
+  background: url('../images/arrow-bottom.png?1462446989') no-repeat;
+>>>>>>> 162f62f49c0a1a24401c471f806aaee46c09378a
 }
 /* line 1683, ../sass/_akdn-redesign.scss */
 .akdn-filter-show-hide h2.active:after {
   content: "";
+<<<<<<< HEAD
   background: url('../images/arrow-top.png?1461329602') no-repeat;
+=======
+  background: url('../images/arrow-top.png?1462446989') no-repeat;
+>>>>>>> 162f62f49c0a1a24401c471f806aaee46c09378a
 }
 
 /* line 1689, ../sass/_akdn-redesign.scss */
@@ -13357,12 +13402,20 @@ ul.primary li {
   height: 22px;
   margin: 0 auto;
   padding: 0;
+<<<<<<< HEAD
   background: url('../images/arrow-bottom.png?1461329602') no-repeat;
+=======
+  background: url('../images/arrow-bottom.png?1462446989') no-repeat;
+>>>>>>> 162f62f49c0a1a24401c471f806aaee46c09378a
 }
 /* line 2381, ../sass/_akdn-redesign.scss */
 .page-search .akdn-filter-show-hide h2.active:after {
   content: "";
+<<<<<<< HEAD
   background: url('../images/arrow-top.png?1461329602') no-repeat;
+=======
+  background: url('../images/arrow-top.png?1462446989') no-repeat;
+>>>>>>> 162f62f49c0a1a24401c471f806aaee46c09378a
 }
 /* line 2387, ../sass/_akdn-redesign.scss */
 .page-search .akdn-filter-js-wrapper {
@@ -13568,7 +13621,11 @@ ul.primary li {
   font-size: 0;
   text-transform: uppercase;
   border: 0 none;
+<<<<<<< HEAD
   background: url('../images/submit.png?1461329602') 0 0 no-repeat;
+=======
+  background: url('../images/submit.png?1462446989') 0 0 no-repeat;
+>>>>>>> 162f62f49c0a1a24401c471f806aaee46c09378a
 }
 /* line 2559, ../sass/_akdn-redesign.scss */
 .node-webform .webform-client-form .form-actions input.form-submit:focus {
@@ -13653,7 +13710,11 @@ ul.primary li {
 .node-webform .webform-subscribe .form-actions input.form-submit {
   width: 180px;
   margin-left: 0 !important;
+<<<<<<< HEAD
   background: url('../images/subscribe.png?1461329602') 0 0 no-repeat;
+=======
+  background: url('../images/subscribe.png?1462446989') 0 0 no-repeat;
+>>>>>>> 162f62f49c0a1a24401c471f806aaee46c09378a
 }
 
 /* line 2644, ../sass/_akdn-redesign.scss */
@@ -13823,7 +13884,11 @@ h2.header-name a:active, h2.header-name a:focus {
 .geography-page .country-activity-tile .hub-pages-row .country_activity_link a,
 .node-type-agency .country-activity-tile .hub-pages-row .country_activity_link a {
   position: absolute;
+<<<<<<< HEAD
   background: url('../images/arrows.png?1461329602') 0 -30px no-repeat;
+=======
+  background: url('../images/arrows.png?1462446989') 0 -30px no-repeat;
+>>>>>>> 162f62f49c0a1a24401c471f806aaee46c09378a
   width: 26px;
   height: 26px;
   font-size: 0;
@@ -14311,7 +14376,11 @@ h2.header-name a:active, h2.header-name a:focus {
   height: 24px;
   margin-top: -2px;
   margin-left: 5px;
+<<<<<<< HEAD
   background: url('../images/download-icon.jpg?1461329602') 0 0 no-repeat;
+=======
+  background: url('../images/download-icon.jpg?1462446989') 0 0 no-repeat;
+>>>>>>> 162f62f49c0a1a24401c471f806aaee46c09378a
   background-size: contain;
 }
 /* line 3245, ../sass/_akdn-redesign.scss */
@@ -16414,12 +16483,20 @@ map area {
   height: 22px;
   margin: 0 auto;
   padding: 0;
+<<<<<<< HEAD
   background: url('../images/arrow-bottom.png?1461329602') no-repeat;
+=======
+  background: url('../images/arrow-bottom.png?1462446989') no-repeat;
+>>>>>>> 162f62f49c0a1a24401c471f806aaee46c09378a
 }
 /* line 5259, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .pane-title.active:after, .akaa-projectfinder-wrapper .block-title.active:after {
   content: "";
+<<<<<<< HEAD
   background: url('../images/arrow-top.png?1461329602') no-repeat;
+=======
+  background: url('../images/arrow-top.png?1462446989') no-repeat;
+>>>>>>> 162f62f49c0a1a24401c471f806aaee46c09378a
 }
 /* line 5264, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .pane-content, .akaa-projectfinder-wrapper .content {
@@ -16678,7 +16755,11 @@ map area {
   height: 26px;
   font-size: 0;
   cursor: pointer;
+<<<<<<< HEAD
   background: url('../images/arrows.png?1461329602') 0 -60px no-repeat;
+=======
+  background: url('../images/arrows.png?1462446989') 0 -60px no-repeat;
+>>>>>>> 162f62f49c0a1a24401c471f806aaee46c09378a
 }
 /* line 5500, ../sass/_akdn-redesign.scss */
 .akaa-award-cycle-block-short-video .views-field-nothing .play-video a:hover, .akaa-award-cycle-block-short-video .views-field-nothing .play-video a:focus {
@@ -16736,7 +16817,11 @@ map area {
   height: 26px;
   font-size: 0;
   cursor: pointer;
+<<<<<<< HEAD
   background: url('../images/arrows.png?1461329602') 0 -30px no-repeat;
+=======
+  background: url('../images/arrows.png?1462446989') 0 -30px no-repeat;
+>>>>>>> 162f62f49c0a1a24401c471f806aaee46c09378a
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -18730,7 +18815,11 @@ map area {
 .akdn-logo-wrap {
   width: 120px;
   height: 55px;
+<<<<<<< HEAD
   background: url('../images/akdn-logo.png?1461329602') no-repeat;
+=======
+  background: url('../images/akdn-logo.png?1462446989') no-repeat;
+>>>>>>> 162f62f49c0a1a24401c471f806aaee46c09378a
 }
 
 /* Projects Lightbox captions */

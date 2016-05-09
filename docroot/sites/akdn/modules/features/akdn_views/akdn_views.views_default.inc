@@ -8475,7 +8475,7 @@ print $content;
   $handler->display->display_options['relationships']['field_related_artists_nid']['id'] = 'field_related_artists_nid';
   $handler->display->display_options['relationships']['field_related_artists_nid']['table'] = 'field_data_field_related_artists';
   $handler->display->display_options['relationships']['field_related_artists_nid']['field'] = 'field_related_artists_nid';
-  $handler->display->display_options['relationships']['field_related_artists_nid']['delta'] = '0';
+  $handler->display->display_options['relationships']['field_related_artists_nid']['delta'] = '-1';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Slideshow Image */
   $handler->display->display_options['fields']['field_feature_image']['id'] = 'field_feature_image';
