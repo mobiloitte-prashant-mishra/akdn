@@ -3812,6 +3812,10 @@ return TRUE;
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Short Title (field_short_title) */
+  $handler->display->display_options['sorts']['field_short_title_value']['id'] = 'field_short_title_value';
+  $handler->display->display_options['sorts']['field_short_title_value']['table'] = 'field_data_field_short_title';
+  $handler->display->display_options['sorts']['field_short_title_value']['field'] = 'field_short_title_value';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Has taxonomy term ID (with depth) */
   $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
@@ -4361,6 +4365,10 @@ return $cycle_id;';
     'title_class' => '',
   );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Short Title (field_short_title) */
+  $handler->display->display_options['sorts']['field_short_title_value']['id'] = 'field_short_title_value';
+  $handler->display->display_options['sorts']['field_short_title_value']['table'] = 'field_data_field_short_title';
+  $handler->display->display_options['sorts']['field_short_title_value']['field'] = 'field_short_title_value';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Cycle Year (field_cycle_year) */
   $handler->display->display_options['arguments']['field_cycle_year_tid']['id'] = 'field_cycle_year_tid';
