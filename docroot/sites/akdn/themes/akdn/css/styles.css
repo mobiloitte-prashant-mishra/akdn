@@ -673,29 +673,32 @@ th {
     padding: 0 !important;
   }
   /* line 348, ../sass/sass-extensions/bootstrap/_print.scss */
+  .gallery-thumbs .arrow {
+    display: none !important;
+  }
+  /* line 351, ../sass/sass-extensions/bootstrap/_print.scss */
   .gallery-thumbs ul {
     width: 100% !important;
     padding: 0 !important;
   }
-  /* line 353, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 356, ../sass/sass-extensions/bootstrap/_print.scss */
   .gallery-thumbs li img {
     height: 150px !important;
   }
-  /* line 356, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 359, ../sass/sass-extensions/bootstrap/_print.scss */
   .gallery-thumbs li a {
     padding-bottom: 5px !important;
   }
-  /* line 359, ../sass/sass-extensions/bootstrap/_print.scss */
-  .gallery-thumbs li .empty,
-  .gallery-thumbs li .arrow {
+  /* line 362, ../sass/sass-extensions/bootstrap/_print.scss */
+  .gallery-thumbs li .empty {
     display: none !important;
   }
-  /* line 363, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 365, ../sass/sass-extensions/bootstrap/_print.scss */
   .gallery-thumbs li:nth-child(3n) a {
     padding-right: 0 !important;
   }
 
-  /* line 369, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 371, ../sass/sass-extensions/bootstrap/_print.scss */
   .press-release-detail .pane-video-block {
     display: none !important;
   }
