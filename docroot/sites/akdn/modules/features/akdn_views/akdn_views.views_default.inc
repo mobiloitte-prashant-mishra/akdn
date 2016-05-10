@@ -18397,17 +18397,7 @@ if ($data->field_data_field_project_image_field_project_image_fid) {
 }
 
 if (isset($array[0][\'rendered\'][\'#markup\'])) {
-  $val = $array[0][\'rendered\'][\'#markup\'];
-  if (strlen($val) <= 125) {
-  $value .= rtrim($val);
-  $value .= "</br>";
-  $value .= $data->field_field_image_copytight[0][\'rendered\'][\'#markup\'];
-  } else {
-    $pos = strpos($val, \' \', 125);
-    $value .= substr($val,0,$pos) . "...";
-    $value .= "</br>";
-    $value .= $data->field_field_image_copytight[0][\'rendered\'][\'#markup\'];
-  }
+  $value = $array[0][\'rendered\'][\'#markup\']; 
 }
 else {
   $value = \'\';
