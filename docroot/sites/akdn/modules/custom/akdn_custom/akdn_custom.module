@@ -346,6 +346,9 @@ function akdn_custom_form_validation($form,&$form_state) {
  * - Set the default language in the language switcher to english
  */
 function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
+ if (module_exists('vbo_multipage_selection') && function_exists('_vbo_multipage_selection_form_alter') && $form_id == 'views_form_newsletter_creation_page') {
+    _vbo_multipage_selection_form_alter($form, $form_state);
+  }
 
   if ($form_id == 'hub_page_node_form' || $form_id == 'page_node_form') {
     $lang = $form['field_basic_page_choose_layout']['#language'];
