@@ -246,7 +246,6 @@ $drupal_hash_salt = '';
  * for you.
  */
 $base_url = 'http://akdn3stg.prod.acquia-sites.com';  // NO trailing slash!*/
-/*$base_url = 'http://www.akdn.org';
 
 /**
  * PHP settings:
