@@ -8884,8 +8884,10 @@ privacy-policy',
     $pane->panel = 'left';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->shown = FALSE;
+    $pane->access = array(
+      'plugins' => array(),
+    );
     $pane->configuration = array(
       'admin_title' => 'Technical Video Title',
       'title' => '',

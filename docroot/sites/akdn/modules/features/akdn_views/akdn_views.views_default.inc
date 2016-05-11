@@ -9040,6 +9040,7 @@ print  \' <div class = "akaa-cycle-title"><a href = "#">\' . $date . \' Performa
   if(!empty($node->field_performance_add_videos)) {
   $video = reset($node->field_performance_add_videos);
   $output = \'\';
+  $output = \'<h2 class="akaa-projectinfo-block-techinfo-title pane-title">Video</h2>\';
   foreach($video as $value) {
     $output .= \'<div class = "video-container">\';
    $output .= \'<span class="youtube-play-button"></span>\';
@@ -9052,7 +9053,7 @@ print  \' <div class = "akaa-cycle-title"><a href = "#">\' . $date . \' Performa
     else {
       $explode = explode(\'brightcove://\', $value[\'uri\']);
     }
-    $output .= \'</div></div>\';
+$output .= \'</div></div>\';
   }
  print $output;
 }
