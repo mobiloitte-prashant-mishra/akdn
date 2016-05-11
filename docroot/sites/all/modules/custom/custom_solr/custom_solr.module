@@ -96,7 +96,7 @@ function custom_solr_entity_property_info_alter(&$info) {
   );
   $info['node']['properties']['image_public_uri'] = array(
       'type' => 'text',
-      'label' => t('Image Uri for nodes [event/article/publication/speech/gallery/video/page]'),
+      'label' => t('Image Uri for nodes [event/article/publication/speech/gallery/video/page/geography]'),
       'getter callback' => 'custom_solr_image_public_uri_callback',
   );
   $info['node']['properties']['node_url_alias'] = array(
@@ -470,6 +470,7 @@ function custom_solr_get_image_fieldname($type) {
       $field_name = 'field_gallery_images';
       break;
     case 'page' :
+    case 'geography' :
       $field_name = 'field_hub_page_image';
       break;
   }
