@@ -858,7 +858,8 @@ function akdn_all_areas_of_activity() {
     }
     $output_base .= '</div></div>';
     // If area of activity is empty then hide it.
-    if (isset($key1)) {
+    $tmp = strip_tags($output);
+    if (!empty($tmp)) {
       $output = $output_header . $output .$output_base;
     }
   }
