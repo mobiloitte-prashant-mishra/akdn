@@ -353,6 +353,29 @@ function akdn_views_fe_nodequeue_export_fields() {
     'count' => 0,
   );
 
+  // Exported nodequeues: nodeque_for_current_year
+  $nodequeues['nodeque_for_current_year'] = array(
+    'name' => 'nodeque_for_current_year',
+    'title' => 'Nodeque For Current Year Home Page Tile',
+    'subqueue_title' => '',
+    'size' => 0,
+    'link' => '',
+    'link_remove' => '',
+    'owner' => 'nodequeue',
+    'show_in_ui' => 1,
+    'show_in_tab' => 1,
+    'show_in_links' => 0,
+    'reference' => 0,
+    'reverse' => 0,
+    'i18n' => 0,
+    'subqueues' => 1,
+    'types' => array(
+      0 => 'architecture_project',
+    ),
+    'roles' => array(),
+    'count' => 0,
+  );
+
   // Exported nodequeues: press_center_carousel
   $nodequeues['press_center_carousel'] = array(
     'name' => 'press_center_carousel',
