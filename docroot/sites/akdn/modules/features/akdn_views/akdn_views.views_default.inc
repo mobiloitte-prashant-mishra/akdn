@@ -8531,28 +8531,6 @@ print $content;
   $handler->display->display_options['fields']['body']['label'] = '';
   $handler->display->display_options['fields']['body']['exclude'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  /* Field: Content: Artists */
-  $handler->display->display_options['fields']['field_related_artists']['id'] = 'field_related_artists';
-  $handler->display->display_options['fields']['field_related_artists']['table'] = 'field_data_field_related_artists';
-  $handler->display->display_options['fields']['field_related_artists']['field'] = 'field_related_artists';
-  $handler->display->display_options['fields']['field_related_artists']['relationship'] = 'field_related_artists_nid';
-  $handler->display->display_options['fields']['field_related_artists']['label'] = '';
-  $handler->display->display_options['fields']['field_related_artists']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_related_artists']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_related_artists']['delta_offset'] = '0';
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['relationship'] = 'field_related_artists_nid';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['text'] = 'More';
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['nid']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['nid']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['nid']['link_to_node'] = TRUE;
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid_1']['id'] = 'nid_1';
   $handler->display->display_options['fields']['nid_1']['table'] = 'node';
@@ -10618,6 +10596,22 @@ print $output;
     'title_style' => '_none',
     'title_link' => 'content',
     'title_class' => '',
+  );
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
+  $handler->display->display_options['filters']['type_1']['table'] = 'node';
+  $handler->display->display_options['filters']['type_1']['field'] = 'type';
+  $handler->display->display_options['filters']['type_1']['value'] = array(
+    'award_cycle' => 'award_cycle',
   );
   $handler->display->display_options['displays'] = array(
     'block_6' => 'block_6',
@@ -28327,18 +28321,19 @@ print $content;
   $handler->display->display_options['fields']['view_node_2']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['view_node_2']['alter']['text'] = '[field_short_title]';
   $handler->display->display_options['fields']['view_node_2']['element_label_colon'] = FALSE;
-  /* Field: Content: Publication Date */
-  $handler->display->display_options['fields']['field_publication_date']['id'] = 'field_publication_date';
-  $handler->display->display_options['fields']['field_publication_date']['table'] = 'field_data_field_publication_date';
-  $handler->display->display_options['fields']['field_publication_date']['field'] = 'field_publication_date';
-  $handler->display->display_options['fields']['field_publication_date']['label'] = '';
-  $handler->display->display_options['fields']['field_publication_date']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_publication_date']['settings'] = array(
+  /* Field: Content: Publish Date */
+  $handler->display->display_options['fields']['field_publish_date']['id'] = 'field_publish_date';
+  $handler->display->display_options['fields']['field_publish_date']['table'] = 'field_data_field_publish_date';
+  $handler->display->display_options['fields']['field_publish_date']['field'] = 'field_publish_date';
+  $handler->display->display_options['fields']['field_publish_date']['label'] = '';
+  $handler->display->display_options['fields']['field_publish_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_publish_date']['settings'] = array(
     'format_type' => 'date_only',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
+    'show_remaining_days' => 0,
   );
   /* Field: Content: Link */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
@@ -28348,11 +28343,11 @@ print $content;
   $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_node']['text'] = 'View';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Publication Date (field_publication_date) */
-  $handler->display->display_options['sorts']['field_publication_date_value']['id'] = 'field_publication_date_value';
-  $handler->display->display_options['sorts']['field_publication_date_value']['table'] = 'field_data_field_publication_date';
-  $handler->display->display_options['sorts']['field_publication_date_value']['field'] = 'field_publication_date_value';
-  $handler->display->display_options['sorts']['field_publication_date_value']['order'] = 'DESC';
+  /* Sort criterion: Content: Publish Date (field_publish_date) */
+  $handler->display->display_options['sorts']['field_publish_date_value']['id'] = 'field_publish_date_value';
+  $handler->display->display_options['sorts']['field_publish_date_value']['table'] = 'field_data_field_publish_date';
+  $handler->display->display_options['sorts']['field_publish_date_value']['field'] = 'field_publish_date_value';
+  $handler->display->display_options['sorts']['field_publish_date_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
