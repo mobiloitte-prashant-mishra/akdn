@@ -29,17 +29,9 @@ if ($row->{'_entity_properties'}['entity_type'] == 'In the media') {
     'html' => TRUE,
     'attributes' => array('target' => '_blank')
   ));
-  $output .= l(t('More'), $exurl, array(
-    'html' => TRUE,
-    'attributes' => array('class' => array('akdn-solr-more-link'), 'target' => '_blank')
-  ));
 }
 else {
   $output = l($output, 'node/' . $row->{'_entity_properties'}['search_api_id'], array('html' => TRUE));
-  $output .= l(t('More'), 'node/' . $row->{'_entity_properties'}['search_api_id'], array(
-    'html' => TRUE,
-    'attributes' => array('class' => array('akdn-solr-more-link'))
-  ));
 }
 print $output;
 ?>
