@@ -7348,3 +7348,18 @@ map {
         color: #b2b2b2;
     }
 }
+
+// AKAM menu text fix on hover
+.main-navbar {
+    .menu-block-wrapper {
+        &> ul.menu > li {
+            &:nth-of-type(4) {
+                &> ul.menu {
+                    &> li:nth-of-type(3) {
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+    }
+}
