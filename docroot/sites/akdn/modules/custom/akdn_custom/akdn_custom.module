@@ -2091,14 +2091,7 @@ function akdn_search_forms($form, &$form_state, $delta) {
             'class' => array('mail_toggle'),
           )
         )) . '</li>';
-      $text .= '<li>' . l('share', 'http://www.addthis.com/bookmark.php',
-          array(
-            'attributes' =>
-              array(
-                'title' => t('Send this page By email'),
-                'class' => array('share_toggle'),
-              )
-          )) . '</li>';
+      $text .= '<li><a href="javascript:;" class="addthis_button share_toggle" title="Share page with AddThis">Share</a></li>';
       $text .= '<li>' . l('Print', current_path() . '#', array(
           'attributes' => array(
             'title' => t('Print this page.'),
