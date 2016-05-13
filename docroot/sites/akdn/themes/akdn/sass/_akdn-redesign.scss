@@ -7348,3 +7348,14 @@ map {
         color: #b2b2b2;
     }
 }
+
+// Css for addthis feature
+[id*='atic_']:not(#atic_facebook):not(#atic_twitter):not(#atic_linkedin),
+[class*='at3winsvc_']:not(.at3winsvc_facebook):not(.at3winsvc_twitter):not(.at3winsvc_linkedin),
+.atm-f,
+.at-expanded-menu-top-services-header,
+#at-expanded-menu-v2 form#at-expanded-menu-filter-form,
+#at-expanded-menu-container .at-branding-logo,
+.at-expanded-menu-ft {
+  display: none !important;
+}
