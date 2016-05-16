@@ -30385,7 +30385,6 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['title_field']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title_field']['alter']['max_length'] = '100';
   $handler->display->display_options['fields']['title_field']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title_field']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_field']['type'] = 'text_plain';
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
