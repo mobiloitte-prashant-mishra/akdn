@@ -29589,7 +29589,6 @@ print $content;
   $handler->display->display_options['fields']['field_short_title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_short_title']['alter']['max_length'] = '50';
   $handler->display->display_options['fields']['field_short_title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['field_short_title']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['field_short_title']['element_label_colon'] = FALSE;
   /* Field: Content: Slideshow Image */
   $handler->display->display_options['fields']['field_feature_image']['id'] = 'field_feature_image';
@@ -30382,12 +30381,10 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
-  $handler->display->display_options['fields']['title_field']['relationship'] = 'field_speech_reference_nid';
   $handler->display->display_options['fields']['title_field']['label'] = '';
   $handler->display->display_options['fields']['title_field']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['title_field']['alter']['max_length'] = '50';
+  $handler->display->display_options['fields']['title_field']['alter']['max_length'] = '100';
   $handler->display->display_options['fields']['title_field']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title_field']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_field']['type'] = 'text_plain';
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
