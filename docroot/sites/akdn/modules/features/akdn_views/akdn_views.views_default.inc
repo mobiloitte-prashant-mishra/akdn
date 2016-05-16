@@ -6608,22 +6608,6 @@ print $output;
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Content: Event Date */
-  $handler->display->display_options['fields']['field_akmi_event_date_1']['id'] = 'field_akmi_event_date_1';
-  $handler->display->display_options['fields']['field_akmi_event_date_1']['table'] = 'field_data_field_akmi_event_date';
-  $handler->display->display_options['fields']['field_akmi_event_date_1']['field'] = 'field_akmi_event_date';
-  $handler->display->display_options['fields']['field_akmi_event_date_1']['label'] = '';
-  $handler->display->display_options['fields']['field_akmi_event_date_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_akmi_event_date_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_akmi_event_date_1']['type'] = 'date_plain';
-  $handler->display->display_options['fields']['field_akmi_event_date_1']['settings'] = array(
-    'format_type' => 'date_only',
-    'fromto' => 'value',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_remaining_days' => 0,
-  );
   /* Field: Content: Event Type */
   $handler->display->display_options['fields']['field_akmi_event_type']['id'] = 'field_akmi_event_type';
   $handler->display->display_options['fields']['field_akmi_event_type']['table'] = 'field_data_field_akmi_event_type';
