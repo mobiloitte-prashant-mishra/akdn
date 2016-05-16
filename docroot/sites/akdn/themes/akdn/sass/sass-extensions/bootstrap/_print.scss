@@ -345,6 +345,9 @@
     .gallery-thumbs {
         width: 100% !important;
         padding: 0 !important;
+        .arrow {
+            display: none !important;
+        }
         ul {
             width: 100% !important;
             padding: 0 !important;
@@ -356,8 +359,7 @@
             a {
                 padding-bottom: 5px !important;
             }
-            .empty,
-            .arrow {
+            .empty {
                 display: none !important;
             }
             &:nth-child(3n) a {
