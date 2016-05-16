@@ -154,7 +154,7 @@ E-mail: akmi@akdn.org';
   $fe_block_boxes->format = 'php_code';
   $fe_block_boxes->machine_name = 'print_email_forward_block';
   $fe_block_boxes->body = '<span class="print_mail"><a href="/forward?path=<?php print ltrim(request_uri(), \'/\'); ?>" title="Send this page by email" class="print-mail" rel="nofollow">E-mail</a></span>
-<span class="pane-addthis"><a href="http://www.addthis.com/bookmark.php" title="Share this page" class="share_toggle" rel="nofollow" target="_blank">Share</a></span>
+<span class="pane-addthis"><a href="javascript:;" title="Share this page" class="addthis_button share_toggle" rel="nofollow" target="_blank">Share</a></span>
 <span class="print_html"><a href="#" title="Print this page" class="print-page" onclick="window.print(); return false" rel="nofollow">Print</a></span>';
 
   $export['print_email_forward_block'] = $fe_block_boxes;
