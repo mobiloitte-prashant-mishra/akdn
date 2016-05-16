@@ -10381,7 +10381,7 @@ button.close {
 /* line 293, ../sass/sass-extensions/_custom-utilities.scss */
 .press-release-detail .related-block-info {
   margin: 0;
-  padding: 0 15px;
+  padding: 0 25px 0 15px;
   width: 50%;
   float: left;
   color: #000;
@@ -18734,6 +18734,22 @@ map area {
 /* line 7358, ../sass/_akdn-redesign.scss */
 .main-navbar .menu-block-wrapper > ul.menu > li:nth-of-type(4) > ul.menu > li:nth-of-type(3) {
   white-space: nowrap;
+}
+
+/* line 7367, ../sass/_akdn-redesign.scss */
+.pane-node-body {
+  position: relative;
+}
+/* line 7369, ../sass/_akdn-redesign.scss */
+.pane-node-body li {
+  list-style: none;
+}
+/* line 7371, ../sass/_akdn-redesign.scss */
+.pane-node-body li:before {
+  content: "\2022";
+  position: absolute;
+  margin-left: -14px;
+  font-size: 18px;
 }
 
 /*

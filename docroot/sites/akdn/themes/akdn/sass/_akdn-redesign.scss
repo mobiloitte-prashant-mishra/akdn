@@ -7363,3 +7363,16 @@ map {
         }
     }
 }
+
+.pane-node-body {
+    position: relative;
+    li {
+        list-style: none;
+        &:before {
+            content: "\2022";
+            position: absolute;
+            margin-left: -14px;
+            font-size: 18px;
+        }
+    }
+} 
