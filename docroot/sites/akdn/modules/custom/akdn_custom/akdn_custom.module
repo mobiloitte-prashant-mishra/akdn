@@ -2087,13 +2087,13 @@ function akdn_search_forms($form, &$form_state, $delta) {
       $text .= '<li>' . l('Mail', 'forward', array(
           'query' => array('path' => current_path()),
           'attributes' => array(
-            'title' => t('Send this page By email'),
+            'title' => t('Send this page by email'),
             'class' => array('mail_toggle'),
           )
         )) . '</li>';
       $block = module_invoke('addthis', 'block_view', 'addthis_block');
       $addthis_block =  render($block['content']);
-      $text .= '<li><div style="display:none!important;">'.$addthis_block.'</div><a href="javascript:;" class="addthis_button share_toggle" title="Share page with AddThis">Share</a></li>';
+      $text .= '<li><div style="display:none!important;">'.$addthis_block.'</div><a href="javascript:;" class="addthis_button share_toggle" title="Share this page">Share</a></li>';
       $text .= '<li>' . l('Print', current_path() . '#', array(
           'attributes' => array(
             'title' => t('Print this page.'),
