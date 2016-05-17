@@ -1112,6 +1112,10 @@ function akdn_basic_page_link_to_style_block() {
       $id = 'accordian-title-' . $i;
       $field_values = entity_revision_load('field_collection_item', $values['revision_id']);
       $image = reset($field_values->field_basic_page_accordian_image);
+      $lang_caption = key($image[0]['field_image_caption']);
+      $image_caption = $image[0]['field_image_caption'][$lang_caption][0]['value'];
+      $lang_copyright = key($image[0]['field_image_copytight']);
+      $image_copyright = $image[0]['field_image_copytight'][$lang_copyright][0]['value'];
       if (!empty($image)) {
         $accordian_image = array(
           'style_name' => 'social_sharing_image',
@@ -1121,8 +1125,16 @@ function akdn_basic_page_link_to_style_block() {
           'alt' => $image[0]['alt'],
           'title' => $image[0]['title'],
         );
-        $output .= '<div class = "link_to_image">';
+        $output .= '<div class = "link_to_image image-caption-show-hide-block">';
         $output .= theme('image_style', $accordian_image);
+        $output .= '<div class="caption-copyright-wrapper">';
+        $output .= '<div class="image-caption-wrapper">';
+        $output .= $image_caption;
+        $output .= '</div>';
+        $output .= '<div class="image-copytight-wrapper">';
+        $output .= $image_copyright;
+        $output .= '</div>';
+        $output .= '</div>';
         $output .= '</div>';
       }
       $output .= '</div>';
@@ -1190,6 +1202,10 @@ function akdn_basic_page_accordian_style_block() {
       $id = 'accordian-title-' . $i;
       $field_values = entity_revision_load('field_collection_item', $values['revision_id']);
       $image = reset($field_values->field_basic_page_accordian_image);
+      $lang_caption = key($image[0]['field_image_caption']);
+      $image_caption = $image[0]['field_image_caption'][$lang_caption][0]['value'];
+      $lang_copyright = key($image[0]['field_image_copytight']);
+      $image_copyright = $image[0]['field_image_copytight'][$lang_copyright][0]['value'];
       $related_links = reset($field_values->field_basic_accordian_rel_links);
       $output .= '<div id = "' . $id . '" class = "basic-page-accordian-rows">';
       $output .= '<div class = accordian-image-rel-wrapper>';
@@ -1202,7 +1218,17 @@ function akdn_basic_page_accordian_style_block() {
           'alt' => $image[0]['alt'],
           'title' => $image[0]['title'],
         );
-        $output .= '<div class = "image">' . theme('image_style', $accordian_image) . '</div>';
+      $output .= '<div class = "image image-caption-show-hide-block">';
+      $output .= theme('image_style', $accordian_image);
+      $output .= '<div class="caption-copyright-wrapper">';
+      $output .= '<div class="image-caption-wrapper">';
+      $output .= $image_caption;
+      $output .= '</div>';
+      $output .= '<div class="image-copytight-wrapper">';
+      $output .= $image_copyright;
+      $output .= '</div>';
+      $output .= '</div>';
+      $output .= '</div>';
       }
       if (!empty($related_links)) {
         $output .= '<div class = "according-related-heading collapse"><span class = "related-heading">Related Information</span>';
@@ -2095,7 +2121,7 @@ function akdn_search_forms($form, &$form_state, $delta) {
       $block = module_invoke('addthis', 'block_view', 'addthis_block');
       $addthis_block =  render($block['content']);
       $text .= '<li><div style="display:none!important;">'.$addthis_block.'</div><a href="javascript:;" class="addthis_button share_toggle" title="Share this page">Share</a></li>';
-       $text .= '<li>' . l('Print', current_path() . '#', array(
+      $text .= '<li>' . l('Print', current_path() . '#', array(
           'attributes' => array(
             'title' => t('Print this page'),
             'rel' => 'nofollow',
