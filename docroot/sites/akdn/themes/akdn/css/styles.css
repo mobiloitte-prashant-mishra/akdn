@@ -18635,20 +18635,31 @@ map area {
   color: #b2b2b2;
 }
 
-/* line 7250, ../sass/_akdn-redesign.scss */
+/* line 7245, ../sass/_akdn-redesign.scss */
+[id*='atic_']:not(#atic_facebook):not(#atic_twitter):not(#atic_linkedin),
+[class*='at3winsvc_']:not(.at3winsvc_facebook):not(.at3winsvc_twitter):not(.at3winsvc_linkedin),
+.atm-f,
+.at-expanded-menu-top-services-header,
+#at-expanded-menu-v2 form#at-expanded-menu-filter-form,
+#at-expanded-menu-container .at-branding-logo,
+.at-expanded-menu-ft {
+  display: none !important;
+}
+
+/* line 7261, ../sass/_akdn-redesign.scss */
 .main-navbar .menu-block-wrapper > ul.menu > li:nth-of-type(4) > ul.menu > li:nth-of-type(3) {
   white-space: nowrap;
 }
 
-/* line 7260, ../sass/_akdn-redesign.scss */
+/* line 7271, ../sass/_akdn-redesign.scss */
 .pane-node-body {
   position: relative;
 }
-/* line 7262, ../sass/_akdn-redesign.scss */
+/* line 7273, ../sass/_akdn-redesign.scss */
 .pane-node-body li {
   list-style: none;
 }
-/* line 7264, ../sass/_akdn-redesign.scss */
+/* line 7275, ../sass/_akdn-redesign.scss */
 .pane-node-body li:before {
   content: "\2022";
   position: absolute;
