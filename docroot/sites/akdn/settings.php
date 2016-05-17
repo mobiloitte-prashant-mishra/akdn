@@ -178,7 +178,21 @@
  * @endcode
  */
 $databases = array();
-
+$databases = array (
+  'default' =>
+  array (
+    'default' =>
+    array (
+      'database' => 'akdn3',
+      'username' => 'root',
+      'password' => 'srijan',
+      'host' => '127.0.0.1',
+      'port' => '',
+      'driver' => 'mysql',
+      'prefix' => '',
+    ),
+  ),
+);
 /**
  * Access control for update.php script.
  *
@@ -231,7 +245,7 @@ $drupal_hash_salt = '';
  * It is not allowed to have a trailing slash; Drupal will add it
  * for you.
  */
-$base_url = 'http://akdn3stg.prod.acquia-sites.com';  // NO trailing slash!
+$base_url = 'http://akdn3stg.prod.acquia-sites.com';  // NO trailing slash!*/
 
 /**
  * PHP settings:
@@ -490,4 +504,14 @@ $conf['404_fast_html'] = '<html xmlns="http://www.w3.org/1999/xhtml"><head><titl
 # $conf['allow_authorize_operations'] = FALSE;
 if (file_exists('/var/www/site-php')) {
   require '/var/www/site-php/akdn3/akdn3-settings.inc';
+}
+
+/*
+ *  Memcache Settings
+ */
+
+if (isset($conf['memcache_servers'])) {
+  $conf['cache_backends'][] = './sites/all/modules/contrib/memcache/memcache.inc';
+  $conf['cache_default_class'] = 'MemCacheDrupal';
+  $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
 }

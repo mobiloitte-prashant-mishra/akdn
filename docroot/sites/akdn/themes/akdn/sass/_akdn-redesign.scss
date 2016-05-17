@@ -563,7 +563,6 @@ h1.title {
         span {
             display: inline;
             background: #fff;
-            z-index: 999;
             position: relative;
             &:first-child {
                 font-size: 130%;
@@ -3006,16 +3005,27 @@ h2.header-name a {
     .print_html {
         display: inline-block;
         float: left;
-        width: 16px;
-        height: 16px;
-        margin: 0 15px 0 0;
+        width: 18px;
+        height: 20px;
+        margin: 0 12px 0 0;
         a {
-            font-size: 0;
+            @extend .akdnfont;
             display: inline-block;
-            height: 16px;
-            width: 16px;
+            width: 18px;
+            height: 20px;
             float: left;
             padding: 0;
+            color: #b49759;
+            font-size: 0;
+            cursor: pointer;
+            &:before {
+                padding: 0 1px;
+                font-size: 18px;
+            }
+            &:focus, &:hover {
+                color: #b49759;
+                text-decoration: none;
+            }
         }
     }
     .pane-email {
@@ -3026,13 +3036,13 @@ h2.header-name a {
         float: left;
     }
     .print_mail a {
-        background: image-url("mail_n.png") 0 0 no-repeat;
+        @extend .icon-envelope2;
     }
     .pane-addthis a {
-        background: image-url("share_n.png") 0 0 no-repeat;
+        @extend .icon-share;
     }
     .print_html a {
-        background: image-url("print_n.png") 0 0 no-repeat;
+        @extend .icon-print;
     }
 
     /* Right Sidebar */
@@ -4858,24 +4868,27 @@ map {
 /* Quote Finder */
 .quote-finder-wrap {
     display: block;
-    border-bottom: 1px solid #b5995a;
+    //border-bottom: 1px solid #b5995a;
     margin-bottom: 60px;
     .view-header {
         @extend %font_times;
         margin: 10px auto 40px;
         color: #000;
     }
-    h3 {
+    .views-limit-grouping-group {
         display: block;
-        margin: 20px auto 3px;
-        padding: 20px 0 0;
+        margin: 0 auto 20px;
+        padding: 0px 0 15px;
         font-size: 16px;
         line-height: 1;
-        border-top: 1px solid #b5995a;
-        &:first-child {
+        border-bottom: 1px solid #b5995a;
+        &:last-child {
             margin-top: 0;
             padding: 0;
-            border-top: 0 none;
+            border-bottom: 0 none;
+        }
+        h3 {
+            display: none;
         }
     }
 }
@@ -4896,6 +4909,7 @@ map {
     font-size: 16px;
     font-weight: bold;
     color: #000000;
+    line-height: 24px;
 }
 .quote-date-location {
     @extend %font_arial;
@@ -4903,13 +4917,13 @@ map {
     font-weight: normal;
     color: #999999;
 }
-.quotes-content {
+.quotes-body {
     @extend %font_arial;
+    margin-bottom: 3px;
     font-size: 16px;
     font-weight: normal;
     color: #000000;
-}
-.quotes-body {
+    line-height: 24px;
     p {
         @extend %font_arial;
         font-size: 16px;
@@ -4918,8 +4932,11 @@ map {
         margin: 0 auto;
     }
 }
-.show-more-quotes {
+.speech-quote-links {
+    margin-top: 10px;
     margin-bottom: 10px;
+    font-size: 16px;
+    color: #b5995a;
     a, .more-quotes {
         color: #b5995a;
         font-size: 16px;
@@ -4934,19 +4951,9 @@ map {
         }
     }
     .more-quotes {
-        &:before {
-            content: " | ";
-            color: #b5995a;
-            text-decoration: none;
-        }
         &:hover {
             cursor: pointer;
             text-decoration: none;
-            &:before {
-                content: " | ";
-                cursor: default;
-                text-decoration: none;
-            }
             span {
                 text-decoration: underline;
             }
@@ -6476,16 +6483,27 @@ map {
     .print_html {
         display: inline-block;
         float: left;
-        width: 16px;
-        height: 16px;
-        margin: 0 15px 0 0;
+        width: 18px;
+        height: 20px;
+        margin: 0 12px 0 0;
         a {
-            font-size: 0;
+            @extend .akdnfont;
             display: inline-block;
-            height: 16px;
-            width: 16px;
+            width: 18px;
+            height: 20px;
             float: left;
             padding: 0;
+            color: #b49759;
+            font-size: 0;
+            cursor: pointer;
+            &:before {
+                padding: 0 1px;
+                font-size: 18px;
+            }
+            &:focus, &:hover {
+                color: #b49759;
+                text-decoration: none;
+            }
         }
     }
     .pane-email {
@@ -6496,13 +6514,13 @@ map {
         float: left;
     }
     .print_mail a {
-        background: image-url("mail_n.png") 0 0 no-repeat;
+        @extend .icon-envelope2;
     }
     .pane-addthis a {
-        background: image-url("share_n.png") 0 0 no-repeat;
+        @extend .icon-share;
     }
     .print_html a {
-        background: image-url("print_n.png") 0 0 no-repeat;
+        @extend .icon-print;
     }
     .akaa-cycle-pane-body {
         @extend %font_arial;
@@ -7313,4 +7331,31 @@ map {
     .playerbox {
         height: auto;
     }
+}
+
+// AKMI Custom Header Block
+.akmi-custom-header-block {
+    margin-bottom: 35px;
+}
+
+// Footer terms and conditions Links
+.footer-term-condition-links {
+    margin-top: 3px;
+    font-size: 13px;
+    color: #b2b2b2;
+    a {
+        font-size: 13px;
+        color: #b2b2b2;
+    }
+}
+
+// Css for addthis feature
+[id*='atic_']:not(#atic_facebook):not(#atic_twitter):not(#atic_linkedin),
+[class*='at3winsvc_']:not(.at3winsvc_facebook):not(.at3winsvc_twitter):not(.at3winsvc_linkedin),
+.atm-f,
+.at-expanded-menu-top-services-header,
+#at-expanded-menu-v2 form#at-expanded-menu-filter-form,
+#at-expanded-menu-container .at-branding-logo,
+.at-expanded-menu-ft {
+  display: none !important;
 }

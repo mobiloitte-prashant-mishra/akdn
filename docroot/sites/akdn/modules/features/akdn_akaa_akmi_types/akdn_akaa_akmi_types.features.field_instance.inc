@@ -1105,54 +1105,6 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-akmi_event-field_custom_meta_tags'
-  $field_instances['node-akmi_event-field_custom_meta_tags'] = array(
-    'bundle' => 'akmi_event',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 13,
-      ),
-      'scs' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_custom_meta_tags',
-    'label' => 'Custom Meta tags',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 2,
-    ),
-  );
-
   // Exported field_instance: 'node-akmi_event-field_event_akmi_year'
   $field_instances['node-akmi_event-field_event_akmi_year'] = array(
     'bundle' => 'akmi_event',
@@ -2067,7 +2019,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 11,
+      'weight' => 39,
     ),
   );
 
@@ -2231,48 +2183,6 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-akmi_performance-field_premiere_year'
-  $field_instances['node-akmi_performance-field_premiere_year'] = array(
-    'bundle' => 'akmi_performance',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 9,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_premiere_year',
-    'label' => 'Premiere Year',
-    'required' => 1,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'max' => '',
-      'min' => '',
-      'prefix' => '',
-      'suffix' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'number',
-      'settings' => array(),
-      'type' => 'number',
-      'weight' => 3,
-    ),
-  );
-
   // Exported field_instance: 'node-akmi_performance-field_related_artists'
   $field_instances['node-akmi_performance-field_related_artists'] = array(
     'bundle' => 'akmi_performance',
@@ -2323,6 +2233,57 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-akmi_performance-field_right_show_block'
+  $field_instances['node-akmi_performance-field_right_show_block'] = array(
+    'bundle' => 'akmi_performance',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 12,
+      ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_right_show_block',
+    'label' => 'Show Block',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 0,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 36,
+    ),
+  );
+
   // Exported field_instance: 'node-akmi_performance-field_specify_a_block_title'
   $field_instances['node-akmi_performance-field_specify_a_block_title'] = array(
     'bundle' => 'akmi_performance',
@@ -2367,7 +2328,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 38,
     ),
   );
 
@@ -4049,67 +4010,6 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-architecture_project-field_simplenews_term'
-  $field_instances['node-architecture_project-field_simplenews_term'] = array(
-    'bundle' => 'architecture_project',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 29,
-      ),
-      'email_html' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 28,
-      ),
-      'email_plain' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'email_textalt' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'scs' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 10,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_simplenews_term',
-    'label' => 'Newsletter category',
-    'required' => TRUE,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 68,
-    ),
-  );
-
   // Exported field_instance: 'node-architecture_project-field_size'
   $field_instances['node-architecture_project-field_size'] = array(
     'bundle' => 'architecture_project',
@@ -4814,54 +4714,6 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
       ),
       'type' => 'node_reference_autocomplete',
       'weight' => 38,
-    ),
-  );
-
-  // Exported field_instance: 'node-award_cycle-field_custom_meta_tags'
-  $field_instances['node-award_cycle-field_custom_meta_tags'] = array(
-    'bundle' => 'award_cycle',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 25,
-      ),
-      'scs' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_custom_meta_tags',
-    'label' => 'Custom Meta Tags',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 32,
     ),
   );
 
@@ -6542,54 +6394,6 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
       'settings' => array(),
       'type' => 'link_field',
       'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance: 'node-custom_content-field_custom_meta_tags'
-  $field_instances['node-custom_content-field_custom_meta_tags'] = array(
-    'bundle' => 'custom_content',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 13,
-      ),
-      'scs' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_custom_meta_tags',
-    'label' => 'Custom Meta Tags',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 2,
     ),
   );
 
@@ -9912,7 +9716,6 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
   t('Completed Date Timestamp');
   t('Country');
   t('Create Banner Item');
-  t('Custom Meta Tags');
   t('Cycle Images');
   t('Cycle Year');
   t('Description');
@@ -9962,7 +9765,6 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
   t('Person Type');
   t('Picture of the person.');
   t('Planner');
-  t('Premiere Year');
   t('Press Kit');
   t('Press Kit File');
   t('Press Kit Label');

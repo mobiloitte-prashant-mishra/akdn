@@ -208,6 +208,13 @@ function akdn_custom_views_query_alter(&$view, &$query) {
       )
     );
   }
+  if ($view->name == 'akaa_projects' && $view->current_display == 'related_award_links_projects') {
+     $node_entity = entity_metadata_wrapper('node', arg(1));
+     $nids = $node_entity->value();
+     $tid = $nids->field_cycle_year[LANGUAGE_NONE][0]['tid'];
+     $key = key($query->where[0][conditions][0]['value']);
+     $query->where[0][conditions][0]['value'][$key]= $tid;
+  }
 }
 
 /**
@@ -339,6 +346,9 @@ function akdn_custom_form_validation($form,&$form_state) {
  * - Set the default language in the language switcher to english
  */
 function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
+ if (module_exists('vbo_multipage_selection') && function_exists('_vbo_multipage_selection_form_alter') && $form_id == 'views_form_newsletter_creation_page') {
+    _vbo_multipage_selection_form_alter($form, $form_state);
+  }
 
   if ($form_id == 'hub_page_node_form' || $form_id == 'page_node_form') {
     $lang = $form['field_basic_page_choose_layout']['#language'];
@@ -788,9 +798,9 @@ function akdn_all_areas_of_activity() {
     $node = node_load($nid);
     $key = key($node->menu_node_links);
     $output = '';
-    $output = '<div class = "all-activities-btn">';
-    $output .= '<h2 class = "pane-title">All Areas of Activities</h2>';
-    $output .= '<div class = "all-activities-sidebar">';
+    $output_header = '<div class = "all-activities-btn">';
+    $output_header .= '<h2 class = "pane-title">All Areas of Activities</h2>';
+    $output_header .= '<div class = "all-activities-sidebar">';
     $get_activities = get_areas_of_activities($key);
     //
     foreach ($get_activities as $values) {
@@ -846,7 +856,11 @@ function akdn_all_areas_of_activity() {
           $output .= '</div>';
       }
     }
-    $output .= '</div></div>';
+    $output_base .= '</div></div>';
+    // If area of activity is empty then hide it.
+    if (isset($key1)) {
+      $output = $output_header . $output .$output_base;
+    }
   }
   return $output;
 }
@@ -2073,18 +2087,13 @@ function akdn_search_forms($form, &$form_state, $delta) {
       $text .= '<li>' . l('Mail', 'forward', array(
           'query' => array('path' => current_path()),
           'attributes' => array(
-            'title' => t('Send this page By email'),
+            'title' => t('Send this page by email'),
             'class' => array('mail_toggle'),
           )
         )) . '</li>';
-      $text .= '<li>' . l('share', 'http://www.addthis.com/bookmark.php',
-          array(
-            'attributes' =>
-              array(
-                'title' => t('Send this page By email'),
-                'class' => array('share_toggle'),
-              )
-          )) . '</li>';
+      $block = module_invoke('addthis', 'block_view', 'addthis_block');
+      $addthis_block =  render($block['content']);
+      $text .= '<li><div style="display:none!important;">'.$addthis_block.'</div><a href="javascript:;" class="addthis_button share_toggle" title="Share this page">Share</a></li>';
       $text .= '<li>' . l('Print', current_path() . '#', array(
           'attributes' => array(
             'title' => t('Print this page.'),
@@ -3112,6 +3121,16 @@ function akdn_custom_theme($existing, $type, $theme, $path) {
     ),
     'arguments' => array('view' => NULL),
   );
+  $themes['views_view_field__solr_quotes__page_1__nothing'] = array(
+    'template' => 'templates/views-view-field--solr-quotes--page-1--nothing',
+    'original hook' => 'views_view_fields',
+    'preprocess functions' => array(
+      'template_preprocess',
+      'template_preprocess_views_view_fields',
+      'akdn_custom_preprocess_views_view_field__solr_quotes__page_1__nothing',
+    ),
+    'arguments' => array('view' => NULL),
+  );
   return $themes;
 }
 
@@ -3747,3 +3766,57 @@ function akdn_custom_v_p_for_archi() {
     return $output;
   }
  }
+
+function akdn_custom_preprocess_views_view_field__solr_quotes__page_1__nothing(&$variables) {
+  $row = $variables['row'];
+  $speech_quote_speech_nid = $row->_entity_properties['speech_quote_speech_nid'];
+  $speech_quotes_count = $row->_entity_properties['field_speech_reference:speech_quotes_count'];
+  $query = db_query(
+    "SELECT entity_id FROM field_data_field_speech_reference
+    WHERE field_speech_reference_nid ='" . $speech_quote_speech_nid . "'
+    ")->fetchAll();
+  $i = 1;
+  $output_speech_quotes = '';
+  $links_speech_quotes = '';
+  $output = '';
+  foreach($query as $value) {
+    $load = node_load($value->entity_id);
+    if ($i == 1) {
+      $output_speech_quotes .= '<div class = "show-speech-quotes">';
+      $output_speech_quotes .= '<div class = "quotes-title">';
+      $output_speech_quotes .= $load->title;
+      $output_speech_quotes .= '</div>';
+      $output_speech_quotes .= '<div class = "quotes-body">';
+      $output_speech_quotes .= $load->body['en'][0][value];
+      $output_speech_quotes .= '</div>';
+      $output_speech_quotes .= '</div>';
+      $links_speech_quotes  .= '<span class = "read-full">';
+      $links_speech_quotes  .=  l(t("Read full Speech"), "node/" . $speech_quote_speech_nid);
+      // Display More quotations only if speech count is more than 1
+      if ($speech_quotes_count > 1) {
+      $links_speech_quotes  .= '</span>';
+      $links_speech_quotes  .= ' | ';
+      $links_speech_quotes  .= '<span class="more-quotes">';
+      $links_speech_quotes  .= t("Show more quotations");
+      $links_speech_quotes  .= '</span>';
+      }
+    }
+    else {
+      $output_speech_quotes .= '<div class = "hide hide-speech-quotes">';
+      $output_speech_quotes .= '<div class = "quotes-title">';
+      $output_speech_quotes .= $load->title;
+      $output_speech_quotes .= '</div>';
+      $output_speech_quotes .= '<div class = "quotes-body">';
+      $output_speech_quotes .= $load->body['en'][0][value];
+      $output_speech_quotes .= '</div>';
+      $output_speech_quotes .= '</div>';
+    }
+    $i++;
+  }
+  $output .= '<div class = "speech-quote-wrapper">';
+  $output .= $output_speech_quotes;
+  $output .= '<div class = "speech-quote-links">';
+  $output .= $links_speech_quotes;
+  $output .= '</div></div>';
+  $variables['speech_quote_speech_nid'] = $output;
+}
