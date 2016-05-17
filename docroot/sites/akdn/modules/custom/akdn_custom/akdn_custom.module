@@ -2095,7 +2095,7 @@ function akdn_search_forms($form, &$form_state, $delta) {
       $block = module_invoke('addthis', 'block_view', 'addthis_block');
       $addthis_block =  render($block['content']);
       $text .= '<li><div style="display:none!important;">'.$addthis_block.'</div><a href="javascript:;" class="addthis_button share_toggle" title="Share this page">Share</a></li>';
-      $text .= '<li>' . l('Print', current_path() . '#', array(
+       $text .= '<li>' . l('Print', current_path() . '#', array(
           'attributes' => array(
             'title' => t('Print this page'),
             'rel' => 'nofollow',
