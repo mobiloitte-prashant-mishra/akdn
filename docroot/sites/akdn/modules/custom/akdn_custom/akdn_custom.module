@@ -2088,7 +2088,7 @@ function akdn_search_forms($form, &$form_state, $delta) {
       $text .= '<li>' . l('Mail', 'forward', array(
           'query' => array('path' => current_path()),
           'attributes' => array(
-            'title' => t('Send this page By email'),
+            'title' => t('Send this page by email'),
             'class' => array('mail_toggle'),
           )
         )) . '</li>';
@@ -2096,13 +2096,13 @@ function akdn_search_forms($form, &$form_state, $delta) {
           array(
             'attributes' =>
               array(
-                'title' => t('Send this page By email'),
+                'title' => t('Share this page'),
                 'class' => array('share_toggle'),
               )
           )) . '</li>';
       $text .= '<li>' . l('Print', current_path() . '#', array(
           'attributes' => array(
-            'title' => t('Print this page.'),
+            'title' => t('Print this page'),
             'rel' => 'nofollow',
             'onclick' => 'window.print(); return false',
             'class' => array('print_toggle'),
