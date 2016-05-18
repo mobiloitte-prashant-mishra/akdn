@@ -1,0 +1,16 @@
+/**
+ * Table SCSS
+ * All the table styles
+ */
+// Table Highlight for upcoming events
+table {
+  tr {
+    &.upcoming_events {
+      background-color: #f4f1e8 !important;
+    }
+
+    &.gone_events {
+      background-color: #E2DFD7 !important;
+    }
+  }
+}
