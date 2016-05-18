@@ -30,8 +30,8 @@ if ($row->{'_entity_properties'}['entity_type'] == 'In the media') {
     'attributes' => array('target' => '_blank')
   ));
 }
-else if($row->{'_entity_properties'}['entity_type'] == 'geography') {
-    $output = l($row->{'_entity_properties'}['entity object']->title, 'node/' . $row->{'_entity_properties'}['search_api_id'], array('html' => TRUE));
+elseif ($row->{'_entity_properties'}['entity_type'] == 'geography') {
+  $output = l($row->{'_entity_properties'}['entity object']->title, 'node/' . $row->{'_entity_properties'}['search_api_id'], array('html' => TRUE));
 }
 else {
   $output = l($output, 'node/' . $row->{'_entity_properties'}['search_api_id'], array('html' => TRUE));
