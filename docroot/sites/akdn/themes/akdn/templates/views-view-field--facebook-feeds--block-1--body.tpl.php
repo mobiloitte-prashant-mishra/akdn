@@ -24,6 +24,11 @@
 
 ?>
 <?php
+if (function_exists('linkify_tweet')) {
+  print linkify_tweet($output);
+}
+else {
   print $output;
+}
 ?>
 
