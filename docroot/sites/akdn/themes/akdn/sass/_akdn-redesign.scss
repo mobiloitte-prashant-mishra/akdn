@@ -7374,3 +7374,8 @@ map {
         }
     }
 }
+
+// Scrollbar overlap on menubar
+.mCSB_scrollTools .mCSB_dragger {
+  z-index: 0 !important;
+}
