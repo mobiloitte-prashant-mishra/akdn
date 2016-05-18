@@ -18710,15 +18710,11 @@ map area {
   white-space: nowrap;
 }
 
-/* line 8710, ../sass/_akdn-redesign.scss */
-.pane-node-body {
-  position: relative;
-}
-/* line 8713, ../sass/_akdn-redesign.scss */
+/* line 8711, ../sass/_akdn-redesign.scss */
 .pane-node-body li {
   list-style: none;
 }
-/* line 8716, ../sass/_akdn-redesign.scss */
+/* line 8714, ../sass/_akdn-redesign.scss */
 .pane-node-body li:before {
   content: "\2022";
   position: absolute;
