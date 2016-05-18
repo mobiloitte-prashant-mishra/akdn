@@ -307,3 +307,35 @@ function akdn_js_alter(&$javascript) {
   $javascript['sites/all/modules/contrib/eu-cookie-compliance/js/eu_cookie_compliance.js']['scope'] = 'header';
   $javascript['sites/all/modules/contrib/eu-cookie-compliance/js/eu_cookie_compliance.js']['weight'] = 100;
 }
+
+/**
+ * template_preprocess_views_view_table.
+ */
+function akdn_preprocess_views_view_table(&$vars) {
+  $view = $vars['view'];
+  $rows = $vars['rows'];
+  if ($view->name == 'akmi_events_views' && $view->current_display == 'page') {
+    foreach ($rows as $id => $row) {
+      $start_date = $view->result[$id]->field_data_field_akmi_event_date_field_akmi_event_date_value;
+      $start_date = date("Y-m-d",strtotime($start_date));
+      $start_date = strtotime($start_date);
+      $event_class = get_the_classes($start_date);
+      $vars['row_classes'][$id][] = $event_class;
+    }
+  }
+}
+
+/**
+ * On rows clases are added based on date.
+ * This Function is used in akdn_preprocess_views_view_table.
+ */
+function get_the_classes($start_date) {
+  $today = date("Y-m-d");
+  $today = strtotime($today);
+  if ($start_date >= $today) {
+    return 'upcoming_events';
+  }
+  else {
+    return 'gone_events';
+  }
+}
