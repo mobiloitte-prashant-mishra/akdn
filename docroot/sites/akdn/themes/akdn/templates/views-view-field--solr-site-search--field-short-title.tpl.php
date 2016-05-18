@@ -29,7 +29,8 @@ if ($row->{'_entity_properties'}['entity_type'] == 'In the media') {
     'html' => TRUE,
     'attributes' => array('target' => '_blank')
   ));
-} else if($row->{'_entity_properties'}['entity_type'] == 'geography') {
+}
+else if($row->{'_entity_properties'}['entity_type'] == 'geography') {
     $output = l($row->{'_entity_properties'}['entity object']->title, 'node/' . $row->{'_entity_properties'}['search_api_id'], array('html' => TRUE));
 }
 else {
