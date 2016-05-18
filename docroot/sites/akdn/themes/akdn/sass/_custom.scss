@@ -1,0 +1,8 @@
+/**
+ * Custom SCSS
+ * All the fixes and hacks will be written here
+ */
+// Scrollbar overlap on menubar
+.mCSB_scrollTools .mCSB_dragger {
+  z-index: 0 !important;
+}
