@@ -20292,3 +20292,16 @@ map area {
 .mCSB_scrollTools .mCSB_dragger {
   z-index: 0 !important;
 }
+
+/**
+ * Table SCSS
+ * All the table styles
+ */
+/* line 8, ../sass/_table.scss */
+table tr.upcoming_events {
+  background-color: #f4f1e8 !important;
+}
+/* line 12, ../sass/_table.scss */
+table tr.gone_events {
+  background-color: #E2DFD7 !important;
+}
