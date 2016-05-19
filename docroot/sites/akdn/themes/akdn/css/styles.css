@@ -10126,7 +10126,7 @@ button.close {
 .akdn-publication-details .pane-publications .views-field-view-node, .akdn-project-details .pane-node-title-field .field-type-text, .akdn-project-details .grid-6 .views-field-field-sub-title, .geography-page .www-summary, .geography-page .www-body, .whatwedo-right .view-header p, .whatwedo-right .views-field-title, .what-we-do-body-more-body, .what-we-do-subwrapper, .project-inner-wrap, .context-akdns-approach-development .text-description p, .basic-page-accordian-summary, .basic-page-summary, .basic-page-quick-links, .accordian-title-right-summary,
 .body-text-wrapper, .node-type-hub-page .grid-18 .about, .node-type-hub-page .grid-18 .hub-page-quick-links-wrapper, .node-type-hub-page .grid-18 .pane-node-body, .node-type-hub-page .grid-18 .pane-node-body p, .node-type-hub-page .grid-18 .pane-node-body span, .other-activities-row, .all-activities-short-title, .media .field-name-field-image-caption,
 .media .field-name-field-image-author,
-.media .field-name-field-image-copytight, .quotes-title, .quote-date-location, .quotes-body, .quotes-body p, .photograph-detail-banner .panel-overlay h3, .photograph-detail-banner .panel-overlay h4, .sub-navbar .sub-navbar-rightlinks .item-list li a, .award-cycle-project-list .view-header .title, .akaa-press-centre-subwrapper, .akaa-other-cycle-row, .akaa-projectinfo-block-techinfo-wrapper, .akaa-technicalinfo-row, .akaa-technicalinfo-download h2.pane-title, .akaa-technicalinfo-download-row, .akaa-projectinfo-block-body-wrapper, .akaa-other-project-row, .akaa-other-project-title, .akaa-other-project-building-country, .akaa-other-project-viewmore a, .akaa-body .akaa-cycle-pane-body, .field-name-field-newsletter-summary, .akaa-projectinfo-map-title-body .view-content, .akmi-related-artists-row, .akmi-related-artists-simple-link, .akmi-event-calender-table, .akaa-map-right, .see-also-brochure-summary, .font_arial {
+.media .field-name-field-image-copytight, .quotes-title, .quote-date-location, .quotes-body, .quotes-body p, .photograph-detail-banner .panel-overlay h3, .photograph-detail-banner .panel-overlay h4, .sub-navbar .sub-navbar-rightlinks .item-list li a, .award-cycle-project-list .view-header .title, .akaa-press-centre-subwrapper, .akaa-other-cycle-row, .akaa-projectinfo-block-techinfo-wrapper, .akaa-technicalinfo-row, .akaa-technicalinfo-download h2.pane-title, .akaa-technicalinfo-download-row, .akaa-projectinfo-block-body-wrapper, .akaa-other-project-row, .akaa-other-project-title, .akaa-other-project-building-country, .akaa-other-project-viewmore a, .akaa-body .akaa-cycle-pane-body, .field-name-field-newsletter-summary, .akaa-projectinfo-map-title-body .view-content, .akmi-related-artists-row, .akmi-related-artists-simple-link, .akmi-event-calender-table, .akaa-map-right, .see-also-brochure-summary, .image-caption-wrapper, .image-copytight-wrapper, .font_arial {
   font-family: arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -khtml-font-smoothing: antialiased;
@@ -18721,6 +18721,52 @@ map area {
   position: absolute;
   margin-left: -14px;
   font-size: 18px;
+}
+
+/* line 8724, ../sass/_akdn-redesign.scss */
+.caption-copyright-wrapper {
+  display: block;
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  -webkit-transition: all 0.6s ease;
+  -moz-transition: all 0.6s ease;
+  -o-transition: all 0.6s ease;
+}
+
+/* line 8739, ../sass/_akdn-redesign.scss */
+.image-caption-wrapper, .image-copytight-wrapper {
+  display: block;
+  width: 100%;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 20px;
+  color: #ffffff;
+  font-style: italic;
+  clear: both;
+  overflow: auto;
+}
+
+/* line 8755, ../sass/_akdn-redesign.scss */
+.image-copytight-wrapper {
+  font-size: 11px;
+}
+
+/* line 8761, ../sass/_akdn-redesign.scss */
+.image-caption-show-hide-block {
+  position: relative;
+}
+/* line 8765, ../sass/_akdn-redesign.scss */
+.image-caption-show-hide-block:hover .caption-copyright-wrapper {
+  bottom: 0;
+  opacity: 1;
 }
 
 /*
