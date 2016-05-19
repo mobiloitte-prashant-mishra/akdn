@@ -1125,7 +1125,8 @@ function akdn_basic_page_link_to_style_block() {
           'alt' => $image[0]['alt'],
           'title' => $image[0]['title'],
         );
-        $output .= '<div class = "link_to_image image-caption-show-hide-block">';
+        $output .= '<div class = "link_to_image">';
+        $output .= '<div class = "image-caption-show-hide-block">';
         $output .= theme('image_style', $accordian_image);
         $output .= '<div class="caption-copyright-wrapper">';
         $output .= '<div class="image-caption-wrapper">';
@@ -1133,6 +1134,7 @@ function akdn_basic_page_link_to_style_block() {
         $output .= '</div>';
         $output .= '<div class="image-copytight-wrapper">';
         $output .= $image_copyright;
+        $output .= '</div>';
         $output .= '</div>';
         $output .= '</div>';
         $output .= '</div>';
