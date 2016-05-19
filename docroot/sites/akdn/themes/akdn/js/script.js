@@ -872,6 +872,7 @@ $(window).load(function(){
   // Remove empty li's from gallery formatter in photographs detail page
   $(window).load(function() {
     $('.galleryformatter .gallery-thumbs li[class*="empty"]').remove();
+    $('.galleryformatter .gallery-thumbs li[class*="cloned"]').remove();
   });
   
   }
