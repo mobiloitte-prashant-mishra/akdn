@@ -677,7 +677,14 @@ h1.title {
       width: auto;
       border-bottom: 1px solid #CCCCCC;
       margin: -6px 0px 0 200px;
-      z-index: -1;
+    }
+
+    // Added class + script as breaks sometime onload
+    &.indexfix {
+      &:after {
+        content: "";
+        z-index: -1;
+      }
     }
 
     span {
