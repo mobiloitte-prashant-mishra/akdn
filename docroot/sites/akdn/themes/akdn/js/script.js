@@ -856,7 +856,7 @@ $(window).load(function(){
       );
     }
   });
-  
+
    // Remove hidden Social Block from DOM/HTML - Required while printing
  $(window).load(function() {
    $('.social-block .pane-facebook-feeds').each(function(){
@@ -872,8 +872,14 @@ $(window).load(function(){
   // Remove empty li's from gallery formatter in photographs detail page
   $(window).load(function() {
     $('.galleryformatter .gallery-thumbs li[class*="empty"]').remove();
+    $('.galleryformatter .gallery-thumbs li[class*="cloned"]').remove();
   });
-  
+
+  // fix line for block title
+  $(window).load(function() {
+    $('.sub-navbar p').addClass('indexfix');
+  });
+
   }
 }
 

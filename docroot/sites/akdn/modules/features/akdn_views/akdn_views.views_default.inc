@@ -6891,6 +6891,7 @@ print $output;
   $handler->display->display_options['filters']['type']['value'] = array(
     'akmi_event' => 'akmi_event',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Event Date -  start date (field_akmi_event_date) */
   $handler->display->display_options['filters']['field_akmi_event_date_value']['id'] = 'field_akmi_event_date_value';
   $handler->display->display_options['filters']['field_akmi_event_date_value']['table'] = 'field_data_field_akmi_event_date';
@@ -6898,7 +6899,6 @@ print $output;
   $handler->display->display_options['filters']['field_akmi_event_date_value']['operator'] = '>';
   $handler->display->display_options['filters']['field_akmi_event_date_value']['default_date'] = 'now';
   $handler->display->display_options['filters']['field_akmi_event_date_value']['year_range'] = '-1:+1';
-
   /* Display: Event Calendar home tile attachment */
   $handler = $view->new_display('attachment', 'Event Calendar home tile attachment', 'attachment_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
