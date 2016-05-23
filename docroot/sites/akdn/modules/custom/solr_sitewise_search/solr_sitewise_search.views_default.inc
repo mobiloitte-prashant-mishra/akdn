@@ -51,6 +51,17 @@ function solr_sitewise_search_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Search Results';
   $handler->display->display_options['display_description'] = 'Site Search';
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'load_more';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '16';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['waypoint']['infinite'] = 1;
+  $handler->display->display_options['pager']['options']['more_button_text'] = '';
+  $handler->display->display_options['pager']['options']['effects']['speed'] = 'slow';
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: PHP */
@@ -114,7 +125,7 @@ print $output;
   $handler->display->display_options['fields']['url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['url']['display_as_link'] = FALSE;
   $handler->display->display_options['fields']['url']['link_to_entity'] = 0;
-  /* Field: Indexed Node: Image Uri for nodes [event/article/publication/speech/gallery/video/page] */
+  /* Field: Indexed Node: Image Uri for nodes [event/article/publication/speech/gallery/video/page/geography] */
   $handler->display->display_options['fields']['image_public_uri']['id'] = 'image_public_uri';
   $handler->display->display_options['fields']['image_public_uri']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['fields']['image_public_uri']['field'] = 'image_public_uri';
@@ -300,7 +311,7 @@ print $output;
   $handler->display->display_options['fields']['url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['url']['display_as_link'] = FALSE;
   $handler->display->display_options['fields']['url']['link_to_entity'] = 0;
-  /* Field: Indexed Node: Image Uri for nodes [event/article/publication/speech/gallery/video/page] */
+  /* Field: Indexed Node: Image Uri for nodes [event/article/publication/speech/gallery/video/page/geography] */
   $handler->display->display_options['fields']['image_public_uri']['id'] = 'image_public_uri';
   $handler->display->display_options['fields']['image_public_uri']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['fields']['image_public_uri']['field'] = 'image_public_uri';

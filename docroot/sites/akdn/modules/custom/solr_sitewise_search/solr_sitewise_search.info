@@ -10,6 +10,7 @@ dependencies[] = context
 dependencies[] = ctools
 dependencies[] = facetapi
 dependencies[] = views
+dependencies[] = views_load_more
 features[context][] = search_page
 features[ctools][] = context:context:3
 features[ctools][] = views:views_default:3.0
