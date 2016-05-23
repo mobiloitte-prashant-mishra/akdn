@@ -1933,7 +1933,6 @@ print $content;
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'in-media-container';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
-  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['cache'] = FALSE;
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
@@ -2080,8 +2079,7 @@ print $content;
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['pager']['options']['waypoint']['infinite'] = 1;
-  $handler->display->display_options['pager']['options']['more_button_text'] = '';
+  $handler->display->display_options['pager']['options']['more_button_text'] = 'Show More';
   $handler->display->display_options['pager']['options']['effects']['type'] = 'fade';
   $handler->display->display_options['pager']['options']['effects']['speed'] = 'slow';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
@@ -4928,6 +4926,7 @@ return $cycle_id;';
     t('OK'),
     t('RESET'),
     t('Select any filter and click on Apply to see results'),
+    t('Show More'),
     t('No projects found!'),
     t('term from field_cycle_year'),
     t('field_award_cycle'),
@@ -8530,8 +8529,6 @@ print $content;
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['pager']['options']['waypoint']['infinite'] = 1;
-  $handler->display->display_options['pager']['options']['more_button_text'] = '';
   $handler->display->display_options['pager']['options']['effects']['speed'] = 'slow';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
@@ -11432,8 +11429,7 @@ print $explode[1];
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['pager']['options']['waypoint']['infinite'] = 1;
-  $handler->display->display_options['pager']['options']['more_button_text'] = '';
+  $handler->display->display_options['pager']['options']['more_button_text'] = 'Show More';
   $handler->display->display_options['pager']['options']['effects']['speed'] = 'slow';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
@@ -11635,8 +11631,7 @@ print $explode[1];
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['pager']['options']['waypoint']['infinite'] = 1;
-  $handler->display->display_options['pager']['options']['more_button_text'] = '';
+  $handler->display->display_options['pager']['options']['more_button_text'] = 'Show More';
   $handler->display->display_options['pager']['options']['effects']['speed'] = 'slow';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';

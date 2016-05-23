@@ -6,7 +6,6 @@ version = 7.x-1.13
 project = solr_search_bundle_2
 dependencies[] = ctools
 dependencies[] = views
-dependencies[] = views_load_more
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
 features[views_view][] = akaa_solr_search_page
