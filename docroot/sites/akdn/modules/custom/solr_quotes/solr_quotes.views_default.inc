@@ -261,8 +261,7 @@ if (count($static->nid[$nid]) == 1) {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['pager']['options']['waypoint']['infinite'] = 1;
-  $handler->display->display_options['pager']['options']['more_button_text'] = '';
+  $handler->display->display_options['pager']['options']['more_button_text'] = 'Show more';
   $handler->display->display_options['pager']['options']['effects']['speed'] = 'slow';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'grouping_limit';
@@ -370,6 +369,7 @@ if (count($static->nid[$nid]) == 1) {
 [php_1]
 </div>'),
     t('Akdn : Speech quotes'),
+    t('Show more'),
     t('<h2 class=\'quotes-main-title\'>Quotations by His Highness the Aga Khan </h2>'),
     t('[speech_quotes_count]
 [speech_quote_speech_nid]'),
