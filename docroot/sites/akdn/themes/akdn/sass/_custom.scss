@@ -6,3 +6,10 @@
 .mCSB_scrollTools .mCSB_dragger {
   z-index: 0 !important;
 }
+
+/* AKAA Project Page Video Height Fix */
+.akaa-body {
+  .playerbox {
+    height: auto;
+  }
+}

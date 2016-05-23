@@ -18773,12 +18773,6 @@ map area {
   opacity: 1;
 }
 
-/* AKAA Project Page Video Height Fix */
-/* line 8782, ../sass/_akdn-redesign.scss */
-.akaa-body .playerbox {
-  height: auto;
-}
-
 /*
 * Media Queries
 *
@@ -20344,6 +20338,12 @@ map area {
 /* line 6, ../sass/_custom.scss */
 .mCSB_scrollTools .mCSB_dragger {
   z-index: 0 !important;
+}
+
+/* AKAA Project Page Video Height Fix */
+/* line 12, ../sass/_custom.scss */
+.akaa-body .playerbox {
+  height: auto;
 }
 
 /**
