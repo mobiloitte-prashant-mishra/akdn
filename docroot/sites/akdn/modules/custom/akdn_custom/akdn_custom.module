@@ -3855,29 +3855,31 @@ function akdn_custom_preprocess_views_view_field__solr_quotes__page_1__nothing(&
  */
 function akdn_custom_views_pre_view(&$view, &$display_id, &$args) {
   if ($view->name == 'solr_quotes' && $display_id == 'page_1') {
-    $url = $_GET;
-    $url_0 = $url['f'][0];
-    $url_1 = $url['f'][1];
-    $url_2 = $url['f'][2];
+    $url = isset($_GET['f']) ? $_GET['f'] : null;
+    $url_0 = $url[0];
+    $url_1 = $url[1];
+    $url_2 = $url[2];
     $url_array = array($url_0,$url_1,$url_2);
-foreach ($url_array as $url_array_value) {
-  switch ($url_array_value) {
-    case strstr($url_array_value,'quotes_agency:'):
-      $url_array_value_explode = explode('quotes_agency:', $url_array_value);
-      $header_output .= $url_array_value_explode[1];
-    break;
-    case strstr($url_array_value,'field_speech_themes:'):
-      $url_array_value_explode = explode('field_speech_themes:', $url_array_value);
-      $term = taxonomy_term_load($url_array_value_explode[1]);
-      $taxonomy_name = $term->name;
-      $header_output .= $taxonomy_name;
-    break;
-    case strstr($url_array_value,'quotes_country:'):
-      $url_array_value_explode = explode('quotes_country:', $url_array_value);
-      $header_output .= $url_array_value_explode[1];
-    break;
+  foreach ($url_array as $url_array_value) {
+    switch ($url_array_value) {
+      case strstr($url_array_value,'quotes_agency:'):
+        $url_array_value_explode = explode('quotes_agency:', $url_array_value);
+        $header_output .= $url_array_value_explode[1];
+      break;
+      case strstr($url_array_value,'field_speech_themes:'):
+        $url_array_value_explode = explode('field_speech_themes:', $url_array_value);
+        $term = taxonomy_term_load($url_array_value_explode[1]);
+        $taxonomy_name = $term->name;
+        $header_output .= $taxonomy_name;
+      break;
+      case strstr($url_array_value,'quotes_country:'):
+        $url_array_value_explode = explode('quotes_country:', $url_array_value);
+        $header_output .= $url_array_value_explode[1];
+      break;
+      default:
+        $header_output .= '';
+    }
   }
-}
     $header = t('<h2 class="quotes-main-title"> '. $header_output .' </h2>');
     $view->add_item('page_1', 'header', 'views', 'area', array('content' => $header, 'format' => 'full_html'));
   }
