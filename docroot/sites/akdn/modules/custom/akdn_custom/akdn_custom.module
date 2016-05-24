@@ -3859,61 +3859,25 @@ function akdn_custom_views_pre_view(&$view, &$display_id, &$args) {
     $url_0 = $url['f'][0];
     $url_1 = $url['f'][1];
     $url_2 = $url['f'][2];
-    $header_output = '';
-    if (strstr($url_0,'quotes_agency:')) {
-      $url_0_explode = explode('quotes_agency:', $url_0);
-      $header_output .= $url_0_explode[1];
-    }
-    if (strstr($url_0,'field_speech_themes:')) {
-      $url_0_explode = explode('field_speech_themes:', $url_0);
-      $term = taxonomy_term_load($url_0_explode[1]);
+    $url_array = array($url_0,$url_1,$url_2);
+foreach ($url_array as $url_array_value) {
+  switch ($url_array_value) {
+    case strstr($url_array_value,'quotes_agency:'):
+      $url_array_value_explode = explode('quotes_agency:', $url_array_value);
+      $header_output .= $url_array_value_explode[1];
+    break;
+    case strstr($url_array_value,'field_speech_themes:'):
+      $url_array_value_explode = explode('field_speech_themes:', $url_array_value);
+      $term = taxonomy_term_load($url_array_value_explode[1]);
       $taxonomy_name = $term->name;
       $header_output .= $taxonomy_name;
-    }
-    if (strstr($url_0,'quotes_country:')) {
-      $url_0_explode = explode('quotes_country:', $url_0);
-      $header_output .= $url_0_explode[1];
-    }
-    if (strstr($url_1,'quotes_agency:')) {
-      $header_output .= ',';
-      $header_output .= ' ';
-      $url_1_explode = explode('quotes_agency:', $url_1);
-      $header_output .= $url_1_explode[1];
-    }
-    if (strstr($url_1,'field_speech_themes:')) {
-      $header_output .= ',';
-      $header_output .= ' ';
-      $url_1_explode = explode('field_speech_themes:', $url_1);
-      $term = taxonomy_term_load($url_1_explode[1]);
-      $taxonomy_name = $term->name;
-      $header_output .= $taxonomy_name;
-    }
-    if (strstr($url_1,'quotes_country:')) {
-      $header_output .= ',';
-      $header_output .= ' ';
-      $url_1_explode = explode('quotes_country:', $url_1);
-      $header_output .= $url_1_explode[1];
-    }
-    if (strstr($url_2,'quotes_agency:')) {
-      $header_output .= ',';
-      $header_output .= ' ';
-      $url_2_explode = explode('quotes_agency:', $url_2);
-      $header_output .= $url_2_explode[1];
-    }
-    if (strstr($url_2,'field_speech_themes:')) {
-      $header_output .= ',';
-      $header_output .= ' ';
-      $url_2_explode = explode('field_speech_themes:', $url_2);
-      $term = taxonomy_term_load($url_2_explode[1]);
-      $taxonomy_name = $term->name;
-      $header_output .= $taxonomy_name;
-    }
-    if (strstr($url_2,'quotes_country:')) {
-      $header_output .= ',';
-      $header_output .= ' ';
-      $url_2_explode = explode('quotes_country:', $url_2);
-      $header_output .= $url_2_explode[1];
-    }
+    break;
+    case strstr($url_array_value,'quotes_country:'):
+      $url_array_value_explode = explode('quotes_country:', $url_array_value);
+      $header_output .= $url_array_value_explode[1];
+    break;
+  }
+}
     $header = t('<h2 class="quotes-main-title"> '. $header_output .' </h2>');
     $view->add_item('page_1', 'header', 'views', 'area', array('content' => $header, 'format' => 'full_html'));
   }
