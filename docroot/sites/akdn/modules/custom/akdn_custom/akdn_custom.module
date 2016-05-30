@@ -3849,3 +3849,48 @@ function akdn_custom_preprocess_views_view_field__solr_quotes__page_1__nothing(&
   $output .= '</div></div>';
   $variables['speech_quote_speech_nid'] = $output;
 }
+
+/**
+ * Implements hook__views_pre_view().
+ */
+function akdn_custom_views_pre_view(&$view, &$display_id, &$args) {
+  if ($view->name == 'solr_quotes' && $display_id == 'page_1') {
+    $url = isset($_GET['f']) ? $_GET['f'] : null;
+    $counter = 0;
+  foreach ($url as $url_array_value) {
+    switch ($url_array_value) {
+      case strstr($url_array_value,'quotes_agency:'):
+        if ($counter > 0 && isset($url_array_value)) {
+          $header_output .= ',';
+          $header_output .= ' ';
+        }
+        $url_array_value_explode = explode('quotes_agency:', $url_array_value);
+        $header_output .= $url_array_value_explode[1];
+      break;
+      case strstr($url_array_value,'field_speech_themes:'):
+        if ($counter > 0) {
+          $header_output .= ',';
+          $header_output .= ' ';
+        }
+        $url_array_value_explode = explode('field_speech_themes:', $url_array_value);
+        $term = taxonomy_term_load($url_array_value_explode[1]);
+        $taxonomy_name = $term->name;
+        $header_output .= $taxonomy_name;
+      break;
+      case strstr($url_array_value,'quotes_country:'):
+        if ($counter > 0) {
+          $header_output .= ',';
+          $header_output .= ' ';
+        }
+        $url_array_value_explode = explode('quotes_country:', $url_array_value);
+        $header_output .= $url_array_value_explode[1];
+      break;
+      default:
+        $header_output .= '';
+    }
+    $counter ++;
+  }
+    $header = t('<h2 class="quotes-main-title"> '. $header_output .' </h2>');
+    $view->add_item('page_1', 'header', 'views', 'area', array('content' => $header, 'format' => 'full_html'));
+  }
+}
