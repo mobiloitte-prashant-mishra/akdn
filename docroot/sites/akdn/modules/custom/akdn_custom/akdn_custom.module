@@ -3856,12 +3856,8 @@ function akdn_custom_preprocess_views_view_field__solr_quotes__page_1__nothing(&
 function akdn_custom_views_pre_view(&$view, &$display_id, &$args) {
   if ($view->name == 'solr_quotes' && $display_id == 'page_1') {
     $url = isset($_GET['f']) ? $_GET['f'] : null;
-    $url_0 = $url[0];
-    $url_1 = $url[1];
-    $url_2 = $url[2];
-    $url_array = array($url_0,$url_1,$url_2);
     $counter = 0;
-  foreach ($url_array as $url_array_value) {
+  foreach ($url as $url_array_value) {
     switch ($url_array_value) {
       case strstr($url_array_value,'quotes_agency:'):
         if ($counter > 0 && isset($url_array_value)) {
