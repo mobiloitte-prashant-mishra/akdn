@@ -56,7 +56,7 @@ function addthis_filter_format_disable($format) {
 /**
  * Implements hook_menu().
  */
-function addthis_menu() {
+function addthis_menu_123() {
   $menu_items['admin/config/user-interface/addthis'] = array(
     'title' => 'AddThis',
     'description' => 'Configure AddThis settings.',
