@@ -3606,8 +3606,11 @@ function akdn_custom_node_update($node) {
 function akdn_custom_facet_items_alter(&$build, &$settings) {
   if ($settings->facet == "entity_type") {
     foreach($build as $key => $item) {
-      if($key == 'project') {
+      if ($key == 'project') {
         $build[$key]["#markup"] = 'Spotlight';
+      }
+      elseif ($key == 'architecture project') {
+        $build[$key]["#markup"] = 'Architecture Project';
       }
     }
   }
