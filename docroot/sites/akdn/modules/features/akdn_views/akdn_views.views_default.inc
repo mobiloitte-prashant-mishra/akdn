@@ -3544,18 +3544,18 @@ return TRUE;
   $handler->display->display_options['fields']['field_client']['element_wrapper_class'] = 'akaa-technicalinfo-row';
   $handler->display->display_options['fields']['field_client']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_client']['hide_empty'] = TRUE;
-  /* Field: Content: Planner */
-  $handler->display->display_options['fields']['field_planner']['id'] = 'field_planner';
-  $handler->display->display_options['fields']['field_planner']['table'] = 'field_data_field_planner';
-  $handler->display->display_options['fields']['field_planner']['field'] = 'field_planner';
-  $handler->display->display_options['fields']['field_planner']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_planner']['element_class'] = 'akaa-technicalinfo-value';
-  $handler->display->display_options['fields']['field_planner']['element_label_type'] = 'div';
-  $handler->display->display_options['fields']['field_planner']['element_label_class'] = 'akaa-technicalinfo-label';
-  $handler->display->display_options['fields']['field_planner']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_planner']['element_wrapper_class'] = 'akaa-technicalinfo-row';
-  $handler->display->display_options['fields']['field_planner']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_planner']['hide_empty'] = TRUE;
+  /* Field: Content: Architect */
+  $handler->display->display_options['fields']['field_architect']['id'] = 'field_architect';
+  $handler->display->display_options['fields']['field_architect']['table'] = 'field_data_field_architect';
+  $handler->display->display_options['fields']['field_architect']['field'] = 'field_architect';
+  $handler->display->display_options['fields']['field_architect']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_architect']['element_class'] = 'akaa-technicalinfo-value';
+  $handler->display->display_options['fields']['field_architect']['element_label_type'] = 'div';
+  $handler->display->display_options['fields']['field_architect']['element_label_class'] = 'akaa-technicalinfo-label';
+  $handler->display->display_options['fields']['field_architect']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_architect']['element_wrapper_class'] = 'akaa-technicalinfo-row';
+  $handler->display->display_options['fields']['field_architect']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_architect']['hide_empty'] = TRUE;
   /* Field: Content: Design Date */
   $handler->display->display_options['fields']['field_design_date']['id'] = 'field_design_date';
   $handler->display->display_options['fields']['field_design_date']['table'] = 'field_data_field_design_date';
@@ -4991,7 +4991,7 @@ return $cycle_id;';
     t('Location'),
     t('[field_city], [field_arch_country]'),
     t('Client'),
-    t('Planner'),
+    t('Architect'),
     t('Design'),
     t('Size'),
     t('Completed'),
