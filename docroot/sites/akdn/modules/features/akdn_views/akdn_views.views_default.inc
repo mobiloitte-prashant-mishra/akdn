@@ -18508,7 +18508,7 @@ if (isset($array[0][\'rendered\'][\'#markup\'])) {
   //$value = $array[0][\'rendered\'][\'#markup\'];
   //$val = $array[0][\'rendered\'][\'#markup\'];
   //$value .= rtrim($val);
-  $value .= rtrim($array[0]['rendered']['#markup']);
+  $value .= rtrim($array[0][\'rendered\'][\'#markup\']);
   $value .= "</br>";
   $value .= $data->field_field_image_copytight[0][\'rendered\'][\'#markup\'];
 }
