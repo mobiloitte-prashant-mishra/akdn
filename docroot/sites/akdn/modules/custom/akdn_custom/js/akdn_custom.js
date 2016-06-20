@@ -383,3 +383,11 @@ jQuery('.language-switcher-locale-url').find('.active').hide();
 // Open 'In the media slide link in new tab'
 jQuery('.slide.In').find("a").attr("target", "_blank");
 
+// On colorbox popup Caption and Copyright appears on gallery/pages
+jQuery(".gallery-slide a img").each(function() {
+  jQuery(this).attr('alt');
+  jQuery(this).parent().attr('title');
+  var temp = jQuery(this).parent().attr('title') + '<br/>' + jQuery(this).attr('alt');
+  jQuery(this).parent().attr('title', temp);
+});
+(jQuery);
