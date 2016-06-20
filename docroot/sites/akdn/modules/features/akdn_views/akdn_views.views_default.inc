@@ -18499,14 +18499,16 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
 $array = $data->field_field_caption;
+$value = \'\';
 if ($data->field_data_field_project_image_field_project_image_fid) {
    $array = $data->field_field_image_caption_1;
 }
 
 if (isset($array[0][\'rendered\'][\'#markup\'])) {
-  $value = $array[0][\'rendered\'][\'#markup\'];
-  $val = $array[0][\'rendered\'][\'#markup\'];
-  $value .= rtrim($val);
+  //$value = $array[0][\'rendered\'][\'#markup\'];
+  //$val = $array[0][\'rendered\'][\'#markup\'];
+  //$value .= rtrim($val);
+  $value .= rtrim($array[0]['rendered']['#markup']);
   $value .= "</br>";
   $value .= $data->field_field_image_copytight[0][\'rendered\'][\'#markup\'];
 }
