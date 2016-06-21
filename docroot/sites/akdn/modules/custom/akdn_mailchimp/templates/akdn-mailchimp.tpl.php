@@ -4,9 +4,9 @@
  * This template is been taken from Mailchimp Embedded Form.
  */ ?>
  <!-- Begin signup -->
- <script src  =  "https://code.jquery.com/jquery-1.10.2.js"></script>
- <link href  =  "//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel = "stylesheet" type = "text/css">
- <style type  =  "text/css">
+ <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+ <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+ <style type="text/css">
  /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
 
@@ -103,7 +103,7 @@
     text-shadow: 0 0 0 #000;
   }
 
-  input[type = "text"],input[type = "email"]{
+  input[type="text"],input[type="email"]{
     height: 28px !important;
     line-height: normal;
     font-size: 13px;
@@ -150,7 +150,7 @@
 </style>
 
 <div id = "mc_embed_signup">
-  <form action = "//akdn.us13.list-manage.com/subscribe/post?u = 521d41d1e11da9ef6c6267182&amp;id = 3a2a5c9a5a" method = "post" id = "mc-embedded-subscribe-form" name = "mc-embedded-subscribe-form" class = "validate webform-subscribe" target = "_blank" novalidate>
+  <form action="//akdn.us13.list-manage.com/subscribe/post?u=521d41d1e11da9ef6c6267182&amp;id=3a2a5c9a5a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate webform-subscribe" target="_blank" novalidate>
     <div id = "mc_embed_signup_scroll">
       <h1 class = "title" id = "page-title"> Subscribe to our Newsletter</h1>
 
@@ -504,10 +504,10 @@
 </form>
 </div>
 
-<script type = "text/javascript">
+<script type="text/javascript">
   $(document).ready(function(){
     $('#mc-embedded-subscribe').on('click',function(e){
-     var atLeastOneIsChecked = $(".subs-subscriptions input[type = 'checkbox']:checked").length > 0;
+     var atLeastOneIsChecked=$(".subs-subscriptions input[type='checkbox']:checked").length > 0;
 
      if (atLeastOneIsChecked === false){
         e.preventDefault();
@@ -518,5 +518,5 @@
   });
 </script>
 
-<script type = 'text/javascript' src = '//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type = 'text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0] = 'EMAIL';ftypes[0] = 'email';fnames[1] = 'FNAME';ftypes[1] = 'text';fnames[2] = 'LNAME';ftypes[2] = 'text';fnames[3] = 'GENDER';ftypes[3] = 'dropdown';fnames[7] = 'YOB';ftypes[7] = 'number';fnames[6] = 'COUNTRY';ftypes[6] = 'dropdown';fnames[4] = 'CAUSE';ftypes[4] = 'dropdown';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames=new Array(); window.ftypes=new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='GENDER';ftypes[3]='dropdown';fnames[7]='YOB';ftypes[7]='number';fnames[6]='COUNTRY';ftypes[6]='dropdown';fnames[4]='CAUSE';ftypes[4]='dropdown';}(jQuery));var $mcj=jQuery.noConflict(true);</script>
 <!--End mc_embed_signup-->
