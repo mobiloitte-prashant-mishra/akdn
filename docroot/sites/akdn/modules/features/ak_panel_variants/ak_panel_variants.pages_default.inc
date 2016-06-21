@@ -17800,6 +17800,96 @@ function ak_panel_variants_default_page_manager_pages() {
   $page->default_handlers[$handler->name] = $handler;
   $pages['speeches_centre'] = $page;
 
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'subscription';
+  $page->task = 'page';
+  $page->admin_title = 'Subscription';
+  $page->admin_description = '';
+  $page->path = 'subscribe';
+  $page->access = array();
+  $page->menu = array();
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_subscription_panel_context';
+  $handler->task = 'page';
+  $handler->subtask = 'subscription';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Panel',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(
+        0 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '1',
+            'paths' => 'subscribe',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'onecol';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'middle' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Subscribe';
+  $display->uuid = 'c83cf17d-4e51-46f1-940d-fb1cd612a351';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-374459a4-e567-4bbc-83c0-ac1c2448659c';
+    $pane->panel = 'middle';
+    $pane->type = 'block';
+    $pane->subtype = 'akdn_mailchimp-subscribe_newsletter';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '374459a4-e567-4bbc-83c0-ac1c2448659c';
+    $display->content['new-374459a4-e567-4bbc-83c0-ac1c2448659c'] = $pane;
+    $display->panels['middle'][0] = 'new-374459a4-e567-4bbc-83c0-ac1c2448659c';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['subscription'] = $page;
+
   return $pages;
 
 }
