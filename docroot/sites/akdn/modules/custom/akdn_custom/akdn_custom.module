@@ -2104,7 +2104,7 @@ function akdn_search_forms($form, &$form_state, $delta) {
       );
       //$text = '<li><span class="search_toggle">' . t('Search') . '</span></li>';
       $text = '';
-      $text .= ' <li>' . l('Subscribe', 'webform/subscribe-our-newsletter',
+      $text .= ' <li>' . l('Subscribe', 'subscribe',
           array(
             'attributes' =>
               array(
