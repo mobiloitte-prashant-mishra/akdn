@@ -2381,6 +2381,20 @@ function akdn_custom_node_presave($node) {
       $node->field_date_decade = array();
     }
   }
+  // Code to prevent tweet nodes from saving in case of cron run
+  if($node->type == 'tweet') {
+    $tweet_external_id = $node->field_tweet_external_id['und'][0]['value'];
+    $nids = db_select('field_data_field_tweet_external_id', 'eid')
+      ->fields('eid', array('entity_id'))
+      ->condition('eid.field_tweet_external_id_value', $tweet_external_id, '=')
+      ->execute()
+      ->fetchCol();
+    if($nids) {
+      drupal_set_message(t('Cron ran successfully'));
+      drupal_goto('admin/config/system/cron/');
+      drupal_exit();
+    }
+  }
 }
 
 /**
