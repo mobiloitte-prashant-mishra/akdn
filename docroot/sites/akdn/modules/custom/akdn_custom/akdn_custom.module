@@ -2381,6 +2381,7 @@ function akdn_custom_node_presave($node) {
       $node->field_date_decade = array();
     }
   }
+
   // Code to prevent tweet nodes from saving in case of cron run
   if($node->type == 'tweet') {
     $tweet_external_id = $node->field_tweet_external_id['und'][0]['value'];
@@ -2390,7 +2391,10 @@ function akdn_custom_node_presave($node) {
       ->execute()
       ->fetchCol();
     if($nids) {
-      drupal_set_message(t('Cron ran successfully'));
+      $file = file_load($node->field_tweet_media['und'][0]['fid']);
+        if(is_object($file)) {
+          file_delete($file, 1);
+        }
       drupal_goto('admin/config/system/cron/');
       drupal_exit();
     }
