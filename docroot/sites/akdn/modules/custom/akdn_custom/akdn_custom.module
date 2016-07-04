@@ -2382,7 +2382,7 @@ function akdn_custom_node_presave($node) {
     }
   }
 
-  // Code to prevent tweet nodes from saving in case of cron run
+  // Code to delete unwanted twitter media images and to prevent unwanted node being saved.
   if($node->type == 'tweet') {
     $tweet_external_id = $node->field_tweet_external_id['und'][0]['value'];
     $nids = db_select('field_data_field_tweet_external_id', 'eid')
