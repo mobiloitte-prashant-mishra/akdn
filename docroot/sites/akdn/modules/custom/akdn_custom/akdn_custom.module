@@ -2381,6 +2381,24 @@ function akdn_custom_node_presave($node) {
       $node->field_date_decade = array();
     }
   }
+
+  // Remove unwanted twitter media images and unwanted node being saved.
+  if($node->type == 'tweet') {
+    $tweet_external_id = $node->field_tweet_external_id['und'][0]['value'];
+    $nids = db_select('field_data_field_tweet_external_id', 'eid')
+      ->fields('eid', array('entity_id'))
+      ->condition('eid.field_tweet_external_id_value', $tweet_external_id, '=')
+      ->execute()
+      ->fetchCol();
+    if($nids) {
+      $file = file_load($node->field_tweet_media['und'][0]['fid']);
+        if(is_object($file)) {
+          file_delete($file, 1);
+        }
+      drupal_goto('admin/config/system/cron/');
+      drupal_exit();
+    }
+  }
 }
 
 /**
