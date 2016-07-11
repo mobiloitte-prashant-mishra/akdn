@@ -1,0 +1,41 @@
+<?php
+/**
+ * @file
+ * This module allows to create Mailchimp Campaign form.
+ */
+
+/**
+ * Implements hook_block_info().
+ */
+function akdn_mailchimp_block_info() {
+  $blocks = array();
+  $blocks['subscribe_newsletter'] = array(
+    'info' => t('Mailchimp Subscribe'),
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function akdn_mailchimp_block_view($delta = NULL) {
+  $block = array();
+  if ($delta == 'subscribe_newsletter') {
+    $block['subject'] = t('<none>');
+    $block['content'] = theme('akdn_mailchimp');
+  }
+  return $block;
+}
+
+/**
+ * Implementation of hook_theme().
+ */
+function akdn_mailchimp_theme() {
+  $path = drupal_get_path('module', 'akdn_mailchimp') . '/templates';
+  return array(
+    'akdn_mailchimp' => array(
+      'template' => 'akdn-mailchimp',
+      'path' => $path,
+    )
+  );
+}

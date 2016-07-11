@@ -1666,6 +1666,39 @@ node/26851/*',
 
   $path_breadcrumb = new stdClass();
   $path_breadcrumb->api_version = 1;
+  $path_breadcrumb->machine_name = 'subscription';
+  $path_breadcrumb->name = 'subscription';
+  $path_breadcrumb->path = 'subscribe';
+  $path_breadcrumb->data = array(
+    'titles' => array(
+      0 => 'Subscribe To Newsletter',
+    ),
+    'paths' => array(
+      0 => '/subscribe',
+    ),
+    'home' => 1,
+    'translatable' => 0,
+    'arguments' => array(),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '1',
+            'paths' => 'subscribe',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+  );
+  $path_breadcrumb->weight = 0;
+  $export['subscription'] = $path_breadcrumb;
+
+  $path_breadcrumb = new stdClass();
+  $path_breadcrumb->api_version = 1;
   $path_breadcrumb->machine_name = 'thematic_areas';
   $path_breadcrumb->name = 'What we do Breadcrumbs';
   $path_breadcrumb->path = 'node/%node';

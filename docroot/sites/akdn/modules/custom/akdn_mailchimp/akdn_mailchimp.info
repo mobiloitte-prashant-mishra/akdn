@@ -1,0 +1,4 @@
+name = AKDN mailchimp
+description = TPL for AKDN Mailchimp.
+core = 7.x
+package = AKDN

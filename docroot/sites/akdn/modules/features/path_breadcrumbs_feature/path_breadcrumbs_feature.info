@@ -45,4 +45,6 @@ features[path_breadcrumbs][] = projects_detail_pages
 features[path_breadcrumbs][] = search_result
 features[path_breadcrumbs][] = speeches
 features[path_breadcrumbs][] = speeches_clone
+features[path_breadcrumbs][] = subscription
 features[path_breadcrumbs][] = thematic_areas
+mtime = 1464090555

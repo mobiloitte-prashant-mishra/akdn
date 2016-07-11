@@ -45,6 +45,7 @@ features[page_manager_pages][] = front
 features[page_manager_pages][] = geographies
 features[page_manager_pages][] = press_centre
 features[page_manager_pages][] = speeches_centre
+features[page_manager_pages][] = subscription
 features[panels_layout][] = hub
 features[panels_mini][] = agency_additional_footer
 features[panels_mini][] = akaa_footer
