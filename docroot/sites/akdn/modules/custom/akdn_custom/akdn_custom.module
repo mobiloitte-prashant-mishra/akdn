@@ -1621,6 +1621,11 @@ function what_we_do_news_and_resources() {
       if ($node->type == 'podcast') {
         $type = 'Videos';
         $image = reset($node->field_podcast_image);
+        if (empty($image)) {
+          $info = field_info_instance('node', 'field_podcast_image', 'podcast');
+          $file = (array) file_load($info['settings']['default_image']);
+          $image = array($file);
+        }
         $title = $node->title;
         $read = l('View', 'node/' . $node->nid);
         $readall = l('View all', 'press-centre/videos', array('query' => array('f[0]' => $filter . ':' . $ntid)));
@@ -1629,6 +1634,11 @@ function what_we_do_news_and_resources() {
       if ($node->type == 'gallery') {
         $type = 'Photographs';
         $image = reset($node->field_gallery_images);
+        if (empty($image)) {
+          $info = field_info_instance('node', 'field_gallery_images', 'gallery');
+          $file = (array) file_load($info['settings']['default_image']);
+          $image = array($file);
+        }
         $title = $node->title;
         $read = l('View', 'node/' . $node->nid);
         $readall = l('View all', 'press-centre/galleries', array('query' => array('f[0]' => $filter . ':' . $ntid)));
@@ -1637,6 +1647,11 @@ function what_we_do_news_and_resources() {
       if ($node->type == 'event') {
         $type = 'Events';
         $image = reset($node->field_event_image);
+        if (empty($image)) {
+          $info = field_info_instance('node', 'field_event_image', 'event');
+          $file = (array) file_load($info['settings']['default_image']);
+          $image = array($file);
+        }
         $title = $node->title;
         $read = l('View', 'node/' . $node->nid);
         $readall = l('View all', 'press-centre/events', array('query' => array('f[0]' => $filter . ':' . $ntid)));
@@ -1645,6 +1660,11 @@ function what_we_do_news_and_resources() {
       if ($node->type == 'publication') {
         $type = 'Publications';
         $image = reset($node->field_publication_image);
+        if (empty($image)) {
+          $info = field_info_instance('node', 'field_publication_image', 'publication');
+          $file = (array) file_load($info['settings']['default_image']);
+          $image = array($file);
+        }
         $title = $node->title;
         $read = l('View', 'node/' . $node->nid);
         $readall = l('View all', 'press-centre/publications', array('query' => array('f[0]' => $filter . ':' . $ntid)));
@@ -1653,6 +1673,11 @@ function what_we_do_news_and_resources() {
       if ($node->type == 'speech') {
         $type = 'Speeches';
         $image = reset($node->field_speech_image);
+        if (empty($image)) {
+          $info = field_info_instance('node', 'field_speech_image', 'speech');
+          $file = (array) file_load($info['settings']['default_image']);
+          $image = array($file);
+        }
         $title = $node->title;
         $read = l('View', 'node/' . $node->nid);
         $readall = l('View all', 'press-centre/speeches', array('query' => array('f[0]' => $filter . ':' . $ntid)));
@@ -1661,6 +1686,11 @@ function what_we_do_news_and_resources() {
       if ($node->type == 'project') {
         $type = 'Spotlights';
         $image = reset($node->field_project_image);
+        if (empty($image)) {
+          $info = field_info_instance('node', 'field_project_image', 'project');
+          $file = (array) file_load($info['settings']['default_image']);
+          $image = array($file);
+        }
         $title = $node->title;
         $read = l('View', 'node/' . $node->nid);
         $readall = l('View all', 'press-centre/projects', array('query' => array('f[0]' => $filter . ':' . $ntid)));
