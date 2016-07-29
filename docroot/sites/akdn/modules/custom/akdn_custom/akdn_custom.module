@@ -1637,6 +1637,13 @@ function what_we_do_news_and_resources() {
         }
 
         $image = reset($node->field_article_img);
+
+/*displaying default image if image not uploaded for article*/
+        if (empty($image)) {
+          $info = field_info_instance('node', 'field_article_img', 'article');
+          $file = (array) file_load($info['settings']['default_image']);
+          $image = array($file);
+        }
         //$read = l('View', 'node/' . $node->nid, $attribute);
         $readall = l('View all', 'press-centre/' . $url, array('query' => array('f[0]' => $filter . ':' . $ntid)));
       }
