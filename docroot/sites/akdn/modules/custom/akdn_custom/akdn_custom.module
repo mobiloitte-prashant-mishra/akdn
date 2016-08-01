@@ -66,6 +66,13 @@ function akdn_custom_menu() {
     'access arguments' => array('administer image styles'),
     'type' => MENU_NORMAL_ITEM,
     ); */
+   $items['custom-import-handler/update/%'] = array(
+     'title' => 'syndicate Node update',
+     'page callback' => '_syndicate_node_update',
+     'page arguments' => array(2),
+     'access callback' => TRUE,
+     'type' => MENU_CALLBACK,
+   );
   return $items;
 }
 
@@ -3967,5 +3974,18 @@ function akdn_custom_views_pre_view(&$view, &$display_id, &$args) {
   }
     $header = t('<h2 class="quotes-main-title"> '. $header_output .' </h2>');
     $view->add_item('page_1', 'header', 'views', 'area', array('content' => $header, 'format' => 'full_html'));
+  }
+}
+
+/**
+ * custom function to update the source node of syndication flag.
+ * @return [type] [description]
+ */
+function _syndicate_node_update() {
+  $nid = arg(2);
+  if(is_numeric($nid)){
+    $node = node_load($nid);
+    $node->field_syndicate_this['und'][0]['value'] = 0;
+    node_save($node);
   }
 }
