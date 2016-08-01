@@ -3985,7 +3985,9 @@ function _syndicate_node_update() {
   $nid = arg(2);
   if(is_numeric($nid)){
     $node = node_load($nid);
-    $node->field_syndicate_this['und'][0]['value'] = 0;
+    if($node->field_syndicate_this['und'][0]['value'] == 1) {
+      $node->field_syndicate_this['und'][0]['value'] = 0;
+    }
     node_save($node);
   }
 }
