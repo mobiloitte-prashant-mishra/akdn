@@ -92,8 +92,8 @@ function akdn_press_centre_types_field_group_info() {
       0 => 'group_article_details_group',
       1 => 'group_article_details',
       2 => 'group_featured_content',
-      3 => 'group_related_content',
-      4 => 'group_newsletter_details',
+      3 => 'group_newsletter_details',
+      4 => 'group_related_content',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(
