@@ -1,5 +1,5 @@
 <?php
-define("SCS_SITE_URL", 'http://kc-module-update/scs/');
+define("SCS_SITE_URL", 'http://akdndev.prod.acquia-sites.com/scs/');
 
 /**
  * Implements hook_menu().
