@@ -1,5 +1,7 @@
 <?php
-define("SCS_SITE_URL", 'http://akdndev.prod.acquia-sites.com/scs/');
+
+$syndicate_url = variable_get('syndicate-url');
+define("SCS_SITE_URL", $syndicate_url);
 
 /**
  * Implements hook_menu().
@@ -73,6 +75,12 @@ function scs_custom_import_menu() {
     'page callback' => '_scs_custom_import_files_syndicate',
     'access arguments' => array('access content overview'),
     'type' => MENU_NORMAL_ITEM,
+    );
+   $items['admin/syndicate-config'] = array(
+    'title' => t('Syndiate configuration'),
+    "page callback" => "drupal_get_form",
+     "page arguments" => array('_scs_custom_syndicate_form'),
+    'access arguments' => array('access content'),
     );
 
 
@@ -1754,3 +1762,42 @@ function _scs_custom_get_languages_code_by_name ($name) {
   return $node_language;
 }
 
+function _scs_custom_syndicate_form($form, &$form_state){
+
+  $form['site_url_fieldset'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('API Key'),
+    );
+
+  $form['site_url_fieldset']['syndicate-url'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Syndicate source URL'),
+    '#default_value' => !empty(variable_get('syndicate-url')) ? variable_get('syndicate-url', '') : check_plain(t('No URL yet')),
+    '#description' => t('Please enter the site url.'),
+  );
+
+  $form['submit'] = array(
+      '#type' => 'submit',
+      '#value' => 'Submit',
+  );
+
+  $form['#submit'][] = '_scs_custom_syndicate_form_submit';
+
+  return $form;
+
+}
+
+
+/**
+ * Implements custom submit handler.
+ *
+ * @param $form $form_state
+ */
+function _scs_custom_syndicate_form_submit($form, &$form_state) {
+  // Setting the api key value to variable.
+  variable_set('syndicate-url', $form_state['values']['syndicate-url']);
+
+  if (!empty($form_state['values']['syndicate-url'])) {
+    drupal_set_message(check_plain(t('Syndicate source URL has been saved: @var', array('@var' => $form_state['values']['syndicate-url']))), 'status');
+  }
+}
