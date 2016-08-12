@@ -1551,6 +1551,7 @@ function _scs_custom_import_language_batch_processing_complete() {
 
 function _scs_custom_get_language($guid){
   $node_language = 'und';
+  if(!empty($guid)) {
   $url = SCS_SITE_URL.'node-language/'.$guid;
   $request = drupal_http_request($url);
   $data = new SimpleXMLElement($request->data);
@@ -1604,6 +1605,7 @@ function _scs_custom_get_language($guid){
       break;
     }
   }
+}
   return $node_language;
 }
 
