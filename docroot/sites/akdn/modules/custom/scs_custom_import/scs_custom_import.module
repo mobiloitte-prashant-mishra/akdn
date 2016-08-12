@@ -1661,9 +1661,9 @@ function _scs_custom_get_file_data_from_fid($fid) {
   $file_id = trim($fid);
   $url = SCS_SITE_URL.'files-attribute-import-by-fid/'.$file_id;
   $request = drupal_http_request($url);
-
+dsm($request, 'req');
   if($request->code == 200 && $request->data) {
-    $data = new SimpleXMLElement($request->data, null, true);
+    $data = new SimpleXMLElement($request->data, null, false);
     $data = $data->file_managed;
 
   }
