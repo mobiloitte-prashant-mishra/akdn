@@ -418,34 +418,38 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
            // Related Information related processing
           $datakey = 'related_information_'.$available_lang;
           $related_info = $source_avail_lang_node_data->{$datakey};
-          $related_info_all = explode('|||', $related_info);
+          if(!empty($related_info)) {
+            $related_info_all = explode('|||', $related_info);
 
-          foreach ($related_info_all as $related_info_links_data) {
-            $temp = array();
-            $temp = explode('||#||',$related_info_links_data);
+            foreach ($related_info_all as $related_info_links_data) {
+              $temp = array();
+              $temp = explode('||#||',$related_info_links_data);
 
-            if(count($temp) >0 ){
-              if($temp['0'] == $temp['1']) {
-                $temp['0'] = '';
+              if(count($temp) >0 ){
+                if($temp['0'] == $temp['1']) {
+                  $temp['0'] = '';
+                }
               }
-
               $node->field_article_link[$available_lang][]= array('title' => $temp['0'], 'url' => $temp['1']);
+              dsm($temp, 'temp');
             }
-          }
+        }
 
             // Related Links related processing
           $datakey = 'related_links_'.$available_lang;
           $related_links = $source_avail_lang_node_data->{$datakey};
-          $related_links_all = explode('|||', $related_links);
-          foreach ($related_links_all as $related_links_data) {
-            $temp = array();
-            $temp = explode('||#||',$related_links_data);
+          if(!empty($related_links)) {
+            $related_links_all = explode('|||', $related_links);
+            foreach ($related_links_all as $related_links_data) {
+              $temp = array();
+              $temp = explode('||#||',$related_links_data);
 
-            if(count($temp) >0 ){
-              if($temp['0'] == $temp['1']) {
-                $temp['0'] = '';
+              if(count($temp) >0 ){
+                if($temp['0'] == $temp['1']) {
+                  $temp['0'] = '';
+                }
+                $node->field_related_links[$available_lang][]= array('title' => $temp['0'], 'url' => $temp['1']);
               }
-              $node->field_related_links[$available_lang][]= array('title' => $temp['0'], 'url' => $temp['1']);
             }
           }
 
@@ -571,14 +575,16 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
           //file event image related processing
           $datakey = 'event_image_'.$available_lang;
           $event_image_fid = $source_avail_lang_node_data->{$datakey};
-          $event_image_source_data = _scs_custom_get_file_data_from_fid($event_image_fid);
 
-          $image_url = $event_image_source_data->path;
-          $media_folder = $event_image_source_data->media_folder;
-          $file = file_save_data(file_get_contents($image_url), file_default_scheme().'://events/'.$media_folder.'/'.$event_image_source_data->file_name, FILE_EXISTS_RENAME);
-          $files_data[$file->fid] = $event_image_source_data;
-          $node->field_event_image[$available_lang][0] = (array)$file;
+          if(!empty($event_image_fid)) {
+            $event_image_source_data = _scs_custom_get_file_data_from_fid($event_image_fid);
 
+            $image_url = $event_image_source_data->path;
+            $media_folder = $event_image_source_data->media_folder;
+            $file = file_save_data(file_get_contents($image_url), file_default_scheme().'://events/'.$media_folder.'/'.$event_image_source_data->file_name, FILE_EXISTS_RENAME);
+            $files_data[$file->fid] = $event_image_source_data;
+            $node->field_event_image[$available_lang][0] = (array)$file;
+          }
           //file newsletter image related processing
           $news_image_fid = 0;
           $news_image_fid = @$node->field_newsletter_image['und']['0']['fid'];
@@ -633,11 +639,10 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
             $node->field_event_date[$available_lang][] = array('value' => $val1, 'value2' => $val2);
           }
 
-      } // foreach end
-
-      // Related Information related processing
-      $datakey = 'event_information';
+          // Related Information related processing
+          $datakey = 'event_information_' . $available_lang;
           $related_info = $source_avail_lang_node_data->{$datakey};
+          if(!empty($related_info)) {
           $related_info_all = explode('|||', $related_info);
 
           foreach ($related_info_all as $related_info_links_data) {
@@ -648,10 +653,13 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
                 $temp['0'] = '';
               }
 
-              $node->field_event_related['und'][]= array('title' => $temp['0'], 'url' => $temp['1']);
+              $node->field_event_related[$available_lang][]= array('title' => $temp['0'], 'url' => $temp['1']);
 
             }
           }
+        }
+
+      } // foreach end
 
              // Related Links related processing
         $datakey = 'related_links';
@@ -764,11 +772,12 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
           $article_image_fid = $source_avail_lang_node_data->{$datakey};
           $article_image_source_data = _scs_custom_get_file_data_from_fid($article_image_fid);
 
-          $image_url = $article_image_source_data->path;
-          $file = file_save_data(file_get_contents($image_url), file_default_scheme().'://'.$i.'_'.$article_image_source_data->file_name, FILE_EXISTS_RENAME);
-          $files_data[$file->fid] = $article_image_source_data;
-          $node->field_speech_image[$available_lang][0] = (array)$file;
-
+          if(!empty($article_image_source_data)) {
+            $image_url = $article_image_source_data->path;
+            $file = file_save_data(file_get_contents($image_url), file_default_scheme().'://'.$i.'_'.$article_image_source_data->file_name, FILE_EXISTS_RENAME);
+            $files_data[$file->fid] = $article_image_source_data;
+            $node->field_speech_image[$available_lang][0] = (array)$file;
+          }
 
         // Tags related processing
           $datakey = 'tags_'.$available_lang;
@@ -1659,24 +1668,24 @@ function _scs_custom_get_node_data ($guid, $type) {
 function _scs_custom_get_file_data_from_fid($fid) {
   $data ='';
   $file_id = trim($fid);
-  $url = SCS_SITE_URL.'files-attribute-import-by-fid/'.$file_id;
-  $request = drupal_http_request($url);
-dsm($request, 'req');
-  if($request->code == 200 && $request->data) {
-    $data = new SimpleXMLElement($request->data, null, false);
-    $data = $data->file_managed;
-
+  if(!empty($file_id)) {
+    $url = SCS_SITE_URL.'files-attribute-import-by-fid/'.$file_id;
+    $request = drupal_http_request($url);
+    if($request->code == 200 && $request->data) {
+      $data = new SimpleXMLElement($request->data, null, false);
+      $data = $data->file_managed;
+    }
   }
-
-dsm($data, 'data');
   return $data;
+
 }
 
 function _scs_custom_get_languages ($guid) {
   $lang = array();
-  $url = SCS_SITE_URL.'node-language-translated/'.$guid;
-  $request = drupal_http_request($url);
-  $data = new SimpleXMLElement($request->data);
+  if(!empty($guid)) {
+    $url = SCS_SITE_URL.'node-language-translated/'.$guid;
+    $request = drupal_http_request($url);
+    $data = new SimpleXMLElement($request->data);
   if($request->data) {
     foreach($data->node as $key => $d){
       $lang_code = _scs_custom_get_languages_code_by_name($d->language);
@@ -1684,7 +1693,7 @@ function _scs_custom_get_languages ($guid) {
       $lang[] = array('source' => $source_code , 'lang' => $lang_code);
     }
   }
-
+}
   return $lang;
 }
 
