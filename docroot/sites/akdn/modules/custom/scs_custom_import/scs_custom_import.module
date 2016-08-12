@@ -1663,10 +1663,12 @@ function _scs_custom_get_file_data_from_fid($fid) {
   $request = drupal_http_request($url);
 
   if($request->code == 200 && $request->data) {
-    $data = new SimpleXMLElement($request->data);
+    $data = new SimpleXMLElement($request->data, null, true);
     $data = $data->file_managed;
+
   }
 
+dsm($data, 'data');
   return $data;
 }
 
