@@ -284,8 +284,7 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
         unset($node->field_country);
         unset($node->field_focus_area);
         unset($node->field_article_img);
-        unset($node->field_article_link);
-        unset($node->field_related_information);
+
         unset($node->field_tags);
         foreach($source_avail_lang as $node_avail_lang) {
           $available_lang = $node_avail_lang['lang'];
@@ -417,10 +416,12 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
 
            // Related Information related processing
           $datakey = 'related_information_'.$available_lang;
+
           $related_info = $source_avail_lang_node_data->{$datakey};
+
           if(!empty($related_info)) {
             $related_info_all = explode('|||', $related_info);
-
+            $i = 0;
             foreach ($related_info_all as $related_info_links_data) {
               $temp = array();
               $temp = explode('||#||',$related_info_links_data);
@@ -430,16 +431,17 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
                   $temp['0'] = '';
                 }
               }
-              $node->field_article_link[$available_lang][]= array('title' => $temp['0'], 'url' => $temp['1']);
-              dsm($temp, 'temp');
+              $node->field_article_link[$available_lang][$i++]= array('title' => $temp['0'], 'url' => $temp['1']);
+
             }
         }
-
             // Related Links related processing
           $datakey = 'related_links_'.$available_lang;
           $related_links = $source_avail_lang_node_data->{$datakey};
+
           if(!empty($related_links)) {
             $related_links_all = explode('|||', $related_links);
+            $i = 0;
             foreach ($related_links_all as $related_links_data) {
               $temp = array();
               $temp = explode('||#||',$related_links_data);
@@ -448,9 +450,11 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
                 if($temp['0'] == $temp['1']) {
                   $temp['0'] = '';
                 }
-                $node->field_related_links[$available_lang][]= array('title' => $temp['0'], 'url' => $temp['1']);
+
+                $node->field_related_links[$available_lang][$i++]= array('title' => $temp['0'], 'url' => $temp['1']);
               }
             }
+
           }
 
           // // Cycle Year mapping for all language
@@ -491,8 +495,6 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
         unset($node->field_focus_area);
         unset($node->field_event_image);
         unset($node->field_event_date);
-        unset($node->field_event_links);
-        unset($node->field_related_information);
         unset($node->field_tags);
 
 
@@ -645,6 +647,7 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
           if(!empty($related_info)) {
           $related_info_all = explode('|||', $related_info);
 
+          $i = 0;
           foreach ($related_info_all as $related_info_links_data) {
             $temp = array();
             $temp = explode('||#||',$related_info_links_data);
@@ -653,7 +656,7 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
                 $temp['0'] = '';
               }
 
-              $node->field_event_related[$available_lang][]= array('title' => $temp['0'], 'url' => $temp['1']);
+              $node->field_event_related[$available_lang][$i++]= array('title' => $temp['0'], 'url' => $temp['1']);
 
             }
           }
@@ -688,8 +691,7 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
         unset($node->field_focus_area);
         unset($node->field_tags);
         unset($node->field_speech_image);
-        unset($node->field_speech_links);
-        unset($node->field_related_information);
+
         unset($node->field_external_media);
         $i=0;
         foreach($source_avail_lang as $node_avail_lang) {
@@ -827,7 +829,7 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
           $datakey = 'related_information_' . $available_lang;
           $related_info = $source_avail_lang_node_data->{$datakey};
           $related_info_all = explode('|||', $related_info);
-
+          $i = 0;
           foreach ($related_info_all as $related_info_links_data) {
             $temp = array();
             $temp = explode('||#||',$related_info_links_data);
@@ -836,7 +838,7 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
                 $temp['0'] = '';
               }
 
-              $node->field_related_speech[$available_lang][]= array('title' => $temp['0'], 'url' => $temp['1']);
+              $node->field_related_speech[$available_lang][$i++]= array('title' => $temp['0'], 'url' => $temp['1']);
             }
           }
 
@@ -953,9 +955,6 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
         unset($node->field_focus_area);
         unset($node->field_tags);
         unset($node->field_publication_image);
-        /*unset($node->field_article_img);
-        unset($node->field_article_link);
-        */
         unset($node->field_related_information);
 
         foreach($source_avail_lang as $node_avail_lang) {
@@ -1151,7 +1150,7 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
       $datakey = 'purchase_link_' . $available_lang;
           $purchase_info = $source_avail_lang_node_data->{$datakey};
           $purchase_info_all = explode('|||', $purchase_info);
-
+          $i = 0;
           foreach ($purchase_info_all as $purchase_info_links_data) {
             $temp = array();
             $temp = explode('||#||',$purchase_info_links_data);
@@ -1160,7 +1159,7 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
                 $temp['0'] = '';
               }
 
-              $node->field_publication_purchase_link[$available_lang][]= array('title' => $temp['0'], 'url' => $temp['1']);
+              $node->field_publication_purchase_link[$available_lang][$i++]= array('title' => $temp['0'], 'url' => $temp['1']);
 
             }
           }
@@ -1169,7 +1168,7 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
           $datakey = 'related_information_' . $available_lang;
           $related_info = $source_avail_lang_node_data->{$datakey};
           $related_info_all = explode('|||', $related_info);
-
+          $i = 0;
           foreach ($related_info_all as $related_info_links_data) {
             $temp = array();
             $temp = explode('||#||',$related_info_links_data);
@@ -1178,7 +1177,7 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
                 $temp['0'] = '';
               }
 
-              $node->field_article_link[$available_lang][]= array('title' => $temp['0'], 'url' => $temp['1']);
+              $node->field_article_link[$available_lang][$i++]= array('title' => $temp['0'], 'url' => $temp['1']);
 
             }
           }
