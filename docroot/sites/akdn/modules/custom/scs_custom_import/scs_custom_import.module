@@ -1041,7 +1041,7 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
           $article_image_source_data = _scs_custom_get_file_data_from_fid($article_image_fid);
           $image_url = $article_image_source_data->path;
 
-          $file = file_save_data(file_get_contents($image_url), file_default_scheme().'://publications/'.$article_image_source_data->file_name, FILE_EXISTS_RENAME);
+          $file = file_save_data(file_get_contents($image_url), file_default_scheme().'://'.$article_image_source_data->file_name, FILE_EXISTS_RENAME);
           $files_data[$file->fid] = $article_image_source_data;
           $node->field_publication_image[$available_lang][0] = (array)$file;
 
@@ -1056,20 +1056,17 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
         //  file article image related processing
           $datakey = 'file_'.$available_lang;
           $pub_image_fid = $source_avail_lang_node_data->{$datakey};
-          //dsm($pub_image_fid, 'fid');
+
           $pub_image_source_data = _scs_custom_get_file_data_from_fid($pub_image_fid);
           $pub_image_url = $pub_image_source_data->path;
-         // dsm($pub_image_source_data, 'file data');
-         // dsm($pub_image_url, 'url');
-          $file = file_save_data(file_get_contents($pub_image_url), file_default_scheme().'://publications/'.$pub_image_source_data->file_name, FILE_EXISTS_RENAME);
+
+          $file = file_save_data(file_get_contents($pub_image_url), file_default_scheme().'://'.$pub_image_source_data->file_name, FILE_EXISTS_RENAME);
           $files_data[$file->fid] = $pub_image_source_data;
-          // $node->field_publication_file[$available_lang][0] = array(
-          //       'fid' => $file->fid,
-          //       'display' => 1,
-          //       'description' => '',
-          //   );
-            // dsm($file, 'file');
-          //$node->field_publication_file[$available_lang][0] =  (array)$file;
+          $node->field_publication_file[$available_lang][0] = array(
+                'fid' => $file->fid,
+                'display' => 1,
+                'description' => '',
+            );
 
        // Tags related processing
           $datakey = 'tags_'.$available_lang;
