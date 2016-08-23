@@ -66,6 +66,13 @@ function akdn_custom_menu() {
     'access arguments' => array('administer image styles'),
     'type' => MENU_NORMAL_ITEM,
     ); */
+   $items['custom-import-handler/update/%'] = array(
+     'title' => 'syndicate Node update',
+     'page callback' => '_syndicate_node_update',
+     'page arguments' => array(2),
+     'access callback' => TRUE,
+     'type' => MENU_CALLBACK,
+   );
   return $items;
 }
 
@@ -1637,12 +1644,24 @@ function what_we_do_news_and_resources() {
         }
 
         $image = reset($node->field_article_img);
+
+/*displaying default image if image not uploaded for article*/
+        if (empty($image)) {
+          $info = field_info_instance('node', 'field_article_img', 'article');
+          $file = (array) file_load($info['settings']['default_image']);
+          $image = array($file);
+        }
         //$read = l('View', 'node/' . $node->nid, $attribute);
         $readall = l('View all', 'press-centre/' . $url, array('query' => array('f[0]' => $filter . ':' . $ntid)));
       }
       if ($node->type == 'podcast') {
         $type = 'Videos';
         $image = reset($node->field_podcast_image);
+        if (empty($image)) {
+          $info = field_info_instance('node', 'field_podcast_image', 'podcast');
+          $file = (array) file_load($info['settings']['default_image']);
+          $image = array($file);
+        }
         $title = $node->title;
         $read = l('View', 'node/' . $node->nid);
         $readall = l('View all', 'press-centre/videos', array('query' => array('f[0]' => $filter . ':' . $ntid)));
@@ -1651,6 +1670,11 @@ function what_we_do_news_and_resources() {
       if ($node->type == 'gallery') {
         $type = 'Photographs';
         $image = reset($node->field_gallery_images);
+        if (empty($image)) {
+          $info = field_info_instance('node', 'field_gallery_images', 'gallery');
+          $file = (array) file_load($info['settings']['default_image']);
+          $image = array($file);
+        }
         $title = $node->title;
         $read = l('View', 'node/' . $node->nid);
         $readall = l('View all', 'press-centre/galleries', array('query' => array('f[0]' => $filter . ':' . $ntid)));
@@ -1659,6 +1683,11 @@ function what_we_do_news_and_resources() {
       if ($node->type == 'event') {
         $type = 'Events';
         $image = reset($node->field_event_image);
+        if (empty($image)) {
+          $info = field_info_instance('node', 'field_event_image', 'event');
+          $file = (array) file_load($info['settings']['default_image']);
+          $image = array($file);
+        }
         $title = $node->title;
         $read = l('View', 'node/' . $node->nid);
         $readall = l('View all', 'press-centre/events', array('query' => array('f[0]' => $filter . ':' . $ntid)));
@@ -1667,6 +1696,11 @@ function what_we_do_news_and_resources() {
       if ($node->type == 'publication') {
         $type = 'Publications';
         $image = reset($node->field_publication_image);
+        if (empty($image)) {
+          $info = field_info_instance('node', 'field_publication_image', 'publication');
+          $file = (array) file_load($info['settings']['default_image']);
+          $image = array($file);
+        }
         $title = $node->title;
         $read = l('View', 'node/' . $node->nid);
         $readall = l('View all', 'press-centre/publications', array('query' => array('f[0]' => $filter . ':' . $ntid)));
@@ -1675,6 +1709,11 @@ function what_we_do_news_and_resources() {
       if ($node->type == 'speech') {
         $type = 'Speeches';
         $image = reset($node->field_speech_image);
+        if (empty($image)) {
+          $info = field_info_instance('node', 'field_speech_image', 'speech');
+          $file = (array) file_load($info['settings']['default_image']);
+          $image = array($file);
+        }
         $title = $node->title;
         $read = l('View', 'node/' . $node->nid);
         $readall = l('View all', 'press-centre/speeches', array('query' => array('f[0]' => $filter . ':' . $ntid)));
@@ -1683,6 +1722,11 @@ function what_we_do_news_and_resources() {
       if ($node->type == 'project') {
         $type = 'Spotlights';
         $image = reset($node->field_project_image);
+        if (empty($image)) {
+          $info = field_info_instance('node', 'field_project_image', 'project');
+          $file = (array) file_load($info['settings']['default_image']);
+          $image = array($file);
+        }
         $title = $node->title;
         $read = l('View', 'node/' . $node->nid);
         $readall = l('View all', 'press-centre/projects', array('query' => array('f[0]' => $filter . ':' . $ntid)));
@@ -2379,6 +2423,41 @@ function akdn_custom_node_presave($node) {
     else {
       //if publish sate is not set (or deleted) set empty value
       $node->field_date_decade = array();
+    }
+  }
+
+  // Remove unwanted twitter media images and unwanted node being saved.
+  if($node->type == 'tweet') {
+    $tweet_external_id = $node->field_tweet_external_id['und'][0]['value'];
+    $nids = db_select('field_data_field_tweet_external_id', 'eid')
+      ->fields('eid', array('entity_id'))
+      ->condition('eid.field_tweet_external_id_value', $tweet_external_id, '=')
+      ->execute()
+      ->fetchCol();
+    if($nids) {
+      $file = file_load($node->field_tweet_media['und'][0]['fid']);
+        if(is_object($file)) {
+          file_delete($file, 1);
+        }
+      drupal_goto('admin/config/system/cron/');
+      drupal_exit();
+    }
+  }
+  //Remove unwanted facebook media images and unwanted node being saved.
+  if($node->type == 'facebook') {
+    $facebook_external_id = $node->field_facebook_external_id['und'][0]['value'];
+    $nids = db_select('field_data_field_facebook_external_id', 'eid')
+      ->fields('eid', array('entity_id'))
+      ->condition('eid.field_facebook_external_id_value', $facebook_external_id, '=')
+      ->execute()
+      ->fetchCol();
+    if($nids) {
+      $file = file_load($node->field_facebook_picture['und'][0]['fid']);
+        if(is_object($file)) {
+          file_delete($file, 1);
+        }
+      drupal_goto('admin/config/system/cron/');
+      drupal_exit();
     }
   }
 }
@@ -3895,5 +3974,20 @@ function akdn_custom_views_pre_view(&$view, &$display_id, &$args) {
   }
     $header = t('<h2 class="quotes-main-title"> '. $header_output .' </h2>');
     $view->add_item('page_1', 'header', 'views', 'area', array('content' => $header, 'format' => 'full_html'));
+  }
+}
+
+/**
+ * custom function to update the source node of syndication flag.
+ * @return [type] [description]
+ */
+function _syndicate_node_update() {
+  $nid = arg(2);
+  if(is_numeric($nid)){
+    $node = node_load($nid);
+    if($node->field_syndicate_this['und'][0]['value'] == 1) {
+      $node->field_syndicate_this['und'][0]['value'] = 0;
+    }
+    node_save($node);
   }
 }

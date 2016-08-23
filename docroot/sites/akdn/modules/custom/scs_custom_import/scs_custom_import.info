@@ -1,0 +1,4 @@
+name = SCS custom Import
+description = "Custom module for language fix after node import."
+core = "7.x"
+package = others

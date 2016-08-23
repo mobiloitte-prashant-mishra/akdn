@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Feeds importer for syndication feature.
+ */
+
+include_once 'feeds_importer_for_syndication.features.inc';
