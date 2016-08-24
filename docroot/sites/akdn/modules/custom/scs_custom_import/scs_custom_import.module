@@ -1,6 +1,6 @@
 <?php
 
-$syndicate_url = variable_get('syndicate-url');
+$syndicate_url = 'http://' . variable_get('syndicate-url');
 define("SCS_SITE_URL", $syndicate_url);
 
 /**
