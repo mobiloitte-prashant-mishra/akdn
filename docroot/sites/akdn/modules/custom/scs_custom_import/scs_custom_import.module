@@ -80,7 +80,7 @@ function scs_custom_import_menu() {
     'title' => t('Syndicate configuration'),
     "page callback" => "drupal_get_form",
      "page arguments" => array('_scs_custom_syndicate_form'),
-    'access arguments' => array('access content'),
+    'access arguments' => array('administer site configuration'),
     );
 
 
