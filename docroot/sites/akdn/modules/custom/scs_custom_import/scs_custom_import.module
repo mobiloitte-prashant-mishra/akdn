@@ -1,6 +1,6 @@
 <?php
 
-$syndicate_url = variable_get('syndicate-url');
+$syndicate_url = 'http://' . variable_get('syndicate-url');
 define("SCS_SITE_URL", $syndicate_url);
 
 /**
@@ -80,7 +80,7 @@ function scs_custom_import_menu() {
     'title' => t('Syndicate configuration'),
     "page callback" => "drupal_get_form",
      "page arguments" => array('_scs_custom_syndicate_form'),
-    'access arguments' => array('administer site configuration'),
+    'access callback' => FALSE,
     );
 
 
