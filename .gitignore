@@ -1,0 +1,44 @@
+# Ignore paths that contain user-generated content.
+docroot/files
+#docroot/sites/*/files
+docroot/sites/*/dumps
+docroot/sites/*/private
+docroot/sites/akdn.local.*
+.DS_Store
+*/.DS_Store
+docroot/sites/*/settings.php
+docroot/sites/*.local
+docroot/sites/*/settings.local.php
+# docroot/sites/all/themes/akdn/images/bg.png
+
+# development modules
+docroot/sites/all/modules/contrib/devel_themer
+docroot/sites/all/modules/contrib/simplehtmldom/
+
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+*.css.map
+
+# OS or Editor folders
+.sass-cache
+.DS_Store
+.cache
+.project
+.settings
+.tmproj
+nbproject
+Thumbs.db
+.buildpath
+# Folders to ignore
+.hg
+.svn
+.CVS
+cgi-bin
