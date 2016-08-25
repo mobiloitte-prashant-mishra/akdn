@@ -1518,7 +1518,7 @@ function _scs_custom_update_syndicate() {
  */
 function _scs_custom_update_syndicate_batch_processing($pass_nid){
   if(!empty($pass_nid)) {
-    $ch = curl_init(SCS_SITE_URL. '/custom-import-handler/update/' . $pass_nid);
+    $ch = curl_init(SCS_SITE_URL. 'custom-import-handler/update/' . $pass_nid);
           curl_exec($ch);
           curl_close($ch);
   } else {
