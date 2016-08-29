@@ -988,7 +988,7 @@ node/26851/*',
     ),
     'paths' => array(
       0 => '<none>',
-      1 => 'press-center/galleries',
+      1 => 'press-centre/galleries',
       2 => '<none>',
     ),
     'home' => 1,

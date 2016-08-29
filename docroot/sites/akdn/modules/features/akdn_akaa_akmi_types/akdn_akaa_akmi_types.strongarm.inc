@@ -634,6 +634,9 @@ function akdn_akaa_akmi_types_strongarm() {
         'redirect' => array(
           'weight' => '10',
         ),
+        'language' => array(
+          'weight' => '5',
+        ),
       ),
       'display' => array(),
     ),
