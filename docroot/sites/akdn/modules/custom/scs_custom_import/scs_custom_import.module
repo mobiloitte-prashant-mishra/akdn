@@ -1,0 +1,1823 @@
+<?php
+
+$syndicate_url = variable_get('syndicate-url');
+define("SCS_SITE_URL", $syndicate_url);
+
+/**
+ * Implements hook_menu().
+ */
+function scs_custom_import_menu() {
+  $items['admin/structure/language-importer'] = array(
+    'title' => 'Language Importer',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('scs_custom_language_importer_form'),
+    'access arguments' => array('access content overview'),
+    'type' => MENU_NORMAL_ITEM,
+    );
+
+  $items['admin/structure/language-importer/atricle-language-importer'] = array(
+    'title' => t('Article Language Importer'),
+    'page callback' => '_scs_custom_import_article_language',
+    'access arguments' => array('access content overview'),
+    'type' => MENU_NORMAL_ITEM,
+    );
+
+  $items['admin/structure/language-importer/event-language-importer'] = array(
+    'title' => t('Event Language Importer'),
+    'page callback' => '_scs_custom_import_event_language',
+    'access arguments' => array('access content overview'),
+    'type' => MENU_NORMAL_ITEM,
+    );
+
+  $items['admin/structure/language-importer/publication-language-importer'] = array(
+    'title' => t('Publication Language Importer'),
+    'page callback' => '_scs_custom_import_publication_language',
+    'access arguments' => array('access content overview'),
+    'type' => MENU_NORMAL_ITEM,
+    );
+
+  $items['admin/structure/language-importer/speech-language-importer'] = array(
+    'title' => t('Speech Language Importer'),
+    'page callback' => '_scs_custom_import_speech_language',
+    'access arguments' => array('access content overview'),
+    'type' => MENU_NORMAL_ITEM,
+    );
+
+  $items['admin/structure/language-importer/speech-quotes-language-importer'] = array(
+    'title' => t('Speech Quotes Language Importer'),
+    'page callback' => '_scs_custom_import_speech_quotes_language',
+    'access arguments' => array('access content overview'),
+    'type' => MENU_NORMAL_ITEM,
+    );
+
+  $items['admin/structure/language-importer/person-language-importer'] = array(
+    'title' => t('Person Language Importer'),
+    'page callback' => '_scs_custom_import_person_language',
+    'access arguments' => array('access content overview'),
+    'type' => MENU_NORMAL_ITEM,
+    );
+
+  $items['admin/structure/language-importer/related-absolute-links'] = array(
+    'title' => t('Related/Absolute Links'),
+    'page callback' => '_scs_custom_import_related_absolute_links',
+    'access arguments' => array('access content overview'),
+    'type' => MENU_NORMAL_ITEM,
+    );
+
+  $items['admin/restore-syndicate'] = array(
+    'title' => t('Uncheck Syndicated Content'),
+    'page callback' => '_scs_custom_update_syndicate',
+    'access arguments' => array('access content overview'),
+    'type' => MENU_NORMAL_ITEM,
+    );
+  $items['admin/structure/language-importer/file-attributes'] = array(
+    'title' => t('Files caption and copyright syndicate'),
+    'page callback' => '_scs_custom_import_files_syndicate',
+    'access arguments' => array('access content overview'),
+    'type' => MENU_NORMAL_ITEM,
+    );
+   $items['admin/syndicate-config'] = array(
+    'title' => t('Syndicate configuration'),
+    "page callback" => "drupal_get_form",
+     "page arguments" => array('_scs_custom_syndicate_form'),
+    'access arguments' => array('access content'),
+    );
+
+
+  return $items;
+}
+
+function scs_custom_language_importer_form($form, $form_state) {
+  $html  = '<ul>';
+  $html  .= '<li>'.l(t('Article Language Importer'),'admin/structure/language-importer/atricle-language-importer').'</li>';
+  $html  .= '<li>'.l(t('Event Language Importer'),'admin/structure/language-importer/event-language-importer').'</li>';
+  $html  .= '<li>'.l(t('Publication Language Importer'),'admin/structure/language-importer/publication-language-importer').'</li>';
+  $html  .= '<li>'.l(t('Speech Language Importer'),'admin/structure/language-importer/speech-language-importer').'</li>';
+  $html  .= '<li>'.l(t('Speech Quotes Language Importer'),'admin/structure/language-importer/speech-quotes-language-importer').'</li>';
+  $html  .= '<li>'.l(t('Person Language Importer'),'admin/structure/language-importer/person-language-importer').'</li>';
+  $html  .= '<li>'.l(t('Related/Absolute Links'),'admin/structure/language-importer/related-absolute-links').'</li>';
+  $html  .= '<li>'.l(t('Files caption and copyright syndicate'),'admin/structure/language-importer/file-attributes').'</li>';
+  $html  .= '</ul>';
+  $form['language_import'] = array(
+    '#title' => t('Language Importer'),
+    '#type' => 'markup',
+    '#markup' => $html,
+    );
+  return $form;
+}
+
+function _scs_custom_import_article_language() {
+  $result = db_select('feeds_item', 'f')
+  ->fields('f',array('guid','entity_id'))
+  ->condition('id','article_import','=')
+  ->execute()
+  ->fetchAll();
+
+  foreach ($result as $value) {
+   $operations[] = array(
+    '_scs_custom_import_language_batch_processing',
+    array($value->guid, $value->entity_id, 'article'),
+    );
+ }
+
+ $batch = array(
+  'title' => t('Importing article language...'),
+  'operations' => $operations,
+  'finished' => '_scs_custom_import_language_batch_processing_complete',
+  'error_message' => t('Encountered an error.'),
+  'progress_message' => t('Imported @current of @total article language.'),
+  );
+ batch_set($batch);
+ batch_process('admin/structure/language-importer');
+}
+
+function _scs_custom_import_event_language() {
+  $result = db_select('feeds_item', 'f')
+  ->fields('f',array('guid','entity_id'))
+  ->condition('id','events_import','=')
+  ->execute()
+  ->fetchAll();
+
+  foreach ($result as $value) {
+   $operations[] = array(
+    '_scs_custom_import_language_batch_processing',
+    array($value->guid, $value->entity_id, 'event'),
+    );
+ }
+
+ $batch = array(
+  'title' => t('Importing event language...'),
+  'operations' => $operations,
+  'finished' => '_scs_custom_import_language_batch_processing_complete',
+  'error_message' => t('Encountered an error.'),
+  'progress_message' => t('Imported @current of @total event language.'),
+  );
+ batch_set($batch);
+ batch_process('admin/structure/language-importer');
+}
+
+function _scs_custom_import_publication_language() {
+  $result = db_select('feeds_item', 'f')
+  ->fields('f',array('guid','entity_id'))
+  ->condition('id','publications_import','=')
+  ->execute()
+  ->fetchAll();
+
+  foreach ($result as $value) {
+   $operations[] = array(
+    '_scs_custom_import_language_batch_processing',
+    array($value->guid, $value->entity_id, 'publication'),
+    );
+ }
+
+ $batch = array(
+  'title' => t('Importing publication language...'),
+  'operations' => $operations,
+  'finished' => '_scs_custom_import_language_batch_processing_complete',
+  'error_message' => t('Encountered an error.'),
+  'progress_message' => t('Imported @current of @total publication language.'),
+  );
+ batch_set($batch);
+ batch_process('admin/structure/language-importer');
+}
+
+function _scs_custom_import_speech_language() {
+  $result = db_select('feeds_item', 'f')
+  ->fields('f',array('guid','entity_id'))
+  ->condition('id','speech_import','=')
+  ->execute()
+  ->fetchAll();
+
+  foreach ($result as $value) {
+   $operations[] = array(
+    '_scs_custom_import_language_batch_processing',
+    array($value->guid, $value->entity_id, 'speech'),
+    );
+ }
+
+ $batch = array(
+  'title' => t('Importing speech language...'),
+  'operations' => $operations,
+  'finished' => '_scs_custom_import_language_batch_processing_complete',
+  'error_message' => t('Encountered an error.'),
+  'progress_message' => t('Imported @current of @total speech language.'),
+  );
+ batch_set($batch);
+ batch_process('admin/structure/language-importer');
+}
+
+function _scs_custom_import_speech_quotes_language() {
+  $result = db_select('feeds_item', 'f')
+  ->fields('f',array('guid','entity_id'))
+  ->condition('id','speech_quotes_import','=')
+  ->execute()
+  ->fetchAll();
+
+  foreach ($result as $value) {
+   $operations[] = array(
+    '_scs_custom_import_language_batch_processing',
+    array($value->guid, $value->entity_id, 'speech_quote'),
+    );
+ }
+
+ $batch = array(
+  'title' => t('Importing speech quote language...'),
+  'operations' => $operations,
+  'finished' => '_scs_custom_import_language_batch_processing_complete',
+  'error_message' => t('Encountered an error.'),
+  'progress_message' => t('Imported @current of @total speech quote language.'),
+  );
+ batch_set($batch);
+ batch_process('admin/structure/language-importer');
+}
+
+function _scs_custom_import_person_language() {
+  $result = db_select('feeds_item', 'f')
+  ->fields('f',array('guid','entity_id'))
+  ->condition('id','person_import','=')
+  ->execute()
+  ->fetchAll();
+
+  foreach ($result as $value) {
+   $operations[] = array(
+    '_scs_custom_import_language_batch_processing',
+    array($value->guid, $value->entity_id, 'person'),
+    );
+ }
+
+ $batch = array(
+  'title' => t('Importing person language...'),
+  'operations' => $operations,
+  'finished' => '_scs_custom_import_language_batch_processing_complete',
+  'error_message' => t('Encountered an error.'),
+  'progress_message' => t('Imported @current of @total person language.'),
+  );
+ batch_set($batch);
+ batch_process('admin/structure/language-importer');
+}
+
+function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_type) {
+  $node_language = 'und';
+  $guid = $guid;
+  $nid = $entity_id;
+  $image_data =array();
+  if($guid != ""  && $nid > 0 && $node_type !="") {
+    $node =  node_load($nid);
+    if(is_object($node)) {
+      $node_language = _scs_custom_get_language($guid);
+      $all_fields = field_info_instances($entity_type = 'node', $bundle_name = $node_type);
+      foreach($all_fields as $key => $val){
+        $field_info = field_info_field($key);
+        if($field_info['translatable'] == 1){
+          $field_data = $node->{$key};
+          $field_lang = key($field_data);
+          $field_data = $field_data[$field_lang];
+          $node->{$key}[$node_language] =  $field_data;
+        }
+      }
+
+      switch ($node_type) {
+        case 'article':
+        $source_avail_lang = _scs_custom_get_languages($guid);
+        $source_avail_lang_node_data = _scs_custom_get_node_data($guid, $node_type);
+        unset($node->field_agency);
+        unset($node->field_country);
+        unset($node->field_focus_area);
+        unset($node->field_article_img);
+
+        unset($node->field_tags);
+        foreach($source_avail_lang as $node_avail_lang) {
+          $available_lang = $node_avail_lang['lang'];
+
+        // // Agency mapping for all language
+          $datakey = 'agency_'.$available_lang;
+          $agency = $source_avail_lang_node_data->{$datakey};
+          $agency_all = explode('|||', $agency);
+          foreach ($agency_all as $agency_term){
+            $term_tid = 0;
+            $term_tid = key(taxonomy_get_term_by_name($agency_term, $vocabulary = 'agencies'));
+
+            if($term_tid > 0) {
+              $node->field_agency[$available_lang][]['tid'] = $term_tid;
+
+            } else {
+              if($agency_term !="") {
+                $vocab = taxonomy_vocabulary_machine_name_load('agencies');
+                $term_temp = (object) array(
+                 'name' => html_entity_decode($agency_term),
+                 'vid' => $vocab->vid,
+                 );
+                $term = taxonomy_term_save($term_temp);
+                if($term && $term->tid > 0) {
+                  $node->field_agency[$available_lang][]['tid'] = $term->tid;
+
+                }
+              }
+            }
+          }
+
+        // // Geography mapping for all language
+          $datakey = 'geography_'.$available_lang;
+          $geography = $source_avail_lang_node_data->{$datakey};
+          $geography_all = explode('|||', $geography);
+          foreach ($geography_all as $geography_term){
+            $term_tid = 0;
+            $term_tid = key(taxonomy_get_term_by_name($geography_term, $vocabulary = 'countries'));
+            if($term_tid > 0) {
+              $node->field_country[$available_lang][]['tid'] = $term_tid;
+            } else {
+              if($geography_term != "") {
+                $vocab = taxonomy_vocabulary_machine_name_load('countries');
+                $term_temp = (object) array(
+                 'name' => html_entity_decode($geography_term),
+                 'vid' => $vocab->vid,
+                 );
+                $term = taxonomy_term_save($term_temp);
+                if($term && $term->tid > 0) {
+                  $node->field_country[$available_lang][]['tid'] = $term->tid;
+                }
+              }
+            }
+          }
+
+        // // Thematic area mapping for all language
+          $datakey = 'thematic_area_'.$available_lang;
+          $thematic_area = $source_avail_lang_node_data->{$datakey};
+          $thematic_area_all = explode('|||', $thematic_area);
+          foreach ($thematic_area_all as $thematic_area_term){
+            $term_tid = 0;
+            $term_tid = key(taxonomy_get_term_by_name($thematic_area_term, $vocabulary = 'focus_areas'));
+            if($term_tid > 0) {
+              $node->field_focus_area[$available_lang][]['tid'] = $term_tid;
+            } else {
+              if($thematic_area_term != "") {
+                $vocab = taxonomy_vocabulary_machine_name_load('focus_areas');
+                $term_temp = (object) array(
+                 'name' => html_entity_decode($thematic_area_term),
+                 'vid' => $vocab->vid,
+                 );
+                $term = taxonomy_term_save($term_temp);
+                if($term && $term->tid > 0) {
+                  $node->field_focus_area[$available_lang][]['tid'] = $term->tid;
+                }
+              }
+            }
+          }
+
+          // // file article image related processing
+          $datakey = 'article_image_'.$available_lang;
+
+          $article_image_fid = $source_avail_lang_node_data->{$datakey};
+          $article_image_source_data = _scs_custom_get_file_data_from_fid($article_image_fid);
+          $image_url = $article_image_source_data->path;
+          if(!empty($article_image_source_data)) {
+            $file = file_save_data(file_get_contents($image_url), file_default_scheme().'://'.$article_image_source_data->file_name, FILE_EXISTS_RENAME);
+
+            $files_data[$file->fid] = $article_image_source_data;
+            $node->field_article_img[$available_lang][0] = (array)$file;
+          }
+          //file newsletter image related processing
+          $news_image_fid = 0;
+          $news_image_fid = @$node->field_newsletter_image['und']['0']['fid'];
+          if($news_image_fid > 0 ) {
+            $news_image_source_data = _scs_custom_get_file_data_from_fid($source_avail_lang_node_data->newsletter_image);
+            $files_data[$news_image_fid] = $news_image_source_data;
+          }
+
+        // Tags related processing
+          $datakey = 'tags_'.$available_lang;
+          $tags = $source_avail_lang_node_data->{$datakey};
+
+          $tags_all = explode('|||', $tags);
+          foreach ($tags_all as $tag_term) {
+            $term_tid = 0;
+            $term_tid = key(taxonomy_get_term_by_name($tag_term, $vocabulary = 'tags'));
+            if($term_tid > 0) {
+              $node->field_tags[$available_lang][]['tid'] = $term_tid;
+            }
+            else {
+              if($tag_term != "") {
+                $vocab = taxonomy_vocabulary_machine_name_load('tags');
+                $term_temp = (object) array(
+                 'name' => html_entity_decode($tag_term),
+                 'vid' => $vocab->vid,
+                 );
+                $term = taxonomy_term_save($term_temp);
+                if($term && $term->tid > 0) {
+                  $node->field_tags[$available_lang][]['tid'] = $term->tid;
+                }
+              }
+            }
+          }
+           // Body Summary related processing
+          $datakey = 'body_'.$available_lang;
+          $body_summary = $source_avail_lang_node_data->{$datakey};
+          $node->body[$available_lang]['0']['summary'] = $body_summary;
+
+           // Related Information related processing
+          $datakey = 'related_information_'.$available_lang;
+
+          $related_info = $source_avail_lang_node_data->{$datakey};
+
+          if(!empty($related_info)) {
+            $related_info_all = explode('|||', $related_info);
+            $i = 0;
+            foreach ($related_info_all as $related_info_links_data) {
+              $temp = array();
+              $temp = explode('||#||',$related_info_links_data);
+
+              if(count($temp) >0 ){
+                if($temp['0'] == $temp['1']) {
+                  $temp['0'] = '';
+                }
+              }
+              $node->field_article_link[$available_lang][$i++]= array('title' => $temp['0'], 'url' => $temp['1']);
+
+            }
+        }
+            // Related Links related processing
+          $datakey = 'related_links_'.$available_lang;
+          $related_links = $source_avail_lang_node_data->{$datakey};
+
+          if(!empty($related_links)) {
+            $related_links_all = explode('|||', $related_links);
+            $i = 0;
+            foreach ($related_links_all as $related_links_data) {
+              $temp = array();
+              $temp = explode('||#||',$related_links_data);
+
+              if(count($temp) >0 ){
+                if($temp['0'] == $temp['1']) {
+                  $temp['0'] = '';
+                }
+
+                $node->field_related_links[$available_lang][$i++]= array('title' => $temp['0'], 'url' => $temp['1']);
+              }
+            }
+
+          }
+
+          // // Cycle Year mapping for all language
+          $datakey = 'cycle_year';
+          $cycle_year = $source_avail_lang_node_data->{$datakey};
+          $cycle_year_all = explode('|||', $cycle_year);
+          foreach ($cycle_year_all as $cycle_year_term){
+            $term_tid = 0;
+            $term_tid = key(taxonomy_get_term_by_name($cycle_year_term, $vocabulary = 'award_cycle'));
+
+            if($term_tid > 0) {
+              $node->field_cycle_year['und'][0]['tid'] = $term_tid;
+            } else {
+              if($cycle_year_term != "") {
+                $vocab = taxonomy_vocabulary_machine_name_load('award_cycle');
+                $term_temp = (object) array(
+                 'name' => html_entity_decode($cycle_year_term),
+                 'vid' => $vocab->vid,
+                 );
+                $term = taxonomy_term_save($term_temp);
+                if($term && $term->tid > 0) {
+                  $node->field_cycle_year['und'][0]['tid'] = $term->tid;
+                }
+              }
+            }
+          }
+
+
+
+        } // foreach end
+        break;
+        case 'event':
+        $source_avail_lang = _scs_custom_get_languages($guid);
+        $source_avail_lang_node_data = _scs_custom_get_node_data($guid, $node_type);
+
+        unset($node->field_agency);
+        unset($node->field_country);
+        unset($node->field_focus_area);
+        unset($node->field_event_image);
+        unset($node->field_event_date);
+        unset($node->field_tags);
+
+
+        foreach($source_avail_lang as $node_avail_lang) {
+          $available_lang = $node_avail_lang['lang'];
+
+
+        // Agency mapping for all language
+          $datakey = 'agency_'.$available_lang;
+          $agency = $source_avail_lang_node_data->{$datakey};
+          $agency_all = explode('|||', $agency);
+          foreach ($agency_all as $agency_term){
+            $term_tid = 0;
+            $term_tid = key(taxonomy_get_term_by_name($agency_term, $vocabulary = 'agencies'));
+            if($term_tid > 0) {
+              $node->field_agency[$available_lang][]['tid'] = $term_tid;
+            } else {
+              if($agency_term !="") {
+                $vocab = taxonomy_vocabulary_machine_name_load('agencies');
+                $term_temp = (object) array(
+                 'name' => html_entity_decode($agency_term),
+                 'vid' => $vocab->vid,
+                 );
+                $term = taxonomy_term_save($term_temp);
+                if($term && $term->tid > 0) {
+                  $node->field_agency[$available_lang][]['tid'] = $term->tid;
+                }
+              }
+            }
+          }
+
+        // Geography mapping for all language
+          $datakey = 'geography_'.$available_lang;
+          $geography = $source_avail_lang_node_data->{$datakey};
+          $geography_all = explode('|||', $geography);
+          foreach ($geography_all as $geography_term){
+            $term_tid = 0;
+            $term_tid = key(taxonomy_get_term_by_name($geography_term, $vocabulary = 'countries'));
+            if($term_tid > 0) {
+              $node->field_country[$available_lang][]['tid'] = $term_tid;
+            } else {
+              if($geography_term !="") {
+                $vocab = taxonomy_vocabulary_machine_name_load('countries');
+                $term_temp = (object) array(
+                 'name' => html_entity_decode($geography_term),
+                 'vid' => $vocab->vid,
+                 );
+                $term = taxonomy_term_save($term_temp);
+                if($term && $term->tid > 0) {
+                  $node->field_country[$available_lang][]['tid'] = $term->tid;
+                }
+              }
+            }
+          }
+
+        // Thematic area mapping for all language
+          $datakey = 'thematic_area_'.$available_lang;
+          $thematic_area = $source_avail_lang_node_data->{$datakey};
+          $thematic_area_all = explode('|||', $thematic_area);
+          foreach ($thematic_area_all as $thematic_area_term){
+            $term_tid = 0;
+            $term_tid = key(taxonomy_get_term_by_name($thematic_area_term, $vocabulary = 'focus_areas'));
+            if($term_tid > 0) {
+              $node->field_focus_area[$available_lang][]['tid'] = $term_tid;
+            } else {
+              if($thematic_area_term != "") {
+                $vocab = taxonomy_vocabulary_machine_name_load('focus_areas');
+                $term_temp = (object) array(
+                 'name' => html_entity_decode($thematic_area_term),
+                 'vid' => $vocab->vid,
+                 );
+                $term = taxonomy_term_save($term_temp);
+                if($term && $term->tid > 0) {
+                  $node->field_focus_area[$available_lang][]['tid'] = $term->tid;
+                }
+              }
+            }
+          }
+
+          //file event image related processing
+          $datakey = 'event_image_'.$available_lang;
+          $event_image_fid = $source_avail_lang_node_data->{$datakey};
+
+          if(!empty($event_image_fid)) {
+            $event_image_source_data = _scs_custom_get_file_data_from_fid($event_image_fid);
+
+            $image_url = $event_image_source_data->path;
+            $media_folder = $event_image_source_data->media_folder;
+            $file = file_save_data(file_get_contents($image_url), file_default_scheme().'://' . $event_image_source_data->file_name, FILE_EXISTS_RENAME);
+
+            $files_data[$file->fid] = $event_image_source_data;
+            $node->field_event_image[$available_lang][0] = (array)$file;
+          }
+          //file newsletter image related processing
+          $news_image_fid = 0;
+          $news_image_fid = @$node->field_newsletter_image['und']['0']['fid'];
+          if($news_image_fid > 0 ) {
+            $news_image_source_data = _scs_custom_get_file_data_from_fid($source_avail_lang_node_data->newsletter_image);
+            $files_data[$news_image_fid] = $news_image_source_data;
+          }
+
+        // Tags related processing
+          $datakey = 'tags_'.$available_lang;
+          $tags = $source_avail_lang_node_data->{$datakey};
+
+          $tags_all = explode('|||', $tags);
+          foreach ($tags_all as $tag_term) {
+            $term_tid = 0;
+            $term_tid = key(taxonomy_get_term_by_name($tag_term, $vocabulary = 'tags'));
+            if($term_tid > 0) {
+              $node->field_tags[$available_lang][]['tid'] = $term_tid;
+            }
+            else {
+              if($tag_term != "") {
+                $vocab = taxonomy_vocabulary_machine_name_load('tags');
+                $term_temp = (object) array(
+                 'name' => html_entity_decode($tag_term),
+                 'vid' => $vocab->vid,
+                 );
+                $term = taxonomy_term_save($term_temp);
+                if($term && $term->tid > 0) {
+                  $node->field_tags[$available_lang][]['tid'] = $term->tid;
+                }
+              }
+            }
+          }
+           // Body Summary related processing
+          $datakey = 'body_'.$available_lang;
+          $body_summary = $source_avail_lang_node_data->{$datakey};
+          $node->body[$available_lang]['0']['summary'] = $body_summary;
+
+          // event date processing
+          // field_event_date
+          $datakey = 'event_date_'.$available_lang;
+          $event_date = $source_avail_lang_node_data->{$datakey};
+
+          if($event_date != "") {
+            $event_date_all = explode('to', $event_date);
+            $val1 = trim($event_date_all['0']);
+            if(isset($event_date_all['1']) && $event_date_all['1'] > 0) {
+              $val2 = trim($event_date_all['1']);
+            } else {
+              $val2 = trim($event_date_all['0']);
+            }
+            $node->field_event_date[$available_lang][] = array('value' => $val1, 'value2' => $val2);
+          }
+
+          // Related Information related processing
+          $datakey = 'event_information_' . $available_lang;
+          $related_info = $source_avail_lang_node_data->{$datakey};
+
+          $related_info_all = explode('|||', $related_info);
+
+          $i = 0;
+          foreach ($related_info_all as $related_info_links_data) {
+            $temp = array();
+            $temp = explode('||#||',$related_info_links_data);
+            if(count($temp) >0 ){
+              if($temp['0'] == $temp['1']) {
+                $temp['0'] = '';
+              }
+
+              $node->field_event_related[$available_lang][$i++]= array('title' => $temp['0'], 'url' => $temp['1']);
+
+            }
+          }
+
+
+      } // foreach end
+
+             // Related Links related processing
+        $datakey = 'related_links';
+        $related_links = $source_avail_lang_node_data->{$datakey};
+        $related_links_all = explode('|||', $related_links);
+        $i = 0;
+        foreach ($related_links_all as $related_links_data) {
+          $temp = array();
+          $temp = explode('||#||',$related_links_data);
+          if(count($temp) >0 ){
+            if($temp['0'] == $temp['1']) {
+              $temp['0'] = '';
+            }
+            $node->field_event_links['und'][$i++]= array('title' => $temp['0'], 'url' => $temp['1']);
+          }
+        }
+
+
+
+        break;
+
+        case 'speech':
+        $source_avail_lang = _scs_custom_get_languages($guid);
+        $source_avail_lang_node_data = _scs_custom_get_node_data($guid, $node_type);
+        unset($node->field_agency);
+        unset($node->field_country);
+        unset($node->field_focus_area);
+        unset($node->field_tags);
+        unset($node->field_speech_image);
+
+        unset($node->field_external_media);
+        $i=0;
+        foreach($source_avail_lang as $node_avail_lang) {
+          $available_lang = $node_avail_lang['lang'];
+          $i++;
+        // Agency mapping for all language
+          $datakey = 'agency_'.$available_lang;
+          $agency = $source_avail_lang_node_data->{$datakey};
+          $agency_all = explode('|||', $agency);
+          foreach ($agency_all as $agency_term){
+            $term_tid = 0;
+            $term_tid = key(taxonomy_get_term_by_name($agency_term, $vocabulary = 'agencies'));
+            if($term_tid > 0) {
+              $node->field_agency[$available_lang][]['tid'] = $term_tid;
+            } else {
+              if($agency_term !="") {
+                $vocab = taxonomy_vocabulary_machine_name_load('agencies');
+                $term_temp = (object) array(
+                 'name' => html_entity_decode($agency_term),
+                 'vid' => $vocab->vid,
+                 );
+                $term = taxonomy_term_save($term_temp);
+                if($term && $term->tid > 0) {
+                  $node->field_agency[$available_lang][]['tid'] = $term->tid;
+                }
+              }
+            }
+          }
+
+        // Geography mapping for all language
+          $datakey = 'geography_'.$available_lang;
+          $geography = $source_avail_lang_node_data->{$datakey};
+          $geography_all = explode('|||', $geography);
+          foreach ($geography_all as $geography_term){
+            $term_tid = 0;
+            $term_tid = key(taxonomy_get_term_by_name($geography_term, $vocabulary = 'countries'));
+            if($term_tid > 0) {
+              $node->field_country[$available_lang][]['tid'] = $term_tid;
+            } else {
+              if($geography_term != "") {
+                $vocab = taxonomy_vocabulary_machine_name_load('countries');
+                $term_temp = (object) array(
+                 'name' => html_entity_decode($geography_term),
+                 'vid' => $vocab->vid,
+                 );
+                $term = taxonomy_term_save($term_temp);
+                if($term && $term->tid > 0) {
+                  $node->field_country[$available_lang][]['tid'] = $term->tid;
+                }
+              }
+            }
+          }
+
+        // Thematic area mapping for all language
+          $datakey = 'thematic_area_'.$available_lang;
+          $thematic_area = $source_avail_lang_node_data->{$datakey};
+          $thematic_area_all = explode('|||', $thematic_area);
+          foreach ($thematic_area_all as $thematic_area_term){
+            $term_tid = 0;
+            $term_tid = key(taxonomy_get_term_by_name($thematic_area_term, $vocabulary = 'focus_areas'));
+            if($term_tid > 0) {
+              $node->field_focus_area[$available_lang][]['tid'] = $term_tid;
+            } else {
+              if($thematic_area_term != "") {
+                $vocab = taxonomy_vocabulary_machine_name_load('focus_areas');
+                $term_temp = (object) array(
+                 'name' => html_entity_decode($thematic_area_term),
+                 'vid' => $vocab->vid,
+                 );
+                $term = taxonomy_term_save($term_temp);
+                if($term && $term->tid > 0) {
+                  $node->field_focus_area[$available_lang][]['tid'] = $term->tid;
+                }
+              }
+            }
+          }
+
+          // file speech image related processing
+          $datakey = 'speech_image_'.$available_lang;
+          $article_image_fid = $source_avail_lang_node_data->{$datakey};
+          $article_image_source_data = _scs_custom_get_file_data_from_fid($article_image_fid);
+
+          if(!empty($article_image_source_data)) {
+            $image_url = $article_image_source_data->path;
+            $file = file_save_data(file_get_contents($image_url), file_default_scheme().'://'.$i.'_'.$article_image_source_data->file_name, FILE_EXISTS_RENAME);
+            $files_data[$file->fid] = $article_image_source_data;
+            $node->field_speech_image[$available_lang][0] = (array)$file;
+          }
+
+        // Tags related processing
+          $datakey = 'tags_'.$available_lang;
+          $tags = $source_avail_lang_node_data->{$datakey};
+
+          $tags_all = explode('|||', $tags);
+          foreach ($tags_all as $tag_term) {
+            $term_tid = 0;
+            $term_tid = key(taxonomy_get_term_by_name($tag_term, $vocabulary = 'tags'));
+            if($term_tid > 0) {
+              $node->field_tags[$available_lang][]['tid'] = $term_tid;
+            }
+            else {
+              if($tag_term != "") {
+                $vocab = taxonomy_vocabulary_machine_name_load('tags');
+                $term_temp = (object) array(
+                 'name' => html_entity_decode($tag_term),
+                 'vid' => $vocab->vid,
+                 );
+                $term = taxonomy_term_save($term_temp);
+                if($term && $term->tid > 0) {
+                  $node->field_tags[$available_lang][]['tid'] = $term->tid;
+                }
+              }
+            }
+          }
+           // Body Summary related processing
+          $datakey = 'body_'.$available_lang;
+          $body_summary = $source_avail_lang_node_data->{$datakey};
+          $node->body[$available_lang]['0']['summary'] = $body_summary;
+
+
+            // External Links related processing
+          $datakey = 'ext_'.$available_lang;
+          $related_links_data = $source_avail_lang_node_data->{$datakey};
+          $related_links_all = explode('|||', $related_links);
+          $temp = array();
+          $temp = explode('||#||',$related_links_data);
+          if(count($temp) >0 ){
+            if($temp['0'] == $temp['1']) {
+              $temp['0'] = '';
+            }
+            $node->field_external_media[$available_lang][]= array('title' => $temp['0'], 'url' => $temp['1']);
+          }
+
+            // Related Information related processing
+          $datakey = 'related_information_' . $available_lang;
+          $related_info = $source_avail_lang_node_data->{$datakey};
+          $related_info_all = explode('|||', $related_info);
+          $i = 0;
+          foreach ($related_info_all as $related_info_links_data) {
+            $temp = array();
+            $temp = explode('||#||',$related_info_links_data);
+            if(count($temp) >0 ){
+              if($temp['0'] == $temp['1']) {
+                $temp['0'] = '';
+              }
+
+              $node->field_related_speech[$available_lang][$i++]= array('title' => $temp['0'], 'url' => $temp['1']);
+            }
+          }
+
+
+
+        } // foreach end
+
+          // // Cycle Year mapping for all language
+          $datakey = 'cycle_year';
+          $cycle_year = $source_avail_lang_node_data->{$datakey};
+          $cycle_year_all = explode('|||', $cycle_year);
+          foreach ($cycle_year_all as $cycle_year_term){
+            $term_tid = 0;
+            $term_tid = key(taxonomy_get_term_by_name($cycle_year_term, $vocabulary = 'award_cycle'));
+
+            if($term_tid > 0) {
+              $node->field_cycle_year['und'][0]['tid'] = $term_tid;
+            } else {
+              if($cycle_year_term != "") {
+                $vocab = taxonomy_vocabulary_machine_name_load('award_cycle');
+                $term_temp = (object) array(
+                 'name' => html_entity_decode($cycle_year_term),
+                 'vid' => $vocab->vid,
+                 );
+                $term = taxonomy_term_save($term_temp);
+                if($term && $term->tid > 0) {
+                  $node->field_cycle_year['und'][0]['tid'] = $term->tid;
+                }
+              }
+            }
+          }
+
+          // Audio file speech image related processing
+          $datakey = 'audio';
+          $audio_fid = $source_avail_lang_node_data->{$datakey};
+          $audio_source_data = _scs_custom_get_file_data_from_fid($audio_fid);
+
+          $file_url = $audio_source_data->path;
+          if(!empty($audio_fid)){
+          $file = file_save_data(file_get_contents($file_url), file_default_scheme().'://' .$audio_source_data->file_name, FILE_EXISTS_RENAME);
+          $files_data[$file->fid] = $audio_source_data;
+
+          $node->field_speech_audio['und'][0] = array(
+                'fid' => $file->fid,
+                'display' => 1,
+                'description' => '',
+                'uri' => $file->uri,
+                'filename' => $file->filename,
+                'type' => $file->type,
+                'filemime' => $file->filemime,
+                'status' => $file->status,
+            );
+}
+           // video file speech image related processing
+          $datakey = 'video';
+          $video_fid = $source_avail_lang_node_data->{$datakey};
+          $video_source_data = _scs_custom_get_file_data_from_fid($video_fid);
+
+          $file_url = $video_source_data->path;
+          if(!empty($video_fid)) {
+          $file = file_save_data(file_get_contents($file_url), file_default_scheme().'://' .$video_source_data->file_name, FILE_EXISTS_RENAME);
+          $files_data[$file->fid] = $video_source_data;
+
+          $node->field_speech_video['und'][0] = array(
+                'fid' => $file->fid,
+                'display' => 1,
+                'description' => '',
+                'uri' => $file->uri,
+                'filename' => $file->filename,
+                'type' => $file->type,
+                'filemime' => $file->filemime,
+                'status' => $file->status,
+            );
+        }
+
+          // Related Links related processing
+        $datakey = 'related_links';
+        $related_links = $source_avail_lang_node_data->{$datakey};
+        $related_links_all = explode('|||', $related_links);
+        $i = 0;
+        foreach ($related_links_all as $related_links_data) {
+          $temp = array();
+          $temp = explode('||#||',$related_links_data);
+          if(count($temp) >0 ){
+            if($temp['0'] == $temp['1']) {
+              $temp['0'] = '';
+            }
+            $node->field_speech_links['und'][$i++]= array('title' => $temp['0'], 'url' => $temp['1']);
+          }
+        }
+
+           // publication source Links  processing
+        $datakey = 'publication_source';
+        $source_links = $source_avail_lang_node_data->{$datakey};
+        $source_links_all = explode('|||', $source_links);
+
+        foreach ($source_links_all as $source_links_data) {
+          $temp = array();
+          $temp = explode('||#||',$source_links_data);
+          if(count($temp) >0 ){
+            if($temp['0'] == $temp['1']) {
+              $temp['0'] = '';
+            }
+
+            $node->field_publication_url['und'][]= array('title' => $temp['0'], 'url' => $temp['1']);
+          }
+        }
+
+
+        break;
+
+        case 'publication':
+        $source_avail_lang = _scs_custom_get_languages($guid);
+        $source_avail_lang_node_data = _scs_custom_get_node_data($guid, $node_type);
+        unset($node->field_agency);
+        unset($node->field_country);
+        unset($node->field_focus_area);
+        unset($node->field_tags);
+        unset($node->field_publication_image);
+
+
+        foreach($source_avail_lang as $node_avail_lang) {
+          $available_lang = $node_avail_lang['lang'];
+
+        // Agency mapping for all language
+          $datakey = 'agency_'.$available_lang;
+          $agency = $source_avail_lang_node_data->{$datakey};
+          $agency_all = explode('|||', $agency);
+          foreach ($agency_all as $agency_term){
+            $term_tid = 0;
+            $term_tid = key(taxonomy_get_term_by_name($agency_term, $vocabulary = 'agencies'));
+            if($term_tid > 0) {
+              $node->field_agency[$available_lang][]['tid'] = $term_tid;
+            } else {
+              if($agency_term !="") {
+                $vocab = taxonomy_vocabulary_machine_name_load('agencies');
+                $term_temp = (object) array(
+                 'name' => html_entity_decode($agency_term),
+                 'vid' => $vocab->vid,
+                 );
+                $term = taxonomy_term_save($term_temp);
+                if($term && $term->tid > 0) {
+                  $node->field_agency[$available_lang][]['tid'] = $term->tid;
+                }
+              }
+            }
+          }
+
+        //Geography mapping for all language
+          $datakey = 'geography_'.$available_lang;
+          $geography = $source_avail_lang_node_data->{$datakey};
+
+          $geography_all = explode('|||', $geography);
+
+          foreach ($geography_all as $geography_term){
+            $term_tid = 0;
+            $term_tid = key(taxonomy_get_term_by_name($geography_term, $vocabulary = 'countries'));
+            if($term_tid > 0) {
+              $node->field_country[$available_lang][]['tid'] = $term_tid;
+            } else {
+              if($geography_term != "") {
+                $vocab = taxonomy_vocabulary_machine_name_load('countries');
+                $term_temp = (object) array(
+                 'name' => html_entity_decode($geography_term),
+                 'vid' => $vocab->vid,
+                 );
+                $term = taxonomy_term_save($term_temp);
+                if($term && $term->tid > 0) {
+                  $node->field_country[$available_lang][]['tid'] = $term->tid;
+                }
+              }
+            }
+          }
+
+        //Thematic area mapping for all language
+          $datakey = 'thematic_area_'.$available_lang;
+          $thematic_area = $source_avail_lang_node_data->{$datakey};
+          $thematic_area_all = explode('|||', $thematic_area);
+          foreach ($thematic_area_all as $thematic_area_term){
+            $term_tid = 0;
+            $term_tid = key(taxonomy_get_term_by_name($thematic_area_term, $vocabulary = 'focus_areas'));
+            if($term_tid > 0) {
+              $node->field_focus_area[$available_lang][]['tid'] = $term_tid;
+            } else {
+              if($thematic_area_term != "") {
+                $vocab = taxonomy_vocabulary_machine_name_load('focus_areas');
+                $term_temp = (object) array(
+                 'name' => html_entity_decode($thematic_area_term),
+                 'vid' => $vocab->vid,
+                 );
+                $term = taxonomy_term_save($term_temp);
+                if($term && $term->tid > 0) {
+                  $node->field_focus_area[$available_lang][]['tid'] = $term->tid;
+                }
+              }
+            }
+          }
+
+        //  file article image related processing
+          $datakey = 'publication_image_'.$available_lang;
+          $article_image_fid = $source_avail_lang_node_data->{$datakey};
+          $article_image_source_data = _scs_custom_get_file_data_from_fid($article_image_fid);
+          $image_url = $article_image_source_data->path;
+
+          $file = file_save_data(file_get_contents($image_url), file_default_scheme().'://'.$article_image_source_data->file_name, FILE_EXISTS_RENAME);
+          $files_data[$file->fid] = $article_image_source_data;
+          $node->field_publication_image[$available_lang][0] = (array)$file;
+
+          //file newsletter image related processing
+          $news_image_fid = 0;
+          $news_image_fid = @$node->field_newsletter_image['und']['0']['fid'];
+          if($news_image_fid > 0 ) {
+            $news_image_source_data = _scs_custom_get_file_data_from_fid($source_avail_lang_node_data->newsletter_image);
+            $files_data[$news_image_fid] = $news_image_source_data;
+          }
+
+        //  file article image related processing
+          $datakey = 'file_'.$available_lang;
+          $pub_image_fid = $source_avail_lang_node_data->{$datakey};
+
+          $pub_image_source_data = _scs_custom_get_file_data_from_fid($pub_image_fid);
+          $pub_image_url = $pub_image_source_data->path;
+
+          $file = file_save_data(file_get_contents($pub_image_url), file_default_scheme().'://'.$pub_image_source_data->file_name, FILE_EXISTS_RENAME);
+          $files_data[$file->fid] = $pub_image_source_data;
+          $node->field_publication_file[$available_lang][0] = array(
+                'fid' => $file->fid,
+                'display' => 1,
+                'description' => '',
+            );
+
+       // Tags related processing
+          $datakey = 'tags_'.$available_lang;
+          $tags = $source_avail_lang_node_data->{$datakey};
+
+          $tags_all = explode('|||', $tags);
+          foreach ($tags_all as $tag_term) {
+            $term_tid = 0;
+            $term_tid = key(taxonomy_get_term_by_name($tag_term, $vocabulary = 'tags'));
+            if($term_tid > 0) {
+              $node->field_tags[$available_lang][]['tid'] = $term_tid;
+            }
+            else {
+              if($tag_term != "") {
+                $vocab = taxonomy_vocabulary_machine_name_load('tags');
+                $term_temp = (object) array(
+                 'name' => html_entity_decode($tag_term),
+                 'vid' => $vocab->vid,
+                 );
+                $term = taxonomy_term_save($term_temp);
+                if($term && $term->tid > 0) {
+                  $node->field_tags[$available_lang][]['tid'] = $term->tid;
+                }
+              }
+            }
+          }
+           // Body Summary related processing
+          $datakey = 'body_'.$available_lang;
+          $body_summary = $source_avail_lang_node_data->{$datakey};
+          $node->body[$available_lang]['0']['summary'] = $body_summary;
+
+        //  publication type processing
+          $datakey = 'publication_type_'.$available_lang;
+          $publication_type = $source_avail_lang_node_data->{$datakey};
+          $publication_type_all = explode('|||', $publication_type);
+          foreach ($publication_type_all as $tag_term) {
+            $term_tid = 0;
+            $term_tid = key(taxonomy_get_term_by_name($tag_term, $vocabulary = 'publication_type'));
+            if($term_tid > 0) {
+              $node->field_publication_type[$available_lang][]['tid'] = $term_tid;
+            }
+            else {
+              if($tag_term != "") {
+                $vocab = taxonomy_vocabulary_machine_name_load('publication_type');
+                $term_temp = (object) array(
+                 'name' => html_entity_decode($tag_term),
+                 'vid' => $vocab->vid,
+                 );
+                $term = taxonomy_term_save($term_temp);
+                if($term && $term->tid > 0) {
+                  $node->field_publication_type[$available_lang][]['tid'] = $term->tid;
+                }
+              }
+            }
+          }
+
+           // // Cycle Year mapping for all language
+          $datakey = 'cycle_year';
+          $cycle_year = $source_avail_lang_node_data->{$datakey};
+          $cycle_year_all = explode('|||', $cycle_year);
+          foreach ($cycle_year_all as $cycle_year_term){
+            $term_tid = 0;
+            $term_tid = key(taxonomy_get_term_by_name($cycle_year_term, $vocabulary = 'award_cycle'));
+
+            if($term_tid > 0) {
+              $node->field_cycle_year['und'][0]['tid'] = $term_tid;
+            } else {
+              if($cycle_year_term != "") {
+                $vocab = taxonomy_vocabulary_machine_name_load('award_cycle');
+                $term_temp = (object) array(
+                 'name' => html_entity_decode($cycle_year_term),
+                 'vid' => $vocab->vid,
+                 );
+                $term = taxonomy_term_save($term_temp);
+                if($term && $term->tid > 0) {
+                  $node->field_cycle_year['und'][0]['tid'] = $term->tid;
+                }
+              }
+            }
+          }
+
+           // Related Information related processing
+      $datakey = 'purchase_link_' . $available_lang;
+          $purchase_info = $source_avail_lang_node_data->{$datakey};
+          $purchase_info_all = explode('|||', $purchase_info);
+          $i = 0;
+          foreach ($purchase_info_all as $purchase_info_links_data) {
+            $temp = array();
+            $temp = explode('||#||',$purchase_info_links_data);
+            if(count($temp) >0 ){
+              if($temp['0'] == $temp['1']) {
+                $temp['0'] = '';
+              }
+
+              $node->field_publication_purchase_link[$available_lang][$i++]= array('title' => $temp['0'], 'url' => $temp['1']);
+
+            }
+          }
+
+            // Related Information related processing
+          $datakey = 'related_information_' . $available_lang;
+          $related_info = $source_avail_lang_node_data->{$datakey};
+          $related_info_all = explode('|||', $related_info);
+          $i = 0;
+          foreach ($related_info_all as $related_info_links_data) {
+            $temp = array();
+            $temp = explode('||#||',$related_info_links_data);
+            if(count($temp) >0 ){
+              if($temp['0'] == $temp['1']) {
+                $temp['0'] = '';
+              }
+
+              $node->field_article_link[$available_lang][$i++]= array('title' => $temp['0'], 'url' => $temp['1']);
+
+            }
+          }
+
+        } // foreach end
+
+
+
+        // Related Links related processing
+        $datakey = 'project_links';
+        $related_links = $source_avail_lang_node_data->{$datakey};
+        $related_links_all = explode('|||', $related_links);
+        foreach ($related_links_all as $related_links_data) {
+          $temp = array();
+          $temp = explode('||#||',$related_links_data);
+          if(count($temp) >0 ){
+            if($temp['0'] == $temp['1']) {
+              $temp['0'] = '';
+            }
+            $node->field_project_links['und'][]= array('title' => $temp['0'], 'url' => $temp['1']);
+          }
+        }
+
+
+        break;
+
+        default:
+        break;
+      }
+
+      $node->language = $node_language;
+      $node->path['pathauto'] = 1;
+      node_save($node);
+      foreach($files_data as $key => $val){
+        _scs_custom_import_file_attributes_by_fid($key,$val);
+      }
+       // Match translated data from akdn, delete untranslated node content and map source language
+      _scs_custom_node_translation($nid, $guid);
+
+
+    }
+  }
+}
+
+// Function to update files attributes
+function _scs_custom_import_file_attributes_by_fid ($fid, $article_image_source_data) {
+  if($fid > 0 && !empty($article_image_source_data)){
+    $file = file_load($fid);
+
+    $file->field_caption_new['und'][0]['value'] = $article_image_source_data->caption;
+    $file->field_copyright['und'][0]['value'] = $article_image_source_data->copyright;
+    $file->field_file_image_title_text['und'][0]['value'] = $article_image_source_data->title;
+    $file->field_file_image_alt_text['und'][0]['value'] = $article_image_source_data->alt;
+    if($article_image_source_data->media_folder) {
+     $term_tid = 0;
+     $term_tid = key(taxonomy_get_term_by_name($article_image_source_data->media_folder, $vocabulary = 'media_folders'));
+     if($term_tid > 0) {
+       $file->field_folder['und'][0]['tid'] = $term_tid;
+     }
+   }
+
+   file_save($file);
+ }
+}
+
+function _scs_custom_import_related_absolute_links() {
+ //  $result = db_select('field_data_field_related_information', 'f')
+ //  ->fields('f',array('entity_type', 'entity_id', 'revision_id', 'language' , 'delta', 'field_related_information_url'))
+ //  ->execute()
+ //  ->fetchAll();
+
+ //  foreach ($result as $value) {
+ //   $operations[] = array(
+ //    '_scs_custom_import_related_absolute_links_batch_processing',
+ //    array($value->entity_type, $value->entity_id, $value->revision_id, $value->language, $value->delta, $value->field_related_information_url),
+ //    );
+ // }
+
+ // $result = db_select('field_data_field_article_link', 'f')
+ // ->fields('f',array('entity_type', 'entity_id', 'revision_id', 'language' , 'delta', 'field_article_link_url'))
+ // ->execute()
+ // ->fetchAll();
+  $result = db_select('field_data_field_related_links', 'f')
+ ->fields('f',array('entity_type', 'entity_id', 'revision_id', 'language' , 'delta', 'field_related_links_url'))
+ ->execute()
+ ->fetchAll();
+
+ foreach ($result as $value) {
+   $operations[] = array(
+    '_scs_custom_import_related_absolute_links_batch_processing_1',
+    array($value->entity_type, $value->entity_id, $value->revision_id, $value->language, $value->delta, $value->field_article_link_url),
+    );
+ }
+
+ // $result = db_select('field_data_field_event_links', 'f')
+ // ->fields('f',array('entity_type', 'entity_id', 'revision_id', 'language' , 'delta', ' field_event_links_url'))
+ // ->execute()
+ // ->fetchAll();
+
+ // foreach ($result as $value) {
+ //   $operations[] = array(
+ //    '_scs_custom_import_related_absolute_links_batch_processing_2',
+ //    array($value->entity_type, $value->entity_id, $value->revision_id, $value->language, $value->delta, $value->field_event_links_url),
+ //    );
+ // }
+
+ // $result = db_select('field_data_field_project_links', 'f')
+ // ->fields('f',array('entity_type', 'entity_id', 'revision_id', 'language' , 'delta', ' field_project_links_url'))
+ // ->execute()
+ // ->fetchAll();
+
+ // foreach ($result as $value) {
+ //   $operations[] = array(
+ //    '_scs_custom_import_related_absolute_links_batch_processing_3',
+ //    array($value->entity_type, $value->entity_id, $value->revision_id, $value->language, $value->delta, $value->field_project_links_url),
+ //    );
+ // }
+
+ // $result = db_select('field_data_field_speech_links', 'f')
+ // ->fields('f',array('entity_type', 'entity_id', 'revision_id', 'language' , 'delta', ' field_speech_links_url'))
+ // ->execute()
+ // ->fetchAll();
+
+ // foreach ($result as $value) {
+ //   $operations[] = array(
+ //    '_scs_custom_import_related_absolute_links_batch_processing_4',
+ //    array($value->entity_type, $value->entity_id, $value->revision_id, $value->language, $value->delta, $value->field_speech_links_url),
+ //    );
+ // }
+
+ $batch = array(
+  'title' => t('Processing related/absolute links...'),
+  'operations' => $operations,
+  'finished' => '_scs_custom_import_language_batch_processing_complete',
+  'error_message' => t('Encountered an error.'),
+  'progress_message' => t('Processed @current of @total related/absolute links.'),
+  );
+
+ batch_set($batch);
+ batch_process('admin/structure/language-importer');
+}
+
+function _scs_custom_import_related_absolute_links_batch_processing($type, $entityid, $rev_id , $lang, $delta, $url) {
+  global $base_url;
+  $explode_url = explode('akdn.org/',$url);
+  if(count($explode_url) > 1) {
+   $new_url = $base_url.'/'.$explode_url[1];
+   $result = db_select('url_alias', 'f')
+   ->fields('f',array('pid'))
+   ->condition('alias', $explode_url[1],'=')
+   ->execute()
+   ->fetchAll();
+   if($result) {
+    db_update('field_data_field_related_information')
+    ->fields(array('field_related_information_url' => $new_url,))
+    ->condition('entity_type', $type, '=')
+    ->condition('entity_id', $entityid, '=')
+    ->condition('revision_id', $rev_id, '=')
+    ->condition('language', $lang, '=')
+    ->condition('delta', $delta, '=')
+    ->execute();
+  }
+}
+}
+
+function _scs_custom_import_related_absolute_links_batch_processing_1($type, $entityid, $rev_id , $lang, $delta, $url) {
+  global $base_url;
+  $explode_url = explode('akdn.org/',$url);
+  if(count($explode_url) > 1) {
+   $new_url = $base_url.'/'.$explode_url[1];
+   $result = db_select('url_alias', 'f')
+   ->fields('f',array('pid'))
+   ->condition('alias', $explode_url[1],'=')
+   ->execute()
+   ->fetchAll();
+   if($result) {
+    db_update('field_data_field_related_links')
+    ->fields(array('field_related_links_url' => $new_url,))
+    ->condition('entity_type', $type, '=')
+    ->condition('entity_id', $entityid, '=')
+    ->condition('revision_id', $rev_id, '=')
+    ->condition('language', $lang, '=')
+    ->condition('delta', $delta, '=')
+    ->execute();
+  }
+}
+}
+
+function _scs_custom_import_related_absolute_links_batch_processing_2($type, $entityid, $rev_id , $lang, $delta, $url) {
+  global $base_url;
+  $explode_url = explode('akdn.org/',$url);
+  if(count($explode_url) > 1) {
+   $new_url = $base_url.'/'.$explode_url[1];
+   $result = db_select('url_alias', 'f')
+   ->fields('f',array('pid'))
+   ->condition('alias', $explode_url[1],'=')
+   ->execute()
+   ->fetchAll();
+   if($result) {
+    db_update('field_data_field_event_links')
+    ->fields(array('field_event_links_url' => $new_url,))
+    ->condition('entity_type', $type, '=')
+    ->condition('entity_id', $entityid, '=')
+    ->condition('revision_id', $rev_id, '=')
+    ->condition('language', $lang, '=')
+    ->condition('delta', $delta, '=')
+    ->execute();
+  }
+}
+}
+
+function _scs_custom_import_related_absolute_links_batch_processing_3($type, $entityid, $rev_id , $lang, $delta, $url) {
+  global $base_url;
+  $explode_url = explode('akdn.org/',$url);
+  if(count($explode_url) > 1) {
+   $new_url = $base_url.'/'.$explode_url[1];
+   $result = db_select('url_alias', 'f')
+   ->fields('f',array('pid'))
+   ->condition('alias', $explode_url[1],'=')
+   ->execute()
+   ->fetchAll();
+   if($result) {
+    db_update('field_data_field_project_links')
+    ->fields(array('field_project_links_url' => $new_url,))
+    ->condition('entity_type', $type, '=')
+    ->condition('entity_id', $entityid, '=')
+    ->condition('revision_id', $rev_id, '=')
+    ->condition('language', $lang, '=')
+    ->condition('delta', $delta, '=')
+    ->execute();
+  }
+}
+}
+
+function _scs_custom_import_related_absolute_links_batch_processing_4($type, $entityid, $rev_id , $lang, $delta, $url) {
+  global $base_url;
+  $explode_url = explode('akdn.org/',$url);
+  if(count($explode_url) > 1) {
+   $new_url = $base_url.'/'.$explode_url[1];
+   $result = db_select('url_alias', 'f')
+   ->fields('f',array('pid'))
+   ->condition('alias', $explode_url[1],'=')
+   ->execute()
+   ->fetchAll();
+   if($result) {
+    db_update('field_data_field_speech_links')
+    ->fields(array('field_speech_links_url' => $new_url,))
+    ->condition('entity_type', $type, '=')
+    ->condition('entity_id', $entityid, '=')
+    ->condition('revision_id', $rev_id, '=')
+    ->condition('language', $lang, '=')
+    ->condition('delta', $delta, '=')
+    ->execute();
+  }
+}
+}
+
+function _scs_custom_import_files_syndicate() {
+  $result = db_select('file_managed', 'f')
+  ->fields('f',array('fid','filename'))
+  ->execute()
+  ->fetchAll();
+
+  foreach ($result as $value) {
+   $operations[] = array(
+    '_scs_custom_import_files_syndicate_batch_processing',
+    array($value->fid, $value->filename),
+    );
+ }
+
+ $batch = array(
+  'title' => t('Importing files caption and copyright...'),
+  'operations' => $operations,
+  'finished' => '_scs_custom_import_language_batch_processing_complete',
+  'error_message' => t('Encountered an error.'),
+  'progress_message' => t('Imported @current of @total files caption and copyright.'),
+  );
+ batch_set($batch);
+ batch_process('admin/structure/language-importer');
+}
+
+/**
+ * [_scs_custom_update_syndicate description]
+ * @return [type] [description]
+ */
+function _scs_custom_update_syndicate() {
+  $url = SCS_SITE_URL.'syndicate-node-api';
+    $request = drupal_http_request($url);
+    if($request->data) {
+      $xml = simplexml_load_string($request->data);
+      $json = json_encode($xml);
+      $array = json_decode($json,TRUE);
+
+    }
+    foreach ($array as $nid) {
+      // Custom fucnction which gonna set the source node syndication off in order to
+      // Protect the destination node override.
+      $count = count($nid);
+      foreach ($nid as $value) {
+        # code...
+        if($count > 1) {
+          $pass_nid = $value['node_nid'];
+        }
+        else{
+          $pass_nid = $value;
+        }
+        $operations[] = array(
+          '_scs_custom_update_syndicate_batch_processing',
+          array($pass_nid),
+        );
+      }
+    }
+
+   $batch = array(
+    'title' => t('restoring the nodes of source for syndication...'),
+    'operations' => $operations,
+    'finished' => '_scs_custom_import_language_batch_processing_complete',
+    'error_message' => t('Encountered an error.'),
+    'progress_message' => t('Updated @current of @total nodes.'),
+    );
+   batch_set($batch);
+   batch_process('admin/structure/language-importer');
+
+}
+
+
+
+/**
+ * [_scs_custom_update_syndicate_batch_processing description]
+ * @param  [type] $pass_nid [description]
+ * @return [type]           [description]
+ */
+function _scs_custom_update_syndicate_batch_processing($pass_nid){
+  if(!empty($pass_nid)) {
+    $ch = curl_init(SCS_SITE_URL. '/custom-import-handler/update/' . $pass_nid);
+          curl_exec($ch);
+          curl_close($ch);
+  } else {
+    drupal_set_message(t('There are no content available for syndicate.'), 'status');
+  }
+
+}
+
+function _scs_custom_import_files_syndicate_batch_processing($fid, $fname) {
+  $file_name = trim($fname);
+  $url = SCS_SITE_URL.'files-attribute-import/'.$file_name;
+  $request = drupal_http_request($url);
+
+  if($request->code == 200 && $request->data) {
+    $data = new SimpleXMLElement($request->data);
+    $file = file_load($fid);
+    $file->field_caption_new['und'][0]['value'] = $data->file_managed->caption;
+    $file->field_copyright['und'][0]['value'] = $data->file_managed->copyright;
+    $file->field_file_image_title_text['und'][0]['value'] = $data->file_managed->title;
+    $file->field_file_image_alt_text['und'][0]['value'] = $data->file_managed->alt;
+    if($data->file_managed->media_folder) {
+     $term_tid = 0;
+     $term_tid = key(taxonomy_get_term_by_name($data->file_managed->media_folder, $vocabulary = 'media_folders'));
+     if($term_tid > 0) {
+      $file->field_folder['und'][0]['tid'] = $term_tid;
+    }
+  }
+  file_save($file);
+}
+}
+
+function _scs_custom_import_language_batch_processing_complete() {
+  drupal_set_message(t('Import Completed Successfully'));
+}
+
+function _scs_custom_get_language($guid){
+  $node_language = 'und';
+  if(!empty($guid)) {
+  $url = SCS_SITE_URL.'node-language/'.$guid;
+  $request = drupal_http_request($url);
+  $data = new SimpleXMLElement($request->data);
+  if($request->data) {
+    $node_lang = $data->node->language;
+    switch ($node_lang) {
+      case 'Language neutral':
+      $node_language = 'en';
+      break;
+      case 'Arabic':
+      $node_language = 'ar';
+      break;
+      case 'Chinese, Simplified':
+      $node_language = 'zh-hans';
+      break;
+      case 'English':
+      $node_language = 'en';
+      break;
+      case 'German':
+      $node_language = 'de';
+      break;
+      case 'Kyrgyz':
+      $node_language = 'ky';
+      break;
+      case 'Portuguese':
+      $node_language = 'pt';
+      break;
+      case 'Russian':
+      $node_language = 'ru';
+      break;
+      case 'Spanish':
+      $node_language = 'es';
+      break;
+      case 'Tajik':
+      $node_language = 'tg';
+      break;
+      case 'French':
+      $node_language = 'fr';
+      break;
+      case 'Italian':
+      $node_language = 'it';
+      break;
+      case 'Persian':
+      $node_language = 'fa';
+      break;
+      case 'Malay':
+      $node_language = 'ms';
+      break;
+      default:
+      $node_language = 'und';
+      break;
+    }
+  }
+}
+  return $node_language;
+}
+
+function _scs_custom_get_node_data ($guid, $type) {
+  $node_data = '';
+  switch ($type) {
+    case 'article':
+    $url = SCS_SITE_URL.'article-data-translated-by-uuid/'.$guid;
+    $request = drupal_http_request($url);
+    if($request->data) {
+      $data = new SimpleXMLElement($request->data);
+      $node_data =  $data->node;
+    }
+    break;
+    case 'event':
+    $url = SCS_SITE_URL.'event-data-translated-by-uuid/'.$guid;
+    $request = drupal_http_request($url);
+    if($request->data) {
+      $data = new SimpleXMLElement($request->data);
+      $node_data =  $data->node;
+    }
+    break;
+    case 'person':
+    $url = SCS_SITE_URL.'person-data-translated-by-uuid/'.$guid;
+    $request = drupal_http_request($url);
+    if($request->data) {
+      $data = new SimpleXMLElement($request->data);
+      $node_data =  $data->node;
+    }
+    break;
+    case 'speech':
+    $url = SCS_SITE_URL.'speech-data-translated-by-uuid/'.$guid;
+    $request = drupal_http_request($url);
+    if($request->data) {
+      $data = new SimpleXMLElement($request->data);
+      $node_data =  $data->node;
+    }
+    break;
+    case 'speech_quote':
+    $url = SCS_SITE_URL.'speech-quote-data-translated-by-uuid/'.$guid;
+    $request = drupal_http_request($url);
+    if($request->data) {
+      $data = new SimpleXMLElement($request->data);
+      $node_data =  $data->node;
+    }
+    break;
+    case 'publication':
+    $url = SCS_SITE_URL.'publication-data-translated-by-uuid/'.$guid;
+    $request = drupal_http_request($url);
+    if($request->data) {
+      $data = new SimpleXMLElement($request->data);
+      $node_data =  $data->node;
+    }
+    break;
+    default:
+    break;
+  }
+
+  return $node_data;
+}
+
+function _scs_custom_get_file_data_from_fid($fid) {
+  $data ='';
+  $file_id = trim($fid);
+  //dsm($file_id, 'file_id');
+  if(!empty($file_id)) {
+    $url = SCS_SITE_URL.'files-attribute-import-by-fid/'.$file_id;
+    $request = drupal_http_request($url);
+    if($request->code == 200 && $request->data) {
+      $data = new SimpleXMLElement($request->data, null, false);
+      $data = $data->file_managed;
+    }
+  }
+  //dsm($data, 'data');
+  return $data;
+
+}
+
+function _scs_custom_get_languages ($guid) {
+  $lang = array();
+  if(!empty($guid)) {
+    $url = SCS_SITE_URL.'node-language-translated/'.$guid;
+    $request = drupal_http_request($url);
+    $data = new SimpleXMLElement($request->data);
+  if($request->data) {
+    foreach($data->node as $key => $d){
+      $lang_code = _scs_custom_get_languages_code_by_name($d->language);
+      $source_code = _scs_custom_get_languages_code_by_name($d->source);
+      $lang[] = array('source' => $source_code , 'lang' => $lang_code);
+    }
+  }
+}
+  return $lang;
+}
+
+function _scs_custom_node_translation($entity_id, $guid) {
+  $translated_lang = array();
+  if($guid && $entity_id > 0) {
+    $node_lang = _scs_custom_get_languages ($guid);
+    foreach($node_lang as $node_lang_data) {
+      $num_updated = db_update('entity_translation')
+      ->fields(array(
+        'source' => $node_lang_data['source'],
+        ))
+      ->condition('entity_id', $entity_id, '=')
+      ->condition('language', $node_lang_data['lang'], '=')
+      ->execute();
+      $translated_lang[] = $node_lang_data['lang'];
+    }
+
+    if(count($translated_lang) > 0) {
+      $num_deleted =db_delete('entity_translation')
+      ->condition('entity_id', $entity_id, '=')
+      ->condition('language', $translated_lang, 'NOT IN')
+      ->execute();
+    }
+  }
+}
+
+function _scs_custom_get_languages_code_by_name ($name) {
+  $node_language = 'und';
+  switch ($name) {
+    case 'Language neutral':
+    $node_language = 'en';
+    break;
+    case 'Arabic':
+    $node_language = 'ar';
+    break;
+    case 'Chinese, Simplified':
+    $node_language = 'zh-hans';
+    break;
+    case 'English':
+    $node_language = 'en';
+    break;
+    case 'German':
+    $node_language = 'de';
+    break;
+    case 'Kyrgyz':
+    $node_language = 'ky';
+    break;
+    case 'Portuguese':
+    $node_language = 'pt';
+    break;
+    case 'Russian':
+    $node_language = 'ru';
+    break;
+    case 'Spanish':
+    $node_language = 'es';
+    break;
+    case 'Tajik':
+    $node_language = 'tg';
+    break;
+    case 'French':
+    $node_language = 'fr';
+    break;
+    case 'Italian':
+    $node_language = 'it';
+    break;
+    case 'Persian':
+    $node_language = 'fa';
+    break;
+    case 'Malay':
+    $node_language = 'ms';
+    break;
+    default:
+    $node_language = '';
+    break;
+  }
+  return $node_language;
+}
+
+function _scs_custom_syndicate_form($form, &$form_state){
+
+  $form['site_url_fieldset'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('API Key'),
+    );
+
+  $form['site_url_fieldset']['syndicate-url'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Syndicate source URL'),
+    '#default_value' => !empty(variable_get('syndicate-url')) ? variable_get('syndicate-url', '') : check_plain(t('No URL yet')),
+    '#description' => t('Please enter the site url.'),
+  );
+
+  $form['submit'] = array(
+      '#type' => 'submit',
+      '#value' => 'Submit',
+  );
+
+  $form['#submit'][] = '_scs_custom_syndicate_form_submit';
+
+  return $form;
+
+}
+
+
+/**
+ * Implements custom submit handler.
+ *
+ * @param $form $form_state
+ */
+function _scs_custom_syndicate_form_submit($form, &$form_state) {
+  // Setting the api key value to variable.
+  variable_set('syndicate-url', $form_state['values']['syndicate-url']);
+
+  if (!empty($form_state['values']['syndicate-url'])) {
+    drupal_set_message(check_plain(t('Syndicate source URL has been saved: @var', array('@var' => $form_state['values']['syndicate-url']))), 'status');
+  }
+}

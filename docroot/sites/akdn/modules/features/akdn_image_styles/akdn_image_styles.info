@@ -32,3 +32,4 @@ features[image][] = publications_list_image_style
 features[image][] = social_feeds
 features[image][] = social_sharing_image
 features[image][] = standard_listing_aspect_switcher
+mtime = 1460963830
