@@ -13703,7 +13703,7 @@ ul.primary li {
 /* line 3226, ../sass/_akdn-redesign.scss */
 .webform-subscribe .subs-captcha label {
   font-size: 16px;
-  font-weight: bold;
+  font-weight: bold !important;
 }
 /* line 3232, ../sass/_akdn-redesign.scss */
 .webform-subscribe .subs-left,
