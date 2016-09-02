@@ -1,6 +1,6 @@
 <?php
 
-$syndicate_url = variable_get('syndicate-url');
+$syndicate_url = 'http://' . variable_get('syndicate-url');
 define("SCS_SITE_URL", $syndicate_url);
 
 /**
@@ -1518,9 +1518,11 @@ function _scs_custom_update_syndicate() {
  */
 function _scs_custom_update_syndicate_batch_processing($pass_nid){
   if(!empty($pass_nid)) {
-    $ch = curl_init(SCS_SITE_URL. '/custom-import-handler/update/' . $pass_nid);
-          curl_exec($ch);
-          curl_close($ch);
+    $url = SCS_SITE_URL.'/custom-import-handler/update/' . $pass_nid;
+    $request = drupal_http_request($url);
+    if($url->code != '200') {
+      drupal_set_message($url->error);
+    }
   } else {
     drupal_set_message(t('There are no content available for syndicate.'), 'status');
   }

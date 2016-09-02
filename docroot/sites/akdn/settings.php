@@ -113,86 +113,86 @@
  *   'collation' => 'utf8_general_ci',
  * );
  * @endcode
- *
- * You can optionally set prefixes for some or all database table names
- * by using the 'prefix' setting. If a prefix is specified, the table
- * name will be prepended with its value. Be sure to use valid database
- * characters only, usually alphanumeric and underscore. If no prefixes
- * are desired, leave it as an empty string ''.
- *
- * To have all database names prefixed, set 'prefix' as a string:
- * @code
- *   'prefix' => 'main_',
- * @endcode
- * To provide prefixes for specific tables, set 'prefix' as an array.
- * The array's keys are the table names and the values are the prefixes.
- * The 'default' element is mandatory and holds the prefix for any tables
- * not specified elsewhere in the array. Example:
- * @code
- *   'prefix' => array(
- *     'default'   => 'main_',
- *     'users'     => 'shared_',
- *     'sessions'  => 'shared_',
- *     'role'      => 'shared_',
- *     'authmap'   => 'shared_',
- *   ),
- * @endcode
- * You can also use a reference to a schema/database as a prefix. This maybe
- * useful if your Drupal installation exists in a schema that is not the default
- * or you want to access several databases from the same code base at the same
- * time.
- * Example:
- * @code
- *   'prefix' => array(
- *     'default'   => 'main.',
- *     'users'     => 'shared.',
- *     'sessions'  => 'shared.',
- *     'role'      => 'shared.',
- *     'authmap'   => 'shared.',
- *   );
- * @endcode
- * NOTE: MySQL and SQLite's definition of a schema is a database.
- *
- * Database configuration format:
- * @code
- *   $databases['default']['default'] = array(
- *     'driver' => 'mysql',
- *     'database' => 'databasename',
- *     'username' => 'username',
- *     'password' => 'password',
- *     'host' => 'localhost',
- *     'prefix' => '',
- *   );
- *   $databases['default']['default'] = array(
- *     'driver' => 'pgsql',
- *     'database' => 'databasename',
- *     'username' => 'username',
- *     'password' => 'password',
- *     'host' => 'localhost',
- *     'prefix' => '',
- *   );
- *   $databases['default']['default'] = array(
- *     'driver' => 'sqlite',
- *     'database' => '/path/to/databasefilename',
- *   );
- * @endcode
- */
+*
+* You can optionally set prefixes for some or all database table names
+* by using the 'prefix' setting. If a prefix is specified, the table
+* name will be prepended with its value. Be sure to use valid database
+* characters only, usually alphanumeric and underscore. If no prefixes
+* are desired, leave it as an empty string ''.
+*
+* To have all database names prefixed, set 'prefix' as a string:
+* @code
+*   'prefix' => 'main_',
+	* @endcode
+	* To provide prefixes for specific tables, set 'prefix' as an array.
+	* The array's keys are the table names and the values are the prefixes.
+	* The 'default' element is mandatory and holds the prefix for any tables
+	* not specified elsewhere in the array. Example:
+	* @code
+	*   'prefix' => array(
+			*     'default'   => 'main_',
+			*     'users'     => 'shared_',
+			*     'sessions'  => 'shared_',
+			*     'role'      => 'shared_',
+			*     'authmap'   => 'shared_',
+			*   ),
+	* @endcode
+	* You can also use a reference to a schema/database as a prefix. This maybe
+	* useful if your Drupal installation exists in a schema that is not the default
+	* or you want to access several databases from the same code base at the same
+	* time.
+	* Example:
+	* @code
+	*   'prefix' => array(
+			*     'default'   => 'main.',
+			*     'users'     => 'shared.',
+			*     'sessions'  => 'shared.',
+			*     'role'      => 'shared.',
+			*     'authmap'   => 'shared.',
+			*   );
+* @endcode
+* NOTE: MySQL and SQLite's definition of a schema is a database.
+*
+* Database configuration format:
+* @code
+*   $databases['default']['default'] = array(
+		*     'driver' => 'mysql',
+		*     'database' => 'databasename',
+		*     'username' => 'username',
+		*     'password' => 'password',
+		*     'host' => 'localhost',
+		*     'prefix' => '',
+		*   );
+*   $databases['default']['default'] = array(
+		*     'driver' => 'pgsql',
+		*     'database' => 'databasename',
+		*     'username' => 'username',
+		*     'password' => 'password',
+		*     'host' => 'localhost',
+		*     'prefix' => '',
+		*   );
+*   $databases['default']['default'] = array(
+		*     'driver' => 'sqlite',
+		*     'database' => '/path/to/databasefilename',
+		*   );
+* @endcode
+*/
 $databases = array();
 $databases = array (
-  'default' =>
-  array (
-    'default' =>
-    array (
-      'database' => 'akdn3',
-      'username' => 'root',
-      'password' => 'srijan',
-      'host' => '127.0.0.1',
-      'port' => '',
-      'driver' => 'mysql',
-      'prefix' => '',
-    ),
-  ),
-);
+		'default' =>
+		array (
+			'default' =>
+			array (
+				'database' => 'akdn3',
+				'username' => 'root',
+				'password' => 'srijan',
+				'host' => '127.0.0.1',
+				'port' => '',
+				'driver' => 'mysql',
+				'prefix' => '',
+			      ),
+		      ),
+		);
 /**
  * Access control for update.php script.
  *
@@ -245,8 +245,7 @@ $drupal_hash_salt = '';
  * It is not allowed to have a trailing slash; Drupal will add it
  * for you.
  */
-$base_url = 'http://akdn3stg.prod.acquia-sites.com';  // NO trailing slash!*/
-
+$base_url = 'http://akdn3stg.prod.acquia-sites.com  // NO trailing slash!*/
 /**
  * PHP settings:
  *
@@ -281,7 +280,6 @@ ini_set('session.gc_maxlifetime', 200000);
  * the cookie. The value 0 means "until the browser is closed".
  */
 ini_set('session.cookie_lifetime', 2000000);
-ini_set('memory_limit', '250M');
 ini_set ('display_errors', '0');
 /**
  * If you encounter a situation where users post a large amount of text, and
