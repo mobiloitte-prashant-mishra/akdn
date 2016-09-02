@@ -27,11 +27,13 @@
   <div class='subs-right'>";
   print drupal_render($form['submitted']['mailshot_subscribe']['newsletter_selection']);
   print '</div></div>';
-
+  
   print "<div class='custom-subscribe subs-acceptance'>
   <div class='subs-left'>" . t('Acceptance '). "<span title='This field is required.' class='form-required'>*</span></div>
   <div class='subs-right'>";
   print drupal_render($form['submitted']['subscription_settings']);
   print '</div></div>';
+   print '<div class = "custom-subscribe subs-captcha">'; print drupal_render($form['captcha']); 
+  '</div>';
 
   print drupal_render_children($form).'</div>';
