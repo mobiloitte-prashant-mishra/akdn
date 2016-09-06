@@ -3199,7 +3199,8 @@ ul.primary li {
 .webform-subscribe {
   .subs-contact-info,
   .subs-subscriptions,
-  .subs-acceptance {
+  .subs-acceptance,
+  .subs-captcha {
     @extend %display_block_l_flt;
 
     margin: 0 auto 15px;
@@ -3211,8 +3212,21 @@ ul.primary li {
     border-top: 1px solid #b69c5f;
   }
 
-  .subs-acceptance {
+  .subs-captcha {
+    position: relative;
     margin-bottom: 0;
+    img {
+      display: block;
+      width: auto;
+      margin: 0 auto 15px;
+    }
+    .description {
+      display: none;
+    }
+    label {
+      font-size: 16px;
+      font-weight: bold !important;
+    }
   }
 
   .subs-left,
