@@ -246,7 +246,6 @@ $drupal_hash_salt = '';
  * for you.
  */
  $base_url = 'http://akdn3dev.prod.acquia-sites.com';  // NO trailing slash!*/
-
 /**
  * PHP settings:
  *
@@ -281,7 +280,10 @@ ini_set('session.gc_maxlifetime', 200000);
  * the cookie. The value 0 means "until the browser is closed".
  */
 ini_set('session.cookie_lifetime', 2000000);
+<<<<<<< HEAD
 //ini_set('memory_limit', '250M');
+=======
+>>>>>>> FEATURES_FIX_SYNC
 ini_set ('display_errors', '0');
 /**
  * If you encounter a situation where users post a large amount of text, and
