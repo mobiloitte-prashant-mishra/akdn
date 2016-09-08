@@ -390,7 +390,7 @@ function akdn_image_styles_image_default_styles() {
     'name' => 'featured_content',
     'label' => 'Two Third Width Carousel',
     'effects' => array(
-      233 => array(
+      236 => array(
         'label' => 'Manual Crop: Custom crop',
         'help' => 'Crop a freely user-selected area.',
         'effect callback' => 'manualcrop_crop_effect',
@@ -405,9 +405,9 @@ function akdn_image_styles_image_default_styles() {
           'reuse_crop_style' => 'banner_items_fall_back',
           'style_name' => 'featured_content',
         ),
-        'weight' => 1,
+        'weight' => -10,
       ),
-      234 => array(
+      251 => array(
         'label' => 'Scale',
         'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
         'effect callback' => 'image_scale_effect',
@@ -421,9 +421,9 @@ function akdn_image_styles_image_default_styles() {
           'height' => 460,
           'upscale' => 1,
         ),
-        'weight' => 3,
+        'weight' => -9,
       ),
-      235 => array(
+      246 => array(
         'label' => 'Scale',
         'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
         'effect callback' => 'image_scale_effect',
@@ -437,7 +437,7 @@ function akdn_image_styles_image_default_styles() {
           'height' => 460,
           'upscale' => 0,
         ),
-        'weight' => 3,
+        'weight' => -8,
       ),
     ),
   );

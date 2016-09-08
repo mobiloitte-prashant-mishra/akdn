@@ -5,15 +5,6 @@
  */
 
 /**
- * Implements hook_ctools_plugin_api().
- */
-function solr_sitewise_search_ctools_plugin_api($module = NULL, $api = NULL) {
-  if ($module == "context" && $api == "context") {
-    return array("version" => "3");
-  }
-}
-
-/**
  * Implements hook_views_api().
  */
 function solr_sitewise_search_views_api($module = NULL, $api = NULL) {

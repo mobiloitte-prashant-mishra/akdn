@@ -426,7 +426,7 @@ function akdn_press_centre_types_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 134116,
+      'default_image' => 176906,
       'entity_translation_sync' => 0,
       'file_directory' => 'article-images',
       'file_extensions' => 'png gif jpg jpeg',
