@@ -1470,6 +1470,10 @@ function _scs_custom_import_files_syndicate() {
  * @return [type] [description]
  */
 function _scs_custom_update_syndicate() {
+
+  // Remove all the entries from table in order to stop updating content next time.
+  db_truncate('feeds_item')->execute();
+
   $url = SCS_SITE_URL.'syndicate-node-api';
     $request = drupal_http_request($url);
     if($request->data) {
