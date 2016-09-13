@@ -1482,6 +1482,7 @@ function _scs_custom_update_syndicate() {
       $array = json_decode($json,TRUE);
 
     }
+
     foreach ($array as $nid) {
       // Custom fucnction which gonna set the source node syndication off in order to
       // Protect the destination node override.
@@ -1530,6 +1531,7 @@ function _scs_custom_update_syndicate_batch_processing($pass_nid){
   } else {
     drupal_set_message(t('There are no content available for syndicate.'), 'status');
   }
+
 
 }
 
@@ -1681,7 +1683,7 @@ function _scs_custom_get_node_data ($guid, $type) {
 function _scs_custom_get_file_data_from_fid($fid) {
   $data ='';
   $file_id = trim($fid);
-  //dsm($file_id, 'file_id');
+
   if(!empty($file_id)) {
     $url = SCS_SITE_URL.'files-attribute-import-by-fid/'.$file_id;
     $request = drupal_http_request($url);
@@ -1690,7 +1692,7 @@ function _scs_custom_get_file_data_from_fid($fid) {
       $data = $data->file_managed;
     }
   }
-  //dsm($data, 'data');
+
   return $data;
 
 }

@@ -1,3 +1,3 @@
 <?php
-  echo "Hello First Commit successful";
+echo phpinfo();
 ?>
