@@ -20376,3 +20376,85 @@ table tr.upcoming_events {
 table tr.gone_events {
   background-color: #E2DFD7 !important;
 }
+
+/* line 3, ../sass/protected-page.scss */
+.page-protected-page .region-content form {
+  width: 70.61404%;
+  margin: auto;
+  float: none;
+}
+/* line 9, ../sass/protected-page.scss */
+.page-protected-page .region-content .form-wrapper {
+  display: block;
+  width: 100%;
+  margin: 45px auto;
+  float: left;
+  padding: 20px 35px;
+  background: #f0eade;
+  border-top: 1px solid #b69c5f;
+}
+/* line 19, ../sass/protected-page.scss */
+.page-protected-page .region-content .fieldset-description {
+  display: block;
+  margin: 0 auto 25px;
+  padding: 0;
+  float: left;
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 24px;
+  border: 0 none;
+}
+/* line 31, ../sass/protected-page.scss */
+.page-protected-page .region-content .form-item {
+  clear: both;
+  float: left;
+  margin: 10px 0 !important;
+  width: 100%;
+}
+/* line 38, ../sass/protected-page.scss */
+.page-protected-page .region-content label {
+  font-weight: normal;
+  width: 330px;
+  display: inline-block;
+  float: left;
+  margin: 0 auto;
+  vertical-align: middle;
+  line-height: 22px;
+}
+/* line 48, ../sass/protected-page.scss */
+.page-protected-page .region-content input.form-text {
+  width: 400px;
+  display: inline-block;
+  float: left;
+  margin: 0 auto;
+  border: 1px solid #999;
+  padding: 2px 5px;
+  height: 28px;
+  line-height: normal;
+}
+/* line 59, ../sass/protected-page.scss */
+.page-protected-page .region-content input.form-submit {
+  background: #b59757;
+  border-radius: 5px;
+  width: auto;
+  color: #fff;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin: 20px auto 10px;
+  padding: 5px 10px;
+  text-align: center;
+  float: right;
+  vertical-align: middle;
+  line-height: normal;
+  border: 0 none;
+  font-weight: normal;
+  text-shadow: none;
+}
+/* line 76, ../sass/protected-page.scss */
+.page-protected-page .region-content input.form-submit:focus {
+  outline: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
