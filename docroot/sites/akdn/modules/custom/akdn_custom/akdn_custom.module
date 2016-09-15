@@ -345,6 +345,15 @@ function akdn_custom_form_validation($form,&$form_state) {
     form_set_error('mailshot_subscribe','Subscriptions field is required');
   }
 }
+
+/**
+ * Override captcha Title
+*/
+function captcha_title_change_after_build($form, &$form_state){
+  $form['captcha']['captcha_widgets']['captcha_response']['#title'] = 'Enter the characters shown in the image';
+  return $form;
+}
+
 /**
  * Implements hook_form_alter().
  *
@@ -364,6 +373,8 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
 
   //Overriding form fields
   if ($form_id == 'webform_client_form_14371') {
+    $form['#after_build'][] = 'captcha_title_change_after_build'; 
+     
     $form['submitted']['gender']['#default_value'] = '';
     $form['submitted']['gender']['#empty_value'] = '';
     $form['submitted']['gender']['#empty_option'] = t('- Please Select -');
@@ -380,6 +391,10 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
     $privacy = l('privacy policy', 'node/29876', array('attributes'=>array('target'=>'_blank')));
     $acceptance = l('terms and conditions', 'node/29871', array('attributes'=>array('target'=>'_blank')));
     $form['submitted']['subscription_settings']['#options'][1] = "I have read and accepted the $acceptance and the $privacy of this website.";
+
+    //print '<pre>';print_r($form);die();
+
+
         $form['#validate'][]='akdn_custom_form_validation';
   }
 
@@ -488,6 +503,10 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
     $form['view-all'] = array('#markup' => '<a id="view-all-projects" href="/architecture/projects">View All Projects</a>');
   }
 }
+
+// function akdn_custom_captcha($op, $captcha_type = '', $captcha_sid = NULL) {
+//   print 'HERE';die();
+// }
 
 /**
  * Implementes hook_form_FORM_ID_alter().
@@ -2148,7 +2167,7 @@ function akdn_search_forms($form, &$form_state, $delta) {
       );
       //$text = '<li><span class="search_toggle">' . t('Search') . '</span></li>';
       $text = '';
-      $text .= ' <li>' . l('Subscribe', 'subscribe',
+      $text .= ' <li>' . l('Subscribe', 'webform/subscribe-our-newsletter',
           array(
             'attributes' =>
               array(
