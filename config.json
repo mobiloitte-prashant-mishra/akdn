@@ -1,0 +1,11 @@
+{
+  "drupal_root": "docroot",
+  "tools": {
+    "coding_standards": {
+      "phpcs": true,
+      "csslint": true,
+      "scsslint": true,
+      "jslint": true
+    }
+  }
+}

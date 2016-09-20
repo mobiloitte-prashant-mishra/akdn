@@ -42,3 +42,6 @@ Thumbs.db
 .svn
 .CVS
 cgi-bin
+
+node_modules
+vendor
