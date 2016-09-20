@@ -2954,6 +2954,10 @@ function akdn_custom_theme_registry_alter(&$theme_registry) {
     $theme_registry['breadcrumb']['theme path'] = drupal_get_path('module', 'akdn_custom');
     $theme_registry['breadcrumb']['function'] = 'akdn_breadcrumb';
   }
+
+  // Override scs-newsletter template from contrib module
+  $theme_registry['scs_newsletter']['template'] = drupal_get_path('module', 'akdn_custom') . '/templates/scs-newsletter';
+
 }
 
 /**
