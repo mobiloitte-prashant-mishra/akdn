@@ -424,7 +424,6 @@ features[node][] = publication
 features[node][] = speech
 features[node][] = speech_quote
 features[node][] = speech_theme
-features[taxonomy][] = akmi_pages
 features[taxonomy][] = article_type
 features[taxonomy][] = award_cycle
 features[taxonomy][] = podcast_type
@@ -500,4 +499,5 @@ features_exclude[field_base][field_akmi_pages] = field_akmi_pages
 features_exclude[field_instance][node-article-field_akmi_activity] = node-article-field_akmi_activity
 features_exclude[field_instance][node-article-field_akmi_page] = node-article-field_akmi_page
 features_exclude[taxonomy][akmi_activity] = akmi_activity
-mtime = 1471942173
+features_exclude[taxonomy][akmi_pages] = akmi_pages
+
