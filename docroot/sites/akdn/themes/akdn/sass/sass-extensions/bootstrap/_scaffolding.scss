@@ -77,6 +77,12 @@ img {
   vertical-align: middle;
   width: 100%;
   height: auto;
+  -ms-interpolation-mode: nearest-neighbor;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: pixelated;
 }
 
 // Responsive images (ensure images don't scale beyond their parents)
