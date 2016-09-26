@@ -364,6 +364,7 @@ function akdn_press_centre_types_field_group_info() {
       4 => 'title_field',
       5 => 'field_short_title',
       6 => 'field_custom_meta_tags',
+      7 => 'field_publish_date',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
