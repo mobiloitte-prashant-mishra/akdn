@@ -426,7 +426,7 @@ function akdn_press_centre_types_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 176906,
+      'default_image' => 179471,
       'entity_translation_sync' => 0,
       'file_directory' => 'article-images',
       'file_extensions' => 'png gif jpg jpeg',
@@ -3838,7 +3838,7 @@ function akdn_press_centre_types_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 0,
+      'default_image' => 179481,
       'entity_translation_sync' => 0,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
@@ -4862,6 +4862,76 @@ function akdn_press_centre_types_field_default_field_instances() {
       ),
       'type' => 'node_reference_autocomplete',
       'weight' => 73,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_publish_date'
+  $field_instances['node-event-field_publish_date'] = array(
+    'bundle' => 'event',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+          'show_remaining_days' => FALSE,
+        ),
+        'type' => 'date_default',
+        'weight' => 52,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_publish_date',
+    'label' => 'Event Date',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'display_all_day' => 0,
+        'increment' => 15,
+        'input_format' => 'j M Y - g:i:sa',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'no_fieldset' => 0,
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_popup',
+      'weight' => 10,
     ),
   );
 
@@ -6337,7 +6407,7 @@ function akdn_press_centre_types_field_default_field_instances() {
     'required' => 1,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 0,
+      'default_image' => 179491,
       'entity_translation_sync' => 0,
       'file_directory' => 'gallery',
       'file_extensions' => 'png gif jpg jpeg',
@@ -9141,7 +9211,7 @@ function akdn_press_centre_types_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 0,
+      'default_image' => 179501,
       'entity_translation_sync' => 0,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
@@ -11508,7 +11578,7 @@ function akdn_press_centre_types_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 0,
+      'default_image' => 179531,
       'entity_translation_sync' => 0,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
@@ -13975,7 +14045,7 @@ function akdn_press_centre_types_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 35356,
+      'default_image' => 179511,
       'entity_translation_sync' => 0,
       'file_directory' => 'Publications',
       'file_extensions' => 'png gif jpg jpeg',
@@ -17173,7 +17243,7 @@ function akdn_press_centre_types_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 134641,
+      'default_image' => 179521,
       'entity_translation_sync' => 0,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
@@ -18724,6 +18794,7 @@ function akdn_press_centre_types_field_default_field_instances() {
   t('Enter any number of comma-separated values to describe this event.');
   t('Enter one or more categories under which this publication is categorized.');
   t('Event');
+  t('Event Date');
   t('Event Image');
   t('Event Informations');
   t('External Media');
