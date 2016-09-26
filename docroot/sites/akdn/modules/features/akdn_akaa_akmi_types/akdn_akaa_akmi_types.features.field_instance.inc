@@ -3200,7 +3200,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
           ),
           'value' => '',
         ),
-        'redirect' => FALSE,
+        'redirect' => 0,
         'retroactive_update' => 0,
       ),
       'filefield_paths_enabled' => 1,
@@ -3261,6 +3261,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
           'publication_listing_image' => 'publication_listing_image',
           'publications_list_image_style' => 'publications_list_image_style',
           'social_sharing_image' => 'social_sharing_image',
+          'two_third_width_carousel_grid_inner' => 'two_third_width_carousel_grid_inner',
         ),
         'manualcrop_styles_mode' => 'include',
         'manualcrop_thumblist' => 1,
@@ -3776,7 +3777,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
           ),
           'value' => '',
         ),
-        'redirect' => FALSE,
+        'redirect' => 0,
         'retroactive_update' => 0,
       ),
       'filefield_paths_enabled' => 1,
@@ -3838,6 +3839,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
           'publication_listing_image' => 'publication_listing_image',
           'publications_list_image_style' => 'publications_list_image_style',
           'social_sharing_image' => 'social_sharing_image',
+          'two_third_width_carousel_grid_inner' => 'two_third_width_carousel_grid_inner',
         ),
         'manualcrop_styles_mode' => 'include',
         'manualcrop_thumblist' => 1,
@@ -6122,6 +6124,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
           'publication_listing_image' => 'publication_listing_image',
           'publications_list_image_style' => 'publications_list_image_style',
           'social_sharing_image' => 'social_sharing_image',
+          'two_third_width_carousel_grid_inner' => 'two_third_width_carousel_grid_inner',
         ),
         'manualcrop_styles_mode' => 'include',
         'manualcrop_thumblist' => 1,
@@ -9568,6 +9571,63 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-person-field_syndicate_this'
+  $field_instances['node-person-field_syndicate_this'] = array(
+    'bundle' => 'person',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 10,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_syndicate_this',
+    'label' => 'Syndicate this on KC?',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 13,
+    ),
+  );
+
   // Exported field_instance: 'node-person-field_tags'
   $field_instances['node-person-field_tags'] = array(
     'bundle' => 'person',
@@ -9757,7 +9817,6 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
   t('News Publication Date');
   t('Newsletter Image');
   t('Newsletter Summary');
-  t('Newsletter category');
   t('Pages to Include');
   t('Pages to exclude');
   t('Performance');
@@ -9796,6 +9855,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
   t('Specify thematic areas to which this person is related. You may select more than one thematic area; to do this, hold the \'ctrl\' key (\'command\' key on a Mac) and click each thematic area you wish to select.');
   t('Steering Committee');
   t('Submission Procedure');
+  t('Syndicate this on KC?');
   t('Tags');
   t('The image that will appear in the banner item slideshow(s).');
   t('The name of the person.');

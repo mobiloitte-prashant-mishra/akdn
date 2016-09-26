@@ -1618,60 +1618,6 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-agency-field_custom_meta_tags'
-  $field_instances['node-agency-field_custom_meta_tags'] = array(
-    'bundle' => 'agency',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 44,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'scs' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_custom_meta_tags',
-    'label' => 'Custom Meta tags',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 2,
-    ),
-  );
-
   // Exported field_instance: 'node-agency-field_enable_project_slider'
   $field_instances['node-agency-field_enable_project_slider'] = array(
     'bundle' => 'agency',
@@ -3183,54 +3129,6 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-focus_area-field_custom_meta_tags'
-  $field_instances['node-focus_area-field_custom_meta_tags'] = array(
-    'bundle' => 'focus_area',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 28,
-      ),
-      'scs' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_custom_meta_tags',
-    'label' => 'Custom Meta tags',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 1,
-    ),
-  );
-
   // Exported field_instance: 'node-focus_area-field_enable_project_slider'
   $field_instances['node-focus_area-field_enable_project_slider'] = array(
     'bundle' => 'focus_area',
@@ -3725,7 +3623,7 @@ function akdn_content_types_field_default_field_instances() {
           ),
           'value' => '',
         ),
-        'redirect' => FALSE,
+        'redirect' => 0,
         'retroactive_update' => 0,
       ),
       'filefield_paths_enabled' => 1,
@@ -3785,6 +3683,7 @@ function akdn_content_types_field_default_field_instances() {
           'press_centre_detail' => 'press_centre_detail',
           'publication_listing_image' => 'publication_listing_image',
           'social_sharing_image' => 'social_sharing_image',
+          'two_third_width_carousel_grid_inner' => 'two_third_width_carousel_grid_inner',
         ),
         'manualcrop_styles_mode' => 'include',
         'manualcrop_thumblist' => 1,
@@ -5153,54 +5052,6 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-geography-field_custom_meta_tags'
-  $field_instances['node-geography-field_custom_meta_tags'] = array(
-    'bundle' => 'geography',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 33,
-      ),
-      'scs' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_custom_meta_tags',
-    'label' => 'Custom Meta tags',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 1,
-    ),
-  );
-
   // Exported field_instance: 'node-geography-field_enable_project_slider'
   $field_instances['node-geography-field_enable_project_slider'] = array(
     'bundle' => 'geography',
@@ -5629,7 +5480,7 @@ function akdn_content_types_field_default_field_instances() {
           ),
           'value' => '',
         ),
-        'redirect' => FALSE,
+        'redirect' => 0,
         'retroactive_update' => 0,
       ),
       'filefield_paths_enabled' => 1,
@@ -5689,6 +5540,7 @@ function akdn_content_types_field_default_field_instances() {
           'press_centre_detail' => 'press_centre_detail',
           'publication_listing_image' => 'publication_listing_image',
           'social_sharing_image' => 'social_sharing_image',
+          'two_third_width_carousel_grid_inner' => 'two_third_width_carousel_grid_inner',
         ),
         'manualcrop_styles_mode' => 'include',
         'manualcrop_thumblist' => 1,
@@ -7120,7 +6972,7 @@ function akdn_content_types_field_default_field_instances() {
           ),
           'value' => '',
         ),
-        'redirect' => FALSE,
+        'redirect' => 0,
         'retroactive_update' => 0,
       ),
       'filefield_paths_enabled' => 1,
@@ -7180,6 +7032,7 @@ function akdn_content_types_field_default_field_instances() {
           'press_centre_detail' => 'press_centre_detail',
           'publication_listing_image' => 'publication_listing_image',
           'social_sharing_image' => 'social_sharing_image',
+          'two_third_width_carousel_grid_inner' => 'two_third_width_carousel_grid_inner',
         ),
         'manualcrop_styles_mode' => 'include',
         'manualcrop_thumblist' => 1,
@@ -8663,184 +8516,6 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_custom_meta_tags'
-  $field_instances['node-page-field_custom_meta_tags'] = array(
-    'bundle' => 'page',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'body_only' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 27,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'scs' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_custom_meta_tags',
-    'label' => 'Custom Meta Tags',
-    'required' => FALSE,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance: 'node-page-field_custom_meta_tags'
-  $field_instances['node-page-field_custom_meta_tags'] = array(
-    'bundle' => 'page',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'body_only' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 27,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'scs' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_custom_meta_tags',
-    'label' => 'Custom Meta tags',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance: 'node-page-field_custom_meta_tags'
-  $field_instances['node-page-field_custom_meta_tags'] = array(
-    'bundle' => 'page',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'body_only' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 27,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'scs' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_custom_meta_tags',
-    'label' => 'Custom Meta tags',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 4,
-    ),
-  );
-
   // Exported field_instance: 'node-page-field_feature_image'
   $field_instances['node-page-field_feature_image'] = array(
     'bundle' => 'page',
@@ -8911,7 +8586,7 @@ function akdn_content_types_field_default_field_instances() {
           ),
           'value' => '',
         ),
-        'redirect' => FALSE,
+        'redirect' => 0,
         'retroactive_update' => 0,
       ),
       'filefield_paths_enabled' => 1,
@@ -8971,6 +8646,7 @@ function akdn_content_types_field_default_field_instances() {
           'press_centre_detail' => 'press_centre_detail',
           'publication_listing_image' => 'publication_listing_image',
           'social_sharing_image' => 'social_sharing_image',
+          'two_third_width_carousel_grid_inner' => 'two_third_width_carousel_grid_inner',
         ),
         'manualcrop_styles_mode' => 'include',
         'manualcrop_thumblist' => 1,
@@ -9240,6 +8916,7 @@ function akdn_content_types_field_default_field_instances() {
           'press_centre_detail' => 'press_centre_detail',
           'publication_listing_image' => 'publication_listing_image',
           'social_sharing_image' => 'social_sharing_image',
+          'two_third_width_carousel_grid_inner' => 'two_third_width_carousel_grid_inner',
         ),
         'manualcrop_styles_mode' => 'include',
         'manualcrop_thumblist' => 1,
@@ -10221,7 +9898,6 @@ function akdn_content_types_field_default_field_instances() {
   t('Check this box to enable the carousel of projects related to this Geography below the Areas Of Activity listings.');
   t('Create Banner Item');
   t('Custom Agency Text');
-  t('Custom Meta tags');
   t('Description of the agency; will be displayed on the agency\'s page, below the rotating slideshow of images.');
   t('Description of the geography.');
   t('Enable Project Carousel');
@@ -10260,7 +9936,6 @@ function akdn_content_types_field_default_field_instances() {
   t('News and resources link');
   t('Newsletter Image');
   t('Newsletter Summary');
-  t('Newsletter category');
   t('Pages to exclude');
   t('Paste the embed code for the brochure viewer for this agency here.');
   t('Picture');
