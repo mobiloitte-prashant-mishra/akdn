@@ -390,7 +390,7 @@ function akdn_image_styles_image_default_styles() {
     'name' => 'featured_content',
     'label' => 'Two Third Width Carousel',
     'effects' => array(
-      236 => array(
+      287 => array(
         'label' => 'Manual Crop: Custom crop',
         'help' => 'Crop a freely user-selected area.',
         'effect callback' => 'manualcrop_crop_effect',
@@ -399,7 +399,7 @@ function akdn_image_styles_image_default_styles() {
         'module' => 'manualcrop',
         'name' => 'manualcrop_crop',
         'data' => array(
-          'width' => 780,
+          'width' => 784,
           'height' => 460,
           'keepproportions' => 1,
           'reuse_crop_style' => 'banner_items_fall_back',
@@ -407,37 +407,20 @@ function akdn_image_styles_image_default_styles() {
         ),
         'weight' => -10,
       ),
-      251 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
+      290 => array(
+        'label' => 'Scale and crop',
+        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
         'module' => 'image',
-        'name' => 'image_scale',
+        'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => '',
+          'width' => 784,
           'height' => 460,
-          'upscale' => 1,
         ),
-        'weight' => -9,
-      ),
-      246 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
-        'name' => 'image_scale',
-        'data' => array(
-          'width' => 780,
-          'height' => 460,
-          'upscale' => 0,
-        ),
-        'weight' => -8,
+        'weight' => 4,
       ),
     ),
   );
@@ -966,6 +949,46 @@ function akdn_image_styles_image_default_styles() {
           'ratio_adjustment' => 1,
         ),
         'weight' => -9,
+      ),
+    ),
+  );
+
+  // Exported image style: two_third_width_carousel_grid_inner.
+  $styles['two_third_width_carousel_grid_inner'] = array(
+    'name' => 'two_third_width_carousel_grid_inner',
+    'label' => 'Two Third Width Carousel Grid Inner',
+    'effects' => array(
+      281 => array(
+        'label' => 'Manual Crop: Custom crop',
+        'help' => 'Crop a freely user-selected area.',
+        'effect callback' => 'manualcrop_crop_effect',
+        'form callback' => 'manualcrop_crop_form',
+        'summary theme' => 'manualcrop_crop_summary',
+        'module' => 'manualcrop',
+        'name' => 'manualcrop_crop',
+        'data' => array(
+          'width' => 774,
+          'height' => 456,
+          'keepproportions' => 1,
+          'reuse_crop_style' => 'banner_items_fall_back',
+          'style_name' => 'two_third_width_carousel_grid_inner',
+        ),
+        'weight' => 0,
+      ),
+      286 => array(
+        'label' => 'Scale and crop',
+        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 774,
+          'height' => 456,
+        ),
+        'weight' => 3,
       ),
     ),
   );

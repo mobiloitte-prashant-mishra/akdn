@@ -2,7 +2,7 @@ name = AKDN AKAA AKMI Types
 description = AKDN AKAA AKMI Using Content types
 core = 7.x
 package = AKDN.org
-version = 7.x-1.0-0
+version = 7.x-1.1
 project = akdn_akaa_akmi_types
 dependencies[] = acdx_node_reference
 dependencies[] = akdn_content_types
@@ -404,4 +404,3 @@ features_exclude[field_base][field_press_kits] = field_press_kits
 features_exclude[field_base][field_related_audio_files] = field_related_audio_files
 features_exclude[field_base][field_more_information] = field_more_information
 features_exclude[taxonomy][akmi_activity] = akmi_activity
-

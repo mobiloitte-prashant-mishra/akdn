@@ -2,7 +2,7 @@ name = AKDN Press Centre Types
 description = AKDN Press centre types Articles, Media ,Podcast, Project, Speech, Gallery
 core = 7.x
 package = AKDN.org
-version = 7.x-1.0-beta1
+version = 7.x-1.1
 project = akdn_press_centre_types
 dependencies[] = akdn_content_types
 dependencies[] = audio_js
@@ -500,4 +500,3 @@ features_exclude[field_instance][node-article-field_akmi_activity] = node-articl
 features_exclude[field_instance][node-article-field_akmi_page] = node-article-field_akmi_page
 features_exclude[taxonomy][akmi_activity] = akmi_activity
 features_exclude[taxonomy][akmi_pages] = akmi_pages
-

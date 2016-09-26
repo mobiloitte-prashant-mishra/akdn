@@ -11966,23 +11966,9 @@ print $explode[1];
   $handler->display->display_options['fields']['field_hub_page_image']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_hub_page_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_hub_page_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_hub_page_image']['type'] = 'cs_adaptive_image';
   $handler->display->display_options['fields']['field_hub_page_image']['settings'] = array(
+    'image_style' => 'two_third_width_carousel_grid_inner',
     'image_link' => '',
-    'styles' => array(
-      'breakpoint_1' => '979',
-      'style_1' => '',
-      'breakpoint_2' => '739',
-      'style_2' => '',
-      'breakpoint_3' => '479',
-      'style_3' => '',
-      'breakpoint_4' => '319',
-      'style_4' => '',
-      'breakpoint_5' => '',
-      'style_5' => '',
-      'max_style' => '',
-      'fallback_style' => '',
-    ),
   );
   $handler->display->display_options['fields']['field_hub_page_image']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_hub_page_image']['delta_offset'] = '0';
@@ -13230,7 +13216,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['field_facebook_picture']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_facebook_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_facebook_picture']['settings'] = array(
-    'image_style' => 'social_sharing_image',
+    'image_style' => 'standard_listing_aspect_switcher',
     'image_link' => '',
   );
   /* Field: Content: Title */
@@ -19167,7 +19153,7 @@ return $id;
   $handler->display->display_options['fields']['field_project_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_project_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_project_image']['settings'] = array(
-    'image_style' => 'featured_content',
+    'image_style' => 'two_third_width_carousel_grid_inner',
     'image_link' => 'content',
   );
   $handler->display->display_options['fields']['field_project_image']['delta_limit'] = '1';
@@ -28857,23 +28843,9 @@ print $content;
   $handler->display->display_options['fields']['field_article_img_et']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_article_img_et']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_article_img_et']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_article_img_et']['type'] = 'cs_adaptive_image';
   $handler->display->display_options['fields']['field_article_img_et']['settings'] = array(
+    'image_style' => 'two_third_width_carousel_grid_inner',
     'image_link' => '',
-    'styles' => array(
-      'breakpoint_1' => '979',
-      'style_1' => '',
-      'breakpoint_2' => '739',
-      'style_2' => '',
-      'breakpoint_3' => '479',
-      'style_3' => '',
-      'breakpoint_4' => '319',
-      'style_4' => '',
-      'breakpoint_5' => '',
-      'style_5' => '',
-      'max_style' => '',
-      'fallback_style' => '',
-    ),
   );
   $handler->display->display_options['fields']['field_article_img_et']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_article_img_et']['delta_offset'] = '0';
@@ -28973,7 +28945,7 @@ print $content;
   $handler->display->display_options['fields']['field_project_image_et']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_project_image_et']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_project_image_et']['settings'] = array(
-    'image_style' => 'featured_content',
+    'image_style' => 'two_third_width_carousel_grid_inner',
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_project_image_et']['group_rows'] = FALSE;
@@ -29058,23 +29030,9 @@ print $content;
   $handler->display->display_options['fields']['field_event_image_et']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_event_image_et']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_event_image_et']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_event_image_et']['type'] = 'cs_adaptive_image';
   $handler->display->display_options['fields']['field_event_image_et']['settings'] = array(
+    'image_style' => 'two_third_width_carousel_grid_inner',
     'image_link' => '',
-    'styles' => array(
-      'breakpoint_1' => '979',
-      'style_1' => '',
-      'breakpoint_2' => '739',
-      'style_2' => '',
-      'breakpoint_3' => '479',
-      'style_3' => '',
-      'breakpoint_4' => '319',
-      'style_4' => '',
-      'breakpoint_5' => '',
-      'style_5' => '',
-      'max_style' => '',
-      'fallback_style' => '',
-    ),
   );
   $handler->display->display_options['fields']['field_event_image_et']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_event_image_et']['delta_offset'] = '0';
@@ -29165,23 +29123,9 @@ print $content;
   $handler->display->display_options['fields']['field_speech_image_et']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_speech_image_et']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_speech_image_et']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_speech_image_et']['type'] = 'cs_adaptive_image';
   $handler->display->display_options['fields']['field_speech_image_et']['settings'] = array(
+    'image_style' => 'two_third_width_carousel_grid_inner',
     'image_link' => '',
-    'styles' => array(
-      'breakpoint_1' => '979',
-      'style_1' => '',
-      'breakpoint_2' => '739',
-      'style_2' => '',
-      'breakpoint_3' => '479',
-      'style_3' => '',
-      'breakpoint_4' => '319',
-      'style_4' => '',
-      'breakpoint_5' => '',
-      'style_5' => '',
-      'max_style' => '',
-      'fallback_style' => '',
-    ),
   );
   $handler->display->display_options['fields']['field_speech_image_et']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_speech_image_et']['delta_offset'] = '0';
@@ -29292,23 +29236,9 @@ print $content;
   $handler->display->display_options['fields']['field_gallery_images_et']['label'] = '';
   $handler->display->display_options['fields']['field_gallery_images_et']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_gallery_images_et']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_gallery_images_et']['type'] = 'cs_adaptive_image';
   $handler->display->display_options['fields']['field_gallery_images_et']['settings'] = array(
+    'image_style' => 'two_third_width_carousel_grid_inner',
     'image_link' => '',
-    'styles' => array(
-      'breakpoint_1' => '979',
-      'style_1' => '',
-      'breakpoint_2' => '739',
-      'style_2' => '',
-      'breakpoint_3' => '479',
-      'style_3' => '',
-      'breakpoint_4' => '319',
-      'style_4' => '',
-      'breakpoint_5' => '',
-      'style_5' => '',
-      'max_style' => '',
-      'fallback_style' => '',
-    ),
   );
   $handler->display->display_options['fields']['field_gallery_images_et']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_gallery_images_et']['delta_offset'] = '0';
@@ -29335,8 +29265,9 @@ print $content;
   $handler->display->display_options['fields']['field_gallery_images_1']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_gallery_images_1']['type'] = 'colorbox';
   $handler->display->display_options['fields']['field_gallery_images_1']['settings'] = array(
-    'colorbox_node_style' => 'featured_content',
-    'colorbox_image_style' => 'featured_content',
+    'colorbox_node_style' => 'two_third_width_carousel_grid_inner',
+    'colorbox_node_style_first' => '',
+    'colorbox_image_style' => 'two_third_width_carousel_grid_inner',
     'colorbox_gallery' => 'post',
     'colorbox_gallery_custom' => '',
     'colorbox_caption' => 'auto',
