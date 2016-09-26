@@ -134,8 +134,8 @@ function akdn_akaa_akmi_types_field_group_info() {
       13 => 'field_size',
       14 => 'field_winner',
       15 => 'field_zipped_images',
-      16 => 'field_reference_cycle',
-      17 => 'field_awards_cycle_links',
+      16 => 'field_awards_cycle_links',
+      17 => 'field_reference_cycle',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

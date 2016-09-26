@@ -24,7 +24,7 @@
     }
     %block_image {
         //max-height: 210px;
-    }    
+    }
     .main-navbar {
         display: block !important;
         overflow: visible;
@@ -98,8 +98,8 @@
                     -o-column-fill: balance;
                     column-count: auto;
                     column-gap: normal;
-                    column-fill: auto; 
-                    li { 
+                    column-fill: auto;
+                    li {
                         display: inline-block;
                         float: left;
                         width: 21%;
@@ -198,8 +198,12 @@
     }
 }
 .panel-panel.grid-18 {
-    .flexslider ul.slides { 
+    .flexslider ul.slides {
         height: 456px;
+        .slide {
+            width: 774px;
+            height: auto;
+        }
     }
 }
 
@@ -233,13 +237,13 @@
         a {
             font-size: 14px;
         }
-        .form-item-search { 
+        .form-item-search {
             .form-control {
                 &::-webkit-input-placeholder{
                     font-size: 14px;
                 }
-                &:-moz-input-placeholder, 
-                &::-moz-input-placeholder, 
+                &:-moz-input-placeholder,
+                &::-moz-input-placeholder,
                 &:-ms-input-placeholder {
                     font-size: 14px;
                 }
@@ -392,7 +396,7 @@
             }
             ul.menu .nolink {
                 color: #000 !important;
-            } 
+            }
             &.active {
                 &> .nolink {
                     color: #b5995a !important;
@@ -582,7 +586,7 @@
             width: 50% !important;
         }
     }
-    .context-speech-quotes { 
+    .context-speech-quotes {
         .akdn-filter-js-wrapper {
             .akdn-filter-wrapper {
                 width: 50% !important;
@@ -590,16 +594,16 @@
         }
     }
     .akaa-projectfinder-wrapper {
-        .views-exposed-widgets { 
-            label { 
+        .views-exposed-widgets {
+            label {
                 font-size: 14px;
-                line-height: 20px;     
+                line-height: 20px;
             }
-        } 
+        }
     }
 
 .akaa-body {
-    .grid-18 { 
+    .grid-18 {
         .akaa-projectfinder-wrapper {
             .views-exposed-widget {
                 width: 33.3333%;
@@ -743,7 +747,7 @@
             }
             ul.menu .nolink {
                 color: #000 !important;
-            } 
+            }
             .subnav {
                 font-size: 12px;
                 font-weight: normal;
@@ -934,7 +938,7 @@
         }
     }
 
-    .context-speech-quotes { 
+    .context-speech-quotes {
         .akdn-filter-js-wrapper {
             .akdn-filter-wrapper {
                 width: 50% !important;
@@ -977,18 +981,18 @@
 .whatwedo-right {
     border-top: 1px solid #b59757;
     padding-top: 15px;
-    border-left: 0;   
+    border-left: 0;
     &:before {
         content: "";
         border-left: 0 none;
-    } 
+    }
 }
 .whatwedo-right {
     &.geography-see-also {
         padding: 15px 0;
     }
 }
-.what-we-do-inner-wrapper, 
+.what-we-do-inner-wrapper,
 .project-inner-wrap {
     margin-bottom: 40px;
     &:last-child {
@@ -1001,9 +1005,9 @@
     }
 }
 
-.publication-list-container { 
+.publication-list-container {
     .views-row {
-        width: 33.3333%; 
+        width: 33.3333%;
         &:nth-child(5n-4) {
             clear: none;
             border-left: 1px solid #b5995a;
@@ -1088,12 +1092,12 @@
             .node-webform {
                 .webform-client-form {
                     width: 100%;
-                    #webform-component-required-text, 
+                    #webform-component-required-text,
                     #webform-component-note {
                         margin-bottom: 0 !important;
                         p {
                             margin-bottom: 0;
-                        } 
+                        }
                     }
                     .form-actions {
                         .input.form-submit {
@@ -1104,7 +1108,7 @@
             }
         }
     }
-    .accordian-image-rel-wrapper, 
+    .accordian-image-rel-wrapper,
     .link_to_image {
         width: 100%;
         padding-right: 0;
@@ -1112,16 +1116,16 @@
     .webform-subscribe {
         .subs-left,
         .subs-right {
-            width: 100%; 
+            width: 100%;
         }
     }
     .akaa-projectfinder-wrapper {
-        .views-exposed-widgets { 
-            label { 
+        .views-exposed-widgets {
+            label {
                 font-size: 14px;
-                line-height: 20px;     
+                line-height: 20px;
             }
-        } 
+        }
         .views-exposed-widget {
             width: 33.3333%;
             margin: 0 auto 20px;
@@ -1132,7 +1136,7 @@
             }
         }
     }
-    .akaa-projectinfo-block-techinfo-wrapper, 
+    .akaa-projectinfo-block-techinfo-wrapper,
     .akaa-projectinfo-block-body-wrapper {
         width: 100%;
         padding: 0 15px;
@@ -1280,8 +1284,8 @@
                 right: 10%;
             }
         }
-        .form-item-search { 
-            .form-control { 
+        .form-item-search {
+            .form-control {
                 float: right;
                 max-width: 140px;
             }
@@ -1327,7 +1331,7 @@
 
 .node-webform {
     .webform-client-form {
-        .form-item { 
+        .form-item {
             .form-textarea-wrapper,
             input[type="text"], select {
                 width: 100% !important;
@@ -1356,7 +1360,7 @@
         }
     }
 
-    .context-speech-quotes { 
+    .context-speech-quotes {
         .akdn-filter-js-wrapper {
             .akdn-filter-wrapper {
                 width: 100% !important;
@@ -1387,10 +1391,10 @@
         }
     }
 
-.publication-list-container { 
+.publication-list-container {
     margin: 0;
     .views-row {
-        width: 100%; 
+        width: 100%;
         border-bottom: 1px solid #b5995a;
         border-left: 0;
         margin-bottom: 20px;
@@ -1437,7 +1441,7 @@
             }
         }
     }
-.grid-about-us-block_description, 
+.grid-about-us-block_description,
 .grid-about-us-block-description {
     .pc-listing-img {
         width: 100%;
@@ -1456,8 +1460,8 @@
     }
 }
 .press-release-detail {
-    .pane-node-field-publication-image, 
-    .pane-node-field-publication-file, 
+    .pane-node-field-publication-image,
+    .pane-node-field-publication-file,
     .related-block-info {
         width: 100%;
     }
@@ -1470,32 +1474,32 @@
         display: block;
     }
 }
-.press-release-photograps-detail, 
-.press-release-video-detail, 
+.press-release-photograps-detail,
+.press-release-video-detail,
 .press-release-events {
     .pane-node-body {
         width: 100%;
         float: left;
-    }     
+    }
 }
 .akdn-publication-details {
-    .pane-node-body, 
+    .pane-node-body,
     .pane-node-title-field {
         width: 100%;
         float: left;
         clear: both;
-    } 
+    }
 }
     .playerbox {
         height: 250px;
     }
     .akaa-projectfinder-wrapper {
-        .views-exposed-widgets { 
-            label { 
+        .views-exposed-widgets {
+            label {
                 font-size: 14px;
-                line-height: 20px;     
+                line-height: 20px;
             }
-        } 
+        }
         .views-exposed-widget {
             width: 100%;
             margin: 0 auto 20px;
