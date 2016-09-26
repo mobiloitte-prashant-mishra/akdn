@@ -108,6 +108,7 @@ features[field_base][] = field_show_links_cycle
 features[field_base][] = field_size
 features[field_base][] = field_steering_committee
 features[field_base][] = field_submission_procedure
+features[field_base][] = field_text_related_instruments
 features[field_base][] = field_upload_factsheet
 features[field_base][] = field_winner
 features[field_base][] = field_zipped_images
@@ -403,4 +404,4 @@ features_exclude[field_base][field_press_kits] = field_press_kits
 features_exclude[field_base][field_related_audio_files] = field_related_audio_files
 features_exclude[field_base][field_more_information] = field_more_information
 features_exclude[taxonomy][akmi_activity] = akmi_activity
-mtime = 1462700577
+

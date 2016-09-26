@@ -5606,6 +5606,13 @@ return $cycle_id;';
   $handler->display->display_options['fields']['field_artist_related_instruments']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_artist_related_instruments']['type'] = 'node_reference_plain';
   $handler->display->display_options['fields']['field_artist_related_instruments']['delta_offset'] = '0';
+  /* Field: Content: Related Instruments */
+  $handler->display->display_options['fields']['field_text_related_instruments']['id'] = 'field_text_related_instruments';
+  $handler->display->display_options['fields']['field_text_related_instruments']['table'] = 'field_data_field_text_related_instruments';
+  $handler->display->display_options['fields']['field_text_related_instruments']['field'] = 'field_text_related_instruments';
+  $handler->display->display_options['fields']['field_text_related_instruments']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_text_related_instruments']['type'] = 'text_plain';
+  $handler->display->display_options['fields']['field_text_related_instruments']['delta_offset'] = '0';
   /* Field: Content: Country of Origin */
   $handler->display->display_options['fields']['field_artist_country_origin']['id'] = 'field_artist_country_origin';
   $handler->display->display_options['fields']['field_artist_country_origin']['table'] = 'field_data_field_artist_country_origin';
@@ -5921,6 +5928,7 @@ print $output;
     t('Performance year with AKMI'),
     t('Instruments'),
     t('<a href="/akmi/instruments#[field_artist_related_instruments]">[field_artist_related_instruments]</a>'),
+    t('Related Instruments'),
     t('Country of Origin'),
     t('AKMI Other Artists'),
     t('Other Artists'),
