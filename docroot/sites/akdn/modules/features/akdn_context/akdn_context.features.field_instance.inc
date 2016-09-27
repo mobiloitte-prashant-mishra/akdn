@@ -286,7 +286,7 @@ function akdn_context_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete_deluxe',
-      'weight' => 8,
+      'weight' => 7,
     ),
   );
 
@@ -394,7 +394,7 @@ function akdn_context_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -680,7 +680,7 @@ function akdn_context_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 
@@ -835,6 +835,54 @@ function akdn_context_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-akmi_artists-field_text_related_instruments'
+  $field_instances['node-akmi_artists-field_text_related_instruments'] = array(
+    'bundle' => 'akmi_artists',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Instruments which do not have a node. will be displayed as Plain text.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 14,
+      ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_text_related_instruments',
+    'label' => 'Related Instruments',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 8,
+    ),
+  );
+
   // Exported field_instance: 'node-akmi_artists-field_vocal_artist_check'
   $field_instances['node-akmi_artists-field_vocal_artist_check'] = array(
     'bundle' => 'akmi_artists',
@@ -882,7 +930,7 @@ function akdn_context_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 3,
+      'weight' => 2,
     ),
   );
 
@@ -1108,7 +1156,7 @@ function akdn_context_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_custom_meta_tags',
-    'label' => 'Custom Meta Tags',
+    'label' => 'Custom Meta tags',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -1474,6 +1522,7 @@ function akdn_context_field_default_field_instances() {
   t('Country of Origin');
   t('Custom Meta Tags');
   t('Custom Meta tags');
+  t('Instruments which do not have a node. will be displayed as Plain text.');
   t('Performance Year With AKMI');
   t('Premiere Year');
   t('Related Instruments');

@@ -141,6 +141,7 @@ features[field_group][] = group_project_details|node|architecture_project|form
 features[field_group][] = group_project|node|architecture_project|form
 features[field_instance][] = field_collection_item-field_press_kits-field_press_kit_file
 features[field_instance][] = field_collection_item-field_press_kits-field_press_kit_label
+features[field_instance][] = node-akmi_artists-field_text_related_instruments
 features[field_instance][] = node-akmi_cd_dvd-body
 features[field_instance][] = node-akmi_cd_dvd-field_artist_related_videos
 features[field_instance][] = node-akmi_cd_dvd-field_audio
