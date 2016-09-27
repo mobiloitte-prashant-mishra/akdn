@@ -148,13 +148,31 @@ function akdn_context_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_custom_meta_tags'
-  $field_bases['field_custom_meta_tags'] = array(
+  // Exported field_base: 'field_premiere_year'
+  $field_bases['field_premiere_year'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_custom_meta_tags',
+    'field_name' => 'field_premiere_year',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 1,
+    'type' => 'number_integer',
+  );
+
+  // Exported field_base: 'field_text_related_instruments'
+  $field_bases['field_text_related_instruments'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_text_related_instruments',
     'foreign keys' => array(
       'format' => array(
         'columns' => array(
@@ -174,26 +192,8 @@ function akdn_context_field_default_field_bases() {
       'entity_translation_sync' => FALSE,
       'max_length' => 255,
     ),
-    'translatable' => 1,
+    'translatable' => 0,
     'type' => 'text',
-  );
-
-  // Exported field_base: 'field_premiere_year'
-  $field_bases['field_premiere_year'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_premiere_year',
-    'foreign keys' => array(),
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'number',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-    ),
-    'translatable' => 1,
-    'type' => 'number_integer',
   );
 
   // Exported field_base: 'field_vocal_artist_check'
@@ -214,7 +214,7 @@ function akdn_context_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => '',
-        1 => 'Vocal Artist',
+        1 => 'Vocal artist',
       ),
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,

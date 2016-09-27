@@ -119,6 +119,54 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-akmi_artists-field_text_related_instruments'
+  $field_instances['node-akmi_artists-field_text_related_instruments'] = array(
+    'bundle' => 'akmi_artists',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Instruments which do not have a node. will be displayed as Plain text.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 14,
+      ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_text_related_instruments',
+    'label' => 'Related Instruments',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 8,
+    ),
+  );
+
   // Exported field_instance: 'node-akmi_cd_dvd-body'
   $field_instances['node-akmi_cd_dvd-body'] = array(
     'bundle' => 'akmi_cd_dvd',
@@ -9568,6 +9616,63 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-person-field_syndicate_this'
+  $field_instances['node-person-field_syndicate_this'] = array(
+    'bundle' => 'person',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 10,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_syndicate_this',
+    'label' => 'Syndicate this on KC?',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 13,
+    ),
+  );
+
   // Exported field_instance: 'node-person-field_tags'
   $field_instances['node-person-field_tags'] = array(
     'bundle' => 'person',
@@ -9744,6 +9849,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
   t('Image');
   t('Images');
   t('Instrument Main Image');
+  t('Instruments which do not have a node. will be displayed as Plain text.');
   t('Latitude and Longitude of the structure');
   t('Link');
   t('Logo');
@@ -9757,7 +9863,6 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
   t('News Publication Date');
   t('Newsletter Image');
   t('Newsletter Summary');
-  t('Newsletter category');
   t('Pages to Include');
   t('Pages to exclude');
   t('Performance');
@@ -9776,6 +9881,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
   t('Region');
   t('Related  Links');
   t('Related Informations');
+  t('Related Instruments');
   t('Review + Selection Procedure');
   t('See Also');
   t('Select Agencies on which this banner item will appear.');
@@ -9796,6 +9902,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
   t('Specify thematic areas to which this person is related. You may select more than one thematic area; to do this, hold the \'ctrl\' key (\'command\' key on a Mac) and click each thematic area you wish to select.');
   t('Steering Committee');
   t('Submission Procedure');
+  t('Syndicate this on KC?');
   t('Tags');
   t('The image that will appear in the banner item slideshow(s).');
   t('The name of the person.');
