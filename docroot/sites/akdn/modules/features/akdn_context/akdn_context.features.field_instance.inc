@@ -991,15 +991,9 @@ function akdn_context_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
-        'weight' => 10,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
       ),
       'scs' => array(
         'label' => 'above',
@@ -1018,7 +1012,7 @@ function akdn_context_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_premiere_year',
     'label' => 'Premiere Year',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'max' => '',
@@ -1032,7 +1026,7 @@ function akdn_context_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 31,
+      'weight' => 3,
     ),
   );
 
