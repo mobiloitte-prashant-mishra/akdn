@@ -5565,17 +5565,6 @@ return $cycle_id;';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Vocal Artist? */
-  $handler->display->display_options['fields']['field_vocal_artist_check']['id'] = 'field_vocal_artist_check';
-  $handler->display->display_options['fields']['field_vocal_artist_check']['table'] = 'field_data_field_vocal_artist_check';
-  $handler->display->display_options['fields']['field_vocal_artist_check']['field'] = 'field_vocal_artist_check';
-  $handler->display->display_options['fields']['field_vocal_artist_check']['label'] = '';
-  $handler->display->display_options['fields']['field_vocal_artist_check']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_vocal_artist_check']['element_class'] = 'akaa-technicalinfo-row akmi-vocal-artist';
-  $handler->display->display_options['fields']['field_vocal_artist_check']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_vocal_artist_check']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_vocal_artist_check']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_vocal_artist_check']['hide_empty'] = TRUE;
   /* Field: Content: Performance Year With AKMI */
   $handler->display->display_options['fields']['field_performance_year']['id'] = 'field_performance_year';
   $handler->display->display_options['fields']['field_performance_year']['table'] = 'field_data_field_performance_year';
@@ -5606,6 +5595,22 @@ return $cycle_id;';
   $handler->display->display_options['fields']['field_artist_related_instruments']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_artist_related_instruments']['type'] = 'node_reference_plain';
   $handler->display->display_options['fields']['field_artist_related_instruments']['delta_offset'] = '0';
+  /* Field: Broken/missing handler */
+  $handler->display->display_options['fields']['field_text_related_instruments']['id'] = 'field_text_related_instruments';
+  $handler->display->display_options['fields']['field_text_related_instruments']['table'] = 'field_data_field_text_related_instruments';
+  $handler->display->display_options['fields']['field_text_related_instruments']['field'] = 'field_text_related_instruments';
+  $handler->display->display_options['fields']['field_text_related_instruments']['hide_empty'] = TRUE;
+  /* Field: Content: Vocal Artist? */
+  $handler->display->display_options['fields']['field_vocal_artist_check']['id'] = 'field_vocal_artist_check';
+  $handler->display->display_options['fields']['field_vocal_artist_check']['table'] = 'field_data_field_vocal_artist_check';
+  $handler->display->display_options['fields']['field_vocal_artist_check']['field'] = 'field_vocal_artist_check';
+  $handler->display->display_options['fields']['field_vocal_artist_check']['label'] = '';
+  $handler->display->display_options['fields']['field_vocal_artist_check']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_vocal_artist_check']['element_class'] = 'akaa-technicalinfo-row akmi-vocal-artist';
+  $handler->display->display_options['fields']['field_vocal_artist_check']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_vocal_artist_check']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_vocal_artist_check']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_vocal_artist_check']['hide_empty'] = TRUE;
   /* Field: Content: Country of Origin */
   $handler->display->display_options['fields']['field_artist_country_origin']['id'] = 'field_artist_country_origin';
   $handler->display->display_options['fields']['field_artist_country_origin']['table'] = 'field_data_field_artist_country_origin';
@@ -5921,6 +5926,7 @@ print $output;
     t('Performance year with AKMI'),
     t('Instruments'),
     t('<a href="/akmi/instruments#[field_artist_related_instruments]">[field_artist_related_instruments]</a>'),
+    t('Broken handler field_data_field_text_related_instruments.field_text_related_instruments'),
     t('Country of Origin'),
     t('AKMI Other Artists'),
     t('Other Artists'),
@@ -6897,6 +6903,7 @@ print $output;
   $handler->display->display_options['filters']['field_akmi_event_date_value']['operator'] = '>';
   $handler->display->display_options['filters']['field_akmi_event_date_value']['default_date'] = 'now';
   $handler->display->display_options['filters']['field_akmi_event_date_value']['year_range'] = '-1:+1';
+
   /* Display: Event Calendar home tile attachment */
   $handler = $view->new_display('attachment', 'Event Calendar home tile attachment', 'attachment_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
@@ -11166,7 +11173,7 @@ print $explode[1];
   $handler->display->display_options['filters']['field_tags_tid']['table'] = 'field_data_field_tags';
   $handler->display->display_options['filters']['field_tags_tid']['field'] = 'field_tags_tid';
   $handler->display->display_options['filters']['field_tags_tid']['value'] = array(
-    0 => '9511',
+    0 => '9631',
   );
   $handler->display->display_options['filters']['field_tags_tid']['vocabulary'] = 'tags';
   $translatables['award_cycle'] = array(
@@ -11958,23 +11965,9 @@ print $explode[1];
   $handler->display->display_options['fields']['field_hub_page_image']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_hub_page_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_hub_page_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_hub_page_image']['type'] = 'cs_adaptive_image';
   $handler->display->display_options['fields']['field_hub_page_image']['settings'] = array(
+    'image_style' => 'two_third_width_carousel_grid_inner',
     'image_link' => '',
-    'styles' => array(
-      'breakpoint_1' => '979',
-      'style_1' => '',
-      'breakpoint_2' => '739',
-      'style_2' => '',
-      'breakpoint_3' => '479',
-      'style_3' => '',
-      'breakpoint_4' => '319',
-      'style_4' => '',
-      'breakpoint_5' => '',
-      'style_5' => '',
-      'max_style' => '',
-      'fallback_style' => '',
-    ),
   );
   $handler->display->display_options['fields']['field_hub_page_image']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_hub_page_image']['delta_offset'] = '0';
@@ -13222,7 +13215,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['field_facebook_picture']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_facebook_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_facebook_picture']['settings'] = array(
-    'image_style' => 'social_sharing_image',
+    'image_style' => 'standard_listing_aspect_switcher',
     'image_link' => '',
   );
   /* Field: Content: Title */
@@ -18375,23 +18368,9 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['field_feature_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_feature_image']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_feature_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_feature_image']['type'] = 'cs_adaptive_image';
   $handler->display->display_options['fields']['field_feature_image']['settings'] = array(
+    'image_style' => 'two_third_width_carousel_grid_inner',
     'image_link' => '',
-    'styles' => array(
-      'breakpoint_1' => '979',
-      'style_1' => 'featured_content_narrow',
-      'breakpoint_2' => '739',
-      'style_2' => 'featured_content_mobile',
-      'breakpoint_3' => '479',
-      'style_3' => 'featured_content_mobile',
-      'breakpoint_4' => '319',
-      'style_4' => 'featured_content_mobile',
-      'breakpoint_5' => '',
-      'style_5' => '',
-      'max_style' => 'featured_content',
-      'fallback_style' => 'featured_content',
-    ),
   );
   /* Field: Content: Images */
   $handler->display->display_options['fields']['field_project_image']['id'] = 'field_project_image';
@@ -18405,10 +18384,15 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['field_project_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_project_image']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_project_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_project_image']['type'] = 'cs_adaptive_image';
+  $handler->display->display_options['fields']['field_project_image']['type'] = 'colorbox';
   $handler->display->display_options['fields']['field_project_image']['settings'] = array(
-    'image_style' => '',
-    'image_link' => '',
+    'colorbox_node_style' => 'two_third_width_carousel_grid_inner',
+    'colorbox_node_style_first' => '',
+    'colorbox_image_style' => '',
+    'colorbox_gallery' => 'none',
+    'colorbox_gallery_custom' => '',
+    'colorbox_caption' => 'auto',
+    'colorbox_caption_custom' => '',
   );
   $handler->display->display_options['fields']['field_project_image']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_project_image']['delta_offset'] = '0';
@@ -18547,8 +18531,8 @@ print \'<div>\'.$value.\'</div>\';
 [php_1]
 </div>';
   $handler->display->display_options['fields']['colorbox']['gid'] = 1;
-  $handler->display->display_options['fields']['colorbox']['width'] = '700px';
-  $handler->display->display_options['fields']['colorbox']['height'] = '600px';
+  $handler->display->display_options['fields']['colorbox']['width'] = '100%';
+  $handler->display->display_options['fields']['colorbox']['height'] = '100%';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
@@ -19159,7 +19143,7 @@ return $id;
   $handler->display->display_options['fields']['field_project_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_project_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_project_image']['settings'] = array(
-    'image_style' => 'featured_content',
+    'image_style' => 'two_third_width_carousel_grid_inner',
     'image_link' => 'content',
   );
   $handler->display->display_options['fields']['field_project_image']['delta_limit'] = '1';
@@ -28849,23 +28833,9 @@ print $content;
   $handler->display->display_options['fields']['field_article_img_et']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_article_img_et']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_article_img_et']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_article_img_et']['type'] = 'cs_adaptive_image';
   $handler->display->display_options['fields']['field_article_img_et']['settings'] = array(
+    'image_style' => 'two_third_width_carousel_grid_inner',
     'image_link' => '',
-    'styles' => array(
-      'breakpoint_1' => '979',
-      'style_1' => '',
-      'breakpoint_2' => '739',
-      'style_2' => '',
-      'breakpoint_3' => '479',
-      'style_3' => '',
-      'breakpoint_4' => '319',
-      'style_4' => '',
-      'breakpoint_5' => '',
-      'style_5' => '',
-      'max_style' => '',
-      'fallback_style' => '',
-    ),
   );
   $handler->display->display_options['fields']['field_article_img_et']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_article_img_et']['delta_offset'] = '0';
@@ -28965,7 +28935,7 @@ print $content;
   $handler->display->display_options['fields']['field_project_image_et']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_project_image_et']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_project_image_et']['settings'] = array(
-    'image_style' => 'featured_content',
+    'image_style' => 'two_third_width_carousel_grid_inner',
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_project_image_et']['group_rows'] = FALSE;
@@ -29050,23 +29020,9 @@ print $content;
   $handler->display->display_options['fields']['field_event_image_et']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_event_image_et']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_event_image_et']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_event_image_et']['type'] = 'cs_adaptive_image';
   $handler->display->display_options['fields']['field_event_image_et']['settings'] = array(
+    'image_style' => 'two_third_width_carousel_grid_inner',
     'image_link' => '',
-    'styles' => array(
-      'breakpoint_1' => '979',
-      'style_1' => '',
-      'breakpoint_2' => '739',
-      'style_2' => '',
-      'breakpoint_3' => '479',
-      'style_3' => '',
-      'breakpoint_4' => '319',
-      'style_4' => '',
-      'breakpoint_5' => '',
-      'style_5' => '',
-      'max_style' => '',
-      'fallback_style' => '',
-    ),
   );
   $handler->display->display_options['fields']['field_event_image_et']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_event_image_et']['delta_offset'] = '0';
@@ -29157,23 +29113,9 @@ print $content;
   $handler->display->display_options['fields']['field_speech_image_et']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_speech_image_et']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_speech_image_et']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_speech_image_et']['type'] = 'cs_adaptive_image';
   $handler->display->display_options['fields']['field_speech_image_et']['settings'] = array(
+    'image_style' => 'two_third_width_carousel_grid_inner',
     'image_link' => '',
-    'styles' => array(
-      'breakpoint_1' => '979',
-      'style_1' => '',
-      'breakpoint_2' => '739',
-      'style_2' => '',
-      'breakpoint_3' => '479',
-      'style_3' => '',
-      'breakpoint_4' => '319',
-      'style_4' => '',
-      'breakpoint_5' => '',
-      'style_5' => '',
-      'max_style' => '',
-      'fallback_style' => '',
-    ),
   );
   $handler->display->display_options['fields']['field_speech_image_et']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_speech_image_et']['delta_offset'] = '0';
@@ -29284,23 +29226,9 @@ print $content;
   $handler->display->display_options['fields']['field_gallery_images_et']['label'] = '';
   $handler->display->display_options['fields']['field_gallery_images_et']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_gallery_images_et']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_gallery_images_et']['type'] = 'cs_adaptive_image';
   $handler->display->display_options['fields']['field_gallery_images_et']['settings'] = array(
+    'image_style' => 'two_third_width_carousel_grid_inner',
     'image_link' => '',
-    'styles' => array(
-      'breakpoint_1' => '979',
-      'style_1' => '',
-      'breakpoint_2' => '739',
-      'style_2' => '',
-      'breakpoint_3' => '479',
-      'style_3' => '',
-      'breakpoint_4' => '319',
-      'style_4' => '',
-      'breakpoint_5' => '',
-      'style_5' => '',
-      'max_style' => '',
-      'fallback_style' => '',
-    ),
   );
   $handler->display->display_options['fields']['field_gallery_images_et']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_gallery_images_et']['delta_offset'] = '0';
@@ -29327,8 +29255,9 @@ print $content;
   $handler->display->display_options['fields']['field_gallery_images_1']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_gallery_images_1']['type'] = 'colorbox';
   $handler->display->display_options['fields']['field_gallery_images_1']['settings'] = array(
-    'colorbox_node_style' => 'featured_content',
-    'colorbox_image_style' => 'featured_content',
+    'colorbox_node_style' => 'two_third_width_carousel_grid_inner',
+    'colorbox_node_style_first' => '',
+    'colorbox_image_style' => 'two_third_width_carousel_grid_inner',
     'colorbox_gallery' => 'post',
     'colorbox_gallery_custom' => '',
     'colorbox_caption' => 'auto',
