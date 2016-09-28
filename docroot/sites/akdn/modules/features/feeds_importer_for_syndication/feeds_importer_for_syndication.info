@@ -55,4 +55,5 @@ features[feeds_tamper][] = article_import-xpathparser_94-html_entity_decode
 features[feeds_tamper][] = article_import-xpathparser_95-html_entity_decode
 features[feeds_tamper][] = article_import-xpathparser_96-html_entity_decode
 features[feeds_tamper][] = article_import-xpathparser_97-html_entity_decode
+mtime = 1474975127
 project path = sites/akdn/modules/features
