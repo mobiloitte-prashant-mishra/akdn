@@ -5595,10 +5595,18 @@ return $cycle_id;';
   $handler->display->display_options['fields']['field_artist_related_instruments']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_artist_related_instruments']['type'] = 'node_reference_plain';
   $handler->display->display_options['fields']['field_artist_related_instruments']['delta_offset'] = '0';
-  /* Field: Content: Related Instruments */
+  /* Field: Content: Other Instruments */
   $handler->display->display_options['fields']['field_text_related_instruments']['id'] = 'field_text_related_instruments';
   $handler->display->display_options['fields']['field_text_related_instruments']['table'] = 'field_data_field_text_related_instruments';
   $handler->display->display_options['fields']['field_text_related_instruments']['field'] = 'field_text_related_instruments';
+  $handler->display->display_options['fields']['field_text_related_instruments']['label'] = 'Instruments';
+  $handler->display->display_options['fields']['field_text_related_instruments']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_text_related_instruments']['element_class'] = 'akaa-technicalinfo-link';
+  $handler->display->display_options['fields']['field_text_related_instruments']['element_label_type'] = 'div';
+  $handler->display->display_options['fields']['field_text_related_instruments']['element_label_class'] = 'akaa-technicalinfo-label';
+  $handler->display->display_options['fields']['field_text_related_instruments']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_text_related_instruments']['element_wrapper_class'] = 'akaa-technicalinfo-row';
+  $handler->display->display_options['fields']['field_text_related_instruments']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_text_related_instruments']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_text_related_instruments']['type'] = 'text_plain';
   $handler->display->display_options['fields']['field_text_related_instruments']['delta_offset'] = '0';
@@ -5928,7 +5936,6 @@ print $output;
     t('Performance year with AKMI'),
     t('Instruments'),
     t('<a href="/akmi/instruments#[field_artist_related_instruments]">[field_artist_related_instruments]</a>'),
-    t('Related Instruments'),
     t('Country of Origin'),
     t('AKMI Other Artists'),
     t('Other Artists'),
@@ -11335,7 +11342,7 @@ print $explode[1];
   $handler->display->display_options['fields']['nothing']['alter']['path'] = '[url]';
   $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'akdn-solr-more-link';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Field: Indexed Node: Publish Date */
+  /* Field: Indexed Node: Gallery Date */
   $handler->display->display_options['fields']['field_publish_date']['id'] = 'field_publish_date';
   $handler->display->display_options['fields']['field_publish_date']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['fields']['field_publish_date']['field'] = 'field_publish_date';
@@ -11518,7 +11525,7 @@ print $explode[1];
   $handler->display->display_options['fields']['field_short_title']['settings'] = array(
     'trim_length' => '600',
   );
-  /* Field: Indexed Node: Publish Date */
+  /* Field: Indexed Node: Gallery Date */
   $handler->display->display_options['fields']['field_publish_date']['id'] = 'field_publish_date';
   $handler->display->display_options['fields']['field_publish_date']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['fields']['field_publish_date']['field'] = 'field_publish_date';
@@ -11720,7 +11727,7 @@ print $explode[1];
   $handler->display->display_options['fields']['field_short_title']['settings'] = array(
     'trim_length' => '600',
   );
-  /* Field: Indexed Node: Publish Date */
+  /* Field: Indexed Node: Gallery Date */
   $handler->display->display_options['fields']['field_publish_date']['id'] = 'field_publish_date';
   $handler->display->display_options['fields']['field_publish_date']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['fields']['field_publish_date']['field'] = 'field_publish_date';
