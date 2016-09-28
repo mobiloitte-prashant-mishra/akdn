@@ -887,6 +887,7 @@ function feeds_importer_for_syndication_feeds_importer_default() {
           'xpathparser:92' => 'title_es',
           'xpathparser:93' => 'title_tg',
           'xpathparser:94' => 'title_und',
+          'xpathparser:95' => 'publish_date',
         ),
         'rawXML' => array(
           'xpathparser:0' => 0,
@@ -963,6 +964,7 @@ function feeds_importer_for_syndication_feeds_importer_default() {
           'xpathparser:92' => 0,
           'xpathparser:93' => 0,
           'xpathparser:94' => 0,
+          'xpathparser:95' => 0,
         ),
         'context' => '/nodes/node',
         'exp' => array(
@@ -1043,6 +1045,7 @@ function feeds_importer_for_syndication_feeds_importer_default() {
             'xpathparser:92' => 0,
             'xpathparser:93' => 0,
             'xpathparser:94' => 0,
+            'xpathparser:95' => 0,
           ),
         ),
         'allow_override' => 1,
@@ -1498,6 +1501,11 @@ function feeds_importer_for_syndication_feeds_importer_default() {
             'target' => 'title_field:et:und',
             'unique' => FALSE,
             'language' => 'und',
+          ),
+          74 => array(
+            'source' => 'xpathparser:95',
+            'target' => 'field_publish_date:start',
+            'unique' => FALSE,
           ),
         ),
         'update_existing' => '2',
