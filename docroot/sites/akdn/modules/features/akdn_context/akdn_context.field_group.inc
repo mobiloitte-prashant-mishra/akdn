@@ -32,7 +32,8 @@ function akdn_context_field_group_info() {
       6 => 'field_akmi_additional_images',
       7 => 'field_performance_year',
       8 => 'field_custom_meta_tags',
-      9 => 'title',
+      9 => 'field_text_related_instruments',
+      10 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

@@ -149,7 +149,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_text_related_instruments',
-    'label' => 'Related Instruments',
+    'label' => 'Other Instruments',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -9866,6 +9866,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
   t('News Publication Date');
   t('Newsletter Image');
   t('Newsletter Summary');
+  t('Other Instruments');
   t('Pages to Include');
   t('Pages to exclude');
   t('Performance');
@@ -9884,7 +9885,6 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
   t('Region');
   t('Related  Links');
   t('Related Informations');
-  t('Related Instruments');
   t('Review + Selection Procedure');
   t('See Also');
   t('Select Agencies on which this banner item will appear.');
