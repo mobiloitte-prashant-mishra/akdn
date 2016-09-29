@@ -18400,7 +18400,7 @@ if ($data->node_type == "featured_content") {
     'colorbox_node_style' => 'two_third_width_carousel_grid_inner',
     'colorbox_node_style_first' => '',
     'colorbox_image_style' => '',
-    'colorbox_gallery' => 'none',
+    'colorbox_gallery' => 'post',
     'colorbox_gallery_custom' => '',
     'colorbox_caption' => 'auto',
     'colorbox_caption_custom' => '',
@@ -18519,7 +18519,6 @@ print \'<div>\'.$value.\'</div>\';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_project_image]</div>
 <div class="slide-text">
 [php_1]
@@ -18536,11 +18535,7 @@ print \'<div>\'.$value.\'</div>\';
   $handler->display->display_options['fields']['colorbox']['field'] = 'colorbox';
   $handler->display->display_options['fields']['colorbox']['label'] = '';
   $handler->display->display_options['fields']['colorbox']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['colorbox']['trigger_field'] = 'nothing';
-  $handler->display->display_options['fields']['colorbox']['popup'] = '<div class="slide">[field_project_image]</div>
-<div class="image-caption">
-[php_1]
-</div>';
+  $handler->display->display_options['fields']['colorbox']['trigger_field'] = 'field_project_image';
   $handler->display->display_options['fields']['colorbox']['gid'] = 1;
   $handler->display->display_options['fields']['colorbox']['width'] = '100%';
   $handler->display->display_options['fields']['colorbox']['height'] = '100%';
@@ -23364,36 +23359,11 @@ $mlid = $node->menu_node_links[key($node->menu_node_links)];
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '1';
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
-    'action::views_bulk_operations_archive_action' => array(
-      'selected' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-      'settings' => array(
-        'scheme' => 'public',
-        'temporary' => 1,
-      ),
-      'postpone_processing' => 0,
-    ),
     'action::views_bulk_operations_delete_item' => array(
       'selected' => 1,
       'skip_confirmation' => 0,
       'override_label' => 1,
       'label' => 'Delete Images',
-      'postpone_processing' => 0,
-    ),
-    'action::system_message_action' => array(
-      'selected' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-      'postpone_processing' => 0,
-    ),
-    'action::views_bulk_operations_script_action' => array(
-      'selected' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
       'postpone_processing' => 0,
     ),
     'action::views_bulk_operations_modify_action' => array(
@@ -23419,29 +23389,6 @@ $mlid = $node->menu_node_links[key($node->menu_node_links)];
           'image::field_focus_area' => 'image::field_focus_area',
         ),
       ),
-      'postpone_processing' => 0,
-    ),
-    'action::views_bulk_operations_argument_selector_action' => array(
-      'selected' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-      'settings' => array(
-        'url' => '',
-      ),
-    ),
-    'action::system_goto_action' => array(
-      'selected' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-      'postpone_processing' => 0,
-    ),
-    'action::system_send_email_action' => array(
-      'selected' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
       'postpone_processing' => 0,
     ),
   );
