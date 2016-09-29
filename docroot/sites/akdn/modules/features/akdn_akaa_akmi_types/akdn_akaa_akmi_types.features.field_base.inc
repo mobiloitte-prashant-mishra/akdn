@@ -10,21 +10,13 @@
 function akdn_akaa_akmi_types_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_add_short_video'
+  // Exported field_base: 'field_add_short_video'.
   $field_bases['field_add_short_video'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_add_short_video',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -44,21 +36,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_akmi_activity'
+  // Exported field_base: 'field_akmi_activity'.
   $field_bases['field_akmi_activity'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_akmi_activity',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -79,21 +63,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_akmi_additional_images'
+  // Exported field_base: 'field_akmi_additional_images'.
   $field_bases['field_akmi_additional_images'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_akmi_additional_images',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -112,14 +88,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_akmi_event_date'
+  // Exported field_base: 'field_akmi_event_date'.
   $field_bases['field_akmi_event_date'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_akmi_event_date',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',
@@ -143,21 +118,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_akmi_event_image'
+  // Exported field_base: 'field_akmi_event_image'.
   $field_bases['field_akmi_event_image'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_akmi_event_image',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -176,21 +143,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_akmi_event_type'
+  // Exported field_base: 'field_akmi_event_type'.
   $field_bases['field_akmi_event_type'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_akmi_event_type',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -211,21 +170,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_akmi_event_venue'
+  // Exported field_base: 'field_akmi_event_venue'.
   $field_bases['field_akmi_event_venue'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_akmi_event_venue',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -240,21 +191,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_akmi_featured_artists'
+  // Exported field_base: 'field_akmi_featured_artists'.
   $field_bases['field_akmi_featured_artists'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_akmi_featured_artists',
-    'foreign keys' => array(
-      'nid' => array(
-        'columns' => array(
-          'nid' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
     'indexes' => array(
       'nid' => array(
         0 => 'nid',
@@ -312,14 +255,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'node_reference',
   );
 
-  // Exported field_base: 'field_akmi_more_information'
+  // Exported field_base: 'field_akmi_more_information'.
   $field_bases['field_akmi_more_information'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_akmi_more_information',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
@@ -343,21 +285,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_arch_country'
+  // Exported field_base: 'field_arch_country'.
   $field_bases['field_arch_country'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_arch_country',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -378,21 +312,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_architect'
+  // Exported field_base: 'field_architect'.
   $field_bases['field_architect'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_architect',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -408,21 +334,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_audio'
+  // Exported field_base: 'field_audio'.
   $field_bases['field_audio'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_audio',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -442,21 +360,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_award_ceremony'
+  // Exported field_base: 'field_award_ceremony'.
   $field_bases['field_award_ceremony'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_award_ceremony',
-    'foreign keys' => array(
-      'nid' => array(
-        'columns' => array(
-          'nid' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
     'indexes' => array(
       'nid' => array(
         0 => 'nid',
@@ -497,14 +407,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'node_reference',
   );
 
-  // Exported field_base: 'field_award_recipients'
+  // Exported field_base: 'field_award_recipients'.
   $field_bases['field_award_recipients'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_award_recipients',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -524,14 +433,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_award_year'
+  // Exported field_base: 'field_award_year'.
   $field_bases['field_award_year'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_award_year',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',
@@ -555,14 +463,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'datestamp',
   );
 
-  // Exported field_base: 'field_awards_cycle_links'
+  // Exported field_base: 'field_awards_cycle_links'.
   $field_bases['field_awards_cycle_links'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_awards_cycle_links',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
@@ -586,14 +493,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_booking_link'
+  // Exported field_base: 'field_booking_link'.
   $field_bases['field_booking_link'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_booking_link',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
@@ -617,21 +523,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_breaking_news_image'
+  // Exported field_base: 'field_breaking_news_image'.
   $field_bases['field_breaking_news_image'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_breaking_news_image',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -650,14 +548,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_brightcove'
+  // Exported field_base: 'field_brightcove'.
   $field_bases['field_brightcove'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_brightcove',
-    'foreign keys' => array(),
     'indexes' => array(
       'brightcove_id' => array(
         0 => 'brightcove_id',
@@ -672,21 +569,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'brightcove_field',
   );
 
-  // Exported field_base: 'field_building_type'
+  // Exported field_base: 'field_building_type'.
   $field_bases['field_building_type'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_building_type',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -707,21 +596,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_calendar'
+  // Exported field_base: 'field_calendar'.
   $field_bases['field_calendar'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_calendar',
-    'foreign keys' => array(
-      'nid' => array(
-        'columns' => array(
-          'nid' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
     'indexes' => array(
       'nid' => array(
         0 => 'nid',
@@ -762,14 +643,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'node_reference',
   );
 
-  // Exported field_base: 'field_cd_volume_number'
+  // Exported field_base: 'field_cd_volume_number'.
   $field_bases['field_cd_volume_number'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_cd_volume_number',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
@@ -781,21 +661,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'number_float',
   );
 
-  // Exported field_base: 'field_ceremony_location'
+  // Exported field_base: 'field_ceremony_location'.
   $field_bases['field_ceremony_location'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ceremony_location',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -811,21 +683,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_chairman_s_award'
+  // Exported field_base: 'field_chairman_s_award'.
   $field_bases['field_chairman_s_award'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_chairman_s_award',
-    'foreign keys' => array(
-      'nid' => array(
-        'columns' => array(
-          'nid' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
     'indexes' => array(
       'nid' => array(
         0 => 'nid',
@@ -866,21 +730,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'node_reference',
   );
 
-  // Exported field_base: 'field_city'
+  // Exported field_base: 'field_city'.
   $field_bases['field_city'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_city',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -901,21 +757,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_client'
+  // Exported field_base: 'field_client'.
   $field_bases['field_client'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_client',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -931,21 +779,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_completed_date'
+  // Exported field_base: 'field_completed_date'.
   $field_bases['field_completed_date'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_completed_date',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -961,14 +801,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_completed_date_timestamp'
+  // Exported field_base: 'field_completed_date_timestamp'.
   $field_bases['field_completed_date_timestamp'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_completed_date_timestamp',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',
@@ -992,14 +831,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'datestamp',
   );
 
-  // Exported field_base: 'field_custom_breadcrumbs'
+  // Exported field_base: 'field_custom_breadcrumbs'.
   $field_bases['field_custom_breadcrumbs'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_custom_breadcrumbs',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
@@ -1023,21 +861,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_cycle_images'
+  // Exported field_base: 'field_cycle_images'.
   $field_bases['field_cycle_images'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_cycle_images',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -1056,21 +886,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_design_date'
+  // Exported field_base: 'field_design_date'.
   $field_bases['field_design_date'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_design_date',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -1086,21 +908,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_eligibility_criteria'
+  // Exported field_base: 'field_eligibility_criteria'.
   $field_bases['field_eligibility_criteria'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_eligibility_criteria',
-    'foreign keys' => array(
-      'nid' => array(
-        'columns' => array(
-          'nid' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
     'indexes' => array(
       'nid' => array(
         0 => 'nid',
@@ -1141,21 +955,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'node_reference',
   );
 
-  // Exported field_base: 'field_event_akmi_year'
+  // Exported field_base: 'field_event_akmi_year'.
   $field_bases['field_event_akmi_year'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_event_akmi_year',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -1176,21 +982,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_event_performance'
+  // Exported field_base: 'field_event_performance'.
   $field_bases['field_event_performance'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_event_performance',
-    'foreign keys' => array(
-      'nid' => array(
-        'columns' => array(
-          'nid' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
     'indexes' => array(
       'nid' => array(
         0 => 'nid',
@@ -1248,21 +1046,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'node_reference',
   );
 
-  // Exported field_base: 'field_facts_icon'
+  // Exported field_base: 'field_facts_icon'.
   $field_bases['field_facts_icon'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_facts_icon',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -1281,14 +1071,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_facts_links'
+  // Exported field_base: 'field_facts_links'.
   $field_bases['field_facts_links'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_facts_links',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
@@ -1312,21 +1101,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_facts_number'
+  // Exported field_base: 'field_facts_number'.
   $field_bases['field_facts_number'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_facts_number',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -1342,14 +1123,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_facts_show_on_homepage'
+  // Exported field_base: 'field_facts_show_on_homepage'.
   $field_bases['field_facts_show_on_homepage'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_facts_show_on_homepage',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -1369,14 +1149,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_feature_link'
+  // Exported field_base: 'field_feature_link'.
   $field_bases['field_feature_link'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_feature_link',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
@@ -1400,14 +1179,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_geocode_lat_long'
+  // Exported field_base: 'field_geocode_lat_long'.
   $field_bases['field_geocode_lat_long'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_geocode_lat_long',
-    'foreign keys' => array(),
     'indexes' => array(
       'bbox' => array(
         0 => 'top',
@@ -1452,21 +1230,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'geofield',
   );
 
-  // Exported field_base: 'field_header_file_url_title'
+  // Exported field_base: 'field_header_file_url_title'.
   $field_bases['field_header_file_url_title'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_header_file_url_title',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -1482,21 +1252,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_header_image'
+  // Exported field_base: 'field_header_image'.
   $field_bases['field_header_image'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_header_image',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -1515,14 +1277,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_header_link'
+  // Exported field_base: 'field_header_link'.
   $field_bases['field_header_link'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_header_link',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
@@ -1546,21 +1307,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_header_logo'
+  // Exported field_base: 'field_header_logo'.
   $field_bases['field_header_logo'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_header_logo',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -1579,21 +1332,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_header_pdf_file'
+  // Exported field_base: 'field_header_pdf_file'.
   $field_bases['field_header_pdf_file'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_header_pdf_file',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -1613,21 +1358,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_header_title'
+  // Exported field_base: 'field_header_title'.
   $field_bases['field_header_title'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_header_title',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -1643,14 +1380,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_header_type'
+  // Exported field_base: 'field_header_type'.
   $field_bases['field_header_type'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_header_type',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -1673,21 +1409,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_image'
+  // Exported field_base: 'field_image'.
   $field_bases['field_image'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_image',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -1706,21 +1434,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_master_jury'
+  // Exported field_base: 'field_master_jury'.
   $field_bases['field_master_jury'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_master_jury',
-    'foreign keys' => array(
-      'nid' => array(
-        'columns' => array(
-          'nid' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
     'indexes' => array(
       'nid' => array(
         0 => 'nid',
@@ -1761,21 +1481,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'node_reference',
   );
 
-  // Exported field_base: 'field_news'
+  // Exported field_base: 'field_news'.
   $field_bases['field_news'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_news',
-    'foreign keys' => array(
-      'nid' => array(
-        'columns' => array(
-          'nid' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
     'indexes' => array(
       'nid' => array(
         0 => 'nid',
@@ -1816,14 +1528,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'node_reference',
   );
 
-  // Exported field_base: 'field_news_publication_date'
+  // Exported field_base: 'field_news_publication_date'.
   $field_bases['field_news_publication_date'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_news_publication_date',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',
@@ -1847,21 +1558,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_news_see_also'
+  // Exported field_base: 'field_news_see_also'.
   $field_bases['field_news_see_also'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_news_see_also',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -1876,21 +1579,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'field_performance_add_videos'
+  // Exported field_base: 'field_performance_add_videos'.
   $field_bases['field_performance_add_videos'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_performance_add_videos',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -1910,21 +1605,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_performance_year'
+  // Exported field_base: 'field_performance_year'.
   $field_bases['field_performance_year'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_performance_year',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -1945,21 +1632,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_person_image'
+  // Exported field_base: 'field_person_image'.
   $field_bases['field_person_image'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_person_image',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -1978,21 +1657,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_person_type'
+  // Exported field_base: 'field_person_type'.
   $field_bases['field_person_type'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_person_type',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -2013,21 +1684,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_planner'
+  // Exported field_base: 'field_planner'.
   $field_bases['field_planner'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_planner',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -2043,21 +1706,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_press_kit'
+  // Exported field_base: 'field_press_kit'.
   $field_bases['field_press_kit'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_press_kit',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -2077,21 +1732,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_press_kit_file'
+  // Exported field_base: 'field_press_kit_file'.
   $field_bases['field_press_kit_file'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_press_kit_file',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -2111,21 +1758,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_press_kit_label'
+  // Exported field_base: 'field_press_kit_label'.
   $field_bases['field_press_kit_label'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_press_kit_label',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -2141,21 +1780,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_press_materials'
+  // Exported field_base: 'field_press_materials'.
   $field_bases['field_press_materials'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_press_materials',
-    'foreign keys' => array(
-      'nid' => array(
-        'columns' => array(
-          'nid' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
     'indexes' => array(
       'nid' => array(
         0 => 'nid',
@@ -2196,21 +1827,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'node_reference',
   );
 
-  // Exported field_base: 'field_reference_cycle'
+  // Exported field_base: 'field_reference_cycle'.
   $field_bases['field_reference_cycle'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_reference_cycle',
-    'foreign keys' => array(
-      'nid' => array(
-        'columns' => array(
-          'nid' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
     'indexes' => array(
       'nid' => array(
         0 => 'nid',
@@ -2263,21 +1886,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'node_reference',
   );
 
-  // Exported field_base: 'field_region'
+  // Exported field_base: 'field_region'.
   $field_bases['field_region'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_region',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -2298,21 +1913,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_related_artists'
+  // Exported field_base: 'field_related_artists'.
   $field_bases['field_related_artists'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_related_artists',
-    'foreign keys' => array(
-      'nid' => array(
-        'columns' => array(
-          'nid' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
     'indexes' => array(
       'nid' => array(
         0 => 'nid',
@@ -2369,21 +1976,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'node_reference',
   );
 
-  // Exported field_base: 'field_review_selection_procedure'
+  // Exported field_base: 'field_review_selection_procedure'.
   $field_bases['field_review_selection_procedure'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_review_selection_procedure',
-    'foreign keys' => array(
-      'nid' => array(
-        'columns' => array(
-          'nid' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
     'indexes' => array(
       'nid' => array(
         0 => 'nid',
@@ -2424,21 +2023,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'node_reference',
   );
 
-  // Exported field_base: 'field_short_video_image'
+  // Exported field_base: 'field_short_video_image'.
   $field_bases['field_short_video_image'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_short_video_image',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -2457,14 +2048,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_short_video_llink'
+  // Exported field_base: 'field_short_video_llink'.
   $field_bases['field_short_video_llink'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_short_video_llink',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
@@ -2488,14 +2078,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_show_block'
+  // Exported field_base: 'field_show_block'.
   $field_bases['field_show_block'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_show_block',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -2515,14 +2104,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_show_links_checkbox'
+  // Exported field_base: 'field_show_links_checkbox'.
   $field_bases['field_show_links_checkbox'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_show_links_checkbox',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -2542,14 +2130,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_show_links_cycle'
+  // Exported field_base: 'field_show_links_cycle'.
   $field_bases['field_show_links_cycle'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_show_links_cycle',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
@@ -2573,21 +2160,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_size'
+  // Exported field_base: 'field_size'.
   $field_bases['field_size'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_size',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -2603,21 +2182,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_steering_committee'
+  // Exported field_base: 'field_steering_committee'.
   $field_bases['field_steering_committee'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_steering_committee',
-    'foreign keys' => array(
-      'nid' => array(
-        'columns' => array(
-          'nid' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
     'indexes' => array(
       'nid' => array(
         0 => 'nid',
@@ -2658,21 +2229,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'node_reference',
   );
 
-  // Exported field_base: 'field_submission_procedure'
+  // Exported field_base: 'field_submission_procedure'.
   $field_bases['field_submission_procedure'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_submission_procedure',
-    'foreign keys' => array(
-      'nid' => array(
-        'columns' => array(
-          'nid' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
     'indexes' => array(
       'nid' => array(
         0 => 'nid',
@@ -2713,51 +2276,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'node_reference',
   );
 
-  // Exported field_base: 'field_text_related_instruments'
-  $field_bases['field_text_related_instruments'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_text_related_instruments',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
-  // Exported field_base: 'field_upload_factsheet'
+  // Exported field_base: 'field_upload_factsheet'.
   $field_bases['field_upload_factsheet'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_upload_factsheet',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -2777,14 +2302,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_winner'
+  // Exported field_base: 'field_winner'.
   $field_bases['field_winner'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_winner',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -2804,21 +2328,13 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_zipped_images'
+  // Exported field_base: 'field_zipped_images'.
   $field_bases['field_zipped_images'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_zipped_images',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',

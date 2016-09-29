@@ -33,4 +33,3 @@ features[image][] = social_feeds
 features[image][] = social_sharing_image
 features[image][] = standard_listing_aspect_switcher
 features[image][] = two_third_width_carousel_grid_inner
-mtime = 1474877020
