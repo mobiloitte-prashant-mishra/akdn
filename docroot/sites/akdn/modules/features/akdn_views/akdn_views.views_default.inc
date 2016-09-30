@@ -5601,7 +5601,7 @@ return $cycle_id;';
   $handler->display->display_options['fields']['field_text_related_instruments']['field'] = 'field_text_related_instruments';
   $handler->display->display_options['fields']['field_text_related_instruments']['label'] = 'Instruments';
   $handler->display->display_options['fields']['field_text_related_instruments']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_text_related_instruments']['element_class'] = 'akaa-technicalinfo-link';
+  $handler->display->display_options['fields']['field_text_related_instruments']['element_class'] = 'akaa-technicalinfo-value';
   $handler->display->display_options['fields']['field_text_related_instruments']['element_label_type'] = 'div';
   $handler->display->display_options['fields']['field_text_related_instruments']['element_label_class'] = 'akaa-technicalinfo-label';
   $handler->display->display_options['fields']['field_text_related_instruments']['element_wrapper_type'] = 'div';
@@ -11344,7 +11344,7 @@ print $explode[1];
   $handler->display->display_options['fields']['nothing']['alter']['path'] = '[url]';
   $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'akdn-solr-more-link';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Field: Indexed Node: Gallery Date */
+  /* Field: Indexed Node: Publish Date */
   $handler->display->display_options['fields']['field_publish_date']['id'] = 'field_publish_date';
   $handler->display->display_options['fields']['field_publish_date']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['fields']['field_publish_date']['field'] = 'field_publish_date';
@@ -11527,7 +11527,7 @@ print $explode[1];
   $handler->display->display_options['fields']['field_short_title']['settings'] = array(
     'trim_length' => '600',
   );
-  /* Field: Indexed Node: Gallery Date */
+  /* Field: Indexed Node: Publish Date */
   $handler->display->display_options['fields']['field_publish_date']['id'] = 'field_publish_date';
   $handler->display->display_options['fields']['field_publish_date']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['fields']['field_publish_date']['field'] = 'field_publish_date';
@@ -11729,7 +11729,7 @@ print $explode[1];
   $handler->display->display_options['fields']['field_short_title']['settings'] = array(
     'trim_length' => '600',
   );
-  /* Field: Indexed Node: Gallery Date */
+  /* Field: Indexed Node: Publish Date */
   $handler->display->display_options['fields']['field_publish_date']['id'] = 'field_publish_date';
   $handler->display->display_options['fields']['field_publish_date']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['fields']['field_publish_date']['field'] = 'field_publish_date';
@@ -18390,7 +18390,7 @@ if ($data->node_type == "featured_content") {
     'colorbox_node_style' => 'two_third_width_carousel_grid_inner',
     'colorbox_node_style_first' => '',
     'colorbox_image_style' => '',
-    'colorbox_gallery' => 'none',
+    'colorbox_gallery' => 'post',
     'colorbox_gallery_custom' => '',
     'colorbox_caption' => 'auto',
     'colorbox_caption_custom' => '',
@@ -18509,7 +18509,6 @@ print \'<div>\'.$value.\'</div>\';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_project_image]</div>
 <div class="slide-text">
 [php_1]
@@ -18526,11 +18525,7 @@ print \'<div>\'.$value.\'</div>\';
   $handler->display->display_options['fields']['colorbox']['field'] = 'colorbox';
   $handler->display->display_options['fields']['colorbox']['label'] = '';
   $handler->display->display_options['fields']['colorbox']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['colorbox']['trigger_field'] = 'nothing';
-  $handler->display->display_options['fields']['colorbox']['popup'] = '<div class="slide">[field_project_image]</div>
-<div class="image-caption">
-[php_1]
-</div>';
+  $handler->display->display_options['fields']['colorbox']['trigger_field'] = 'field_project_image';
   $handler->display->display_options['fields']['colorbox']['gid'] = 1;
   $handler->display->display_options['fields']['colorbox']['width'] = '100%';
   $handler->display->display_options['fields']['colorbox']['height'] = '100%';
