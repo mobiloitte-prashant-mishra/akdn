@@ -160,10 +160,10 @@ function akdn_custom_preprocess_page(&$vars, $hook) {
   drupal_add_js(drupal_get_path('module', 'akdn_custom') . '/js/chosen/chosen.jquery.js');
   drupal_add_js('
     window.onload=function () {
-      var tt = document.querySelectorAll(".field-add-more-submit")[0];
+      var tt = document.querySelectorAll(".field-add-more-submit");
       var len = document.querySelectorAll(".fieldset-legend .fieldset-title").length;
       if(!len){
-        tt.click();
+        tt[0].click();
       }
     }
     ', array('type' => 'inline', 'scope' => 'header', 'weight' => -99));
@@ -373,8 +373,8 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
 
   //Overriding form fields
   if ($form_id == 'webform_client_form_14371') {
-    $form['#after_build'][] = 'captcha_title_change_after_build'; 
-     
+    $form['#after_build'][] = 'captcha_title_change_after_build';
+
     $form['submitted']['gender']['#default_value'] = '';
     $form['submitted']['gender']['#empty_value'] = '';
     $form['submitted']['gender']['#empty_option'] = t('- Please Select -');
