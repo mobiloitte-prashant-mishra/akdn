@@ -216,7 +216,6 @@ features[field_instance][] = node-event-field_pages_to_exclude
 features[field_instance][] = node-event-field_photos_reference
 features[field_instance][] = node-event-field_podcasts_reference
 features[field_instance][] = node-event-field_press_reference
-features[field_instance][] = node-event-field_publish_date
 features[field_instance][] = node-event-field_related_in_the_media
 features[field_instance][] = node-event-field_related_news
 features[field_instance][] = node-event-field_related_project

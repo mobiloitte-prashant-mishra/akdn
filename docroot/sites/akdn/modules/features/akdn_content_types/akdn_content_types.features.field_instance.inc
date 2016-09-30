@@ -10,7 +10,8 @@
 function akdn_content_types_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'field_collection_item-field_basic_page_accordian_style-field_basic_accordian_rel_links'
+  // Exported field_instance:
+  // 'field_collection_item-field_basic_page_accordian_style-field_basic_accordian_rel_links'.
   $field_instances['field_collection_item-field_basic_page_accordian_style-field_basic_accordian_rel_links'] = array(
     'bundle' => 'field_basic_page_accordian_style',
     'default_value' => NULL,
@@ -60,7 +61,8 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_basic_page_accordian_style-field_basic_add_more_link'
+  // Exported field_instance:
+  // 'field_collection_item-field_basic_page_accordian_style-field_basic_add_more_link'.
   $field_instances['field_collection_item-field_basic_page_accordian_style-field_basic_add_more_link'] = array(
     'bundle' => 'field_basic_page_accordian_style',
     'default_value' => NULL,
@@ -110,7 +112,8 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_basic_page_accordian_style-field_basic_page_accordian_image'
+  // Exported field_instance:
+  // 'field_collection_item-field_basic_page_accordian_style-field_basic_page_accordian_image'.
   $field_instances['field_collection_item-field_basic_page_accordian_style-field_basic_page_accordian_image'] = array(
     'bundle' => 'field_basic_page_accordian_style',
     'default_value' => array(),
@@ -228,7 +231,8 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_basic_page_accordian_style-field_basic_page_accordian_title'
+  // Exported field_instance:
+  // 'field_collection_item-field_basic_page_accordian_style-field_basic_page_accordian_title'.
   $field_instances['field_collection_item-field_basic_page_accordian_style-field_basic_page_accordian_title'] = array(
     'bundle' => 'field_basic_page_accordian_style',
     'default_value' => NULL,
@@ -264,7 +268,8 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_basic_page_accordian_style-field_text'
+  // Exported field_instance:
+  // 'field_collection_item-field_basic_page_accordian_style-field_text'.
   $field_instances['field_collection_item-field_basic_page_accordian_style-field_text'] = array(
     'bundle' => 'field_basic_page_accordian_style',
     'default_value' => NULL,
@@ -302,7 +307,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_videos-field_body'
+  // Exported field_instance: 'field_collection_item-field_videos-field_body'.
   $field_instances['field_collection_item-field_videos-field_body'] = array(
     'bundle' => 'field_videos',
     'default_value' => NULL,
@@ -345,7 +350,8 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_videos-field_podcast_video'
+  // Exported field_instance:
+  // 'field_collection_item-field_videos-field_podcast_video'.
   $field_instances['field_collection_item-field_videos-field_podcast_video'] = array(
     'bundle' => 'field_videos',
     'deleted' => 0,
@@ -442,7 +448,8 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_videos-field_unique_import'
+  // Exported field_instance:
+  // 'field_collection_item-field_videos-field_unique_import'.
   $field_instances['field_collection_item-field_videos-field_unique_import'] = array(
     'bundle' => 'field_videos',
     'default_value' => NULL,
@@ -478,7 +485,8 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_videos-field_video_size'
+  // Exported field_instance:
+  // 'field_collection_item-field_videos-field_video_size'.
   $field_instances['field_collection_item-field_videos-field_video_size'] = array(
     'bundle' => 'field_videos',
     'default_value' => NULL,
@@ -516,7 +524,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-agency-body'
+  // Exported field_instance: 'node-agency-body'.
   $field_instances['node-agency-body'] = array(
     'bundle' => 'agency',
     'default_value' => NULL,
@@ -575,7 +583,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-agency-field_3rd_party_rss'
+  // Exported field_instance: 'node-agency-field_3rd_party_rss'.
   $field_instances['node-agency-field_3rd_party_rss'] = array(
     'bundle' => 'agency',
     'default_value' => NULL,
@@ -629,7 +637,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-agency-field_about_page'
+  // Exported field_instance: 'node-agency-field_about_page'.
   $field_instances['node-agency-field_about_page'] = array(
     'bundle' => 'agency',
     'default_value' => NULL,
@@ -684,7 +692,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-agency-field_agency_about'
+  // Exported field_instance: 'node-agency-field_agency_about'.
   $field_instances['node-agency-field_agency_about'] = array(
     'bundle' => 'agency',
     'default_value' => NULL,
@@ -738,7 +746,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-agency-field_agency_acronym'
+  // Exported field_instance: 'node-agency-field_agency_acronym'.
   $field_instances['node-agency-field_agency_acronym'] = array(
     'bundle' => 'agency',
     'default_value' => NULL,
@@ -792,7 +800,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-agency-field_agency_image'
+  // Exported field_instance: 'node-agency-field_agency_image'.
   $field_instances['node-agency-field_agency_image'] = array(
     'bundle' => 'agency',
     'deleted' => 0,
@@ -856,7 +864,7 @@ function akdn_content_types_field_default_field_instances() {
           ),
           'value' => '',
         ),
-        'redirect' => FALSE,
+        'redirect' => 0,
         'retroactive_update' => 0,
       ),
       'filefield_paths_enabled' => 1,
@@ -916,6 +924,7 @@ function akdn_content_types_field_default_field_instances() {
           'press_centre_detail' => 'press_centre_detail',
           'publication_listing_image' => 'publication_listing_image',
           'social_sharing_image' => 'social_sharing_image',
+          'two_third_width_carousel_grid_inner' => 'two_third_width_carousel_grid_inner',
         ),
         'manualcrop_styles_mode' => 'include',
         'manualcrop_thumblist' => 1,
@@ -926,7 +935,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-agency-field_agency_logo'
+  // Exported field_instance: 'node-agency-field_agency_logo'.
   $field_instances['node-agency-field_agency_logo'] = array(
     'bundle' => 'agency',
     'deleted' => 0,
@@ -994,7 +1003,7 @@ function akdn_content_types_field_default_field_instances() {
           ),
           'value' => '',
         ),
-        'redirect' => FALSE,
+        'redirect' => 0,
         'retroactive_update' => 0,
       ),
       'filefield_paths_enabled' => 1,
@@ -1053,6 +1062,7 @@ function akdn_content_types_field_default_field_instances() {
           'press_centre_detail' => 'press_centre_detail',
           'publication_listing_image' => 'publication_listing_image',
           'social_sharing_image' => 'social_sharing_image',
+          'two_third_width_carousel_grid_inner' => 'two_third_width_carousel_grid_inner',
         ),
         'manualcrop_styles_mode' => 'include',
         'manualcrop_thumblist' => 1,
@@ -1063,7 +1073,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-agency-field_agency_logo_with_title'
+  // Exported field_instance: 'node-agency-field_agency_logo_with_title'.
   $field_instances['node-agency-field_agency_logo_with_title'] = array(
     'bundle' => 'agency',
     'deleted' => 0,
@@ -1196,7 +1206,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-agency-field_akaa_short_video'
+  // Exported field_instance: 'node-agency-field_akaa_short_video'.
   $field_instances['node-agency-field_akaa_short_video'] = array(
     'bundle' => 'agency',
     'deleted' => 0,
@@ -1310,7 +1320,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-agency-field_akaa_short_video_title'
+  // Exported field_instance: 'node-agency-field_akaa_short_video_title'.
   $field_instances['node-agency-field_akaa_short_video_title'] = array(
     'bundle' => 'agency',
     'default_value' => NULL,
@@ -1364,7 +1374,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-agency-field_akaa_video_thumbnail'
+  // Exported field_instance: 'node-agency-field_akaa_video_thumbnail'.
   $field_instances['node-agency-field_akaa_video_thumbnail'] = array(
     'bundle' => 'agency',
     'deleted' => 0,
@@ -1497,7 +1507,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-agency-field_brochure_embed_code'
+  // Exported field_instance: 'node-agency-field_brochure_embed_code'.
   $field_instances['node-agency-field_brochure_embed_code'] = array(
     'bundle' => 'agency',
     'default_value' => NULL,
@@ -1551,7 +1561,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-agency-field_brochure_link'
+  // Exported field_instance: 'node-agency-field_brochure_link'.
   $field_instances['node-agency-field_brochure_link'] = array(
     'bundle' => 'agency',
     'default_value' => NULL,
@@ -1618,7 +1628,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-agency-field_enable_project_slider'
+  // Exported field_instance: 'node-agency-field_enable_project_slider'.
   $field_instances['node-agency-field_enable_project_slider'] = array(
     'bundle' => 'agency',
     'default_value' => array(
@@ -1675,7 +1685,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-agency-field_fact_sheet_reference'
+  // Exported field_instance: 'node-agency-field_fact_sheet_reference'.
   $field_instances['node-agency-field_fact_sheet_reference'] = array(
     'bundle' => 'agency',
     'default_value' => NULL,
@@ -1730,7 +1740,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-agency-field_fact_sheet_upload'
+  // Exported field_instance: 'node-agency-field_fact_sheet_upload'.
   $field_instances['node-agency-field_fact_sheet_upload'] = array(
     'bundle' => 'agency',
     'deleted' => 0,
@@ -1829,7 +1839,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-agency-field_facts_url_links'
+  // Exported field_instance: 'node-agency-field_facts_url_links'.
   $field_instances['node-agency-field_facts_url_links'] = array(
     'bundle' => 'agency',
     'default_value' => NULL,
@@ -1897,7 +1907,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-agency-field_featured_content_area'
+  // Exported field_instance: 'node-agency-field_featured_content_area'.
   $field_instances['node-agency-field_featured_content_area'] = array(
     'bundle' => 'agency',
     'default_value' => NULL,
@@ -1948,7 +1958,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-agency-field_featured_content_nodes'
+  // Exported field_instance: 'node-agency-field_featured_content_nodes'.
   $field_instances['node-agency-field_featured_content_nodes'] = array(
     'bundle' => 'agency',
     'default_value' => NULL,
@@ -2004,7 +2014,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-agency-field_footer_video'
+  // Exported field_instance: 'node-agency-field_footer_video'.
   $field_instances['node-agency-field_footer_video'] = array(
     'bundle' => 'agency',
     'deleted' => 0,
@@ -2060,7 +2070,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-agency-field_news_and_resources_link'
+  // Exported field_instance: 'node-agency-field_news_and_resources_link'.
   $field_instances['node-agency-field_news_and_resources_link'] = array(
     'bundle' => 'agency',
     'default_value' => NULL,
@@ -2111,7 +2121,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-agency-field_newsletter_image'
+  // Exported field_instance: 'node-agency-field_newsletter_image'.
   $field_instances['node-agency-field_newsletter_image'] = array(
     'bundle' => 'agency',
     'deleted' => 0,
@@ -2179,7 +2189,7 @@ function akdn_content_types_field_default_field_instances() {
           ),
           'value' => '',
         ),
-        'redirect' => 0,
+        'redirect' => FALSE,
         'retroactive_update' => 0,
       ),
       'filefield_paths_enabled' => 1,
@@ -2212,10 +2222,10 @@ function akdn_content_types_field_default_field_instances() {
           'brightcove_playlist' => 0,
           'media_browser_plus--media_browser_my_files' => 0,
           'media_browser_plus--media_browser_thumbnails' => 0,
-          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_1' => 0,
           'media_default--media_browser_my_files' => 0,
           'media_internet' => 0,
-          'upload' => 'upload',
+          'upload' => 0,
         ),
         'manualcrop_crop_info' => 1,
         'manualcrop_default_crop_area' => 1,
@@ -2236,7 +2246,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-agency-field_newsletter_summary'
+  // Exported field_instance: 'node-agency-field_newsletter_summary'.
   $field_instances['node-agency-field_newsletter_summary'] = array(
     'bundle' => 'agency',
     'default_value' => NULL,
@@ -2289,7 +2299,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-agency-field_select_fact_sheet'
+  // Exported field_instance: 'node-agency-field_select_fact_sheet'.
   $field_instances['node-agency-field_select_fact_sheet'] = array(
     'bundle' => 'agency',
     'default_value' => array(
@@ -2344,7 +2354,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-agency-field_select_news_res_content'
+  // Exported field_instance: 'node-agency-field_select_news_res_content'.
   $field_instances['node-agency-field_select_news_res_content'] = array(
     'bundle' => 'agency',
     'default_value' => NULL,
@@ -2395,7 +2405,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-agency-field_show_fact_block'
+  // Exported field_instance: 'node-agency-field_show_fact_block'.
   $field_instances['node-agency-field_show_fact_block'] = array(
     'bundle' => 'agency',
     'default_value' => array(
@@ -2452,7 +2462,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-agency-field_show_news_and_resources'
+  // Exported field_instance: 'node-agency-field_show_news_and_resources'.
   $field_instances['node-agency-field_show_news_and_resources'] = array(
     'bundle' => 'agency',
     'default_value' => array(
@@ -2509,7 +2519,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-agency-field_show_social_share'
+  // Exported field_instance: 'node-agency-field_show_social_share'.
   $field_instances['node-agency-field_show_social_share'] = array(
     'bundle' => 'agency',
     'default_value' => array(
@@ -2566,7 +2576,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-agency-field_social_sharing_links'
+  // Exported field_instance: 'node-agency-field_social_sharing_links'.
   $field_instances['node-agency-field_social_sharing_links'] = array(
     'bundle' => 'agency',
     'default_value' => NULL,
@@ -2634,7 +2644,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-agency-field_sub_title'
+  // Exported field_instance: 'node-agency-field_sub_title'.
   $field_instances['node-agency-field_sub_title'] = array(
     'bundle' => 'agency',
     'default_value' => NULL,
@@ -2688,7 +2698,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-agency-field_summary'
+  // Exported field_instance: 'node-agency-field_summary'.
   $field_instances['node-agency-field_summary'] = array(
     'bundle' => 'agency',
     'default_value' => NULL,
@@ -2742,7 +2752,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-agency-field_tags'
+  // Exported field_instance: 'node-agency-field_tags'.
   $field_instances['node-agency-field_tags'] = array(
     'bundle' => 'agency',
     'default_value' => NULL,
@@ -2796,7 +2806,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-agency-field_turn_on_secondary_footer'
+  // Exported field_instance: 'node-agency-field_turn_on_secondary_footer'.
   $field_instances['node-agency-field_turn_on_secondary_footer'] = array(
     'bundle' => 'agency',
     'default_value' => array(
@@ -2853,7 +2863,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-agency-title_field'
+  // Exported field_instance: 'node-agency-title_field'.
   $field_instances['node-agency-title_field'] = array(
     'bundle' => 'agency',
     'default_value' => NULL,
@@ -2912,7 +2922,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-focus_area-body'
+  // Exported field_instance: 'node-focus_area-body'.
   $field_instances['node-focus_area-body'] = array(
     'bundle' => 'focus_area',
     'default_value' => NULL,
@@ -2972,7 +2982,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-focus_area-field_about_page'
+  // Exported field_instance: 'node-focus_area-field_about_page'.
   $field_instances['node-focus_area-field_about_page'] = array(
     'bundle' => 'focus_area',
     'default_value' => NULL,
@@ -3027,7 +3037,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-focus_area-field_add_agency_what_we_do'
+  // Exported field_instance: 'node-focus_area-field_add_agency_what_we_do'.
   $field_instances['node-focus_area-field_add_agency_what_we_do'] = array(
     'bundle' => 'focus_area',
     'default_value' => NULL,
@@ -3081,7 +3091,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-focus_area-field_custom_agency_text'
+  // Exported field_instance: 'node-focus_area-field_custom_agency_text'.
   $field_instances['node-focus_area-field_custom_agency_text'] = array(
     'bundle' => 'focus_area',
     'default_value' => NULL,
@@ -3129,7 +3139,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-focus_area-field_enable_project_slider'
+  // Exported field_instance: 'node-focus_area-field_enable_project_slider'.
   $field_instances['node-focus_area-field_enable_project_slider'] = array(
     'bundle' => 'focus_area',
     'default_value' => array(
@@ -3186,7 +3196,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-focus_area-field_fact_sheet_reference'
+  // Exported field_instance: 'node-focus_area-field_fact_sheet_reference'.
   $field_instances['node-focus_area-field_fact_sheet_reference'] = array(
     'bundle' => 'focus_area',
     'default_value' => NULL,
@@ -3241,7 +3251,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-focus_area-field_fact_sheet_upload'
+  // Exported field_instance: 'node-focus_area-field_fact_sheet_upload'.
   $field_instances['node-focus_area-field_fact_sheet_upload'] = array(
     'bundle' => 'focus_area',
     'deleted' => 0,
@@ -3340,7 +3350,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-focus_area-field_featured_content_area'
+  // Exported field_instance: 'node-focus_area-field_featured_content_area'.
   $field_instances['node-focus_area-field_featured_content_area'] = array(
     'bundle' => 'focus_area',
     'default_value' => NULL,
@@ -3391,7 +3401,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-focus_area-field_featured_content_nodes'
+  // Exported field_instance: 'node-focus_area-field_featured_content_nodes'.
   $field_instances['node-focus_area-field_featured_content_nodes'] = array(
     'bundle' => 'focus_area',
     'default_value' => NULL,
@@ -3447,7 +3457,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-focus_area-field_focus_area'
+  // Exported field_instance: 'node-focus_area-field_focus_area'.
   $field_instances['node-focus_area-field_focus_area'] = array(
     'bundle' => 'focus_area',
     'default_value' => NULL,
@@ -3501,7 +3511,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-focus_area-field_hub_page_about'
+  // Exported field_instance: 'node-focus_area-field_hub_page_about'.
   $field_instances['node-focus_area-field_hub_page_about'] = array(
     'bundle' => 'focus_area',
     'default_value' => NULL,
@@ -3555,7 +3565,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-focus_area-field_hub_page_image'
+  // Exported field_instance: 'node-focus_area-field_hub_page_image'.
   $field_instances['node-focus_area-field_hub_page_image'] = array(
     'bundle' => 'focus_area',
     'deleted' => 0,
@@ -3694,7 +3704,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-focus_area-field_hub_page_project'
+  // Exported field_instance: 'node-focus_area-field_hub_page_project'.
   $field_instances['node-focus_area-field_hub_page_project'] = array(
     'bundle' => 'focus_area',
     'default_value' => NULL,
@@ -3749,7 +3759,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-focus_area-field_news_and_resources_link'
+  // Exported field_instance: 'node-focus_area-field_news_and_resources_link'.
   $field_instances['node-focus_area-field_news_and_resources_link'] = array(
     'bundle' => 'focus_area',
     'default_value' => NULL,
@@ -3800,7 +3810,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-focus_area-field_newsletter_image'
+  // Exported field_instance: 'node-focus_area-field_newsletter_image'.
   $field_instances['node-focus_area-field_newsletter_image'] = array(
     'bundle' => 'focus_area',
     'deleted' => 0,
@@ -3868,7 +3878,7 @@ function akdn_content_types_field_default_field_instances() {
           ),
           'value' => '',
         ),
-        'redirect' => 0,
+        'redirect' => FALSE,
         'retroactive_update' => 0,
       ),
       'filefield_paths_enabled' => 1,
@@ -3901,10 +3911,10 @@ function akdn_content_types_field_default_field_instances() {
           'brightcove_playlist' => 0,
           'media_browser_plus--media_browser_my_files' => 0,
           'media_browser_plus--media_browser_thumbnails' => 0,
-          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_1' => 0,
           'media_default--media_browser_my_files' => 0,
           'media_internet' => 0,
-          'upload' => 'upload',
+          'upload' => 0,
         ),
         'manualcrop_crop_info' => 1,
         'manualcrop_default_crop_area' => 1,
@@ -3925,7 +3935,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-focus_area-field_newsletter_summary'
+  // Exported field_instance: 'node-focus_area-field_newsletter_summary'.
   $field_instances['node-focus_area-field_newsletter_summary'] = array(
     'bundle' => 'focus_area',
     'default_value' => NULL,
@@ -3980,7 +3990,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-focus_area-field_project_listing_area'
+  // Exported field_instance: 'node-focus_area-field_project_listing_area'.
   $field_instances['node-focus_area-field_project_listing_area'] = array(
     'bundle' => 'focus_area',
     'default_value' => array(
@@ -4035,7 +4045,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-focus_area-field_project_listing_content'
+  // Exported field_instance: 'node-focus_area-field_project_listing_content'.
   $field_instances['node-focus_area-field_project_listing_content'] = array(
     'bundle' => 'focus_area',
     'default_value' => NULL,
@@ -4090,7 +4100,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-focus_area-field_select_fact_sheet'
+  // Exported field_instance: 'node-focus_area-field_select_fact_sheet'.
   $field_instances['node-focus_area-field_select_fact_sheet'] = array(
     'bundle' => 'focus_area',
     'default_value' => array(
@@ -4145,7 +4155,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-focus_area-field_show_fact_block'
+  // Exported field_instance: 'node-focus_area-field_show_fact_block'.
   $field_instances['node-focus_area-field_show_fact_block'] = array(
     'bundle' => 'focus_area',
     'default_value' => array(
@@ -4202,7 +4212,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-focus_area-field_show_news_and_resources'
+  // Exported field_instance: 'node-focus_area-field_show_news_and_resources'.
   $field_instances['node-focus_area-field_show_news_and_resources'] = array(
     'bundle' => 'focus_area',
     'default_value' => array(
@@ -4259,7 +4269,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-focus_area-field_sub_title'
+  // Exported field_instance: 'node-focus_area-field_sub_title'.
   $field_instances['node-focus_area-field_sub_title'] = array(
     'bundle' => 'focus_area',
     'default_value' => NULL,
@@ -4313,7 +4323,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-focus_area-field_summary'
+  // Exported field_instance: 'node-focus_area-field_summary'.
   $field_instances['node-focus_area-field_summary'] = array(
     'bundle' => 'focus_area',
     'default_value' => NULL,
@@ -4367,7 +4377,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-focus_area-field_tags'
+  // Exported field_instance: 'node-focus_area-field_tags'.
   $field_instances['node-focus_area-field_tags'] = array(
     'bundle' => 'focus_area',
     'default_value' => NULL,
@@ -4421,7 +4431,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-focus_area-field_use_focus_area_body_text'
+  // Exported field_instance: 'node-focus_area-field_use_focus_area_body_text'.
   $field_instances['node-focus_area-field_use_focus_area_body_text'] = array(
     'bundle' => 'focus_area',
     'default_value' => array(
@@ -4478,7 +4488,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-focus_area-title_field'
+  // Exported field_instance: 'node-focus_area-title_field'.
   $field_instances['node-focus_area-title_field'] = array(
     'bundle' => 'focus_area',
     'default_value' => NULL,
@@ -4541,7 +4551,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-geography-body'
+  // Exported field_instance: 'node-geography-body'.
   $field_instances['node-geography-body'] = array(
     'bundle' => 'geography',
     'default_value' => NULL,
@@ -4563,9 +4573,11 @@ function akdn_content_types_field_default_field_instances() {
           'more_text' => 'Read more',
           'summary_handler' => 'full',
           'trim_length' => 50,
+          'trim_link' => FALSE,
           'trim_options' => array(
             'text' => 0,
           ),
+          'trim_preserve_tags' => '',
           'trim_suffix' => '...',
           'trim_type' => 'words',
         ),
@@ -4611,7 +4623,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-geography-field_about_page'
+  // Exported field_instance: 'node-geography-field_about_page'.
   $field_instances['node-geography-field_about_page'] = array(
     'bundle' => 'geography',
     'default_value' => NULL,
@@ -4666,7 +4678,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-geography-field_block_add_links'
+  // Exported field_instance: 'node-geography-field_block_add_links'.
   $field_instances['node-geography-field_block_add_links'] = array(
     'bundle' => 'geography',
     'default_value' => NULL,
@@ -4728,7 +4740,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-geography-field_brochure_heading'
+  // Exported field_instance: 'node-geography-field_brochure_heading'.
   $field_instances['node-geography-field_brochure_heading'] = array(
     'bundle' => 'geography',
     'default_value' => NULL,
@@ -4776,7 +4788,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-geography-field_brochure_image'
+  // Exported field_instance: 'node-geography-field_brochure_image'.
   $field_instances['node-geography-field_brochure_image'] = array(
     'bundle' => 'geography',
     'deleted' => 0,
@@ -4891,7 +4903,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-geography-field_brochure_summary'
+  // Exported field_instance: 'node-geography-field_brochure_summary'.
   $field_instances['node-geography-field_brochure_summary'] = array(
     'bundle' => 'geography',
     'default_value' => NULL,
@@ -4939,7 +4951,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-geography-field_brochure_view_link'
+  // Exported field_instance: 'node-geography-field_brochure_view_link'.
   $field_instances['node-geography-field_brochure_view_link'] = array(
     'bundle' => 'geography',
     'default_value' => NULL,
@@ -5001,7 +5013,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-geography-field_country_show_block'
+  // Exported field_instance: 'node-geography-field_country_show_block'.
   $field_instances['node-geography-field_country_show_block'] = array(
     'bundle' => 'geography',
     'default_value' => array(
@@ -5052,7 +5064,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-geography-field_enable_project_slider'
+  // Exported field_instance: 'node-geography-field_enable_project_slider'.
   $field_instances['node-geography-field_enable_project_slider'] = array(
     'bundle' => 'geography',
     'default_value' => array(
@@ -5109,7 +5121,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-geography-field_fact_sheet_reference'
+  // Exported field_instance: 'node-geography-field_fact_sheet_reference'.
   $field_instances['node-geography-field_fact_sheet_reference'] = array(
     'bundle' => 'geography',
     'default_value' => NULL,
@@ -5158,7 +5170,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-geography-field_fact_sheet_upload'
+  // Exported field_instance: 'node-geography-field_fact_sheet_upload'.
   $field_instances['node-geography-field_fact_sheet_upload'] = array(
     'bundle' => 'geography',
     'deleted' => 0,
@@ -5251,7 +5263,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-geography-field_featured_content_area'
+  // Exported field_instance: 'node-geography-field_featured_content_area'.
   $field_instances['node-geography-field_featured_content_area'] = array(
     'bundle' => 'geography',
     'default_value' => NULL,
@@ -5302,7 +5314,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-geography-field_featured_content_nodes'
+  // Exported field_instance: 'node-geography-field_featured_content_nodes'.
   $field_instances['node-geography-field_featured_content_nodes'] = array(
     'bundle' => 'geography',
     'default_value' => NULL,
@@ -5358,7 +5370,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-geography-field_hub_page_about'
+  // Exported field_instance: 'node-geography-field_hub_page_about'.
   $field_instances['node-geography-field_hub_page_about'] = array(
     'bundle' => 'geography',
     'default_value' => NULL,
@@ -5412,7 +5424,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-geography-field_hub_page_image'
+  // Exported field_instance: 'node-geography-field_hub_page_image'.
   $field_instances['node-geography-field_hub_page_image'] = array(
     'bundle' => 'geography',
     'deleted' => 0,
@@ -5551,7 +5563,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-geography-field_hub_page_project'
+  // Exported field_instance: 'node-geography-field_hub_page_project'.
   $field_instances['node-geography-field_hub_page_project'] = array(
     'bundle' => 'geography',
     'default_value' => NULL,
@@ -5606,7 +5618,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-geography-field_more_link'
+  // Exported field_instance: 'node-geography-field_more_link'.
   $field_instances['node-geography-field_more_link'] = array(
     'bundle' => 'geography',
     'default_value' => NULL,
@@ -5674,7 +5686,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-geography-field_news_and_resources_link'
+  // Exported field_instance: 'node-geography-field_news_and_resources_link'.
   $field_instances['node-geography-field_news_and_resources_link'] = array(
     'bundle' => 'geography',
     'default_value' => NULL,
@@ -5719,7 +5731,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-geography-field_newsletter_image'
+  // Exported field_instance: 'node-geography-field_newsletter_image'.
   $field_instances['node-geography-field_newsletter_image'] = array(
     'bundle' => 'geography',
     'deleted' => 0,
@@ -5781,7 +5793,7 @@ function akdn_content_types_field_default_field_instances() {
           ),
           'value' => '',
         ),
-        'redirect' => 0,
+        'redirect' => FALSE,
         'retroactive_update' => 0,
       ),
       'filefield_paths_enabled' => 1,
@@ -5814,10 +5826,10 @@ function akdn_content_types_field_default_field_instances() {
           'brightcove_playlist' => 0,
           'media_browser_plus--media_browser_my_files' => 0,
           'media_browser_plus--media_browser_thumbnails' => 0,
-          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_1' => 0,
           'media_default--media_browser_my_files' => 0,
           'media_internet' => 0,
-          'upload' => 'upload',
+          'upload' => 0,
         ),
         'manualcrop_crop_info' => 1,
         'manualcrop_default_crop_area' => 1,
@@ -5838,7 +5850,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-geography-field_newsletter_summary'
+  // Exported field_instance: 'node-geography-field_newsletter_summary'.
   $field_instances['node-geography-field_newsletter_summary'] = array(
     'bundle' => 'geography',
     'default_value' => NULL,
@@ -5887,7 +5899,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-geography-field_select_fact_sheet'
+  // Exported field_instance: 'node-geography-field_select_fact_sheet'.
   $field_instances['node-geography-field_select_fact_sheet'] = array(
     'bundle' => 'geography',
     'default_value' => array(
@@ -5936,7 +5948,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-geography-field_select_news_res_content'
+  // Exported field_instance: 'node-geography-field_select_news_res_content'.
   $field_instances['node-geography-field_select_news_res_content'] = array(
     'bundle' => 'geography',
     'default_value' => NULL,
@@ -5981,7 +5993,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-geography-field_short_title'
+  // Exported field_instance: 'node-geography-field_short_title'.
   $field_instances['node-geography-field_short_title'] = array(
     'bundle' => 'geography',
     'default_value' => NULL,
@@ -6029,7 +6041,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-geography-field_show_block'
+  // Exported field_instance: 'node-geography-field_show_block'.
   $field_instances['node-geography-field_show_block'] = array(
     'bundle' => 'geography',
     'default_value' => array(
@@ -6080,7 +6092,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-geography-field_show_fact_block'
+  // Exported field_instance: 'node-geography-field_show_fact_block'.
   $field_instances['node-geography-field_show_fact_block'] = array(
     'bundle' => 'geography',
     'default_value' => array(
@@ -6131,7 +6143,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-geography-field_show_news_and_resources'
+  // Exported field_instance: 'node-geography-field_show_news_and_resources'.
   $field_instances['node-geography-field_show_news_and_resources'] = array(
     'bundle' => 'geography',
     'default_value' => array(
@@ -6182,7 +6194,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-geography-field_specify_a_block_title'
+  // Exported field_instance: 'node-geography-field_specify_a_block_title'.
   $field_instances['node-geography-field_specify_a_block_title'] = array(
     'bundle' => 'geography',
     'default_value' => NULL,
@@ -6230,7 +6242,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-geography-field_sub_title'
+  // Exported field_instance: 'node-geography-field_sub_title'.
   $field_instances['node-geography-field_sub_title'] = array(
     'bundle' => 'geography',
     'default_value' => NULL,
@@ -6289,7 +6301,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-geography-field_summary'
+  // Exported field_instance: 'node-geography-field_summary'.
   $field_instances['node-geography-field_summary'] = array(
     'bundle' => 'geography',
     'default_value' => NULL,
@@ -6343,7 +6355,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-geography-field_tags'
+  // Exported field_instance: 'node-geography-field_tags'.
   $field_instances['node-geography-field_tags'] = array(
     'bundle' => 'geography',
     'default_value' => NULL,
@@ -6397,7 +6409,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-geography-title_field'
+  // Exported field_instance: 'node-geography-title_field'.
   $field_instances['node-geography-title_field'] = array(
     'bundle' => 'geography',
     'default_value' => NULL,
@@ -6460,7 +6472,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-hub_page-body'
+  // Exported field_instance: 'node-hub_page-body'.
   $field_instances['node-hub_page-body'] = array(
     'bundle' => 'hub_page',
     'default_value' => NULL,
@@ -6481,9 +6493,11 @@ function akdn_content_types_field_default_field_instances() {
           'more_text' => 'Read more',
           'summary_handler' => 'full',
           'trim_length' => 50,
+          'trim_link' => FALSE,
           'trim_options' => array(
             'text' => 0,
           ),
+          'trim_preserve_tags' => '',
           'trim_suffix' => '...',
           'trim_type' => 'words',
         ),
@@ -6536,7 +6550,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-hub_page-field_about_page'
+  // Exported field_instance: 'node-hub_page-field_about_page'.
   $field_instances['node-hub_page-field_about_page'] = array(
     'bundle' => 'hub_page',
     'default_value' => NULL,
@@ -6591,7 +6605,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-hub_page-field_agency_geography'
+  // Exported field_instance: 'node-hub_page-field_agency_geography'.
   $field_instances['node-hub_page-field_agency_geography'] = array(
     'bundle' => 'hub_page',
     'default_value' => NULL,
@@ -6646,7 +6660,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-hub_page-field_agency_term'
+  // Exported field_instance: 'node-hub_page-field_agency_term'.
   $field_instances['node-hub_page-field_agency_term'] = array(
     'bundle' => 'hub_page',
     'default_value' => NULL,
@@ -6696,7 +6710,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-hub_page-field_basic_page_accordian_style'
+  // Exported field_instance: 'node-hub_page-field_basic_page_accordian_style'.
   $field_instances['node-hub_page-field_basic_page_accordian_style'] = array(
     'bundle' => 'hub_page',
     'default_value' => NULL,
@@ -6747,7 +6761,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-hub_page-field_basic_page_choose_layout'
+  // Exported field_instance: 'node-hub_page-field_basic_page_choose_layout'.
   $field_instances['node-hub_page-field_basic_page_choose_layout'] = array(
     'bundle' => 'hub_page',
     'default_value' => NULL,
@@ -6792,7 +6806,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-hub_page-field_block_add_links'
+  // Exported field_instance: 'node-hub_page-field_block_add_links'.
   $field_instances['node-hub_page-field_block_add_links'] = array(
     'bundle' => 'hub_page',
     'default_value' => NULL,
@@ -6854,7 +6868,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-hub_page-field_geography_term'
+  // Exported field_instance: 'node-hub_page-field_geography_term'.
   $field_instances['node-hub_page-field_geography_term'] = array(
     'bundle' => 'hub_page',
     'default_value' => NULL,
@@ -6904,7 +6918,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-hub_page-field_hub_page_image'
+  // Exported field_instance: 'node-hub_page-field_hub_page_image'.
   $field_instances['node-hub_page-field_hub_page_image'] = array(
     'bundle' => 'hub_page',
     'deleted' => 0,
@@ -7043,7 +7057,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-hub_page-field_more_blocks'
+  // Exported field_instance: 'node-hub_page-field_more_blocks'.
   $field_instances['node-hub_page-field_more_blocks'] = array(
     'bundle' => 'hub_page',
     'default_value' => array(
@@ -7094,7 +7108,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-hub_page-field_more_link'
+  // Exported field_instance: 'node-hub_page-field_more_link'.
   $field_instances['node-hub_page-field_more_link'] = array(
     'bundle' => 'hub_page',
     'default_value' => NULL,
@@ -7161,7 +7175,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-hub_page-field_newsletter_image'
+  // Exported field_instance: 'node-hub_page-field_newsletter_image'.
   $field_instances['node-hub_page-field_newsletter_image'] = array(
     'bundle' => 'hub_page',
     'deleted' => 0,
@@ -7240,7 +7254,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-hub_page-field_newsletter_summary'
+  // Exported field_instance: 'node-hub_page-field_newsletter_summary'.
   $field_instances['node-hub_page-field_newsletter_summary'] = array(
     'bundle' => 'hub_page',
     'default_value' => NULL,
@@ -7289,7 +7303,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-hub_page-field_right_show_block'
+  // Exported field_instance: 'node-hub_page-field_right_show_block'.
   $field_instances['node-hub_page-field_right_show_block'] = array(
     'bundle' => 'hub_page',
     'default_value' => array(
@@ -7340,7 +7354,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-hub_page-field_short_title'
+  // Exported field_instance: 'node-hub_page-field_short_title'.
   $field_instances['node-hub_page-field_short_title'] = array(
     'bundle' => 'hub_page',
     'default_value' => NULL,
@@ -7399,7 +7413,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-hub_page-field_specify_a_block_title'
+  // Exported field_instance: 'node-hub_page-field_specify_a_block_title'.
   $field_instances['node-hub_page-field_specify_a_block_title'] = array(
     'bundle' => 'hub_page',
     'default_value' => NULL,
@@ -7447,7 +7461,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-hub_page-field_tags'
+  // Exported field_instance: 'node-hub_page-field_tags'.
   $field_instances['node-hub_page-field_tags'] = array(
     'bundle' => 'hub_page',
     'default_value' => NULL,
@@ -7501,7 +7515,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-hub_page-title_field'
+  // Exported field_instance: 'node-hub_page-title_field'.
   $field_instances['node-hub_page-title_field'] = array(
     'bundle' => 'hub_page',
     'default_value' => NULL,
@@ -7564,7 +7578,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-instagram-body'
+  // Exported field_instance: 'node-instagram-body'.
   $field_instances['node-instagram-body'] = array(
     'bundle' => 'instagram',
     'default_value' => NULL,
@@ -7615,7 +7629,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-instagram-field_instagram_external_id'
+  // Exported field_instance: 'node-instagram-field_instagram_external_id'.
   $field_instances['node-instagram-field_instagram_external_id'] = array(
     'bundle' => 'instagram',
     'default_value' => NULL,
@@ -7662,7 +7676,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-instagram-field_instagram_link'
+  // Exported field_instance: 'node-instagram-field_instagram_link'.
   $field_instances['node-instagram-field_instagram_link'] = array(
     'bundle' => 'instagram',
     'default_value' => NULL,
@@ -7723,7 +7737,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-instagram-field_instagram_picture'
+  // Exported field_instance: 'node-instagram-field_instagram_picture'.
   $field_instances['node-instagram-field_instagram_picture'] = array(
     'bundle' => 'instagram',
     'deleted' => 0,
@@ -7806,7 +7820,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-instagram-field_instagram_user_id'
+  // Exported field_instance: 'node-instagram-field_instagram_user_id'.
   $field_instances['node-instagram-field_instagram_user_id'] = array(
     'bundle' => 'instagram',
     'default_value' => NULL,
@@ -7858,7 +7872,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-instagram-field_instagram_user_link'
+  // Exported field_instance: 'node-instagram-field_instagram_user_link'.
   $field_instances['node-instagram-field_instagram_user_link'] = array(
     'bundle' => 'instagram',
     'default_value' => NULL,
@@ -7920,7 +7934,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-instagram-field_instagram_user_name'
+  // Exported field_instance: 'node-instagram-field_instagram_user_name'.
   $field_instances['node-instagram-field_instagram_user_name'] = array(
     'bundle' => 'instagram',
     'default_value' => NULL,
@@ -7968,7 +7982,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-body'
+  // Exported field_instance: 'node-page-body'.
   $field_instances['node-page-body'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -7996,9 +8010,11 @@ function akdn_content_types_field_default_field_instances() {
           'more_text' => 'Read more',
           'summary_handler' => 'full',
           'trim_length' => 50,
+          'trim_link' => FALSE,
           'trim_options' => array(
             'text' => 0,
           ),
+          'trim_preserve_tags' => '',
           'trim_suffix' => '...',
           'trim_type' => 'words',
         ),
@@ -8051,7 +8067,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_agency_term'
+  // Exported field_instance: 'node-page-field_agency_term'.
   $field_instances['node-page-field_agency_term'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -8114,7 +8130,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_article_link'
+  // Exported field_instance: 'node-page-field_article_link'.
   $field_instances['node-page-field_article_link'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -8195,7 +8211,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_basic_page_accordian_style'
+  // Exported field_instance: 'node-page-field_basic_page_accordian_style'.
   $field_instances['node-page-field_basic_page_accordian_style'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -8258,7 +8274,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_basic_page_choose_layout'
+  // Exported field_instance: 'node-page-field_basic_page_choose_layout'.
   $field_instances['node-page-field_basic_page_choose_layout'] = array(
     'bundle' => 'page',
     'default_value' => array(
@@ -8319,7 +8335,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_block_add_links'
+  // Exported field_instance: 'node-page-field_block_add_links'.
   $field_instances['node-page-field_block_add_links'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -8393,7 +8409,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_caption'
+  // Exported field_instance: 'node-page-field_caption'.
   $field_instances['node-page-field_caption'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -8453,7 +8469,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_create_featured_content'
+  // Exported field_instance: 'node-page-field_create_featured_content'.
   $field_instances['node-page-field_create_featured_content'] = array(
     'bundle' => 'page',
     'default_value' => array(
@@ -8516,7 +8532,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_feature_image'
+  // Exported field_instance: 'node-page-field_feature_image'.
   $field_instances['node-page-field_feature_image'] = array(
     'bundle' => 'page',
     'deleted' => 0,
@@ -8657,7 +8673,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_geography_term'
+  // Exported field_instance: 'node-page-field_geography_term'.
   $field_instances['node-page-field_geography_term'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -8720,7 +8736,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_hub_page'
+  // Exported field_instance: 'node-page-field_hub_page'.
   $field_instances['node-page-field_hub_page'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -8777,7 +8793,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_hub_page_image'
+  // Exported field_instance: 'node-page-field_hub_page_image'.
   $field_instances['node-page-field_hub_page_image'] = array(
     'bundle' => 'page',
     'deleted' => 0,
@@ -8927,7 +8943,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_more_blocks'
+  // Exported field_instance: 'node-page-field_more_blocks'.
   $field_instances['node-page-field_more_blocks'] = array(
     'bundle' => 'page',
     'default_value' => array(
@@ -8990,7 +9006,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_more_link'
+  // Exported field_instance: 'node-page-field_more_link'.
   $field_instances['node-page-field_more_link'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -9070,7 +9086,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_newsletter_image'
+  // Exported field_instance: 'node-page-field_newsletter_image'.
   $field_instances['node-page-field_newsletter_image'] = array(
     'bundle' => 'page',
     'deleted' => 0,
@@ -9201,7 +9217,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_newsletter_summary'
+  // Exported field_instance: 'node-page-field_newsletter_summary'.
   $field_instances['node-page-field_newsletter_summary'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -9262,7 +9278,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_pages_to_exclude'
+  // Exported field_instance: 'node-page-field_pages_to_exclude'.
   $field_instances['node-page-field_pages_to_exclude'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -9323,7 +9339,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_quick_links'
+  // Exported field_instance: 'node-page-field_quick_links'.
   $field_instances['node-page-field_quick_links'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -9397,7 +9413,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_right_show_block'
+  // Exported field_instance: 'node-page-field_right_show_block'.
   $field_instances['node-page-field_right_show_block'] = array(
     'bundle' => 'page',
     'default_value' => array(
@@ -9460,7 +9476,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_short_title'
+  // Exported field_instance: 'node-page-field_short_title'.
   $field_instances['node-page-field_short_title'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -9531,7 +9547,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_specify_a_block_title'
+  // Exported field_instance: 'node-page-field_specify_a_block_title'.
   $field_instances['node-page-field_specify_a_block_title'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -9591,7 +9607,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_tags'
+  // Exported field_instance: 'node-page-field_tags'.
   $field_instances['node-page-field_tags'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -9657,7 +9673,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_unique_import'
+  // Exported field_instance: 'node-page-field_unique_import'.
   $field_instances['node-page-field_unique_import'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -9717,7 +9733,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_videos'
+  // Exported field_instance: 'node-page-field_videos'.
   $field_instances['node-page-field_videos'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -9793,7 +9809,7 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-title_field'
+  // Exported field_instance: 'node-page-title_field'.
   $field_instances['node-page-title_field'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
