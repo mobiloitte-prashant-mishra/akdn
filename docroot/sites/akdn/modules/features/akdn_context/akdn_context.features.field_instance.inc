@@ -188,7 +188,7 @@ function akdn_context_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 7,
+      'weight' => 9,
     ),
   );
 
@@ -236,7 +236,7 @@ function akdn_context_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -504,7 +504,7 @@ function akdn_context_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -680,7 +680,7 @@ function akdn_context_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -732,7 +732,7 @@ function akdn_context_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -865,7 +865,7 @@ function akdn_context_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_text_related_instruments',
-    'label' => 'Related Instruments',
+    'label' => 'Other Instruments',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -930,7 +930,7 @@ function akdn_context_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -991,15 +991,9 @@ function akdn_context_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
-        'weight' => 10,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
       ),
       'scs' => array(
         'label' => 'above',
@@ -1018,7 +1012,7 @@ function akdn_context_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_premiere_year',
     'label' => 'Premiere Year',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'max' => '',
@@ -1032,7 +1026,7 @@ function akdn_context_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 31,
+      'weight' => 3,
     ),
   );
 
@@ -1529,6 +1523,7 @@ function akdn_context_field_default_field_instances() {
   t('Custom Meta Tags');
   t('Custom Meta tags');
   t('Instruments which do not have a node. will be displayed as Plain text.');
+  t('Other Instruments');
   t('Performance Year With AKMI');
   t('Premiere Year');
   t('Related Instruments');

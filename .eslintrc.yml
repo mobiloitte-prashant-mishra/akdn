@@ -1,0 +1,26 @@
+env:
+  browser: true
+extends: 'eslint:recommended'
+globals:
+  Drupal: true
+  jQuery: true
+  tinyMCE: true
+rules:
+  eqeqeq:
+    - error
+    - smart
+  guard-for-in: error
+  no-undef: error
+  strict: off
+  new-cap: off
+  quotes: off
+  camelcase: off
+  no-underscrore-dangle: off
+  no-new: off
+  no-alert: off
+  no-use-before-define: off
+  consistent-return: off
+  no-constant-condition: off
+  comma-dangle: off
+  no-catch-shadow: error
+  no-trailing-spaces: error

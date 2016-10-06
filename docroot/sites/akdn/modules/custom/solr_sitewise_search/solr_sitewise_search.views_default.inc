@@ -51,6 +51,11 @@ function solr_sitewise_search_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Search Results';
   $handler->display->display_options['display_description'] = 'Site Search';
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['search_api_bypass_access'] = 0;
+  $handler->display->display_options['query']['options']['entity_access'] = 0;
+  $handler->display->display_options['query']['options']['parse_mode'] = 'direct';
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: PHP */
@@ -114,7 +119,7 @@ print $output;
   $handler->display->display_options['fields']['url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['url']['display_as_link'] = FALSE;
   $handler->display->display_options['fields']['url']['link_to_entity'] = 0;
-  /* Field: Indexed Node: Image Uri for nodes [event/article/publication/speech/gallery/video/page] */
+  /* Field: Indexed Node: Image Uri for nodes [event/article/publication/speech/gallery/video/page/geography] */
   $handler->display->display_options['fields']['image_public_uri']['id'] = 'image_public_uri';
   $handler->display->display_options['fields']['image_public_uri']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['fields']['image_public_uri']['field'] = 'image_public_uri';
@@ -218,7 +223,6 @@ print $output;
   $handler->display->display_options['sorts']['search_api_relevance']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['sorts']['search_api_relevance']['field'] = 'search_api_relevance';
   $handler->display->display_options['sorts']['search_api_relevance']['order'] = 'DESC';
-  $handler->display->display_options['sorts']['search_api_relevance']['expose']['label'] = 'Relevance';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Indexed Node: Content type */
@@ -231,7 +235,6 @@ print $output;
     'article' => 'article',
     'award_cycle' => 'award_cycle',
     'page' => 'page',
-    'custom_content' => 'custom_content',
     'event' => 'event',
     'gallery' => 'gallery',
     'geography' => 'geography',
@@ -269,7 +272,6 @@ print $output;
     5 => 0,
     3 => 0,
   );
-  $handler->display->display_options['filters']['search_api_views_fulltext']['mode'] = 'filter';
   $handler->display->display_options['filters']['search_api_views_fulltext']['fields'] = array(
     'search_api_aggregation_1' => 'search_api_aggregation_1',
   );
@@ -300,7 +302,7 @@ print $output;
   $handler->display->display_options['fields']['url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['url']['display_as_link'] = FALSE;
   $handler->display->display_options['fields']['url']['link_to_entity'] = 0;
-  /* Field: Indexed Node: Image Uri for nodes [event/article/publication/speech/gallery/video/page] */
+  /* Field: Indexed Node: Image Uri for nodes [event/article/publication/speech/gallery/video/page/geography] */
   $handler->display->display_options['fields']['image_public_uri']['id'] = 'image_public_uri';
   $handler->display->display_options['fields']['image_public_uri']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['fields']['image_public_uri']['field'] = 'image_public_uri';
@@ -372,11 +374,11 @@ print $output;
   $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'akdn-solr-more-link';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Search: Relevance */
-  $handler->display->display_options['sorts']['search_api_relevance']['id'] = 'search_api_relevance';
-  $handler->display->display_options['sorts']['search_api_relevance']['table'] = 'search_api_index_akdn';
-  $handler->display->display_options['sorts']['search_api_relevance']['field'] = 'search_api_relevance';
-  $handler->display->display_options['sorts']['search_api_relevance']['order'] = 'DESC';
+  /* Sort criterion: Indexed Node: Time of Event Start/Article,publication,podcast,speech,gallery,project Publish */
+  $handler->display->display_options['sorts']['event_date_start_time']['id'] = 'event_date_start_time';
+  $handler->display->display_options['sorts']['event_date_start_time']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['sorts']['event_date_start_time']['field'] = 'event_date_start_time';
+  $handler->display->display_options['sorts']['event_date_start_time']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['operator'] = 'OR';
   $handler->display->display_options['filter_groups']['groups'] = array(
@@ -466,7 +468,6 @@ print $output;
     t('[title_field]'),
     t('More'),
     t('[entity_type]'),
-    t('Relevance'),
     t('Fulltext search'),
     t('What\'s new'),
     t(' More'),

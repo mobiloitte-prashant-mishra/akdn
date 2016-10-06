@@ -5595,11 +5595,21 @@ return $cycle_id;';
   $handler->display->display_options['fields']['field_artist_related_instruments']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_artist_related_instruments']['type'] = 'node_reference_plain';
   $handler->display->display_options['fields']['field_artist_related_instruments']['delta_offset'] = '0';
-  /* Field: Broken/missing handler */
+  /* Field: Content: Other Instruments */
   $handler->display->display_options['fields']['field_text_related_instruments']['id'] = 'field_text_related_instruments';
   $handler->display->display_options['fields']['field_text_related_instruments']['table'] = 'field_data_field_text_related_instruments';
   $handler->display->display_options['fields']['field_text_related_instruments']['field'] = 'field_text_related_instruments';
+  $handler->display->display_options['fields']['field_text_related_instruments']['label'] = 'Instruments';
+  $handler->display->display_options['fields']['field_text_related_instruments']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_text_related_instruments']['element_class'] = 'akaa-technicalinfo-value';
+  $handler->display->display_options['fields']['field_text_related_instruments']['element_label_type'] = 'div';
+  $handler->display->display_options['fields']['field_text_related_instruments']['element_label_class'] = 'akaa-technicalinfo-label';
+  $handler->display->display_options['fields']['field_text_related_instruments']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_text_related_instruments']['element_wrapper_class'] = 'akaa-technicalinfo-row';
+  $handler->display->display_options['fields']['field_text_related_instruments']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_text_related_instruments']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_text_related_instruments']['type'] = 'text_plain';
+  $handler->display->display_options['fields']['field_text_related_instruments']['delta_offset'] = '0';
   /* Field: Content: Vocal Artist? */
   $handler->display->display_options['fields']['field_vocal_artist_check']['id'] = 'field_vocal_artist_check';
   $handler->display->display_options['fields']['field_vocal_artist_check']['table'] = 'field_data_field_vocal_artist_check';
@@ -5611,6 +5621,7 @@ return $cycle_id;';
   $handler->display->display_options['fields']['field_vocal_artist_check']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_vocal_artist_check']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_vocal_artist_check']['hide_empty'] = TRUE;
+
   /* Field: Content: Country of Origin */
   $handler->display->display_options['fields']['field_artist_country_origin']['id'] = 'field_artist_country_origin';
   $handler->display->display_options['fields']['field_artist_country_origin']['table'] = 'field_data_field_artist_country_origin';
@@ -5926,7 +5937,6 @@ print $output;
     t('Performance year with AKMI'),
     t('Instruments'),
     t('<a href="/akmi/instruments#[field_artist_related_instruments]">[field_artist_related_instruments]</a>'),
-    t('Broken handler field_data_field_text_related_instruments.field_text_related_instruments'),
     t('Country of Origin'),
     t('AKMI Other Artists'),
     t('Other Artists'),
