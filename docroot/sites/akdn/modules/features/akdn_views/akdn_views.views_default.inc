@@ -12043,10 +12043,13 @@ print $explode[1];
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
   $handler->display->display_options['fields']['body']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['body']['alter']['text'] = '<div class = "body-summary">[body-summary]</div>';
+  $handler->display->display_options['fields']['body']['alter']['text'] = '[body-summary]';
   $handler->display->display_options['fields']['body']['element_type'] = 'div';
-  $handler->display->display_options['fields']['body']['element_class'] = 'basic-page-summary';
+  $handler->display->display_options['fields']['body']['element_class'] = 'body-summary';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['body']['element_wrapper_class'] = 'basic-page-summary';
+  $handler->display->display_options['fields']['body']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_length' => '1000',
@@ -12212,13 +12215,12 @@ print $explode[1];
 </div>'),
     t('All'),
     t('Baisc Page summary'),
-    t('<div class = "body-summary">[body-summary]</div>'),
+    t('[body-summary]'),
     t('Custom Content Header'),
     t('[field_short_title]'),
     t('<div class = "basic-page-custom-logo-title">[title]</div>'),
     t('Baisc Page Accordian summary'),
     t('Translations'),
-    t('[body-summary]'),
   );
   $export['basic_pages_view'] = $view;
 
@@ -18259,7 +18261,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'slideshow';
