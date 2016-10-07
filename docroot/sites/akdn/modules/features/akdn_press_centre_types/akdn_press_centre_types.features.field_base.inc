@@ -103,7 +103,7 @@ function akdn_press_centre_types_field_default_field_bases() {
     'locked' => 0,
     'module' => 'image',
     'settings' => array(
-      'default_image' => 176911,
+      'default_image' => 179476,
       'entity_translation_sync' => array(
         0 => 'fid',
       ),
@@ -378,7 +378,7 @@ function akdn_press_centre_types_field_default_field_bases() {
     'locked' => 0,
     'module' => 'image',
     'settings' => array(
-      'default_image' => 35331,
+      'default_image' => 179486,
       'entity_translation_sync' => array(
         0 => 'fid',
       ),
@@ -560,7 +560,7 @@ function akdn_press_centre_types_field_default_field_bases() {
     'locked' => 0,
     'module' => 'image',
     'settings' => array(
-      'default_image' => 35336,
+      'default_image' => 179496,
       'entity_translation_sync' => array(
         0 => 'fid',
       ),
@@ -746,7 +746,7 @@ function akdn_press_centre_types_field_default_field_bases() {
     'locked' => 0,
     'module' => 'image',
     'settings' => array(
-      'default_image' => 35346,
+      'default_image' => 179506,
       'entity_translation_sync' => array(
         0 => 'fid',
       ),
@@ -1022,7 +1022,7 @@ function akdn_press_centre_types_field_default_field_bases() {
     'locked' => 0,
     'module' => 'image',
     'settings' => array(
-      'default_image' => 34391,
+      'default_image' => 179536,
       'entity_translation_sync' => array(
         0 => 'fid',
       ),
@@ -1226,7 +1226,7 @@ function akdn_press_centre_types_field_default_field_bases() {
     'locked' => 0,
     'module' => 'image',
     'settings' => array(
-      'default_image' => 35351,
+      'default_image' => 179516,
       'entity_translation_sync' => array(
         0 => 'fid',
       ),
@@ -1746,7 +1746,7 @@ function akdn_press_centre_types_field_default_field_bases() {
     'locked' => 0,
     'module' => 'image',
     'settings' => array(
-      'default_image' => 134646,
+      'default_image' => 179526,
       'entity_translation_sync' => array(
         0 => 'fid',
       ),

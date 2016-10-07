@@ -28648,8 +28648,7 @@ print $content;
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['style_plugin'] = 'slideshow';
   $handler->display->display_options['style_options']['flexslider_views_slideshow']['caption_field'] = 'none';
   $handler->display->display_options['style_options']['slideshow_type'] = 'flexslider_views_slideshow';
@@ -28783,9 +28782,15 @@ print $content;
   $handler->display->display_options['fields']['field_article_img_et']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_article_img_et']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_article_img_et']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_article_img_et']['type'] = 'colorbox';
   $handler->display->display_options['fields']['field_article_img_et']['settings'] = array(
-    'image_style' => 'two_third_width_carousel_grid_inner',
-    'image_link' => '',
+    'colorbox_node_style' => 'two_third_width_carousel_grid_inner',
+    'colorbox_node_style_first' => '',
+    'colorbox_image_style' => '',
+    'colorbox_gallery' => 'post',
+    'colorbox_gallery_custom' => '',
+    'colorbox_caption' => 'custom',
+    'colorbox_caption_custom' => '[file:field-image-caption] | [file:field-image-copytight]',
   );
   $handler->display->display_options['fields']['field_article_img_et']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_article_img_et']['delta_offset'] = '0';
@@ -28808,7 +28813,6 @@ print $content;
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_article_img_et]</div>
 <div class="slide-text">
 <div class="caption">[field_image_caption]</div>
@@ -28822,15 +28826,10 @@ print $content;
   $handler->display->display_options['fields']['colorbox']['field'] = 'colorbox';
   $handler->display->display_options['fields']['colorbox']['label'] = '';
   $handler->display->display_options['fields']['colorbox']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['colorbox']['trigger_field'] = 'nothing';
-  $handler->display->display_options['fields']['colorbox']['popup'] = '<div class="slide">[field_article_img_et]</div>
-<div class="slide-text">
-<div class="caption">[field_image_caption]</div>
-<div class="caption image-copytight">[field_image_copytight]</div>
-</div>';
+  $handler->display->display_options['fields']['colorbox']['trigger_field'] = 'field_article_img_et';
   $handler->display->display_options['fields']['colorbox']['gid'] = 1;
-  $handler->display->display_options['fields']['colorbox']['width'] = '700px';
-  $handler->display->display_options['fields']['colorbox']['height'] = '600px';
+  $handler->display->display_options['fields']['colorbox']['width'] = '100%';
+  $handler->display->display_options['fields']['colorbox']['height'] = '100%';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -28884,9 +28883,15 @@ print $content;
   $handler->display->display_options['fields']['field_project_image_et']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_project_image_et']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_project_image_et']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_project_image_et']['type'] = 'colorbox';
   $handler->display->display_options['fields']['field_project_image_et']['settings'] = array(
-    'image_style' => 'two_third_width_carousel_grid_inner',
-    'image_link' => '',
+    'colorbox_node_style' => 'two_third_width_carousel_grid_inner',
+    'colorbox_node_style_first' => '',
+    'colorbox_image_style' => '',
+    'colorbox_gallery' => 'post',
+    'colorbox_gallery_custom' => '',
+    'colorbox_caption' => 'custom',
+    'colorbox_caption_custom' => '[file:field-image-caption] | [file:field-image-copytight]',
   );
   $handler->display->display_options['fields']['field_project_image_et']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_project_image_et']['delta_offset'] = '0';
@@ -28914,15 +28919,10 @@ print $content;
   $handler->display->display_options['fields']['colorbox']['field'] = 'colorbox';
   $handler->display->display_options['fields']['colorbox']['label'] = '';
   $handler->display->display_options['fields']['colorbox']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['colorbox']['trigger_field'] = 'nothing';
-  $handler->display->display_options['fields']['colorbox']['popup'] = '<div class="slide">[field_project_image_et]</div>
-<div class="slide-text-colorbox">
-<div class="caption">[field_image_caption]</div>
-<div class="caption image-copytight">[field_image_copytight]</div>
-</div>';
+  $handler->display->display_options['fields']['colorbox']['trigger_field'] = 'field_project_image_et';
   $handler->display->display_options['fields']['colorbox']['gid'] = 1;
-  $handler->display->display_options['fields']['colorbox']['width'] = '800px';
-  $handler->display->display_options['fields']['colorbox']['height'] = '700px';
+  $handler->display->display_options['fields']['colorbox']['width'] = '100%';
+  $handler->display->display_options['fields']['colorbox']['height'] = '100%';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -28970,9 +28970,15 @@ print $content;
   $handler->display->display_options['fields']['field_event_image_et']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_event_image_et']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_event_image_et']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_event_image_et']['type'] = 'colorbox';
   $handler->display->display_options['fields']['field_event_image_et']['settings'] = array(
-    'image_style' => 'two_third_width_carousel_grid_inner',
-    'image_link' => '',
+    'colorbox_node_style' => 'two_third_width_carousel_grid_inner',
+    'colorbox_node_style_first' => '',
+    'colorbox_image_style' => '',
+    'colorbox_gallery' => 'post',
+    'colorbox_gallery_custom' => '',
+    'colorbox_caption' => 'custom',
+    'colorbox_caption_custom' => '[file:field-image-caption] | [file:field-image-copytight]',
   );
   $handler->display->display_options['fields']['field_event_image_et']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_event_image_et']['delta_offset'] = '0';
@@ -28998,7 +29004,6 @@ print $content;
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_event_image_et]</div>
 <div class="slide-text">
 <div class="caption">[field_image_caption]</div>
@@ -29011,15 +29016,10 @@ print $content;
   $handler->display->display_options['fields']['colorbox']['field'] = 'colorbox';
   $handler->display->display_options['fields']['colorbox']['label'] = '';
   $handler->display->display_options['fields']['colorbox']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['colorbox']['trigger_field'] = 'nothing';
-  $handler->display->display_options['fields']['colorbox']['popup'] = '<div class="slide">[field_event_image_et]</div>
-<div class="slide-text">
-<div class="caption">[field_image_caption]</div>
-<div class="caption image-copytight">[field_image_copytight]</div>
-</div>';
+  $handler->display->display_options['fields']['colorbox']['trigger_field'] = 'field_event_image_et';
   $handler->display->display_options['fields']['colorbox']['gid'] = 1;
-  $handler->display->display_options['fields']['colorbox']['width'] = '700px';
-  $handler->display->display_options['fields']['colorbox']['height'] = '600px';
+  $handler->display->display_options['fields']['colorbox']['width'] = '100%';
+  $handler->display->display_options['fields']['colorbox']['height'] = '100%';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -29063,9 +29063,15 @@ print $content;
   $handler->display->display_options['fields']['field_speech_image_et']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_speech_image_et']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_speech_image_et']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_speech_image_et']['type'] = 'colorbox';
   $handler->display->display_options['fields']['field_speech_image_et']['settings'] = array(
-    'image_style' => 'two_third_width_carousel_grid_inner',
-    'image_link' => '',
+    'colorbox_node_style' => 'two_third_width_carousel_grid_inner',
+    'colorbox_node_style_first' => '',
+    'colorbox_image_style' => '',
+    'colorbox_gallery' => 'post',
+    'colorbox_gallery_custom' => '',
+    'colorbox_caption' => 'custom',
+    'colorbox_caption_custom' => '[file:field-image-caption] | [file:field-image-copytight]',
   );
   $handler->display->display_options['fields']['field_speech_image_et']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_speech_image_et']['delta_offset'] = '0';
@@ -29088,7 +29094,6 @@ print $content;
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_speech_image_et]</div>
 <div class="slide-text">
 <div class="caption">[field_image_caption]</div>
@@ -29101,13 +29106,10 @@ print $content;
   $handler->display->display_options['fields']['colorbox']['field'] = 'colorbox';
   $handler->display->display_options['fields']['colorbox']['label'] = '';
   $handler->display->display_options['fields']['colorbox']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['colorbox']['trigger_field'] = 'nothing';
-  $handler->display->display_options['fields']['colorbox']['popup'] = '<div class="slide">[field_speech_image_et]</div>
-<div class="slide-text">
-<div class="caption">[field_image_caption]</div>
-<div class="caption image-copytight">[field_image_copytight]</div>
-</div>';
+  $handler->display->display_options['fields']['colorbox']['trigger_field'] = 'field_speech_image_et';
   $handler->display->display_options['fields']['colorbox']['gid'] = 1;
+  $handler->display->display_options['fields']['colorbox']['width'] = '100%';
+  $handler->display->display_options['fields']['colorbox']['height'] = '100%';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -29155,13 +29157,6 @@ print $content;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['inline'] = array(
-    'field_gallery_images_et' => 'field_gallery_images_et',
-    'field_image_caption' => 'field_image_caption',
-    'field_image_copytight' => 'field_image_copytight',
-    'field_gallery_images_1' => 'field_gallery_images_1',
-    'nothing' => 'nothing',
-  );
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Images (field_gallery_images:fid) */
@@ -29176,9 +29171,15 @@ print $content;
   $handler->display->display_options['fields']['field_gallery_images_et']['label'] = '';
   $handler->display->display_options['fields']['field_gallery_images_et']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_gallery_images_et']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_gallery_images_et']['type'] = 'colorbox';
   $handler->display->display_options['fields']['field_gallery_images_et']['settings'] = array(
-    'image_style' => 'two_third_width_carousel_grid_inner',
-    'image_link' => '',
+    'colorbox_node_style' => 'two_third_width_carousel_grid_inner',
+    'colorbox_node_style_first' => '',
+    'colorbox_image_style' => 'featured_content',
+    'colorbox_gallery' => 'post',
+    'colorbox_gallery_custom' => '',
+    'colorbox_caption' => 'custom',
+    'colorbox_caption_custom' => '[file:field-image-caption] | [file:field-image-copytight]',
   );
   $handler->display->display_options['fields']['field_gallery_images_et']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_gallery_images_et']['delta_offset'] = '0';
@@ -29205,9 +29206,8 @@ print $content;
   $handler->display->display_options['fields']['field_gallery_images_1']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_gallery_images_1']['type'] = 'colorbox';
   $handler->display->display_options['fields']['field_gallery_images_1']['settings'] = array(
-    'colorbox_node_style' => 'two_third_width_carousel_grid_inner',
-    'colorbox_node_style_first' => '',
-    'colorbox_image_style' => 'two_third_width_carousel_grid_inner',
+    'colorbox_node_style' => 'featured_content',
+    'colorbox_image_style' => 'featured_content',
     'colorbox_gallery' => 'post',
     'colorbox_gallery_custom' => '',
     'colorbox_caption' => 'auto',
@@ -29233,15 +29233,10 @@ print $content;
   $handler->display->display_options['fields']['colorbox']['field'] = 'colorbox';
   $handler->display->display_options['fields']['colorbox']['label'] = '';
   $handler->display->display_options['fields']['colorbox']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['colorbox']['trigger_field'] = 'nothing';
-  $handler->display->display_options['fields']['colorbox']['popup'] = '<div class="slide">[field_gallery_images_et]</div>
-<div class="slide-text">
-<div class="caption">[field_image_caption]</div>
-<div class="caption image-copytight">[field_image_copytight]</div>
-</div>';
+  $handler->display->display_options['fields']['colorbox']['trigger_field'] = 'field_gallery_images_et';
   $handler->display->display_options['fields']['colorbox']['gid'] = 1;
-  $handler->display->display_options['fields']['colorbox']['width'] = '700px';
-  $handler->display->display_options['fields']['colorbox']['height'] = '600px';
+  $handler->display->display_options['fields']['colorbox']['width'] = '100%';
+  $handler->display->display_options['fields']['colorbox']['height'] = '100%';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
