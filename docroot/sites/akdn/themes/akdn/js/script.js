@@ -869,12 +869,6 @@ $(window).load(function(){
   // To remove extra 10px margin from font-size
   $("[style='font-size: x-small;']").css("margin", "0px");
 
-  // Remove empty li's from gallery formatter in photographs detail page
-  $(window).load(function() {
-    $('.galleryformatter .gallery-thumbs li[class*="empty"]').remove();
-    $('.galleryformatter .gallery-thumbs li[class*="cloned"]').remove();
-  });
-
   // fix line for block title
   $(window).load(function() {
     $('.sub-navbar p').addClass('indexfix');
