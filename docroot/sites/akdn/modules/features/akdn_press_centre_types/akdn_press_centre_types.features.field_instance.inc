@@ -5572,7 +5572,7 @@ function akdn_press_centre_types_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 10,
+      'weight' => 9,
     ),
   );
 
@@ -5881,7 +5881,7 @@ function akdn_press_centre_types_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 12,
+      'weight' => 11,
     ),
   );
 
@@ -6275,7 +6275,7 @@ function akdn_press_centre_types_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 11,
+      'weight' => 10,
     ),
   );
 
@@ -7561,7 +7561,7 @@ function akdn_press_centre_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 7,
+      'weight' => 12,
     ),
   );
 
