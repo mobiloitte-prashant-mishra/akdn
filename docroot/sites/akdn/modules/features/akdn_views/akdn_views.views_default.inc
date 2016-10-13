@@ -28790,7 +28790,7 @@ print $content;
     'colorbox_gallery' => 'post',
     'colorbox_gallery_custom' => '',
     'colorbox_caption' => 'custom',
-    'colorbox_caption_custom' => '[file:field-image-caption] | [file:field-image-copytight]',
+    'colorbox_caption_custom' => '[file:field-image-caption]^[file:field-image-copytight]',
   );
   $handler->display->display_options['fields']['field_article_img_et']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_article_img_et']['delta_offset'] = '0';
@@ -28891,7 +28891,7 @@ print $content;
     'colorbox_gallery' => 'post',
     'colorbox_gallery_custom' => '',
     'colorbox_caption' => 'custom',
-    'colorbox_caption_custom' => '[file:field-image-caption] | [file:field-image-copytight]',
+    'colorbox_caption_custom' => '[file:field-image-caption]^[file:field-image-copytight]',
   );
   $handler->display->display_options['fields']['field_project_image_et']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_project_image_et']['delta_offset'] = '0';
@@ -28978,7 +28978,7 @@ print $content;
     'colorbox_gallery' => 'post',
     'colorbox_gallery_custom' => '',
     'colorbox_caption' => 'custom',
-    'colorbox_caption_custom' => '[file:field-image-caption] | [file:field-image-copytight]',
+    'colorbox_caption_custom' => '[file:field-image-caption]^[file:field-image-copytight]',
   );
   $handler->display->display_options['fields']['field_event_image_et']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_event_image_et']['delta_offset'] = '0';
@@ -29071,7 +29071,7 @@ print $content;
     'colorbox_gallery' => 'post',
     'colorbox_gallery_custom' => '',
     'colorbox_caption' => 'custom',
-    'colorbox_caption_custom' => '[file:field-image-caption] | [file:field-image-copytight]',
+    'colorbox_caption_custom' => '[file:field-image-caption]^[file:field-image-copytight]',
   );
   $handler->display->display_options['fields']['field_speech_image_et']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_speech_image_et']['delta_offset'] = '0';
@@ -29179,7 +29179,7 @@ print $content;
     'colorbox_gallery' => 'post',
     'colorbox_gallery_custom' => '',
     'colorbox_caption' => 'custom',
-    'colorbox_caption_custom' => '[file:field-image-caption] | [file:field-image-copytight]',
+    'colorbox_caption_custom' => '[file:field-image-caption]^[file:field-image-copytight]',
   );
   $handler->display->display_options['fields']['field_gallery_images_et']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_gallery_images_et']['delta_offset'] = '0';
