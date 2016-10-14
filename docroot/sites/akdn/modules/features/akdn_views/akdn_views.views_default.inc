@@ -424,7 +424,7 @@ print $output;
     t('queue'),
     t('| More'),
     t('<div class="pc-listing-img">
-	[field_hub_page_image]
+
 </div>
 <div class="pc-listing-info">
 	<div class="pc-body">
@@ -5595,7 +5595,6 @@ return $cycle_id;';
   $handler->display->display_options['fields']['field_artist_related_instruments']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_artist_related_instruments']['type'] = 'node_reference_plain';
   $handler->display->display_options['fields']['field_artist_related_instruments']['delta_offset'] = '0';
-
   /* Field: Content: Other Instruments */
   $handler->display->display_options['fields']['field_text_related_instruments']['id'] = 'field_text_related_instruments';
   $handler->display->display_options['fields']['field_text_related_instruments']['table'] = 'field_data_field_text_related_instruments';
@@ -5609,6 +5608,8 @@ return $cycle_id;';
   $handler->display->display_options['fields']['field_text_related_instruments']['element_wrapper_class'] = 'akaa-technicalinfo-row';
   $handler->display->display_options['fields']['field_text_related_instruments']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_text_related_instruments']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_text_related_instruments']['type'] = 'text_plain';
+  $handler->display->display_options['fields']['field_text_related_instruments']['delta_offset'] = '0';
   /* Field: Content: Vocal Artist? */
   $handler->display->display_options['fields']['field_vocal_artist_check']['id'] = 'field_vocal_artist_check';
   $handler->display->display_options['fields']['field_vocal_artist_check']['table'] = 'field_data_field_vocal_artist_check';
@@ -12051,10 +12052,13 @@ print $explode[1];
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
   $handler->display->display_options['fields']['body']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['body']['alter']['text'] = '<div class = "body-summary">[body-summary]</div>';
+  $handler->display->display_options['fields']['body']['alter']['text'] = '[body-summary]';
   $handler->display->display_options['fields']['body']['element_type'] = 'div';
-  $handler->display->display_options['fields']['body']['element_class'] = 'basic-page-summary';
+  $handler->display->display_options['fields']['body']['element_class'] = 'body-summary';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['body']['element_wrapper_class'] = 'basic-page-summary';
+  $handler->display->display_options['fields']['body']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_length' => '1000',
@@ -12220,13 +12224,12 @@ print $explode[1];
 </div>'),
     t('All'),
     t('Baisc Page summary'),
-    t('<div class = "body-summary">[body-summary]</div>'),
+    t('[body-summary]'),
     t('Custom Content Header'),
     t('[field_short_title]'),
     t('<div class = "basic-page-custom-logo-title">[title]</div>'),
     t('Baisc Page Accordian summary'),
     t('Translations'),
-    t('[body-summary]'),
   );
   $export['basic_pages_view'] = $view;
 
@@ -28786,7 +28789,7 @@ print $content;
     'colorbox_gallery' => 'post',
     'colorbox_gallery_custom' => '',
     'colorbox_caption' => 'custom',
-    'colorbox_caption_custom' => '[file:field-image-caption] | [file:field-image-copytight]',
+    'colorbox_caption_custom' => '[file:field-image-caption]^[file:field-image-copytight]',
   );
   $handler->display->display_options['fields']['field_article_img_et']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_article_img_et']['delta_offset'] = '0';
@@ -28887,7 +28890,7 @@ print $content;
     'colorbox_gallery' => 'post',
     'colorbox_gallery_custom' => '',
     'colorbox_caption' => 'custom',
-    'colorbox_caption_custom' => '[file:field-image-caption] | [file:field-image-copytight]',
+    'colorbox_caption_custom' => '[file:field-image-caption]^[file:field-image-copytight]',
   );
   $handler->display->display_options['fields']['field_project_image_et']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_project_image_et']['delta_offset'] = '0';
@@ -28974,7 +28977,7 @@ print $content;
     'colorbox_gallery' => 'post',
     'colorbox_gallery_custom' => '',
     'colorbox_caption' => 'custom',
-    'colorbox_caption_custom' => '[file:field-image-caption] | [file:field-image-copytight]',
+    'colorbox_caption_custom' => '[file:field-image-caption]^[file:field-image-copytight]',
   );
   $handler->display->display_options['fields']['field_event_image_et']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_event_image_et']['delta_offset'] = '0';
@@ -29067,7 +29070,7 @@ print $content;
     'colorbox_gallery' => 'post',
     'colorbox_gallery_custom' => '',
     'colorbox_caption' => 'custom',
-    'colorbox_caption_custom' => '[file:field-image-caption] | [file:field-image-copytight]',
+    'colorbox_caption_custom' => '[file:field-image-caption]^[file:field-image-copytight]',
   );
   $handler->display->display_options['fields']['field_speech_image_et']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_speech_image_et']['delta_offset'] = '0';
@@ -29175,7 +29178,7 @@ print $content;
     'colorbox_gallery' => 'post',
     'colorbox_gallery_custom' => '',
     'colorbox_caption' => 'custom',
-    'colorbox_caption_custom' => '[file:field-image-caption] | [file:field-image-copytight]',
+    'colorbox_caption_custom' => '[file:field-image-caption]^[file:field-image-copytight]',
   );
   $handler->display->display_options['fields']['field_gallery_images_et']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_gallery_images_et']['delta_offset'] = '0';
