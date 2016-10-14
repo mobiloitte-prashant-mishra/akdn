@@ -1674,6 +1674,7 @@ function what_we_do_news_and_resources() {
         $readall = l('View all', 'press-centre/' . $url, array('query' => array('f[0]' => $filter . ':' . $ntid)));
       }
       if ($node->type == 'podcast') {
+        //$name = 'podcast';
         $type = 'Videos';
         $image = reset($node->field_podcast_image);
         if (empty($image)) {
@@ -1780,6 +1781,7 @@ function what_we_do_news_and_resources() {
       $output .= '<span class= "read">[' . $read . '</span>';
       $output .= '<span class= "readall">' . " | " . $readall . ']</span>';
       $output .= '</div></div>';
+      $name = '';
 
     }
     $output .= '</div>';
