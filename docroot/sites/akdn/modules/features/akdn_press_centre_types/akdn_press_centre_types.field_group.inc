@@ -639,7 +639,8 @@ function akdn_press_centre_types_field_group_info() {
       0 => 'field_country',
       1 => 'field_agency',
       2 => 'field_focus_area',
-      3 => 'field_cycle_year',
+      3 => 'field_tags',
+      4 => 'field_cycle_year',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -670,8 +671,7 @@ function akdn_press_centre_types_field_group_info() {
       1 => 'field_publish_date',
       2 => 'title_field',
       3 => 'field_short_title',
-      4 => 'field_tags',
-      5 => 'field_custom_meta_tags',
+      4 => 'field_custom_meta_tags',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

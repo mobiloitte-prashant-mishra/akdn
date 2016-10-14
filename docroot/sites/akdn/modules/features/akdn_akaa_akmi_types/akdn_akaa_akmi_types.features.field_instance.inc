@@ -170,7 +170,6 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
   );
 
   // Exported field_instance: 'node-akmi_cd_dvd-body'
->>>>>>> 8b75b893afa79e73bbc92346e65db69350e0c909
   $field_instances['node-akmi_cd_dvd-body'] = array(
     'bundle' => 'akmi_cd_dvd',
     'default_value' => NULL,
