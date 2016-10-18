@@ -275,7 +275,7 @@ class SocialContentTwitter extends SocialContent {
       'screen_name' => $settings['account'],
       'exclude_replies' => TRUE,
       'count' => $settings['limit'],
-      'tweet_mode' => 'compatibility',
+      'tweet_mode' => 'extended',
     );
     if ($last_id) {
       $params['since_id'] = $last_id;
