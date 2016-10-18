@@ -2270,7 +2270,6 @@ function akdn_date_filter_submit($form, &$form_state) {
 }
 
 function akdn_custom_search_api_query_alter(SearchApiQueryInterface $query) {
-  dsm(current_path());
   $current_path = current_path();
   if(arg(1) == 'events') {
     $filter_field = 'field_event_date:value';
