@@ -4010,3 +4010,10 @@ function _syndicate_node_update() {
     node_save($node);
   }
 }
+
+/*Overwritting twitter text*/
+function akdn_custom_social_content_import_alter(&$wrapper, &$context) {
+ if ($context['settings']['instance_template']['content_type'] == 'tweet') {
+    $wrapper->body->set(array('value' => $context['row']->full_text, 'format' => 'tweet'));
+ }
+}
