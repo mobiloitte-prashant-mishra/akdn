@@ -1,0 +1,12 @@
+diff --git a/docroot/sites/akdn/modules/contrib/social_content/modules/twitter/social_content_twitter.class.inc b/docroot/sites/akdn/modules/contrib/social_content/modules/twitter/social_content_twitter.class.inc
+index c598d2a..9018ec2 100644
+--- a/docroot/sites/akdn/modules/contrib/social_content/modules/twitter/social_content_twitter.class.inc
++++ b/docroot/sites/akdn/modules/contrib/social_content/modules/twitter/social_content_twitter.class.inc
+@@ -275,6 +275,7 @@ class SocialContentTwitter extends SocialContent {
+       'screen_name' => $settings['account'],
+       'exclude_replies' => TRUE,
+       'count' => $settings['limit'],
++      'tweet_mode' => 'extended',
+     );
+     if ($last_id) {
+       $params['since_id'] = $last_id;
