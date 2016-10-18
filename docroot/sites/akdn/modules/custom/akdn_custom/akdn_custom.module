@@ -373,8 +373,7 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
 
   //Overriding form fields
   if ($form_id == 'webform_client_form_14371') {
-    $form['#after_build'][] = 'captcha_title_change_after_build'; 
-     
+    $form['#after_build'][] = 'captcha_title_change_after_build';
     $form['submitted']['gender']['#default_value'] = '';
     $form['submitted']['gender']['#empty_value'] = '';
     $form['submitted']['gender']['#empty_option'] = t('- Please Select -');
@@ -1355,13 +1354,14 @@ function fact_sheet_top_links_block() {
   if (!empty($arg)) {
     $node = node_load($arg);
     $show = $node->field_show_fact_block[key($node->field_show_fact_block)][0]['value'];
-    if ($show == 1) {
+    $view = views_get_view_result('facts_blocks', 'facts_block', $node->nid);
+    $result = count($view);
+    if ($show == 1 && !empty($result)) {
       $term = nat_get_terms_by_vocabulary($arg);
       $term = array_values($term);
       $name = $term[0]->name;
       $output = '';
       $output .= '<p><span>' . substr($name, 0, 1) . '</span><span>' . substr($name, 1) . ' AT A GLANCE</span></p><ul>';
-
       if (!empty($node->field_fact_sheet_upload)) {
         $file_id = $node->field_fact_sheet_upload[key($node->field_fact_sheet_upload)][0]['fid'];
         $url = l('FACT SHEET', 'factsheet/' . str_replace(' ', '-', $name) . '/' . $file_id);
