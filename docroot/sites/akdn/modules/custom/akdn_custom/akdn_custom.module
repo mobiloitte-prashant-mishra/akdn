@@ -2077,29 +2077,15 @@ function akdn_block_forms($form, &$form_state, $delta) {
   $form = array();
   switch ($delta) {
     case 'akdn_date_filter':
+    //dsm($_SESSION);
       $format = 'Y-m-d';
       $date_filter_flag = 0;
-      foreach ($_GET['f'] as $value) {
-        $match = substr($value, 0, 18);
-        $publish_date_filter = strpos($match, 'quote_publish_date');
-        $publish_time_filter =  strpos($match, 'publish_time');
-        $field_publish_date =  strpos($match, 'field_publish_date');
-        if (is_numeric($publish_date_filter) || is_numeric($publish_time_filter) || is_numeric($field_publish_date)) {
-          $date_filter_flag = 1;
-          break;
-        }
+      if(!empty($_GET['from'])) {
+        $from = !empty($_GET['from']) ? date('Y-m-d',$_GET['from']) : '';
       }
-      if (isset($_SESSION['from']) && isset($_GET['f']) && $date_filter_flag == 1) {
-        $from = $_SESSION['from'];
-      }
-      else {
-        $from = '';//date('Y-m-d', time());
-      }
-      if (isset($_SESSION['to']) && isset($_GET['f']) && $date_filter_flag == 1) {
-        $to = $_SESSION['to'];
-      }
-      else {
-        $to = '';//date('Y-m-d', time());
+
+      if(!empty($_GET['to'])) {
+        $to = !empty($_GET['to']) ? date('Y-m-d',$_GET['to']) : '';
       }
       $start = 1957 - date('Y', time());
       $form['date_filter_from'] = array(
@@ -2132,7 +2118,6 @@ function akdn_block_forms($form, &$form_state, $delta) {
         '#value' => t('OK'),
         '#submit' => array('akdn_date_filter_submit'),
       );
-      // print l('Reset', current_path(), array('language' => $language->language, 'html' => TRUE, 'attributes' => array('class' => 'akdn-solr-rest-link')));
 
       break;
   }
@@ -2245,32 +2230,13 @@ function akdn_date_filter_submit($form, &$form_state) {
 
   // Apply the date filter.
   if (isset($form_state['values']['date_filter_to'])) {
-    $to = $form_state['values']['date_filter_to'] . 'T23:59:59Z';
+    $to = $form_state['values']['date_filter_to'];
   }
   if (isset($form_state['values']['date_filter_from'])) {
-    $from = $form_state['values']['date_filter_from'] . 'T00:00:00Z';
+    $from = $form_state['values']['date_filter_from'];
   }
 
   $current_path = current_path();
-  // The other query parameters have to be remembered as well.
-  $date_filter = "";
-
-  if (arg(1) == 'events') {
-    $date_filter = 'field_event_date%3Avalue';
-  }
-  else {
-    if ($current_path == 'speech-quotes') {
-      $date_filter = 'quote_publish_date';
-    }
-    else {
-      if ($current_path == 'search' || $current_path == 'what-is-new') {
-        $date_filter = 'publish_time';
-      }
-      else {
-        $date_filter = 'field_publish_date';
-      }
-    }
-  }
 
   if (isset($_GET['f']) || isset($_GET['text'])) {
     $flag = 1;
@@ -2283,7 +2249,8 @@ function akdn_date_filter_submit($form, &$form_state) {
     }
     if ($flag) {
       // Search for the publish date and change it.
-      $_GET['f'][] = $date_filter . ':[' . $from . ' TO ' . $to . ']';
+      $_GET['from'] = strtotime($from);
+      $_GET['to'] = strtotime($to);
     }
   }
   // Apply the date filters.
@@ -2292,12 +2259,39 @@ function akdn_date_filter_submit($form, &$form_state) {
       $current_path,
       array(
         'query' => array(
-          'f' => array(
-            '0' => $date_filter . ':[' . $from . ' TO ' . $to . ']',
-          ),
+          'from' => strtotime($from),
+          'to' => strtotime($to),
         ),
       ),
     );
+  }
+}
+
+function akdn_custom_search_api_query_alter(SearchApiQueryInterface $query) {
+  dsm(current_path());
+  $current_path = current_path();
+  if(arg(1) == 'events') {
+    $filter_field = 'field_event_date:value';
+  }else if ($current_path == 'speech-quotes') {
+    $filter_field = 'quote_publish_date';
+  }else if ($current_path == 'search' || $current_path == 'what-is-new') {
+    $filter_field = 'publish_time';
+  }else{
+    $filter_field = 'field_publish_date';
+  }
+
+  // Add date condition for filtering data.
+  if(!empty($_GET['from']) && !empty($_GET['to'])) {
+    $query->condition($filter_field,$_GET['from'], '>=');
+    $query->condition($filter_field,$_GET['to'],'<=');
+  }
+
+  if(!empty($_GET['from']) && empty($_GET['to'])) {
+    $query->condition($filter_field,$_GET['from'], '>=');
+  }
+
+  if(empty($_GET['from']) && !empty($_GET['to'])) {
+    $query->condition($filter_field,$_GET['to'],'<=');
   }
 }
 
