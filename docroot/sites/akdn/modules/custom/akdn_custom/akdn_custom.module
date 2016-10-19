@@ -345,6 +345,35 @@ function akdn_custom_form_validation($form,&$form_state) {
     form_set_error('mailshot_subscribe','Subscriptions field is required');
   }
 }
+
+/**
+ * TEST FUNCTION
+ */
+function akdn_simplenews_form_alter($form, &$form_state) {
+  if (empty($form_state['values']['nid'])) {
+    $form_state['values']['field_newsletter_default_value'][key($form_state['values']['field_newsletter_default_value'])][0]['value'] = $form_state['values']['body'][key($form_state['values']['body'])][0]['value'];
+  }
+  if (!empty($form_state['values']['field_newsletter_social_type'])) {
+    $data = array();
+    $data['title'] = $form_state['values']['field_newsletter_social_title'][LANGUAGE_NONE][0]['value'];
+    $data['type'] = $form_state['values']['field_newsletter_social_type'][LANGUAGE_NONE][0]['value'];
+    $image =  $form_state['values']['field_newsletter_social_image'][LANGUAGE_NONE][0]['fid'];
+    $file_load = file_load($image);
+    $data['summary'] = $form_state['values']['field_newsletter_social_summary'][LANGUAGE_NONE][0]['value'];
+    $data['url'] = $form_state['values']['field_newsletter_social_url'][LANGUAGE_NONE][0]['url'];
+    $thumb_image = array(
+    'style_name' => 'newsletter_social_image',
+    'path' => $file_load->uri,
+    'width' => 250,
+    'height' => 200,
+    );
+    $image = theme('image_style', $thumb_image);
+    $data['image'] = $image;
+    $template = theme('simplenews-social-content-creation', array('output' => $data));
+    $form_state['values']['body'][key($form_state['values']['body'])][0]['value'] =   $form_state['values']['field_newsletter_default_value'][key($form_state['values']['field_newsletter_default_value'])][0]['value'] . '<table cellspacing="0" cellpadding="0" border="0" width="100%" style="border:0;"><tr><td style="padding:15px;border:0;">' . $template . '</td></tr></table>';
+  }
+}
+
 /**
  * Implements hook_form_alter().
  *
@@ -487,6 +516,14 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
   if ($form['#id'] == 'views-exposed-form-akaa-projects-page') {
     $form['view-all'] = array('#markup' => '<a id="view-all-projects" href="/architecture/projects">View All Projects</a>');
   }
+
+  if (isset($form['type']) && isset($form['type']['#value']) && $form['type']['#value'] . '_node_form' == 'simplenews_node_form') {
+ //   print('hello');
+  //  print'<pre>';print_r($form);
+  array_unshift($form['actions']['submit']['#submit'], 'akdn_simplenews_form_alter');
+   // $form['actions']['submit']['#submit'][] = 'akdn_simplenews_form_alter';
+  }
+ // die();
 }
 
 /**
@@ -3242,6 +3279,10 @@ function akdn_custom_theme($existing, $type, $theme, $path) {
       'akdn_custom_preprocess_views_view_field__solr_quotes__page_1__nothing',
     ),
     'arguments' => array('view' => NULL),
+  );
+  $themes['simplenews-social-content-creation'] = array(
+    'template' => 'templates/simplenews-social-content-creation',
+    'arguments' => array('output' => NULL),
   );
   return $themes;
 }
