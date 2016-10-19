@@ -49,8 +49,9 @@ jQuery(".what-we-do-body-more-body .lesslink").click(function(){
     jQuery('#what-is-new-nofound').addClass('hide');
   }
   // remove () from file size
-  var content = jQuery(".file-size").text().replace(/[()]/g,'');
-  jQuery(".file-size").html(content);
+  // var content = jQuery(".file-size").text().replace(/[()]/g,'');
+  // alert('HERE');
+  // jQuery(".file-size").html(content);
 
   // hide the open quotations
   jQuery('.toggle-quote-display').click(function(){

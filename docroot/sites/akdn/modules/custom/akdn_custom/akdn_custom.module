@@ -4016,3 +4016,10 @@ function akdn_custom_social_content_import_alter(&$wrapper, &$context) {
     $wrapper->body->set(array('value' => $context['row']->full_text, 'format' => 'tweet'));
  }
 }
+
+function akdn_custom_wysiwyg_editor_settings_alter(&$settings, $context) {
+ if($context['profile']->editor == 'ckeditor') {
+    $settings['enterMode'] = 1; // CKEDITOR.ENTER_P
+    $settings['shiftEnterMode'] = 2; // CKEDITOR.ENTER_BR
+  }
+}
