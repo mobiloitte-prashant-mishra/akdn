@@ -355,6 +355,34 @@ function captcha_title_change_after_build($form, &$form_state){
 }
 
 /**
+ * Implements form alter
+ */
+function akdn_simplenews_form_alter($form, &$form_state) {
+  if (empty($form_state['values']['nid'])) {
+    $form_state['values']['field_newsletter_default_value'][key($form_state['values']['field_newsletter_default_value'])][0]['value'] = $form_state['values']['body'][key($form_state['values']['body'])][0]['value'];
+  }
+  if (!empty($form_state['values']['field_newsletter_social_type'])) {
+    $data = array();
+    $data['title'] = $form_state['values']['field_newsletter_social_title'][LANGUAGE_NONE][0]['value'];
+    $data['type'] = $form_state['values']['field_newsletter_social_type'][LANGUAGE_NONE][0]['value'];
+    $image =  $form_state['values']['field_newsletter_social_image'][LANGUAGE_NONE][0]['fid'];
+    $file_load = file_load($image);
+    $data['summary'] = $form_state['values']['field_newsletter_social_summary'][LANGUAGE_NONE][0]['value'];
+    $data['url'] = $form_state['values']['field_newsletter_social_url'][LANGUAGE_NONE][0]['url'];
+    $thumb_image = array(
+    'style_name' => 'newsletter_social_image',
+    'path' => $file_load->uri,
+    'width' => 250,
+    'height' => 200,
+    );
+    $image = theme('image_style', $thumb_image);
+    $data['image'] = $image;
+    $template = theme('simplenews-social-content-creation', array('output' => $data));
+    $form_state['values']['body'][key($form_state['values']['body'])][0]['value'] =   $form_state['values']['field_newsletter_default_value'][key($form_state['values']['field_newsletter_default_value'])][0]['value'] . '<table cellspacing="0" cellpadding="0" border="0" width="100%" style="border:0;"><tr><td style="padding:15px;border:0;">' . $template . '</td></tr></table>';
+  }
+}
+
+/**
  * Implements hook_form_alter().
  *
  * Adjustments for node_edit forms. We override the following:
@@ -390,9 +418,6 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
     $privacy = l('privacy policy', 'node/29876', array('attributes'=>array('target'=>'_blank')));
     $acceptance = l('terms and conditions', 'node/29871', array('attributes'=>array('target'=>'_blank')));
     $form['submitted']['subscription_settings']['#options'][1] = "I have read and accepted the $acceptance and the $privacy of this website.";
-
-    //print '<pre>';print_r($form);die();
-
 
         $form['#validate'][]='akdn_custom_form_validation';
   }
@@ -501,11 +526,12 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
   if ($form['#id'] == 'views-exposed-form-akaa-projects-page') {
     $form['view-all'] = array('#markup' => '<a id="view-all-projects" href="/architecture/projects">View All Projects</a>');
   }
-}
 
-// function akdn_custom_captcha($op, $captcha_type = '', $captcha_sid = NULL) {
-//   print 'HERE';die();
-// }
+  if ($form_id === 'simplenews_node_form') {
+    $form['field_newsletter_default_value'][LANGUAGE_NONE]['#access'] = FALSE;
+    array_unshift($form['actions']['submit']['#submit'], 'akdn_simplenews_form_alter');
+  }
+}
 
 /**
  * Implementes hook_form_FORM_ID_alter().
@@ -1835,7 +1861,6 @@ function akdn_breadcrumb_trail() {
   if ((arg(1) == 'steering-committee') || (arg(1) == 'master-jury')) {
     $arg = arg(2);
     $node_load = node_load($arg);
-    //dsm($node_load);
     $get_breadcrumb[5] = $get_breadcrumb[4];
     $get_breadcrumb[4] = l($node_load->field_short_title[$node_load->language][0]['value'], 'node/' . $node_load->nid);
   }
@@ -3256,6 +3281,10 @@ function akdn_custom_theme($existing, $type, $theme, $path) {
       'akdn_custom_preprocess_views_view_field__solr_quotes__page_1__nothing',
     ),
     'arguments' => array('view' => NULL),
+  );
+  $themes['simplenews-social-content-creation'] = array(
+    'template' => 'templates/simplenews-social-content-creation',
+    'arguments' => array('output' => NULL),
   );
   return $themes;
 }
