@@ -18393,7 +18393,7 @@ if ($data->node_type == "featured_content") {
     'colorbox_gallery' => 'post',
     'colorbox_gallery_custom' => '',
     'colorbox_caption' => 'custom',
-    'colorbox_caption_custom' => '[file:field-image-caption]',
+    'colorbox_caption_custom' => '[file:field-image-caption]^[file:field-image-copytight]',
   );
   $handler->display->display_options['fields']['field_project_image']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_project_image']['delta_offset'] = '0';
@@ -28905,7 +28905,6 @@ print $content;
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_project_image_et]</div>
 <div class="slide-text">
 <div class="caption">[field_image_caption]</div>
@@ -29219,7 +29218,6 @@ print $content;
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_gallery_images_et]</div>
 <div class="slide-text">
 <div class="caption">[field_image_caption]</div>
