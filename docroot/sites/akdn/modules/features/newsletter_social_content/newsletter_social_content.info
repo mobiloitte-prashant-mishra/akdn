@@ -48,3 +48,4 @@ features[variable][] = node_preview_simplenews
 features[variable][] = node_submitted_simplenews
 features_exclude[field_base][field_simplenews_term] = field_simplenews_term
 features_exclude[field_base][field_newsletter] = field_newsletter
+mtime = 1476885039
