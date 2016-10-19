@@ -373,8 +373,8 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
 
   //Overriding form fields
   if ($form_id == 'webform_client_form_14371') {
-    $form['#after_build'][] = 'captcha_title_change_after_build'; 
-     
+    $form['#after_build'][] = 'captcha_title_change_after_build';
+
     $form['submitted']['gender']['#default_value'] = '';
     $form['submitted']['gender']['#empty_value'] = '';
     $form['submitted']['gender']['#empty_option'] = t('- Please Select -');
@@ -4013,4 +4013,11 @@ function _syndicate_node_update() {
     }
     node_save($node);
   }
+}
+
+function akdn_custom_wysiwyg_editor_settings_alter(&$settings, $context) {
+ if($context['profile']->editor == 'ckeditor') {
+    $settings['enterMode'] = 1; // CKEDITOR.ENTER_P
+    $settings['shiftEnterMode'] = 2; // CKEDITOR.ENTER_BR
+ }
 }
