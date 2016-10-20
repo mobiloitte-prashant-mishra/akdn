@@ -736,7 +736,22 @@ if (isset($node->field_about_page)) {
   $pane->type = 'block';
   $pane->subtype = 'akdn_custom-fact_block_show_hide';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'php',
+        'settings' => array(
+          'description' => 'Has content',
+          'php' => '$view = views_get_view_result(\'facts_blocks\', \'facts_block\', arg(1));
+$result = count($view);
+if (!empty($result)) {
+return true;
+}',
+        ),
+        'not' => FALSE,
+      ),
+    ),
+  );
   $pane->configuration = array(
     'override_title' => 0,
     'override_title_text' => '',
@@ -5964,7 +5979,22 @@ if (isset($node->field_about_page)) {
   $pane->type = 'block';
   $pane->subtype = 'akdn_custom-fact_block_show_hide';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'php',
+        'settings' => array(
+          'description' => 'Has content',
+          'php' => '$view = views_get_view_result(\'facts_blocks\', \'facts_block\', arg(1));
+$result = count($view);
+if (!empty($result)) {
+return true;
+}',
+        ),
+        'not' => FALSE,
+      ),
+    ),
+  );
   $pane->configuration = array(
     'override_title' => 0,
     'override_title_text' => '',
@@ -10718,7 +10748,22 @@ $record = $result->fetchField();
   $pane->type = 'block';
   $pane->subtype = 'akdn_custom-fact_block_show_hide';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'php',
+        'settings' => array(
+          'description' => 'Has content',
+          'php' => '$view = views_get_view_result(\'facts_blocks\', \'facts_block\', arg(1));
+$result = count($view);
+if (!empty($result)) {
+return true;
+}',
+        ),
+        'not' => FALSE,
+      ),
+    ),
+  );
   $pane->configuration = array(
     'override_title' => 0,
     'override_title_text' => '',
@@ -13560,7 +13605,22 @@ print  \'<div class="sub-navbar">
   $pane->type = 'views';
   $pane->subtype = 'akaa_home_page';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'php',
+        'settings' => array(
+          'description' => 'Has content',
+          'php' => '$view = views_get_view_result(\'facts_blocks\', \'block_3\', arg(1));
+$result = count($view);
+if (!empty($result)) {
+return true;
+}',
+        ),
+        'not' => FALSE,
+      ),
+    ),
+  );
   $pane->configuration = array(
     'override_pager_settings' => 0,
     'use_pager' => 0,
@@ -15820,7 +15880,22 @@ node/22106',
   $pane->type = 'views';
   $pane->subtype = 'akmi_home_page';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'php',
+        'settings' => array(
+          'description' => 'Has content',
+          'php' => '$view = views_get_view_result(\'facts_blocks\', \'block_4\', arg(1));
+$result = count($view);
+if (!empty($result)) {
+return true;
+}',
+        ),
+        'not' => FALSE,
+      ),
+    ),
+  );
   $pane->configuration = array(
     'override_pager_settings' => 0,
     'use_pager' => 0,
