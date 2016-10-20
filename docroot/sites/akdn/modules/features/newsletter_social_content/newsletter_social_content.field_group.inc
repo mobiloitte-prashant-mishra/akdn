@@ -28,7 +28,6 @@ function newsletter_social_content_field_group_info() {
       2 => 'field_newsletter_social_summary',
       3 => 'field_newsletter_social_type',
       4 => 'field_newsletter_social_url',
-      5 => 'field_newsletter_default_value',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
