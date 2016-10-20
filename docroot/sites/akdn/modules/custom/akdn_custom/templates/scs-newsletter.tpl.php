@@ -9,6 +9,7 @@
  *    - $nodes Array of built selected nodes, ready to be outputed with the
  *    render() function.
  */
+
 ?>
 <?php
   $output = '';
@@ -20,6 +21,7 @@
   $thumb_image = array(
     'style_name' => 'mail_shot_image_cache',
     'path' => $img_url,
+    'width' => 150,
   );
   $img =  theme('image_style', $thumb_image);
   $body = reset($node['#node']->field_newsletter_summary)['0']['value'];

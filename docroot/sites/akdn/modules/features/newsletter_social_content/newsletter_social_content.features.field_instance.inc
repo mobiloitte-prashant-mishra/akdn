@@ -173,53 +173,6 @@ function newsletter_social_content_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-simplenews-field_newsletter_default_value'
-  $field_instances['node-simplenews-field_newsletter_default_value'] = array(
-    'bundle' => 'simplenews',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 8,
-      ),
-      'scs' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_newsletter_default_value',
-    'label' => 'Newsletter default value',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 13,
-    ),
-  );
-
   // Exported field_instance: 'node-simplenews-field_newsletter_social_image'
   $field_instances['node-simplenews-field_newsletter_social_image'] = array(
     'bundle' => 'simplenews',
@@ -593,7 +546,6 @@ function newsletter_social_content_field_default_field_instances() {
   t('Body');
   t('Newsletter');
   t('Newsletter category');
-  t('Newsletter default value');
   t('Newsletter social image');
   t('Newsletter social summary');
   t('Newsletter social title');
