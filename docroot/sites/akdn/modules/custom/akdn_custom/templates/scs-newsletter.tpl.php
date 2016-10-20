@@ -19,15 +19,7 @@
     if ($node['#node']->type == 'article') {
       $tid = reset($node['#node']->field_article_cat)[0]['tid'];
       $term_load = taxonomy_term_load($tid);
-      if ($term_load->name == 'In the media') {
-        $url = reset($node['#node']->field_media_source)['0']['display_url'];
-      }
-      else {
-        $url = 'node/' . $node['#node']->nid;
-      }
-    }
-    else {
-      $url = 'node/' . $node['#node']->nid;
+      $url = reset($node['#node']->field_media_source)['0']['display_url'];
     }
     $title = strip_tags($node['#node']->title);
     $img_url = reset($node['#node']->field_newsletter_image)['0']['uri'];
@@ -40,12 +32,28 @@
     $body = reset($node['#node']->field_newsletter_summary)['0']['value'];
     $output .= '<tr><td align="right" valign="top" width="170" style="padding:20px 0 20px 20px;border-bottom:1px solid #999999;vertical-align:top;text-align:center;">';
     if (!empty($img)) {
-      $output .= l($img, $url, array( 'attributes' => array('target'=>'_blank'), 'html' => TRUE));
+      if ($term_load->name == 'In the media' && !empty($url)) {
+        $output .= l($img, $url, array( 'attributes' => array('target'=>'_blank'), 'html' => TRUE));
+      }
+      elseif($term_load->name == 'In the media' && empty($url)) {
+        $output .= $img ;
+      }
+      else {
+        $output .= l($img, 'node/' . $node['#node']->nid, array( 'attributes' => array('target'=>'_blank'), 'html' => TRUE));
+      }
     }
     $output .= '</td>';
     $output .= '<td valign="top" style="padding:20px;border-bottom:1px solid #999999;vertical-align:top;">';
     if (!empty($title)) {
-      $output .= '<h4 style="color:#b49759;font-weight:bold;font-size:12px;font-family:Arial,Serif;line-height:16px;margin:0 0 5px;">' . l($title, $url) . '</h4>';
+      if ($term_load->name == 'In the media' && !empty($url)) {
+        $output .= '<h4 style="color:#b49759;font-weight:bold;font-size:12px;font-family:Arial,Serif;line-height:16px;margin:0 0 5px;">' . l($title, $url) . '</h4>';
+      }
+      elseif($term_load->name == 'In the media' && empty($url)) {
+        $output .= '<h4 style="color:#b49759;font-weight:bold;font-size:12px;font-family:Arial,Serif;line-height:16px;margin:0 0 5px;">' . $title . '</h4>';
+      }
+      else {
+        $output .= '<h4 style="color:#b49759;font-weight:bold;font-size:12px;font-family:Arial,Serif;line-height:16px;margin:0 0 5px;">' . l($title, 'node/' . $node['#node']->nid) . '</h4>';
+      }
     }
     if (!empty($body)) {
       $output .= '<p style="font-size:12px;line-height:16px;font-style:normal;color:#333333;font-family:Arial,Serif;margin:0;">' . $body . '</p>';
