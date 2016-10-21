@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Newsletter social content feature.
+ */
+
+include_once 'newsletter_social_content.features.inc';
