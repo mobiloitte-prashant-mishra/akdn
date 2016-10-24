@@ -321,13 +321,24 @@ function akdn_image_styles_image_default_styles() {
   $styles['gallery_thumbnail'] = array(
     'label' => 'gallery_thumbnail',
     'effects' => array(
-      86 => array(
+      261 => array(
+        'name' => 'manualcrop_crop',
+        'data' => array(
+          'width' => 335,
+          'height' => 224,
+          'keepproportions' => 1,
+          'reuse_crop_style' => '',
+          'style_name' => 'gallery_thumbnail',
+        ),
+        'weight' => -11,
+      ),
+      256 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 335,
           'height' => 224,
         ),
-        'weight' => 1,
+        'weight' => -10,
       ),
     ),
   );
