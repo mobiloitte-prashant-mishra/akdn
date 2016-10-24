@@ -10,21 +10,13 @@
 function akdn_context_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_artist_country_origin'
+  // Exported field_base: 'field_artist_country_origin'.
   $field_bases['field_artist_country_origin'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_artist_country_origin',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -45,21 +37,13 @@ function akdn_context_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_artist_related_instruments'
+  // Exported field_base: 'field_artist_related_instruments'.
   $field_bases['field_artist_related_instruments'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_artist_related_instruments',
-    'foreign keys' => array(
-      'nid' => array(
-        'columns' => array(
-          'nid' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
     'indexes' => array(
       'nid' => array(
         0 => 'nid',
@@ -114,21 +98,13 @@ function akdn_context_field_default_field_bases() {
     'type' => 'node_reference',
   );
 
-  // Exported field_base: 'field_artist_related_videos'
+  // Exported field_base: 'field_artist_related_videos'.
   $field_bases['field_artist_related_videos'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_artist_related_videos',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -148,14 +124,13 @@ function akdn_context_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_premiere_year'
+  // Exported field_base: 'field_premiere_year'.
   $field_bases['field_premiere_year'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_premiere_year',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
@@ -166,21 +141,13 @@ function akdn_context_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_text_related_instruments'
+  // Exported field_base: 'field_text_related_instruments'.
   $field_bases['field_text_related_instruments'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_text_related_instruments',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -196,14 +163,13 @@ function akdn_context_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_vocal_artist_check'
+  // Exported field_base: 'field_vocal_artist_check'.
   $field_bases['field_vocal_artist_check'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_vocal_artist_check',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -214,7 +180,7 @@ function akdn_context_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => '',
-        1 => 'Vocal artist',
+        1 => 'Vocal Artist',
       ),
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
