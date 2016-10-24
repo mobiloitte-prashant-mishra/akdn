@@ -4871,7 +4871,77 @@ function akdn_press_centre_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_related_in_the_media'.
+  // Exported field_instance: 'node-event-field_publish_date'
+  $field_instances['node-event-field_publish_date'] = array(
+    'bundle' => 'event',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+          'show_remaining_days' => FALSE,
+        ),
+        'type' => 'date_default',
+        'weight' => 52,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_publish_date',
+    'label' => 'Publish Date',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'display_all_day' => 0,
+        'increment' => 15,
+        'input_format' => 'j M Y - g:i:sa',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'no_fieldset' => 0,
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_popup',
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_related_in_the_media'
   $field_instances['node-event-field_related_in_the_media'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -8729,7 +8799,7 @@ function akdn_press_centre_types_field_default_field_instances() {
           ),
           'value' => '',
         ),
-        'redirect' => FALSE,
+        'redirect' => 0,
         'retroactive_update' => 0,
       ),
       'filefield_paths_enabled' => 1,
@@ -8762,10 +8832,10 @@ function akdn_press_centre_types_field_default_field_instances() {
           'brightcove_playlist' => 0,
           'media_browser_plus--media_browser_my_files' => 0,
           'media_browser_plus--media_browser_thumbnails' => 0,
-          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
           'media_default--media_browser_my_files' => 0,
           'media_internet' => 0,
-          'upload' => 0,
+          'upload' => 'upload',
         ),
         'manualcrop_crop_info' => 1,
         'manualcrop_default_crop_area' => 1,
@@ -11102,7 +11172,7 @@ function akdn_press_centre_types_field_default_field_instances() {
           ),
           'value' => '',
         ),
-        'redirect' => FALSE,
+        'redirect' => 0,
         'retroactive_update' => 0,
       ),
       'filefield_paths_enabled' => 1,
@@ -11135,10 +11205,10 @@ function akdn_press_centre_types_field_default_field_instances() {
           'brightcove_playlist' => 0,
           'media_browser_plus--media_browser_my_files' => 0,
           'media_browser_plus--media_browser_thumbnails' => 0,
-          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
           'media_default--media_browser_my_files' => 0,
           'media_internet' => 0,
-          'upload' => 0,
+          'upload' => 'upload',
         ),
         'manualcrop_crop_info' => 1,
         'manualcrop_default_crop_area' => 1,
@@ -13321,7 +13391,7 @@ function akdn_press_centre_types_field_default_field_instances() {
           ),
           'value' => '',
         ),
-        'redirect' => FALSE,
+        'redirect' => 0,
         'retroactive_update' => 0,
       ),
       'filefield_paths_enabled' => 1,
@@ -13354,10 +13424,10 @@ function akdn_press_centre_types_field_default_field_instances() {
           'brightcove_playlist' => 0,
           'media_browser_plus--media_browser_my_files' => 0,
           'media_browser_plus--media_browser_thumbnails' => 0,
-          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
           'media_default--media_browser_my_files' => 0,
           'media_internet' => 0,
-          'upload' => 0,
+          'upload' => 'upload',
         ),
         'manualcrop_crop_info' => 1,
         'manualcrop_default_crop_area' => 1,
@@ -15969,7 +16039,7 @@ function akdn_press_centre_types_field_default_field_instances() {
           ),
           'value' => '',
         ),
-        'redirect' => FALSE,
+        'redirect' => 0,
         'retroactive_update' => 0,
       ),
       'filefield_paths_enabled' => 1,
@@ -16002,10 +16072,10 @@ function akdn_press_centre_types_field_default_field_instances() {
           'brightcove_playlist' => 0,
           'media_browser_plus--media_browser_my_files' => 0,
           'media_browser_plus--media_browser_thumbnails' => 0,
-          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
           'media_default--media_browser_my_files' => 0,
           'media_internet' => 0,
-          'upload' => 0,
+          'upload' => 'upload',
         ),
         'manualcrop_crop_info' => 1,
         'manualcrop_default_crop_area' => 1,
@@ -18741,6 +18811,7 @@ function akdn_press_centre_types_field_default_field_instances() {
   t('Enter any number of comma-separated values to describe this event.');
   t('Enter one or more categories under which this publication is categorized.');
   t('Event');
+  t('Event Date');
   t('Event Image');
   t('Event Informations');
   t('External Media');
