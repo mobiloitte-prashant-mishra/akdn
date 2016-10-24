@@ -4938,7 +4938,7 @@ function akdn_press_centre_types_field_default_field_instances() {
         'label_position' => 'above',
         'no_fieldset' => 0,
         'text_parts' => array(),
-        'year_range' => '-3:+3',
+        'year_range' => '-2000:+10',
       ),
       'type' => 'date_popup',
       'weight' => 10,
