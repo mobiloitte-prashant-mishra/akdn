@@ -1,0 +1,12 @@
+name = syndication
+description = syndication view
+core = 7.x
+package = Features
+version = 7.x-1.0
+project = syndication
+dependencies[] = views
+dependencies[] = views_data_export
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = feed_data_translated_view
+features_exclude[dependencies][ctools] = ctools
