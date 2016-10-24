@@ -170,7 +170,6 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
   );
 
   // Exported field_instance: 'node-akmi_cd_dvd-body'
->>>>>>> udit/AKDN-1321_Vocal_artist_ordering_new
   $field_instances['node-akmi_cd_dvd-body'] = array(
     'bundle' => 'akmi_cd_dvd',
     'default_value' => NULL,
