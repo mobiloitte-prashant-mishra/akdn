@@ -1250,22 +1250,17 @@ function _scs_custom_import_file_attributes_by_fid ($fid, $article_image_source_
 }
 
 function _scs_custom_import_related_absolute_links() {
- //  $result = db_select('field_data_field_related_information', 'f')
- //  ->fields('f',array('entity_type', 'entity_id', 'revision_id', 'language' , 'delta', 'field_related_information_url'))
- //  ->execute()
- //  ->fetchAll();
+  $result = db_select('field_data_field_article_link', 'f')
+  ->fields('f',array('entity_type', 'entity_id', 'revision_id', 'language' , 'delta', 'field_article_link_url'))
+  ->execute()
+  ->fetchAll();
+  foreach ($result as $value) {
+   $operations[] = array(
+    '_scs_custom_import_related_absolute_links_batch_processing',
+    array($value->entity_type, $value->entity_id, $value->revision_id, $value->language, $value->delta, $value->field_article_link_url),
+    );
+ }
 
- //  foreach ($result as $value) {
- //   $operations[] = array(
- //    '_scs_custom_import_related_absolute_links_batch_processing',
- //    array($value->entity_type, $value->entity_id, $value->revision_id, $value->language, $value->delta, $value->field_related_information_url),
- //    );
- // }
-
- // $result = db_select('field_data_field_article_link', 'f')
- // ->fields('f',array('entity_type', 'entity_id', 'revision_id', 'language' , 'delta', 'field_article_link_url'))
- // ->execute()
- // ->fetchAll();
   $result = db_select('field_data_field_related_links', 'f')
  ->fields('f',array('entity_type', 'entity_id', 'revision_id', 'language' , 'delta', 'field_related_links_url'))
  ->execute()
@@ -1274,45 +1269,69 @@ function _scs_custom_import_related_absolute_links() {
  foreach ($result as $value) {
    $operations[] = array(
     '_scs_custom_import_related_absolute_links_batch_processing_1',
-    array($value->entity_type, $value->entity_id, $value->revision_id, $value->language, $value->delta, $value->field_article_link_url),
+    array($value->entity_type, $value->entity_id, $value->revision_id, $value->language, $value->delta, $value->field_related_links_url),
     );
  }
 
- // $result = db_select('field_data_field_event_links', 'f')
- // ->fields('f',array('entity_type', 'entity_id', 'revision_id', 'language' , 'delta', ' field_event_links_url'))
- // ->execute()
- // ->fetchAll();
+ $result = db_select('field_data_field_event_links', 'f')
+ ->fields('f',array('entity_type', 'entity_id', 'revision_id', 'language' , 'delta', ' field_event_links_url'))
+ ->execute()
+ ->fetchAll();
 
- // foreach ($result as $value) {
- //   $operations[] = array(
- //    '_scs_custom_import_related_absolute_links_batch_processing_2',
- //    array($value->entity_type, $value->entity_id, $value->revision_id, $value->language, $value->delta, $value->field_event_links_url),
- //    );
- // }
+ foreach ($result as $value) {
+   $operations[] = array(
+    '_scs_custom_import_related_absolute_links_batch_processing_2',
+    array($value->entity_type, $value->entity_id, $value->revision_id, $value->language, $value->delta, $value->field_event_links_url),
+    );
+ }
 
- // $result = db_select('field_data_field_project_links', 'f')
- // ->fields('f',array('entity_type', 'entity_id', 'revision_id', 'language' , 'delta', ' field_project_links_url'))
- // ->execute()
- // ->fetchAll();
+ $result = db_select('field_data_field_project_links', 'f')
+ ->fields('f',array('entity_type', 'entity_id', 'revision_id', 'language' , 'delta', ' field_project_links_url'))
+ ->execute()
+ ->fetchAll();
 
- // foreach ($result as $value) {
- //   $operations[] = array(
- //    '_scs_custom_import_related_absolute_links_batch_processing_3',
- //    array($value->entity_type, $value->entity_id, $value->revision_id, $value->language, $value->delta, $value->field_project_links_url),
- //    );
- // }
+ foreach ($result as $value) {
+   $operations[] = array(
+    '_scs_custom_import_related_absolute_links_batch_processing_3',
+    array($value->entity_type, $value->entity_id, $value->revision_id, $value->language, $value->delta, $value->field_project_links_url),
+    );
+ }
 
- // $result = db_select('field_data_field_speech_links', 'f')
- // ->fields('f',array('entity_type', 'entity_id', 'revision_id', 'language' , 'delta', ' field_speech_links_url'))
- // ->execute()
- // ->fetchAll();
+ $result = db_select('field_data_field_speech_links', 'f')
+ ->fields('f',array('entity_type', 'entity_id', 'revision_id', 'language' , 'delta', ' field_speech_links_url'))
+ ->execute()
+ ->fetchAll();
 
- // foreach ($result as $value) {
- //   $operations[] = array(
- //    '_scs_custom_import_related_absolute_links_batch_processing_4',
- //    array($value->entity_type, $value->entity_id, $value->revision_id, $value->language, $value->delta, $value->field_speech_links_url),
- //    );
- // }
+ foreach ($result as $value) {
+   $operations[] = array(
+    '_scs_custom_import_related_absolute_links_batch_processing_4',
+    array($value->entity_type, $value->entity_id, $value->revision_id, $value->language, $value->delta, $value->field_speech_links_url),
+    );
+ }
+
+ $result = db_select('field_data_field_event_related', 'f')
+  ->fields('f',array('entity_type', 'entity_id', 'revision_id', 'language' , 'delta', 'field_event_related_url'))
+  ->execute()
+  ->fetchAll();
+
+  foreach ($result as $value) {
+   $operations[] = array(
+    '_scs_custom_import_related_absolute_links_batch_processing_5',
+    array($value->entity_type, $value->entity_id, $value->revision_id, $value->language, $value->delta, $value->field_event_related_url),
+    );
+ }
+
+ $result = db_select('field_data_field_related_speech', 'f')
+  ->fields('f',array('entity_type', 'entity_id', 'revision_id', 'language' , 'delta', 'field_related_speech_url'))
+  ->execute()
+  ->fetchAll();
+
+  foreach ($result as $value) {
+   $operations[] = array(
+    '_scs_custom_import_related_absolute_links_batch_processing_6',
+    array($value->entity_type, $value->entity_id, $value->revision_id, $value->language, $value->delta, $value->field_related_speech_url),
+    );
+ }
 
  $batch = array(
   'title' => t('Processing related/absolute links...'),
@@ -1328,116 +1347,204 @@ function _scs_custom_import_related_absolute_links() {
 
 function _scs_custom_import_related_absolute_links_batch_processing($type, $entityid, $rev_id , $lang, $delta, $url) {
   global $base_url;
-  $explode_url = explode('akdn.org/',$url);
+  $source_base_url = preg_replace('#^https?://#', '', SCS_SITE_URL);
+  $explode_url = explode($source_base_url,$url);
   if(count($explode_url) > 1) {
-   $new_url = $base_url.'/'.$explode_url[1];
-   $result = db_select('url_alias', 'f')
-   ->fields('f',array('pid'))
-   ->condition('alias', $explode_url[1],'=')
-   ->execute()
-   ->fetchAll();
-   if($result) {
-    db_update('field_data_field_related_information')
-    ->fields(array('field_related_information_url' => $new_url,))
+   $is_exist = 0;
+   $path = $explode_url[1];
+   if (!drupal_valid_path($path)) {
+    if(drupal_lookup_path('source',$path)) {
+      $is_exist = 1;
+    }
+   }else{
+    $is_exist = 1;
+   }
+   if($is_exist) {
+    $new_url = $base_url.'/'.$explode_url[1];
+    db_update('field_data_field_article_link')
+    ->fields(array('field_article_link_url' => $new_url))
     ->condition('entity_type', $type, '=')
     ->condition('entity_id', $entityid, '=')
     ->condition('revision_id', $rev_id, '=')
     ->condition('language', $lang, '=')
     ->condition('delta', $delta, '=')
     ->execute();
-  }
+    cache_clear_all("field:node:".$entityid, 'cache_field');
+   }
 }
 }
 
 function _scs_custom_import_related_absolute_links_batch_processing_1($type, $entityid, $rev_id , $lang, $delta, $url) {
   global $base_url;
-  $explode_url = explode('akdn.org/',$url);
+  $source_base_url = preg_replace('#^https?://#', '', SCS_SITE_URL);
+  $explode_url = explode($source_base_url,$url);
   if(count($explode_url) > 1) {
-   $new_url = $base_url.'/'.$explode_url[1];
-   $result = db_select('url_alias', 'f')
-   ->fields('f',array('pid'))
-   ->condition('alias', $explode_url[1],'=')
-   ->execute()
-   ->fetchAll();
-   if($result) {
+   $is_exist = 0;
+   $path = $explode_url[1];
+   if (!drupal_valid_path($path)) {
+    if(drupal_lookup_path('source',$path)) {
+      $is_exist = 1;
+    }
+   }else{
+    $is_exist = 1;
+   }
+   if($is_exist) {
+    $new_url = $base_url.'/'.$explode_url[1];
     db_update('field_data_field_related_links')
-    ->fields(array('field_related_links_url' => $new_url,))
+    ->fields(array('field_related_links_url' => $new_url))
     ->condition('entity_type', $type, '=')
     ->condition('entity_id', $entityid, '=')
     ->condition('revision_id', $rev_id, '=')
     ->condition('language', $lang, '=')
     ->condition('delta', $delta, '=')
     ->execute();
-  }
+    cache_clear_all("field:node:".$entityid, 'cache_field');
+   }
 }
 }
 
 function _scs_custom_import_related_absolute_links_batch_processing_2($type, $entityid, $rev_id , $lang, $delta, $url) {
   global $base_url;
-  $explode_url = explode('akdn.org/',$url);
+  $source_base_url = preg_replace('#^https?://#', '', SCS_SITE_URL);
+  $explode_url = explode($source_base_url,$url);
   if(count($explode_url) > 1) {
-   $new_url = $base_url.'/'.$explode_url[1];
-   $result = db_select('url_alias', 'f')
-   ->fields('f',array('pid'))
-   ->condition('alias', $explode_url[1],'=')
-   ->execute()
-   ->fetchAll();
-   if($result) {
+   $is_exist = 0;
+   $path = $explode_url[1];
+   if (!drupal_valid_path($path)) {
+    if(drupal_lookup_path('source',$path)) {
+      $is_exist = 1;
+    }
+   }else{
+    $is_exist = 1;
+   }
+   if($is_exist) {
+    $new_url = $base_url.'/'.$explode_url[1];
     db_update('field_data_field_event_links')
-    ->fields(array('field_event_links_url' => $new_url,))
+    ->fields(array('field_event_links_url' => $new_url))
     ->condition('entity_type', $type, '=')
     ->condition('entity_id', $entityid, '=')
     ->condition('revision_id', $rev_id, '=')
     ->condition('language', $lang, '=')
     ->condition('delta', $delta, '=')
     ->execute();
-  }
+    cache_clear_all("field:node:".$entityid, 'cache_field');
+   }
 }
 }
 
 function _scs_custom_import_related_absolute_links_batch_processing_3($type, $entityid, $rev_id , $lang, $delta, $url) {
   global $base_url;
-  $explode_url = explode('akdn.org/',$url);
+  $source_base_url = preg_replace('#^https?://#', '', SCS_SITE_URL);
+  $explode_url = explode($source_base_url,$url);
   if(count($explode_url) > 1) {
-   $new_url = $base_url.'/'.$explode_url[1];
-   $result = db_select('url_alias', 'f')
-   ->fields('f',array('pid'))
-   ->condition('alias', $explode_url[1],'=')
-   ->execute()
-   ->fetchAll();
-   if($result) {
+   $is_exist = 0;
+   $path = $explode_url[1];
+   if (!drupal_valid_path($path)) {
+    if(drupal_lookup_path('source',$path)) {
+      $is_exist = 1;
+    }
+   }else{
+    $is_exist = 1;
+   }
+   if($is_exist) {
+    $new_url = $base_url.'/'.$explode_url[1];
     db_update('field_data_field_project_links')
-    ->fields(array('field_project_links_url' => $new_url,))
+    ->fields(array('field_project_links_url' => $new_url))
     ->condition('entity_type', $type, '=')
     ->condition('entity_id', $entityid, '=')
     ->condition('revision_id', $rev_id, '=')
     ->condition('language', $lang, '=')
     ->condition('delta', $delta, '=')
     ->execute();
-  }
+    cache_clear_all("field:node:".$entityid, 'cache_field');
+   }
 }
 }
 
 function _scs_custom_import_related_absolute_links_batch_processing_4($type, $entityid, $rev_id , $lang, $delta, $url) {
   global $base_url;
-  $explode_url = explode('akdn.org/',$url);
+  $source_base_url = preg_replace('#^https?://#', '', SCS_SITE_URL);
+  $explode_url = explode($source_base_url,$url);
   if(count($explode_url) > 1) {
-   $new_url = $base_url.'/'.$explode_url[1];
-   $result = db_select('url_alias', 'f')
-   ->fields('f',array('pid'))
-   ->condition('alias', $explode_url[1],'=')
-   ->execute()
-   ->fetchAll();
-   if($result) {
+   $is_exist = 0;
+   $path = $explode_url[1];
+   if (!drupal_valid_path($path)) {
+    if(drupal_lookup_path('source',$path)) {
+      $is_exist = 1;
+    }
+   }else{
+    $is_exist = 1;
+   }
+   if($is_exist) {
+    $new_url = $base_url.'/'.$explode_url[1];
     db_update('field_data_field_speech_links')
-    ->fields(array('field_speech_links_url' => $new_url,))
+    ->fields(array('field_speech_links_url' => $new_url))
     ->condition('entity_type', $type, '=')
     ->condition('entity_id', $entityid, '=')
     ->condition('revision_id', $rev_id, '=')
     ->condition('language', $lang, '=')
     ->condition('delta', $delta, '=')
     ->execute();
-  }
+    cache_clear_all("field:node:".$entityid, 'cache_field');
+   }
+}
+}
+
+function _scs_custom_import_related_absolute_links_batch_processing_5($type, $entityid, $rev_id , $lang, $delta, $url) {
+ global $base_url;
+  $source_base_url = preg_replace('#^https?://#', '', SCS_SITE_URL);
+  $explode_url = explode($source_base_url,$url);
+  if(count($explode_url) > 1) {
+   $is_exist = 0;
+   $path = $explode_url[1];
+   if (!drupal_valid_path($path)) {
+    if(drupal_lookup_path('source',$path)) {
+      $is_exist = 1;
+    }
+   }else{
+    $is_exist = 1;
+   }
+   if($is_exist) {
+    $new_url = $base_url.'/'.$explode_url[1];
+    db_update('field_data_field_event_related')
+    ->fields(array('field_event_related_url' => $new_url))
+    ->condition('entity_type', $type, '=')
+    ->condition('entity_id', $entityid, '=')
+    ->condition('revision_id', $rev_id, '=')
+    ->condition('language', $lang, '=')
+    ->condition('delta', $delta, '=')
+    ->execute();
+    cache_clear_all("field:node:".$entityid, 'cache_field');
+   }
+}
+}
+
+function _scs_custom_import_related_absolute_links_batch_processing_6($type, $entityid, $rev_id , $lang, $delta, $url) {
+ global $base_url;
+  $source_base_url = preg_replace('#^https?://#', '', SCS_SITE_URL);
+  $explode_url = explode($source_base_url,$url);
+  if(count($explode_url) > 1) {
+   $is_exist = 0;
+   $path = $explode_url[1];
+   if (!drupal_valid_path($path)) {
+    if(drupal_lookup_path('source',$path)) {
+      $is_exist = 1;
+    }
+   }else{
+    $is_exist = 1;
+   }
+   if($is_exist) {
+    $new_url = $base_url.'/'.$explode_url[1];
+    db_update('field_data_field_related_speech')
+    ->fields(array('field_related_speech_url' => $new_url))
+    ->condition('entity_type', $type, '=')
+    ->condition('entity_id', $entityid, '=')
+    ->condition('revision_id', $rev_id, '=')
+    ->condition('language', $lang, '=')
+    ->condition('delta', $delta, '=')
+    ->execute();
+    cache_clear_all("field:node:".$entityid, 'cache_field');
+   }
 }
 }
 
