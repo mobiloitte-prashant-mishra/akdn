@@ -1487,7 +1487,7 @@ function _scs_custom_update_syndicate() {
   $url = SCS_SITE_URL.'syndicate-node-api';
     $request = drupal_http_request($url);
     if($request->data) {
-      $xml = simplexml_load_string($request->data);
+      $xml = simplexml_load_string(trim($request->data));
       $json = json_encode($xml);
       $array = json_decode($json,TRUE);
 
@@ -1584,8 +1584,8 @@ function _scs_custom_get_language($guid){
   if(!empty($guid)) {
   $url = SCS_SITE_URL.'node-language/'.$guid;
   $request = drupal_http_request($url);
-  if(_isValidXML($request->data)) {
- $data = new SimpleXMLElement($request->data);
+  if(_isValidXML(trim($request->data))){
+  $data = new SimpleXMLElement(trim($request->data));
   if($request->data) {
     $node_lang = $data->node->language;
     switch ($node_lang) {
@@ -1648,8 +1648,8 @@ function _scs_custom_get_node_data ($guid, $type) {
     $url = SCS_SITE_URL.'article-data-translated-by-uuid/'.$guid;
     $request = drupal_http_request($url);
     if($request->data) {
-      if(_isValidXML($request->data)) {
-      $data = new SimpleXMLElement($request->data);
+      if(_isValidXML(trim($request->data))) {
+      $data = new SimpleXMLElement(trim($request->data));
       $node_data =  $data->node;
       }
     }
@@ -1658,8 +1658,8 @@ function _scs_custom_get_node_data ($guid, $type) {
     $url = SCS_SITE_URL.'event-data-translated-by-uuid/'.$guid;
     $request = drupal_http_request($url);
     if($request->data) {
-      if(_isValidXML($request->data)) {
-      $data = new SimpleXMLElement($request->data);
+      if(_isValidXML(trim($request->data))) {
+      $data = new SimpleXMLElement(trim($request->data));
       $node_data =  $data->node;
       }
     }
@@ -1668,8 +1668,8 @@ function _scs_custom_get_node_data ($guid, $type) {
     $url = SCS_SITE_URL.'person-data-translated-by-uuid/'.$guid;
     $request = drupal_http_request($url);
     if($request->data) {
-      if(_isValidXML($request->data)) {
-      $data = new SimpleXMLElement($request->data);
+      if(_isValidXML(trim($request->data))) {
+      $data = new SimpleXMLElement(trim($request->data));
       $node_data =  $data->node;
       }
     }
@@ -1678,8 +1678,8 @@ function _scs_custom_get_node_data ($guid, $type) {
     $url = SCS_SITE_URL.'speech-data-translated-by-uuid/'.$guid;
     $request = drupal_http_request($url);
     if($request->data) {
-      if(_isValidXML($request->data)) {
-      $data = new SimpleXMLElement($request->data);
+      if(_isValidXML(trim($request->data))) {
+      $data = new SimpleXMLElement(trim($request->data));
       $node_data =  $data->node;
       }
     }
@@ -1688,8 +1688,8 @@ function _scs_custom_get_node_data ($guid, $type) {
     $url = SCS_SITE_URL.'speech-quote-data-translated-by-uuid/'.$guid;
     $request = drupal_http_request($url);
     if($request->data) {
-      if(_isValidXML($request->data)) {
-      $data = new SimpleXMLElement($request->data);
+      if(_isValidXML(trim($request->data))) {
+      $data = new SimpleXMLElement(trim($request->data));
       $node_data =  $data->node;
       }
     }
@@ -1698,8 +1698,8 @@ function _scs_custom_get_node_data ($guid, $type) {
     $url = SCS_SITE_URL.'publication-data-translated-by-uuid/'.$guid;
     $request = drupal_http_request($url);
     if($request->data) {
-      if(_isValidXML($request->data)) {
-      $data = new SimpleXMLElement($request->data);
+      if(_isValidXML(trim($request->data))) {
+      $data = new SimpleXMLElement(trim($request->data));
       $node_data =  $data->node;
       }
     }
@@ -1719,8 +1719,8 @@ function _scs_custom_get_file_data_from_fid($fid) {
     $url = SCS_SITE_URL.'files-attribute-import-by-fid/'.$file_id;
     $request = drupal_http_request($url);
     if($request->code == 200 && $request->data) {
-      if(_isValidXML($request->data)) {
-      $data = new SimpleXMLElement($request->data, null, false);
+      if(_isValidXML(trim($request->data))) {
+      $data = new SimpleXMLElement(trim($request->data), null, false);
       $data = $data->file_managed;
       }
     }
@@ -1735,8 +1735,8 @@ function _scs_custom_get_languages ($guid) {
   if(!empty($guid)) {
     $url = SCS_SITE_URL.'node-language-translated/'.$guid;
     $request = drupal_http_request($url);
-    if(_isValidXML($request->data)) {
-    $data = new SimpleXMLElement($request->data);
+    if(_isValidXML(trim($request->data))) {
+    $data = new SimpleXMLElement(trim($request->data));
   if($request->data) {
     foreach($data->node as $key => $d){
       $lang_code = _scs_custom_get_languages_code_by_name($d->language);
