@@ -1,6 +1,11 @@
 <?php
 
-$syndicate_url = 'http://' . variable_get('syndicate-url');
+$syndicate_url = variable_get('syndicate-url');
+$parsed = parse_url($syndicate_url);
+if (empty($parsed['scheme'])) {
+    $syndicate_url = 'http://' . ltrim($syndicate_url, '/');
+}
+
 define("SCS_SITE_URL", $syndicate_url);
 
 /**
@@ -132,6 +137,7 @@ function _scs_custom_import_article_language() {
 }
 
 function _scs_custom_import_event_language() {
+  $operations = array();
   $result = db_select('feeds_item', 'f')
   ->fields('f',array('guid','entity_id'))
   ->condition('id','events_import','=')
@@ -157,6 +163,7 @@ function _scs_custom_import_event_language() {
 }
 
 function _scs_custom_import_publication_language() {
+  $operations = array();
   $result = db_select('feeds_item', 'f')
   ->fields('f',array('guid','entity_id'))
   ->condition('id','publications_import','=')
@@ -182,6 +189,7 @@ function _scs_custom_import_publication_language() {
 }
 
 function _scs_custom_import_speech_language() {
+  $operations = array();
   $result = db_select('feeds_item', 'f')
   ->fields('f',array('guid','entity_id'))
   ->condition('id','speech_import','=')
@@ -207,6 +215,7 @@ function _scs_custom_import_speech_language() {
 }
 
 function _scs_custom_import_speech_quotes_language() {
+  $operations = array();
   $result = db_select('feeds_item', 'f')
   ->fields('f',array('guid','entity_id'))
   ->condition('id','speech_quotes_import','=')
@@ -232,6 +241,7 @@ function _scs_custom_import_speech_quotes_language() {
 }
 
 function _scs_custom_import_person_language() {
+  $operations = array();
   $result = db_select('feeds_item', 'f')
   ->fields('f',array('guid','entity_id'))
   ->condition('id','person_import','=')
@@ -1560,12 +1570,22 @@ function _scs_custom_import_language_batch_processing_complete() {
   drupal_set_message(t('Import Completed Successfully'));
 }
 
+ function _isValidXML($xml) {
+    $doc = @simplexml_load_string($xml);
+    if ($doc) {
+        return true; //this is valid
+    } else {
+        return false; //this is not valid
+    }
+}
+
 function _scs_custom_get_language($guid){
   $node_language = 'und';
   if(!empty($guid)) {
   $url = SCS_SITE_URL.'node-language/'.$guid;
   $request = drupal_http_request($url);
-  $data = new SimpleXMLElement($request->data);
+  if(_isValidXML($request->data)) {
+ $data = new SimpleXMLElement($request->data);
   if($request->data) {
     $node_lang = $data->node->language;
     switch ($node_lang) {
@@ -1614,9 +1634,10 @@ function _scs_custom_get_language($guid){
       default:
       $node_language = 'und';
       break;
+        }
+      }
     }
   }
-}
   return $node_language;
 }
 
@@ -1627,48 +1648,60 @@ function _scs_custom_get_node_data ($guid, $type) {
     $url = SCS_SITE_URL.'article-data-translated-by-uuid/'.$guid;
     $request = drupal_http_request($url);
     if($request->data) {
+      if(_isValidXML($request->data)) {
       $data = new SimpleXMLElement($request->data);
       $node_data =  $data->node;
+      }
     }
     break;
     case 'event':
     $url = SCS_SITE_URL.'event-data-translated-by-uuid/'.$guid;
     $request = drupal_http_request($url);
     if($request->data) {
+      if(_isValidXML($request->data)) {
       $data = new SimpleXMLElement($request->data);
       $node_data =  $data->node;
+      }
     }
     break;
     case 'person':
     $url = SCS_SITE_URL.'person-data-translated-by-uuid/'.$guid;
     $request = drupal_http_request($url);
     if($request->data) {
+      if(_isValidXML($request->data)) {
       $data = new SimpleXMLElement($request->data);
       $node_data =  $data->node;
+      }
     }
     break;
     case 'speech':
     $url = SCS_SITE_URL.'speech-data-translated-by-uuid/'.$guid;
     $request = drupal_http_request($url);
     if($request->data) {
+      if(_isValidXML($request->data)) {
       $data = new SimpleXMLElement($request->data);
       $node_data =  $data->node;
+      }
     }
     break;
     case 'speech_quote':
     $url = SCS_SITE_URL.'speech-quote-data-translated-by-uuid/'.$guid;
     $request = drupal_http_request($url);
     if($request->data) {
+      if(_isValidXML($request->data)) {
       $data = new SimpleXMLElement($request->data);
       $node_data =  $data->node;
+      }
     }
     break;
     case 'publication':
     $url = SCS_SITE_URL.'publication-data-translated-by-uuid/'.$guid;
     $request = drupal_http_request($url);
     if($request->data) {
+      if(_isValidXML($request->data)) {
       $data = new SimpleXMLElement($request->data);
       $node_data =  $data->node;
+      }
     }
     break;
     default:
@@ -1686,8 +1719,10 @@ function _scs_custom_get_file_data_from_fid($fid) {
     $url = SCS_SITE_URL.'files-attribute-import-by-fid/'.$file_id;
     $request = drupal_http_request($url);
     if($request->code == 200 && $request->data) {
+      if(_isValidXML($request->data)) {
       $data = new SimpleXMLElement($request->data, null, false);
       $data = $data->file_managed;
+      }
     }
   }
   //dsm($data, 'data');
@@ -1700,6 +1735,7 @@ function _scs_custom_get_languages ($guid) {
   if(!empty($guid)) {
     $url = SCS_SITE_URL.'node-language-translated/'.$guid;
     $request = drupal_http_request($url);
+    if(_isValidXML($request->data)) {
     $data = new SimpleXMLElement($request->data);
   if($request->data) {
     foreach($data->node as $key => $d){
@@ -1708,6 +1744,7 @@ function _scs_custom_get_languages ($guid) {
       $lang[] = array('source' => $source_code , 'lang' => $lang_code);
     }
   }
+}
 }
   return $lang;
 }
