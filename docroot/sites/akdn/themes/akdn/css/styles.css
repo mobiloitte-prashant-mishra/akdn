@@ -18795,6 +18795,12 @@ map area {
   opacity: 1;
 }
 
+/* Fixed Text editor Image Upload fieldset */
+/* line 8802, ../sass/_akdn-redesign.scss */
+html.js fieldset.collapsed {
+  height: auto;
+}
+
 /*
 * Media Queries
 *

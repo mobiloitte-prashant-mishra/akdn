@@ -8794,3 +8794,14 @@ map {
     }
   }
 }
+
+/* Fixed Text editor Image Upload fieldset */
+html {
+  &.js {
+    fieldset {
+      &.collapsed{
+        height: auto;
+      }
+    }
+  }
+}
