@@ -2473,16 +2473,16 @@ function akdn_custom_node_presave($node) {
     }
   }
   // Remove unwanted instagram media images and unwanted node being saved.
-  if($node->type == 'instagram') {
+  if ($node->type == 'instagram') {
     $instagram_external_id = $node->field_instagram_external_id['und'][0]['value'];
     $nids = db_select('field_data_field_instagram_external_id', 'eid')
       ->fields('eid', array('entity_id'))
       ->condition('eid.field_instagram_external_id_value', $instagram_external_id, '=')
       ->execute()
       ->fetchCol();
-    if($nids) {
+    if ($nids) {
       $file = file_load($node->field_instagram_picture['und'][0]['fid']);
-        if(is_object($file)) {
+        if (is_object($file)) {
           file_delete($file, 1);
         }
       drupal_goto('admin/config/system/cron/');
