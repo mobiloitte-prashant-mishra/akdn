@@ -2096,7 +2096,6 @@ function akdn_block_forms($form, &$form_state, $delta) {
   $form = array();
   switch ($delta) {
     case 'akdn_date_filter':
-    //dsm($_SESSION);
       $format = 'Y-m-d';
       $date_filter_flag = 0;
       if(!empty($_GET['from'])) {
@@ -4059,5 +4058,98 @@ function akdn_custom_wysiwyg_editor_settings_alter(&$settings, $context) {
  if($context['profile']->editor == 'ckeditor') {
     $settings['enterMode'] = 1; // CKEDITOR.ENTER_P
     $settings['shiftEnterMode'] = 2; // CKEDITOR.ENTER_BR
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function akdn_custom_form_simplenews_node_form_alter(&$form, &$form_state, &$form_id) {
+  // Check that we are creating a newsletter and that we come from the
+  // admin/content/node
+  if (!empty($form['#node_edit_form'])
+    && in_array($form['type']['#value'], simplenews_get_content_types())
+    && $form_state['input']['op'] = t('Create newsletter')
+    && isset($form_state['input']['nodes'])
+  ) {
+    $form['body'][LANGUAGE_NONE]['0']['summary'] = FALSE;
+    $nodes = node_load_multiple(array_keys($form_state['input']['nodes']));
+    $data_social = array();
+    $result = array();
+    foreach ($nodes as $key => $value) {
+      if($value->type == 'facebook' || $value->type == 'instagram' || $value->type == 'tweet' || $value->type == 'youtube'){
+        switch($value->type) {
+          case 'facebook':
+            $data_social[] = array(
+              'nid' =>$value->nid,
+              'type' => $value->type,
+              'body' => $value->body['en'][0]['value'],
+              'image' => $value->field_facebook_picture['und'][0]['uri'],
+              'url' => $value->field_facebook_link['und'][0]['url'],
+            );
+          break;
+          case 'instagram':
+            $data_social[] = array(
+              'nid' =>$value->nid,
+              'type' => $value->type,
+              'body' => $value->body['en'][0]['value'],
+              'image' => $value->field_instagram_picture['und'][0]['uri'],
+              'url' => $value->field_instagram_link['und'][0]['url'],
+            );
+          break;
+          case 'tweet':
+            $data_social[] = array(
+              'nid' =>$value->nid,
+              'type' => $value->type,
+              'body' => $value->body['en'][0]['value'],
+              'image' => $value->field_tweet_media['und'][0]['uri'],
+              'url' => $value->field_tweet_link['und'][0]['url'],
+            );
+          break;
+          case 'youtube':
+            $data_social[] = array(
+              'nid' =>$value->nid,
+              'type' => $value->type,
+              'title' => $value->title,
+              'body' => $value->body['en'][0]['value'],
+              'image' => $value->field_youtube_picture['und'][0]['uri'],
+              'url' => $value->field_youtube_link['und'][0]['url'],
+            );
+          break;
+        }
+      }
+      else {
+        $body = $value->field_newsletter_summary['und']['0']['value'];
+        if ($value->type == 'article') {
+          $tid = $value->field_article_cat[0]['tid'];
+          $term_load = taxonomy_term_load($tid);
+          $url = $value->field_media_source['0']['display_url'];
+          $result[] = array(
+            'nid' => $key,
+            'title' => strip_tags($value->title),
+            'image' => $value->field_newsletter_image['und']['0']['uri'],
+            'body' => $body,
+            'term_load' => $term_load,
+            'url' => $url,
+          );
+        }
+        else{
+          $result[] = array(
+            'nid' => $key,
+            'title' => strip_tags($value->title),
+            'image' => $value->field_newsletter_image['und']['0']['uri'],
+            'body' => $body,
+          );
+        }
+      }
+    }
+    foreach($nodes as $node) {
+      $node->scs_view_mode = $form_state['input']['nodes'][$node->nid]['view_mode'];
+    }
+    $form['body'][LANGUAGE_NONE][0]['#default_value'] = theme('scs_newsletter', array(
+      'result' => $result,
+      'social' => $data_social,
+      'toc' => empty($form_state['input']['scs_toc']) ? FALSE : TRUE,
+    ));
   }
 }
