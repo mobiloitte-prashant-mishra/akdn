@@ -416,8 +416,7 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
     $privacy = l('privacy policy', 'node/29876', array('attributes'=>array('target'=>'_blank')));
     $acceptance = l('terms and conditions', 'node/29871', array('attributes'=>array('target'=>'_blank')));
     $form['submitted']['subscription_settings']['#options'][1] = "I have read and accepted the $acceptance and the $privacy of this website.";
-
-        $form['#validate'][]='akdn_custom_form_validation';
+    $form['#validate'][]='akdn_custom_form_validation';
   }
 
   // Check that we're on a node edit form.
@@ -4060,7 +4059,6 @@ function akdn_custom_wysiwyg_editor_settings_alter(&$settings, $context) {
     $settings['shiftEnterMode'] = 2; // CKEDITOR.ENTER_BR
   }
 }
-
 /**
  * Implements hook_form_FORM_ID_alter().
  */

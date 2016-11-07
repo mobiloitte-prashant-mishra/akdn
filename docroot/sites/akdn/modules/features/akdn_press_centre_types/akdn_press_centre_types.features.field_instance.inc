@@ -4875,7 +4875,7 @@ function akdn_press_centre_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_publish_date'.
+  // Exported field_instance: 'node-event-field_publish_date'
   $field_instances['node-event-field_publish_date'] = array(
     'bundle' => 'event',
     'deleted' => 0,
@@ -4945,7 +4945,7 @@ function akdn_press_centre_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_related_in_the_media'.
+  // Exported field_instance: 'node-event-field_related_in_the_media'
   $field_instances['node-event-field_related_in_the_media'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
