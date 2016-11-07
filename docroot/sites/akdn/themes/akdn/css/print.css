@@ -11,6 +11,33 @@ div.tabs,
 .block-ac-node-translations{
   display: none;
 }
-#zone-branding, #zone-menu, #breadcrumb, #region-sidebar-first, #region-sidebar-second, .node-links, .field-name-field-recipe-tags {
+#zone-menu, #breadcrumb, #region-sidebar-first, #region-sidebar-second, .node-links, .field-name-field-recipe-tags {
 	display:none;
+}
+#block-akdn-custom-akdn-breadcrumb-trail {
+  display: none;
+}
+/*.other-activities-title, .pane-akdn-custom-all-areas-of-activity,.hub-page-press-center-right {
+  display: none;
+}*/
+.akdn-basic-page .grid-6 {
+  display: none !important;
+}
+.akdn-basic-page .grid-18 {
+  width: 100% !important;
+}
+.basic-page-accordian-main-container .accordian-main-body {
+  display: block;
+}
+.whatwedo-left .morelink {
+  display: none !important;
+}
+.whatwedo-left .what-we-do-body-more-body{
+  display: block;
+}
+.whatwedo-left {
+  width: 100% !important;
+}
+.whatwedo-right {
+  display: none !important;
 }
