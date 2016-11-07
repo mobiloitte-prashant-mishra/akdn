@@ -1827,6 +1827,97 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'type' => 'node_reference',
   );
 
+  // Exported field_base: 'field_rchb_show_block'.
+  $field_bases['field_rchb_show_block'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_rchb_show_block',
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => 'Don\'t Display on Custom Page',
+        1 => 'Show Block',
+      ),
+      'allowed_values_function' => '',
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'list_boolean',
+  );
+
+  // Exported field_base: 'field_reference_custom_header_bl'.
+  $field_bases['field_reference_custom_header_bl'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_reference_custom_header_bl',
+    'indexes' => array(
+      'nid' => array(
+        0 => 'nid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'node_reference',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'referenceable_types' => array(
+        'agency' => 0,
+        'akmi_activity' => 0,
+        'akmi_artists' => 0,
+        'akmi_cd_dvd' => 0,
+        'akmi_event' => 0,
+        'akmi_instrument' => 0,
+        'akmi_pages' => 0,
+        'akmi_performance' => 0,
+        'architecture_project' => 0,
+        'article' => 0,
+        'award_cycle' => 0,
+        'breaking_news' => 0,
+        'custom_content' => 0,
+        'custom_header_block' => 'custom_header_block',
+        'event' => 0,
+        'facebook' => 0,
+        'fact_sheet' => 0,
+        'facts_block' => 0,
+        'featured_content' => 0,
+        'filesexport' => 0,
+        'focus_area' => 0,
+        'gallery' => 0,
+        'geography' => 0,
+        'hub_page' => 0,
+        'instagram' => 0,
+        'page' => 0,
+        'person' => 0,
+        'podcast' => 0,
+        'project' => 0,
+        'publication' => 0,
+        'simplenews' => 0,
+        'speech' => 0,
+        'speech_quote' => 0,
+        'speech_theme' => 0,
+        'tweet' => 0,
+        'webform' => 0,
+        'youtube' => 0,
+      ),
+      'view' => array(
+        'args' => array(),
+        'display_name' => '',
+        'view_name' => '',
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'node_reference',
+  );
+
   // Exported field_base: 'field_reference_cycle'.
   $field_bases['field_reference_cycle'] = array(
     'active' => 1,

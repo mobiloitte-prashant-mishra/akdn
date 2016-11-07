@@ -6689,14 +6689,111 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-custom_content-field_right_show_block'.
-  $field_instances['node-custom_content-field_right_show_block'] = array(
+  // Exported field_instance: 'node-custom_content-field_rchb_show_block'.
+  $field_instances['node-custom_content-field_rchb_show_block'] = array(
     'bundle' => 'custom_content',
     'default_value' => array(
       0 => array(
         'value' => 0,
       ),
     ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 16,
+      ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_rchb_show_block',
+    'label' => 'Show Block',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 0,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 25,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-custom_content-field_reference_custom_header_bl'.
+  $field_instances['node-custom_content-field_reference_custom_header_bl'] = array(
+    'bundle' => 'custom_content',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'node_reference',
+        'settings' => array(),
+        'type' => 'node_reference_default',
+        'weight' => 14,
+      ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_reference_custom_header_bl',
+    'label' => 'Reference Custom Header Block',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'node_reference',
+      'settings' => array(
+        'autocomplete_match' => 'contains',
+        'autocomplete_path' => 'node_reference/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'node_reference_autocomplete',
+      'weight' => 24,
+    ),
+  );
+
+  // Exported field_instance: 'node-custom_content-field_right_show_block'.
+  $field_instances['node-custom_content-field_right_show_block'] = array(
+    'bundle' => 'custom_content',
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -6735,7 +6832,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
       'settings' => array(
         'display_label' => 0,
       ),
-      'type' => 'options_onoff',
+      'type' => 'options_buttons',
       'weight' => 4,
     ),
   );
@@ -9873,6 +9970,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
   t('Press Materials');
   t('Project');
   t('Purchase Link');
+  t('Reference Custom Header Block');
   t('Reference Cycle');
   t('Region');
   t('Related  Links');
