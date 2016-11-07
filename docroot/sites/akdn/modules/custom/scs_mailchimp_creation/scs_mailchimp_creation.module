@@ -10,19 +10,17 @@ module_load_include('module','mailchimp','mailchimp');
 
 function scs_mailchimp_creation_node_insert($node) {
   if ($node->is_new ==1 && $node->type == 'simplenews') {
-    $new_tid = $node->field_simplenews_term[LANGUAGE_NONE][0]['tid'];
+    $new_tid = $node->field_simplenews_term[key($node->field_simplenews_term)][0]['tid'];
     $load_new_tid = taxonomy_term_load($new_tid);
     $t_name = $load_new_tid->name;
     $get_segments = mailchimp_get_segments(variable_get('list_id'));
-    
+
     $segments = array();
     foreach ($get_segments as $value) {
       $segments[$value->id] = $value->name;
     }
-
    $segment_id = array_search($t_name, $segments);
-
-    $nid = $node->nid;  
+    $nid = $node->nid;
     $mailchimp_object = mailchimp_get_api_object();
     $template_id = variable_get('template_id');
     $settings = (object) array(
@@ -48,11 +46,11 @@ function scs_mailchimp_creation_node_insert($node) {
 
     $campaign_id = mailchimp_campaign_save_campaign($template_content, $recipients, $settings, $template_id, $campaign_id);
     cache_clear_all('mailchimp_campaign_campaigns', 'cache');
-    
+
     $node->field_campaign_id[LANGUAGE_NONE][0]['value'] = $campaign_id;
     field_attach_update('node', $node);
   }
-} 
+}
 
 /**
  * Implements hook_permission().
