@@ -12971,7 +12971,8 @@ print $explode[1];
   /* Display: Custom Header Block View */
   $handler = $view->new_display('block', 'Custom Header Block View', 'custom_header_block_view');
   $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Reference Custom Header Block (field_reference_custom_header_bl) */
@@ -13001,6 +13002,16 @@ print $explode[1];
   $handler->display->display_options['fields']['field_header_title']['element_type'] = 'h2';
   $handler->display->display_options['fields']['field_header_title']['element_class'] = 'block-title';
   $handler->display->display_options['fields']['field_header_title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -13050,6 +13061,7 @@ print $explode[1];
     t('Custom Listing Page RHS'),
     t('Custom Header Block View'),
     t('field_reference_custom_header_bl'),
+    t('All'),
   );
   $export['custom_header_block'] = $view;
 
