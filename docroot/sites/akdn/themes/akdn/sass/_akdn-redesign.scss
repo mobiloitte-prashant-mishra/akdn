@@ -8790,3 +8790,12 @@ map {
     }
   }
 }
+
+/* AKDN-1392 remove custom header block margin */
+.pane-custom-header-block {
+ .akaa-projectinfo-map-related-info {
+   &:before {
+     margin-top: 0;
+   }
+ }
+}
