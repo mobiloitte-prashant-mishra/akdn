@@ -18794,14 +18794,20 @@ map area {
 /* line 8795, ../sass/_akdn-redesign.scss */
 .media-youtube-outer-wrapper {
   width: 100% !important;
-  height: 100% !important;
+  height: auto !important;
 }
 /* line 8798, ../sass/_akdn-redesign.scss */
-.media-youtube-outer-wrapper object {
+.media-youtube-outer-wrapper .media-youtube-preview-wrapper {
+  width: 100% !important;
+  height: auto !important;
+}
+/* line 8802, ../sass/_akdn-redesign.scss */
+.media-youtube-outer-wrapper object,
+.media-youtube-outer-wrapper iframe {
   max-width: 100%;
 }
 
-/* line 8803, ../sass/_akdn-redesign.scss */
+/* line 8808, ../sass/_akdn-redesign.scss */
 .media object {
   max-width: 100%;
 }

@@ -8794,8 +8794,13 @@ map {
 // Fix overlapping inline videos
 .media-youtube-outer-wrapper {
   width: 100% !important;
-  height: 100% !important;
-  object {
+  height: auto !important;
+  .media-youtube-preview-wrapper {
+    width: 100% !important;
+    height: auto !important;
+  }
+  object,
+  iframe {
     max-width: 100%;
   }
 }
