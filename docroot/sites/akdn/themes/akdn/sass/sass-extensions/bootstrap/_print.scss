@@ -130,9 +130,9 @@
         padding: 0 !important;
     }
     // THIS APPENDS A LINK AFTER EACH ANCHOR TAG
-    /*a[href]:link:after, a[href]:visited:after {    
-        content: " ("attr(href) ") ";    
-        font-size: 0%;   
+    /*a[href]:link:after, a[href]:visited:after {
+        content: " ("attr(href) ") ";
+        font-size: 0%;
     }*/
     ul, li {
         padding: 0;
@@ -172,7 +172,7 @@
    body:not(.front) {
        .region-footer-first {
             display: none !important;
-            .footer-left, 
+            .footer-left,
             .footer-right {
                 display: none !important;
             }
@@ -188,7 +188,7 @@
             .quicklinks_social_block {
                 padding-left: 15px;
             }
-            .footer-left, 
+            .footer-left,
             .footer-right {
                 display: none;
             }
@@ -246,11 +246,11 @@
         border-right: 0 none !important;
     }
     // SubNavbar Titles
-    .pane-breaking-news .view-header, 
+    .pane-breaking-news .view-header,
     .sub-navbar .pane-content {
         font-size: 20px !important;
         margin-bottom: 10px !important;
-        span:first-child, 
+        span:first-child,
         p:first-letter {
             font-size: 24px !important;
         }
@@ -263,7 +263,7 @@
         a {
             font-size: 12px !important;
         }
-    }   
+    }
     // Breaking News Section
     .breaking-news-text-wrapper .title {
         font-size: 22px !important;
@@ -272,10 +272,10 @@
     .breaking-news-left .date-display-single {
         font-size: 14px !important;
     }
-    .basic-page-slideshow, 
-    .banner-slideshow-views-no-title, 
-    .pane-breaking-news .view-content, 
-    .social-block, 
+    .basic-page-slideshow,
+    .banner-slideshow-views-no-title,
+    .pane-breaking-news .view-content,
+    .social-block,
     .akdn-facts-block {
         margin-bottom: 20px !important;
     }
@@ -284,13 +284,13 @@
     .akaa-logotitle {
         margin: 0 auto 20px !important;
     }
-    %carousel-left-block, 
+    %carousel-left-block,
     %carousel-right-block {
         width: 100% !important;
         height: auto !important;
         margin-bottom: 20px !important;
     }
-    %carousel-left-block, 
+    %carousel-left-block,
     %carousel-left-block img {
         height: 460px !important;
         overflow: hidden !important;
@@ -298,21 +298,21 @@
     // Project Finder
     .akaa-projectfinder-wrapper {
         display: none !important;
-    } 
+    }
     // News & Resources Block AKMI
-    .akaa-award-cycle-block-short-video .views-field-nothing .play-video a, 
+    .akaa-award-cycle-block-short-video .views-field-nothing .play-video a,
     .akaa-icon-title {
         display: none !important;
     }
     .akaa-award-cycle-block {
         margin-bottom: 15px !important;
     }
-    .akaa-award-cycle-wrapper, 
-    .what-we-do-main-wrapper, 
+    .akaa-award-cycle-wrapper,
+    .what-we-do-main-wrapper,
     .akaa-projectfinder-wrapper {
         margin-bottom: 20px !important;
     }
-    .what-we-do-inner-wrapper, 
+    .what-we-do-inner-wrapper,
     .what-we-do-main-wrapper {
         display: -ms-flex !important;
         display: flex !important;
@@ -365,10 +365,32 @@
             &:nth-child(3n) a {
                 padding-right: 0 !important;
             }
-        } 
-    } 
-    // Videos Detail Page 
+        }
+    }
+    // Videos Detail Page
     .press-release-detail .pane-video-block {
         display: none !important;
     }
+    .akdn-basic-page .grid-6 {
+      display: none !important;
+    }
+    .akdn-basic-page .grid-18 {
+      width: 100% !important;
+    }
+    .basic-page-accordian-main-container .accordian-main-body {
+      display: block;
+    }
+    .whatwedo-left .morelink {
+      display: none !important;
+    }
+    .whatwedo-left .what-we-do-body-more-body{
+      display: block;
+    }
+    .whatwedo-left {
+      width: 100% !important;
+    }
+    .whatwedo-right {
+      display: none !important;
+    }
+
 }
