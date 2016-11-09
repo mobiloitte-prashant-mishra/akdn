@@ -12568,15 +12568,6 @@ print $explode[1];
   $handler->display->display_options['filters']['type']['value'] = array(
     'custom_header_block' => 'custom_header_block',
   );
-  /* Filter criterion: Field: Tags (field_tags) */
-  $handler->display->display_options['filters']['field_tags_tid']['id'] = 'field_tags_tid';
-  $handler->display->display_options['filters']['field_tags_tid']['table'] = 'field_data_field_tags';
-  $handler->display->display_options['filters']['field_tags_tid']['field'] = 'field_tags_tid';
-  $handler->display->display_options['filters']['field_tags_tid']['value'] = array(
-    9076 => '9076',
-  );
-  $handler->display->display_options['filters']['field_tags_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_tags_tid']['vocabulary'] = 'tags';
 
   /* Display: AKAA Project Locations RHS */
   $handler = $view->new_display('block', 'AKAA Project Locations RHS', 'block');
@@ -12976,6 +12967,74 @@ print $explode[1];
   $handler->display->display_options['filters']['field_header_link_url']['field'] = 'field_header_link_url';
   $handler->display->display_options['filters']['field_header_link_url']['operator'] = 'not empty';
   $handler->display->display_options['block_description'] = 'Custom Listing Page RHS';
+
+  /* Display: Custom Header Block View */
+  $handler = $view->new_display('block', 'Custom Header Block View', 'custom_header_block_view');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Reference Custom Header Block (field_reference_custom_header_bl) */
+  $handler->display->display_options['relationships']['field_reference_custom_header_bl_nid']['id'] = 'field_reference_custom_header_bl_nid';
+  $handler->display->display_options['relationships']['field_reference_custom_header_bl_nid']['table'] = 'field_data_field_reference_custom_header_bl';
+  $handler->display->display_options['relationships']['field_reference_custom_header_bl_nid']['field'] = 'field_reference_custom_header_bl_nid';
+  $handler->display->display_options['relationships']['field_reference_custom_header_bl_nid']['delta'] = '-1';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: header link */
+  $handler->display->display_options['fields']['field_header_link']['id'] = 'field_header_link';
+  $handler->display->display_options['fields']['field_header_link']['table'] = 'field_data_field_header_link';
+  $handler->display->display_options['fields']['field_header_link']['field'] = 'field_header_link';
+  $handler->display->display_options['fields']['field_header_link']['relationship'] = 'field_reference_custom_header_bl_nid';
+  $handler->display->display_options['fields']['field_header_link']['label'] = '';
+  $handler->display->display_options['fields']['field_header_link']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_header_link']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_header_link']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_header_link']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_header_link']['multi_type'] = 'ul';
+  /* Field: Content: Header Title */
+  $handler->display->display_options['fields']['field_header_title']['id'] = 'field_header_title';
+  $handler->display->display_options['fields']['field_header_title']['table'] = 'field_data_field_header_title';
+  $handler->display->display_options['fields']['field_header_title']['field'] = 'field_header_title';
+  $handler->display->display_options['fields']['field_header_title']['relationship'] = 'field_reference_custom_header_bl_nid';
+  $handler->display->display_options['fields']['field_header_title']['label'] = '';
+  $handler->display->display_options['fields']['field_header_title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_header_title']['element_type'] = 'h2';
+  $handler->display->display_options['fields']['field_header_title']['element_class'] = 'block-title';
+  $handler->display->display_options['fields']['field_header_title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'custom_content' => 'custom_content',
+  );
+  /* Filter criterion: Content: Show Block (field_rchb_show_block) */
+  $handler->display->display_options['filters']['field_rchb_show_block_value']['id'] = 'field_rchb_show_block_value';
+  $handler->display->display_options['filters']['field_rchb_show_block_value']['table'] = 'field_data_field_rchb_show_block';
+  $handler->display->display_options['filters']['field_rchb_show_block_value']['field'] = 'field_rchb_show_block_value';
+  $handler->display->display_options['filters']['field_rchb_show_block_value']['value'] = array(
+    1 => '1',
+  );
   $translatables['custom_header_block'] = array(
     t('Master'),
     t('more'),
@@ -13000,6 +13059,9 @@ print $explode[1];
     t('AKMI Event Calender RHS'),
     t('AKAA Press Centre RHS'),
     t('Custom Listing Page RHS'),
+    t('Custom Header Block View'),
+    t('field_reference_custom_header_bl'),
+    t('All'),
   );
   $export['custom_header_block'] = $view;
 
@@ -22908,6 +22970,7 @@ print $node_path;
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['hide_empty'] = TRUE;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -22917,6 +22980,7 @@ print $node_path;
   $handler->display->display_options['fields']['nothing']['element_class'] = 'other-activities-main-title';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['nothing']['hide_empty'] = TRUE;
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_hub_page_image']['id'] = 'field_hub_page_image';
   $handler->display->display_options['fields']['field_hub_page_image']['table'] = 'field_data_field_hub_page_image';
@@ -22928,6 +22992,7 @@ print $node_path;
   $handler->display->display_options['fields']['field_hub_page_image']['element_class'] = 'other-activities-image';
   $handler->display->display_options['fields']['field_hub_page_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_hub_page_image']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_hub_page_image']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_hub_page_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_hub_page_image']['settings'] = array(
     'image_style' => '',
@@ -22946,6 +23011,7 @@ print $node_path;
   $handler->display->display_options['fields']['field_short_title']['element_class'] = 'other-activities-short-title';
   $handler->display->display_options['fields']['field_short_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_short_title']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_short_title']['hide_empty'] = TRUE;
   /* Field: Content: Type */
   $handler->display->display_options['fields']['type']['id'] = 'type';
   $handler->display->display_options['fields']['type']['table'] = 'node';
@@ -22953,6 +23019,7 @@ print $node_path;
   $handler->display->display_options['fields']['type']['label'] = '';
   $handler->display->display_options['fields']['type']['exclude'] = TRUE;
   $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['type']['hide_empty'] = TRUE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Global: Random */
   $handler->display->display_options['sorts']['random']['id'] = 'random';
