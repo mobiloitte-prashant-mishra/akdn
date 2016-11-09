@@ -8819,9 +8819,31 @@ html {
     max-width: 100%;
   }
 }
-.media {
+
+// Fix overlapping inline videos + video in half for custom page
+.node-type-custom-content {
   object {
-    max-width: 100%;
+    width: 387px !important;
+    height: 258px !important;
+    margin-right: 15px;
+  }
+  .media-youtube-outer-wrapper {
+    display: inline-block;
+    width: 387px !important;
+    height: 258px !important;
+    margin-right: 15px;
+    float: left;
+    .media-youtube-preview-wrapper {
+      width: 100% !important;
+      height: 100% !important;
+    }
+    object,
+    iframe,
+    embed {
+      width: 100% !important;
+      height: 100% !important;
+      margin-right: 0;
+    }
   }
 }
 
