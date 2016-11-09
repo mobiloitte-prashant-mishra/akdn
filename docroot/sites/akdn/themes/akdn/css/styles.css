@@ -18791,25 +18791,32 @@ map area {
   opacity: 1;
 }
 
-/* line 8795, ../sass/_akdn-redesign.scss */
-.media-youtube-outer-wrapper {
+/* line 8796, ../sass/_akdn-redesign.scss */
+.node-type-custom-content object {
+  width: 387px !important;
+  height: 258px !important;
+  margin-right: 15px;
+}
+/* line 8801, ../sass/_akdn-redesign.scss */
+.node-type-custom-content .media-youtube-outer-wrapper {
+  display: inline-block;
+  width: 387px !important;
+  height: 258px !important;
+  margin-right: 15px;
+  float: left;
+}
+/* line 8807, ../sass/_akdn-redesign.scss */
+.node-type-custom-content .media-youtube-outer-wrapper .media-youtube-preview-wrapper {
   width: 100% !important;
-  height: auto !important;
+  height: 100% !important;
 }
-/* line 8798, ../sass/_akdn-redesign.scss */
-.media-youtube-outer-wrapper .media-youtube-preview-wrapper {
+/* line 8811, ../sass/_akdn-redesign.scss */
+.node-type-custom-content .media-youtube-outer-wrapper object,
+.node-type-custom-content .media-youtube-outer-wrapper iframe,
+.node-type-custom-content .media-youtube-outer-wrapper embed {
   width: 100% !important;
-  height: auto !important;
-}
-/* line 8802, ../sass/_akdn-redesign.scss */
-.media-youtube-outer-wrapper object,
-.media-youtube-outer-wrapper iframe {
-  max-width: 100%;
-}
-
-/* line 8808, ../sass/_akdn-redesign.scss */
-.media object {
-  max-width: 100%;
+  height: 100% !important;
+  margin-right: 0;
 }
 
 /*
