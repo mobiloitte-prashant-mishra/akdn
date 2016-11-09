@@ -2952,7 +2952,7 @@ ul.primary li {
             vertical-align: top;
             font-size: 12px;
             line-height: 18px;
-            text-transform: none;
+            text-transform: lowercase;
 
             &:first-letter {
               text-transform: capitalize;
@@ -5142,6 +5142,10 @@ map {
   font-size: 16px;
   line-height: 24px;
   border-bottom: 1px solid #CCCCCC;
+
+  &:first-child {
+    padding-top: 0;
+  }
 
   &:last-child {
     margin-bottom: 25px;
@@ -8787,6 +8791,17 @@ map {
     .caption-copyright-wrapper {
       bottom: 0;
       opacity: 1;
+    }
+  }
+}
+
+/* Fixed Text editor Image Upload fieldset */
+html {
+  &.js {
+    fieldset {
+      &.collapsed{
+        height: auto;
+      }
     }
   }
 }
