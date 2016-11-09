@@ -13494,7 +13494,7 @@ ul.primary li {
   vertical-align: top;
   font-size: 12px;
   line-height: 18px;
-  text-transform: none;
+  text-transform: lowercase;
 }
 /* line 2957, ../sass/_akdn-redesign.scss */
 .page-search .akdn-filter-js-wrapper .akdn-filter-wrapper .item-list li a:first-letter {
