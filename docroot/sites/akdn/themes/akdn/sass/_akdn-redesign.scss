@@ -2931,6 +2931,14 @@ ul.primary li {
         overflow-y: auto;
         overflow-x: hidden;
 
+      .facetapi-facet-entity-type {
+        li {
+          a {
+            text-transform: lowercase;
+          }
+        }
+      }
+
         li {
           margin: 0;
           list-style-type: none;
