@@ -18796,8 +18796,9 @@ map area {
   width: 387px !important;
   height: 258px !important;
   margin-right: 15px;
+  float: left;
 }
-/* line 8801, ../sass/_akdn-redesign.scss */
+/* line 8802, ../sass/_akdn-redesign.scss */
 .node-type-custom-content .media-youtube-outer-wrapper {
   display: inline-block;
   width: 387px !important;
@@ -18805,12 +18806,12 @@ map area {
   margin-right: 15px;
   float: left;
 }
-/* line 8807, ../sass/_akdn-redesign.scss */
+/* line 8808, ../sass/_akdn-redesign.scss */
 .node-type-custom-content .media-youtube-outer-wrapper .media-youtube-preview-wrapper {
   width: 100% !important;
   height: 100% !important;
 }
-/* line 8811, ../sass/_akdn-redesign.scss */
+/* line 8812, ../sass/_akdn-redesign.scss */
 .node-type-custom-content .media-youtube-outer-wrapper object,
 .node-type-custom-content .media-youtube-outer-wrapper iframe,
 .node-type-custom-content .media-youtube-outer-wrapper embed {
