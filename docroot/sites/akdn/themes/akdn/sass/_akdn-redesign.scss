@@ -8805,3 +8805,53 @@ html {
     }
   }
 }
+
+// Fix overlapping inline videos
+.media-youtube-outer-wrapper {
+  width: 100% !important;
+  height: auto !important;
+  .media-youtube-preview-wrapper {
+    width: 100% !important;
+    height: auto !important;
+  }
+  object,
+  iframe {
+    max-width: 100%;
+  }
+}
+
+// Fix overlapping inline videos + video in half for custom page
+.node-type-custom-content {
+  object {
+    width: 387px !important;
+    height: 258px !important;
+    margin-right: 15px;
+  }
+  .media-youtube-outer-wrapper {
+    display: inline-block;
+    width: 387px !important;
+    height: 258px !important;
+    margin-right: 15px;
+    float: left;
+    .media-youtube-preview-wrapper {
+      width: 100% !important;
+      height: 100% !important;
+    }
+    object,
+    iframe,
+    embed {
+      width: 100% !important;
+      height: 100% !important;
+      margin-right: 0;
+    }
+  }
+}
+
+/* AKDN-1392 remove custom header block margin */
+.pane-custom-header-block {
+ .akaa-projectinfo-map-related-info {
+   &:before {
+     margin-top: 0;
+   }
+ }
+}
