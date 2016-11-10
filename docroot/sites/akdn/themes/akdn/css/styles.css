@@ -712,28 +712,32 @@ th {
   .akdn-basic-page .grid-18 {
     width: 100% !important;
   }
+  /* line 379, ../sass/sass-extensions/bootstrap/_print.scss */
+  .akdn-basic-page .grid-18 .accordian-rows {
+    page-break-inside: avoid;
+  }
 
-  /* line 380, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 383, ../sass/sass-extensions/bootstrap/_print.scss */
   .basic-page-accordian-main-container .accordian-main-body {
     display: block;
   }
 
-  /* line 383, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 386, ../sass/sass-extensions/bootstrap/_print.scss */
   .whatwedo-left .morelink {
     display: none !important;
   }
 
-  /* line 386, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 389, ../sass/sass-extensions/bootstrap/_print.scss */
   .whatwedo-left .what-we-do-body-more-body {
     display: block;
   }
 
-  /* line 389, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 392, ../sass/sass-extensions/bootstrap/_print.scss */
   .whatwedo-left {
     width: 100% !important;
   }
 
-  /* line 392, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 395, ../sass/sass-extensions/bootstrap/_print.scss */
   .whatwedo-right {
     display: none !important;
   }
