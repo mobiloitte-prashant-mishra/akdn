@@ -376,6 +376,9 @@
     }
     .akdn-basic-page .grid-18 {
       width: 100% !important;
+      .accordian-rows {
+        page-break-inside: avoid;
+      }
     }
     .basic-page-accordian-main-container .accordian-main-body {
       display: block;
