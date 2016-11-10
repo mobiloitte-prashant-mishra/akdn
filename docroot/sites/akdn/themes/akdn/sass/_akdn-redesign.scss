@@ -2930,6 +2930,14 @@ ul.primary li {
         max-height: 220px;
         overflow-y: auto;
         overflow-x: hidden;
+       
+       .facetapi-facet-entity-type {
+         li {
+           a {
+               text-transform: lowercase;
+           }
+         }
+       }
 
         li {
           margin: 0;
@@ -7884,7 +7892,7 @@ map {
   .item-list {
     li {
       a {
-        text-transform: capitalize;
+        text-transform: lowercase;
       }
     }
   }
