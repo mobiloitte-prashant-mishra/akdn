@@ -741,6 +741,16 @@ th {
   .whatwedo-right {
     display: none !important;
   }
+
+  /* line 399, ../sass/sass-extensions/bootstrap/_print.scss */
+  .block-akdn-filter {
+    display: none !important;
+  }
+
+  /* line 403, ../sass/sass-extensions/bootstrap/_print.scss */
+  .press-centre-listings {
+    display: none !important;
+  }
 }
 @at-root {
   @font-face {
