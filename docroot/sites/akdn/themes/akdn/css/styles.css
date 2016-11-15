@@ -751,6 +751,28 @@ th {
   .press-centre-listings {
     display: none !important;
   }
+
+  /* line 407, ../sass/sass-extensions/bootstrap/_print.scss */
+  .akaa-akmi-body .pane-featured-slideshow {
+    display: none !important;
+  }
+  /* line 410, ../sass/sass-extensions/bootstrap/_print.scss */
+  .akaa-akmi-body .whatsnew-right {
+    display: none !important;
+  }
+
+  /* line 416, ../sass/sass-extensions/bootstrap/_print.scss */
+  .page-akmi-press-centre .section-content .grid-18, .page-architecture-press-centre .section-content .grid-18 {
+    width: 100% !important;
+  }
+  /* line 420, ../sass/sass-extensions/bootstrap/_print.scss */
+  .page-akmi-press-centre .block-akdn-custom-akdn-filter, .page-architecture-press-centre .block-akdn-custom-akdn-filter {
+    display: none !important;
+  }
+  /* line 423, ../sass/sass-extensions/bootstrap/_print.scss */
+  .page-akmi-press-centre .akdn-filter-js-wrapper, .page-architecture-press-centre .akdn-filter-js-wrapper {
+    display: none !important;
+  }
 }
 @at-root {
   @font-face {
