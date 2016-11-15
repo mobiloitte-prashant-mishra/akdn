@@ -397,10 +397,31 @@
     }
 
     .block-akdn-filter {
-    display: none !important;
+     display: none !important;
 }
 
 .press-centre-listings {
         display: none !important;
+  }
+  .akaa-akmi-body {
+    .pane-featured-slideshow {
+      display: none !important;
+    }
+    .whatsnew-right {
+      display: none !important;
+    }
+  }
+  .page-akmi-press-centre, .page-architecture-press-centre {
+      .section-content {
+        .grid-18 {
+            width: 100% !important;
+        }
+      }
+    .block-akdn-custom-akdn-filter {
+      display: none !important;
+    }
+    .akdn-filter-js-wrapper {
+      display: none !important;
+    }
   }
 }
