@@ -1,6 +1,11 @@
 <?php
 
-$syndicate_url = 'http://' . variable_get('syndicate-url');
+$syndicate_url = variable_get('syndicate-url');
+$parsed = parse_url($syndicate_url);
+if (empty($parsed['scheme'])) {
+    $syndicate_url = 'http://' . ltrim($syndicate_url, '/');
+}
+
 define("SCS_SITE_URL", $syndicate_url);
 
 /**
@@ -132,6 +137,7 @@ function _scs_custom_import_article_language() {
 }
 
 function _scs_custom_import_event_language() {
+  $operations = array();
   $result = db_select('feeds_item', 'f')
   ->fields('f',array('guid','entity_id'))
   ->condition('id','events_import','=')
@@ -157,6 +163,7 @@ function _scs_custom_import_event_language() {
 }
 
 function _scs_custom_import_publication_language() {
+  $operations = array();
   $result = db_select('feeds_item', 'f')
   ->fields('f',array('guid','entity_id'))
   ->condition('id','publications_import','=')
@@ -182,6 +189,7 @@ function _scs_custom_import_publication_language() {
 }
 
 function _scs_custom_import_speech_language() {
+  $operations = array();
   $result = db_select('feeds_item', 'f')
   ->fields('f',array('guid','entity_id'))
   ->condition('id','speech_import','=')
@@ -207,6 +215,7 @@ function _scs_custom_import_speech_language() {
 }
 
 function _scs_custom_import_speech_quotes_language() {
+  $operations = array();
   $result = db_select('feeds_item', 'f')
   ->fields('f',array('guid','entity_id'))
   ->condition('id','speech_quotes_import','=')
@@ -232,6 +241,7 @@ function _scs_custom_import_speech_quotes_language() {
 }
 
 function _scs_custom_import_person_language() {
+  $operations = array();
   $result = db_select('feeds_item', 'f')
   ->fields('f',array('guid','entity_id'))
   ->condition('id','person_import','=')
@@ -1250,22 +1260,17 @@ function _scs_custom_import_file_attributes_by_fid ($fid, $article_image_source_
 }
 
 function _scs_custom_import_related_absolute_links() {
- //  $result = db_select('field_data_field_related_information', 'f')
- //  ->fields('f',array('entity_type', 'entity_id', 'revision_id', 'language' , 'delta', 'field_related_information_url'))
- //  ->execute()
- //  ->fetchAll();
+  $result = db_select('field_data_field_article_link', 'f')
+  ->fields('f',array('entity_type', 'entity_id', 'revision_id', 'language' , 'delta', 'field_article_link_url'))
+  ->execute()
+  ->fetchAll();
+  foreach ($result as $value) {
+   $operations[] = array(
+    '_scs_custom_import_related_absolute_links_batch_processing',
+    array($value->entity_type, $value->entity_id, $value->revision_id, $value->language, $value->delta, $value->field_article_link_url),
+    );
+ }
 
- //  foreach ($result as $value) {
- //   $operations[] = array(
- //    '_scs_custom_import_related_absolute_links_batch_processing',
- //    array($value->entity_type, $value->entity_id, $value->revision_id, $value->language, $value->delta, $value->field_related_information_url),
- //    );
- // }
-
- // $result = db_select('field_data_field_article_link', 'f')
- // ->fields('f',array('entity_type', 'entity_id', 'revision_id', 'language' , 'delta', 'field_article_link_url'))
- // ->execute()
- // ->fetchAll();
   $result = db_select('field_data_field_related_links', 'f')
  ->fields('f',array('entity_type', 'entity_id', 'revision_id', 'language' , 'delta', 'field_related_links_url'))
  ->execute()
@@ -1274,45 +1279,69 @@ function _scs_custom_import_related_absolute_links() {
  foreach ($result as $value) {
    $operations[] = array(
     '_scs_custom_import_related_absolute_links_batch_processing_1',
-    array($value->entity_type, $value->entity_id, $value->revision_id, $value->language, $value->delta, $value->field_article_link_url),
+    array($value->entity_type, $value->entity_id, $value->revision_id, $value->language, $value->delta, $value->field_related_links_url),
     );
  }
 
- // $result = db_select('field_data_field_event_links', 'f')
- // ->fields('f',array('entity_type', 'entity_id', 'revision_id', 'language' , 'delta', ' field_event_links_url'))
- // ->execute()
- // ->fetchAll();
+ $result = db_select('field_data_field_event_links', 'f')
+ ->fields('f',array('entity_type', 'entity_id', 'revision_id', 'language' , 'delta', ' field_event_links_url'))
+ ->execute()
+ ->fetchAll();
 
- // foreach ($result as $value) {
- //   $operations[] = array(
- //    '_scs_custom_import_related_absolute_links_batch_processing_2',
- //    array($value->entity_type, $value->entity_id, $value->revision_id, $value->language, $value->delta, $value->field_event_links_url),
- //    );
- // }
+ foreach ($result as $value) {
+   $operations[] = array(
+    '_scs_custom_import_related_absolute_links_batch_processing_2',
+    array($value->entity_type, $value->entity_id, $value->revision_id, $value->language, $value->delta, $value->field_event_links_url),
+    );
+ }
 
- // $result = db_select('field_data_field_project_links', 'f')
- // ->fields('f',array('entity_type', 'entity_id', 'revision_id', 'language' , 'delta', ' field_project_links_url'))
- // ->execute()
- // ->fetchAll();
+ $result = db_select('field_data_field_project_links', 'f')
+ ->fields('f',array('entity_type', 'entity_id', 'revision_id', 'language' , 'delta', ' field_project_links_url'))
+ ->execute()
+ ->fetchAll();
 
- // foreach ($result as $value) {
- //   $operations[] = array(
- //    '_scs_custom_import_related_absolute_links_batch_processing_3',
- //    array($value->entity_type, $value->entity_id, $value->revision_id, $value->language, $value->delta, $value->field_project_links_url),
- //    );
- // }
+ foreach ($result as $value) {
+   $operations[] = array(
+    '_scs_custom_import_related_absolute_links_batch_processing_3',
+    array($value->entity_type, $value->entity_id, $value->revision_id, $value->language, $value->delta, $value->field_project_links_url),
+    );
+ }
 
- // $result = db_select('field_data_field_speech_links', 'f')
- // ->fields('f',array('entity_type', 'entity_id', 'revision_id', 'language' , 'delta', ' field_speech_links_url'))
- // ->execute()
- // ->fetchAll();
+ $result = db_select('field_data_field_speech_links', 'f')
+ ->fields('f',array('entity_type', 'entity_id', 'revision_id', 'language' , 'delta', ' field_speech_links_url'))
+ ->execute()
+ ->fetchAll();
 
- // foreach ($result as $value) {
- //   $operations[] = array(
- //    '_scs_custom_import_related_absolute_links_batch_processing_4',
- //    array($value->entity_type, $value->entity_id, $value->revision_id, $value->language, $value->delta, $value->field_speech_links_url),
- //    );
- // }
+ foreach ($result as $value) {
+   $operations[] = array(
+    '_scs_custom_import_related_absolute_links_batch_processing_4',
+    array($value->entity_type, $value->entity_id, $value->revision_id, $value->language, $value->delta, $value->field_speech_links_url),
+    );
+ }
+
+ $result = db_select('field_data_field_event_related', 'f')
+  ->fields('f',array('entity_type', 'entity_id', 'revision_id', 'language' , 'delta', 'field_event_related_url'))
+  ->execute()
+  ->fetchAll();
+
+  foreach ($result as $value) {
+   $operations[] = array(
+    '_scs_custom_import_related_absolute_links_batch_processing_5',
+    array($value->entity_type, $value->entity_id, $value->revision_id, $value->language, $value->delta, $value->field_event_related_url),
+    );
+ }
+
+ $result = db_select('field_data_field_related_speech', 'f')
+  ->fields('f',array('entity_type', 'entity_id', 'revision_id', 'language' , 'delta', 'field_related_speech_url'))
+  ->execute()
+  ->fetchAll();
+
+  foreach ($result as $value) {
+   $operations[] = array(
+    '_scs_custom_import_related_absolute_links_batch_processing_6',
+    array($value->entity_type, $value->entity_id, $value->revision_id, $value->language, $value->delta, $value->field_related_speech_url),
+    );
+ }
 
  $batch = array(
   'title' => t('Processing related/absolute links...'),
@@ -1328,116 +1357,204 @@ function _scs_custom_import_related_absolute_links() {
 
 function _scs_custom_import_related_absolute_links_batch_processing($type, $entityid, $rev_id , $lang, $delta, $url) {
   global $base_url;
-  $explode_url = explode('akdn.org/',$url);
+  $source_base_url = preg_replace('#^https?://#', '', SCS_SITE_URL);
+  $explode_url = explode($source_base_url,$url);
   if(count($explode_url) > 1) {
-   $new_url = $base_url.'/'.$explode_url[1];
-   $result = db_select('url_alias', 'f')
-   ->fields('f',array('pid'))
-   ->condition('alias', $explode_url[1],'=')
-   ->execute()
-   ->fetchAll();
-   if($result) {
-    db_update('field_data_field_related_information')
-    ->fields(array('field_related_information_url' => $new_url,))
+   $is_exist = 0;
+   $path = $explode_url[1];
+   if (!drupal_valid_path($path)) {
+    if(drupal_lookup_path('source',$path)) {
+      $is_exist = 1;
+    }
+   }else{
+    $is_exist = 1;
+   }
+   if($is_exist) {
+    $new_url = $base_url.'/'.$explode_url[1];
+    db_update('field_data_field_article_link')
+    ->fields(array('field_article_link_url' => $new_url))
     ->condition('entity_type', $type, '=')
     ->condition('entity_id', $entityid, '=')
     ->condition('revision_id', $rev_id, '=')
     ->condition('language', $lang, '=')
     ->condition('delta', $delta, '=')
     ->execute();
-  }
+    cache_clear_all("field:node:".$entityid, 'cache_field');
+   }
 }
 }
 
 function _scs_custom_import_related_absolute_links_batch_processing_1($type, $entityid, $rev_id , $lang, $delta, $url) {
   global $base_url;
-  $explode_url = explode('akdn.org/',$url);
+  $source_base_url = preg_replace('#^https?://#', '', SCS_SITE_URL);
+  $explode_url = explode($source_base_url,$url);
   if(count($explode_url) > 1) {
-   $new_url = $base_url.'/'.$explode_url[1];
-   $result = db_select('url_alias', 'f')
-   ->fields('f',array('pid'))
-   ->condition('alias', $explode_url[1],'=')
-   ->execute()
-   ->fetchAll();
-   if($result) {
+   $is_exist = 0;
+   $path = $explode_url[1];
+   if (!drupal_valid_path($path)) {
+    if(drupal_lookup_path('source',$path)) {
+      $is_exist = 1;
+    }
+   }else{
+    $is_exist = 1;
+   }
+   if($is_exist) {
+    $new_url = $base_url.'/'.$explode_url[1];
     db_update('field_data_field_related_links')
-    ->fields(array('field_related_links_url' => $new_url,))
+    ->fields(array('field_related_links_url' => $new_url))
     ->condition('entity_type', $type, '=')
     ->condition('entity_id', $entityid, '=')
     ->condition('revision_id', $rev_id, '=')
     ->condition('language', $lang, '=')
     ->condition('delta', $delta, '=')
     ->execute();
-  }
+    cache_clear_all("field:node:".$entityid, 'cache_field');
+   }
 }
 }
 
 function _scs_custom_import_related_absolute_links_batch_processing_2($type, $entityid, $rev_id , $lang, $delta, $url) {
   global $base_url;
-  $explode_url = explode('akdn.org/',$url);
+  $source_base_url = preg_replace('#^https?://#', '', SCS_SITE_URL);
+  $explode_url = explode($source_base_url,$url);
   if(count($explode_url) > 1) {
-   $new_url = $base_url.'/'.$explode_url[1];
-   $result = db_select('url_alias', 'f')
-   ->fields('f',array('pid'))
-   ->condition('alias', $explode_url[1],'=')
-   ->execute()
-   ->fetchAll();
-   if($result) {
+   $is_exist = 0;
+   $path = $explode_url[1];
+   if (!drupal_valid_path($path)) {
+    if(drupal_lookup_path('source',$path)) {
+      $is_exist = 1;
+    }
+   }else{
+    $is_exist = 1;
+   }
+   if($is_exist) {
+    $new_url = $base_url.'/'.$explode_url[1];
     db_update('field_data_field_event_links')
-    ->fields(array('field_event_links_url' => $new_url,))
+    ->fields(array('field_event_links_url' => $new_url))
     ->condition('entity_type', $type, '=')
     ->condition('entity_id', $entityid, '=')
     ->condition('revision_id', $rev_id, '=')
     ->condition('language', $lang, '=')
     ->condition('delta', $delta, '=')
     ->execute();
-  }
+    cache_clear_all("field:node:".$entityid, 'cache_field');
+   }
 }
 }
 
 function _scs_custom_import_related_absolute_links_batch_processing_3($type, $entityid, $rev_id , $lang, $delta, $url) {
   global $base_url;
-  $explode_url = explode('akdn.org/',$url);
+  $source_base_url = preg_replace('#^https?://#', '', SCS_SITE_URL);
+  $explode_url = explode($source_base_url,$url);
   if(count($explode_url) > 1) {
-   $new_url = $base_url.'/'.$explode_url[1];
-   $result = db_select('url_alias', 'f')
-   ->fields('f',array('pid'))
-   ->condition('alias', $explode_url[1],'=')
-   ->execute()
-   ->fetchAll();
-   if($result) {
+   $is_exist = 0;
+   $path = $explode_url[1];
+   if (!drupal_valid_path($path)) {
+    if(drupal_lookup_path('source',$path)) {
+      $is_exist = 1;
+    }
+   }else{
+    $is_exist = 1;
+   }
+   if($is_exist) {
+    $new_url = $base_url.'/'.$explode_url[1];
     db_update('field_data_field_project_links')
-    ->fields(array('field_project_links_url' => $new_url,))
+    ->fields(array('field_project_links_url' => $new_url))
     ->condition('entity_type', $type, '=')
     ->condition('entity_id', $entityid, '=')
     ->condition('revision_id', $rev_id, '=')
     ->condition('language', $lang, '=')
     ->condition('delta', $delta, '=')
     ->execute();
-  }
+    cache_clear_all("field:node:".$entityid, 'cache_field');
+   }
 }
 }
 
 function _scs_custom_import_related_absolute_links_batch_processing_4($type, $entityid, $rev_id , $lang, $delta, $url) {
   global $base_url;
-  $explode_url = explode('akdn.org/',$url);
+  $source_base_url = preg_replace('#^https?://#', '', SCS_SITE_URL);
+  $explode_url = explode($source_base_url,$url);
   if(count($explode_url) > 1) {
-   $new_url = $base_url.'/'.$explode_url[1];
-   $result = db_select('url_alias', 'f')
-   ->fields('f',array('pid'))
-   ->condition('alias', $explode_url[1],'=')
-   ->execute()
-   ->fetchAll();
-   if($result) {
+   $is_exist = 0;
+   $path = $explode_url[1];
+   if (!drupal_valid_path($path)) {
+    if(drupal_lookup_path('source',$path)) {
+      $is_exist = 1;
+    }
+   }else{
+    $is_exist = 1;
+   }
+   if($is_exist) {
+    $new_url = $base_url.'/'.$explode_url[1];
     db_update('field_data_field_speech_links')
-    ->fields(array('field_speech_links_url' => $new_url,))
+    ->fields(array('field_speech_links_url' => $new_url))
     ->condition('entity_type', $type, '=')
     ->condition('entity_id', $entityid, '=')
     ->condition('revision_id', $rev_id, '=')
     ->condition('language', $lang, '=')
     ->condition('delta', $delta, '=')
     ->execute();
-  }
+    cache_clear_all("field:node:".$entityid, 'cache_field');
+   }
+}
+}
+
+function _scs_custom_import_related_absolute_links_batch_processing_5($type, $entityid, $rev_id , $lang, $delta, $url) {
+ global $base_url;
+  $source_base_url = preg_replace('#^https?://#', '', SCS_SITE_URL);
+  $explode_url = explode($source_base_url,$url);
+  if(count($explode_url) > 1) {
+   $is_exist = 0;
+   $path = $explode_url[1];
+   if (!drupal_valid_path($path)) {
+    if(drupal_lookup_path('source',$path)) {
+      $is_exist = 1;
+    }
+   }else{
+    $is_exist = 1;
+   }
+   if($is_exist) {
+    $new_url = $base_url.'/'.$explode_url[1];
+    db_update('field_data_field_event_related')
+    ->fields(array('field_event_related_url' => $new_url))
+    ->condition('entity_type', $type, '=')
+    ->condition('entity_id', $entityid, '=')
+    ->condition('revision_id', $rev_id, '=')
+    ->condition('language', $lang, '=')
+    ->condition('delta', $delta, '=')
+    ->execute();
+    cache_clear_all("field:node:".$entityid, 'cache_field');
+   }
+}
+}
+
+function _scs_custom_import_related_absolute_links_batch_processing_6($type, $entityid, $rev_id , $lang, $delta, $url) {
+ global $base_url;
+  $source_base_url = preg_replace('#^https?://#', '', SCS_SITE_URL);
+  $explode_url = explode($source_base_url,$url);
+  if(count($explode_url) > 1) {
+   $is_exist = 0;
+   $path = $explode_url[1];
+   if (!drupal_valid_path($path)) {
+    if(drupal_lookup_path('source',$path)) {
+      $is_exist = 1;
+    }
+   }else{
+    $is_exist = 1;
+   }
+   if($is_exist) {
+    $new_url = $base_url.'/'.$explode_url[1];
+    db_update('field_data_field_related_speech')
+    ->fields(array('field_related_speech_url' => $new_url))
+    ->condition('entity_type', $type, '=')
+    ->condition('entity_id', $entityid, '=')
+    ->condition('revision_id', $rev_id, '=')
+    ->condition('language', $lang, '=')
+    ->condition('delta', $delta, '=')
+    ->execute();
+    cache_clear_all("field:node:".$entityid, 'cache_field');
+   }
 }
 }
 
@@ -1477,7 +1594,7 @@ function _scs_custom_update_syndicate() {
   $url = SCS_SITE_URL.'syndicate-node-api';
     $request = drupal_http_request($url);
     if($request->data) {
-      $xml = simplexml_load_string($request->data);
+      $xml = simplexml_load_string(trim($request->data));
       $json = json_encode($xml);
       $array = json_decode($json,TRUE);
 
@@ -1560,12 +1677,22 @@ function _scs_custom_import_language_batch_processing_complete() {
   drupal_set_message(t('Import Completed Successfully'));
 }
 
+ function _isValidXML($xml) {
+    $doc = @simplexml_load_string($xml);
+    if ($doc) {
+        return true; //this is valid
+    } else {
+        return false; //this is not valid
+    }
+}
+
 function _scs_custom_get_language($guid){
   $node_language = 'und';
   if(!empty($guid)) {
   $url = SCS_SITE_URL.'node-language/'.$guid;
   $request = drupal_http_request($url);
-  $data = new SimpleXMLElement($request->data);
+  if(_isValidXML(trim($request->data))){
+  $data = new SimpleXMLElement(trim($request->data));
   if($request->data) {
     $node_lang = $data->node->language;
     switch ($node_lang) {
@@ -1614,9 +1741,10 @@ function _scs_custom_get_language($guid){
       default:
       $node_language = 'und';
       break;
+        }
+      }
     }
   }
-}
   return $node_language;
 }
 
@@ -1627,48 +1755,60 @@ function _scs_custom_get_node_data ($guid, $type) {
     $url = SCS_SITE_URL.'article-data-translated-by-uuid/'.$guid;
     $request = drupal_http_request($url);
     if($request->data) {
-      $data = new SimpleXMLElement($request->data);
+      if(_isValidXML(trim($request->data))) {
+      $data = new SimpleXMLElement(trim($request->data));
       $node_data =  $data->node;
+      }
     }
     break;
     case 'event':
     $url = SCS_SITE_URL.'event-data-translated-by-uuid/'.$guid;
     $request = drupal_http_request($url);
     if($request->data) {
-      $data = new SimpleXMLElement($request->data);
+      if(_isValidXML(trim($request->data))) {
+      $data = new SimpleXMLElement(trim($request->data));
       $node_data =  $data->node;
+      }
     }
     break;
     case 'person':
     $url = SCS_SITE_URL.'person-data-translated-by-uuid/'.$guid;
     $request = drupal_http_request($url);
     if($request->data) {
-      $data = new SimpleXMLElement($request->data);
+      if(_isValidXML(trim($request->data))) {
+      $data = new SimpleXMLElement(trim($request->data));
       $node_data =  $data->node;
+      }
     }
     break;
     case 'speech':
     $url = SCS_SITE_URL.'speech-data-translated-by-uuid/'.$guid;
     $request = drupal_http_request($url);
     if($request->data) {
-      $data = new SimpleXMLElement($request->data);
+      if(_isValidXML(trim($request->data))) {
+      $data = new SimpleXMLElement(trim($request->data));
       $node_data =  $data->node;
+      }
     }
     break;
     case 'speech_quote':
     $url = SCS_SITE_URL.'speech-quote-data-translated-by-uuid/'.$guid;
     $request = drupal_http_request($url);
     if($request->data) {
-      $data = new SimpleXMLElement($request->data);
+      if(_isValidXML(trim($request->data))) {
+      $data = new SimpleXMLElement(trim($request->data));
       $node_data =  $data->node;
+      }
     }
     break;
     case 'publication':
     $url = SCS_SITE_URL.'publication-data-translated-by-uuid/'.$guid;
     $request = drupal_http_request($url);
     if($request->data) {
-      $data = new SimpleXMLElement($request->data);
+      if(_isValidXML(trim($request->data))) {
+      $data = new SimpleXMLElement(trim($request->data));
       $node_data =  $data->node;
+      }
     }
     break;
     default:
@@ -1686,8 +1826,10 @@ function _scs_custom_get_file_data_from_fid($fid) {
     $url = SCS_SITE_URL.'files-attribute-import-by-fid/'.$file_id;
     $request = drupal_http_request($url);
     if($request->code == 200 && $request->data) {
-      $data = new SimpleXMLElement($request->data, null, false);
+      if(_isValidXML(trim($request->data))) {
+      $data = new SimpleXMLElement(trim($request->data), null, false);
       $data = $data->file_managed;
+      }
     }
   }
   //dsm($data, 'data');
@@ -1700,7 +1842,8 @@ function _scs_custom_get_languages ($guid) {
   if(!empty($guid)) {
     $url = SCS_SITE_URL.'node-language-translated/'.$guid;
     $request = drupal_http_request($url);
-    $data = new SimpleXMLElement($request->data);
+    if(_isValidXML(trim($request->data))) {
+    $data = new SimpleXMLElement(trim($request->data));
   if($request->data) {
     foreach($data->node as $key => $d){
       $lang_code = _scs_custom_get_languages_code_by_name($d->language);
@@ -1708,6 +1851,7 @@ function _scs_custom_get_languages ($guid) {
       $lang[] = array('source' => $source_code , 'lang' => $lang_code);
     }
   }
+}
 }
   return $lang;
 }

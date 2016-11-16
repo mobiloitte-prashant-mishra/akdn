@@ -355,6 +355,32 @@ function captcha_title_change_after_build($form, &$form_state){
 }
 
 /**
+ * hook_node_view(node, view_mode, langcode)
+ */
+function akdn_custom_node_view($node, $view_mode, $langcode) {
+  if ($node->type === 'simplenews') {
+    $data = array();
+    $data['title'] = $node->field_newsletter_social_title[LANGUAGE_NONE][0]['value'];
+    $data['type'] = $node->field_newsletter_social_type[LANGUAGE_NONE][0]['value'];
+    $data['summary'] = $node->field_newsletter_social_summary[LANGUAGE_NONE][0]['value'];
+    $data['url'] = $node->field_newsletter_social_url[LANGUAGE_NONE][0]['url'];
+    $url =  $node->field_newsletter_social_image[LANGUAGE_NONE][0]['uri'];
+    $thumb_image = array(
+      'style_name' => 'newsletter_social_image',
+      'path' => $url,
+      'width' => 250,
+      'height' => 200,
+    );
+    $image = theme('image_style', $thumb_image);
+    $image_link = l($image, $data['url'], array( 'attributes' => array('target'=>'_blank'), 'html' => TRUE));
+    $data['image'] = $image_link;
+    $template = theme('simplenews-social-content-creation', array('output' => $data));
+    $node->content['body'][0]['#markup'] = $node->content['body'][0]['#markup'] . '<table cellspacing="0" cellpadding="0" border="0" width="100%" style="border:0;"><tr><td style="padding:15px;border:0;">' . $template . '</td></tr></table>';
+    return $node;
+  }
+}
+
+/**
  * Implements hook_form_alter().
  *
  * Adjustments for node_edit forms. We override the following:
@@ -391,11 +417,7 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
     $privacy = l('privacy policy', 'node/29876', array('attributes'=>array('target'=>'_blank')));
     $acceptance = l('terms and conditions', 'node/29871', array('attributes'=>array('target'=>'_blank')));
     $form['submitted']['subscription_settings']['#options'][1] = "I have read and accepted the $acceptance and the $privacy of this website.";
-
-    //print '<pre>';print_r($form);die();
-
-
-        $form['#validate'][]='akdn_custom_form_validation';
+    $form['#validate'][]='akdn_custom_form_validation';
   }
 
   // Check that we're on a node edit form.
@@ -503,10 +525,6 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
     $form['view-all'] = array('#markup' => '<a id="view-all-projects" href="/architecture/projects">View All Projects</a>');
   }
 }
-
-// function akdn_custom_captcha($op, $captcha_type = '', $captcha_sid = NULL) {
-//   print 'HERE';die();
-// }
 
 /**
  * Implementes hook_form_FORM_ID_alter().
@@ -1676,6 +1694,7 @@ function what_we_do_news_and_resources() {
         $readall = l('View all', 'press-centre/' . $url, array('query' => array('f[0]' => $filter . ':' . $ntid)));
       }
       if ($node->type == 'podcast') {
+        //$name = 'podcast';
         $type = 'Videos';
         $image = reset($node->field_podcast_image);
         if (empty($image)) {
@@ -1782,6 +1801,7 @@ function what_we_do_news_and_resources() {
       $output .= '<span class= "read">[' . $read . '</span>';
       $output .= '<span class= "readall">' . " | " . $readall . ']</span>';
       $output .= '</div></div>';
+      $name = '';
 
     }
     $output .= '</div>';
@@ -1835,7 +1855,6 @@ function akdn_breadcrumb_trail() {
   if ((arg(1) == 'steering-committee') || (arg(1) == 'master-jury')) {
     $arg = arg(2);
     $node_load = node_load($arg);
-    //dsm($node_load);
     $get_breadcrumb[5] = $get_breadcrumb[4];
     $get_breadcrumb[4] = l($node_load->field_short_title[$node_load->language][0]['value'], 'node/' . $node_load->nid);
   }
@@ -2079,7 +2098,6 @@ function akdn_block_forms($form, &$form_state, $delta) {
   $form = array();
   switch ($delta) {
     case 'akdn_date_filter':
-    //dsm($_SESSION);
       $format = 'Y-m-d';
       $date_filter_flag = 0;
       if(!empty($_GET['from'])) {
@@ -3274,6 +3292,10 @@ function akdn_custom_theme($existing, $type, $theme, $path) {
     ),
     'arguments' => array('view' => NULL),
   );
+  $themes['simplenews-social-content-creation'] = array(
+    'template' => 'templates/simplenews-social-content-creation',
+    'arguments' => array('output' => NULL),
+  );
   return $themes;
 }
 
@@ -4031,5 +4053,104 @@ function _syndicate_node_update() {
 function akdn_custom_social_content_import_alter(&$wrapper, &$context) {
  if ($context['settings']['instance_template']['content_type'] == 'tweet') {
     $wrapper->body->set(array('value' => $context['row']->full_text, 'format' => 'tweet'));
+ }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function akdn_custom_form_simplenews_node_form_alter(&$form, &$form_state, &$form_id) {
+  // Check that we are creating a newsletter and that we come from the
+  // admin/content/node
+  if (!empty($form['#node_edit_form'])
+    && in_array($form['type']['#value'], simplenews_get_content_types())
+    && $form_state['input']['op'] = t('Create newsletter')
+    && isset($form_state['input']['nodes'])
+  ) {
+    $form['body'][LANGUAGE_NONE]['0']['summary'] = FALSE;
+    $nodes = node_load_multiple(array_keys($form_state['input']['nodes']));
+    $data_social = array();
+    $result = array();
+    foreach ($nodes as $key => $value) {
+      if($value->type == 'facebook' || $value->type == 'instagram' || $value->type == 'tweet' || $value->type == 'youtube'){
+        switch($value->type) {
+          case 'facebook':
+            $data_social[] = array(
+              'nid' =>$value->nid,
+              'type' => $value->type,
+              'body' => $value->body['en'][0]['value'],
+              'image' => $value->field_facebook_picture['und'][0]['uri'],
+              'url' => $value->field_facebook_link['und'][0]['url'],
+            );
+          break;
+          case 'instagram':
+            $data_social[] = array(
+              'nid' =>$value->nid,
+              'type' => $value->type,
+              'body' => $value->body['en'][0]['value'],
+              'image' => $value->field_instagram_picture['und'][0]['uri'],
+              'url' => $value->field_instagram_link['und'][0]['url'],
+            );
+          break;
+          case 'tweet':
+            $data_social[] = array(
+              'nid' =>$value->nid,
+              'type' => $value->type,
+              'body' => $value->body['en'][0]['value'],
+              'image' => $value->field_tweet_media['und'][0]['uri'],
+              'url' => $value->field_tweet_link['und'][0]['url'],
+            );
+          break;
+          case 'youtube':
+            $data_social[] = array(
+              'nid' =>$value->nid,
+              'type' => $value->type,
+              'title' => $value->title,
+              'body' => $value->body['en'][0]['value'],
+              'image' => $value->field_youtube_picture['und'][0]['uri'],
+              'url' => $value->field_youtube_link['und'][0]['url'],
+            );
+          break;
+        }
+      }
+      else {
+        $body = $value->field_newsletter_summary['und']['0']['value'];
+        if ($value->type == 'article') {
+          $tid = $value->field_article_cat[0]['tid'];
+          $term_load = taxonomy_term_load($tid);
+          $url = $value->field_media_source['0']['display_url'];
+          $result[] = array(
+            'nid' => $key,
+            'title' => strip_tags($value->title),
+            'image' => $value->field_newsletter_image['und']['0']['uri'],
+            'body' => $body,
+            'term_load' => $term_load,
+            'url' => $url,
+          );
+        }
+        else{
+          $result[] = array(
+            'nid' => $key,
+            'title' => strip_tags($value->title),
+            'image' => $value->field_newsletter_image['und']['0']['uri'],
+            'body' => $body,
+          );
+        }
+      }
+    }
+    foreach($nodes as $node) {
+      $node->scs_view_mode = $form_state['input']['nodes'][$node->nid]['view_mode'];
+    }
+    $form['body'][LANGUAGE_NONE][0]['#default_value'] = theme('scs_newsletter', array(
+      'result' => $result,
+      'social' => $data_social,
+      'toc' => empty($form_state['input']['scs_toc']) ? FALSE : TRUE,
+    ));
+  }
+}
+function akdn_custom_wysiwyg_editor_settings_alter(&$settings, $context) {
+ if($context['profile']->editor == 'ckeditor') {
+    $settings['enterMode'] = 1; // CKEDITOR.ENTER_P
+    $settings['shiftEnterMode'] = 2; // CKEDITOR.ENTER_BR
  }
 }

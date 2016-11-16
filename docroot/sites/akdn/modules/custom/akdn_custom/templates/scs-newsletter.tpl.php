@@ -14,29 +14,224 @@
   $output = '';
   $output .= '<table cellspacing="0" cellpadding="0" border="0" width="100%" style="margin:0;border:0;">';
   $count = 0;
-  foreach ($nodes as $node) {
-  $title = strip_tags($node['#node']->title);
-  $img_url = reset($node['#node']->field_newsletter_image)['0']['uri'];
-  $thumb_image = array(
-    'style_name' => 'mail_shot_image_cache',
-    'path' => $img_url,
-  );
-  $img =  theme('image_style', $thumb_image);
-  $body = reset($node['#node']->field_newsletter_summary)['0']['value'];
-  $output .= '<tr><td align="right" valign="top" width="170" style="padding:20px 0 20px 20px;border-bottom:1px solid #999999;vertical-align:top;text-align:center;">';
-  if (!empty($img)) {
-    $output .= l($img, 'node/' . $node['#node']->nid, array( 'attributes' => array('target'=>'_blank'), 'html' => TRUE));
-  }
-  $output .= '</td>';
-  $output .= '<td valign="top" style="padding:20px;border-bottom:1px solid #999999;vertical-align:top;">';
-  if (!empty($title)) {
-    $output .= '<h4 style="color:#b49759;font-weight:bold;font-size:12px;font-family:Arial,Serif;line-height:16px;margin:0 0 5px;text-transform:capitalize;">' . l($title, 'node/' . $node['#node']->nid) . '</h4>';
-  }
-  if (!empty($body)) {
-    $output .= '<p style="font-size:12px;line-height:16px;font-style:normal;color:#333333;font-family:Arial,Serif;margin:0;">' . $body . '</p>';
-  }
-  $output .= '</td></tr>';
+  foreach ($result as $key => $value) {
+    $thumb_image = array(
+      'style_name' => 'mail_shot_image_cache',
+      'path' => $value['image'],
+      'width' => 150,
+    );
+    $img = theme('image_style', $thumb_image);
+    $image_link = l($img, 'node/' . $value['nid'], array('attributes' => array('target' => '_blank'), 'html' => TRUE));
+    if (!empty($value['image'])) {
+      $output .= '<tr><td align="left" valign="top" width="170" style="padding:20px 0 20px 15px;border-bottom:1px solid #999999;vertical-align:top;text-align:left;">';
+      if ($value['term_load']->name == 'In the media' && !empty($value['url'])) {
+        $output .= l($img, $value['url'], array('attributes' => array('target' => '_blank'), 'html' => TRUE));
+      }
+      elseif($value['term_load']->name == 'In the media' && empty($value['url'])) {
+        $output .= $img;
+      }
+      else {
+        $output .= $image_link;
+      }
+      $output .= '</td>';
+      $output .= '<td align="left" valign="top" style="padding:20px 15px;border-bottom:1px solid #999999;vertical-align:top;text-align:left;">';
+      if (!empty($value['title'])) {
+          if ($value['term_load']->name == 'In the media' && !empty($value['url'])) {
+            $output .= '<h4 style="color:#b49759;font-weight:bold;font-size:12px;font-family:Arial,Serif;line-height:16px;margin:0 0 5px;text-align:left;">' . l($value['title'], $value['url']) . '</h4>';
+          }
+          elseif($value['term_load']->name == 'In the media' && empty($value['url'])) {
+            $output .= '<h4 style="color:#b49759;font-weight:bold;font-size:12px;font-family:Arial,Serif;line-height:16px;margin:0 0 5px;text-align:left;">' . $value['title'] . '</h4>';
+          }
+          else {
+            $output .= '<h4 style="color:#b49759;font-weight:bold;font-size:12px;font-family:Arial,Serif;line-height:16px;margin:0 0 5px;text-align:left;">' . l($value['title'], 'node/' . $value['nid']) . '</h4>';
+          }
+        }
+        if (!empty($value['body'])) {
+          $output .= '<p style="font-size:12px;line-height:16px;font-style:normal;color:#333333;font-family:Arial,Serif;margin:0;text-align:left;">' . $value['body'] . '</p>';
+        }
+        $output .= '</td></tr>';
+    } else {
+      $output .= '<tr><td colspan="2" align="left" valign="top" style="padding:20px 15px;border-bottom:1px solid #999999;vertical-align:top;text-align:left;">';
+      if (!empty($value['title'])) {
+        if ($value['term_load']->name == 'In the media' && !empty($value['url'])) {
+          $output .= '<h4 style="color:#b49759;font-weight:bold;font-size:12px;font-family:Arial,Serif;line-height:16px;margin:0 0 5px;text-align:left;">' . l($value['title'], $value['url']) . '</h4>';
+        }
+        elseif($value['term_load']->name == 'In the media' && empty($value['url'])) {
+          $output .= '<h4 style="color:#b49759;font-weight:bold;font-size:12px;font-family:Arial,Serif;line-height:16px;margin:0 0 5px;text-align:left;">' . $value['title'] . '</h4>';
+        }
+        else {
+          $output .= '<h4 style="color:#b49759;font-weight:bold;font-size:12px;font-family:Arial,Serif;line-height:16px;margin:0 0 5px;text-align:left;">' . l($value['title'], 'node/' . $value['nid']) . '</h4>';
+        }
+      }
+      if (!empty($value['body'])) {
+        $output .= '<p style="font-size:12px;line-height:16px;font-style:normal;color:#333333;font-family:Arial,Serif;margin:0;text-align:left;">' . $value['body'] . '</p>';
+      }
+      $output .= '</td></tr>';
+    }
     $count++;
+  }
+  /**
+   * SOCIAL CONTENT
+   */
+  $i=0;
+  foreach ($social as $key => $value) {
+    $thumb_image = array(
+     'style_name' => 'newsletter_social_image',
+     'path' => $value['image'],
+     'width' => 250,
+     'height' => 200,
+    );
+    $image = theme('image_style', $thumb_image);
+    $image_link = l($image, $value['url'], array('attributes' => array('target' => '_blank'), 'html' => TRUE));
+    if($i==0) {
+      $output .= '<tr><td colspan="2" style="padding:15px;border:0;"><h5 style="margin:0;font-family:Times New Roman,arial;font-size: 16px;font-weight: bold;color: #000;">AKDN on social media</h5></td></tr>';
+    }
+    $output .= '<tr><td colspan="2" style="padding:0 15px 15px;border:0;">';
+      if($value['type'] == 'facebook') {
+        if (!empty($value['image'])) {
+          $output .= '<table cellspacing="0" cellpadding="0" border="0" width="100%" style="margin:0;background:#eaeaea;border:0;">
+                      <tr>
+                        <td align="left" valign="top" style="padding:15px 0 15px 15px;border:0;vertical-align:top;">
+                          <table cellspacing="0" cellpadding="0" border="0" width="100%" style=";border:0;">
+                            <tr><td width="1%" align="left" valign="top" style="padding:2px 0 0 0;"><img width="32" height="32" src="http://akdn.org/sites/akdn/themes/akdn/images/facebook.png" style="width:32px;height:32px;"></td>
+                            <td width="99%" align="left" valign="top" style="padding:0 0 0 8px;">
+                              <h3 style="font-size:16px;margin:0 0 3px;padding:0;font-family:arial;font-weight:normal;line-height:1;">Aga Khan Development Network</h3>
+                              <p style="margin:0;font-family:Times New Roman,arial;font-size:14px;">facebook.com/AKDN</p>
+                            </td></tr>
+                          <tr><td colspan="2" style="font-family:arial;font-size:14px;line-height:16px;color:#000000;padding:5px 0 10px;">' . $value['body'] . '</td></tr>
+                          <tr><td colspan="2" style="padding:0;"><a href="' . $value['url'] . '" style="width:50px;height:20px;padding:0;border-top: 3px solid #3b5998;border-bottom: 3px solid #3b5998;border-right: 8px solid #3b5998;border-left: 8px solid #3b5998;font-family:arial;font-size:12px;line-height:1;color:#ffffff;background:#3b5998;text-decoration:none;">Read</a></td></tr>
+                          </table>
+                        </td>
+                        <td width="250" align="right" valign="top" style="padding:15px;">' . $image_link . '</td>
+                      </tr>
+          </table>';
+        } else {
+          $output .= '<table cellspacing="0" cellpadding="0" border="0" width="100%" style="margin:0;background:#eaeaea;border:0;">
+                      <tr>
+                        <td colspan="2" align="left" valign="top" style="padding:15px 0 15px 15px;border:0;vertical-align:top;">
+                          <table cellspacing="0" cellpadding="0" border="0" width="100%" style=";border:0;">
+                            <tr><td width="1%" align="left" valign="top" style="padding:2px 0 0 0;"><img width="32" height="32" src="http://akdn.org/sites/akdn/themes/akdn/images/facebook.png" style="width:32px;height:32px;"></td>
+                            <td width="99%" align="left" valign="top" style="padding:0 0 0 8px;">
+                              <h3 style="font-size:16px;margin:0 0 3px;padding:0;font-family:arial;font-weight:normal;line-height:1;">Aga Khan Development Network</h3>
+                              <p style="margin:0;font-family:Times New Roman,arial;font-size:14px;">facebook.com/AKDN</p>
+                            </td></tr>
+                          <tr><td colspan="2" style="font-family:arial;font-size:14px;line-height:16px;color:#000000;padding:5px 0 10px;">' . $value['body'] . '</td></tr>
+                          <tr><td colspan="2" style="padding:0;"><a href="' . $value['url'] . '" style="width:50px;height:20px;padding:0;border-top: 3px solid #3b5998;border-bottom: 3px solid #3b5998;border-right: 8px solid #3b5998;border-left: 8px solid #3b5998;font-family:arial;font-size:12px;line-height:1;color:#ffffff;background:#3b5998;text-decoration:none;">Read</a></td></tr>
+                          </table>
+                        </td>
+                      </tr>
+          </table>';
+        }
+      }
+
+      if ($value['type'] == 'tweet') {
+        if (!empty($value['image'])) {
+          $output .= '<table cellspacing="0" cellpadding="0" border="0" width="100%" style="margin:0;background:#eaeaea;border:0;">
+            <tr>
+              <td align="left" valign="top" style="padding:15px 0 15px 15px;border:0;vertical-align:top;">
+                <table cellspacing="0" cellpadding="0" border="0" width="100%" style=";border:0;">
+                  <tr><td width="1%" align="left" valign="top" style="padding:2px 0 0 0;"><img width="32" height="32" src="http://akdn.org/sites/akdn/themes/akdn/images/twitter.png" style="width:32px;height:32px;"></td>
+                  <td width="99%" align="left" valign="top" style="padding:0 0 0 8px;">
+                    <h3 style="font-size:16px;margin:0 0 3px;padding:0;font-family:arial;font-weight:normal;line-height:1;">Aga Khan Development Network</h3>
+                    <p style="margin:0;font-family:Times New Roman,arial;font-size:14px;">@AKDN</p>
+                  </td></tr>
+                <tr><td colspan="2" style="font-family:arial;font-size:14px;line-height:16px;color:#000000;padding:5px 0 10px;">' . $value['body'] . '</td></tr>
+                <tr><td colspan="2" style="padding:0;"><a href="' . $value['url'] . '" style="width:50px;height:20px;padding:0;border-top: 3px solid #1b95e0;border-bottom: 3px solid #1b95e0;border-right: 8px solid #1b95e0;border-left: 8px solid #1b95e0;font-family:arial;font-size:12px;line-height:1;color:#ffffff;background:#1b95e0;text-decoration:none;">Read</a></td></tr>
+                </table>
+              </td>
+              <td width="250" align="right" valign="top" style="padding:15px;">' . $image_link . '</td>
+            </tr>
+          </table>';
+        } else {
+          $output .= '<table cellspacing="0" cellpadding="0" border="0" width="100%" style="margin:0;background:#eaeaea;border:0;">
+            <tr>
+              <td align="left" colspan="2" valign="top" style="padding:15px 0 15px 15px;border:0;vertical-align:top;">
+                <table cellspacing="0" cellpadding="0" border="0" width="100%" style=";border:0;">
+                  <tr><td width="1%" align="left" valign="top" style="padding:2px 0 0 0;"><img width="32" height="32" src="http://akdn.org/sites/akdn/themes/akdn/images/twitter.png" style="width:32px;height:32px;"></td>
+                  <td width="99%" align="left" valign="top" style="padding:0 0 0 8px;">
+                    <h3 style="font-size:16px;margin:0 0 3px;padding:0;font-family:arial;font-weight:normal;line-height:1;">Aga Khan Development Network</h3>
+                    <p style="margin:0;font-family:Times New Roman,arial;font-size:14px;">@AKDN</p>
+                  </td></tr>
+                <tr><td colspan="2" style="font-family:arial;font-size:14px;line-height:16px;color:#000000;padding:5px 0 10px;">' . $value['body'] . '</td></tr>
+                <tr><td colspan="2" style="padding:0;"><a href="' . $value['url'] . '" style="width:50px;height:20px;padding:0;border-top: 3px solid #1b95e0;border-bottom: 3px solid #1b95e0;border-right: 8px solid #1b95e0;border-left: 8px solid #1b95e0;font-family:arial;font-size:12px;line-height:1;color:#ffffff;background:#1b95e0;text-decoration:none;">Read</a></td></tr>
+                </table>
+              </td>
+            </tr>
+          </table>';
+        }
+      }
+
+      if ($value['type'] == 'instagram') {
+        if (!empty($value['image'])) {
+          $output .= '<table cellspacing="0" cellpadding="0" border="0" width="100%" style="margin:0;background:#eaeaea;border:0;">
+          <tr>
+            <td align="left" valign="top" style="padding:15px 0 15px 15px;border:0;vertical-align:top;">
+              <table cellspacing="0" cellpadding="0" border="0" width="100%" style=";border:0;">
+                <tr><td width="1%" align="left" valign="top" style="padding:2px 0 0 0;"><img width="32" height="32" src="http://akdn.org/sites/akdn/themes/akdn/images/instagram.png" style="width:32px;height:32px;"></td>
+                <td width="99%" align="left" valign="top" style="padding:0 0 0 8px;">
+                  <h3 style="font-size:16px;margin:0 0 3px;padding:0;font-family:arial;font-weight:normal;line-height:1;">Aga Khan Development Network</h3>
+                  <p style="margin:0;font-family:Times New Roman,arial;font-size:14px;">@AKDN</p>
+                </td></tr>
+              <tr><td colspan="2" style="font-family:arial;font-size:14px;line-height:16px;color:#000000;padding:5px 0 0;">' . $value['body'] . '</td></tr>
+              </table>
+            </td>
+            <td width="250" align="right" valign="top" style="padding:15px;">' . $image_link . '</td>
+          </tr>
+          </table>';
+        } else {
+          $output .= '<table cellspacing="0" cellpadding="0" border="0" width="100%" style="margin:0;background:#eaeaea;border:0;">
+          <tr>
+            <td colspan="2" align="left" valign="top" style="padding:15px 0 15px 15px;border:0;vertical-align:top;">
+              <table cellspacing="0" cellpadding="0" border="0" width="100%" style=";border:0;">
+                <tr><td width="1%" align="left" valign="top" style="padding:2px 0 0 0;"><img width="32" height="32" src="http://akdn.org/sites/akdn/themes/akdn/images/instagram.png" style="width:32px;height:32px;"></td>
+                <td width="99%" align="left" valign="top" style="padding:0 0 0 8px;">
+                  <h3 style="font-size:16px;margin:0 0 3px;padding:0;font-family:arial;font-weight:normal;line-height:1;">Aga Khan Development Network</h3>
+                  <p style="margin:0;font-family:Times New Roman,arial;font-size:14px;">@AKDN</p>
+                </td></tr>
+              <tr><td colspan="2" style="font-family:arial;font-size:14px;line-height:16px;color:#000000;padding:5px 0 0;">' . $value['body'] . '</td></tr>
+              </table>
+            </td>
+          </tr>
+          </table>';
+        }
+      }
+
+      if ($value['type'] == 'youtube') {
+        if (!empty($value['image'])) {
+          $output .= '<table cellspacing="0" cellpadding="0" border="0" width="100%" style="margin:0;background:#eaeaea;border:0;">
+          <tr>
+            <td align="left" valign="top" style="padding:15px 0 15px 15px;border:0;vertical-align:top;">
+              <table cellspacing="0" cellpadding="0" border="0" width="100%" style=";border:0;">
+                <tr><td width="1%" align="left" valign="top" style="padding:2px 0 0 0;"><img width="32" height="32" src="http://akdn.org/sites/akdn/themes/akdn/images/youtube.png" style="width:32px;height:32px;"></td>
+                <td width="99%" align="left" align="left" valign="top" style="padding:0 0 0 8px;vertical-align:top;">
+                  <h3 style="font-size:16px;margin:0;padding:0;font-family:Times New Roman,arial;font-weight:bold;line-height:18px;"><a href=" ' . $value['url'] . '" target="_blank" style="color:#000000;">' . $value['title'] . '</a></h3>
+                </td></tr>
+                <tr><td colspan="2" style="font-family:arial;font-size:14px;line-height:16px;color:#000000;padding:5px 0 10px;">' . $value['body'] . '</td></tr>
+                <tr><td colspan="2" style="padding:0;"><a href="' . $value['url'] . '" style="width:50px;height:20px;padding:0;border-top: 3px solid #e62117;border-bottom: 3px solid #e62117;border-right: 8px solid #e62117;border-left: 8px solid #e62117;font-family:arial;font-size:12px;line-height:1;color:#ffffff;background:#e62117;text-decoration:none;">Play</a></td></tr>
+              </table>
+            </td>
+            <td width="250" align="right" valign="top" style="padding:15px;">' . $image_link . '</td>
+          </tr>
+          </table>';
+        } else {
+          $output .= '<table cellspacing="0" cellpadding="0" border="0" width="100%" style="margin:0;background:#eaeaea;border:0;">
+          <tr>
+            <td colspan="2" align="left" valign="top" style="padding:15px 0 15px 15px;border:0;vertical-align:top;">
+              <table cellspacing="0" cellpadding="0" border="0" width="100%" style=";border:0;">
+                <tr><td width="1%" align="left" valign="top" style="padding:2px 0 0 0;"><img width="32" height="32" src="http://akdn.org/sites/akdn/themes/akdn/images/youtube.png" style="width:32px;height:32px;"></td>
+                <td width="99%" align="left" align="left" valign="top" style="padding:0 0 0 8px;vertical-align:top;">
+                  <h3 style="font-size:16px;margin:0;padding:0;font-family:Times New Roman,arial;font-weight:bold;line-height:18px;"><a href=" ' . $value['url'] . '" target="_blank" style="color:#000000;">' . $value['title'] . '</a></h3>
+                </td></tr>
+                <tr><td colspan="2" style="font-family:arial;font-size:14px;line-height:16px;color:#000000;padding:5px 0 10px;">' . $value['body'] . '</td></tr>
+                <tr><td colspan="2" style="padding:0;"><a href="' . $value['url'] . '" style="width:50px;height:20px;padding:0;border-top: 3px solid #e62117;border-bottom: 3px solid #e62117;border-right: 8px solid #e62117;border-left: 8px solid #e62117;font-family:arial;font-size:12px;line-height:1;color:#ffffff;background:#e62117;text-decoration:none;">Play</a></td></tr>
+              </table>
+            </td>
+          </tr>
+          </table>';
+        }
+      }
+    $output .= '</td></tr>';
+    $i++;
   }
   $output .= '</table>';
   print $output;

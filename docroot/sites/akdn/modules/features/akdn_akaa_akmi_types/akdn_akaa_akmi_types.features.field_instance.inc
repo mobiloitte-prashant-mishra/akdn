@@ -121,7 +121,55 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-akmi_cd_dvd-body'.
+  // Exported field_instance: 'node-akmi_artists-field_text_related_instruments'
+  $field_instances['node-akmi_artists-field_text_related_instruments'] = array(
+    'bundle' => 'akmi_artists',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Instruments which do not have a node. will be displayed as Plain text.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 14,
+      ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_text_related_instruments',
+    'label' => 'Other Instruments',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'node-akmi_cd_dvd-body'
   $field_instances['node-akmi_cd_dvd-body'] = array(
     'bundle' => 'akmi_cd_dvd',
     'default_value' => NULL,

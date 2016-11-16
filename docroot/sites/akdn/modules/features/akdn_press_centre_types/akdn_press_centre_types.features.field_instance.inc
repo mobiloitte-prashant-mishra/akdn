@@ -428,7 +428,7 @@ function akdn_press_centre_types_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 0,
+      'default_image' => 179471,
       'entity_translation_sync' => 0,
       'file_directory' => 'article-images',
       'file_extensions' => 'png gif jpg jpeg',
@@ -3846,7 +3846,7 @@ function akdn_press_centre_types_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 0,
+      'default_image' => 179481,
       'entity_translation_sync' => 0,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
@@ -6420,7 +6420,7 @@ function akdn_press_centre_types_field_default_field_instances() {
     'required' => 1,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 0,
+      'default_image' => 179491,
       'entity_translation_sync' => 0,
       'file_directory' => 'gallery',
       'file_extensions' => 'png gif jpg jpeg',
@@ -9228,7 +9228,7 @@ function akdn_press_centre_types_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 0,
+      'default_image' => 179501,
       'entity_translation_sync' => 0,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
@@ -11598,7 +11598,7 @@ function akdn_press_centre_types_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 0,
+      'default_image' => 179531,
       'entity_translation_sync' => 0,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
@@ -14069,7 +14069,7 @@ function akdn_press_centre_types_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 0,
+      'default_image' => 179511,
       'entity_translation_sync' => 0,
       'file_directory' => 'Publications',
       'file_extensions' => 'png gif jpg jpeg',
@@ -17270,7 +17270,7 @@ function akdn_press_centre_types_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 0,
+      'default_image' => 179521,
       'entity_translation_sync' => 0,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',

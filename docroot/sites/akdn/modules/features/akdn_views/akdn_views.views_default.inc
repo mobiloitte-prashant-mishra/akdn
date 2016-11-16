@@ -424,7 +424,7 @@ print $output;
     t('queue'),
     t('| More'),
     t('<div class="pc-listing-img">
-	[field_hub_page_image]
+
 </div>
 <div class="pc-listing-info">
 	<div class="pc-body">

@@ -1,0 +1,13 @@
+name = WYSIWYG Profiles
+core = 7.x
+package = AKDN.org
+version = 7.x-1.0-alpha1
+dependencies[] = features
+dependencies[] = filter
+dependencies[] = media
+dependencies[] = wysiwyg
+features[features_api][] = api:2
+features[filter][] = filtered_html
+features[filter][] = full_html
+features[wysiwyg][] = filtered_html
+features[wysiwyg][] = full_html
