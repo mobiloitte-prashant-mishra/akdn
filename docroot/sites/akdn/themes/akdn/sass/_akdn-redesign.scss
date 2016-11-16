@@ -8813,6 +8813,7 @@ html {
     }
   }
 }
+
 /* AKDN-1392 remove custom header block margin */
 .pane-custom-header-block {
  .akaa-projectinfo-map-related-info {
@@ -8827,6 +8828,39 @@ html {
   &.rem_brdr {
     &:before {
       display: none;
+    }
+  }
+}
+
+// Fix overlapping inline videos for all content
+.media-video {
+  display: block;
+  float: left;
+  width: 100%;
+  object,
+  iframe,
+  embed {
+    width: 100% !important;
+    height: 100% !important;
+    float: left;
+  }
+  & > object,
+  & > iframe,
+  & .media-youtube-outer-wrapper {
+    display: block;
+    width: 50% !important;
+    height: 260px !important;
+    margin: 3px 15px 10px 0;
+    float: left;
+  }
+  .media-youtube-preview-wrapper {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  & > p {
+    width: auto;
+    span {
+      font-size: 16px !important;
     }
   }
 }
