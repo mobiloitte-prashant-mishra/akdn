@@ -8821,3 +8821,12 @@ html {
    }
  }
 }
+
+//Remove top boder if no content on custom header block
+.basic-page-custom-block-right {
+  &.rem_brdr {
+    &:before {
+      display: none;
+    }
+  }
+}

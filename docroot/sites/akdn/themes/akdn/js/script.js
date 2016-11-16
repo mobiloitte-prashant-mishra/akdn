@@ -874,6 +874,11 @@ $(window).load(function(){
     $('.sub-navbar p').addClass('indexfix');
   });
 
+  //Remove border from custom header block
+  if($('.basic-page-custom-block-right .pane-content > .view .field-content').is(':empty')){
+    $('.basic-page-custom-block-right').addClass('rem_brdr');
+  }
+
   }
 }
 
