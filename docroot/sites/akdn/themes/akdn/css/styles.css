@@ -18919,6 +18919,11 @@ html.js fieldset.collapsed {
   font-size: 16px !important;
 }
 
+/* line 8863, ../sass/_akdn-redesign.scss */
+.basic-page-custom-block-right.rem_brdr:before {
+  display: none;
+}
+
 /*
 * Media Queries
 *
