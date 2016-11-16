@@ -8823,48 +8823,6 @@ html {
   }
 }
 
-// Fix overlapping inline videos
-.media-youtube-outer-wrapper {
-  width: 100% !important;
-  height: auto !important;
-  .media-youtube-preview-wrapper {
-    width: 100% !important;
-    height: auto !important;
-  }
-  object,
-  iframe {
-    max-width: 100%;
-  }
-}
-
-// Fix overlapping inline videos + video in half for custom page
-.node-type-custom-content {
-  object {
-    width: 387px !important;
-    height: 258px !important;
-    margin-right: 15px;
-    float: left;
-  }
-  .media-youtube-outer-wrapper {
-    display: inline-block;
-    width: 387px !important;
-    height: 258px !important;
-    margin-right: 15px;
-    float: left;
-    .media-youtube-preview-wrapper {
-      width: 100% !important;
-      height: 100% !important;
-    }
-    object,
-    iframe,
-    embed {
-      width: 100% !important;
-      height: 100% !important;
-      margin-right: 0;
-    }
-  }
-}
-
 /* AKDN-1392 remove custom header block margin */
 .pane-custom-header-block {
  .akaa-projectinfo-map-related-info {
@@ -8872,4 +8830,37 @@ html {
      margin-top: 0;
    }
  }
+}
+
+// Fix overlapping inline videos for all content
+.media-video {
+  display: block;
+  float: left;
+  width: 100%;
+  object,
+  iframe,
+  embed {
+    width: 100% !important;
+    height: 100% !important;
+    float: left;
+  }
+  & > object,
+  & > iframe,
+  & .media-youtube-outer-wrapper {
+    display: block;
+    width: 50% !important;
+    height: 260px !important;
+    margin: 3px 15px 10px 0;
+    float: left;
+  }
+  .media-youtube-preview-wrapper {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  & > p {
+    width: auto;
+    span {
+      font-size: 16px !important;
+    }
+  }
 }

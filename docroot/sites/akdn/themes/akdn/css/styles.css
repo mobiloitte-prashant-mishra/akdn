@@ -18845,55 +18845,46 @@ html.js fieldset.collapsed {
   height: auto;
 }
 
-/* line 8827, ../sass/_akdn-redesign.scss */
-.media-youtube-outer-wrapper {
-  width: 100% !important;
-  height: auto !important;
-}
-/* line 8830, ../sass/_akdn-redesign.scss */
-.media-youtube-outer-wrapper .media-youtube-preview-wrapper {
-  width: 100% !important;
-  height: auto !important;
-}
-/* line 8834, ../sass/_akdn-redesign.scss */
-.media-youtube-outer-wrapper object,
-.media-youtube-outer-wrapper iframe {
-  max-width: 100%;
-}
-
-/* line 8842, ../sass/_akdn-redesign.scss */
-.node-type-custom-content object {
-  width: 387px !important;
-  height: 258px !important;
-  margin-right: 15px;
-  float: left;
-}
-/* line 8848, ../sass/_akdn-redesign.scss */
-.node-type-custom-content .media-youtube-outer-wrapper {
-  display: inline-block;
-  width: 387px !important;
-  height: 258px !important;
-  margin-right: 15px;
-  float: left;
-}
-/* line 8854, ../sass/_akdn-redesign.scss */
-.node-type-custom-content .media-youtube-outer-wrapper .media-youtube-preview-wrapper {
-  width: 100% !important;
-  height: 100% !important;
-}
-/* line 8858, ../sass/_akdn-redesign.scss */
-.node-type-custom-content .media-youtube-outer-wrapper object,
-.node-type-custom-content .media-youtube-outer-wrapper iframe,
-.node-type-custom-content .media-youtube-outer-wrapper embed {
-  width: 100% !important;
-  height: 100% !important;
-  margin-right: 0;
-}
-
 /* AKDN-1392 remove custom header block margin */
-/* line 8871, ../sass/_akdn-redesign.scss */
+/* line 8829, ../sass/_akdn-redesign.scss */
 .pane-custom-header-block .akaa-projectinfo-map-related-info:before {
   margin-top: 0;
+}
+
+/* line 8836, ../sass/_akdn-redesign.scss */
+.media-video {
+  display: block;
+  float: left;
+  width: 100%;
+}
+/* line 8840, ../sass/_akdn-redesign.scss */
+.media-video object,
+.media-video iframe,
+.media-video embed {
+  width: 100% !important;
+  height: 100% !important;
+  float: left;
+}
+/* line 8847, ../sass/_akdn-redesign.scss */
+.media-video > object, .media-video > iframe, .media-video .media-youtube-outer-wrapper {
+  display: block;
+  width: 50% !important;
+  height: 260px !important;
+  margin: 3px 15px 10px 0;
+  float: left;
+}
+/* line 8856, ../sass/_akdn-redesign.scss */
+.media-video .media-youtube-preview-wrapper {
+  width: 100% !important;
+  height: 100% !important;
+}
+/* line 8860, ../sass/_akdn-redesign.scss */
+.media-video > p {
+  width: auto;
+}
+/* line 8862, ../sass/_akdn-redesign.scss */
+.media-video > p span {
+  font-size: 16px !important;
 }
 
 /*
