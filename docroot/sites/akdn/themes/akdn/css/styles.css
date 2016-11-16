@@ -18791,6 +18791,42 @@ map area {
   opacity: 1;
 }
 
+/* line 8795, ../sass/_akdn-redesign.scss */
+.media-video {
+  display: block;
+  float: left;
+  width: 100%;
+}
+/* line 8799, ../sass/_akdn-redesign.scss */
+.media-video object,
+.media-video iframe,
+.media-video embed {
+  width: 100% !important;
+  height: 100% !important;
+  float: left;
+}
+/* line 8806, ../sass/_akdn-redesign.scss */
+.media-video > object, .media-video .media-youtube-outer-wrapper {
+  display: block;
+  width: 50% !important;
+  height: 260px !important;
+  margin: 3px 15px 10px 0;
+  float: left;
+}
+/* line 8814, ../sass/_akdn-redesign.scss */
+.media-video .media-youtube-preview-wrapper {
+  width: 100% !important;
+  height: 100% !important;
+}
+/* line 8818, ../sass/_akdn-redesign.scss */
+.media-video > p {
+  width: auto;
+}
+/* line 8820, ../sass/_akdn-redesign.scss */
+.media-video > p span {
+  font-size: 16px !important;
+}
+
 /*
 * Media Queries
 *
