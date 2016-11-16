@@ -1355,7 +1355,9 @@ function fact_sheet_top_links_block() {
   if (!empty($arg)) {
     $node = node_load($arg);
     $show = $node->field_show_fact_block[key($node->field_show_fact_block)][0]['value'];
-    if ($show == 1) {
+    $view = views_get_view_result('facts_blocks', 'facts_block', $node->nid);
+    $result = count($view);
+    if ($show == 1 && !empty($result)) {
       $term = nat_get_terms_by_vocabulary($arg);
       $term = array_values($term);
       $name = $term[0]->name;
