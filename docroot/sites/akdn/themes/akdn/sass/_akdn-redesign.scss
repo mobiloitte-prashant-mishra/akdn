@@ -8837,6 +8837,7 @@ html {
     float: left;
   }
   & > object,
+  & > iframe,
   & .media-youtube-outer-wrapper {
     display: block;
     width: 50% !important;
