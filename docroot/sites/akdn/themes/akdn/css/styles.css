@@ -712,29 +712,104 @@ th {
   .akdn-basic-page .grid-18 {
     width: 100% !important;
   }
+  /* line 379, ../sass/sass-extensions/bootstrap/_print.scss */
+  .akdn-basic-page .grid-18 .accordian-rows {
+    page-break-inside: avoid;
+  }
 
-  /* line 380, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 383, ../sass/sass-extensions/bootstrap/_print.scss */
   .basic-page-accordian-main-container .accordian-main-body {
     display: block;
   }
 
-  /* line 383, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 386, ../sass/sass-extensions/bootstrap/_print.scss */
   .whatwedo-left .morelink {
     display: none !important;
   }
 
-  /* line 386, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 389, ../sass/sass-extensions/bootstrap/_print.scss */
   .whatwedo-left .what-we-do-body-more-body {
     display: block;
   }
 
-  /* line 389, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 392, ../sass/sass-extensions/bootstrap/_print.scss */
   .whatwedo-left {
     width: 100% !important;
   }
 
-  /* line 392, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 395, ../sass/sass-extensions/bootstrap/_print.scss */
   .whatwedo-right {
+    display: none !important;
+  }
+
+  /* line 399, ../sass/sass-extensions/bootstrap/_print.scss */
+  .block-akdn-filter {
+    display: none !important;
+  }
+
+  /* line 403, ../sass/sass-extensions/bootstrap/_print.scss */
+  .press-centre-listings {
+    display: none !important;
+  }
+
+  /* line 407, ../sass/sass-extensions/bootstrap/_print.scss */
+  .akaa-akmi-body .pane-featured-slideshow {
+    display: none !important;
+  }
+  /* line 410, ../sass/sass-extensions/bootstrap/_print.scss */
+  .akaa-akmi-body .whatsnew-right {
+    display: none !important;
+  }
+
+  /* line 416, ../sass/sass-extensions/bootstrap/_print.scss */
+  .page-akmi-press-centre .section-content .grid-18, .page-architecture-press-centre .section-content .grid-18 {
+    width: 100% !important;
+  }
+  /* line 420, ../sass/sass-extensions/bootstrap/_print.scss */
+  .page-akmi-press-centre .block-akdn-custom-akdn-filter, .page-architecture-press-centre .block-akdn-custom-akdn-filter {
+    display: none !important;
+  }
+  /* line 423, ../sass/sass-extensions/bootstrap/_print.scss */
+  .page-akmi-press-centre .akdn-filter-js-wrapper, .page-architecture-press-centre .akdn-filter-js-wrapper {
+    display: none !important;
+  }
+
+  /* line 428, ../sass/sass-extensions/bootstrap/_print.scss */
+  .node-type-award-cycle .grid-18 {
+    width: 100% !important;
+  }
+  /* line 430, ../sass/sass-extensions/bootstrap/_print.scss */
+  .node-type-award-cycle .grid-18 .akaa-cycle-slideshow {
+    display: none !important;
+  }
+  /* line 434, ../sass/sass-extensions/bootstrap/_print.scss */
+  .node-type-award-cycle .grid-6 {
+    display: none !important;
+  }
+
+  /* line 439, ../sass/sass-extensions/bootstrap/_print.scss */
+  .page-architecture-steering-committee .grid-18, .page-architecture-master-jury .grid-18 {
+    width: 100% !important;
+  }
+  /* line 441, ../sass/sass-extensions/bootstrap/_print.scss */
+  .page-architecture-steering-committee .grid-18 .views-row, .page-architecture-master-jury .grid-18 .views-row {
+    page-break-inside: avoid;
+  }
+  /* line 443, ../sass/sass-extensions/bootstrap/_print.scss */
+  .page-architecture-steering-committee .grid-18 .views-row .readmore-text, .page-architecture-master-jury .grid-18 .views-row .readmore-text {
+    display: block !important;
+  }
+  /* line 447, ../sass/sass-extensions/bootstrap/_print.scss */
+  .page-architecture-steering-committee .grid-18 .views-row .readmore-link:after, .page-architecture-steering-committee .grid-18 .views-row .readless-link:after, .page-architecture-master-jury .grid-18 .views-row .readmore-link:after, .page-architecture-master-jury .grid-18 .views-row .readless-link:after {
+    content: "" !important;
+  }
+
+  /* line 455, ../sass/sass-extensions/bootstrap/_print.scss */
+  .node-type-architecture-project .grid-18 {
+    width: 100% !important;
+  }
+  /* line 458, ../sass/sass-extensions/bootstrap/_print.scss */
+  .node-type-architecture-project .grid-6 {
     display: none !important;
   }
 }

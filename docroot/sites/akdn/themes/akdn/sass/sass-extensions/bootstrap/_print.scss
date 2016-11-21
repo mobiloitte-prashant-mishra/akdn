@@ -376,6 +376,9 @@
     }
     .akdn-basic-page .grid-18 {
       width: 100% !important;
+      .accordian-rows {
+        page-break-inside: avoid;
+      }
     }
     .basic-page-accordian-main-container .accordian-main-body {
       display: block;
@@ -393,4 +396,67 @@
       display: none !important;
     }
 
+    .block-akdn-filter {
+     display: none !important;
+}
+
+.press-centre-listings {
+        display: none !important;
+  }
+  .akaa-akmi-body {
+    .pane-featured-slideshow {
+      display: none !important;
+    }
+    .whatsnew-right {
+      display: none !important;
+    }
+  }
+  .page-akmi-press-centre, .page-architecture-press-centre {
+      .section-content {
+        .grid-18 {
+            width: 100% !important;
+        }
+      }
+    .block-akdn-custom-akdn-filter {
+      display: none !important;
+    }
+    .akdn-filter-js-wrapper {
+      display: none !important;
+    }
+  }
+  .node-type-award-cycle {
+    .grid-18 {
+      width: 100% !important;
+      .akaa-cycle-slideshow {
+        display: none !important;
+      }
+    }
+    .grid-6 {
+      display: none !important;
+    }
+  }
+  .page-architecture-steering-committee, .page-architecture-master-jury {
+    .grid-18 {
+      width: 100% !important;
+      .views-row {
+        page-break-inside: avoid;
+        .readmore-text {
+          display: block !important;
+        }
+        .readmore-link, .readless-link {
+          &:after{
+            content: "" !important;
+          }
+        }
+      }
+    }
+  }
+  .node-type-architecture-project {
+    .grid-18 {
+      width: 100% !important;
+    }
+    .grid-6 {
+      display: none !important;
+    }
+  }
 }
