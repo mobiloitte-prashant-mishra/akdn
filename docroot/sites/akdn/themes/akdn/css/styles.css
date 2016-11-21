@@ -717,98 +717,107 @@ th {
     page-break-inside: avoid;
   }
 
-  /* line 383, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 384, ../sass/sass-extensions/bootstrap/_print.scss */
   .basic-page-accordian-main-container .accordian-main-body {
     display: block;
   }
-
-  /* line 386, ../sass/sass-extensions/bootstrap/_print.scss */
-  .whatwedo-left .morelink {
+  /* line 387, ../sass/sass-extensions/bootstrap/_print.scss */
+  .basic-page-accordian-main-container .accordian-icon {
     display: none !important;
   }
 
-  /* line 389, ../sass/sass-extensions/bootstrap/_print.scss */
-  .whatwedo-left .what-we-do-body-more-body {
-    display: block;
-  }
-
   /* line 392, ../sass/sass-extensions/bootstrap/_print.scss */
-  .whatwedo-left {
+  .geography-page .pane-featured-slideshow {
     width: 100% !important;
   }
 
-  /* line 395, ../sass/sass-extensions/bootstrap/_print.scss */
-  .whatwedo-right {
+  /* line 396, ../sass/sass-extensions/bootstrap/_print.scss */
+  .whatwedo-left .morelink, .lesslink {
     display: none !important;
   }
 
   /* line 399, ../sass/sass-extensions/bootstrap/_print.scss */
+  .whatwedo-left .what-we-do-body-more-body {
+    display: block;
+  }
+
+  /* line 402, ../sass/sass-extensions/bootstrap/_print.scss */
+  .whatwedo-left {
+    width: 100% !important;
+  }
+
+  /* line 405, ../sass/sass-extensions/bootstrap/_print.scss */
+  .whatwedo-right {
+    display: none !important;
+  }
+
+  /* line 409, ../sass/sass-extensions/bootstrap/_print.scss */
   .block-akdn-filter {
     display: none !important;
   }
 
-  /* line 403, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 413, ../sass/sass-extensions/bootstrap/_print.scss */
   .press-centre-listings {
     display: none !important;
   }
 
-  /* line 407, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 417, ../sass/sass-extensions/bootstrap/_print.scss */
   .akaa-akmi-body .pane-featured-slideshow {
     display: none !important;
   }
-  /* line 410, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 420, ../sass/sass-extensions/bootstrap/_print.scss */
   .akaa-akmi-body .whatsnew-right {
     display: none !important;
   }
 
-  /* line 416, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 426, ../sass/sass-extensions/bootstrap/_print.scss */
   .page-akmi-press-centre .section-content .grid-18, .page-architecture-press-centre .section-content .grid-18 {
     width: 100% !important;
   }
-  /* line 420, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 430, ../sass/sass-extensions/bootstrap/_print.scss */
   .page-akmi-press-centre .block-akdn-custom-akdn-filter, .page-architecture-press-centre .block-akdn-custom-akdn-filter {
     display: none !important;
   }
-  /* line 423, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 433, ../sass/sass-extensions/bootstrap/_print.scss */
   .page-akmi-press-centre .akdn-filter-js-wrapper, .page-architecture-press-centre .akdn-filter-js-wrapper {
     display: none !important;
   }
 
-  /* line 428, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 438, ../sass/sass-extensions/bootstrap/_print.scss */
   .node-type-award-cycle .grid-18 {
     width: 100% !important;
   }
-  /* line 430, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 440, ../sass/sass-extensions/bootstrap/_print.scss */
   .node-type-award-cycle .grid-18 .akaa-cycle-slideshow {
     display: none !important;
   }
-  /* line 434, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 444, ../sass/sass-extensions/bootstrap/_print.scss */
   .node-type-award-cycle .grid-6 {
     display: none !important;
   }
 
-  /* line 439, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 449, ../sass/sass-extensions/bootstrap/_print.scss */
   .page-architecture-steering-committee .grid-18, .page-architecture-master-jury .grid-18 {
     width: 100% !important;
   }
-  /* line 441, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 451, ../sass/sass-extensions/bootstrap/_print.scss */
   .page-architecture-steering-committee .grid-18 .views-row, .page-architecture-master-jury .grid-18 .views-row {
     page-break-inside: avoid;
   }
-  /* line 443, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 453, ../sass/sass-extensions/bootstrap/_print.scss */
   .page-architecture-steering-committee .grid-18 .views-row .readmore-text, .page-architecture-master-jury .grid-18 .views-row .readmore-text {
     display: block !important;
   }
-  /* line 447, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 457, ../sass/sass-extensions/bootstrap/_print.scss */
   .page-architecture-steering-committee .grid-18 .views-row .readmore-link:after, .page-architecture-steering-committee .grid-18 .views-row .readless-link:after, .page-architecture-master-jury .grid-18 .views-row .readmore-link:after, .page-architecture-master-jury .grid-18 .views-row .readless-link:after {
     content: "" !important;
   }
 
-  /* line 455, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 465, ../sass/sass-extensions/bootstrap/_print.scss */
   .node-type-architecture-project .grid-18 {
     width: 100% !important;
   }
-  /* line 458, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 468, ../sass/sass-extensions/bootstrap/_print.scss */
   .node-type-architecture-project .grid-6 {
     display: none !important;
   }
