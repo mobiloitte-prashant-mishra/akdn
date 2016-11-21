@@ -1678,11 +1678,7 @@ function _scs_custom_import_files_syndicate_batch_processing($fid, $fname) {
 
 function _scs_custom_import_language_batch_processing_complete($success, $results, $operations) {
   if($success) {
-    if(empty($operations)) {
-      drupal_set_message(t('Everything is already upto date nothing to update.'));
-    }else{
-      drupal_set_message(t('Import Completed Successfully.'));
-    }
+    drupal_set_message(t('Import Completed Successfully.'));
   }else{
     $error_operation = reset($operations);
     $message = t('An error occurred while processing %error_operation with arguments: @arguments', array(
