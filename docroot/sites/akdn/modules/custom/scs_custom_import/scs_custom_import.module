@@ -112,6 +112,7 @@ function scs_custom_language_importer_form($form, $form_state) {
 }
 
 function _scs_custom_import_article_language() {
+  $operations = array();
   $result = db_select('feeds_item', 'f')
   ->fields('f',array('guid','entity_id'))
   ->condition('id','article_import','=')
@@ -1675,8 +1676,21 @@ function _scs_custom_import_files_syndicate_batch_processing($fid, $fname) {
 }
 }
 
-function _scs_custom_import_language_batch_processing_complete() {
-  drupal_set_message(t('Import Completed Successfully'));
+function _scs_custom_import_language_batch_processing_complete($success, $results, $operations) {
+  if($success) {
+    if(empty($operations)) {
+      drupal_set_message(t('Everything is already upto date nothing to update.'));
+    }else{
+      drupal_set_message(t('Import Completed Successfully.'));
+    }
+  }else{
+    $error_operation = reset($operations);
+    $message = t('An error occurred while processing %error_operation with arguments: @arguments', array(
+      '%error_operation' => $error_operation[0],
+      '@arguments' => print_r($error_operation[1], TRUE)
+    ));
+    drupal_set_message($message, 'error');
+  }
 }
 
  function _isValidXML($xml) {

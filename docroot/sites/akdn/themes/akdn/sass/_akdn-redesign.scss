@@ -2932,6 +2932,14 @@ ul.primary li {
         overflow-y: auto;
         overflow-x: hidden;
 
+       .facetapi-facet-entity-type {
+         li {
+           a {
+               text-transform: lowercase;
+           }
+         }
+       }
+
       .facetapi-facet-entity-type {
         li {
           a {
@@ -8853,15 +8861,6 @@ html {
     width: auto;
     span {
       font-size: 16px !important;
-    }
-  }
-}
-
-//Remove top boder if no content on custom header block
-.basic-page-custom-block-right {
-  &.rem_brdr {
-    &:before {
-      display: none;
     }
   }
 }
