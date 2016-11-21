@@ -424,4 +424,34 @@
       display: none !important;
     }
   }
+  .node-type-award-cycle {
+    .grid-18 {
+      width: 100% !important;
+      .akaa-cycle-slideshow {
+        display: none !important;
+      }
+    }
+    .grid-6 {
+      display: none !important;
+    }
+  }
+  .page-architecture-steering-committee, .page-architecture-master-jury {
+    .grid-18 {
+      width: 100% !important;
+      .views-row {
+        page-break-inside: avoid;
+      }
+    }
+  }
+  .node-type-architecture-project {
+    .grid-18 {
+      width: 100% !important;
+      .akaa-cycle-slideshow {
+        display: none !important;
+      }
+    }
+    .grid-6 {
+      display: none !important;
+    }
+  }
 }

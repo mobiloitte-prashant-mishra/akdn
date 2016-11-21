@@ -773,6 +773,41 @@ th {
   .page-akmi-press-centre .akdn-filter-js-wrapper, .page-architecture-press-centre .akdn-filter-js-wrapper {
     display: none !important;
   }
+
+  /* line 428, ../sass/sass-extensions/bootstrap/_print.scss */
+  .node-type-award-cycle .grid-18 {
+    width: 100% !important;
+  }
+  /* line 430, ../sass/sass-extensions/bootstrap/_print.scss */
+  .node-type-award-cycle .grid-18 .akaa-cycle-slideshow {
+    display: none !important;
+  }
+  /* line 434, ../sass/sass-extensions/bootstrap/_print.scss */
+  .node-type-award-cycle .grid-6 {
+    display: none !important;
+  }
+
+  /* line 439, ../sass/sass-extensions/bootstrap/_print.scss */
+  .page-architecture-steering-committee .grid-18, .page-architecture-master-jury .grid-18 {
+    width: 100% !important;
+  }
+  /* line 441, ../sass/sass-extensions/bootstrap/_print.scss */
+  .page-architecture-steering-committee .grid-18 .views-row, .page-architecture-master-jury .grid-18 .views-row {
+    page-break-inside: avoid;
+  }
+
+  /* line 447, ../sass/sass-extensions/bootstrap/_print.scss */
+  .node-type-architecture-project .grid-18 {
+    width: 100% !important;
+  }
+  /* line 449, ../sass/sass-extensions/bootstrap/_print.scss */
+  .node-type-architecture-project .grid-18 .akaa-cycle-slideshow {
+    display: none !important;
+  }
+  /* line 453, ../sass/sass-extensions/bootstrap/_print.scss */
+  .node-type-architecture-project .grid-6 {
+    display: none !important;
+  }
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
