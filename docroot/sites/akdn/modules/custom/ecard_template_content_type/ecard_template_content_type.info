@@ -1,7 +1,7 @@
 name = Ecard Template content type
 description = Content type for Ecard Template
 core = 7.x
-package = Features
+package = Ecards
 version = 7.x-1.0
 dependencies[] = akdn_content_types
 dependencies[] = akdn_press_centre_types
