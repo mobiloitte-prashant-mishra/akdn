@@ -8832,6 +8832,15 @@ html {
  }
 }
 
+//Remove top boder if no content on custom header block
+.basic-page-custom-block-right {
+  &.rem_brdr {
+    &:before {
+      display: none;
+    }
+  }
+}
+
 // Fix overlapping inline videos for all content
 .media-video {
   display: block;
@@ -8861,15 +8870,6 @@ html {
     width: auto;
     span {
       font-size: 16px !important;
-    }
-  }
-}
-
-//Remove top boder if no content on custom header block
-.basic-page-custom-block-right {
-  &.rem_brdr {
-    &:before {
-      display: none;
     }
   }
 }
