@@ -489,7 +489,7 @@
         $('#block-panels-mini-footer-menus .pane-menu-quick-links, #block-panels-mini-footer-menus .social-share-footer', context).wrapAll('<div class="quicklinks_social_block"></div>');
 
         //filter show/hide
-        $('.page-press-centre .akdn-filter-wrapper, .page-search .akdn-filter-wrapper, .page-speech-quotes .akdn-filter-wrapper, .page-architecture-press-centre .akdn-filter-wrapper, .page-akmi-press-centre .akdn-filter-wrapper', context).wrapAll('<div class="akdn-filter-js-wrapper"></div>');
+        $('.page-press-centre .akdn-filter-wrapper, .page-search .akdn-filter-wrapper, .page-speech-quotes .akdn-filter-wrapper, .page-architecture-press-centre .akdn-filter-wrapper, .page-akmi-press-centre .akdn-filter-wrapper, .page-ecards. .akdn-filter-wrapper', context).wrapAll('<div class="akdn-filter-js-wrapper"></div>');
         $('.akdn-filter-js-wrapper', context).hide();
         $('.akdn-filter-show-hide h2').removeClass('active');
         $('.akdn-filter-show-hide', context).click(function(){

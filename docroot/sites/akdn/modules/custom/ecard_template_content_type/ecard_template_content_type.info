@@ -10,6 +10,7 @@ dependencies[] = features
 dependencies[] = field_group
 dependencies[] = file
 dependencies[] = filefield_paths
+dependencies[] = image
 dependencies[] = link
 dependencies[] = media
 dependencies[] = options
