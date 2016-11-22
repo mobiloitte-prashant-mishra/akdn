@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ * This module enables multistep form for ecard creation.
+ */
+
+module_load_include('inc', 'akdn_ecard_multistep', 'includes/akdn_ecard_multistep.navigation');
+module_load_include('inc', 'akdn_ecard_multistep', 'includes/akdn_ecard_multistep.validate');
+module_load_include('inc', 'akdn_ecard_multistep', 'includes/akdn_ecard_multistep.submit');
+
+/**
+ * Implements hook_menu().
+ */
+function akdn_ecard_multistep_menu() {
+
+  $items = array();
+  $items['create/ecard'] = array(
+    'title' => 'Customise your eCard',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('akdn_ecard_multistep_form'),
+    'access arguments' => array('access content'),
+    'file' => 'includes/akdn_ecard_multistep.form.inc',
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  $items['complete-page'] = array(
+    'title' => 'ECard complete',
+    'page callback' => 'akdn_ecard_complete_page',
+    'page arguments' => array(),
+    'access arguments' => array('access content'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
