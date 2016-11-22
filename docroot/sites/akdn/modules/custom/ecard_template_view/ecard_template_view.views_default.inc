@@ -93,9 +93,14 @@ function ecard_template_view_views_default_views() {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="media-desc">
-<div class="title">[title] </div>
+<div class="title">[title] 
+<div class="read-more"><a href="[url] ">Send Card</a></div>
+</div>
 </div>';
+  $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_class'] = 'grid-media-block_description grid-media-block_description-speeches';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['nothing']['hide_alter_empty'] = TRUE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Indexed Node: Date created */
@@ -119,7 +124,7 @@ function ecard_template_view_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = array(
     1 => '1',
   );
-  $handler->display->display_options['path'] = 'ecards/template';
+  $handler->display->display_options['path'] = 'ecards';
   $translatables['ecard_listing_page'] = array(
     t('Master'),
     t('Ecard listing page'),
@@ -143,7 +148,9 @@ function ecard_template_view_views_default_views() {
     t('Ecards'),
     t('No results found!'),
     t('<div class="media-desc">
-<div class="title">[title] </div>
+<div class="title">[title] 
+<div class="read-more"><a href="[url] ">Send Card</a></div>
+</div>
 </div>'),
   );
   $export['ecard_listing_page'] = $view;
