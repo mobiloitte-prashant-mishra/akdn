@@ -51,7 +51,7 @@ function akdn_ecard_multistep_form($form, &$form_state) {
  * @return type
  */
 function akdn_ecard_multistep_form_step1($form, &$form_state) {
-  
+
   $values = isset($form_state['multistep_values']['step1']) ? $form_state['multistep_values']['step1'] : array();
 
   $form['step1']['label'] = array(
@@ -92,8 +92,8 @@ function akdn_ecard_multistep_form_step1($form, &$form_state) {
     '#type' => 'textfield',
     '#title' => 'Your own Greeting Message',
     '#default_value' => isset($values['custom_gretting_message']) ? $values['custom_gretting_message'] : NULL,
-    '#size' => 60, 
-    '#maxlength' => 128, 
+    '#size' => 60,
+    '#maxlength' => 128,
     '#states' =>array(
       'visible' => array(
         ':input[name=greetings]' => array('value' => 'custom'),
@@ -115,7 +115,8 @@ function akdn_ecard_multistep_form_step1($form, &$form_state) {
 
   $form['next'] = array(
     '#type' => 'submit',
-    '#value' => t('Next')
+    '#value' => t('Next'),
+    '#prefix' => '<div class="ecard-submit-wrapper">',
   );
 
   $form['actions']['cancel'] = array(
@@ -123,6 +124,7 @@ function akdn_ecard_multistep_form_step1($form, &$form_state) {
     '#value'  => t('Cancel'),
     '#submit' => array('_akdn_ecard_cancel_button'),
     '#limit_validation_errors' => array(),
+    '#suffix' => '</div>',
   );
   return $form;
 }
@@ -138,10 +140,8 @@ function akdn_ecard_multistep_form_step1($form, &$form_state) {
  * @return type
  */
 function akdn_ecard_multistep_form_step2($form, &$form_state) {
- 
+
  $values = isset($form_state['multistep_values']['step2']) ? $form_state['multistep_values']['step2'] : array();
- //print '<pre>';print_r($values);die();
- 
   $form['step2']['header'] = array(
     '#markup' => '<h2>' . t('Step 2: Add Recipients') . '</h2>',
   );
@@ -308,7 +308,7 @@ function akdn_ecard_multistep_form_step2($form, &$form_state) {
       ),
     ),
   );
- 
+
   $form['next'] = array(
     '#type' => 'submit',
     '#value' => t('Next')
@@ -336,7 +336,7 @@ function akdn_ecard_multistep_form_step2($form, &$form_state) {
   $form['preview'] = array(
     '#markup' => $link,
   );
-  
+
   return $form;
 }
 
