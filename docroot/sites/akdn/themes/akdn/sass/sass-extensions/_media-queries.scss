@@ -618,7 +618,7 @@
     }
 }
 
-.page-ecards-template #akdn-ecard-multistep-form {
+#akdn-ecard-multistep-form {
     width: 100%;
  }
 
@@ -1202,25 +1202,23 @@
     }
 }
 
-.page-ecards-template {
-    #akdn-ecard-multistep-form {
+#akdn-ecard-multistep-form {
+    width: 100%;
+    & > div {
+        padding: 20px 20px;
+    }
+    .form-item {
+    }
+    label,
+    input[type="text"]
+    {
         width: 100%;
-        & > div {
-            padding: 20px 20px;
-        }
-        .form-item {
-        }
-        label,
-        input[type="text"]
-        {
-            width: 100%;
-        }
-        .ecard-submit-wrapper {
-            width: 100%;
+    }
+    .ecard-submit-wrapper {
+        width: 100%;
         }
     }
   }
-}
 
 @media screen and (max-width: 480px) {
     /*upto 480px*/
