@@ -18972,14 +18972,14 @@ html.js fieldset.collapsed {
 }
 
 /* Ecard Template Page */
-/* line 8870, ../sass/_akdn-redesign.scss */
-.page-ecards-template #akdn-ecard-multistep-form {
+/* line 8869, ../sass/_akdn-redesign.scss */
+#akdn-ecard-multistep-form {
   width: 70.61404%;
   float: none;
   margin: auto;
 }
-/* line 8874, ../sass/_akdn-redesign.scss */
-.page-ecards-template #akdn-ecard-multistep-form > div {
+/* line 8873, ../sass/_akdn-redesign.scss */
+#akdn-ecard-multistep-form > div {
   display: block;
   width: 100%;
   margin: 0 auto 40px;
@@ -18988,8 +18988,8 @@ html.js fieldset.collapsed {
   background: #f0eade;
   border-top: 1px solid #b69c5f;
 }
-/* line 8883, ../sass/_akdn-redesign.scss */
-.page-ecards-template #akdn-ecard-multistep-form h2 {
+/* line 8882, ../sass/_akdn-redesign.scss */
+#akdn-ecard-multistep-form h2 {
   display: block;
   width: 100%;
   margin: 28px auto 30px;
@@ -18999,8 +18999,8 @@ html.js fieldset.collapsed {
   line-height: 1;
   text-align: center;
 }
-/* line 8893, ../sass/_akdn-redesign.scss */
-.page-ecards-template #akdn-ecard-multistep-form .form-item {
+/* line 8892, ../sass/_akdn-redesign.scss */
+#akdn-ecard-multistep-form .form-item {
   width: 100%;
   margin: 0 auto 10px;
   padding: 5px;
@@ -19010,22 +19010,22 @@ html.js fieldset.collapsed {
      width: 425px;
    } */
 }
-/* line 8899, ../sass/_akdn-redesign.scss */
-.page-ecards-template #akdn-ecard-multistep-form .form-item label {
+/* line 8898, ../sass/_akdn-redesign.scss */
+#akdn-ecard-multistep-form .form-item label {
   font-weight: normal;
   width: 240px;
 }
-/* line 8904, ../sass/_akdn-redesign.scss */
-.page-ecards-template #akdn-ecard-multistep-form .form-item select {
+/* line 8903, ../sass/_akdn-redesign.scss */
+#akdn-ecard-multistep-form .form-item select {
   width: auto;
   max-width: 725px;
 }
-/* line 8912, ../sass/_akdn-redesign.scss */
-.page-ecards-template #akdn-ecard-multistep-form .ecard-submit-wrapper {
+/* line 8911, ../sass/_akdn-redesign.scss */
+#akdn-ecard-multistep-form .ecard-submit-wrapper {
   float: right;
 }
-/* line 8914, ../sass/_akdn-redesign.scss */
-.page-ecards-template #akdn-ecard-multistep-form .ecard-submit-wrapper .form-submit {
+/* line 8913, ../sass/_akdn-redesign.scss */
+#akdn-ecard-multistep-form .ecard-submit-wrapper .form-submit {
   background: #b59757;
   border: 0;
   border-radius: 5px;
@@ -19638,7 +19638,7 @@ html.js fieldset.collapsed {
   }
 
   /* line 621, ../sass/sass-extensions/_media-queries.scss */
-  .page-ecards-template #akdn-ecard-multistep-form {
+  #akdn-ecard-multistep-form {
     width: 100%;
   }
 }
@@ -20248,191 +20248,191 @@ html.js fieldset.collapsed {
     padding: 0 15px;
   }
 
-  /* line 1206, ../sass/sass-extensions/_media-queries.scss */
-  .page-ecards-template #akdn-ecard-multistep-form {
+  /* line 1205, ../sass/sass-extensions/_media-queries.scss */
+  #akdn-ecard-multistep-form {
     width: 100%;
   }
-  /* line 1208, ../sass/sass-extensions/_media-queries.scss */
-  .page-ecards-template #akdn-ecard-multistep-form > div {
+  /* line 1207, ../sass/sass-extensions/_media-queries.scss */
+  #akdn-ecard-multistep-form > div {
     padding: 20px 20px;
   }
-  /* line 1213, ../sass/sass-extensions/_media-queries.scss */
-  .page-ecards-template #akdn-ecard-multistep-form label,
-  .page-ecards-template #akdn-ecard-multistep-form input[type="text"] {
+  /* line 1212, ../sass/sass-extensions/_media-queries.scss */
+  #akdn-ecard-multistep-form label,
+  #akdn-ecard-multistep-form input[type="text"] {
     width: 100%;
   }
-  /* line 1218, ../sass/sass-extensions/_media-queries.scss */
-  .page-ecards-template #akdn-ecard-multistep-form .ecard-submit-wrapper {
+  /* line 1217, ../sass/sass-extensions/_media-queries.scss */
+  #akdn-ecard-multistep-form .ecard-submit-wrapper {
     width: 100%;
   }
 }
 @media screen and (max-width: 480px) {
   /*upto 480px*/
-  /* line 1227, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1225, ../sass/sass-extensions/_media-queries.scss */
   .visible-xxs {
     display: block !important;
   }
 
-  /* line 1231, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1229, ../sass/sass-extensions/_media-queries.scss */
   .logo-container {
     margin: 0 0 10px;
   }
 
-  /* line 1235, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1233, ../sass/sass-extensions/_media-queries.scss */
   .menu-btn {
     display: block;
     margin: 0 auto 0;
     font-size: 20px;
   }
 
-  /* line 1241, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1239, ../sass/sass-extensions/_media-queries.scss */
   .footer-container .block-inner {
     padding: 20px 0;
   }
 
-  /* line 1245, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1243, ../sass/sass-extensions/_media-queries.scss */
   .main-navbar {
     margin: 100px 0 0 0;
   }
-  /* line 1250, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1248, ../sass/sass-extensions/_media-queries.scss */
   .main-navbar li ul.menu li a {
     color: #000 !important;
   }
 
-  /* line 1257, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1255, ../sass/sass-extensions/_media-queries.scss */
   .top-navbar {
     padding: 0;
     margin: 0 auto 10px;
     max-width: 300px;
   }
-  /* line 1262, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1260, ../sass/sass-extensions/_media-queries.scss */
   .top-navbar ul {
     text-align: right;
   }
-  /* line 1266, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1264, ../sass/sass-extensions/_media-queries.scss */
   .top-navbar li {
     padding: 0 10px;
     margin: 0 auto 10px;
   }
-  /* line 1270, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1268, ../sass/sass-extensions/_media-queries.scss */
   .top-navbar li:nth-child(2) {
     border-right: 0 none;
     display: block;
     margin: 0 auto 10px;
     border-left: 0 none;
   }
-  /* line 1277, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1275, ../sass/sass-extensions/_media-queries.scss */
   .top-navbar li:first-child {
     border-right: 0 none;
     display: block;
     margin: 0 auto 10px;
   }
-  /* line 1283, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1281, ../sass/sass-extensions/_media-queries.scss */
   .top-navbar li:last-child {
     padding-right: 10px;
   }
-  /* line 1288, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1286, ../sass/sass-extensions/_media-queries.scss */
   .top-navbar .greyed-text {
     padding: 0 0 0 10px;
     display: inline-block;
   }
-  /* line 1292, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1290, ../sass/sass-extensions/_media-queries.scss */
   .top-navbar .greyed-text:first-child {
     padding: 0 10px;
   }
-  /* line 1297, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1295, ../sass/sass-extensions/_media-queries.scss */
   .top-navbar a {
     font-size: 18px;
   }
-  /* line 1301, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1299, ../sass/sass-extensions/_media-queries.scss */
   .top-navbar .dropdown-menu {
     margin: -32px 0 0;
   }
-  /* line 1304, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1302, ../sass/sass-extensions/_media-queries.scss */
   .top-navbar .dropdown-menu:before, .top-navbar .dropdown-menu:after {
     right: 10%;
   }
-  /* line 1309, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1307, ../sass/sass-extensions/_media-queries.scss */
   .top-navbar .form-item-search .form-control {
     float: right;
     max-width: 140px;
   }
-  /* line 1314, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1312, ../sass/sass-extensions/_media-queries.scss */
   .top-navbar span.ext {
     display: none;
   }
 
-  /* line 1320, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1318, ../sass/sass-extensions/_media-queries.scss */
   .section-top .views-field.views-field-title {
     font-size: 20px;
   }
-  /* line 1324, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1322, ../sass/sass-extensions/_media-queries.scss */
   .section-top .views-field.views-field-field-facts-number {
     font-size: 60px;
   }
 
-  /* line 1329, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1327, ../sass/sass-extensions/_media-queries.scss */
   .pane-facebook-feeds {
     width: 100%;
     margin-bottom: 40px;
   }
-  /* line 1332, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1330, ../sass/sass-extensions/_media-queries.scss */
   .pane-facebook-feeds:last-child {
     margin-bottom: 0;
   }
 
-  /* line 1342, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1340, ../sass/sass-extensions/_media-queries.scss */
   .node-type-webform .region-content .node-webform .webform-client-form label {
     width: 100%;
   }
-  /* line 1345, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1343, ../sass/sass-extensions/_media-queries.scss */
   .node-type-webform .region-content .node-webform .webform-client-form input.form-email, .node-type-webform .region-content .node-webform .webform-client-form select.form-select {
     width: 100% !important;
   }
 
-  /* line 1356, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1354, ../sass/sass-extensions/_media-queries.scss */
   .node-webform .webform-client-form .form-item .form-textarea-wrapper,
   .node-webform .webform-client-form .form-item input[type="text"], .node-webform .webform-client-form .form-item select {
     width: 100% !important;
   }
-  /* line 1362, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1360, ../sass/sass-extensions/_media-queries.scss */
   .node-webform .webform-client-form .form-actions input.form-submit {
     margin-left: 0 !important;
     margin-top: 10px;
   }
 
-  /* line 1371, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1369, ../sass/sass-extensions/_media-queries.scss */
   .webform-client-form #edit-submitted-mailshot-subscribe-newsletter-selection.form-checkboxes .form-item.form-type-checkbox {
     width: 100%;
   }
 
-  /* line 1378, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1376, ../sass/sass-extensions/_media-queries.scss */
   .akdn-filter-js-wrapper .akdn-filter-wrapper {
     width: 100% !important;
     padding: 0;
   }
 
-  /* line 1386, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1384, ../sass/sass-extensions/_media-queries.scss */
   .context-speech-quotes .akdn-filter-js-wrapper .akdn-filter-wrapper {
     width: 100% !important;
   }
 
-  /* line 1394, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1392, ../sass/sass-extensions/_media-queries.scss */
   .carousel-left .banner-slideshow-views > .view-content {
     width: 100%;
   }
 
-  /* line 1400, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1398, ../sass/sass-extensions/_media-queries.scss */
   .whatsnew-right {
     width: 100%;
   }
 
-  /* line 1404, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1402, ../sass/sass-extensions/_media-queries.scss */
   .in-media-block, .geography-page .country-activity-tile .hub-pages-row,
   .node-type-agency .country-activity-tile .hub-pages-row, .what-we-do-inner-wrapper, .whatwedo-project-row, .akaa-award-cycle-wrapper .akaa-award-cycle-block, .akaa-press-centre-inner-wrapper {
     width: 100%;
   }
-  /* line 1406, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1404, ../sass/sass-extensions/_media-queries.scss */
   .in-media-block:nth-child(3n-2), .geography-page .country-activity-tile .hub-pages-row:nth-child(3n-2),
   .node-type-agency .country-activity-tile .hub-pages-row:nth-child(3n-2), .what-we-do-inner-wrapper:nth-child(3n-2), .whatwedo-project-row:nth-child(3n-2), .akaa-award-cycle-wrapper .akaa-award-cycle-block:nth-child(3n-2), .akaa-press-centre-inner-wrapper:nth-child(3n-2), .in-media-block:nth-child(3n+2), .geography-page .country-activity-tile .hub-pages-row:nth-child(3n+2),
   .node-type-agency .country-activity-tile .hub-pages-row:nth-child(3n+2), .what-we-do-inner-wrapper:nth-child(3n+2), .whatwedo-project-row:nth-child(3n+2), .akaa-award-cycle-wrapper .akaa-award-cycle-block:nth-child(3n+2), .akaa-press-centre-inner-wrapper:nth-child(3n+2), .in-media-block:nth-child(3n), .geography-page .country-activity-tile .hub-pages-row:nth-child(3n),
@@ -20442,11 +20442,11 @@ html.js fieldset.collapsed {
     clear: none;
   }
 
-  /* line 1415, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1413, ../sass/sass-extensions/_media-queries.scss */
   .publication-list-container {
     margin: 0;
   }
-  /* line 1417, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1415, ../sass/sass-extensions/_media-queries.scss */
   .publication-list-container .views-row {
     width: 100%;
     border-bottom: 1px solid #b5995a;
@@ -20454,87 +20454,87 @@ html.js fieldset.collapsed {
     margin-bottom: 20px;
     padding-bottom: 20px;
   }
-  /* line 1423, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1421, ../sass/sass-extensions/_media-queries.scss */
   .publication-list-container .views-row:nth-child(5n-4) {
     clear: both;
     border-left: 0;
   }
-  /* line 1427, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1425, ../sass/sass-extensions/_media-queries.scss */
   .publication-list-container .views-row:nth-child(3n-2) {
     clear: both;
     border-left: 0;
   }
-  /* line 1431, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1429, ../sass/sass-extensions/_media-queries.scss */
   .publication-list-container .views-row:first-child {
     clear: both;
     border-left: 0;
   }
 
-  /* line 1440, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1438, ../sass/sass-extensions/_media-queries.scss */
   .page-search .region-content .views-row {
     width: 100%;
     padding: 0 10px 10px;
     border-right: 0 none;
     border-bottom: 1px solid #e8dfcd;
   }
-  /* line 1445, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1443, ../sass/sass-extensions/_media-queries.scss */
   .page-search .region-content .views-row:last-child {
     border-bottom: 0;
   }
 
-  /* line 1454, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1452, ../sass/sass-extensions/_media-queries.scss */
   .node-type-project .region .grid-18, .node-type-article .region .grid-18 {
     width: 100%;
     border-right: 0 none;
   }
-  /* line 1459, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1457, ../sass/sass-extensions/_media-queries.scss */
   .node-type-project .region .grid-6, .node-type-article .region .grid-6 {
     width: 100%;
     max-width: 100%;
   }
 
-  /* line 1467, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1465, ../sass/sass-extensions/_media-queries.scss */
   .grid-about-us-block_description .pc-listing-img,
   .grid-about-us-block-description .pc-listing-img {
     width: 100%;
     padding-right: 0;
     margin-bottom: 15px;
   }
-  /* line 1472, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1470, ../sass/sass-extensions/_media-queries.scss */
   .grid-about-us-block_description .pc-listing-info,
   .grid-about-us-block-description .pc-listing-info {
     width: 100%;
   }
-  /* line 1475, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1473, ../sass/sass-extensions/_media-queries.scss */
   .grid-about-us-block_description .pc-body-wrapper,
   .grid-about-us-block-description .pc-body-wrapper {
     margin: 0 auto;
   }
-  /* line 1478, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1476, ../sass/sass-extensions/_media-queries.scss */
   .grid-about-us-block_description .related-artist,
   .grid-about-us-block-description .related-artist {
     width: 100%;
     float: left;
   }
 
-  /* line 1484, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1482, ../sass/sass-extensions/_media-queries.scss */
   .press-release-detail .pane-node-field-publication-image,
   .press-release-detail .pane-node-field-publication-file,
   .press-release-detail .related-block-info {
     width: 100%;
   }
-  /* line 1489, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1487, ../sass/sass-extensions/_media-queries.scss */
   .press-release-detail .pane-page-title, .press-release-detail .pane-node-body {
     clear: both;
     display: block;
   }
-  /* line 1493, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1491, ../sass/sass-extensions/_media-queries.scss */
   .press-release-detail .pane-node-field-short-title {
     clear: both;
     display: block;
   }
 
-  /* line 1501, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1499, ../sass/sass-extensions/_media-queries.scss */
   .press-release-photograps-detail .pane-node-body,
   .press-release-video-detail .pane-node-body,
   .press-release-events .pane-node-body {
@@ -20542,7 +20542,7 @@ html.js fieldset.collapsed {
     float: left;
   }
 
-  /* line 1507, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1505, ../sass/sass-extensions/_media-queries.scss */
   .akdn-publication-details .pane-node-body,
   .akdn-publication-details .pane-node-title-field {
     width: 100%;
@@ -20550,60 +20550,60 @@ html.js fieldset.collapsed {
     clear: both;
   }
 
-  /* line 1514, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1512, ../sass/sass-extensions/_media-queries.scss */
   .playerbox {
     height: 250px;
   }
 
-  /* line 1519, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1517, ../sass/sass-extensions/_media-queries.scss */
   .akaa-projectfinder-wrapper .views-exposed-widgets label {
     font-size: 14px;
     line-height: 20px;
   }
-  /* line 1524, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1522, ../sass/sass-extensions/_media-queries.scss */
   .akaa-projectfinder-wrapper .views-exposed-widget {
     width: 100%;
     margin: 0 auto 20px;
   }
-  /* line 1529, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1527, ../sass/sass-extensions/_media-queries.scss */
   .akaa-projectfinder-wrapper.akaa-performancefinder-wrapper .views-exposed-widget {
     width: 100%;
   }
 
-  /* line 1534, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1532, ../sass/sass-extensions/_media-queries.scss */
   .akaa-press-centre-inner-wrapper {
     border-left: 0 none !important;
   }
-  /* line 1536, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1534, ../sass/sass-extensions/_media-queries.scss */
   .akaa-press-centre-inner-wrapper .akaa-press-centre-subwrapper {
     padding-bottom: 20px;
     border-bottom: 1px solid #e8dfcd;
   }
-  /* line 1541, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1539, ../sass/sass-extensions/_media-queries.scss */
   .akaa-press-centre-inner-wrapper:last-child .akaa-press-centre-subwrapper {
     border-bottom: 0 none;
     padding-bottom: 0;
   }
 
-  /* line 1548, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1546, ../sass/sass-extensions/_media-queries.scss */
   .breaking-news-image {
     width: 100%;
   }
-  /* line 1550, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1548, ../sass/sass-extensions/_media-queries.scss */
   .breaking-news-image img {
     width: 100%;
   }
 
-  /* line 1555, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1553, ../sass/sass-extensions/_media-queries.scss */
   .no_img .breaking-news-text-wrapper {
     width: 100%;
     padding: 15px;
   }
-  /* line 1558, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1556, ../sass/sass-extensions/_media-queries.scss */
   .no_img .breaking-news-text-wrapper .title {
     padding: 10px 15px;
   }
-  /* line 1562, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1560, ../sass/sass-extensions/_media-queries.scss */
   .no_img .breaking-news-left {
     width: 100%;
     border-right: 0 none;
@@ -20612,13 +20612,13 @@ html.js fieldset.collapsed {
     padding-bottom: 10px;
     margin: 0 0 10px;
   }
-  /* line 1570, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1568, ../sass/sass-extensions/_media-queries.scss */
   .no_img .breaking-news-right {
     width: 100%;
     padding: 0;
   }
 
-  /* line 1576, ../sass/sass-extensions/_media-queries.scss */
+  /* line 1574, ../sass/sass-extensions/_media-queries.scss */
   .slide-text {
     position: relative;
     padding: 10px 125px 10px 15px;
