@@ -17,6 +17,7 @@
  * @param type $form_state
  */
 function akdn_ecard_multistep_form_submit($form, &$form_state) {
+
   switch ($form_state['stage']) {
 
     case 'step3':
@@ -37,6 +38,8 @@ function akdn_ecard_multistep_form_submit($form, &$form_state) {
   if (isset($form_state['complete'])) drupal_goto('complete-page');
 
   if ($form_state['triggering_element']['#value'] == 'Back') {
+    //    print '<pre>';print_r($form_state);die();
+
     $form_state['new_stage'] = akdn_ecard_multistep_move_to_previous_stage($form, $form_state);
   }
 

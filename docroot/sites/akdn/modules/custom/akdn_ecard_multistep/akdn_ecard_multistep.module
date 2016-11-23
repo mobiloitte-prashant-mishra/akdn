@@ -15,7 +15,7 @@ module_load_include('inc', 'akdn_ecard_multistep', 'includes/akdn_ecard_multiste
 function akdn_ecard_multistep_menu() {
 
   $items = array();
-  $items['create/ecard'] = array(
+  $items['ecards/%'] = array(
     'title' => 'Customise your eCard',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('akdn_ecard_multistep_form'),
@@ -24,7 +24,7 @@ function akdn_ecard_multistep_menu() {
     'type' => MENU_NORMAL_ITEM,
   );
 
-  $items['complete-page'] = array(
+  $items['ecard/thankyou'] = array(
     'title' => 'ECard complete',
     'page callback' => 'akdn_ecard_complete_page',
     'page arguments' => array(),

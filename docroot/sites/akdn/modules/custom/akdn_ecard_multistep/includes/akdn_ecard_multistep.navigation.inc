@@ -36,7 +36,6 @@ function akdn_ecard_multistep_move_to_next_stage($form, &$form_state) {
  */
 
 function akdn_ecard_multistep_move_to_previous_stage($form, &$form_state) {
-
   switch ($form_state['stage']) {
     case 'step2':
       return 'step1';
