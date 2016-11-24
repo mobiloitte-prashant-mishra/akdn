@@ -2,7 +2,7 @@
 
 function akdn_ecard_preview($args) {
  $arg = $_GET['design'];
- if(!empty($qrg) && is_numeric($arg)) {
+ if(!empty($arg) && is_numeric($arg)) {
    $node = node_load($arg);
    $node_wrapper = entity_metadata_wrapper('node', $node);
    $image_uri = file_create_url($node_wrapper->field_image_upload->value()['uri']);
