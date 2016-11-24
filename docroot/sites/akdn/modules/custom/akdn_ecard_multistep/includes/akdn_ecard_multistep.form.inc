@@ -142,7 +142,6 @@ function akdn_ecard_multistep_form_step1($form, &$form_state) {
 function akdn_ecard_multistep_form_step2($form, &$form_state) {
 
  $values = isset($form_state['multistep_values']['step2']) ? $form_state['multistep_values']['step2'] : array();
-
   $form['step2']['header'] = array(
     '#markup' => '<h2>' . t('Step 2: Add Recipients') . '</h2>',
   );
@@ -217,7 +216,7 @@ function akdn_ecard_multistep_form_step2($form, &$form_state) {
   ';
 
   $form['step2']['contacts_hidden'] = array(
-    '#type' => 'textfield',
+    '#type' => 'hidden',
     '#default_value' => ' ',
   );
 
@@ -327,16 +326,11 @@ function akdn_ecard_multistep_form_step2($form, &$form_state) {
 
   $link = l(
     t('Preview'),
-    'ecard-send/preview/' . $form_state['ecard_campaign']->nid . '/' . $form_state['ecard_template']->nid,
+    'preview/ecards',
     array(
       'attributes' => array(
         'class' => 'colorbox-load btn',
       ),
-      'query' => array(
-        'width' => '800',
-        'height' => '600',
-        'iframe' => 'true'
-      )
     )
   );
   $form['preview'] = array(
@@ -359,10 +353,41 @@ function akdn_ecard_multistep_form_step3($form, &$form_state) {
 
   $values = isset($form_state['multistep_values']['step3']) ? $form_state['multistep_values']['step3'] : array();
 
-  $form['step3']['field3'] = array(
-    '#type' => 'textfield',
-    '#title' => 'Step3 field',
-    '#default_value' => isset($values['field3']) ? $values['field3'] : NULL,
+  $form['step3']['header'] = array(
+    '#markup' => '<h2>' . t('Step 3: Confirm eCard') . '</h2>',
+  );
+
+  $rec_list = array();
+  $rec = array();
+  $recipients = '';
+  $rec_list = explode(',', $form_state['multistep_values']['step2']['import']);
+  $count = 0;
+  if ($form_state['multistep_values']['step2']['input_type'] === 'import') {
+    foreach ($rec_list as $r) {
+      if ($r != ''){
+        $recipients .= htmlentities(trim($r)) . '<br/>';
+      }
+    }
+  } 
+  else {
+    $rec_list = $form_state['multistep_values']['step2']['recipients'];
+    foreach($rec_list as $r) {
+      $rec[] = $r['name'] . " &lt;" . $r['email'] . "&gt;";
+    }
+  }
+  $recipients .= implode("<br/>", $rec);
+
+  ecard_admin_recipient_remove_duplicates($recipients, "\r\n", "<");
+
+  $form['step3']['to'] = array(
+    '#markup' => '<div id="ecard-preview-to"><span class="label-head">To:</span><br/>' . $recipients . '</div>',
+  );
+  $form['step3']['from'] = array(
+    '#markup' => '<div id="ecard-preview-from"><span class="label-head">From:</span><br/>' . $$form_state['multistep_values']['step1']['sender_name'] . " &lt;" . $form_state['multistep_values']['step1']['sender_email'] . "&gt;</div>",
+  );
+
+   $form['step3']['from_summary'] = array(
+    '#markup' => '<div id="ecard-preview-text"><span class="label-head">Message:</span><br/>' . filter_xss(nl2br($form_state['multistep_values']['step1']['default_message']), array('br')) . '</div>',
   );
 
   $form['back'] = array(
@@ -372,16 +397,28 @@ function akdn_ecard_multistep_form_step3($form, &$form_state) {
 
   $form['next'] = array(
     '#type' => 'submit',
-    '#value' => t('Submit')
+    '#value' => t('Send Ecard')
   );
 
   $form['actions']['cancel'] = array(
     '#type'   => 'submit',
     '#value'  => t('Cancel'),
-    '#submit' => array('callback_for_cancel_button'),
+    '#submit' => array('_akdn_ecard_cancel_button'),
     '#limit_validation_errors' => array(),
   );
-
+  $link = l(
+    t('Preview'),
+    'preview/ecards',
+    array(
+      'attributes' => array(
+        'class' => 'colorbox-load btn',
+      ),
+    )
+  );
+  $form['preview'] = array(
+    '#markup' => $link,
+  );
+  
   return $form;
 }
 
@@ -428,6 +465,34 @@ function ecard_admin_add_recipient($form, &$form_state) {
 
 function ecard_admin_recipient_callback($form, &$form_state) {
   return $form['step2']['recipients'];
+}
+
+function ecard_admin_recipient_remove_duplicates(&$recipients, $explode_string, $explode2) {
+  $import = explode($explode_string, $recipients);
+
+  $rec_array = array();
+  foreach ($import as $row) {
+    if (!empty($row)) {
+      $rec_array[] = explode($explode2, $row);
+    }
+  }
+
+  $length = count($rec_array);
+  while($rec = current($rec_array)) {
+    if ($length > 1) {
+      for($i = key($rec_array)+1; $i < $length; $i++) {
+        if (isset($rec_array[$i][1])) {
+          if (strcasecmp($rec[1], $rec_array[$i][1])===0) {
+            unset($rec_array[$i]);
+          }
+        }
+      }
+    }
+    $rec_array[key($rec_array)] = implode($explode2, $rec);
+    next($rec_array);
+  }
+  $recipients = implode($explode_string, $rec_array);
+  return $recipients;
 }
 
 
