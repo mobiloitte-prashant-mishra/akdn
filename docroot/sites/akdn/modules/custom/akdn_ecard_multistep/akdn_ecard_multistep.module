@@ -64,7 +64,7 @@ function akdn_ecard_multistep_theme() {
   return array(
     'ecard_template' => array(
       'template' => 'includes/ecard_template',
-      'variables' => array('main_image' => NULL, 'proj' => NULL, 'fact_image' => NULL, 'fact_desc' => NULL, 'link_title' => NULL, 'link_url' => NULL),
+      'variables' => array('main_image' => NULL, 'proj_info' => NULL, 'fact_image' => NULL, 'fact_desc' => NULL, 'link_title' => NULL, 'link_url' => NULL),
     ),
   );
 }
