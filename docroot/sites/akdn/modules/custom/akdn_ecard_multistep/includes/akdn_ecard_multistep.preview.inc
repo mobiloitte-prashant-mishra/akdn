@@ -12,6 +12,6 @@ function akdn_ecard_preview($args) {
    $title = $node_wrapper->field_more_information_link->value()['title'];
    $url = $node_wrapper->field_more_information_link->value()['url'];
  }	
- $html = theme('ecard_template', array('main_image' => $image_uri, 'proj' => $proj, 'fact_image' => $fact_image, 'fact_desc' => $fact_desc, 'link_title' => $title, 'link_url' => $url));
+ $html = theme('ecard_template', array('main_image' => $image_uri, 'proj_info' => $proj, 'fact_image' => $fact_image, 'fact_desc' => $fact_desc, 'link_title' => $title, 'link_url' => $url));
  print $html;die();
 }
