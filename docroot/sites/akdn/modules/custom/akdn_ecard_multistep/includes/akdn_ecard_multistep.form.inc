@@ -236,6 +236,8 @@ function akdn_ecard_multistep_form_step2($form, &$form_state) {
       'import' => t('Import recipients from your address book'),
     ),
     '#default_value' => isset($values['input_type']) ? $values['input_type'] : 'manual',
+    '#prefix' => '<div class="ecard-radio-btn">',
+    '#suffix' => '</div>',
   );
 
   $form['step2']['import'] = array(
