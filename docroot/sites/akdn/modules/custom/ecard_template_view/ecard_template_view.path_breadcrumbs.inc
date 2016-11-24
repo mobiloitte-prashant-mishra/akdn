@@ -37,7 +37,7 @@ function ecard_template_view_path_breadcrumbs_settings_info() {
   $path_breadcrumb->path = 'ecards';
   $path_breadcrumb->data = array(
     'titles' => array(
-      0 => 'Eacrds',
+      0 => 'Ecards',
     ),
     'paths' => array(
       0 => '<none>',
