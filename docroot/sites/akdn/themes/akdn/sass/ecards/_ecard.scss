@@ -40,8 +40,9 @@
         }
     }
     .ecard-submit-wrapper {
-      float: right;
-        .form-submit {
+/*       float: right;*/
+/* padding-top: 20px; */
+        .form-submit , {
           background: #b59757;
           border: 0;
           border-radius: 5px;
@@ -54,5 +55,69 @@
           text-shadow: none;
           margin: 0 0 0 5px;
           }
+          .ecard-submit-preview-wrapper{
+          background: #b59757;
+          border: 0;
+          border-radius: 5px;
+          color: #ffffff;
+          font-size: 14px;
+          text-transform: uppercase;
+          padding: 1.5px 10px;
+          text-align: center;
+          font-weight: normal;
+          text-shadow: none;
+          margin: 0 0 0 5px;
+          }
       }
+      .recipient-btn-submit-wrapper {
+        float: right;
+/*             padding-right: 80px;
+ */          & > input {
+            background: #b59757;
+            border: 0;
+            border-radius: 5px;
+            color: #ffffff;
+            font-size: 14px;
+            text-transform: uppercase;
+            padding: 1.5px 10px;
+            text-align: center;
+            font-weight: normal;
+            text-shadow: none;
+            margin: 0 0 0 5px;
+          }
+      }
+      .ecard-import-wrapper {
+          background: #b59757;
+          border: 0;
+          border-radius: 5px;
+          color: #ffffff;
+          font-size: 14px;
+          text-transform: uppercase;
+          padding: 1.5px 10px;
+          text-align: center;
+          font-weight: normal;
+          text-shadow: none;
+/*           margin: 0 0 0 5px;
+ */      }
+      .description{
+        padding-top: 20px;
+      }
+
+.rounded-box {
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-color: #f1f1e0;
+    border: 1px solid #eee;
+/*     border: 1px solid rgba(0,0,0,0.05); */
+/*     -webkit-border-radius: 4px;
+    -moz-border-radius: 4px; */
+ /*    border-radius: 4px; */
+  .fieldset-wrapper {
+  display: inline-flex;
+   input {
+  width: 100%;
+  }
+}
+    }
 }
