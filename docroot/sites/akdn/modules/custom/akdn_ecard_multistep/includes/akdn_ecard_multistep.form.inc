@@ -339,11 +339,8 @@ function akdn_ecard_multistep_form_step2($form, &$form_state) {
   );
   $form['preview'] = array(
     '#markup' => $link,
-            '#suffix' => '</div>',
-
-
+    '#suffix' => '</div>',
   );
-
   return $form;
 }
 
@@ -400,7 +397,7 @@ function akdn_ecard_multistep_form_step3($form, &$form_state) {
   $form['back'] = array(
     '#type' => 'submit',
     '#value' => t('Back'),
-            '#prefix' => '<div class="ecard-submit-wrapper">',
+    '#prefix' => '<div class="ecard-submit-wrapper">',
 
   );
 
@@ -426,7 +423,7 @@ function akdn_ecard_multistep_form_step3($form, &$form_state) {
   );
   $form['preview'] = array(
     '#markup' => $link,
-                '#suffix' => '</div>',
+    '#suffix' => '</div>',
 
   );
 
