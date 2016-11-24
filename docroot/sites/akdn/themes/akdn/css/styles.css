@@ -20574,9 +20574,10 @@ table tr.gone_events {
 }
 /* line 42, ../sass/ecards/_ecard.scss */
 #akdn-ecard-multistep-form .ecard-submit-wrapper {
-  float: right;
+  /*       float: right;*/
+  /* padding-top: 20px; */
 }
-/* line 44, ../sass/ecards/_ecard.scss */
+/* line 45, ../sass/ecards/_ecard.scss */
 #akdn-ecard-multistep-form .ecard-submit-wrapper .form-submit {
   background: #b59757;
   border: 0;
@@ -20589,6 +20590,79 @@ table tr.gone_events {
   font-weight: normal;
   text-shadow: none;
   margin: 0 0 0 5px;
+}
+/* line 58, ../sass/ecards/_ecard.scss */
+#akdn-ecard-multistep-form .ecard-submit-wrapper .ecard-submit-preview-wrapper {
+  background: #b59757;
+  border: 0;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 1.5px 10px;
+  text-align: center;
+  font-weight: normal;
+  text-shadow: none;
+  margin: 0 0 0 5px;
+}
+/* line 72, ../sass/ecards/_ecard.scss */
+#akdn-ecard-multistep-form .recipient-btn-submit-wrapper {
+  float: right;
+  /*             padding-right: 80px;
+   */
+}
+/* line 75, ../sass/ecards/_ecard.scss */
+#akdn-ecard-multistep-form .recipient-btn-submit-wrapper > input {
+  background: #b59757;
+  border: 0;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 1.5px 10px;
+  text-align: center;
+  font-weight: normal;
+  text-shadow: none;
+  margin: 0 0 0 5px;
+}
+/* line 89, ../sass/ecards/_ecard.scss */
+#akdn-ecard-multistep-form .ecard-import-wrapper {
+  background: #b59757;
+  border: 0;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 1.5px 10px;
+  text-align: center;
+  font-weight: normal;
+  text-shadow: none;
+  /*           margin: 0 0 0 5px;
+   */
+}
+/* line 102, ../sass/ecards/_ecard.scss */
+#akdn-ecard-multistep-form .description {
+  padding-top: 20px;
+}
+/* line 106, ../sass/ecards/_ecard.scss */
+#akdn-ecard-multistep-form .rounded-box {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #f1f1e0;
+  border: 1px solid #eee;
+  /*     border: 1px solid rgba(0,0,0,0.05); */
+  /*     -webkit-border-radius: 4px;
+      -moz-border-radius: 4px; */
+  /*    border-radius: 4px; */
+}
+/* line 116, ../sass/ecards/_ecard.scss */
+#akdn-ecard-multistep-form .rounded-box .fieldset-wrapper {
+  display: inline-flex;
+}
+/* line 118, ../sass/ecards/_ecard.scss */
+#akdn-ecard-multistep-form .rounded-box .fieldset-wrapper input {
+  width: 100%;
 }
 
 /*
@@ -20608,23 +20682,31 @@ table tr.gone_events {
   #akdn-ecard-multistep-form {
     width: 100%;
   }
+  /* line 18, ../sass/ecards/_ecard-media-query.scss */
+  #akdn-ecard-multistep-form .recipient-btn-submit-wrapper {
+    padding-right: 12px;
+  }
 }
 @media screen and (max-width: 767px) {
-  /* line 24, ../sass/ecards/_ecard-media-query.scss */
+  /* line 27, ../sass/ecards/_ecard-media-query.scss */
   #akdn-ecard-multistep-form {
     width: 100%;
   }
-  /* line 26, ../sass/ecards/_ecard-media-query.scss */
+  /* line 29, ../sass/ecards/_ecard-media-query.scss */
   #akdn-ecard-multistep-form > div {
     padding: 20px 20px;
   }
-  /* line 29, ../sass/ecards/_ecard-media-query.scss */
+  /* line 32, ../sass/ecards/_ecard-media-query.scss */
   #akdn-ecard-multistep-form label,
   #akdn-ecard-multistep-form input[type="text"] {
     width: 100%;
   }
-  /* line 33, ../sass/ecards/_ecard-media-query.scss */
+  /* line 36, ../sass/ecards/_ecard-media-query.scss */
   #akdn-ecard-multistep-form .ecard-submit-wrapper {
     width: 100%;
+  }
+  /* line 39, ../sass/ecards/_ecard-media-query.scss */
+  #akdn-ecard-multistep-form .recipient-btn-submit-wrapper {
+    padding-right: 5px;
   }
 }
