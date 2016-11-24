@@ -11,6 +11,7 @@ dependencies[] = facetapi
 dependencies[] = path_breadcrumbs
 dependencies[] = views
 features[context][] = ecard_listing_page
+features[context][] = ecard_page_title
 features[ctools][] = context:context:3
 features[ctools][] = path_breadcrumbs:path_breadcrumbs:1
 features[ctools][] = views:views_default:3.0
