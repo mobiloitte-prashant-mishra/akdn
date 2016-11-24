@@ -6,14 +6,14 @@
 ?>
 <div style="background-color:#efefef;" >
   <div id="content" style="margin-top:auto;margin-right:auto;margin-left:auto;padding-top:20px;padding-bottom:20px;padding-right:20px;padding-left:20px;background-color:#FFFFFF;max-width:650px;width:100%;border-width:1px;border-style:solid;border-color:#CFCDCD;" >
-
-    <img src="http://cdn.iiuk.org/akdn/ecard_humayun2.jpg" alt="Card Image" width="610" height="323" title="Card Image"/>
-
+    <?php isset($main_image)? $main_image : $main_image = 'http://cdn.iiuk.org/akdn/ecard_humayun2.jpg';
+    print '<img src="'.$main_image.'" alt="Card Image" width="610" height="323" title="Card Image"/>';
+    ?>
     <div class="horizontal2" style="max-width:650px;width:100%;height:1px;background-color:#DBDBDB;margin-bottom:15px;margin-top:15px;clear:both;" >
     </div>
 
     <div class="greeting" style="font-family:Gill Sans, Gill Sans MT, Myriad Pro, DejaVu Sans Condensed, Helvetica, Arial,' sans-serif';font-size:25px;text-align:center;color:#b49957;" >
-      <?php print isset($greeting)? $greeting : 'GREETING TEXT'; ?>
+      <?php print isset($greeting)? $greeting : '{Greetings}'; ?>
     </div>
 
     <div class="horizontal3" style="max-width:650px;width:100%;height:1px;background-color:#DBDBDB;margin-bottom:25px;margin-top:15px;clear:both;" >
@@ -21,10 +21,10 @@
   
     <div class="ftext" style="font-family:Cambria, Hoefler Text, Liberation Serif, Times, Times New Roman, serif;font-size:16px;line-height:20px;color:#000;margin-bottom:10px;" >
       <p style="text-align:center;" >Dear <?php print isset($to_name)? $to_name : 'Recipient'; ?>,</p><br>
-      <p style="text-align:center;" ><?php print isset($message)? $message : 'MESSAGE TEXT'; ?>
+      <p style="text-align:center;" ><?php print isset($message)? $message : '{Message}'; ?>
       <br>
       <br>
-        <?php print isset($sender_name)? $sender_name : 'Sender Name'; ?>
+        <?php print isset($sender_name)? $sender_name : '{Sender Name}'; ?>
       </p>
     </div>
 
@@ -40,15 +40,17 @@
               <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
                 <tbody style="border:0;">
                   <tr>
-                    <td width="113" rowspan="2" valign="middle" style="padding:3px;"><img src="http://cdn.iiuk.org/akdn/humayun3-01.png" alt="Fact" width="100" height="145" title="Fact"/>
+                    <td width="113" rowspan="2" valign="middle" style="padding:3px;">
+                    <?php isset($fact_uri) ? $fact_uri : $fact_uri = 'http://cdn.iiuk.org/akdn/humayun3-01.png';
+                    print '<img src="'.$fact_uri.'" alt="Fact" width="100" height="145" title="Fact"/>'; ?>
                     </td>
-                    <td width="507" height="80" valign="top" style="padding:10px;"><?php print isset($project_desc)? $project_desc : 'Project Info'; ?>. 
-                      <a href="{learnmoreurl}" target="_blank" style="color:#656565;" >Learn more  »</a>
+                    <td width="507" height="80" valign="top" style="padding:10px;"><?php print isset($proj)? $proj : '{Project Info}'; ?>. 
+                     <?php print '<a href="'.$link_url.'" target="_blank" style="color:#656565;" >'.$link_title.'  »</a>'; ?>
                     </td>
                   </tr>
                   <tr>
                     <td width="507" height="23" valign="top" style="padding:10px;">
-                      <strong>Did you know? AKDN has participated in 8 projects to rehabilitate or create parks, historic sites and gardens, which together attract 5 million people a year, and have attracted 43 million visitors since 2004.</strong>
+                      <strong><?php isset($fact_desc) ? $fact_desc : '{fact desc}'; ?></strong>
                     </td>
                   </tr>
                 </tbody>

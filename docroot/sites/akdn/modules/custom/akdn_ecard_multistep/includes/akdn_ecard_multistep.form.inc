@@ -224,7 +224,7 @@ function akdn_ecard_multistep_form_step2($form, &$form_state) {
   $form['step2']['#attached']['library'][] = array('system', 'ui.button');
   $form['step2']['#attached']['js'] = array(
     'https://api.cloudsponge.com/address_books.js' => array('type' => 'external'),
-    'var csPageOptions = { domain_key:"Z542YNNQPKDUZEBRYGZD", textarea_id:"edit-import", beforeLaunch:' . $before_launch_js . ', beforeClosing:' . $before_close_js . ', afterSubmitContacts:' . $after_contact_js . '}' => array('type' => 'inline'),
+    'var csPageOptions = { domain_key:"'.variable_get("cloud_sponge_key").'", textarea_id:"edit-import", beforeLaunch:' . $before_launch_js . ', beforeClosing:' . $before_close_js . ', afterSubmitContacts:' . $after_contact_js . '}' => array('type' => 'inline'),
     '(function ($) { $(document).ready(function(){ $("#ecard-admin-create .form-radios").buttonset(); }); })(jQuery);' => array('type' => 'inline'),
   );
 
@@ -331,6 +331,9 @@ function akdn_ecard_multistep_form_step2($form, &$form_state) {
       'attributes' => array(
         'class' => 'colorbox-load btn',
       ),
+      'query' => array(
+        'design' => arg(1),
+      )
     )
   );
   $form['preview'] = array(
@@ -413,6 +416,9 @@ function akdn_ecard_multistep_form_step3($form, &$form_state) {
       'attributes' => array(
         'class' => 'colorbox-load btn',
       ),
+      'query' => array(
+        'design' => arg(1),
+      )
     )
   );
   $form['preview'] = array(
@@ -456,6 +462,9 @@ function _akdn_ecard_cancel_button() {
   drupal_goto('ecards/template');
 }
 
+/**
+ *  @Add recipients 
+ */
 function ecard_admin_add_recipient($form, &$form_state) {
   if($form_state['rec_count'] < 49) {
     $form_state['rec_count']++;
@@ -463,9 +472,17 @@ function ecard_admin_add_recipient($form, &$form_state) {
   $form_state['rebuild'] = TRUE;
 }
 
+/**
+ *  @return Recipients
+ */
+
 function ecard_admin_recipient_callback($form, &$form_state) {
   return $form['step2']['recipients'];
 }
+
+/*
+ * @callback for removing duplicate recipients
+ */
 
 function ecard_admin_recipient_remove_duplicates(&$recipients, $explode_string, $explode2) {
   $import = explode($explode_string, $recipients);
