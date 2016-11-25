@@ -20665,17 +20665,22 @@ table tr.gone_events {
 }
 /* line 139, ../sass/ecards/_ecard.scss */
 #akdn-ecard-multistep-form .form-radios input[type="radio"]:checked + .option {
-  background: #CCCCCC;
+  background-color: #f0eade;
+  border: 1px solid gray;
+  box-shadow: black;
+  box-shadow: 2px 2px 1px #888888;
 }
-/* line 143, ../sass/ecards/_ecard.scss */
+/* line 146, ../sass/ecards/_ecard.scss */
 #akdn-ecard-multistep-form .form-radios label.option {
-  background: #EEEEEE;
   display: block;
   padding: 10px;
   cursor: pointer;
   text-align: center;
   border-radius: 8px;
   width: 100%;
+  background-color: #f0eade;
+  border: 1px solid gray;
+  box-shadow: none;
 }
 
 /*
