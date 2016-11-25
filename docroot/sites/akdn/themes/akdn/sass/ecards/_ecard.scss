@@ -132,22 +132,28 @@
   .form-radios {
     display: inline-block;
 
+    .option {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      text-align: center;
+      background-color: #f0eade;
+      border-radius: 8px;
+      border: 1px solid gray;
+      cursor: pointer;
+      box-shadow: none;
+    }
+
     input[type="radio"] {
       display: none;
-    }
 
-    input[type="radio"]:checked + .option {
-      background: #CCCCCC;
-    }
-
-    label.option {
-      background: #EEEEEE;
-      display: block;
-      padding: 10px;
-      cursor: pointer;
-      text-align: center;
-      border-radius: 8px;
-      width: 100%;
+      &:checked {
+        & + .option {
+          background-color: #f0eade;
+          border: 1px solid gray;
+          box-shadow: 2px 2px 1px #888888;
+        }
+      }
     }
   }
 }
