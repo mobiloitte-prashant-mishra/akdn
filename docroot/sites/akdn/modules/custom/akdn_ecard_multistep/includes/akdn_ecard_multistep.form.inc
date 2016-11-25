@@ -326,20 +326,38 @@ function akdn_ecard_multistep_form_step2($form, &$form_state) {
 
   $link = l(
     t('Preview'),
-    'preview/ecards',
+    '',
     array(
       'attributes' => array(
-        'class' => 'colorbox-load btn',
+        'class' => 'colorbox-inline btn',
       ),
       'query' => array(
-        'design' => arg(1),
+        'inline' => 'true#ecard_template',
       )
     )
   );
+  
   $form['preview'] = array(
-    '#markup' => $link,
+    '#markup' => urldecode($link),
   );
 
+  $template_data = _get_template_details(arg(1));
+
+  $step1_details = $form_state['multistep_values']['step1'];
+  
+  if ($step1_details['greetings'] === 'custom') {
+    $greetings = $step1_details['custom_gretting_message'];
+  }
+  else{
+    $greetings = $step1_details['greetings'];
+  }
+
+  $html = theme('ecard_template', array('main_image' => $template_data['main_image'], 'proj_info' => $template_data['proj_info'], 'fact_image' => $template_data['fact_image'], 'fact_desc' => $template_data['fact_desc'], 'link_title' => $template_data['link_title'], 'link_url' => $template_data['link_url'], 'greetings' => $greetings, 'sender_name' => $step1_details['sender_name'], 'message' => $step1_details['default_message']));
+ 
+  $form['ecard_template'] = array(
+    '#markup' => '<div class = "element-hidden"><div id="ecard_template">' . $html . '</div></div>',
+  );
+  
   return $form;
 }
 
@@ -411,18 +429,36 @@ function akdn_ecard_multistep_form_step3($form, &$form_state) {
   );
   $link = l(
     t('Preview'),
-    'preview/ecards',
+    '',
     array(
       'attributes' => array(
-        'class' => 'colorbox-load btn',
+        'class' => 'colorbox-inline btn',
       ),
       'query' => array(
-        'design' => arg(1),
+          'inline' => 'true#ecard_template_step3',
       )
     )
   );
+
   $form['preview'] = array(
-    '#markup' => $link,
+    '#markup' => urldecode($link),
+  );
+
+  $template_data = _get_template_details(arg(1));
+
+  $step1_details = $form_state['multistep_values']['step1'];
+  
+  if ($step1_details['greetings'] === 'custom') {
+    $greetings = $step1_details['custom_gretting_message'];
+  }
+  else{
+    $greetings = $step1_details['greetings'];
+  }
+
+  $html = theme('ecard_template', array('main_image' => $template_data['main_image'], 'proj_info' => $template_data['proj_info'], 'fact_image' => $template_data['fact_image'], 'fact_desc' => $template_data['fact_desc'], 'link_title' => $template_data['link_title'], 'link_url' => $template_data['link_url'], 'greetings' => $greetings, 'sender_name' => $step1_details['sender_name'], 'message' => $step1_details['default_message']));
+ 
+  $form['ecard_template_step3'] = array(
+    '#markup' => '<div class = "element-hidden"><div id="ecard_template_step3">' . $html . '</div></div>',
   );
   
   return $form;
@@ -510,6 +546,31 @@ function ecard_admin_recipient_remove_duplicates(&$recipients, $explode_string, 
   }
   $recipients = implode($explode_string, $rec_array);
   return $recipients;
+}
+
+/**
+ * return Tempate Details
+ */
+
+function _get_template_details($nid) {
+  $data = array();
+  $data['image_uri'] = 'http://test.ico';
+    $data['proj_info'] = 'ffdhsjfhs dkjfhksdjhfksdhkfsdj fksdjhf k';
+    $data['fact_desc'] = 'fact description dvhsdfhjksd fjksdhfk jsdfk jds';
+    $data['fact_uri'] = 'http://test.ico';
+    $data['link_title'] = 'title';
+    $data['link_url'] = 'http://test.com';
+  // if (!empty($nid)) {
+  //   $node = node_load($nid);
+  //   $node_wrapper = entity_metadata_wrapper('node', $node);
+  //   $data['image_uri'] = file_create_url($node_wrapper->field_image_upload->value()['uri']);
+  //   $data['proj'] = $node_wrapper->field_project_country_descript->value()['value'];
+  //   $data['fact_desc'] = $node_wrapper->field_fact_description->value()['value'];
+  //   $data['fact_uri'] = file_create_url($node_wrapper->field_fact_image->value()['uri']);
+  //   $data['title'] = $node_wrapper->field_more_information_link->value()['title'];
+  //   $data['url'] = $node_wrapper->field_more_information_link->value()['url'];
+  // }
+  return $data;
 }
 
 
