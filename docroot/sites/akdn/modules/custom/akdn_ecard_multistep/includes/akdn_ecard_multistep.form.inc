@@ -334,7 +334,7 @@ function akdn_ecard_multistep_form_step2($form, &$form_state) {
     '',
     array(
       'attributes' => array(
-        'class' => 'colorbox-inline btn',
+        'class' => 'colorbox-inline btn ecard-submit-preview-wrapper',
       ),
       'query' => array(
         'inline' => 'true#ecard_template',
@@ -343,7 +343,7 @@ function akdn_ecard_multistep_form_step2($form, &$form_state) {
   );
   
   $form['preview'] = array(
-    '#markup' => urkdecode($link),
+    '#markup' => urldecode($link),
     '#suffix' => '</div>',
   );
 
@@ -363,7 +363,6 @@ function akdn_ecard_multistep_form_step2($form, &$form_state) {
   $form['ecard_template'] = array(
     '#markup' => '<div class = "element-hidden"><div id="ecard_template">' . $html . '</div></div>',
   );
-  
   return $form;
 }
 
@@ -440,10 +439,10 @@ function akdn_ecard_multistep_form_step3($form, &$form_state) {
     '',
     array(
       'attributes' => array(
-        'class' => 'colorbox-inline btn',
+        'class' => 'colorbox-inline btn ecard-submit-preview-wrapper',
       ),
       'query' => array(
-          'inline' => 'true#ecard_template_step3',
+        'inline' => 'true#ecard_template_step3',
       )
     )
   );
