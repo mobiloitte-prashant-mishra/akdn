@@ -44,8 +44,10 @@
                     <?php !empty($fact_uri) ? $fact_uri : $fact_uri = 'http://cdn.iiuk.org/akdn/humayun3-01.png';
                     print '<img src="'.$fact_uri.'" alt="Fact" width="100" height="145" title="Fact"/>'; ?>
                     </td>
+                    <p>
                     <td width="507" height="80" valign="top" style="padding:10px;"><?php print !empty($proj_info) ? $proj_info : '{Project Info}'; ?>. 
                      <?php print '<a href="' . $link_url .'" target="_blank" style="color:#656565;" >' . $link_title .'  »</a>'; ?>
+                     </p>
                     </td>
                   </tr>
                   <tr>
