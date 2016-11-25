@@ -236,13 +236,15 @@ function akdn_ecard_multistep_form_step2($form, &$form_state) {
       'import' => t('Import recipients from your address book'),
     ),
     '#default_value' => isset($values['input_type']) ? $values['input_type'] : 'manual',
+    '#prefix' => '<div class="ecard-radio-btn">',
+    '#suffix' => '</div>',
   );
 
   $form['step2']['import'] = array(
     '#title' => t('Import'),
     '#type' => 'textarea',
     '#default_value' => isset($values['import']) ? $values['import'] : '',
-    '#description' => '<a class="cs_import btn btn-small">Add from Address Book</a> <p>Please use this button to start the import process. After you have imported the contacts from your address book you can add additional contacts in this field. Please separate contacts by using a comma and use the following syntax: John Doe &lt;email@example.com&gt;</p>',
+    '#description' => '<a class="cs_import btn btn-small ecard-import-wrapper">Add from Address Book</a> <p>Please use this button to start the import process. After you have imported the contacts from your address book you can add additional contacts in this field. Please separate contacts by using a comma and use the following syntax: John Doe &lt;email@example.com&gt;</p>',
     '#states' => array(
       'visible' => array(
         ':input[name="input_type"]' => array('value' => 'import'),
@@ -293,13 +295,13 @@ function akdn_ecard_multistep_form_step2($form, &$form_state) {
 
   $form['step2']['add_rec'] = array(
     '#type' => 'submit',
-    '#value' => t('Add another recipient'),
+    '#value' => t('+ Add'),
     '#submit' => array('ecard_admin_add_recipient'),
     '#ajax' => array(
       'callback' => 'ecard_admin_recipient_callback',
       'wrapper' => 'recipient-container',
     ),
-    '#prefix' => '<div id="add-recipient-btn">',
+    '#prefix' => '<div id="add-recipient-btn " class="recipient-btn-submit-wrapper">',
     '#suffix' => '</div>',
     '#attributes' => array('class' => array('btn', 'btn-small')),
     '#states' => array(
@@ -311,7 +313,9 @@ function akdn_ecard_multistep_form_step2($form, &$form_state) {
 
   $form['next'] = array(
     '#type' => 'submit',
-    '#value' => t('Next')
+    '#value' => t('Next'),
+        '#prefix' => '<div class="ecard-submit-wrapper">',
+
   );
   $form['back'] = array(
     '#type' => 'submit',
@@ -322,6 +326,7 @@ function akdn_ecard_multistep_form_step2($form, &$form_state) {
     '#value'  => t('Cancel'),
     '#submit' => array('_akdn_ecard_cancel_button'),
     '#limit_validation_errors' => array(),
+
   );
 
   $link = l(
@@ -329,7 +334,7 @@ function akdn_ecard_multistep_form_step2($form, &$form_state) {
     '',
     array(
       'attributes' => array(
-        'class' => 'colorbox-inline btn',
+        'class' => 'colorbox-inline btn ecard-submit-preview-wrapper',
       ),
       'query' => array(
         'inline' => 'true#ecard_template',
@@ -339,6 +344,7 @@ function akdn_ecard_multistep_form_step2($form, &$form_state) {
   
   $form['preview'] = array(
     '#markup' => urldecode($link),
+    '#suffix' => '</div>',
   );
 
   $template_data = _get_template_details(arg(1));
@@ -357,7 +363,6 @@ function akdn_ecard_multistep_form_step2($form, &$form_state) {
   $form['ecard_template'] = array(
     '#markup' => '<div class = "element-hidden"><div id="ecard_template">' . $html . '</div></div>',
   );
-  
   return $form;
 }
 
@@ -389,7 +394,7 @@ function akdn_ecard_multistep_form_step3($form, &$form_state) {
         $recipients .= htmlentities(trim($r)) . '<br/>';
       }
     }
-  } 
+  }
   else {
     $rec_list = $form_state['multistep_values']['step2']['recipients'];
     foreach($rec_list as $r) {
@@ -413,7 +418,9 @@ function akdn_ecard_multistep_form_step3($form, &$form_state) {
 
   $form['back'] = array(
     '#type' => 'submit',
-    '#value' => t('Back')
+    '#value' => t('Back'),
+    '#prefix' => '<div class="ecard-submit-wrapper">',
+
   );
 
   $form['next'] = array(
@@ -432,16 +439,17 @@ function akdn_ecard_multistep_form_step3($form, &$form_state) {
     '',
     array(
       'attributes' => array(
-        'class' => 'colorbox-inline btn',
+        'class' => 'colorbox-inline btn ecard-submit-preview-wrapper',
       ),
       'query' => array(
-          'inline' => 'true#ecard_template_step3',
+        'inline' => 'true#ecard_template_step3',
       )
     )
   );
 
   $form['preview'] = array(
     '#markup' => urldecode($link),
+    '#suffix' => '</div>',
   );
 
   $template_data = _get_template_details(arg(1));
@@ -460,7 +468,7 @@ function akdn_ecard_multistep_form_step3($form, &$form_state) {
   $form['ecard_template_step3'] = array(
     '#markup' => '<div class = "element-hidden"><div id="ecard_template_step3">' . $html . '</div></div>',
   );
-  
+
   return $form;
 }
 
