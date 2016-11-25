@@ -13,7 +13,7 @@
     </div>
 
     <div class="greeting" style="font-family:Gill Sans, Gill Sans MT, Myriad Pro, DejaVu Sans Condensed, Helvetica, Arial,' sans-serif';font-size:25px;text-align:center;color:#b49957;" >
-      <?php print !empty($greeting)? $greeting : '{Greetings}'; ?>
+      <?php print !empty($greetings)? $greetings : '{Greetings}'; ?>
     </div>
 
     <div class="horizontal3" style="max-width:650px;width:100%;height:1px;background-color:#DBDBDB;margin-bottom:25px;margin-top:15px;clear:both;" >
@@ -21,10 +21,9 @@
   
     <div class="ftext" style="font-family:Cambria, Hoefler Text, Liberation Serif, Times, Times New Roman, serif;font-size:16px;line-height:20px;color:#000;margin-bottom:10px;" >
       <p style="text-align:center;" >Dear <?php print !empty($to_name)? $to_name : 'Recipient'; ?>,</p><br>
-      <p style="text-align:center;" ><?php print !empty($message)? $message : '{Message}'; ?>
+      <p style="text-align:center;" ><?php print !empty($message)? $message : '{Message}'; ?></p>
       <br>
-      <br>
-        <?php print !empty($sender_name)? $sender_name : '{Sender Name}'; ?>
+       <p style="text-align:center;" ><?php print !empty($sender_name)? $sender_name : '{Sender Name}'; ?>
       </p>
     </div>
 
