@@ -53,26 +53,29 @@ function ecard_template_content_type_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_image_credit'.
-  $field_bases['field_image_credit'] = array(
+  // Exported field_base: 'field_fact_image'.
+  $field_bases['field_fact_image'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_image_credit',
+    'field_name' => 'field_fact_image',
     'indexes' => array(
-      'format' => array(
-        0 => 'format',
+      'fid' => array(
+        0 => 'fid',
       ),
     ),
     'locked' => 0,
-    'module' => 'text',
+    'module' => 'image',
     'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'max_length' => 255,
+      'default_image' => 0,
+      'entity_translation_sync' => array(
+        0 => 'fid',
+      ),
+      'uri_scheme' => 'public',
     ),
     'translatable' => 0,
-    'type' => 'text',
+    'type' => 'image',
   );
 
   // Exported field_base: 'field_image_upload'.
@@ -88,17 +91,16 @@ function ecard_template_content_type_field_default_field_bases() {
       ),
     ),
     'locked' => 0,
-    'module' => 'file',
+    'module' => 'image',
     'settings' => array(
-      'display_default' => 0,
-      'display_field' => 0,
+      'default_image' => 0,
       'entity_translation_sync' => array(
         0 => 'fid',
       ),
       'uri_scheme' => 'public',
     ),
     'translatable' => 0,
-    'type' => 'file',
+    'type' => 'image',
   );
 
   // Exported field_base: 'field_more_information_link'.

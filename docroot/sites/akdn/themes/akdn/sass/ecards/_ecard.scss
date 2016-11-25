@@ -1,0 +1,153 @@
+/* Ecard Template Page */
+
+#akdn-ecard-multistep-form {
+  width: 70.61404%;
+  float: none;
+  margin: auto;
+
+  & > div {
+    display: block;
+    width: 100%;
+    margin: 0 auto 40px;
+    float: left;
+    padding: 20px 40px;
+    background: #f0eade;
+    border-top: 1px solid #b69c5f;
+  }
+
+  h2 {
+    display: block;
+    width: 100%;
+    margin: 28px auto 30px;
+    float: left;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 1;
+    text-align: center;
+  }
+
+  .form-item {
+    width: 100%;
+    margin: 0 auto 10px;
+    padding: 5px;
+    float: none;
+    clear: both;
+
+    label {
+      font-weight: normal;
+      width: 240px;
+    }
+
+    select {
+      width: auto;
+      max-width: 725px;
+    }
+  }
+
+  .ecard-submit-wrapper {
+    .form-submit {
+      background: #b59757;
+      border: 0;
+      border-radius: 5px;
+      color: #ffffff;
+      font-size: 14px;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      text-align: center;
+      font-weight: normal;
+      text-shadow: none;
+      margin: 10px 0 0 5px;
+    }
+
+    .ecard-submit-preview-wrapper {
+      background: #b59757;
+      border: 0;
+      border-radius: 5px;
+      color: #ffffff;
+      font-size: 14px;
+      text-transform: uppercase;
+      padding: 1.5px 10px;
+      text-align: center;
+      font-weight: normal;
+      text-shadow: none;
+      margin: 0 0 0 5px;
+      margin-top: 10px;
+    }
+  }
+
+  .recipient-btn-submit-wrapper {
+    float: right;
+
+    & > input {
+      background: #b59757;
+      border: 0;
+      border-radius: 5px;
+      color: #ffffff;
+      font-size: 14px;
+      text-transform: uppercase;
+      padding: 1.5px 10px;
+      text-align: center;
+      font-weight: normal;
+      text-shadow: none;
+      margin: 10px 5px 0 5px;
+    }
+  }
+
+  .ecard-import-wrapper {
+    background: #b59757;
+    border: 0;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 1.5px 10px;
+    text-align: center;
+    font-weight: normal;
+    text-shadow: none;
+  }
+
+  .description {
+    padding-top: 20px;
+  }
+
+  .rounded-box {
+    min-height: 20px;
+    padding: 0px;
+
+    .fieldset-wrapper {
+      display: inline-flex;
+
+      input {
+        width: 100%;
+      }
+    }
+  }
+
+  .ecard-radio-btn
+  .form-item {
+    display: inline-block;
+    width: auto;
+  }
+
+  .form-radios {
+    display: inline-block;
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    input[type="radio"]:checked + .option {
+      background: #CCCCCC;
+    }
+
+    label.option {
+      background: #EEEEEE;
+      display: block;
+      padding: 10px;
+      cursor: pointer;
+      text-align: center;
+      border-radius: 8px;
+      width: 100%;
+    }
+  }
+}
