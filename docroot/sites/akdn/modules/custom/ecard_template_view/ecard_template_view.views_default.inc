@@ -66,18 +66,30 @@ function ecard_template_view_views_default_views() {
   $handler->display->display_options['empty']['area']['content'] = 'No results found!';
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Indexed Node: Node ID */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['separator'] = '';
+  $handler->display->display_options['fields']['nid']['link_to_entity'] = 0;
   /* Field: Indexed Node: Image upload */
   $handler->display->display_options['fields']['field_image_upload']['id'] = 'field_image_upload';
   $handler->display->display_options['fields']['field_image_upload']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['fields']['field_image_upload']['field'] = 'field_image_upload';
   $handler->display->display_options['fields']['field_image_upload']['label'] = '';
+  $handler->display->display_options['fields']['field_image_upload']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_image_upload']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_image_upload']['alter']['path'] = 'ecards/[nid]';
   $handler->display->display_options['fields']['field_image_upload']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_image_upload']['element_class'] = 'grid-media-block_image grid-media-block_image-speeches';
   $handler->display->display_options['fields']['field_image_upload']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image_upload']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image_upload']['settings'] = array(
     'image_style' => 'social_sharing_image',
-    'image_link' => 'content',
+    'image_link' => '',
   );
   /* Field: Indexed Node: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -85,8 +97,10 @@ function ecard_template_view_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['path'] = 'ecards/[nid]';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['title']['link_to_entity'] = 0;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -94,7 +108,7 @@ function ecard_template_view_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="media-desc">
 <div class="title">[title] 
-<div class="read-more"><a href="[url] ">Send Card</a></div>
+<div class="read-more"><a href="/ecards/[nid]">Send Card</a></div>
 </div>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
@@ -149,7 +163,7 @@ function ecard_template_view_views_default_views() {
     t('No results found!'),
     t('<div class="media-desc">
 <div class="title">[title] 
-<div class="read-more"><a href="[url] ">Send Card</a></div>
+<div class="read-more"><a href="/ecards/[nid]">Send Card</a></div>
 </div>
 </div>'),
   );
