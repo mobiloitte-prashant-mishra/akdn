@@ -20690,15 +20690,15 @@ table tr.gone_events {
   width: 62%;
 }
 /* line 165, ../sass/ecards/_ecard.scss */
-#akdn-ecard-multistep-form .captcha img {
-  width: 30%;
-  float: right;
-  padding-bottom: 10px;
-  margin-right: 70px;
-}
-/* line 172, ../sass/ecards/_ecard.scss */
 #akdn-ecard-multistep-form .captcha .description {
   display: none;
+}
+/* line 169, ../sass/ecards/_ecard.scss */
+#akdn-ecard-multistep-form .captcha img {
+  width: 30%;
+  margin-right: 70px;
+  padding-bottom: 10px;
+  float: right;
 }
 
 /*
