@@ -224,7 +224,7 @@ function akdn_ecard_multistep_form_step2($form, &$form_state) {
   $form['step2']['#attached']['library'][] = array('system', 'ui.button');
   $form['step2']['#attached']['js'] = array(
     'https://api.cloudsponge.com/address_books.js' => array('type' => 'external'),
-    'var csPageOptions = { domain_key:"Z542YNNQPKDUZEBRYGZD", textarea_id:"edit-import", beforeLaunch:' . $before_launch_js . ', beforeClosing:' . $before_close_js . ', afterSubmitContacts:' . $after_contact_js . '}' => array('type' => 'inline'),
+    'var csPageOptions = { domain_key:"'.variable_get("cloud_sponge_key").'", textarea_id:"edit-import", beforeLaunch:' . $before_launch_js . ', beforeClosing:' . $before_close_js . ', afterSubmitContacts:' . $after_contact_js . '}' => array('type' => 'inline'),
     '(function ($) { $(document).ready(function(){ $("#ecard-admin-create .form-radios").buttonset(); }); })(jQuery);' => array('type' => 'inline'),
   );
 
@@ -236,13 +236,15 @@ function akdn_ecard_multistep_form_step2($form, &$form_state) {
       'import' => t('Import recipients from your address book'),
     ),
     '#default_value' => isset($values['input_type']) ? $values['input_type'] : 'manual',
+    '#prefix' => '<div class="ecard-radio-btn">',
+    '#suffix' => '</div>',
   );
 
   $form['step2']['import'] = array(
     '#title' => t('Import'),
     '#type' => 'textarea',
     '#default_value' => isset($values['import']) ? $values['import'] : '',
-    '#description' => '<a class="cs_import btn btn-small">Add from Address Book</a> <p>Please use this button to start the import process. After you have imported the contacts from your address book you can add additional contacts in this field. Please separate contacts by using a comma and use the following syntax: John Doe &lt;email@example.com&gt;</p>',
+    '#description' => '<a class="cs_import btn btn-small ecard-import-wrapper">Add from Address Book</a> <p>Please use this button to start the import process. After you have imported the contacts from your address book you can add additional contacts in this field. Please separate contacts by using a comma and use the following syntax: John Doe &lt;email@example.com&gt;</p>',
     '#states' => array(
       'visible' => array(
         ':input[name="input_type"]' => array('value' => 'import'),
@@ -293,13 +295,13 @@ function akdn_ecard_multistep_form_step2($form, &$form_state) {
 
   $form['step2']['add_rec'] = array(
     '#type' => 'submit',
-    '#value' => t('Add another recipient'),
+    '#value' => t('+ Add'),
     '#submit' => array('ecard_admin_add_recipient'),
     '#ajax' => array(
       'callback' => 'ecard_admin_recipient_callback',
       'wrapper' => 'recipient-container',
     ),
-    '#prefix' => '<div id="add-recipient-btn">',
+    '#prefix' => '<div id="add-recipient-btn " class="recipient-btn-submit-wrapper">',
     '#suffix' => '</div>',
     '#attributes' => array('class' => array('btn', 'btn-small')),
     '#states' => array(
@@ -311,7 +313,9 @@ function akdn_ecard_multistep_form_step2($form, &$form_state) {
 
   $form['next'] = array(
     '#type' => 'submit',
-    '#value' => t('Next')
+    '#value' => t('Next'),
+        '#prefix' => '<div class="ecard-submit-wrapper">',
+
   );
   $form['back'] = array(
     '#type' => 'submit',
@@ -322,21 +326,43 @@ function akdn_ecard_multistep_form_step2($form, &$form_state) {
     '#value'  => t('Cancel'),
     '#submit' => array('_akdn_ecard_cancel_button'),
     '#limit_validation_errors' => array(),
+
   );
 
   $link = l(
     t('Preview'),
-    'preview/ecards',
+    '',
     array(
       'attributes' => array(
-        'class' => 'colorbox-load btn',
+        'class' => 'colorbox-inline btn ecard-submit-preview-wrapper',
       ),
+      'query' => array(
+        'inline' => 'true#ecard_template',
+      )
     )
   );
+
   $form['preview'] = array(
-    '#markup' => $link,
+    '#markup' => urldecode($link),
+    '#suffix' => '</div>',
   );
 
+  $template_data = _get_template_details(arg(1));
+
+  $step1_details = $form_state['multistep_values']['step1'];
+
+  if ($step1_details['greetings'] === 'custom') {
+    $greetings = $step1_details['custom_gretting_message'];
+  }
+  else{
+    $greetings = $step1_details['greetings'];
+  }
+
+  $html = theme('ecard_template', array('main_image' => $template_data['main_image'], 'proj_info' => $template_data['proj_info'], 'fact_image' => $template_data['fact_image'], 'fact_desc' => $template_data['fact_desc'], 'link_title' => $template_data['link_title'], 'link_url' => $template_data['link_url'], 'greetings' => $greetings, 'sender_name' => $step1_details['sender_name'], 'message' => $step1_details['default_message']));
+
+  $form['ecard_template'] = array(
+    '#markup' => '<div class = "element-hidden"><div id="ecard_template">' . $html . '</div></div>',
+  );
   return $form;
 }
 
@@ -368,7 +394,7 @@ function akdn_ecard_multistep_form_step3($form, &$form_state) {
         $recipients .= htmlentities(trim($r)) . '<br/>';
       }
     }
-  } 
+  }
   else {
     $rec_list = $form_state['multistep_values']['step2']['recipients'];
     foreach($rec_list as $r) {
@@ -390,9 +416,16 @@ function akdn_ecard_multistep_form_step3($form, &$form_state) {
     '#markup' => '<div id="ecard-preview-text"><span class="label-head">Message:</span><br/>' . filter_xss(nl2br($form_state['multistep_values']['step1']['default_message']), array('br')) . '</div>',
   );
 
-  $form['back'] = array(
+  $form['step3']['captcha'] = array(
+    '#type' => 'captcha',
+    '#captcha_type' => 'image_captcha/Image',
+  );
+   $form['back'] = array(
     '#type' => 'submit',
-    '#value' => t('Back')
+    '#value' => t('Back'),
+    '#limit_validation_errors' => array(),
+    '#submit' => array('akdn_ecard_multistep_form_submit'),
+    '#prefix' => '<div class="ecard-submit-wrapper">',
   );
 
   $form['next'] = array(
@@ -408,17 +441,39 @@ function akdn_ecard_multistep_form_step3($form, &$form_state) {
   );
   $link = l(
     t('Preview'),
-    'preview/ecards',
+    '',
     array(
       'attributes' => array(
-        'class' => 'colorbox-load btn',
+        'class' => 'colorbox-inline btn ecard-submit-preview-wrapper',
       ),
+      'query' => array(
+        'inline' => 'true#ecard_template_step3',
+      )
     )
   );
+
   $form['preview'] = array(
-    '#markup' => $link,
+    '#markup' => urldecode($link),
+    '#suffix' => '</div>',
   );
-  
+
+  $template_data = _get_template_details(arg(1));
+
+  $step1_details = $form_state['multistep_values']['step1'];
+
+  if ($step1_details['greetings'] === 'custom') {
+    $greetings = $step1_details['custom_gretting_message'];
+  }
+  else{
+    $greetings = $step1_details['greetings'];
+  }
+
+  $html = theme('ecard_template', array('main_image' => $template_data['main_image'], 'proj_info' => $template_data['proj_info'], 'fact_image' => $template_data['fact_image'], 'fact_desc' => $template_data['fact_desc'], 'link_title' => $template_data['link_title'], 'link_url' => $template_data['link_url'], 'greetings' => $greetings, 'sender_name' => $step1_details['sender_name'], 'message' => $step1_details['default_message']));
+
+  $form['ecard_template_step3'] = array(
+    '#markup' => '<div class = "element-hidden"><div id="ecard_template_step3">' . $html . '</div></div>',
+  );
+
   return $form;
 }
 
@@ -456,6 +511,9 @@ function _akdn_ecard_cancel_button() {
   drupal_goto('ecards/template');
 }
 
+/**
+ *  @Add recipients
+ */
 function ecard_admin_add_recipient($form, &$form_state) {
   if($form_state['rec_count'] < 49) {
     $form_state['rec_count']++;
@@ -463,9 +521,17 @@ function ecard_admin_add_recipient($form, &$form_state) {
   $form_state['rebuild'] = TRUE;
 }
 
+/**
+ *  @return Recipients
+ */
+
 function ecard_admin_recipient_callback($form, &$form_state) {
   return $form['step2']['recipients'];
 }
+
+/*
+ * @callback for removing duplicate recipients
+ */
 
 function ecard_admin_recipient_remove_duplicates(&$recipients, $explode_string, $explode2) {
   $import = explode($explode_string, $recipients);
@@ -493,6 +559,27 @@ function ecard_admin_recipient_remove_duplicates(&$recipients, $explode_string, 
   }
   $recipients = implode($explode_string, $rec_array);
   return $recipients;
+}
+
+/**
+ * return Tempate Details
+ */
+
+function _get_template_details($nid) {
+  $data = array();
+  if (!empty($nid) && is_numeric($nid)) {
+    $node = node_load($nid);
+    if (!empty($node) && $node->type === 'ecard_template'){
+      $node_wrapper = entity_metadata_wrapper('node', $node);
+      $data['image_uri'] = file_create_url($node_wrapper->field_image_upload->value()['uri']);
+      $data['proj_info'] = $node_wrapper->field_project_country_descript->value()['value'];
+      $data['fact_desc'] = $node_wrapper->field_fact_description->value()['value'];
+      $data['fact_uri'] = file_create_url($node_wrapper->field_fact_image->value()['uri']);
+      $data['link_title'] = $node_wrapper->field_more_information_link->value()['title'];
+      $data['link_url'] = $node_wrapper->field_more_information_link->value()['url'];
+    }
+  }
+  return $data;
 }
 
 

@@ -12,26 +12,40 @@
 */
 
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  #akdn-ecard-multistep-form {
+    width: 100%;
 
-#akdn-ecard-multistep-form {
-  width: 100%;
-}
-
+    .captcha img {
+      margin-right: 35px;
+    }
+  }
 }
 
 @media screen and (max-width: $screen-xs-max) {
+  #akdn-ecard-multistep-form {
+    width: 100%;
 
-#akdn-ecard-multistep-form {
-  width: 100%;
-  & > div {
-    padding: 20px 20px;
+    & > div {
+      padding: 20px 20px;
+    }
+
+    label,
+    input[type="text"] {
+      width: 100%;
+    }
+
+    .ecard-submit-wrapper {
+      width: 100%;
+    }
+
+    .rounded-box {
+      .fieldset-wrapper {
+        width: 50%;
+
+        input {
+          width: 100%;
+        }
+      }
+    }
   }
-  label,
-  input[type="text"] {
-    width: 100%;
-  }
-  .ecard-submit-wrapper {
-    width: 100%;
-  }
-}
 }
