@@ -870,57 +870,57 @@ th {
     float: none !important;
   }
 
-  /* line 578, ../sass/sass-extensions/bootstrap/_print.scss */
-  .whatwedo-body .sub-navbar {
-    page-break-before: always !important;
-    float: left !important;
-    width: 100% !important;
-  }
-
-  /* line 586, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 579, ../sass/sass-extensions/bootstrap/_print.scss */
   .grid-about-us-block-description,
   .grid-about-us-block_description {
     border-bottom: 0.1em solid #000000 !important;
     page-break-inside: avoid !important;
   }
 
-  /* line 592, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 585, ../sass/sass-extensions/bootstrap/_print.scss */
   .grid-about-us-block-description:last-child,
   .grid-about-us-block_description:last-child {
     border-bottom: 0 none !important;
   }
 
-  /* line 597, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 590, ../sass/sass-extensions/bootstrap/_print.scss */
   .award-cycle-project-list,
   .view-empty {
     float: left !important;
     width: 100% !important;
   }
 
-  /* line 601, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 594, ../sass/sass-extensions/bootstrap/_print.scss */
   .pane-akmi-custom-akmi-news-resources-block {
     position: relative !important;
     page-break-inside: avoid !important;
   }
 
-  /* line 605, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 598, ../sass/sass-extensions/bootstrap/_print.scss */
   .akaa-press-centre-main-wrapper {
     float: left !important;
     width: 100% !important;
   }
 
-  /* line 610, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 603, ../sass/sass-extensions/bootstrap/_print.scss */
   .region-footer-second, .akaa-press-centre-inner-wrapper {
     page-break-inside: avoid !important;
   }
 
-  /* line 613, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 606, ../sass/sass-extensions/bootstrap/_print.scss */
   .akaa-press-centre-main-wrapper, #region-content, .region-footer-second {
     clear: both !important;
     display: block !important;
     float: none !important;
     overflow: visible !important;
     width: 100% !important;
+  }
+
+  /* line 613, ../sass/sass-extensions/bootstrap/_print.scss */
+  .print-wrapper {
+    display: block !important;
+    float: left !important;
+    page-break-inside: avoid !important;
   }
 }
 @at-root {

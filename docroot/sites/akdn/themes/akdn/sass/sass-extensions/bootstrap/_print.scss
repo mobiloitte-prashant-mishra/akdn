@@ -574,13 +574,6 @@
           }
         }
       }
-      .whatwedo-body {
-          .sub-navbar {
-              page-break-before: always !important;
-              float: left !important;
-              width: 100% !important;
-          }
-      }
 
       .grid-about-us-block-description,
       .grid-about-us-block_description {
@@ -616,5 +609,10 @@
           float: none ! important;
           overflow: visible ! important;
           width: 100% ! important;
+        }
+        .print-wrapper {
+          display: block !important;
+          float: left !important;
+          page-break-inside: avoid !important;
         }
      }
