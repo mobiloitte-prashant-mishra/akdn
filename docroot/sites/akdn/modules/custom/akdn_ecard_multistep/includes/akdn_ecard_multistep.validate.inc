@@ -20,9 +20,8 @@ function akdn_ecard_multistep_form_validate($form, &$form_state) {
   if ($form_state['triggering_element']['#value'] == 'Back') {
     return;
   }
-
   switch ($form_state['stage']) {
-
+    
     case 'step1':
       return akdn_ecard_multistep_step1_validate($form, $form_state);
      break;
@@ -32,7 +31,7 @@ function akdn_ecard_multistep_form_validate($form, &$form_state) {
      break;
 
     case 'step3':
-      return akdn_ecard_multistep_step2_validate($form, $form_state);
+      return akdn_ecard_multistep_step3_validate($form, $form_state);
      break;
 
   }
@@ -110,7 +109,7 @@ function akdn_ecard_multistep_step2_validate($form, &$form_state) {
       form_set_error('import', 'You must enter at least one recipient.');
     }
     else {
-      form_set_error('recipients', 'You must enter at least one recipient.');
+      form_set_error('recipients', 'You must enter at least one recipientsada.');
     }
   }
 }
