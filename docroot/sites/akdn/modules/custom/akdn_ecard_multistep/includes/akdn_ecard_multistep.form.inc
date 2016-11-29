@@ -574,7 +574,7 @@ function _get_template_details($nid) {
     $node = node_load($nid);
     if (!empty($node) && $node->type === 'ecard_template'){
       $node_wrapper = entity_metadata_wrapper('node', $node);
-      $data['image_uri'] = file_create_url($node_wrapper->field_image_upload->value()['uri']);
+      $data['main_image'] = file_create_url($node_wrapper->field_image_upload->value()['uri']);
       $data['proj_info'] = $node_wrapper->field_project_country_descript->value()['value'];
       $data['fact_desc'] = $node_wrapper->field_fact_description->value()['value'];
       $data['fact_uri'] = file_create_url($node_wrapper->field_fact_image->value()['uri']);
