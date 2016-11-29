@@ -324,7 +324,7 @@ function akdn_press_centre_types_field_group_info() {
   $field_group->parent_name = 'group_event';
   $field_group->data = array(
     'label' => 'Event Categories',
-    'weight' => '41',
+    'weight' => '40',
     'children' => array(
       0 => 'field_tags',
       1 => 'field_agency',
@@ -449,7 +449,7 @@ function akdn_press_centre_types_field_group_info() {
   $field_group->parent_name = 'group_event';
   $field_group->data = array(
     'label' => 'Banner Item',
-    'weight' => '40',
+    'weight' => '39',
     'children' => array(
       0 => 'field_create_featured_content',
       1 => 'field_feature_image',
@@ -970,7 +970,7 @@ function akdn_press_centre_types_field_group_info() {
   $field_group->parent_name = 'group_event';
   $field_group->data = array(
     'label' => 'Newsletter Details',
-    'weight' => '42',
+    'weight' => '41',
     'children' => array(
       0 => 'field_newsletter_image',
       1 => 'field_newsletter_summary',
@@ -1515,7 +1515,7 @@ function akdn_press_centre_types_field_group_info() {
   $field_group->parent_name = 'group_event';
   $field_group->data = array(
     'label' => 'Related Content',
-    'weight' => '43',
+    'weight' => '42',
     'children' => array(
       0 => 'field_related_project',
       1 => 'field_enable_project_slider',

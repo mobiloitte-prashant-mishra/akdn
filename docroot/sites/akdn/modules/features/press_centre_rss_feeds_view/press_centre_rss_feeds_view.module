@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Press centre rss feeds view feature.
+ */
+
+include_once 'press_centre_rss_feeds_view.features.inc';
