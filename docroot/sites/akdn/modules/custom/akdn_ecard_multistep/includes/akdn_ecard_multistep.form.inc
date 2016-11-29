@@ -354,8 +354,9 @@ function akdn_ecard_multistep_form_step2($form, &$form_state) {
   if ($step1_details['greetings'] === 'custom') {
     $greetings = $step1_details['custom_gretting_message'];
   }
-  else{
-    $greetings = $step1_details['greetings'];
+  else {
+    $term_load = taxonomy_term_load($step1_details['greetings']);
+    $greetings = $term_load->name;
   }
 
   $html = theme('ecard_template', array('main_image' => $template_data['main_image'], 'proj_info' => $template_data['proj_info'], 'fact_image' => $template_data['fact_image'], 'fact_desc' => $template_data['fact_desc'], 'link_title' => $template_data['link_title'], 'link_url' => $template_data['link_url'], 'greetings' => $greetings, 'sender_name' => $step1_details['sender_name'], 'message' => $step1_details['default_message']));
@@ -416,10 +417,11 @@ function akdn_ecard_multistep_form_step3($form, &$form_state) {
     '#markup' => '<div id="ecard-preview-text"><span class="label-head">Message:</span><br/>' . filter_xss(nl2br($form_state['multistep_values']['step1']['default_message']), array('br')) . '</div>',
   );
 
-  $form['step3']['captcha'] = array(
-    '#type' => 'captcha',
-    '#captcha_type' => 'image_captcha/Image',
-  );
+   $form['step3']['captcha'] = array(
+     '#type' => 'captcha',
+     '#captcha_type' => 'image_captcha/Image',
+   );
+ 
    $form['back'] = array(
     '#type' => 'submit',
     '#value' => t('Back'),
@@ -464,8 +466,9 @@ function akdn_ecard_multistep_form_step3($form, &$form_state) {
   if ($step1_details['greetings'] === 'custom') {
     $greetings = $step1_details['custom_gretting_message'];
   }
-  else{
-    $greetings = $step1_details['greetings'];
+  else {
+    $term_load = taxonomy_term_load($step1_details['greetings']);
+    $greetings = $term_load->name;
   }
 
   $html = theme('ecard_template', array('main_image' => $template_data['main_image'], 'proj_info' => $template_data['proj_info'], 'fact_image' => $template_data['fact_image'], 'fact_desc' => $template_data['fact_desc'], 'link_title' => $template_data['link_title'], 'link_url' => $template_data['link_url'], 'greetings' => $greetings, 'sender_name' => $step1_details['sender_name'], 'message' => $step1_details['default_message']));
@@ -488,7 +491,7 @@ function _get_ecard_grettings_list() {
     $options = array();
     foreach($tree as $value) {
       $string  = clean_string($value->name);
-      $options[strtolower($string)] = $value->name;
+      $options[$value->tid] = $value->name;
     }
   }
   return $options;
