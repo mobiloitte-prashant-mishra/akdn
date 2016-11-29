@@ -2,17 +2,17 @@
 
 #akdn-ecard-multistep-form {
   width: 70.61404%;
-  float: none;
   margin: auto;
+  float: none;
 
   & > div {
     display: block;
     width: 100%;
     margin: 0 auto 40px;
-    float: left;
     padding: 20px 40px;
-    background: #f0eade;
+    float: left;
     border-top: 1px solid #b69c5f;
+    background: #f0eade;
   }
 
   h2 {
@@ -34,8 +34,8 @@
     clear: both;
 
     label {
-      font-weight: normal;
       width: 240px;
+      font-weight: normal;
     }
 
     select {
@@ -45,33 +45,33 @@
   }
 
   .ecard-submit-wrapper {
+    clear: both;
+
     .form-submit {
-      background: #b59757;
+      margin: 10px 0 0 5px;
+      padding: 3px 10px;
       border: 0;
       border-radius: 5px;
       color: #ffffff;
       font-size: 14px;
-      text-transform: uppercase;
-      padding: 3px 10px;
       text-align: center;
       font-weight: normal;
       text-shadow: none;
-      margin: 10px 0 0 5px;
+      background: #b59757;
     }
 
     .ecard-submit-preview-wrapper {
-      background: #b59757;
+      margin: 0 0 0 5px;
+      margin-top: 10px;
+      padding: 1.5px 10px;
       border: 0;
       border-radius: 5px;
       color: #ffffff;
       font-size: 14px;
-      text-transform: uppercase;
-      padding: 1.5px 10px;
       text-align: center;
       font-weight: normal;
       text-shadow: none;
-      margin: 0 0 0 5px;
-      margin-top: 10px;
+      background: #b59757;
     }
   }
 
@@ -79,31 +79,29 @@
     float: right;
 
     & > input {
-      background: #b59757;
+      margin: 10px 5px 0 5px;
+      padding: 1.5px 10px;
       border: 0;
       border-radius: 5px;
       color: #ffffff;
       font-size: 14px;
-      text-transform: uppercase;
-      padding: 1.5px 10px;
       text-align: center;
       font-weight: normal;
       text-shadow: none;
-      margin: 10px 5px 0 5px;
+      background: #b59757;
     }
   }
 
   .ecard-import-wrapper {
-    background: #b59757;
+    padding: 1.5px 10px;
     border: 0;
     border-radius: 5px;
     color: #ffffff;
     font-size: 14px;
-    text-transform: uppercase;
-    padding: 1.5px 10px;
     text-align: center;
     font-weight: normal;
     text-shadow: none;
+    background: #b59757;
   }
 
   .description {
@@ -136,12 +134,12 @@
       display: block;
       width: 100%;
       padding: 10px;
-      text-align: center;
-      background-color: #f0eade;
       border-radius: 8px;
       border: 1px solid gray;
-      cursor: pointer;
+      text-align: center;
+      background-color: #f0eade;
       box-shadow: none;
+      cursor: pointer;
     }
 
     input[type="radio"] {
@@ -149,11 +147,30 @@
 
       &:checked {
         & + .option {
-          background-color: #f0eade;
           border: 1px solid gray;
           box-shadow: 2px 2px 1px #888888;
+          background-color: #f0eade;
         }
       }
+    }
+  }
+
+  #ecard-preview-text {
+    padding-bottom: 14px;
+  }
+
+  .captcha {
+    width: 62%;
+
+    .description {
+      display: none;
+    }
+
+    img {
+      width: 30%;
+      margin-right: 70px;
+      padding-bottom: 10px;
+      float: right;
     }
   }
 }
