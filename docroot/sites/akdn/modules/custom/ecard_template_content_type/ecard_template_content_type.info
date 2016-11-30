@@ -38,6 +38,7 @@ features[field_instance][] = node-ecard_template-field_focus_area
 features[field_instance][] = node-ecard_template-field_image_upload
 features[field_instance][] = node-ecard_template-field_more_information_link
 features[field_instance][] = node-ecard_template-field_project_country_descript
+features[image][] = ecard_template_image
 features[node][] = ecard_template
 features[variable][] = field_bundle_settings_node__ecard_template
 features[variable][] = language_content_type_ecard_template
