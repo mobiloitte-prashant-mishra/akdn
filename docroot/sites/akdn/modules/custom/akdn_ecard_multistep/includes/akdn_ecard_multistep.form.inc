@@ -113,17 +113,17 @@ function akdn_ecard_multistep_form_step1($form, &$form_state) {
     )
   );
 
-  $form['next'] = array(
-    '#type' => 'submit',
-    '#value' => t('Next'),
-    '#prefix' => '<div class="ecard-submit-wrapper">',
-  );
-
   $form['actions']['cancel'] = array(
     '#type'   => 'submit',
     '#value'  => t('Cancel'),
     '#submit' => array('_akdn_ecard_cancel_button'),
     '#limit_validation_errors' => array(),
+    '#prefix' => '<div class="ecard-submit-wrapper">',
+  );
+
+  $form['next'] = array(
+    '#type' => 'submit',
+    '#value' => t('Next'),
     '#suffix' => '</div>',
   );
   return $form;
@@ -311,22 +311,17 @@ function akdn_ecard_multistep_form_step2($form, &$form_state) {
     ),
   );
 
-  $form['next'] = array(
-    '#type' => 'submit',
-    '#value' => t('Next'),
-        '#prefix' => '<div class="ecard-submit-wrapper">',
-
-  );
   $form['back'] = array(
     '#type' => 'submit',
-    '#value' => t('Back')
+    '#value' => t('Back'),
+    '#prefix' => '<div class="ecard-submit-wrapper">',
   );
+
   $form['actions']['cancel'] = array(
     '#type'   => 'submit',
     '#value'  => t('Cancel'),
     '#submit' => array('_akdn_ecard_cancel_button'),
     '#limit_validation_errors' => array(),
-
   );
 
   $link = l(
@@ -344,6 +339,11 @@ function akdn_ecard_multistep_form_step2($form, &$form_state) {
 
   $form['preview'] = array(
     '#markup' => urldecode($link),
+  );
+
+  $form['next'] = array(
+    '#type' => 'submit',
+    '#value' => t('Next'),
     '#suffix' => '</div>',
   );
 
@@ -421,7 +421,7 @@ function akdn_ecard_multistep_form_step3($form, &$form_state) {
      '#type' => 'captcha',
      '#captcha_type' => 'image_captcha/Image',
    );
- 
+
    $form['back'] = array(
     '#type' => 'submit',
     '#value' => t('Back'),
@@ -430,10 +430,7 @@ function akdn_ecard_multistep_form_step3($form, &$form_state) {
     '#prefix' => '<div class="ecard-submit-wrapper">',
   );
 
-  $form['next'] = array(
-    '#type' => 'submit',
-    '#value' => t('Send Ecard')
-  );
+
 
   $form['actions']['cancel'] = array(
     '#type'   => 'submit',
@@ -441,6 +438,7 @@ function akdn_ecard_multistep_form_step3($form, &$form_state) {
     '#submit' => array('_akdn_ecard_cancel_button'),
     '#limit_validation_errors' => array(),
   );
+
   $link = l(
     t('Preview'),
     '',
@@ -456,7 +454,15 @@ function akdn_ecard_multistep_form_step3($form, &$form_state) {
 
   $form['preview'] = array(
     '#markup' => urldecode($link),
-    '#suffix' => '</div>',
+  );
+
+    $form['next'] = array(
+    '#type' => 'submit',
+    '#value' => t('Send Ecard'),
+        '#prefix' => '<span class="ecard-send-submit-wrapper">',
+        '#suffix' => '</span>',
+        '#suffix' => '</div>',
+
   );
 
   $template_data = _get_template_details(arg(1));
