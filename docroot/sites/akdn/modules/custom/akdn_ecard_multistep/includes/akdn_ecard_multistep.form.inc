@@ -96,7 +96,7 @@ function akdn_ecard_multistep_form_step1($form, &$form_state) {
     '#maxlength' => 128,
     '#states' =>array(
       'visible' => array(
-        ':input[name=greetings]' => array('value' => 'custom'),
+        ':input[name=greetings]' => array('value' => 'Custom'),
       )
     ),
     '#attributes' => array(
@@ -355,8 +355,7 @@ function akdn_ecard_multistep_form_step2($form, &$form_state) {
     $greetings = $step1_details['custom_gretting_message'];
   }
   else {
-    $term_load = taxonomy_term_load($step1_details['greetings']);
-    $greetings = $term_load->name;
+    $greetings = $form_state['multistep_values']['step1']['greetings'];
   }
 
   $html = theme('ecard_template', array('main_image' => $template_data['main_image'], 'proj_info' => $template_data['proj_info'], 'fact_image' => $template_data['fact_image'], 'fact_desc' => $template_data['fact_desc'], 'link_title' => $template_data['link_title'], 'link_url' => $template_data['link_url'], 'greetings' => $greetings, 'sender_name' => $step1_details['sender_name'], 'message' => $step1_details['default_message'], 'op' => 'preview'));
@@ -473,8 +472,7 @@ function akdn_ecard_multistep_form_step3($form, &$form_state) {
     $greetings = $step1_details['custom_gretting_message'];
   }
   else {
-    $term_load = taxonomy_term_load($step1_details['greetings']);
-    $greetings = $term_load->name;
+    $greetings = $form_state['multistep_values']['step1']['greetings'];
   }
 
   $html = theme('ecard_template', array('main_image' => $template_data['main_image'], 'proj_info' => $template_data['proj_info'], 'fact_image' => $template_data['fact_image'], 'fact_desc' => $template_data['fact_desc'], 'link_title' => $template_data['link_title'], 'link_url' => $template_data['link_url'], 'greetings' => $greetings, 'sender_name' => $step1_details['sender_name'], 'message' => $step1_details['default_message'], 'op' => 'preview'));
@@ -496,20 +494,10 @@ function _get_ecard_grettings_list() {
   if (!empty($vocabulary->vid)) {
     $options = array();
     foreach($tree as $value) {
-      $string  = clean_string($value->name);
-      $options[$value->tid] = $value->name;
+      $options[$value->name] = $value->name;
     }
   }
   return $options;
-}
-
-/**
- *  @returns Clean strings - replace space and special characters
- */
-
-function clean_string($string) {
-  $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
-  return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
 }
 
 /**
