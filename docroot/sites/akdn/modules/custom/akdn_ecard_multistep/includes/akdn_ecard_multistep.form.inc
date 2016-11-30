@@ -585,6 +585,10 @@ function _get_template_details($nid) {
         $ecard_image = array(
           'style_name' => 'ecard_template_image',
           'path' => $img_uri,
+          'width' => '650',
+          'height' => '344',
+          'alt' => 'Card Image',
+          'title' => 'Card Image',
         );
       }
       $data['main_image'] = $ecard_image;
