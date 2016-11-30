@@ -113,17 +113,17 @@ function akdn_ecard_multistep_form_step1($form, &$form_state) {
     )
   );
 
-  $form['next'] = array(
-    '#type' => 'submit',
-    '#value' => t('Next'),
-    '#prefix' => '<div class="ecard-submit-wrapper">',
-  );
-
   $form['actions']['cancel'] = array(
     '#type'   => 'submit',
     '#value'  => t('Cancel'),
     '#submit' => array('_akdn_ecard_cancel_button'),
     '#limit_validation_errors' => array(),
+    '#prefix' => '<div class="ecard-submit-wrapper">',
+  );
+
+  $form['next'] = array(
+    '#type' => 'submit',
+    '#value' => t('Next'),
     '#suffix' => '</div>',
   );
   return $form;
@@ -311,22 +311,17 @@ function akdn_ecard_multistep_form_step2($form, &$form_state) {
     ),
   );
 
-  $form['next'] = array(
-    '#type' => 'submit',
-    '#value' => t('Next'),
-        '#prefix' => '<div class="ecard-submit-wrapper">',
-
-  );
   $form['back'] = array(
     '#type' => 'submit',
-    '#value' => t('Back')
+    '#value' => t('Back'),
+    '#prefix' => '<div class="ecard-submit-wrapper">',
   );
+
   $form['actions']['cancel'] = array(
     '#type'   => 'submit',
     '#value'  => t('Cancel'),
     '#submit' => array('_akdn_ecard_cancel_button'),
     '#limit_validation_errors' => array(),
-
   );
 
   $link = l(
@@ -344,6 +339,11 @@ function akdn_ecard_multistep_form_step2($form, &$form_state) {
 
   $form['preview'] = array(
     '#markup' => urldecode($link),
+  );
+
+  $form['next'] = array(
+    '#type' => 'submit',
+    '#value' => t('Next'),
     '#suffix' => '</div>',
   );
 
@@ -359,7 +359,7 @@ function akdn_ecard_multistep_form_step2($form, &$form_state) {
     $greetings = $term_load->name;
   }
 
-  $html = theme('ecard_template', array('main_image' => $template_data['main_image'], 'proj_info' => $template_data['proj_info'], 'fact_image' => $template_data['fact_image'], 'fact_desc' => $template_data['fact_desc'], 'link_title' => $template_data['link_title'], 'link_url' => $template_data['link_url'], 'greetings' => $greetings, 'sender_name' => $step1_details['sender_name'], 'message' => $step1_details['default_message']));
+  $html = theme('ecard_template', array('main_image' => $template_data['main_image'], 'proj_info' => $template_data['proj_info'], 'fact_image' => $template_data['fact_image'], 'fact_desc' => $template_data['fact_desc'], 'link_title' => $template_data['link_title'], 'link_url' => $template_data['link_url'], 'greetings' => $greetings, 'sender_name' => $step1_details['sender_name'], 'message' => $step1_details['default_message'], 'op' => 'preview'));
 
   $form['ecard_template'] = array(
     '#markup' => '<div class = "element-hidden"><div id="ecard_template">' . $html . '</div></div>',
@@ -402,26 +402,26 @@ function akdn_ecard_multistep_form_step3($form, &$form_state) {
       $rec[] = $r['name'] . " &lt;" . $r['email'] . "&gt;";
     }
   }
-  $recipients .= implode("<br/>", $rec);
+  $recipients .= implode(", ", $rec);
 
   ecard_admin_recipient_remove_duplicates($recipients, "\r\n", "<");
 
   $form['step3']['to'] = array(
-    '#markup' => '<div id="ecard-preview-to"><span class="label-head">To:</span><br/>' . $recipients . '</div>',
+    '#markup' => '<div id="ecard-preview-to" style="margin: 10px;padding: 10px;"><span class="label-head" style="font-weight:bold;">To: </span>' . $recipients . '</div>',
   );
   $form['step3']['from'] = array(
-    '#markup' => '<div id="ecard-preview-from"><span class="label-head">From:</span><br/>' . $$form_state['multistep_values']['step1']['sender_name'] . " &lt;" . $form_state['multistep_values']['step1']['sender_email'] . "&gt;</div>",
+    '#markup' => '<div id="ecard-preview-from" style="margin: 10px;padding: 10px;"><span class="label-head" style="font-weight:bold;">From: </span>' . $form_state['multistep_values']['step1']['sender_name'] . " &lt;" . $form_state['multistep_values']['step1']['sender_email'] . "&gt;</div>",
   );
 
    $form['step3']['from_summary'] = array(
-    '#markup' => '<div id="ecard-preview-text"><span class="label-head">Message:</span><br/>' . filter_xss(nl2br($form_state['multistep_values']['step1']['default_message']), array('br')) . '</div>',
+    '#markup' => '<div id="ecard-preview-text" style="margin: 10px;padding: 10px;"><span class="label-head" style="font-weight:bold;">Message: </span><br/>' . filter_xss(nl2br($form_state['multistep_values']['step1']['default_message']), array('br')) . '</div>',
   );
 
    $form['step3']['captcha'] = array(
      '#type' => 'captcha',
      '#captcha_type' => 'image_captcha/Image',
    );
- 
+
    $form['back'] = array(
     '#type' => 'submit',
     '#value' => t('Back'),
@@ -430,10 +430,7 @@ function akdn_ecard_multistep_form_step3($form, &$form_state) {
     '#prefix' => '<div class="ecard-submit-wrapper">',
   );
 
-  $form['next'] = array(
-    '#type' => 'submit',
-    '#value' => t('Send Ecard')
-  );
+
 
   $form['actions']['cancel'] = array(
     '#type'   => 'submit',
@@ -441,6 +438,7 @@ function akdn_ecard_multistep_form_step3($form, &$form_state) {
     '#submit' => array('_akdn_ecard_cancel_button'),
     '#limit_validation_errors' => array(),
   );
+
   $link = l(
     t('Preview'),
     '',
@@ -456,7 +454,15 @@ function akdn_ecard_multistep_form_step3($form, &$form_state) {
 
   $form['preview'] = array(
     '#markup' => urldecode($link),
-    '#suffix' => '</div>',
+  );
+
+    $form['next'] = array(
+    '#type' => 'submit',
+    '#value' => t('Send Ecard'),
+        '#prefix' => '<span class="ecard-send-submit-wrapper">',
+        '#suffix' => '</span>',
+        '#suffix' => '</div>',
+
   );
 
   $template_data = _get_template_details(arg(1));
@@ -471,7 +477,7 @@ function akdn_ecard_multistep_form_step3($form, &$form_state) {
     $greetings = $term_load->name;
   }
 
-  $html = theme('ecard_template', array('main_image' => $template_data['main_image'], 'proj_info' => $template_data['proj_info'], 'fact_image' => $template_data['fact_image'], 'fact_desc' => $template_data['fact_desc'], 'link_title' => $template_data['link_title'], 'link_url' => $template_data['link_url'], 'greetings' => $greetings, 'sender_name' => $step1_details['sender_name'], 'message' => $step1_details['default_message']));
+  $html = theme('ecard_template', array('main_image' => $template_data['main_image'], 'proj_info' => $template_data['proj_info'], 'fact_image' => $template_data['fact_image'], 'fact_desc' => $template_data['fact_desc'], 'link_title' => $template_data['link_title'], 'link_url' => $template_data['link_url'], 'greetings' => $greetings, 'sender_name' => $step1_details['sender_name'], 'message' => $step1_details['default_message'], 'op' => 'preview'));
 
   $form['ecard_template_step3'] = array(
     '#markup' => '<div class = "element-hidden"><div id="ecard_template_step3">' . $html . '</div></div>',
@@ -574,7 +580,14 @@ function _get_template_details($nid) {
     $node = node_load($nid);
     if (!empty($node) && $node->type === 'ecard_template'){
       $node_wrapper = entity_metadata_wrapper('node', $node);
-      $data['main_image'] = file_create_url($node_wrapper->field_image_upload->value()['uri']);
+      $img_uri = $node_wrapper->field_image_upload->value()['uri'];
+      if (!empty($img_uri)) {
+        $ecard_image = array(
+          'style_name' => 'ecard_template_image',
+          'path' => $img_uri,
+        );
+      }
+      $data['main_image'] = $ecard_image;
       $data['proj_info'] = $node_wrapper->field_project_country_descript->value()['value'];
       $data['fact_desc'] = $node_wrapper->field_fact_description->value()['value'];
       $data['fact_uri'] = file_create_url($node_wrapper->field_fact_image->value()['uri']);
