@@ -19,7 +19,7 @@
     </div>
 
     <div class="ftext" style="font-family:Cambria, Hoefler Text, Liberation Serif, Times, Times New Roman, serif;font-size:16px;line-height:20px;color:#000;margin-bottom:10px;" >
-      <p style="text-align:center;" >Dear <?php if ($op = 'preview') { $name = 'Name'; } else { $name = '*|FNAME|*';} print !empty($to_name)? $to_name : $name; ?>,</p>
+      <p style="text-align:center;" >Dear <?php if ($op === 'preview') { $name = 'Name'; } else { $name = '*|FNAME|*';} print !empty($to_name)? $to_name : $name; ?>,</p>
       <p style="text-align:center;" ><?php print !empty($message)? filter_xss(nl2br($message), array('br')) : '{Message}'; ?></p><br/>
        <p style="text-align:center;" ><?php print !empty($sender_name)? $sender_name : '{Sender Name}'; ?>
       </p>
