@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Institutional Space feature.
- */
-
-include_once 'institutional_space.features.inc';

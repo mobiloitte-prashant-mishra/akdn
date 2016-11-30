@@ -1,11 +1,15 @@
 <?php
 
 /**
- *  @implements hook_form()
+ * @file
+ * Administrative forms for Mailchimp Settings.
  */
 
+/**
+ * Implements hook_form().
+ */
 function scs_mailchimp_creation_form($form, &$form_state) {
-  
+
   $form['template_id'] = array(
     '#type' => 'textfield',
     '#title' => t('Enter Template ID'),
@@ -42,5 +46,5 @@ function scs_mailchimp_creation_form($form, &$form_state) {
     '#description' => t("The List ID of the Mailchimp Account"),
     '#required' => TRUE,
   );
- return system_settings_form($form);
+  return system_settings_form($form);
 }

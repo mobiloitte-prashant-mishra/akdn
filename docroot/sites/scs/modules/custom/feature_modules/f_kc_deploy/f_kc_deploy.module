@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the f_kc_deploy feature.
- */
-
-include_once 'f_kc_deploy.features.inc';

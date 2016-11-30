@@ -1,4 +1,0 @@
-name = KC html mail
-description = HTML mail customization
-dependencies[] = htmlmail
-core = 7.x

@@ -1,4 +1,0 @@
-name = Test Module
-description = This a test only Module
-dependencies[] = ctools
-core = 7.x

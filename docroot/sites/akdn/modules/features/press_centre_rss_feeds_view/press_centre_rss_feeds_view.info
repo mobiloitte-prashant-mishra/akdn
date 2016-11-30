@@ -1,0 +1,8 @@
+name = Press centre rss feeds view
+core = 7.x
+package = AKDN.org
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = press_centre_rss_feed
+features_exclude[dependencies][ctools] = ctools
