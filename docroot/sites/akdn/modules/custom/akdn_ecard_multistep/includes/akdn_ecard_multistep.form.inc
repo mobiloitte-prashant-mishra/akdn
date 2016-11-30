@@ -591,7 +591,7 @@ function _get_template_details($nid) {
           'title' => 'Card Image',
         );
       }
-      $data['main_image'] = $ecard_image;
+      $data['main_image'] = $img_uri;
       $data['proj_info'] = $node_wrapper->field_project_country_descript->value()['value'];
       $data['fact_desc'] = $node_wrapper->field_fact_description->value()['value'];
       $data['fact_uri'] = file_create_url($node_wrapper->field_fact_image->value()['uri']);
