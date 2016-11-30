@@ -1,0 +1,4 @@
+name = AKDN Ecard Multistep Form.
+description = Custom module for ecard multistep form.
+core = 7.x
+package = Custom

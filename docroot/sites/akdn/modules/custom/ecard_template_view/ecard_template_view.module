@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Ecard Template view feature.
+ */
+
+include_once 'ecard_template_view.features.inc';

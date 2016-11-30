@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Ecard Template content type feature.
+ */
+
+include_once 'ecard_template_content_type.features.inc';
