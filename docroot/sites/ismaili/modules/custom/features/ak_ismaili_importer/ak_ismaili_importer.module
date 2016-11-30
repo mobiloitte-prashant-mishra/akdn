@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Ismaili importer feature.
- */
-
-include_once 'ak_ismaili_importer.features.inc';

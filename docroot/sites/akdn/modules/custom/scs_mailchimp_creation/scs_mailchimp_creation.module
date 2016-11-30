@@ -1,15 +1,21 @@
 <?php
 
-module_load_include('inc', 'mailchimp', 'includes/mailchimp_campaign.admin');
-module_load_include('module','mailchimp','mailchimp');
-
 /**
- * Implements hook_formID_alter
- * Returns Simplenews news Node ID
+ * @file
+ * Mandrill module.
  */
 
+module_load_include('inc', 'mailchimp', 'includes/mailchimp_campaign.admin');
+module_load_include('module', 'mailchimp', 'mailchimp');
+
+/**
+ * Implements hook_node_insert().
+ *
+ * @param int $node
+ *   Simplenews news Node ID.
+ */
 function scs_mailchimp_creation_node_insert($node) {
-  if ($node->is_new ==1 && $node->type == 'simplenews') {
+  if ($node->is_new == 1 && $node->type == 'simplenews') {
     $new_tid = $node->field_simplenews_term[key($node->field_simplenews_term)][0]['tid'];
     $load_new_tid = taxonomy_term_load($new_tid);
     $t_name = $load_new_tid->name;
@@ -19,18 +25,17 @@ function scs_mailchimp_creation_node_insert($node) {
     foreach ($get_segments as $value) {
       $segments[$value->id] = $value->name;
     }
-   $segment_id = array_search($t_name, $segments);
+    $segment_id = array_search($t_name, $segments);
     $nid = $node->nid;
-    $mailchimp_object = mailchimp_get_api_object();
     $template_id = variable_get('template_id');
     $settings = (object) array(
-        'subject_line' => $node->title,
-        'title' => $node->title,
-        'from_name' => check_plain(variable_get('mailchimp_name')),
-        'reply_to' => variable_get('mailchimp_email'),
-      );
+      'subject_line' => $node->title,
+      'title' => $node->title,
+      'from_name' => check_plain(variable_get('mailchimp_name')),
+      'reply_to' => variable_get('mailchimp_email'),
+    );
     $recipients = (object) array(
-        'list_id' => variable_get('list_id'),
+      'list_id' => variable_get('list_id'),
     );
 
     $recipients->segment_opts = (object) array(
@@ -39,7 +44,6 @@ function scs_mailchimp_creation_node_insert($node) {
 
     $template_content = array();
     $html = "[mailchimp_campaign|entity_type=node|entity_id=" . $nid . "|view_mode=full]";
-
 
     $template_content['main_content'] = array('value' => $html, 'format' => 'mailchimp_campaign');
     $campaign_id = NULL;
@@ -55,24 +59,22 @@ function scs_mailchimp_creation_node_insert($node) {
 /**
  * Implements hook_permission().
  */
-
 function scs_mailchimp_creation_permission() {
   return array(
     'administer custom mailchimp configuration' => array(
       'title' => t('Administer Custom Mailchimp Configuration'),
-    )
+    ),
   );
 }
 
 /**
  * Implements hook_menu().
  */
-
 function scs_mailchimp_creation_menu() {
   $items = array();
   $items['admin/config/services/custom_mailchimp_campaign'] = array(
     'title' => 'Custom MailChimp Campaign',
-    'description' => t('Manage Custom MailChimp Campaign Settings.'),
+    'description' => 'Manage Custom MailChimp Campaign Settings.',
     'page callback' => 'drupal_get_form',
     'access_arguments' => array('administer custom mailchimp configuration'),
     'page arguments' => array('scs_mailchimp_creation_form'),
@@ -83,37 +85,34 @@ function scs_mailchimp_creation_menu() {
 }
 
 /**
-  * Implements hook_block_info().
-  */
-
+ * Implements hook_block_info().
+ */
 function scs_mailchimp_creation_block_info() {
   $blocks['mailchimp_campaign_links'] = array(
     'info' => t('Mailchimp Campaign Links'),
-    );
+  );
   return $blocks;
 }
 
 /**
  * Implements hook_block_view().
  */
-
 function scs_mailchimp_creation_block_view($delta = '') {
   $block = array();
 
   switch ($delta) {
     case 'mailchimp_campaign_links':
-    $block['subject'] = t('Mailchimp Campaign Links');
-    $block['content'] = mailchimp_campaign_links_block();
+      $block['subject'] = t('Mailchimp Campaign Links');
+      $block['content'] = mailchimp_campaign_links_block();
 
-    break;
+      break;
   }
   return $block;
 }
 
 /**
- *  @Implements hook_theme
+ * Implements hook_theme().
  */
-
 function scs_mailchimp_creation_theme() {
   return array(
     'scs_mailchimp_creation_links' => array(
@@ -124,16 +123,15 @@ function scs_mailchimp_creation_theme() {
 }
 
 /**
- *  @Returns Mailchimp Links
+ * Returns Mailchimp Links.
  */
-
 function mailchimp_campaign_links_block() {
-	$arg = arg(1);
-	$node = node_load($arg);
-	$campaign_id = $node->field_campaign_id[LANGUAGE_NONE][0]['value'];
-	if (!empty($campaign_id)) {
-		$send = l('Send','admin/config/services/mailchimp/campaigns/' . $campaign_id . '/send', array('attributes' => array('target'=>'_blank')));
-		$send_test = l('Send Test','admin/config/services/mailchimp/campaigns/' . $campaign_id . '/send-test', array('attributes' => array('target'=>'_blank')));
+  $arg = arg(1);
+  $node = node_load($arg);
+  $campaign_id = $node->field_campaign_id[LANGUAGE_NONE][0]['value'];
+  if (!empty($campaign_id)) {
+    $send = l(t('Send'), 'admin/config/services/mailchimp/campaigns/' . $campaign_id . '/send', array('attributes' => array('target' => '_blank')));
+    $send_test = l(t('Send Test'), 'admin/config/services/mailchimp/campaigns/' . $campaign_id . '/send-test', array('attributes' => array('target' => '_blank')));
     return theme('scs_mailchimp_creation_links', array('send' => $send, 'send_test' => $send_test));
   }
 }

@@ -1,5 +1,0 @@
-name = KC workbench customization
-description = KC workbench customization
-core = 7.x
-dependencies[] = filedepot
-

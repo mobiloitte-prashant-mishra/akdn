@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the f_listing_page feature.
- */
-
-include_once 'f_listing_page.features.inc';

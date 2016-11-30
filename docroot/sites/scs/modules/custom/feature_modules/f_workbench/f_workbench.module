@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the f_workbench feature.
- */
-
-include_once 'f_workbench.features.inc';

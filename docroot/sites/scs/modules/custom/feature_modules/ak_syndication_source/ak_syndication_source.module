@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Syndication source feature.
- */
-
-include_once 'ak_syndication_source.features.inc';

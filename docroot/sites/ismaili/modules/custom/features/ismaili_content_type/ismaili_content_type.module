@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the ismaili_content_type feature.
- */
-
-include_once 'ismaili_content_type.features.inc';
