@@ -581,16 +581,6 @@ function _get_template_details($nid) {
     if (!empty($node) && $node->type === 'ecard_template'){
       $node_wrapper = entity_metadata_wrapper('node', $node);
       $img_uri = $node_wrapper->field_image_upload->value()['uri'];
-      if (!empty($img_uri)) {
-        $ecard_image = array(
-          'style_name' => 'ecard_template_image',
-          'path' => $img_uri,
-          'width' => '650',
-          'height' => '344',
-          'alt' => 'Card Image',
-          'title' => 'Card Image',
-        );
-      }
       $data['main_image'] = $img_uri;
       $data['proj_info'] = $node_wrapper->field_project_country_descript->value()['value'];
       $data['fact_desc'] = $node_wrapper->field_fact_description->value()['value'];
