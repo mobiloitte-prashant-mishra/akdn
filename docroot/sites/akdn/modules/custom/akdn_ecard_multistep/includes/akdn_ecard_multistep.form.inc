@@ -402,19 +402,19 @@ function akdn_ecard_multistep_form_step3($form, &$form_state) {
       $rec[] = $r['name'] . " &lt;" . $r['email'] . "&gt;";
     }
   }
-  $recipients .= implode("<br/>", $rec);
+  $recipients .= implode(", ", $rec);
 
   ecard_admin_recipient_remove_duplicates($recipients, "\r\n", "<");
 
   $form['step3']['to'] = array(
-    '#markup' => '<div id="ecard-preview-to"><span class="label-head">To:</span><br/>' . $recipients . '</div>',
+    '#markup' => '<div id="ecard-preview-to" style="margin: 10px;padding: 10px;"><span class="label-head" style="font-weight:bold;">To: </span>' . $recipients . '</div>',
   );
   $form['step3']['from'] = array(
-    '#markup' => '<div id="ecard-preview-from"><span class="label-head">From:</span><br/>' . $$form_state['multistep_values']['step1']['sender_name'] . " &lt;" . $form_state['multistep_values']['step1']['sender_email'] . "&gt;</div>",
+    '#markup' => '<div id="ecard-preview-from" style="margin: 10px;padding: 10px;"><span class="label-head" style="font-weight:bold;">From: </span>' . $form_state['multistep_values']['step1']['sender_name'] . " &lt;" . $form_state['multistep_values']['step1']['sender_email'] . "&gt;</div>",
   );
 
    $form['step3']['from_summary'] = array(
-    '#markup' => '<div id="ecard-preview-text"><span class="label-head">Message:</span><br/>' . filter_xss(nl2br($form_state['multistep_values']['step1']['default_message']), array('br')) . '</div>',
+    '#markup' => '<div id="ecard-preview-text" style="margin: 10px;padding: 10px;"><span class="label-head" style="font-weight:bold;">Message: </span><br/>' . filter_xss(nl2br($form_state['multistep_values']['step1']['default_message']), array('br')) . '</div>',
   );
 
    $form['step3']['captcha'] = array(
@@ -574,7 +574,14 @@ function _get_template_details($nid) {
     $node = node_load($nid);
     if (!empty($node) && $node->type === 'ecard_template'){
       $node_wrapper = entity_metadata_wrapper('node', $node);
-      $data['main_image'] = file_create_url($node_wrapper->field_image_upload->value()['uri']);
+      $img_uri = $node_wrapper->field_image_upload->value()['uri'];
+      if (!empty($img_uri)) {
+        $ecard_image = array(
+          'style_name' => 'ecard_template_image',
+          'path' => $img_uri,
+        );
+      }
+      $data['main_image'] = $ecard_image;
       $data['proj_info'] = $node_wrapper->field_project_country_descript->value()['value'];
       $data['fact_desc'] = $node_wrapper->field_fact_description->value()['value'];
       $data['fact_uri'] = file_create_url($node_wrapper->field_fact_image->value()['uri']);

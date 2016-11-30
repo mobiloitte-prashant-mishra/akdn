@@ -8,7 +8,6 @@
 module_load_include('inc', 'akdn_ecard_multistep', 'includes/akdn_ecard_multistep.navigation');
 module_load_include('inc', 'akdn_ecard_multistep', 'includes/akdn_ecard_multistep.validate');
 module_load_include('inc', 'akdn_ecard_multistep', 'includes/akdn_ecard_multistep.submit');
-module_load_include('inc', 'akdn_ecard_multistep', 'includes/akdn_ecard_multistep.preview');
 module_load_include('inc', 'akdn_ecard_multistep', 'includes/akdn_ecard_multistep.admin');
 
 /**
@@ -32,15 +31,6 @@ function akdn_ecard_multistep_menu() {
     'page arguments' => array(),
     'access arguments' => array('access content'),
     'type' => MENU_NORMAL_ITEM,
-  );
-
-  $items['preview/ecards'] = array(
-    'title' => 'Ecards',
-    'page callback' => 'akdn_ecard_preview',
-    'page arguments' => array(1),
-    'access arguments' => array('access content'),
-    'type' => MENU_NORMAL_ITEM,
-    'file' => 'includes/akdn_ecard_multistep.preview.inc',
   );
 
   $items['admin/config/services/ecards'] = array(
@@ -67,10 +57,6 @@ function akdn_ecard_multistep_theme() {
     ),
   );
 }
-
-
-
-
 
 
 
