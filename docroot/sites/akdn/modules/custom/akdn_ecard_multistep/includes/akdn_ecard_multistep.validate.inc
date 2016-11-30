@@ -109,7 +109,7 @@ function akdn_ecard_multistep_step2_validate($form, &$form_state) {
       form_set_error('import', 'You must enter at least one recipient.');
     }
     else {
-      form_set_error('recipients', 'You must enter at least one recipientsada.');
+      form_set_error('recipients', 'You must enter at least one recipient.');
     }
   }
 }
