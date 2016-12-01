@@ -20923,6 +20923,13 @@ table tr.gone_events {
   padding-bottom: 10px;
   float: right;
 }
+/* line 181, ../sass/ecards/_ecard.scss */
+#akdn-ecard-multistep-form .ecard-thank-you-wrapper {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 50px;
+  font-family: "Times New Roman", arial, sans-serif;
+}
 
 /*
 * Media Queries
