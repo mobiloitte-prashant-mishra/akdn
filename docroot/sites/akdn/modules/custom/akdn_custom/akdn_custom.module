@@ -2169,7 +2169,7 @@ function akdn_search_forms($form, &$form_state, $delta) {
       );
       //$text = '<li><span class="search_toggle">' . t('Search') . '</span></li>';
       $text = '';
-      $text .= ' <li>' . l('Subscribe', 'webform/subscribe-our-newsletter',
+      $text .= ' <li>' . l('Subscribe', 'subscribe',
           array(
             'attributes' =>
               array(
@@ -4119,15 +4119,17 @@ function akdn_custom_form_simplenews_node_form_alter(&$form, &$form_state, &$for
       else {
         $body = $value->field_newsletter_summary['und']['0']['value'];
         if ($value->type == 'article') {
-          $tid = $value->field_article_cat[0]['tid'];
+          // print '<pre>'; print_r($value);
+          $tid = $value->field_article_cat['und'][0]['tid'];
           $term_load = taxonomy_term_load($tid);
-          $url = $value->field_media_source['0']['display_url'];
+          (object) $term->name = $term_load->name;
+          $url = $value->field_media_source['und']['0']['display_url'];
           $result[] = array(
             'nid' => $key,
             'title' => strip_tags($value->title),
             'image' => $value->field_newsletter_image['und']['0']['uri'],
             'body' => $body,
-            'term_load' => $term_load,
+            'term_load' => $term,
             'url' => $url,
           );
         }

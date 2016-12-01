@@ -283,8 +283,8 @@ function akdn_akaa_akmi_types_field_group_info() {
     'label' => 'Custom Header Block',
     'weight' => '26',
     'children' => array(
-      0 => 'field_reference_custom_header_bl',
-      1 => 'field_rchb_show_block',
+      0 => 'field_rchb_show_block',
+      1 => 'field_reference_custom_header_bl',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

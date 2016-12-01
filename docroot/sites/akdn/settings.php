@@ -514,3 +514,9 @@ if (isset($conf['memcache_servers'])) {
   $conf['cache_default_class'] = 'MemCacheDrupal';
   $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
 }
+
+// Check for Acquia environment.
+if (array_key_exists('AH_SITE_ENVIRONMENT', $_ENV)) {
+ // Set shared temp directory so multi-file uploads will work.
+ $conf['plupload_temporary_uri'] = "/mnt/gfs/{$_ENV['AH_SITE_GROUP']}.{$_ENV['AH_SITE_ENVIRONMENT']}/tmp";
+}

@@ -64,6 +64,27 @@ function akdn_press_centre_types_strongarm() {
       'diff_standard' => array(
         'custom_settings' => FALSE,
       ),
+      'scs' => array(
+        'custom_settings' => TRUE,
+      ),
+      'press_centre_rss_feed' => array(
+        'custom_settings' => TRUE,
+      ),
+      'colorbox' => array(
+        'custom_settings' => FALSE,
+      ),
+      'email_plain' => array(
+        'custom_settings' => FALSE,
+      ),
+      'email_html' => array(
+        'custom_settings' => FALSE,
+      ),
+      'email_textalt' => array(
+        'custom_settings' => FALSE,
+      ),
+      'press_centre_rss_feeds' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -106,6 +127,14 @@ function akdn_press_centre_types_strongarm() {
             'visible' => FALSE,
           ),
           'search_result' => array(
+            'weight' => '6',
+            'visible' => FALSE,
+          ),
+          'press_centre_rss_feed' => array(
+            'weight' => '6',
+            'visible' => FALSE,
+          ),
+          'press_centre_rss_feeds' => array(
             'weight' => '6',
             'visible' => FALSE,
           ),
@@ -178,6 +207,18 @@ function akdn_press_centre_types_strongarm() {
       'email_textalt' => array(
         'custom_settings' => FALSE,
       ),
+      'scs' => array(
+        'custom_settings' => TRUE,
+      ),
+      'press_centre_rss_feed' => array(
+        'custom_settings' => TRUE,
+      ),
+      'colorbox' => array(
+        'custom_settings' => FALSE,
+      ),
+      'press_centre_rss_feeds' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -208,6 +249,14 @@ function akdn_press_centre_types_strongarm() {
             'visible' => FALSE,
           ),
           'full' => array(
+            'weight' => '19',
+            'visible' => FALSE,
+          ),
+          'press_centre_rss_feed' => array(
+            'weight' => '19',
+            'visible' => FALSE,
+          ),
+          'press_centre_rss_feeds' => array(
             'weight' => '19',
             'visible' => FALSE,
           ),
@@ -280,6 +329,18 @@ function akdn_press_centre_types_strongarm() {
       'project_subtitle_summary' => array(
         'custom_settings' => FALSE,
       ),
+      'scs' => array(
+        'custom_settings' => TRUE,
+      ),
+      'press_centre_rss_feed' => array(
+        'custom_settings' => TRUE,
+      ),
+      'colorbox' => array(
+        'custom_settings' => FALSE,
+      ),
+      'press_centre_rss_feeds' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -310,6 +371,14 @@ function akdn_press_centre_types_strongarm() {
             'visible' => TRUE,
           ),
           'full' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
+          'press_centre_rss_feed' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
+          'press_centre_rss_feeds' => array(
             'weight' => '0',
             'visible' => TRUE,
           ),
@@ -385,6 +454,15 @@ function akdn_press_centre_types_strongarm() {
       'scs' => array(
         'custom_settings' => TRUE,
       ),
+      'press_centre_rss_feed' => array(
+        'custom_settings' => TRUE,
+      ),
+      'colorbox' => array(
+        'custom_settings' => FALSE,
+      ),
+      'press_centre_rss_feeds' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -419,6 +497,14 @@ function akdn_press_centre_types_strongarm() {
             'visible' => FALSE,
           ),
           'email_html' => array(
+            'weight' => '17',
+            'visible' => FALSE,
+          ),
+          'press_centre_rss_feed' => array(
+            'weight' => '17',
+            'visible' => FALSE,
+          ),
+          'press_centre_rss_feeds' => array(
             'weight' => '17',
             'visible' => FALSE,
           ),
@@ -491,6 +577,18 @@ function akdn_press_centre_types_strongarm() {
       'email_textalt' => array(
         'custom_settings' => FALSE,
       ),
+      'scs' => array(
+        'custom_settings' => TRUE,
+      ),
+      'press_centre_rss_feed' => array(
+        'custom_settings' => TRUE,
+      ),
+      'colorbox' => array(
+        'custom_settings' => FALSE,
+      ),
+      'press_centre_rss_feeds' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -528,6 +626,14 @@ function akdn_press_centre_types_strongarm() {
             'visible' => FALSE,
           ),
           'project_subtitle_summary' => array(
+            'weight' => '19',
+            'visible' => FALSE,
+          ),
+          'press_centre_rss_feed' => array(
+            'weight' => '19',
+            'visible' => FALSE,
+          ),
+          'press_centre_rss_feeds' => array(
             'weight' => '19',
             'visible' => FALSE,
           ),
@@ -582,6 +688,33 @@ function akdn_press_centre_types_strongarm() {
       'projects_hub_page_listing' => array(
         'custom_settings' => FALSE,
       ),
+      'scs' => array(
+        'custom_settings' => TRUE,
+      ),
+      'press_centre_rss_feed' => array(
+        'custom_settings' => TRUE,
+      ),
+      'colorbox' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'email_plain' => array(
+        'custom_settings' => FALSE,
+      ),
+      'email_html' => array(
+        'custom_settings' => FALSE,
+      ),
+      'email_textalt' => array(
+        'custom_settings' => FALSE,
+      ),
+      'body_only' => array(
+        'custom_settings' => FALSE,
+      ),
+      'press_centre_rss_feeds' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -612,6 +745,14 @@ function akdn_press_centre_types_strongarm() {
             'visible' => FALSE,
           ),
           'full' => array(
+            'weight' => '18',
+            'visible' => FALSE,
+          ),
+          'press_centre_rss_feed' => array(
+            'weight' => '18',
+            'visible' => FALSE,
+          ),
+          'press_centre_rss_feeds' => array(
             'weight' => '18',
             'visible' => FALSE,
           ),
@@ -675,6 +816,27 @@ function akdn_press_centre_types_strongarm() {
       'diff_standard' => array(
         'custom_settings' => FALSE,
       ),
+      'scs' => array(
+        'custom_settings' => TRUE,
+      ),
+      'press_centre_rss_feed' => array(
+        'custom_settings' => TRUE,
+      ),
+      'colorbox' => array(
+        'custom_settings' => FALSE,
+      ),
+      'email_plain' => array(
+        'custom_settings' => FALSE,
+      ),
+      'email_html' => array(
+        'custom_settings' => FALSE,
+      ),
+      'email_textalt' => array(
+        'custom_settings' => FALSE,
+      ),
+      'press_centre_rss_feeds' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -705,6 +867,14 @@ function akdn_press_centre_types_strongarm() {
             'visible' => FALSE,
           ),
           'full' => array(
+            'weight' => '17',
+            'visible' => FALSE,
+          ),
+          'press_centre_rss_feed' => array(
+            'weight' => '17',
+            'visible' => FALSE,
+          ),
+          'press_centre_rss_feeds' => array(
             'weight' => '17',
             'visible' => FALSE,
           ),
