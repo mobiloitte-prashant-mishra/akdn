@@ -80,7 +80,7 @@ function akdn_ecard_multistep_form_step1($form, &$form_state) {
 
   $form['step1']['greetings'] = array(
     '#type' => 'select',
-    '#title' => 'Greetings',
+    '#title' => 'Greeting',
     '#options' => _get_ecard_grettings_list(),
     '#default_value' => isset($values['greetings']) ? $values['greetings'] : NULL,
     '#attributes' => array(
@@ -106,11 +106,10 @@ function akdn_ecard_multistep_form_step1($form, &$form_state) {
 
   $form['step1']['default_message'] = array(
     '#type' => 'textarea',
-    '#title' => 'Your Message',
-    '#default_value' => isset($values['default_message']) ? $values['default_message'] : 'Please type your customised message here. Your recipients name will automatically be added. A preview will be available on the next step prior to sending.',
-    '#attributes' => array(
-      'title' => t("Please enter your personal message."),
-    )
+    '#title' => 'Please type your message below. Your recipients name will automatically be added. A preview will be available on the next step prior to sending.',
+    '#default_value' => isset($values['default_message']) ? $values['default_message'] : 'Type your greeting here',
+    '#prefix' => '<span class="ecard-message">',
+    '#suffix' => '</span>',
   );
 
   $form['actions']['cancel'] = array(
