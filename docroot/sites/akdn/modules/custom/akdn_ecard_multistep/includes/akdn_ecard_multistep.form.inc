@@ -107,7 +107,7 @@ function akdn_ecard_multistep_form_step1($form, &$form_state) {
   $form['step1']['default_message'] = array(
     '#type' => 'textarea',
     '#title' => 'Your Message',
-    '#default_value' => isset($values['default_message']) ? $values['default_message'] : 'This is the Default Message',
+    '#default_value' => isset($values['default_message']) ? $values['default_message'] : 'Please type your customised message here. Your recipients name will automatically be added. A preview will be available on the next step prior to sending.',
     '#attributes' => array(
       'title' => t("Please enter your personal message."),
     )
@@ -429,8 +429,6 @@ function akdn_ecard_multistep_form_step3($form, &$form_state) {
     '#prefix' => '<div class="ecard-submit-wrapper">',
   );
 
-
-
   $form['actions']['cancel'] = array(
     '#type'   => 'submit',
     '#value'  => t('Cancel'),
@@ -455,13 +453,12 @@ function akdn_ecard_multistep_form_step3($form, &$form_state) {
     '#markup' => urldecode($link),
   );
 
-    $form['next'] = array(
+  $form['next'] = array(
     '#type' => 'submit',
     '#value' => t('Send Ecard'),
-        '#prefix' => '<span class="ecard-send-submit-wrapper">',
-        '#suffix' => '</span>',
-        '#suffix' => '</div>',
-
+      '#prefix' => '<span class="ecard-send-submit-wrapper">',
+      '#suffix' => '</span>',
+      '#suffix' => '</div>',
   );
 
   $template_data = _get_template_details(arg(1));
@@ -505,7 +502,7 @@ function _get_ecard_grettings_list() {
  */
 
 function _akdn_ecard_cancel_button() {
-  drupal_goto('ecards/template');
+  drupal_goto('ecards');
 }
 
 /**
