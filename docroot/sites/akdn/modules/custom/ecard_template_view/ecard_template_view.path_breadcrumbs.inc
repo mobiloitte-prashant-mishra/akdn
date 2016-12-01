@@ -12,6 +12,41 @@ function ecard_template_view_path_breadcrumbs_settings_info() {
 
   $path_breadcrumb = new stdClass();
   $path_breadcrumb->api_version = 1;
+  $path_breadcrumb->machine_name = 'ecard_thank_you';
+  $path_breadcrumb->name = 'ecard_thank_you';
+  $path_breadcrumb->path = 'ecard/thank-you';
+  $path_breadcrumb->data = array(
+    'titles' => array(
+      0 => 'eCards',
+      1 => 'Thank You',
+    ),
+    'paths' => array(
+      0 => 'ecards',
+      1 => '<none>',
+    ),
+    'home' => 1,
+    'translatable' => 0,
+    'arguments' => array(),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '1',
+            'paths' => 'ecard/thank-you',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+  );
+  $path_breadcrumb->weight = 0;
+  $export['ecard_thank_you'] = $path_breadcrumb;
+
+  $path_breadcrumb = new stdClass();
+  $path_breadcrumb->api_version = 1;
   $path_breadcrumb->machine_name = 'ecards_creation_pages';
   $path_breadcrumb->name = 'Ecards Creation Pages';
   $path_breadcrumb->path = 'ecards/*';
