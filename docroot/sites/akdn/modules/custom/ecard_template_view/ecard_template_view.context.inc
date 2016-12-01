@@ -50,6 +50,12 @@ function ecard_template_view_context_default_contexts() {
           'region' => 'content',
           'weight' => '-6',
         ),
+        'block-181' => array(
+          'module' => 'block',
+          'delta' => '181',
+          'region' => 'content',
+          'weight' => '-5',
+        ),
         'delta_blocks-page-title' => array(
           'module' => 'delta_blocks',
           'delta' => 'page-title',
