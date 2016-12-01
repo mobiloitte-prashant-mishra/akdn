@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the f_search feature.
- */
-
-include_once 'f_search.features.inc';

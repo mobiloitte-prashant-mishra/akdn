@@ -1,6 +1,0 @@
-name = Nodequeue Auto Rotate
-description = Schedule a reoccuring rotation of nodequeues.
-package = Nodequeue
-dependencies[] = nodequeue
-dependencies[] = date_popup
-core = 7.x
