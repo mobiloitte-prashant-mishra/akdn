@@ -14,6 +14,7 @@
   $output = '';
   $output .= '<table cellspacing="0" cellpadding="0" border="0" width="100%" style="margin:0;border:0;">';
   $count = 0;
+
   foreach ($result as $key => $value) {
     $thumb_image = array(
       'style_name' => 'mail_shot_image_cache',
@@ -23,7 +24,15 @@
     $img = theme('image_style', $thumb_image);
     $image_link = l($img, 'node/' . $value['nid'], array('attributes' => array('target' => '_blank'), 'html' => TRUE));
     if (!empty($value['image'])) {
-      $output .= '<tr><td align="left" valign="top" width="170" style="padding:20px 0 20px 15px;border-bottom:1px solid #999999;vertical-align:top;text-align:left;">';
+      if(count($result) - 1 == $count && !empty($social)){
+        $output .= '<tr><td align="left" valign="top" width="170" style="padding:20px 0 20px 15px;border-bottom:1px solid #999999;vertical-align:top;text-align:left;">';
+      }
+      elseif(count($result) - 1 == $count && empty($social)){
+        $output .= '<tr><td align="left" valign="top" width="170" style="padding:20px 0 20px 15px;vertical-align:top;text-align:left;">';
+      }
+      else{
+        $output .= '<tr><td align="left" valign="top" width="170" style="padding:20px 0 20px 15px;border-bottom:1px solid #999999;vertical-align:top;text-align:left;">';
+      }
       if ($value['term_load']->name == 'In the media' && !empty($value['url'])) {
         $output .= l($img, $value['url'], array('attributes' => array('target' => '_blank'), 'html' => TRUE));
       }
@@ -34,7 +43,15 @@
         $output .= $image_link;
       }
       $output .= '</td>';
-      $output .= '<td align="left" valign="top" style="padding:20px 15px;border-bottom:1px solid #999999;vertical-align:top;text-align:left;">';
+      if(count($result) - 1 == $count && !empty($social)){
+        $output .= '<td align="left" valign="top" style="padding:20px 15px;border-bottom:1px solid #999999;vertical-align:top;text-align:left;">';
+      }
+      elseif(count($result) - 1 == $count && empty($social)){
+        $output .= '<td align="left" valign="top" style="padding:20px 15px;vertical-align:top;text-align:left;">';
+      }
+      else{
+        $output .= '<td align="left" valign="top" style="padding:20px 15px;border-bottom:1px solid #999999;vertical-align:top;text-align:left;">';
+      }
       if (!empty($value['title'])) {
           if ($value['term_load']->name == 'In the media' && !empty($value['url'])) {
             $output .= '<h4 style="color:#b49759;font-weight:bold;font-size:12px;font-family:Arial,Serif;line-height:16px;margin:0 0 5px;text-align:left;">' . l($value['title'], $value['url']) . '</h4>';
@@ -51,7 +68,15 @@
         }
         $output .= '</td></tr>';
     } else {
-      $output .= '<tr><td colspan="2" align="left" valign="top" style="padding:20px 15px;border-bottom:1px solid #999999;vertical-align:top;text-align:left;">';
+      if(count($result) - 1 == $count && !empty($social)){
+        $output .= '<tr><td colspan="2" align="left" valign="top" style="padding:20px 15px;border-bottom:1px solid #999999;vertical-align:top;text-align:left;">';
+      }
+      elseif(count($result) - 1 == $count && empty($social)){
+        $output .= '<tr><td colspan="2" align="left" valign="top" style="padding:20px 15px;vertical-align:top;text-align:left;">';
+      }
+      else{
+        $output .= '<tr><td colspan="2" align="left" valign="top" style="padding:20px 15px;border-bottom:1px solid #999999;vertical-align:top;text-align:left;">';
+      }
       if (!empty($value['title'])) {
         if ($value['term_load']->name == 'In the media' && !empty($value['url'])) {
           $output .= '<h4 style="color:#b49759;font-weight:bold;font-size:12px;font-family:Arial,Serif;line-height:16px;margin:0 0 5px;text-align:left;">' . l($value['title'], $value['url']) . '</h4>';
