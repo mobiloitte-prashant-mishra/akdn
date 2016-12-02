@@ -144,7 +144,7 @@ function ecard_template_content_type_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => -3,
     ),
   );
 
@@ -192,7 +192,7 @@ function ecard_template_content_type_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 13,
+      'weight' => 0,
     ),
   );
 
@@ -252,7 +252,7 @@ function ecard_template_content_type_field_default_field_instances() {
             'slashes' => 0,
             'transliterate' => 0,
           ),
-          'value' => '',
+          'value' => 'ecards',
         ),
         'redirect' => 0,
         'retroactive_update' => 0,
@@ -324,7 +324,7 @@ function ecard_template_content_type_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 14,
+      'weight' => 1,
     ),
   );
 
@@ -429,7 +429,7 @@ function ecard_template_content_type_field_default_field_instances() {
             'slashes' => 0,
             'transliterate' => 0,
           ),
-          'value' => '',
+          'value' => 'ecards',
         ),
         'redirect' => 0,
         'retroactive_update' => 0,
@@ -501,7 +501,7 @@ function ecard_template_content_type_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 9,
+      'weight' => -4,
     ),
   );
 
@@ -563,7 +563,7 @@ function ecard_template_content_type_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 11,
+      'weight' => -2,
     ),
   );
 
@@ -612,7 +612,58 @@ function ecard_template_content_type_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 12,
+      'weight' => -1,
+    ),
+  );
+
+  // Exported field_instance: 'node-ecard_template-title_field'.
+  $field_instances['node-ecard_template-title_field'] = array(
+    'bundle' => 'ecard_template',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
+      ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'title_field',
+    'label' => 'Title',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'hide_label' => array(
+        'entity' => 0,
+        'page' => 0,
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => -5,
     ),
   );
 
@@ -627,6 +678,7 @@ function ecard_template_content_type_field_default_field_instances() {
   t('More Information Link');
   t('Project/Country Description');
   t('Thematic Areas');
+  t('Title');
 
   return $field_instances;
 }
