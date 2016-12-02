@@ -53,12 +53,12 @@ function ecard_template_content_type_field_group_info() {
     'weight' => '1',
     'children' => array(
       0 => 'field_ecard_image_caption',
-      1 => 'field_more_information_link',
-      2 => 'field_project_country_descript',
-      3 => 'field_fact_description',
-      4 => 'field_image_upload',
-      5 => 'field_fact_image',
-      6 => 'title',
+      1 => 'field_fact_description',
+      2 => 'field_fact_image',
+      3 => 'field_image_upload',
+      4 => 'field_more_information_link',
+      5 => 'field_project_country_descript',
+      6 => 'title_field',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -85,8 +85,8 @@ function ecard_template_content_type_field_group_info() {
     'label' => 'Ecard',
     'weight' => '0',
     'children' => array(
-      0 => 'group_ecard_details',
-      1 => 'group_ecard_categories',
+      0 => 'group_ecard_categories',
+      1 => 'group_ecard_details',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(
