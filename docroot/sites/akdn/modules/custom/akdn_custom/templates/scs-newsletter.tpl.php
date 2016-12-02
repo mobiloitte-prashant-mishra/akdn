@@ -66,7 +66,7 @@
         if (!empty($value['body'])) {
           $html = $value['body'];
           $str = preg_replace('!^<p>(.*?)</p>$!i', '$1', $html);
-          $output .= '<div style="font-size:12px;line-height:16px;font-style:normal;color:#333333;font-family:Arial,Serif;margin:0;text-align:left;">' . $str . '</div>';
+          $output .= '<p style="font-size:12px;line-height:16px;font-style:normal;color:#333333;font-family:Arial,Serif;margin:0;text-align:left;">' . $str . '</p>';
         }
         $output .= '</td></tr>';
     } else {
@@ -93,7 +93,7 @@
       if (!empty($value['body'])) {
         $html = $value['body'];
         $str = preg_replace('!^<p>(.*?)</p>$!i', '$1', $html);
-        $output .= '<div style="font-size:12px;line-height:16px;font-style:normal;color:#333333;font-family:Arial,Serif;margin:0;text-align:left;">' . $str . '</div>';
+        $output .= '<p style="font-size:12px;line-height:16px;font-style:normal;color:#333333;font-family:Arial,Serif;margin:0;text-align:left;">' . $str . '</p>';
       }
       $output .= '</td></tr>';
     }
