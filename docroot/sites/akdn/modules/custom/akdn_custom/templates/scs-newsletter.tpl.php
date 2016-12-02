@@ -64,7 +64,7 @@
           }
         }
         if (!empty($value['body'])) {
-          $output .= '<p style="font-size:12px;line-height:16px;font-style:normal;color:#333333;font-family:Arial,Serif;margin:0;text-align:left;">' . $value['body'] . '</p>';
+          $output .= '<div style="font-size:12px;line-height:16px;font-style:normal;color:#333333;font-family:Arial,Serif;margin:0;text-align:left;">' . $value['body'] . '</div>';
         }
         $output .= '</td></tr>';
     } else {
@@ -89,7 +89,7 @@
         }
       }
       if (!empty($value['body'])) {
-        $output .= '<p style="font-size:12px;line-height:16px;font-style:normal;color:#333333;font-family:Arial,Serif;margin:0;text-align:left;">' . $value['body'] . '</p>';
+        $output .= '<div style="font-size:12px;line-height:16px;font-style:normal;color:#333333;font-family:Arial,Serif;margin:0;text-align:left;">' . $value['body'] . '</div>';
       }
       $output .= '</td></tr>';
     }
