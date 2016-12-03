@@ -29,8 +29,8 @@ function ecard_template_content_type_image_default_styles() {
       231 => array(
         'name' => 'manualcrop_crop',
         'data' => array(
-          'width' => 650,
-          'height' => 344,
+          'width' => 1300,
+          'height' => 688,
           'keepproportions' => 1,
           'reuse_crop_style' => '',
           'style_name' => 'ecard_template_image',
@@ -40,8 +40,8 @@ function ecard_template_content_type_image_default_styles() {
       226 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 650,
-          'height' => 344,
+          'width' => 1300,
+          'height' => 688,
         ),
         'weight' => 1,
       ),

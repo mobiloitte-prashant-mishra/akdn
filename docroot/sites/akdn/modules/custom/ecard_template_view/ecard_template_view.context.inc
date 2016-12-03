@@ -50,6 +50,12 @@ function ecard_template_view_context_default_contexts() {
           'region' => 'content',
           'weight' => '-6',
         ),
+        'block-181' => array(
+          'module' => 'block',
+          'delta' => '181',
+          'region' => 'content',
+          'weight' => '-5',
+        ),
         'delta_blocks-page-title' => array(
           'module' => 'delta_blocks',
           'delta' => 'page-title',
@@ -89,6 +95,34 @@ function ecard_template_view_context_default_contexts() {
   );
   $context->condition_mode = 1;
   $export['ecard_page_title'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'ecard_thankyou_page';
+  $context->description = '';
+  $context->tag = '';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'ecard/thank-you' => 'ecard/thank-you',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'block-186' => array(
+          'module' => 'block',
+          'delta' => '186',
+          'region' => 'branding',
+          'weight' => '-9',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+  $export['ecard_thankyou_page'] = $context;
 
   return $export;
 }
