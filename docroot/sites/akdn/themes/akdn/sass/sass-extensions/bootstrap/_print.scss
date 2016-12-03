@@ -380,10 +380,20 @@
         page-break-inside: avoid;
       }
     }
-    .basic-page-accordian-main-container .accordian-main-body {
-      display: block;
+    .basic-page-accordian-main-container {
+      .accordian-main-body {
+        display: block;
+      }
+      .accordian-icon {
+        display: none !important;
+      }
     }
-    .whatwedo-left .morelink {
+    .geography-page {
+      .pane-featured-slideshow {
+        width: 100% !important;
+      }
+    }
+    .whatwedo-left .morelink, .lesslink {
       display: none !important;
     }
     .whatwedo-left .what-we-do-body-more-body{
