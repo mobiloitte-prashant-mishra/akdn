@@ -362,7 +362,9 @@ function akdn_ecard_multistep_form_step2($form, &$form_state) {
   
   $data = str_replace(array('<p>', '</p>'), array('<span>', '</span>'), $template_data['proj_info']);
 
-  $html = theme('ecard_template', array('main_image' => $template_data['main_image'], 'proj_info' => $data, 'fact_image' => $template_data['fact_image'], 'fact_desc' => $template_data['fact_desc'], 'link_title' => $template_data['link_title'], 'link_url' => $template_data['link_url'], 'greetings' => $greetings, 'sender_name' => $step1_details['sender_name'], 'message' => $step1_details['default_message'], 'op' => 'preview'));
+  $style_uri = image_style_url('ecard_template_image', $template_data['main_image']);
+
+  $html = theme('ecard_template', array('main_image' => $style_uri, 'proj_info' => $data, 'fact_image' => $template_data['fact_image'], 'fact_desc' => $template_data['fact_desc'], 'link_title' => $template_data['link_title'], 'link_url' => $template_data['link_url'], 'greetings' => $greetings, 'sender_name' => $step1_details['sender_name'], 'message' => $step1_details['default_message'], 'op' => 'preview'));
 
   $form['ecard_template'] = array(
     '#markup' => '<div class = "element-hidden"><div id="ecard_template">' . $html . '</div></div>',
@@ -482,8 +484,10 @@ function akdn_ecard_multistep_form_step3($form, &$form_state) {
   }
 
   $data = str_replace(array('<p>', '</p>'), array('<span>', '</span>'), $template_data['proj_info']);
-  
-  $html = theme('ecard_template', array('main_image' => $template_data['main_image'], 'proj_info' => $data, 'fact_image' => $template_data['fact_image'], 'fact_desc' => $template_data['fact_desc'], 'link_title' => $template_data['link_title'], 'link_url' => $template_data['link_url'], 'greetings' => $greetings, 'sender_name' => $step1_details['sender_name'], 'message' => $step1_details['default_message'], 'op' => 'preview'));
+
+  $style_uri = image_style_url('ecard_template_image', $template_data['main_image']);
+
+  $html = theme('ecard_template', array('main_image' => $style_uri, 'proj_info' => $data, 'fact_image' => $template_data['fact_image'], 'fact_desc' => $template_data['fact_desc'], 'link_title' => $template_data['link_title'], 'link_url' => $template_data['link_url'], 'greetings' => $greetings, 'sender_name' => $step1_details['sender_name'], 'message' => $step1_details['default_message'], 'op' => 'preview'));
 
   $form['ecard_template_step3'] = array(
     '#markup' => '<div class = "element-hidden"><div id="ecard_template_step3">' . $html . '</div></div>',

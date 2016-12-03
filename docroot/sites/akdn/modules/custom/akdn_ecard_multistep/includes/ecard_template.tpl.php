@@ -6,7 +6,8 @@
 ?>
 <div style="background-color:#efefef;" >
   <div id="content" style="margin-top:auto;margin-right:auto;margin-left:auto;padding-top:20px;padding-bottom:20px;padding-right:20px;padding-left:20px;background-color:#FFFFFF;max-width:650px;width:100%;border-width:1px;border-style:solid;border-color:#CFCDCD;" >
-    <?php print !empty($main_image) ? theme('image_style', array('path' => $main_image, 'style_name' => 'ecard_template_image')) : '<img src="http://cdn.iiuk.org/akdn/ecard_humayun2.jpg" alt="Card Image" width="650" height="344" title="Card Image"/>';
+    <?php !empty($main_image) ? $main_image : $main_image = 'http://cdn.iiuk.org/akdn/ecard_humayun2.jpg';
+      print '<img src="' . $main_image . '" alt="Card Image" width="650" height="344" title="Card Image"/>';
     ?>
     <div class="horizontal2" style="max-width:650px;width:100%;height:1px;background-color:#DBDBDB;margin-bottom:15px;margin-top:15px;clear:both;" >
     </div>
