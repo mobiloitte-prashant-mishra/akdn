@@ -404,9 +404,14 @@ function akdn_ecard_multistep_form_step3($form, &$form_state) {
 
   ecard_admin_recipient_remove_duplicates($recipients, "\r\n", "<");
 
+  $form['step3']['heading'] = array(
+    '#markup' => '<div id="ecard-step3-head" style="font-weight:bold;">Please confirm the details below and enter the letters in the verification image to send your eCard(s).</div>',
+  );
+  
   $form['step3']['to'] = array(
     '#markup' => '<div id="ecard-preview-to" style="margin: 10px;padding: 10px;"><span class="label-head" style="font-weight:bold;">To: </span>' . $recipients . '</div>',
   );
+  
   $form['step3']['from'] = array(
     '#markup' => '<div id="ecard-preview-from" style="margin: 10px;padding: 10px;"><span class="label-head" style="font-weight:bold;">From: </span>' . $form_state['multistep_values']['step1']['sender_name'] . " &lt;" . $form_state['multistep_values']['step1']['sender_email'] . "&gt;</div>",
   );
