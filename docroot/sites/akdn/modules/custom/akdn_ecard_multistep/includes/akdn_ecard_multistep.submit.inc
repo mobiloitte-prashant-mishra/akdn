@@ -99,7 +99,7 @@ function akdn_ecard_multistep_step3_submit($form, &$form_state) {
     }
   }
 
-  send_ecard_emails_mandrill($html, $step_details['step1']['sender_email'], $step_details['step1']['sender_name'],$to_reci);
+  send_ecard_emails_mandrill($html, $step_details['step1']['sender_email'], $step_details['step1']['sender_name'],$to_reci, $step_details['step1']['greetings']);
 
   drupal_goto('ecard/thank-you');
 
@@ -121,7 +121,7 @@ function send_ecard_emails_mandrill($html, $from_email, $from_name,$to, $subject
   try{
     $message = array(
       'html' => $html,
-      'subject' => 'AKDN Ecards',
+      'subject' => $subject,
       'from_email' => 'noreply@akdn.org',
       'from_name' => $from_name,
       'to'=> $to,
