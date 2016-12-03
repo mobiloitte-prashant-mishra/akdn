@@ -1,9 +1,9 @@
 <?php
+
 /**
  * @file
- * theme implementation to display Links.
+ * Theme implementation to display Links.
  */
-
 ?>
 <ul class="tabs primary">
   <li><?php print $send; ?></li>
