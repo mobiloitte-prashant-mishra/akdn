@@ -69,7 +69,9 @@ function akdn_ecard_multistep_step3_submit($form, &$form_state) {
     $greetings = $step_details['step1']['greetings'];
   }
 
-  $html = theme('ecard_template', array('main_image' => $template_data['main_image'], 'proj_info' => $template_data['proj_info'], 'fact_image' => $template_data['fact_image'], 'fact_desc' => $template_data['fact_desc'], 'link_title' => $template_data['link_title'], 'link_url' => $template_data['link_url'], 'greetings' => $greetings, 'sender_name' => $step_details['step1']['sender_name'], 'message' => $step_details['step1']['default_message']));
+  $data = str_replace(array('<p>', '</p>'), array('<span>', '</span>'), $template_data['proj_info']);
+
+  $html = theme('ecard_template', array('main_image' => $template_data['main_image'], 'proj_info' => $data, 'fact_image' => $template_data['fact_image'], 'fact_desc' => $template_data['fact_desc'], 'link_title' => $template_data['link_title'], 'link_url' => $template_data['link_url'], 'greetings' => $greetings, 'sender_name' => $step_details['step1']['sender_name'], 'message' => $step_details['step1']['default_message']));
 
   $to_reci = array();
   $rec_details = array();
