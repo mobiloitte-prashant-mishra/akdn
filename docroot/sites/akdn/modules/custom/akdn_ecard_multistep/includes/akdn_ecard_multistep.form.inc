@@ -14,6 +14,15 @@
  * @return type
  */
 function akdn_ecard_multistep_form($form, &$form_state) {
+  $element = array(
+    '#tag' => 'meta', 
+    '#attributes' => array( 
+      'name' => 'robots', 
+      'content' => 'noarchive, nofollow, noimageindex, noindex, nosnippet, notranslate, noydir',
+    ),
+  );
+  drupal_add_html_head($element, 'ecards_form');  
+
   if (!isset($form_state['stage'])) $form_state['stage'] = 'step1';
 
   $form = array();
