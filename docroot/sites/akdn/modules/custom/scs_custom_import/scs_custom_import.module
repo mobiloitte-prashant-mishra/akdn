@@ -1860,7 +1860,9 @@ function _scs_custom_get_languages ($guid) {
     foreach($data->node as $key => $d){
       $lang_code = _scs_custom_get_languages_code_by_name($d->language);
       $source_code = _scs_custom_get_languages_code_by_name($d->source);
+      if(!in_array_r($lang_code,$lang)) {
       $lang[] = array('source' => $source_code , 'lang' => $lang_code);
+    }
     }
   }
 }
