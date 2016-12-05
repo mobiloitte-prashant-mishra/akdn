@@ -822,7 +822,7 @@ print $output;
   /* Display: Projects */
   $handler = $view->new_display('page', 'Projects', 'page_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Projects';
+  $handler->display->display_options['title'] = 'Spotlights';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'in-media-block';
@@ -1735,6 +1735,7 @@ print $content;
     t('Press Center - news'),
     t('News'),
     t('Projects'),
+    t('Spotlights'),
     t('<div class="media-desc">
 <div class="title">[field_short_title]</div>
 <div class="title">[field_sub_title]

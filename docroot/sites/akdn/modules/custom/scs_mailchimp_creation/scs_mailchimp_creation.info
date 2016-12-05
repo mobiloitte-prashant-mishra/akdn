@@ -1,0 +1,4 @@
+name = SCS Mailchimp Creation
+description = "Automatic Maichimp Campaign Creation"
+core = "7.x"
+package = Mailchimp Campaign

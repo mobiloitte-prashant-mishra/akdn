@@ -1,8 +1,0 @@
-name = f_kc_deploy
-core = 7.x
-package = Features
-dependencies[] = ctools
-dependencies[] = services
-features[ctools][] = services:services:3
-features[features_api][] = api:2
-features[services_endpoint][] = akdn_kc_deploy

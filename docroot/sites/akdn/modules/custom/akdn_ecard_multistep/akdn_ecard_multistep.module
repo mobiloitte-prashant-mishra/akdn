@@ -1,0 +1,54 @@
+<?php
+
+/**
+ * @file
+ * This module enables multistep form for ecard creation.
+ */
+
+module_load_include('inc', 'akdn_ecard_multistep', 'includes/akdn_ecard_multistep.navigation');
+module_load_include('inc', 'akdn_ecard_multistep', 'includes/akdn_ecard_multistep.validate');
+module_load_include('inc', 'akdn_ecard_multistep', 'includes/akdn_ecard_multistep.submit');
+module_load_include('inc', 'akdn_ecard_multistep', 'includes/akdn_ecard_multistep.admin');
+
+/**
+ * Implements hook_menu().
+ */
+function akdn_ecard_multistep_menu() {
+
+  $items = array();
+  $items['ecards/%'] = array(
+    'title' => 'Ecards',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('akdn_ecard_multistep_form'),
+    'access arguments' => array('access content'),
+    'file' => 'includes/akdn_ecard_multistep.form.inc',
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  $items['admin/config/services/ecards'] = array(
+    'title' => 'Ecards Configuration',
+    'description' => t('Manage Ecards Settings.'),
+    'page callback' => 'drupal_get_form',
+    'access_arguments' => array('access content'),
+    'page arguments' => array('akdn_ecard_settings_form'),
+    'file' => 'includes/akdn_ecard_multistep.admin.inc',
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+  );
+  
+  return $items;
+}
+
+/**
+ *  @Implements hook_theme
+ */
+
+function akdn_ecard_multistep_theme() {
+  return array(
+    'ecard_template' => array(
+      'template' => 'includes/ecard_template',
+    ),
+  );
+}
+
+
+

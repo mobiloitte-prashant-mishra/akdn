@@ -245,8 +245,7 @@ $drupal_hash_salt = '';
  * It is not allowed to have a trailing slash; Drupal will add it
  * for you.
  */
-$base_url = 'http://akdn3stg.prod.acquia-sites.com';  // NO trailing slash!*/
-
+ $base_url = 'http://www.akdn.org';  // NO trailing slash!*/
 /**
  * PHP settings:
  *
@@ -281,8 +280,8 @@ ini_set('session.gc_maxlifetime', 200000);
  * the cookie. The value 0 means "until the browser is closed".
  */
 ini_set('session.cookie_lifetime', 2000000);
-ini_set('memory_limit', '512M');
 ini_set ('display_errors', '0');
+ini_set('memory_limit', '512M');
 /**
  * If you encounter a situation where users post a large amount of text, and
  * the result is stripped out upon viewing but can still be edited, Drupal's
@@ -514,4 +513,10 @@ if (isset($conf['memcache_servers'])) {
   $conf['cache_backends'][] = './sites/all/modules/contrib/memcache/memcache.inc';
   $conf['cache_default_class'] = 'MemCacheDrupal';
   $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
+}
+
+// Check for Acquia environment.
+if (array_key_exists('AH_SITE_ENVIRONMENT', $_ENV)) {
+ // Set shared temp directory so multi-file uploads will work.
+ $conf['plupload_temporary_uri'] = "/mnt/gfs/{$_ENV['AH_SITE_GROUP']}.{$_ENV['AH_SITE_ENVIRONMENT']}/tmp";
 }

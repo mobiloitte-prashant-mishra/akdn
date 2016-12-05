@@ -30,6 +30,23 @@ function akdn_custom_update_7101() {
 }
 
 /**
+ * Implements hook_update().
+ */
+function akdn_custom_update_7102() {
+	if (!db_table_exists("filter")) {
+	  db_insert("filter")
+	   ->fields(array(
+			'format' => 'mailchimp_campaign',
+			'module' => 'mailchimp_campaign',
+			'name' => 'mailchimp_campaign',
+			'weight' => 0,
+			'status' => 1,
+			'settings' => 0x613a303a7b7d))
+			->execute();
+	}
+}
+
+/**
  * Implements hook_schema().
  */
 function akdn_custom_schema() {
@@ -46,22 +63,4 @@ function akdn_custom_schema() {
 		'primary key' => array('url'),
 	);
 	return $schema;
-}
-
-/**
- * Implements hook_update().
- */
-function akdn_custom_update_7102() {
-  if (db_table_exists('filter')) {
-    db_insert('filter')
-      ->fields(array(
-        'format' => 'mailchimp_campaign',
-        'module' => 'mailchimp_campaign',
-        'name' => 'mailchimp_campaign',
-        'weight' =>  0,
-        'status' =>  1,
-        'settings' =>  0x613a303a7b7d,
-        ))
-      ->execute();
-  }
 }

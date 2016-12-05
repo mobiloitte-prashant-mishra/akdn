@@ -11,6 +11,12 @@ div.tabs,
 .block-ac-node-translations{
   display: none;
 }
-#zone-branding, #zone-menu, #breadcrumb, #region-sidebar-first, #region-sidebar-second, .node-links, .field-name-field-recipe-tags {
+#zone-menu, #breadcrumb, #region-sidebar-first, #region-sidebar-second, .node-links, .field-name-field-recipe-tags {
 	display:none;
 }
+#block-akdn-custom-akdn-breadcrumb-trail {
+  display: none;
+}
+/*.other-activities-title, .pane-akdn-custom-all-areas-of-activity,.hub-page-press-center-right {
+  display: none;
+}*/

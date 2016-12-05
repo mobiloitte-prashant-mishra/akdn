@@ -339,3 +339,47 @@ function get_the_classes($start_date) {
     return 'gone_events';
   }
 }
+
+/**
+ * On Pop up lightbox showing image default caption and copyright with adddition of |
+ */
+function akdn_colorbox_imagefield($variables) {
+  $caption = '';
+  $explode = array_filter(explode('^', $variables['title']));
+  if (!empty($explode)) {
+    if (!empty($explode[0]) && !empty($explode[1])) {
+      $caption = $explode[0] . ' | ' . $explode[1];
+    }
+    elseif (!empty($explode[0]) && empty($explode[1])) {
+      $caption = $explode[0];
+    }
+    elseif (empty($explode[0]) && !empty($explode[1])) {
+      $caption = $explode[1];
+    }
+    else {
+        $caption = '';
+    }
+  }
+  $class = array('colorbox');
+  if ($variables['image']['style_name'] == 'hide') {
+    $image = '';
+    $class[] = 'js-hide';
+  }
+  elseif (!empty($variables['image']['style_name'])) {
+    $image = theme('image_style', $variables['image']);
+  }
+  else {
+    $image = theme('image', $variables['image']);
+  }
+  $options = drupal_parse_url($variables['path']);
+  $options += array(
+     'html' => TRUE,
+     'attributes' => array(
+      'title' =>  $caption ,
+      'class' => $class,
+      'rel' => $variables['gid'],
+    ),
+    'language' => array('language' => NULL),
+  );
+  return l($image, $options['path'], $options);
+}

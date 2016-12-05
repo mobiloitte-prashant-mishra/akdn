@@ -1,0 +1,43 @@
+diff --git a/docroot/sites/akdn/modules/contrib/galleryformatter/theme/infiniteCarousel.js b/docroot/sites/akdn/modules/contrib/galleryformatter/theme/infiniteCarousel.js
+index c4e167b..5fd117d 100644
+--- a/docroot/sites/akdn/modules/contrib/galleryformatter/theme/infiniteCarousel.js
++++ b/docroot/sites/akdn/modules/contrib/galleryformatter/theme/infiniteCarousel.js
+@@ -25,19 +25,19 @@
+               pages = Math.ceil($items.length / visible);
+ 
+ 
+-          // 1. Pad so that 'visible' number will always be seen, otherwise create empty items
+-          if (($items.length % visible) != 0) {
++          // 1. Pad so that 'visible' number will always be seen, otherwise create empty items (Not needed)
++          /*if (($items.length % visible) != 0) {
+               $slider.append(repeat('<li class="empty" />', visible - ($items.length % visible)));
+               $items = $slider.find('> li');
+-          }
++          }*/
+ 
+-          // 2. Top and tail the list with 'visible' number of items, top has the last section, and tail has the first
+-          $items.filter(':first').before($items.slice(- visible).clone().addClass('cloned'));
+-          $items.filter(':last').after($items.slice(0, visible).clone().addClass('cloned'));
+-          $items = $slider.find('> li'); // reselect
++          // 2. Top and tail the list with 'visible' number of items, top has the last section, and tail has the first (Not needed)
++          //$items.filter(':first').before($items.slice(- visible).clone().addClass('cloned'));
++          //$items.filter(':last').after($items.slice(0, visible).clone().addClass('cloned'));
++          //$items = $slider.find('> li'); // reselect
+ 
+-          // 3. Set the left position to the first 'real' item
+-          $wrapper.scrollLeft(singleWidth * visible);
++          // 3. Set the left position to the first 'real' item (Not needed)
++          //$wrapper.scrollLeft(singleWidth * visible);
+ 
+           // 4. paging function
+           function gotoPage(page) {
+@@ -52,7 +52,8 @@
+                       $wrapper.scrollLeft(singleWidth * visible * pages);
+                       page = pages;
+                   } else if (page > pages) {
+-                      $wrapper.scrollLeft(singleWidth * visible);
++                      // Slide-0 won't run on the left anymore
++                      $wrapper.scrollLeft(0);
+                       // reset back to start position
+                       page = 1;
+                   }

@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the ismaili draft revisions views feature.
- */
-
-include_once 'ismaili_draft_revisions_views.features.inc';

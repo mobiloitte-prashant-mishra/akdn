@@ -1,0 +1,17 @@
+diff --git a/modules/instagram/social_content_instagram.class.inc b/modules/instagram/social_content_instagram.class.inc
+index e39e395..f5f54fe 100644
+--- a/modules/instagram/social_content_instagram.class.inc
++++ b/modules/instagram/social_content_instagram.class.inc
+@@ -448,7 +448,11 @@ class SocialContentInstagram extends SocialContent {
+       'redirect_uri' => url($settings['redirect_uri'], array('query' => array(drupal_get_destination()), 'absolute' => TRUE)),
+       'code' => $code,
+     );
+-    $result = drupal_http_request($settings['api_url'] . '/oauth/access_token', array('method' => 'POST', 'data' => drupal_http_build_query($fields)));
++    $result = drupal_http_request($settings['api_url'] . '/oauth/access_token', array(
++      'method' => 'POST',
++      'headers' => array('Content-Type' => 'application/x-www-form-urlencoded'),
++      'data' => drupal_http_build_query($fields))
++    );
+     $data = json_decode($result->data);
+     if ($result->code != 200) {
+       drupal_set_message(t('Error: @error', array('@error' => $result->data)), 'error');

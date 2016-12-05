@@ -10,7 +10,8 @@
 function akdn_akaa_akmi_types_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'field_collection_item-field_press_kits-field_press_kit_file'
+  // Exported field_instance:
+  // 'field_collection_item-field_press_kits-field_press_kit_file'.
   $field_instances['field_collection_item-field_press_kits-field_press_kit_file'] = array(
     'bundle' => 'field_press_kits',
     'deleted' => 0,
@@ -83,7 +84,8 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_press_kits-field_press_kit_label'
+  // Exported field_instance:
+  // 'field_collection_item-field_press_kits-field_press_kit_label'.
   $field_instances['field_collection_item-field_press_kits-field_press_kit_label'] = array(
     'bundle' => 'field_press_kits',
     'default_value' => NULL,
@@ -119,55 +121,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-akmi_artists-field_text_related_instruments'
-  $field_instances['node-akmi_artists-field_text_related_instruments'] = array(
-    'bundle' => 'akmi_artists',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Instruments which do not have a node. will be displayed as Plain text.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 14,
-      ),
-      'scs' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_text_related_instruments',
-    'label' => 'Related Instruments',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 8,
-    ),
-  );
-
-  // Exported field_instance: 'node-akmi_cd_dvd-body'
+  // Exported field_instance: 'node-akmi_cd_dvd-body'.
   $field_instances['node-akmi_cd_dvd-body'] = array(
     'bundle' => 'akmi_cd_dvd',
     'default_value' => NULL,
@@ -218,7 +172,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-akmi_cd_dvd-field_artist_related_videos'
+  // Exported field_instance: 'node-akmi_cd_dvd-field_artist_related_videos'.
   $field_instances['node-akmi_cd_dvd-field_artist_related_videos'] = array(
     'bundle' => 'akmi_cd_dvd',
     'default_value' => NULL,
@@ -291,7 +245,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-akmi_cd_dvd-field_audio'
+  // Exported field_instance: 'node-akmi_cd_dvd-field_audio'.
   $field_instances['node-akmi_cd_dvd-field_audio'] = array(
     'bundle' => 'akmi_cd_dvd',
     'deleted' => 0,
@@ -363,7 +317,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-akmi_cd_dvd-field_cd_volume_number'
+  // Exported field_instance: 'node-akmi_cd_dvd-field_cd_volume_number'.
   $field_instances['node-akmi_cd_dvd-field_cd_volume_number'] = array(
     'bundle' => 'akmi_cd_dvd',
     'default_value' => NULL,
@@ -417,7 +371,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-akmi_cd_dvd-field_event_performance'
+  // Exported field_instance: 'node-akmi_cd_dvd-field_event_performance'.
   $field_instances['node-akmi_cd_dvd-field_event_performance'] = array(
     'bundle' => 'akmi_cd_dvd',
     'default_value' => array(),
@@ -467,7 +421,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-akmi_cd_dvd-field_feature_image'
+  // Exported field_instance: 'node-akmi_cd_dvd-field_feature_image'.
   $field_instances['node-akmi_cd_dvd-field_feature_image'] = array(
     'bundle' => 'akmi_cd_dvd',
     'deleted' => 0,
@@ -525,7 +479,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
           ),
           'value' => '',
         ),
-        'redirect' => FALSE,
+        'redirect' => 0,
         'retroactive_update' => 0,
       ),
       'filefield_paths_enabled' => 1,
@@ -580,6 +534,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
           'banner_item_standard_home_page' => 'banner_item_standard_home_page',
           'featured_content' => 'featured_content',
           'focus_area_listing' => 'focus_area_listing',
+          'gallery_thumbnail' => 'gallery_thumbnail',
           'inline_half_with' => 'inline_half_with',
           'photo_thumb' => 'photo_thumb',
           'press_centre_detail' => 'press_centre_detail',
@@ -596,7 +551,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-akmi_cd_dvd-field_feature_link'
+  // Exported field_instance: 'node-akmi_cd_dvd-field_feature_link'.
   $field_instances['node-akmi_cd_dvd-field_feature_link'] = array(
     'bundle' => 'akmi_cd_dvd',
     'default_value' => NULL,
@@ -658,7 +613,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-akmi_cd_dvd-field_related_artists'
+  // Exported field_instance: 'node-akmi_cd_dvd-field_related_artists'.
   $field_instances['node-akmi_cd_dvd-field_related_artists'] = array(
     'bundle' => 'akmi_cd_dvd',
     'default_value' => NULL,
@@ -708,7 +663,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-akmi_event-field_akmi_event_date'
+  // Exported field_instance: 'node-akmi_event-field_akmi_event_date'.
   $field_instances['node-akmi_event-field_akmi_event_date'] = array(
     'bundle' => 'akmi_event',
     'deleted' => 0,
@@ -771,7 +726,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-akmi_event-field_akmi_event_image'
+  // Exported field_instance: 'node-akmi_event-field_akmi_event_image'.
   $field_instances['node-akmi_event-field_akmi_event_image'] = array(
     'bundle' => 'akmi_event',
     'deleted' => 0,
@@ -887,7 +842,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-akmi_event-field_akmi_event_type'
+  // Exported field_instance: 'node-akmi_event-field_akmi_event_type'.
   $field_instances['node-akmi_event-field_akmi_event_type'] = array(
     'bundle' => 'akmi_event',
     'default_value' => NULL,
@@ -932,7 +887,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-akmi_event-field_akmi_event_venue'
+  // Exported field_instance: 'node-akmi_event-field_akmi_event_venue'.
   $field_instances['node-akmi_event-field_akmi_event_venue'] = array(
     'bundle' => 'akmi_event',
     'default_value' => NULL,
@@ -980,7 +935,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-akmi_event-field_akmi_featured_artists'
+  // Exported field_instance: 'node-akmi_event-field_akmi_featured_artists'.
   $field_instances['node-akmi_event-field_akmi_featured_artists'] = array(
     'bundle' => 'akmi_event',
     'default_value' => NULL,
@@ -1029,7 +984,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-akmi_event-field_akmi_more_information'
+  // Exported field_instance: 'node-akmi_event-field_akmi_more_information'.
   $field_instances['node-akmi_event-field_akmi_more_information'] = array(
     'bundle' => 'akmi_event',
     'default_value' => NULL,
@@ -1091,7 +1046,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-akmi_event-field_block_add_links'
+  // Exported field_instance: 'node-akmi_event-field_block_add_links'.
   $field_instances['node-akmi_event-field_block_add_links'] = array(
     'bundle' => 'akmi_event',
     'default_value' => NULL,
@@ -1153,7 +1108,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-akmi_event-field_event_akmi_year'
+  // Exported field_instance: 'node-akmi_event-field_event_akmi_year'.
   $field_instances['node-akmi_event-field_event_akmi_year'] = array(
     'bundle' => 'akmi_event',
     'default_value' => NULL,
@@ -1198,7 +1153,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-akmi_event-field_event_performance'
+  // Exported field_instance: 'node-akmi_event-field_event_performance'.
   $field_instances['node-akmi_event-field_event_performance'] = array(
     'bundle' => 'akmi_event',
     'default_value' => NULL,
@@ -1247,7 +1202,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-akmi_event-field_right_show_block'
+  // Exported field_instance: 'node-akmi_event-field_right_show_block'.
   $field_instances['node-akmi_event-field_right_show_block'] = array(
     'bundle' => 'akmi_event',
     'default_value' => array(
@@ -1298,7 +1253,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-akmi_event-field_specify_a_block_title'
+  // Exported field_instance: 'node-akmi_event-field_specify_a_block_title'.
   $field_instances['node-akmi_event-field_specify_a_block_title'] = array(
     'bundle' => 'akmi_event',
     'default_value' => NULL,
@@ -1346,7 +1301,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-akmi_instrument-body'
+  // Exported field_instance: 'node-akmi_instrument-body'.
   $field_instances['node-akmi_instrument-body'] = array(
     'bundle' => 'akmi_instrument',
     'default_value' => NULL,
@@ -1399,7 +1354,8 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-akmi_instrument-field_akmi_additional_images'
+  // Exported field_instance:
+  // 'node-akmi_instrument-field_akmi_additional_images'.
   $field_instances['node-akmi_instrument-field_akmi_additional_images'] = array(
     'bundle' => 'akmi_instrument',
     'deleted' => 0,
@@ -1514,7 +1470,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-akmi_instrument-field_image'
+  // Exported field_instance: 'node-akmi_instrument-field_image'.
   $field_instances['node-akmi_instrument-field_image'] = array(
     'bundle' => 'akmi_instrument',
     'deleted' => 0,
@@ -1572,7 +1528,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
           ),
           'value' => '',
         ),
-        'redirect' => FALSE,
+        'redirect' => 0,
         'retroactive_update' => 0,
       ),
       'filefield_paths_enabled' => 1,
@@ -1627,6 +1583,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
           'banner_item_standard_home_page' => 'banner_item_standard_home_page',
           'featured_content' => 'featured_content',
           'focus_area_listing' => 'focus_area_listing',
+          'gallery_thumbnail' => 'gallery_thumbnail',
           'inline_half_with' => 'inline_half_with',
           'photo_thumb' => 'photo_thumb',
           'press_centre_detail' => 'press_centre_detail',
@@ -1643,7 +1600,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-akmi_performance-body'
+  // Exported field_instance: 'node-akmi_performance-body'.
   $field_instances['node-akmi_performance-body'] = array(
     'bundle' => 'akmi_performance',
     'default_value' => NULL,
@@ -1696,7 +1653,8 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-akmi_performance-field_akmi_additional_images'
+  // Exported field_instance:
+  // 'node-akmi_performance-field_akmi_additional_images'.
   $field_instances['node-akmi_performance-field_akmi_additional_images'] = array(
     'bundle' => 'akmi_performance',
     'deleted' => 0,
@@ -1754,7 +1712,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
           ),
           'value' => '',
         ),
-        'redirect' => FALSE,
+        'redirect' => 0,
         'retroactive_update' => 0,
       ),
       'filefield_paths_enabled' => 1,
@@ -1808,6 +1766,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
           'banner_item_standard_home_page' => 'banner_item_standard_home_page',
           'banner_items_fall_back' => 'banner_items_fall_back',
           'featured_content' => 'featured_content',
+          'gallery_thumbnail' => 'gallery_thumbnail',
           'photo_thumb' => 'photo_thumb',
           'publication_listing_image' => 'publication_listing_image',
           'publications_list_image_style' => 'publications_list_image_style',
@@ -1822,7 +1781,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-akmi_performance-field_booking_link'
+  // Exported field_instance: 'node-akmi_performance-field_booking_link'.
   $field_instances['node-akmi_performance-field_booking_link'] = array(
     'bundle' => 'akmi_performance',
     'default_value' => NULL,
@@ -1884,7 +1843,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-akmi_performance-field_feature_image'
+  // Exported field_instance: 'node-akmi_performance-field_feature_image'.
   $field_instances['node-akmi_performance-field_feature_image'] = array(
     'bundle' => 'akmi_performance',
     'deleted' => 0,
@@ -1942,7 +1901,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
           ),
           'value' => '',
         ),
-        'redirect' => FALSE,
+        'redirect' => 0,
         'retroactive_update' => 0,
       ),
       'filefield_paths_enabled' => 1,
@@ -1995,6 +1954,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
           'banner_image' => 'banner_image',
           'banner_item_standard_home_page' => 'banner_item_standard_home_page',
           'featured_content' => 'featured_content',
+          'gallery_thumbnail' => 'gallery_thumbnail',
           'photo_thumb' => 'photo_thumb',
           'publication_listing_image' => 'publication_listing_image',
           'publications_list_image_style' => 'publications_list_image_style',
@@ -2009,7 +1969,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-akmi_performance-field_feature_link'
+  // Exported field_instance: 'node-akmi_performance-field_feature_link'.
   $field_instances['node-akmi_performance-field_feature_link'] = array(
     'bundle' => 'akmi_performance',
     'default_value' => NULL,
@@ -2071,7 +2031,8 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-akmi_performance-field_performance_add_videos'
+  // Exported field_instance:
+  // 'node-akmi_performance-field_performance_add_videos'.
   $field_instances['node-akmi_performance-field_performance_add_videos'] = array(
     'bundle' => 'akmi_performance',
     'deleted' => 0,
@@ -2179,7 +2140,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-akmi_performance-field_performance_year'
+  // Exported field_instance: 'node-akmi_performance-field_performance_year'.
   $field_instances['node-akmi_performance-field_performance_year'] = array(
     'bundle' => 'akmi_performance',
     'default_value' => NULL,
@@ -2231,7 +2192,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-akmi_performance-field_related_artists'
+  // Exported field_instance: 'node-akmi_performance-field_related_artists'.
   $field_instances['node-akmi_performance-field_related_artists'] = array(
     'bundle' => 'akmi_performance',
     'default_value' => NULL,
@@ -2281,7 +2242,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-akmi_performance-field_right_show_block'
+  // Exported field_instance: 'node-akmi_performance-field_right_show_block'.
   $field_instances['node-akmi_performance-field_right_show_block'] = array(
     'bundle' => 'akmi_performance',
     'default_value' => array(
@@ -2332,7 +2293,8 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-akmi_performance-field_specify_a_block_title'
+  // Exported field_instance:
+  // 'node-akmi_performance-field_specify_a_block_title'.
   $field_instances['node-akmi_performance-field_specify_a_block_title'] = array(
     'bundle' => 'akmi_performance',
     'default_value' => NULL,
@@ -2380,7 +2342,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-architecture_project-body'
+  // Exported field_instance: 'node-architecture_project-body'.
   $field_instances['node-architecture_project-body'] = array(
     'bundle' => 'architecture_project',
     'default_value' => NULL,
@@ -2402,9 +2364,11 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
           'more_text' => 'Read more',
           'summary_handler' => 'full',
           'trim_length' => 50,
+          'trim_link' => FALSE,
           'trim_options' => array(
             'text' => 0,
           ),
+          'trim_preserve_tags' => '',
           'trim_suffix' => '...',
           'trim_type' => 'words',
         ),
@@ -2419,9 +2383,11 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
           'more_text' => 'Read more',
           'summary_handler' => 'full',
           'trim_length' => 50,
+          'trim_link' => FALSE,
           'trim_options' => array(
             'text' => 0,
           ),
+          'trim_preserve_tags' => '',
           'trim_suffix' => '...',
           'trim_type' => 'words',
         ),
@@ -2459,7 +2425,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-architecture_project-field_arch_country'
+  // Exported field_instance: 'node-architecture_project-field_arch_country'.
   $field_instances['node-architecture_project-field_arch_country'] = array(
     'bundle' => 'architecture_project',
     'default_value' => NULL,
@@ -2513,7 +2479,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-architecture_project-field_architect'
+  // Exported field_instance: 'node-architecture_project-field_architect'.
   $field_instances['node-architecture_project-field_architect'] = array(
     'bundle' => 'architecture_project',
     'default_value' => NULL,
@@ -2567,7 +2533,8 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-architecture_project-field_awards_cycle_links'
+  // Exported field_instance:
+  // 'node-architecture_project-field_awards_cycle_links'.
   $field_instances['node-architecture_project-field_awards_cycle_links'] = array(
     'bundle' => 'architecture_project',
     'default_value' => NULL,
@@ -2629,7 +2596,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-architecture_project-field_building_type'
+  // Exported field_instance: 'node-architecture_project-field_building_type'.
   $field_instances['node-architecture_project-field_building_type'] = array(
     'bundle' => 'architecture_project',
     'default_value' => NULL,
@@ -2683,7 +2650,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-architecture_project-field_caption'
+  // Exported field_instance: 'node-architecture_project-field_caption'.
   $field_instances['node-architecture_project-field_caption'] = array(
     'bundle' => 'architecture_project',
     'default_value' => NULL,
@@ -2737,7 +2704,8 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-architecture_project-field_ceremony_location'
+  // Exported field_instance:
+  // 'node-architecture_project-field_ceremony_location'.
   $field_instances['node-architecture_project-field_ceremony_location'] = array(
     'bundle' => 'architecture_project',
     'default_value' => NULL,
@@ -2791,7 +2759,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-architecture_project-field_city'
+  // Exported field_instance: 'node-architecture_project-field_city'.
   $field_instances['node-architecture_project-field_city'] = array(
     'bundle' => 'architecture_project',
     'default_value' => NULL,
@@ -2845,7 +2813,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-architecture_project-field_client'
+  // Exported field_instance: 'node-architecture_project-field_client'.
   $field_instances['node-architecture_project-field_client'] = array(
     'bundle' => 'architecture_project',
     'default_value' => NULL,
@@ -2899,7 +2867,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-architecture_project-field_completed_date'
+  // Exported field_instance: 'node-architecture_project-field_completed_date'.
   $field_instances['node-architecture_project-field_completed_date'] = array(
     'bundle' => 'architecture_project',
     'default_value' => NULL,
@@ -2953,7 +2921,8 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-architecture_project-field_completed_date_timestamp'
+  // Exported field_instance:
+  // 'node-architecture_project-field_completed_date_timestamp'.
   $field_instances['node-architecture_project-field_completed_date_timestamp'] = array(
     'bundle' => 'architecture_project',
     'deleted' => 0,
@@ -3022,7 +2991,8 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-architecture_project-field_create_featured_content'
+  // Exported field_instance:
+  // 'node-architecture_project-field_create_featured_content'.
   $field_instances['node-architecture_project-field_create_featured_content'] = array(
     'bundle' => 'architecture_project',
     'default_value' => array(
@@ -3079,7 +3049,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-architecture_project-field_cycle_year'
+  // Exported field_instance: 'node-architecture_project-field_cycle_year'.
   $field_instances['node-architecture_project-field_cycle_year'] = array(
     'bundle' => 'architecture_project',
     'default_value' => NULL,
@@ -3130,7 +3100,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-architecture_project-field_design_date'
+  // Exported field_instance: 'node-architecture_project-field_design_date'.
   $field_instances['node-architecture_project-field_design_date'] = array(
     'bundle' => 'architecture_project',
     'default_value' => NULL,
@@ -3184,7 +3154,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-architecture_project-field_feature_image'
+  // Exported field_instance: 'node-architecture_project-field_feature_image'.
   $field_instances['node-architecture_project-field_feature_image'] = array(
     'bundle' => 'architecture_project',
     'deleted' => 0,
@@ -3303,6 +3273,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
           'banner_item_standard_home_page' => 'banner_item_standard_home_page',
           'featured_content' => 'featured_content',
           'focus_area_listing' => 'focus_area_listing',
+          'gallery_thumbnail' => 'gallery_thumbnail',
           'mini_feature' => 'mini_feature',
           'photo_thumb' => 'photo_thumb',
           'press_centre_detail' => 'press_centre_detail',
@@ -3320,7 +3291,8 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-architecture_project-field_geocode_lat_long'
+  // Exported field_instance:
+  // 'node-architecture_project-field_geocode_lat_long'.
   $field_instances['node-architecture_project-field_geocode_lat_long'] = array(
     'bundle' => 'architecture_project',
     'default_value' => NULL,
@@ -3384,7 +3356,8 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-architecture_project-field_pages_to_exclude'
+  // Exported field_instance:
+  // 'node-architecture_project-field_pages_to_exclude'.
   $field_instances['node-architecture_project-field_pages_to_exclude'] = array(
     'bundle' => 'architecture_project',
     'default_value' => NULL,
@@ -3439,7 +3412,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-architecture_project-field_planner'
+  // Exported field_instance: 'node-architecture_project-field_planner'.
   $field_instances['node-architecture_project-field_planner'] = array(
     'bundle' => 'architecture_project',
     'default_value' => NULL,
@@ -3493,7 +3466,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-architecture_project-field_podcast_video'
+  // Exported field_instance: 'node-architecture_project-field_podcast_video'.
   $field_instances['node-architecture_project-field_podcast_video'] = array(
     'bundle' => 'architecture_project',
     'deleted' => 0,
@@ -3584,7 +3557,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-architecture_project-field_press_kit'
+  // Exported field_instance: 'node-architecture_project-field_press_kit'.
   $field_instances['node-architecture_project-field_press_kit'] = array(
     'bundle' => 'architecture_project',
     'deleted' => 0,
@@ -3696,7 +3669,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-architecture_project-field_press_kits'
+  // Exported field_instance: 'node-architecture_project-field_press_kits'.
   $field_instances['node-architecture_project-field_press_kits'] = array(
     'bundle' => 'architecture_project',
     'default_value' => NULL,
@@ -3753,7 +3726,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-architecture_project-field_project_image'
+  // Exported field_instance: 'node-architecture_project-field_project_image'.
   $field_instances['node-architecture_project-field_project_image'] = array(
     'bundle' => 'architecture_project',
     'deleted' => 0,
@@ -3880,6 +3853,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
           'banner_item_standard_home_page' => 'banner_item_standard_home_page',
           'featured_content' => 'featured_content',
           'focus_area_listing' => 'focus_area_listing',
+          'gallery_thumbnail' => 'gallery_thumbnail',
           'inline_half_with' => 'inline_half_with',
           'mini_feature' => 'mini_feature',
           'photo_thumb' => 'photo_thumb',
@@ -3898,7 +3872,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-architecture_project-field_reference_cycle'
+  // Exported field_instance: 'node-architecture_project-field_reference_cycle'.
   $field_instances['node-architecture_project-field_reference_cycle'] = array(
     'bundle' => 'architecture_project',
     'default_value' => NULL,
@@ -3947,7 +3921,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-architecture_project-field_region'
+  // Exported field_instance: 'node-architecture_project-field_region'.
   $field_instances['node-architecture_project-field_region'] = array(
     'bundle' => 'architecture_project',
     'default_value' => NULL,
@@ -4001,7 +3975,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-architecture_project-field_short_title'
+  // Exported field_instance: 'node-architecture_project-field_short_title'.
   $field_instances['node-architecture_project-field_short_title'] = array(
     'bundle' => 'architecture_project',
     'default_value' => NULL,
@@ -4060,7 +4034,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-architecture_project-field_size'
+  // Exported field_instance: 'node-architecture_project-field_size'.
   $field_instances['node-architecture_project-field_size'] = array(
     'bundle' => 'architecture_project',
     'default_value' => NULL,
@@ -4114,7 +4088,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-architecture_project-field_tags'
+  // Exported field_instance: 'node-architecture_project-field_tags'.
   $field_instances['node-architecture_project-field_tags'] = array(
     'bundle' => 'architecture_project',
     'default_value' => NULL,
@@ -4168,7 +4142,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-architecture_project-field_winner'
+  // Exported field_instance: 'node-architecture_project-field_winner'.
   $field_instances['node-architecture_project-field_winner'] = array(
     'bundle' => 'architecture_project',
     'default_value' => array(
@@ -4225,7 +4199,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-architecture_project-field_zipped_images'
+  // Exported field_instance: 'node-architecture_project-field_zipped_images'.
   $field_instances['node-architecture_project-field_zipped_images'] = array(
     'bundle' => 'architecture_project',
     'deleted' => 0,
@@ -4337,7 +4311,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-architecture_project-title_field'
+  // Exported field_instance: 'node-architecture_project-title_field'.
   $field_instances['node-architecture_project-title_field'] = array(
     'bundle' => 'architecture_project',
     'default_value' => NULL,
@@ -4395,7 +4369,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-award_cycle-field_about_page'
+  // Exported field_instance: 'node-award_cycle-field_about_page'.
   $field_instances['node-award_cycle-field_about_page'] = array(
     'bundle' => 'award_cycle',
     'default_value' => NULL,
@@ -4444,7 +4418,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-award_cycle-field_award_ceremony'
+  // Exported field_instance: 'node-award_cycle-field_award_ceremony'.
   $field_instances['node-award_cycle-field_award_ceremony'] = array(
     'bundle' => 'award_cycle',
     'default_value' => NULL,
@@ -4493,7 +4467,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-award_cycle-field_award_recipients'
+  // Exported field_instance: 'node-award_cycle-field_award_recipients'.
   $field_instances['node-award_cycle-field_award_recipients'] = array(
     'bundle' => 'award_cycle',
     'default_value' => array(
@@ -4544,7 +4518,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-award_cycle-field_award_year'
+  // Exported field_instance: 'node-award_cycle-field_award_year'.
   $field_instances['node-award_cycle-field_award_year'] = array(
     'bundle' => 'award_cycle',
     'deleted' => 0,
@@ -4607,7 +4581,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-award_cycle-field_awards_cycle_links'
+  // Exported field_instance: 'node-award_cycle-field_awards_cycle_links'.
   $field_instances['node-award_cycle-field_awards_cycle_links'] = array(
     'bundle' => 'award_cycle',
     'default_value' => NULL,
@@ -4669,7 +4643,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-award_cycle-field_calendar'
+  // Exported field_instance: 'node-award_cycle-field_calendar'.
   $field_instances['node-award_cycle-field_calendar'] = array(
     'bundle' => 'award_cycle',
     'default_value' => NULL,
@@ -4718,7 +4692,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-award_cycle-field_chairman_s_award'
+  // Exported field_instance: 'node-award_cycle-field_chairman_s_award'.
   $field_instances['node-award_cycle-field_chairman_s_award'] = array(
     'bundle' => 'award_cycle',
     'default_value' => NULL,
@@ -4767,7 +4741,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-award_cycle-field_cycle_images'
+  // Exported field_instance: 'node-award_cycle-field_cycle_images'.
   $field_instances['node-award_cycle-field_cycle_images'] = array(
     'bundle' => 'award_cycle',
     'deleted' => 0,
@@ -4882,6 +4856,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
           'area_of_activities_two_activies' => 'area_of_activities_two_activies',
           'article_listing_thumbnail' => 'article_listing_thumbnail',
           'banner_item_standard_home_page' => 'banner_item_standard_home_page',
+          'gallery_thumbnail' => 'gallery_thumbnail',
           'inline_half_with' => 'inline_half_with',
           'photo_thumb' => 'photo_thumb',
           'press_centre_detail' => 'press_centre_detail',
@@ -4898,7 +4873,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-award_cycle-field_cycle_year'
+  // Exported field_instance: 'node-award_cycle-field_cycle_year'.
   $field_instances['node-award_cycle-field_cycle_year'] = array(
     'bundle' => 'award_cycle',
     'default_value' => NULL,
@@ -4943,7 +4918,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-award_cycle-field_eligibility_criteria'
+  // Exported field_instance: 'node-award_cycle-field_eligibility_criteria'.
   $field_instances['node-award_cycle-field_eligibility_criteria'] = array(
     'bundle' => 'award_cycle',
     'default_value' => NULL,
@@ -4992,7 +4967,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-award_cycle-field_featured_content_area'
+  // Exported field_instance: 'node-award_cycle-field_featured_content_area'.
   $field_instances['node-award_cycle-field_featured_content_area'] = array(
     'bundle' => 'award_cycle',
     'default_value' => array(
@@ -5041,7 +5016,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-award_cycle-field_featured_content_nodes'
+  // Exported field_instance: 'node-award_cycle-field_featured_content_nodes'.
   $field_instances['node-award_cycle-field_featured_content_nodes'] = array(
     'bundle' => 'award_cycle',
     'default_value' => NULL,
@@ -5091,7 +5066,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-award_cycle-field_master_jury'
+  // Exported field_instance: 'node-award_cycle-field_master_jury'.
   $field_instances['node-award_cycle-field_master_jury'] = array(
     'bundle' => 'award_cycle',
     'default_value' => NULL,
@@ -5140,7 +5115,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-award_cycle-field_news'
+  // Exported field_instance: 'node-award_cycle-field_news'.
   $field_instances['node-award_cycle-field_news'] = array(
     'bundle' => 'award_cycle',
     'default_value' => NULL,
@@ -5189,7 +5164,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-award_cycle-field_press_materials'
+  // Exported field_instance: 'node-award_cycle-field_press_materials'.
   $field_instances['node-award_cycle-field_press_materials'] = array(
     'bundle' => 'award_cycle',
     'default_value' => NULL,
@@ -5238,7 +5213,8 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-award_cycle-field_review_selection_procedure'
+  // Exported field_instance:
+  // 'node-award_cycle-field_review_selection_procedure'.
   $field_instances['node-award_cycle-field_review_selection_procedure'] = array(
     'bundle' => 'award_cycle',
     'default_value' => NULL,
@@ -5287,7 +5263,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-award_cycle-field_short_title'
+  // Exported field_instance: 'node-award_cycle-field_short_title'.
   $field_instances['node-award_cycle-field_short_title'] = array(
     'bundle' => 'award_cycle',
     'default_value' => NULL,
@@ -5335,7 +5311,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-award_cycle-field_show_links_checkbox'
+  // Exported field_instance: 'node-award_cycle-field_show_links_checkbox'.
   $field_instances['node-award_cycle-field_show_links_checkbox'] = array(
     'bundle' => 'award_cycle',
     'default_value' => array(
@@ -5386,7 +5362,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-award_cycle-field_show_links_cycle'
+  // Exported field_instance: 'node-award_cycle-field_show_links_cycle'.
   $field_instances['node-award_cycle-field_show_links_cycle'] = array(
     'bundle' => 'award_cycle',
     'default_value' => NULL,
@@ -5448,7 +5424,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-award_cycle-field_steering_committee'
+  // Exported field_instance: 'node-award_cycle-field_steering_committee'.
   $field_instances['node-award_cycle-field_steering_committee'] = array(
     'bundle' => 'award_cycle',
     'default_value' => NULL,
@@ -5497,7 +5473,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-award_cycle-field_submission_procedure'
+  // Exported field_instance: 'node-award_cycle-field_submission_procedure'.
   $field_instances['node-award_cycle-field_submission_procedure'] = array(
     'bundle' => 'award_cycle',
     'default_value' => NULL,
@@ -5546,7 +5522,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-award_cycle-title_field'
+  // Exported field_instance: 'node-award_cycle-title_field'.
   $field_instances['node-award_cycle-title_field'] = array(
     'bundle' => 'award_cycle',
     'default_value' => NULL,
@@ -5598,7 +5574,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-breaking_news-body'
+  // Exported field_instance: 'node-breaking_news-body'.
   $field_instances['node-breaking_news-body'] = array(
     'bundle' => 'breaking_news',
     'default_value' => NULL,
@@ -5648,7 +5624,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-breaking_news-field_breaking_news_image'
+  // Exported field_instance: 'node-breaking_news-field_breaking_news_image'.
   $field_instances['node-breaking_news-field_breaking_news_image'] = array(
     'bundle' => 'breaking_news',
     'default_value' => array(),
@@ -5707,7 +5683,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
           ),
           'value' => '',
         ),
-        'redirect' => FALSE,
+        'redirect' => 0,
         'retroactive_update' => 0,
       ),
       'filefield_paths_enabled' => 1,
@@ -5761,6 +5737,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
           'article_listing_thumbnail' => 'article_listing_thumbnail',
           'banner_item_standard_home_page' => 'banner_item_standard_home_page',
           'featured_content' => 'featured_content',
+          'gallery_thumbnail' => 'gallery_thumbnail',
           'inline_half_with' => 'inline_half_with',
           'photo_thumb' => 'photo_thumb',
           'press_centre_detail' => 'press_centre_detail',
@@ -5777,7 +5754,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-breaking_news-field_facts_links'
+  // Exported field_instance: 'node-breaking_news-field_facts_links'.
   $field_instances['node-breaking_news-field_facts_links'] = array(
     'bundle' => 'breaking_news',
     'default_value' => NULL,
@@ -5839,7 +5816,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-breaking_news-field_facts_show_on_homepage'
+  // Exported field_instance: 'node-breaking_news-field_facts_show_on_homepage'.
   $field_instances['node-breaking_news-field_facts_show_on_homepage'] = array(
     'bundle' => 'breaking_news',
     'default_value' => array(
@@ -5890,7 +5867,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-breaking_news-field_news_publication_date'
+  // Exported field_instance: 'node-breaking_news-field_news_publication_date'.
   $field_instances['node-breaking_news-field_news_publication_date'] = array(
     'bundle' => 'breaking_news',
     'deleted' => 0,
@@ -5953,7 +5930,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-breaking_news-field_news_see_also'
+  // Exported field_instance: 'node-breaking_news-field_news_see_also'.
   $field_instances['node-breaking_news-field_news_see_also'] = array(
     'bundle' => 'breaking_news',
     'default_value' => NULL,
@@ -6003,7 +5980,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-custom_content-body'
+  // Exported field_instance: 'node-custom_content-body'.
   $field_instances['node-custom_content-body'] = array(
     'bundle' => 'custom_content',
     'default_value' => NULL,
@@ -6054,7 +6031,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-custom_content-field_agency_logo'
+  // Exported field_instance: 'node-custom_content-field_agency_logo'.
   $field_instances['node-custom_content-field_agency_logo'] = array(
     'bundle' => 'custom_content',
     'deleted' => 0,
@@ -6166,6 +6143,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
           'article_listing_thumbnail' => 'article_listing_thumbnail',
           'banner_item_standard_home_page' => 'banner_item_standard_home_page',
           'featured_content' => 'featured_content',
+          'gallery_thumbnail' => 'gallery_thumbnail',
           'inline_half_with' => 'inline_half_with',
           'photo_thumb' => 'photo_thumb',
           'press_centre_detail' => 'press_centre_detail',
@@ -6183,7 +6161,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-custom_content-field_agency_term'
+  // Exported field_instance: 'node-custom_content-field_agency_term'.
   $field_instances['node-custom_content-field_agency_term'] = array(
     'bundle' => 'custom_content',
     'default_value' => NULL,
@@ -6228,7 +6206,8 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-custom_content-field_basic_page_accordian_style'
+  // Exported field_instance:
+  // 'node-custom_content-field_basic_page_accordian_style'.
   $field_instances['node-custom_content-field_basic_page_accordian_style'] = array(
     'bundle' => 'custom_content',
     'default_value' => NULL,
@@ -6279,7 +6258,8 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-custom_content-field_basic_page_choose_layout'
+  // Exported field_instance:
+  // 'node-custom_content-field_basic_page_choose_layout'.
   $field_instances['node-custom_content-field_basic_page_choose_layout'] = array(
     'bundle' => 'custom_content',
     'default_value' => NULL,
@@ -6324,7 +6304,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-custom_content-field_block_add_links'
+  // Exported field_instance: 'node-custom_content-field_block_add_links'.
   $field_instances['node-custom_content-field_block_add_links'] = array(
     'bundle' => 'custom_content',
     'default_value' => NULL,
@@ -6386,7 +6366,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-custom_content-field_custom_breadcrumbs'
+  // Exported field_instance: 'node-custom_content-field_custom_breadcrumbs'.
   $field_instances['node-custom_content-field_custom_breadcrumbs'] = array(
     'bundle' => 'custom_content',
     'default_value' => NULL,
@@ -6448,7 +6428,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-custom_content-field_geography_term'
+  // Exported field_instance: 'node-custom_content-field_geography_term'.
   $field_instances['node-custom_content-field_geography_term'] = array(
     'bundle' => 'custom_content',
     'default_value' => NULL,
@@ -6493,7 +6473,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-custom_content-field_newsletter_image'
+  // Exported field_instance: 'node-custom_content-field_newsletter_image'.
   $field_instances['node-custom_content-field_newsletter_image'] = array(
     'bundle' => 'custom_content',
     'deleted' => 0,
@@ -6612,7 +6592,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-custom_content-field_newsletter_summary'
+  // Exported field_instance: 'node-custom_content-field_newsletter_summary'.
   $field_instances['node-custom_content-field_newsletter_summary'] = array(
     'bundle' => 'custom_content',
     'default_value' => NULL,
@@ -6647,7 +6627,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -6661,14 +6641,111 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-custom_content-field_right_show_block'
-  $field_instances['node-custom_content-field_right_show_block'] = array(
+  // Exported field_instance: 'node-custom_content-field_rchb_show_block'.
+  $field_instances['node-custom_content-field_rchb_show_block'] = array(
     'bundle' => 'custom_content',
     'default_value' => array(
       0 => array(
         'value' => 0,
       ),
     ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 16,
+      ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_rchb_show_block',
+    'label' => 'Show Block',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 0,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 25,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-custom_content-field_reference_custom_header_bl'.
+  $field_instances['node-custom_content-field_reference_custom_header_bl'] = array(
+    'bundle' => 'custom_content',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'node_reference',
+        'settings' => array(),
+        'type' => 'node_reference_default',
+        'weight' => 14,
+      ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_reference_custom_header_bl',
+    'label' => 'Reference Custom Header Block',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'node_reference',
+      'settings' => array(
+        'autocomplete_match' => 'contains',
+        'autocomplete_path' => 'node_reference/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'node_reference_autocomplete',
+      'weight' => 24,
+    ),
+  );
+
+  // Exported field_instance: 'node-custom_content-field_right_show_block'.
+  $field_instances['node-custom_content-field_right_show_block'] = array(
+    'bundle' => 'custom_content',
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -6707,12 +6784,12 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
       'settings' => array(
         'display_label' => 0,
       ),
-      'type' => 'options_onoff',
+      'type' => 'options_buttons',
       'weight' => 4,
     ),
   );
 
-  // Exported field_instance: 'node-custom_content-field_short_title'
+  // Exported field_instance: 'node-custom_content-field_short_title'.
   $field_instances['node-custom_content-field_short_title'] = array(
     'bundle' => 'custom_content',
     'default_value' => NULL,
@@ -6765,7 +6842,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-custom_content-field_specify_a_block_title'
+  // Exported field_instance: 'node-custom_content-field_specify_a_block_title'.
   $field_instances['node-custom_content-field_specify_a_block_title'] = array(
     'bundle' => 'custom_content',
     'default_value' => NULL,
@@ -6813,7 +6890,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-custom_header_block-body'
+  // Exported field_instance: 'node-custom_header_block-body'.
   $field_instances['node-custom_header_block-body'] = array(
     'bundle' => 'custom_header_block',
     'default_value' => NULL,
@@ -6871,7 +6948,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-custom_header_block-field_add_short_video'
+  // Exported field_instance: 'node-custom_header_block-field_add_short_video'.
   $field_instances['node-custom_header_block-field_add_short_video'] = array(
     'bundle' => 'custom_header_block',
     'deleted' => 0,
@@ -6986,7 +7063,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-custom_header_block-field_brightcove'
+  // Exported field_instance: 'node-custom_header_block-field_brightcove'.
   $field_instances['node-custom_header_block-field_brightcove'] = array(
     'bundle' => 'custom_header_block',
     'deleted' => 0,
@@ -7040,7 +7117,8 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-custom_header_block-field_header_file_url_title'
+  // Exported field_instance:
+  // 'node-custom_header_block-field_header_file_url_title'.
   $field_instances['node-custom_header_block-field_header_file_url_title'] = array(
     'bundle' => 'custom_header_block',
     'default_value' => NULL,
@@ -7095,7 +7173,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-custom_header_block-field_header_image'
+  // Exported field_instance: 'node-custom_header_block-field_header_image'.
   $field_instances['node-custom_header_block-field_header_image'] = array(
     'bundle' => 'custom_header_block',
     'deleted' => 0,
@@ -7163,7 +7241,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
           ),
           'value' => '',
         ),
-        'redirect' => FALSE,
+        'redirect' => 0,
         'retroactive_update' => 0,
       ),
       'filefield_paths_enabled' => 1,
@@ -7217,6 +7295,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
           'banner_item_standard_home_page' => 'banner_item_standard_home_page',
           'banner_items_fall_back' => 'banner_items_fall_back',
           'featured_content' => 'featured_content',
+          'gallery_thumbnail' => 'gallery_thumbnail',
           'photo_thumb' => 'photo_thumb',
           'publication_listing_image' => 'publication_listing_image',
           'publications_list_image_style' => 'publications_list_image_style',
@@ -7231,7 +7310,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-custom_header_block-field_header_link'
+  // Exported field_instance: 'node-custom_header_block-field_header_link'.
   $field_instances['node-custom_header_block-field_header_link'] = array(
     'bundle' => 'custom_header_block',
     'default_value' => NULL,
@@ -7300,7 +7379,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-custom_header_block-field_header_logo'
+  // Exported field_instance: 'node-custom_header_block-field_header_logo'.
   $field_instances['node-custom_header_block-field_header_logo'] = array(
     'bundle' => 'custom_header_block',
     'deleted' => 0,
@@ -7421,7 +7500,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-custom_header_block-field_header_pdf_file'
+  // Exported field_instance: 'node-custom_header_block-field_header_pdf_file'.
   $field_instances['node-custom_header_block-field_header_pdf_file'] = array(
     'bundle' => 'custom_header_block',
     'deleted' => 0,
@@ -7521,7 +7600,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-custom_header_block-field_header_title'
+  // Exported field_instance: 'node-custom_header_block-field_header_title'.
   $field_instances['node-custom_header_block-field_header_title'] = array(
     'bundle' => 'custom_header_block',
     'default_value' => NULL,
@@ -7576,7 +7655,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-custom_header_block-field_header_type'
+  // Exported field_instance: 'node-custom_header_block-field_header_type'.
   $field_instances['node-custom_header_block-field_header_type'] = array(
     'bundle' => 'custom_header_block',
     'default_value' => NULL,
@@ -7628,7 +7707,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-custom_header_block-field_pages_to_exclude'
+  // Exported field_instance: 'node-custom_header_block-field_pages_to_exclude'.
   $field_instances['node-custom_header_block-field_pages_to_exclude'] = array(
     'bundle' => 'custom_header_block',
     'default_value' => NULL,
@@ -7684,7 +7763,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-custom_header_block-field_short_title'
+  // Exported field_instance: 'node-custom_header_block-field_short_title'.
   $field_instances['node-custom_header_block-field_short_title'] = array(
     'bundle' => 'custom_header_block',
     'default_value' => NULL,
@@ -7739,7 +7818,8 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-custom_header_block-field_short_video_image'
+  // Exported field_instance:
+  // 'node-custom_header_block-field_short_video_image'.
   $field_instances['node-custom_header_block-field_short_video_image'] = array(
     'bundle' => 'custom_header_block',
     'deleted' => 0,
@@ -7864,7 +7944,8 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-custom_header_block-field_short_video_llink'
+  // Exported field_instance:
+  // 'node-custom_header_block-field_short_video_llink'.
   $field_instances['node-custom_header_block-field_short_video_llink'] = array(
     'bundle' => 'custom_header_block',
     'default_value' => NULL,
@@ -7933,7 +8014,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-custom_header_block-field_show_block'
+  // Exported field_instance: 'node-custom_header_block-field_show_block'.
   $field_instances['node-custom_header_block-field_show_block'] = array(
     'bundle' => 'custom_header_block',
     'default_value' => array(
@@ -7991,7 +8072,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-custom_header_block-field_tags'
+  // Exported field_instance: 'node-custom_header_block-field_tags'.
   $field_instances['node-custom_header_block-field_tags'] = array(
     'bundle' => 'custom_header_block',
     'default_value' => NULL,
@@ -8046,7 +8127,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-fact_sheet-field_upload_factsheet'
+  // Exported field_instance: 'node-fact_sheet-field_upload_factsheet'.
   $field_instances['node-fact_sheet-field_upload_factsheet'] = array(
     'bundle' => 'fact_sheet',
     'deleted' => 0,
@@ -8139,7 +8220,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-facts_block-body'
+  // Exported field_instance: 'node-facts_block-body'.
   $field_instances['node-facts_block-body'] = array(
     'bundle' => 'facts_block',
     'default_value' => NULL,
@@ -8147,6 +8228,13 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'press_centre_rss_feed' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
@@ -8190,7 +8278,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-facts_block-field_agency'
+  // Exported field_instance: 'node-facts_block-field_agency'.
   $field_instances['node-facts_block-field_agency'] = array(
     'bundle' => 'facts_block',
     'default_value' => NULL,
@@ -8198,6 +8286,13 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 3,
+      ),
+      'press_centre_rss_feed' => array(
         'label' => 'above',
         'module' => 'taxonomy',
         'settings' => array(),
@@ -8235,7 +8330,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-facts_block-field_country'
+  // Exported field_instance: 'node-facts_block-field_country'.
   $field_instances['node-facts_block-field_country'] = array(
     'bundle' => 'facts_block',
     'default_value' => NULL,
@@ -8243,6 +8338,13 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 4,
+      ),
+      'press_centre_rss_feed' => array(
         'label' => 'above',
         'module' => 'taxonomy',
         'settings' => array(),
@@ -8280,13 +8382,23 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-facts_block-field_facts_icon'
+  // Exported field_instance: 'node-facts_block-field_facts_icon'.
   $field_instances['node-facts_block-field_facts_icon'] = array(
     'bundle' => 'facts_block',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 8,
+      ),
+      'press_centre_rss_feed' => array(
         'label' => 'above',
         'module' => 'image',
         'settings' => array(
@@ -8392,6 +8504,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
           'article_listing_thumbnail' => 'article_listing_thumbnail',
           'banner_item_standard_home_page' => 'banner_item_standard_home_page',
           'featured_content' => 'featured_content',
+          'gallery_thumbnail' => 'gallery_thumbnail',
           'inline_half_with' => 'inline_half_with',
           'photo_thumb' => 'photo_thumb',
           'press_centre_detail' => 'press_centre_detail',
@@ -8408,7 +8521,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-facts_block-field_facts_links'
+  // Exported field_instance: 'node-facts_block-field_facts_links'.
   $field_instances['node-facts_block-field_facts_links'] = array(
     'bundle' => 'facts_block',
     'default_value' => NULL,
@@ -8416,6 +8529,13 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 7,
+      ),
+      'press_centre_rss_feed' => array(
         'label' => 'above',
         'module' => 'link',
         'settings' => array(),
@@ -8470,7 +8590,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-facts_block-field_facts_number'
+  // Exported field_instance: 'node-facts_block-field_facts_number'.
   $field_instances['node-facts_block-field_facts_number'] = array(
     'bundle' => 'facts_block',
     'default_value' => NULL,
@@ -8478,6 +8598,13 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'press_centre_rss_feed' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
@@ -8518,7 +8645,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-facts_block-field_facts_show_on_homepage'
+  // Exported field_instance: 'node-facts_block-field_facts_show_on_homepage'.
   $field_instances['node-facts_block-field_facts_show_on_homepage'] = array(
     'bundle' => 'facts_block',
     'default_value' => array(
@@ -8530,6 +8657,13 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 6,
+      ),
+      'press_centre_rss_feed' => array(
         'label' => 'above',
         'module' => 'list',
         'settings' => array(),
@@ -8569,7 +8703,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-facts_block-field_focus_area'
+  // Exported field_instance: 'node-facts_block-field_focus_area'.
   $field_instances['node-facts_block-field_focus_area'] = array(
     'bundle' => 'facts_block',
     'default_value' => NULL,
@@ -8577,6 +8711,13 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 5,
+      ),
+      'press_centre_rss_feed' => array(
         'label' => 'above',
         'module' => 'taxonomy',
         'settings' => array(),
@@ -8614,7 +8755,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-facts_block-field_tags'
+  // Exported field_instance: 'node-facts_block-field_tags'.
   $field_instances['node-facts_block-field_tags'] = array(
     'bundle' => 'facts_block',
     'default_value' => NULL,
@@ -8622,6 +8763,13 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 9,
+      ),
+      'press_centre_rss_feed' => array(
         'label' => 'above',
         'module' => 'taxonomy',
         'settings' => array(),
@@ -8662,7 +8810,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-featured_content-field_agency'
+  // Exported field_instance: 'node-featured_content-field_agency'.
   $field_instances['node-featured_content-field_agency'] = array(
     'bundle' => 'featured_content',
     'default_value' => NULL,
@@ -8707,7 +8855,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-featured_content-field_akmi_activity'
+  // Exported field_instance: 'node-featured_content-field_akmi_activity'.
   $field_instances['node-featured_content-field_akmi_activity'] = array(
     'bundle' => 'featured_content',
     'default_value' => NULL,
@@ -8752,7 +8900,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-featured_content-field_caption'
+  // Exported field_instance: 'node-featured_content-field_caption'.
   $field_instances['node-featured_content-field_caption'] = array(
     'bundle' => 'featured_content',
     'default_value' => NULL,
@@ -8800,7 +8948,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-featured_content-field_country'
+  // Exported field_instance: 'node-featured_content-field_country'.
   $field_instances['node-featured_content-field_country'] = array(
     'bundle' => 'featured_content',
     'default_value' => NULL,
@@ -8845,7 +8993,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-featured_content-field_feature_image'
+  // Exported field_instance: 'node-featured_content-field_feature_image'.
   $field_instances['node-featured_content-field_feature_image'] = array(
     'bundle' => 'featured_content',
     'deleted' => 0,
@@ -8903,7 +9051,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
           ),
           'value' => '',
         ),
-        'redirect' => FALSE,
+        'redirect' => 0,
         'retroactive_update' => 0,
       ),
       'filefield_paths_enabled' => 1,
@@ -8957,6 +9105,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
           'article_listing_thumbnail' => 'article_listing_thumbnail',
           'banner_item_standard_home_page' => 'banner_item_standard_home_page',
           'featured_content' => 'featured_content',
+          'gallery_thumbnail' => 'gallery_thumbnail',
           'inline_half_with' => 'inline_half_with',
           'mini_feature' => 'mini_feature',
           'photo_thumb' => 'photo_thumb',
@@ -8974,7 +9123,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-featured_content-field_feature_link'
+  // Exported field_instance: 'node-featured_content-field_feature_link'.
   $field_instances['node-featured_content-field_feature_link'] = array(
     'bundle' => 'featured_content',
     'default_value' => NULL,
@@ -9035,7 +9184,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-featured_content-field_focus_area'
+  // Exported field_instance: 'node-featured_content-field_focus_area'.
   $field_instances['node-featured_content-field_focus_area'] = array(
     'bundle' => 'featured_content',
     'default_value' => NULL,
@@ -9080,7 +9229,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-featured_content-title_field'
+  // Exported field_instance: 'node-featured_content-title_field'.
   $field_instances['node-featured_content-title_field'] = array(
     'bundle' => 'featured_content',
     'default_value' => NULL,
@@ -9132,7 +9281,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person-body'
+  // Exported field_instance: 'node-person-body'.
   $field_instances['node-person-body'] = array(
     'bundle' => 'person',
     'default_value' => NULL,
@@ -9192,7 +9341,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person-field_agency'
+  // Exported field_instance: 'node-person-field_agency'.
   $field_instances['node-person-field_agency'] = array(
     'bundle' => 'person',
     'default_value' => NULL,
@@ -9243,7 +9392,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person-field_country'
+  // Exported field_instance: 'node-person-field_country'.
   $field_instances['node-person-field_country'] = array(
     'bundle' => 'person',
     'default_value' => NULL,
@@ -9294,7 +9443,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person-field_enable_project_slider'
+  // Exported field_instance: 'node-person-field_enable_project_slider'.
   $field_instances['node-person-field_enable_project_slider'] = array(
     'bundle' => 'person',
     'default_value' => array(
@@ -9350,7 +9499,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person-field_focus_area'
+  // Exported field_instance: 'node-person-field_focus_area'.
   $field_instances['node-person-field_focus_area'] = array(
     'bundle' => 'person',
     'default_value' => NULL,
@@ -9401,7 +9550,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person-field_person_image'
+  // Exported field_instance: 'node-person-field_person_image'.
   $field_instances['node-person-field_person_image'] = array(
     'bundle' => 'person',
     'deleted' => 0,
@@ -9447,6 +9596,28 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
       'entity_translation_sync' => 0,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
+      'filefield_paths' => array(
+        'active_updating' => 0,
+        'file_name' => array(
+          'options' => array(
+            'pathauto' => 0,
+            'slashes' => 0,
+            'transliterate' => 0,
+          ),
+          'value' => '[file:ffp-name-only-original].[file:ffp-extension-original]',
+        ),
+        'file_path' => array(
+          'options' => array(
+            'pathauto' => 0,
+            'slashes' => 0,
+            'transliterate' => 0,
+          ),
+          'value' => '',
+        ),
+        'redirect' => 0,
+        'retroactive_update' => 0,
+      ),
+      'filefield_paths_enabled' => 1,
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
@@ -9493,16 +9664,11 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
         'manualcrop_styles_list' => array(
           'article_listing_thumbnail' => 'article_listing_thumbnail',
           'featured_content' => 'featured_content',
-          'featured_content_mobile' => 'featured_content_mobile',
-          'featured_content_narrow' => 'featured_content_narrow',
           'focus_area_listing' => 'focus_area_listing',
-          'grid_square' => 'grid_square',
+          'gallery_thumbnail' => 'gallery_thumbnail',
           'mini_feature' => 'mini_feature',
-          'mini_feature_narrow' => 'mini_feature_narrow',
-          'node_page_header' => 'node_page_header',
-          'project_slider' => 'project_slider',
           'publication_listing_image' => 'publication_listing_image',
-          'small_thumbnail' => 'small_thumbnail',
+          'two_third_width_carousel_grid_inner' => 'two_third_width_carousel_grid_inner',
         ),
         'manualcrop_styles_mode' => 'include',
         'manualcrop_thumblist' => 1,
@@ -9513,7 +9679,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person-field_person_type'
+  // Exported field_instance: 'node-person-field_person_type'.
   $field_instances['node-person-field_person_type'] = array(
     'bundle' => 'person',
     'default_value' => NULL,
@@ -9564,7 +9730,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person-field_related_project'
+  // Exported field_instance: 'node-person-field_related_project'.
   $field_instances['node-person-field_related_project'] = array(
     'bundle' => 'person',
     'default_value' => NULL,
@@ -9619,64 +9785,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person-field_syndicate_this'
-  $field_instances['node-person-field_syndicate_this'] = array(
-    'bundle' => 'person',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 10,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'scs' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_syndicate_this',
-    'label' => 'Syndicate this on KC?',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'display_label' => 1,
-      ),
-      'type' => 'options_onoff',
-      'weight' => 13,
-    ),
-  );
-
-  // Exported field_instance: 'node-person-field_tags'
+  // Exported field_instance: 'node-person-field_tags'.
   $field_instances['node-person-field_tags'] = array(
     'bundle' => 'person',
     'default_value' => NULL,
@@ -9730,7 +9839,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person-title_field'
+  // Exported field_instance: 'node-person-title_field'.
   $field_instances['node-person-title_field'] = array(
     'bundle' => 'person',
     'default_value' => NULL,
@@ -9852,7 +9961,6 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
   t('Image');
   t('Images');
   t('Instrument Main Image');
-  t('Instruments which do not have a node. will be displayed as Plain text.');
   t('Latitude and Longitude of the structure');
   t('Link');
   t('Logo');
@@ -9880,11 +9988,11 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
   t('Press Materials');
   t('Project');
   t('Purchase Link');
+  t('Reference Custom Header Block');
   t('Reference Cycle');
   t('Region');
   t('Related  Links');
   t('Related Informations');
-  t('Related Instruments');
   t('Review + Selection Procedure');
   t('See Also');
   t('Select Agencies on which this banner item will appear.');
@@ -9905,7 +10013,6 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
   t('Specify thematic areas to which this person is related. You may select more than one thematic area; to do this, hold the \'ctrl\' key (\'command\' key on a Mac) and click each thematic area you wish to select.');
   t('Steering Committee');
   t('Submission Procedure');
-  t('Syndicate this on KC?');
   t('Tags');
   t('The image that will appear in the banner item slideshow(s).');
   t('The name of the person.');

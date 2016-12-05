@@ -1667,7 +1667,8 @@ $icons: facebook, twitter, youtube, instagram, vimeo, akmi;
     @extend %display_full_block;
 
     display: inline-block;
-    margin: 0 auto 10px;
+    width: auto;
+    margin: 0 auto;
     font-size: 16px;
     color: #000000;
     line-height: 24px;
@@ -2931,6 +2932,22 @@ ul.primary li {
         overflow-y: auto;
         overflow-x: hidden;
 
+       .facetapi-facet-entity-type {
+         li {
+           a {
+               text-transform: lowercase;
+           }
+         }
+       }
+
+      .facetapi-facet-entity-type {
+        li {
+          a {
+            text-transform: lowercase;
+          }
+        }
+      }
+
         li {
           margin: 0;
           list-style-type: none;
@@ -2952,7 +2969,7 @@ ul.primary li {
             vertical-align: top;
             font-size: 12px;
             line-height: 18px;
-            text-transform: none;
+            text-transform: lowercase;
 
             &:first-letter {
               text-transform: capitalize;
@@ -5142,6 +5159,10 @@ map {
   font-size: 16px;
   line-height: 24px;
   border-bottom: 1px solid #CCCCCC;
+
+  &:first-child {
+    padding-top: 0;
+  }
 
   &:last-child {
     margin-bottom: 25px;
@@ -7884,7 +7905,7 @@ map {
   .item-list {
     li {
       a {
-        text-transform: capitalize;
+        text-transform: lowercase;
       }
     }
   }
@@ -8787,6 +8808,68 @@ map {
     .caption-copyright-wrapper {
       bottom: 0;
       opacity: 1;
+    }
+  }
+}
+
+/* Fixed Text editor Image Upload fieldset */
+html {
+  &.js {
+    fieldset {
+      &.collapsed{
+        height: auto;
+      }
+    }
+  }
+}
+
+/* AKDN-1392 remove custom header block margin */
+.pane-custom-header-block {
+ .akaa-projectinfo-map-related-info {
+   &:before {
+     margin-top: 0;
+   }
+ }
+}
+
+// Fix overlapping inline videos for all content
+.media-video {
+  display: block;
+  float: left;
+  width: 100%;
+  object,
+  iframe,
+  embed {
+    width: 100% !important;
+    height: 100% !important;
+    float: left;
+  }
+  & > object,
+  & > iframe,
+  & .media-youtube-outer-wrapper {
+    display: block;
+    width: 50% !important;
+    height: 260px !important;
+    margin: 3px 15px 10px 0;
+    float: left;
+  }
+  .media-youtube-preview-wrapper {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  & > p {
+    width: auto;
+    span {
+      font-size: 16px !important;
+    }
+  }
+}
+
+//Remove top boder if no content on custom header block
+.basic-page-custom-block-right {
+  &.rem_brdr {
+    &:before {
+      display: none;
     }
   }
 }

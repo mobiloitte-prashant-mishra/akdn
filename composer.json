@@ -1,0 +1,8 @@
+{
+  "name": "Drupal starter kit",
+  "description": "Drupal stater kit including CI using travis",
+  "version": "0.0.1",
+  "require": {
+    "drupal/coder": "~8.2.8"
+  }
+}

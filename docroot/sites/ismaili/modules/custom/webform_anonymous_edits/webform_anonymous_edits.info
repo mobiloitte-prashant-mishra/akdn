@@ -1,4 +1,0 @@
-name = Anonymous access on webform entry
-description = Allow anonymous users to edit their ebform entry.
-core = 7.x
-package = webform.

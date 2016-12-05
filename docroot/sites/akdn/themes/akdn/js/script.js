@@ -489,7 +489,7 @@
         $('#block-panels-mini-footer-menus .pane-menu-quick-links, #block-panels-mini-footer-menus .social-share-footer', context).wrapAll('<div class="quicklinks_social_block"></div>');
 
         //filter show/hide
-        $('.page-press-centre .akdn-filter-wrapper, .page-search .akdn-filter-wrapper, .page-speech-quotes .akdn-filter-wrapper, .page-architecture-press-centre .akdn-filter-wrapper, .page-akmi-press-centre .akdn-filter-wrapper', context).wrapAll('<div class="akdn-filter-js-wrapper"></div>');
+        $('.page-press-centre .akdn-filter-wrapper, .page-search .akdn-filter-wrapper, .page-speech-quotes .akdn-filter-wrapper, .page-architecture-press-centre .akdn-filter-wrapper, .page-akmi-press-centre .akdn-filter-wrapper, .page-ecards. .akdn-filter-wrapper', context).wrapAll('<div class="akdn-filter-js-wrapper"></div>');
         $('.akdn-filter-js-wrapper', context).hide();
         $('.akdn-filter-show-hide h2').removeClass('active');
         $('.akdn-filter-show-hide', context).click(function(){
@@ -869,16 +869,15 @@ $(window).load(function(){
   // To remove extra 10px margin from font-size
   $("[style='font-size: x-small;']").css("margin", "0px");
 
-  // Remove empty li's from gallery formatter in photographs detail page
-  $(window).load(function() {
-    $('.galleryformatter .gallery-thumbs li[class*="empty"]').remove();
-    $('.galleryformatter .gallery-thumbs li[class*="cloned"]').remove();
-  });
-
   // fix line for block title
   $(window).load(function() {
     $('.sub-navbar p').addClass('indexfix');
   });
+
+  //Remove border from custom header block
+  if($('.basic-page-custom-block-right .pane-content > .view .field-content').is(':empty')){
+    $('.basic-page-custom-block-right').addClass('rem_brdr');
+  }
 
   }
 }

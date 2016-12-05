@@ -362,6 +362,7 @@ stylesheets[all][] = css/style.css
 stylesheets[all][] = css/styles.css
 stylesheets[all][] = css/jquery.mCustomScrollbar.css
 scripts[] = js/jquery.lettering.js
+scripts[] = js/jquery.ba-replacetext.min.js
 scripts[] = js/script.js
 scripts[] = js/akmi.js
 scripts[] = js/jquery.touchSwipe.min.js

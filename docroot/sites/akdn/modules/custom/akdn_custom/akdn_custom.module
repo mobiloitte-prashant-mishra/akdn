@@ -160,10 +160,10 @@ function akdn_custom_preprocess_page(&$vars, $hook) {
   drupal_add_js(drupal_get_path('module', 'akdn_custom') . '/js/chosen/chosen.jquery.js');
   drupal_add_js('
     window.onload=function () {
-      var tt = document.querySelectorAll(".field-add-more-submit")[0];
+      var tt = document.querySelectorAll(".field-add-more-submit");
       var len = document.querySelectorAll(".fieldset-legend .fieldset-title").length;
       if(!len){
-        tt.click();
+        tt[0].click();
       }
     }
     ', array('type' => 'inline', 'scope' => 'header', 'weight' => -99));
@@ -355,6 +355,32 @@ function captcha_title_change_after_build($form, &$form_state){
 }
 
 /**
+ * hook_node_view(node, view_mode, langcode)
+ */
+function akdn_custom_node_view($node, $view_mode, $langcode) {
+  if ($node->type === 'simplenews') {
+    $data = array();
+    $data['title'] = $node->field_newsletter_social_title[LANGUAGE_NONE][0]['value'];
+    $data['type'] = $node->field_newsletter_social_type[LANGUAGE_NONE][0]['value'];
+    $data['summary'] = $node->field_newsletter_social_summary[LANGUAGE_NONE][0]['value'];
+    $data['url'] = $node->field_newsletter_social_url[LANGUAGE_NONE][0]['url'];
+    $url =  $node->field_newsletter_social_image[LANGUAGE_NONE][0]['uri'];
+    $thumb_image = array(
+      'style_name' => 'newsletter_social_image',
+      'path' => $url,
+      'width' => 250,
+      'height' => 200,
+    );
+    $image = theme('image_style', $thumb_image);
+    $image_link = l($image, $data['url'], array( 'attributes' => array('target'=>'_blank'), 'html' => TRUE));
+    $data['image'] = $image_link;
+    $template = theme('simplenews-social-content-creation', array('output' => $data));
+    $node->content['body'][0]['#markup'] = $node->content['body'][0]['#markup'] . '<table cellspacing="0" cellpadding="0" border="0" width="100%" style="border:0;"><tr><td style="padding:15px;border:0;">' . $template . '</td></tr></table>';
+    return $node;
+  }
+}
+
+/**
  * Implements hook_form_alter().
  *
  * Adjustments for node_edit forms. We override the following:
@@ -373,8 +399,7 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
 
   //Overriding form fields
   if ($form_id == 'webform_client_form_14371') {
-    $form['#after_build'][] = 'captcha_title_change_after_build'; 
-     
+    $form['#after_build'][] = 'captcha_title_change_after_build';
     $form['submitted']['gender']['#default_value'] = '';
     $form['submitted']['gender']['#empty_value'] = '';
     $form['submitted']['gender']['#empty_option'] = t('- Please Select -');
@@ -391,11 +416,7 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
     $privacy = l('privacy policy', 'node/29876', array('attributes'=>array('target'=>'_blank')));
     $acceptance = l('terms and conditions', 'node/29871', array('attributes'=>array('target'=>'_blank')));
     $form['submitted']['subscription_settings']['#options'][1] = "I have read and accepted the $acceptance and the $privacy of this website.";
-
-    //print '<pre>';print_r($form);die();
-
-
-        $form['#validate'][]='akdn_custom_form_validation';
+    $form['#validate'][]='akdn_custom_form_validation';
   }
 
   // Check that we're on a node edit form.
@@ -503,11 +524,6 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
     $form['view-all'] = array('#markup' => '<a id="view-all-projects" href="/architecture/projects">View All Projects</a>');
   }
 }
-
-// function akdn_custom_captcha($op, $captcha_type = '', $captcha_sid = NULL) {
-//   print 'HERE';die();
-// }
-
 /**
  * Implementes hook_form_FORM_ID_alter().
  *
@@ -1355,13 +1371,14 @@ function fact_sheet_top_links_block() {
   if (!empty($arg)) {
     $node = node_load($arg);
     $show = $node->field_show_fact_block[key($node->field_show_fact_block)][0]['value'];
-    if ($show == 1) {
+    $view = views_get_view_result('facts_blocks', 'facts_block', $node->nid);
+    $result = count($view);
+    if ($show == 1 && !empty($result)) {
       $term = nat_get_terms_by_vocabulary($arg);
       $term = array_values($term);
       $name = $term[0]->name;
       $output = '';
       $output .= '<p><span>' . substr($name, 0, 1) . '</span><span>' . substr($name, 1) . ' AT A GLANCE</span></p><ul>';
-
       if (!empty($node->field_fact_sheet_upload)) {
         $file_id = $node->field_fact_sheet_upload[key($node->field_fact_sheet_upload)][0]['fid'];
         $url = l('FACT SHEET', 'factsheet/' . str_replace(' ', '-', $name) . '/' . $file_id);
@@ -1674,6 +1691,7 @@ function what_we_do_news_and_resources() {
         $readall = l('View all', 'press-centre/' . $url, array('query' => array('f[0]' => $filter . ':' . $ntid)));
       }
       if ($node->type == 'podcast') {
+        //$name = 'podcast';
         $type = 'Videos';
         $image = reset($node->field_podcast_image);
         if (empty($image)) {
@@ -1780,6 +1798,7 @@ function what_we_do_news_and_resources() {
       $output .= '<span class= "read">[' . $read . '</span>';
       $output .= '<span class= "readall">' . " | " . $readall . ']</span>';
       $output .= '</div></div>';
+      $name = '';
 
     }
     $output .= '</div>';
@@ -1833,7 +1852,6 @@ function akdn_breadcrumb_trail() {
   if ((arg(1) == 'steering-committee') || (arg(1) == 'master-jury')) {
     $arg = arg(2);
     $node_load = node_load($arg);
-    //dsm($node_load);
     $get_breadcrumb[5] = $get_breadcrumb[4];
     $get_breadcrumb[4] = l($node_load->field_short_title[$node_load->language][0]['value'], 'node/' . $node_load->nid);
   }
@@ -2079,27 +2097,12 @@ function akdn_block_forms($form, &$form_state, $delta) {
     case 'akdn_date_filter':
       $format = 'Y-m-d';
       $date_filter_flag = 0;
-      foreach ($_GET['f'] as $value) {
-        $match = substr($value, 0, 18);
-        $publish_date_filter = strpos($match, 'quote_publish_date');
-        $publish_time_filter =  strpos($match, 'publish_time');
-        $field_publish_date =  strpos($match, 'field_publish_date');
-        if (is_numeric($publish_date_filter) || is_numeric($publish_time_filter) || is_numeric($field_publish_date)) {
-          $date_filter_flag = 1;
-          break;
-        }
+      if(!empty($_GET['from'])) {
+        $from = !empty($_GET['from']) ? date('Y-m-d',$_GET['from']) : '';
       }
-      if (isset($_SESSION['from']) && isset($_GET['f']) && $date_filter_flag == 1) {
-        $from = $_SESSION['from'];
-      }
-      else {
-        $from = '';//date('Y-m-d', time());
-      }
-      if (isset($_SESSION['to']) && isset($_GET['f']) && $date_filter_flag == 1) {
-        $to = $_SESSION['to'];
-      }
-      else {
-        $to = '';//date('Y-m-d', time());
+
+      if(!empty($_GET['to'])) {
+        $to = !empty($_GET['to']) ? date('Y-m-d',$_GET['to']) : '';
       }
       $start = 1957 - date('Y', time());
       $form['date_filter_from'] = array(
@@ -2132,7 +2135,6 @@ function akdn_block_forms($form, &$form_state, $delta) {
         '#value' => t('OK'),
         '#submit' => array('akdn_date_filter_submit'),
       );
-      // print l('Reset', current_path(), array('language' => $language->language, 'html' => TRUE, 'attributes' => array('class' => 'akdn-solr-rest-link')));
 
       break;
   }
@@ -2167,7 +2169,7 @@ function akdn_search_forms($form, &$form_state, $delta) {
       );
       //$text = '<li><span class="search_toggle">' . t('Search') . '</span></li>';
       $text = '';
-      $text .= ' <li>' . l('Subscribe', 'webform/subscribe-our-newsletter',
+      $text .= ' <li>' . l('Subscribe', 'subscribe',
           array(
             'attributes' =>
               array(
@@ -2245,32 +2247,13 @@ function akdn_date_filter_submit($form, &$form_state) {
 
   // Apply the date filter.
   if (isset($form_state['values']['date_filter_to'])) {
-    $to = $form_state['values']['date_filter_to'] . 'T23:59:59Z';
+    $to = $form_state['values']['date_filter_to'];
   }
   if (isset($form_state['values']['date_filter_from'])) {
-    $from = $form_state['values']['date_filter_from'] . 'T00:00:00Z';
+    $from = $form_state['values']['date_filter_from'];
   }
 
   $current_path = current_path();
-  // The other query parameters have to be remembered as well.
-  $date_filter = "";
-
-  if (arg(1) == 'events') {
-    $date_filter = 'field_event_date%3Avalue';
-  }
-  else {
-    if ($current_path == 'speech-quotes') {
-      $date_filter = 'quote_publish_date';
-    }
-    else {
-      if ($current_path == 'search' || $current_path == 'what-is-new') {
-        $date_filter = 'publish_time';
-      }
-      else {
-        $date_filter = 'field_publish_date';
-      }
-    }
-  }
 
   if (isset($_GET['f']) || isset($_GET['text'])) {
     $flag = 1;
@@ -2283,7 +2266,8 @@ function akdn_date_filter_submit($form, &$form_state) {
     }
     if ($flag) {
       // Search for the publish date and change it.
-      $_GET['f'][] = $date_filter . ':[' . $from . ' TO ' . $to . ']';
+      $_GET['from'] = strtotime($from);
+      $_GET['to'] = strtotime($to);
     }
   }
   // Apply the date filters.
@@ -2292,12 +2276,38 @@ function akdn_date_filter_submit($form, &$form_state) {
       $current_path,
       array(
         'query' => array(
-          'f' => array(
-            '0' => $date_filter . ':[' . $from . ' TO ' . $to . ']',
-          ),
+          'from' => strtotime($from),
+          'to' => strtotime($to),
         ),
       ),
     );
+  }
+}
+
+function akdn_custom_search_api_query_alter(SearchApiQueryInterface $query) {
+  $current_path = current_path();
+  if(arg(1) == 'events') {
+    $filter_field = 'field_event_date:value';
+  }else if ($current_path == 'speech-quotes') {
+    $filter_field = 'quote_publish_date';
+  }else if ($current_path == 'search' || $current_path == 'what-is-new') {
+    $filter_field = 'publish_time';
+  }else{
+    $filter_field = 'field_publish_date';
+  }
+
+  // Add date condition for filtering data.
+  if(!empty($_GET['from']) && !empty($_GET['to'])) {
+    $query->condition($filter_field,$_GET['from'], '>=');
+    $query->condition($filter_field,$_GET['to'],'<=');
+  }
+
+  if(!empty($_GET['from']) && empty($_GET['to'])) {
+    $query->condition($filter_field,$_GET['from'], '>=');
+  }
+
+  if(empty($_GET['from']) && !empty($_GET['to'])) {
+    $query->condition($filter_field,$_GET['to'],'<=');
   }
 }
 
@@ -2473,6 +2483,23 @@ function akdn_custom_node_presave($node) {
     if($nids) {
       $file = file_load($node->field_facebook_picture['und'][0]['fid']);
         if(is_object($file)) {
+          file_delete($file, 1);
+        }
+      drupal_goto('admin/config/system/cron/');
+      drupal_exit();
+    }
+  }
+  // Remove unwanted instagram media images and unwanted node being saved.
+  if ($node->type == 'instagram') {
+    $instagram_external_id = $node->field_instagram_external_id['und'][0]['value'];
+    $nids = db_select('field_data_field_instagram_external_id', 'eid')
+      ->fields('eid', array('entity_id'))
+      ->condition('eid.field_instagram_external_id_value', $instagram_external_id, '=')
+      ->execute()
+      ->fetchCol();
+    if ($nids) {
+      $file = file_load($node->field_instagram_picture['und'][0]['fid']);
+        if (is_object($file)) {
           file_delete($file, 1);
         }
       drupal_goto('admin/config/system/cron/');
@@ -3262,6 +3289,10 @@ function akdn_custom_theme($existing, $type, $theme, $path) {
     ),
     'arguments' => array('view' => NULL),
   );
+  $themes['simplenews-social-content-creation'] = array(
+    'template' => 'templates/simplenews-social-content-creation',
+    'arguments' => array('output' => NULL),
+  );
   return $themes;
 }
 
@@ -4012,5 +4043,113 @@ function _syndicate_node_update() {
       $node->field_syndicate_this['und'][0]['value'] = 0;
     }
     node_save($node);
+  }
+}
+
+/*Overwritting twitter text*/
+function akdn_custom_social_content_import_alter(&$wrapper, &$context) {
+ if ($context['settings']['instance_template']['content_type'] == 'tweet') {
+    $wrapper->body->set(array('value' => $context['row']->full_text, 'format' => 'tweet'));
+ }
+}
+
+function akdn_custom_wysiwyg_editor_settings_alter(&$settings, $context) {
+ if($context['profile']->editor == 'ckeditor') {
+    $settings['enterMode'] = 1; // CKEDITOR.ENTER_P
+    $settings['shiftEnterMode'] = 2; // CKEDITOR.ENTER_BR
+  }
+}
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function akdn_custom_form_simplenews_node_form_alter(&$form, &$form_state, &$form_id) {
+  // Check that we are creating a newsletter and that we come from the
+  // admin/content/node
+  if (!empty($form['#node_edit_form'])
+    && in_array($form['type']['#value'], simplenews_get_content_types())
+    && $form_state['input']['op'] = t('Create newsletter')
+    && isset($form_state['input']['nodes'])
+  ) {
+    $form['body'][LANGUAGE_NONE]['0']['summary'] = FALSE;
+    $nodes = node_load_multiple(array_keys($form_state['input']['nodes']));
+    $data_social = array();
+    $result = array();
+    foreach ($nodes as $key => $value) {
+      if($value->type == 'facebook' || $value->type == 'instagram' || $value->type == 'tweet' || $value->type == 'youtube'){
+        switch($value->type) {
+          case 'facebook':
+            $data_social[] = array(
+              'nid' =>$value->nid,
+              'type' => $value->type,
+              'body' => $value->body['en'][0]['value'],
+              'image' => $value->field_facebook_picture['und'][0]['uri'],
+              'url' => $value->field_facebook_link['und'][0]['url'],
+            );
+          break;
+          case 'instagram':
+            $data_social[] = array(
+              'nid' =>$value->nid,
+              'type' => $value->type,
+              'body' => $value->body['en'][0]['value'],
+              'image' => $value->field_instagram_picture['und'][0]['uri'],
+              'url' => $value->field_instagram_link['und'][0]['url'],
+            );
+          break;
+          case 'tweet':
+            $data_social[] = array(
+              'nid' =>$value->nid,
+              'type' => $value->type,
+              'body' => $value->body['en'][0]['value'],
+              'image' => $value->field_tweet_media['und'][0]['uri'],
+              'url' => $value->field_tweet_link['und'][0]['url'],
+            );
+          break;
+          case 'youtube':
+            $data_social[] = array(
+              'nid' =>$value->nid,
+              'type' => $value->type,
+              'title' => $value->title,
+              'body' => $value->body['en'][0]['value'],
+              'image' => $value->field_youtube_picture['und'][0]['uri'],
+              'url' => $value->field_youtube_link['und'][0]['url'],
+            );
+          break;
+        }
+      }
+      else {
+        $body = $value->field_newsletter_summary['und']['0']['value'];
+        if ($value->type == 'article') {
+          // print '<pre>'; print_r($value);
+          $tid = $value->field_article_cat['und'][0]['tid'];
+          $term_load = taxonomy_term_load($tid);
+          (object) $term->name = $term_load->name;
+          $url = $value->field_media_source['und']['0']['display_url'];
+          $result[] = array(
+            'nid' => $key,
+            'title' => strip_tags($value->title),
+            'image' => $value->field_newsletter_image['und']['0']['uri'],
+            'body' => $body,
+            'term_load' => $term,
+            'url' => $url,
+          );
+        }
+        else{
+          $result[] = array(
+            'nid' => $key,
+            'title' => strip_tags($value->title),
+            'image' => $value->field_newsletter_image['und']['0']['uri'],
+            'body' => $body,
+          );
+        }
+      }
+    }
+    foreach($nodes as $node) {
+      $node->scs_view_mode = $form_state['input']['nodes'][$node->nid]['view_mode'];
+    }
+    $form['body'][LANGUAGE_NONE][0]['#default_value'] = theme('scs_newsletter', array(
+      'result' => $result,
+      'social' => $data_social,
+      'toc' => empty($form_state['input']['scs_toc']) ? FALSE : TRUE,
+    ));
   }
 }

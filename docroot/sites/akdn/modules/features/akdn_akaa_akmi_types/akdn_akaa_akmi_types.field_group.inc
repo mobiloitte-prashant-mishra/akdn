@@ -273,6 +273,34 @@ function akdn_akaa_akmi_types_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_cust_header_block|node|custom_content|form';
+  $field_group->group_name = 'group_cust_header_block';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'custom_content';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Custom Header Block',
+    'weight' => '26',
+    'children' => array(
+      0 => 'field_rchb_show_block',
+      1 => 'field_reference_custom_header_bl',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-cust-header-block field-group-fieldset',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_cust_header_block|node|custom_content|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_custom_details|node|custom_content|form';
   $field_group->group_name = 'group_custom_details';
   $field_group->entity_type = 'node';
