@@ -69,7 +69,11 @@ function akdn_ecard_multistep_step3_submit($form, &$form_state) {
     $greetings = $step_details['step1']['greetings'];
   }
 
-  $html = theme('ecard_template', array('main_image' => $template_data['main_image'], 'proj_info' => $template_data['proj_info'], 'fact_image' => $template_data['fact_image'], 'fact_desc' => $template_data['fact_desc'], 'link_title' => $template_data['link_title'], 'link_url' => $template_data['link_url'], 'greetings' => $greetings, 'sender_name' => $step_details['step1']['sender_name'], 'message' => $step_details['step1']['default_message']));
+  $data = str_replace(array('<p>', '</p>'), array('<span>', '</span>'), $template_data['proj_info']);
+
+  $style_uri = image_style_url('ecard_template_image', $template_data['main_image']);
+
+  $html = theme('ecard_template', array('main_image' => $style_uri, 'proj_info' => $data, 'fact_image' => $template_data['fact_image'], 'fact_desc' => $template_data['fact_desc'], 'link_title' => $template_data['link_title'], 'link_url' => $template_data['link_url'], 'greetings' => $greetings, 'sender_name' => $step_details['step1']['sender_name'], 'message' => $step_details['step1']['default_message']));
 
   $to_reci = array();
   $rec_details = array();
@@ -99,19 +103,10 @@ function akdn_ecard_multistep_step3_submit($form, &$form_state) {
     }
   }
 
-  send_ecard_emails_mandrill($html, $step_details['step1']['sender_email'], $step_details['step1']['sender_name'],$to_reci);
+  send_ecard_emails_mandrill($html, $step_details['step1']['sender_email'], $step_details['step1']['sender_name'],$to_reci, $step_details['step1']['greetings']);
 
   drupal_goto('ecard/thank-you');
 
-}
-
-/**
- * Returns what to show on the completion page.
- *
- * @return type
- */
-function akdn_ecard_complete_page() {
-  return 'Your eCard has been Queued successfully.';
 }
 
 /**
@@ -121,7 +116,7 @@ function send_ecard_emails_mandrill($html, $from_email, $from_name,$to, $subject
   try{
     $message = array(
       'html' => $html,
-      'subject' => 'AKDN Ecards',
+      'subject' => $subject,
       'from_email' => 'noreply@akdn.org',
       'from_name' => $from_name,
       'to'=> $to,

@@ -14,6 +14,15 @@
  * @return type
  */
 function akdn_ecard_multistep_form($form, &$form_state) {
+  $element = array(
+    '#tag' => 'meta', 
+    '#attributes' => array( 
+      'name' => 'robots', 
+      'content' => 'noarchive, nofollow, noimageindex, noindex, nosnippet, notranslate, noydir',
+    ),
+  );
+  drupal_add_html_head($element, 'ecards_form');  
+
   if (!isset($form_state['stage'])) $form_state['stage'] = 'step1';
 
   $form = array();
@@ -107,9 +116,12 @@ function akdn_ecard_multistep_form_step1($form, &$form_state) {
   $form['step1']['default_message'] = array(
     '#type' => 'textarea',
     '#title' => 'Please type your message below. Your recipients name will automatically be added. A preview will be available on the next step prior to sending.',
-    '#default_value' => isset($values['default_message']) ? $values['default_message'] : 'Type your greeting here',
+    '#default_value' => isset($values['default_message']) ? $values['default_message'] : '',
     '#prefix' => '<span class="ecard-message">',
     '#suffix' => '</span>',
+    '#attributes' => array(
+      'placeholder' => t("Type your greeting here.."),
+    )
   );
 
   $form['actions']['cancel'] = array(
@@ -356,8 +368,12 @@ function akdn_ecard_multistep_form_step2($form, &$form_state) {
   else {
     $greetings = $form_state['multistep_values']['step1']['greetings'];
   }
+  
+  $data = str_replace(array('<p>', '</p>'), array('<span>', '</span>'), $template_data['proj_info']);
 
-  $html = theme('ecard_template', array('main_image' => $template_data['main_image'], 'proj_info' => $template_data['proj_info'], 'fact_image' => $template_data['fact_image'], 'fact_desc' => $template_data['fact_desc'], 'link_title' => $template_data['link_title'], 'link_url' => $template_data['link_url'], 'greetings' => $greetings, 'sender_name' => $step1_details['sender_name'], 'message' => $step1_details['default_message'], 'op' => 'preview'));
+  $style_uri = image_style_url('ecard_template_image', $template_data['main_image']);
+
+  $html = theme('ecard_template', array('main_image' => $style_uri, 'proj_info' => $data, 'fact_image' => $template_data['fact_image'], 'fact_desc' => $template_data['fact_desc'], 'link_title' => $template_data['link_title'], 'link_url' => $template_data['link_url'], 'greetings' => $greetings, 'sender_name' => $step1_details['sender_name'], 'message' => $step1_details['default_message'], 'op' => 'preview'));
 
   $form['ecard_template'] = array(
     '#markup' => '<div class = "element-hidden"><div id="ecard_template">' . $html . '</div></div>',
@@ -404,9 +420,14 @@ function akdn_ecard_multistep_form_step3($form, &$form_state) {
 
   ecard_admin_recipient_remove_duplicates($recipients, "\r\n", "<");
 
+  $form['step3']['heading'] = array(
+    '#markup' => '<div id="ecard-step3-head" style="font-weight:bold;">Please confirm the details below and enter the letters in the verification image to send your eCard(s).</div>',
+  );
+  
   $form['step3']['to'] = array(
     '#markup' => '<div id="ecard-preview-to" style="margin: 10px;padding: 10px;"><span class="label-head" style="font-weight:bold;">To: </span>' . $recipients . '</div>',
   );
+
   $form['step3']['from'] = array(
     '#markup' => '<div id="ecard-preview-from" style="margin: 10px;padding: 10px;"><span class="label-head" style="font-weight:bold;">From: </span>' . $form_state['multistep_values']['step1']['sender_name'] . " &lt;" . $form_state['multistep_values']['step1']['sender_email'] . "&gt;</div>",
   );
@@ -471,7 +492,11 @@ function akdn_ecard_multistep_form_step3($form, &$form_state) {
     $greetings = $form_state['multistep_values']['step1']['greetings'];
   }
 
-  $html = theme('ecard_template', array('main_image' => $template_data['main_image'], 'proj_info' => $template_data['proj_info'], 'fact_image' => $template_data['fact_image'], 'fact_desc' => $template_data['fact_desc'], 'link_title' => $template_data['link_title'], 'link_url' => $template_data['link_url'], 'greetings' => $greetings, 'sender_name' => $step1_details['sender_name'], 'message' => $step1_details['default_message'], 'op' => 'preview'));
+  $data = str_replace(array('<p>', '</p>'), array('<span>', '</span>'), $template_data['proj_info']);
+
+  $style_uri = image_style_url('ecard_template_image', $template_data['main_image']);
+
+  $html = theme('ecard_template', array('main_image' => $style_uri, 'proj_info' => $data, 'fact_image' => $template_data['fact_image'], 'fact_desc' => $template_data['fact_desc'], 'link_title' => $template_data['link_title'], 'link_url' => $template_data['link_url'], 'greetings' => $greetings, 'sender_name' => $step1_details['sender_name'], 'message' => $step1_details['default_message'], 'op' => 'preview'));
 
   $form['ecard_template_step3'] = array(
     '#markup' => '<div class = "element-hidden"><div id="ecard_template_step3">' . $html . '</div></div>',
