@@ -92,22 +92,21 @@ function ecard_template_view_views_default_views() {
     'image_link' => '',
   );
   /* Field: Indexed Node: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'search_api_index_akdn';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['path'] = 'ecards/[nid]';
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['label'] = '';
+  $handler->display->display_options['fields']['title_field']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['title_field']['alter']['path'] = 'ecards/[nid]';
+  $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="media-desc">
-<div class="title">[title] 
+<div class="title">[title_field]
 <div class="read-more"><a href="/ecards/[nid]">Send Card</a></div>
 </div>
 </div>';
@@ -138,6 +137,22 @@ function ecard_template_view_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = array(
     1 => '1',
   );
+  $handler->display->display_options['metatags'] = array(
+    'robots' => array(
+      'value' => array(
+        'noindex' => 'noindex',
+        'nofollow' => 'nofollow',
+        'noarchive' => 'noarchive',
+        'nosnippet' => 'nosnippet',
+        'noodp' => 'noodp',
+        'noydir' => 'noydir',
+        'noimageindex' => 'noimageindex',
+        'notranslate' => 'notranslate',
+        'index' => 0,
+        'follow' => 0,
+      ),
+    ),
+  );
   $handler->display->display_options['path'] = 'ecards';
   $translatables['ecard_listing_page'] = array(
     t('Master'),
@@ -162,7 +177,7 @@ function ecard_template_view_views_default_views() {
     t('Ecards'),
     t('No results found!'),
     t('<div class="media-desc">
-<div class="title">[title] 
+<div class="title">[title_field]
 <div class="read-more"><a href="/ecards/[nid]">Send Card</a></div>
 </div>
 </div>'),

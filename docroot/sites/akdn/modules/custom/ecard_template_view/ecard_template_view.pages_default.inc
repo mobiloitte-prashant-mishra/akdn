@@ -42,6 +42,25 @@ function ecard_template_view_default_page_manager_pages() {
     'contexts' => array(),
     'relationships' => array(),
     'name' => 'panel',
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(
+        'robots' => array(
+          'value' => array(
+            'noindex' => 'noindex',
+            'nofollow' => 'nofollow',
+            'noarchive' => 'noarchive',
+            'nosnippet' => 'nosnippet',
+            'noodp' => 'noodp',
+            'noydir' => 'noydir',
+            'noimageindex' => 'noimageindex',
+            'notranslate' => 'notranslate',
+            'index' => 0,
+            'follow' => 0,
+          ),
+        ),
+      ),
+    ),
   );
   $display = new panels_display();
   $display->layout = 'omega_24_onecol';
