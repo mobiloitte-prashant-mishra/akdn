@@ -925,8 +925,8 @@ th {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url(../fonts/bootstrap/glyphicons-halflings-regular.eot?1475745015);
-  src: url(../fonts/bootstrap/glyphicons-halflings-regular.eot?&1475745015#iefix) format("embedded-opentype"), url(../fonts/bootstrap/glyphicons-halflings-regular.woff2?1475745015) format("woff2"), url(../fonts/bootstrap/glyphicons-halflings-regular.woff?1475745015) format("woff"), url(../fonts/bootstrap/glyphicons-halflings-regular.ttf?1475745015) format("truetype"), url(../fonts/bootstrap/glyphicons-halflings-regular.svg?1475745015#glyphicons_halflingsregular) format("svg");
+  src: url(../fonts/bootstrap/glyphicons-halflings-regular.eot?1477290867);
+  src: url(../fonts/bootstrap/glyphicons-halflings-regular.eot?&1477290867#iefix) format("embedded-opentype"), url(../fonts/bootstrap/glyphicons-halflings-regular.woff2?1477290867) format("woff2"), url(../fonts/bootstrap/glyphicons-halflings-regular.woff?1477290867) format("woff"), url(../fonts/bootstrap/glyphicons-halflings-regular.ttf?1477290867) format("truetype"), url(../fonts/bootstrap/glyphicons-halflings-regular.svg?1477290867#glyphicons_halflingsregular) format("svg");
 }
 /* line 24, ../sass/sass-extensions/bootstrap/_glyphicons.scss */
 .glyphicon, .location-links h2 .nolink:after, .location-links h2 a:after {
@@ -11058,7 +11058,7 @@ button.close {
   line-height: 1;
   margin: 8px 1px 0 0;
   color: #b2b2b2;
-  background: #fff url('../images/magnifier.png?1475745015') no-repeat;
+  background: #fff url('../images/magnifier.png?1477290867') no-repeat;
   background-size: contain;
   border-radius: 0;
   border: 0 none;
@@ -11805,7 +11805,7 @@ h1.title {
   padding: 0;
   font-size: 0;
   line-height: 1;
-  background: url('../images/instagram.png?1475745015') no-repeat;
+  background: url('../images/instagram.png?1477290867') no-repeat;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
@@ -12406,32 +12406,32 @@ h1.title {
 
 /* line 1630, ../sass/_akdn-redesign.scss */
 .facebook {
-  background: url('../images/facebook.png?1475745015') no-repeat;
+  background: url('../images/facebook.png?1477290867') no-repeat;
 }
 
 /* line 1630, ../sass/_akdn-redesign.scss */
 .twitter {
-  background: url('../images/twitter.png?1475745015') no-repeat;
+  background: url('../images/twitter.png?1477290867') no-repeat;
 }
 
 /* line 1630, ../sass/_akdn-redesign.scss */
 .youtube {
-  background: url('../images/youtube.png?1475745015') no-repeat;
+  background: url('../images/youtube.png?1477290867') no-repeat;
 }
 
 /* line 1630, ../sass/_akdn-redesign.scss */
 .instagram {
-  background: url('../images/instagram.png?1475745015') no-repeat;
+  background: url('../images/instagram.png?1477290867') no-repeat;
 }
 
 /* line 1630, ../sass/_akdn-redesign.scss */
 .vimeo {
-  background: url('../images/vimeo.png?1475745015') no-repeat;
+  background: url('../images/vimeo.png?1477290867') no-repeat;
 }
 
 /* line 1630, ../sass/_akdn-redesign.scss */
 .akmi {
-  background: url('../images/akmi.png?1475745015') no-repeat;
+  background: url('../images/akmi.png?1477290867') no-repeat;
 }
 
 /* line 1635, ../sass/_akdn-redesign.scss */
@@ -12793,12 +12793,12 @@ h1.title {
   height: 22px;
   margin: 0 auto;
   padding: 0;
-  background: url('../images/arrow-bottom.png?1475745015') no-repeat;
+  background: url('../images/arrow-bottom.png?1477290867') no-repeat;
 }
 /* line 2062, ../sass/_akdn-redesign.scss */
 .akdn-filter-show-hide h2.active:after {
   content: "";
-  background: url('../images/arrow-top.png?1475745015') no-repeat;
+  background: url('../images/arrow-top.png?1477290867') no-repeat;
 }
 
 /* line 2069, ../sass/_akdn-redesign.scss */
@@ -13586,12 +13586,12 @@ ul.primary li {
   height: 22px;
   margin: 0 auto;
   padding: 0;
-  background: url('../images/arrow-bottom.png?1475745015') no-repeat;
+  background: url('../images/arrow-bottom.png?1477290867') no-repeat;
 }
 /* line 2880, ../sass/_akdn-redesign.scss */
 .page-search .akdn-filter-show-hide h2.active:after {
   content: "";
-  background: url('../images/arrow-top.png?1475745015') no-repeat;
+  background: url('../images/arrow-top.png?1477290867') no-repeat;
 }
 /* line 2887, ../sass/_akdn-redesign.scss */
 .page-search .akdn-filter-js-wrapper {
@@ -13806,7 +13806,7 @@ ul.primary li {
   font-size: 0;
   text-transform: uppercase;
   border: 0 none;
-  background: url('../images/submit.png?1475745015') 0 0 no-repeat;
+  background: url('../images/submit.png?1477290867') 0 0 no-repeat;
 }
 /* line 3108, ../sass/_akdn-redesign.scss */
 .node-webform .webform-client-form .form-actions input.form-submit:focus {
@@ -13891,7 +13891,7 @@ ul.primary li {
 .node-webform .webform-subscribe .form-actions input.form-submit {
   width: 180px;
   margin-left: 0 !important;
-  background: url('../images/subscribe.png?1475745015') 0 0 no-repeat;
+  background: url('../images/subscribe.png?1477290867') 0 0 no-repeat;
 }
 
 /* line 3207, ../sass/_akdn-redesign.scss */
@@ -14078,7 +14078,7 @@ h2.header-name a:active, h2.header-name a:focus {
 .geography-page .country-activity-tile .hub-pages-row .country_activity_link a,
 .node-type-agency .country-activity-tile .hub-pages-row .country_activity_link a {
   position: absolute;
-  background: url('../images/arrows.png?1475745015') 0 -30px no-repeat;
+  background: url('../images/arrows.png?1477290867') 0 -30px no-repeat;
   width: 26px;
   height: 26px;
   font-size: 0;
@@ -14539,7 +14539,7 @@ h2.header-name a:active, h2.header-name a:focus {
   height: 24px;
   margin-top: -2px;
   margin-left: 5px;
-  background: url('../images/download-icon.jpg?1475745015') 0 0 no-repeat;
+  background: url('../images/download-icon.jpg?1477290867') 0 0 no-repeat;
   background-size: contain;
 }
 /* line 3915, ../sass/_akdn-redesign.scss */
@@ -16577,12 +16577,12 @@ map area {
   height: 22px;
   margin: 0 auto;
   padding: 0;
-  background: url('../images/arrow-bottom.png?1475745015') no-repeat;
+  background: url('../images/arrow-bottom.png?1477290867') no-repeat;
 }
 /* line 6233, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .pane-title.active:after, .akaa-projectfinder-wrapper .block-title.active:after {
   content: "";
-  background: url('../images/arrow-top.png?1475745015') no-repeat;
+  background: url('../images/arrow-top.png?1477290867') no-repeat;
 }
 /* line 6239, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .pane-content, .akaa-projectfinder-wrapper .content {
@@ -16841,7 +16841,7 @@ map area {
   height: 26px;
   font-size: 0;
   cursor: pointer;
-  background: url('../images/arrows.png?1475745015') 0 -60px no-repeat;
+  background: url('../images/arrows.png?1477290867') 0 -60px no-repeat;
 }
 /* line 6521, ../sass/_akdn-redesign.scss */
 .akaa-award-cycle-block-short-video .views-field-nothing .play-video a:hover, .akaa-award-cycle-block-short-video .views-field-nothing .play-video a:focus {
@@ -16899,7 +16899,7 @@ map area {
   height: 26px;
   font-size: 0;
   cursor: pointer;
-  background: url('../images/arrows.png?1475745015') 0 -30px no-repeat;
+  background: url('../images/arrows.png?1477290867') 0 -30px no-repeat;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -18893,7 +18893,7 @@ map area {
 .akdn-logo-wrap {
   width: 120px;
   height: 55px;
-  background: url('../images/akdn-logo.png?1475745015') no-repeat;
+  background: url('../images/akdn-logo.png?1477290867') no-repeat;
 }
 
 /* Projects Lightbox captions */
@@ -19070,6 +19070,11 @@ html.js fieldset.collapsed {
 /* line 8862, ../sass/_akdn-redesign.scss */
 .media-video > p span {
   font-size: 16px !important;
+}
+
+/* line 8871, ../sass/_akdn-redesign.scss */
+.basic-page-custom-block-right.rem_brdr:before {
+  display: none;
 }
 
 /*
