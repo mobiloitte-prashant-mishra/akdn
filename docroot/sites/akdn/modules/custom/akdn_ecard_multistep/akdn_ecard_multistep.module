@@ -25,14 +25,6 @@ function akdn_ecard_multistep_menu() {
     'type' => MENU_NORMAL_ITEM,
   );
 
-  $items['ecard/thankyou'] = array(
-    'title' => 'Ecards',
-    'page callback' => 'akdn_ecard_complete_page',
-    'page arguments' => array(),
-    'access arguments' => array('access content'),
-    'type' => MENU_NORMAL_ITEM,
-  );
-
   $items['admin/config/services/ecards'] = array(
     'title' => 'Ecards Configuration',
     'description' => t('Manage Ecards Settings.'),
