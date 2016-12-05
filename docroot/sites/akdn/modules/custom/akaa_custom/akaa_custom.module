@@ -1,12 +1,17 @@
 <?php
 
 /**
+ * @file
+ * AKAA custom module.
+ */
+
+/**
  * Implements hook_block_info().
  */
 function akaa_custom_block_info() {
   $blocks = array(
     'akaa_news_resources_tiles' => array(
-      'info' => t('AKAA Latest News & Resources Block '),
+      'info' => t('AKAA Latest News & Resources Block'),
       'cache' => DRUPAL_NO_CACHE,
     ),
     'akaa_see_also_block' => array(
@@ -42,21 +47,25 @@ function akaa_custom_block_view($delta = '') {
         $block['subject'] = t('AKAA News & Resources for home page');
       }
       break;
+
     case 'akaa_see_also_block':
       $block['content'] = _akaa_see_also_block();
       $block['subject'] = t('AKAA See Also');
       break;
+
     case 'akaa_custom_award_cycle_related':
       $block['content'] = _akaa_custom_award_cycle_related_informations();
       $block['subject'] = t('AKAA Award cycle Related Information:Jury');
       break;
+
     case '_akaa_custom_social_sharing':
       $block['content'] = _akaa_custom_social_sharing_block();
       $block['subject'] = t('AKAA custom Social Sharing Block');
       break;
+
     case 'akaa_custom_press_centre_rhs':
       $block['content'] = akaa_custom_press_centre_rhs();
-     if(strpos($block['content'], 'views-row') === false){
+      if (strpos($block['content'], 'views-row') === FALSE) {
         $block['content'] = views_embed_view('custom_header_block', 'akaa_press_centre_rhs');
       }
       $block['subject'] = t('AKAA Press Centre RHS Block');
@@ -64,60 +73,66 @@ function akaa_custom_block_view($delta = '') {
   }
   return $block;
 }
-/*
- * Get Rhs block on press Centre
+
+/**
+ * Get Rhs block on press Centre.
  */
-function akaa_custom_press_centre_rhs(){
-  // For RELATED INFORMATION Block On architecture/press-centre?Year_Filter
-  foreach($_GET['f'] as $value) {
+function akaa_custom_press_centre_rhs() {
+  // For RELATED INFORMATION Block On architecture/press-centre?Year_Filter.
+  foreach ($_GET['f'] as $value) {
     $val = explode(':', $value);
-    if($val[0] =='field_cycle_year') {
+    if ($val[0] == 'field_cycle_year') {
       $query = new EntityFieldQuery();
       $query->entityCondition('entity_type', 'node')
- ->entityCondition('bundle', 'award_cycle')
- ->fieldCondition('field_cycle_year', 'tid', $val[1], '=');
+        ->entityCondition('bundle', 'award_cycle')
+        ->fieldCondition('field_cycle_year', 'tid', $val[1], '=');
       $result = $query->execute();
       $node_id = reset($result[node])->nid;
       if (isset($node_id)) {
-        $content = views_embed_view("akaa_projects","block_8", $node_id);
+        $content = views_embed_view("akaa_projects", "block_8", $node_id);
       }
     }
   }
-return $content;
+  return $content;
 }
-/*
- * Get latest News & Resources
+
+/**
+ * Get latest News & Resources.
  */
 function _akaa_custom_latest_news_resouces() {
-  //get latest Publications for AKAA
+  // Get latest Publications for AKAA.
   $content = views_embed_view('akaa_home_page', 'block_3');
-  //get latest Press Release for AKAA
+  // Get latest Press Release for AKAA.
   $content .= views_embed_view('akaa_home_page', 'block_5');
-  //get latest In the Media for AKAA
+  // Get latest In the Media for AKAA.
   $content .= views_embed_view('akaa_home_page', 'block_4');
   return $content;
 }
 
-/*
- * Get latest News & Resources
+/**
+ * Get latest News & Resources.
  */
 function _akaa_custom_social_sharing_block() {
-  //get latest stay connections facebook
+  // Get latest stay connections facebook.
   $content = views_embed_view('facebook_feeds', 'akaa_facebook_home_page');
-  //get latest stay connections itunes
+  // Get latest stay connections itunes.
   $content .= views_embed_view('custom_header_block', 'block_1');
-  //get latest stay connections Youtube
+  // Get latest stay connections Youtube.
   $content .= views_embed_view('facebook_feeds', 'akaa_youtube_home_page');
   return $content;
 }
 
+/**
+ * AKAA see also block.
+ */
 function _akaa_see_also_block() {
 
   $tname = taxonomy_get_term_by_name('Aga Khan Award for Architecture (AKAA)', 'tags');
   $tid = reset($tname)->tid;
   if ((arg(1) == 'steering-committee') || (arg(1) == 'master-jury')) {
     $node = node_load(arg(2));
-  }else{
+  }
+  else {
     $node = node_load(arg(1));
   }
   $cycle_tid = $node->field_cycle_year[LANGUAGE_NONE][0]['tid'];
@@ -130,7 +145,7 @@ function _akaa_see_also_block() {
     'podcast' => 'Videos',
     'gallery' => 'Photographs',
     'event' => 'Events',
-    'project' => 'Project Locations'
+    'project' => 'Project Locations',
   );
   $path = '/architecture/press-centre';
   $output = '';
@@ -152,7 +167,7 @@ function _akaa_see_also_block() {
         $output .= '<li class = "rows">';
         $param = '?f[0]=entity_type:' . $key;
         $url = $path . $param;
-        $output .= '<a href="' .$url . '">' . $value . '</a>';
+        $output .= '<a href="' . $url . '">' . $value . '</a>';
         $output .= '</li>';
       }
     }
@@ -166,6 +181,21 @@ function _akaa_see_also_block() {
   return $output;
 }
 
+/**
+ * Count the number of nodes.
+ *
+ * @param int $key
+ *   Key.
+ * @param int $tid
+ *   Term id.
+ * @param int $cid
+ *   Count.
+ *
+ * @return object $result
+ *   Result object.
+ *
+ * @todo $cid is unused.
+ */
 function _akaa_node_count($key, $tid, $cid) {
   if (is_numeric($key)) {
     $type = 'article';
@@ -187,11 +217,10 @@ function _akaa_node_count($key, $tid, $cid) {
 }
 
 /**
- *
- * AKAA Form Alter
+ * Implements hook_form_alter().
  */
 function akaa_custom_form_alter(&$form, &$form_state, $form_id) {
-  //Update name of the Award winning text
+  // Update name of the Award winning text.
   if ($form_id == 'views_exposed_form') {
     if ($form_state['view']->name == 'akaa_projects' && $form_state['view']->current_display == 'page') {
       $form['field_winner_value']['#options'][1] = 'Show Award recipients only';
@@ -205,14 +234,20 @@ function akaa_custom_form_alter(&$form, &$form_state, $form_id) {
   }
 }
 
-
 /**
- * [akaa_custom_theme description]
- * @param  [type] $existing [description]
- * @param  [type] $type     [description]
- * @param  [type] $theme    [description]
- * @param  [type] $path     [description]
- * @return [type]           [description]
+ * Akaa_custom_theme description.
+ *
+ * @param array $existing
+ *   An array of existing implementations.
+ * @param string $type
+ *   Where the theme hook is defined: 'module', 'theme_engine', or 'theme'.
+ * @param string $theme
+ *   The actual name of theme, module, etc. that is being being processed.
+ * @param string $path
+ *   The directory path of the theme or module.
+ *
+ * @return array $themes
+ *   Returns theme array.
  */
 function akaa_custom_theme($existing, $type, $theme, $path) {
   $themes['views_view_field__akaa_projects__other_cycles_block__nothing'] = array(
@@ -239,25 +274,26 @@ function akaa_custom_theme($existing, $type, $theme, $path) {
 }
 
 /**
- *  Shot title field of award Cycle
+ * Shot title field of award Cycle.
  */
-
 function akdn_custom_preprocess_views_view_field__akaa_projects__other_arch_projects__nothing(&$variables) {
   $row = $variables['row'];
   $tid = reset($row->_field_data['nid']['entity']->field_cycle_year)[0]['tid'];
   $query = db_select('field_data_field_short_title', 's');
   $query->leftJoin('field_data_field_cycle_year', 'c', 'c.entity_id = s.entity_id');
-  $short_title_result = $query->fields('s',array('field_short_title_value'))
+  $short_title_result = $query->fields('s', array('field_short_title_value'))
     ->fields('c', array('entity_id'))
     ->condition('c.field_cycle_year_tid', $tid, '=')
     ->condition('c.bundle', 'award_cycle', '=')
     ->execute()
     ->fetchAll();
-  $short_title = explode(' ',$short_title_result[0]->field_short_title_value);
+  $short_title = explode(' ', $short_title_result[0]->field_short_title_value);
   $variables['other_cycles_projects'] = $short_title[0];
 }
 
-
+/**
+ * Preprocessor function for akaa_projects__other_cycles_block.
+ */
 function akdn_custom_preprocess_views_view_field__akaa_projects__other_cycles_block__nothing(&$variables) {
   $row = $variables['row'];
 
@@ -282,7 +318,6 @@ function akdn_custom_preprocess_views_view_field__akaa_projects__other_cycles_bl
   $read = l('View', 'node/' . $project_nid);
   $readAll = l('All ' . $short_title . ' projects', 'node/' . $cycle_nid);
 
-
   $output = '';
 
   $output .= '<div class = "other_cycle">';
@@ -303,36 +338,43 @@ function akdn_custom_preprocess_views_view_field__akaa_projects__other_cycles_bl
 
 }
 
+/**
+ * Gets term name from term id.
+ *
+ * @param int $tid
+ *   The term id.
+ *
+ * @return string name
+ *   The name of related term.
+ */
 function akaa_load_term_name($tid) {
   $load = taxonomy_term_load($tid);
   return $load->name;
 }
 
-/*
- * Award cycle Related Informations
+/**
+ * Award cycle Related Informations.
  */
-
-function _akaa_custom_award_cycle_related_informations(){
+function _akaa_custom_award_cycle_related_informations() {
   $nid = arg(2);
   $node = node_load($nid);
-  if(!empty($node->field_awards_cycle_links[LANGUAGE_NONE])){
+  if (!empty($node->field_awards_cycle_links[LANGUAGE_NONE])) {
     $output = '';
     $output .= '<div class="akaa-award-cycle-related-info">';
     $output .= '<ul>';
-    foreach ($node->field_awards_cycle_links[LANGUAGE_NONE] as $url_value){
-      if($url_value['url']){
+    foreach ($node->field_awards_cycle_links[LANGUAGE_NONE] as $url_value) {
+      if ($url_value['url']) {
         $url = url($url_value['url']);
         $title = $url_value['title'];
-        $target =  $url_value['attributes']['target'];
-        $output .= '<li><a href="'.$url.'" target="'.$target.'">'.$title.'</a></li>';
+        $target = $url_value['attributes']['target'];
+        $output .= '<li><a href="' . $url . '" target="' . $target . '">' . $title . '</a></li>';
       }
     }
-    $output .='</ul>';
-    $output .='</div>';
+    $output .= '</ul>';
+    $output .= '</div>';
     return $output;
   }
 }
-
 
 /**
  * Implements hook_menu().
@@ -374,7 +416,9 @@ function akaa_custom_menu_autocomplete($entity_type, $bundle, $field_name, $stri
   drupal_json_output($matches);
 }
 
-
+/**
+ * Function for menu_field_widget.
+ */
 function akaa_custom_menu_field_widget_info() {
   return array(
     'node_reference_autocomplete_deluxe' => array(
@@ -389,4 +433,3 @@ function akaa_custom_menu_field_widget_info() {
     ),
   );
 }
-
