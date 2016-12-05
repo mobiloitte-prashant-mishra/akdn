@@ -110,15 +110,6 @@ function akdn_ecard_multistep_step3_submit($form, &$form_state) {
 }
 
 /**
- * Returns what to show on the completion page.
- *
- * @return type
- */
-function akdn_ecard_complete_page() {
-  return 'Your eCard has been Queued successfully.';
-}
-
-/**
  *  Queued email addresses in mandrill for sending
  */
 function send_ecard_emails_mandrill($html, $from_email, $from_name,$to, $subject) {
