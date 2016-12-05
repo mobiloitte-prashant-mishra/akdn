@@ -137,6 +137,22 @@ function ecard_template_view_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = array(
     1 => '1',
   );
+  $handler->display->display_options['metatags'] = array(
+    'robots' => array(
+      'value' => array(
+        'noindex' => 'noindex',
+        'nofollow' => 'nofollow',
+        'noarchive' => 'noarchive',
+        'nosnippet' => 'nosnippet',
+        'noodp' => 'noodp',
+        'noydir' => 'noydir',
+        'noimageindex' => 'noimageindex',
+        'notranslate' => 'notranslate',
+        'index' => 0,
+        'follow' => 0,
+      ),
+    ),
+  );
   $handler->display->display_options['path'] = 'ecards';
   $translatables['ecard_listing_page'] = array(
     t('Master'),
