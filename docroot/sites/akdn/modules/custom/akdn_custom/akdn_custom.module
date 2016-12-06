@@ -4122,7 +4122,7 @@ function akdn_custom_form_simplenews_node_form_alter(&$form, &$form_state, &$for
           // print '<pre>'; print_r($value);
           $tid = $value->field_article_cat['und'][0]['tid'];
           $term_load = taxonomy_term_load($tid);
-          (object) $term->name = $term_load->name;
+          $term = $term_load->name;
           $url = $value->field_media_source['und']['0']['display_url'];
           $result[] = array(
             'nid' => $key,
