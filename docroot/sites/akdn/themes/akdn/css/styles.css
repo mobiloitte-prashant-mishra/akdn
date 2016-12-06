@@ -264,14 +264,14 @@ th {
 
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 @media print and (color) {
-  /* line 8, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 7, ../sass/sass-extensions/bootstrap/_print.scss */
   * {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
 }
 @media print {
-  /* line 15, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 14, ../sass/sass-extensions/bootstrap/_print.scss */
   * {
     /*CSS transition-property*/
     -o-transition-property: none !important;
@@ -307,7 +307,7 @@ th {
       box-shadow: none !important;
       text-shadow: none !important;
   }*/
-  /* line 50, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 49, ../sass/sass-extensions/bootstrap/_print.scss */
   a,
   a:visited {
     text-decoration: underline;
@@ -319,44 +319,44 @@ th {
   abbr[title]:after {
       content: " (" attr(title) ")";
   }*/
-  /* line 63, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 62, ../sass/sass-extensions/bootstrap/_print.scss */
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
     content: "";
   }
 
   /* line 67, ../sass/sass-extensions/bootstrap/_print.scss */
-  pre,
-  blockquote {
+  blockquote,
+  pre {
     border: 1px solid #999;
     page-break-inside: avoid;
   }
 
-  /* line 72, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 73, ../sass/sass-extensions/bootstrap/_print.scss */
   thead {
     display: table-header-group;
   }
 
-  /* line 75, ../sass/sass-extensions/bootstrap/_print.scss */
-  tr,
-  img {
+  /* line 77, ../sass/sass-extensions/bootstrap/_print.scss */
+  img,
+  tr {
     page-break-inside: avoid;
   }
 
-  /* line 79, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 82, ../sass/sass-extensions/bootstrap/_print.scss */
   img {
     max-width: 100% !important;
   }
 
-  /* line 82, ../sass/sass-extensions/bootstrap/_print.scss */
-  p,
+  /* line 86, ../sass/sass-extensions/bootstrap/_print.scss */
   h2,
-  h3 {
+  h3,
+  p {
     orphans: 3;
     widows: 3;
   }
 
-  /* line 88, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 93, ../sass/sass-extensions/bootstrap/_print.scss */
   h1,
   h2,
   h3,
@@ -367,7 +367,7 @@ th {
   /*.navbar {
       display: none;
   }*/
-  /* line 102, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 107, ../sass/sass-extensions/bootstrap/_print.scss */
   .btn > .caret,
   .dropup > .btn > .caret {
     border-top-color: #000 !important;
@@ -376,24 +376,24 @@ th {
   /*.label {
       border: 1px solid #000;
   }*/
-  /* line 109, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 114, ../sass/sass-extensions/bootstrap/_print.scss */
   .table {
     border-collapse: collapse !important;
     page-break-inside: avoid;
   }
-  /* line 113, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 118, ../sass/sass-extensions/bootstrap/_print.scss */
   .table td,
   .table th {
     background-color: #fff !important;
   }
 
-  /* line 119, ../sass/sass-extensions/bootstrap/_print.scss */
-  .table-bordered th,
-  .table-bordered td {
+  /* line 125, ../sass/sass-extensions/bootstrap/_print.scss */
+  .table-bordered td,
+  .table-bordered th {
     border: 1px solid #ddd !important;
   }
 
-  /* line 126, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 132, ../sass/sass-extensions/bootstrap/_print.scss */
   body {
     width: 100% !important;
     max-width: 1170px !important;
@@ -405,38 +405,42 @@ th {
       content: " ("attr(href) ") ";
       font-size: 0%;
   }*/
-  /* line 137, ../sass/sass-extensions/bootstrap/_print.scss */
-  ul, li {
+  /* line 143, ../sass/sass-extensions/bootstrap/_print.scss */
+  li,
+  ul {
     padding: 0;
     list-style: none;
   }
 
-  /* line 141, ../sass/sass-extensions/bootstrap/_print.scss */
-  ul, li,
+  /* line 149, ../sass/sass-extensions/bootstrap/_print.scss */
+  .block-title,
+  .heading,
+  .pane-title,
+  .title,
   .view-header,
-  .pane-title, .block-title,
-  .heading, .title {
+  li,
+  ul {
     position: relative;
   }
 
-  /* line 147, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 159, ../sass/sass-extensions/bootstrap/_print.scss */
   img {
     position: relative;
     page-break-inside: avoid !important;
   }
 
-  /* line 151, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 164, ../sass/sass-extensions/bootstrap/_print.scss */
   div {
     position: relative;
     height: auto !important;
   }
 
-  /* line 156, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 169, ../sass/sass-extensions/bootstrap/_print.scss */
   .contextual-links-wrapper {
     display: none !important;
   }
 
-  /* line 160, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 173, ../sass/sass-extensions/bootstrap/_print.scss */
   .panel-panel.grid-18,
   .panel-panel.grid-6 {
     height: auto !important;
@@ -445,150 +449,150 @@ th {
   @page {
     margin: 1cm;
   }
-  /* line 168, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 182, ../sass/sass-extensions/bootstrap/_print.scss */
   html body.admin-menu {
     margin-top: 0 !important;
   }
 
-  /* line 173, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 187, ../sass/sass-extensions/bootstrap/_print.scss */
   body:not(.front) .region-footer-first {
     display: none !important;
   }
-  /* line 175, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 190, ../sass/sass-extensions/bootstrap/_print.scss */
   body:not(.front) .region-footer-first .footer-left,
   body:not(.front) .region-footer-first .footer-right {
     display: none !important;
   }
-  /* line 180, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 196, ../sass/sass-extensions/bootstrap/_print.scss */
   body:not(.front) .region-footer-second {
     border-top: 2px solid #000 !important;
     margin: 0 auto !important;
     padding: 20px 0 !important;
   }
 
-  /* line 188, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 205, ../sass/sass-extensions/bootstrap/_print.scss */
   body.front .region-footer-first-inner .quicklinks_social_block {
     padding-left: 15px;
   }
-  /* line 191, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 209, ../sass/sass-extensions/bootstrap/_print.scss */
   body.front .region-footer-first-inner .footer-left,
   body.front .region-footer-first-inner .footer-right {
     display: none;
   }
-  /* line 197, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 216, ../sass/sass-extensions/bootstrap/_print.scss */
   body.front .social-box a {
     width: 24px !important;
     height: 24px !important;
   }
-  /* line 202, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 222, ../sass/sass-extensions/bootstrap/_print.scss */
   body.front .region-footer-second {
     margin: 10px auto !important;
   }
 
-  /* line 207, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 227, ../sass/sass-extensions/bootstrap/_print.scss */
   .logo-container {
     margin: 0 auto 10px !important;
   }
 
-  /* line 210, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 231, ../sass/sass-extensions/bootstrap/_print.scss */
   .top-navbar {
     display: none !important;
   }
 
-  /* line 215, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 236, ../sass/sass-extensions/bootstrap/_print.scss */
   .main-navbar {
     margin: 12px 0 0 !important;
   }
-  /* line 217, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 239, ../sass/sass-extensions/bootstrap/_print.scss */
   .main-navbar .nolink {
     font-size: 13px !important;
   }
 
-  /* line 222, ../sass/sass-extensions/bootstrap/_print.scss */
-  .social-block,
-  .pane-facebook-feeds {
+  /* line 244, ../sass/sass-extensions/bootstrap/_print.scss */
+  .pane-facebook-feeds,
+  .social-block {
     display: -ms-flex !important;
     display: flex !important;
     height: auto !important;
   }
 
-  /* line 228, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 251, ../sass/sass-extensions/bootstrap/_print.scss */
   .social-icon-image {
     left: 0 !important;
   }
 
-  /* line 231, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 255, ../sass/sass-extensions/bootstrap/_print.scss */
   .grid-social-block_title {
     margin-bottom: 10px !important;
     min-height: 48px !important;
   }
-  /* line 234, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 259, ../sass/sass-extensions/bootstrap/_print.scss */
   .grid-social-block_title .title {
     font-size: 12px !important;
     line-height: 16px !important;
   }
-  /* line 237, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 263, ../sass/sass-extensions/bootstrap/_print.scss */
   .grid-social-block_title .title span:not(.social-icon-image):last-child {
     margin-top: 0 !important;
     font-size: 16px !important;
     line-height: 20px !important;
   }
 
-  /* line 245, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 271, ../sass/sass-extensions/bootstrap/_print.scss */
   .akdn-facts-block-row {
     border-right: 0 none !important;
   }
 
-  /* line 249, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 275, ../sass/sass-extensions/bootstrap/_print.scss */
   .pane-breaking-news .view-header,
   .sub-navbar .pane-content {
     font-size: 20px !important;
     margin-bottom: 10px !important;
   }
-  /* line 253, ../sass/sass-extensions/bootstrap/_print.scss */
-  .pane-breaking-news .view-header span:first-child,
+  /* line 280, ../sass/sass-extensions/bootstrap/_print.scss */
   .pane-breaking-news .view-header p:first-letter,
-  .sub-navbar .pane-content span:first-child,
-  .sub-navbar .pane-content p:first-letter {
+  .pane-breaking-news .view-header span:first-child,
+  .sub-navbar .pane-content p:first-letter,
+  .sub-navbar .pane-content span:first-child {
     font-size: 24px !important;
   }
 
-  /* line 259, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 287, ../sass/sass-extensions/bootstrap/_print.scss */
   .sub-navbar ul {
     display: block !important;
     margin: 0 auto !important;
   }
-  /* line 263, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 292, ../sass/sass-extensions/bootstrap/_print.scss */
   .sub-navbar a {
     font-size: 12px !important;
   }
 
-  /* line 268, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 297, ../sass/sass-extensions/bootstrap/_print.scss */
   .breaking-news-text-wrapper .title {
     font-size: 22px !important;
     line-height: 28px !important;
   }
 
-  /* line 272, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 302, ../sass/sass-extensions/bootstrap/_print.scss */
   .breaking-news-left .date-display-single {
     font-size: 14px !important;
   }
 
-  /* line 275, ../sass/sass-extensions/bootstrap/_print.scss */
-  .basic-page-slideshow,
+  /* line 306, ../sass/sass-extensions/bootstrap/_print.scss */
+  .akdn-facts-block,
   .banner-slideshow-views-no-title,
+  .basic-page-slideshow,
   .pane-breaking-news .view-content,
-  .social-block,
-  .akdn-facts-block {
+  .social-block {
     margin-bottom: 20px !important;
   }
 
-  /* line 284, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 314, ../sass/sass-extensions/bootstrap/_print.scss */
   .akaa-logotitle {
     margin: 0 auto 20px !important;
   }
 
-  /* line 287, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 318, ../sass/sass-extensions/bootstrap/_print.scss */
   .carousel-left .banner-slideshow-views > .view-content, .whatwedo-body .pane-featured-slideshow, .node-type-agency .pane-featured-slideshow, .akaa-akmi-body .pane-featured-slideshow,
   .whatsnew-right,
   .whatwedo-body .whatsnew-right,
@@ -598,7 +602,7 @@ th {
     margin-bottom: 20px !important;
   }
 
-  /* line 293, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 325, ../sass/sass-extensions/bootstrap/_print.scss */
   .carousel-left .banner-slideshow-views > .view-content, .whatwedo-body .pane-featured-slideshow, .node-type-agency .pane-featured-slideshow, .akaa-akmi-body .pane-featured-slideshow,
   .carousel-left .banner-slideshow-views > .view-content img,
   .whatwedo-body .pane-featured-slideshow img,
@@ -608,30 +612,36 @@ th {
     overflow: hidden !important;
   }
 
-  /* line 299, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 331, ../sass/sass-extensions/bootstrap/_print.scss */
   .akaa-projectfinder-wrapper {
     display: none !important;
   }
 
-  /* line 303, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 335, ../sass/sass-extensions/bootstrap/_print.scss */
   .akaa-award-cycle-block-short-video .views-field-nothing .play-video a,
   .akaa-icon-title {
     display: none !important;
   }
 
-  /* line 307, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 340, ../sass/sass-extensions/bootstrap/_print.scss */
   .akaa-award-cycle-block {
     margin-bottom: 15px !important;
   }
 
-  /* line 310, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 344, ../sass/sass-extensions/bootstrap/_print.scss */
   .akaa-award-cycle-wrapper,
-  .what-we-do-main-wrapper,
-  .akaa-projectfinder-wrapper {
+  .akaa-projectfinder-wrapper,
+  .what-we-do-main-wrapper {
     margin-bottom: 20px !important;
   }
 
-  /* line 315, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 350, ../sass/sass-extensions/bootstrap/_print.scss */
+  .akaa-press-centre-main-wrapper {
+    float: left !important;
+    width: 100% !important;
+  }
+
+  /* line 355, ../sass/sass-extensions/bootstrap/_print.scss */
   .what-we-do-inner-wrapper,
   .what-we-do-main-wrapper {
     display: -ms-flex !important;
@@ -639,178 +649,278 @@ th {
     height: auto !important;
   }
 
-  /* line 322, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 362, ../sass/sass-extensions/bootstrap/_print.scss */
   #backtotop {
     display: none !important;
   }
 
-  /* line 327, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 367, ../sass/sass-extensions/bootstrap/_print.scss */
   .press-release-detail .grid-18 {
     width: 100% !important;
     height: auto !important;
     border-right: 0 none !important;
   }
-  /* line 332, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 373, ../sass/sass-extensions/bootstrap/_print.scss */
   .press-release-detail .grid-6 {
     display: none !important;
   }
 
-  /* line 337, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 378, ../sass/sass-extensions/bootstrap/_print.scss */
   .gallery-frame,
   .gallery-slide {
     width: 100% !important;
     position: relative !important;
   }
 
-  /* line 342, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 384, ../sass/sass-extensions/bootstrap/_print.scss */
   .gallery-slide {
     margin-top: 10px !important;
   }
 
-  /* line 345, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 388, ../sass/sass-extensions/bootstrap/_print.scss */
   .gallery-thumbs {
     width: 100% !important;
     padding: 0 !important;
   }
-  /* line 348, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 392, ../sass/sass-extensions/bootstrap/_print.scss */
   .gallery-thumbs .arrow {
     display: none !important;
   }
-  /* line 351, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 396, ../sass/sass-extensions/bootstrap/_print.scss */
   .gallery-thumbs ul {
     width: 100% !important;
     padding: 0 !important;
   }
-  /* line 356, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 402, ../sass/sass-extensions/bootstrap/_print.scss */
   .gallery-thumbs li img {
     height: 150px !important;
   }
-  /* line 359, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 406, ../sass/sass-extensions/bootstrap/_print.scss */
   .gallery-thumbs li a {
     padding-bottom: 5px !important;
   }
-  /* line 362, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 410, ../sass/sass-extensions/bootstrap/_print.scss */
   .gallery-thumbs li .empty {
     display: none !important;
   }
-  /* line 365, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 414, ../sass/sass-extensions/bootstrap/_print.scss */
   .gallery-thumbs li:nth-child(3n) a {
     padding-right: 0 !important;
   }
 
-  /* line 371, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 420, ../sass/sass-extensions/bootstrap/_print.scss */
   .press-release-detail .pane-video-block {
     display: none !important;
   }
 
-  /* line 374, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 424, ../sass/sass-extensions/bootstrap/_print.scss */
   .akdn-basic-page .grid-6 {
     display: none !important;
   }
 
-  /* line 377, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 428, ../sass/sass-extensions/bootstrap/_print.scss */
   .akdn-basic-page .grid-18 {
     width: 100% !important;
   }
-  /* line 379, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 431, ../sass/sass-extensions/bootstrap/_print.scss */
   .akdn-basic-page .grid-18 .accordian-rows {
     page-break-inside: avoid;
   }
 
-  /* line 383, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 437, ../sass/sass-extensions/bootstrap/_print.scss */
   .basic-page-accordian-main-container .accordian-main-body {
     display: block;
   }
+  /* line 441, ../sass/sass-extensions/bootstrap/_print.scss */
+  .basic-page-accordian-main-container .accordian-icon {
+    display: none !important;
+  }
 
-  /* line 386, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 447, ../sass/sass-extensions/bootstrap/_print.scss */
+  .geography-page .pane-featured-slideshow {
+    width: 100% !important;
+  }
+
+  /* line 452, ../sass/sass-extensions/bootstrap/_print.scss */
+  .lesslink,
   .whatwedo-left .morelink {
     display: none !important;
   }
 
-  /* line 389, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 458, ../sass/sass-extensions/bootstrap/_print.scss */
   .whatwedo-left .what-we-do-body-more-body {
     display: block;
   }
+  /* line 462, ../sass/sass-extensions/bootstrap/_print.scss */
+  .whatwedo-left .view-display-id-what_we_do_summary_text p {
+    font-size: 16px !important;
+  }
 
-  /* line 392, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 468, ../sass/sass-extensions/bootstrap/_print.scss */
   .whatwedo-left {
     width: 100% !important;
   }
 
-  /* line 395, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 472, ../sass/sass-extensions/bootstrap/_print.scss */
   .whatwedo-right {
     display: none !important;
   }
 
-  /* line 399, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 476, ../sass/sass-extensions/bootstrap/_print.scss */
   .block-akdn-filter {
     display: none !important;
   }
 
-  /* line 403, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 480, ../sass/sass-extensions/bootstrap/_print.scss */
   .press-centre-listings {
     display: none !important;
   }
 
-  /* line 407, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 485, ../sass/sass-extensions/bootstrap/_print.scss */
   .akaa-akmi-body .pane-featured-slideshow {
     display: none !important;
   }
-  /* line 410, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 489, ../sass/sass-extensions/bootstrap/_print.scss */
   .akaa-akmi-body .whatsnew-right {
     display: none !important;
   }
 
-  /* line 416, ../sass/sass-extensions/bootstrap/_print.scss */
-  .page-akmi-press-centre .section-content .grid-18, .page-architecture-press-centre .section-content .grid-18 {
+  /* line 497, ../sass/sass-extensions/bootstrap/_print.scss */
+  .page-akmi-press-centre .section-content .grid-18,
+  .page-architecture-press-centre .section-content .grid-18 {
     width: 100% !important;
   }
-  /* line 420, ../sass/sass-extensions/bootstrap/_print.scss */
-  .page-akmi-press-centre .block-akdn-custom-akdn-filter, .page-architecture-press-centre .block-akdn-custom-akdn-filter {
+  /* line 502, ../sass/sass-extensions/bootstrap/_print.scss */
+  .page-akmi-press-centre .block-akdn-custom-akdn-filter,
+  .page-architecture-press-centre .block-akdn-custom-akdn-filter {
     display: none !important;
   }
-  /* line 423, ../sass/sass-extensions/bootstrap/_print.scss */
-  .page-akmi-press-centre .akdn-filter-js-wrapper, .page-architecture-press-centre .akdn-filter-js-wrapper {
+  /* line 506, ../sass/sass-extensions/bootstrap/_print.scss */
+  .page-akmi-press-centre .akdn-filter-js-wrapper,
+  .page-architecture-press-centre .akdn-filter-js-wrapper {
     display: none !important;
   }
 
-  /* line 428, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 512, ../sass/sass-extensions/bootstrap/_print.scss */
   .node-type-award-cycle .grid-18 {
     width: 100% !important;
   }
-  /* line 430, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 515, ../sass/sass-extensions/bootstrap/_print.scss */
   .node-type-award-cycle .grid-18 .akaa-cycle-slideshow {
     display: none !important;
   }
-  /* line 434, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 520, ../sass/sass-extensions/bootstrap/_print.scss */
   .node-type-award-cycle .grid-6 {
     display: none !important;
   }
 
-  /* line 439, ../sass/sass-extensions/bootstrap/_print.scss */
-  .page-architecture-steering-committee .grid-18, .page-architecture-master-jury .grid-18 {
+  /* line 527, ../sass/sass-extensions/bootstrap/_print.scss */
+  .page-architecture-master-jury .grid-18,
+  .page-architecture-steering-committee .grid-18 {
     width: 100% !important;
   }
-  /* line 441, ../sass/sass-extensions/bootstrap/_print.scss */
-  .page-architecture-steering-committee .grid-18 .views-row, .page-architecture-master-jury .grid-18 .views-row {
+  /* line 530, ../sass/sass-extensions/bootstrap/_print.scss */
+  .page-architecture-master-jury .grid-18 .views-row,
+  .page-architecture-steering-committee .grid-18 .views-row {
     page-break-inside: avoid;
   }
-  /* line 443, ../sass/sass-extensions/bootstrap/_print.scss */
-  .page-architecture-steering-committee .grid-18 .views-row .readmore-text, .page-architecture-master-jury .grid-18 .views-row .readmore-text {
+  /* line 533, ../sass/sass-extensions/bootstrap/_print.scss */
+  .page-architecture-master-jury .grid-18 .views-row .readmore-text,
+  .page-architecture-steering-committee .grid-18 .views-row .readmore-text {
     display: block !important;
   }
-  /* line 447, ../sass/sass-extensions/bootstrap/_print.scss */
-  .page-architecture-steering-committee .grid-18 .views-row .readmore-link:after, .page-architecture-steering-committee .grid-18 .views-row .readless-link:after, .page-architecture-master-jury .grid-18 .views-row .readmore-link:after, .page-architecture-master-jury .grid-18 .views-row .readless-link:after {
+  /* line 539, ../sass/sass-extensions/bootstrap/_print.scss */
+  .page-architecture-master-jury .grid-18 .views-row .readless-link:after,
+  .page-architecture-master-jury .grid-18 .views-row .readmore-link:after,
+  .page-architecture-steering-committee .grid-18 .views-row .readless-link:after,
+  .page-architecture-steering-committee .grid-18 .views-row .readmore-link:after {
     content: "" !important;
   }
 
-  /* line 455, ../sass/sass-extensions/bootstrap/_print.scss */
-  .node-type-architecture-project .grid-18 {
+  /* line 548, ../sass/sass-extensions/bootstrap/_print.scss */
+  .node-type-architecture-project .grid-18, .node-type-akmi-performance .grid-18 {
     width: 100% !important;
   }
-  /* line 458, ../sass/sass-extensions/bootstrap/_print.scss */
-  .node-type-architecture-project .grid-6 {
+  /* line 552, ../sass/sass-extensions/bootstrap/_print.scss */
+  .node-type-architecture-project .grid-6, .node-type-akmi-performance .grid-6 {
     display: none !important;
+  }
+
+  /* line 557, ../sass/sass-extensions/bootstrap/_print.scss */
+  .node-type-akmi-performance .akaa-projectinfo-block-techinfo-wrapper {
+    display: none !important;
+  }
+  /* line 560, ../sass/sass-extensions/bootstrap/_print.scss */
+  .node-type-akmi-performance .akaa-projectinfo-block-body-wrapper {
+    width: 100% !important;
+    padding: 20px !important;
+  }
+
+  /* line 566, ../sass/sass-extensions/bootstrap/_print.scss */
+  .page-akmi-cd-dvd .grid-18 {
+    width: 100% !important;
+  }
+  /* line 569, ../sass/sass-extensions/bootstrap/_print.scss */
+  .page-akmi-cd-dvd .pc-listing-info {
+    width: 100% !important;
+    float: none !important;
+  }
+  /* line 572, ../sass/sass-extensions/bootstrap/_print.scss */
+  .page-akmi-cd-dvd .pc-listing-info .pc-body-wrapper {
+    float: none !important;
+  }
+
+  /* line 578, ../sass/sass-extensions/bootstrap/_print.scss */
+  .grid-about-us-block-description,
+  .grid-about-us-block_description {
+    border-bottom: 0.1em solid #000000 !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* line 584, ../sass/sass-extensions/bootstrap/_print.scss */
+  .grid-about-us-block-description:last-child,
+  .grid-about-us-block_description:last-child {
+    border-bottom: 0 none !important;
+  }
+
+  /* line 589, ../sass/sass-extensions/bootstrap/_print.scss */
+  .award-cycle-project-list,
+  .view-empty {
+    float: left !important;
+    width: 100% !important;
+  }
+
+  /* line 594, ../sass/sass-extensions/bootstrap/_print.scss */
+  .pane-akmi-custom-akmi-news-resources-block {
+    position: relative !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* line 598, ../sass/sass-extensions/bootstrap/_print.scss */
+  .akaa-press-centre-main-wrapper {
+    float: left !important;
+    width: 100% !important;
+  }
+
+  /* line 603, ../sass/sass-extensions/bootstrap/_print.scss */
+  .region-footer-second, .akaa-press-centre-inner-wrapper {
+    page-break-inside: avoid !important;
+  }
+
+  /* line 606, ../sass/sass-extensions/bootstrap/_print.scss */
+  .akaa-press-centre-main-wrapper, #region-content, .region-footer-second {
+    clear: both !important;
+    display: block !important;
+    float: none !important;
+    overflow: visible !important;
+    width: 100% !important;
+  }
+
+  /* line 613, ../sass/sass-extensions/bootstrap/_print.scss */
+  .print-wrapper {
+    display: block !important;
+    float: left !important;
+    page-break-inside: avoid !important;
   }
 }
 @font-face {
