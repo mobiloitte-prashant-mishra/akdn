@@ -838,11 +838,11 @@ th {
   }
 
   /* line 548, ../sass/sass-extensions/bootstrap/_print.scss */
-  .node-type-architecture-project .grid-18, .node-type-akmi-performance .grid-18 {
+  .node-type-architecture-project .grid-18, .node-type-akmi-performance .grid-18, .node-type-akmi-artists .grid-18 {
     width: 100% !important;
   }
   /* line 552, ../sass/sass-extensions/bootstrap/_print.scss */
-  .node-type-architecture-project .grid-6, .node-type-akmi-performance .grid-6 {
+  .node-type-architecture-project .grid-6, .node-type-akmi-performance .grid-6, .node-type-akmi-artists .grid-6 {
     display: none !important;
   }
 
