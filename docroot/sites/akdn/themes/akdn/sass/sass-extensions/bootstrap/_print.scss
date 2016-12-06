@@ -1,5 +1,4 @@
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
-
 // ==========================================================================
 // Print styles.
 // Inlined to avoid the additional HTTP request: h5bp.com/r
@@ -20,11 +19,11 @@
         -webkit-transition-property: none !important;
         transition-property: none !important;
         /*CSS transitions*/
-        -webkit-transition:none!important;
-        -moz-transition:none!important;
-        -ms-transition:none!important;
-        -o-transition:none!important;
-        transition:none!important;
+        -webkit-transition: none!important;
+        -moz-transition: none!important;
+        -ms-transition: none!important;
+        -o-transition: none!important;
+        transition: none!important;
         /*CSS transforms*/
         -o-transform: none !important;
         -moz-transform: none !important;
@@ -64,27 +63,33 @@
     a[href^="javascript:"]:after {
         content: "";
     }
-    pre,
-    blockquote {
+
+    blockquote,
+    pre {
         border: 1px solid #999;
         page-break-inside: avoid;
     }
+
     thead {
         display: table-header-group; // h5bp.com/t
     }
-    tr,
-    img {
+
+    img,
+    tr {
         page-break-inside: avoid;
     }
+
     img {
         max-width: 100% !important;
     }
-    p,
+
     h2,
-    h3 {
+    h3,
+    p {
         orphans: 3;
         widows: 3;
     }
+
     h1,
     h2,
     h3,
@@ -108,16 +113,17 @@
     }*/
     .table {
         border-collapse: collapse !important;
-        page-break-inside : avoid;
+        page-break-inside: avoid;
 
         td,
         th {
             background-color: #fff !important;
         }
     }
+
     .table-bordered {
-        th,
-        td {
+        td,
+        th {
             border: 1px solid #ddd !important;
         }
     }
@@ -134,20 +140,27 @@
         content: " ("attr(href) ") ";
         font-size: 0%;
     }*/
-    ul, li {
+    li,
+    ul {
         padding: 0;
         list-style: none;
     }
-    ul, li,
+
+    .block-title,
+    .heading,
+    .pane-title,
+    .title,
     .view-header,
-    .pane-title, .block-title,
-    .heading, .title {
+    li,
+    ul {
         position: relative;
     }
+
     img {
         position: relative;
         page-break-inside: avoid !important;
     }
+
     div {
         position: relative;
         height: auto !important;
@@ -159,81 +172,94 @@
     // Layout specific
     .panel-panel.grid-18,
     .panel-panel.grid-6 {
-      height: auto !important;
+        height: auto !important;
     }
     @page {
-      //size : portrait;   /* auto is the initial value */
+        //size : portrait;   /* auto is the initial value */
         margin: 1cm;
     }
+
     html body.admin-menu {
         margin-top: 0 !important;
     }
-   // Footer
-   body:not(.front) {
-       .region-footer-first {
+    // Footer
+    body:not(.front) {
+        .region-footer-first {
             display: none !important;
+
             .footer-left,
             .footer-right {
                 display: none !important;
             }
-       }
-       .region-footer-second{
+        }
+
+        .region-footer-second {
             border-top: 2px solid #000 !important;
             margin: 0 auto !important;
             padding: 20px 0 !important;
-       }
-   }
-   body.front {
-       .region-footer-first-inner {
+        }
+    }
+
+    body.front {
+        .region-footer-first-inner {
             .quicklinks_social_block {
                 padding-left: 15px;
             }
+
             .footer-left,
             .footer-right {
                 display: none;
             }
-       }
+        }
+
         .social-box {
             a {
                 width: 24px !important;
                 height: 24px !important;
             }
         }
-       .region-footer-second {
+
+        .region-footer-second {
             margin: 10px auto !important;
-       }
-   }
-   // Logo & Top and Sub Navigation
-   .logo-container {
+        }
+    }
+    // Logo & Top and Sub Navigation
+    .logo-container {
         margin: 0 auto 10px !important;
-   }
-    .top-navbar{
+    }
+
+    .top-navbar {
         display: none !important;
     }
     // Homepage Specific
     // Navigation
     .main-navbar {
         margin: 12px 0 0 !important;
+
         .nolink {
             font-size: 13px !important;
         }
     }
     // Social Block
-    .social-block,
-    .pane-facebook-feeds {
+    .pane-facebook-feeds,
+    .social-block {
         display: -ms-flex !important;
         display: flex !important;
         height: auto !important;
     }
+
     .social-icon-image {
         left: 0 !important;
     }
+
     .grid-social-block_title {
-            margin-bottom: 10px !important;
-            min-height: 48px !important;
+        margin-bottom: 10px !important;
+        min-height: 48px !important;
+
         .title {
             font-size: 12px !important;
             line-height: 16px !important;
+
             span:not(.social-icon-image):last-child {
                 margin-top: 0 !important;
                 font-size: 16px !important;
@@ -250,16 +276,19 @@
     .sub-navbar .pane-content {
         font-size: 20px !important;
         margin-bottom: 10px !important;
-        span:first-child,
-        p:first-letter {
+
+        p:first-letter,
+        span:first-child {
             font-size: 24px !important;
         }
     }
-   .sub-navbar {
-       ul {
+
+    .sub-navbar {
+        ul {
             display: block !important;
             margin: 0 auto !important;
         }
+
         a {
             font-size: 12px !important;
         }
@@ -269,27 +298,30 @@
         font-size: 22px !important;
         line-height: 28px !important;
     }
+
     .breaking-news-left .date-display-single {
         font-size: 14px !important;
     }
-    .basic-page-slideshow,
+
+    .akdn-facts-block,
     .banner-slideshow-views-no-title,
+    .basic-page-slideshow,
     .pane-breaking-news .view-content,
-    .social-block,
-    .akdn-facts-block {
+    .social-block {
         margin-bottom: 20px !important;
     }
-
     //AKAA AND AKMI
     .akaa-logotitle {
         margin: 0 auto 20px !important;
     }
+
     %carousel-left-block,
     %carousel-right-block {
         width: 100% !important;
         height: auto !important;
         margin-bottom: 20px !important;
     }
+
     %carousel-left-block,
     %carousel-left-block img {
         height: 460px !important;
@@ -304,14 +336,22 @@
     .akaa-icon-title {
         display: none !important;
     }
+
     .akaa-award-cycle-block {
         margin-bottom: 15px !important;
     }
+
     .akaa-award-cycle-wrapper,
-    .what-we-do-main-wrapper,
-    .akaa-projectfinder-wrapper {
+    .akaa-projectfinder-wrapper,
+    .what-we-do-main-wrapper {
         margin-bottom: 20px !important;
     }
+    //for footer breaking
+    .akaa-press-centre-main-wrapper {
+        float: left !important;
+        width: 100% !important;
+    }
+
     .what-we-do-inner-wrapper,
     .what-we-do-main-wrapper {
         display: -ms-flex !important;
@@ -329,6 +369,7 @@
             height: auto !important;
             border-right: 0 none !important;
         }
+
         .grid-6 {
             display: none !important;
         }
@@ -339,29 +380,37 @@
         width: 100% !important;
         position: relative !important;
     }
+
     .gallery-slide {
         margin-top: 10px !important;
     }
+
     .gallery-thumbs {
         width: 100% !important;
         padding: 0 !important;
+
         .arrow {
             display: none !important;
         }
+
         ul {
             width: 100% !important;
             padding: 0 !important;
         }
+
         li {
             img {
                 height: 150px !important;
             }
+
             a {
                 padding-bottom: 5px !important;
             }
+
             .empty {
                 display: none !important;
             }
+
             &:nth-child(3n) a {
                 padding-right: 0 !important;
             }
@@ -371,102 +420,199 @@
     .press-release-detail .pane-video-block {
         display: none !important;
     }
+
     .akdn-basic-page .grid-6 {
-      display: none !important;
-    }
-    .akdn-basic-page .grid-18 {
-      width: 100% !important;
-      .accordian-rows {
-        page-break-inside: avoid;
-      }
-    }
-    .basic-page-accordian-main-container {
-      .accordian-main-body {
-        display: block;
-      }
-      .accordian-icon {
         display: none !important;
-      }
     }
-    .geography-page {
-      .pane-featured-slideshow {
+
+    .akdn-basic-page .grid-18 {
         width: 100% !important;
+
+        .accordian-rows {
+            page-break-inside: avoid;
+        }
+    }
+
+    .basic-page-accordian-main-container {
+        .accordian-main-body {
+            display: block;
+        }
+
+        .accordian-icon {
+            display: none !important;
+        }
+    }
+
+    .geography-page {
+        .pane-featured-slideshow {
+            width: 100% !important;
+        }
+    }
+
+    .lesslink,
+    .whatwedo-left .morelink {
+        display: none !important;
+    }
+
+    .whatwedo-left {
+      .what-we-do-body-more-body {
+          display: block;
+      }
+      .view-display-id-what_we_do_summary_text {
+        p {
+          font-size: 16px !important;
+        }
       }
     }
-    .whatwedo-left .morelink, .lesslink {
-      display: none !important;
-    }
-    .whatwedo-left .what-we-do-body-more-body{
-      display: block;
-    }
+
     .whatwedo-left {
-      width: 100% !important;
+        width: 100% !important;
     }
+
     .whatwedo-right {
-      display: none !important;
+        display: none !important;
     }
 
     .block-akdn-filter {
-     display: none !important;
-}
-
-.press-centre-listings {
         display: none !important;
-  }
-  .akaa-akmi-body {
-    .pane-featured-slideshow {
-      display: none !important;
     }
-    .whatsnew-right {
-      display: none !important;
+
+    .press-centre-listings {
+        display: none !important;
     }
-  }
-  .page-akmi-press-centre, .page-architecture-press-centre {
-      .section-content {
+
+    .akaa-akmi-body {
+        .pane-featured-slideshow {
+            display: none !important;
+        }
+
+        .whatsnew-right {
+            display: none !important;
+        }
+    }
+
+    .page-akmi-press-centre,
+    .page-architecture-press-centre {
+        .section-content {
+            .grid-18 {
+                width: 100% !important;
+            }
+        }
+
+        .block-akdn-custom-akdn-filter {
+            display: none !important;
+        }
+
+        .akdn-filter-js-wrapper {
+            display: none !important;
+        }
+    }
+
+    .node-type-award-cycle {
+        .grid-18 {
+            width: 100% !important;
+
+            .akaa-cycle-slideshow {
+                display: none !important;
+            }
+        }
+
+        .grid-6 {
+            display: none !important;
+        }
+    }
+
+    .page-architecture-master-jury,
+    .page-architecture-steering-committee {
+        .grid-18 {
+            width: 100% !important;
+
+            .views-row {
+                page-break-inside: avoid;
+
+                .readmore-text {
+                    display: block !important;
+                }
+
+                .readless-link,
+                .readmore-link {
+                    &:after {
+                        content: "" !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .node-type-architecture-project, .node-type-akmi-performance {
         .grid-18 {
             width: 100% !important;
         }
-      }
-    .block-akdn-custom-akdn-filter {
-      display: none !important;
-    }
-    .akdn-filter-js-wrapper {
-      display: none !important;
-    }
-  }
-  .node-type-award-cycle {
-    .grid-18 {
-      width: 100% !important;
-      .akaa-cycle-slideshow {
-        display: none !important;
-      }
-    }
-    .grid-6 {
-      display: none !important;
-    }
-  }
-  .page-architecture-steering-committee, .page-architecture-master-jury {
-    .grid-18 {
-      width: 100% !important;
-      .views-row {
-        page-break-inside: avoid;
-        .readmore-text {
-          display: block !important;
+
+        .grid-6 {
+            display: none !important;
         }
-        .readmore-link, .readless-link {
-          &:after{
-            content: "" !important;
+      }
+      .node-type-akmi-performance {
+        .akaa-projectinfo-block-techinfo-wrapper {
+          display: none !important;
+        }
+        .akaa-projectinfo-block-body-wrapper {
+          width: 100% !important;
+          padding: 20px !important;
+        }
+      }
+      .page-akmi-cd-dvd {
+        .grid-18 {
+            width: 100% !important;
+        }
+        .pc-listing-info {
+          width: 100% !important;
+          float: none !important;
+          .pc-body-wrapper {
+            float: none !important;
           }
         }
       }
-    }
-  }
-  .node-type-architecture-project {
-    .grid-18 {
-      width: 100% !important;
-    }
-    .grid-6 {
-      display: none !important;
-    }
-  }
-}
+
+      .grid-about-us-block-description,
+      .grid-about-us-block_description {
+          border-bottom: 0.1em solid #000000 !important;
+          page-break-inside: avoid !important;
+      }
+
+      .grid-about-us-block-description:last-child,
+      .grid-about-us-block_description:last-child {
+          border-bottom: 0 none !important;
+      }
+
+      .award-cycle-project-list,
+      .view-empty {
+          float: left !important;
+          width: 100% !important;
+      }
+      .pane-akmi-custom-akmi-news-resources-block {
+        position: relative !important;
+        page-break-inside: avoid !important;
+      }
+      .akaa-press-centre-main-wrapper {
+          float: left !important;
+          width: 100% !important;
+      }
+
+      .region-footer-second, .akaa-press-centre-inner-wrapper {
+          page-break-inside: avoid !important;
+        }
+        .akaa-press-centre-main-wrapper, #region-content, .region-footer-second {
+          clear: both ! important;
+          display: block ! important;
+          float: none ! important;
+          overflow: visible ! important;
+          width: 100% ! important;
+        }
+        .print-wrapper {
+          display: block !important;
+          float: left !important;
+          page-break-inside: avoid !important;
+        }
+     }
