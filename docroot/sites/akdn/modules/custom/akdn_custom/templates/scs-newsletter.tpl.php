@@ -34,10 +34,10 @@
       else{
         $output .= '<tr><td align="left" valign="top" width="170" style="padding:20px 0 20px 15px;border-bottom:1px solid #999999;vertical-align:top;text-align:left;">';
       }
-      if ($value['term_load']->name == 'In the media' && !empty($value['url'])) {
+      if ($value['term_load'] == 'In the media' && !empty($value['url'])) {
         $output .= l($img, $value['url'], array('attributes' => array('target' => '_blank'), 'html' => TRUE));
       }
-      elseif($value['term_load']->name == 'In the media' && empty($value['url'])) {
+      elseif($value['term_load'] == 'In the media' && empty($value['url'])) {
         $output .= $img;
       }
       else {
@@ -54,10 +54,10 @@
         $output .= '<td align="left" valign="top" style="padding:20px 15px;border-bottom:1px solid #999999;vertical-align:top;text-align:left;">';
       }
       if (!empty($value['title'])) {
-          if ($value['term_load']->name == 'In the media' && !empty($value['url'])) {
+          if ($value['term_load'] == 'In the media' && !empty($value['url'])) {
             $output .= '<h4 style="color:#b49759;font-weight:bold;font-size:12px;font-family:Arial,Serif;line-height:16px;margin:0 0 5px;text-align:left;">' . l($value['title'], $value['url']) . '</h4>';
           }
-          elseif($value['term_load']->name == 'In the media' && empty($value['url'])) {
+          elseif($value['term_load'] == 'In the media' && empty($value['url'])) {
             $output .= '<h4 style="color:#b49759;font-weight:bold;font-size:12px;font-family:Arial,Serif;line-height:16px;margin:0 0 5px;text-align:left;">' . $value['title'] . '</h4>';
           }
           else {
@@ -81,10 +81,10 @@
         $output .= '<tr><td colspan="2" align="left" valign="top" style="padding:20px 15px;border-bottom:1px solid #999999;vertical-align:top;text-align:left;">';
       }
       if (!empty($value['title'])) {
-        if ($value['term_load']->name == 'In the media' && !empty($value['url'])) {
+        if ($value['term_load'] == 'In the media' && !empty($value['url'])) {
           $output .= '<h4 style="color:#b49759;font-weight:bold;font-size:12px;font-family:Arial,Serif;line-height:16px;margin:0 0 5px;text-align:left;">' . l($value['title'], $value['url']) . '</h4>';
         }
-        elseif($value['term_load']->name == 'In the media' && empty($value['url'])) {
+        elseif($value['term_load'] == 'In the media' && empty($value['url'])) {
           $output .= '<h4 style="color:#b49759;font-weight:bold;font-size:12px;font-family:Arial,Serif;line-height:16px;margin:0 0 5px;text-align:left;">' . $value['title'] . '</h4>';
         }
         else {
