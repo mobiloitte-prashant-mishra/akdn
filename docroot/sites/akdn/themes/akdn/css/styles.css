@@ -751,85 +751,85 @@ th {
   .whatwedo-left .what-we-do-body-more-body {
     display: block;
   }
-  /* line 462, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 463, ../sass/sass-extensions/bootstrap/_print.scss */
   .whatwedo-left .view-display-id-what_we_do_summary_text p {
     font-size: 16px !important;
   }
 
-  /* line 468, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 469, ../sass/sass-extensions/bootstrap/_print.scss */
   .whatwedo-left {
     width: 100% !important;
   }
 
-  /* line 472, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 473, ../sass/sass-extensions/bootstrap/_print.scss */
   .whatwedo-right {
     display: none !important;
   }
 
-  /* line 476, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 477, ../sass/sass-extensions/bootstrap/_print.scss */
   .block-akdn-filter {
     display: none !important;
   }
 
-  /* line 480, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 481, ../sass/sass-extensions/bootstrap/_print.scss */
   .press-centre-listings {
     display: none !important;
   }
 
-  /* line 485, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 486, ../sass/sass-extensions/bootstrap/_print.scss */
   .akaa-akmi-body .pane-featured-slideshow {
     display: none !important;
   }
-  /* line 489, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 490, ../sass/sass-extensions/bootstrap/_print.scss */
   .akaa-akmi-body .whatsnew-right {
     display: none !important;
   }
 
-  /* line 497, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 498, ../sass/sass-extensions/bootstrap/_print.scss */
   .page-akmi-press-centre .section-content .grid-18,
   .page-architecture-press-centre .section-content .grid-18 {
     width: 100% !important;
   }
-  /* line 502, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 503, ../sass/sass-extensions/bootstrap/_print.scss */
   .page-akmi-press-centre .block-akdn-custom-akdn-filter,
   .page-architecture-press-centre .block-akdn-custom-akdn-filter {
     display: none !important;
   }
-  /* line 506, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 507, ../sass/sass-extensions/bootstrap/_print.scss */
   .page-akmi-press-centre .akdn-filter-js-wrapper,
   .page-architecture-press-centre .akdn-filter-js-wrapper {
     display: none !important;
   }
 
-  /* line 512, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 513, ../sass/sass-extensions/bootstrap/_print.scss */
   .node-type-award-cycle .grid-18 {
     width: 100% !important;
   }
-  /* line 515, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 516, ../sass/sass-extensions/bootstrap/_print.scss */
   .node-type-award-cycle .grid-18 .akaa-cycle-slideshow {
     display: none !important;
   }
-  /* line 520, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 521, ../sass/sass-extensions/bootstrap/_print.scss */
   .node-type-award-cycle .grid-6 {
     display: none !important;
   }
 
-  /* line 527, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 528, ../sass/sass-extensions/bootstrap/_print.scss */
   .page-architecture-master-jury .grid-18,
   .page-architecture-steering-committee .grid-18 {
     width: 100% !important;
   }
-  /* line 530, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 531, ../sass/sass-extensions/bootstrap/_print.scss */
   .page-architecture-master-jury .grid-18 .views-row,
   .page-architecture-steering-committee .grid-18 .views-row {
     page-break-inside: avoid;
   }
-  /* line 533, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 534, ../sass/sass-extensions/bootstrap/_print.scss */
   .page-architecture-master-jury .grid-18 .views-row .readmore-text,
   .page-architecture-steering-committee .grid-18 .views-row .readmore-text {
     display: block !important;
   }
-  /* line 539, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 540, ../sass/sass-extensions/bootstrap/_print.scss */
   .page-architecture-master-jury .grid-18 .views-row .readless-link:after,
   .page-architecture-master-jury .grid-18 .views-row .readmore-link:after,
   .page-architecture-steering-committee .grid-18 .views-row .readless-link:after,
@@ -837,78 +837,91 @@ th {
     content: "" !important;
   }
 
-  /* line 548, ../sass/sass-extensions/bootstrap/_print.scss */
-  .node-type-architecture-project .grid-18, .node-type-akmi-performance .grid-18, .node-type-akmi-artists .grid-18 {
+  /* line 551, ../sass/sass-extensions/bootstrap/_print.scss */
+  .node-type-akmi-artists .grid-18,
+  .node-type-akmi-performance .grid-18,
+  .node-type-architecture-project .grid-18 {
     width: 100% !important;
   }
-  /* line 552, ../sass/sass-extensions/bootstrap/_print.scss */
-  .node-type-architecture-project .grid-6, .node-type-akmi-performance .grid-6, .node-type-akmi-artists .grid-6 {
+  /* line 555, ../sass/sass-extensions/bootstrap/_print.scss */
+  .node-type-akmi-artists .grid-6,
+  .node-type-akmi-performance .grid-6,
+  .node-type-architecture-project .grid-6 {
     display: none !important;
   }
 
-  /* line 557, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 561, ../sass/sass-extensions/bootstrap/_print.scss */
   .node-type-akmi-performance .akaa-projectinfo-block-techinfo-wrapper {
     display: none !important;
   }
-  /* line 560, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 565, ../sass/sass-extensions/bootstrap/_print.scss */
   .node-type-akmi-performance .akaa-projectinfo-block-body-wrapper {
     width: 100% !important;
     padding: 20px !important;
   }
 
-  /* line 566, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 572, ../sass/sass-extensions/bootstrap/_print.scss */
   .page-akmi-cd-dvd .grid-18 {
     width: 100% !important;
   }
-  /* line 569, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 576, ../sass/sass-extensions/bootstrap/_print.scss */
   .page-akmi-cd-dvd .pc-listing-info {
     width: 100% !important;
     float: none !important;
   }
-  /* line 572, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 580, ../sass/sass-extensions/bootstrap/_print.scss */
   .page-akmi-cd-dvd .pc-listing-info .pc-body-wrapper {
     float: none !important;
   }
 
-  /* line 578, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 586, ../sass/sass-extensions/bootstrap/_print.scss */
   .grid-about-us-block-description,
   .grid-about-us-block_description {
     border-bottom: 0.1em solid #000000 !important;
     page-break-inside: avoid !important;
   }
 
-  /* line 584, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 592, ../sass/sass-extensions/bootstrap/_print.scss */
   .grid-about-us-block-description:last-child,
   .grid-about-us-block_description:last-child {
     border-bottom: 0 none !important;
   }
 
-  /* line 589, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 597, ../sass/sass-extensions/bootstrap/_print.scss */
   .award-cycle-project-list,
   .view-empty {
     float: left !important;
     width: 100% !important;
   }
 
-  /* line 594, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 603, ../sass/sass-extensions/bootstrap/_print.scss */
   .pane-akmi-custom-akmi-news-resources-block {
     position: relative !important;
     page-break-inside: avoid !important;
   }
 
-  /* line 598, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 610, ../sass/sass-extensions/bootstrap/_print.scss */
+  .akaa-press-centre-inner-wrapper .image a {
+    display: block;
+    float: left;
+  }
+
+  /* line 617, ../sass/sass-extensions/bootstrap/_print.scss */
   .akaa-press-centre-main-wrapper {
     float: left !important;
     width: 100% !important;
   }
 
-  /* line 603, ../sass/sass-extensions/bootstrap/_print.scss */
-  .region-footer-second, .akaa-press-centre-inner-wrapper {
+  /* line 622, ../sass/sass-extensions/bootstrap/_print.scss */
+  .akaa-press-centre-inner-wrapper,
+  .region-footer-second {
     page-break-inside: avoid !important;
   }
 
-  /* line 606, ../sass/sass-extensions/bootstrap/_print.scss */
-  .akaa-press-centre-main-wrapper, #region-content, .region-footer-second {
+  /* line 627, ../sass/sass-extensions/bootstrap/_print.scss */
+  #region-content,
+  .akaa-press-centre-main-wrapper,
+  .region-footer-second {
     clear: both !important;
     display: block !important;
     float: none !important;
@@ -916,7 +929,7 @@ th {
     width: 100% !important;
   }
 
-  /* line 613, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 637, ../sass/sass-extensions/bootstrap/_print.scss */
   .print-wrapper {
     display: block !important;
     float: left !important;
@@ -925,8 +938,8 @@ th {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url(../fonts/bootstrap/glyphicons-halflings-regular.eot?1475745015);
-  src: url(../fonts/bootstrap/glyphicons-halflings-regular.eot?&1475745015#iefix) format("embedded-opentype"), url(../fonts/bootstrap/glyphicons-halflings-regular.woff2?1475745015) format("woff2"), url(../fonts/bootstrap/glyphicons-halflings-regular.woff?1475745015) format("woff"), url(../fonts/bootstrap/glyphicons-halflings-regular.ttf?1475745015) format("truetype"), url(../fonts/bootstrap/glyphicons-halflings-regular.svg?1475745015#glyphicons_halflingsregular) format("svg");
+  src: url(../fonts/bootstrap/glyphicons-halflings-regular.eot?1479706147);
+  src: url(../fonts/bootstrap/glyphicons-halflings-regular.eot?&1479706147#iefix) format("embedded-opentype"), url(../fonts/bootstrap/glyphicons-halflings-regular.woff2?1479706147) format("woff2"), url(../fonts/bootstrap/glyphicons-halflings-regular.woff?1479706147) format("woff"), url(../fonts/bootstrap/glyphicons-halflings-regular.ttf?1479706147) format("truetype"), url(../fonts/bootstrap/glyphicons-halflings-regular.svg?1479706147#glyphicons_halflingsregular) format("svg");
 }
 /* line 24, ../sass/sass-extensions/bootstrap/_glyphicons.scss */
 .glyphicon, .location-links h2 .nolink:after, .location-links h2 a:after {
@@ -11058,7 +11071,7 @@ button.close {
   line-height: 1;
   margin: 8px 1px 0 0;
   color: #b2b2b2;
-  background: #fff url('../images/magnifier.png?1475745015') no-repeat;
+  background: #fff url('../images/magnifier.png?1479706147') no-repeat;
   background-size: contain;
   border-radius: 0;
   border: 0 none;
@@ -11805,7 +11818,7 @@ h1.title {
   padding: 0;
   font-size: 0;
   line-height: 1;
-  background: url('../images/instagram.png?1475745015') no-repeat;
+  background: url('../images/instagram.png?1479706147') no-repeat;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
@@ -12406,32 +12419,32 @@ h1.title {
 
 /* line 1630, ../sass/_akdn-redesign.scss */
 .facebook {
-  background: url('../images/facebook.png?1475745015') no-repeat;
+  background: url('../images/facebook.png?1479706147') no-repeat;
 }
 
 /* line 1630, ../sass/_akdn-redesign.scss */
 .twitter {
-  background: url('../images/twitter.png?1475745015') no-repeat;
+  background: url('../images/twitter.png?1479706147') no-repeat;
 }
 
 /* line 1630, ../sass/_akdn-redesign.scss */
 .youtube {
-  background: url('../images/youtube.png?1475745015') no-repeat;
+  background: url('../images/youtube.png?1479706147') no-repeat;
 }
 
 /* line 1630, ../sass/_akdn-redesign.scss */
 .instagram {
-  background: url('../images/instagram.png?1475745015') no-repeat;
+  background: url('../images/instagram.png?1479706147') no-repeat;
 }
 
 /* line 1630, ../sass/_akdn-redesign.scss */
 .vimeo {
-  background: url('../images/vimeo.png?1475745015') no-repeat;
+  background: url('../images/vimeo.png?1479706147') no-repeat;
 }
 
 /* line 1630, ../sass/_akdn-redesign.scss */
 .akmi {
-  background: url('../images/akmi.png?1475745015') no-repeat;
+  background: url('../images/akmi.png?1479706147') no-repeat;
 }
 
 /* line 1635, ../sass/_akdn-redesign.scss */
@@ -12793,12 +12806,12 @@ h1.title {
   height: 22px;
   margin: 0 auto;
   padding: 0;
-  background: url('../images/arrow-bottom.png?1475745015') no-repeat;
+  background: url('../images/arrow-bottom.png?1479706147') no-repeat;
 }
 /* line 2062, ../sass/_akdn-redesign.scss */
 .akdn-filter-show-hide h2.active:after {
   content: "";
-  background: url('../images/arrow-top.png?1475745015') no-repeat;
+  background: url('../images/arrow-top.png?1479706147') no-repeat;
 }
 
 /* line 2069, ../sass/_akdn-redesign.scss */
@@ -13586,12 +13599,12 @@ ul.primary li {
   height: 22px;
   margin: 0 auto;
   padding: 0;
-  background: url('../images/arrow-bottom.png?1475745015') no-repeat;
+  background: url('../images/arrow-bottom.png?1479706147') no-repeat;
 }
 /* line 2880, ../sass/_akdn-redesign.scss */
 .page-search .akdn-filter-show-hide h2.active:after {
   content: "";
-  background: url('../images/arrow-top.png?1475745015') no-repeat;
+  background: url('../images/arrow-top.png?1479706147') no-repeat;
 }
 /* line 2887, ../sass/_akdn-redesign.scss */
 .page-search .akdn-filter-js-wrapper {
@@ -13806,7 +13819,7 @@ ul.primary li {
   font-size: 0;
   text-transform: uppercase;
   border: 0 none;
-  background: url('../images/submit.png?1475745015') 0 0 no-repeat;
+  background: url('../images/submit.png?1479706147') 0 0 no-repeat;
 }
 /* line 3108, ../sass/_akdn-redesign.scss */
 .node-webform .webform-client-form .form-actions input.form-submit:focus {
@@ -13891,7 +13904,7 @@ ul.primary li {
 .node-webform .webform-subscribe .form-actions input.form-submit {
   width: 180px;
   margin-left: 0 !important;
-  background: url('../images/subscribe.png?1475745015') 0 0 no-repeat;
+  background: url('../images/subscribe.png?1479706147') 0 0 no-repeat;
 }
 
 /* line 3207, ../sass/_akdn-redesign.scss */
@@ -14078,7 +14091,7 @@ h2.header-name a:active, h2.header-name a:focus {
 .geography-page .country-activity-tile .hub-pages-row .country_activity_link a,
 .node-type-agency .country-activity-tile .hub-pages-row .country_activity_link a {
   position: absolute;
-  background: url('../images/arrows.png?1475745015') 0 -30px no-repeat;
+  background: url('../images/arrows.png?1479706147') 0 -30px no-repeat;
   width: 26px;
   height: 26px;
   font-size: 0;
@@ -14539,7 +14552,7 @@ h2.header-name a:active, h2.header-name a:focus {
   height: 24px;
   margin-top: -2px;
   margin-left: 5px;
-  background: url('../images/download-icon.jpg?1475745015') 0 0 no-repeat;
+  background: url('../images/download-icon.jpg?1479706147') 0 0 no-repeat;
   background-size: contain;
 }
 /* line 3915, ../sass/_akdn-redesign.scss */
@@ -16577,12 +16590,12 @@ map area {
   height: 22px;
   margin: 0 auto;
   padding: 0;
-  background: url('../images/arrow-bottom.png?1475745015') no-repeat;
+  background: url('../images/arrow-bottom.png?1479706147') no-repeat;
 }
 /* line 6233, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .pane-title.active:after, .akaa-projectfinder-wrapper .block-title.active:after {
   content: "";
-  background: url('../images/arrow-top.png?1475745015') no-repeat;
+  background: url('../images/arrow-top.png?1479706147') no-repeat;
 }
 /* line 6239, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .pane-content, .akaa-projectfinder-wrapper .content {
@@ -16841,7 +16854,7 @@ map area {
   height: 26px;
   font-size: 0;
   cursor: pointer;
-  background: url('../images/arrows.png?1475745015') 0 -60px no-repeat;
+  background: url('../images/arrows.png?1479706147') 0 -60px no-repeat;
 }
 /* line 6521, ../sass/_akdn-redesign.scss */
 .akaa-award-cycle-block-short-video .views-field-nothing .play-video a:hover, .akaa-award-cycle-block-short-video .views-field-nothing .play-video a:focus {
@@ -16899,7 +16912,7 @@ map area {
   height: 26px;
   font-size: 0;
   cursor: pointer;
-  background: url('../images/arrows.png?1475745015') 0 -30px no-repeat;
+  background: url('../images/arrows.png?1479706147') 0 -30px no-repeat;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -18893,7 +18906,7 @@ map area {
 .akdn-logo-wrap {
   width: 120px;
   height: 55px;
-  background: url('../images/akdn-logo.png?1475745015') no-repeat;
+  background: url('../images/akdn-logo.png?1479706147') no-repeat;
 }
 
 /* Projects Lightbox captions */
