@@ -935,6 +935,21 @@ th {
     float: left !important;
     page-break-inside: avoid !important;
   }
+
+  /* line 644, ../sass/sass-extensions/bootstrap/_print.scss */
+  .photograph-detail-banner .galleryformatter {
+    display: block !important;
+    float: left !important;
+    overflow: visible !important;
+    width: 100% !important;
+  }
+  /* line 651, ../sass/sass-extensions/bootstrap/_print.scss */
+  .photograph-detail-banner .galleryformatter .gallery-thumbs .wrapper {
+    display: block !important;
+    float: left !important;
+    overflow: visible !important;
+    width: 100% !important;
+  }
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
