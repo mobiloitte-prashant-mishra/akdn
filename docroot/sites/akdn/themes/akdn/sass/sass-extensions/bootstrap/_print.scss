@@ -671,31 +671,33 @@
     page-break-inside: avoid !important;
   }
 
- .press-release-detail {
-        .pane-node-title-field {
-            clear: both !important;
+  .press-release-detail {
+    .pane-node-title-field {
+      clear: both !important;
+    }
+  }
+
+  .photograph-detail-banner {
+    .galleryformatter {
+      overflow: visible !important;
+
+      .gallery-thumbs {
+        padding: 0 !important;
+
+        .wrapper {
+          overflow: visible !important;
         }
+      }
     }
+  }
 
-    .photograph-detail-banner {
-        .galleryformatter {
-            overflow: visible !important;
+  .in-media-block {
+    page-break-inside: avoid !important;
+  }
 
-            .gallery-thumbs {
-                padding: 0 !important;
-
-                .wrapper {
-                    overflow: visible !important;
-                }
-            }
-          }
-    }
-    .in-media-block {
-      page-break-inside: avoid !important;
-    }
-    .page-architecture-projects .title-border h1.title{
-      border: 0 none !important;
-    }
+  .page-architecture-projects .title-border h1.title {
+    border: 0 none !important;
+  }
 
   .grid-media-block_description {
     .read-more {
@@ -720,9 +722,9 @@
     border-left-width: 1.5px !important;
     content: "";
   }
+
   .section-content .omega-24-twocol-6-18 {
     margin: 0 !important;
     padding: 0 10px !important;
   }
 }
-

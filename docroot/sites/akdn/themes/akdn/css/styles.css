@@ -954,39 +954,39 @@ th {
     overflow: visible !important;
   }
 
-  /* line 693, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 694, ../sass/sass-extensions/bootstrap/_print.scss */
   .in-media-block {
     page-break-inside: avoid !important;
   }
 
-  /* line 696, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 698, ../sass/sass-extensions/bootstrap/_print.scss */
   .page-architecture-projects .title-border h1.title {
     border: 0 none !important;
   }
 
-  /* line 702, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 704, ../sass/sass-extensions/bootstrap/_print.scss */
   .grid-media-block_description .read-more .country-city-readmore {
     width: 100% !important;
   }
 
-  /* line 708, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 710, ../sass/sass-extensions/bootstrap/_print.scss */
   .in-media-container .view-content {
     margin: 0px !important;
   }
 
-  /* line 713, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 715, ../sass/sass-extensions/bootstrap/_print.scss */
   .grid-media-block_description .country-city-readmore a {
     clear: both !important;
     display: block !important;
   }
 
-  /* line 719, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 721, ../sass/sass-extensions/bootstrap/_print.scss */
   .in-media-block::before {
     border-left-width: 1.5px !important;
     content: "";
   }
 
-  /* line 723, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 726, ../sass/sass-extensions/bootstrap/_print.scss */
   .section-content .omega-24-twocol-6-18 {
     margin: 0 !important;
     padding: 0 10px !important;
