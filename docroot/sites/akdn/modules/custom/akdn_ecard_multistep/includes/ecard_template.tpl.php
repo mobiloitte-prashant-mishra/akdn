@@ -18,21 +18,21 @@
   </div>
   <div class="horizontal5" style="max-width:650px;width:100%;height:1px;background-color:#DBDBDB;margin-bottom:10px;margin-top:25px;clear:both;" ></div>
   <div class="akdn" style="text-align:justify;align-content:justify;font-family:Arial;color:#656565;background-color:#F7F7F7;background-image:none;background-repeat:repeat;background-position:top left;background-attachment:scroll;font-size:11px;line-height:16px;border-width:1px;border-style:solid;border-color:#CCC;padding-top:20px;padding-bottom:12px;" >
-    <table width="610" border="0" align="center" cellpadding="0" cellspacing="0">
+    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
       <tbody style="border:none;">
         <tr>
           <td>
     <strong> </strong>
-    <table width="620" border="0" align="center" cellpadding="0" cellspacing="0">
+    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
       <tbody style="border:none;">
         <tr>
-          <td width="113" rowspan="2" valign="middle"><?php !empty($fact_uri) ? $fact_uri : $fact_uri = 'http://cdn.iiuk.org/akdn/humayun3-01.png';print '<img src="'.$fact_uri.'" alt="Fact" width="100" height="145" title="Fact"/>'; ?></td>
-          <td width="507" height="80" valign="top"><span class="akdntext" style="text-align:justify;align-content:justify;font-family:Arial;color:#656565;font-size:11px;line-height:16px;" ><?php print !empty($proj_info) ? $proj_info : '{Project Info}'; ?>.<?php print '<a href="' . $link_url .'" target="_blank" style="color:#656565;" >' . $link_title .'  »</a>'; ?><strong><br>
+          <td width="113" rowspan="2" valign="middle" style="padding:3px;"><?php !empty($fact_uri) ? $fact_uri : $fact_uri = 'http://cdn.iiuk.org/akdn/humayun3-01.png';print '<img src="'.$fact_uri.'" alt="Fact" width="100" height="145" title="Fact"/>'; ?></td>
+          <td width="507" height="80" valign="top" style="padding:10px;><span class="akdntext" style="text-align:justify;align-content:justify;font-family:Arial;color:#656565;font-size:11px;line-height:16px;" ><?php print !empty($proj_info) ? $proj_info : '{Project Info}'; ?>.<?php print '<a href="' . $link_url .'" target="_blank" style="color:#656565;" >' . $link_title .'  »</a>'; ?><strong><br>
             <br>
           </strong></span></td>
           </tr>
         <tr>
-        <td width="507" height="23" valign="top"><strong><span class="akdntext" style="text-align:justify;align-content:justify;font-family:Arial;color:#656565;font-size:11px;line-height:16px;" ><?php print !empty($fact_desc) ? $fact_desc : '{fact desc}'; ?></span></strong></td>
+        <td width="507" height="23" valign="top" style="padding:10px;><strong><span class="akdntext" style="text-align:justify;align-content:justify;font-family:Arial;color:#656565;font-size:11px;line-height:16px;" ><?php print !empty($fact_desc) ? $fact_desc : '{fact desc}'; ?></span></strong></td>
           </tr>
         </tbody>
       </table></td>
@@ -42,7 +42,7 @@
   </div><br>
   <div class="horizontal4" style="max-width:650px;width:100%;height:1px;background-color:#DBDBDB;margin-bottom:10px;margin-top:10px;clear:both;" ></div><br>
   <div class="nl" style="text-align:center;align-content:center;font-family:arial;color:#656565;font-size:11px;line-height:16px;padding-top:10px;" > 
-    <table width="620" border="0" cellspacing="0" cellpadding="0">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tbody style="border:none;">
         <tr>
           <td width="113" align="center"><a href="http://www.akdn.org/"><img src="https://i3.createsend1.com/ei/d/F6/998/C6E/204759/csimport/logo-akdn-3_2.png" alt="AKDN" width="80" height="37" title="AKDN"/></a></td>
