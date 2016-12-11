@@ -46,7 +46,7 @@
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tbody style="border:none;">
           <tr>
-            <td width="80" align="center"><a href="http://www.akdn.org/"><img src="/sites/akdn/themes/akdn/images/logo-akdn-3_2.png" alt="AKDN" width="80" height="37" title="AKDN"/></a></td>
+            <td width="80" align="center"><a href="http://www.akdn.org/"><img src="http://www.akdn.org/sites/akdn/themes/akdn/images/logo-akdn-3_2.png" alt="AKDN" width="80" height="37" title="AKDN"/></a></td>
           <td width="518"><span class="akdntext" style="text-align:justify;align-content:justify;font-family:Arial;color:#656565;font-size:11px;line-height:16px;" >You can learn more about AKDN's work by visiting our <a href="http://www.akdn.org/" style="color:#656565;" ><strong>Website »</strong></a><strong></strong> or subscribing to our <a href="http://www.akdn.org/subscribe" style="color:#656565;" ><strong>Newsletter »</strong></a></span></td>
             </tr>
           </tbody>
