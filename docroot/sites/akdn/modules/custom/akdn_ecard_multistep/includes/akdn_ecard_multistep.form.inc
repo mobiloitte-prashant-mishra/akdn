@@ -370,9 +370,7 @@ function akdn_ecard_multistep_form_step2($form, &$form_state) {
   }
   
   $data = str_replace(array('<p>', '</p>'), array('<span>', '</span>'), $template_data['proj_info']);
-
   $style_uri = image_style_url('ecard_template_image', $template_data['main_image']);
-
   $html = theme('ecard_template', array('main_image' => $style_uri, 'proj_info' => $data, 'fact_image' => $template_data['fact_image'], 'fact_desc' => $template_data['fact_desc'], 'link_title' => $template_data['link_title'], 'link_url' => $template_data['link_url'], 'greetings' => $greetings, 'sender_name' => $step1_details['sender_name'], 'message' => $step1_details['default_message'], 'op' => 'preview'));
 
   $form['ecard_template'] = array(
@@ -593,7 +591,7 @@ function _get_template_details($nid) {
       $data['main_image'] = $img_uri;
       $data['proj_info'] = $node_wrapper->field_project_country_descript->value()['value'];
       $data['fact_desc'] = $node_wrapper->field_fact_description->value()['value'];
-      $data['fact_uri'] = file_create_url($node_wrapper->field_fact_image->value()['uri']);
+      $data['fact_image'] = file_create_url($node_wrapper->field_fact_image->value()['uri']);
       $data['link_title'] = $node_wrapper->field_more_information_link->value()['title'];
       $data['link_url'] = $node_wrapper->field_more_information_link->value()['url'];
     }
