@@ -6,7 +6,7 @@
         print '<img src="' . $main_image . '" alt="Card Image" width="650" height="344" title="Card Image"/>';
         ?>
     <div class="horizontal2" style="max-width:650px;width:100%;height:1px;background-color:#DBDBDB;margin-bottom:15px;margin-top:15px;clear:both;" >  </div>
-   <BR /><BR /> <div class="greeting" style="font-family:Gill Sans, Gill Sans MT, Myriad Pro, DejaVu Sans Condensed, Helvetica, Arial,' sans-serif';font-size:25px;text-align:center;color:#b49957;" ><?php print !empty($greetings)? $greetings : '{Greetings}'; ?></div>
+   <BR /><BR /> <div class="greeting" style="font-family:Gill Sans, Gill Sans MT, Myriad Pro, DejaVu Sans Condensed, Helvetica, Arial,' sans-serif';font-size:25px;text-align:center;color:#b49957;text-transform: uppercase;" ><?php print !empty($greetings)? $greetings : '{Greetings}'; ?></div>
   <div class="horizontal3" style="max-width:650px;width:100%;height:1px;background-color:#DBDBDB;margin-bottom:25px;margin-top:15px;clear:both;" >  </div>
    
     <div class="ftext" style="font-family:Cambria, Hoefler Text, Liberation Serif, Times, Times New Roman, serif;font-size:16px;line-height:20px;color:#000;margin-bottom:10px;" >
@@ -46,7 +46,7 @@
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tbody style="border:none;">
           <tr>
-            <td width="80" align="center"><a href="http://www.akdn.org/"><img src="/sites/akdn/themes/akdn/images/logo-akdn-3_2.png" alt="AKDN" width="80" height="37" title="AKDN"/></a></td>
+            <td width="80" align="center"><a href="http://www.akdn.org/"><img src="http://www.akdn.org/sites/akdn/themes/akdn/images/logo-akdn-3_2.png" alt="AKDN" width="80" height="37" title="AKDN"/></a></td>
           <td width="518"><span class="akdntext" style="text-align:justify;align-content:justify;font-family:Arial;color:#656565;font-size:11px;line-height:16px;" >You can learn more about AKDN's work by visiting our <a href="http://www.akdn.org/" style="color:#656565;" ><strong>Website »</strong></a><strong></strong> or subscribing to our <a href="http://www.akdn.org/subscribe" style="color:#656565;" ><strong>Newsletter »</strong></a></span></td>
             </tr>
           </tbody>

@@ -361,8 +361,8 @@ function akdn_ecard_multistep_form_step2($form, &$form_state) {
   $template_data = _get_template_details(arg(1));
 
   $step1_details = $form_state['multistep_values']['step1'];
-
-  if ($step1_details['greetings'] === 'custom') {
+   
+  if ($step1_details['greetings'] === 'Custom') {
     $greetings = $step1_details['custom_gretting_message'];
   }
   else {
@@ -483,7 +483,7 @@ function akdn_ecard_multistep_form_step3($form, &$form_state) {
 
   $step1_details = $form_state['multistep_values']['step1'];
 
-  if ($step1_details['greetings'] === 'custom') {
+  if ($step1_details['greetings'] === 'Custom') {
     $greetings = $step1_details['custom_gretting_message'];
   }
   else {

@@ -62,7 +62,7 @@ function akdn_ecard_multistep_step3_submit($form, &$form_state) {
 
   $template_data = _get_template_details(arg(1));
   
-  if ($step_details['step1']['greetings'] === 'custom') {
+  if ($step_details['step1']['greetings'] === 'Custom') {
     $greetings = $step_details['step1']['custom_gretting_message'];
   }
   else {
@@ -103,7 +103,7 @@ function akdn_ecard_multistep_step3_submit($form, &$form_state) {
     }
   }
 
-  send_ecard_emails_mandrill($html, $step_details['step1']['sender_email'], $step_details['step1']['sender_name'],$to_reci, $step_details['step1']['greetings']);
+  send_ecard_emails_mandrill($html, $step_details['step1']['sender_email'], $step_details['step1']['sender_name'],$to_reci, $greetings);
 
   drupal_goto('ecard/thank-you');
 
