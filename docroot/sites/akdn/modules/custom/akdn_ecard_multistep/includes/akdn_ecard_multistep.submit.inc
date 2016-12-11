@@ -124,7 +124,7 @@ function send_ecard_emails_mandrill($html, $from_email, $from_name,$to, $subject
       'track_opens' => true,
       'track_clicks' => true,
       'inline_css' => true,
-      'preserve_recipients' => true,
+      'preserve_recipients' => false,
     );
     $args=array('async' => true,'ip_pool' => 'Main Pool');
     $result = mandrill_mailsend($message,'mandrill_sender_plain',$args);
