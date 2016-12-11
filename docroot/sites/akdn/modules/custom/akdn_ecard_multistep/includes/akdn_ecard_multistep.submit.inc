@@ -62,7 +62,7 @@ function akdn_ecard_multistep_step3_submit($form, &$form_state) {
 
   $template_data = _get_template_details(arg(1));
   
-  if ($step_details['step1']['greetings'] === 'custom') {
+  if ($step_details['step1']['greetings'] === 'Custom') {
     $greetings = $step_details['step1']['custom_gretting_message'];
   }
   else {
