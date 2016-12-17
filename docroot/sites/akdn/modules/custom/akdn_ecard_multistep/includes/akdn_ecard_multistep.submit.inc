@@ -113,6 +113,18 @@ function akdn_ecard_multistep_step3_submit($form, &$form_state) {
  *  Queued email addresses in mandrill for sending
  */
 function send_ecard_emails_mandrill($html, $from_email, $from_name,$to, $subject) {
+
+  foreach ($to as $value) {
+    $obj = new stdClass();
+    $vars = array();
+    $obj2 = new stdClass();
+    $obj2->name = "fname";
+    $obj->rcpt = $value['email'];
+    $obj2->content = $value['name'];
+    $vars[] = $obj2;
+    $obj->vars = $vars;
+    $v[] =  $obj;
+  }
   try{
     $message = array(
       'html' => $html,
@@ -125,8 +137,10 @@ function send_ecard_emails_mandrill($html, $from_email, $from_name,$to, $subject
       'track_clicks' => true,
       'inline_css' => true,
       'preserve_recipients' => false,
+      'merge_vars' => $v,
     );
     $args=array('async' => true,'ip_pool' => 'Main Pool');
+
     $result = mandrill_mailsend($message,'mandrill_sender_plain',$args);
   }
   catch(Mandrill_Error $e) {
@@ -134,6 +148,13 @@ function send_ecard_emails_mandrill($html, $from_email, $from_name,$to, $subject
     throw $e;
   }
 }
+
+
+
+
+
+
+
 
 
 

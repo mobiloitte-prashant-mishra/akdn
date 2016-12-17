@@ -10,7 +10,7 @@
   <div class="horizontal3" style="max-width:650px;width:100%;height:1px;background-color:#DBDBDB;margin-bottom:25px;margin-top:15px;clear:both;" >  </div>
    
     <div class="ftext" style="font-family:Cambria, Hoefler Text, Liberation Serif, Times, Times New Roman, serif;font-size:16px;line-height:20px;color:#000;margin-bottom:10px;" >
-      <p style="text-align:center;" >Dear <?php if ($op === 'preview') { $name = 'Name'; } else { $name = '*|FNAME|*';} print !empty($to_name)? $to_name : $name; ?>,</p><br>
+      <p style="text-align:center;" >Dear <?php if ($op === 'preview') { $name = 'Name'; } else { $name = '*|fname|*';} print !empty($to_name)? $to_name : $name; ?>,</p><br>
       <p style="text-align:center;" ><?php print !empty($message)? filter_xss(nl2br($message), array('br')) : '{Message}'; ?></p>
       <br><br>
       <p style="text-align:center;" >
