@@ -154,7 +154,7 @@ function akdn_ecard_multistep_form_step2($form, &$form_state) {
 
  $values = isset($form_state['multistep_values']['step2']) ? $form_state['multistep_values']['step2'] : array();
   $form['step2']['header'] = array(
-    '#markup' => '<h2>' . t('Step 2: Add Recipients') . '</h2>',
+    '#markup' => '<h2>' . t('Step 2: Add Recipients') . '</h2><div style="margin:5px;">Your recipients name will automatically be added in the eCard.</div>',
   );
 
   if (empty($form_state['rec_count'])) {
