@@ -424,7 +424,7 @@ print $output;
     t('queue'),
     t('| More'),
     t('<div class="pc-listing-img">
-
+	[field_hub_page_image]
 </div>
 <div class="pc-listing-info">
 	<div class="pc-body">
@@ -5621,7 +5621,6 @@ return $cycle_id;';
   $handler->display->display_options['fields']['field_vocal_artist_check']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_vocal_artist_check']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_vocal_artist_check']['hide_empty'] = TRUE;
-
   /* Field: Content: Country of Origin */
   $handler->display->display_options['fields']['field_artist_country_origin']['id'] = 'field_artist_country_origin';
   $handler->display->display_options['fields']['field_artist_country_origin']['table'] = 'field_data_field_artist_country_origin';
@@ -23148,6 +23147,8 @@ $mlid = $node->menu_node_links[key($node->menu_node_links)];
   $handler = $view->new_display('block', 'Custom Block', 'custom_block');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Custom Block';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'hub-page-custom-page-block-link';
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Unfiltered text */
   $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
@@ -23162,6 +23163,8 @@ $mlid = $node->menu_node_links[key($node->menu_node_links)];
   $handler->display->display_options['fields']['field_block_add_links']['table'] = 'field_data_field_block_add_links';
   $handler->display->display_options['fields']['field_block_add_links']['field'] = 'field_block_add_links';
   $handler->display->display_options['fields']['field_block_add_links']['label'] = '';
+  $handler->display->display_options['fields']['field_block_add_links']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_block_add_links']['element_class'] = 'custom-page-block-link';
   $handler->display->display_options['fields']['field_block_add_links']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_block_add_links']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_block_add_links']['group_rows'] = FALSE;
