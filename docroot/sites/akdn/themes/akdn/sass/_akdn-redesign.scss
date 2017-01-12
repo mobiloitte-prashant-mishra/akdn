@@ -5613,6 +5613,8 @@ map {
   }
 
   .views-row {
+    color: #000;
+    font-size: 18px;
     a {
       @extend %other_activities_links;
     }
@@ -6030,6 +6032,8 @@ map {
   }
 
   .views-row {
+    color: #000;
+    font-size: 18px;
     a {
       @extend %custom_activities_links;
     }
@@ -6040,6 +6044,12 @@ map {
       display: none;
     }
   }
+}
+
+.custom-page-header-block{
+    margin-bottom: 10px;
+    color: #000;
+    font-size: 18px;
 }
 
 .basic-page-custom-title {
