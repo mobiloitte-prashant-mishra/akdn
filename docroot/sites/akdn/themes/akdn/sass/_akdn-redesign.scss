@@ -5613,10 +5613,19 @@ map {
   }
 
   .views-row {
+    margin-bottom: 10px;
     color: #000;
     font-size: 18px;
     a {
       @extend %other_activities_links;
+    }
+  }
+}
+
+.hub-page-custom-page-block-link {
+  .custom-page-block-link {
+    a {
+    margin-bottom: 0px;
     }
   }
 }
@@ -6032,8 +6041,9 @@ map {
   }
 
   .views-row {
-    color: #000;
+    margin-bottom: 10px;
     font-size: 18px;
+    color: #000;
     a {
       @extend %custom_activities_links;
     }
@@ -6048,13 +6058,13 @@ map {
 
 .custom-page-header-block{
     margin-bottom: 10px;
-    color: #000;
     font-size: 18px;
+    color: #000;
     .akaa-projectinfo-map-related-info{
       .item-list{
         ul{
           li{
-            line-height: 35px;
+            line-height: 40px;
           }
         }
       }
