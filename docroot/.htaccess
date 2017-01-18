@@ -135,7 +135,7 @@ DirectoryIndex index.php index.html index.htm
   RewriteCond %{HTTP_HOST} ^(www\.)?nic\.ismaili$ [NC,OR]
   RewriteCond %{HTTP_HOST} ^(www\.)?nic\.agakhan$ [NC,OR]
   RewriteCond %{HTTP_HOST} ^(www\.)?nic\.imamat$
-  RewriteRule (.*) www.akdn.org/gtld/$1 [P,L]
+  RewriteRule (.*) http://www.akdn.org/gtld/$1 [P,L]
 
   # Rules to correctly serve gzip compressed CSS and JS files.
   # Requires both mod_rewrite and mod_headers to be enabled.
