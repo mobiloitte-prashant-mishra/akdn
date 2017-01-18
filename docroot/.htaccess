@@ -130,6 +130,13 @@ DirectoryIndex index.php index.html index.htm
   RewriteCond %{REQUEST_URI} !=/favicon.ico
   RewriteRule ^ index.php [L]
 
+  # Proxy redirect everything from "nic.akdn, nic.ismaili, nic.agakhan, nic.imamat" to "http://akdn3dev.prod.acquia-sites.com/ecards"
+  RewriteCond %{HTTP_HOST} ^(www\.)?nic\.akdn$ [NC,OR]
+  RewriteCond %{HTTP_HOST} ^(www\.)?nic\.ismaili$ [NC,OR]
+  RewriteCond %{HTTP_HOST} ^(www\.)?nic\.agakhan$ [NC,OR]
+  RewriteCond %{HTTP_HOST} ^(www\.)?nic\.imamat$
+  RewriteRule (.*) http://akdn3dev.prod.acquia-sites.com/ecards/$1 [P,L]
+
   # Rules to correctly serve gzip compressed CSS and JS files.
   # Requires both mod_rewrite and mod_headers to be enabled.
   <IfModule mod_headers.c>
