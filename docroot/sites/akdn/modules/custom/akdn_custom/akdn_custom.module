@@ -3747,9 +3747,8 @@ function akdn_custom_facet_items_alter(&$build, &$settings) {
       }
     }
     if (array_key_exists('agency', $build)) {
-        $count = $build['agency']['#count'];
-        $count1 = $count - 2;
-        $build['agency']['#count'] = $count1;
+        $count = $build['agency']['#count'] -2;
+        $build['agency']['#count'] = $count;
       }
   }
 }
