@@ -114,7 +114,7 @@
     $image = theme('image_style', $thumb_image);
     $image_link = l($image, $value['url'], array('attributes' => array('target' => '_blank'), 'html' => TRUE));
     if($i==0) {
-      $output .= '<tr><td colspan="2" style="padding:15px;border:0;"><h5 style="margin:0;font-family:Times New Roman,arial;font-size: 16px;font-weight: bold;color: #000;">AKDN on social media</h5></td></tr>';
+      $output .= '<tr><td colspan="2" style="padding:15px;border:0;"><h5 style="margin:0;font-family:arial, sans-serif;font-size: 16px;font-weight: bold;color: #b49759;">AKDN on social media</h5></td></tr>';
     }
     $output .= '<tr><td colspan="2" style="padding:0 15px 15px;border:0;">';
       if($value['type'] == 'facebook') {
@@ -126,9 +126,9 @@
                             <tr><td width="1%" align="left" valign="top" style="padding:2px 0 0 0;"><img width="32" height="32" src="'.$base_url.'/sites/akdn/themes/akdn/images/facebook.png" style="width:32px;height:32px;"></td>
                             <td width="99%" align="left" valign="top" style="padding:0 0 0 8px;">
                               <h3 style="font-size:16px;margin:0 0 3px;padding:0;font-family:arial;font-weight:normal;line-height:1;">Aga Khan Development Network</h3>
-                              <p style="margin:0;font-family:Times New Roman,arial;font-size:14px;">facebook.com/AKDN</p>
+                              <p style="margin:0;font-family:arial, sans-serif;font-size:12px;">facebook.com/AKDN</p>
                             </td></tr>
-                          <tr><td colspan="2" style="font-family:arial;font-size:14px;line-height:16px;color:#000000;padding:5px 0 10px;">' . $value['body'] . '</td></tr>
+                          <tr><td colspan="2" style="font-family:arial;font-size:12px;line-height:16px;color:#000000;padding:5px 0 10px;">' . $value['body'] . '</td></tr>
                           <tr><td colspan="2" style="padding:0;"><a href="' . $value['url'] . '" style="width:50px;height:20px;padding:0;border-top: 3px solid #3b5998;border-bottom: 3px solid #3b5998;border-right: 8px solid #3b5998;border-left: 8px solid #3b5998;font-family:arial;font-size:12px;line-height:1;color:#ffffff;background:#3b5998;text-decoration:none;">Read</a></td></tr>
                           </table>
                         </td>
@@ -143,9 +143,9 @@
                             <tr><td width="1%" align="left" valign="top" style="padding:2px 0 0 0;"><img width="32" height="32" src="'.$base_url.'/sites/akdn/themes/akdn/images/facebook.png" style="width:32px;height:32px;"></td>
                             <td width="99%" align="left" valign="top" style="padding:0 0 0 8px;">
                               <h3 style="font-size:16px;margin:0 0 3px;padding:0;font-family:arial;font-weight:normal;line-height:1;">Aga Khan Development Network</h3>
-                              <p style="margin:0;font-family:Times New Roman,arial;font-size:14px;">facebook.com/AKDN</p>
+                              <p style="margin:0;font-family:arial, sans-serif;font-size:12px;">facebook.com/AKDN</p>
                             </td></tr>
-                          <tr><td colspan="2" style="font-family:arial;font-size:14px;line-height:16px;color:#000000;padding:5px 0 10px;">' . $value['body'] . '</td></tr>
+                          <tr><td colspan="2" style="font-family:arial;font-size:12px;line-height:16px;color:#000000;padding:5px 0 10px;">' . $value['body'] . '</td></tr>
                           <tr><td colspan="2" style="padding:0;"><a href="' . $value['url'] . '" style="width:50px;height:20px;padding:0;border-top: 3px solid #3b5998;border-bottom: 3px solid #3b5998;border-right: 8px solid #3b5998;border-left: 8px solid #3b5998;font-family:arial;font-size:12px;line-height:1;color:#ffffff;background:#3b5998;text-decoration:none;">Read</a></td></tr>
                           </table>
                         </td>
@@ -163,9 +163,9 @@
                   <tr><td width="1%" align="left" valign="top" style="padding:2px 0 0 0;"><img width="32" height="32" src="'.$base_url.'/sites/akdn/themes/akdn/images/twitter.png" style="width:32px;height:32px;"></td>
                   <td width="99%" align="left" valign="top" style="padding:0 0 0 8px;">
                     <h3 style="font-size:16px;margin:0 0 3px;padding:0;font-family:arial;font-weight:normal;line-height:1;">Aga Khan Development Network</h3>
-                    <p style="margin:0;font-family:Times New Roman,arial;font-size:14px;">@AKDN</p>
+                    <p style="margin:0;font-family:arial, sans-serif;font-size:12px;">@AKDN</p>
                   </td></tr>
-                <tr><td colspan="2" style="font-family:arial;font-size:14px;line-height:16px;color:#000000;padding:5px 0 10px;">' . $value['body'] . '</td></tr>
+                <tr><td colspan="2" style="font-family:arial;font-size:12px;line-height:16px;color:#000000;padding:5px 0 10px;">' . $value['body'] . '</td></tr>
                 <tr><td colspan="2" style="padding:0;"><a href="' . $value['url'] . '" style="width:50px;height:20px;padding:0;border-top: 3px solid #1b95e0;border-bottom: 3px solid #1b95e0;border-right: 8px solid #1b95e0;border-left: 8px solid #1b95e0;font-family:arial;font-size:12px;line-height:1;color:#ffffff;background:#1b95e0;text-decoration:none;">Read</a></td></tr>
                 </table>
               </td>
@@ -180,9 +180,9 @@
                   <tr><td width="1%" align="left" valign="top" style="padding:2px 0 0 0;"><img width="32" height="32" src="'.$base_url.'/sites/akdn/themes/akdn/images/twitter.png" style="width:32px;height:32px;"></td>
                   <td width="99%" align="left" valign="top" style="padding:0 0 0 8px;">
                     <h3 style="font-size:16px;margin:0 0 3px;padding:0;font-family:arial;font-weight:normal;line-height:1;">Aga Khan Development Network</h3>
-                    <p style="margin:0;font-family:Times New Roman,arial;font-size:14px;">@AKDN</p>
+                    <p style="margin:0;font-family:arial, sans-serif;font-size:12px;">@AKDN</p>
                   </td></tr>
-                <tr><td colspan="2" style="font-family:arial;font-size:14px;line-height:16px;color:#000000;padding:5px 0 10px;">' . $value['body'] . '</td></tr>
+                <tr><td colspan="2" style="font-family:arial;font-size:12px;line-height:16px;color:#000000;padding:5px 0 10px;">' . $value['body'] . '</td></tr>
                 <tr><td colspan="2" style="padding:0;"><a href="' . $value['url'] . '" style="width:50px;height:20px;padding:0;border-top: 3px solid #1b95e0;border-bottom: 3px solid #1b95e0;border-right: 8px solid #1b95e0;border-left: 8px solid #1b95e0;font-family:arial;font-size:12px;line-height:1;color:#ffffff;background:#1b95e0;text-decoration:none;">Read</a></td></tr>
                 </table>
               </td>
@@ -200,9 +200,9 @@
                 <tr><td width="1%" align="left" valign="top" style="padding:2px 0 0 0;"><img width="32" height="32" src="'.$base_url.'/sites/akdn/themes/akdn/images/instagram.png" style="width:32px;height:32px;"></td>
                 <td width="99%" align="left" valign="top" style="padding:0 0 0 8px;">
                   <h3 style="font-size:16px;margin:0 0 3px;padding:0;font-family:arial;font-weight:normal;line-height:1;">Aga Khan Development Network</h3>
-                  <p style="margin:0;font-family:Times New Roman,arial;font-size:14px;">@AKDN</p>
+                  <p style="margin:0;font-family:arial, sans-serif;font-size:12px;">@AKDN</p>
                 </td></tr>
-              <tr><td colspan="2" style="font-family:arial;font-size:14px;line-height:16px;color:#000000;padding:5px 0 0;">' . $value['body'] . '</td></tr>
+              <tr><td colspan="2" style="font-family:arial;font-size:12px;line-height:16px;color:#000000;padding:5px 0 0;">' . $value['body'] . '</td></tr>
               </table>
             </td>
             <td width="250" align="right" valign="top" style="padding:15px;">' . $image_link . '</td>
@@ -216,9 +216,9 @@
                 <tr><td width="1%" align="left" valign="top" style="padding:2px 0 0 0;"><img width="32" height="32" src="'.$base_url.'/sites/akdn/themes/akdn/images/instagram.png" style="width:32px;height:32px;"></td>
                 <td width="99%" align="left" valign="top" style="padding:0 0 0 8px;">
                   <h3 style="font-size:16px;margin:0 0 3px;padding:0;font-family:arial;font-weight:normal;line-height:1;">Aga Khan Development Network</h3>
-                  <p style="margin:0;font-family:Times New Roman,arial;font-size:14px;">@AKDN</p>
+                  <p style="margin:0;font-family:arial, sans-serif;font-size:12px;">@AKDN</p>
                 </td></tr>
-              <tr><td colspan="2" style="font-family:arial;font-size:14px;line-height:16px;color:#000000;padding:5px 0 0;">' . $value['body'] . '</td></tr>
+              <tr><td colspan="2" style="font-family:arial;font-size:12px;line-height:16px;color:#000000;padding:5px 0 0;">' . $value['body'] . '</td></tr>
               </table>
             </td>
           </tr>
@@ -234,9 +234,9 @@
               <table cellspacing="0" cellpadding="0" border="0" width="100%" style=";border:0;">
                 <tr><td width="1%" align="left" valign="top" style="padding:2px 0 0 0;"><img width="32" height="32" src="'.$base_url.'/sites/akdn/themes/akdn/images/youtube.png" style="width:32px;height:32px;"></td>
                 <td width="99%" align="left" align="left" valign="top" style="padding:0 0 0 8px;vertical-align:top;">
-                  <h3 style="font-size:16px;margin:0;padding:0;font-family:Times New Roman,arial;font-weight:bold;line-height:18px;"><a href=" ' . $value['url'] . '" target="_blank" style="color:#000000;">' . $value['title'] . '</a></h3>
+                  <h3 style="font-size:16px;margin:0;padding:0;font-family:arial, sans-serif;font-weight:normal;line-height:18px;"><a href=" ' . $value['url'] . '" target="_blank" style="color:#000000;">' . $value['title'] . '</a></h3>
                 </td></tr>
-                <tr><td colspan="2" style="font-family:arial;font-size:14px;line-height:16px;color:#000000;padding:5px 0 10px;">' . $value['body'] . '</td></tr>
+                <tr><td colspan="2" style="font-family:arial;font-size:12px;line-height:16px;color:#000000;padding:5px 0 10px;">' . $value['body'] . '</td></tr>
                 <tr><td colspan="2" style="padding:0;"><a href="' . $value['url'] . '" style="width:50px;height:20px;padding:0;border-top: 3px solid #e62117;border-bottom: 3px solid #e62117;border-right: 8px solid #e62117;border-left: 8px solid #e62117;font-family:arial;font-size:12px;line-height:1;color:#ffffff;background:#e62117;text-decoration:none;">Play</a></td></tr>
               </table>
             </td>
@@ -250,9 +250,9 @@
               <table cellspacing="0" cellpadding="0" border="0" width="100%" style=";border:0;">
                 <tr><td width="1%" align="left" valign="top" style="padding:2px 0 0 0;"><img width="32" height="32" src="'.$base_url.'/sites/akdn/themes/akdn/images/youtube.png" style="width:32px;height:32px;"></td>
                 <td width="99%" align="left" align="left" valign="top" style="padding:0 0 0 8px;vertical-align:top;">
-                  <h3 style="font-size:16px;margin:0;padding:0;font-family:Times New Roman,arial;font-weight:bold;line-height:18px;"><a href=" ' . $value['url'] . '" target="_blank" style="color:#000000;">' . $value['title'] . '</a></h3>
+                  <h3 style="font-size:16px;margin:0;padding:0;font-family:arial, sans-serif;font-weight:normal;line-height:18px;"><a href=" ' . $value['url'] . '" target="_blank" style="color:#000000;">' . $value['title'] . '</a></h3>
                 </td></tr>
-                <tr><td colspan="2" style="font-family:arial;font-size:14px;line-height:16px;color:#000000;padding:5px 0 10px;">' . $value['body'] . '</td></tr>
+                <tr><td colspan="2" style="font-family:arial;font-size:12px;line-height:16px;color:#000000;padding:5px 0 10px;">' . $value['body'] . '</td></tr>
                 <tr><td colspan="2" style="padding:0;"><a href="' . $value['url'] . '" style="width:50px;height:20px;padding:0;border-top: 3px solid #e62117;border-bottom: 3px solid #e62117;border-right: 8px solid #e62117;border-left: 8px solid #e62117;font-family:arial;font-size:12px;line-height:1;color:#ffffff;background:#e62117;text-decoration:none;">Play</a></td></tr>
               </table>
             </td>
