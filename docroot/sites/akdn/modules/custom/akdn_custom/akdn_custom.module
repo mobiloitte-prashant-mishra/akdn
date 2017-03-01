@@ -4156,3 +4156,29 @@ function akdn_custom_form_simplenews_node_form_alter(&$form, &$form_state, &$for
     ));
   }
 }
+
+function akdn_custom_search_api_solr_query_alter(array &$call_args, SearchApiQueryInterface $query) {
+ $node_types = node_type_get_types();
+ foreach ($node_types as $node_type) {
+
+   $boost_factor = 0;
+
+   if ($node_type->type == 'geography') {
+     $boost_factor = 15;
+   }
+   if ($node_type->type == 'focus_area') {
+     $boost_factor = 15;
+   }
+   if ($node_type->type == 'agency') {
+     $boost_factor = 15;
+   }
+   if ($node_type->type == 'page') {
+     $boost_factor = 1;
+   }
+   if ($node_type->type == 'custom_content') {
+     $boost_factor = 1;
+   }
+
+   $call_args['params']['bq'][$node_type->type] = "ss_type:\"$node_type->type\"^$boost_factor";
+ }
+}
