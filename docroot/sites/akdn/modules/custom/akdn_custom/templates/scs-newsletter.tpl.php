@@ -114,7 +114,7 @@
     $image = theme('image_style', $thumb_image);
     $image_link = l($image, $value['url'], array('attributes' => array('target' => '_blank'), 'html' => TRUE));
     if($i==0) {
-      $output .= '<tr><td colspan="2" style="padding:15px;border:0;"><h5 style="margin:0;font-family:arial, sans-serif;font-size: 16px;font-weight: bold;color: #000;">AKDN on social media</h5></td></tr>';
+      $output .= '<tr><td colspan="2" style="padding:15px;border:0;"><h5 style="margin:0;font-family:arial, sans-serif;font-size: 16px;font-weight: bold;color: #b49759;">AKDN on social media</h5></td></tr>';
     }
     $output .= '<tr><td colspan="2" style="padding:0 15px 15px;border:0;">';
       if($value['type'] == 'facebook') {
