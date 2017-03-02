@@ -19176,6 +19176,19 @@ html.js fieldset.collapsed {
   display: none;
 }
 
+/* line 8912, ../sass/_akdn-redesign.scss */
+.page-search .view-solr-site-search .views-row .views-field-title-field a {
+  font-size: 16px;
+  font-weight: normal;
+  color: #000;
+}
+
+/* line 8926, ../sass/_akdn-redesign.scss */
+.page-search .view-solr-site-search .views-row .views-field-title-field a:hover {
+  text-decoration: none;
+  color: #000;
+}
+
 /*
 * Media Queries
 *
