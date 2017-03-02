@@ -19187,6 +19187,11 @@ html.js fieldset.collapsed {
   text-decoration: none;
   color: #000;
 }
+/* line 8922, ../sass/_akdn-redesign.scss */
+.page-search .view-solr-site-search .views-row .views-field-search-api-excerpt {
+  font-size: 14px;
+  font-style: italic;
+}
 
 /*
 * Media Queries
