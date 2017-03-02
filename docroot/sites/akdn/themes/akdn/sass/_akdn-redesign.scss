@@ -8903,3 +8903,31 @@ html {
     }
   }
 }
+
+//search page title
+.page-search {
+  .view-solr-site-search {
+    .views-row {
+      .views-field-title-field {
+        a {
+        font-size: 16px;
+        font-weight: normal;
+        color: #000;
+        }
+      }
+    }
+  }
+}
+
+.page-search {
+  .view-solr-site-search {
+    .views-row {
+      .views-field-title-field {
+        a:hover {
+        text-decoration: none;
+        color: #000;
+        }
+      }
+    }
+  }
+}
