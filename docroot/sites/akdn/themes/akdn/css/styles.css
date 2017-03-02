@@ -19193,6 +19193,11 @@ html.js fieldset.collapsed {
   font-style: italic;
 }
 
+/* line 8935, ../sass/_akdn-redesign.scss */
+.page-search .akdn-filter-js-wrapper .filter-agency-block .item-list li a {
+  text-transform: none;
+}
+
 /*
 * Media Queries
 *
