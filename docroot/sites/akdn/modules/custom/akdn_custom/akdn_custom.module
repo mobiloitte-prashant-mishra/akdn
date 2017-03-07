@@ -3768,30 +3768,6 @@ function akdn_custom_facet_items_alter(&$build, &$settings) {
   }
 }
 
-
-/**
- * Implements hook_search_api_solr_query_alter()
- */
-function akdn_custom_search_api_solr_query_alter(array &$call_args, SearchApiQueryInterface $query) {
-  // Fetching the facet name to change solr query on.
-  $facet_item = $query->getFilter()->getFilters();
-  if (!empty($facet_item)) {
-    $facet_item = $facet_item[0]->getFilters();
-    if (!empty($facet_item[1])) {
-      if (!empty($facet_item[1])) {
-        $facet_node_types_items = $facet_item[1]->getFilters();
-        // This is my facet item I wont to change solr query on "page" and also add node type "custom content" to the filter.
-        foreach ($facet_node_types_items as $key => $node_types) {
-          if ($node_types[0] == 'type' && $node_types[1] === 'page') {       
-            $call_args['params']['fq'][2] = $call_args['params']['fq'][2] . ' OR  ss_entity_type:"custom content"';
-            break;
-          }          
-        }
-      }
-    }
-  }
-}
-
 /*
  * AKDN Custom Video Player
  */
@@ -4217,7 +4193,22 @@ function akdn_custom_search_api_solr_query_alter(array &$call_args, SearchApiQue
    if ($node_type->type == 'custom_content') {
      $boost_factor = 1;
    }
-
-   $call_args['params']['bq'][$node_type->type] = "ss_type:\"$node_type->type\"^$boost_factor";
+  $call_args['params']['bq'][$node_type->type] = "ss_type:\"$node_type->type\"^$boost_factor";
  }
+  $facet_item = $query->getFilter()->getFilters();
+   if (!empty($facet_item)) {
+    $facet_item = $facet_item[0]->getFilters();
+    if (!empty($facet_item[1])) {
+      if (!empty($facet_item[1])) {
+        $facet_node_types_items = $facet_item[1]->getFilters();
+        // This is my facet item I wont to change solr query on "page" and also add node type "custom content" to the filter.
+        foreach ($facet_node_types_items as $key => $node_types) {
+          if ($node_types[0] == 'type' && $node_types[1] === 'page') {       
+            $call_args['params']['fq'][2] = $call_args['params']['fq'][2] . ' OR  ss_entity_type:"custom content"';
+            break;
+          }          
+        }
+      }
+     }
+   }
 }
