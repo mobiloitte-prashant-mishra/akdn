@@ -3731,25 +3731,64 @@ function akdn_custom_node_update($node) {
   }
 }
 
-/*
- *
- implements hook_facet_items_alter(&$build, &$settings)
+/**
+ * Implements hook_facet_items_alter(&$build, &$settings)
  */
-
 function akdn_custom_facet_items_alter(&$build, &$settings) {
   if ($settings->facet == "entity_type") {
-    foreach($build as $key => $item) {
+    
+    // Save Custom Page number to add on the combined facet item.
+    $number_of_custom_content = (isset($build['custom content']['#count']) && $build['custom content']['#count']) ?
+        $build['custom content']['#count'] : 0;
+
+    foreach ($build as $key => $item) {
       if ($key == 'project') {
         $build[$key]["#markup"] = 'Spotlight';
       }
       elseif ($key == 'architecture project') {
         $build[$key]["#markup"] = 'Architecture Project';
       }
-    }
-    if (array_key_exists('agency', $build)) {
-        $count = $build['agency']['#count'] -2;
-        $build['agency']['#count'] = $count;
+      elseif ($key == 'page') {
+        // Change the title of facet item to represent two facet items
+        $build['page']["#markup"] = t('Info page');
+
+        // Smash the count of hits together.
+        if ($build['page']['#count'] > 0) {
+          $build['page']['#count'] = $build['page']['#count'] + $number_of_custom_content;
+        }
       }
+      elseif ($key == 'custom content') {
+        unset($build['custom content']);
+      }
+    } // End foreach
+    if (array_key_exists('agency', $build)) {
+      $count = $build['agency']['#count'] - 2;
+      $build['agency']['#count'] = $count;
+    }
+  }
+}
+
+
+/**
+ * Implements hook_search_api_solr_query_alter()
+ */
+function akdn_custom_search_api_solr_query_alter(array &$call_args, SearchApiQueryInterface $query) {
+  // Fetching the facet name to change solr query on.
+  $facet_item = $query->getFilter()->getFilters();
+  if (!empty($facet_item)) {
+    $facet_item = $facet_item[0]->getFilters();
+    if (!empty($facet_item[1])) {
+      if (!empty($facet_item[1])) {
+        $facet_node_types_items = $facet_item[1]->getFilters();
+        // This is my facet item I wont to change solr query on "page" and also add node type "custom content" to the filter.
+        foreach ($facet_node_types_items as $key => $node_types) {
+          if ($node_types[0] == 'type' && $node_types[1] === 'page') {       
+            $call_args['params']['fq'][2] = $call_args['params']['fq'][2] . ' OR  ss_entity_type:"custom content"';
+            break;
+          }          
+        }
+      }
+    }
   }
 }
 

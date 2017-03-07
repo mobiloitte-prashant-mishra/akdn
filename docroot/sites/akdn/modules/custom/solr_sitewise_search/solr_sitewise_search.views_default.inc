@@ -235,6 +235,7 @@ print $output;
     'article' => 'article',
     'award_cycle' => 'award_cycle',
     'page' => 'page',
+    'custom_content' => 'custom_content',
     'event' => 'event',
     'gallery' => 'gallery',
     'geography' => 'geography',
