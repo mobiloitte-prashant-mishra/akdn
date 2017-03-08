@@ -286,6 +286,14 @@ print $output;
     'field_custom_meta_tags' => 'field_custom_meta_tags',
     'search_api_aggregation_1' => 'search_api_aggregation_1',
   );
+  /* Filter criterion: Indexed Node: Exclude from search */
+  $handler->display->display_options['filters']['field_exclude_from_search']['id'] = 'field_exclude_from_search';
+  $handler->display->display_options['filters']['field_exclude_from_search']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['filters']['field_exclude_from_search']['field'] = 'field_exclude_from_search';
+  $handler->display->display_options['filters']['field_exclude_from_search']['operator'] = '<>';
+  $handler->display->display_options['filters']['field_exclude_from_search']['value'] = array(
+    1 => '1',
+  );
   $handler->display->display_options['path'] = 'search';
 
   /* Display: Site Search */
