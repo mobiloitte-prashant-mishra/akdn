@@ -6428,6 +6428,57 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-custom_content-field_exclude_from_search'.
+  $field_instances['node-custom_content-field_exclude_from_search'] = array(
+    'bundle' => 'custom_content',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 17,
+      ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_exclude_from_search',
+    'label' => 'Exclude from search',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 27,
+    ),
+  );
+
   // Exported field_instance: 'node-custom_content-field_geography_term'.
   $field_instances['node-custom_content-field_geography_term'] = array(
     'bundle' => 'custom_content',
@@ -9947,6 +9998,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
   t('Event Venue');
   t('Event Year');
   t('Event image');
+  t('Exclude from search');
   t('Facts Icon');
   t('Facts Links');
   t('Facts Number');
