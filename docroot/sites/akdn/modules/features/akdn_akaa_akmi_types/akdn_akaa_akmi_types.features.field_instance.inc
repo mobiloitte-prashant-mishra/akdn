@@ -6462,7 +6462,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_exclude_from_search',
-    'label' => 'Exclude from search',
+    'label' => 'Exclude from search.',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -9998,7 +9998,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
   t('Event Venue');
   t('Event Year');
   t('Event image');
-  t('Exclude from search');
+  t('Exclude from search.');
   t('Facts Icon');
   t('Facts Links');
   t('Facts Number');
