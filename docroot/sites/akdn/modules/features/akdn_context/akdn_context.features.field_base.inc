@@ -180,7 +180,7 @@ function akdn_context_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => '',
-        1 => 'Vocal Artist',
+        1 => 'Vocal artist',
       ),
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,

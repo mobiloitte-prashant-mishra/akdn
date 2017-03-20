@@ -305,6 +305,12 @@ function custom_solr_entity_type_callback($node) {
     $type = "Video";
   }
   $type = str_ireplace("_", " ", $type);
+  
+  // #AKDN-1457 Change the display name for basic page and Custom content
+  if ($node->type == 'page' || $node->type == 'custom_content') {
+    $type = "Info Page";
+  }
+  
   return $type;
 }
 

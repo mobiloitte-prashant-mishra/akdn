@@ -1,0 +1,87 @@
+<?php
+/**
+ * @file
+ * The main module file for the "SOLR boost by node type" module.
+ *
+ * This file contains all module functionality, including settings pages and
+ * the hooks to affect the SOLR queries.
+ */
+
+/**
+ * Implements hook_form_alter().
+ *
+ * Add elements to the configuration form at admin/config/search/settings
+ * One element per defined node type.
+ */
+function solr_boost_by_node_type_form_search_admin_settings_alter(&$form, &$form_state) {
+  // Introductory text.
+  $form['content_ranking']['solr_boost_by_node_type_info'] = array(
+    '#markup' => '<p><em>' . t('Additionally, you can set influence per node type using the table below.') . '</em></p>',
+  );
+  // Set up variables required by loop, including standard options, headers for
+  // the config table and the current settings.
+  $rows = array();
+  $options = array(
+    '0' => t('Normal influence'),
+    '2' => '2',
+    '3' => '3',
+    '4' => '4',
+    '5' => '5',
+    '6' => '6',
+    '7' => '7',
+    '8' => '8',
+    '9' => '9',
+    '10' => '10',
+  );
+  $headers = array(t('Node type'), t('Influence'));
+
+  $node_types = node_type_get_types();
+  foreach ($node_types as $node_type) {
+    $default = variable_get('node_rank_by_type_' . $node_type->type, 0);
+    // Create an options array with the currently selected option first.
+    // Apparently #default_value doesn't work if you render the element
+    // with drupal_render.
+    $this_options = $options;
+    if ($default > 1) {
+      unset($this_options[(string) $default]);
+      $this_options = array_reverse($this_options, TRUE);
+      $this_options[(string) $default] = $default;
+      $this_options = array_reverse($this_options, TRUE);
+    }
+    // Create the form element.
+    $form['content_ranking']['node_rank_by_type_' . $node_type->type] = array(
+      '#title' => $node_type->name,
+      '#type' => 'select',
+      '#options' => $this_options,
+      '#title_display' => 'invisible',
+      '#name' => 'node_rank_by_type_' . $node_type->type,
+    );
+    // Add it to the table.
+    $row = array();
+    $row[] = $node_type->name;
+    $row[] = drupal_render($form['content_ranking']['node_rank_by_type_' . $node_type->type]);
+    $rows[] = $row;
+  }
+  $form['content_ranking']['solr_boost_by_node_type_config'] = array(
+    '#markup' => theme('table', array('header' => $headers, 'rows' => $rows)),
+  );
+}
+
+/**
+ * Implements hook_search_api_solr_query_alter().
+ *
+ * Alters the query sent to SOLR to add boost query parameters for the various
+ * node types.
+ */
+function solr_boost_by_node_type_search_api_solr_query_alter(
+  array &$call_args, SearchApiQueryInterface $query
+) {
+  $node_types = node_type_get_types();
+  foreach ($node_types as $node_type) {
+    $boost_factor = variable_get('node_rank_by_type_' . $node_type->type, 0) * 10;
+    if ($boost_factor == 0 || !is_numeric($boost_factor)) {
+      continue;
+    }
+    $call_args['params']['bq'][$node_type->type] = "ss_type:\"$node_type->type\"^$boost_factor";
+  }
+}
