@@ -8,7 +8,7 @@
             var paragraph_arrive_link = $(this).text();
 
             var paragraph_arrive_text = paragraph_arrive_link.toLowerCase();
-            paragraph_arrive_text = paragraph_arrive_text.replace(/\s+/, '-');
+            paragraph_arrive_text = paragraph_arrive_text.replace(/ +/g, '-');
 
             $(this).attr('id', paragraph_arrive_text);
             
