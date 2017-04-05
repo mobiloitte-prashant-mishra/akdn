@@ -4261,20 +4261,18 @@ function media_file_single($fid){
  */
 function akdn_custom_search_api_solr_documents_alter(array &$documents, SearchApiIndex $index, array $items) {
   $boost = array(
-    'article' => 20,
-    'publication' => 19,
-    'speech' => 18,
-    'project' => 17,
-    'event' => 16,
-    'podcast' => 15,
-    'gallery' => 14,
-    'geography' => 13,
-    'focus_area' => 12,
-    'agency' => 11,
+    'geography' => 10,
+    'focus_area' => 10,
     'agency' => 10,
+    'article' => 9,
+    'publication' => 9,
+    'speech' => 9,
+    'project' => 9,
+    'event' => 9,
+    'podcast' => 9,
+    'gallery' => 8,
     'page' => 1,
     'custom_content' => 1,
-    
   );
   if ($index->item_type == 'node') {
     foreach ($documents as $document) {
