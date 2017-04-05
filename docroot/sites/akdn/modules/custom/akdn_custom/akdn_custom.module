@@ -2555,7 +2555,7 @@ function akdn_custom_media_wysiwyg_allowed_view_modes_alter(&$view_modes, &$file
       'custom settings' => FALSE,
     ),
   );
-} docroot/sites/akdn/modules/custom/akdn_custom/akdn_custom.module 
+}
 
 /**
  * Form for getting the configuration.
@@ -4278,6 +4278,7 @@ function akdn_custom_search_api_solr_documents_alter(array &$documents, SearchAp
       }
     }
   }
+}
 
 function akdn_custom_search_api_solr_query_alter(array &$call_args, SearchApiQueryInterface $query) {
  $node_types = node_type_get_types();
@@ -4319,3 +4320,4 @@ function akdn_custom_search_api_solr_query_alter(array &$call_args, SearchApiQue
      }
    }
 }
+
