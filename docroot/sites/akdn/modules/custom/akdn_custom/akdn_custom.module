@@ -4157,3 +4157,27 @@ function akdn_custom_form_simplenews_node_form_alter(&$form, &$form_state, &$for
     ));
   }
 }
+
+/**
+ * Implements hook_search_api_solr_documents_alter()
+ */
+function akdn_custom_search_api_solr_documents_alter(array &$documents, SearchApiIndex $index, array $items) {
+  $boost = array(
+    'article' => 10,
+    'publication' => 9,
+    'speech' => 8,
+    'project' => 7,
+    'event' => 6,
+    'podcast' => 5,
+    'gallery' => 4
+  );
+  if ($index->item_type == 'node') {
+    foreach ($documents as $document) {
+      if ($field = $document->getField('ss_type')) {
+        if (isset($boost[$field['value']])) {
+          $document->setBoost($boost[$field['value']]);
+        }
+      }
+    }
+  }
+}
