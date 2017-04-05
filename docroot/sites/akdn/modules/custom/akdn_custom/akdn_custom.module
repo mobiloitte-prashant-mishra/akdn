@@ -4261,13 +4261,20 @@ function media_file_single($fid){
  */
 function akdn_custom_search_api_solr_documents_alter(array &$documents, SearchApiIndex $index, array $items) {
   $boost = array(
-    'article' => 10,
-    'publication' => 9,
-    'speech' => 8,
-    'project' => 7,
-    'event' => 6,
-    'podcast' => 5,
-    'gallery' => 4
+    'article' => 20,
+    'publication' => 19,
+    'speech' => 18,
+    'project' => 17,
+    'event' => 16,
+    'podcast' => 15,
+    'gallery' => 14,
+    'geography' => 13,
+    'focus_area' => 12,
+    'agency' => 11,
+    'agency' => 10,
+    'page' => 1,
+    'custom_content' => 1,
+    
   );
   if ($index->item_type == 'node') {
     foreach ($documents as $document) {
@@ -4281,43 +4288,43 @@ function akdn_custom_search_api_solr_documents_alter(array &$documents, SearchAp
 }
 
 function akdn_custom_search_api_solr_query_alter(array &$call_args, SearchApiQueryInterface $query) {
- $node_types = node_type_get_types();
- foreach ($node_types as $node_type) {
-
-   $boost_factor = 0;
-
-   if ($node_type->type == 'geography') {
-     $boost_factor = 15;
-   }
-   if ($node_type->type == 'focus_area') {
-     $boost_factor = 15;
-   }
-   if ($node_type->type == 'agency') {
-     $boost_factor = 15;
-   }
-   if ($node_type->type == 'page') {
-     $boost_factor = 1;
-   }
-   if ($node_type->type == 'custom_content') {
-     $boost_factor = 1;
-   }
-  $call_args['params']['bq'][$node_type->type] = "ss_type:\"$node_type->type\"^$boost_factor";
- }
-  $facet_item = $query->getFilter()->getFilters();
-   if (!empty($facet_item)) {
-    $facet_item = $facet_item[0]->getFilters();
-    if (!empty($facet_item[1])) {
-      if (!empty($facet_item[1])) {
-        $facet_node_types_items = $facet_item[1]->getFilters();
-        // This is my facet item I wont to change solr query on "page" and also add node type "custom content" to the filter.
-        foreach ($facet_node_types_items as $key => $node_types) {
-          if ($node_types[0] == 'type' && $node_types[1] === 'page') {       
-            $call_args['params']['fq'][2] = $call_args['params']['fq'][2] . ' OR  ss_entity_type:"custom content"';
-            break;
-          }          
-        }
-      }
-     }
-   }
+// $node_types = node_type_get_types();
+// foreach ($node_types as $node_type) {
+//
+//   $boost_factor = 0;
+//
+//   if ($node_type->type == 'geography') {
+//     $boost_factor = 15;
+//   }
+//   if ($node_type->type == 'focus_area') {
+//     $boost_factor = 15;
+//   }
+//   if ($node_type->type == 'agency') {
+//     $boost_factor = 15;
+//   }
+//   if ($node_type->type == 'page') {
+//     $boost_factor = 1;
+//   }
+//   if ($node_type->type == 'custom_content') {
+//     $boost_factor = 1;
+//   }
+//  $call_args['params']['bq'][$node_type->type] = "ss_type:\"$node_type->type\"^$boost_factor";
+// }
+//  $facet_item = $query->getFilter()->getFilters();
+//   if (!empty($facet_item)) {
+//    $facet_item = $facet_item[0]->getFilters();
+//    if (!empty($facet_item[1])) {
+//      if (!empty($facet_item[1])) {
+//        $facet_node_types_items = $facet_item[1]->getFilters();
+//        // This is my facet item I wont to change solr query on "page" and also add node type "custom content" to the filter.
+//        foreach ($facet_node_types_items as $key => $node_types) {
+//          if ($node_types[0] == 'type' && $node_types[1] === 'page') {       
+//            $call_args['params']['fq'][2] = $call_args['params']['fq'][2] . ' OR  ss_entity_type:"custom content"';
+//            break;
+//          }          
+//        }
+//      }
+//     }
+//   }
 }
 
