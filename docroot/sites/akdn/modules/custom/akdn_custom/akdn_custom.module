@@ -4255,6 +4255,30 @@ function media_file_single($fid){
     return 'samit';
   }
 }
+
+/**
+ * Implements hook_search_api_solr_documents_alter()
+ */
+function akdn_custom_search_api_solr_documents_alter(array &$documents, SearchApiIndex $index, array $items) {
+  $boost = array(
+    'article' => 10,
+    'publication' => 9,
+    'speech' => 8,
+    'project' => 7,
+    'event' => 6,
+    'podcast' => 5,
+    'gallery' => 4
+  );
+  if ($index->item_type == 'node') {
+    foreach ($documents as $document) {
+      if ($field = $document->getField('ss_type')) {
+        if (isset($boost[$field['value']])) {
+          $document->setBoost($boost[$field['value']]);
+        }
+      }
+    }
+  }
+
 function akdn_custom_search_api_solr_query_alter(array &$call_args, SearchApiQueryInterface $query) {
  $node_types = node_type_get_types();
  foreach ($node_types as $node_type) {
