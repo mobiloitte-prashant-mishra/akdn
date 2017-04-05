@@ -264,7 +264,7 @@ th {
 
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 @media print and (color) {
-  /* line 8, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 7, ../sass/sass-extensions/bootstrap/_print.scss */
   * {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
@@ -307,7 +307,7 @@ th {
       box-shadow: none !important;
       text-shadow: none !important;
   }*/
-  /* line 50, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 54, ../sass/sass-extensions/bootstrap/_print.scss */
   a,
   a:visited {
     text-decoration: underline;
@@ -319,44 +319,44 @@ th {
   abbr[title]:after {
       content: " (" attr(title) ")";
   }*/
-  /* line 63, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 68, ../sass/sass-extensions/bootstrap/_print.scss */
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
     content: "";
   }
 
-  /* line 67, ../sass/sass-extensions/bootstrap/_print.scss */
-  pre,
-  blockquote {
+  /* line 73, ../sass/sass-extensions/bootstrap/_print.scss */
+  blockquote,
+  pre {
     border: 1px solid #999;
     page-break-inside: avoid;
   }
 
-  /* line 72, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 79, ../sass/sass-extensions/bootstrap/_print.scss */
   thead {
     display: table-header-group;
   }
 
-  /* line 75, ../sass/sass-extensions/bootstrap/_print.scss */
-  tr,
-  img {
+  /* line 86, ../sass/sass-extensions/bootstrap/_print.scss */
+  img,
+  tr {
     page-break-inside: avoid;
   }
 
-  /* line 79, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 91, ../sass/sass-extensions/bootstrap/_print.scss */
   img {
     max-width: 100% !important;
   }
 
-  /* line 82, ../sass/sass-extensions/bootstrap/_print.scss */
-  p,
+  /* line 95, ../sass/sass-extensions/bootstrap/_print.scss */
   h2,
-  h3 {
+  h3,
+  p {
     orphans: 3;
     widows: 3;
   }
 
-  /* line 88, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 102, ../sass/sass-extensions/bootstrap/_print.scss */
   h1,
   h2,
   h3,
@@ -367,7 +367,7 @@ th {
   /*.navbar {
       display: none;
   }*/
-  /* line 102, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 117, ../sass/sass-extensions/bootstrap/_print.scss */
   .btn > .caret,
   .dropup > .btn > .caret {
     border-top-color: #000 !important;
@@ -376,24 +376,24 @@ th {
   /*.label {
       border: 1px solid #000;
   }*/
-  /* line 109, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 125, ../sass/sass-extensions/bootstrap/_print.scss */
   .table {
     border-collapse: collapse !important;
     page-break-inside: avoid;
   }
-  /* line 113, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 129, ../sass/sass-extensions/bootstrap/_print.scss */
   .table td,
   .table th {
     background-color: #fff !important;
   }
 
-  /* line 119, ../sass/sass-extensions/bootstrap/_print.scss */
-  .table-bordered th,
-  .table-bordered td {
+  /* line 136, ../sass/sass-extensions/bootstrap/_print.scss */
+  .table-bordered td,
+  .table-bordered th {
     border: 1px solid #ddd !important;
   }
 
-  /* line 126, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 144, ../sass/sass-extensions/bootstrap/_print.scss */
   body {
     width: 100% !important;
     max-width: 1170px !important;
@@ -405,38 +405,42 @@ th {
       content: " ("attr(href) ") ";
       font-size: 0%;
   }*/
-  /* line 137, ../sass/sass-extensions/bootstrap/_print.scss */
-  ul, li {
+  /* line 156, ../sass/sass-extensions/bootstrap/_print.scss */
+  li,
+  ul {
     padding: 0;
     list-style: none;
   }
 
-  /* line 141, ../sass/sass-extensions/bootstrap/_print.scss */
-  ul, li,
+  /* line 162, ../sass/sass-extensions/bootstrap/_print.scss */
+  .block-title,
+  .heading,
+  .pane-title,
+  .title,
   .view-header,
-  .pane-title, .block-title,
-  .heading, .title {
+  li,
+  ul {
     position: relative;
   }
 
-  /* line 147, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 172, ../sass/sass-extensions/bootstrap/_print.scss */
   img {
     position: relative;
     page-break-inside: avoid !important;
   }
 
-  /* line 151, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 177, ../sass/sass-extensions/bootstrap/_print.scss */
   div {
     position: relative;
     height: auto !important;
   }
 
-  /* line 156, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 183, ../sass/sass-extensions/bootstrap/_print.scss */
   .contextual-links-wrapper {
     display: none !important;
   }
 
-  /* line 160, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 188, ../sass/sass-extensions/bootstrap/_print.scss */
   .panel-panel.grid-18,
   .panel-panel.grid-6 {
     height: auto !important;
@@ -445,150 +449,150 @@ th {
   @page {
     margin: 1cm;
   }
-  /* line 168, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 198, ../sass/sass-extensions/bootstrap/_print.scss */
   html body.admin-menu {
     margin-top: 0 !important;
   }
 
-  /* line 173, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 204, ../sass/sass-extensions/bootstrap/_print.scss */
   body:not(.front) .region-footer-first {
     display: none !important;
   }
-  /* line 175, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 207, ../sass/sass-extensions/bootstrap/_print.scss */
   body:not(.front) .region-footer-first .footer-left,
   body:not(.front) .region-footer-first .footer-right {
     display: none !important;
   }
-  /* line 180, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 213, ../sass/sass-extensions/bootstrap/_print.scss */
   body:not(.front) .region-footer-second {
     border-top: 2px solid #000 !important;
     margin: 0 auto !important;
     padding: 20px 0 !important;
   }
 
-  /* line 188, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 222, ../sass/sass-extensions/bootstrap/_print.scss */
   body.front .region-footer-first-inner .quicklinks_social_block {
     padding-left: 15px;
   }
-  /* line 191, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 226, ../sass/sass-extensions/bootstrap/_print.scss */
   body.front .region-footer-first-inner .footer-left,
   body.front .region-footer-first-inner .footer-right {
     display: none;
   }
-  /* line 197, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 233, ../sass/sass-extensions/bootstrap/_print.scss */
   body.front .social-box a {
     width: 24px !important;
     height: 24px !important;
   }
-  /* line 202, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 239, ../sass/sass-extensions/bootstrap/_print.scss */
   body.front .region-footer-second {
     margin: 10px auto !important;
   }
 
-  /* line 207, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 245, ../sass/sass-extensions/bootstrap/_print.scss */
   .logo-container {
     margin: 0 auto 10px !important;
   }
 
-  /* line 210, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 249, ../sass/sass-extensions/bootstrap/_print.scss */
   .top-navbar {
     display: none !important;
   }
 
-  /* line 215, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 255, ../sass/sass-extensions/bootstrap/_print.scss */
   .main-navbar {
     margin: 12px 0 0 !important;
   }
-  /* line 217, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 258, ../sass/sass-extensions/bootstrap/_print.scss */
   .main-navbar .nolink {
     font-size: 13px !important;
   }
 
-  /* line 222, ../sass/sass-extensions/bootstrap/_print.scss */
-  .social-block,
-  .pane-facebook-feeds {
+  /* line 264, ../sass/sass-extensions/bootstrap/_print.scss */
+  .pane-facebook-feeds,
+  .social-block {
     display: -ms-flex !important;
     display: flex !important;
     height: auto !important;
   }
 
-  /* line 228, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 271, ../sass/sass-extensions/bootstrap/_print.scss */
   .social-icon-image {
     left: 0 !important;
   }
 
-  /* line 231, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 275, ../sass/sass-extensions/bootstrap/_print.scss */
   .grid-social-block_title {
     margin-bottom: 10px !important;
     min-height: 48px !important;
   }
-  /* line 234, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 279, ../sass/sass-extensions/bootstrap/_print.scss */
   .grid-social-block_title .title {
     font-size: 12px !important;
     line-height: 16px !important;
   }
-  /* line 237, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 283, ../sass/sass-extensions/bootstrap/_print.scss */
   .grid-social-block_title .title span:not(.social-icon-image):last-child {
     margin-top: 0 !important;
     font-size: 16px !important;
     line-height: 20px !important;
   }
 
-  /* line 245, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 292, ../sass/sass-extensions/bootstrap/_print.scss */
   .akdn-facts-block-row {
     border-right: 0 none !important;
   }
 
-  /* line 249, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 297, ../sass/sass-extensions/bootstrap/_print.scss */
   .pane-breaking-news .view-header,
   .sub-navbar .pane-content {
     font-size: 20px !important;
     margin-bottom: 10px !important;
   }
-  /* line 253, ../sass/sass-extensions/bootstrap/_print.scss */
-  .pane-breaking-news .view-header span:first-child,
+  /* line 302, ../sass/sass-extensions/bootstrap/_print.scss */
   .pane-breaking-news .view-header p:first-letter,
-  .sub-navbar .pane-content span:first-child,
-  .sub-navbar .pane-content p:first-letter {
+  .pane-breaking-news .view-header span:first-child,
+  .sub-navbar .pane-content p:first-letter,
+  .sub-navbar .pane-content span:first-child {
     font-size: 24px !important;
   }
 
-  /* line 259, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 309, ../sass/sass-extensions/bootstrap/_print.scss */
   .sub-navbar ul {
     display: block !important;
     margin: 0 auto !important;
   }
-  /* line 263, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 314, ../sass/sass-extensions/bootstrap/_print.scss */
   .sub-navbar a {
     font-size: 12px !important;
   }
 
-  /* line 268, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 320, ../sass/sass-extensions/bootstrap/_print.scss */
   .breaking-news-text-wrapper .title {
     font-size: 22px !important;
     line-height: 28px !important;
   }
 
-  /* line 272, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 325, ../sass/sass-extensions/bootstrap/_print.scss */
   .breaking-news-left .date-display-single {
     font-size: 14px !important;
   }
 
-  /* line 275, ../sass/sass-extensions/bootstrap/_print.scss */
-  .basic-page-slideshow,
+  /* line 329, ../sass/sass-extensions/bootstrap/_print.scss */
+  .akdn-facts-block,
   .banner-slideshow-views-no-title,
+  .basic-page-slideshow,
   .pane-breaking-news .view-content,
-  .social-block,
-  .akdn-facts-block {
+  .social-block {
     margin-bottom: 20px !important;
   }
 
-  /* line 284, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 338, ../sass/sass-extensions/bootstrap/_print.scss */
   .akaa-logotitle {
     margin: 0 auto 20px !important;
   }
 
-  /* line 287, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 342, ../sass/sass-extensions/bootstrap/_print.scss */
   .carousel-left .banner-slideshow-views > .view-content, .whatwedo-body .pane-featured-slideshow, .node-type-agency .pane-featured-slideshow, .akaa-akmi-body .pane-featured-slideshow,
   .whatsnew-right,
   .whatwedo-body .whatsnew-right,
@@ -598,7 +602,7 @@ th {
     margin-bottom: 20px !important;
   }
 
-  /* line 293, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 349, ../sass/sass-extensions/bootstrap/_print.scss */
   .carousel-left .banner-slideshow-views > .view-content, .whatwedo-body .pane-featured-slideshow, .node-type-agency .pane-featured-slideshow, .akaa-akmi-body .pane-featured-slideshow,
   .carousel-left .banner-slideshow-views > .view-content img,
   .whatwedo-body .pane-featured-slideshow img,
@@ -608,30 +612,36 @@ th {
     overflow: hidden !important;
   }
 
-  /* line 299, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 356, ../sass/sass-extensions/bootstrap/_print.scss */
   .akaa-projectfinder-wrapper {
     display: none !important;
   }
 
-  /* line 303, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 361, ../sass/sass-extensions/bootstrap/_print.scss */
   .akaa-award-cycle-block-short-video .views-field-nothing .play-video a,
   .akaa-icon-title {
     display: none !important;
   }
 
-  /* line 307, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 366, ../sass/sass-extensions/bootstrap/_print.scss */
   .akaa-award-cycle-block {
     margin-bottom: 15px !important;
   }
 
-  /* line 310, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 370, ../sass/sass-extensions/bootstrap/_print.scss */
   .akaa-award-cycle-wrapper,
-  .what-we-do-main-wrapper,
-  .akaa-projectfinder-wrapper {
+  .akaa-projectfinder-wrapper,
+  .what-we-do-main-wrapper {
     margin-bottom: 20px !important;
   }
 
-  /* line 315, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 377, ../sass/sass-extensions/bootstrap/_print.scss */
+  .akaa-press-centre-main-wrapper {
+    float: left !important;
+    width: 100% !important;
+  }
+
+  /* line 382, ../sass/sass-extensions/bootstrap/_print.scss */
   .what-we-do-inner-wrapper,
   .what-we-do-main-wrapper {
     display: -ms-flex !important;
@@ -639,178 +649,347 @@ th {
     height: auto !important;
   }
 
-  /* line 322, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 390, ../sass/sass-extensions/bootstrap/_print.scss */
   #backtotop {
     display: none !important;
   }
 
-  /* line 327, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 396, ../sass/sass-extensions/bootstrap/_print.scss */
   .press-release-detail .grid-18 {
     width: 100% !important;
     height: auto !important;
     border-right: 0 none !important;
   }
-  /* line 332, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 402, ../sass/sass-extensions/bootstrap/_print.scss */
   .press-release-detail .grid-6 {
     display: none !important;
   }
 
-  /* line 337, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 408, ../sass/sass-extensions/bootstrap/_print.scss */
   .gallery-frame,
   .gallery-slide {
     width: 100% !important;
     position: relative !important;
   }
 
-  /* line 342, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 414, ../sass/sass-extensions/bootstrap/_print.scss */
   .gallery-slide {
     margin-top: 10px !important;
   }
 
-  /* line 345, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 418, ../sass/sass-extensions/bootstrap/_print.scss */
   .gallery-thumbs {
     width: 100% !important;
     padding: 0 !important;
   }
-  /* line 348, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 422, ../sass/sass-extensions/bootstrap/_print.scss */
   .gallery-thumbs .arrow {
     display: none !important;
   }
-  /* line 351, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 426, ../sass/sass-extensions/bootstrap/_print.scss */
   .gallery-thumbs ul {
     width: 100% !important;
     padding: 0 !important;
   }
-  /* line 356, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 432, ../sass/sass-extensions/bootstrap/_print.scss */
   .gallery-thumbs li img {
     height: 150px !important;
   }
-  /* line 359, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 436, ../sass/sass-extensions/bootstrap/_print.scss */
   .gallery-thumbs li a {
     padding-bottom: 5px !important;
   }
-  /* line 362, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 440, ../sass/sass-extensions/bootstrap/_print.scss */
   .gallery-thumbs li .empty {
     display: none !important;
   }
-  /* line 365, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 444, ../sass/sass-extensions/bootstrap/_print.scss */
   .gallery-thumbs li:nth-child(3n) a {
     padding-right: 0 !important;
   }
 
-  /* line 371, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 451, ../sass/sass-extensions/bootstrap/_print.scss */
   .press-release-detail .pane-video-block {
     display: none !important;
   }
 
-  /* line 374, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 455, ../sass/sass-extensions/bootstrap/_print.scss */
   .akdn-basic-page .grid-6 {
     display: none !important;
   }
 
-  /* line 377, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 459, ../sass/sass-extensions/bootstrap/_print.scss */
   .akdn-basic-page .grid-18 {
     width: 100% !important;
   }
-  /* line 379, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 462, ../sass/sass-extensions/bootstrap/_print.scss */
   .akdn-basic-page .grid-18 .accordian-rows {
     page-break-inside: avoid;
   }
 
-  /* line 383, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 468, ../sass/sass-extensions/bootstrap/_print.scss */
   .basic-page-accordian-main-container .accordian-main-body {
     display: block;
   }
+  /* line 472, ../sass/sass-extensions/bootstrap/_print.scss */
+  .basic-page-accordian-main-container .accordian-icon {
+    display: none !important;
+  }
 
-  /* line 386, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 478, ../sass/sass-extensions/bootstrap/_print.scss */
+  .geography-page .pane-featured-slideshow {
+    width: 100% !important;
+  }
+
+  /* line 483, ../sass/sass-extensions/bootstrap/_print.scss */
+  .lesslink,
   .whatwedo-left .morelink {
     display: none !important;
   }
 
-  /* line 389, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 489, ../sass/sass-extensions/bootstrap/_print.scss */
   .whatwedo-left .what-we-do-body-more-body {
     display: block;
   }
+  /* line 494, ../sass/sass-extensions/bootstrap/_print.scss */
+  .whatwedo-left .view-display-id-what_we_do_summary_text p {
+    font-size: 16px !important;
+  }
 
-  /* line 392, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 500, ../sass/sass-extensions/bootstrap/_print.scss */
   .whatwedo-left {
     width: 100% !important;
   }
 
-  /* line 395, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 504, ../sass/sass-extensions/bootstrap/_print.scss */
   .whatwedo-right {
     display: none !important;
   }
 
-  /* line 399, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 508, ../sass/sass-extensions/bootstrap/_print.scss */
   .block-akdn-filter {
     display: none !important;
   }
 
-  /* line 403, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 512, ../sass/sass-extensions/bootstrap/_print.scss */
   .press-centre-listings {
     display: none !important;
   }
 
-  /* line 407, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 517, ../sass/sass-extensions/bootstrap/_print.scss */
   .akaa-akmi-body .pane-featured-slideshow {
     display: none !important;
   }
-  /* line 410, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 521, ../sass/sass-extensions/bootstrap/_print.scss */
   .akaa-akmi-body .whatsnew-right {
     display: none !important;
   }
 
-  /* line 416, ../sass/sass-extensions/bootstrap/_print.scss */
-  .page-akmi-press-centre .section-content .grid-18, .page-architecture-press-centre .section-content .grid-18 {
+  /* line 529, ../sass/sass-extensions/bootstrap/_print.scss */
+  .page-akmi-press-centre .section-content .grid-18,
+  .page-architecture-press-centre .section-content .grid-18 {
     width: 100% !important;
   }
-  /* line 420, ../sass/sass-extensions/bootstrap/_print.scss */
-  .page-akmi-press-centre .block-akdn-custom-akdn-filter, .page-architecture-press-centre .block-akdn-custom-akdn-filter {
+  /* line 534, ../sass/sass-extensions/bootstrap/_print.scss */
+  .page-akmi-press-centre .block-akdn-custom-akdn-filter,
+  .page-architecture-press-centre .block-akdn-custom-akdn-filter {
     display: none !important;
   }
-  /* line 423, ../sass/sass-extensions/bootstrap/_print.scss */
-  .page-akmi-press-centre .akdn-filter-js-wrapper, .page-architecture-press-centre .akdn-filter-js-wrapper {
+  /* line 538, ../sass/sass-extensions/bootstrap/_print.scss */
+  .page-akmi-press-centre .akdn-filter-js-wrapper,
+  .page-architecture-press-centre .akdn-filter-js-wrapper {
     display: none !important;
   }
 
-  /* line 428, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 544, ../sass/sass-extensions/bootstrap/_print.scss */
   .node-type-award-cycle .grid-18 {
     width: 100% !important;
   }
-  /* line 430, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 547, ../sass/sass-extensions/bootstrap/_print.scss */
   .node-type-award-cycle .grid-18 .akaa-cycle-slideshow {
     display: none !important;
   }
-  /* line 434, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 552, ../sass/sass-extensions/bootstrap/_print.scss */
   .node-type-award-cycle .grid-6 {
     display: none !important;
   }
 
-  /* line 439, ../sass/sass-extensions/bootstrap/_print.scss */
-  .page-architecture-steering-committee .grid-18, .page-architecture-master-jury .grid-18 {
+  /* line 559, ../sass/sass-extensions/bootstrap/_print.scss */
+  .page-architecture-master-jury .grid-18,
+  .page-architecture-steering-committee .grid-18 {
     width: 100% !important;
   }
-  /* line 441, ../sass/sass-extensions/bootstrap/_print.scss */
-  .page-architecture-steering-committee .grid-18 .views-row, .page-architecture-master-jury .grid-18 .views-row {
+  /* line 562, ../sass/sass-extensions/bootstrap/_print.scss */
+  .page-architecture-master-jury .grid-18 .views-row,
+  .page-architecture-steering-committee .grid-18 .views-row {
     page-break-inside: avoid;
   }
-  /* line 443, ../sass/sass-extensions/bootstrap/_print.scss */
-  .page-architecture-steering-committee .grid-18 .views-row .readmore-text, .page-architecture-master-jury .grid-18 .views-row .readmore-text {
+  /* line 565, ../sass/sass-extensions/bootstrap/_print.scss */
+  .page-architecture-master-jury .grid-18 .views-row .readmore-text,
+  .page-architecture-steering-committee .grid-18 .views-row .readmore-text {
     display: block !important;
   }
-  /* line 447, ../sass/sass-extensions/bootstrap/_print.scss */
-  .page-architecture-steering-committee .grid-18 .views-row .readmore-link:after, .page-architecture-steering-committee .grid-18 .views-row .readless-link:after, .page-architecture-master-jury .grid-18 .views-row .readmore-link:after, .page-architecture-master-jury .grid-18 .views-row .readless-link:after {
+  /* line 571, ../sass/sass-extensions/bootstrap/_print.scss */
+  .page-architecture-master-jury .grid-18 .views-row .readless-link:after,
+  .page-architecture-master-jury .grid-18 .views-row .readmore-link:after,
+  .page-architecture-steering-committee .grid-18 .views-row .readless-link:after,
+  .page-architecture-steering-committee .grid-18 .views-row .readmore-link:after {
     content: "" !important;
   }
 
-  /* line 455, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 582, ../sass/sass-extensions/bootstrap/_print.scss */
+  .node-type-akmi-artists .grid-18,
+  .node-type-akmi-performance .grid-18,
   .node-type-architecture-project .grid-18 {
     width: 100% !important;
   }
-  /* line 458, ../sass/sass-extensions/bootstrap/_print.scss */
+  /* line 586, ../sass/sass-extensions/bootstrap/_print.scss */
+  .node-type-akmi-artists .grid-6,
+  .node-type-akmi-performance .grid-6,
   .node-type-architecture-project .grid-6 {
     display: none !important;
+  }
+
+  /* line 592, ../sass/sass-extensions/bootstrap/_print.scss */
+  .node-type-akmi-performance .akaa-projectinfo-block-techinfo-wrapper {
+    display: none !important;
+  }
+  /* line 596, ../sass/sass-extensions/bootstrap/_print.scss */
+  .node-type-akmi-performance .akaa-projectinfo-block-body-wrapper {
+    width: 100% !important;
+    padding: 20px !important;
+  }
+
+  /* line 603, ../sass/sass-extensions/bootstrap/_print.scss */
+  .page-akmi-cd-dvd .grid-18 {
+    width: 100% !important;
+  }
+  /* line 607, ../sass/sass-extensions/bootstrap/_print.scss */
+  .page-akmi-cd-dvd .pc-listing-info {
+    width: 100% !important;
+    float: none !important;
+  }
+  /* line 611, ../sass/sass-extensions/bootstrap/_print.scss */
+  .page-akmi-cd-dvd .pc-listing-info .pc-body-wrapper {
+    float: none !important;
+  }
+
+  /* line 617, ../sass/sass-extensions/bootstrap/_print.scss */
+  .grid-about-us-block-description,
+  .grid-about-us-block_description {
+    border-bottom: 0.1em solid #000000 !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* line 623, ../sass/sass-extensions/bootstrap/_print.scss */
+  .grid-about-us-block-description:last-child,
+  .grid-about-us-block_description:last-child {
+    border-bottom: 0 none !important;
+  }
+
+  /* line 628, ../sass/sass-extensions/bootstrap/_print.scss */
+  .award-cycle-project-list,
+  .view-empty {
+    float: left !important;
+    width: 100% !important;
+  }
+
+  /* line 634, ../sass/sass-extensions/bootstrap/_print.scss */
+  .pane-akmi-custom-akmi-news-resources-block {
+    position: relative !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* line 641, ../sass/sass-extensions/bootstrap/_print.scss */
+  .akaa-press-centre-inner-wrapper .image a {
+    display: block;
+    float: left;
+  }
+
+  /* line 648, ../sass/sass-extensions/bootstrap/_print.scss */
+  .akaa-press-centre-main-wrapper {
+    float: left !important;
+    width: 100% !important;
+  }
+
+  /* line 653, ../sass/sass-extensions/bootstrap/_print.scss */
+  .akaa-press-centre-inner-wrapper,
+  .region-footer-second {
+    page-break-inside: avoid !important;
+  }
+
+  /* line 658, ../sass/sass-extensions/bootstrap/_print.scss */
+  #region-content,
+  .akaa-press-centre-main-wrapper,
+  .region-footer-second {
+    clear: both !important;
+    display: block !important;
+    float: none !important;
+    overflow: visible !important;
+    width: 100% !important;
+  }
+
+  /* line 668, ../sass/sass-extensions/bootstrap/_print.scss */
+  .print-wrapper {
+    display: block !important;
+    float: left !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* line 675, ../sass/sass-extensions/bootstrap/_print.scss */
+  .press-release-detail .pane-node-title-field {
+    clear: both !important;
+  }
+
+  /* line 681, ../sass/sass-extensions/bootstrap/_print.scss */
+  .photograph-detail-banner .galleryformatter {
+    overflow: visible !important;
+  }
+  /* line 684, ../sass/sass-extensions/bootstrap/_print.scss */
+  .photograph-detail-banner .galleryformatter .gallery-thumbs {
+    padding: 0 !important;
+  }
+  /* line 687, ../sass/sass-extensions/bootstrap/_print.scss */
+  .photograph-detail-banner .galleryformatter .gallery-thumbs .wrapper {
+    overflow: visible !important;
+  }
+
+  /* line 694, ../sass/sass-extensions/bootstrap/_print.scss */
+  .in-media-block {
+    page-break-inside: avoid !important;
+  }
+
+  /* line 698, ../sass/sass-extensions/bootstrap/_print.scss */
+  .page-architecture-projects .title-border h1.title {
+    border: 0 none !important;
+  }
+
+  /* line 704, ../sass/sass-extensions/bootstrap/_print.scss */
+  .grid-media-block_description .read-more .country-city-readmore {
+    width: 100% !important;
+  }
+
+  /* line 710, ../sass/sass-extensions/bootstrap/_print.scss */
+  .in-media-container .view-content {
+    margin: 0px !important;
+  }
+
+  /* line 715, ../sass/sass-extensions/bootstrap/_print.scss */
+  .grid-media-block_description .country-city-readmore a {
+    clear: both !important;
+    display: block !important;
+  }
+
+  /* line 721, ../sass/sass-extensions/bootstrap/_print.scss */
+  .in-media-block::before {
+    border-left-width: 1.5px !important;
+    content: "";
+  }
+
+  /* line 726, ../sass/sass-extensions/bootstrap/_print.scss */
+  .section-content .omega-24-twocol-6-18 {
+    margin: 0 !important;
+    padding: 0 10px !important;
   }
 }
 @font-face {
@@ -14134,17 +14313,18 @@ h2.header-name a:active, h2.header-name a:focus {
   padding: 0 15px;
   font-size: 16px;
   line-height: 24px;
+  clear: right;
 }
-/* line 3574, ../sass/_akdn-redesign.scss */
+/* line 3575, ../sass/_akdn-redesign.scss */
 .press-release-detail .pane-node-body a {
   color: #b49759;
 }
-/* line 3580, ../sass/_akdn-redesign.scss */
+/* line 3581, ../sass/_akdn-redesign.scss */
 .press-release-detail .related-block-info {
   overflow: hidden;
   margin-top: 7px;
 }
-/* line 3586, ../sass/_akdn-redesign.scss */
+/* line 3587, ../sass/_akdn-redesign.scss */
 .press-release-detail .related-block-info:before {
   content: "";
   position: relative;
@@ -14152,7 +14332,7 @@ h2.header-name a:active, h2.header-name a:focus {
   margin-bottom: -15px;
   border-top: 4px solid #b49759;
 }
-/* line 3594, ../sass/_akdn-redesign.scss */
+/* line 3595, ../sass/_akdn-redesign.scss */
 .press-release-detail .related-block-info:after {
   content: "";
   position: relative;
@@ -14162,11 +14342,11 @@ h2.header-name a:active, h2.header-name a:focus {
   margin: 15px 0 12px;
   border-top: 1px solid #b49759;
 }
-/* line 3614, ../sass/_akdn-redesign.scss */
+/* line 3615, ../sass/_akdn-redesign.scss */
 .press-release-detail .related-block-info a:hover {
   color: #b59757;
 }
-/* line 3625, ../sass/_akdn-redesign.scss */
+/* line 3626, ../sass/_akdn-redesign.scss */
 .press-release-detail .print_mail,
 .press-release-detail .pane-addthis,
 .press-release-detail .print_html {
@@ -14176,7 +14356,7 @@ h2.header-name a:active, h2.header-name a:focus {
   height: 20px;
   margin: 0 12px 0 0;
 }
-/* line 3634, ../sass/_akdn-redesign.scss */
+/* line 3635, ../sass/_akdn-redesign.scss */
 .press-release-detail .print_mail a,
 .press-release-detail .pane-addthis a,
 .press-release-detail .print_html a {
@@ -14189,14 +14369,14 @@ h2.header-name a:active, h2.header-name a:focus {
   font-size: 0;
   cursor: pointer;
 }
-/* line 3646, ../sass/_akdn-redesign.scss */
+/* line 3647, ../sass/_akdn-redesign.scss */
 .press-release-detail .print_mail a:before,
 .press-release-detail .pane-addthis a:before,
 .press-release-detail .print_html a:before {
   padding: 0 1px;
   font-size: 18px;
 }
-/* line 3651, ../sass/_akdn-redesign.scss */
+/* line 3652, ../sass/_akdn-redesign.scss */
 .press-release-detail .print_mail a:focus, .press-release-detail .print_mail a:hover,
 .press-release-detail .pane-addthis a:focus,
 .press-release-detail .pane-addthis a:hover,
@@ -14205,7 +14385,7 @@ h2.header-name a:active, h2.header-name a:focus {
   color: #b49759;
   text-decoration: none;
 }
-/* line 3658, ../sass/_akdn-redesign.scss */
+/* line 3659, ../sass/_akdn-redesign.scss */
 .press-release-detail .pane-email {
   width: auto;
   position: relative;
@@ -14213,18 +14393,18 @@ h2.header-name a:active, h2.header-name a:focus {
   height: auto;
   float: left;
 }
-/* line 3680, ../sass/_akdn-redesign.scss */
+/* line 3681, ../sass/_akdn-redesign.scss */
 .press-release-detail .grid-6 a {
   font-size: 16px;
   font-weight: normal;
   color: #000;
   text-decoration: none;
 }
-/* line 3688, ../sass/_akdn-redesign.scss */
+/* line 3689, ../sass/_akdn-redesign.scss */
 .press-release-detail .grid-6 a:hover {
   text-decoration: none;
 }
-/* line 3693, ../sass/_akdn-redesign.scss */
+/* line 3694, ../sass/_akdn-redesign.scss */
 .press-release-detail .grid-6 .views-field-field-short-title a,
 .press-release-detail .grid-6 .views-field-view-node-2 a,
 .press-release-detail .grid-6 .views-field-title a,
@@ -14234,7 +14414,7 @@ h2.header-name a:active, h2.header-name a:focus {
   margin-bottom: 5px;
   font-size: 18px;
 }
-/* line 3705, ../sass/_akdn-redesign.scss */
+/* line 3706, ../sass/_akdn-redesign.scss */
 .press-release-detail .grid-6 h2.pane-title {
   margin: 0;
   margin-bottom: 5px;
@@ -14246,26 +14426,26 @@ h2.header-name a:active, h2.header-name a:focus {
   text-transform: uppercase;
   border-top: 4px solid #b49759;
 }
-/* line 3718, ../sass/_akdn-redesign.scss */
+/* line 3719, ../sass/_akdn-redesign.scss */
 .press-release-detail .grid-6 h2.pane-title:first-letter {
   font-size: 100%;
 }
-/* line 3723, ../sass/_akdn-redesign.scss */
+/* line 3724, ../sass/_akdn-redesign.scss */
 .press-release-detail .grid-6 .view-header {
   font-size: 25px;
   text-transform: uppercase;
   line-height: 1;
   margin-bottom: 20px;
 }
-/* line 3731, ../sass/_akdn-redesign.scss */
+/* line 3732, ../sass/_akdn-redesign.scss */
 .press-release-detail .grid-6 .view-header:first-letter {
   font-size: 32px;
 }
-/* line 3736, ../sass/_akdn-redesign.scss */
+/* line 3737, ../sass/_akdn-redesign.scss */
 .press-release-detail .grid-6 ul, .press-release-detail .grid-6 li {
   margin: 0;
 }
-/* line 3742, ../sass/_akdn-redesign.scss */
+/* line 3743, ../sass/_akdn-redesign.scss */
 .press-release-detail .grid-6 .views-field-field-article-img,
 .press-release-detail .grid-6 .views-field-field-podcast-image-1,
 .press-release-detail .grid-6 .views-field-field-speech-image,
@@ -14273,7 +14453,7 @@ h2.header-name a:active, h2.header-name a:focus {
 .press-release-detail .grid-6 .views-field-field-project-image {
   margin: 0 auto 10px;
 }
-/* line 3750, ../sass/_akdn-redesign.scss */
+/* line 3751, ../sass/_akdn-redesign.scss */
 .press-release-detail .grid-6 .views-field-field-publish-date,
 .press-release-detail .grid-6 .views-field-field-publication-date,
 .press-release-detail .grid-6 .views-field-field-event-date {
@@ -14284,38 +14464,38 @@ h2.header-name a:active, h2.header-name a:focus {
   color: #999999;
   line-height: 1;
 }
-/* line 3761, ../sass/_akdn-redesign.scss */
+/* line 3762, ../sass/_akdn-redesign.scss */
 .press-release-detail .grid-6 .views-field-php,
 .press-release-detail .grid-6 .views-field-view-node,
 .press-release-detail .grid-6 .views-field-nothing {
   color: #b59757;
 }
-/* line 3769, ../sass/_akdn-redesign.scss */
+/* line 3770, ../sass/_akdn-redesign.scss */
 .press-release-detail .grid-6 .views-field-php a:hover,
 .press-release-detail .grid-6 .views-field-view-node a:hover,
 .press-release-detail .grid-6 .views-field-nothing a:hover {
   text-decoration: underline;
 }
-/* line 3773, ../sass/_akdn-redesign.scss */
+/* line 3774, ../sass/_akdn-redesign.scss */
 .press-release-detail .grid-6 .views-field-php a:focus,
 .press-release-detail .grid-6 .views-field-view-node a:focus,
 .press-release-detail .grid-6 .views-field-nothing a:focus {
   text-decoration: none;
 }
-/* line 3779, ../sass/_akdn-redesign.scss */
+/* line 3780, ../sass/_akdn-redesign.scss */
 .press-release-detail .grid-6 .views-row {
   margin: 0 auto 40px;
 }
-/* line 3783, ../sass/_akdn-redesign.scss */
+/* line 3784, ../sass/_akdn-redesign.scss */
 .press-release-detail .grid-6 .views-row-last {
   margin-bottom: 0;
 }
-/* line 3789, ../sass/_akdn-redesign.scss */
+/* line 3790, ../sass/_akdn-redesign.scss */
 .press-release-detail .pane-menu-menu-see-also {
   clear: both;
   padding: 25px 0;
 }
-/* line 3793, ../sass/_akdn-redesign.scss */
+/* line 3794, ../sass/_akdn-redesign.scss */
 .press-release-detail .pane-menu-menu-see-also h2.pane-title {
   font-size: 28px;
   font-weight: normal;
@@ -14326,11 +14506,11 @@ h2.header-name a:active, h2.header-name a:focus {
   color: #000;
   line-height: 36px;
 }
-/* line 3805, ../sass/_akdn-redesign.scss */
+/* line 3806, ../sass/_akdn-redesign.scss */
 .press-release-detail .pane-menu-menu-see-also h2.pane-title:first-letter {
   font-size: 36px !important;
 }
-/* line 3810, ../sass/_akdn-redesign.scss */
+/* line 3811, ../sass/_akdn-redesign.scss */
 .press-release-detail .pane-menu-menu-see-also ul, .press-release-detail .pane-menu-menu-see-also li {
   margin: 0 auto 15px;
   padding: 0;
@@ -14340,36 +14520,36 @@ h2.header-name a:active, h2.header-name a:focus {
   font-size: 18px;
   font-weight: normal;
 }
-/* line 3819, ../sass/_akdn-redesign.scss */
+/* line 3820, ../sass/_akdn-redesign.scss */
 .press-release-detail .pane-menu-menu-see-also ul a, .press-release-detail .pane-menu-menu-see-also li a {
   font-weight: normal;
   text-transform: none;
   font-size: 18px;
 }
-/* line 3826, ../sass/_akdn-redesign.scss */
+/* line 3827, ../sass/_akdn-redesign.scss */
 .press-release-detail .pane-menu-menu-see-also a {
   color: #000;
 }
-/* line 3829, ../sass/_akdn-redesign.scss */
+/* line 3830, ../sass/_akdn-redesign.scss */
 .press-release-detail .pane-menu-menu-see-also a:hover, .press-release-detail .pane-menu-menu-see-also a:active, .press-release-detail .pane-menu-menu-see-also a.active {
   color: #b49759;
   text-decoration: none;
 }
 
 /* News Detail Page */
-/* line 3838, ../sass/_akdn-redesign.scss */
+/* line 3839, ../sass/_akdn-redesign.scss */
 .body-article-news {
   font-size: 16px;
   font-weight: normal;
 }
 
 /* Publication Detail Page*/
-/* line 3846, ../sass/_akdn-redesign.scss */
+/* line 3847, ../sass/_akdn-redesign.scss */
 .akdn-publication-details {
   /* Publication Image border */
   /* Publication Download Button */
 }
-/* line 3848, ../sass/_akdn-redesign.scss */
+/* line 3849, ../sass/_akdn-redesign.scss */
 .akdn-publication-details .pane-node-field-publication-image {
   margin: 0;
   padding: 0 15px;
@@ -14377,30 +14557,30 @@ h2.header-name a:active, h2.header-name a:focus {
   float: left;
   clear: left;
 }
-/* line 3855, ../sass/_akdn-redesign.scss */
+/* line 3856, ../sass/_akdn-redesign.scss */
 .akdn-publication-details .pane-node-field-publication-image .field-item {
   border: 1px solid #a3a3a3;
 }
-/* line 3860, ../sass/_akdn-redesign.scss */
+/* line 3861, ../sass/_akdn-redesign.scss */
 .akdn-publication-details .pane-node-title-field {
   display: inline-block;
   width: 50%;
   float: none;
 }
-/* line 3866, ../sass/_akdn-redesign.scss */
+/* line 3867, ../sass/_akdn-redesign.scss */
 .akdn-publication-details .pane-node-body {
   display: inline-block;
   width: 50%;
   margin: 0;
   float: none;
 }
-/* line 3873, ../sass/_akdn-redesign.scss */
+/* line 3874, ../sass/_akdn-redesign.scss */
 .akdn-publication-details .field-type-text {
   position: relative;
   top: -10px;
   margin: 0 0 20px;
 }
-/* line 3880, ../sass/_akdn-redesign.scss */
+/* line 3881, ../sass/_akdn-redesign.scss */
 .akdn-publication-details .pane-node-field-publication-file {
   margin: 0;
   padding: 0 15px;
@@ -14408,7 +14588,7 @@ h2.header-name a:active, h2.header-name a:focus {
   float: left;
   clear: left;
 }
-/* line 3891, ../sass/_akdn-redesign.scss */
+/* line 3892, ../sass/_akdn-redesign.scss */
 .akdn-publication-details .pane-node-field-publication-file a {
   display: block;
   padding: 10px 0px;
@@ -14420,7 +14600,7 @@ h2.header-name a:active, h2.header-name a:focus {
   text-decoration: none;
   letter-spacing: 5px;
 }
-/* line 3902, ../sass/_akdn-redesign.scss */
+/* line 3903, ../sass/_akdn-redesign.scss */
 .akdn-publication-details .pane-node-field-publication-file a:after {
   content: "";
   position: absolute;
@@ -14432,21 +14612,21 @@ h2.header-name a:active, h2.header-name a:focus {
   background: url('../images/download-icon.jpg?1479706147') 0 0 no-repeat;
   background-size: contain;
 }
-/* line 3915, ../sass/_akdn-redesign.scss */
+/* line 3916, ../sass/_akdn-redesign.scss */
 .akdn-publication-details .pane-node-field-publication-file .file {
   display: block;
   margin: 20px 0 30px;
   padding: 0;
 }
-/* line 3924, ../sass/_akdn-redesign.scss */
+/* line 3925, ../sass/_akdn-redesign.scss */
 .akdn-publication-details .grid-6 .pane-publications .views-row {
   margin-bottom: 10px;
 }
-/* line 3927, ../sass/_akdn-redesign.scss */
+/* line 3928, ../sass/_akdn-redesign.scss */
 .akdn-publication-details .grid-6 .pane-publications .views-row:last-child {
   margin-bottom: 0;
 }
-/* line 3935, ../sass/_akdn-redesign.scss */
+/* line 3936, ../sass/_akdn-redesign.scss */
 .akdn-publication-details .pane-publications .views-field-field-publication-file,
 .akdn-publication-details .pane-publications .views-field-view-node {
   display: inline-block;
@@ -14454,43 +14634,43 @@ h2.header-name a:active, h2.header-name a:focus {
   font-weight: normal;
   text-transform: capitalize;
 }
-/* line 3945, ../sass/_akdn-redesign.scss */
+/* line 3946, ../sass/_akdn-redesign.scss */
 .akdn-publication-details .pane-publications .views-field-field-publication-file a,
 .akdn-publication-details .pane-publications .views-field-view-node a {
   color: #b59757;
   text-decoration: none;
 }
-/* line 3949, ../sass/_akdn-redesign.scss */
+/* line 3950, ../sass/_akdn-redesign.scss */
 .akdn-publication-details .pane-publications .views-field-field-publication-file a:hover,
 .akdn-publication-details .pane-publications .views-field-view-node a:hover {
   text-decoration: underline;
 }
-/* line 3960, ../sass/_akdn-redesign.scss */
+/* line 3961, ../sass/_akdn-redesign.scss */
 .akdn-publication-details .pane-publications .views-field-field-publication-file a:before {
   content: "[";
   margin-right: 3px;
   display: inline-block;
 }
-/* line 3969, ../sass/_akdn-redesign.scss */
+/* line 3970, ../sass/_akdn-redesign.scss */
 .akdn-publication-details .pane-publications .views-field-view-node a:before {
   content: "|";
   display: inline-block;
   margin-right: 3px;
 }
-/* line 3975, ../sass/_akdn-redesign.scss */
+/* line 3976, ../sass/_akdn-redesign.scss */
 .akdn-publication-details .pane-publications .views-field-view-node a:after {
   content: "]";
   margin-left: 3px;
   display: inline-block;
 }
 
-/* line 3986, ../sass/_akdn-redesign.scss */
+/* line 3987, ../sass/_akdn-redesign.scss */
 .press-release-speech-detail .view-press-center-detail-page-slideshows {
   margin: 0 0 40px;
   padding: 0 15px;
   overflow: hidden;
 }
-/* line 4008, ../sass/_akdn-redesign.scss */
+/* line 4009, ../sass/_akdn-redesign.scss */
 .press-release-speech-detail .pane-node-field-attachment {
   width: 16px;
   height: 16px;
@@ -14500,11 +14680,11 @@ h2.header-name a:active, h2.header-name a:focus {
   margin-top: 12px;
   margin-right: 15px;
 }
-/* line 4018, ../sass/_akdn-redesign.scss */
+/* line 4019, ../sass/_akdn-redesign.scss */
 .press-release-speech-detail .pane-node-field-attachment .file img {
   display: none;
 }
-/* line 4022, ../sass/_akdn-redesign.scss */
+/* line 4023, ../sass/_akdn-redesign.scss */
 .press-release-speech-detail .pane-node-field-attachment .file a {
   margin: 0 auto;
   color: #fff;
@@ -14517,16 +14697,16 @@ h2.header-name a:active, h2.header-name a:focus {
   text-align: center;
   padding: 0;
 }
-/* line 4035, ../sass/_akdn-redesign.scss */
+/* line 4036, ../sass/_akdn-redesign.scss */
 .press-release-speech-detail .pane-node-field-attachment .file .file-size {
   display: none;
 }
-/* line 4043, ../sass/_akdn-redesign.scss */
+/* line 4044, ../sass/_akdn-redesign.scss */
 .press-release-speech-detail .grid-6 .views-row .views-field-field-short-title {
   text-transform: none;
 }
 
-/* line 4051, ../sass/_akdn-redesign.scss */
+/* line 4052, ../sass/_akdn-redesign.scss */
 .press-release-detail-type .pane-node-field-attachment {
   width: 16px;
   height: 16px;
@@ -14536,11 +14716,11 @@ h2.header-name a:active, h2.header-name a:focus {
   margin-top: 12px;
   margin-right: 15px;
 }
-/* line 4061, ../sass/_akdn-redesign.scss */
+/* line 4062, ../sass/_akdn-redesign.scss */
 .press-release-detail-type .pane-node-field-attachment .file img {
   display: none;
 }
-/* line 4065, ../sass/_akdn-redesign.scss */
+/* line 4066, ../sass/_akdn-redesign.scss */
 .press-release-detail-type .pane-node-field-attachment .file a {
   margin: 0 auto;
   color: #fff;
@@ -14553,45 +14733,45 @@ h2.header-name a:active, h2.header-name a:focus {
   text-align: center;
   padding: 0;
 }
-/* line 4078, ../sass/_akdn-redesign.scss */
+/* line 4079, ../sass/_akdn-redesign.scss */
 .press-release-detail-type .pane-node-field-attachment .file .file-size {
   display: none;
 }
-/* line 4086, ../sass/_akdn-redesign.scss */
+/* line 4087, ../sass/_akdn-redesign.scss */
 .press-release-detail-type .grid-6 .views-row .views-field-field-short-title {
   text-transform: none;
 }
 
-/* line 4094, ../sass/_akdn-redesign.scss */
+/* line 4095, ../sass/_akdn-redesign.scss */
 .press-release-photograps-detail .views_slideshow_pager_field_item {
   width: 33.3333%;
   float: left;
   display: inline;
 }
-/* line 4102, ../sass/_akdn-redesign.scss */
+/* line 4103, ../sass/_akdn-redesign.scss */
 .press-release-photograps-detail .grid-6 .views-row .views-field-field-gallery-images-1 {
   margin: 0 auto 10px;
 }
-/* line 4106, ../sass/_akdn-redesign.scss */
+/* line 4107, ../sass/_akdn-redesign.scss */
 .press-release-photograps-detail .grid-6 .views-row .views-field-field-short-title {
   text-transform: none;
 }
 
-/* line 4116, ../sass/_akdn-redesign.scss */
+/* line 4117, ../sass/_akdn-redesign.scss */
 .body-article-news .grid-6 .views-row .views-field-view-node-2 a {
   text-transform: none;
 }
 
-/* line 4126, ../sass/_akdn-redesign.scss */
+/* line 4127, ../sass/_akdn-redesign.scss */
 .press-release-video-detail .grid-6 .views-row .views-field-field-short-title {
   text-transform: none;
 }
-/* line 4133, ../sass/_akdn-redesign.scss */
+/* line 4134, ../sass/_akdn-redesign.scss */
 .press-release-video-detail .video-image-thumbnail a {
   position: relative;
   display: block;
 }
-/* line 4139, ../sass/_akdn-redesign.scss */
+/* line 4140, ../sass/_akdn-redesign.scss */
 .press-release-video-detail .video-image-thumbnail a:before {
   content: "\e90e";
   position: absolute;
@@ -14610,7 +14790,7 @@ h2.header-name a:active, h2.header-name a:focus {
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.75);
 }
-/* line 4159, ../sass/_akdn-redesign.scss */
+/* line 4160, ../sass/_akdn-redesign.scss */
 .press-release-video-detail .video-image-thumbnail a:hover:before {
   -webkit-box-shadow: 0 0 15px 0 rgba(255, 255, 255, 0.5);
   box-shadow: 0 0 15px 0 rgba(255, 255, 255, 0.5);
@@ -14618,35 +14798,35 @@ h2.header-name a:active, h2.header-name a:focus {
   color: rgba(0, 0, 0, 0.55);
 }
 
-/* line 4172, ../sass/_akdn-redesign.scss */
+/* line 4173, ../sass/_akdn-redesign.scss */
 .akdn-project-details .pane-node-title-field .field-type-text {
   margin-bottom: 15px;
   font-size: 25px;
   line-height: 1;
   text-transform: none;
 }
-/* line 4182, ../sass/_akdn-redesign.scss */
+/* line 4183, ../sass/_akdn-redesign.scss */
 .akdn-project-details .pane-node-field-sub-title {
   padding: 0;
   margin: 0 auto;
   width: 100%;
   border-right: 0 none;
 }
-/* line 4191, ../sass/_akdn-redesign.scss */
+/* line 4192, ../sass/_akdn-redesign.scss */
 .akdn-project-details .related-block-info .pane-node-field-country a {
   width: auto;
 }
-/* line 4194, ../sass/_akdn-redesign.scss */
+/* line 4195, ../sass/_akdn-redesign.scss */
 .akdn-project-details .related-block-info .pane-node-field-country a:after {
   content: ",";
   margin-right: 3px;
 }
-/* line 4202, ../sass/_akdn-redesign.scss */
+/* line 4203, ../sass/_akdn-redesign.scss */
 .akdn-project-details .related-block-info .pane-node-field-country .field-item:last-child a:after {
   content: "";
   margin-right: 0;
 }
-/* line 4212, ../sass/_akdn-redesign.scss */
+/* line 4213, ../sass/_akdn-redesign.scss */
 .akdn-project-details .grid-6 .views-field-field-sub-title {
   font-size: 16px;
   font-weight: normal;
@@ -14654,7 +14834,7 @@ h2.header-name a:active, h2.header-name a:focus {
   color: #000;
 }
 
-/* line 4224, ../sass/_akdn-redesign.scss */
+/* line 4225, ../sass/_akdn-redesign.scss */
 .presscenter-right-more-btn a {
   display: block;
   width: 100%;
@@ -14666,7 +14846,7 @@ h2.header-name a:active, h2.header-name a:focus {
   border-bottom: 1px solid #b69c5f;
   text-transform: uppercase;
 }
-/* line 4237, ../sass/_akdn-redesign.scss */
+/* line 4238, ../sass/_akdn-redesign.scss */
 .presscenter-right-more-btn a:after {
   content: "\e913";
   float: right;
@@ -14674,7 +14854,7 @@ h2.header-name a:active, h2.header-name a:focus {
   color: #b59757;
 }
 
-/* line 4251, ../sass/_akdn-redesign.scss */
+/* line 4252, ../sass/_akdn-redesign.scss */
 .press-release-photograps-detail .pane-node-body,
 .press-release-video-detail .pane-node-body,
 .press-release-events .pane-node-body {
@@ -14683,14 +14863,14 @@ h2.header-name a:active, h2.header-name a:focus {
 }
 
 /*******/
-/* line 4261, ../sass/_akdn-redesign.scss */
+/* line 4262, ../sass/_akdn-redesign.scss */
 .geography-page .pane-featured-slideshow {
   width: 68.77193%;
   margin: 0 auto 40px;
   padding: 0;
   overflow: hidden;
 }
-/* line 4270, ../sass/_akdn-redesign.scss */
+/* line 4271, ../sass/_akdn-redesign.scss */
 .geography-page .hub-about-short-title {
   width: 31.22807%;
   float: left;
@@ -14702,30 +14882,30 @@ h2.header-name a:active, h2.header-name a:focus {
   overflow: auto;
   height: 460px;
 }
-/* line 4283, ../sass/_akdn-redesign.scss */
+/* line 4284, ../sass/_akdn-redesign.scss */
 .geography-page .hub-about-short-title h2, .geography-page .hub-about-short-title h1 {
   margin-top: 0;
   font-size: 20px;
   color: #ab8f54;
 }
-/* line 4291, ../sass/_akdn-redesign.scss */
+/* line 4292, ../sass/_akdn-redesign.scss */
 .geography-page .hub-about-short-title h1 {
   font-size: 28px;
 }
-/* line 4298, ../sass/_akdn-redesign.scss */
+/* line 4299, ../sass/_akdn-redesign.scss */
 .geography-page .hub-about-short-title .about a {
   display: block;
   color: #ab8f54;
 }
-/* line 4302, ../sass/_akdn-redesign.scss */
+/* line 4303, ../sass/_akdn-redesign.scss */
 .geography-page .hub-about-short-title .about a:before {
   content: "[";
 }
-/* line 4306, ../sass/_akdn-redesign.scss */
+/* line 4307, ../sass/_akdn-redesign.scss */
 .geography-page .hub-about-short-title .about a:after {
   content: "]";
 }
-/* line 4313, ../sass/_akdn-redesign.scss */
+/* line 4314, ../sass/_akdn-redesign.scss */
 .geography-page .www-summary {
   position: relative;
   margin-bottom: 40px;
@@ -14736,11 +14916,11 @@ h2.header-name a:active, h2.header-name a:focus {
   color: #999999;
   line-height: 30px;
 }
-/* line 4325, ../sass/_akdn-redesign.scss */
+/* line 4326, ../sass/_akdn-redesign.scss */
 .geography-page .www-summary p {
   margin: 0 auto;
 }
-/* line 4330, ../sass/_akdn-redesign.scss */
+/* line 4331, ../sass/_akdn-redesign.scss */
 .geography-page .www-summary .field-type-text-with-summary:before {
   content: "";
   position: absolute;
@@ -14750,7 +14930,7 @@ h2.header-name a:active, h2.header-name a:focus {
   height: 97%;
   border-left: 4px solid #b4965a;
 }
-/* line 4342, ../sass/_akdn-redesign.scss */
+/* line 4343, ../sass/_akdn-redesign.scss */
 .geography-page .www-body {
   margin-bottom: 40px;
   font-size: 16px;
@@ -14761,12 +14941,12 @@ h2.header-name a:active, h2.header-name a:focus {
 
 /* What we do pages */
 /* What We do Summary Text Show more css */
-/* line 4365, ../sass/_akdn-redesign.scss */
+/* line 4366, ../sass/_akdn-redesign.scss */
 .morecontent span {
   display: none;
 }
 
-/* line 4369, ../sass/_akdn-redesign.scss */
+/* line 4370, ../sass/_akdn-redesign.scss */
 .morelink {
   display: block;
   color: #b59757;
@@ -14777,29 +14957,29 @@ h2.header-name a:active, h2.header-name a:focus {
   line-height: 1;
   margin-top: 5px;
 }
-/* line 4379, ../sass/_akdn-redesign.scss */
+/* line 4380, ../sass/_akdn-redesign.scss */
 .morelink:hover {
   color: #b59757;
 }
-/* line 4383, ../sass/_akdn-redesign.scss */
+/* line 4384, ../sass/_akdn-redesign.scss */
 .morelink:focus {
   color: #b59757;
   text-decoration: none;
 }
 
-/* line 4389, ../sass/_akdn-redesign.scss */
+/* line 4390, ../sass/_akdn-redesign.scss */
 .whatwedo-left {
   margin-bottom: 40px;
   padding-left: 0;
   border: 0 none;
 }
 
-/* line 4397, ../sass/_akdn-redesign.scss */
+/* line 4398, ../sass/_akdn-redesign.scss */
 .whatwedo-right {
   margin-bottom: 40px;
   padding-left: 15px;
 }
-/* line 4403, ../sass/_akdn-redesign.scss */
+/* line 4404, ../sass/_akdn-redesign.scss */
 .whatwedo-right:before {
   content: "";
   border-left: 1px solid #b59757;
@@ -14808,7 +14988,7 @@ h2.header-name a:active, h2.header-name a:focus {
   left: 0;
   height: 97%;
 }
-/* line 4412, ../sass/_akdn-redesign.scss */
+/* line 4413, ../sass/_akdn-redesign.scss */
 .whatwedo-right h2.pane-title {
   font-size: 28px;
   font-weight: normal;
@@ -14816,23 +14996,23 @@ h2.header-name a:active, h2.header-name a:focus {
   line-height: 1;
   text-transform: uppercase;
 }
-/* line 4421, ../sass/_akdn-redesign.scss */
+/* line 4422, ../sass/_akdn-redesign.scss */
 .whatwedo-right h2.pane-title:first-letter {
   font-size: 35px;
 }
-/* line 4427, ../sass/_akdn-redesign.scss */
+/* line 4428, ../sass/_akdn-redesign.scss */
 .whatwedo-right .view-header p {
   font-size: 16px;
   font-weight: normal;
   margin: 0 auto 15px;
   line-height: 1;
 }
-/* line 4437, ../sass/_akdn-redesign.scss */
+/* line 4438, ../sass/_akdn-redesign.scss */
 .whatwedo-right .views-row {
   margin: 0 auto 10px;
   position: relative;
 }
-/* line 4442, ../sass/_akdn-redesign.scss */
+/* line 4443, ../sass/_akdn-redesign.scss */
 .whatwedo-right .views-field-field-agency-logo {
   position: absolute;
   left: 0;
@@ -14842,7 +15022,7 @@ h2.header-name a:active, h2.header-name a:focus {
   float: left;
   overflow: hidden;
 }
-/* line 4452, ../sass/_akdn-redesign.scss */
+/* line 4453, ../sass/_akdn-redesign.scss */
 .whatwedo-right .views-field-title {
   width: auto;
   height: auto;
@@ -14853,19 +15033,19 @@ h2.header-name a:active, h2.header-name a:focus {
   line-height: 32px;
   vertical-align: middle;
 }
-/* line 4464, ../sass/_akdn-redesign.scss */
+/* line 4465, ../sass/_akdn-redesign.scss */
 .whatwedo-right .views-field-title a {
   color: #000;
   text-decoration: none;
   text-transform: none;
 }
-/* line 4469, ../sass/_akdn-redesign.scss */
+/* line 4470, ../sass/_akdn-redesign.scss */
 .whatwedo-right .views-field-title a:hover, .whatwedo-right .views-field-title a:focus {
   color: #b59757;
   text-decoration: none;
 }
 
-/* line 4477, ../sass/_akdn-redesign.scss */
+/* line 4478, ../sass/_akdn-redesign.scss */
 .what-we-do-body-more, .context-his-highness-aga-khan .pane-node-body .field-type-text-with-summary {
   padding-left: 20px;
   font-size: 22px;
@@ -14875,7 +15055,7 @@ h2.header-name a:active, h2.header-name a:focus {
   color: #999999;
   position: relative;
 }
-/* line 4486, ../sass/_akdn-redesign.scss */
+/* line 4487, ../sass/_akdn-redesign.scss */
 .what-we-do-body-more:before, .context-his-highness-aga-khan .pane-node-body .field-type-text-with-summary:before {
   content: "";
   position: absolute;
@@ -14885,52 +15065,52 @@ h2.header-name a:active, h2.header-name a:focus {
   height: 97%;
   border-left: 4px solid #b4965a;
 }
-/* line 4496, ../sass/_akdn-redesign.scss */
+/* line 4497, ../sass/_akdn-redesign.scss */
 .what-we-do-body-more span, .context-his-highness-aga-khan .pane-node-body .field-type-text-with-summary span {
   display: inline-block;
 }
-/* line 4500, ../sass/_akdn-redesign.scss */
+/* line 4501, ../sass/_akdn-redesign.scss */
 .what-we-do-body-more .morelink, .context-his-highness-aga-khan .pane-node-body .field-type-text-with-summary .morelink {
   font-size: 22px;
   font-style: normal;
 }
-/* line 4501, ../sass/_akdn-redesign.scss */
+/* line 4502, ../sass/_akdn-redesign.scss */
 .what-we-do-body-more .morelink:before, .context-his-highness-aga-khan .pane-node-body .field-type-text-with-summary .morelink:before {
   content: "[";
   display: inline-block;
   margin-right: 3px;
 }
-/* line 4507, ../sass/_akdn-redesign.scss */
+/* line 4508, ../sass/_akdn-redesign.scss */
 .what-we-do-body-more .morelink:after, .context-his-highness-aga-khan .pane-node-body .field-type-text-with-summary .morelink:after {
   content: "]";
   margin-left: 3px;
   display: inline-block;
 }
 
-/* line 4518, ../sass/_akdn-redesign.scss */
+/* line 4519, ../sass/_akdn-redesign.scss */
 .what-we-do-body-more-body {
   margin: 30px auto 0;
   font-size: 16px;
   font-style: normal;
   line-height: 24px;
 }
-/* line 4526, ../sass/_akdn-redesign.scss */
+/* line 4527, ../sass/_akdn-redesign.scss */
 .what-we-do-body-more-body ul {
   margin: 10px auto;
   padding: 0;
   list-style-position: outside;
 }
-/* line 4532, ../sass/_akdn-redesign.scss */
+/* line 4533, ../sass/_akdn-redesign.scss */
 .what-we-do-body-more-body li {
   position: relative;
   left: 1em;
 }
-/* line 4537, ../sass/_akdn-redesign.scss */
+/* line 4538, ../sass/_akdn-redesign.scss */
 .what-we-do-body-more-body .hr-line {
   display: block;
   margin: 30px auto 0;
 }
-/* line 4542, ../sass/_akdn-redesign.scss */
+/* line 4543, ../sass/_akdn-redesign.scss */
 .what-we-do-body-more-body .lesslink {
   position: absolute;
   right: 15px;
@@ -14946,21 +15126,21 @@ h2.header-name a:active, h2.header-name a:focus {
   text-decoration: none;
   z-index: 1;
 }
-/* line 4559, ../sass/_akdn-redesign.scss */
+/* line 4560, ../sass/_akdn-redesign.scss */
 .what-we-do-body-more-body .lesslink:before {
   content: "\e906";
   position: absolute;
   bottom: 0;
   font-size: 42px;
 }
-/* line 4566, ../sass/_akdn-redesign.scss */
+/* line 4567, ../sass/_akdn-redesign.scss */
 .what-we-do-body-more-body .lesslink:hover {
   color: #b5995a;
   text-decoration: none;
 }
 
 /* News & Resources Block */
-/* line 4574, ../sass/_akdn-redesign.scss */
+/* line 4575, ../sass/_akdn-redesign.scss */
 .what-we-do-main-wrapper {
   display: block;
   width: auto;
@@ -14969,17 +15149,17 @@ h2.header-name a:active, h2.header-name a:focus {
   clear: both;
 }
 
-/* line 4582, ../sass/_akdn-redesign.scss */
+/* line 4583, ../sass/_akdn-redesign.scss */
 .what-we-do-inner-wrapper {
   margin-bottom: 0;
 }
-/* line 4587, ../sass/_akdn-redesign.scss */
+/* line 4588, ../sass/_akdn-redesign.scss */
 .what-we-do-inner-wrapper .view-content,
 .what-we-do-inner-wrapper .views-row {
   height: 100%;
 }
 
-/* line 4593, ../sass/_akdn-redesign.scss */
+/* line 4594, ../sass/_akdn-redesign.scss */
 .what-we-do-subwrapper {
   height: 100%;
   color: #000000;
@@ -14987,13 +15167,13 @@ h2.header-name a:active, h2.header-name a:focus {
   font-weight: normal;
   background: #eaeaea;
 }
-/* line 4604, ../sass/_akdn-redesign.scss */
+/* line 4605, ../sass/_akdn-redesign.scss */
 .what-we-do-subwrapper .image {
   margin-bottom: 15px;
   width: 100%;
   overflow: hidden;
 }
-/* line 4610, ../sass/_akdn-redesign.scss */
+/* line 4611, ../sass/_akdn-redesign.scss */
 .what-we-do-subwrapper .type {
   margin-bottom: 15px;
   padding: 0 15px;
@@ -15001,7 +15181,7 @@ h2.header-name a:active, h2.header-name a:focus {
   text-transform: uppercase;
   line-height: 1;
 }
-/* line 4620, ../sass/_akdn-redesign.scss */
+/* line 4621, ../sass/_akdn-redesign.scss */
 .what-we-do-subwrapper .date {
   margin-bottom: 5px;
   padding: 0 15px;
@@ -15009,23 +15189,23 @@ h2.header-name a:active, h2.header-name a:focus {
   color: #888888;
   line-height: 1;
 }
-/* line 4628, ../sass/_akdn-redesign.scss */
+/* line 4629, ../sass/_akdn-redesign.scss */
 .what-we-do-subwrapper .title {
   margin-bottom: 2px;
   padding: 0 15px;
   font-weight: bold;
   line-height: 25px;
 }
-/* line 4634, ../sass/_akdn-redesign.scss */
+/* line 4635, ../sass/_akdn-redesign.scss */
 .what-we-do-subwrapper .title a {
   color: #000;
   text-decoration: none;
 }
-/* line 4638, ../sass/_akdn-redesign.scss */
+/* line 4639, ../sass/_akdn-redesign.scss */
 .what-we-do-subwrapper .title a:hover {
   text-decoration: none;
 }
-/* line 4644, ../sass/_akdn-redesign.scss */
+/* line 4645, ../sass/_akdn-redesign.scss */
 .what-we-do-subwrapper .read,
 .what-we-do-subwrapper .readall {
   display: inline-block;
@@ -15033,33 +15213,33 @@ h2.header-name a:active, h2.header-name a:focus {
   color: #b59757;
   text-decoration: none;
 }
-/* line 4651, ../sass/_akdn-redesign.scss */
+/* line 4652, ../sass/_akdn-redesign.scss */
 .what-we-do-subwrapper .read a,
 .what-we-do-subwrapper .readall a {
   padding: 0 3px;
   vertical-align: middle;
   color: #b59757;
 }
-/* line 4656, ../sass/_akdn-redesign.scss */
+/* line 4657, ../sass/_akdn-redesign.scss */
 .what-we-do-subwrapper .read a:hover,
 .what-we-do-subwrapper .readall a:hover {
   text-decoration: underline;
 }
-/* line 4662, ../sass/_akdn-redesign.scss */
+/* line 4663, ../sass/_akdn-redesign.scss */
 .what-we-do-subwrapper .read {
   padding-left: 15px;
 }
-/* line 4666, ../sass/_akdn-redesign.scss */
+/* line 4667, ../sass/_akdn-redesign.scss */
 .what-we-do-subwrapper .readall {
   padding-right: 15px;
 }
-/* line 4669, ../sass/_akdn-redesign.scss */
+/* line 4670, ../sass/_akdn-redesign.scss */
 .what-we-do-subwrapper .readall a {
   padding-left: 0;
 }
 
 /* What we do Projects Block */
-/* line 4677, ../sass/_akdn-redesign.scss */
+/* line 4678, ../sass/_akdn-redesign.scss */
 .node-type-focus-area .pane-projects {
   display: block;
   width: 100%;
@@ -15067,7 +15247,7 @@ h2.header-name a:active, h2.header-name a:focus {
   float: left;
   clear: both;
 }
-/* line 4684, ../sass/_akdn-redesign.scss */
+/* line 4685, ../sass/_akdn-redesign.scss */
 .node-type-focus-area .pane-projects .view-content {
   margin: 0 -15px 20px;
   display: block;
@@ -15075,7 +15255,7 @@ h2.header-name a:active, h2.header-name a:focus {
   float: left;
   text-transform: none;
 }
-/* line 4693, ../sass/_akdn-redesign.scss */
+/* line 4694, ../sass/_akdn-redesign.scss */
 .node-type-focus-area .pane-projects.sub-navbar p:after {
   content: "";
   position: relative;
@@ -15085,16 +15265,16 @@ h2.header-name a:active, h2.header-name a:focus {
   border-bottom: 1px solid #CCCCCC;
   margin: -6px 0px 0 150px;
 }
-/* line 4704, ../sass/_akdn-redesign.scss */
+/* line 4705, ../sass/_akdn-redesign.scss */
 .node-type-focus-area .pane-projects.sub-navbar .project-inner-wrap span {
   font-size: 16px !important;
 }
-/* line 4709, ../sass/_akdn-redesign.scss */
+/* line 4710, ../sass/_akdn-redesign.scss */
 .node-type-focus-area .pane-projects.sub-navbar .pane-content {
   margin-bottom: 0;
 }
 
-/* line 4716, ../sass/_akdn-redesign.scss */
+/* line 4717, ../sass/_akdn-redesign.scss */
 .what-we-do-sub-navbar {
   margin-bottom: 15px;
   display: block;
@@ -15102,7 +15282,7 @@ h2.header-name a:active, h2.header-name a:focus {
   width: 100%;
 }
 
-/* line 4727, ../sass/_akdn-redesign.scss */
+/* line 4728, ../sass/_akdn-redesign.scss */
 .project-inner-wrap {
   height: 100%;
   color: #000000;
@@ -15110,44 +15290,44 @@ h2.header-name a:active, h2.header-name a:focus {
   font-weight: normal;
   background: #eaeaea;
 }
-/* line 4738, ../sass/_akdn-redesign.scss */
+/* line 4739, ../sass/_akdn-redesign.scss */
 .project-inner-wrap .views-field-field-project-image {
   margin-bottom: 15px;
   width: 100%;
   overflow: hidden;
 }
-/* line 4739, ../sass/_akdn-redesign.scss */
+/* line 4740, ../sass/_akdn-redesign.scss */
 .project-inner-wrap .views-field-field-project-image a {
   padding: 0;
   border: 0 none;
   display: block;
 }
-/* line 4750, ../sass/_akdn-redesign.scss */
+/* line 4751, ../sass/_akdn-redesign.scss */
 .project-inner-wrap .project-short-title {
   margin-bottom: 5px;
   padding: 0 15px;
   font-weight: bold;
   line-height: 25px;
 }
-/* line 4756, ../sass/_akdn-redesign.scss */
+/* line 4757, ../sass/_akdn-redesign.scss */
 .project-inner-wrap .project-short-title a {
   color: #000;
   text-decoration: none;
   border: 0 none;
   padding: 0;
 }
-/* line 4762, ../sass/_akdn-redesign.scss */
+/* line 4763, ../sass/_akdn-redesign.scss */
 .project-inner-wrap .project-short-title a:hover {
   text-decoration: none;
 }
 
-/* line 4769, ../sass/_akdn-redesign.scss */
+/* line 4770, ../sass/_akdn-redesign.scss */
 .project-body-wrap {
   margin-bottom: 25px;
   padding: 0 15px;
   line-height: 25px;
 }
-/* line 4775, ../sass/_akdn-redesign.scss */
+/* line 4776, ../sass/_akdn-redesign.scss */
 .project-body-wrap .views-field-body a {
   padding: 0;
   margin: 0;
@@ -15155,12 +15335,12 @@ h2.header-name a:active, h2.header-name a:focus {
   display: inline;
   text-decoration: none;
 }
-/* line 4782, ../sass/_akdn-redesign.scss */
+/* line 4783, ../sass/_akdn-redesign.scss */
 .project-body-wrap .views-field-body a:hover, .project-body-wrap .views-field-body a:focus {
   text-decoration: none;
   color: #000;
 }
-/* line 4790, ../sass/_akdn-redesign.scss */
+/* line 4791, ../sass/_akdn-redesign.scss */
 .project-body-wrap .views-field-view-node a {
   color: #b5995a;
   padding: 0;
@@ -15168,41 +15348,41 @@ h2.header-name a:active, h2.header-name a:focus {
   white-space: nowrap;
   border: 0 none;
 }
-/* line 4797, ../sass/_akdn-redesign.scss */
+/* line 4798, ../sass/_akdn-redesign.scss */
 .project-body-wrap .views-field-view-node a:before {
   content: "[";
   display: inline-block;
   margin-right: 3px;
 }
-/* line 4803, ../sass/_akdn-redesign.scss */
+/* line 4804, ../sass/_akdn-redesign.scss */
 .project-body-wrap .views-field-view-node a:after {
   content: "]";
   display: inline-block;
   margin-left: 3px;
 }
-/* line 4809, ../sass/_akdn-redesign.scss */
+/* line 4810, ../sass/_akdn-redesign.scss */
 .project-body-wrap .views-field-view-node a:hover {
   color: #b5995a;
   text-decoration: underline;
 }
 
 /* What we do pages */
-/* line 4823, ../sass/_akdn-redesign.scss */
+/* line 4824, ../sass/_akdn-redesign.scss */
 .node-type-agency .hub-about-short-title {
   border-right: 0;
 }
-/* line 4828, ../sass/_akdn-redesign.scss */
+/* line 4829, ../sass/_akdn-redesign.scss */
 .node-type-agency .hub-about-short-title h2 {
   margin: 0 auto 10px;
 }
 
-/* line 4834, ../sass/_akdn-redesign.scss */
+/* line 4835, ../sass/_akdn-redesign.scss */
 .agencies_logo {
   position: relative;
   display: block;
   margin: 0 auto 30px;
 }
-/* line 4839, ../sass/_akdn-redesign.scss */
+/* line 4840, ../sass/_akdn-redesign.scss */
 .agencies_logo img {
   width: auto;
   margin: 0 auto;
@@ -15210,7 +15390,7 @@ h2.header-name a:active, h2.header-name a:focus {
   position: relative;
 }
 
-/* line 4847, ../sass/_akdn-redesign.scss */
+/* line 4848, ../sass/_akdn-redesign.scss */
 .agencies_title_wrapper {
   margin: 0 auto;
   font-size: 22px;
@@ -15219,7 +15399,7 @@ h2.header-name a:active, h2.header-name a:focus {
   text-transform: uppercase;
 }
 
-/* line 4855, ../sass/_akdn-redesign.scss */
+/* line 4856, ../sass/_akdn-redesign.scss */
 .agencies_title {
   margin: 20px 0 61px;
   font-size: 22px;
@@ -15229,40 +15409,40 @@ h2.header-name a:active, h2.header-name a:focus {
 }
 
 /* Video Detail Page Video Height Fix */
-/* line 4866, ../sass/_akdn-redesign.scss */
+/* line 4867, ../sass/_akdn-redesign.scss */
 .playerbox {
   width: 100%;
   height: 460px;
 }
 
-/* line 4871, ../sass/_akdn-redesign.scss */
+/* line 4872, ../sass/_akdn-redesign.scss */
 .not-active {
   color: #b5995a;
 }
-/* line 4874, ../sass/_akdn-redesign.scss */
+/* line 4875, ../sass/_akdn-redesign.scss */
 .not-active:hover, .not-active:focus {
   color: #b5995a;
   text-decoration: none;
 }
 
-/* line 4882, ../sass/_akdn-redesign.scss */
+/* line 4883, ../sass/_akdn-redesign.scss */
 .context-akdns-approach-development .listing-page-views .views-row {
   margin: 0 auto 40px;
   position: relative;
 }
-/* line 4889, ../sass/_akdn-redesign.scss */
+/* line 4890, ../sass/_akdn-redesign.scss */
 .context-akdns-approach-development .text-description p {
   font-size: 16px;
   line-height: 24px;
 }
-/* line 4897, ../sass/_akdn-redesign.scss */
+/* line 4898, ../sass/_akdn-redesign.scss */
 .context-akdns-approach-development .read-more {
   position: absolute;
   display: block;
   bottom: 0;
   right: 0;
 }
-/* line 4903, ../sass/_akdn-redesign.scss */
+/* line 4904, ../sass/_akdn-redesign.scss */
 .context-akdns-approach-development .read-more .read-more-link {
   position: absolute;
   top: 20px;
@@ -15272,24 +15452,24 @@ h2.header-name a:active, h2.header-name a:focus {
   cursor: pointer;
   color: #b5995a;
 }
-/* line 4914, ../sass/_akdn-redesign.scss */
+/* line 4915, ../sass/_akdn-redesign.scss */
 .context-akdns-approach-development .read-more .read-more-link:before {
   content: "\e906";
   position: absolute;
   bottom: 0;
   font-size: 30px;
 }
-/* line 4923, ../sass/_akdn-redesign.scss */
+/* line 4924, ../sass/_akdn-redesign.scss */
 .context-akdns-approach-development .grid-about-us-block_description-hhak {
   float: none;
   padding: 0;
   border: 0 none;
 }
-/* line 4929, ../sass/_akdn-redesign.scss */
+/* line 4930, ../sass/_akdn-redesign.scss */
 .context-akdns-approach-development .grid-about-us-block_description-hhak .pc-title a {
   text-transform: uppercase;
 }
-/* line 4935, ../sass/_akdn-redesign.scss */
+/* line 4936, ../sass/_akdn-redesign.scss */
 .context-akdns-approach-development .views-field-field-quick-links {
   position: relative;
   margin: 0 auto 40px;
@@ -15297,7 +15477,7 @@ h2.header-name a:active, h2.header-name a:focus {
   font-size: 16px;
   font-weight: normal;
 }
-/* line 4942, ../sass/_akdn-redesign.scss */
+/* line 4943, ../sass/_akdn-redesign.scss */
 .context-akdns-approach-development .views-field-field-quick-links:before {
   content: "";
   position: absolute;
@@ -15307,21 +15487,21 @@ h2.header-name a:active, h2.header-name a:focus {
   height: 100%;
   border-left: 4px solid #b4965a;
 }
-/* line 4952, ../sass/_akdn-redesign.scss */
+/* line 4953, ../sass/_akdn-redesign.scss */
 .context-akdns-approach-development .views-field-field-quick-links a {
   display: block;
   line-height: 1;
   color: #000;
   margin-bottom: 10px;
 }
-/* line 4960, ../sass/_akdn-redesign.scss */
+/* line 4961, ../sass/_akdn-redesign.scss */
 .context-akdns-approach-development .related {
   display: block;
   margin: 0 auto;
   position: relative;
   line-height: 1;
 }
-/* line 4966, ../sass/_akdn-redesign.scss */
+/* line 4967, ../sass/_akdn-redesign.scss */
 .context-akdns-approach-development .related:before {
   content: "";
   position: relative;
@@ -15331,7 +15511,7 @@ h2.header-name a:active, h2.header-name a:focus {
   height: auto;
   border-top: 4px solid #b4965a;
 }
-/* line 4976, ../sass/_akdn-redesign.scss */
+/* line 4977, ../sass/_akdn-redesign.scss */
 .context-akdns-approach-development .related:after {
   content: "";
   position: relative;
@@ -15341,7 +15521,7 @@ h2.header-name a:active, h2.header-name a:focus {
   height: auto;
   border-top: 1px solid #b4965a;
 }
-/* line 4986, ../sass/_akdn-redesign.scss */
+/* line 4987, ../sass/_akdn-redesign.scss */
 .context-akdns-approach-development .related span {
   display: block;
   margin: 0 auto 15px;
@@ -15349,20 +15529,20 @@ h2.header-name a:active, h2.header-name a:focus {
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 4994, ../sass/_akdn-redesign.scss */
+/* line 4995, ../sass/_akdn-redesign.scss */
 .context-akdns-approach-development .related a {
   color: #000;
   display: block;
   margin: 0 auto 10px;
 }
 
-/* line 5003, ../sass/_akdn-redesign.scss */
+/* line 5004, ../sass/_akdn-redesign.scss */
 map area {
   outline: none;
 }
 
 /* Where we work - Area of activity */
-/* line 5009, ../sass/_akdn-redesign.scss */
+/* line 5010, ../sass/_akdn-redesign.scss */
 .basic-page-slideshow,
 .banner-slideshow-views-no-title {
   width: 100%;
@@ -15371,14 +15551,14 @@ map area {
   float: left;
 }
 
-/* line 5017, ../sass/_akdn-redesign.scss */
+/* line 5018, ../sass/_akdn-redesign.scss */
 .basic-page-short-title {
   width: 100%;
   margin: 0 auto 30px;
   padding: 0 15px;
   font-size: 42px;
 }
-/* line 5027, ../sass/_akdn-redesign.scss */
+/* line 5028, ../sass/_akdn-redesign.scss */
 .basic-page-short-title .field-name-title-field {
   width: 100%;
   margin: 0 auto;
@@ -15386,7 +15566,7 @@ map area {
   float: left;
 }
 
-/* line 5035, ../sass/_akdn-redesign.scss */
+/* line 5036, ../sass/_akdn-redesign.scss */
 .basic-page-accordian-summary {
   margin-bottom: 40px;
   padding: 0 15px;
@@ -15397,7 +15577,7 @@ map area {
   line-height: 30px;
 }
 
-/* line 5049, ../sass/_akdn-redesign.scss */
+/* line 5050, ../sass/_akdn-redesign.scss */
 .basic-page-summary {
   margin-bottom: 40px;
   padding: 0 15px;
@@ -15407,16 +15587,16 @@ map area {
   color: #999999;
   line-height: 30px;
 }
-/* line 5062, ../sass/_akdn-redesign.scss */
+/* line 5063, ../sass/_akdn-redesign.scss */
 .basic-page-summary p {
   margin: 0 auto;
 }
-/* line 5066, ../sass/_akdn-redesign.scss */
+/* line 5067, ../sass/_akdn-redesign.scss */
 .basic-page-summary .body-summary {
   position: relative;
   padding: 0 0 0 20px;
 }
-/* line 5070, ../sass/_akdn-redesign.scss */
+/* line 5071, ../sass/_akdn-redesign.scss */
 .basic-page-summary .body-summary:before {
   content: "";
   position: absolute;
@@ -15427,7 +15607,7 @@ map area {
   border-left: 4px solid #b4965a;
 }
 
-/* line 5082, ../sass/_akdn-redesign.scss */
+/* line 5083, ../sass/_akdn-redesign.scss */
 .quick-links-title {
   margin-bottom: 10px;
   font-size: 16px;
@@ -15435,30 +15615,30 @@ map area {
   text-transform: none;
   line-height: 1;
 }
-/* line 5089, ../sass/_akdn-redesign.scss */
+/* line 5090, ../sass/_akdn-redesign.scss */
 .quick-links-title a {
   color: #000;
   text-decoration: none;
 }
-/* line 5093, ../sass/_akdn-redesign.scss */
+/* line 5094, ../sass/_akdn-redesign.scss */
 .quick-links-title a:hover {
   text-decoration: none;
 }
 
-/* line 5099, ../sass/_akdn-redesign.scss */
+/* line 5100, ../sass/_akdn-redesign.scss */
 .basic-page-quick-links {
   position: relative;
   width: 100%;
   padding: 0 15px;
 }
 
-/* line 5109, ../sass/_akdn-redesign.scss */
+/* line 5110, ../sass/_akdn-redesign.scss */
 .accordian-quick-links {
   position: relative;
   margin-bottom: 40px;
   padding-left: 20px;
 }
-/* line 5113, ../sass/_akdn-redesign.scss */
+/* line 5114, ../sass/_akdn-redesign.scss */
 .accordian-quick-links .heading {
   margin: 0 auto 15px;
   font-size: 16px;
@@ -15466,18 +15646,18 @@ map area {
   line-height: 1;
   text-transform: uppercase;
 }
-/* line 5121, ../sass/_akdn-redesign.scss */
+/* line 5122, ../sass/_akdn-redesign.scss */
 .accordian-quick-links ul {
   margin: 0;
   padding: 0;
   list-style: none;
   font-size: 16px;
 }
-/* line 5129, ../sass/_akdn-redesign.scss */
+/* line 5130, ../sass/_akdn-redesign.scss */
 .accordian-quick-links li:last-child .quick-links-title {
   margin-bottom: 0;
 }
-/* line 5136, ../sass/_akdn-redesign.scss */
+/* line 5137, ../sass/_akdn-redesign.scss */
 .accordian-quick-links:before {
   content: "";
   position: absolute;
@@ -15488,13 +15668,13 @@ map area {
   border-left: 4px solid #b4965a;
 }
 
-/* line 5147, ../sass/_akdn-redesign.scss */
+/* line 5148, ../sass/_akdn-redesign.scss */
 .basic-page-accordian-rows {
   margin: 0 auto 40px;
   position: relative;
 }
 
-/* line 5154, ../sass/_akdn-redesign.scss */
+/* line 5155, ../sass/_akdn-redesign.scss */
 .accordian-rows {
   position: relative;
   padding: 25px 0;
@@ -15502,16 +15682,16 @@ map area {
   line-height: 24px;
   border-bottom: 1px solid #CCCCCC;
 }
-/* line 5163, ../sass/_akdn-redesign.scss */
+/* line 5164, ../sass/_akdn-redesign.scss */
 .accordian-rows:first-child {
   padding-top: 0;
 }
-/* line 5167, ../sass/_akdn-redesign.scss */
+/* line 5168, ../sass/_akdn-redesign.scss */
 .accordian-rows:last-child {
   margin-bottom: 25px;
 }
 
-/* line 5172, ../sass/_akdn-redesign.scss */
+/* line 5173, ../sass/_akdn-redesign.scss */
 .accordian-image-rel-wrapper,
 .link_to_image {
   width: 50%;
@@ -15521,7 +15701,7 @@ map area {
   padding-right: 15px;
 }
 
-/* line 5182, ../sass/_akdn-redesign.scss */
+/* line 5183, ../sass/_akdn-redesign.scss */
 .according-related-heading:before {
   content: "";
   position: relative;
@@ -15531,7 +15711,7 @@ map area {
   height: auto;
   border-top: 4px solid #b4965a;
 }
-/* line 5192, ../sass/_akdn-redesign.scss */
+/* line 5193, ../sass/_akdn-redesign.scss */
 .according-related-heading:after {
   content: "";
   position: relative;
@@ -15541,7 +15721,7 @@ map area {
   height: auto;
   border-top: 1px solid #b4965a;
 }
-/* line 5202, ../sass/_akdn-redesign.scss */
+/* line 5203, ../sass/_akdn-redesign.scss */
 .according-related-heading .related-heading {
   display: block;
   margin: 0 auto 15px;
@@ -15549,35 +15729,35 @@ map area {
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 5210, ../sass/_akdn-redesign.scss */
+/* line 5211, ../sass/_akdn-redesign.scss */
 .according-related-heading .accordian_rel_links {
   font-size: 16px;
   line-height: 24px;
 }
-/* line 5214, ../sass/_akdn-redesign.scss */
+/* line 5215, ../sass/_akdn-redesign.scss */
 .according-related-heading .accordian_rel_links a {
   color: #000;
   display: block;
   margin: 0 auto 10px;
 }
-/* line 5219, ../sass/_akdn-redesign.scss */
+/* line 5220, ../sass/_akdn-redesign.scss */
 .according-related-heading .accordian_rel_links a:hover, .according-related-heading .accordian_rel_links a:focus {
   color: #b5995a;
   text-decoration: none;
 }
-/* line 5226, ../sass/_akdn-redesign.scss */
+/* line 5227, ../sass/_akdn-redesign.scss */
 .according-related-heading .accordian_rel_links:last-child a {
   margin-bottom: 0;
 }
 
-/* line 5233, ../sass/_akdn-redesign.scss */
+/* line 5234, ../sass/_akdn-redesign.scss */
 .accordian-title-right-summary,
 .body-text-wrapper {
   font-size: 16px;
   line-height: 24px;
 }
 
-/* line 5241, ../sass/_akdn-redesign.scss */
+/* line 5242, ../sass/_akdn-redesign.scss */
 .accordian-title,
 .basic_page_title {
   color: #000;
@@ -15588,46 +15768,46 @@ map area {
   margin: 0 auto 5px;
 }
 
-/* line 5251, ../sass/_akdn-redesign.scss */
+/* line 5252, ../sass/_akdn-redesign.scss */
 .accordian-summary {
   margin: 0 auto 2px;
 }
-/* line 5254, ../sass/_akdn-redesign.scss */
+/* line 5255, ../sass/_akdn-redesign.scss */
 .accordian-summary + .basic_page_more_link {
   margin-left: 0;
 }
-/* line 5258, ../sass/_akdn-redesign.scss */
+/* line 5259, ../sass/_akdn-redesign.scss */
 .accordian-summary ul {
   margin-left: 0;
   padding: 0;
   list-style-position: outside;
 }
-/* line 5264, ../sass/_akdn-redesign.scss */
+/* line 5265, ../sass/_akdn-redesign.scss */
 .accordian-summary li {
   position: relative;
   left: 1em;
 }
 
-/* line 5270, ../sass/_akdn-redesign.scss */
+/* line 5271, ../sass/_akdn-redesign.scss */
 .accordian-main-body,
 .body-wrapper {
   margin: 0 auto 10px;
 }
-/* line 5274, ../sass/_akdn-redesign.scss */
+/* line 5275, ../sass/_akdn-redesign.scss */
 .accordian-main-body ul,
 .body-wrapper ul {
   margin-left: 0;
   padding: 0;
   list-style-position: outside;
 }
-/* line 5280, ../sass/_akdn-redesign.scss */
+/* line 5281, ../sass/_akdn-redesign.scss */
 .accordian-main-body li,
 .body-wrapper li {
   position: relative;
   left: 1em;
 }
 
-/* line 5286, ../sass/_akdn-redesign.scss */
+/* line 5287, ../sass/_akdn-redesign.scss */
 .accordian-icon {
   position: absolute;
   right: 0;
@@ -15635,7 +15815,7 @@ map area {
   font-size: 0;
   cursor: pointer;
 }
-/* line 5295, ../sass/_akdn-redesign.scss */
+/* line 5296, ../sass/_akdn-redesign.scss */
 .accordian-icon:before {
   content: "\e908";
   margin: auto;
@@ -15643,12 +15823,12 @@ map area {
   font-size: 30px;
   line-height: 1;
 }
-/* line 5303, ../sass/_akdn-redesign.scss */
+/* line 5304, ../sass/_akdn-redesign.scss */
 .accordian-icon.active:before {
   content: "\e906";
 }
 
-/* line 5309, ../sass/_akdn-redesign.scss */
+/* line 5310, ../sass/_akdn-redesign.scss */
 .header-logo-title .title {
   text-align: center;
   margin: 30px auto 60px;
@@ -15657,43 +15837,43 @@ map area {
   font-weight: normal;
   line-height: 1;
 }
-/* line 5319, ../sass/_akdn-redesign.scss */
+/* line 5320, ../sass/_akdn-redesign.scss */
 .header-logo-title .title a {
   color: #000;
 }
-/* line 5322, ../sass/_akdn-redesign.scss */
+/* line 5323, ../sass/_akdn-redesign.scss */
 .header-logo-title .title a:hover {
   color: #000;
   text-decoration: none;
 }
 
-/* line 5330, ../sass/_akdn-redesign.scss */
+/* line 5331, ../sass/_akdn-redesign.scss */
 .basic_page_more_link {
   margin-left: 5px;
 }
-/* line 5333, ../sass/_akdn-redesign.scss */
+/* line 5334, ../sass/_akdn-redesign.scss */
 .basic_page_more_link a {
   color: #B49759;
 }
-/* line 5336, ../sass/_akdn-redesign.scss */
+/* line 5337, ../sass/_akdn-redesign.scss */
 .basic_page_more_link a:before {
   content: "[";
   display: inline-block;
   margin-right: 3px;
 }
-/* line 5342, ../sass/_akdn-redesign.scss */
+/* line 5343, ../sass/_akdn-redesign.scss */
 .basic_page_more_link a:after {
   content: "]";
   display: inline-block;
   margin-left: 3px;
 }
-/* line 5348, ../sass/_akdn-redesign.scss */
+/* line 5349, ../sass/_akdn-redesign.scss */
 .basic_page_more_link a:hover {
   color: #b49759;
   text-decoration: underline;
 }
 
-/* line 5355, ../sass/_akdn-redesign.scss */
+/* line 5356, ../sass/_akdn-redesign.scss */
 .basic-page-more-links-wrapper {
   width: 100%;
   margin: 0 auto 20px;
@@ -15702,7 +15882,7 @@ map area {
 }
 
 /* Right Sidebar For Hub Pages Area of Activity and Other Activity */
-/* line 5365, ../sass/_akdn-redesign.scss */
+/* line 5366, ../sass/_akdn-redesign.scss */
 .node-type-hub-page .grid-18 .hub-about-short-title {
   width: 100%;
   height: auto;
@@ -15713,7 +15893,7 @@ map area {
   border: 0 none;
   font-size: 42px;
 }
-/* line 5380, ../sass/_akdn-redesign.scss */
+/* line 5381, ../sass/_akdn-redesign.scss */
 .node-type-hub-page .grid-18 .about {
   width: 100%;
   padding: 0 15px;
@@ -15724,21 +15904,21 @@ map area {
   color: #999999;
   line-height: 30px;
 }
-/* line 5392, ../sass/_akdn-redesign.scss */
+/* line 5393, ../sass/_akdn-redesign.scss */
 .node-type-hub-page .grid-18 .about p {
   margin: 0 auto;
 }
-/* line 5396, ../sass/_akdn-redesign.scss */
+/* line 5397, ../sass/_akdn-redesign.scss */
 .node-type-hub-page .grid-18 .about a {
   color: #b49759;
 }
-/* line 5401, ../sass/_akdn-redesign.scss */
+/* line 5402, ../sass/_akdn-redesign.scss */
 .node-type-hub-page .grid-18 .hub-page-quick-links-wrapper {
   width: 100%;
   margin: 0 auto 30px;
   padding: 0 15px;
 }
-/* line 5411, ../sass/_akdn-redesign.scss */
+/* line 5412, ../sass/_akdn-redesign.scss */
 .node-type-hub-page .grid-18 .pane-node-body {
   float: none;
   clear: both;
@@ -15746,21 +15926,21 @@ map area {
   line-height: 24px;
   padding: 0 15px;
 }
-/* line 5420, ../sass/_akdn-redesign.scss */
+/* line 5421, ../sass/_akdn-redesign.scss */
 .node-type-hub-page .grid-18 .pane-node-body a {
   color: #b5995a;
 }
-/* line 5424, ../sass/_akdn-redesign.scss */
+/* line 5425, ../sass/_akdn-redesign.scss */
 .node-type-hub-page .grid-18 .pane-node-body p, .node-type-hub-page .grid-18 .pane-node-body span {
   margin-bottom: 15px;
   font-size: 16px;
   line-height: 24px;
 }
-/* line 5434, ../sass/_akdn-redesign.scss */
+/* line 5435, ../sass/_akdn-redesign.scss */
 .node-type-hub-page .grid-6 {
   padding-top: 20px;
 }
-/* line 5437, ../sass/_akdn-redesign.scss */
+/* line 5438, ../sass/_akdn-redesign.scss */
 .node-type-hub-page .grid-6:before {
   content: "";
   border-top: 4px solid #b49759;
@@ -15770,7 +15950,7 @@ map area {
   position: relative;
 }
 
-/* line 5449, ../sass/_akdn-redesign.scss */
+/* line 5450, ../sass/_akdn-redesign.scss */
 .other-activities-title h2.pane-title {
   margin: 0;
   margin-bottom: 5px;
@@ -15781,73 +15961,73 @@ map area {
   line-height: 1;
   text-transform: uppercase;
 }
-/* line 5461, ../sass/_akdn-redesign.scss */
+/* line 5462, ../sass/_akdn-redesign.scss */
 .other-activities-title h2.pane-title:first-letter {
   font-size: 100%;
 }
 
-/* line 5467, ../sass/_akdn-redesign.scss */
+/* line 5468, ../sass/_akdn-redesign.scss */
 .other-activities-row {
   margin: 0 auto;
 }
 
-/* line 5473, ../sass/_akdn-redesign.scss */
+/* line 5474, ../sass/_akdn-redesign.scss */
 .other-activities-main-title {
   font-size: 25px;
   text-transform: uppercase;
   line-height: 1;
   margin-bottom: 20px;
 }
-/* line 5481, ../sass/_akdn-redesign.scss */
+/* line 5482, ../sass/_akdn-redesign.scss */
 .other-activities-main-title:first-letter {
   font-size: 32px;
 }
 
-/* line 5486, ../sass/_akdn-redesign.scss */
+/* line 5487, ../sass/_akdn-redesign.scss */
 .other-activities-image {
   margin: 0 auto 10px;
 }
 
-/* line 5490, ../sass/_akdn-redesign.scss */
+/* line 5491, ../sass/_akdn-redesign.scss */
 .other-activities-short-title {
   margin: 0 auto;
   font-size: 18px;
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 5496, ../sass/_akdn-redesign.scss */
+/* line 5497, ../sass/_akdn-redesign.scss */
 .other-activities-short-title a {
   color: #000;
   text-decoration: none;
 }
-/* line 5500, ../sass/_akdn-redesign.scss */
+/* line 5501, ../sass/_akdn-redesign.scss */
 .other-activities-short-title a:hover {
   color: #000;
   text-decoration: none;
 }
 
-/* line 5507, ../sass/_akdn-redesign.scss */
+/* line 5508, ../sass/_akdn-redesign.scss */
 .other-activities-body {
   font-size: 16px;
   font-weight: normal;
   color: #000;
   line-height: 22px;
 }
-/* line 5513, ../sass/_akdn-redesign.scss */
+/* line 5514, ../sass/_akdn-redesign.scss */
 .other-activities-body p {
   margin-bottom: 15px;
 }
-/* line 5516, ../sass/_akdn-redesign.scss */
+/* line 5517, ../sass/_akdn-redesign.scss */
 .other-activities-body p:last-child {
   margin-bottom: 0;
 }
 
-/* line 5522, ../sass/_akdn-redesign.scss */
+/* line 5523, ../sass/_akdn-redesign.scss */
 .all-activities-btn {
   margin: 15px auto;
   border-bottom: 1px solid #b69c5f;
 }
-/* line 5526, ../sass/_akdn-redesign.scss */
+/* line 5527, ../sass/_akdn-redesign.scss */
 .all-activities-btn h2.pane-title {
   position: relative;
   display: block;
@@ -15862,7 +16042,7 @@ map area {
   text-transform: uppercase !important;
   cursor: pointer;
 }
-/* line 5542, ../sass/_akdn-redesign.scss */
+/* line 5543, ../sass/_akdn-redesign.scss */
 .all-activities-btn h2.pane-title:after {
   content: "\e909";
   position: absolute;
@@ -15875,19 +16055,19 @@ map area {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 5560, ../sass/_akdn-redesign.scss */
+/* line 5561, ../sass/_akdn-redesign.scss */
 .all-activities-btn.bounce h2.pane-title:after {
   content: "\e907";
 }
 
-/* line 5567, ../sass/_akdn-redesign.scss */
+/* line 5568, ../sass/_akdn-redesign.scss */
 .all-activities-sidebar {
   display: none;
   background-color: #f4f1e7;
   border-top: 1px solid #b69c5f;
 }
 
-/* line 5573, ../sass/_akdn-redesign.scss */
+/* line 5574, ../sass/_akdn-redesign.scss */
 .all-activities-row {
   margin: 0 15px;
   padding: 10px 0;
@@ -15895,67 +16075,67 @@ map area {
   border-bottom: 1px solid #b59859;
   text-transform: none;
 }
-/* line 5580, ../sass/_akdn-redesign.scss */
+/* line 5581, ../sass/_akdn-redesign.scss */
 .all-activities-row:last-child {
   border-bottom: 0;
 }
 
-/* line 5585, ../sass/_akdn-redesign.scss */
+/* line 5586, ../sass/_akdn-redesign.scss */
 .all-activities-short-title {
   font-size: 16px;
   line-height: 24px;
   font-weight: normal;
 }
-/* line 5592, ../sass/_akdn-redesign.scss */
+/* line 5593, ../sass/_akdn-redesign.scss */
 .all-activities-short-title a {
   display: block;
   color: #000;
   text-decoration: none;
 }
-/* line 5597, ../sass/_akdn-redesign.scss */
+/* line 5598, ../sass/_akdn-redesign.scss */
 .all-activities-short-title a.active {
   color: #B49759;
 }
-/* line 5601, ../sass/_akdn-redesign.scss */
+/* line 5602, ../sass/_akdn-redesign.scss */
 .all-activities-short-title a:hover {
   color: #B49759;
   text-decoration: none;
 }
 
-/* line 5615, ../sass/_akdn-redesign.scss */
+/* line 5616, ../sass/_akdn-redesign.scss */
 .hub-page-rural-development .views-row {
   margin-bottom: 10px;
   color: #000;
   font-size: 18px;
 }
 
-/* line 5627, ../sass/_akdn-redesign.scss */
+/* line 5628, ../sass/_akdn-redesign.scss */
 .hub-page-custom-page-block-link .custom-page-block-link a {
   margin-bottom: 0px;
 }
 
-/* line 5636, ../sass/_akdn-redesign.scss */
+/* line 5637, ../sass/_akdn-redesign.scss */
 .hub-page-press-center-right ul {
   padding-left: 0;
 }
-/* line 5640, ../sass/_akdn-redesign.scss */
+/* line 5641, ../sass/_akdn-redesign.scss */
 .hub-page-press-center-right .press-center-title {
   margin-bottom: 5px;
 }
-/* line 5646, ../sass/_akdn-redesign.scss */
+/* line 5647, ../sass/_akdn-redesign.scss */
 .hub-page-press-center-right li {
   list-style: none;
 }
 
 /* Rajnees Babu css */
-/* line 5656, ../sass/_akdn-redesign.scss */
+/* line 5657, ../sass/_akdn-redesign.scss */
 .media {
   cursor: pointer;
   position: relative;
   overflow: visible;
   margin-bottom: 10px !important;
 }
-/* line 5663, ../sass/_akdn-redesign.scss */
+/* line 5664, ../sass/_akdn-redesign.scss */
 .media .field-name-field-image-caption,
 .media .field-name-field-image-author,
 .media .field-name-field-image-copytight {
@@ -15971,24 +16151,24 @@ map area {
   clear: both;
   overflow: auto;
 }
-/* line 5680, ../sass/_akdn-redesign.scss */
+/* line 5681, ../sass/_akdn-redesign.scss */
 .media .field-name-field-image-caption .field-label,
 .media .field-name-field-image-author .field-label,
 .media .field-name-field-image-copytight .field-label {
   display: none;
 }
-/* line 5684, ../sass/_akdn-redesign.scss */
+/* line 5685, ../sass/_akdn-redesign.scss */
 .media .field-name-field-image-caption .field-items,
 .media .field-name-field-image-author .field-items,
 .media .field-name-field-image-copytight .field-items {
   font-family: arial !important;
   float: left;
 }
-/* line 5690, ../sass/_akdn-redesign.scss */
+/* line 5691, ../sass/_akdn-redesign.scss */
 .media .field-name-field-image-copytight {
   font-size: 11px;
 }
-/* line 5694, ../sass/_akdn-redesign.scss */
+/* line 5695, ../sass/_akdn-redesign.scss */
 .media .field-show-hide-block {
   display: block;
   position: absolute;
@@ -16004,19 +16184,19 @@ map area {
   -o-transition: all 0.6s ease;
 }
 
-/* line 5710, ../sass/_akdn-redesign.scss */
+/* line 5711, ../sass/_akdn-redesign.scss */
 .media-one-third-left {
   width: 32%;
   margin: 0 15px 10px 0;
 }
 
-/* line 5717, ../sass/_akdn-redesign.scss */
+/* line 5718, ../sass/_akdn-redesign.scss */
 .media-one-third-right {
   width: 32%;
   margin: 0 0 10px 15px;
 }
 
-/* line 5731, ../sass/_akdn-redesign.scss */
+/* line 5732, ../sass/_akdn-redesign.scss */
 .media-half-left:hover .field-show-hide-block,
 .media-half-right:hover .field-show-hide-block,
 .media-full:hover .field-show-hide-block,
@@ -16027,41 +16207,41 @@ map area {
   opacity: 1;
 }
 
-/* line 5738, ../sass/_akdn-redesign.scss */
+/* line 5739, ../sass/_akdn-redesign.scss */
 .media-half-left, .media-element.file-media-left-half {
   float: left;
   width: 50%;
   margin: 0 15px 10px 0;
 }
 
-/* line 5744, ../sass/_akdn-redesign.scss */
+/* line 5745, ../sass/_akdn-redesign.scss */
 .media-half-right, .media-element.file-media-half-right {
   float: right;
   width: 50%;
   margin: 0 15px 0 10px;
 }
 
-/* line 5750, ../sass/_akdn-redesign.scss */
+/* line 5751, ../sass/_akdn-redesign.scss */
 .media-full {
   width: 50%;
   margin: 0 15px 10px 0;
 }
 
-/* line 5755, ../sass/_akdn-redesign.scss */
+/* line 5756, ../sass/_akdn-redesign.scss */
 .media-element.file-media-third-left, .media-one-third-left {
   width: 32%;
   float: left;
   margin: 0 15px 10px 0;
 }
 
-/* line 5761, ../sass/_akdn-redesign.scss */
+/* line 5762, ../sass/_akdn-redesign.scss */
 .media-element.file-media-right-third, .media-one-third-right {
   width: 32%;
   float: right;
   margin: 0 15px 0 10px;
 }
 
-/* line 5767, ../sass/_akdn-redesign.scss */
+/* line 5768, ../sass/_akdn-redesign.scss */
 .media-one-third-left .media-element.file-media-third-left,
 .media-one-third-right .media-element.file-media-right-third,
 .media-half-left .media-element.file-media-left-half,
@@ -16072,17 +16252,17 @@ map area {
 }
 
 /* Quote Finder */
-/* line 5777, ../sass/_akdn-redesign.scss */
+/* line 5778, ../sass/_akdn-redesign.scss */
 .quote-finder-wrap {
   display: block;
   margin-bottom: 60px;
 }
-/* line 5781, ../sass/_akdn-redesign.scss */
+/* line 5782, ../sass/_akdn-redesign.scss */
 .quote-finder-wrap .view-header {
   margin: 10px auto 40px;
   color: #000;
 }
-/* line 5788, ../sass/_akdn-redesign.scss */
+/* line 5789, ../sass/_akdn-redesign.scss */
 .quote-finder-wrap .views-limit-grouping-group {
   display: block;
   margin: 0 auto 20px;
@@ -16091,18 +16271,18 @@ map area {
   line-height: 1;
   border-bottom: 1px solid #b5995a;
 }
-/* line 5796, ../sass/_akdn-redesign.scss */
+/* line 5797, ../sass/_akdn-redesign.scss */
 .quote-finder-wrap .views-limit-grouping-group:last-child {
   margin-top: 0;
   padding: 0;
   border-bottom: 0 none;
 }
-/* line 5802, ../sass/_akdn-redesign.scss */
+/* line 5803, ../sass/_akdn-redesign.scss */
 .quote-finder-wrap .views-limit-grouping-group h3 {
   display: none;
 }
 
-/* line 5808, ../sass/_akdn-redesign.scss */
+/* line 5809, ../sass/_akdn-redesign.scss */
 .quotes-main-title {
   margin: 0;
   padding: 0;
@@ -16111,14 +16291,14 @@ map area {
   line-height: 48px;
 }
 
-/* line 5816, ../sass/_akdn-redesign.scss */
+/* line 5817, ../sass/_akdn-redesign.scss */
 .quotes-total-records {
   font-size: 42px;
   font-style: italic;
   line-height: 48px;
 }
 
-/* line 5822, ../sass/_akdn-redesign.scss */
+/* line 5823, ../sass/_akdn-redesign.scss */
 .quotes-title {
   font-size: 16px;
   font-weight: bold;
@@ -16126,14 +16306,14 @@ map area {
   line-height: 24px;
 }
 
-/* line 5831, ../sass/_akdn-redesign.scss */
+/* line 5832, ../sass/_akdn-redesign.scss */
 .quote-date-location {
   font-size: 16px;
   font-weight: normal;
   color: #999999;
 }
 
-/* line 5839, ../sass/_akdn-redesign.scss */
+/* line 5840, ../sass/_akdn-redesign.scss */
 .quotes-body {
   margin-bottom: 3px;
   font-size: 16px;
@@ -16141,7 +16321,7 @@ map area {
   color: #000000;
   line-height: 24px;
 }
-/* line 5848, ../sass/_akdn-redesign.scss */
+/* line 5849, ../sass/_akdn-redesign.scss */
 .quotes-body p {
   font-size: 16px;
   font-weight: normal;
@@ -16149,118 +16329,118 @@ map area {
   margin: 0 auto;
 }
 
-/* line 5858, ../sass/_akdn-redesign.scss */
+/* line 5859, ../sass/_akdn-redesign.scss */
 .speech-quote-links {
   margin-top: 10px;
   margin-bottom: 10px;
   font-size: 16px;
   color: #b5995a;
 }
-/* line 5864, ../sass/_akdn-redesign.scss */
+/* line 5865, ../sass/_akdn-redesign.scss */
 .speech-quote-links a, .speech-quote-links .more-quotes {
   color: #b5995a;
   font-size: 16px;
 }
-/* line 5868, ../sass/_akdn-redesign.scss */
+/* line 5869, ../sass/_akdn-redesign.scss */
 .speech-quote-links a:hover, .speech-quote-links .more-quotes:hover {
   cursor: pointer;
   color: #b5995a;
   text-decoration: underline;
 }
-/* line 5874, ../sass/_akdn-redesign.scss */
+/* line 5875, ../sass/_akdn-redesign.scss */
 .speech-quote-links a:focus, .speech-quote-links .more-quotes:focus {
   color: #b5995a;
   text-decoration: none;
 }
-/* line 5881, ../sass/_akdn-redesign.scss */
+/* line 5882, ../sass/_akdn-redesign.scss */
 .speech-quote-links .more-quotes:hover {
   cursor: pointer;
   text-decoration: none;
 }
-/* line 5885, ../sass/_akdn-redesign.scss */
+/* line 5886, ../sass/_akdn-redesign.scss */
 .speech-quote-links .more-quotes:hover span {
   text-decoration: underline;
 }
-/* line 5891, ../sass/_akdn-redesign.scss */
+/* line 5892, ../sass/_akdn-redesign.scss */
 .speech-quote-links:before {
   content: "[";
   display: inline-block;
   margin-right: 3px;
   color: #b5995a;
 }
-/* line 5898, ../sass/_akdn-redesign.scss */
+/* line 5899, ../sass/_akdn-redesign.scss */
 .speech-quote-links:after {
   content: "]";
   display: inline-block;
   margin-left: 3px;
   color: #b5995a;
 }
-/* line 5905, ../sass/_akdn-redesign.scss */
+/* line 5906, ../sass/_akdn-redesign.scss */
 .speech-quote-links:hover {
   cursor: pointer;
   color: #b5995a;
   text-decoration: none;
 }
-/* line 5911, ../sass/_akdn-redesign.scss */
+/* line 5912, ../sass/_akdn-redesign.scss */
 .speech-quote-links:focus {
   color: #b5995a;
   text-decoration: none;
 }
 
-/* line 5917, ../sass/_akdn-redesign.scss */
+/* line 5918, ../sass/_akdn-redesign.scss */
 .block_full {
   width: 100% !important;
 }
 
-/* line 5921, ../sass/_akdn-redesign.scss */
+/* line 5922, ../sass/_akdn-redesign.scss */
 .block_half {
   width: 50% !important;
 }
 
-/* line 5925, ../sass/_akdn-redesign.scss */
+/* line 5926, ../sass/_akdn-redesign.scss */
 .photograph-detail-banner {
   width: 100%;
   height: auto;
   padding: 0 15px;
   margin: 0 auto 40px;
 }
-/* line 5931, ../sass/_akdn-redesign.scss */
+/* line 5932, ../sass/_akdn-redesign.scss */
 .photograph-detail-banner .galleryformatter {
   overflow: hidden;
 }
-/* line 5934, ../sass/_akdn-redesign.scss */
+/* line 5935, ../sass/_akdn-redesign.scss */
 .photograph-detail-banner .galleryformatter .gallery-slides {
   width: 100% !important;
   margin-bottom: 5px;
 }
-/* line 5938, ../sass/_akdn-redesign.scss */
+/* line 5939, ../sass/_akdn-redesign.scss */
 .photograph-detail-banner .galleryformatter .gallery-slides .slide-button {
   display: none !important;
 }
-/* line 5943, ../sass/_akdn-redesign.scss */
+/* line 5944, ../sass/_akdn-redesign.scss */
 .photograph-detail-banner .galleryformatter .gallery-thumbs {
   width: 100% !important;
   padding: 0 40px 0 45px;
 }
-/* line 5947, ../sass/_akdn-redesign.scss */
+/* line 5948, ../sass/_akdn-redesign.scss */
 .photograph-detail-banner .galleryformatter .gallery-thumbs .wrapper {
   width: 100%;
 }
-/* line 5951, ../sass/_akdn-redesign.scss */
+/* line 5952, ../sass/_akdn-redesign.scss */
 .photograph-detail-banner .galleryformatter .gallery-thumbs li {
   margin: 0 auto;
   padding: 0;
 }
-/* line 5955, ../sass/_akdn-redesign.scss */
+/* line 5956, ../sass/_akdn-redesign.scss */
 .photograph-detail-banner .galleryformatter .gallery-thumbs li a {
   display: block;
   padding: 0 5px 0 0;
 }
-/* line 5960, ../sass/_akdn-redesign.scss */
+/* line 5961, ../sass/_akdn-redesign.scss */
 .photograph-detail-banner .galleryformatter .gallery-thumbs li.empty {
   display: none;
 }
-/* line 5967, ../sass/_akdn-redesign.scss */
+/* line 5968, ../sass/_akdn-redesign.scss */
 .photograph-detail-banner .arrow {
   position: absolute;
   top: 0;
@@ -16269,11 +16449,11 @@ map area {
   font-size: 0;
   background: #fff;
 }
-/* line 5977, ../sass/_akdn-redesign.scss */
+/* line 5978, ../sass/_akdn-redesign.scss */
 .photograph-detail-banner .arrow.back {
   left: 0;
 }
-/* line 5980, ../sass/_akdn-redesign.scss */
+/* line 5981, ../sass/_akdn-redesign.scss */
 .photograph-detail-banner .arrow.back:before {
   content: "\e910";
   position: absolute;
@@ -16287,11 +16467,11 @@ map area {
   color: #999999;
   cursor: pointer;
 }
-/* line 5995, ../sass/_akdn-redesign.scss */
+/* line 5996, ../sass/_akdn-redesign.scss */
 .photograph-detail-banner .arrow.forward {
   right: 0;
 }
-/* line 5998, ../sass/_akdn-redesign.scss */
+/* line 5999, ../sass/_akdn-redesign.scss */
 .photograph-detail-banner .arrow.forward:before {
   content: "\e912";
   position: absolute;
@@ -16305,7 +16485,7 @@ map area {
   color: #999999;
   cursor: pointer;
 }
-/* line 6014, ../sass/_akdn-redesign.scss */
+/* line 6015, ../sass/_akdn-redesign.scss */
 .photograph-detail-banner .panel-overlay {
   position: absolute;
   bottom: 0;
@@ -16314,7 +16494,7 @@ map area {
   color: #fff;
   background-color: rgba(0, 0, 0, 0.5);
 }
-/* line 6022, ../sass/_akdn-redesign.scss */
+/* line 6023, ../sass/_akdn-redesign.scss */
 .photograph-detail-banner .panel-overlay h3, .photograph-detail-banner .panel-overlay h4 {
   margin-bottom: 2px;
   font-size: 14px;
@@ -16325,40 +16505,40 @@ map area {
 }
 
 /* Basic Page Custom Page*/
-/* line 6043, ../sass/_akdn-redesign.scss */
+/* line 6044, ../sass/_akdn-redesign.scss */
 .basic-page-custom-block-right .views-row {
   margin-bottom: 10px;
   font-size: 18px;
   color: #000;
 }
-/* line 6053, ../sass/_akdn-redesign.scss */
+/* line 6054, ../sass/_akdn-redesign.scss */
 .basic-page-custom-block-right.no_tp_br + .panel-separator + .hub-page-press-center-right:before {
   display: none;
 }
 
-/* line 6059, ../sass/_akdn-redesign.scss */
+/* line 6060, ../sass/_akdn-redesign.scss */
 .custom-page-header-block {
   margin-bottom: 10px;
   font-size: 18px;
   color: #000;
 }
-/* line 6066, ../sass/_akdn-redesign.scss */
+/* line 6067, ../sass/_akdn-redesign.scss */
 .custom-page-header-block .akaa-projectinfo-map-related-info .item-list ul li {
   line-height: 40px;
 }
 
-/* line 6088, ../sass/_akdn-redesign.scss */
+/* line 6089, ../sass/_akdn-redesign.scss */
 .node-type-custom-content .block-akdn-breadcrumb-trail {
   display: none;
 }
 
-/* line 6093, ../sass/_akdn-redesign.scss */
+/* line 6094, ../sass/_akdn-redesign.scss */
 .basic-page-custom-logo {
   position: relative;
   display: block;
   margin: 0 auto;
 }
-/* line 6098, ../sass/_akdn-redesign.scss */
+/* line 6099, ../sass/_akdn-redesign.scss */
 .basic-page-custom-logo img {
   position: relative;
   display: block;
@@ -16367,7 +16547,7 @@ map area {
   max-height: 100px;
 }
 
-/* line 6107, ../sass/_akdn-redesign.scss */
+/* line 6108, ../sass/_akdn-redesign.scss */
 .basic-page-custom-logo-title {
   margin: 30px auto 60px;
   font-size: 50px;
@@ -16377,15 +16557,15 @@ map area {
   line-height: 1;
 }
 
-/* line 6120, ../sass/_akdn-redesign.scss */
+/* line 6121, ../sass/_akdn-redesign.scss */
 .node-type-custom-content .breadcrumb span:not(.delimiter) {
   padding: 0 3px;
 }
-/* line 6123, ../sass/_akdn-redesign.scss */
+/* line 6124, ../sass/_akdn-redesign.scss */
 .node-type-custom-content .breadcrumb span:not(.delimiter):last-child {
   color: #b49759;
 }
-/* line 6129, ../sass/_akdn-redesign.scss */
+/* line 6130, ../sass/_akdn-redesign.scss */
 .node-type-custom-content .other-activities-title:before {
   content: "";
   border-top: 4px solid #b49759;
@@ -16393,28 +16573,28 @@ map area {
   padding-bottom: 10px;
 }
 
-/* line 6138, ../sass/_akdn-redesign.scss */
+/* line 6139, ../sass/_akdn-redesign.scss */
 .context-speech-quotes .akdn-filter-wrapper.filter-date-block {
   width: 12%;
 }
-/* line 6142, ../sass/_akdn-redesign.scss */
+/* line 6143, ../sass/_akdn-redesign.scss */
 .context-speech-quotes .akdn-filter-wrapper.filter-agency-block {
   width: 33%;
 }
-/* line 6146, ../sass/_akdn-redesign.scss */
+/* line 6147, ../sass/_akdn-redesign.scss */
 .context-speech-quotes .akdn-filter-wrapper {
   width: 29%;
 }
-/* line 6150, ../sass/_akdn-redesign.scss */
+/* line 6151, ../sass/_akdn-redesign.scss */
 .context-speech-quotes .akdn-filter-wrapper.filter-geography-block {
   width: 26%;
 }
 
-/* line 6157, ../sass/_akdn-redesign.scss */
+/* line 6158, ../sass/_akdn-redesign.scss */
 .header-logo-title .logo-image a {
   display: block;
 }
-/* line 6161, ../sass/_akdn-redesign.scss */
+/* line 6162, ../sass/_akdn-redesign.scss */
 .header-logo-title .logo-image img {
   display: block;
   width: auto;
@@ -16424,13 +16604,13 @@ map area {
   max-height: 100px;
 }
 
-/* line 6173, ../sass/_akdn-redesign.scss */
+/* line 6174, ../sass/_akdn-redesign.scss */
 .akdn-basic-page-about-us .accordian-quick-links {
   position: relative;
   margin-bottom: 40px;
   padding-left: 20px;
 }
-/* line 6178, ../sass/_akdn-redesign.scss */
+/* line 6179, ../sass/_akdn-redesign.scss */
 .akdn-basic-page-about-us .accordian-quick-links:before {
   content: "";
   position: absolute;
@@ -16442,23 +16622,23 @@ map area {
 }
 
 /* AKAA */
-/* line 6194, ../sass/_akdn-redesign.scss */
+/* line 6195, ../sass/_akdn-redesign.scss */
 .sub-navbar .sub-navbar-rightlinks .item-list li {
   padding: 0 0 10px;
   margin: 0 auto;
 }
-/* line 6206, ../sass/_akdn-redesign.scss */
+/* line 6207, ../sass/_akdn-redesign.scss */
 .sub-navbar .what-we-do-inner-wrapper .view-content, .sub-navbar .what-we-do-inner-wrapper .views-row {
   height: 100%;
 }
 
-/* line 6218, ../sass/_akdn-redesign.scss */
+/* line 6219, ../sass/_akdn-redesign.scss */
 .akaa-logotitle {
   position: relative;
   display: block;
   margin: 10px 0 30px;
 }
-/* line 6223, ../sass/_akdn-redesign.scss */
+/* line 6224, ../sass/_akdn-redesign.scss */
 .akaa-logotitle img {
   width: auto;
   margin: 0 auto;
@@ -16466,7 +16646,7 @@ map area {
   position: relative;
 }
 
-/* line 6231, ../sass/_akdn-redesign.scss */
+/* line 6232, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper {
   display: inline-block;
   width: 100%;
@@ -16474,7 +16654,7 @@ map area {
   margin: 0 auto 40px;
   clear: both;
 }
-/* line 6238, ../sass/_akdn-redesign.scss */
+/* line 6239, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .pane-title, .akaa-projectfinder-wrapper .block-title {
   display: block;
   margin: 0;
@@ -16486,7 +16666,7 @@ map area {
   background: #f4f1e8;
   border-top: 1px solid #e8dfcd;
 }
-/* line 6251, ../sass/_akdn-redesign.scss */
+/* line 6252, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .pane-title:after, .akaa-projectfinder-wrapper .block-title:after {
   content: "";
   display: inline-block;
@@ -16498,12 +16678,12 @@ map area {
   padding: 0;
   background: url('../images/arrow-bottom.png?1479706147') no-repeat;
 }
-/* line 6263, ../sass/_akdn-redesign.scss */
+/* line 6264, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .pane-title.active:after, .akaa-projectfinder-wrapper .block-title.active:after {
   content: "";
   background: url('../images/arrow-top.png?1479706147') no-repeat;
 }
-/* line 6269, ../sass/_akdn-redesign.scss */
+/* line 6270, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .pane-content, .akaa-projectfinder-wrapper .content {
   width: 100%;
   float: left;
@@ -16511,7 +16691,7 @@ map area {
   background: #f4f1e8;
   border-bottom: 1px solid #e8dfcd;
 }
-/* line 6277, ../sass/_akdn-redesign.scss */
+/* line 6278, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .views-exposed-form {
   display: none;
   width: 100%;
@@ -16519,17 +16699,17 @@ map area {
   padding: 0;
   float: none;
 }
-/* line 6285, ../sass/_akdn-redesign.scss */
+/* line 6286, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper ul, .akaa-projectfinder-wrapper li {
   list-style: none !important;
   margin: 0 auto !important;
   padding: 0;
 }
-/* line 6291, ../sass/_akdn-redesign.scss */
+/* line 6292, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .views-exposed-widgets {
   margin: 0 -10px;
 }
-/* line 6294, ../sass/_akdn-redesign.scss */
+/* line 6295, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .views-exposed-widgets label {
   margin: 0 auto 10px;
   padding: 0;
@@ -16538,77 +16718,77 @@ map area {
   font-weight: normal;
   line-height: 24px;
 }
-/* line 6304, ../sass/_akdn-redesign.scss */
+/* line 6305, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .views-exposed-widget {
   width: 16.66667%;
   margin: 0 auto;
   padding: 0 10px;
 }
-/* line 6309, ../sass/_akdn-redesign.scss */
+/* line 6310, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .views-exposed-widget input[type="text"] {
   width: 100% !important;
   padding: 0 5px;
   margin: 0 auto;
   border: 1px solid #cccccc !important;
 }
-/* line 6316, ../sass/_akdn-redesign.scss */
+/* line 6317, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .views-exposed-widget select {
   width: 100%;
 }
-/* line 6320, ../sass/_akdn-redesign.scss */
+/* line 6321, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .views-exposed-widget .chzn-container {
   width: 100% !important;
 }
-/* line 6325, ../sass/_akdn-redesign.scss */
+/* line 6326, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .views-exposed-widget .chzn-container-multi .chzn-choices {
   border: 1px solid #cccccc !important;
   background-image: none;
   background: #ffffff;
   box-shadow: none;
 }
-/* line 6331, ../sass/_akdn-redesign.scss */
+/* line 6332, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .views-exposed-widget .chzn-container-multi .chzn-choices .search-field {
   width: 100%;
 }
-/* line 6334, ../sass/_akdn-redesign.scss */
+/* line 6335, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .views-exposed-widget .chzn-container-multi .chzn-choices .search-field input {
   height: 23px;
   padding: 0 5px;
   margin: 0;
   border: 0 none !important;
 }
-/* line 6344, ../sass/_akdn-redesign.scss */
+/* line 6345, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .views-exposed-widget .chzn-container-multi.chzn-container-active .chzn-choices {
   -webkit-box-shadow: 0 0 5px #5897fb;
   -moz-box-shadow: 0 0 5px #5897fb;
   box-shadow: 0 0 5px #5897fb;
 }
-/* line 6357, ../sass/_akdn-redesign.scss */
+/* line 6358, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .views-submit-button .form-submit:hover, .akaa-projectfinder-wrapper .views-submit-button .form-submit:focus, .akaa-projectfinder-wrapper .views-submit-button a:hover, .akaa-projectfinder-wrapper .views-submit-button a:focus {
   color: #6F6F6F;
   outline: none;
   box-shadow: none;
   text-decoration: none;
 }
-/* line 6367, ../sass/_akdn-redesign.scss */
+/* line 6368, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .views-widget-filter-field_cycle_year_tid .form-select {
   width: 100% !important;
   border: 1px solid #cccccc;
   color: #000;
 }
-/* line 6372, ../sass/_akdn-redesign.scss */
+/* line 6373, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .views-widget-filter-field_cycle_year_tid .form-select option {
   color: #000;
 }
-/* line 6375, ../sass/_akdn-redesign.scss */
+/* line 6376, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .views-widget-filter-field_cycle_year_tid .form-select option:first-child {
   color: #999;
 }
-/* line 6380, ../sass/_akdn-redesign.scss */
+/* line 6381, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .views-widget-filter-field_cycle_year_tid .form-select.plcholdr {
   color: #999;
 }
-/* line 6386, ../sass/_akdn-redesign.scss */
+/* line 6387, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .views-widget-filter-field_winner_value {
   display: block;
   width: 100% !important;
@@ -16616,15 +16796,15 @@ map area {
   padding: 0 10px;
   clear: both;
 }
-/* line 6393, ../sass/_akdn-redesign.scss */
+/* line 6394, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .views-widget-filter-field_winner_value input[type="checkbox"] {
   margin: 0 auto;
 }
-/* line 6397, ../sass/_akdn-redesign.scss */
+/* line 6398, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .views-widget-filter-field_winner_value label {
   vertical-align: sub;
 }
-/* line 6402, ../sass/_akdn-redesign.scss */
+/* line 6403, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .views-submit-button {
   display: inline-block;
   width: auto !important;
@@ -16633,7 +16813,7 @@ map area {
   float: left;
   clear: left;
 }
-/* line 6411, ../sass/_akdn-redesign.scss */
+/* line 6412, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .views-reset-button {
   display: inline-block;
   width: auto !important;
@@ -16641,27 +16821,27 @@ map area {
   padding: 0;
   float: left;
 }
-/* line 6421, ../sass/_akdn-redesign.scss */
+/* line 6422, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .views-reset-button .form-submit:hover, .akaa-projectfinder-wrapper .views-reset-button .form-submit:focus {
   color: #6F6F6F;
   outline: none;
   box-shadow: none;
   text-decoration: none;
 }
-/* line 6431, ../sass/_akdn-redesign.scss */
+/* line 6432, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper.akaa-performancefinder-wrapper .views-exposed-widget {
   width: 20%;
 }
 
 /* Cycle award page */
-/* line 6438, ../sass/_akdn-redesign.scss */
+/* line 6439, ../sass/_akdn-redesign.scss */
 .akaa-award-cycle-header-title {
   margin: 0 auto 10px;
   clear: both;
   overflow: auto;
 }
 
-/* line 6444, ../sass/_akdn-redesign.scss */
+/* line 6445, ../sass/_akdn-redesign.scss */
 .akaa-award-cycle-wrapper {
   display: block;
   width: auto;
@@ -16669,25 +16849,25 @@ map area {
   float: left;
   clear: both;
 }
-/* line 6451, ../sass/_akdn-redesign.scss */
+/* line 6452, ../sass/_akdn-redesign.scss */
 .akaa-award-cycle-wrapper > p {
   display: none;
 }
-/* line 6458, ../sass/_akdn-redesign.scss */
+/* line 6459, ../sass/_akdn-redesign.scss */
 .akaa-award-cycle-wrapper .akaa-award-cycle-block:nth-child(3n-2) {
   clear: none;
 }
-/* line 6463, ../sass/_akdn-redesign.scss */
+/* line 6464, ../sass/_akdn-redesign.scss */
 .akaa-award-cycle-wrapper .akaa-award-cycle-block .attachment .view-award-cycle,
 .akaa-award-cycle-wrapper .akaa-award-cycle-block .attachment .info-akmi-block {
   position: relative;
   height: 100%;
 }
-/* line 6469, ../sass/_akdn-redesign.scss */
+/* line 6470, ../sass/_akdn-redesign.scss */
 .akaa-award-cycle-wrapper .akaa-award-cycle-block .attachment .view-header {
   height: 100%;
 }
-/* line 6473, ../sass/_akdn-redesign.scss */
+/* line 6474, ../sass/_akdn-redesign.scss */
 .akaa-award-cycle-wrapper .akaa-award-cycle-block .attachment .view-content {
   position: absolute;
   z-index: 1000;
@@ -16696,7 +16876,7 @@ map area {
   margin: 0;
   background-color: #f4f1e7;
 }
-/* line 6481, ../sass/_akdn-redesign.scss */
+/* line 6482, ../sass/_akdn-redesign.scss */
 .akaa-award-cycle-wrapper .akaa-award-cycle-block .attachment .view-content .views-row {
   border-bottom: 1px solid #b59859;
   padding: 8px 0;
@@ -16705,35 +16885,35 @@ map area {
   text-transform: none;
   line-height: 22px;
 }
-/* line 6489, ../sass/_akdn-redesign.scss */
+/* line 6490, ../sass/_akdn-redesign.scss */
 .akaa-award-cycle-wrapper .akaa-award-cycle-block .attachment .view-content .views-row a {
   color: #000;
 }
-/* line 6493, ../sass/_akdn-redesign.scss */
+/* line 6494, ../sass/_akdn-redesign.scss */
 .akaa-award-cycle-wrapper .akaa-award-cycle-block .attachment .view-content .views-row:last-child {
   border-bottom: 0;
 }
-/* line 6501, ../sass/_akdn-redesign.scss */
+/* line 6502, ../sass/_akdn-redesign.scss */
 .akaa-award-cycle-wrapper .akaa_cycle_image {
   cursor: pointer;
 }
 
-/* line 6507, ../sass/_akdn-redesign.scss */
+/* line 6508, ../sass/_akdn-redesign.scss */
 .akaa-award-cycle-block-short-video .views-field-field-short-video-image {
   position: relative;
   clear: both;
   overflow: auto;
 }
-/* line 6512, ../sass/_akdn-redesign.scss */
+/* line 6513, ../sass/_akdn-redesign.scss */
 .akaa-award-cycle-block-short-video .views-field-field-short-video-image .grid-social-block_picture {
   margin-bottom: 0;
   padding: 0;
 }
-/* line 6518, ../sass/_akdn-redesign.scss */
+/* line 6519, ../sass/_akdn-redesign.scss */
 .akaa-award-cycle-block-short-video .views-field-title {
   height: 100%;
 }
-/* line 6521, ../sass/_akdn-redesign.scss */
+/* line 6522, ../sass/_akdn-redesign.scss */
 .akaa-award-cycle-block-short-video .views-field-title .field-content {
   font-size: 22px;
   color: #000;
@@ -16741,16 +16921,16 @@ map area {
   text-decoration: none;
   text-transform: uppercase;
 }
-/* line 6530, ../sass/_akdn-redesign.scss */
+/* line 6531, ../sass/_akdn-redesign.scss */
 .akaa-award-cycle-block-short-video .views-field-title .field-content:hover, .akaa-award-cycle-block-short-video .views-field-title .field-content:focus {
   color: #000;
   text-decoration: none;
 }
-/* line 6537, ../sass/_akdn-redesign.scss */
+/* line 6538, ../sass/_akdn-redesign.scss */
 .akaa-award-cycle-block-short-video .views-field-nothing {
   position: relative;
 }
-/* line 6540, ../sass/_akdn-redesign.scss */
+/* line 6541, ../sass/_akdn-redesign.scss */
 .akaa-award-cycle-block-short-video .views-field-nothing .play-video a {
   position: absolute;
   right: 5px;
@@ -16762,23 +16942,23 @@ map area {
   cursor: pointer;
   background: url('../images/arrows.png?1479706147') 0 -60px no-repeat;
 }
-/* line 6551, ../sass/_akdn-redesign.scss */
+/* line 6552, ../sass/_akdn-redesign.scss */
 .akaa-award-cycle-block-short-video .views-field-nothing .play-video a:hover, .akaa-award-cycle-block-short-video .views-field-nothing .play-video a:focus {
   outline: none;
   text-decoration: none;
 }
 
-/* line 6560, ../sass/_akdn-redesign.scss */
+/* line 6561, ../sass/_akdn-redesign.scss */
 .akaa-award-cycle-block-textbook .view-footer {
   position: relative;
   margin-top: -23px;
 }
-/* line 6565, ../sass/_akdn-redesign.scss */
+/* line 6566, ../sass/_akdn-redesign.scss */
 .akaa-award-cycle-block-textbook .view-footer .akaa-icon-title a {
   background-position: 0 -60px;
 }
 
-/* line 6572, ../sass/_akdn-redesign.scss */
+/* line 6573, ../sass/_akdn-redesign.scss */
 .akaa-cycle-title {
   display: table;
   width: 100%;
@@ -16787,12 +16967,12 @@ map area {
   cursor: pointer;
   background-color: #f4f1e7;
 }
-/* line 6580, ../sass/_akdn-redesign.scss */
+/* line 6581, ../sass/_akdn-redesign.scss */
 .akaa-cycle-title h2 {
   margin: 0 auto;
   line-height: 24px;
 }
-/* line 6585, ../sass/_akdn-redesign.scss */
+/* line 6586, ../sass/_akdn-redesign.scss */
 .akaa-cycle-title a {
   display: table-cell;
   font-size: 22px;
@@ -16802,13 +16982,13 @@ map area {
   text-transform: uppercase;
   vertical-align: middle;
 }
-/* line 6596, ../sass/_akdn-redesign.scss */
+/* line 6597, ../sass/_akdn-redesign.scss */
 .akaa-cycle-title a:hover, .akaa-cycle-title a:focus {
   color: #000;
   text-decoration: none;
 }
 
-/* line 6604, ../sass/_akdn-redesign.scss */
+/* line 6605, ../sass/_akdn-redesign.scss */
 .akaa-icon-title a {
   position: absolute;
   right: 5px;
@@ -16824,16 +17004,16 @@ map area {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 6619, ../sass/_akdn-redesign.scss */
+/* line 6620, ../sass/_akdn-redesign.scss */
 .akaa-icon-title a.activity-icon-staright {
   background-position: 0 -60px;
 }
-/* line 6625, ../sass/_akdn-redesign.scss */
+/* line 6626, ../sass/_akdn-redesign.scss */
 .akaa-icon-title.active a {
   background-position: 0 0;
 }
 
-/* line 6631, ../sass/_akdn-redesign.scss */
+/* line 6632, ../sass/_akdn-redesign.scss */
 .akaa-cycle-slideshow {
   width: 100%;
   margin-bottom: 40px;
@@ -16841,7 +17021,7 @@ map area {
   clear: both;
 }
 
-/* line 6639, ../sass/_akdn-redesign.scss */
+/* line 6640, ../sass/_akdn-redesign.scss */
 .akaa-akmi-body .akaa-cycle-slideshow {
   width: 100%;
   margin-bottom: 40px;
@@ -16849,18 +17029,18 @@ map area {
   clear: both;
 }
 
-/* line 6650, ../sass/_akdn-redesign.scss */
+/* line 6651, ../sass/_akdn-redesign.scss */
 .akaa-body .grid-18 .akaa-projectfinder-wrapper,
 .akmi-performance-body .grid-18 .akaa-projectfinder-wrapper {
   padding: 0 15px;
   display: inline-block;
 }
-/* line 6658, ../sass/_akdn-redesign.scss */
+/* line 6659, ../sass/_akdn-redesign.scss */
 .akaa-body .basic-page-summary .about a,
 .akmi-performance-body .basic-page-summary .about a {
   color: #b5995a;
 }
-/* line 6665, ../sass/_akdn-redesign.scss */
+/* line 6666, ../sass/_akdn-redesign.scss */
 .akaa-body .grid-6:before,
 .akmi-performance-body .grid-6:before {
   content: "";
@@ -16870,36 +17050,36 @@ map area {
   position: relative;
 }
 
-/* line 6675, ../sass/_akdn-redesign.scss */
+/* line 6676, ../sass/_akdn-redesign.scss */
 .views-more-link-akaa {
   color: #b5995a;
   text-decoration: none;
   white-space: nowrap;
 }
-/* line 6680, ../sass/_akdn-redesign.scss */
+/* line 6681, ../sass/_akdn-redesign.scss */
 .views-more-link-akaa:before {
   content: "[";
   display: inline-block;
   margin-right: 3px;
 }
-/* line 6686, ../sass/_akdn-redesign.scss */
+/* line 6687, ../sass/_akdn-redesign.scss */
 .views-more-link-akaa:after {
   content: "]";
   display: inline-block;
   margin-left: 3px;
 }
-/* line 6692, ../sass/_akdn-redesign.scss */
+/* line 6693, ../sass/_akdn-redesign.scss */
 .views-more-link-akaa:hover {
   color: #b5995a;
   text-decoration: underline;
 }
-/* line 6697, ../sass/_akdn-redesign.scss */
+/* line 6698, ../sass/_akdn-redesign.scss */
 .views-more-link-akaa:focus {
   color: #b5995a;
   text-decoration: none;
 }
 
-/* line 6711, ../sass/_akdn-redesign.scss */
+/* line 6712, ../sass/_akdn-redesign.scss */
 .page-architecture-master-jury .zone-content,
 .page-architecture-steering-committee .zone-content,
 .page-architecture-press-centre .zone-content,
@@ -16909,7 +17089,7 @@ map area {
 .page-akmi-events .zone-content {
   margin: 0 -15px;
 }
-/* line 6718, ../sass/_akdn-redesign.scss */
+/* line 6719, ../sass/_akdn-redesign.scss */
 .page-architecture-master-jury .grid-6 .akaa-award-cycle-related-info:before,
 .page-architecture-master-jury .grid-6 .akaa-projectinfo-map-related-info:before,
 .page-architecture-steering-committee .grid-6 .akaa-award-cycle-related-info:before,
@@ -16927,7 +17107,7 @@ map area {
   margin-top: 0 !important;
 }
 
-/* line 6726, ../sass/_akdn-redesign.scss */
+/* line 6727, ../sass/_akdn-redesign.scss */
 .page-akmi-instruments h1.title {
   margin: 0 auto 30px;
   padding: 0;
@@ -16935,16 +17115,16 @@ map area {
   text-align: left;
   text-transform: none;
 }
-/* line 6736, ../sass/_akdn-redesign.scss */
+/* line 6737, ../sass/_akdn-redesign.scss */
 .page-akmi-instruments .grid-6 .akaa-award-cycle-related-info:before {
   margin-top: 50px !important;
 }
-/* line 6742, ../sass/_akdn-redesign.scss */
+/* line 6743, ../sass/_akdn-redesign.scss */
 .page-akmi-instruments .grid-about-us-block-description:first-child {
   padding-top: 0 !important;
 }
 
-/* line 6747, ../sass/_akdn-redesign.scss */
+/* line 6748, ../sass/_akdn-redesign.scss */
 .grid-master-jury-wrapper,
 .grid-steering-committee-wrapper,
 .grid-instrument-listing-wrapper {
@@ -16953,7 +17133,7 @@ map area {
   float: left;
   width: auto;
 }
-/* line 6756, ../sass/_akdn-redesign.scss */
+/* line 6757, ../sass/_akdn-redesign.scss */
 .grid-master-jury-wrapper .view-header h2,
 .grid-steering-committee-wrapper .view-header h2,
 .grid-instrument-listing-wrapper .view-header h2 {
@@ -16961,21 +17141,21 @@ map area {
   font-size: 42px;
   padding: 0 15px;
 }
-/* line 6765, ../sass/_akdn-redesign.scss */
+/* line 6766, ../sass/_akdn-redesign.scss */
 .grid-master-jury-wrapper .view-content,
 .grid-steering-committee-wrapper .view-content,
 .grid-instrument-listing-wrapper .view-content {
   padding-left: 15px;
   padding-right: 15px;
 }
-/* line 6770, ../sass/_akdn-redesign.scss */
+/* line 6771, ../sass/_akdn-redesign.scss */
 .grid-master-jury-wrapper .grid-about-us-block-description,
 .grid-steering-committee-wrapper .grid-about-us-block-description,
 .grid-instrument-listing-wrapper .grid-about-us-block-description {
   border-bottom: 1px solid #b5995a;
   position: relative;
 }
-/* line 6774, ../sass/_akdn-redesign.scss */
+/* line 6775, ../sass/_akdn-redesign.scss */
 .grid-master-jury-wrapper .grid-about-us-block-description .pc-listing-info,
 .grid-steering-committee-wrapper .grid-about-us-block-description .pc-listing-info,
 .grid-instrument-listing-wrapper .grid-about-us-block-description .pc-listing-info {
@@ -16983,13 +17163,13 @@ map area {
   float: none;
   display: inline;
 }
-/* line 6779, ../sass/_akdn-redesign.scss */
+/* line 6780, ../sass/_akdn-redesign.scss */
 .grid-master-jury-wrapper .grid-about-us-block-description .pc-listing-info .pc-people-listing-body,
 .grid-steering-committee-wrapper .grid-about-us-block-description .pc-listing-info .pc-people-listing-body,
 .grid-instrument-listing-wrapper .grid-about-us-block-description .pc-listing-info .pc-people-listing-body {
   margin-bottom: 30px;
 }
-/* line 6784, ../sass/_akdn-redesign.scss */
+/* line 6785, ../sass/_akdn-redesign.scss */
 .grid-master-jury-wrapper .grid-about-us-block-description .pc-title,
 .grid-steering-committee-wrapper .grid-about-us-block-description .pc-title,
 .grid-instrument-listing-wrapper .grid-about-us-block-description .pc-title {
@@ -16997,7 +17177,7 @@ map area {
   text-transform: none;
   font-weight: bold;
 }
-/* line 6790, ../sass/_akdn-redesign.scss */
+/* line 6791, ../sass/_akdn-redesign.scss */
 .grid-master-jury-wrapper .grid-about-us-block-description .readmore-link,
 .grid-steering-committee-wrapper .grid-about-us-block-description .readmore-link,
 .grid-instrument-listing-wrapper .grid-about-us-block-description .readmore-link {
@@ -17013,7 +17193,7 @@ map area {
   cursor: pointer;
   text-decoration: none;
 }
-/* line 6805, ../sass/_akdn-redesign.scss */
+/* line 6806, ../sass/_akdn-redesign.scss */
 .grid-master-jury-wrapper .grid-about-us-block-description .readmore-link:after,
 .grid-steering-committee-wrapper .grid-about-us-block-description .readmore-link:after,
 .grid-instrument-listing-wrapper .grid-about-us-block-description .readmore-link:after {
@@ -17024,7 +17204,7 @@ map area {
   display: inline-block;
   font-size: 42px;
 }
-/* line 6814, ../sass/_akdn-redesign.scss */
+/* line 6815, ../sass/_akdn-redesign.scss */
 .grid-master-jury-wrapper .grid-about-us-block-description .readmore-link:hover, .grid-master-jury-wrapper .grid-about-us-block-description .readmore-link:focus,
 .grid-steering-committee-wrapper .grid-about-us-block-description .readmore-link:hover,
 .grid-steering-committee-wrapper .grid-about-us-block-description .readmore-link:focus,
@@ -17033,7 +17213,7 @@ map area {
   color: #b5995a;
   text-decoration: none;
 }
-/* line 6821, ../sass/_akdn-redesign.scss */
+/* line 6822, ../sass/_akdn-redesign.scss */
 .grid-master-jury-wrapper .grid-about-us-block-description .readless-link,
 .grid-steering-committee-wrapper .grid-about-us-block-description .readless-link,
 .grid-instrument-listing-wrapper .grid-about-us-block-description .readless-link {
@@ -17049,7 +17229,7 @@ map area {
   cursor: pointer;
   text-decoration: none;
 }
-/* line 6836, ../sass/_akdn-redesign.scss */
+/* line 6837, ../sass/_akdn-redesign.scss */
 .grid-master-jury-wrapper .grid-about-us-block-description .readless-link:after,
 .grid-steering-committee-wrapper .grid-about-us-block-description .readless-link:after,
 .grid-instrument-listing-wrapper .grid-about-us-block-description .readless-link:after {
@@ -17060,7 +17240,7 @@ map area {
   display: inline-block;
   font-size: 42px;
 }
-/* line 6845, ../sass/_akdn-redesign.scss */
+/* line 6846, ../sass/_akdn-redesign.scss */
 .grid-master-jury-wrapper .grid-about-us-block-description .readless-link:hover, .grid-master-jury-wrapper .grid-about-us-block-description .readless-link:focus,
 .grid-steering-committee-wrapper .grid-about-us-block-description .readless-link:hover,
 .grid-steering-committee-wrapper .grid-about-us-block-description .readless-link:focus,
@@ -17069,14 +17249,14 @@ map area {
   color: #b5995a;
   text-decoration: none;
 }
-/* line 6851, ../sass/_akdn-redesign.scss */
+/* line 6852, ../sass/_akdn-redesign.scss */
 .grid-master-jury-wrapper .grid-about-us-block-description .related-artist,
 .grid-steering-committee-wrapper .grid-about-us-block-description .related-artist,
 .grid-instrument-listing-wrapper .grid-about-us-block-description .related-artist {
   width: 50%;
   float: right;
 }
-/* line 6855, ../sass/_akdn-redesign.scss */
+/* line 6856, ../sass/_akdn-redesign.scss */
 .grid-master-jury-wrapper .grid-about-us-block-description .related-artist:before,
 .grid-steering-committee-wrapper .grid-about-us-block-description .related-artist:before,
 .grid-instrument-listing-wrapper .grid-about-us-block-description .related-artist:before {
@@ -17088,7 +17268,7 @@ map area {
   height: auto;
   border-top: 4px solid #b4965a;
 }
-/* line 6865, ../sass/_akdn-redesign.scss */
+/* line 6866, ../sass/_akdn-redesign.scss */
 .grid-master-jury-wrapper .grid-about-us-block-description .related-artist:after,
 .grid-steering-committee-wrapper .grid-about-us-block-description .related-artist:after,
 .grid-instrument-listing-wrapper .grid-about-us-block-description .related-artist:after {
@@ -17100,7 +17280,7 @@ map area {
   height: auto;
   border-top: 1px solid #b4965a;
 }
-/* line 6875, ../sass/_akdn-redesign.scss */
+/* line 6876, ../sass/_akdn-redesign.scss */
 .grid-master-jury-wrapper .grid-about-us-block-description .related-artist .related-heading,
 .grid-steering-committee-wrapper .grid-about-us-block-description .related-artist .related-heading,
 .grid-instrument-listing-wrapper .grid-about-us-block-description .related-artist .related-heading {
@@ -17110,20 +17290,20 @@ map area {
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 6883, ../sass/_akdn-redesign.scss */
+/* line 6884, ../sass/_akdn-redesign.scss */
 .grid-master-jury-wrapper .grid-about-us-block-description .related-artist ul,
 .grid-steering-committee-wrapper .grid-about-us-block-description .related-artist ul,
 .grid-instrument-listing-wrapper .grid-about-us-block-description .related-artist ul {
   margin: 0 auto;
 }
-/* line 6889, ../sass/_akdn-redesign.scss */
+/* line 6890, ../sass/_akdn-redesign.scss */
 .grid-master-jury-wrapper .grid-about-us-block-description .related-artist .rel_artist_links,
 .grid-steering-committee-wrapper .grid-about-us-block-description .related-artist .rel_artist_links,
 .grid-instrument-listing-wrapper .grid-about-us-block-description .related-artist .rel_artist_links {
   font-size: 16px;
   line-height: 24px;
 }
-/* line 6893, ../sass/_akdn-redesign.scss */
+/* line 6894, ../sass/_akdn-redesign.scss */
 .grid-master-jury-wrapper .grid-about-us-block-description .related-artist .rel_artist_links a,
 .grid-steering-committee-wrapper .grid-about-us-block-description .related-artist .rel_artist_links a,
 .grid-instrument-listing-wrapper .grid-about-us-block-description .related-artist .rel_artist_links a {
@@ -17131,7 +17311,7 @@ map area {
   display: block;
   margin: 0 auto 10px;
 }
-/* line 6898, ../sass/_akdn-redesign.scss */
+/* line 6899, ../sass/_akdn-redesign.scss */
 .grid-master-jury-wrapper .grid-about-us-block-description .related-artist .rel_artist_links a:hover, .grid-master-jury-wrapper .grid-about-us-block-description .related-artist .rel_artist_links a:focus,
 .grid-steering-committee-wrapper .grid-about-us-block-description .related-artist .rel_artist_links a:hover,
 .grid-steering-committee-wrapper .grid-about-us-block-description .related-artist .rel_artist_links a:focus,
@@ -17140,51 +17320,51 @@ map area {
   color: #b5995a;
   text-decoration: none;
 }
-/* line 6905, ../sass/_akdn-redesign.scss */
+/* line 6906, ../sass/_akdn-redesign.scss */
 .grid-master-jury-wrapper .grid-about-us-block-description .related-artist .rel_artist_links:last-child a,
 .grid-steering-committee-wrapper .grid-about-us-block-description .related-artist .rel_artist_links:last-child a,
 .grid-instrument-listing-wrapper .grid-about-us-block-description .related-artist .rel_artist_links:last-child a {
   margin-bottom: 0;
 }
-/* line 6911, ../sass/_akdn-redesign.scss */
+/* line 6912, ../sass/_akdn-redesign.scss */
 .grid-master-jury-wrapper .grid-about-us-block-description .related-artist.hidden_artist,
 .grid-steering-committee-wrapper .grid-about-us-block-description .related-artist.hidden_artist,
 .grid-instrument-listing-wrapper .grid-about-us-block-description .related-artist.hidden_artist {
   display: none !important;
 }
-/* line 6917, ../sass/_akdn-redesign.scss */
+/* line 6918, ../sass/_akdn-redesign.scss */
 .grid-master-jury-wrapper .readmore_hide,
 .grid-steering-committee-wrapper .readmore_hide,
 .grid-instrument-listing-wrapper .readmore_hide {
   display: none !important;
 }
-/* line 6920, ../sass/_akdn-redesign.scss */
+/* line 6921, ../sass/_akdn-redesign.scss */
 .grid-master-jury-wrapper .readmore_hide a,
 .grid-steering-committee-wrapper .readmore_hide a,
 .grid-instrument-listing-wrapper .readmore_hide a {
   color: #b5995a;
 }
-/* line 6925, ../sass/_akdn-redesign.scss */
+/* line 6926, ../sass/_akdn-redesign.scss */
 .grid-master-jury-wrapper .readmore_show,
 .grid-steering-committee-wrapper .readmore_show,
 .grid-instrument-listing-wrapper .readmore_show {
   display: inline !important;
 }
-/* line 6928, ../sass/_akdn-redesign.scss */
+/* line 6929, ../sass/_akdn-redesign.scss */
 .grid-master-jury-wrapper .readmore_show a,
 .grid-steering-committee-wrapper .readmore_show a,
 .grid-instrument-listing-wrapper .readmore_show a {
   color: #b5995a;
 }
 
-/* line 6934, ../sass/_akdn-redesign.scss */
+/* line 6935, ../sass/_akdn-redesign.scss */
 .award-cycle-project-list {
   margin-bottom: 40px;
   padding: 0 15px;
   clear: both;
   overflow: auto;
 }
-/* line 6941, ../sass/_akdn-redesign.scss */
+/* line 6942, ../sass/_akdn-redesign.scss */
 .award-cycle-project-list .view-header .title {
   width: 100%;
   margin: 0 auto;
@@ -17194,12 +17374,12 @@ map area {
   text-transform: none;
 }
 
-/* line 6958, ../sass/_akdn-redesign.scss */
+/* line 6959, ../sass/_akdn-redesign.scss */
 .view-akaa-projects .grid-media-block_description .date {
   width: 100%;
 }
 
-/* line 6964, ../sass/_akdn-redesign.scss */
+/* line 6965, ../sass/_akdn-redesign.scss */
 .akaa-press-centre-main-wrapper {
   display: block;
   width: auto;
@@ -17209,17 +17389,17 @@ map area {
   overflow: auto;
 }
 
-/* line 6973, ../sass/_akdn-redesign.scss */
+/* line 6974, ../sass/_akdn-redesign.scss */
 .akaa-press-centre-inner-wrapper {
   border-left: 1px solid #e8dfcd;
 }
-/* line 6978, ../sass/_akdn-redesign.scss */
+/* line 6979, ../sass/_akdn-redesign.scss */
 .akaa-press-centre-inner-wrapper .image {
   width: 100%;
   overflow: hidden;
 }
 
-/* line 6986, ../sass/_akdn-redesign.scss */
+/* line 6987, ../sass/_akdn-redesign.scss */
 .akaa-press-centre-subwrapper {
   height: auto;
   padding: 15px 0 0;
@@ -17227,7 +17407,7 @@ map area {
   font-size: 16px;
   font-weight: normal;
 }
-/* line 6997, ../sass/_akdn-redesign.scss */
+/* line 6998, ../sass/_akdn-redesign.scss */
 .akaa-press-centre-subwrapper .type {
   margin-bottom: 10px;
   padding: 0;
@@ -17236,7 +17416,7 @@ map area {
   line-height: 1;
   clear: both;
 }
-/* line 7008, ../sass/_akdn-redesign.scss */
+/* line 7009, ../sass/_akdn-redesign.scss */
 .akaa-press-centre-subwrapper .date {
   margin-bottom: 5px;
   padding: 0;
@@ -17245,7 +17425,7 @@ map area {
   line-height: 1;
   clear: both;
 }
-/* line 7017, ../sass/_akdn-redesign.scss */
+/* line 7018, ../sass/_akdn-redesign.scss */
 .akaa-press-centre-subwrapper .title {
   margin-bottom: 2px;
   padding: 0;
@@ -17253,16 +17433,16 @@ map area {
   line-height: 25px;
   clear: both;
 }
-/* line 7024, ../sass/_akdn-redesign.scss */
+/* line 7025, ../sass/_akdn-redesign.scss */
 .akaa-press-centre-subwrapper .title a {
   color: #000;
   text-decoration: none;
 }
-/* line 7028, ../sass/_akdn-redesign.scss */
+/* line 7029, ../sass/_akdn-redesign.scss */
 .akaa-press-centre-subwrapper .title a:hover {
   text-decoration: none;
 }
-/* line 7035, ../sass/_akdn-redesign.scss */
+/* line 7036, ../sass/_akdn-redesign.scss */
 .akaa-press-centre-subwrapper .readmore a {
   display: block;
   padding: 0;
@@ -17271,35 +17451,35 @@ map area {
   cursor: pointer;
   text-decoration: none;
 }
-/* line 7043, ../sass/_akdn-redesign.scss */
+/* line 7044, ../sass/_akdn-redesign.scss */
 .akaa-press-centre-subwrapper .readmore a:before {
   content: "[";
   display: inline-block;
   margin-right: 3px;
 }
-/* line 7049, ../sass/_akdn-redesign.scss */
+/* line 7050, ../sass/_akdn-redesign.scss */
 .akaa-press-centre-subwrapper .readmore a:after {
   content: "]";
   display: inline-block;
   margin-left: 3px;
 }
-/* line 7055, ../sass/_akdn-redesign.scss */
+/* line 7056, ../sass/_akdn-redesign.scss */
 .akaa-press-centre-subwrapper .readmore a:hover {
   color: #b5995a;
   text-decoration: underline;
 }
-/* line 7060, ../sass/_akdn-redesign.scss */
+/* line 7061, ../sass/_akdn-redesign.scss */
 .akaa-press-centre-subwrapper .readmore a:focus {
   color: #b5995a;
   text-decoration: none;
 }
 
-/* line 7068, ../sass/_akdn-redesign.scss */
+/* line 7069, ../sass/_akdn-redesign.scss */
 .project-finder-btn {
   margin: 0 auto 15px;
   border-bottom: 1px solid #b69c5f;
 }
-/* line 7073, ../sass/_akdn-redesign.scss */
+/* line 7074, ../sass/_akdn-redesign.scss */
 .project-finder-btn .content a {
   position: relative;
   display: block;
@@ -17314,7 +17494,7 @@ map area {
   cursor: pointer;
   line-height: 1;
 }
-/* line 7089, ../sass/_akdn-redesign.scss */
+/* line 7090, ../sass/_akdn-redesign.scss */
 .project-finder-btn .content a:after {
   content: "\e913";
   position: absolute;
@@ -17327,16 +17507,16 @@ map area {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 7104, ../sass/_akdn-redesign.scss */
+/* line 7105, ../sass/_akdn-redesign.scss */
 .project-finder-btn .content a:hover, .project-finder-btn .content a:focus {
   text-decoration: none;
 }
-/* line 7110, ../sass/_akdn-redesign.scss */
+/* line 7111, ../sass/_akdn-redesign.scss */
 .project-finder-btn p {
   margin-bottom: 0 !important;
 }
 
-/* line 7116, ../sass/_akdn-redesign.scss */
+/* line 7117, ../sass/_akdn-redesign.scss */
 .akaa-other-cycle-right h2.pane-title {
   margin: 0;
   margin-bottom: 20px;
@@ -17347,93 +17527,93 @@ map area {
   line-height: 36px;
   text-transform: uppercase;
 }
-/* line 7128, ../sass/_akdn-redesign.scss */
+/* line 7129, ../sass/_akdn-redesign.scss */
 .akaa-other-cycle-right h2.pane-title:first-letter {
   font-size: 36px;
 }
 
-/* line 7134, ../sass/_akdn-redesign.scss */
+/* line 7135, ../sass/_akdn-redesign.scss */
 .akaa-other-cycle-wrap {
   margin: 0 auto 40px;
 }
 
-/* line 7138, ../sass/_akdn-redesign.scss */
+/* line 7139, ../sass/_akdn-redesign.scss */
 .akaa-other-cycle-image {
   margin-bottom: 15px;
 }
 
-/* line 7142, ../sass/_akdn-redesign.scss */
+/* line 7143, ../sass/_akdn-redesign.scss */
 .akaa-other-cycle-row {
   margin-bottom: 20px;
   font-size: 16px;
   font-weight: normal;
   color: #000;
 }
-/* line 7151, ../sass/_akdn-redesign.scss */
+/* line 7152, ../sass/_akdn-redesign.scss */
 .akaa-other-cycle-row .cycle_year {
   display: block;
   margin-bottom: 2px;
   color: #999999;
   clear: both;
 }
-/* line 7158, ../sass/_akdn-redesign.scss */
+/* line 7159, ../sass/_akdn-redesign.scss */
 .akaa-other-cycle-row .project_title {
   display: block;
   margin-bottom: 2px;
   clear: both;
 }
-/* line 7163, ../sass/_akdn-redesign.scss */
+/* line 7164, ../sass/_akdn-redesign.scss */
 .akaa-other-cycle-row .project_title a {
   font-size: 16px;
   font-weight: normal;
   color: #000;
 }
-/* line 7170, ../sass/_akdn-redesign.scss */
+/* line 7171, ../sass/_akdn-redesign.scss */
 .akaa-other-cycle-row .concat_build_country {
   display: block;
   margin-bottom: 2px;
   clear: both;
 }
-/* line 7176, ../sass/_akdn-redesign.scss */
+/* line 7177, ../sass/_akdn-redesign.scss */
 .akaa-other-cycle-row .view_links {
   color: #b5995a;
 }
-/* line 7179, ../sass/_akdn-redesign.scss */
+/* line 7180, ../sass/_akdn-redesign.scss */
 .akaa-other-cycle-row .view_links:before {
   content: "[";
   display: inline-block;
   margin-right: 3px;
 }
-/* line 7185, ../sass/_akdn-redesign.scss */
+/* line 7186, ../sass/_akdn-redesign.scss */
 .akaa-other-cycle-row .view_links:after {
   content: "]";
   display: inline-block;
   margin-left: 3px;
 }
-/* line 7191, ../sass/_akdn-redesign.scss */
+/* line 7192, ../sass/_akdn-redesign.scss */
 .akaa-other-cycle-row .view_links a {
   color: #b5995a;
   white-space: nowrap;
   cursor: pointer;
   text-decoration: none;
 }
-/* line 7197, ../sass/_akdn-redesign.scss */
+/* line 7198, ../sass/_akdn-redesign.scss */
 .akaa-other-cycle-row .view_links a:hover {
   color: #b5995a;
   text-decoration: underline;
 }
-/* line 7202, ../sass/_akdn-redesign.scss */
+/* line 7203, ../sass/_akdn-redesign.scss */
 .akaa-other-cycle-row .view_links a:focus {
   color: #b5995a;
   text-decoration: none;
 }
 
-/* line 7210, ../sass/_akdn-redesign.scss */
+/* line 7211, ../sass/_akdn-redesign.scss */
 .akaa-cyle-award-see-also {
   clear: both;
   padding: 25px 0;
 }
-/* line 7214, ../sass/_akdn-redesign.scss */
+/* line 7215, ../sass/_akdn-redesign.scss */
 .akaa-cyle-award-see-also h2.pane-title,
 .akaa-cyle-award-see-also h2.block-title {
   font-size: 28px;
@@ -17445,12 +17625,12 @@ map area {
   color: #000;
   line-height: 36px;
 }
-/* line 7227, ../sass/_akdn-redesign.scss */
+/* line 7228, ../sass/_akdn-redesign.scss */
 .akaa-cyle-award-see-also h2.pane-title:first-letter,
 .akaa-cyle-award-see-also h2.block-title:first-letter {
   font-size: 36px !important;
 }
-/* line 7232, ../sass/_akdn-redesign.scss */
+/* line 7233, ../sass/_akdn-redesign.scss */
 .akaa-cyle-award-see-also ul, .akaa-cyle-award-see-also li {
   margin: 0 auto 15px;
   padding: 0;
@@ -17460,28 +17640,28 @@ map area {
   font-size: 18px;
   font-weight: bold;
 }
-/* line 7241, ../sass/_akdn-redesign.scss */
+/* line 7242, ../sass/_akdn-redesign.scss */
 .akaa-cyle-award-see-also ul a, .akaa-cyle-award-see-also li a {
   font-weight: normal;
   text-transform: none;
 }
-/* line 7247, ../sass/_akdn-redesign.scss */
+/* line 7248, ../sass/_akdn-redesign.scss */
 .akaa-cyle-award-see-also a {
   color: #000;
 }
-/* line 7250, ../sass/_akdn-redesign.scss */
+/* line 7251, ../sass/_akdn-redesign.scss */
 .akaa-cyle-award-see-also a:hover, .akaa-cyle-award-see-also a:active, .akaa-cyle-award-see-also a.active {
   color: #b49759;
   text-decoration: none;
 }
 
-/* line 7261, ../sass/_akdn-redesign.scss */
+/* line 7262, ../sass/_akdn-redesign.scss */
 .akaa-award-cycle-related-info ul,
 .akaa-projectinfo-map-related-info ul {
   margin: 0 auto !important;
   padding: 0 !important;
 }
-/* line 7266, ../sass/_akdn-redesign.scss */
+/* line 7267, ../sass/_akdn-redesign.scss */
 .akaa-award-cycle-related-info h2.pane-title,
 .akaa-award-cycle-related-info h2.block-title,
 .akaa-projectinfo-map-related-info h2.pane-title,
@@ -17489,20 +17669,20 @@ map area {
   margin-top: 0;
   margin-bottom: 20px;
 }
-/* line 7274, ../sass/_akdn-redesign.scss */
+/* line 7275, ../sass/_akdn-redesign.scss */
 .akaa-award-cycle-related-info li,
 .akaa-projectinfo-map-related-info li {
   margin: 0 auto !important;
   padding: 0 !important;
   list-style: none;
 }
-/* line 7287, ../sass/_akdn-redesign.scss */
+/* line 7288, ../sass/_akdn-redesign.scss */
 .akaa-award-cycle-related-info .akaa-award-cycle-related-link a,
 .akaa-projectinfo-map-related-info .akaa-award-cycle-related-link a {
   color: #000;
   text-transform: none;
 }
-/* line 7291, ../sass/_akdn-redesign.scss */
+/* line 7292, ../sass/_akdn-redesign.scss */
 .akaa-award-cycle-related-info .akaa-award-cycle-related-link a:hover, .akaa-award-cycle-related-info .akaa-award-cycle-related-link a:focus,
 .akaa-projectinfo-map-related-info .akaa-award-cycle-related-link a:hover,
 .akaa-projectinfo-map-related-info .akaa-award-cycle-related-link a:focus {
@@ -17510,14 +17690,14 @@ map area {
   text-decoration: none;
 }
 
-/* line 7299, ../sass/_akdn-redesign.scss */
+/* line 7300, ../sass/_akdn-redesign.scss */
 .akaa-all-award-cycle-wrapper {
   display: none;
   background-color: #f4f1e7;
   border-top: 1px solid #b69c5f;
 }
 
-/* line 7305, ../sass/_akdn-redesign.scss */
+/* line 7306, ../sass/_akdn-redesign.scss */
 .akaa-all-award-cycle-row {
   margin: 0 15px;
   padding: 10px 0;
@@ -17527,58 +17707,58 @@ map area {
   text-transform: none;
   border-bottom: 1px solid #b59859;
 }
-/* line 7314, ../sass/_akdn-redesign.scss */
+/* line 7315, ../sass/_akdn-redesign.scss */
 .akaa-all-award-cycle-row:last-child {
   border-bottom: 0;
 }
-/* line 7318, ../sass/_akdn-redesign.scss */
+/* line 7319, ../sass/_akdn-redesign.scss */
 .akaa-all-award-cycle-row a {
   display: block;
   color: #000;
   text-decoration: none;
 }
-/* line 7323, ../sass/_akdn-redesign.scss */
+/* line 7324, ../sass/_akdn-redesign.scss */
 .akaa-all-award-cycle-row a:hover, .akaa-all-award-cycle-row a:focus {
   color: #b5995a;
   text-decoration: none;
 }
-/* line 7328, ../sass/_akdn-redesign.scss */
+/* line 7329, ../sass/_akdn-redesign.scss */
 .akaa-all-award-cycle-row a.active {
   color: #B49759;
 }
-/* line 7334, ../sass/_akdn-redesign.scss */
+/* line 7335, ../sass/_akdn-redesign.scss */
 .akaa-all-award-cycle-row .active a {
   color: #B49759;
 }
 
-/* line 7340, ../sass/_akdn-redesign.scss */
+/* line 7341, ../sass/_akdn-redesign.scss */
 .all-activities-short-title {
   font-size: 16px;
   line-height: 24px;
   font-weight: normal;
 }
-/* line 7347, ../sass/_akdn-redesign.scss */
+/* line 7348, ../sass/_akdn-redesign.scss */
 .all-activities-short-title a {
   display: block;
   color: #000;
   text-decoration: none;
 }
-/* line 7352, ../sass/_akdn-redesign.scss */
+/* line 7353, ../sass/_akdn-redesign.scss */
 .all-activities-short-title a.active {
   color: #B49759;
 }
-/* line 7356, ../sass/_akdn-redesign.scss */
+/* line 7357, ../sass/_akdn-redesign.scss */
 .all-activities-short-title a:hover {
   color: #B49759;
   text-decoration: none;
 }
 
-/* line 7363, ../sass/_akdn-redesign.scss */
+/* line 7364, ../sass/_akdn-redesign.scss */
 .akaa-all-award-cycle-btn {
   margin: 15px auto;
   border-bottom: 1px solid #b69c5f;
 }
-/* line 7367, ../sass/_akdn-redesign.scss */
+/* line 7368, ../sass/_akdn-redesign.scss */
 .akaa-all-award-cycle-btn h2.pane-title,
 .akaa-all-award-cycle-btn h2.block-title {
   position: relative;
@@ -17595,7 +17775,7 @@ map area {
   cursor: pointer;
   line-height: 24px;
 }
-/* line 7385, ../sass/_akdn-redesign.scss */
+/* line 7386, ../sass/_akdn-redesign.scss */
 .akaa-all-award-cycle-btn h2.pane-title:after,
 .akaa-all-award-cycle-btn h2.block-title:after {
   content: "\e909";
@@ -17609,18 +17789,18 @@ map area {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 7400, ../sass/_akdn-redesign.scss */
+/* line 7401, ../sass/_akdn-redesign.scss */
 .akaa-all-award-cycle-btn h2.pane-title:first-letter,
 .akaa-all-award-cycle-btn h2.block-title:first-letter {
   font-size: 100% !important;
 }
-/* line 7408, ../sass/_akdn-redesign.scss */
+/* line 7409, ../sass/_akdn-redesign.scss */
 .akaa-all-award-cycle-btn.bounce h2.pane-title:after,
 .akaa-all-award-cycle-btn.bounce h2.block-title:after {
   content: "\e907";
 }
 
-/* line 7415, ../sass/_akdn-redesign.scss */
+/* line 7416, ../sass/_akdn-redesign.scss */
 .akaa-projectinfo-block-title {
   display: block;
   margin: 0 auto 40px;
@@ -17628,7 +17808,7 @@ map area {
   font-size: 42px;
   line-height: 50px;
 }
-/* line 7424, ../sass/_akdn-redesign.scss */
+/* line 7425, ../sass/_akdn-redesign.scss */
 .akaa-projectinfo-block-title .field-name-title-field {
   padding: 0;
   margin: 0 auto;
@@ -17636,7 +17816,7 @@ map area {
   line-height: 50px;
 }
 
-/* line 7432, ../sass/_akdn-redesign.scss */
+/* line 7433, ../sass/_akdn-redesign.scss */
 .akaa-projectinfo-block-techinfo-wrapper {
   position: relative;
   padding: 0 15px;
@@ -17646,11 +17826,11 @@ map area {
   font-size: 16px;
   font-weight: normal;
 }
-/* line 7443, ../sass/_akdn-redesign.scss */
+/* line 7444, ../sass/_akdn-redesign.scss */
 .akaa-projectinfo-block-techinfo-wrapper > p {
   margin-bottom: 0 !important;
 }
-/* line 7447, ../sass/_akdn-redesign.scss */
+/* line 7448, ../sass/_akdn-redesign.scss */
 .akaa-projectinfo-block-techinfo-wrapper:before {
   content: "";
   position: relative;
@@ -17658,7 +17838,7 @@ map area {
   border-top: 4px solid #b49759;
 }
 
-/* line 7456, ../sass/_akdn-redesign.scss */
+/* line 7457, ../sass/_akdn-redesign.scss */
 .akaa-projectinfo-block-techinfo-title h2.pane-title {
   font-size: 18px;
   margin: 15px auto;
@@ -17666,11 +17846,11 @@ map area {
   text-transform: uppercase;
 }
 
-/* line 7464, ../sass/_akdn-redesign.scss */
+/* line 7465, ../sass/_akdn-redesign.scss */
 .akaa-technicalinfo-award-cycle {
   margin-bottom: 10px;
 }
-/* line 7467, ../sass/_akdn-redesign.scss */
+/* line 7468, ../sass/_akdn-redesign.scss */
 .akaa-technicalinfo-award-cycle p {
   display: inline-block;
   font-size: 16px;
@@ -17678,7 +17858,7 @@ map area {
   margin: 0 auto;
   margin-right: 3px;
 }
-/* line 7475, ../sass/_akdn-redesign.scss */
+/* line 7476, ../sass/_akdn-redesign.scss */
 .akaa-technicalinfo-award-cycle p + span a {
   display: inline-block;
   font-size: 16px;
@@ -17686,20 +17866,20 @@ map area {
   color: #b49759;
 }
 
-/* line 7485, ../sass/_akdn-redesign.scss */
+/* line 7486, ../sass/_akdn-redesign.scss */
 .akaa-technicalinfo-content {
   margin-bottom: 30px;
   font-size: 16px;
   line-height: 24px;
 }
-/* line 7491, ../sass/_akdn-redesign.scss */
+/* line 7492, ../sass/_akdn-redesign.scss */
 .akaa-technicalinfo-content .item-list ul, .akaa-technicalinfo-content .item-list li {
   margin: 0 auto;
   padding: 0;
   list-style: none;
 }
 
-/* line 7499, ../sass/_akdn-redesign.scss */
+/* line 7500, ../sass/_akdn-redesign.scss */
 .akaa-technicalinfo-row {
   display: block;
   font-size: 16px;
@@ -17709,18 +17889,18 @@ map area {
   margin-bottom: 8px;
 }
 
-/* line 7510, ../sass/_akdn-redesign.scss */
+/* line 7511, ../sass/_akdn-redesign.scss */
 .akaa-technicalinfo-label,
 .akaa-technicalinfo-value,
 .akaa-technicalinfo-link {
   display: inline;
 }
 
-/* line 7516, ../sass/_akdn-redesign.scss */
+/* line 7517, ../sass/_akdn-redesign.scss */
 .akaa-technicalinfo-link {
   color: #b49759;
 }
-/* line 7519, ../sass/_akdn-redesign.scss */
+/* line 7520, ../sass/_akdn-redesign.scss */
 .akaa-technicalinfo-link a {
   display: inline;
   font-size: 16px;
@@ -17728,22 +17908,22 @@ map area {
   color: #b49759;
   text-decoration: none;
 }
-/* line 7526, ../sass/_akdn-redesign.scss */
+/* line 7527, ../sass/_akdn-redesign.scss */
 .akaa-technicalinfo-link a:focus {
   color: #b49759;
   text-decoration: none;
 }
-/* line 7531, ../sass/_akdn-redesign.scss */
+/* line 7532, ../sass/_akdn-redesign.scss */
 .akaa-technicalinfo-link a:hover {
   color: #b49759;
   text-decoration: underline;
 }
 
-/* line 7538, ../sass/_akdn-redesign.scss */
+/* line 7539, ../sass/_akdn-redesign.scss */
 .akaa-technicalinfo-download {
   margin-bottom: 30px;
 }
-/* line 7541, ../sass/_akdn-redesign.scss */
+/* line 7542, ../sass/_akdn-redesign.scss */
 .akaa-technicalinfo-download h2.pane-title {
   font-size: 18px;
   margin: 15px auto;
@@ -17751,7 +17931,7 @@ map area {
   text-transform: uppercase;
 }
 
-/* line 7551, ../sass/_akdn-redesign.scss */
+/* line 7552, ../sass/_akdn-redesign.scss */
 .akaa-technicalinfo-download-row {
   display: block;
   font-size: 16px;
@@ -17761,29 +17941,29 @@ map area {
   margin-bottom: 8px;
 }
 
-/* line 7562, ../sass/_akdn-redesign.scss */
+/* line 7563, ../sass/_akdn-redesign.scss */
 .akaa-technicalinfo-download-label {
   display: inline-block;
   margin-right: 3px;
   color: #000;
 }
 
-/* line 7568, ../sass/_akdn-redesign.scss */
+/* line 7569, ../sass/_akdn-redesign.scss */
 .akaa-technicalinfo-download-link {
   display: inline-block;
 }
-/* line 7571, ../sass/_akdn-redesign.scss */
+/* line 7572, ../sass/_akdn-redesign.scss */
 .akaa-technicalinfo-download-link a {
   color: #b49759;
 }
 
-/* line 7577, ../sass/_akdn-redesign.scss */
+/* line 7578, ../sass/_akdn-redesign.scss */
 .akaa-technicalinfo-video .playerbox {
   width: 100%;
   height: 240px;
 }
 
-/* line 7583, ../sass/_akdn-redesign.scss */
+/* line 7584, ../sass/_akdn-redesign.scss */
 .akaa-projectinfo-block-body-wrapper {
   position: relative;
   display: block;
@@ -17796,12 +17976,12 @@ map area {
   color: #000;
   line-height: 24px;
 }
-/* line 7597, ../sass/_akdn-redesign.scss */
+/* line 7598, ../sass/_akdn-redesign.scss */
 .akaa-projectinfo-block-body-wrapper a {
   color: #b49759;
 }
 
-/* line 7603, ../sass/_akdn-redesign.scss */
+/* line 7604, ../sass/_akdn-redesign.scss */
 .akaa-other-project-right h2.pane-title {
   margin: 0 auto 5px;
   padding: 0;
@@ -17812,12 +17992,12 @@ map area {
   text-transform: uppercase;
 }
 
-/* line 7616, ../sass/_akdn-redesign.scss */
+/* line 7617, ../sass/_akdn-redesign.scss */
 .akaa-other-project-wrap {
   margin: 0 auto 40px;
 }
 
-/* line 7620, ../sass/_akdn-redesign.scss */
+/* line 7621, ../sass/_akdn-redesign.scss */
 .akaa-other-project-row {
   margin-bottom: 20px;
   font-size: 16px;
@@ -17825,7 +18005,7 @@ map area {
   color: #000;
 }
 
-/* line 7629, ../sass/_akdn-redesign.scss */
+/* line 7630, ../sass/_akdn-redesign.scss */
 .akaa-other-project-year {
   margin: 0 auto 20px;
   padding: 0;
@@ -17835,13 +18015,13 @@ map area {
   line-height: 1;
 }
 
-/* line 7640, ../sass/_akdn-redesign.scss */
+/* line 7641, ../sass/_akdn-redesign.scss */
 .akaa-other-project-image {
   display: block;
   margin-bottom: 15px;
 }
 
-/* line 7645, ../sass/_akdn-redesign.scss */
+/* line 7646, ../sass/_akdn-redesign.scss */
 .akaa-other-project-title {
   display: block;
   margin-bottom: 2px;
@@ -17851,16 +18031,16 @@ map area {
   line-height: 22px;
   clear: both;
 }
-/* line 7656, ../sass/_akdn-redesign.scss */
+/* line 7657, ../sass/_akdn-redesign.scss */
 .akaa-other-project-title a {
   color: #000;
 }
-/* line 7659, ../sass/_akdn-redesign.scss */
+/* line 7660, ../sass/_akdn-redesign.scss */
 .akaa-other-project-title a:hover, .akaa-other-project-title a:focus {
   color: #000;
 }
 
-/* line 7665, ../sass/_akdn-redesign.scss */
+/* line 7666, ../sass/_akdn-redesign.scss */
 .akaa-other-project-building-country {
   display: block;
   margin-bottom: 2px;
@@ -17871,25 +18051,25 @@ map area {
   clear: both;
 }
 
-/* line 7677, ../sass/_akdn-redesign.scss */
+/* line 7678, ../sass/_akdn-redesign.scss */
 .akaa-other-project-viewmore {
   display: inline-block;
   color: #b5995a;
   clear: both;
 }
-/* line 7682, ../sass/_akdn-redesign.scss */
+/* line 7683, ../sass/_akdn-redesign.scss */
 .akaa-other-project-viewmore:before {
   content: "[";
   display: inline-block;
   margin-right: 3px;
 }
-/* line 7688, ../sass/_akdn-redesign.scss */
+/* line 7689, ../sass/_akdn-redesign.scss */
 .akaa-other-project-viewmore:after {
   content: "]";
   display: inline-block;
   margin-left: 3px;
 }
-/* line 7694, ../sass/_akdn-redesign.scss */
+/* line 7695, ../sass/_akdn-redesign.scss */
 .akaa-other-project-viewmore a {
   display: inline-block;
   margin-bottom: 2px;
@@ -17902,24 +18082,24 @@ map area {
   text-decoration: none;
   clear: both;
 }
-/* line 7708, ../sass/_akdn-redesign.scss */
+/* line 7709, ../sass/_akdn-redesign.scss */
 .akaa-other-project-viewmore a:hover, .akaa-other-project-viewmore a:focus {
   color: #b5995a;
   text-decoration: underline;
 }
 
-/* line 7715, ../sass/_akdn-redesign.scss */
+/* line 7716, ../sass/_akdn-redesign.scss */
 .akaa-body {
   /* Share Icons */
 }
-/* line 7717, ../sass/_akdn-redesign.scss */
+/* line 7718, ../sass/_akdn-redesign.scss */
 .akaa-body .akaa-projectfinder-mail-share-print {
   margin-bottom: 30px;
   display: block;
   clear: both;
   overflow: auto;
 }
-/* line 7724, ../sass/_akdn-redesign.scss */
+/* line 7725, ../sass/_akdn-redesign.scss */
 .akaa-body .print_mail,
 .akaa-body .pane-addthis,
 .akaa-body .print_html {
@@ -17929,7 +18109,7 @@ map area {
   height: 20px;
   margin: 0 12px 0 0;
 }
-/* line 7733, ../sass/_akdn-redesign.scss */
+/* line 7734, ../sass/_akdn-redesign.scss */
 .akaa-body .print_mail a,
 .akaa-body .pane-addthis a,
 .akaa-body .print_html a {
@@ -17942,14 +18122,14 @@ map area {
   font-size: 0;
   cursor: pointer;
 }
-/* line 7745, ../sass/_akdn-redesign.scss */
+/* line 7746, ../sass/_akdn-redesign.scss */
 .akaa-body .print_mail a:before,
 .akaa-body .pane-addthis a:before,
 .akaa-body .print_html a:before {
   padding: 0 1px;
   font-size: 18px;
 }
-/* line 7750, ../sass/_akdn-redesign.scss */
+/* line 7751, ../sass/_akdn-redesign.scss */
 .akaa-body .print_mail a:focus, .akaa-body .print_mail a:hover,
 .akaa-body .pane-addthis a:focus,
 .akaa-body .pane-addthis a:hover,
@@ -17958,7 +18138,7 @@ map area {
   color: #b49759;
   text-decoration: none;
 }
-/* line 7757, ../sass/_akdn-redesign.scss */
+/* line 7758, ../sass/_akdn-redesign.scss */
 .akaa-body .pane-email {
   width: auto;
   position: relative;
@@ -17966,18 +18146,18 @@ map area {
   height: auto;
   float: left;
 }
-/* line 7777, ../sass/_akdn-redesign.scss */
+/* line 7778, ../sass/_akdn-redesign.scss */
 .akaa-body .akaa-cycle-pane-body {
   font-size: 16px;
   line-height: 24px;
   padding: 0 15px;
 }
-/* line 7784, ../sass/_akdn-redesign.scss */
+/* line 7785, ../sass/_akdn-redesign.scss */
 .akaa-body .akaa-cycle-pane-body ul {
   padding-left: 16px;
 }
 
-/* line 7790, ../sass/_akdn-redesign.scss */
+/* line 7791, ../sass/_akdn-redesign.scss */
 .akaa-other-projects-country,
 .akaa-other-projects-building-type {
   display: block;
@@ -17986,12 +18166,12 @@ map area {
   clear: both;
   overflow: auto;
 }
-/* line 7798, ../sass/_akdn-redesign.scss */
+/* line 7799, ../sass/_akdn-redesign.scss */
 .akaa-other-projects-country img,
 .akaa-other-projects-building-type img {
   width: auto;
 }
-/* line 7802, ../sass/_akdn-redesign.scss */
+/* line 7803, ../sass/_akdn-redesign.scss */
 .akaa-other-projects-country h2.pane-title,
 .akaa-other-projects-building-type h2.pane-title {
   font-size: 18px;
@@ -18000,7 +18180,7 @@ map area {
   line-height: 24px;
   text-transform: uppercase;
 }
-/* line 7810, ../sass/_akdn-redesign.scss */
+/* line 7811, ../sass/_akdn-redesign.scss */
 .akaa-other-projects-country table,
 .akaa-other-projects-country th,
 .akaa-other-projects-country td,
@@ -18017,13 +18197,13 @@ map area {
   padding: 0;
   line-height: 1;
 }
-/* line 7821, ../sass/_akdn-redesign.scss */
+/* line 7822, ../sass/_akdn-redesign.scss */
 .akaa-other-projects-country table,
 .akaa-other-projects-building-type table {
   width: 100%;
   border-top: 4px solid #b59759;
 }
-/* line 7825, ../sass/_akdn-redesign.scss */
+/* line 7826, ../sass/_akdn-redesign.scss */
 .akaa-other-projects-country table a,
 .akaa-other-projects-building-type table a {
   display: block;
@@ -18032,42 +18212,42 @@ map area {
   font-size: 14px;
   line-height: 18px;
 }
-/* line 7832, ../sass/_akdn-redesign.scss */
+/* line 7833, ../sass/_akdn-redesign.scss */
 .akaa-other-projects-country table a:hover, .akaa-other-projects-country table a:focus,
 .akaa-other-projects-building-type table a:hover,
 .akaa-other-projects-building-type table a:focus {
   color: #b5995a;
   text-decoration: none;
 }
-/* line 7838, ../sass/_akdn-redesign.scss */
+/* line 7839, ../sass/_akdn-redesign.scss */
 .akaa-other-projects-country table thead,
 .akaa-other-projects-building-type table thead {
   background-color: #f9f9f9;
 }
-/* line 7842, ../sass/_akdn-redesign.scss */
+/* line 7843, ../sass/_akdn-redesign.scss */
 .akaa-other-projects-country table td.active,
 .akaa-other-projects-building-type table td.active {
   background-color: #f9f9f9;
 }
-/* line 7846, ../sass/_akdn-redesign.scss */
+/* line 7847, ../sass/_akdn-redesign.scss */
 .akaa-other-projects-country table tr.even, .akaa-other-projects-country table tr.odd,
 .akaa-other-projects-building-type table tr.even,
 .akaa-other-projects-building-type table tr.odd {
   background-color: #f9f9f9;
 }
-/* line 7850, ../sass/_akdn-redesign.scss */
+/* line 7851, ../sass/_akdn-redesign.scss */
 .akaa-other-projects-country table th,
 .akaa-other-projects-building-type table th {
   border-bottom: 1px solid #b59759;
   padding: 10px 15px;
   text-transform: uppercase;
 }
-/* line 7855, ../sass/_akdn-redesign.scss */
+/* line 7856, ../sass/_akdn-redesign.scss */
 .akaa-other-projects-country table th a,
 .akaa-other-projects-building-type table th a {
   padding: 0;
 }
-/* line 7861, ../sass/_akdn-redesign.scss */
+/* line 7862, ../sass/_akdn-redesign.scss */
 .akaa-other-projects-country td.views-field-field-performance-year,
 .akaa-other-projects-country td.views-field-field-artist-country-origin,
 .akaa-other-projects-building-type td.views-field-field-performance-year,
@@ -18077,22 +18257,22 @@ map area {
   font-size: 14px;
   line-height: 18px;
 }
-/* line 7870, ../sass/_akdn-redesign.scss */
+/* line 7871, ../sass/_akdn-redesign.scss */
 .akaa-other-projects-country td.views-field-field-artist-related-instruments a,
 .akaa-other-projects-building-type td.views-field-field-artist-related-instruments a {
   display: inline-block;
 }
-/* line 7873, ../sass/_akdn-redesign.scss */
+/* line 7874, ../sass/_akdn-redesign.scss */
 .akaa-other-projects-country td.views-field-field-artist-related-instruments a:first-child,
 .akaa-other-projects-building-type td.views-field-field-artist-related-instruments a:first-child {
   padding: 10px 0 10px 15px;
 }
-/* line 7877, ../sass/_akdn-redesign.scss */
+/* line 7878, ../sass/_akdn-redesign.scss */
 .akaa-other-projects-country td.views-field-field-artist-related-instruments a + a,
 .akaa-other-projects-building-type td.views-field-field-artist-related-instruments a + a {
   padding: 10px 0;
 }
-/* line 7883, ../sass/_akdn-redesign.scss */
+/* line 7884, ../sass/_akdn-redesign.scss */
 .akaa-other-projects-country .perf_heading,
 .akaa-other-projects-building-type .perf_heading {
   display: block;
@@ -18102,7 +18282,7 @@ map area {
   font-size: 16px;
   line-height: 18px;
 }
-/* line 7892, ../sass/_akdn-redesign.scss */
+/* line 7893, ../sass/_akdn-redesign.scss */
 .akaa-other-projects-country .peformance_label,
 .akaa-other-projects-building-type .peformance_label {
   display: inline-block;
@@ -18111,7 +18291,7 @@ map area {
   padding: 0;
   font-weight: bold;
 }
-/* line 7900, ../sass/_akdn-redesign.scss */
+/* line 7901, ../sass/_akdn-redesign.scss */
 .akaa-other-projects-country .performance_years,
 .akaa-other-projects-building-type .performance_years {
   display: inline-block;
@@ -18119,7 +18299,7 @@ map area {
   padding: 0;
   font-weight: normal;
 }
-/* line 7907, ../sass/_akdn-redesign.scss */
+/* line 7908, ../sass/_akdn-redesign.scss */
 .akaa-other-projects-country .booking_link,
 .akaa-other-projects-building-type .booking_link {
   display: block;
@@ -18129,7 +18309,7 @@ map area {
   font-size: 16px;
   line-height: 18px;
 }
-/* line 7915, ../sass/_akdn-redesign.scss */
+/* line 7916, ../sass/_akdn-redesign.scss */
 .akaa-other-projects-country .booking_link a,
 .akaa-other-projects-building-type .booking_link a {
   color: #b5995a;
@@ -18137,47 +18317,47 @@ map area {
   line-height: 18px;
   text-decoration: none;
 }
-/* line 7921, ../sass/_akdn-redesign.scss */
+/* line 7922, ../sass/_akdn-redesign.scss */
 .akaa-other-projects-country .booking_link a:hover,
 .akaa-other-projects-building-type .booking_link a:hover {
   color: #b5995a;
   text-decoration: underline;
 }
-/* line 7926, ../sass/_akdn-redesign.scss */
+/* line 7927, ../sass/_akdn-redesign.scss */
 .akaa-other-projects-country .booking_link a:focus,
 .akaa-other-projects-building-type .booking_link a:focus {
   color: #b5995a;
   text-decoration: none;
 }
 
-/* line 7937, ../sass/_akdn-redesign.scss */
+/* line 7938, ../sass/_akdn-redesign.scss */
 .filter-content-block .item-list li a {
   text-transform: lowercase;
 }
 
-/* line 7946, ../sass/_akdn-redesign.scss */
+/* line 7947, ../sass/_akdn-redesign.scss */
 .node-type-facts-block .field-name-field-facts-icon img {
   width: auto;
 }
 
-/* line 7954, ../sass/_akdn-redesign.scss */
+/* line 7955, ../sass/_akdn-redesign.scss */
 .grid-6 .akdn-menu-active-trail .akdn-menu-active {
   color: #b5995a !important;
 }
 
-/* line 7960, ../sass/_akdn-redesign.scss */
+/* line 7961, ../sass/_akdn-redesign.scss */
 .field-name-field-newsletter-image {
   display: inline-block;
   width: auto;
   float: left;
   padding: 15px 10px 10px;
 }
-/* line 7966, ../sass/_akdn-redesign.scss */
+/* line 7967, ../sass/_akdn-redesign.scss */
 .field-name-field-newsletter-image a {
   display: block;
 }
 
-/* line 7971, ../sass/_akdn-redesign.scss */
+/* line 7972, ../sass/_akdn-redesign.scss */
 .field-name-title-field {
   display: block;
   width: auto;
@@ -18185,7 +18365,7 @@ map area {
   padding: 10px 10px 0;
   margin: 0 auto 5px;
 }
-/* line 7978, ../sass/_akdn-redesign.scss */
+/* line 7979, ../sass/_akdn-redesign.scss */
 .field-name-title-field a {
   font-size: 18px;
   font-weight: bold;
@@ -18194,13 +18374,13 @@ map area {
   text-decoration: none;
   cursor: pointer;
 }
-/* line 7988, ../sass/_akdn-redesign.scss */
+/* line 7989, ../sass/_akdn-redesign.scss */
 .field-name-title-field a:hover, .field-name-title-field a:focus {
   color: #000;
   text-decoration: none;
 }
 
-/* line 7995, ../sass/_akdn-redesign.scss */
+/* line 7996, ../sass/_akdn-redesign.scss */
 .field-name-field-newsletter-summary {
   display: block;
   width: auto;
@@ -18213,16 +18393,16 @@ map area {
   line-height: 20px;
 }
 
-/* line 8012, ../sass/_akdn-redesign.scss */
+/* line 8013, ../sass/_akdn-redesign.scss */
 .akaa-projectinfo-map-wrapper .view-footer {
   margin: 10px auto 0;
 }
-/* line 8016, ../sass/_akdn-redesign.scss */
+/* line 8017, ../sass/_akdn-redesign.scss */
 .akaa-projectinfo-map-wrapper img {
   width: auto;
 }
 
-/* line 8022, ../sass/_akdn-redesign.scss */
+/* line 8023, ../sass/_akdn-redesign.scss */
 .node-type-webform div.element-invisible {
   position: relative !important;
   clip: auto;
@@ -18230,18 +18410,18 @@ map area {
   height: auto;
 }
 
-/* line 8031, ../sass/_akdn-redesign.scss */
+/* line 8032, ../sass/_akdn-redesign.scss */
 .akaa-projectinfo-map-title-body .view-header {
   margin: 0 auto 30px;
   padding: 0;
 }
-/* line 8037, ../sass/_akdn-redesign.scss */
+/* line 8038, ../sass/_akdn-redesign.scss */
 .akaa-projectinfo-map-title-body .view-header h2 {
   margin: 0 auto;
   padding: 0;
   font-size: 42px;
 }
-/* line 8044, ../sass/_akdn-redesign.scss */
+/* line 8045, ../sass/_akdn-redesign.scss */
 .akaa-projectinfo-map-title-body .view-content {
   position: relative;
   margin: 0 auto 40px;
@@ -18253,7 +18433,7 @@ map area {
   color: #999999;
   line-height: 30px;
 }
-/* line 8057, ../sass/_akdn-redesign.scss */
+/* line 8058, ../sass/_akdn-redesign.scss */
 .akaa-projectinfo-map-title-body .view-content:before {
   content: "";
   position: absolute;
@@ -18264,7 +18444,7 @@ map area {
   border-left: 4px solid #b4965a;
 }
 
-/* line 8071, ../sass/_akdn-redesign.scss */
+/* line 8072, ../sass/_akdn-redesign.scss */
 .page-architecture-projects .title-border h1.title {
   width: 100%;
   margin: 0 auto;
@@ -18277,7 +18457,7 @@ map area {
   border-top: 4px solid #b4965a;
 }
 
-/* line 8087, ../sass/_akdn-redesign.scss */
+/* line 8088, ../sass/_akdn-redesign.scss */
 .video-container {
   display: block;
   position: relative;
@@ -18285,18 +18465,18 @@ map area {
   padding: 0;
 }
 
-/* line 8097, ../sass/_akdn-redesign.scss */
+/* line 8098, ../sass/_akdn-redesign.scss */
 .page-akmi-press-centre .grid-6 .akaa-projectinfo-map-related-info:before {
   margin-top: 25px;
 }
 
-/* line 8106, ../sass/_akdn-redesign.scss */
+/* line 8107, ../sass/_akdn-redesign.scss */
 .page-akmi-cd-dvd .region-inner.region-content-inner,
 .page-akmi-events .region-inner.region-content-inner {
   margin: 0 -15px;
 }
 
-/* line 8111, ../sass/_akdn-redesign.scss */
+/* line 8112, ../sass/_akdn-redesign.scss */
 .akmi-related-artists-row, .akmi-related-artists-simple-link {
   display: block;
   font-size: 16px;
@@ -18306,24 +18486,24 @@ map area {
   margin-bottom: 5px;
 }
 
-/* line 8122, ../sass/_akdn-redesign.scss */
+/* line 8123, ../sass/_akdn-redesign.scss */
 .akmi-related-artists-label,
 .akmi-related-artists-value,
 .akmi-related-artists-link {
   display: inline;
 }
 
-/* line 8128, ../sass/_akdn-redesign.scss */
+/* line 8129, ../sass/_akdn-redesign.scss */
 .akmi-related-artists-label {
   margin-right: 2px;
   color: #000;
 }
 
-/* line 8133, ../sass/_akdn-redesign.scss */
+/* line 8134, ../sass/_akdn-redesign.scss */
 .akmi-related-artists-link {
   color: #b49759;
 }
-/* line 8136, ../sass/_akdn-redesign.scss */
+/* line 8137, ../sass/_akdn-redesign.scss */
 .akmi-related-artists-link a {
   display: inline-block;
   font-size: 16px;
@@ -18331,26 +18511,26 @@ map area {
   color: #b49759;
   text-decoration: none;
 }
-/* line 8143, ../sass/_akdn-redesign.scss */
+/* line 8144, ../sass/_akdn-redesign.scss */
 .akmi-related-artists-link a:focus {
   color: #b49759;
   text-decoration: none;
 }
-/* line 8148, ../sass/_akdn-redesign.scss */
+/* line 8149, ../sass/_akdn-redesign.scss */
 .akmi-related-artists-link a:hover {
   color: #b49759;
   text-decoration: underline;
 }
 
-/* line 8156, ../sass/_akdn-redesign.scss */
+/* line 8157, ../sass/_akdn-redesign.scss */
 .akmi-related-artists-audio-icon .file-size {
   display: none;
 }
-/* line 8161, ../sass/_akdn-redesign.scss */
+/* line 8162, ../sass/_akdn-redesign.scss */
 .akmi-related-artists-audio-icon .file img {
   display: none;
 }
-/* line 8166, ../sass/_akdn-redesign.scss */
+/* line 8167, ../sass/_akdn-redesign.scss */
 .akmi-related-artists-audio-icon a:not(.anchor-to-link) {
   position: relative;
   width: 18px;
@@ -18363,55 +18543,55 @@ map area {
   background: #fff;
   text-decoration: none;
 }
-/* line 8180, ../sass/_akdn-redesign.scss */
+/* line 8181, ../sass/_akdn-redesign.scss */
 .akmi-related-artists-audio-icon a:not(.anchor-to-link):before {
   content: "\e934";
   font-size: 18px;
 }
-/* line 8185, ../sass/_akdn-redesign.scss */
+/* line 8186, ../sass/_akdn-redesign.scss */
 .akmi-related-artists-audio-icon a:not(.anchor-to-link):hover {
   color: #b5995a;
   text-decoration: none;
 }
-/* line 8190, ../sass/_akdn-redesign.scss */
+/* line 8191, ../sass/_akdn-redesign.scss */
 .akmi-related-artists-audio-icon a:not(.anchor-to-link):focus {
   color: #000;
   text-decoration: none;
 }
 
-/* line 8197, ../sass/_akdn-redesign.scss */
+/* line 8198, ../sass/_akdn-redesign.scss */
 .akmi-related-artists-simple-link {
   line-height: 18px;
 }
-/* line 8202, ../sass/_akdn-redesign.scss */
+/* line 8203, ../sass/_akdn-redesign.scss */
 .akmi-related-artists-simple-link a {
   color: #b5995a;
   text-decoration: none;
 }
-/* line 8206, ../sass/_akdn-redesign.scss */
+/* line 8207, ../sass/_akdn-redesign.scss */
 .akmi-related-artists-simple-link a:hover {
   color: #b5995a;
   text-decoration: underline;
 }
-/* line 8211, ../sass/_akdn-redesign.scss */
+/* line 8212, ../sass/_akdn-redesign.scss */
 .akmi-related-artists-simple-link a:focus {
   color: #b5995a;
   text-decoration: none;
 }
 
-/* line 8218, ../sass/_akdn-redesign.scss */
+/* line 8219, ../sass/_akdn-redesign.scss */
 .akmi-related-artists-volume-number {
   margin-top: 20px;
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 8224, ../sass/_akdn-redesign.scss */
+/* line 8225, ../sass/_akdn-redesign.scss */
 .akmi-related-artists-volume-number + .views-field .field-content.pc-title {
   line-height: normal;
   margin: 0 auto 2px;
 }
 
-/* line 8234, ../sass/_akdn-redesign.scss */
+/* line 8235, ../sass/_akdn-redesign.scss */
 .akaa-technicalinfo-download .akaa-technicalinfo-download-link a:after {
   content: ",";
   display: inline-block;
@@ -18419,17 +18599,17 @@ map area {
   color: #000;
   text-decoration: none;
 }
-/* line 8245, ../sass/_akdn-redesign.scss */
+/* line 8246, ../sass/_akdn-redesign.scss */
 .akaa-technicalinfo-download .akaa-technicalinfo-download-link:last-child a:after {
   content: "";
 }
 
-/* line 8254, ../sass/_akdn-redesign.scss */
+/* line 8255, ../sass/_akdn-redesign.scss */
 .file .file-icon {
   width: auto !important;
 }
 
-/* line 8259, ../sass/_akdn-redesign.scss */
+/* line 8260, ../sass/_akdn-redesign.scss */
 .performance-year-title {
   width: 100%;
   margin: -10px 0 20px;
@@ -18441,12 +18621,12 @@ map area {
   text-transform: uppercase;
 }
 
-/* line 8272, ../sass/_akdn-redesign.scss */
+/* line 8273, ../sass/_akdn-redesign.scss */
 .akmi-all-performance-programme-btn {
   margin: 15px auto;
   border-bottom: 1px solid #b69c5f;
 }
-/* line 8276, ../sass/_akdn-redesign.scss */
+/* line 8277, ../sass/_akdn-redesign.scss */
 .akmi-all-performance-programme-btn h2.pane-title {
   position: relative;
   display: block;
@@ -18462,7 +18642,7 @@ map area {
   cursor: pointer;
   line-height: 24px;
 }
-/* line 8293, ../sass/_akdn-redesign.scss */
+/* line 8294, ../sass/_akdn-redesign.scss */
 .akmi-all-performance-programme-btn h2.pane-title:after {
   content: "\e909";
   position: absolute;
@@ -18475,22 +18655,22 @@ map area {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 8308, ../sass/_akdn-redesign.scss */
+/* line 8309, ../sass/_akdn-redesign.scss */
 .akmi-all-performance-programme-btn h2.pane-title:first-letter {
   font-size: 100% !important;
 }
-/* line 8315, ../sass/_akdn-redesign.scss */
+/* line 8316, ../sass/_akdn-redesign.scss */
 .akmi-all-performance-programme-btn.bounce h2.pane-title:after {
   content: "\e907";
 }
-/* line 8321, ../sass/_akdn-redesign.scss */
+/* line 8322, ../sass/_akdn-redesign.scss */
 .akmi-all-performance-programme-btn .view-content {
   display: none;
   background-color: #f4f1e7;
   border-top: 1px solid #b69c5f;
 }
 
-/* line 8328, ../sass/_akdn-redesign.scss */
+/* line 8329, ../sass/_akdn-redesign.scss */
 .akmi-all-performance-programme-row {
   margin: 0 15px;
   padding: 10px 0;
@@ -18500,27 +18680,27 @@ map area {
   text-transform: none;
   border-bottom: 1px solid #b59859;
 }
-/* line 8337, ../sass/_akdn-redesign.scss */
+/* line 8338, ../sass/_akdn-redesign.scss */
 .akmi-all-performance-programme-row:last-child {
   border-bottom: 0;
 }
-/* line 8341, ../sass/_akdn-redesign.scss */
+/* line 8342, ../sass/_akdn-redesign.scss */
 .akmi-all-performance-programme-row a {
   display: block;
   color: #000;
   text-decoration: none;
 }
-/* line 8346, ../sass/_akdn-redesign.scss */
+/* line 8347, ../sass/_akdn-redesign.scss */
 .akmi-all-performance-programme-row a:hover, .akmi-all-performance-programme-row a:focus {
   color: #b5995a;
   text-decoration: none;
 }
-/* line 8351, ../sass/_akdn-redesign.scss */
+/* line 8352, ../sass/_akdn-redesign.scss */
 .akmi-all-performance-programme-row a.active {
   color: #B49759;
 }
 
-/* line 8357, ../sass/_akdn-redesign.scss */
+/* line 8358, ../sass/_akdn-redesign.scss */
 .akmi-event-calender-table {
   display: block;
   margin: 0 auto 30px;
@@ -18528,11 +18708,11 @@ map area {
   clear: both;
   overflow: auto;
 }
-/* line 8366, ../sass/_akdn-redesign.scss */
+/* line 8367, ../sass/_akdn-redesign.scss */
 .akmi-event-calender-table img {
   width: auto;
 }
-/* line 8370, ../sass/_akdn-redesign.scss */
+/* line 8371, ../sass/_akdn-redesign.scss */
 .akmi-event-calender-table .view-header {
   font-size: 18px;
   margin: 10px auto;
@@ -18540,7 +18720,7 @@ map area {
   line-height: 24px;
   text-transform: uppercase;
 }
-/* line 8378, ../sass/_akdn-redesign.scss */
+/* line 8379, ../sass/_akdn-redesign.scss */
 .akmi-event-calender-table table,
 .akmi-event-calender-table th,
 .akmi-event-calender-table td,
@@ -18551,52 +18731,52 @@ map area {
   padding: 0;
   line-height: 1;
 }
-/* line 8389, ../sass/_akdn-redesign.scss */
+/* line 8390, ../sass/_akdn-redesign.scss */
 .akmi-event-calender-table table {
   width: 100%;
   border-top: 4px solid #b59759;
   margin-bottom: 15px;
 }
-/* line 8394, ../sass/_akdn-redesign.scss */
+/* line 8395, ../sass/_akdn-redesign.scss */
 .akmi-event-calender-table table a {
   color: #000;
   font-size: 14px;
   line-height: 18px;
 }
-/* line 8399, ../sass/_akdn-redesign.scss */
+/* line 8400, ../sass/_akdn-redesign.scss */
 .akmi-event-calender-table table a:hover, .akmi-event-calender-table table a:focus {
   color: #b5995a;
   text-decoration: none;
 }
-/* line 8405, ../sass/_akdn-redesign.scss */
+/* line 8406, ../sass/_akdn-redesign.scss */
 .akmi-event-calender-table table td {
   padding: 10px 15px;
 }
-/* line 8409, ../sass/_akdn-redesign.scss */
+/* line 8410, ../sass/_akdn-redesign.scss */
 .akmi-event-calender-table table thead {
   background-color: #f9f9f9;
 }
-/* line 8413, ../sass/_akdn-redesign.scss */
+/* line 8414, ../sass/_akdn-redesign.scss */
 .akmi-event-calender-table table td.active {
   background-color: #f9f9f9;
 }
-/* line 8417, ../sass/_akdn-redesign.scss */
+/* line 8418, ../sass/_akdn-redesign.scss */
 .akmi-event-calender-table table tr.even, .akmi-event-calender-table table tr.odd {
   background-color: #f9f9f9;
 }
-/* line 8421, ../sass/_akdn-redesign.scss */
+/* line 8422, ../sass/_akdn-redesign.scss */
 .akmi-event-calender-table table th {
   border-bottom: 1px solid #b59759;
   padding: 10px 15px;
   text-transform: uppercase;
   min-width: 140px;
 }
-/* line 8427, ../sass/_akdn-redesign.scss */
+/* line 8428, ../sass/_akdn-redesign.scss */
 .akmi-event-calender-table table th a {
   padding: 0;
 }
 
-/* line 8434, ../sass/_akdn-redesign.scss */
+/* line 8435, ../sass/_akdn-redesign.scss */
 .akmi-event-calendar-see-also {
   display: block;
   margin: 0 auto 5px;
@@ -18605,7 +18785,7 @@ map area {
   font-size: 16px;
   line-height: 18px;
 }
-/* line 8442, ../sass/_akdn-redesign.scss */
+/* line 8443, ../sass/_akdn-redesign.scss */
 .akmi-event-calendar-see-also .view-header {
   display: inline-block;
   margin: 0 auto;
@@ -18617,32 +18797,32 @@ map area {
   vertical-align: top;
   text-transform: none;
 }
-/* line 8454, ../sass/_akdn-redesign.scss */
+/* line 8455, ../sass/_akdn-redesign.scss */
 .akmi-event-calendar-see-also .view-content {
   display: inline-block;
   margin: 0 auto;
   padding: 0;
   font-weight: normal;
 }
-/* line 8460, ../sass/_akdn-redesign.scss */
+/* line 8461, ../sass/_akdn-redesign.scss */
 .akmi-event-calendar-see-also .view-content a {
   color: #b5995a;
   font-size: 16px;
   line-height: 18px;
   text-decoration: none;
 }
-/* line 8466, ../sass/_akdn-redesign.scss */
+/* line 8467, ../sass/_akdn-redesign.scss */
 .akmi-event-calendar-see-also .view-content a:hover {
   color: #b5995a;
   text-decoration: underline;
 }
-/* line 8471, ../sass/_akdn-redesign.scss */
+/* line 8472, ../sass/_akdn-redesign.scss */
 .akmi-event-calendar-see-also .view-content a:focus {
   color: #b5995a;
   text-decoration: none;
 }
 
-/* line 8482, ../sass/_akdn-redesign.scss */
+/* line 8483, ../sass/_akdn-redesign.scss */
 .section-content .grid-6 .inside > .hub-page-rural-development:before {
   content: "";
   border-top: 0 none;
@@ -18650,7 +18830,7 @@ map area {
   padding: 0;
 }
 
-/* line 8494, ../sass/_akdn-redesign.scss */
+/* line 8495, ../sass/_akdn-redesign.scss */
 .basic-page-summary .body-summary .basic-page-custom-summary {
   margin: 0 auto;
   padding: 0;
@@ -18658,71 +18838,71 @@ map area {
   font: inherit;
 }
 
-/* line 8503, ../sass/_akdn-redesign.scss */
+/* line 8504, ../sass/_akdn-redesign.scss */
 .akaa-map-left, .akaa-map-right {
   float: left;
   display: inline;
 }
 
-/* line 8509, ../sass/_akdn-redesign.scss */
+/* line 8510, ../sass/_akdn-redesign.scss */
 .akaa-map-left a {
   display: block;
   padding: 0 10px 0 0;
 }
 
-/* line 8515, ../sass/_akdn-redesign.scss */
+/* line 8516, ../sass/_akdn-redesign.scss */
 .akaa-map-right {
   font-size: 14px;
   line-height: 16px;
 }
-/* line 8521, ../sass/_akdn-redesign.scss */
+/* line 8522, ../sass/_akdn-redesign.scss */
 .akaa-map-right .akaa-map-project-title {
   display: block;
   margin-bottom: 3px;
 }
-/* line 8525, ../sass/_akdn-redesign.scss */
+/* line 8526, ../sass/_akdn-redesign.scss */
 .akaa-map-right .akaa-map-project-title a {
   color: #b5995a;
   text-decoration: none;
 }
-/* line 8529, ../sass/_akdn-redesign.scss */
+/* line 8530, ../sass/_akdn-redesign.scss */
 .akaa-map-right .akaa-map-project-title a:hover {
   color: #b5995a;
   text-decoration: underline;
 }
-/* line 8534, ../sass/_akdn-redesign.scss */
+/* line 8535, ../sass/_akdn-redesign.scss */
 .akaa-map-right .akaa-map-project-title a:focus {
   color: #b5995a;
   text-decoration: none;
 }
-/* line 8541, ../sass/_akdn-redesign.scss */
+/* line 8542, ../sass/_akdn-redesign.scss */
 .akaa-map-right .akaa-map-project-city,
 .akaa-map-right .akaa-map-project-country {
   display: block;
   margin-bottom: 3px;
 }
 
-/* line 8551, ../sass/_akdn-redesign.scss */
+/* line 8552, ../sass/_akdn-redesign.scss */
 .country-city-readmore a {
   display: inline;
 }
 
-/* line 8559, ../sass/_akdn-redesign.scss */
+/* line 8560, ../sass/_akdn-redesign.scss */
 .akmi-homepage .grid-social-block_title-facebook .title span:not(.social-icon-image):last-child {
   font-size: 17px;
 }
 
-/* line 8576, ../sass/_akdn-redesign.scss */
+/* line 8577, ../sass/_akdn-redesign.scss */
 .page-press-centre.page-press-centre-press-releases .slide-text, .page-press-centre.page-press-centre-in-the-media .slide-text, .page-press-centre.page-press-centre-publications .slide-text, .page-press-centre.page-press-centre-galleries .slide-text, .page-press-centre.page-press-centre-speeches .slide-text, .page-press-centre.page-press-centre-projects .slide-text, .page-press-centre.page-press-centre-videos .slide-text, .page-press-centre.page-press-centre-events .slide-text, .page-press-centre.page-press-centre-news .slide-text {
   display: none !important;
 }
 
-/* line 8583, ../sass/_akdn-redesign.scss */
+/* line 8584, ../sass/_akdn-redesign.scss */
 .geography-grid-equalise > p {
   display: none;
 }
 
-/* line 8588, ../sass/_akdn-redesign.scss */
+/* line 8589, ../sass/_akdn-redesign.scss */
 .see-also-brochure-wrapper,
 .see-also-brochure-row {
   line-height: 22px;
@@ -18731,84 +18911,84 @@ map area {
   color: #000;
 }
 
-/* line 8602, ../sass/_akdn-redesign.scss */
+/* line 8603, ../sass/_akdn-redesign.scss */
 .see-also-brochure-image {
   margin-bottom: 10px;
 }
 
-/* line 8608, ../sass/_akdn-redesign.scss */
+/* line 8609, ../sass/_akdn-redesign.scss */
 .see-also-brochure-summary {
   margin-bottom: 2px;
   font-size: 16px;
   line-height: 22px;
 }
 
-/* line 8618, ../sass/_akdn-redesign.scss */
+/* line 8619, ../sass/_akdn-redesign.scss */
 .see-also-brochure-more {
   font-size: 16px;
 }
-/* line 8623, ../sass/_akdn-redesign.scss */
+/* line 8624, ../sass/_akdn-redesign.scss */
 .see-also-brochure-more a {
   color: #b49759;
   white-space: nowrap;
   line-height: 16px;
 }
-/* line 8628, ../sass/_akdn-redesign.scss */
+/* line 8629, ../sass/_akdn-redesign.scss */
 .see-also-brochure-more a:before {
   content: "[";
   display: inline-block;
   margin-right: 3px;
 }
-/* line 8634, ../sass/_akdn-redesign.scss */
+/* line 8635, ../sass/_akdn-redesign.scss */
 .see-also-brochure-more a:after {
   content: "]";
   display: inline-block;
   margin-left: 3px;
 }
-/* line 8640, ../sass/_akdn-redesign.scss */
+/* line 8641, ../sass/_akdn-redesign.scss */
 .see-also-brochure-more a:hover {
   text-decoration: underline;
 }
 
-/* line 8652, ../sass/_akdn-redesign.scss */
+/* line 8653, ../sass/_akdn-redesign.scss */
 .see-also-custom .view-header:before {
   margin-top: 50px !important;
 }
-/* line 8657, ../sass/_akdn-redesign.scss */
+/* line 8658, ../sass/_akdn-redesign.scss */
 .see-also-custom .view-content {
   margin-bottom: 0;
 }
-/* line 8662, ../sass/_akdn-redesign.scss */
+/* line 8663, ../sass/_akdn-redesign.scss */
 .see-also-custom .view-content a {
   color: #000;
   text-transform: none;
 }
-/* line 8666, ../sass/_akdn-redesign.scss */
+/* line 8667, ../sass/_akdn-redesign.scss */
 .see-also-custom .view-content a:hover, .see-also-custom .view-content a:focus {
   color: #B49759;
   text-decoration: none;
 }
 
-/* line 8675, ../sass/_akdn-redesign.scss */
+/* line 8676, ../sass/_akdn-redesign.scss */
 .www-body ul {
   margin-left: 0;
   padding: 0;
   list-style-position: outside;
 }
-/* line 8681, ../sass/_akdn-redesign.scss */
+/* line 8682, ../sass/_akdn-redesign.scss */
 .www-body li {
   position: relative;
   left: 1em;
 }
 
-/* line 8689, ../sass/_akdn-redesign.scss */
+/* line 8690, ../sass/_akdn-redesign.scss */
 .fb_hidecomm {
   width: 50px !important;
   height: 20px !important;
   overflow: hidden;
 }
 
-/* line 8696, ../sass/_akdn-redesign.scss */
+/* line 8697, ../sass/_akdn-redesign.scss */
 .akdn-logo-wrap {
   width: 120px;
   height: 55px;
@@ -18816,7 +18996,7 @@ map area {
 }
 
 /* Projects Lightbox captions */
-/* line 8704, ../sass/_akdn-redesign.scss */
+/* line 8705, ../sass/_akdn-redesign.scss */
 #colorbox .slide-text-colorbox,
 #colorbox .image-caption {
   position: relative;
@@ -18829,47 +19009,47 @@ map area {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* line 8718, ../sass/_akdn-redesign.scss */
+/* line 8719, ../sass/_akdn-redesign.scss */
 .basic-page-custom-summary-italics {
   font-style: italic !important;
 }
 
-/* line 8722, ../sass/_akdn-redesign.scss */
+/* line 8723, ../sass/_akdn-redesign.scss */
 .basic-page-custom-summary-bold {
   font-style: normal;
   font-weight: bold !important;
 }
 
-/* line 8728, ../sass/_akdn-redesign.scss */
+/* line 8729, ../sass/_akdn-redesign.scss */
 .custom-video-speech {
   display: block;
   margin-top: 30px;
   float: left;
   clear: both;
 }
-/* line 8734, ../sass/_akdn-redesign.scss */
+/* line 8735, ../sass/_akdn-redesign.scss */
 .custom-video-speech .playerbox {
   height: auto;
 }
 
-/* line 8740, ../sass/_akdn-redesign.scss */
+/* line 8741, ../sass/_akdn-redesign.scss */
 .akmi-custom-header-block {
   margin-bottom: 35px;
 }
 
-/* line 8745, ../sass/_akdn-redesign.scss */
+/* line 8746, ../sass/_akdn-redesign.scss */
 .footer-term-condition-links {
   margin-top: 3px;
   font-size: 13px;
   color: #b2b2b2;
 }
-/* line 8750, ../sass/_akdn-redesign.scss */
+/* line 8751, ../sass/_akdn-redesign.scss */
 .footer-term-condition-links a {
   font-size: 13px;
   color: #b2b2b2;
 }
 
-/* line 8757, ../sass/_akdn-redesign.scss */
+/* line 8758, ../sass/_akdn-redesign.scss */
 [id*='atic_']:not(#atic_facebook):not(#atic_twitter):not(#atic_linkedin),
 [class*='at3winsvc_']:not(.at3winsvc_facebook):not(.at3winsvc_twitter):not(.at3winsvc_linkedin),
 .atm-f,
@@ -18880,16 +19060,16 @@ map area {
   display: none !important;
 }
 
-/* line 8773, ../sass/_akdn-redesign.scss */
+/* line 8774, ../sass/_akdn-redesign.scss */
 .main-navbar .menu-block-wrapper > ul.menu > li:nth-of-type(4) > ul.menu > li:nth-of-type(3) {
   white-space: nowrap;
 }
 
-/* line 8784, ../sass/_akdn-redesign.scss */
+/* line 8785, ../sass/_akdn-redesign.scss */
 .pane-node-body li {
   list-style: none;
 }
-/* line 8787, ../sass/_akdn-redesign.scss */
+/* line 8788, ../sass/_akdn-redesign.scss */
 .pane-node-body li:before {
   content: "\2022";
   position: absolute;
@@ -18897,7 +19077,7 @@ map area {
   font-size: 18px;
 }
 
-/* line 8797, ../sass/_akdn-redesign.scss */
+/* line 8798, ../sass/_akdn-redesign.scss */
 .caption-copyright-wrapper {
   display: block;
   position: absolute;
@@ -18913,7 +19093,7 @@ map area {
   -o-transition: all 0.6s ease;
 }
 
-/* line 8812, ../sass/_akdn-redesign.scss */
+/* line 8813, ../sass/_akdn-redesign.scss */
 .image-caption-wrapper, .image-copytight-wrapper {
   display: block;
   width: 100%;
@@ -18928,40 +19108,40 @@ map area {
   overflow: auto;
 }
 
-/* line 8828, ../sass/_akdn-redesign.scss */
+/* line 8829, ../sass/_akdn-redesign.scss */
 .image-copytight-wrapper {
   font-size: 11px;
 }
 
-/* line 8834, ../sass/_akdn-redesign.scss */
+/* line 8835, ../sass/_akdn-redesign.scss */
 .image-caption-show-hide-block {
   position: relative;
 }
-/* line 8838, ../sass/_akdn-redesign.scss */
+/* line 8839, ../sass/_akdn-redesign.scss */
 .image-caption-show-hide-block:hover .caption-copyright-wrapper {
   bottom: 0;
   opacity: 1;
 }
 
 /* Fixed Text editor Image Upload fieldset */
-/* line 8849, ../sass/_akdn-redesign.scss */
+/* line 8850, ../sass/_akdn-redesign.scss */
 html.js fieldset.collapsed {
   height: auto;
 }
 
 /* AKDN-1392 remove custom header block margin */
-/* line 8859, ../sass/_akdn-redesign.scss */
+/* line 8860, ../sass/_akdn-redesign.scss */
 .pane-custom-header-block .akaa-projectinfo-map-related-info:before {
   margin-top: 0;
 }
 
-/* line 8866, ../sass/_akdn-redesign.scss */
+/* line 8867, ../sass/_akdn-redesign.scss */
 .media-video {
   display: block;
   float: left;
   width: 100%;
 }
-/* line 8870, ../sass/_akdn-redesign.scss */
+/* line 8871, ../sass/_akdn-redesign.scss */
 .media-video object,
 .media-video iframe,
 .media-video embed {
@@ -18969,7 +19149,7 @@ html.js fieldset.collapsed {
   height: 100% !important;
   float: left;
 }
-/* line 8877, ../sass/_akdn-redesign.scss */
+/* line 8878, ../sass/_akdn-redesign.scss */
 .media-video > object, .media-video > iframe, .media-video .media-youtube-outer-wrapper {
   display: block;
   width: 50% !important;
@@ -18977,23 +19157,45 @@ html.js fieldset.collapsed {
   margin: 3px 15px 10px 0;
   float: left;
 }
-/* line 8886, ../sass/_akdn-redesign.scss */
+/* line 8887, ../sass/_akdn-redesign.scss */
 .media-video .media-youtube-preview-wrapper {
   width: 100% !important;
   height: 100% !important;
 }
-/* line 8890, ../sass/_akdn-redesign.scss */
+/* line 8891, ../sass/_akdn-redesign.scss */
 .media-video > p {
   width: auto;
 }
-/* line 8892, ../sass/_akdn-redesign.scss */
+/* line 8893, ../sass/_akdn-redesign.scss */
 .media-video > p span {
   font-size: 16px !important;
 }
 
-/* line 8901, ../sass/_akdn-redesign.scss */
+/* line 8902, ../sass/_akdn-redesign.scss */
 .basic-page-custom-block-right.rem_brdr:before {
   display: none;
+}
+
+/* line 8912, ../sass/_akdn-redesign.scss */
+.page-search .view-solr-site-search .views-row .views-field-title-field a {
+  font-size: 16px;
+  font-weight: normal;
+  color: #000;
+}
+/* line 8916, ../sass/_akdn-redesign.scss */
+.page-search .view-solr-site-search .views-row .views-field-title-field a:hover {
+  text-decoration: none;
+  color: #000;
+}
+/* line 8922, ../sass/_akdn-redesign.scss */
+.page-search .view-solr-site-search .views-row .views-field-search-api-excerpt {
+  font-size: 14px;
+  font-style: italic;
+}
+
+/* line 8935, ../sass/_akdn-redesign.scss */
+.page-search .akdn-filter-js-wrapper .filter-agency-block .item-list li a {
+  text-transform: none;
 }
 
 /*

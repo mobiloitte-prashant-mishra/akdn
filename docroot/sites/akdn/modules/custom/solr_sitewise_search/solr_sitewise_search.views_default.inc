@@ -179,7 +179,6 @@ print $output;
   $handler->display->display_options['fields']['title_field']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['label'] = '';
-  $handler->display->display_options['fields']['title_field']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title_field']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['title_field']['alter']['path'] = '[url]';
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
@@ -188,6 +187,7 @@ print $output;
   $handler->display->display_options['fields']['field_short_title']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['fields']['field_short_title']['field'] = 'field_short_title';
   $handler->display->display_options['fields']['field_short_title']['label'] = '';
+  $handler->display->display_options['fields']['field_short_title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_short_title']['alter']['path'] = '[url]';
   $handler->display->display_options['fields']['field_short_title']['alter']['link_class'] = 'akdn-solr-short-link';
   $handler->display->display_options['fields']['field_short_title']['element_label_colon'] = FALSE;
@@ -217,6 +217,15 @@ print $output;
   $handler->display->display_options['fields']['entity_type']['element_class'] = 'akdn-solr-type-of-node';
   $handler->display->display_options['fields']['entity_type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['entity_type']['link_to_entity'] = 0;
+  /* Field: Search: Excerpt */
+  $handler->display->display_options['fields']['search_api_excerpt']['id'] = 'search_api_excerpt';
+  $handler->display->display_options['fields']['search_api_excerpt']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['fields']['search_api_excerpt']['field'] = 'search_api_excerpt';
+  $handler->display->display_options['fields']['search_api_excerpt']['label'] = '';
+  $handler->display->display_options['fields']['search_api_excerpt']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['search_api_excerpt']['alter']['preserve_tags'] = '<strong>';
+  $handler->display->display_options['fields']['search_api_excerpt']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['search_api_excerpt']['link_to_entity'] = 0;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Search: Relevance */
   $handler->display->display_options['sorts']['search_api_relevance']['id'] = 'search_api_relevance';
@@ -235,6 +244,7 @@ print $output;
     'article' => 'article',
     'award_cycle' => 'award_cycle',
     'page' => 'page',
+    'custom_content' => 'custom_content',
     'event' => 'event',
     'gallery' => 'gallery',
     'geography' => 'geography',
@@ -273,7 +283,17 @@ print $output;
     3 => 0,
   );
   $handler->display->display_options['filters']['search_api_views_fulltext']['fields'] = array(
+    'field_custom_meta_tags' => 'field_custom_meta_tags',
     'search_api_aggregation_1' => 'search_api_aggregation_1',
+  );
+  /* Filter criterion: Exclude from search */
+  $handler->display->display_options['filters']['field_exclude_from_search']['id'] = 'field_exclude_from_search';
+  $handler->display->display_options['filters']['field_exclude_from_search']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['filters']['field_exclude_from_search']['field'] = 'field_exclude_from_search';
+  $handler->display->display_options['filters']['field_exclude_from_search']['ui_name'] = 'Exclude from search';
+  $handler->display->display_options['filters']['field_exclude_from_search']['operator'] = '<>';
+  $handler->display->display_options['filters']['field_exclude_from_search']['value'] = array(
+    1 => '1',
   );
   $handler->display->display_options['path'] = 'search';
 
