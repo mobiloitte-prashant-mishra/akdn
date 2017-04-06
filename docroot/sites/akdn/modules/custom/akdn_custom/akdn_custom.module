@@ -3328,7 +3328,57 @@ function akdn_custom_theme($existing, $type, $theme, $path) {
     'template' => 'templates/simplenews-social-content-creation',
     'arguments' => array('output' => NULL),
   );
+  $themes['views_view_field__solr_site_search__page__title_field'] = array(
+    'template' => 'templates/views-view-field--solr-site-search--page--title-field',
+    'original hook' => 'views_view_fields',
+    'preprocess functions' => array(
+      'template_preprocess',
+      'template_preprocess_views_view_fields',
+      'akdn_custom_preprocess_views_view_field__solr_site_search__page__title_field',
+    ),
+    'arguments' => array('view' => NULL),
+  );  
   return $themes;
+}
+
+/**
+ * Custom preprocess funcation for search page results title
+ */
+function akdn_custom_preprocess_views_view_field__solr_site_search__page__title_field(&$variables) {
+  $row = $variables['row'];
+  $row_node_object = $row->_entity_properties['entity object'];
+  $title = $output = '';
+  if ($row_node_object->type == 'page' || $row_node_object->type == 'custom_content') {
+    if(!empty($row_node_object->field_geography_term) || !empty($row_node_object->field_agency_term)){
+      if(isset($row_node_object->title_field['en'][0]['value']) &&
+          $row_node_object->title_field['en'][0]['value'] != NULL){
+        $title = $row_node_object->title_field['en'][0]['value'];
+      }
+      else{
+        $title = $row_node_object->title;
+      }
+    }
+    else{
+      if(isset($row_node_object->title_field['en'][0]['value']) &&
+          $row_node_object->title_field['en'][0]['value'] != NULL){
+        $title = $row_node_object->title_field['en'][0]['value'];
+      }
+      else{
+        $title = $row_node_object->title;
+      }
+    }
+  }
+  else{
+     if(isset($row_node_object->title_field['en'][0]['value']) &&
+          $row_node_object->title_field['en'][0]['value'] != NULL){
+        $title = $row_node_object->title_field['en'][0]['value'];
+      }
+      else{
+        $title = $row_node_object->title;
+      }
+  }
+  $output .= l($title, 'node/' . $row_node_object->nid);
+  $variables['output'] = $output;
 }
 
 
