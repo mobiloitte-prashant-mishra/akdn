@@ -747,13 +747,14 @@ function akdn_content_types_field_group_info() {
     'label' => 'Focus Area',
     'weight' => '1',
     'children' => array(
-      0 => 'group_deprecated',
-      1 => 'group_fact_sheet_visibiliity',
-      2 => 'group_focus_area_details',
-      3 => 'group_focus_area_project_listing',
-      4 => 'group_focus_area_text',
-      5 => 'group_media',
-      6 => 'group_news_resouces_visible',
+      0 => 'group_home_page_slider',
+      1 => 'group_deprecated',
+      2 => 'group_fact_sheet_visibiliity',
+      3 => 'group_focus_area_details',
+      4 => 'group_focus_area_project_listing',
+      5 => 'group_focus_area_text',
+      6 => 'group_media',
+      7 => 'group_news_resouces_visible',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(
@@ -880,6 +881,33 @@ function akdn_content_types_field_group_info() {
     ),
   );
   $export['group_geography|node|geography|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_home_page_slider|node|focus_area|form';
+  $field_group->group_name = 'group_home_page_slider';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'focus_area';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_focus_area';
+  $field_group->data = array(
+    'label' => 'Home Page Slider',
+    'weight' => '25',
+    'children' => array(
+      0 => 'field_feature_image',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-home-page-slider field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_home_page_slider|node|focus_area|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
