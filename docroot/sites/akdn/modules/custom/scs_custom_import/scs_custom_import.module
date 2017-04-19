@@ -477,6 +477,11 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
                     $temp['0'] = '';
                   }
                 }
+                /**
+                 * AKDN-1448 
+                 * Remove KC URL address for related content
+                 */
+                $temp[1] = preg_replace('/http:\/\/info.akdn.net\//', '', $temp[1]);
                 $node->field_article_link[$available_lang][$i++] = array('title' => $temp['0'], 'url' => $temp['1']);
 
               }
@@ -496,7 +501,11 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
                   if ($temp['0'] == $temp['1']) {
                     $temp['0'] = '';
                   }
-
+                  /**
+                   * AKDN-1448 
+                   * Remove KC URL address for related content
+                   */
+                  $temp[1] = preg_replace('/http:\/\/info.akdn.net\//', '', $temp[1]);
                   $node->field_related_links[$available_lang][$i++] = array('title' => $temp['0'], 'url' => $temp['1']);
                 }
               }
@@ -709,7 +718,11 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
                 if ($temp['0'] == $temp['1']) {
                   $temp['0'] = '';
                 }
-
+                /**
+                 * AKDN-1448 
+                 * Remove KC URL address for related content
+                 */
+                $temp[1] = preg_replace('/http:\/\/info.akdn.net\//', '', $temp[1]);
                 $node->field_event_related[$available_lang][$i++] = array('title' => $temp['0'], 'url' => $temp['1']);
 
               }
@@ -729,6 +742,11 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
               if ($temp['0'] == $temp['1']) {
                 $temp['0'] = '';
               }
+              /**
+               * AKDN-1448 
+               * Remove KC URL address for related content
+               */
+              $temp[1] = preg_replace('/http:\/\/info.akdn.net\//', '', $temp[1]);              
               $node->field_event_links['und'][$i++] = array('title' => $temp['0'], 'url' => $temp['1']);
             }
           }
@@ -893,7 +911,11 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
                 if ($temp['0'] == $temp['1']) {
                   $temp['0'] = '';
                 }
-
+                /**
+                 * AKDN-1448 
+                 * Remove KC URL address for related content
+                 */
+                $temp[1] = preg_replace('/http:\/\/info.akdn.net\//', '', $temp[1]);
                 $node->field_related_speech[$available_lang][$i++] = array('title' => $temp['0'], 'url' => $temp['1']);
               }
             }
@@ -981,6 +1003,11 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
               if ($temp['0'] == $temp['1']) {
                 $temp['0'] = '';
               }
+              /**
+               * AKDN-1448 
+               * Remove KC URL address for related content
+               */
+              $temp[1] = preg_replace('/http:\/\/info.akdn.net\//', '', $temp[1]);              
               $node->field_speech_links['und'][$i++] = array('title' => $temp['0'], 'url' => $temp['1']);
             }
           }
@@ -1226,7 +1253,11 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
                 if ($temp['0'] == $temp['1']) {
                   $temp['0'] = '';
                 }
-
+                /**
+                 * AKDN-1448 
+                 * Remove KC URL address for related content
+                 */
+                $temp[1] = preg_replace('/http:\/\/info.akdn.net\//', '', $temp[1]); 
                 $node->field_publication_purchase_link[$available_lang][$i++] = array('title' => $temp['0'], 'url' => $temp['1']);
 
               }
@@ -1244,7 +1275,11 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
                 if ($temp['0'] == $temp['1']) {
                   $temp['0'] = '';
                 }
-
+                /**
+                 * AKDN-1448 
+                 * Remove KC URL address for related content
+                 */
+                $temp[1] = preg_replace('/http:\/\/info.akdn.net\//', '', $temp[1]); 
                 $node->field_article_link[$available_lang][$i++] = array('title' => $temp['0'], 'url' => $temp['1']);
 
               }
@@ -1263,6 +1298,11 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
               if ($temp['0'] == $temp['1']) {
                 $temp['0'] = '';
               }
+              /**
+               * AKDN-1448 
+               * Remove KC URL address for related content
+               */
+              $temp[1] = preg_replace('/http:\/\/info.akdn.net\//', '', $temp[1]);               
               $node->field_project_links['und'][] = array('title' => $temp['0'], 'url' => $temp['1']);
             }
           }
