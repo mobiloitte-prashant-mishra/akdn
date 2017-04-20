@@ -8905,6 +8905,11 @@ html {
   }
 }
 
+//Hide Press Releases pdf download icon title
+.press-release-detail-type div.pane-node-field-attachment .pane-title{
+    display:none!important;
+}
+
 //search page title
 .page-search {
   .view-solr-site-search {
