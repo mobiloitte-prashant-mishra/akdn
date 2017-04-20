@@ -4090,10 +4090,6 @@ h2.header-name a {
   }
 }
 
-.press-release-detail-type div.pane-node-field-attachment .pane-title{
-    display:none!important;
-}
-
 .press-release-photograps-detail {
   .views_slideshow_pager_field_item {
     width: 33.3333%;
@@ -8906,4 +8902,8 @@ html {
       display: none;
     }
   }
+}
+//Hide Press Releases pdf download icon title
+.press-release-detail-type div.pane-node-field-attachment .pane-title{
+    display:none!important;
 }
