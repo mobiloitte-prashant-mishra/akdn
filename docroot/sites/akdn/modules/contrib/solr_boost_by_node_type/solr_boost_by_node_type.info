@@ -1,0 +1,7 @@
+name = SOLR boost by node type
+description = Boost search API SOLR searches by node type.
+core = 7.x
+configure = admin/config/search/settings
+dependencies[] = search
+dependencies[] = search_api
+dependencies[] = search_api_solr
