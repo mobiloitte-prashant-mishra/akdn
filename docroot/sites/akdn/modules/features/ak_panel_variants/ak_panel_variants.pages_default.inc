@@ -457,19 +457,10 @@ akmi',
   $pane->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'entity_field_value:node:agency:field_featured_content_area',
-        'settings' => array(
-          'field_featured_content_area' => array(
-            'en' => array(
-              0 => array(
-                'value' => '1',
-              ),
-            ),
-          ),
-          'field_featured_content_area_value' => '1',
-        ),
+        'name' => 'akdn_custom.akdn_custom_access_plugin',
+        'settings' => NULL,
         'context' => 'argument_entity_id:node_1',
-        'not' => TRUE,
+        'not' => FALSE,
       ),
     ),
   );
@@ -515,19 +506,10 @@ akmi',
   $pane->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'entity_field_value:node:agency:field_featured_content_area',
-        'settings' => array(
-          'field_featured_content_area' => array(
-            'en' => array(
-              0 => array(
-                'value' => '1',
-              ),
-            ),
-          ),
-          'field_featured_content_area_value' => '1',
-        ),
+        'name' => 'akdn_custom.akdn_custom_access_plugin',
+        'settings' => NULL,
         'context' => 'argument_entity_id:node_1',
-        'not' => FALSE,
+        'not' => TRUE,
       ),
     ),
   );
