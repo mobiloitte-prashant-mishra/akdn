@@ -4157,3 +4157,12 @@ function akdn_custom_form_simplenews_node_form_alter(&$form, &$form_state, &$for
     ));
   }
 }
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function akdn_custom_ctools_plugin_directory($module, $plugin) {
+  if ($module == 'ctools' && !empty($plugin)) {
+    return "plugins/$plugin";
+  }
+}
