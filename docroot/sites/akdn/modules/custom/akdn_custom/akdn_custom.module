@@ -4337,6 +4337,15 @@ function akdn_custom_search_api_solr_documents_alter(array &$documents, SearchAp
   }
 }
 
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function akdn_custom_ctools_plugin_directory($module, $plugin) {
+  if ($module == 'ctools' && !empty($plugin)) {
+    return "plugins/$plugin";
+  }
+}
+
 function akdn_custom_search_api_solr_query_alter(array &$call_args, SearchApiQueryInterface $query) {
 // $node_types = node_type_get_types();
 // foreach ($node_types as $node_type) {
@@ -4377,4 +4386,3 @@ function akdn_custom_search_api_solr_query_alter(array &$call_args, SearchApiQue
 //     }
 //   }
 }
-
