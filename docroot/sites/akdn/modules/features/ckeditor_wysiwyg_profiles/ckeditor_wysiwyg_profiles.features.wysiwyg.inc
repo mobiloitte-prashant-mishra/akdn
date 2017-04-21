@@ -47,7 +47,8 @@ function ckeditor_wysiwyg_profiles_wysiwyg_default_profiles() {
       'acf_allowed_content' => '',
       'css_setting' => 'theme',
       'css_path' => '',
-      'stylesSet' => 'Gold Style=p.basic-page-custom-summary',
+      'stylesSet' => 'Gold Style=p.basic-page-custom-summary
+Video Style=div.media-video',
       'block_formats' => 'h2,h3,h4,h5,h6,p,div,blockquote,pre',
       'advanced__active_tab' => 'edit-css',
       'forcePasteAsPlainText' => 0,
@@ -86,10 +87,12 @@ function ckeditor_wysiwyg_profiles_wysiwyg_default_profiles() {
           'Unlink' => 1,
           'Anchor' => 1,
           'Image' => 1,
+          'Source' => 1,
           'HorizontalRule' => 1,
           'Copy' => 1,
           'Paste' => 1,
           'PasteFromWord' => 1,
+          'ShowBlocks' => 1,
           'RemoveFormat' => 1,
           'Format' => 1,
           'Font' => 1,
@@ -100,7 +103,6 @@ function ckeditor_wysiwyg_profiles_wysiwyg_default_profiles() {
         ),
         'drupal' => array(
           'media' => 1,
-          'linebreaks' => 1,
           'break' => 1,
         ),
       ),
@@ -112,7 +114,9 @@ function ckeditor_wysiwyg_profiles_wysiwyg_default_profiles() {
       'acf_allowed_content' => '',
       'css_setting' => 'theme',
       'css_path' => '/sites/all/themes/akdn/css/global.css',
-      'stylesSet' => 'Gold Style=p.basic-page-custom-summary',
+      'stylesSet' => 'Gold Style=p.basic-page-custom-summary
+Video Style=div.media-video
+Link Arrive=div.paragraph-arrive-link',
       'block_formats' => 'h2,h3,h4,h5,h6,p,div,blockquote,pre',
       'advanced__active_tab' => 'edit-css',
       'forcePasteAsPlainText' => 0,
