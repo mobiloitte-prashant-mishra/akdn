@@ -3570,6 +3570,7 @@ h2.header-name a {
     padding: 0 15px;
     font-size: 16px;
     line-height: 24px;
+    clear: right;
 
     a {
       color: #b49759;
@@ -8900,6 +8901,48 @@ html {
   &.rem_brdr {
     &:before {
       display: none;
+    }
+  }
+}
+
+//Hide Press Releases pdf download icon title
+.press-release-detail-type div.pane-node-field-attachment .pane-title{
+    display:none!important;
+}
+
+//search page title
+.page-search {
+  .view-solr-site-search {
+    .views-row {
+      .views-field-title-field {
+        a {
+        font-size: 16px;
+        font-weight: normal;
+        color: #000;
+          &:hover {
+          text-decoration: none;
+          color: #000;
+          }
+        }
+      }
+      .views-field-search-api-excerpt {
+        font-size: 14px;
+        font-style: italic;
+      }
+    }
+  }
+}
+
+.page-search {
+  .akdn-filter-js-wrapper {
+    .filter-agency-block {
+      .item-list {
+        li {
+          a {
+          text-transform: none;
+          }
+        }
+      }
     }
   }
 }
