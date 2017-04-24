@@ -1263,14 +1263,14 @@ function akdn_basic_page_accordian_style_block() {
       $id = 'accordian-title-' . $i;
       $field_values = entity_revision_load('field_collection_item', $values['revision_id']);
       $output .= '<div id = "' . $id . '" class = "basic-page-accordian-rows">';
+      $output .= '<div class = accordian-image-rel-wrapper>';
       if (!empty($field_values->field_basic_page_accordian_image)) {
         $image = reset($field_values->field_basic_page_accordian_image);
         $lang_caption = key($image[0]['field_image_caption']);
         $image_caption = $image[0]['field_image_caption'][$lang_caption][0]['value'];
         $lang_copyright = key($image[0]['field_image_copytight']);
         $image_copyright = $image[0]['field_image_copytight'][$lang_copyright][0]['value'];
-        $related_links = reset($field_values->field_basic_accordian_rel_links);
-        $output .= '<div class = accordian-image-rel-wrapper>';
+        $related_links = reset($field_values->field_basic_accordian_rel_links);        
         $accordian_image = array(
           'style_name' => 'social_sharing_image',
           'path' => $image[0]['uri'],
