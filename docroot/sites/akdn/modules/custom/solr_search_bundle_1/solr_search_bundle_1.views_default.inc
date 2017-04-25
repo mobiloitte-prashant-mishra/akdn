@@ -462,6 +462,26 @@ if (function_exists(\'custom_solr_get_what_new_header\')) {
 print $output;
 ?>';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Link */
+  $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['label'] = '';
+  $handler->display->display_options['fields']['view_node']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_node']['text'] = 'Read';
+  $handler->display->display_options['fields']['view_node']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['view_node']['node_in_colorbox_height'] = '600';
+  $handler->display->display_options['fields']['view_node']['node_in_colorbox_rel'] = '';
+  /* Field: Indexed Node: Node ID */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['separator'] = '';
+  $handler->display->display_options['fields']['nid']['link_to_entity'] = 0;
   /* Field: Indexed Node: Image */
   $handler->display->display_options['fields']['field_speech_image']['id'] = 'field_speech_image';
   $handler->display->display_options['fields']['field_speech_image']['table'] = 'search_api_index_akdn';
@@ -510,7 +530,7 @@ print $output;
   $handler->display->display_options['fields']['field_short_title']['label'] = '';
   $handler->display->display_options['fields']['field_short_title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_short_title']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_short_title']['alter']['path'] = '[url]';
+  $handler->display->display_options['fields']['field_short_title']['alter']['path'] = 'node/[nid]';
   $handler->display->display_options['fields']['field_short_title']['alter']['link_class'] = 'akdn-solr-short-link';
   $handler->display->display_options['fields']['field_short_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_short_title']['type'] = 'text_plain';
@@ -527,7 +547,7 @@ print $output;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="media-desc">
 <div class="date">[field_publish_date]</div>
 <div class="title">[field_short_title] 
-<div class="read-more"><a href="[url] ">Read</a></div>
+<div class="read-more">[view_node]</div>
 </div>
 </div>';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
@@ -719,6 +739,25 @@ if (function_exists(\'custom_solr_get_what_new_header\')) {
 print $output;
 ?>';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Link */
+  $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['label'] = '';
+  $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_node']['text'] = 'Read';
+  $handler->display->display_options['fields']['view_node']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['view_node']['node_in_colorbox_height'] = '600';
+  $handler->display->display_options['fields']['view_node']['node_in_colorbox_rel'] = '';
+  /* Field: Indexed Node: Node ID */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['separator'] = '';
+  $handler->display->display_options['fields']['nid']['link_to_entity'] = 0;
   /* Field: Indexed Node: Article Image */
   $handler->display->display_options['fields']['field_article_img']['id'] = 'field_article_img';
   $handler->display->display_options['fields']['field_article_img']['table'] = 'search_api_index_akdn';
@@ -767,7 +806,7 @@ print $output;
   $handler->display->display_options['fields']['field_short_title']['label'] = '';
   $handler->display->display_options['fields']['field_short_title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_short_title']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_short_title']['alter']['path'] = '[url]';
+  $handler->display->display_options['fields']['field_short_title']['alter']['path'] = 'node/[nid]';
   $handler->display->display_options['fields']['field_short_title']['alter']['link_class'] = 'akdn-solr-short-link';
   $handler->display->display_options['fields']['field_short_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_short_title']['type'] = 'text_plain';
@@ -779,7 +818,7 @@ print $output;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="media-desc">
 <div class="date">[field_publish_date]</div>
 <div class="title">[field_short_title] 
-<div class="read-more"><a href="[url] ">Read</a></div>
+<div class="read-more">[view_node]</div>
 </div>
 </div>';
   $handler->display->display_options['fields']['nothing']['alter']['path'] = '[url]';
@@ -1157,6 +1196,15 @@ print $output;
   $handler->display->display_options['fields']['url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['url']['display_as_link'] = FALSE;
   $handler->display->display_options['fields']['url']['link_to_entity'] = 0;
+  /* Field: Indexed Node: Node ID */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['separator'] = '';
+  $handler->display->display_options['fields']['nid']['link_to_entity'] = 0;
   /* Field: Indexed Node: Image */
   $handler->display->display_options['fields']['field_publication_image']['id'] = 'field_publication_image';
   $handler->display->display_options['fields']['field_publication_image']['table'] = 'search_api_index_akdn';
@@ -1175,10 +1223,21 @@ print $output;
   $handler->display->display_options['fields']['field_short_title']['field'] = 'field_short_title';
   $handler->display->display_options['fields']['field_short_title']['label'] = '';
   $handler->display->display_options['fields']['field_short_title']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_short_title']['alter']['path'] = '[url]';
+  $handler->display->display_options['fields']['field_short_title']['alter']['path'] = 'node/[nid]';
   $handler->display->display_options['fields']['field_short_title']['alter']['link_class'] = 'akdn-solr-short-link';
   $handler->display->display_options['fields']['field_short_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_short_title']['type'] = 'text_plain';
+  /* Field: Content: Link */
+  $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['label'] = '';
+  $handler->display->display_options['fields']['view_node']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_node']['text'] = 'Read';
+  $handler->display->display_options['fields']['view_node']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['view_node']['node_in_colorbox_height'] = '600';
+  $handler->display->display_options['fields']['view_node']['node_in_colorbox_rel'] = '';
   /* Field: Indexed Node: File */
   $handler->display->display_options['fields']['field_publication_file']['id'] = 'field_publication_file';
   $handler->display->display_options['fields']['field_publication_file']['table'] = 'search_api_index_akdn';
@@ -1197,7 +1256,7 @@ print $output;
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<a href="[url]"> Read </a>| [field_publication_file]';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[view_node] | [field_publication_file]';
   $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'akdn-solr-more-link';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
@@ -1719,10 +1778,11 @@ print $content;
     t('Press Center: Recent Speeches'),
     t('Speeches and Interviews'),
     t('Solr Recent Speeches'),
+    t('Read'),
     t('<div class="media-desc">
 <div class="date">[field_publish_date]</div>
 <div class="title">[field_short_title] 
-<div class="read-more"><a href="[url] ">Read</a></div>
+<div class="read-more">[view_node]</div>
 </div>
 </div>'),
     t('Speeches quotes'),
@@ -1743,7 +1803,6 @@ print $content;
 </div>
 </div>'),
     t('In The Media'),
-    t('Read'),
     t('<div class="media-desc">
 <div class="date">[field_publish_date] </div>
 <div class="source">[field_media_source]</div>
@@ -1756,7 +1815,7 @@ print $content;
     t('Press center - publication'),
     t('Publications'),
     t('Download'),
-    t('<a href="[url]"> Read </a>| [field_publication_file]'),
+    t('[view_node] | [field_publication_file]'),
     t('In media Latest'),
     t('What\'s New'),
     t('More'),
