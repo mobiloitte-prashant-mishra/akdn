@@ -2920,6 +2920,26 @@ function akdn_custom_node_load($nodes, $types) {
         unset($node->field_tags);
       }
     }
+    elseif($node->type == 'page' || $node->type == 'custom_content'){
+      //AKDN-1434-Create-dynamic-link-of-a-paragraph
+      if (isset($arg[0]) && $arg[0] == 'node' && isset($arg[1]) && is_numeric($arg[1]) && !isset($arg[2])) {
+        $url_nid = $arg[1];
+        if(!empty ($nodes[$url_nid])) {
+          global $user;
+          $user_anonymous = FALSE;
+          if(in_array('anonymous user', $user->roles)){
+            $user_anonymous = TRUE;
+          }
+          
+          $node_alias_url = ltrim(url("node/{$url_nid}"), "/");
+          
+          drupal_add_js(array('node_alias_url' => $node_alias_url), 'setting');
+          drupal_add_js(array('user_anonymous' => $user_anonymous), 'setting');
+          drupal_add_js(drupal_get_path('module', 'akdn_custom') . '/js/jquery.malihu.PageScroll2id.min.js');
+          drupal_add_js(drupal_get_path('module', 'akdn_custom') . '/js/paragraph_arrive_link.js');
+        } 
+      }
+    }
   }
 }
 
