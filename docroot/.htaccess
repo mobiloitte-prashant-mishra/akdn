@@ -123,19 +123,19 @@ DirectoryIndex index.php index.html index.htm
   # uncomment the following line:
   # RewriteBase /
 
-  # Pass all requests not referring directly to files in the filesystem to
-  # index.php. Clean URLs are handled in drupal_environment_initialize().
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_URI} !=/favicon.ico
-  RewriteRule ^ index.php [L]
-
   # Proxy redirect everything from "nic.akdn, nic.ismaili, nic.agakhan, nic.imamat" to "www.akdn.org/gtld"
   RewriteCond %{HTTP_HOST} ^(www\.)?nic\.akdn$ [NC,OR]
   RewriteCond %{HTTP_HOST} ^(www\.)?nic\.ismaili$ [NC,OR]
   RewriteCond %{HTTP_HOST} ^(www\.)?nic\.agakhan$ [NC,OR]
   RewriteCond %{HTTP_HOST} ^(www\.)?nic\.imamat$
   RewriteRule (.*) http://www.akdn.org/gtld/$1 [P,L]
+  
+  # Pass all requests not referring directly to files in the filesystem to
+  # index.php. Clean URLs are handled in drupal_environment_initialize().
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} !=/favicon.ico
+  RewriteRule ^ index.php [L]
 
   # Rules to correctly serve gzip compressed CSS and JS files.
   # Requires both mod_rewrite and mod_headers to be enabled.
