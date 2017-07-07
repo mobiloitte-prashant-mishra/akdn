@@ -124,11 +124,11 @@ DirectoryIndex index.php index.html index.htm
   # RewriteBase /
 
   # Proxy redirect everything from "nic.akdn, nic.ismaili, nic.agakhan, nic.imamat" to "www.akdn.org/gtld"
-  RewriteCond %{HTTP_HOST} ^(www\.)?nic\.akdn$ [NC,OR]
-  RewriteCond %{HTTP_HOST} ^(www\.)?nic\.ismaili$ [NC,OR]
-  RewriteCond %{HTTP_HOST} ^(www\.)?nic\.agakhan$ [NC,OR]
-  RewriteCond %{HTTP_HOST} ^(www\.)?nic\.imamat$
-  RewriteRule (.*) http://www.akdn.org/gtld/$1 [P,L]
+	RewriteCond %{HTTP_HOST} ^(www\.)?nic\.akdn$ [NC,OR]
+	RewriteCond %{HTTP_HOST} ^(www\.)?nic\.ismaili$ [NC,OR]
+	RewriteCond %{HTTP_HOST} ^(www\.)?nic\.agakhan$ [NC,OR]
+	RewriteCond %{HTTP_HOST} ^(www\.)?nic\.imamat$
+	RewriteRule ^(.*)$ http://www.akdn.org/gtld/$1 [L,R=301]
   
   # Pass all requests not referring directly to files in the filesystem to
   # index.php. Clean URLs are handled in drupal_environment_initialize().
