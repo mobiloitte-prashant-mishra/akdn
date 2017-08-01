@@ -523,6 +523,39 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
   if ($form['#id'] == 'views-exposed-form-akaa-projects-page') {
     $form['view-all'] = array('#markup' => '<a id="view-all-projects" href="/architecture/projects">View All Projects</a>');
   }
+  
+  // AKDN internal News page Config Block content type
+  if ($form_id == 'config_block_node_form') {
+    $language_code = 'und';
+    $form['field_announcement_title']['#states'] = array(
+      'visible' => array(
+        ":input[name='field_block_type[{$language_code}]']" => array('value' => 'Announcement'),
+      ),
+      'required' => array(
+        ":input[name='field_block_type[{$language_code}]']" => array('value' => 'Announcement'),
+      ),
+    );
+    $form['field_short_title']['#states'] = array(
+      'visible' => array(
+        ":input[name='field_block_type[{$language_code}]']" => array('value' => 'Announcement'),
+      ),
+    );
+    $form['field_image']['#states'] = array(
+      'visible' => array(
+        ":input[name='field_block_type[{$language_code}]']" => array('value' => 'Announcement'),
+      ),
+    );    
+    $form['body']['#states'] = array(
+      'visible' => array(
+        ":input[name='field_block_type[{$language_code}]']" => array('value' => 'Announcement'),
+      ),
+    );  
+    $form['field_find_out_more_link']['#states'] = array(
+      'visible' => array(
+        ":input[name='field_block_type[{$language_code}]']" => array('value' => 'Announcement'),
+      ),
+    );            
+  }
 }
 /**
  * Implementes hook_form_FORM_ID_alter().
@@ -662,6 +695,18 @@ function akdn_custom_block_info() {
     'info' => t('AKDN Custom V Architecture'),
     'cache' => DRUPAL_NO_CACHE,
     ),
+    'akdn_internal_news_page_header' => array(
+      'info' => t('AKDN internal News page header'),
+    ), 
+    'akdn_internal_news_page_footer' => array(
+      'info' => t('AKDN internal News page footer'),
+    ),
+    'akdn_search_internal_news_page' => array(
+      'info' => t('AKDN Search internal News page'),
+    ),
+    'akdn_internal_news_config_block' => array(
+      'info' => t('AKDN internal News page Configuration Blocks'),
+    ),     
   );
   return $blocks;
 }
@@ -670,8 +715,8 @@ function akdn_custom_block_info() {
  * Implements hook_block_view().
  */
 function akdn_custom_block_view($delta = '') {
+  $arg = arg();
   $block = array();
-
   switch ($delta) {
     case 'ac_node_translations':
       if ($links = _akdn_custom_lang_links()) {
@@ -776,8 +821,54 @@ function akdn_custom_block_view($delta = '') {
       $block['subject'] = t('AKDN Custom Video Player Architecture');
       $block['content'] = akdn_custom_v_p_for_archi();
       break;
-  }
+    case 'akdn_search_internal_news_page':
+      $block['subject'] = '';
+      $block['content'] = drupal_get_form('akdn_search_forms_internal_news_page');
+      break;    
+    case 'akdn_internal_news_page_header':
+      $block['subject'] = $current_date = $sub_title = '';
+      global $language;
+      $block_content = NULL;
+      if ((isset($arg[0]) && $arg[0] == 'node') && (isset($arg[1]) && is_numeric($arg[1]))) {
+        $node_obj = &drupal_static('akdn_internal_news_page_node');
+        if(!$node_obj){
+          $node_obj = node_load($arg[1]);
+        }
+        if(isset($node_obj->field_sub_title[$language->language][0]['value'])){
+          $sub_title = "<h3> {$node_obj->field_sub_title[$language->language][0]['value']} </h3>";
+        }
+      }
+      if($sub_title){
+        $current_date .= '|';
+      }
+      $current_date .= "<span class='current-date'>" . format_date(time(), 'custom', 'l, jS F Y', 'Europe/Paris') . "</span>";
+      
+      $block_content = "<div class='sub_title_date'>{$sub_title}{$current_date}</div>";
 
+      $block['content'] = $block_content;
+      break;   
+    case 'akdn_internal_news_page_footer':
+      $block['subject'] = '';
+      $left = $right = $content = '';
+      $left = "<span class='internal-news-page-footer-left'>" . "&copy; " . format_date(time(), 'custom', 'Y', 'Europe/Paris') . ' ' . t('Aga Khan Development Network. All rights reserved.') . "</span>";
+      $right = "<span class='internal-news-page-footer-right'><h5>" . t('More news on') . "</h5>". l('www.AKDN.org', 'http://www.akdn.org/' , array('attributes' => array('title' => 'www.AKDN.org'))) . "</span>";
+      $content = "<div class='internal-news-page-footer'>{$left}{$right}</div>";
+      $block['content'] = $content;
+      break;
+    case 'akdn_internal_news_config_block':
+      $block['subject'] = '';
+      if ((isset($arg[0]) && $arg[0] == 'node') && (isset($arg[1]) && is_numeric($arg[1]))) {
+        $node_obj = &drupal_static('akdn_internal_news_page_node');
+        if(!$node_obj){
+          $node_obj = node_load($arg[1]);
+        }
+        $block['content'] = config_blocks_display($node_obj);
+      }
+      else {
+        $block['content'] = NULL;
+      }
+      break;
+  }
   return $block;
 }
 
@@ -4176,4 +4267,71 @@ function akdn_custom_form_simplenews_node_form_alter(&$form, &$form_state, &$for
       'toc' => empty($form_state['input']['scs_toc']) ? FALSE : TRUE,
     ));
   }
+}
+
+/**
+ * AKDN Search for internal News page with Announcement
+ */
+function akdn_search_forms_internal_news_page($form, &$form_state) {
+  $form['search'] = array(
+    '#type' => 'textfield',
+    '#attributes' => array(
+      'placeholder' => t('Search AKDN website'),
+      'class' => array('form-control'),
+    ),
+    '#size' => 15,
+  );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Go'),
+    '#submit' => array('akdn_search_forms_internal_news_page_submit'),
+  );
+  return $form;
+}
+
+/**
+ * AKDN Search for internal News page with Announcement block submit handler.
+ */
+function akdn_search_forms_internal_news_page_submit($form, &$form_state) {
+  $form_state['redirect'] = array(
+    'search',
+    array(
+      'query' => array('text' => $form_state['values']['search']),
+    )
+  );
+}
+
+/**
+ * AKDN internal News page Configuration Blocks
+ */
+function config_blocks_display($node_obj) {
+  $return_str = '';
+  $cb_ids = field_get_items('node', $node_obj, 'field_config_block_reference', LANGUAGE_NONE);
+  foreach ($cb_ids as $key => $value) {
+    $block_type = get_config_block_type($value['target_id']);
+    switch ($block_type) {
+      case 'Announcement':
+        $view_obj = views_get_view('akdn_internal_news_page_announcement');
+        $view_obj->set_display('block');
+        $view_obj->set_arguments(array($value['target_id']));
+        $view_obj->execute();
+        $return_str .= $view_obj->render();
+        break;
+    }
+  }
+  return $return_str;
+}
+
+/**
+ * get block type like About, Featured Story etc.
+ * @param type $nid
+ * @return type
+ */
+function get_config_block_type($nid) {
+  $block_type_value = db_query("SELECT field_block_type_value FROM {field_data_field_block_type} 
+                                                    WHERE entity_type = 'node' 
+                                                    AND bundle = 'config_block'
+                                                    AND entity_id = :nid", array(':nid' => $nid))->fetchField();
+
+  return $block_type_value;
 }

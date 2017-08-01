@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AKDN internal News page feature.
+ */
+
+include_once 'akdn_internal_news_page.features.inc';
