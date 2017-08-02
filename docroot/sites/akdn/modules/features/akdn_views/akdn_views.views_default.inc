@@ -13281,6 +13281,11 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['field_facebook_picture']['table'] = 'field_data_field_facebook_picture';
   $handler->display->display_options['fields']['field_facebook_picture']['field'] = 'field_facebook_picture';
   $handler->display->display_options['fields']['field_facebook_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_facebook_picture']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_facebook_picture']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_facebook_picture']['alter']['path'] = 'https://www.facebook.com/akdn';
+  $handler->display->display_options['fields']['field_facebook_picture']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['field_facebook_picture']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['field_facebook_picture']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_facebook_picture']['element_class'] = 'grid-social-block_picture grid-social-block_picture-facebook';
   $handler->display->display_options['fields']['field_facebook_picture']['element_label_colon'] = FALSE;
@@ -13349,12 +13354,12 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="social_sharing">
-<span>
-<a href="[field_facebook_link_1]" target="_blank">Read</a>
-</span>
-<div class="fb-like" data-href="https://www.facebook.com/akdn" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
-<div class="fb-share-button" data-href="[field_facebook_link_1]" data-layout="button"></div>
-</div>';
+  <span>
+  <a href="[field_facebook_link_1]" target="_blank">Read</a>
+  </span>
+  <div class="fb-like" data-href="https://www.facebook.com/akdn" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+  <div class="fb-share-button" data-href="[field_facebook_link_1]" data-layout="button"></div>
+  </div>';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_class'] = 'grid-social-block_medialink grid-social-block_medialink-facebook';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -13402,6 +13407,11 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['field_tweet_media']['table'] = 'field_data_field_tweet_media';
   $handler->display->display_options['fields']['field_tweet_media']['field'] = 'field_tweet_media';
   $handler->display->display_options['fields']['field_tweet_media']['label'] = '';
+  $handler->display->display_options['fields']['field_tweet_media']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_tweet_media']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_tweet_media']['alter']['path'] = 'https://twitter.com/akdn';
+  $handler->display->display_options['fields']['field_tweet_media']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['field_tweet_media']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['field_tweet_media']['element_class'] = 'tweet-media';
   $handler->display->display_options['fields']['field_tweet_media']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_tweet_media']['hide_empty'] = TRUE;
@@ -13479,11 +13489,11 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="social_sharing">
-<span>
-<a href="https://twitter.com/share" class="twitter-share-button" data-url="[field_tweet_link]" data-count="none">Tweet</a>
-</span>
-<span><a href="https://twitter.com/akdn" class="twitter-follow-button" data-show-count="false">Follow @akdn</a></span>
-</div>';
+  <span>
+  <a href="https://twitter.com/share" class="twitter-share-button" data-url="[field_tweet_link]" data-count="none">Tweet</a>
+  </span>
+  <span><a href="https://twitter.com/akdn" class="twitter-follow-button" data-show-count="false">Follow @akdn</a></span>
+  </div>';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_class'] = 'grid-social-block_medialink grid-social-block_medialink-twitter';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -13612,8 +13622,8 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="social_sharing">
-<span class="play-video" id="[field_youtube_external_id]"><a class="colorbox-inline" href="https://www.youtube.com/embed/[field_youtube_external_id]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0">Play</a></span>
-</div>';
+  <span class="play-video" id="[field_youtube_external_id]"><a class="colorbox-inline" href="https://www.youtube.com/embed/[field_youtube_external_id]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0">Play</a></span>
+  </div>';
   $handler->display->display_options['fields']['nothing']['alter']['preserve_tags'] = '<iframe><span>';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_class'] = 'grid-social-block_medialink grid-social-block_medialink-youtube';
@@ -13740,12 +13750,12 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="social_sharing">
-<span>
-<a href="[field_facebook_link_1]" target="_blank">Read</a>
-</span>
-<div class="fb-like" data-href="https://www.facebook.com/AgaKhanAward" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
-<div class="fb-share-button" data-href="[field_facebook_link_1]" data-layout="button"></div>
-</div>';
+  <span>
+  <a href="[field_facebook_link_1]" target="_blank">Read</a>
+  </span>
+  <div class="fb-like" data-href="https://www.facebook.com/AgaKhanAward" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+  <div class="fb-share-button" data-href="[field_facebook_link_1]" data-layout="button"></div>
+  </div>';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_class'] = 'grid-social-block_medialink grid-social-block_medialink-facebook';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -13882,8 +13892,8 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="social_sharing">
-<span class="play-video" id="[field_youtube_external_id]"><a class="colorbox-inline" href="https://www.youtube.com/embed/[field_youtube_external_id]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0">Play</a></span>
-</div>';
+  <span class="play-video" id="[field_youtube_external_id]"><a class="colorbox-inline" href="https://www.youtube.com/embed/[field_youtube_external_id]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0">Play</a></span>
+  </div>';
   $handler->display->display_options['fields']['nothing']['alter']['preserve_tags'] = '<iframe><span>';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_class'] = 'grid-social-block_medialink grid-social-block_medialink-youtube';
@@ -14019,12 +14029,12 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="social_sharing">
-<span>
-<a href="[field_facebook_link_1]" target="_blank">Read</a>
-</span>
-<div class="fb-like" data-href="https://www.facebook.com/AgaKhanMusicInitiative" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
-<div class="fb-share-button" data-href="[field_facebook_link_1]" data-layout="button"></div>
-</div>';
+  <span>
+  <a href="[field_facebook_link_1]" target="_blank">Read</a>
+  </span>
+  <div class="fb-like" data-href="https://www.facebook.com/AgaKhanMusicInitiative" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+  <div class="fb-share-button" data-href="[field_facebook_link_1]" data-layout="button"></div>
+  </div>';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_class'] = 'grid-social-block_medialink grid-social-block_medialink-facebook';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -14140,11 +14150,11 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="social_sharing">
-<span>
-<a href="https://twitter.com/share" class="twitter-share-button" data-url="[field_tweet_link]" data-count="none">Tweet</a>
-</span>
-<span><a href="https://twitter.com/agakhanmusic" class="twitter-follow-button" data-show-count="false">Follow @agakhanmusic</a></span>
-</div>';
+  <span>
+  <a href="https://twitter.com/share" class="twitter-share-button" data-url="[field_tweet_link]" data-count="none">Tweet</a>
+  </span>
+  <span><a href="https://twitter.com/agakhanmusic" class="twitter-follow-button" data-show-count="false">Follow @agakhanmusic</a></span>
+  </div>';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_class'] = 'grid-social-block_medialink grid-social-block_medialink-twitter';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -14272,8 +14282,8 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="social_sharing">
-<span class="play-video" id="[field_youtube_external_id]"><a class="colorbox-inline" href="https://www.youtube.com/embed/[field_youtube_external_id]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0">Play</a></span>
-</div>';
+  <span class="play-video" id="[field_youtube_external_id]"><a class="colorbox-inline" href="https://www.youtube.com/embed/[field_youtube_external_id]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0">Play</a></span>
+  </div>';
   $handler->display->display_options['fields']['nothing']['alter']['preserve_tags'] = '<iframe><span>';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_class'] = 'grid-social-block_medialink grid-social-block_medialink-youtube';
@@ -14326,6 +14336,11 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['field_instagram_picture']['table'] = 'field_data_field_instagram_picture';
   $handler->display->display_options['fields']['field_instagram_picture']['field'] = 'field_instagram_picture';
   $handler->display->display_options['fields']['field_instagram_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_instagram_picture']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_instagram_picture']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_instagram_picture']['alter']['path'] = 'https://www.instagram.com/akdn/';
+  $handler->display->display_options['fields']['field_instagram_picture']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['field_instagram_picture']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['field_instagram_picture']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_instagram_picture']['element_class'] = 'grid-social-block_picture grid-social-block_picture-instagram';
   $handler->display->display_options['fields']['field_instagram_picture']['element_label_colon'] = FALSE;
@@ -14413,57 +14428,57 @@ print file_create_url($row->uri);
     t('Social Facebook Feeds Home Page'),
     t('<div class="title"><span class="social-icon-image"></span>Aga Khan Development Network <span>facebook.com/AKDN</span></div>'),
     t('<div class="social_sharing">
-<span>
-<a href="[field_facebook_link_1]" target="_blank">Read</a>
-</span>
-<div class="fb-like" data-href="https://www.facebook.com/akdn" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
-<div class="fb-share-button" data-href="[field_facebook_link_1]" data-layout="button"></div>
-</div>'),
+  <span>
+  <a href="[field_facebook_link_1]" target="_blank">Read</a>
+  </span>
+  <div class="fb-like" data-href="https://www.facebook.com/akdn" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+  <div class="fb-share-button" data-href="[field_facebook_link_1]" data-layout="button"></div>
+  </div>'),
     t('Twitter Feeds Home Page'),
     t('<div class="title"><span class="social-icon-image"></span>Aga Khan Development Network <span>@AKDN</span></div>'),
     t('<div class="social_sharing">
-<span>
-<a href="https://twitter.com/share" class="twitter-share-button" data-url="[field_tweet_link]" data-count="none">Tweet</a>
-</span>
-<span><a href="https://twitter.com/akdn" class="twitter-follow-button" data-show-count="false">Follow @akdn</a></span>
-</div>'),
+  <span>
+  <a href="https://twitter.com/share" class="twitter-share-button" data-url="[field_tweet_link]" data-count="none">Tweet</a>
+  </span>
+  <span><a href="https://twitter.com/akdn" class="twitter-follow-button" data-show-count="false">Follow @akdn</a></span>
+  </div>'),
     t('Youtube Feeds Home page'),
     t('[field_youtube_embed] '),
     t('[field_youtube_picture-title]'),
     t('<span class="youtube-play-button"></span>'),
     t('<div class="title"><span class="social-icon-image"></span>[title]</div>'),
     t('<div class="social_sharing">
-<span class="play-video" id="[field_youtube_external_id]"><a class="colorbox-inline" href="https://www.youtube.com/embed/[field_youtube_external_id]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0">Play</a></span>
-</div>'),
+  <span class="play-video" id="[field_youtube_external_id]"><a class="colorbox-inline" href="https://www.youtube.com/embed/[field_youtube_external_id]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0">Play</a></span>
+  </div>'),
     t('AKAA Social Facebook '),
     t('<img typeof="foaf:Image" src="/sites/akdn/themes/akdn/images/akaa-fb-default.jpg" width="240" height="360" alt="">'),
     t('<div class="title"><span class="social-icon-image"></span>Aga Khan Award for Architecture <span>facebook.com/AgaKhanAward</span></div>'),
     t('<div class="social_sharing">
-<span>
-<a href="[field_facebook_link_1]" target="_blank">Read</a>
-</span>
-<div class="fb-like" data-href="https://www.facebook.com/AgaKhanAward" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
-<div class="fb-share-button" data-href="[field_facebook_link_1]" data-layout="button"></div>
-</div>'),
+  <span>
+  <a href="[field_facebook_link_1]" target="_blank">Read</a>
+  </span>
+  <div class="fb-like" data-href="https://www.facebook.com/AgaKhanAward" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+  <div class="fb-share-button" data-href="[field_facebook_link_1]" data-layout="button"></div>
+  </div>'),
     t('AKAA youtube home page'),
     t('AKAA Youtube Home Page'),
     t('AKMI Facebook Home Page'),
     t('<div class="title"><span class="social-icon-image"></span>Aga Khan Music Initiative <span>facebook.com/AgaKhanMusicInitiative</span></div>'),
     t('<div class="social_sharing">
-<span>
-<a href="[field_facebook_link_1]" target="_blank">Read</a>
-</span>
-<div class="fb-like" data-href="https://www.facebook.com/AgaKhanMusicInitiative" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
-<div class="fb-share-button" data-href="[field_facebook_link_1]" data-layout="button"></div>
-</div>'),
+  <span>
+  <a href="[field_facebook_link_1]" target="_blank">Read</a>
+  </span>
+  <div class="fb-like" data-href="https://www.facebook.com/AgaKhanMusicInitiative" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+  <div class="fb-share-button" data-href="[field_facebook_link_1]" data-layout="button"></div>
+  </div>'),
     t('AKMI Twitter Home Page'),
     t('<div class="title"><span class="social-icon-image"></span>The Aga Khan Music Initiative<span>@agakhanmusic</span></div>'),
     t('<div class="social_sharing">
-<span>
-<a href="https://twitter.com/share" class="twitter-share-button" data-url="[field_tweet_link]" data-count="none">Tweet</a>
-</span>
-<span><a href="https://twitter.com/agakhanmusic" class="twitter-follow-button" data-show-count="false">Follow @agakhanmusic</a></span>
-</div>'),
+  <span>
+  <a href="https://twitter.com/share" class="twitter-share-button" data-url="[field_tweet_link]" data-count="none">Tweet</a>
+  </span>
+  <span><a href="https://twitter.com/agakhanmusic" class="twitter-follow-button" data-show-count="false">Follow @agakhanmusic</a></span>
+  </div>'),
     t('AKMI Youtube Home page'),
     t('Instagram Feeds Home Page'),
   );
