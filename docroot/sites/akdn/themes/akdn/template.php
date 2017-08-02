@@ -37,7 +37,11 @@ if (!empty($vars['node']) && $vars['node']->type == 'page' || $vars['node']->typ
   }
   //drupal_add_js(path_to_theme() . '/js/jquery.touchSwipe.min.js');
   // dpm($variables['node']);
-
+  
+  //New page tpl for AKDN internal News page nodes
+  if(!empty($vars['node']) && $vars['node']->type == 'akdn_internal_news_page'){
+    $vars['theme_hook_suggestions'][] = 'page__akdn_internal_news_page';
+  }
 
 }
 
