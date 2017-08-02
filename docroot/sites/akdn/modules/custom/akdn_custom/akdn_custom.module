@@ -4309,6 +4309,7 @@ function config_blocks_display($node_obj) {
   $cb_ids = field_get_items('node', $node_obj, 'field_config_block_reference', LANGUAGE_NONE);
   foreach ($cb_ids as $key => $value) {
     $block_type = get_config_block_type($value['target_id']);
+    
     switch ($block_type) {
       case 'Announcement':
         $view_obj = views_get_view('akdn_internal_news_page_announcement');
@@ -4349,6 +4350,19 @@ function config_blocks_display($node_obj) {
             $return_str .= $social_media;
         }
         break;
+      case 'AKDN.org':
+        $config_block = node_load($value['target_id']);
+        if(array_key_exists('field_show_block', $config_block)){
+          $node_wrapper = entity_metadata_wrapper('node', $config_block);
+          $status = $node_wrapper->field_show_block->value();
+          if($status == 1){
+            $view_obj = views_get_view('akdn_internal_news_pages_blocks');
+            $view_obj->set_display('new_akdn_org');
+            $view_obj->execute();
+            $return_str .= $view_obj->render();
+          }
+        }
+      break;
     }
   }
   return $return_str;
