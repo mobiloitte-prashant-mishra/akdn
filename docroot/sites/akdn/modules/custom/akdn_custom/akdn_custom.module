@@ -4317,6 +4317,38 @@ function config_blocks_display($node_obj) {
         $view_obj->execute();
         $return_str .= $view_obj->render();
         break;
+      case 'Social Media':
+        $node_obj = node_load($value['target_id']);
+        if(isset($node_obj) &&
+            $node_obj->type == 'config_block' &&
+            (isset($node_obj->field_show_block['und'][0]['value']) && $node_obj->field_show_block['und'][0]['value'])){
+            
+            $instagram_feeds = $twitter_feeds = $facebook_feeds = '';
+            $title = t('AKDN in social media');
+               
+            // Facebook
+            $view_obj = views_get_view('facebook_feeds');
+            $view_obj->set_display('block');
+            $view_obj->execute();
+            $facebook_feeds = $view_obj->render();
+            
+            // Twitter
+            $view_obj1 = views_get_view('facebook_feeds');
+            $view_obj1->set_display('block_1');
+            $view_obj1->execute();
+            $twitter_feeds = $view_obj1->render();
+            
+            //Instagram
+            $view_obj2 = views_get_view('facebook_feeds');
+            $view_obj2->set_display('block_3');
+            $view_obj2->execute();
+            $instagram_feeds = $view_obj2->render();            
+            
+            $social_media = "<div class='akdn_social_media_content'><h3>{$title}</h3>" . $facebook_feeds . $twitter_feeds . $instagram_feeds . "</div>";
+            
+            $return_str .= $social_media;
+        }
+        break;
     }
   }
   return $return_str;

@@ -50,12 +50,24 @@ function akdn_internal_news_page_views_default_views() {
   $handler->display->display_options['fields']['field_announcement_title_et']['field'] = 'field_announcement_title_et';
   $handler->display->display_options['fields']['field_announcement_title_et']['label'] = '';
   $handler->display->display_options['fields']['field_announcement_title_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_announcement_title_et']['type'] = 'title_linked';
+  $handler->display->display_options['fields']['field_announcement_title_et']['settings'] = array(
+    'title_style' => 'h3',
+    'title_link' => '',
+    'title_class' => '',
+  );
   /* Field: Entity translation: Short Title: translated */
   $handler->display->display_options['fields']['field_short_title_et']['id'] = 'field_short_title_et';
   $handler->display->display_options['fields']['field_short_title_et']['table'] = 'field_data_field_short_title';
   $handler->display->display_options['fields']['field_short_title_et']['field'] = 'field_short_title_et';
   $handler->display->display_options['fields']['field_short_title_et']['label'] = '';
   $handler->display->display_options['fields']['field_short_title_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_short_title_et']['type'] = 'title_linked';
+  $handler->display->display_options['fields']['field_short_title_et']['settings'] = array(
+    'title_style' => 'h4',
+    'title_link' => '',
+    'title_class' => '',
+  );
   /* Field: Entity translation: Body: translated */
   $handler->display->display_options['fields']['body_et']['id'] = 'body_et';
   $handler->display->display_options['fields']['body_et']['table'] = 'field_data_body';
