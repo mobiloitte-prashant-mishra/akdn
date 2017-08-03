@@ -71,3 +71,4 @@ features[variable][] = print_pdf_display_config_block
 features[variable][] = print_pdf_display_urllist_akdn_internal_news_page
 features[variable][] = print_pdf_display_urllist_config_block
 features[views_view][] = akdn_internal_news_page_announcement
+features[views_view][] = akdn_internal_news_pages_blocks
