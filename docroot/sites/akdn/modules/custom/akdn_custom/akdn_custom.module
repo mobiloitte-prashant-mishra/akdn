@@ -852,7 +852,7 @@ function akdn_custom_block_view($delta = '') {
       $left = $right = $content = '';
       $left = "<span class='internal-news-page-footer-left'>" . "&copy; " . format_date(time(), 'custom', 'Y', 'Europe/Paris') . ' ' . t('Aga Khan Development Network. All rights reserved.') . "</span>";
       $right = "<span class='internal-news-page-footer-right'><h5>" . t('More news on') . "</h5>". l('www.AKDN.org', 'http://www.akdn.org/' , array('attributes' => array('title' => 'www.AKDN.org'))) . "</span>";
-      $content = "<div class='internal-news-page-footer'>{$left}{$right}</div>";
+      $content = "<div class='internal-news-page-footer clearfix'>{$left}{$right}</div>";
       $block['content'] = $content;
       break;
     case 'akdn_internal_news_config_block':
