@@ -523,7 +523,7 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
   if ($form['#id'] == 'views-exposed-form-akaa-projects-page') {
     $form['view-all'] = array('#markup' => '<a id="view-all-projects" href="/architecture/projects">View All Projects</a>');
   }
-  
+
   // AKDN internal News page Config Block content type
   if ($form_id == 'config_block_node_form') {
     $language_code = 'und';
@@ -544,17 +544,17 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
       'visible' => array(
         ":input[name='field_block_type[{$language_code}]']" => array('value' => 'Announcement'),
       ),
-    );    
+    );
     $form['body']['#states'] = array(
       'visible' => array(
         ":input[name='field_block_type[{$language_code}]']" => array('value' => 'Announcement'),
       ),
-    );  
+    );
     $form['field_find_out_more_link']['#states'] = array(
       'visible' => array(
         ":input[name='field_block_type[{$language_code}]']" => array('value' => 'Announcement'),
       ),
-    );            
+    );
   }
 }
 /**
@@ -697,7 +697,7 @@ function akdn_custom_block_info() {
     ),
     'akdn_internal_news_page_header' => array(
       'info' => t('AKDN internal News page header'),
-    ), 
+    ),
     'akdn_internal_news_page_footer' => array(
       'info' => t('AKDN internal News page footer'),
     ),
@@ -706,7 +706,7 @@ function akdn_custom_block_info() {
     ),
     'akdn_internal_news_config_block' => array(
       'info' => t('AKDN internal News page Configuration Blocks'),
-    ),     
+    ),
   );
   return $blocks;
 }
@@ -824,7 +824,7 @@ function akdn_custom_block_view($delta = '') {
     case 'akdn_search_internal_news_page':
       $block['subject'] = '';
       $block['content'] = drupal_get_form('akdn_search_forms_internal_news_page');
-      break;    
+      break;
     case 'akdn_internal_news_page_header':
       $block['subject'] = $current_date = $sub_title = '';
       global $language;
@@ -842,11 +842,11 @@ function akdn_custom_block_view($delta = '') {
         $current_date .= '|';
       }
       $current_date .= "<span class='current-date'>" . format_date(time(), 'custom', 'l, jS F Y', 'Europe/Paris') . "</span>";
-      
+
       $block_content = "<div class='sub_title_date'>{$sub_title}{$current_date}</div>";
 
       $block['content'] = $block_content;
-      break;   
+      break;
     case 'akdn_internal_news_page_footer':
       $block['subject'] = '';
       $left = $right = $content = '';
@@ -3021,14 +3021,14 @@ function akdn_custom_node_load($nodes, $types) {
           if(in_array('anonymous user', $user->roles)){
             $user_anonymous = TRUE;
           }
-          
+
           $node_alias_url = ltrim(url("node/{$url_nid}"), "/");
-          
+
           drupal_add_js(array('node_alias_url' => $node_alias_url), 'setting');
           drupal_add_js(array('user_anonymous' => $user_anonymous), 'setting');
           drupal_add_js(drupal_get_path('module', 'akdn_custom') . '/js/jquery.malihu.PageScroll2id.min.js');
           drupal_add_js(drupal_get_path('module', 'akdn_custom') . '/js/paragraph_arrive_link.js');
-        } 
+        }
       }
     }
   }
@@ -4322,30 +4322,30 @@ function config_blocks_display($node_obj) {
         if(isset($node_obj) &&
             $node_obj->type == 'config_block' &&
             (isset($node_obj->field_show_block['und'][0]['value']) && $node_obj->field_show_block['und'][0]['value'])){
-            
+
             $instagram_feeds = $twitter_feeds = $facebook_feeds = '';
             $title = t('AKDN in social media');
-               
+
             // Facebook
             $view_obj = views_get_view('facebook_feeds');
             $view_obj->set_display('block');
             $view_obj->execute();
             $facebook_feeds = $view_obj->render();
-            
+
             // Twitter
             $view_obj1 = views_get_view('facebook_feeds');
             $view_obj1->set_display('block_1');
             $view_obj1->execute();
             $twitter_feeds = $view_obj1->render();
-            
+
             //Instagram
             $view_obj2 = views_get_view('facebook_feeds');
             $view_obj2->set_display('block_3');
             $view_obj2->execute();
-            $instagram_feeds = $view_obj2->render();            
-            
-            $social_media = "<div class='akdn_social_media_content'><h3>{$title}</h3>" . $facebook_feeds . $twitter_feeds . $instagram_feeds . "</div>";
-            
+            $instagram_feeds = $view_obj2->render();
+
+            $social_media = "<div class='akdn_social_media_content clearfix'><h3>{$title}</h3>" . '<div class="social-media-block">' . $facebook_feeds . $twitter_feeds . $instagram_feeds . '</div>' . "</div>";
+
             $return_str .= $social_media;
         }
         break;
@@ -4360,8 +4360,8 @@ function config_blocks_display($node_obj) {
  * @return type
  */
 function get_config_block_type($nid) {
-  $block_type_value = db_query("SELECT field_block_type_value FROM {field_data_field_block_type} 
-                                                    WHERE entity_type = 'node' 
+  $block_type_value = db_query("SELECT field_block_type_value FROM {field_data_field_block_type}
+                                                    WHERE entity_type = 'node'
                                                     AND bundle = 'config_block'
                                                     AND entity_id = :nid", array(':nid' => $nid))->fetchField();
 

@@ -52,7 +52,10 @@ function akdn_internal_news_page_default_panels_mini() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'heading-text-date',
+  );
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
@@ -75,7 +78,10 @@ function akdn_internal_news_page_default_panels_mini() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'search-block',
+  );
   $pane->extras = array();
   $pane->position = 1;
   $pane->locks = array();
