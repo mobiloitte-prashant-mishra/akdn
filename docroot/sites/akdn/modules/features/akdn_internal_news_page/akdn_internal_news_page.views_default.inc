@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * akdn_internal_news_page.views_default.inc
@@ -219,7 +220,7 @@ function akdn_internal_news_page_views_default_views() {
 
   $view = new view();
   $view->name = 'akdn_internal_news_pages_blocks';
-  $view->description = 'AKDN internal News page Announcement block';
+  $view->description = 'AKDN internal News page blocks';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'AKDN Internal News Pages Blocks';
@@ -572,7 +573,7 @@ switch($row->type_1){
   $handler->display->display_options['fields']['field_short_title_et']['type'] = 'title_linked';
   $handler->display->display_options['fields']['field_short_title_et']['settings'] = array(
     'title_style' => 'h4',
-    'title_link' => '',
+    'title_link' => 'content',
     'title_class' => '',
   );
   /* Field: Content: Publish Date */
@@ -650,9 +651,13 @@ switch($row->type_1){
      $url = \'/press-centre/galleries\';
      print \'<a href="\'.$url.\'">All Photographs</a>\';
      break;
- case \'default\':
+case \'speech\':
+     $url = \'/press-centre/speeches\';
+     print \'<a href="\'.$url.\'">All Speeches</a>\';
+     break;
+ default:
      $url_name = str_replace(\'_\',\'-\',$row->type_1);
-     $display_name = str_replace(\'_\',\' \',strtoupper($row->type_1));
+     $display_name = str_replace(\'_\',\' \',$row->type_1);
      $url = \'/press-centre/\'.$url_name.\'s\';
      print \'<a href="\'.$url.\'">All \'.$display_name.\'s</a>\';
      break;
