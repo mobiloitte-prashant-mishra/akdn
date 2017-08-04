@@ -4517,7 +4517,6 @@ function config_blocks_display($node_obj) {
   $cb_ids = field_get_items('node', $node_obj, 'field_config_block_reference', LANGUAGE_NONE);
   foreach ($cb_ids as $key => $value) {
     $block_type = get_config_block_type($value['target_id']);
-    
     switch ($block_type) {
       case 'Announcement':
         $view_obj = views_get_view('akdn_internal_news_page_announcement');
@@ -4563,11 +4562,43 @@ function config_blocks_display($node_obj) {
         if(array_key_exists('field_show_block', $config_block)){
           $node_wrapper = entity_metadata_wrapper('node', $config_block);
           $status = $node_wrapper->field_show_block->value();
+          $title = t('New On AKDN.Org');
           if($status == 1){
             $view_obj = views_get_view('akdn_internal_news_pages_blocks');
             $view_obj->set_display('new_akdn_org');
             $view_obj->execute();
-            $return_str .= $view_obj->render();
+            $return_str .= "<div class='akdn_social_media_content'><h3>{$title}</h3>".$view_obj->render();
+          }
+        }
+      break;
+     case 'Multimedia & Careers':
+        $config_block = node_load($value['target_id']);
+        if(array_key_exists('field_show_block', $config_block)){
+          $node_wrapper = entity_metadata_wrapper('node', $config_block);
+          $status = $node_wrapper->field_show_block->value();
+          if($status == 1){
+            $title = t('Multimedia');
+            $view_obj = views_get_view('akdn_internal_news_pages_blocks');
+            $view_obj->set_display('multimedia_block_1');
+            $view_obj->execute();
+            $return_str .= "<div class='akdn_social_media_content'><h3>{$title}</h3>".$view_obj->render();
+            
+            $full_url = 'http://krb-jobs.brassring.com/WebRouter/WebRouter.asmx?op=route';
+            //$xml = '<Envelope version="01.00">  <Sender><Id>123</Id><Credential>30025</Credential></Sender> <TransactInfo transactId="1" transactType="data"><TransactId>05/10/2017</TransactId>  <TimeStamp>12:00:00 AM</TimeStamp></TransactInfo> <Unit UnitProcessor="SearchAPI"> <Packet> <PacketInfo packetType="data">  <packetId>1</packetId></PacketInfo><Payload><InputString> <ClientId>30025</ClientId><SiteId>5750</SiteId> <PageNumber>1</PageNumber><OutputXMLFormat>1</OutputXMLFormat>  <AuthenticationToken/><HotJobs/> <ProximitySearch><Distance/> <Measurement/> <Country/><State/> <City/><zipCode/> </ProximitySearch><JobMatchCriteriaText/> <SelectedSearchLocaleId/> <Questions> <Question Sortorder="ASC" Sort="No"> <Value> <![CDATA[TG_SEARCH_ALL]]></Value></Question></Questions></InputString>  </Payload> </Packet>  </Unit></Envelope>';
+  $request = drupal_http_request($full_url);
+  print '<pre>';
+  print_r($request); die;
+  $data = new SimpleXMLElement($request->data);
+  
+  $data = drupal_json_decode(drupal_json_encode($data));
+//  print '<pre>';
+//  print_r($data); die;
+            
+            
+//            $view_obj2 = views_get_view('facebook_feeds');
+//            $view_obj2->set_display('block_2');
+//            $view_obj2->execute();
+//            $return_str .= $view_obj2->render(); 
           }
         }
       break;
