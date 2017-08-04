@@ -122,14 +122,14 @@ a:hover {
         padding: 30px 45px;
         background: #b5995a;
         .announcement-image {
-            width: 357px;
+            width: 340px;
             float: left;
             margin-right: 45px;
         }
         .announcement-content {
             float: left;
             color: $color_white;
-            font: 24px/32px "Arial, sans-serif";
+            font: 24px/26px "Arial, sans-serif";
             h3 {
                 font: 45px "Times New Roman, sans-Serif";
             }
@@ -244,6 +244,9 @@ a:hover {
                     font-weight: bold;
                     color: $color_black;
                     margin: 0 0 10px;
+                    a {
+                       color: $color_black; 
+                    }
                 }
                 .news-date {
                     margin-bottom: 10px;
@@ -263,6 +266,9 @@ a:hover {
                 }
             }
         }
+    }
+    .news-community {
+        @extend .news-block;
     }
     .internal-news-page-footer {
         padding: 20px 0;
