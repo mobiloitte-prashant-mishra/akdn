@@ -24,7 +24,7 @@ function akdn_internal_news_page_default_page_manager_handlers() {
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
     'body_classes_to_add' => '',
-    'css_id' => '',
+    'css_id' => 'internal-page',
     'css' => '',
     'contexts' => array(),
     'relationships' => array(),
