@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * akdn_internal_news_page.views_default.inc
@@ -148,8 +149,8 @@ function akdn_internal_news_page_views_default_views() {
     t('Announcement Block'),
   );
   $export['akdn_internal_news_page_announcement'] = $view;
-  
-  
+
+
   $view = new view();
   $view->name = 'akdn_internal_news_pages_blocks';
   $view->description = 'AKDN internal News page Announcement block';
@@ -172,6 +173,16 @@ function akdn_internal_news_page_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
+  $handler->display->display_options['fields']['nid']['node_in_colorbox_rel'] = '';
   /* Field: Content: Type */
   $handler->display->display_options['fields']['type_1']['id'] = 'type_1';
   $handler->display->display_options['fields']['type_1']['table'] = 'node';
@@ -296,6 +307,46 @@ function akdn_internal_news_page_views_default_views() {
   $handler->display->display_options['fields']['view_node']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['view_node']['node_in_colorbox_height'] = '600';
   $handler->display->display_options['fields']['view_node']['node_in_colorbox_rel'] = '';
+  /* Field: Global: PHP */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php
+switch($row->type_1){
+  case \'article\':
+     $article_node = node_load($row->nid);
+     $node_wrapper = entity_metadata_wrapper(\'node\', $article_node);
+     $article_type = $node_wrapper->field_article_cat->value();
+     $url_name = str_replace(\' \',\'-\',strtolower($article_type->name));
+     $url = \'/press-centre/\'.$url_name.\'s\';
+     $display_name = \'All \'.$article_type->name.\'s\';
+     if($article_type->name == \'In the media\' || $article_type->name == \'News\'){
+        $url = \'/press-centre/\'.$url_name;
+        $display_name = \'All \'.$article_type->name;
+      }
+     if($article_type->name == \'Spotlight\'){
+        $url = \'/press-centre/projects\';
+      }
+     print \'<a href="\'.$url.\'">\'.$display_name.\'</a>\';
+     break;
+ case \'gallery\':
+     $url = \'/press-centre/galleries\';
+     print \'<a href="\'.$url.\'">All Photographs</a>\';
+     break;
+ case \'default\':
+     $url_name = str_replace(\'_\',\'-\',$row->type_1);
+     $display_name = str_replace(\'_\',\' \',strtoupper($row->type_1));
+     $url = \'/press-centre/\'.$url_name.\'s\';
+     print \'<a href="\'.$url.\'">All \'.$display_name.\'s</a>\';
+     break;
+}
+
+?>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Sort criterion: Content: Publish Date (field_publish_date) */
   $handler->display->display_options['sorts']['field_publish_date_value']['id'] = 'field_publish_date_value';
   $handler->display->display_options['sorts']['field_publish_date_value']['table'] = 'field_data_field_publish_date';
@@ -322,8 +373,131 @@ function akdn_internal_news_page_views_default_views() {
 
   /* Display: New on akdn.org */
   $handler = $view->new_display('block', 'New on akdn.org', 'new_akdn_org');
+  $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['display_description'] = 'new on akdn.org';
   $handler->display->display_options['block_description'] = 'AKDN new on akdn.org';
+
+  /* Display: Multimedia */
+  $handler = $view->new_display('block', 'Multimedia', 'multimedia_block_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
+  $handler->display->display_options['fields']['nid']['node_in_colorbox_rel'] = '';
+  /* Field: Content: External id */
+  $handler->display->display_options['fields']['field_youtube_external_id']['id'] = 'field_youtube_external_id';
+  $handler->display->display_options['fields']['field_youtube_external_id']['table'] = 'field_data_field_youtube_external_id';
+  $handler->display->display_options['fields']['field_youtube_external_id']['field'] = 'field_youtube_external_id';
+  $handler->display->display_options['fields']['field_youtube_external_id']['label'] = '';
+  $handler->display->display_options['fields']['field_youtube_external_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_youtube_external_id']['element_label_colon'] = FALSE;
+  /* Field: Content: Picture */
+  $handler->display->display_options['fields']['field_youtube_picture']['id'] = 'field_youtube_picture';
+  $handler->display->display_options['fields']['field_youtube_picture']['table'] = 'field_data_field_youtube_picture';
+  $handler->display->display_options['fields']['field_youtube_picture']['field'] = 'field_youtube_picture';
+  $handler->display->display_options['fields']['field_youtube_picture']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_youtube_picture']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_youtube_picture']['settings'] = array(
+    'image_style' => 'standard_listing_aspect_switcher',
+    'image_link' => '',
+  );
+  /* Field: Content: Youtube Video Embed */
+  $handler->display->display_options['fields']['field_youtube_embed']['id'] = 'field_youtube_embed';
+  $handler->display->display_options['fields']['field_youtube_embed']['table'] = 'field_data_field_youtube_embed';
+  $handler->display->display_options['fields']['field_youtube_embed']['field'] = 'field_youtube_embed';
+  $handler->display->display_options['fields']['field_youtube_embed']['label'] = '';
+  $handler->display->display_options['fields']['field_youtube_embed']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_youtube_embed']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_youtube_embed']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_youtube_embed']['type'] = 'link_plain';
+  $handler->display->display_options['fields']['field_youtube_embed']['settings'] = array(
+    'controls' => 1,
+    'width' => '640',
+    'height' => '385',
+    'download_link' => 0,
+    'download_text' => 'Download',
+  );
+  /* Field: Content: Youtube link */
+  $handler->display->display_options['fields']['field_youtube_link']['id'] = 'field_youtube_link';
+  $handler->display->display_options['fields']['field_youtube_link']['table'] = 'field_data_field_youtube_link';
+  $handler->display->display_options['fields']['field_youtube_link']['field'] = 'field_youtube_link';
+  $handler->display->display_options['fields']['field_youtube_link']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_youtube_link']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_youtube_link']['type'] = 'mediaelement_video';
+  $handler->display->display_options['fields']['field_youtube_link']['settings'] = array(
+    'controls' => 1,
+    'width' => '640',
+    'height' => '385',
+    'download_link' => 0,
+    'download_text' => 'Download',
+  );
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="social_sharing">
+  <span class="play-video" id="[field_youtube_external_id]"><a class="colorbox-inline" href="https://www.youtube.com/embed/[field_youtube_external_id]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0">[field_youtube_picture]</a></span>
+  </div>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_type'] = 'h4';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_rel'] = '';
+  /* Field: Content: Post date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'node';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['label'] = '';
+  $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['created']['date_format'] = 'date_only';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'search_api_facetapi_YEAR';
+  /* Field: Entity translation: Body: translated */
+  $handler->display->display_options['fields']['body_et']['id'] = 'body_et';
+  $handler->display->display_options['fields']['body_et']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body_et']['field'] = 'body_et';
+  $handler->display->display_options['fields']['body_et']['label'] = '';
+  $handler->display->display_options['fields']['body_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body_et']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['body_et']['type'] = 'text_summary_or_trimmed';
+  $handler->display->display_options['fields']['body_et']['settings'] = array(
+    'trim_length' => '200',
+  );
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'youtube' => 'youtube',
+  );
+  $handler->display->display_options['block_description'] = 'Multimedia Block 1';
   $translatables['akdn_internal_news_pages_blocks'] = array(
     t('Master'),
     t('more'),
@@ -337,6 +511,13 @@ function akdn_internal_news_page_views_default_views() {
     t('New on akdn.org'),
     t('new on akdn.org'),
     t('AKDN new on akdn.org'),
+    t('Multimedia'),
+    t('Picture'),
+    t('Youtube link'),
+    t('<div class="social_sharing">
+  <span class="play-video" id="[field_youtube_external_id]"><a class="colorbox-inline" href="https://www.youtube.com/embed/[field_youtube_external_id]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0">[field_youtube_picture]</a></span>
+  </div>'),
+    t('Multimedia Block 1'),
   );
   $export['akdn_internal_news_pages_blocks'] = $view;
 
