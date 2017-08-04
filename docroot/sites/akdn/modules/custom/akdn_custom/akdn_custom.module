@@ -251,6 +251,24 @@ function akdn_custom_views_pre_render(&$view) {
       }
     }
   }
+  elseif ($view->name == 'facebook_feeds' &&
+      ($view->current_display == 'block' ||
+      $view->current_display == 'block_1' ||
+      $view->current_display == 'block_3')) {
+    $arg = arg();
+    if ((isset($arg[0]) && $arg[0] == 'node') && (isset($arg[1]) && is_numeric($arg[1]))) {
+      $node_obj = &drupal_static('akdn_internal_news_page_node');
+      if (!$node_obj) {
+        $node_obj = node_load($arg[1]);
+      }
+      if ($node_obj->type != 'akdn_internal_news_page') {
+        unset($view->field['nothing_1']);
+      }
+    }
+    else {
+      unset($view->field['nothing_1']);
+    }
+  }
   //Disabled This as it is not neeed now. handled through function call akdn_custom_nodes_to_exclude_pagewise at the desired block or page view definition
   return '';
   $node = menu_get_object();
