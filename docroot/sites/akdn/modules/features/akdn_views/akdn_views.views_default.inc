@@ -13283,8 +13283,9 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['field_facebook_picture']['label'] = '';
   $handler->display->display_options['fields']['field_facebook_picture']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_facebook_picture']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_facebook_picture']['alter']['path'] = 'https://www.facebook.com/akdn';
+  $handler->display->display_options['fields']['field_facebook_picture']['alter']['path'] = '[field_facebook_link_1]';
   $handler->display->display_options['fields']['field_facebook_picture']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['field_facebook_picture']['alter']['external'] = TRUE;
   $handler->display->display_options['fields']['field_facebook_picture']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['field_facebook_picture']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_facebook_picture']['element_class'] = 'grid-social-block_picture grid-social-block_picture-facebook';
@@ -13303,7 +13304,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['text'] = '<div class="title"><span class="social-icon-image"></span>Aga Khan Development Network <span>facebook.com/AKDN</span></div>';
   $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['path'] = 'http://www.facebook.com/akdn';
+  $handler->display->display_options['fields']['title']['alter']['path'] = '[field_facebook_link_1]';
   $handler->display->display_options['fields']['title']['alter']['external'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
@@ -13313,6 +13314,9 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_rel'] = '';
   /* Field: Content: Post date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
@@ -13364,6 +13368,19 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['nothing']['element_class'] = 'grid-social-block_medialink grid-social-block_medialink-facebook';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = '0';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
+  $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_1']['label'] = '';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '[ VIEW ON FACEBOOK ]';
+  $handler->display->display_options['fields']['nothing_1']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nothing_1']['alter']['path'] = '[field_facebook_link_1]';
+  $handler->display->display_options['fields']['nothing_1']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['nothing_1']['alter']['external'] = TRUE;
+  $handler->display->display_options['fields']['nothing_1']['alter']['target'] = '_blank';
+  $handler->display->display_options['fields']['nothing_1']['element_class'] = 'view-on-social-media';
+  $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -13409,8 +13426,9 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['field_tweet_media']['label'] = '';
   $handler->display->display_options['fields']['field_tweet_media']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_tweet_media']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_tweet_media']['alter']['path'] = 'https://twitter.com/akdn';
+  $handler->display->display_options['fields']['field_tweet_media']['alter']['path'] = '[field_tweet_link]';
   $handler->display->display_options['fields']['field_tweet_media']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['field_tweet_media']['alter']['external'] = TRUE;
   $handler->display->display_options['fields']['field_tweet_media']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['field_tweet_media']['element_class'] = 'tweet-media';
   $handler->display->display_options['fields']['field_tweet_media']['element_label_colon'] = FALSE;
@@ -13428,7 +13446,8 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['text'] = '<div class="title"><span class="social-icon-image"></span>Aga Khan Development Network <span>@AKDN</span></div>';
   $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['path'] = 'http://www.twitter.com/akdn';
+  $handler->display->display_options['fields']['title']['alter']['path'] = '[field_tweet_link] ';
+  $handler->display->display_options['fields']['title']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['external'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
@@ -13438,6 +13457,9 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_rel'] = '';
   /* Field: Content: Post date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
@@ -13498,6 +13520,19 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['nothing']['element_class'] = 'grid-social-block_medialink grid-social-block_medialink-twitter';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = '0';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
+  $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_1']['label'] = '';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '[ VIEW ON TWITTER ]';
+  $handler->display->display_options['fields']['nothing_1']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nothing_1']['alter']['path'] = '[field_tweet_link]';
+  $handler->display->display_options['fields']['nothing_1']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['nothing_1']['alter']['external'] = TRUE;
+  $handler->display->display_options['fields']['nothing_1']['alter']['target'] = '_blank';
+  $handler->display->display_options['fields']['nothing_1']['element_class'] = 'view-on-social-media';
+  $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -14331,6 +14366,14 @@ print file_create_url($row->uri);
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Instagram link */
+  $handler->display->display_options['fields']['field_instagram_link']['id'] = 'field_instagram_link';
+  $handler->display->display_options['fields']['field_instagram_link']['table'] = 'field_data_field_instagram_link';
+  $handler->display->display_options['fields']['field_instagram_link']['field'] = 'field_instagram_link';
+  $handler->display->display_options['fields']['field_instagram_link']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_instagram_link']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_instagram_link']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_instagram_link']['type'] = 'link_url';
   /* Field: Content: Picture */
   $handler->display->display_options['fields']['field_instagram_picture']['id'] = 'field_instagram_picture';
   $handler->display->display_options['fields']['field_instagram_picture']['table'] = 'field_data_field_instagram_picture';
@@ -14338,8 +14381,9 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['field_instagram_picture']['label'] = '';
   $handler->display->display_options['fields']['field_instagram_picture']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_instagram_picture']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_instagram_picture']['alter']['path'] = 'https://www.instagram.com/akdn/';
+  $handler->display->display_options['fields']['field_instagram_picture']['alter']['path'] = '[field_instagram_link]';
   $handler->display->display_options['fields']['field_instagram_picture']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['field_instagram_picture']['alter']['external'] = TRUE;
   $handler->display->display_options['fields']['field_instagram_picture']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['field_instagram_picture']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_instagram_picture']['element_class'] = 'grid-social-block_picture grid-social-block_picture-instagram';
@@ -14358,7 +14402,8 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['text'] = '<div class="title"><span class="social-icon-image"></span>Aga Khan Development Network <span>@AKDN</span></div>';
   $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['path'] = 'www.instagram.com/akdn';
+  $handler->display->display_options['fields']['title']['alter']['path'] = '[field_instagram_link]';
+  $handler->display->display_options['fields']['title']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['external'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['title']['element_type'] = 'div';
@@ -14366,6 +14411,9 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_rel'] = '';
   /* Field: Content: Post date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
@@ -14399,6 +14447,19 @@ print file_create_url($row->uri);
       'text' => 0,
     ),
   );
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[ VIEW ON INSTAGRAM ]';
+  $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = '[field_instagram_link]';
+  $handler->display->display_options['fields']['nothing']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['external'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['target'] = '_blank';
+  $handler->display->display_options['fields']['nothing']['element_class'] = 'view-on-social-media';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -14434,6 +14495,7 @@ print file_create_url($row->uri);
   <div class="fb-like" data-href="https://www.facebook.com/akdn" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
   <div class="fb-share-button" data-href="[field_facebook_link_1]" data-layout="button"></div>
   </div>'),
+    t('[ VIEW ON FACEBOOK ]'),
     t('Twitter Feeds Home Page'),
     t('<div class="title"><span class="social-icon-image"></span>Aga Khan Development Network <span>@AKDN</span></div>'),
     t('<div class="social_sharing">
@@ -14442,6 +14504,7 @@ print file_create_url($row->uri);
   </span>
   <span><a href="https://twitter.com/akdn" class="twitter-follow-button" data-show-count="false">Follow @akdn</a></span>
   </div>'),
+    t('[ VIEW ON TWITTER ]'),
     t('Youtube Feeds Home page'),
     t('[field_youtube_embed] '),
     t('[field_youtube_picture-title]'),
@@ -14481,6 +14544,8 @@ print file_create_url($row->uri);
   </div>'),
     t('AKMI Youtube Home page'),
     t('Instagram Feeds Home Page'),
+    t('Instagram link'),
+    t('[ VIEW ON INSTAGRAM ]'),
   );
   $export['facebook_feeds'] = $view;
 
