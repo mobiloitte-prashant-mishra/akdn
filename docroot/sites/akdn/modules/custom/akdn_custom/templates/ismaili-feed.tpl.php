@@ -5,11 +5,11 @@
 //    print '<pre>';
 //    print_r($value); die;
     $image = $value->Image;
-    $primary_cat = $value->Primary-Category;
+    $primary_cat = $value->Primary;
     $title = $value->Title;
     $date = $value->Date;
     $body = $value->Body;
-    $read_more = $value->Read-More;
+    $read_more = $value->Read;
     ?>
     
         <div class="news-block-content">

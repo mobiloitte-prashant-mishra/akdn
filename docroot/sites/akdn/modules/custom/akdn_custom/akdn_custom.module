@@ -4388,22 +4388,21 @@ function config_blocks_display($node_obj) {
           }
         }
       break;
-      
-      case 'News from The Ismaili Community':
+     case 'News from The Ismaili Community':
         $config_block = node_load($value['target_id']);
-        if(array_key_exists('field_show_block', $config_block)){
-         $node_wrapper = entity_metadata_wrapper('node', $config_block);
+        if (array_key_exists('field_show_block', $config_block)) {
+          $node_wrapper = entity_metadata_wrapper('node', $config_block);
           $status = $node_wrapper->field_show_block->value();
           $title = t('News from The Ismaili Community');
-          if($status == 1){
-          $url = 'https://the.ismaili/ismaili-rss.xml';
-          $request = drupal_http_request($url);
-          if (_isValidXML(trim($request->data))) {
-            $data = new SimpleXMLElement(trim($request->data));
-            if ($request->data) {
-              $return_str .= theme('ismaili_feed', array('output' => $data->node));
+          if ($status == 1) {
+            $url = 'https://the.ismaili/ismaili-rss.xml';
+            $request = drupal_http_request($url);
+            if (_isValidXML(trim($request->data))) {
+              $data = new SimpleXMLElement(trim($request->data));
+              if ($request->data) {
+                $return_str .= "<div class='akdn_social_media_content'><h3>{$title}</h3>" . theme('ismaili_feed', array('output' => $data->node));
+              }
             }
-          }
           }
         }
         break;
