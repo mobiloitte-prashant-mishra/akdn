@@ -1,10 +1,43 @@
 /* hidden internal page*/
+
+/* Varaibles*/
 $color_white: #fff;
+$color_black: #000;
 $color_brown: #b6985a;
+$color_grey: #666;
+$font-20: 20px;
+$font-18: 18px;
+$font-universe-bold: 'universltstd-bold';
+$font-universe-light: 'universltstd-light';
+
+
 h3 {
     text-transform: uppercase;
     margin: 0;
 }
+a:hover {
+    text-decoration: none;
+}
+/* Font face*/
+@font-face {
+    font-family: 'universltstd-bold';
+    src: url('../fonts/universltstd-bold-598412d236533.eot');
+    src: local('☺'), url('../fonts/universltstd-bold-598412d236533.woff') format('woff'),
+         url('../fonts/universltstd-bold-598412d236533.ttf') format('truetype'), 
+         url('../fonts/universltstd-bold-598412d236533.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+	font-family: 'universltstd-light';
+	src: url('../fonts/univers-lt-std-45-light-5984549a39169.eot');
+	src: local('☺'), url('fonts/univers-lt-std-45-light-5984549a39169.woff') format('woff'),
+             url('../fonts/univers-lt-std-45-light-5984549a39169.ttf') format('truetype'), 
+             url('../fonts/univers-lt-std-45-light-5984549a39169.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
 
 #internal-page {
     max-width: 1172px;
@@ -12,8 +45,15 @@ h3 {
 
     h1 {
         font-size: 50px;
+        margin: 0 0 20px;
+        
         a {
-            color: #000;
+            color: $color_black;
+            font-size: 60px;
+            font-family: "Times New Roman", arial, sans-serif;
+            &:hover {
+                text-decoration: none;
+            }
         }
     }
     /* Header*/
@@ -21,21 +61,24 @@ h3 {
         float: left;
         clear: left;
         .sub_title_date {
-            color: #666;
-            text-transform: uppercase;
-            font-size: 24px;
-            line-height: 26px;
+            margin-top: 5px;
+            color: $color_grey;
+            font-size: $font-20;
+            line-height: 22px;
             h3 {
                 display: inline-block;
                 vertical-align: top;
                 margin: 0 10px 0 0;
                 padding: 0;
+                font-size: $font-20;
+                line-height: 22px;
+                text-transform: uppercase;
+                
             }
             span {
                 padding-left: 10px;
                 display: inline-block;
                 vertical-align: top;
-                border-left: 1px solid #666;
             }
         }
     }
@@ -44,20 +87,21 @@ h3 {
         float: right;
         clear: right;
         background: #eaeaea;
-        width: 360px;
+        width: 300px;
         form {
-            padding: 5px;
+            padding: 5px 10px;
         }
         .form-item-search {
             display: inline-block;
             vertical-align: top;
             width: 85%;
+            margin: 0;
             input[type=text] {
               background: none !important;
               border: 0 !important;
-              width: 80% !important;
               box-shadow: none !important;
-              padding: 0 10px !important;
+              padding: 0 !important;
+              font-size: 16px;
            }            
         }
         input[type=submit] {
@@ -67,6 +111,8 @@ h3 {
           border: 0 ;
           width: 15px;
           height: 15px;
+          float: right;
+          margin: 5px 0;
         }
     }
 
@@ -81,7 +127,6 @@ h3 {
             margin-right: 45px;
         }
         .announcement-content {
-            width: 60%;
             float: left;
             color: $color_white;
             font: 24px/32px "Arial, sans-serif";
@@ -92,7 +137,7 @@ h3 {
                 font: bold 24px/32px "Arial, sans-serif";
                 margin: 0;
             }
-            p a {
+            a {
                 display: block;
                 color: $color_white;
                 text-transform: uppercase;
@@ -102,26 +147,30 @@ h3 {
     }
 
     .akdn_social_media_content {
-        margin: 25px 0;
+        margin: 25px 0 0;
+        border-bottom: 1px solid #b6985a;
+        padding: 0 0 25px 0;
         h3 {
             color: $color_brown;
             font: 45px "Times New Roman, sans-Serif";
         }
         .social-media-block {
-            margin-top: 10px;
+            margin-top: $font-20;
             display: flex;
             display: -webkit-flex;
             justify-content: flex-start;
+            font-family: 'universltstd-bold';
             .view-facebook-feeds {
-                width: 350px;
+                width: 33%;
                 border-right: 1px solid $color_brown;
                 padding-right: 30px;
                 margin-right: 30px;
-                font-size: 20px;
+                font-size: $font-20;
                 &:last-child {
                     border-right: 0;
                     padding-right: 0;
                     margin-right: 0;
+                    width: 30.5%;
                 }
                 .grid-social-block_picture {
                     img {
@@ -130,10 +179,11 @@ h3 {
                 }
                 .grid-social-block_title {
                     padding: 0;
-                    margin-top: 10px;
+                    margin: 10px 0 0;
                     .title {
                         padding: 0;
-                        font-weight: bold;
+                        font-family: 'universltstd-bold';
+                        font-size: $font-20;
                     }
                     .social-icon-image {
                         position: static;
@@ -144,19 +194,81 @@ h3 {
                 .grid-social-block_date {
                     padding: 0;
                     margin: 10px 0;
+                    font-size: $font-18;
+                    font-family: $font-universe-light;
                 }
                 .grid-social-block_body {
                     padding: 0;
+                    font-size: $font-18;
+                    line-height: 24px;
+                    font-family: $font-universe-light;
+                }
+                .grid-social-block_medialink {
+                    display: none;
                 }
             }    
         }
     }
     
+    .news-block {
+        margin-top: 20px;
+        .view-content {
+            display: flex;
+            display: -webkit-flex;
+            justify-content: flex-start;
+            .news-block-content {
+                width: 33%;
+                border-right: 1px solid $color_brown;
+                padding-right: 30px;
+                margin-right: 30px;
+                font-size: $font-20;
+                &:last-child {
+                    padding-right: 0;
+                    border-right: 0;
+                    margin-right: 0;
+                    width: 30.5%;
+                }
+                .news-image {
+                    margin-bottom: 25px;
+                }
+                .article-type {
+                    color: $color_brown;
+                    text-transform: uppercase;
+                    font-family: $font-universe-bold;
+                }
+                .article-text {
+                    display: none;
+                }
+                h4 {
+                    font-size: $font-20;
+                    font-weight: bold;
+                    color: $color_black;
+                    margin: 0 0 10px;
+                }
+                .news-date {
+                    margin-bottom: 10px;
+                    color: $color_grey;
+                    font-family: $font-universe-light;
+                }
+                .news-body {
+                    font-size: $font-18;
+                    line-height: 24px;
+                    font-family: $font-universe-light;
+                }
+                .readmore-text {
+                    a {
+                        color: $color_black;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
     .internal-news-page-footer {
-        border-top: 1px solid $color_brown;
         padding: 20px 0;
-        font-size: 14px;
+        font-size: $font-18;
         line-height: 16px;
+        font-family: $font-universe-light;
         .internal-news-page-footer-left {
             float: left;
             color: $color_brown;
@@ -167,6 +279,7 @@ h3 {
                 display: inline-block;
                 vertical-align: top;
                 margin: 0 5px 0 0;
+                font-size: $font-18;
             }
             a {
                 display: inline-block;
@@ -174,4 +287,5 @@ h3 {
             }
         }
     }
+    
 }
