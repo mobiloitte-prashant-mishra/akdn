@@ -208,6 +208,14 @@ a:hover {
        .grid-social-block_medialink {
            display: none;
        }
+       .view-on-social-media {
+           a {
+               color: $color_black;
+               font-family: $font-universe-bold;
+               text-transform: uppercase;
+               font-size: 16px;
+           }
+       }
     }
     /* news block*/
     .news-block {
@@ -244,6 +252,7 @@ a:hover {
                     font-weight: bold;
                     color: $color_black;
                     margin: 0 0 10px;
+                    min-height: 70px;
                     a {
                        color: $color_black; 
                     }
@@ -261,7 +270,9 @@ a:hover {
                 .readmore-text {
                     a {
                         color: $color_black;
-                        font-weight: bold;
+                        font-family: $font-universe-bold;
+                        text-transform: uppercase;
+                        font-size: 16px;
                     }
                 }
             }
@@ -271,6 +282,9 @@ a:hover {
     /* News from community*/
     .news-community {
         @extend .news-block;
+        .article-type {
+            min-height: 27px;
+        }
     }
     
     /*Multimedia and career block*/
