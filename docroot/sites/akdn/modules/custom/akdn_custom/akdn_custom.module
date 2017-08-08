@@ -3452,6 +3452,9 @@ function akdn_custom_theme($existing, $type, $theme, $path) {
     'template' => 'templates/ismaili-feed',
     'arguments' => array('output' => NULL),
   );
+  $themes['akdn_news_page_careers'] = array(
+    'template' => 'templates/akdn-news-page-careers',
+  );
   return $themes;
 }
 
@@ -4607,10 +4610,29 @@ function config_blocks_display($node_obj) {
             $view_obj->execute();
             
             // Jobs
+            $url = 'http://krb-jobs.brassring.com/WebRouter/WebRouter.asmx/route?inputXml=%3CEnvelope%20version=%2201.00%22%3E%20%3CSender%3E%3CId%3E123%3C/Id%3E%3CCredential%3E30025%3C/Credential%3E%3C/Sender%3E%20%3CTransactInfo%20transactId=%221%22%20transactType=%22data%22%3E%3CTransactId%3E05/10/2017%3C/TransactId%3E%20%3CTimeStamp%3E12:00:00%20AM%3C/TimeStamp%3E%3C/TransactInfo%3E%20%3CUnit%20UnitProcessor=%22SearchAPI%22%3E%20%3CPacket%3E%20%3CPacketInfo%20packetType=%22data%22%3E%20%3CpacketId%3E1%3C/packetId%3E%3C/PacketInfo%3E%3CPayload%3E%3CInputString%3E%20%3CClientId%3E30025%3C/ClientId%3E%3CSiteId%3E5750%3C/SiteId%3E%20%3CPageNumber%3E1%3C/PageNumber%3E%3COutputXMLFormat%3E1%3C/OutputXMLFormat%3E%20%3CAuthenticationToken/%3E%3CHotJobs/%3E%20%3CProximitySearch%3E%3CDistance/%3E%20%3CMeasurement/%3E%20%3CCountry/%3E%3CState/%3E%20%3CCity/%3E%3CzipCode/%3E%20%3C/ProximitySearch%3E%3CJobMatchCriteriaText/%3E%20%3CSelectedSearchLocaleId/%3E%20%3CQuestions%3E%20%3CQuestion%20Sortorder=%22ASC%22%20Sort=%22No%22%3E%20%3CValue%3E%20%3C![CDATA[TG_SEARCH_ALL]]%3E%3C/Value%3E%3C/Question%3E%3C/Questions%3E%3C/InputString%3E%20%3C/Payload%3E%20%3C/Packet%3E%20%3C/Unit%3E%3C/Envelope%3E';
+            $request = drupal_http_request($url);
+            $jobs_careers_html = $jobs_data = '';
+            if (_isValidXML(trim($request->data))) {
+              $jobs_data = $request->data;
+              $jobs_data = preg_replace('/\<\?xml version="1\.0" encoding="utf-8"\?\>/', '', $jobs_data);
+              $jobs_data = preg_replace('/\<string xmlns="http\:\/\/integrationuri\.org\/">/', '', $jobs_data);
+              $jobs_data = preg_replace('/\<\/string\>/', '', $jobs_data);
+              $jobs_data = html_entity_decode($jobs_data);
+
+              $xml = simplexml_load_string($jobs_data);
+              
+              $xml_obj = $xml->Unit->Packet->Payload->ResultSet->rss->channel;
+              
+              $jobs_careers_html = theme('akdn_news_page_careers', array('jobs' => $xml_obj));
+            }
             
-            
-            $return_str .= "<div class='akdn_social_media_content'><h3>{$title}</h3>" . $view_obj->render() . "</div>";
-           
+            $return_str .= "<div class='akdn_news_page_media_careers_content'><div class='akdn_news_page_media_content'><h3>{$title}</h3>" . $view_obj->render() . "</div>";
+            if($jobs_careers_html){
+              $jobs_title = t('Careers');
+              $return_str .= "<div class='akdn_news_page_careers_content'><h3>{$jobs_title}</h3>" . $jobs_careers_html . "</div>";
+            }
+            $return_str .= "</div>";
           }
         }
       break;
