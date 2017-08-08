@@ -174,42 +174,42 @@ a:hover {
                 }
                 .grid-social-block_picture {
                     img {
-                        width: 320px;
+                        width: 340px;
                     }
-                }
-                .grid-social-block_title {
-                    padding: 0;
-                    margin: 10px 0 0;
-                    .title {
-                        padding: 0;
-                        font-family: 'universltstd-bold';
-                        font-size: $font-20;
-                    }
-                    .social-icon-image {
-                        position: static;
-                        left: 0;
-                        float: right;
-                    }
-                }
-                .grid-social-block_date {
-                    padding: 0;
-                    margin: 10px 0;
-                    font-size: $font-18;
-                    font-family: $font-universe-light;
-                }
-                .grid-social-block_body {
-                    padding: 0;
-                    font-size: $font-18;
-                    line-height: 24px;
-                    font-family: $font-universe-light;
-                }
-                .grid-social-block_medialink {
-                    display: none;
-                }
+                }                
             }    
         }
+      .grid-social-block_title {
+         padding: 0;
+         margin: 10px 0 0;
+        .title {
+           padding: 0;
+           font-family: 'universltstd-bold';
+           font-size: $font-18;
+        }
+        .social-icon-image {
+           position: static;
+           left: 0;
+           float: right;
+        }
+      }
+       .grid-social-block_date {
+           padding: 0;
+           margin: 10px 0;
+           font-size: $font-18;
+           font-family: $font-universe-light;
+       }
+       .grid-social-block_body {
+           padding: 0;
+           font-size: $font-18;
+           line-height: 24px;
+           font-family: $font-universe-light;
+       }
+       .grid-social-block_medialink {
+           display: none;
+       }
     }
-    
+    /* news block*/
     .news-block {
         margin-top: 20px;
         .view-content {
@@ -267,9 +267,29 @@ a:hover {
             }
         }
     }
+    
+    /* News from community*/
     .news-community {
         @extend .news-block;
     }
+    
+    /*Multimedia and career block*/
+    .multimedia-block {
+        .view-content {
+            margin-top: 20px;
+            width: 760px;
+            float: left;
+            padding-right: 25px;
+            border-right: 1px solid $color_brown;
+            .grid-social-block_picture img {
+                max-height: 100% !important;
+            }
+            .grid-social-block_date {
+                margin: -25px 0 5px 0;
+            }
+        }        
+    }
+    
     .internal-news-page-footer {
         padding: 20px 0;
         font-size: $font-18;

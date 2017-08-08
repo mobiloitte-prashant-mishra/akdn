@@ -20703,6 +20703,9 @@ a:hover {
   margin: 0 auto;
   /* Header*/
   /* Annoucement Config Blocks*/
+  /* news block*/
+  /* News from community*/
+  /*Multimedia and career block*/
 }
 /* line 46, ../sass/_internal-page.scss */
 #internal-page h1 {
@@ -20854,41 +20857,41 @@ a:hover {
 }
 /* line 176, ../sass/_internal-page.scss */
 #internal-page .akdn_social_media_content .social-media-block .view-facebook-feeds .grid-social-block_picture img {
-  width: 320px;
+  width: 340px;
 }
-/* line 180, ../sass/_internal-page.scss */
-#internal-page .akdn_social_media_content .social-media-block .view-facebook-feeds .grid-social-block_title {
+/* line 182, ../sass/_internal-page.scss */
+#internal-page .akdn_social_media_content .grid-social-block_title {
   padding: 0;
   margin: 10px 0 0;
 }
-/* line 183, ../sass/_internal-page.scss */
-#internal-page .akdn_social_media_content .social-media-block .view-facebook-feeds .grid-social-block_title .title {
+/* line 185, ../sass/_internal-page.scss */
+#internal-page .akdn_social_media_content .grid-social-block_title .title {
   padding: 0;
   font-family: 'universltstd-bold';
-  font-size: 20px;
+  font-size: 18px;
 }
-/* line 188, ../sass/_internal-page.scss */
-#internal-page .akdn_social_media_content .social-media-block .view-facebook-feeds .grid-social-block_title .social-icon-image {
+/* line 190, ../sass/_internal-page.scss */
+#internal-page .akdn_social_media_content .grid-social-block_title .social-icon-image {
   position: static;
   left: 0;
   float: right;
 }
-/* line 194, ../sass/_internal-page.scss */
-#internal-page .akdn_social_media_content .social-media-block .view-facebook-feeds .grid-social-block_date {
+/* line 196, ../sass/_internal-page.scss */
+#internal-page .akdn_social_media_content .grid-social-block_date {
   padding: 0;
   margin: 10px 0;
   font-size: 18px;
   font-family: "universltstd-light";
 }
-/* line 200, ../sass/_internal-page.scss */
-#internal-page .akdn_social_media_content .social-media-block .view-facebook-feeds .grid-social-block_body {
+/* line 202, ../sass/_internal-page.scss */
+#internal-page .akdn_social_media_content .grid-social-block_body {
   padding: 0;
   font-size: 18px;
   line-height: 24px;
   font-family: "universltstd-light";
 }
-/* line 206, ../sass/_internal-page.scss */
-#internal-page .akdn_social_media_content .social-media-block .view-facebook-feeds .grid-social-block_medialink {
+/* line 208, ../sass/_internal-page.scss */
+#internal-page .akdn_social_media_content .grid-social-block_medialink {
   display: none;
 }
 /* line 213, ../sass/_internal-page.scss */
@@ -20958,30 +20961,46 @@ a:hover {
   color: #000;
   font-weight: bold;
 }
-/* line 273, ../sass/_internal-page.scss */
+/* line 278, ../sass/_internal-page.scss */
+#internal-page .multimedia-block .view-content {
+  margin-top: 20px;
+  width: 760px;
+  float: left;
+  padding-right: 25px;
+  border-right: 1px solid #b6985a;
+}
+/* line 284, ../sass/_internal-page.scss */
+#internal-page .multimedia-block .view-content .grid-social-block_picture img {
+  max-height: 100% !important;
+}
+/* line 287, ../sass/_internal-page.scss */
+#internal-page .multimedia-block .view-content .grid-social-block_date {
+  margin: -25px 0 5px 0;
+}
+/* line 293, ../sass/_internal-page.scss */
 #internal-page .internal-news-page-footer {
   padding: 20px 0;
   font-size: 18px;
   line-height: 16px;
   font-family: "universltstd-light";
 }
-/* line 278, ../sass/_internal-page.scss */
+/* line 298, ../sass/_internal-page.scss */
 #internal-page .internal-news-page-footer .internal-news-page-footer-left {
   float: left;
   color: #b6985a;
 }
-/* line 282, ../sass/_internal-page.scss */
+/* line 302, ../sass/_internal-page.scss */
 #internal-page .internal-news-page-footer .internal-news-page-footer-right {
   float: right;
 }
-/* line 284, ../sass/_internal-page.scss */
+/* line 304, ../sass/_internal-page.scss */
 #internal-page .internal-news-page-footer .internal-news-page-footer-right h5 {
   display: inline-block;
   vertical-align: top;
   margin: 0 5px 0 0;
   font-size: 18px;
 }
-/* line 290, ../sass/_internal-page.scss */
+/* line 310, ../sass/_internal-page.scss */
 #internal-page .internal-news-page-footer .internal-news-page-footer-right a {
   display: inline-block;
   vertical-align: top;

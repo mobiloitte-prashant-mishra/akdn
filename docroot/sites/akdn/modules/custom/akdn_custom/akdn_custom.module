@@ -4382,7 +4382,7 @@ function config_blocks_display($node_obj) {
             $view_obj = views_get_view('akdn_internal_news_pages_blocks');
             $view_obj->set_display('new_akdn_org');
             $view_obj->execute();
-            $return_str .= "<div class='akdn_social_media_content'><h3>{$title}</h3>" . $view_obj->render() . "</div>";
+            $return_str .= "<div class='akdn_social_media_content clearfix'><h3>{$title}</h3>" . $view_obj->render() . "</div>";
           }
         }
       break;
@@ -4401,7 +4401,7 @@ function config_blocks_display($node_obj) {
             // Jobs
             
             
-            $return_str .= "<div class='akdn_social_media_content'><h3>{$title}</h3>" . $view_obj->render() . "</div>";
+            $return_str .= "<div class='akdn_social_media_content multimedia-block clearfix'><h3>{$title}</h3>" . $view_obj->render() . "</div>";
            
           }
         }
@@ -4418,7 +4418,7 @@ function config_blocks_display($node_obj) {
             if (_isValidXML(trim($request->data))) {
               $data = new SimpleXMLElement(trim($request->data));
               if ($request->data) {
-                $return_str .= "<div class='akdn_social_media_content'><h3>{$title}</h3>" . theme('ismaili_feed', array('output' => $data->node)) . "</div>";
+                $return_str .= "<div class='akdn_social_media_content clearfix'><h3>{$title}</h3>" . theme('ismaili_feed', array('output' => $data->node)) . "</div>";
               }
             }
           }
