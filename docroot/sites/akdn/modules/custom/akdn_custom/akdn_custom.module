@@ -4349,7 +4349,7 @@ function config_blocks_display($node_obj) {
             (isset($node_obj->field_show_block['und'][0]['value']) && $node_obj->field_show_block['und'][0]['value'])){
             
             $instagram_feeds = $twitter_feeds = $facebook_feeds = '';
-            $title = t('AKDN in social media');
+            $title = t('AKDN IN SOCIAL MEDIA');
                
             // Facebook
             $view_obj = views_get_view('facebook_feeds');
@@ -4380,7 +4380,7 @@ function config_blocks_display($node_obj) {
         if(array_key_exists('field_show_block', $config_block)){
           $node_wrapper = entity_metadata_wrapper('node', $config_block);
           $status = $node_wrapper->field_show_block->value();
-          $title = t('New On AKDN.Org');
+          $title = t('NEW ON AKDN.org');
           if($status == 1){
             $view_obj = views_get_view('akdn_internal_news_pages_blocks');
             $view_obj->set_display('new_akdn_org');
@@ -4396,7 +4396,7 @@ function config_blocks_display($node_obj) {
           $status = $node_wrapper->field_show_block->value();
           if($status == 1){
             // Youtube
-            $title = t('Multimedia');
+            $title = t('MULTIMEDIA');
             $view_obj = views_get_view('facebook_feeds');
             $view_obj->set_display('block_2');
             $view_obj->execute();
@@ -4422,7 +4422,7 @@ function config_blocks_display($node_obj) {
 
             $return_str .= "<div class='akdn_social_media_content clearfix akdn_news_page_media_careers_content'><div class='multimedia-block'><h3>{$title}</h3>" . $view_obj->render() . "</div>";
             if($jobs_careers_html){
-              $jobs_title = t('Careers');
+              $jobs_title = t('CAREERS');
               $return_str .= "<div class='akdn_news_page_careers_content'><h3>{$jobs_title}</h3>" . $jobs_careers_html . "</div>";
             }
             $return_str .= "</div>";
@@ -4434,7 +4434,7 @@ function config_blocks_display($node_obj) {
         if (array_key_exists('field_show_block', $config_block)) {
           $node_wrapper = entity_metadata_wrapper('node', $config_block);
           $status = $node_wrapper->field_show_block->value();
-          $title = t('News from The Ismaili Community');
+          $title = t('NEWS FROM THE ISMAILI COMMUNITY');
           if ($status == 1) {
             $url = 'https://the.ismaili/ismaili-rss.xml';
             $request = drupal_http_request($url);
