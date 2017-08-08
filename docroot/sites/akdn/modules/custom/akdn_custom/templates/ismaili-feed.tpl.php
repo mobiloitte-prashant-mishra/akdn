@@ -10,6 +10,7 @@
     $date = $value->Date;
     $body = $value->Body;
     $read_more = $value->Read;
+    $link = trim($value->Link);
     ?>
     
         <div class="news-block-content">
@@ -42,7 +43,7 @@
     <?php } ?>
   <?php if ($read_more) { ?>
       <div class="readmore-text">
-        [ <?php print $read_more; ?> ]
+        [ <?php print $read_more; if(!empty($link)) { print ' | '.$link; } ?> ]
       </div>
     <?php } ?>
             </div>
