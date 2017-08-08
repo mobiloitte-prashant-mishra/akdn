@@ -1,5 +1,6 @@
 <div class="akdn-news-page-careers">
   <div class="view-content">
+      <div class="career-akdn-logo"></div>
     <?php $i = 0; ?>
     <?php foreach ($jobs->item as $key => $value): $i++; ?>
       <div class="careers-block-content">
@@ -14,7 +15,7 @@
           <?php endif; ?>            
       </div>
     <?php 
-    if($i== 3)break;
+    if($i== 2)break;
     endforeach; ?>
   </div>
     <div class="all-jobs-link">

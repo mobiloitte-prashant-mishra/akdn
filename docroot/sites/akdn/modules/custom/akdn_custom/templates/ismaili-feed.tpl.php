@@ -42,7 +42,7 @@
     <?php } ?>
   <?php if ($read_more) { ?>
       <div class="readmore-text">
-        <?php print $read_more; ?>
+        [ <?php print $read_more; ?> ]
       </div>
     <?php } ?>
             </div>
