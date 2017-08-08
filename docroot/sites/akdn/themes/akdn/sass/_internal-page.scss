@@ -11,8 +11,7 @@ $font-universe-bold: 'universltstd-bold';
 $font-universe-light: 'universltstd-light';
 
 
-h3 {
-    text-transform: uppercase;
+h3 { 
     margin: 0;
 }
 a:hover {
@@ -102,6 +101,22 @@ a:hover {
               box-shadow: none !important;
               padding: 0 !important;
               font-size: 16px;
+              ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+                line-height: inherit !important;
+                text-align: left !important;
+              }
+              ::-moz-placeholder { /* Firefox 19+ */
+                line-height: inherit !important;
+                text-align: left !important;
+              }
+              :-ms-input-placeholder { /* IE 10+ */
+                line-height: inherit !important;
+                text-align: left !important;
+              }
+              :-moz-placeholder { /* Firefox 18- */
+                line-height: inherit !important;
+                text-align: left !important;
+              }
            }            
         }
         input[type=submit] {
@@ -132,6 +147,7 @@ a:hover {
             font: 24px/26px "Arial, sans-serif";
             h3 {
                 font: 45px "Times New Roman, sans-Serif";
+                text-transform: uppercase;
             }
             h4 {
                 font: bold 24px/32px "Arial, sans-serif";
