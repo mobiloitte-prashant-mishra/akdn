@@ -20975,13 +20975,16 @@ a:hover {
 #internal-page .news-community .article-type {
   min-height: 27px;
 }
-/* line 292, ../sass/_internal-page.scss */
-#internal-page .multimedia-block .view-content {
-  margin-top: 20px;
+/* line 291, ../sass/_internal-page.scss */
+#internal-page .multimedia-block {
   width: 760px;
   float: left;
   padding-right: 25px;
   border-right: 1px solid #b6985a;
+}
+/* line 296, ../sass/_internal-page.scss */
+#internal-page .multimedia-block .view-content {
+  margin-top: 20px;
 }
 /* line 298, ../sass/_internal-page.scss */
 #internal-page .multimedia-block .view-content .grid-social-block_picture img {
@@ -20991,30 +20994,71 @@ a:hover {
 #internal-page .multimedia-block .view-content .grid-social-block_date {
   margin: -25px 0 5px 0;
 }
-/* line 307, ../sass/_internal-page.scss */
+/* line 306, ../sass/_internal-page.scss */
+#internal-page .akdn_news_page_careers_content {
+  float: right;
+  width: 380px;
+  padding-left: 25px;
+}
+/* line 310, ../sass/_internal-page.scss */
+#internal-page .akdn_news_page_careers_content .akdn-news-page-careers {
+  margin-top: 20px;
+}
+/* line 312, ../sass/_internal-page.scss */
+#internal-page .akdn_news_page_careers_content .akdn-news-page-careers .career-akdn-logo {
+  background: url("../images/__logo.png") center 0 no-repeat;
+  height: 56px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+/* line 318, ../sass/_internal-page.scss */
+#internal-page .akdn_news_page_careers_content .akdn-news-page-careers .careers-block-content {
+  border-bottom: 1px solid #666;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+/* line 322, ../sass/_internal-page.scss */
+#internal-page .akdn_news_page_careers_content .akdn-news-page-careers .careers-block-content h4 {
+  font-size: 18px;
+  color: #000;
+  font-family: "universltstd-bold";
+}
+/* line 327, ../sass/_internal-page.scss */
+#internal-page .akdn_news_page_careers_content .akdn-news-page-careers .careers-block-content .job-description {
+  font-size: 16px;
+  font-family: "universltstd-light";
+}
+/* line 333, ../sass/_internal-page.scss */
+#internal-page .akdn_news_page_careers_content .akdn-news-page-careers .job-link a, #internal-page .akdn_news_page_careers_content .akdn-news-page-careers .all-jobs-link a {
+  color: #000;
+  font-family: "universltstd-bold";
+  text-transform: uppercase;
+  font-size: 16px;
+}
+/* line 345, ../sass/_internal-page.scss */
 #internal-page .internal-news-page-footer {
   padding: 20px 0;
   font-size: 18px;
   line-height: 16px;
   font-family: "universltstd-light";
 }
-/* line 312, ../sass/_internal-page.scss */
+/* line 350, ../sass/_internal-page.scss */
 #internal-page .internal-news-page-footer .internal-news-page-footer-left {
   float: left;
   color: #b6985a;
 }
-/* line 316, ../sass/_internal-page.scss */
+/* line 354, ../sass/_internal-page.scss */
 #internal-page .internal-news-page-footer .internal-news-page-footer-right {
   float: right;
 }
-/* line 318, ../sass/_internal-page.scss */
+/* line 356, ../sass/_internal-page.scss */
 #internal-page .internal-news-page-footer .internal-news-page-footer-right h5 {
   display: inline-block;
   vertical-align: top;
   margin: 0 5px 0 0;
   font-size: 18px;
 }
-/* line 324, ../sass/_internal-page.scss */
+/* line 362, ../sass/_internal-page.scss */
 #internal-page .internal-news-page-footer .internal-news-page-footer-right a {
   display: inline-block;
   vertical-align: top;
