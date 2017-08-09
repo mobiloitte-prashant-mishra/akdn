@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * akdn_internal_news_page.views_default.inc
@@ -197,6 +196,7 @@ function akdn_internal_news_page_views_default_views() {
   $handler->display->display_options['fields']['field_find_out_more_link']['alter']['text'] = '[ FIND OUT MORE ]';
   $handler->display->display_options['fields']['field_find_out_more_link']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_find_out_more_link']['alter']['path'] = '[field_find_out_more_link-url]';
+  $handler->display->display_options['fields']['field_find_out_more_link']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['field_find_out_more_link']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_find_out_more_link']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_find_out_more_link']['click_sort_column'] = 'url';
@@ -616,6 +616,8 @@ switch($row->type_1){
   $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['label'] = '';
   $handler->display->display_options['fields']['view_node']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['view_node']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['view_node']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_node']['text'] = 'Read More';
   $handler->display->display_options['fields']['view_node']['node_in_colorbox_width'] = '600';
@@ -645,21 +647,21 @@ switch($row->type_1){
      if($article_type->name == \'Spotlight\'){
         $url = \'/press-centre/projects\';
       }
-     print \'<a href="\'.$url.\'">\'.$display_name.\'</a>\';
+     print \'<a href="\'.$url.\'" target="_blank">\'.$display_name.\'</a>\';
      break;
  case \'gallery\':
      $url = \'/press-centre/galleries\';
-     print \'<a href="\'.$url.\'">All Photographs</a>\';
+     print \'<a href="\'.$url.\'" target="_blank">All Photographs</a>\';
      break;
 case \'speech\':
      $url = \'/press-centre/speeches\';
-     print \'<a href="\'.$url.\'">All Speeches</a>\';
+     print \'<a href="\'.$url.\'" target="_blank">All Speeches</a>\';
      break;
  default:
      $url_name = str_replace(\'_\',\'-\',$row->type_1);
      $display_name = str_replace(\'_\',\' \',$row->type_1);
      $url = \'/press-centre/\'.$url_name.\'s\';
-     print \'<a href="\'.$url.\'">All \'.$display_name.\'s</a>\';
+     print \'<a href="\'.$url.\'" target="_blank">All \'.$display_name.\'s</a>\';
      break;
 }
 
@@ -681,6 +683,7 @@ case \'speech\':
   /* Display: Multimedia */
   $handler = $view->new_display('block', 'Multimedia', 'multimedia_block_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
