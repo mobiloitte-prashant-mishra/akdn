@@ -9,13 +9,13 @@
           <?php endif; ?>
           <?php 
           if($value->description): 
-//           $exploded_val = explode('<P>', trim($value->description));
-//           $loc = explode('Location:  ', $exploded_val[1]);
-//           $agency = explode('Agency:  ', $exploded_val[2]);
-//           $description = $agency[1].' ('. $loc[1].')';
+           $exploded_val = explode('<P>', trim($value->description));
+           $loc = explode('Location:  ', $exploded_val[1]);
+           $agency = explode('Agency:  ', $exploded_val[2]);
+           $description = $agency[1].' ('. $loc[1].')';
             ?>
-            <!--<div class="job-description"><?php //print $description; ?></div>-->
-            <div class="job-description"><?php print $value->description; ?></div>
+            <div class="job-description"><?php print $description; ?></div>
+            <!--<div class="job-description"><?php // print $value->description; ?></div>-->
           <?php endif; ?>
           <?php if($value->link): ?>
             <div class="job-link"><?php print l(t('[ FIND OUT MORE ]'), $value->link, array('attributes' => array('target'=>'_blank'))); ?></div>
