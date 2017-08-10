@@ -22,7 +22,7 @@
           <?php endif; ?>            
       </div>
     <?php 
-    if($i== 2)break;
+    if($i== 3)break;
     endforeach; ?>
   </div>
     <div class="all-jobs-link">
