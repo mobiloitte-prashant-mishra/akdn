@@ -21045,24 +21045,24 @@ a:hover {
   border-bottom: 1px solid #666;
   padding-bottom: 20px;
   margin-bottom: 20px;
+  font-size: 20px;
 }
-/* line 342, ../sass/_internal-page.scss */
+/* line 343, ../sass/_internal-page.scss */
 #internal-page .akdn_news_page_careers_content .akdn-news-page-careers .careers-block-content h4 {
-  font-size: 18px;
+  font-size: 20px;
   color: #000;
   font-family: "universltstd-bold";
 }
-/* line 347, ../sass/_internal-page.scss */
+/* line 348, ../sass/_internal-page.scss */
 #internal-page .akdn_news_page_careers_content .akdn-news-page-careers .careers-block-content .job-description {
-  font-size: 16px;
   font-family: "universltstd-light";
+  margin-bottom: 10px;
 }
-/* line 353, ../sass/_internal-page.scss */
+/* line 354, ../sass/_internal-page.scss */
 #internal-page .akdn_news_page_careers_content .akdn-news-page-careers .job-link a, #internal-page .akdn_news_page_careers_content .akdn-news-page-careers .all-jobs-link a {
   color: #000;
-  font-family: "universltstd-bold";
+  font-family: "universltstd-light";
   text-transform: uppercase;
-  font-size: 16px;
 }
 /* line 365, ../sass/_internal-page.scss */
 #internal-page .internal-news-page-footer {
