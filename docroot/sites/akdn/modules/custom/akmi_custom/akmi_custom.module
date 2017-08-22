@@ -268,6 +268,9 @@ function akmi_custom_views_pre_render(&$view) {
  */
 function _akdn_custom_get_latest_youtube_video($url, $channel_id) {
   $url = $url;
+  if(!$channel_id){
+    $channel_id = 'UCJ9z0V7erDeLCWHS2iGGg5g';
+  }
   $options = array(
     'channel_id' => $channel_id,
   );

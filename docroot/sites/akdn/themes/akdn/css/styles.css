@@ -815,8 +815,8 @@ th {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url(../fonts/bootstrap/glyphicons-halflings-regular.eot?1479706147);
-  src: url(../fonts/bootstrap/glyphicons-halflings-regular.eot?&1479706147#iefix) format("embedded-opentype"), url(../fonts/bootstrap/glyphicons-halflings-regular.woff2?1479706147) format("woff2"), url(../fonts/bootstrap/glyphicons-halflings-regular.woff?1479706147) format("woff"), url(../fonts/bootstrap/glyphicons-halflings-regular.ttf?1479706147) format("truetype"), url(../fonts/bootstrap/glyphicons-halflings-regular.svg?1479706147#glyphicons_halflingsregular) format("svg");
+  src: url(../fonts/bootstrap/glyphicons-halflings-regular.eot?1501677507);
+  src: url(../fonts/bootstrap/glyphicons-halflings-regular.eot?&1501677507#iefix) format("embedded-opentype"), url(../fonts/bootstrap/glyphicons-halflings-regular.woff2?1501677507) format("woff2"), url(../fonts/bootstrap/glyphicons-halflings-regular.woff?1501677507) format("woff"), url(../fonts/bootstrap/glyphicons-halflings-regular.ttf?1501677507) format("truetype"), url(../fonts/bootstrap/glyphicons-halflings-regular.svg?1501677507#glyphicons_halflingsregular) format("svg");
 }
 /* line 24, ../sass/sass-extensions/bootstrap/_glyphicons.scss */
 .glyphicon, .location-links h2 .nolink:after, .location-links h2 a:after {
@@ -10948,7 +10948,7 @@ button.close {
   line-height: 1;
   margin: 8px 1px 0 0;
   color: #b2b2b2;
-  background: #fff url('../images/magnifier.png?1479706147') no-repeat;
+  background: #fff url('../images/magnifier.png?1501677507') no-repeat;
   background-size: contain;
   border-radius: 0;
   border: 0 none;
@@ -11695,7 +11695,7 @@ h1.title {
   padding: 0;
   font-size: 0;
   line-height: 1;
-  background: url('../images/instagram.png?1479706147') no-repeat;
+  background: url('../images/instagram.png?1501677507') no-repeat;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
@@ -12296,32 +12296,32 @@ h1.title {
 
 /* line 1630, ../sass/_akdn-redesign.scss */
 .facebook {
-  background: url('../images/facebook.png?1479706147') no-repeat;
+  background: url('../images/facebook.png?1501677507') no-repeat;
 }
 
 /* line 1630, ../sass/_akdn-redesign.scss */
 .twitter {
-  background: url('../images/twitter.png?1479706147') no-repeat;
+  background: url('../images/twitter.png?1501677507') no-repeat;
 }
 
 /* line 1630, ../sass/_akdn-redesign.scss */
 .youtube {
-  background: url('../images/youtube.png?1479706147') no-repeat;
+  background: url('../images/youtube.png?1501677507') no-repeat;
 }
 
 /* line 1630, ../sass/_akdn-redesign.scss */
 .instagram {
-  background: url('../images/instagram.png?1479706147') no-repeat;
+  background: url('../images/instagram.png?1501677507') no-repeat;
 }
 
 /* line 1630, ../sass/_akdn-redesign.scss */
 .vimeo {
-  background: url('../images/vimeo.png?1479706147') no-repeat;
+  background: url('../images/vimeo.png?1501677507') no-repeat;
 }
 
 /* line 1630, ../sass/_akdn-redesign.scss */
 .akmi {
-  background: url('../images/akmi.png?1479706147') no-repeat;
+  background: url('../images/akmi.png?1501677507') no-repeat;
 }
 
 /* line 1635, ../sass/_akdn-redesign.scss */
@@ -12683,12 +12683,12 @@ h1.title {
   height: 22px;
   margin: 0 auto;
   padding: 0;
-  background: url('../images/arrow-bottom.png?1479706147') no-repeat;
+  background: url('../images/arrow-bottom.png?1501677507') no-repeat;
 }
 /* line 2062, ../sass/_akdn-redesign.scss */
 .akdn-filter-show-hide h2.active:after {
   content: "";
-  background: url('../images/arrow-top.png?1479706147') no-repeat;
+  background: url('../images/arrow-top.png?1501677507') no-repeat;
 }
 
 /* line 2069, ../sass/_akdn-redesign.scss */
@@ -13476,12 +13476,12 @@ ul.primary li {
   height: 22px;
   margin: 0 auto;
   padding: 0;
-  background: url('../images/arrow-bottom.png?1479706147') no-repeat;
+  background: url('../images/arrow-bottom.png?1501677507') no-repeat;
 }
 /* line 2880, ../sass/_akdn-redesign.scss */
 .page-search .akdn-filter-show-hide h2.active:after {
   content: "";
-  background: url('../images/arrow-top.png?1479706147') no-repeat;
+  background: url('../images/arrow-top.png?1501677507') no-repeat;
 }
 /* line 2887, ../sass/_akdn-redesign.scss */
 .page-search .akdn-filter-js-wrapper {
@@ -13696,7 +13696,7 @@ ul.primary li {
   font-size: 0;
   text-transform: uppercase;
   border: 0 none;
-  background: url('../images/submit.png?1479706147') 0 0 no-repeat;
+  background: url('../images/submit.png?1501677507') 0 0 no-repeat;
 }
 /* line 3108, ../sass/_akdn-redesign.scss */
 .node-webform .webform-client-form .form-actions input.form-submit:focus {
@@ -13781,7 +13781,7 @@ ul.primary li {
 .node-webform .webform-subscribe .form-actions input.form-submit {
   width: 180px;
   margin-left: 0 !important;
-  background: url('../images/subscribe.png?1479706147') 0 0 no-repeat;
+  background: url('../images/subscribe.png?1501677507') 0 0 no-repeat;
 }
 
 /* line 3207, ../sass/_akdn-redesign.scss */
@@ -13968,7 +13968,7 @@ h2.header-name a:active, h2.header-name a:focus {
 .geography-page .country-activity-tile .hub-pages-row .country_activity_link a,
 .node-type-agency .country-activity-tile .hub-pages-row .country_activity_link a {
   position: absolute;
-  background: url('../images/arrows.png?1479706147') 0 -30px no-repeat;
+  background: url('../images/arrows.png?1501677507') 0 -30px no-repeat;
   width: 26px;
   height: 26px;
   font-size: 0;
@@ -14429,7 +14429,7 @@ h2.header-name a:active, h2.header-name a:focus {
   height: 24px;
   margin-top: -2px;
   margin-left: 5px;
-  background: url('../images/download-icon.jpg?1479706147') 0 0 no-repeat;
+  background: url('../images/download-icon.jpg?1501677507') 0 0 no-repeat;
   background-size: contain;
 }
 /* line 3915, ../sass/_akdn-redesign.scss */
@@ -16496,12 +16496,12 @@ map area {
   height: 22px;
   margin: 0 auto;
   padding: 0;
-  background: url('../images/arrow-bottom.png?1479706147') no-repeat;
+  background: url('../images/arrow-bottom.png?1501677507') no-repeat;
 }
 /* line 6263, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .pane-title.active:after, .akaa-projectfinder-wrapper .block-title.active:after {
   content: "";
-  background: url('../images/arrow-top.png?1479706147') no-repeat;
+  background: url('../images/arrow-top.png?1501677507') no-repeat;
 }
 /* line 6269, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .pane-content, .akaa-projectfinder-wrapper .content {
@@ -16760,7 +16760,7 @@ map area {
   height: 26px;
   font-size: 0;
   cursor: pointer;
-  background: url('../images/arrows.png?1479706147') 0 -60px no-repeat;
+  background: url('../images/arrows.png?1501677507') 0 -60px no-repeat;
 }
 /* line 6551, ../sass/_akdn-redesign.scss */
 .akaa-award-cycle-block-short-video .views-field-nothing .play-video a:hover, .akaa-award-cycle-block-short-video .views-field-nothing .play-video a:focus {
@@ -16818,7 +16818,7 @@ map area {
   height: 26px;
   font-size: 0;
   cursor: pointer;
-  background: url('../images/arrows.png?1479706147') 0 -30px no-repeat;
+  background: url('../images/arrows.png?1501677507') 0 -30px no-repeat;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -18812,7 +18812,7 @@ map area {
 .akdn-logo-wrap {
   width: 120px;
   height: 55px;
-  background: url('../images/akdn-logo.png?1479706147') no-repeat;
+  background: url('../images/akdn-logo.png?1501677507') no-repeat;
 }
 
 /* Projects Lightbox captions */
@@ -20667,6 +20667,438 @@ table tr.gone_events {
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
+}
+
+/* hidden internal page*/
+/* Varaibles*/
+/* line 14, ../sass/_internal-page.scss */
+h3 {
+  margin: 0;
+}
+
+/* line 17, ../sass/_internal-page.scss */
+a:hover {
+  text-decoration: none;
+}
+
+/* Font face*/
+@font-face {
+  font-family: 'universltstd-bold';
+  src: url("../fonts/universltstd-bold-598412d236533.eot");
+  src: local("☺"), url("../fonts/universltstd-bold-598412d236533.woff") format("woff"), url("../fonts/universltstd-bold-598412d236533.ttf") format("truetype"), url("../fonts/universltstd-bold-598412d236533.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'universltstd-light';
+  src: url("../fonts/univers-lt-std-45-light-5984549a39169.eot");
+  src: local("☺"), url("fonts/univers-lt-std-45-light-5984549a39169.woff") format("woff"), url("../fonts/univers-lt-std-45-light-5984549a39169.ttf") format("truetype"), url("../fonts/univers-lt-std-45-light-5984549a39169.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 41, ../sass/_internal-page.scss */
+.node-type-akdn-internal-news-page ul.tabs.primary {
+  margin-top: 50px;
+}
+
+/* line 45, ../sass/_internal-page.scss */
+#internal-page {
+  max-width: 1172px;
+  margin: 0 auto;
+  /* Header*/
+  /* Annoucement Config Blocks*/
+  /* news block*/
+  /* News from community*/
+  /*Multimedia and career block*/
+}
+/* line 49, ../sass/_internal-page.scss */
+#internal-page h1 {
+  font-size: 50px;
+  margin: 0 0 20px;
+}
+/* line 53, ../sass/_internal-page.scss */
+#internal-page h1 a {
+  color: #000;
+  font-size: 60px;
+  font-family: "Times New Roman", arial, sans-serif;
+}
+/* line 57, ../sass/_internal-page.scss */
+#internal-page h1 a:hover {
+  text-decoration: none;
+}
+/* line 63, ../sass/_internal-page.scss */
+#internal-page .heading-text-date {
+  float: left;
+  clear: left;
+}
+/* line 66, ../sass/_internal-page.scss */
+#internal-page .heading-text-date .sub_title_date {
+  margin-top: 5px;
+  color: #666;
+  font-size: 20px;
+  line-height: 22px;
+}
+/* line 71, ../sass/_internal-page.scss */
+#internal-page .heading-text-date .sub_title_date h3 {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 10px 0 0;
+  padding: 0;
+  font-size: 20px;
+  line-height: 22px;
+  text-transform: uppercase;
+}
+/* line 81, ../sass/_internal-page.scss */
+#internal-page .heading-text-date .sub_title_date span {
+  padding-left: 10px;
+  display: inline-block;
+  vertical-align: top;
+}
+/* line 89, ../sass/_internal-page.scss */
+#internal-page .search-block {
+  float: right;
+  clear: right;
+  background: #eaeaea;
+  width: 300px;
+}
+/* line 94, ../sass/_internal-page.scss */
+#internal-page .search-block form {
+  padding: 5px 10px;
+}
+/* line 97, ../sass/_internal-page.scss */
+#internal-page .search-block .form-item-search {
+  display: inline-block;
+  vertical-align: top;
+  width: 85%;
+  margin: 0;
+}
+/* line 102, ../sass/_internal-page.scss */
+#internal-page .search-block .form-item-search input[type=text] {
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  font-size: 16px;
+}
+/* line 108, ../sass/_internal-page.scss */
+#internal-page .search-block .form-item-search input[type=text] ::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  line-height: inherit !important;
+  text-align: left !important;
+}
+/* line 112, ../sass/_internal-page.scss */
+#internal-page .search-block .form-item-search input[type=text] ::-moz-placeholder {
+  /* Firefox 19+ */
+  line-height: inherit !important;
+  text-align: left !important;
+}
+/* line 116, ../sass/_internal-page.scss */
+#internal-page .search-block .form-item-search input[type=text] :-ms-input-placeholder {
+  /* IE 10+ */
+  line-height: inherit !important;
+  text-align: left !important;
+}
+/* line 120, ../sass/_internal-page.scss */
+#internal-page .search-block .form-item-search input[type=text] :-moz-placeholder {
+  /* Firefox 18- */
+  line-height: inherit !important;
+  text-align: left !important;
+}
+/* line 126, ../sass/_internal-page.scss */
+#internal-page .search-block input[type=submit] {
+  display: inline-block;
+  background: url('../images/magnifier.png?1501677507') no-repeat;
+  font-size: 0;
+  border: 0;
+  width: 15px;
+  height: 15px;
+  float: right;
+  margin: 5px 0;
+}
+/* line 139, ../sass/_internal-page.scss */
+#internal-page .announcement-block {
+  margin: 25px 0;
+  padding: 30px 45px;
+  background: #b5995a;
+}
+/* line 143, ../sass/_internal-page.scss */
+#internal-page .announcement-block .announcement-image {
+  width: 340px;
+  float: left;
+  margin-right: 45px;
+}
+/* line 148, ../sass/_internal-page.scss */
+#internal-page .announcement-block .announcement-content {
+  float: left;
+  color: #fff;
+  font: 24px/26px "Arial, sans-serif";
+}
+/* line 152, ../sass/_internal-page.scss */
+#internal-page .announcement-block .announcement-content h3 {
+  font: 45px "Times New Roman, sans-Serif";
+  text-transform: uppercase;
+}
+/* line 156, ../sass/_internal-page.scss */
+#internal-page .announcement-block .announcement-content h4 {
+  font: bold 24px/32px "Arial, sans-serif";
+  margin: 0;
+}
+/* line 160, ../sass/_internal-page.scss */
+#internal-page .announcement-block .announcement-content a {
+  display: block;
+  color: #fff;
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+/* line 169, ../sass/_internal-page.scss */
+#internal-page .akdn_social_media_content {
+  margin: 25px 0 0;
+  border-bottom: 1px solid #b6985a;
+  padding: 0 0 25px 0;
+}
+/* line 173, ../sass/_internal-page.scss */
+#internal-page .akdn_social_media_content h3 {
+  color: #b6985a;
+  font: 45px "Times New Roman, sans-Serif";
+}
+/* line 177, ../sass/_internal-page.scss */
+#internal-page .akdn_social_media_content .social-media-block {
+  margin-top: 20px;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: flex-start;
+  font-family: 'universltstd-bold';
+}
+/* line 183, ../sass/_internal-page.scss */
+#internal-page .akdn_social_media_content .social-media-block .view-facebook-feeds {
+  width: 33%;
+  border-right: 1px solid #b6985a;
+  padding-right: 30px;
+  margin-right: 30px;
+  font-size: 20px;
+}
+/* line 189, ../sass/_internal-page.scss */
+#internal-page .akdn_social_media_content .social-media-block .view-facebook-feeds:last-child {
+  border-right: 0;
+  padding-right: 0;
+  margin-right: 0;
+  width: 30.5%;
+}
+/* line 196, ../sass/_internal-page.scss */
+#internal-page .akdn_social_media_content .social-media-block .view-facebook-feeds .grid-social-block_picture img {
+  width: 340px;
+}
+/* line 202, ../sass/_internal-page.scss */
+#internal-page .akdn_social_media_content .grid-social-block_title {
+  padding: 0;
+  margin: 10px 0 0;
+}
+/* line 205, ../sass/_internal-page.scss */
+#internal-page .akdn_social_media_content .grid-social-block_title .title {
+  padding: 0;
+  font-family: 'universltstd-bold';
+  font-size: 18px;
+}
+/* line 210, ../sass/_internal-page.scss */
+#internal-page .akdn_social_media_content .grid-social-block_title .social-icon-image {
+  position: static;
+  left: 0;
+  float: right;
+}
+/* line 216, ../sass/_internal-page.scss */
+#internal-page .akdn_social_media_content .grid-social-block_date {
+  padding: 0;
+  margin: 10px 0;
+  font-size: 18px;
+  font-family: "universltstd-light";
+}
+/* line 222, ../sass/_internal-page.scss */
+#internal-page .akdn_social_media_content .grid-social-block_body {
+  padding: 0;
+  font-size: 18px;
+  line-height: 24px;
+  font-family: "universltstd-light";
+}
+/* line 228, ../sass/_internal-page.scss */
+#internal-page .akdn_social_media_content .grid-social-block_medialink {
+  display: none;
+}
+/* line 232, ../sass/_internal-page.scss */
+#internal-page .akdn_social_media_content .view-on-social-media a {
+  color: #000;
+  font-family: "universltstd-bold";
+  text-transform: uppercase;
+  font-size: 16px;
+}
+/* line 241, ../sass/_internal-page.scss */
+#internal-page .news-block, #internal-page .news-community {
+  margin-top: 20px;
+}
+/* line 243, ../sass/_internal-page.scss */
+#internal-page .news-block .view-content, #internal-page .news-community .view-content {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: flex-start;
+}
+/* line 247, ../sass/_internal-page.scss */
+#internal-page .news-block .view-content .news-block-content, #internal-page .news-community .view-content .news-block-content {
+  width: 33%;
+  border-right: 1px solid #b6985a;
+  padding-right: 30px;
+  margin-right: 30px;
+  font-size: 20px;
+}
+/* line 253, ../sass/_internal-page.scss */
+#internal-page .news-block .view-content .news-block-content:last-child, #internal-page .news-community .view-content .news-block-content:last-child {
+  padding-right: 0;
+  border-right: 0;
+  margin-right: 0;
+  width: 30.5%;
+}
+/* line 259, ../sass/_internal-page.scss */
+#internal-page .news-block .view-content .news-block-content .news-image, #internal-page .news-community .view-content .news-block-content .news-image {
+  margin-bottom: 25px;
+}
+/* line 262, ../sass/_internal-page.scss */
+#internal-page .news-block .view-content .news-block-content .article-type, #internal-page .news-community .view-content .news-block-content .article-type {
+  color: #b6985a;
+  text-transform: uppercase;
+  font-family: "universltstd-bold";
+}
+/* line 267, ../sass/_internal-page.scss */
+#internal-page .news-block .view-content .news-block-content .article-text, #internal-page .news-community .view-content .news-block-content .article-text {
+  display: none;
+}
+/* line 270, ../sass/_internal-page.scss */
+#internal-page .news-block .view-content .news-block-content h4, #internal-page .news-community .view-content .news-block-content h4 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+  margin: 0 0 10px;
+  min-height: 70px;
+}
+/* line 276, ../sass/_internal-page.scss */
+#internal-page .news-block .view-content .news-block-content h4 a, #internal-page .news-community .view-content .news-block-content h4 a {
+  color: #000;
+}
+/* line 280, ../sass/_internal-page.scss */
+#internal-page .news-block .view-content .news-block-content .news-date, #internal-page .news-community .view-content .news-block-content .news-date {
+  margin-bottom: 10px;
+  color: #666;
+  font-family: "universltstd-light";
+}
+/* line 285, ../sass/_internal-page.scss */
+#internal-page .news-block .view-content .news-block-content .news-body, #internal-page .news-community .view-content .news-block-content .news-body {
+  font-size: 18px;
+  line-height: 24px;
+  font-family: "universltstd-light";
+}
+/* line 291, ../sass/_internal-page.scss */
+#internal-page .news-block .view-content .news-block-content .readmore-text a, #internal-page .news-community .view-content .news-block-content .readmore-text a {
+  color: #000;
+  font-family: "universltstd-bold";
+  text-transform: uppercase;
+  font-size: 16px;
+}
+/* line 305, ../sass/_internal-page.scss */
+#internal-page .news-community .article-type {
+  min-height: 27px;
+}
+/* line 311, ../sass/_internal-page.scss */
+#internal-page .multimedia-block {
+  width: 760px;
+  float: left;
+  padding-right: 25px;
+  border-right: 1px solid #b6985a;
+}
+/* line 316, ../sass/_internal-page.scss */
+#internal-page .multimedia-block .view-content {
+  margin-top: 20px;
+}
+/* line 318, ../sass/_internal-page.scss */
+#internal-page .multimedia-block .view-content .grid-social-block_picture img {
+  max-height: 100% !important;
+}
+/* line 321, ../sass/_internal-page.scss */
+#internal-page .multimedia-block .view-content .grid-social-block_date {
+  margin: -25px 0 5px 0;
+}
+/* line 326, ../sass/_internal-page.scss */
+#internal-page .akdn_news_page_careers_content {
+  float: right;
+  width: 380px;
+  padding-left: 25px;
+}
+/* line 330, ../sass/_internal-page.scss */
+#internal-page .akdn_news_page_careers_content .akdn-news-page-careers {
+  margin-top: 20px;
+}
+/* line 332, ../sass/_internal-page.scss */
+#internal-page .akdn_news_page_careers_content .akdn-news-page-careers .career-akdn-logo {
+  background: url("../images/__logo.png") center 0 no-repeat;
+  height: 56px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+/* line 338, ../sass/_internal-page.scss */
+#internal-page .akdn_news_page_careers_content .akdn-news-page-careers .careers-block-content {
+  border-bottom: 1px solid #666;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+/* line 343, ../sass/_internal-page.scss */
+#internal-page .akdn_news_page_careers_content .akdn-news-page-careers .careers-block-content h4 {
+  font-size: 20px;
+  color: #000;
+  font-family: "universltstd-bold";
+}
+/* line 348, ../sass/_internal-page.scss */
+#internal-page .akdn_news_page_careers_content .akdn-news-page-careers .careers-block-content .job-description {
+  font-family: "universltstd-light";
+  margin-bottom: 10px;
+}
+/* line 354, ../sass/_internal-page.scss */
+#internal-page .akdn_news_page_careers_content .akdn-news-page-careers .job-link a, #internal-page .akdn_news_page_careers_content .akdn-news-page-careers .all-jobs-link a {
+  color: #000;
+  font-family: "universltstd-light";
+  text-transform: uppercase;
+}
+/* line 361, ../sass/_internal-page.scss */
+#internal-page .akdn_news_page_careers_content .all-jobs-link {
+  font-size: 20px;
+}
+/* line 364, ../sass/_internal-page.scss */
+#internal-page .akdn_news_page_careers_content .all-jobs-link a {
+  font-size: 20px;
+}
+/* line 369, ../sass/_internal-page.scss */
+#internal-page .internal-news-page-footer {
+  padding: 20px 0;
+  font-size: 18px;
+  line-height: 16px;
+  font-family: "universltstd-light";
+}
+/* line 374, ../sass/_internal-page.scss */
+#internal-page .internal-news-page-footer .internal-news-page-footer-left {
+  float: left;
+  color: #b6985a;
+}
+/* line 378, ../sass/_internal-page.scss */
+#internal-page .internal-news-page-footer .internal-news-page-footer-right {
+  float: right;
+}
+/* line 380, ../sass/_internal-page.scss */
+#internal-page .internal-news-page-footer .internal-news-page-footer-right h5 {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 5px 0 0;
+  font-size: 18px;
+}
+/* line 386, ../sass/_internal-page.scss */
+#internal-page .internal-news-page-footer .internal-news-page-footer-right a {
+  display: inline-block;
+  vertical-align: top;
 }
 
 /* Ecard Template Page */
