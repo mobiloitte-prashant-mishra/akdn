@@ -360,6 +360,10 @@ a:hover {
         }
         .all-jobs-link {
             @extend .job-link;
+            font-size: $font-20;
+            a {
+                font-size: $font-20;
+            }
         }
     }
     .internal-news-page-footer {
