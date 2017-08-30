@@ -8540,6 +8540,69 @@ function akdn_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-page-field_exclude_from_search'.
+  $field_instances['node-page-field_exclude_from_search'] = array(
+    'bundle' => 'page',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'body_only' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 28,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_exclude_from_search',
+    'label' => 'Exclude from search',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 36,
+    ),
+  );
+
   // Exported field_instance: 'node-page-field_feature_image'.
   $field_instances['node-page-field_feature_image'] = array(
     'bundle' => 'page',
@@ -9932,6 +9995,7 @@ function akdn_content_types_field_default_field_instances() {
   t('Enter the titles of pieces of content you wish to appear in the rotating banner. The content types that can appear here are: Articles, Featured Content, Galleries, Podcasts, Projects, Publications, Speeches. The specified content must have its Banner fields filled out to appear in the rotating banner.');
   t('Enter the titles of pieces of content you wish to appear in the rotating banner. The content types that can appear here are: Articles, Featured Content, Galleries, Podcasts, Projects, Publications, Speeches. The specified content must have its banner fields filled out to appear in the rotating banner.');
   t('Enter the titles of projects you wish to appear in the listing.');
+  t('Exclude from search');
   t('External id');
   t('Fact Block Reference');
   t('Fact Sheet Reference');
