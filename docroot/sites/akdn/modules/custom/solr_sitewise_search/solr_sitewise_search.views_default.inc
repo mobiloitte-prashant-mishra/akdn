@@ -9,7 +9,7 @@
  */
 function solr_sitewise_search_views_default_views() {
   $export = array();
-
+   
   $view = new view();
   $view->name = 'solr_site_search';
   $view->description = '';
@@ -56,6 +56,10 @@ function solr_sitewise_search_views_default_views() {
   $handler->display->display_options['query']['options']['search_api_bypass_access'] = 0;
   $handler->display->display_options['query']['options']['entity_access'] = 0;
   $handler->display->display_options['query']['options']['parse_mode'] = 'direct';
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: PHP */
@@ -63,22 +67,22 @@ function solr_sitewise_search_views_default_views() {
   $handler->display->display_options['header']['php']['table'] = 'views';
   $handler->display->display_options['header']['php']['field'] = 'php';
   $handler->display->display_options['header']['php']['php_output'] = '<?php
-$title = t("Search Results");
-/*$view_all_label = t(\'| View All\');
-$path = \'search\';
-$link = l($view_all_label, $path);
-*/
-$output = "<div class=\'press-center-header\'><span class=\'press-center-header-label\'>";
-$output .= $title;
-$output .= "</span>";
-/*
-$output .= "<span class=\'press-center-header-link\'>";
-$output .= $link;
-$output .= "</span>";
-*/
-$output .= "</div>";
-print $output;
-?>';
+  $title = t("Search Results");
+  /*$view_all_label = t(\'| View All\');
+  $path = \'search\';
+  $link = l($view_all_label, $path);
+  */
+  $output = "<div class=\'press-center-header\'><span class=\'press-center-header-label\'>";
+  $output .= $title;
+  $output .= "</span>";
+  /*
+  $output .= "<span class=\'press-center-header-link\'>";
+  $output .= $link;
+  $output .= "</span>";
+  */
+  $output .= "</div>";
+  print $output;
+  ?>';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
@@ -138,10 +142,10 @@ print $output;
   $handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php if (isset($data->_entity_properties[\'node_short_title\']) && !empty($data->_entity_properties[\'node_short_title\']) && $data->_entity_properties[\'node_type\'] != \'hub_page\' && $data->_entity_properties[\'node_type\'] != \'page\'): ?>
-  <?php print l($data->_entity_properties[\'node_short_title\'], \'node/\' . $data->_entity_properties[\'nid\']); ?>
-<?php else : ?>
-  <?php print l($data->_entity_properties[\'node_title\'], \'node/\' . $data->_entity_properties[\'nid\']); ?>
-<?php endif; ?>';
+    <?php print l($data->_entity_properties[\'node_short_title\'], \'node/\' . $data->_entity_properties[\'nid\']); ?>
+  <?php else : ?>
+    <?php print l($data->_entity_properties[\'node_title\'], \'node/\' . $data->_entity_properties[\'nid\']); ?>
+  <?php endif; ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Field: Indexed Node: Publish Date */
@@ -217,12 +221,30 @@ print $output;
   $handler->display->display_options['fields']['entity_type']['element_class'] = 'akdn-solr-type-of-node';
   $handler->display->display_options['fields']['entity_type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['entity_type']['link_to_entity'] = 0;
+  /* Field: Search: Excerpt */
+  $handler->display->display_options['fields']['search_api_excerpt']['id'] = 'search_api_excerpt';
+  $handler->display->display_options['fields']['search_api_excerpt']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['fields']['search_api_excerpt']['field'] = 'search_api_excerpt';
+  $handler->display->display_options['fields']['search_api_excerpt']['label'] = '';
+  $handler->display->display_options['fields']['search_api_excerpt']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['search_api_excerpt']['alter']['preserve_tags'] = '<strong>';
+  $handler->display->display_options['fields']['search_api_excerpt']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['search_api_excerpt']['link_to_entity'] = 0;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Indexed Node: Publish Date */
+  $handler->display->display_options['sorts']['field_publish_date']['id'] = 'field_publish_date';
+  $handler->display->display_options['sorts']['field_publish_date']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['sorts']['field_publish_date']['field'] = 'field_publish_date';
+  $handler->display->display_options['sorts']['field_publish_date']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['field_publish_date']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['field_publish_date']['expose']['label'] = 'Chronologically';
   /* Sort criterion: Search: Relevance */
   $handler->display->display_options['sorts']['search_api_relevance']['id'] = 'search_api_relevance';
   $handler->display->display_options['sorts']['search_api_relevance']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['sorts']['search_api_relevance']['field'] = 'search_api_relevance';
   $handler->display->display_options['sorts']['search_api_relevance']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['search_api_relevance']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['search_api_relevance']['expose']['label'] = 'Relevance';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Indexed Node: Content type */
@@ -235,6 +257,7 @@ print $output;
     'article' => 'article',
     'award_cycle' => 'award_cycle',
     'page' => 'page',
+    'custom_content' => 'custom_content',
     'event' => 'event',
     'gallery' => 'gallery',
     'geography' => 'geography',
@@ -274,6 +297,15 @@ print $output;
   );
   $handler->display->display_options['filters']['search_api_views_fulltext']['fields'] = array(
     'search_api_aggregation_1' => 'search_api_aggregation_1',
+  );
+  /* Filter criterion: Exclude from search */
+  $handler->display->display_options['filters']['field_exclude_from_search']['id'] = 'field_exclude_from_search';
+  $handler->display->display_options['filters']['field_exclude_from_search']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['filters']['field_exclude_from_search']['field'] = 'field_exclude_from_search';
+  $handler->display->display_options['filters']['field_exclude_from_search']['ui_name'] = 'Exclude from search';
+  $handler->display->display_options['filters']['field_exclude_from_search']['operator'] = '<>';
+  $handler->display->display_options['filters']['field_exclude_from_search']['value'] = array(
+    1 => '1',
   );
   $handler->display->display_options['path'] = 'search';
 
@@ -468,6 +500,8 @@ print $output;
     t('[title_field]'),
     t('More'),
     t('[entity_type]'),
+    t('Chronologically'),
+    t('Relevance'),
     t('Fulltext search'),
     t('What\'s new'),
     t(' More'),
