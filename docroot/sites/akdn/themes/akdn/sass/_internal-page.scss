@@ -47,16 +47,14 @@ a:hover {
     margin: 0 auto;
 
     h1 {
-        font-size: 50px;
         margin: 0 0 20px;
         
         a {
-            color: $color_black;
-            font-size: 60px;
-            font-family: "Times New Roman", arial, sans-serif;
-            &:hover {
-                text-decoration: none;
-            }
+            width: 120px;
+            height: 55px;
+            background: url(../images/akdn-logo.png) 0 0 no-repeat;
+            display: block;
+            font-size: 0;
         }
     }
     /* Header*/
