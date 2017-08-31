@@ -69,7 +69,6 @@ features[field_base][] = field_design_date
 features[field_base][] = field_eligibility_criteria
 features[field_base][] = field_event_akmi_year
 features[field_base][] = field_event_performance
-features[field_base][] = field_exclude_from_search
 features[field_base][] = field_facts_icon
 features[field_base][] = field_facts_links
 features[field_base][] = field_facts_number
