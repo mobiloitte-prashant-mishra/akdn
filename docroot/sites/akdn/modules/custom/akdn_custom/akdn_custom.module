@@ -874,7 +874,7 @@ function akdn_custom_block_view($delta = '') {
       if($sub_title){
         $current_date .= '|';
       }
-      $current_date .= "<span class='current-date'>" . format_date(time(), 'custom', 'l, j F Y', 'Europe/Paris') . "</span>";
+      $current_date .= "<span class='current-date'>" . format_date(time(), 'custom', 'l j F Y', 'Europe/Paris') . "</span>";
       
       $block_content = "<div class='sub_title_date'>{$sub_title}{$current_date}</div>";
 
