@@ -21122,6 +21122,11 @@ a:hover {
   margin-bottom: 20px;
 }
 
+/* line 416, ../sass/_internal-page.scss */
+div#block-views-exp-solr-site-search-page {
+  clear: both;
+}
+
 /* Ecard Template Page */
 /* line 3, ../sass/ecards/_ecard.scss */
 #akdn-ecard-multistep-form {
