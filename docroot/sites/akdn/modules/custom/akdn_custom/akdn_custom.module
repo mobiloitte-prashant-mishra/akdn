@@ -4533,6 +4533,11 @@ function akdn_search_forms_internal_news_page_submit($form, &$form_state) {
     )
   );
 }
+function akdn_custom_views_post_render(&$view, &$output, &$cache){
+//  if($view->name == '')
+//  print '<pre>';
+//  print_r($output); die;
+}
 
 /**
  * AKDN internal News page Configuration Blocks

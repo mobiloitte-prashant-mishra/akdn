@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * akdn_internal_news_page.views_default.inc
@@ -476,17 +477,34 @@ function akdn_internal_news_page_views_default_views() {
   $handler->display->display_options['fields']['type_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['type_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['type_1']['machine_name'] = TRUE;
+  /* Field: Content: Link */
+  $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['label'] = '';
+  $handler->display->display_options['fields']['view_node']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['view_node']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['view_node']['alter']['target'] = '_blank';
+  $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_node']['text'] = 'Read More';
+  $handler->display->display_options['fields']['view_node']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['view_node']['node_in_colorbox_height'] = '600';
+  $handler->display->display_options['fields']['view_node']['node_in_colorbox_rel'] = '';
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_speech_image']['id'] = 'field_speech_image';
   $handler->display->display_options['fields']['field_speech_image']['table'] = 'field_data_field_speech_image';
   $handler->display->display_options['fields']['field_speech_image']['field'] = 'field_speech_image';
   $handler->display->display_options['fields']['field_speech_image']['label'] = '';
   $handler->display->display_options['fields']['field_speech_image']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_speech_image']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_speech_image']['alter']['path'] = '/node/[nid]';
+  $handler->display->display_options['fields']['field_speech_image']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['field_speech_image']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['field_speech_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_speech_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_speech_image']['settings'] = array(
     'image_style' => 'standard_listing_aspect_switcher',
-    'image_link' => 'content',
+    'image_link' => '',
   );
   $handler->display->display_options['fields']['field_speech_image']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_speech_image']['delta_offset'] = '0';
@@ -496,11 +514,15 @@ function akdn_internal_news_page_views_default_views() {
   $handler->display->display_options['fields']['field_article_img']['field'] = 'field_article_img';
   $handler->display->display_options['fields']['field_article_img']['label'] = '';
   $handler->display->display_options['fields']['field_article_img']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_article_img']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_article_img']['alter']['path'] = '/node/[nid]';
+  $handler->display->display_options['fields']['field_article_img']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['field_article_img']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['field_article_img']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_article_img']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_article_img']['settings'] = array(
     'image_style' => 'standard_listing_aspect_switcher',
-    'image_link' => 'content',
+    'image_link' => '',
   );
   $handler->display->display_options['fields']['field_article_img']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_article_img']['delta_offset'] = '0';
@@ -510,11 +532,15 @@ function akdn_internal_news_page_views_default_views() {
   $handler->display->display_options['fields']['field_gallery_images']['field'] = 'field_gallery_images';
   $handler->display->display_options['fields']['field_gallery_images']['label'] = '';
   $handler->display->display_options['fields']['field_gallery_images']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_gallery_images']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_gallery_images']['alter']['path'] = '/node/[nid]';
+  $handler->display->display_options['fields']['field_gallery_images']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['field_gallery_images']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['field_gallery_images']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_gallery_images']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_gallery_images']['settings'] = array(
     'image_style' => 'standard_listing_aspect_switcher',
-    'image_link' => 'content',
+    'image_link' => '',
   );
   $handler->display->display_options['fields']['field_gallery_images']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_gallery_images']['delta_offset'] = '0';
@@ -524,11 +550,15 @@ function akdn_internal_news_page_views_default_views() {
   $handler->display->display_options['fields']['field_event_image']['field'] = 'field_event_image';
   $handler->display->display_options['fields']['field_event_image']['label'] = '';
   $handler->display->display_options['fields']['field_event_image']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_event_image']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_event_image']['alter']['path'] = '/node/[nid]';
+  $handler->display->display_options['fields']['field_event_image']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['field_event_image']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['field_event_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_event_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_event_image']['settings'] = array(
     'image_style' => 'standard_listing_aspect_switcher',
-    'image_link' => 'content',
+    'image_link' => '',
   );
   $handler->display->display_options['fields']['field_event_image']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_event_image']['delta_offset'] = '0';
@@ -538,11 +568,15 @@ function akdn_internal_news_page_views_default_views() {
   $handler->display->display_options['fields']['field_publication_image']['field'] = 'field_publication_image';
   $handler->display->display_options['fields']['field_publication_image']['label'] = '';
   $handler->display->display_options['fields']['field_publication_image']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_publication_image']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_publication_image']['alter']['path'] = '/node/[nid]';
+  $handler->display->display_options['fields']['field_publication_image']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['field_publication_image']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['field_publication_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_publication_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_publication_image']['settings'] = array(
     'image_style' => 'standard_listing_aspect_switcher',
-    'image_link' => 'content',
+    'image_link' => '',
   );
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
@@ -582,11 +616,15 @@ function akdn_internal_news_page_views_default_views() {
   $handler->display->display_options['fields']['field_short_title_et']['table'] = 'field_data_field_short_title';
   $handler->display->display_options['fields']['field_short_title_et']['field'] = 'field_short_title_et';
   $handler->display->display_options['fields']['field_short_title_et']['label'] = '';
+  $handler->display->display_options['fields']['field_short_title_et']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_short_title_et']['alter']['path'] = '/node/[nid]';
+  $handler->display->display_options['fields']['field_short_title_et']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['field_short_title_et']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['field_short_title_et']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_short_title_et']['type'] = 'title_linked';
   $handler->display->display_options['fields']['field_short_title_et']['settings'] = array(
     'title_style' => 'h4',
-    'title_link' => 'content',
+    'title_link' => '',
     'title_class' => '',
   );
   /* Field: Content: Publish Date */
@@ -623,19 +661,6 @@ function akdn_internal_news_page_views_default_views() {
   $handler->display->display_options['fields']['body_et']['settings'] = array(
     'trim_length' => '200',
   );
-  /* Field: Content: Link */
-  $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
-  $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
-  $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
-  $handler->display->display_options['fields']['view_node']['label'] = '';
-  $handler->display->display_options['fields']['view_node']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['view_node']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['view_node']['alter']['target'] = '_blank';
-  $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view_node']['text'] = 'Read More';
-  $handler->display->display_options['fields']['view_node']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['view_node']['node_in_colorbox_height'] = '600';
-  $handler->display->display_options['fields']['view_node']['node_in_colorbox_rel'] = '';
   /* Field: Global: PHP */
   $handler->display->display_options['fields']['php']['id'] = 'php';
   $handler->display->display_options['fields']['php']['table'] = 'views';
@@ -835,12 +860,12 @@ function akdn_internal_news_page_views_default_views() {
     t('`Read More'),
     t('New on akdn.org'),
     t('new on akdn.org'),
+    t('Read More'),
     t('[field_publication_image]
   [field_speech_image] 
   [field_article_img]
   [field_gallery_images]
   [field_event_image]'),
-    t('Read More'),
     t('[ [view_node] | [php] ]'),
     t('AKDN new on akdn.org'),
     t('Multimedia'),
