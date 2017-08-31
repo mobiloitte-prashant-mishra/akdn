@@ -21030,13 +21030,12 @@ a:hover {
 /* line 329, ../sass/_internal-page.scss */
 #internal-page .akdn_news_page_careers_content .akdn-news-page-careers {
   margin-top: 20px;
-}
-/* line 331, ../sass/_internal-page.scss */
-#internal-page .akdn_news_page_careers_content .akdn-news-page-careers .career-akdn-logo {
-  background: url("../images/__logo.png") center 0 no-repeat;
-  height: 56px;
-  width: 100%;
-  margin-bottom: 20px;
+  /*            .career-akdn-logo {
+                  background: url('../images/__logo.png') center 0 no-repeat; 
+                  height: 56px;
+                  width: 100%; 
+                  margin-bottom: 20px;
+              }*/
 }
 /* line 337, ../sass/_internal-page.scss */
 #internal-page .akdn_news_page_careers_content .akdn-news-page-careers .careers-block-content {
