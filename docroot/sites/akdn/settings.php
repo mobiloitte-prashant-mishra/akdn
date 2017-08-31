@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Drupal site-specific configuration file.
@@ -41,7 +40,6 @@
  * http://www.drupal.org:8080/mysite/test/ could be loaded from
  * sites/8080.www.drupal.org.mysite.test/.
  */
-
 /**
  * Database settings:
  *
@@ -205,7 +203,6 @@ $databases = array (
  * TRUE back to a FALSE!
  */
 $update_free_access = FALSE;
-
 /**
  * Salt for one-time login links and cancel links, form tokens, etc.
  *
@@ -224,7 +221,6 @@ $update_free_access = FALSE;
  *
  */
 $drupal_hash_salt = '';
-
 /**
  * Base URL (optional).
  *
@@ -256,7 +252,6 @@ $drupal_hash_salt = '';
  * runtime settings and the .htaccess file for non-runtime settings. Settings
  * defined there should not be duplicated here so as to avoid conflict issues.
  */
-
 /**
  * Some distributions of Linux (most notably Debian) ship their PHP
  * installations with garbage collection (gc) disabled. Since Drupal depends on
@@ -265,7 +260,6 @@ $drupal_hash_salt = '';
  */
 ini_set('session.gc_probability', 1);
 ini_set('session.gc_divisor', 100);
-
 /**
  * Set session lifetime (in seconds), i.e. the time from the user's last visit
  * to the active session may be deleted by the session garbage collector. When
@@ -273,7 +267,6 @@ ini_set('session.gc_divisor', 100);
  * of the user's $_SESSION variable is discarded.
  */
 ini_set('session.gc_maxlifetime', 200000);
-
 /**
  * Set session cookie lifetime (in seconds), i.e. the time from the session is
  * created to the cookie expires, i.e. when the browser is expected to discard
@@ -292,7 +285,6 @@ ini_set('memory_limit', '512M');
  */
 # ini_set('pcre.backtrack_limit', 200000);
 # ini_set('pcre.recursion_limit', 200000);
-
 /**
  * Drupal automatically generates a unique session cookie name for each site
  * based on its full domain name. If you have multiple domains pointing at the
@@ -303,7 +295,6 @@ ini_set('memory_limit', '512M');
  * with a leading dot, as per RFC 2109.
  */
 # $cookie_domain = '.example.com';
-
 /**
  * Variable overrides:
  *
@@ -324,7 +315,6 @@ ini_set('memory_limit', '512M');
 # $conf['site_name'] = 'My Drupal site';
 # $conf['theme_default'] = 'garland';
 # $conf['anonymous'] = 'Visitor';
-
 /**
  * A custom theme can be set for the offline page. This applies when the site
  * is explicitly set to maintenance mode through the administration page or when
@@ -334,7 +324,6 @@ ini_set('memory_limit', '512M');
  * Note: This setting does not apply to installation and update pages.
  */
 # $conf['maintenance_theme'] = 'bartik';
-
 /**
  * Reverse Proxy Configuration:
  *
@@ -367,19 +356,16 @@ ini_set('memory_limit', '512M');
  * address spoofing unless more advanced precautions are taken.
  */
 # $conf['reverse_proxy'] = TRUE;
-
 /**
  * Specify every reverse proxy IP address in your environment.
  * This setting is required if $conf['reverse_proxy'] is TRUE.
  */
 # $conf['reverse_proxy_addresses'] = array('a.b.c.d', ...);
-
 /**
  * Set this value if your proxy server sends the client IP in a header
  * other than X-Forwarded-For.
  */
 # $conf['reverse_proxy_header'] = 'HTTP_X_CLUSTER_CLIENT_IP';
-
 /**
  * Page caching:
  *
@@ -397,7 +383,6 @@ ini_set('memory_limit', '512M');
  * getting cached pages from the proxy.
  */
 # $conf['omit_vary_cookie'] = TRUE;
-
 /**
  * CSS/JS aggregated file gzip compression:
  *
@@ -412,7 +397,6 @@ ini_set('memory_limit', '512M');
  */
 # $conf['css_gzip_compression'] = FALSE;
 # $conf['js_gzip_compression'] = FALSE;
-
 /**
  * String overrides:
  *
@@ -426,7 +410,6 @@ ini_set('memory_limit', '512M');
 #   'forum'      => 'Discussion board',
 #   '@count min' => '@count minutes',
 # );
-
 /**
  *
  * IP blocking:
@@ -449,7 +432,6 @@ ini_set('memory_limit', '512M');
 # $conf['blocked_ips'] = array(
 #   'a.b.c.d',
 # );
-
 /**
  * Fast 404 pages:
  *
@@ -472,7 +454,6 @@ ini_set('memory_limit', '512M');
 $conf['404_fast_paths_exclude'] = '/\/(?:styles)\//';
 $conf['404_fast_paths'] = '/\.(?:txt|png|gif|jpe?g|css|js|ico|swf|flv|cgi|bat|pl|dll|exe|asp)$/i';
 $conf['404_fast_html'] = '<html xmlns="http://www.w3.org/1999/xhtml"><head><title>404 Not Found</title></head><body><h1>Not Found</h1><p>The requested URL "@path" was not found on this server.</p></body></html>';
-
 /**
  * By default, fast 404s are returned as part of the normal page request
  * process, which will properly serve valid pages that happen to match and will
@@ -485,7 +466,6 @@ $conf['404_fast_html'] = '<html xmlns="http://www.w3.org/1999/xhtml"><head><titl
  * To enable this functionality, remove the leading hash sign below.
  */
 # drupal_fast_404();
-
 /**
  * Authorized file system operations:
  *
@@ -504,17 +484,14 @@ $conf['404_fast_html'] = '<html xmlns="http://www.w3.org/1999/xhtml"><head><titl
 if (file_exists('/var/www/site-php')) {
   require '/var/www/site-php/akdn3/akdn3-settings.inc';
 }
-
 /*
  *  Memcache Settings
  */
-
 if (isset($conf['memcache_servers'])) {
   $conf['cache_backends'][] = './sites/all/modules/contrib/memcache/memcache.inc';
   $conf['cache_default_class'] = 'MemCacheDrupal';
   $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
 }
-
 // Check for Acquia environment.
 if (array_key_exists('AH_SITE_ENVIRONMENT', $_ENV)) {
  // Set shared temp directory so multi-file uploads will work.

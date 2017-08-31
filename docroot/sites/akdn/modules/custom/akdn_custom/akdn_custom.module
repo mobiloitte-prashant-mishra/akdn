@@ -80,6 +80,21 @@ function akdn_custom_menu() {
      'access callback' => TRUE,
      'type' => MENU_CALLBACK,
    );
+  $items['media-file'] = array(
+    'title' => '',
+    'page callback' => 'media_file',
+    'access arguments' => array('access content'),
+    'delivery callback' => 'drupal_json_output',
+    'type' => MENU_CALLBACK,
+  );
+  $items['media-file-single/%'] = array(
+    'title' => '',
+    'page callback' => 'media_file_single',
+    'page arguments' => array(1),
+    'access arguments' => array('access content'),
+    'delivery callback' => 'drupal_json_output',
+    'type' => MENU_CALLBACK,
+  );    
   return $items;
 }
 
@@ -1284,15 +1299,16 @@ function akdn_basic_page_link_to_style_block() {
     $i = 1;
     foreach ($field_collection as $values) {
       $output .= '<div class = "accordian-rows">';
-      $output .= '<div class = "image-wrapper">';
+      
       $id = 'accordian-title-' . $i;
       $field_values = entity_revision_load('field_collection_item', $values['revision_id']);
-      $image = reset($field_values->field_basic_page_accordian_image);
-      $lang_caption = key($image[0]['field_image_caption']);
-      $image_caption = $image[0]['field_image_caption'][$lang_caption][0]['value'];
-      $lang_copyright = key($image[0]['field_image_copytight']);
-      $image_copyright = $image[0]['field_image_copytight'][$lang_copyright][0]['value'];
-      if (!empty($image)) {
+      $output .= '<div class = "image-wrapper">';
+      if (!empty($field_values->field_basic_page_accordian_image)) {
+        $image = reset($field_values->field_basic_page_accordian_image);
+        $lang_caption = key($image[0]['field_image_caption']);
+        $image_caption = $image[0]['field_image_caption'][$lang_caption][0]['value'];
+        $lang_copyright = key($image[0]['field_image_copytight']);
+        $image_copyright = $image[0]['field_image_copytight'][$lang_copyright][0]['value'];
         $accordian_image = array(
           'style_name' => 'social_sharing_image',
           'path' => $image[0]['uri'],
@@ -1379,15 +1395,15 @@ function akdn_basic_page_accordian_style_block() {
     foreach ($field_collection as $values) {
       $id = 'accordian-title-' . $i;
       $field_values = entity_revision_load('field_collection_item', $values['revision_id']);
-      $image = reset($field_values->field_basic_page_accordian_image);
-      $lang_caption = key($image[0]['field_image_caption']);
-      $image_caption = $image[0]['field_image_caption'][$lang_caption][0]['value'];
-      $lang_copyright = key($image[0]['field_image_copytight']);
-      $image_copyright = $image[0]['field_image_copytight'][$lang_copyright][0]['value'];
-      $related_links = reset($field_values->field_basic_accordian_rel_links);
       $output .= '<div id = "' . $id . '" class = "basic-page-accordian-rows">';
       $output .= '<div class = accordian-image-rel-wrapper>';
-      if (!empty($image)) {
+      if (!empty($field_values->field_basic_page_accordian_image)) {
+        $image = reset($field_values->field_basic_page_accordian_image);
+        $lang_caption = key($image[0]['field_image_caption']);
+        $image_caption = $image[0]['field_image_caption'][$lang_caption][0]['value'];
+        $lang_copyright = key($image[0]['field_image_copytight']);
+        $image_copyright = $image[0]['field_image_copytight'][$lang_copyright][0]['value'];
+        $related_links = reset($field_values->field_basic_accordian_rel_links);        
         $accordian_image = array(
           'style_name' => 'social_sharing_image',
           'path' => $image[0]['uri'],
@@ -3447,6 +3463,16 @@ function akdn_custom_theme($existing, $type, $theme, $path) {
     'template' => 'templates/simplenews-social-content-creation',
     'arguments' => array('output' => NULL),
   );
+  $themes['views_view_field__solr_site_search__page__title_field'] = array(
+    'template' => 'templates/views-view-field--solr-site-search--page--title-field',
+    'original hook' => 'views_view_fields',
+    'preprocess functions' => array(
+      'template_preprocess',
+      'template_preprocess_views_view_fields',
+      'akdn_custom_preprocess_views_view_field__solr_site_search__page__title_field',
+    ),
+    'arguments' => array('view' => NULL),
+  );  
   $themes['ismaili_feed'] = array(
     'template' => 'templates/ismaili-feed',
     'arguments' => array('output' => NULL),
@@ -3455,6 +3481,46 @@ function akdn_custom_theme($existing, $type, $theme, $path) {
     'template' => 'templates/akdn-news-page-careers',
   );
   return $themes;
+}
+
+/**
+ * Custom preprocess funcation for search page results title
+ */
+function akdn_custom_preprocess_views_view_field__solr_site_search__page__title_field(&$variables) {
+  $row = $variables['row'];
+  $row_node_object = $row->_entity_properties['entity object'];
+  $title = $output = '';
+  if ($row_node_object->type == 'page' || $row_node_object->type == 'custom_content') {
+    if(!empty($row_node_object->field_geography_term) || !empty($row_node_object->field_agency_term)){
+      if(isset($row_node_object->title_field['en'][0]['value']) &&
+          $row_node_object->title_field['en'][0]['value'] != NULL){
+        $title = $row_node_object->title_field['en'][0]['value'];
+      }
+      else{
+        $title = $row_node_object->title;
+      }
+    }
+    else{
+      if(isset($row_node_object->title_field['en'][0]['value']) &&
+          $row_node_object->title_field['en'][0]['value'] != NULL){
+        $title = $row_node_object->title_field['en'][0]['value'];
+      }
+      else{
+        $title = $row_node_object->title;
+      }
+    }
+  }
+  else{
+     if(isset($row_node_object->title_field['en'][0]['value']) &&
+          $row_node_object->title_field['en'][0]['value'] != NULL){
+        $title = $row_node_object->title_field['en'][0]['value'];
+      }
+      else{
+        $title = $row_node_object->title;
+      }
+  }
+  $output .= l($title, 'node/' . $row_node_object->nid);
+  $variables['output'] = $output;
 }
 
 
@@ -3892,14 +3958,11 @@ function akdn_custom_node_update($node) {
   }
 }
 
-/*
- *
- implements hook_facet_items_alter(&$build, &$settings)
+/**
+ * Implements hook_facet_items_alter(&$build, &$settings)
  */
-
 function akdn_custom_facet_items_alter(&$build, &$settings) {
   if ($settings->facet == "entity_type") {
-
     // Save Custom Page number to add on the combined facet item.
     $number_of_custom_content = (isset($build['custom content']['#count']) && $build['custom content']['#count']) ?
         $build['custom content']['#count'] : 0;
@@ -4301,7 +4364,6 @@ function akdn_custom_form_simplenews_node_form_alter(&$form, &$form_state, &$for
       else {
         $body = $value->field_newsletter_summary['und']['0']['value'];
         if ($value->type == 'article') {
-          // print '<pre>'; print_r($value);
           $tid = $value->field_article_cat['und'][0]['tid'];
           $term_load = taxonomy_term_load($tid);
           $term = $term_load->name;
@@ -4334,6 +4396,134 @@ function akdn_custom_form_simplenews_node_form_alter(&$form, &$form_state, &$for
       'toc' => empty($form_state['input']['scs_toc']) ? FALSE : TRUE,
     ));
   }
+}  
+  
+/**
+ * Call back for media-file
+ */
+function media_file() {
+  $fids = db_query("SELECT fm.fid, fm.filename, fm.filemime FROM {file_managed} fm
+                              INNER JOIN {field_data_field_article_img} fai
+                              ON fm.fid = fai.field_article_img_fid  
+                                 AND(fai.entity_type = 'node' AND fai.bundle = 'article')
+                              INNER JOIN {field_data_field_folder} ff
+                              ON fai.field_article_img_fid = ff.entity_id 
+                                 AND (ff.entity_type = 'file' AND ff.bundle = 'image')")->fetchAll();
+  $media_arr = array();
+  foreach ($fids as $key => $value) {
+      $media_arr[] = array(
+        'fid' => $value->fid,
+        'filename' => $value->filename,
+        'filemime' => $value->filemime,
+      );
+  }
+ return array(
+        'version' => $media_arr
+ );
+}
+
+/**
+ * Call back for media-file-single/%
+ */
+function media_file_single($fid){
+  if(isset($fid) && is_numeric($fid)){
+    $image_entity = entity_load('file', array($fid));
+    $image_entity = $image_entity[$fid];
+    $folder_term_name = taxonomy_term_load($image_entity->field_folder['und'][0]['tid']);
+      $media_arr = array(
+        'fid' => $image_entity->fid,
+        'filename' => $image_entity->filename,
+        'filemime' => $image_entity->filemime,
+        'uri' => $image_entity->uri,
+        'field_folder' => $image_entity->field_folder['und'][0]['tid'],
+        'field_folder_term_name' => $folder_term_name->name,
+        'field_image_copytight' => $image_entity->field_image_copytight['und'][0]['value'],
+        'field_image_caption' => $image_entity->field_image_caption['en'][0]['value'],
+      );
+      return $media_arr;
+  }
+  else{
+    return 'samit';
+  }
+}
+
+/**
+ * Implements hook_search_api_solr_documents_alter()
+ */
+function akdn_custom_search_api_solr_documents_alter(array &$documents, SearchApiIndex $index, array $items) {
+  $boost = array(
+    'geography' => 10,
+    'focus_area' => 10,
+    'agency' => 10,
+    'article' => 9,
+    'publication' => 9,
+    'speech' => 9,
+    'project' => 9,
+    'event' => 9,
+    'podcast' => 9,
+    'gallery' => 8,
+    'page' => 1,
+    'custom_content' => 1,
+  );
+  if ($index->item_type == 'node') {
+    foreach ($documents as $document) {
+      if ($field = $document->getField('ss_type')) {
+        if (isset($boost[$field['value']])) {
+          $document->setBoost($boost[$field['value']]);
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function akdn_custom_ctools_plugin_directory($module, $plugin) {
+  if ($module == 'ctools' && !empty($plugin)) {
+    return "plugins/$plugin";
+  }
+}
+
+function akdn_custom_search_api_solr_query_alter(array &$call_args, SearchApiQueryInterface $query) {
+// $node_types = node_type_get_types();
+// foreach ($node_types as $node_type) {
+//
+//   $boost_factor = 0;
+//
+//   if ($node_type->type == 'geography') {
+//     $boost_factor = 15;
+//   }
+//   if ($node_type->type == 'focus_area') {
+//     $boost_factor = 15;
+//   }
+//   if ($node_type->type == 'agency') {
+//     $boost_factor = 15;
+//   }
+//   if ($node_type->type == 'page') {
+//     $boost_factor = 1;
+//   }
+//   if ($node_type->type == 'custom_content') {
+//     $boost_factor = 1;
+//   }
+//  $call_args['params']['bq'][$node_type->type] = "ss_type:\"$node_type->type\"^$boost_factor";
+// }
+//  $facet_item = $query->getFilter()->getFilters();
+//   if (!empty($facet_item)) {
+//    $facet_item = $facet_item[0]->getFilters();
+//    if (!empty($facet_item[1])) {
+//      if (!empty($facet_item[1])) {
+//        $facet_node_types_items = $facet_item[1]->getFilters();
+//        // This is my facet item I wont to change solr query on "page" and also add node type "custom content" to the filter.
+//        foreach ($facet_node_types_items as $key => $node_types) {
+//          if ($node_types[0] == 'type' && $node_types[1] === 'page') {       
+//            $call_args['params']['fq'][2] = $call_args['params']['fq'][2] . ' OR  ss_entity_type:"custom content"';
+//            break;
+//          }          
+//        }
+//      }
+//     }
+//   }
 }
 
 /**
@@ -4366,6 +4556,11 @@ function akdn_search_forms_internal_news_page_submit($form, &$form_state) {
       'query' => array('text' => $form_state['values']['search']),
     )
   );
+}
+function akdn_custom_views_post_render(&$view, &$output, &$cache){
+//  if($view->name == '')
+//  print '<pre>';
+//  print_r($output); die;
 }
 
 /**
