@@ -717,7 +717,9 @@ function akdn_akaa_akmi_types_field_group_info() {
       5 => 'field_performance_year',
       6 => 'field_related_artists',
       7 => 'field_premiere_year',
-      8 => 'title',
+      8 => 'field_custom_meta_tags',
+      9 => 'title',
+      10 => 'field_exclude_from_search',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
