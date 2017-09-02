@@ -183,7 +183,6 @@ function solr_sitewise_search_views_default_views() {
   $handler->display->display_options['fields']['title_field']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['label'] = '';
-  $handler->display->display_options['fields']['title_field']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title_field']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['title_field']['alter']['path'] = '[url]';
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
@@ -192,6 +191,7 @@ function solr_sitewise_search_views_default_views() {
   $handler->display->display_options['fields']['field_short_title']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['fields']['field_short_title']['field'] = 'field_short_title';
   $handler->display->display_options['fields']['field_short_title']['label'] = '';
+  $handler->display->display_options['fields']['field_short_title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_short_title']['alter']['path'] = '[url]';
   $handler->display->display_options['fields']['field_short_title']['alter']['link_class'] = 'akdn-solr-short-link';
   $handler->display->display_options['fields']['field_short_title']['element_label_colon'] = FALSE;

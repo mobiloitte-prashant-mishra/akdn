@@ -11973,9 +11973,15 @@ print $explode[1];
   $handler->display->display_options['fields']['field_hub_page_image']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_hub_page_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_hub_page_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_hub_page_image']['type'] = 'colorbox';
   $handler->display->display_options['fields']['field_hub_page_image']['settings'] = array(
-    'image_style' => 'two_third_width_carousel_grid_inner',
-    'image_link' => '',
+    'colorbox_node_style' => 'two_third_width_carousel_grid_inner',
+    'colorbox_node_style_first' => '',
+    'colorbox_image_style' => '',
+    'colorbox_gallery' => 'post',
+    'colorbox_gallery_custom' => '',
+    'colorbox_caption' => 'custom',
+    'colorbox_caption_custom' => '[file:field-image-caption]^[file:field-image-copytight]',
   );
   $handler->display->display_options['fields']['field_hub_page_image']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_hub_page_image']['delta_offset'] = '0';
@@ -12000,7 +12006,6 @@ print $explode[1];
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_hub_page_image]</div>
 <div class="slide-text">
 <div class="caption">[field_image_caption]</div>
@@ -12013,15 +12018,10 @@ print $explode[1];
   $handler->display->display_options['fields']['colorbox']['field'] = 'colorbox';
   $handler->display->display_options['fields']['colorbox']['label'] = '';
   $handler->display->display_options['fields']['colorbox']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['colorbox']['trigger_field'] = 'nothing';
-  $handler->display->display_options['fields']['colorbox']['popup'] = '<div class="slide">[field_hub_page_image]</div>
-<div class="slide-text">
-<div class="caption">[field_image_caption]</div>
-<div class="caption image-copytight">[field_image_copytight]</div>
-</div>';
+  $handler->display->display_options['fields']['colorbox']['trigger_field'] = 'field_hub_page_image';
   $handler->display->display_options['fields']['colorbox']['gid'] = 1;
-  $handler->display->display_options['fields']['colorbox']['width'] = '700px';
-  $handler->display->display_options['fields']['colorbox']['height'] = '600px';
+  $handler->display->display_options['fields']['colorbox']['width'] = '100%';
+  $handler->display->display_options['fields']['colorbox']['height'] = '100%';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -15615,6 +15615,7 @@ if ($data->node_type == "featured_content") {
     'publication' => 'publication',
     'speech' => 'speech',
     'project' => 'project',
+    'focus_area' => 'focus_area',
   );
   $handler->display->display_options['filters']['type_1']['group'] = 2;
   /* Filter criterion: Content: Published or admin */
@@ -20507,8 +20508,7 @@ if ($data->node_type == "featured_content") {
   /* Display: Flexslider Manual A/G/FAA Block */
   $handler = $view->new_display('block', 'Flexslider Manual A/G/FAA Block', 'block_4');
   $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '0';
+  $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'slideshow';

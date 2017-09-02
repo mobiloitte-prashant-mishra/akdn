@@ -5,8 +5,10 @@
 //    print '<pre>';
 //    print_r($value); die;
     $image = $value->Image;
+    $imagespeech = $value->Imagespeech;
     $primary_cat = $value->Primary;
     $title = $value->Title;
+    $type = $value->Type;
     $date = $value->Date;
     $body = $value->Body;
     $read_more = $value->Read;
@@ -14,11 +16,16 @@
     ?>
     
         <div class="news-block-content">
-    <?php if ($image) { ?>
+    <?php if (($type != 'speech') && $image) { ?>
       <div class="news-image">
         <?php print $image; ?>
       </div>
     <?php } ?>
+      <?php if (($type == 'speech') && $imagespeech) { ?>
+      <div class="news-image">
+        <?php print $imagespeech; ?>
+      </div>
+    <?php } ?>     
     <?php if ($primary_cat) { ?>
       <div class="article-type">
         <?php print $primary_cat; ?>
