@@ -67,22 +67,22 @@ function solr_sitewise_search_views_default_views() {
   $handler->display->display_options['header']['php']['table'] = 'views';
   $handler->display->display_options['header']['php']['field'] = 'php';
   $handler->display->display_options['header']['php']['php_output'] = '<?php
-    $title = t("Search Results");
-    /*$view_all_label = t(\'| View All\');
-    $path = \'search\';
-    $link = l($view_all_label, $path);
-    */
-    $output = "<div class=\'press-center-header\'><span class=\'press-center-header-label\'>";
-    $output .= $title;
-    $output .= "</span>";
-    /*
-    $output .= "<span class=\'press-center-header-link\'>";
-    $output .= $link;
-    $output .= "</span>";
-    */
-    $output .= "</div>";
-    print $output;
-    ?>';
+      $title = t("Search Results");
+      /*$view_all_label = t(\'| View All\');
+      $path = \'search\';
+      $link = l($view_all_label, $path);
+      */
+      $output = "<div class=\'press-center-header\'><span class=\'press-center-header-label\'>";
+      $output .= $title;
+      $output .= "</span>";
+      /*
+      $output .= "<span class=\'press-center-header-link\'>";
+      $output .= $link;
+      $output .= "</span>";
+      */
+      $output .= "</div>";
+      print $output;
+      ?>';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
@@ -142,13 +142,13 @@ function solr_sitewise_search_views_default_views() {
   $handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php if (isset($data->_entity_properties[\'node_short_title\']) && !empty($data->_entity_properties[\'node_short_title\']) && $data->_entity_properties[\'node_type\'] != \'hub_page\' && $data->_entity_properties[\'node_type\'] != \'page\'): ?>
-      <?php print l($data->_entity_properties[\'node_short_title\'], \'node/\' . $data->_entity_properties[\'nid\']); ?>
-    <?php else : ?>
-      <?php print l($data->_entity_properties[\'node_title\'], \'node/\' . $data->_entity_properties[\'nid\']); ?>
-    <?php endif; ?>';
+        <?php print l($data->_entity_properties[\'node_short_title\'], \'node/\' . $data->_entity_properties[\'nid\']); ?>
+      <?php else : ?>
+        <?php print l($data->_entity_properties[\'node_title\'], \'node/\' . $data->_entity_properties[\'nid\']); ?>
+      <?php endif; ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Field: Indexed Node: Publish Date */
+  /* Field: Indexed Node: Gallery Date */
   $handler->display->display_options['fields']['field_publish_date']['id'] = 'field_publish_date';
   $handler->display->display_options['fields']['field_publish_date']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['fields']['field_publish_date']['field'] = 'field_publish_date';
@@ -231,7 +231,7 @@ function solr_sitewise_search_views_default_views() {
   $handler->display->display_options['fields']['search_api_excerpt']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['search_api_excerpt']['link_to_entity'] = 0;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Indexed Node: Publish Date */
+  /* Sort criterion: Indexed Node: Gallery Date */
   $handler->display->display_options['sorts']['field_publish_date']['id'] = 'field_publish_date';
   $handler->display->display_options['sorts']['field_publish_date']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['sorts']['field_publish_date']['field'] = 'field_publish_date';
@@ -252,6 +252,8 @@ function solr_sitewise_search_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
+    'akmi_artists' => 'akmi_artists',
+    'akmi_performance' => 'akmi_performance',
     'agency' => 'agency',
     'architecture_project' => 'architecture_project',
     'article' => 'article',
@@ -357,7 +359,7 @@ function solr_sitewise_search_views_default_views() {
   $handler->display->display_options['fields']['field_short_title']['settings'] = array(
     'trim_length' => '600',
   );
-  /* Field: Indexed Node: Publish Date */
+  /* Field: Indexed Node: Gallery Date */
   $handler->display->display_options['fields']['field_publish_date']['id'] = 'field_publish_date';
   $handler->display->display_options['fields']['field_publish_date']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['fields']['field_publish_date']['field'] = 'field_publish_date';
