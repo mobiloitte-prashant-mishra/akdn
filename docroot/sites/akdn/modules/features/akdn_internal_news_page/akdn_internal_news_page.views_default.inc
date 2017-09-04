@@ -599,7 +599,7 @@ function akdn_internal_news_page_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_publication_image]
   [field_speech_image] 
-<div class="all-read-more [field_article_cat]"><a href="/node/[nid]" target="_blank">[field_article_img]</a></div><div class="inthemedia-read-more [field_article_cat]">[nothing_3]</div> 
+<div class="all-read-more [field_article_cat_1]"><a href="/node/[nid]" target="_blank">[field_article_img]</a></div><div class="inthemedia-read-more [field_article_cat_1]">[nothing_3]</div> 
   [field_gallery_images]
   [field_event_image]';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -646,9 +646,12 @@ function akdn_internal_news_page_views_default_views() {
   $handler->display->display_options['fields']['nothing_4']['table'] = 'views';
   $handler->display->display_options['fields']['nothing_4']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_4']['label'] = '';
-  $handler->display->display_options['fields']['nothing_4']['alter']['text'] = '<div class="all-read-more [field_article_cat]">
-<h4><a href="/node/[nid]" target="_blank">[field_short_title_et]</a></h4></div>
-<div class="inthemedia-read-more [field_article_cat]"><h4><a href="[field_media_source]" target="_blank">[field_short_title_et]</a></h4></div>';
+  $handler->display->display_options['fields']['nothing_4']['alter']['text'] = '<div class="all-read-more [field_article_cat_1]">
+<h4><a href="/node/[nid]" target="_blank">[field_short_title_et]</a></h4>
+</div>
+<div class="inthemedia-read-more [field_article_cat_1]">
+<h4><a href="[field_media_source]" target="_blank">[field_short_title_et]</a></h4>
+</div>';
   $handler->display->display_options['fields']['nothing_4']['alter']['path'] = '[field_media_source]';
   $handler->display->display_options['fields']['nothing_4']['alter']['external'] = TRUE;
   $handler->display->display_options['fields']['nothing_4']['alter']['target'] = '_blank';
@@ -762,7 +765,7 @@ function akdn_internal_news_page_views_default_views() {
   $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<div class="all-read-more [field_article_cat]">[ [view_node]</div><div class="inthemedia-read-more [field_article_cat]">[ [nothing_2]</div> | [php] ]';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<div class="all-read-more [field_article_cat_1]">[ [view_node]</div><div class="inthemedia-read-more [field_article_cat_1]">[ [nothing_2]</div> | [php] ]';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_class'] = 'readmore-text';
@@ -915,15 +918,18 @@ function akdn_internal_news_page_views_default_views() {
     t('[field_article_img]'),
     t('[field_publication_image]
   [field_speech_image] 
-<div class="all-read-more [field_article_cat]"><a href="/node/[nid]" target="_blank">[field_article_img]</a></div><div class="inthemedia-read-more [field_article_cat]">[nothing_3]</div> 
+<div class="all-read-more [field_article_cat_1]"><a href="/node/[nid]" target="_blank">[field_article_img]</a></div><div class="inthemedia-read-more [field_article_cat_1]">[nothing_3]</div> 
   [field_gallery_images]
   [field_event_image]'),
-    t('<div class="all-read-more [field_article_cat]">
-<h4><a href="/node/[nid]" target="_blank">[field_short_title_et]</a></h4></div>
-<div class="inthemedia-read-more [field_article_cat]"><h4><a href="[field_media_source]" target="_blank">[field_short_title_et]</a></h4></div>'),
+    t('<div class="all-read-more [field_article_cat_1]">
+<h4><a href="/node/[nid]" target="_blank">[field_short_title_et]</a></h4>
+</div>
+<div class="inthemedia-read-more [field_article_cat_1]">
+<h4><a href="[field_media_source]" target="_blank">[field_short_title_et]</a></h4>
+</div>'),
     t('Read More'),
     t('in the media read more'),
-    t('<div class="all-read-more [field_article_cat]">[ [view_node]</div><div class="inthemedia-read-more [field_article_cat]">[ [nothing_2]</div> | [php] ]'),
+    t('<div class="all-read-more [field_article_cat_1]">[ [view_node]</div><div class="inthemedia-read-more [field_article_cat_1]">[ [nothing_2]</div> | [php] ]'),
     t('AKDN new on akdn.org'),
     t('Multimedia'),
     t('Picture'),
