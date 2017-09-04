@@ -287,7 +287,22 @@ a:hover {
                     line-height: 24px;
                     font-family: $font-universe-light;
                 }
-                .readmore-text {
+               .readmore-text {
+                    .all-read-more{
+                        float: left;
+                        margin: 0 5px 0 0;
+                        &.media {
+                          display: none;   
+                        }                        
+                    }
+                    .inthemedia-read-more {
+                        margin: 0 5px 0 0;
+                        float: left;
+                        display: none;
+                        &.media {
+                            display: block;
+                        }
+                    }
                     a {
                         color: $color_black;
                         font-family: $font-universe-bold;
@@ -295,6 +310,7 @@ a:hover {
                         font-size: 16px;
                     }
                 }
+
             }
         }
     }
@@ -309,7 +325,7 @@ a:hover {
     
     /*Multimedia and career block*/
     .multimedia-block {  
-        width: 760px;
+        width: 769px;
         float: left;
         padding-right: 25px;
         border-right: 1px solid $color_brown;
@@ -325,7 +341,7 @@ a:hover {
     }
     .akdn_news_page_careers_content {
         float: right;
-        width: 380px;
+        width: 371px;
         padding-left: 25px;
         .akdn-news-page-careers {
             margin-top: 20px;
