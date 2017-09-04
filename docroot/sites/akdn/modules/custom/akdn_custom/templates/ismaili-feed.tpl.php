@@ -25,7 +25,7 @@
       <div class="news-image">
         <?php print $imagespeech; ?>
       </div>
-    <?php } ?>     
+    <?php } ?> 
     <?php if ($primary_cat) { ?>
       <div class="article-type">
         <?php print $primary_cat; ?>

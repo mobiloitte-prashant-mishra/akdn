@@ -732,7 +732,7 @@ function akdn_internal_news_page_views_default_views() {
   $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<div class="all-read-more">[ [view_node]</div><div class="inthemedia-read-more [field_article_cat]">[ [nothing_2]</div> | [php] ]';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<div class="all-read-more [field_article_cat]">[ [view_node]</div><div class="inthemedia-read-more [field_article_cat]">[ [nothing_2]</div> | [php] ]';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_class'] = 'readmore-text';
@@ -888,7 +888,7 @@ function akdn_internal_news_page_views_default_views() {
   [field_event_image]'),
     t('Read More'),
     t('in the media read more'),
-    t('<div class="all-read-more">[ [view_node]</div><div class="inthemedia-read-more [field_article_cat]">[ [nothing_2]</div> | [php] ]'),
+    t('<div class="all-read-more [field_article_cat]">[ [view_node]</div><div class="inthemedia-read-more [field_article_cat]">[ [nothing_2]</div> | [php] ]'),
     t('AKDN new on akdn.org'),
     t('Multimedia'),
     t('Picture'),
