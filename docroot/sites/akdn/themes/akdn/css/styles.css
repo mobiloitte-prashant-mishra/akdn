@@ -21199,30 +21199,30 @@ a:hover {
   font-family: "universltstd-light";
 }
 /* line 290, ../sass/_internal-page.scss */
-#internal-page .news-block .view-content .news-block-content .readmore-text .all-read-more, #internal-page .news-community .view-content .news-block-content .readmore-text .all-read-more {
-  float: left;
-  margin: 0 5px 0 0;
-}
-/* line 293, ../sass/_internal-page.scss */
-#internal-page .news-block .view-content .news-block-content .readmore-text .all-read-more.media, #internal-page .news-community .view-content .news-block-content .readmore-text .all-read-more.media {
-  display: none;
-}
-/* line 297, ../sass/_internal-page.scss */
-#internal-page .news-block .view-content .news-block-content .readmore-text .inthemedia-read-more, #internal-page .news-community .view-content .news-block-content .readmore-text .inthemedia-read-more {
-  margin: 0 5px 0 0;
-  float: left;
-  display: none;
-}
-/* line 301, ../sass/_internal-page.scss */
-#internal-page .news-block .view-content .news-block-content .readmore-text .inthemedia-read-more.media, #internal-page .news-community .view-content .news-block-content .readmore-text .inthemedia-read-more.media {
-  display: block;
-}
-/* line 305, ../sass/_internal-page.scss */
 #internal-page .news-block .view-content .news-block-content .readmore-text a, #internal-page .news-community .view-content .news-block-content .readmore-text a {
   color: #000;
   font-family: "universltstd-bold";
   text-transform: uppercase;
   font-size: 16px;
+}
+/* line 297, ../sass/_internal-page.scss */
+#internal-page .news-block .view-content .news-block-content .all-read-more, #internal-page .news-community .view-content .news-block-content .all-read-more {
+  float: left;
+  margin: 0 5px 0 0;
+}
+/* line 300, ../sass/_internal-page.scss */
+#internal-page .news-block .view-content .news-block-content .all-read-more.media, #internal-page .news-community .view-content .news-block-content .all-read-more.media {
+  display: none;
+}
+/* line 304, ../sass/_internal-page.scss */
+#internal-page .news-block .view-content .news-block-content .inthemedia-read-more, #internal-page .news-community .view-content .news-block-content .inthemedia-read-more {
+  margin: 0 5px 0 0;
+  float: left;
+  display: none;
+}
+/* line 308, ../sass/_internal-page.scss */
+#internal-page .news-block .view-content .news-block-content .inthemedia-read-more.media, #internal-page .news-community .view-content .news-block-content .inthemedia-read-more.media {
+  display: block;
 }
 /* line 320, ../sass/_internal-page.scss */
 #internal-page .news-community .article-type {

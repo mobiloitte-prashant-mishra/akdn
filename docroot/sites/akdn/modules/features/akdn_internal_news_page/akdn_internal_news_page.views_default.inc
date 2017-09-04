@@ -501,7 +501,6 @@ function akdn_internal_news_page_views_default_views() {
   $handler->display->display_options['fields']['field_article_img']['field'] = 'field_article_img';
   $handler->display->display_options['fields']['field_article_img']['label'] = '';
   $handler->display->display_options['fields']['field_article_img']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_article_img']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_article_img']['alter']['path'] = '/node/[nid]';
   $handler->display->display_options['fields']['field_article_img']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['field_article_img']['alter']['target'] = '_blank';
@@ -565,6 +564,36 @@ function akdn_internal_news_page_views_default_views() {
     'image_style' => 'standard_listing_aspect_switcher',
     'image_link' => '',
   );
+  /* Field: Content: Media Source */
+  $handler->display->display_options['fields']['field_media_source']['id'] = 'field_media_source';
+  $handler->display->display_options['fields']['field_media_source']['table'] = 'field_data_field_media_source';
+  $handler->display->display_options['fields']['field_media_source']['field'] = 'field_media_source';
+  $handler->display->display_options['fields']['field_media_source']['label'] = '';
+  $handler->display->display_options['fields']['field_media_source']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_media_source']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_media_source']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_media_source']['type'] = 'link_absolute';
+  /* Field: Content: Article Type */
+  $handler->display->display_options['fields']['field_article_cat']['id'] = 'field_article_cat';
+  $handler->display->display_options['fields']['field_article_cat']['table'] = 'field_data_field_article_cat';
+  $handler->display->display_options['fields']['field_article_cat']['field'] = 'field_article_cat';
+  $handler->display->display_options['fields']['field_article_cat']['label'] = '';
+  $handler->display->display_options['fields']['field_article_cat']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_article_cat']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_article_cat']['element_wrapper_class'] = 'article-type';
+  $handler->display->display_options['fields']['field_article_cat']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_article_cat']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing_3']['id'] = 'nothing_3';
+  $handler->display->display_options['fields']['nothing_3']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_3']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_3']['label'] = 'inthemedia image';
+  $handler->display->display_options['fields']['nothing_3']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nothing_3']['alter']['text'] = '[field_article_img]';
+  $handler->display->display_options['fields']['nothing_3']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nothing_3']['alter']['path'] = '[field_media_source]';
+  $handler->display->display_options['fields']['nothing_3']['alter']['external'] = TRUE;
+  $handler->display->display_options['fields']['nothing_3']['alter']['target'] = '_blank';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -572,7 +601,7 @@ function akdn_internal_news_page_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_publication_image]
   [field_speech_image] 
-  [field_article_img]
+<div class="all-read-more [field_article_cat]"><a href="/node/[nid]" target="_blank">[field_article_img]</a></div><div class="inthemedia-read-more [field_article_cat]">[nothing_3]</div> 
   [field_gallery_images]
   [field_event_image]';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -588,32 +617,33 @@ function akdn_internal_news_page_views_default_views() {
   $handler->display->display_options['fields']['type']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['type']['element_wrapper_class'] = 'article-type [type_1]-text';
   $handler->display->display_options['fields']['type']['element_default_classes'] = FALSE;
-  /* Field: Content: Article Type */
-  $handler->display->display_options['fields']['field_article_cat']['id'] = 'field_article_cat';
-  $handler->display->display_options['fields']['field_article_cat']['table'] = 'field_data_field_article_cat';
-  $handler->display->display_options['fields']['field_article_cat']['field'] = 'field_article_cat';
-  $handler->display->display_options['fields']['field_article_cat']['label'] = '';
-  $handler->display->display_options['fields']['field_article_cat']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_article_cat']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_article_cat']['element_wrapper_class'] = 'article-type';
-  $handler->display->display_options['fields']['field_article_cat']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_article_cat']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Entity translation: Short Title: translated */
   $handler->display->display_options['fields']['field_short_title_et']['id'] = 'field_short_title_et';
   $handler->display->display_options['fields']['field_short_title_et']['table'] = 'field_data_field_short_title';
   $handler->display->display_options['fields']['field_short_title_et']['field'] = 'field_short_title_et';
   $handler->display->display_options['fields']['field_short_title_et']['label'] = '';
-  $handler->display->display_options['fields']['field_short_title_et']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_short_title_et']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_short_title_et']['alter']['path'] = '/node/[nid]';
   $handler->display->display_options['fields']['field_short_title_et']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['field_short_title_et']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['field_short_title_et']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_short_title_et']['type'] = 'title_linked';
+  $handler->display->display_options['fields']['field_short_title_et']['type'] = 'text_plain';
   $handler->display->display_options['fields']['field_short_title_et']['settings'] = array(
     'title_style' => 'h4',
     'title_link' => '',
     'title_class' => '',
   );
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing_4']['id'] = 'nothing_4';
+  $handler->display->display_options['fields']['nothing_4']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_4']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_4']['label'] = 'inthemedia title';
+  $handler->display->display_options['fields']['nothing_4']['alter']['text'] = '<div class="all-read-more [field_article_cat]">
+<h4><a href="/node/[nid]" target="_blank">[field_short_title_et]</a></h4></div>
+<div class="inthemedia-read-more [field_article_cat]"><h4><a href="[field_media_source]" target="_blank">[field_short_title_et]</a></h4></div>';
+  $handler->display->display_options['fields']['nothing_4']['alter']['path'] = '[field_media_source]';
+  $handler->display->display_options['fields']['nothing_4']['alter']['external'] = TRUE;
+  $handler->display->display_options['fields']['nothing_4']['alter']['target'] = '_blank';
   /* Field: Content: Publish Date */
   $handler->display->display_options['fields']['field_publish_date']['id'] = 'field_publish_date';
   $handler->display->display_options['fields']['field_publish_date']['table'] = 'field_data_field_publish_date';
@@ -648,15 +678,6 @@ function akdn_internal_news_page_views_default_views() {
   $handler->display->display_options['fields']['body_et']['settings'] = array(
     'trim_length' => '200',
   );
-  /* Field: Content: Media Source */
-  $handler->display->display_options['fields']['field_media_source']['id'] = 'field_media_source';
-  $handler->display->display_options['fields']['field_media_source']['table'] = 'field_data_field_media_source';
-  $handler->display->display_options['fields']['field_media_source']['field'] = 'field_media_source';
-  $handler->display->display_options['fields']['field_media_source']['label'] = '';
-  $handler->display->display_options['fields']['field_media_source']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_media_source']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_media_source']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_media_source']['type'] = 'link_absolute';
   /* Field: Content: Link */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
@@ -881,11 +902,17 @@ function akdn_internal_news_page_views_default_views() {
     t('`Read More'),
     t('New on akdn.org'),
     t('new on akdn.org'),
+    t('inthemedia image'),
+    t('[field_article_img]'),
     t('[field_publication_image]
   [field_speech_image] 
-  [field_article_img]
+<div class="all-read-more [field_article_cat]"><a href="/node/[nid]" target="_blank">[field_article_img]</a></div><div class="inthemedia-read-more [field_article_cat]">[nothing_3]</div> 
   [field_gallery_images]
   [field_event_image]'),
+    t('inthemedia title'),
+    t('<div class="all-read-more [field_article_cat]">
+<h4><a href="/node/[nid]" target="_blank">[field_short_title_et]</a></h4></div>
+<div class="inthemedia-read-more [field_article_cat]"><h4><a href="[field_media_source]" target="_blank">[field_short_title_et]</a></h4></div>'),
     t('Read More'),
     t('in the media read more'),
     t('<div class="all-read-more [field_article_cat]">[ [view_node]</div><div class="inthemedia-read-more [field_article_cat]">[ [nothing_2]</div> | [php] ]'),
