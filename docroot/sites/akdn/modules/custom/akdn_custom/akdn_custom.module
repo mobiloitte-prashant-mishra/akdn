@@ -66,6 +66,13 @@ function akdn_custom_menu() {
     'access arguments' => array('administer image styles'),
     'type' => MENU_NORMAL_ITEM,
     ); */
+  $items['search/google-search'] = array(
+     'title' => 'Google Search',
+     'type' => MENU_CALLBACK,
+     'access callback' => TRUE,
+     'page callback' => 'akdn_custom_google_search',
+     'file' => 'includes/akdn_custom.google_search.inc',
+    );
    $items['custom-import-handler/update/%'] = array(
      'title' => 'syndicate Node update',
      'page callback' => '_syndicate_node_update',
@@ -724,6 +731,9 @@ function akdn_custom_block_info() {
     ),
     'akdn_internal_news_config_block' => array(
       'info' => t('AKDN internal News page Configuration Blocks'),
+    ),
+    'akdn_search_urls_block' => array(
+      'info' => t('AKDN Search URLS Blocks'),
     ),     
   );
   return $blocks;
@@ -885,6 +895,21 @@ function akdn_custom_block_view($delta = '') {
       else {
         $block['content'] = NULL;
       }
+      break;
+      case 'akdn_search_urls_block':
+        $block['subject'] = '';
+        $default_search_class = $google_search_class = '';
+        if ((isset($arg[0]) && $arg[0] == 'search') && (isset($arg[1]) && $arg[1] == 'google-search')) {
+            $google_search_class = 'default';
+        } elseif ((isset($arg[0]) && $arg[0] == 'search') && !isset($arg[1])) {
+            $default_search_class = 'default';
+        }
+
+        $default_search_url = l('Site Search', 'search', array('class' => array($default_search_class), 'title' => t('Search')));
+        $google_search_url = l('Google Search', 'search/google-search', array('class' => array($google_search_class), 'title' => t('Google Search')));
+
+        $search_urls = '<div class="akdn_search_urls_block">' . $default_search_url . $google_search_url . '</div>';
+        $block['content'] = $search_urls;
       break;
   }
   return $block;
@@ -3874,18 +3899,35 @@ function akdn_custom_node_update($node) {
 
 function akdn_custom_facet_items_alter(&$build, &$settings) {
   if ($settings->facet == "entity_type") {
-    foreach($build as $key => $item) {
+
+    // Save Custom Page number to add on the combined facet item.
+    $number_of_custom_content = (isset($build['custom content']['#count']) && $build['custom content']['#count']) ?
+        $build['custom content']['#count'] : 0;
+
+    foreach ($build as $key => $item) {
       if ($key == 'project') {
         $build[$key]["#markup"] = 'Spotlight';
       }
       elseif ($key == 'architecture project') {
         $build[$key]["#markup"] = 'Architecture Project';
       }
-    }
-    if (array_key_exists('agency', $build)) {
-        $count = $build['agency']['#count'] -2;
-        $build['agency']['#count'] = $count;
+      elseif ($key == 'page') {
+        // Change the title of facet item to represent two facet items
+        $build['page']["#markup"] = t('Info page');
+
+        // Smash the count of hits together.
+        if ($build['page']['#count'] > 0) {
+          $build['page']['#count'] = $build['page']['#count'] + $number_of_custom_content;
+        }
       }
+      elseif ($key == 'custom content') {
+        unset($build['custom content']);
+      }
+    } // End foreach
+    if (array_key_exists('agency', $build)) {
+      $count = $build['agency']['#count'] - 2;
+      $build['agency']['#count'] = $count;
+    }
   }
 }
 
