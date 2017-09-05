@@ -47,16 +47,14 @@ a:hover {
     margin: 0 auto;
 
     h1 {
-        font-size: 50px;
         margin: 0 0 20px;
         
         a {
-            color: $color_black;
-            font-size: 60px;
-            font-family: "Times New Roman", arial, sans-serif;
-            &:hover {
-                text-decoration: none;
-            }
+            width: 120px;
+            height: 55px;
+            background: url(../images/akdn-logo.png) 0 0 no-repeat;
+            display: block;
+            font-size: 0;
         }
     }
     /* Header*/
@@ -346,12 +344,12 @@ a:hover {
         padding-left: 25px;
         .akdn-news-page-careers {
             margin-top: 20px;
-            .career-akdn-logo {
+/*            .career-akdn-logo {
                 background: url('../images/__logo.png') center 0 no-repeat; 
                 height: 56px;
                 width: 100%; 
                 margin-bottom: 20px;
-            }
+            }*/
             .careers-block-content {
                 border-bottom: 1px solid $color_grey;
                 padding-bottom: 20px;
