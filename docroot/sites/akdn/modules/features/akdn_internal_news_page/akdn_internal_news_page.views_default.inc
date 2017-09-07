@@ -185,7 +185,6 @@ function akdn_internal_news_page_views_default_views() {
   $handler->display->display_options['fields']['body_et']['label'] = '';
   $handler->display->display_options['fields']['body_et']['alter']['max_length'] = '200';
   $handler->display->display_options['fields']['body_et']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['body_et']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['body_et']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body_et']['hide_empty'] = TRUE;
   /* Field: Content: Find out more link */
