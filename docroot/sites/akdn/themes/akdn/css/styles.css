@@ -20983,69 +20983,70 @@ a:hover {
   margin-bottom: 10px;
   color: #666;
   font-family: "universltstd-light";
+  clear: both;
 }
-/* line 283, ../sass/_internal-page.scss */
+/* line 284, ../sass/_internal-page.scss */
 #internal-page .news-block .view-content .news-block-content .news-body, #internal-page .news-community .view-content .news-block-content .news-body {
   font-size: 18px;
   line-height: 24px;
   font-family: "universltstd-light";
 }
-/* line 290, ../sass/_internal-page.scss */
+/* line 291, ../sass/_internal-page.scss */
 #internal-page .news-block .view-content .news-block-content .readmore-text a, #internal-page .news-community .view-content .news-block-content .readmore-text a {
   color: #000;
   font-family: "universltstd-bold";
   text-transform: uppercase;
   font-size: 16px;
 }
-/* line 297, ../sass/_internal-page.scss */
+/* line 298, ../sass/_internal-page.scss */
 #internal-page .news-block .view-content .news-block-content .all-read-more, #internal-page .news-community .view-content .news-block-content .all-read-more {
   float: left;
   margin: 0 5px 0 0;
 }
-/* line 300, ../sass/_internal-page.scss */
+/* line 301, ../sass/_internal-page.scss */
 #internal-page .news-block .view-content .news-block-content .all-read-more.media, #internal-page .news-community .view-content .news-block-content .all-read-more.media {
   display: none;
 }
-/* line 304, ../sass/_internal-page.scss */
+/* line 305, ../sass/_internal-page.scss */
 #internal-page .news-block .view-content .news-block-content .inthemedia-read-more, #internal-page .news-community .view-content .news-block-content .inthemedia-read-more {
   margin: 0 5px 0 0;
   float: left;
   display: none;
 }
-/* line 308, ../sass/_internal-page.scss */
+/* line 309, ../sass/_internal-page.scss */
 #internal-page .news-block .view-content .news-block-content .inthemedia-read-more.media, #internal-page .news-community .view-content .news-block-content .inthemedia-read-more.media {
   display: block;
 }
-/* line 320, ../sass/_internal-page.scss */
+/* line 321, ../sass/_internal-page.scss */
 #internal-page .news-community .article-type {
   min-height: 27px;
 }
-/* line 326, ../sass/_internal-page.scss */
+/* line 327, ../sass/_internal-page.scss */
 #internal-page .multimedia-block {
   width: 769px;
   float: left;
   padding-right: 25px;
   border-right: 1px solid #b6985a;
 }
-/* line 331, ../sass/_internal-page.scss */
+/* line 332, ../sass/_internal-page.scss */
 #internal-page .multimedia-block .view-content {
   margin-top: 20px;
 }
-/* line 333, ../sass/_internal-page.scss */
+/* line 334, ../sass/_internal-page.scss */
 #internal-page .multimedia-block .view-content .grid-social-block_picture img {
   max-height: 100% !important;
 }
-/* line 336, ../sass/_internal-page.scss */
+/* line 337, ../sass/_internal-page.scss */
 #internal-page .multimedia-block .view-content .grid-social-block_date {
   margin: -25px 0 5px 0;
 }
-/* line 341, ../sass/_internal-page.scss */
+/* line 342, ../sass/_internal-page.scss */
 #internal-page .akdn_news_page_careers_content {
   float: right;
   width: 371px;
   padding-left: 25px;
 }
-/* line 345, ../sass/_internal-page.scss */
+/* line 346, ../sass/_internal-page.scss */
 #internal-page .akdn_news_page_careers_content .akdn-news-page-careers {
   margin-top: 20px;
   /*            .career-akdn-logo {
@@ -21055,62 +21056,62 @@ a:hover {
                   margin-bottom: 20px;
               }*/
 }
-/* line 353, ../sass/_internal-page.scss */
+/* line 354, ../sass/_internal-page.scss */
 #internal-page .akdn_news_page_careers_content .akdn-news-page-careers .careers-block-content {
   border-bottom: 1px solid #666;
   padding-bottom: 20px;
   margin-bottom: 20px;
   font-size: 20px;
 }
-/* line 358, ../sass/_internal-page.scss */
+/* line 359, ../sass/_internal-page.scss */
 #internal-page .akdn_news_page_careers_content .akdn-news-page-careers .careers-block-content h4 {
   font-size: 20px;
   color: #000;
   font-family: "universltstd-bold";
 }
-/* line 363, ../sass/_internal-page.scss */
+/* line 364, ../sass/_internal-page.scss */
 #internal-page .akdn_news_page_careers_content .akdn-news-page-careers .careers-block-content .job-description {
   font-family: "universltstd-light";
   margin-bottom: 10px;
 }
-/* line 369, ../sass/_internal-page.scss */
+/* line 370, ../sass/_internal-page.scss */
 #internal-page .akdn_news_page_careers_content .akdn-news-page-careers .job-link a, #internal-page .akdn_news_page_careers_content .akdn-news-page-careers .all-jobs-link a {
   color: #000;
   font-family: "universltstd-light";
   text-transform: uppercase;
 }
-/* line 376, ../sass/_internal-page.scss */
+/* line 377, ../sass/_internal-page.scss */
 #internal-page .akdn_news_page_careers_content .all-jobs-link {
   font-size: 20px;
 }
-/* line 379, ../sass/_internal-page.scss */
+/* line 380, ../sass/_internal-page.scss */
 #internal-page .akdn_news_page_careers_content .all-jobs-link a {
   font-size: 20px;
 }
-/* line 384, ../sass/_internal-page.scss */
+/* line 385, ../sass/_internal-page.scss */
 #internal-page .internal-news-page-footer {
   padding: 20px 0;
   font-size: 18px;
   line-height: 16px;
   font-family: "universltstd-light";
 }
-/* line 389, ../sass/_internal-page.scss */
+/* line 390, ../sass/_internal-page.scss */
 #internal-page .internal-news-page-footer .internal-news-page-footer-left {
   float: left;
   color: #b6985a;
 }
-/* line 393, ../sass/_internal-page.scss */
+/* line 394, ../sass/_internal-page.scss */
 #internal-page .internal-news-page-footer .internal-news-page-footer-right {
   float: right;
 }
-/* line 395, ../sass/_internal-page.scss */
+/* line 396, ../sass/_internal-page.scss */
 #internal-page .internal-news-page-footer .internal-news-page-footer-right h5 {
   display: inline-block;
   vertical-align: top;
   margin: 0 5px 0 0;
   font-size: 18px;
 }
-/* line 401, ../sass/_internal-page.scss */
+/* line 402, ../sass/_internal-page.scss */
 #internal-page .internal-news-page-footer .internal-news-page-footer-right a {
   display: inline-block;
   vertical-align: top;
