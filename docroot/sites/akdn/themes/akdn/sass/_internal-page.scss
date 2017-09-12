@@ -87,9 +87,6 @@ a:hover {
             font-size: $font-20;
             line-height: 22px;
             @media only screen and (max-width: $width479-mobilesmall) {
-              font-size: 14px;
-            }
-            @media only screen and (max-width: $width374-mobilesmallp) {
               font-size: 12px;
             }
             h3 {
@@ -101,10 +98,7 @@ a:hover {
                 line-height: 22px;
                 text-transform: uppercase;
                 @media only screen and (max-width: $width479-mobilesmall) {
-                  font-size: 14px;
-                }
-                @media only screen and (max-width: $width374-mobilesmallp) {
-                    font-size: 11px;
+                  font-size: 12px;
                 }
             }
             span {
