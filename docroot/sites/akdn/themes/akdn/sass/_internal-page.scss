@@ -87,7 +87,7 @@ a:hover {
             font-size: $font-20;
             line-height: 22px;
             @media only screen and (max-width: $width479-mobilesmall) {
-              font-size: 15px;
+              font-size: 14px;
             }
             @media only screen and (max-width: $width374-mobilesmallp) {
               font-size: 12px;
@@ -101,7 +101,7 @@ a:hover {
                 line-height: 22px;
                 text-transform: uppercase;
                 @media only screen and (max-width: $width479-mobilesmall) {
-                  font-size: 15px;
+                  font-size: 14px;
                 }
                 @media only screen and (max-width: $width374-mobilesmallp) {
                     font-size: 11px;
@@ -182,7 +182,7 @@ a:hover {
         margin: 25px 0;
         padding: 30px 45px;
         background: #b5995a;
-        @media only screen and (max-width: $width666-mobile) {
+        @media only screen and (max-width: $width767-mobile) {
           padding: 15px;
         }
         .announcement-image {
@@ -193,6 +193,13 @@ a:hover {
                 width: 30%;
             }
             @media only screen and (max-width: $width767-mobile) {
+                margin-right: 15px;
+            }
+            @media only screen and (min-width: $width479-mobilesmall) and (max-width: $width666-mobile) {
+              width: 100%;
+              margin-right: 0;
+            }
+            @media only screen and (max-width: $width479-mobilesmall) {
                 width: 100%;
             }
          }
@@ -528,11 +535,20 @@ a:hover {
         .internal-news-page-footer-left {
             float: left;
             color: $color_brown;
+            @media only screen and (max-width: $width767-mobile) {
+                float: none;
+                display: block;
+                margin-bottom: 10px;
+                line-height: normal;
+            }
         }
         .internal-news-page-footer-right {
             float: right;
             @media only screen and (max-width: $width768-ipadp) { 
                 float: none;
+            }
+            @media only screen and (max-width: $width767-mobile) {
+                display: block;
             }
             h5 {
                 display: inline-block;
