@@ -205,6 +205,9 @@ a:hover {
             h3 {
                 font: 45px "Times New Roman, sans-Serif";
                 text-transform: uppercase;
+                @media only screen and (max-width: $width767-mobile) {
+                  font-size: 35px;
+                }
                 @media only screen and (max-width: $width666-mobile) {
                     font-size: 30px;
                 }
