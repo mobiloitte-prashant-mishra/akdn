@@ -99,7 +99,7 @@ a:hover {
                 text-transform: uppercase;
                 @media only screen and (max-width: $width479-mobilesmall) {
                   font-size: 12px;
-                }
+                } 
             }
             span {
                 padding-left: 10px;
@@ -466,10 +466,11 @@ a:hover {
                 max-height: 100% !important;
             }
             .grid-social-block_date {
-                margin: -25px 0 5px 0;
+                margin: -25px 0 5px;
             }            
         }
     }
+    
     .akdn_news_page_careers_content {
         float: right;
         width: 371px;

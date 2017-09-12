@@ -21449,29 +21449,29 @@ a:hover {
 }
 /* line 468, ../sass/_internal-page.scss */
 #internal-page .multimedia-block .view-content .grid-social-block_date {
-  margin: -25px 0 5px 0;
+  margin: -25px 0 5px;
 }
-/* line 473, ../sass/_internal-page.scss */
+/* line 474, ../sass/_internal-page.scss */
 #internal-page .akdn_news_page_careers_content {
   float: right;
   width: 371px;
   padding-left: 25px;
 }
 @media only screen and (max-width: 1024px) {
-  /* line 473, ../sass/_internal-page.scss */
+  /* line 474, ../sass/_internal-page.scss */
   #internal-page .akdn_news_page_careers_content {
     width: 50%;
   }
 }
 @media only screen and (max-width: 768px) {
-  /* line 473, ../sass/_internal-page.scss */
+  /* line 474, ../sass/_internal-page.scss */
   #internal-page .akdn_news_page_careers_content {
     width: 100%;
     padding-left: 0;
     margin-top: 20px;
   }
 }
-/* line 485, ../sass/_internal-page.scss */
+/* line 486, ../sass/_internal-page.scss */
 #internal-page .akdn_news_page_careers_content .akdn-news-page-careers {
   margin-top: 20px;
   /*            .career-akdn-logo {
@@ -21481,52 +21481,52 @@ a:hover {
                   margin-bottom: 20px;
               }*/
 }
-/* line 493, ../sass/_internal-page.scss */
+/* line 494, ../sass/_internal-page.scss */
 #internal-page .akdn_news_page_careers_content .akdn-news-page-careers .careers-block-content {
   border-bottom: 1px solid #666;
   padding-bottom: 20px;
   margin-bottom: 20px;
   font-size: 20px;
 }
-/* line 498, ../sass/_internal-page.scss */
+/* line 499, ../sass/_internal-page.scss */
 #internal-page .akdn_news_page_careers_content .akdn-news-page-careers .careers-block-content h4 {
   font-size: 20px;
   color: #000;
   font-family: "universltstd-bold";
 }
-/* line 503, ../sass/_internal-page.scss */
+/* line 504, ../sass/_internal-page.scss */
 #internal-page .akdn_news_page_careers_content .akdn-news-page-careers .careers-block-content .job-description {
   font-family: "universltstd-light";
   margin-bottom: 10px;
 }
-/* line 509, ../sass/_internal-page.scss */
+/* line 510, ../sass/_internal-page.scss */
 #internal-page .akdn_news_page_careers_content .akdn-news-page-careers .job-link a, #internal-page .akdn_news_page_careers_content .akdn-news-page-careers .all-jobs-link a {
   color: #000;
   font-family: "universltstd-light";
   text-transform: uppercase;
 }
-/* line 516, ../sass/_internal-page.scss */
+/* line 517, ../sass/_internal-page.scss */
 #internal-page .akdn_news_page_careers_content .all-jobs-link {
   font-size: 20px;
 }
-/* line 519, ../sass/_internal-page.scss */
+/* line 520, ../sass/_internal-page.scss */
 #internal-page .akdn_news_page_careers_content .all-jobs-link a {
   font-size: 20px;
 }
-/* line 524, ../sass/_internal-page.scss */
+/* line 525, ../sass/_internal-page.scss */
 #internal-page .internal-news-page-footer {
   padding: 20px 0;
   font-size: 18px;
   line-height: 16px;
   font-family: "universltstd-light";
 }
-/* line 529, ../sass/_internal-page.scss */
+/* line 530, ../sass/_internal-page.scss */
 #internal-page .internal-news-page-footer .internal-news-page-footer-left {
   float: left;
   color: #b6985a;
 }
 @media only screen and (max-width: 767px) {
-  /* line 529, ../sass/_internal-page.scss */
+  /* line 530, ../sass/_internal-page.scss */
   #internal-page .internal-news-page-footer .internal-news-page-footer-left {
     float: none;
     display: block;
@@ -21534,41 +21534,41 @@ a:hover {
     line-height: normal;
   }
 }
-/* line 539, ../sass/_internal-page.scss */
+/* line 540, ../sass/_internal-page.scss */
 #internal-page .internal-news-page-footer .internal-news-page-footer-right {
   float: right;
 }
 @media only screen and (max-width: 768px) {
-  /* line 539, ../sass/_internal-page.scss */
+  /* line 540, ../sass/_internal-page.scss */
   #internal-page .internal-news-page-footer .internal-news-page-footer-right {
     float: none;
   }
 }
 @media only screen and (max-width: 767px) {
-  /* line 539, ../sass/_internal-page.scss */
+  /* line 540, ../sass/_internal-page.scss */
   #internal-page .internal-news-page-footer .internal-news-page-footer-right {
     display: block;
   }
 }
-/* line 547, ../sass/_internal-page.scss */
+/* line 548, ../sass/_internal-page.scss */
 #internal-page .internal-news-page-footer .internal-news-page-footer-right h5 {
   display: inline-block;
   vertical-align: top;
   margin: 0 5px 0 0;
   font-size: 18px;
 }
-/* line 553, ../sass/_internal-page.scss */
+/* line 554, ../sass/_internal-page.scss */
 #internal-page .internal-news-page-footer .internal-news-page-footer-right a {
   display: inline-block;
   vertical-align: top;
 }
 
 /* for search page*/
-/* line 563, ../sass/_internal-page.scss */
+/* line 564, ../sass/_internal-page.scss */
 .akdn_search_urls_block {
   margin: 5px 10px 10px 0px;
 }
-/* line 565, ../sass/_internal-page.scss */
+/* line 566, ../sass/_internal-page.scss */
 .akdn_search_urls_block a {
   border: 1px solid #cccccc;
   padding: 5px 10px;
@@ -21576,24 +21576,24 @@ a:hover {
   margin: 0 10px 10px 0;
 }
 
-/* line 574, ../sass/_internal-page.scss */
+/* line 575, ../sass/_internal-page.scss */
 #views-exposed-form-solr-site-search-page .views-widget-filter-search_api_views_fulltext {
   display: none;
 }
-/* line 578, ../sass/_internal-page.scss */
+/* line 579, ../sass/_internal-page.scss */
 #views-exposed-form-solr-site-search-page .views-widget-sort-by {
   clear: both;
   float: none;
   margin-bottom: 20px;
 }
 
-/* line 585, ../sass/_internal-page.scss */
+/* line 586, ../sass/_internal-page.scss */
 div#block-views-exp-solr-site-search-page {
   clear: both;
 }
 
 @media only screen and (max-width: 1172px) {
-  /* line 590, ../sass/_internal-page.scss */
+  /* line 591, ../sass/_internal-page.scss */
   .akdn_main_body {
     width: 100%;
   }
