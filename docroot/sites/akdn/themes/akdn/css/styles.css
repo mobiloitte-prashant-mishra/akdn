@@ -21311,20 +21311,20 @@ a:hover {
 #internal-page .akdn_news_page_careers_content .all-jobs-link a {
   font-size: 20px;
 }
-/* line 528, ../sass/_internal-page.scss */
+/* line 529, ../sass/_internal-page.scss */
 #internal-page .internal-news-page-footer {
   padding: 20px 0;
   font-size: 18px;
   line-height: 16px;
   font-family: "universltstd-light";
 }
-/* line 533, ../sass/_internal-page.scss */
+/* line 534, ../sass/_internal-page.scss */
 #internal-page .internal-news-page-footer .internal-news-page-footer-left {
   float: left;
   color: #b6985a;
 }
 @media only screen and (max-width: 767px) {
-  /* line 533, ../sass/_internal-page.scss */
+  /* line 534, ../sass/_internal-page.scss */
   #internal-page .internal-news-page-footer .internal-news-page-footer-left {
     float: none;
     display: block;
@@ -21332,37 +21332,37 @@ a:hover {
     line-height: normal;
   }
 }
-/* line 543, ../sass/_internal-page.scss */
+/* line 544, ../sass/_internal-page.scss */
 #internal-page .internal-news-page-footer .internal-news-page-footer-right {
   float: right;
 }
 @media only screen and (max-width: 768px) {
-  /* line 543, ../sass/_internal-page.scss */
+  /* line 544, ../sass/_internal-page.scss */
   #internal-page .internal-news-page-footer .internal-news-page-footer-right {
     float: none;
   }
 }
 @media only screen and (max-width: 767px) {
-  /* line 543, ../sass/_internal-page.scss */
+  /* line 544, ../sass/_internal-page.scss */
   #internal-page .internal-news-page-footer .internal-news-page-footer-right {
     display: block;
   }
 }
-/* line 551, ../sass/_internal-page.scss */
+/* line 552, ../sass/_internal-page.scss */
 #internal-page .internal-news-page-footer .internal-news-page-footer-right h5 {
   display: inline-block;
   vertical-align: top;
   margin: 0 5px 0 0;
   font-size: 18px;
 }
-/* line 557, ../sass/_internal-page.scss */
+/* line 558, ../sass/_internal-page.scss */
 #internal-page .internal-news-page-footer .internal-news-page-footer-right a {
   display: inline-block;
   vertical-align: top;
 }
 
 @media only screen and (max-width: 1172px) {
-  /* line 567, ../sass/_internal-page.scss */
+  /* line 568, ../sass/_internal-page.scss */
   .akdn_main_body {
     width: 100%;
   }
