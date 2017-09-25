@@ -10,6 +10,19 @@ $font-18: 18px;
 $font-universe-bold: 'universltstd-bold';
 $font-universe-light: 'universltstd-light';
 
+/* variables for media query*/
+$width1172:                1172px;
+$width1100:                1100px;
+$width1025:                1025px;
+$width1024-ipadl:          1024px;
+$width991-ipadl:           991px;
+$width768-ipadp:           768px;
+$width767-mobile:          767px;
+$width667-mobile:          667px;
+$width666-mobile:          666px;
+$width479-mobilesmall:     479px;
+$width374-mobilesmallp:    374px;
+
 
 h3 { 
     margin: 0;
@@ -42,9 +55,16 @@ a:hover {
         margin-top: 50px;
     }
 }
+
 #internal-page {
     max-width: 1172px;
     margin: 0 auto;
+    @media only screen and (max-width: $width1172) {
+        width: 100%;
+    }
+    @media only screen and (max-width: $width991-ipadl) {
+        position: relative;
+    }
 
     h1 {
         margin: 0 0 20px;
@@ -67,6 +87,9 @@ a:hover {
             color: $color_grey;
             font-size: $font-20;
             line-height: 22px;
+            @media only screen and (max-width: $width479-mobilesmall) {
+              font-size: 12px;
+            }
             h3 {
                 display: inline-block;
                 vertical-align: top;
@@ -75,7 +98,9 @@ a:hover {
                 font-size: $font-20;
                 line-height: 22px;
                 text-transform: uppercase;
-                
+                @media only screen and (max-width: $width479-mobilesmall) {
+                  font-size: 12px;
+                } 
             }
             span {
                 padding-left: 10px;
@@ -90,6 +115,18 @@ a:hover {
         clear: right;
         background: #eaeaea;
         width: 300px;
+        @media only screen and (max-width: $width991-ipadl) {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        @media only screen and (max-width: $width479-mobilesmall) {
+            width: 200px;
+        }
+        @media only screen and (max-width: $width479-mobilesmall) {
+            position: static;
+            width: 100%;
+        }
         form {
             padding: 5px 10px;
         }
@@ -140,22 +177,55 @@ a:hover {
         margin: 25px 0;
         padding: 30px 45px;
         background: #b5995a;
+        @media only screen and (max-width: $width767-mobile) {
+          padding: 15px;
+        }
         .announcement-image {
             width: 340px;
             float: left;
             margin-right: 45px;
-        }
+            @media only screen and (max-width: $width991-ipadl) {
+                width: 30%;
+            }
+            @media only screen and (max-width: $width767-mobile) {
+                margin-right: 15px;
+            }
+            @media only screen and (min-width: $width479-mobilesmall) and (max-width: $width666-mobile) {
+              width: 100%;
+              margin-right: 0;
+            }
+            @media only screen and (max-width: $width479-mobilesmall) {
+                width: 100%;
+            }
+         }
         .announcement-content {
             float: left;
             color: $color_white;
             font: 24px/26px "Arial, sans-serif";
+            width: 100%;
             h3 {
                 font: 45px "Times New Roman, sans-Serif";
                 text-transform: uppercase;
+                @media only screen and (max-width: $width767-mobile) {
+                  font-size: 35px;
+                }
+                @media only screen and (max-width: $width666-mobile) {
+                    font-size: 30px;
+                }
             }
             h4 {
                 font: bold 24px/32px "Arial, sans-serif";
                 margin: 0;
+                @media only screen and (max-width: $width666-mobile) {
+                    font-size: 20px;
+                    line-height: 26px;
+                }
+            }
+            p {
+                @media only screen and (max-width: $width666-mobile) {
+                    font-size: 20px;
+                    line-height: 22px;
+                }
             }
             a {
                 display: block;
@@ -173,6 +243,9 @@ a:hover {
         h3 {
             color: $color_brown;
             font: 45px "Times New Roman, sans-Serif";
+            @media only screen and (max-width: $width991-ipadl) {
+              font-size: 30px;
+            }
         }
         .social-media-block {
             margin-top: $font-20;
@@ -180,21 +253,42 @@ a:hover {
             display: -webkit-flex;
             justify-content: flex-start;
             font-family: 'universltstd-bold';
+            @media only screen and (max-width: $width767-mobile) {
+              display: block;
+            }
             .view-facebook-feeds {
                 width: 33%;
                 border-right: 1px solid $color_brown;
                 padding-right: 30px;
                 margin-right: 30px;
                 font-size: $font-20;
+                @media only screen and (max-width: $width991-ipadl) {
+                    padding-right: 15px;
+                    margin-right: 15px;
+                }
+                @media only screen and (max-width: $width767-mobile) {
+                    width: 100%;
+                    margin-right: 0;
+                    padding: 0 0 20px;
+                    border-right: 0;
+                    border-bottom: 1px solid $color_brown;
+                }
                 &:last-child {
                     border-right: 0;
                     padding-right: 0;
                     margin-right: 0;
                     width: 30.5%;
+                    @media only screen and (max-width: $width767-mobile) {
+                        width: 100%;
+                        border-bottom: 0;
+                    }
                 }
                 .grid-social-block_picture {
                     img {
                         width: 340px;
+                        @media only screen and (max-width: $width1172) { 
+                            width: 100%;
+                        }
                     }
                 }                
             }    
@@ -244,17 +338,35 @@ a:hover {
             display: flex;
             display: -webkit-flex;
             justify-content: flex-start;
+            @media only screen and (max-width: $width767-mobile) {
+              display: block;
+            }
             .news-block-content {
                 width: 33%;
                 border-right: 1px solid $color_brown;
                 padding-right: 30px;
                 margin-right: 30px;
                 font-size: $font-20;
+                @media only screen and (max-width: $width991-ipadl) {
+                    padding-right: 15px;
+                    margin-right: 15px;
+                }
+                @media only screen and (max-width: $width767-mobile) {
+                    width: 100%;
+                    margin: 0 0 20px;
+                    padding: 0 0 20px;
+                    border-right: 0;
+                    border-bottom: 1px solid $color_brown;
+                }
                 &:last-child {
                     padding-right: 0;
                     border-right: 0;
                     margin-right: 0;
                     width: 30.5%;
+                    @media only screen and (max-width: $width767-mobile) {
+                        width: 100%;
+                        border-bottom: 0;
+                    }
                 }
                 .news-image {
                     margin-bottom: 25px;
@@ -296,6 +408,11 @@ a:hover {
                         text-transform: uppercase;
                         font-size: 16px;
                     }
+                    .inthemedia-read-more { 
+                        @media only screen and (max-width: $width767-mobile) { 
+                           float: left;
+                        }
+                    }
                 }
                 .all-read-more {
                         float: left;
@@ -308,6 +425,9 @@ a:hover {
                     margin: 0 5px 0 0;
                     float: left;
                     display: none;
+                    @media only screen and (max-width: $width767-mobile) { 
+                        float: none;
+                    }
                     &.media {
                         display: block;
                     }
@@ -320,6 +440,11 @@ a:hover {
     /* News from community*/
     .news-community {
         @extend .news-block;
+        .inthemedia-read-more {            
+            @media only screen and (max-width: $width767-mobile) { 
+                float: left;
+            }
+        }
         .article-type {
             min-height: 27px;
         }
@@ -331,20 +456,38 @@ a:hover {
         float: left;
         padding-right: 25px;
         border-right: 1px solid $color_brown;
+        @media only screen and (max-width: $width1024-ipadl) {
+            width: 50%;
+        }
+        @media only screen and (max-width: $width768-ipadp) {
+            width: 100%;
+            border-right: 0;
+            border-bottom: 1px solid $color_brown;
+            padding-right: 0;
+        }
         .view-content {
            margin-top: 20px;
             .grid-social-block_picture img {
                 max-height: 100% !important;
             }
             .grid-social-block_date {
-                margin: -25px 0 5px 0;
+                margin: -25px 0 5px;
             }            
         }
     }
+    
     .akdn_news_page_careers_content {
         float: right;
         width: 371px;
         padding-left: 25px;
+        @media only screen and (max-width: $width1024-ipadl) {
+            width: 50%;
+        }
+        @media only screen and (max-width: $width768-ipadp) {
+            width: 100%;
+            padding-left: 0;
+            margin-top: 20px;
+        }
         .akdn-news-page-careers {
             margin-top: 20px;
 /*            .career-akdn-logo {
@@ -384,6 +527,7 @@ a:hover {
             }
         }
     }
+    
     .internal-news-page-footer {
         padding: 20px 0;
         font-size: $font-18;
@@ -392,9 +536,21 @@ a:hover {
         .internal-news-page-footer-left {
             float: left;
             color: $color_brown;
+            @media only screen and (max-width: $width767-mobile) {
+                float: none;
+                display: block;
+                margin-bottom: 10px;
+                line-height: normal;
+            }
         }
         .internal-news-page-footer-right {
             float: right;
+            @media only screen and (max-width: $width768-ipadp) { 
+                float: none;
+            }
+            @media only screen and (max-width: $width767-mobile) {
+                display: block;
+            }
             h5 {
                 display: inline-block;
                 vertical-align: top;
@@ -435,4 +591,10 @@ a:hover {
 
 div#block-views-exp-solr-site-search-page {
     clear: both;
+}
+
+@media only screen and (max-width: $width1172) {
+    .akdn_main_body {
+        width: 100%;
+    }
 }
