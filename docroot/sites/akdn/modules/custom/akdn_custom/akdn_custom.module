@@ -3904,24 +3904,19 @@ function akdn_custom_video_player() {
     $youtube_video_id = $youtube_temp[1];
   }
   if (($video_temp[1]) && (stripos($video_temp, 'brightcove://') !== FALSE)) {
-    $output = '<script type="text/javascript" src="//admin.brightcove.com/js/BrightcoveExperiences.js"></script>';
     $output .= '<div class="playerbox" height="460">
-    <object id="player1" class="BrightcoveExperience">
-      <param name="bgcolor" value="#FFFFFF" />
-      <param name="width" value="100%" />
-      <param name="height" value="100%" />
-      <param name="playerID" value="2212788304001" />
-      <param name="playerKey" value="AQ~~,AAAAlwpybYk~,Oor7wWdAhP73CsnDCZpEpG4Cs-qxbQGl" />
-      <param name="isVid" value="true" />
-      <param name="isUI" value="true" />
-      <param name="dynamicStreaming" value="true" />
-      <param name="@videoPlayer" value="' . $video . '" />
-      <param name="templateLoadHandler" value="onTemplateLoad" />
-      <param name="templateReadyHandler" value="onTemplateReady" />
-      <param name="includeAPI" value="true" />
-      <param name="autoStart" value="false" />
-    </object>
-  </div>';
+                      <video 
+                        data-video-id="' . $video . '"
+                        data-account="648715333001" 
+                        data-player="SJCRhP7Eb" 
+                        data-embed="default" 
+                        data-application-id 
+                        class="video-js" 
+                        controls 
+                        style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; width: 100%; height: 100%;">
+                      </video>
+                      <script src="//players.brightcove.net/648715333001/SJCRhP7Eb_default/index.min.js"></script>
+                </div>';
     //$output .= '<script type="text/javascript">brightcove.createExperiences();</script>';
     drupal_add_js($drupal_get_path . '/js/akdn_brightcove.js');
     return $output;
