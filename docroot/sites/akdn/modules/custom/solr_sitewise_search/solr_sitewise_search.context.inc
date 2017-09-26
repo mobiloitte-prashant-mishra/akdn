@@ -19,7 +19,6 @@ function solr_sitewise_search_context_default_contexts() {
   $context->conditions = array(
     'path' => array(
       'values' => array(
-        'search' => 'search',
         'search/google-search' => 'search/google-search',
       ),
     ),
@@ -65,6 +64,12 @@ function solr_sitewise_search_context_default_contexts() {
           'delta' => '-exp-solr_site_search-page',
           'region' => 'content',
           'weight' => '-9',
+        ),
+        'akdn_custom-akdn_search_urls_block' => array(
+          'module' => 'akdn_custom',
+          'delta' => 'akdn_search_urls_block',
+          'region' => 'content',
+          'weight' => '-8',
         ),
       ),
     ),
