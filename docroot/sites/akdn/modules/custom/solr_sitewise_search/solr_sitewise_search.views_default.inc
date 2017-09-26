@@ -195,6 +195,7 @@ function solr_sitewise_search_views_default_views() {
   $handler->display->display_options['fields']['field_short_title']['alter']['path'] = '[url]';
   $handler->display->display_options['fields']['field_short_title']['alter']['link_class'] = 'akdn-solr-short-link';
   $handler->display->display_options['fields']['field_short_title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_short_title']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_short_title']['empty'] = '[title_field]';
   $handler->display->display_options['fields']['field_short_title']['type'] = 'text_plain';
   $handler->display->display_options['fields']['field_short_title']['settings'] = array(
@@ -231,13 +232,6 @@ function solr_sitewise_search_views_default_views() {
   $handler->display->display_options['fields']['search_api_excerpt']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['search_api_excerpt']['link_to_entity'] = 0;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Indexed Node: Gallery Date */
-  $handler->display->display_options['sorts']['field_publish_date']['id'] = 'field_publish_date';
-  $handler->display->display_options['sorts']['field_publish_date']['table'] = 'search_api_index_akdn';
-  $handler->display->display_options['sorts']['field_publish_date']['field'] = 'field_publish_date';
-  $handler->display->display_options['sorts']['field_publish_date']['order'] = 'DESC';
-  $handler->display->display_options['sorts']['field_publish_date']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['field_publish_date']['expose']['label'] = 'Chronologically';
   /* Sort criterion: Search: Relevance */
   $handler->display->display_options['sorts']['search_api_relevance']['id'] = 'search_api_relevance';
   $handler->display->display_options['sorts']['search_api_relevance']['table'] = 'search_api_index_akdn';
@@ -246,7 +240,14 @@ function solr_sitewise_search_views_default_views() {
   $handler->display->display_options['sorts']['search_api_relevance']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['search_api_relevance']['expose']['label'] = 'Relevance';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;  
+  /* Sort criterion: Indexed Node: Gallery Date */
+  $handler->display->display_options['sorts']['field_publish_date']['id'] = 'field_publish_date';
+  $handler->display->display_options['sorts']['field_publish_date']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['sorts']['field_publish_date']['field'] = 'field_publish_date';
+  $handler->display->display_options['sorts']['field_publish_date']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['field_publish_date']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['field_publish_date']['expose']['label'] = 'Date';
   /* Filter criterion: Indexed Node: Content type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'search_api_index_akdn';
