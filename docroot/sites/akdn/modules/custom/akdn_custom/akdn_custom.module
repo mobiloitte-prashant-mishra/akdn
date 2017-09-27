@@ -184,7 +184,7 @@ function akdn_custom_preprocess_page(&$vars, $hook) {
     window.onload=function () {
       var tt = document.querySelectorAll(".field-add-more-submit");
       var len = document.querySelectorAll(".fieldset-legend .fieldset-title").length;
-      if(!len){
+      if(!len && tt[0] !== undefined){
         tt[0].click();
       }
     }
@@ -913,17 +913,23 @@ function akdn_custom_block_view($delta = '') {
       break;
       case 'akdn_search_urls_block':
         $block['subject'] = '';
-        $default_search_class = $google_search_class = '';
+        $search_url = $default_search_class = $google_search_class = '';
         if ((isset($arg[0]) && $arg[0] == 'search') && (isset($arg[1]) && $arg[1] == 'google-search')) {
             $google_search_class = 'default';
+            $search_url = l('Switch to site search', 'search', array('class' => array($default_search_class), 'title' => t('Search')));
         } elseif ((isset($arg[0]) && $arg[0] == 'search') && !isset($arg[1])) {
             $default_search_class = 'default';
+            $search_url = l('Switch to Google search', 'search/google-search', array('class' => array($google_search_class), 'title' => t('Google Search')));
         }
-
-        $default_search_url = l('Site Search', 'search', array('class' => array($default_search_class), 'title' => t('Search')));
-        $google_search_url = l('Google Search', 'search/google-search', array('class' => array($google_search_class), 'title' => t('Google Search')));
-
-        $search_urls = '<div class="akdn_search_urls_block">' . $default_search_url . $google_search_url . '</div>';
+        
+        if($search_url == ''){
+          
+        }
+        else{
+          
+        }
+        
+        $search_urls = '<div class="akdn_search_urls_block">' . $search_url . '</div>';
         $block['content'] = $search_urls;
       break;
   }
@@ -4697,4 +4703,34 @@ function get_config_block_type($nid) {
                                                     AND entity_id = :nid", array(':nid' => $nid))->fetchField();
 
   return $block_type_value;
+}
+
+/**
+ * Implement hook_search_api_solr_documents_alter
+ */
+function akdn_custom_search_api_solr_documents_alter(array &$documents, SearchApiIndex $index, array $items) {
+  $boost = array(
+    'geography' => 10,
+    'focus_area' => 9,
+    'agency' => 8,
+    'article' => 7,
+    'publication' => 6,
+    'speech' => 5,
+    'project' => 4,
+    'event' => 3,
+    'podcast' => 2,
+    'gallery' => 1,
+    'page' => -1,
+    'custom_content' => -1,
+  );
+
+  if ($index->item_type == 'node') {
+    foreach ($documents as $document) {
+      if ($field = $document->getField('ss_type')) {
+        if (isset($boost[$field['value']])) {
+          $document->setBoost($boost[$field['value']]);
+        }
+      }
+    }
+  }
 }
