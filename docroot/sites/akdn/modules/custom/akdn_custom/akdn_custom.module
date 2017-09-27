@@ -4509,3 +4509,33 @@ function get_config_block_type($nid) {
 
   return $block_type_value;
 }
+
+/**
+ * Implement hook_search_api_solr_documents_alter
+ */
+function akdn_custom_search_api_solr_documents_alter(array &$documents, SearchApiIndex $index, array $items) {
+  $boost = array(
+    'geography' => 10,
+    'focus_area' => 9,
+    'agency' => 8,
+    'article' => 7,
+    'publication' => 6,
+    'speech' => 5,
+    'project' => 4,
+    'event' => 3,
+    'podcast' => 2,
+    'gallery' => 1,
+    'page' => -1,
+    'custom_content' => -1,
+  );
+
+  if ($index->item_type == 'node') {
+    foreach ($documents as $document) {
+      if ($field = $document->getField('ss_type')) {
+        if (isset($boost[$field['value']])) {
+          $document->setBoost($boost[$field['value']]);
+        }
+      }
+    }
+  }
+}
