@@ -564,33 +564,6 @@ a:hover {
     
 }
 
-/* for search page*/
-.akdn_search_urls_block {
-    margin: 5px 10px 10px 0px;
-    a {
-        border: 1px solid rgb(204, 204, 204);
-        padding: 5px 10px;
-        border-radius: 10px;
-        margin: 0 10px 10px 0;
-    }
-}
-
-#views-exposed-form-solr-site-search-page {
-    .views-widget-filter-search_api_views_fulltext {
-        display: none;
-    }
-    
-    .views-widget-sort-by {
-        clear: both;
-        float: none;
-        margin-bottom: 20px;
-    }
-}
-
-div#block-views-exp-solr-site-search-page {
-    clear: both;
-}
-
 @media only screen and (max-width: $width1172) {
     .akdn_main_body {
         width: 100%;

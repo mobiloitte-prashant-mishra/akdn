@@ -21579,37 +21579,8 @@ a:hover {
   vertical-align: top;
 }
 
-/* for search page*/
-/* line 568, ../sass/_internal-page.scss */
-.akdn_search_urls_block {
-  margin: 5px 10px 10px 0px;
-}
-/* line 570, ../sass/_internal-page.scss */
-.akdn_search_urls_block a {
-  border: 1px solid #cccccc;
-  padding: 5px 10px;
-  border-radius: 10px;
-  margin: 0 10px 10px 0;
-}
-
-/* line 579, ../sass/_internal-page.scss */
-#views-exposed-form-solr-site-search-page .views-widget-filter-search_api_views_fulltext {
-  display: none;
-}
-/* line 583, ../sass/_internal-page.scss */
-#views-exposed-form-solr-site-search-page .views-widget-sort-by {
-  clear: both;
-  float: none;
-  margin-bottom: 20px;
-}
-
-/* line 590, ../sass/_internal-page.scss */
-div#block-views-exp-solr-site-search-page {
-  clear: both;
-}
-
 @media only screen and (max-width: 1172px) {
-  /* line 595, ../sass/_internal-page.scss */
+  /* line 568, ../sass/_internal-page.scss */
   .akdn_main_body {
     width: 100%;
   }
