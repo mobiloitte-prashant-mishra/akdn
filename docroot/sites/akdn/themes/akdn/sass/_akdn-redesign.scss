@@ -2772,7 +2772,7 @@ ul.primary li {
 
         a {
           font-size: 16px;
-          font-weight: normal;
+          font-weight: bold;
           color: #000;
 
           &:hover {
@@ -2845,6 +2845,9 @@ ul.primary li {
           line-height: 1;
           text-transform: capitalize;
         }
+      }
+      .views-field-search-api-excerpt {
+          font-size: 14px;
       }
     }
   }
