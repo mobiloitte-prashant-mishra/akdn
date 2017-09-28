@@ -21,19 +21,36 @@
  * regardless of any changes in the aliasing that might happen if
  * the view is modified.
  */
-$arg = arg();
-$url = 'https://www.youtube.com/feeds/videos.xml';
-if ($arg[0] == 'front') {
-  $channel_id = variable_get('akdn_youtube_channelid') ? variable_get('akdn_youtube_channelid') : 'UCJ9z0V7erDeLCWHS2iGGg5g';
+if (isset($row->_field_data['nid']['entity']->field_show_block['und'][0]['value']) &&
+    $row->_field_data['nid']['entity']->field_show_block['und'][0]['value'] &&
+    isset($row->field_field_youtube_embed[0]['rendered']['#element']['url'])) {
+  $content = array();
+  $youtube_URL = $row->field_field_youtube_embed[0]['rendered']['#element']['url'];
+  $youtube_key = preg_replace('/(https|http)\:\/\/www\.youtube\.com\/watch\?v\=/', '', $youtube_URL);
+  dsm($youtube_URL);dsm($youtube_key);
+  $content['id'] = $youtube_key;
+  $content['image_url'] = "http://i3.ytimg.com/vi/{$youtube_key}/hqdefault.jpg";
+  $details = file_get_contents("http://youtube.com/get_video_info?video_id={$youtube_key}");
+  parse_str($details, $ytarr);
+  $content['title'] = $ytarr['title'];
+  $content['date'] = $ytarr['timestamp'];
+  
 }
-elseif ($arg[1] == '22106') {
-  $channel_id = variable_get('akaa_youtube_channelid') ? variable_get('akaa_youtube_channelid') : 'UCq2a2B38dTDMKW7rgDf0LIA';
-}
-elseif ($arg[1] == '9576') {
-  $channel_id = variable_get('akmi_youtube_channelid') ? variable_get('akmi_youtube_channelid') : 'UCdXlZQFsArBuxT7bdkjhqvw';
-}
-if (function_exists('_akdn_custom_get_latest_youtube_video')) {
-  $content = _akdn_custom_get_latest_youtube_video($url, $channel_id);
+else {
+  $arg = arg();
+  $url = 'https://www.youtube.com/feeds/videos.xml';
+  if ($arg[0] == 'front') {
+    $channel_id = variable_get('akdn_youtube_channelid') ? variable_get('akdn_youtube_channelid') : 'UCJ9z0V7erDeLCWHS2iGGg5g';
+  }
+  elseif ($arg[1] == '22106') {
+    $channel_id = variable_get('akaa_youtube_channelid') ? variable_get('akaa_youtube_channelid') : 'UCq2a2B38dTDMKW7rgDf0LIA';
+  }
+  elseif ($arg[1] == '9576') {
+    $channel_id = variable_get('akmi_youtube_channelid') ? variable_get('akmi_youtube_channelid') : 'UCdXlZQFsArBuxT7bdkjhqvw';
+  }
+  if (function_exists('_akdn_custom_get_latest_youtube_video')) {
+    $content = _akdn_custom_get_latest_youtube_video($url, $channel_id);
+  }
 }
 ?>
 <?php

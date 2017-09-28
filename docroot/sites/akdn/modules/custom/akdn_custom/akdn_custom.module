@@ -574,7 +574,16 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
       ),
     );            
   }
+  
+  if ($form_id == 'youtube_node_form') {
+    $form['field_youtube_embed']['#states'] = array(
+      'visible' => array(
+        ":input[name='field_show_block[und]']" => array('checked' => TRUE),
+      ),
+    );
+  }
 }
+
 /**
  * Implementes hook_form_FORM_ID_alter().
  *
