@@ -27,7 +27,6 @@ if (isset($row->_field_data['nid']['entity']->field_show_block['und'][0]['value'
   $content = array();
   $youtube_URL = $row->field_field_youtube_embed[0]['rendered']['#element']['url'];
   $youtube_key = preg_replace('/(https|http)\:\/\/www\.youtube\.com\/watch\?v\=/', '', $youtube_URL);
-  dsm($youtube_URL);dsm($youtube_key);
   $content['id'] = $youtube_key;
   $content['image_url'] = "http://i3.ytimg.com/vi/{$youtube_key}/hqdefault.jpg";
   $details = file_get_contents("http://youtube.com/get_video_info?video_id={$youtube_key}");
