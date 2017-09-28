@@ -4525,8 +4525,8 @@ function get_config_block_type($nid) {
  */
 function akdn_custom_search_api_solr_documents_alter(array &$documents, SearchApiIndex $index, array $items) {
   $boost = array(
-    'geography' => 10,
-    'focus_area' => 9,
+    'geography' => 9,
+    //'focus_area' => 9,
     'agency' => 8,
     'article' => 7,
     'publication' => 6,
