@@ -30,7 +30,9 @@ if ($row->{'_entity_properties'}['entity_type'] == 'In the media') {
     'attributes' => array('target' => '_blank')
   ));
 }
-elseif ($row->{'_entity_properties'}['entity_type'] == 'geography') {
+elseif ($row->{'_entity_properties'}['entity_type'] == 'geography' ||
+        ($row->{'_entity_properties'}['entity_type'] == 'Info Page' && $row->{'_entity_properties'}['entity object']->type == 'akmi_artists') ||
+        ($row->{'_entity_properties'}['entity_type'] == 'Info Page' && $row->{'_entity_properties'}['entity object']->type == 'akmi_performance')) {
   $output = l($row->{'_entity_properties'}['entity object']->title, 'node/' . $row->{'_entity_properties'}['search_api_id'], array('html' => TRUE));
 }
 else {

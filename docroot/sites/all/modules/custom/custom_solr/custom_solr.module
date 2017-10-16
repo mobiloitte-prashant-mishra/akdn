@@ -307,7 +307,9 @@ function custom_solr_entity_type_callback($node) {
   $type = str_ireplace("_", " ", $type);
   
   // #AKDN-1457 Change the display name for basic page and Custom content
-  if ($node->type == 'page' || $node->type == 'custom_content') {
+  //#AKDN-1225 Change the display name for akmi_artists and akmi_performance
+  if ($node->type == 'page' || $node->type == 'custom_content' || 
+	  $node->type == 'akmi_artists' || $node->type == 'akmi_performance') {
     $type = "Info Page";
   }
   
@@ -478,6 +480,10 @@ function custom_solr_get_image_fieldname($type) {
     case 'page' :
     case 'geography' :
       $field_name = 'field_hub_page_image';
+      break;
+    case 'akmi_artists' :
+    case 'akmi_performance' :
+      $field_name = 'field_feature_image';
       break;
   }
   return $field_name;

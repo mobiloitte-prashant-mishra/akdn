@@ -66,6 +66,13 @@ function akdn_custom_menu() {
     'access arguments' => array('administer image styles'),
     'type' => MENU_NORMAL_ITEM,
     ); */
+  $items['search/google-search'] = array(
+     'title' => 'Google Search',
+     'type' => MENU_CALLBACK,
+     'access callback' => TRUE,
+     'page callback' => 'akdn_custom_google_search',
+     'file' => 'includes/akdn_custom.google_search.inc',
+    );
    $items['custom-import-handler/update/%'] = array(
      'title' => 'syndicate Node update',
      'page callback' => '_syndicate_node_update',
@@ -162,7 +169,7 @@ function akdn_custom_preprocess_page(&$vars, $hook) {
     window.onload=function () {
       var tt = document.querySelectorAll(".field-add-more-submit");
       var len = document.querySelectorAll(".fieldset-legend .fieldset-title").length;
-      if(!len){
+      if(!len && tt[0] !== undefined){
         tt[0].click();
       }
     }
@@ -724,6 +731,10 @@ function akdn_custom_block_info() {
     ),
     'akdn_internal_news_config_block' => array(
       'info' => t('AKDN internal News page Configuration Blocks'),
+    ),
+    'akdn_search_urls_block' => array(
+      'info' => t('AKDN Search URLS Blocks'),
+      'cache' => DRUPAL_NO_CACHE,
     ),     
   );
   return $blocks;
@@ -885,6 +896,27 @@ function akdn_custom_block_view($delta = '') {
       else {
         $block['content'] = NULL;
       }
+      break;
+      case 'akdn_search_urls_block':
+        $block['subject'] = '';
+        $search_url = $default_search_class = $google_search_class = '';
+        if ((isset($arg[0]) && $arg[0] == 'search') && (isset($arg[1]) && $arg[1] == 'google-search')) {
+            $google_search_class = 'default';
+            $search_url = l('Switch to site search', 'search', array('class' => array($default_search_class), 'title' => t('Search')));
+        } elseif ((isset($arg[0]) && $arg[0] == 'search') && !isset($arg[1])) {
+            $default_search_class = 'default';
+            $search_url = l('Switch to Google search', 'search/google-search', array('class' => array($google_search_class), 'title' => t('Google Search')));
+        }
+        
+        if($search_url == ''){
+          
+        }
+        else{
+          
+        }
+        
+        $search_urls = '<div class="akdn_search_urls_block">' . $search_url . '</div>';
+        $block['content'] = $search_urls;
       break;
   }
   return $block;
@@ -3874,18 +3906,35 @@ function akdn_custom_node_update($node) {
 
 function akdn_custom_facet_items_alter(&$build, &$settings) {
   if ($settings->facet == "entity_type") {
-    foreach($build as $key => $item) {
+
+    // Save Custom Page number to add on the combined facet item.
+    $number_of_custom_content = (isset($build['custom content']['#count']) && $build['custom content']['#count']) ?
+        $build['custom content']['#count'] : 0;
+
+    foreach ($build as $key => $item) {
       if ($key == 'project') {
         $build[$key]["#markup"] = 'Spotlight';
       }
       elseif ($key == 'architecture project') {
         $build[$key]["#markup"] = 'Architecture Project';
       }
-    }
-    if (array_key_exists('agency', $build)) {
-        $count = $build['agency']['#count'] -2;
-        $build['agency']['#count'] = $count;
+      elseif ($key == 'page') {
+        // Change the title of facet item to represent two facet items
+        $build['page']["#markup"] = t('Info page');
+
+        // Smash the count of hits together.
+        if ($build['page']['#count'] > 0) {
+          $build['page']['#count'] = $build['page']['#count'] + $number_of_custom_content;
+        }
       }
+      elseif ($key == 'custom content') {
+        unset($build['custom content']);
+      }
+    } // End foreach
+    if (array_key_exists('agency', $build)) {
+      $count = $build['agency']['#count'] - 2;
+      $build['agency']['#count'] = $count;
+    }
   }
 }
 
@@ -4460,4 +4509,34 @@ function get_config_block_type($nid) {
                                                     AND entity_id = :nid", array(':nid' => $nid))->fetchField();
 
   return $block_type_value;
+}
+
+/**
+ * Implement hook_search_api_solr_documents_alter
+ */
+function akdn_custom_search_api_solr_documents_alter(array &$documents, SearchApiIndex $index, array $items) {
+  $boost = array(
+    'geography' => 9,
+    //'focus_area' => 9,
+    'agency' => 8,
+    'article' => 7,
+    'publication' => 6,
+    'speech' => 5,
+    'project' => 4,
+    'event' => 3,
+    'podcast' => 2,
+    'gallery' => 1,
+    'page' => -1,
+    'custom_content' => -1,
+  );
+
+  if ($index->item_type == 'node') {
+    foreach ($documents as $document) {
+      if ($field = $document->getField('ss_type')) {
+        if (isset($boost[$field['value']])) {
+          $document->setBoost($boost[$field['value']]);
+        }
+      }
+    }
+  }
 }

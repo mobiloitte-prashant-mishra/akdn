@@ -554,6 +554,57 @@ function akdn_context_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'node-akmi_artists-field_exclude_from_search'.
+  $field_instances['node-akmi_artists-field_exclude_from_search'] = array(
+    'bundle' => 'akmi_artists',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 15,
+      ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_exclude_from_search',
+    'label' => 'Exclude from search',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
       'weight' => 2,
     ),
   );
@@ -883,7 +934,7 @@ function akdn_context_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 7,
     ),
   );
 
@@ -1030,7 +1081,7 @@ function akdn_context_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 3,
+      'weight' => 5,
     ),
   );
 
@@ -1526,6 +1577,7 @@ function akdn_context_field_default_field_instances() {
   t('Country of Origin');
   t('Custom Meta Tags');
   t('Custom Meta tags');
+  t('Exclude from search');
   t('Instruments which do not have a node. will be displayed as Plain text.');
   t('Other Instruments');
   t('Performance Year With AKMI');

@@ -1649,7 +1649,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 2,
+      'weight' => 4,
     ),
   );
 
@@ -1777,7 +1777,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 7,
+      'weight' => 9,
     ),
   );
 
@@ -1839,7 +1839,106 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 9,
+      'weight' => 11,
+    ),
+  );
+
+  // Exported field_instance: 'node-akmi_performance-field_custom_meta_tags'.
+  $field_instances['node-akmi_performance-field_custom_meta_tags'] = array(
+    'bundle' => 'akmi_performance',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 13,
+      ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_custom_meta_tags',
+    'label' => 'Custom Meta tags',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-akmi_performance-field_exclude_from_search'.
+  $field_instances['node-akmi_performance-field_exclude_from_search'] = array(
+    'bundle' => 'akmi_performance',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 14,
+      ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_exclude_from_search',
+    'label' => 'Exclude from search',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 3,
     ),
   );
 
@@ -1965,7 +2064,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 5,
+      'weight' => 7,
     ),
   );
 
@@ -2136,7 +2235,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 8,
+      'weight' => 10,
     ),
   );
 
@@ -2188,7 +2287,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
         'size' => 40,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 4,
+      'weight' => 6,
     ),
   );
 
@@ -2238,7 +2337,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete_deluxe',
-      'weight' => 6,
+      'weight' => 8,
     ),
   );
 
@@ -9984,6 +10083,7 @@ function akdn_akaa_akmi_types_field_default_field_instances() {
   t('Completed Date Timestamp');
   t('Country');
   t('Create Banner Item');
+  t('Custom Meta tags');
   t('Cycle Images');
   t('Cycle Year');
   t('Description');
