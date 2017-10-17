@@ -11872,7 +11872,7 @@ print $explode[1];
     $export['award_cycle_news'] = $view;
 
     $view = new view();
-    $view->name = 'basic_pages_view';
+    $view->name = 'basic_pages_view'; 
     $view->description = '';
     $view->tag = 'default';
     $view->base_table = 'node';
