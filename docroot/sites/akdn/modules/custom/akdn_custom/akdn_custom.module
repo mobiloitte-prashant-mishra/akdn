@@ -2397,8 +2397,9 @@ function akdn_date_filter_submit($form, &$form_state) {
 
   // Apply the date filter.
   if (isset($form_state['values']['date_filter_to'])) {
-    $to = $form_state['values']['date_filter_to'];
+    $to = $form_state['values']['date_filter_to'].' 23:59:00';
   }
+
   if (isset($form_state['values']['date_filter_from'])) {
     $from = $form_state['values']['date_filter_from'];
   }
@@ -2445,7 +2446,7 @@ function akdn_custom_search_api_query_alter(SearchApiQueryInterface $query) {
   }else{
     $filter_field = 'field_publish_date';
   }
-
+ 
   // Add date condition for filtering data.
   if(!empty($_GET['from']) && !empty($_GET['to'])) {
     $query->condition($filter_field,$_GET['from'], '>=');
