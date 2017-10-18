@@ -28,3 +28,33 @@ div#block-views-exp-solr-site-search-page {
     clear: both;
     display: inline-block;
 }
+
+/* AKDN-1362 add carousel arrow*/
+.photograph-detail-banner {
+    .galleryformatter .gallery-slides {
+        position: relative;
+        .slide-button {           
+            top: 42%;
+            position: absolute;
+            display: block;
+            cursor: pointer;
+            font-size: 0;
+            width: 50px;
+                height: 50px;
+                opacity: .5;
+                border: 4px solid #000;
+                border-radius: 50% 50%;
+            &.prev-slide {
+                background: white url(../images/left-arrow.png) center center no-repeat;                
+                background-size: 34px 34px;                
+                left: 6px;
+            }
+            &.next-slide {
+                background: white url(../images/right-arrow.png) center center no-repeat;
+                background-size: 34px 34px;                
+                left: auto;
+                right: 6px;
+            }
+        }
+    }
+}
