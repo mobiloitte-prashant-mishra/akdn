@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * solr_sitewise_search.views_default.inc
@@ -9,7 +10,7 @@
  */
 function solr_sitewise_search_views_default_views() {
   $export = array();
-   
+
   $view = new view();
   $view->name = 'solr_site_search';
   $view->description = '';
@@ -148,7 +149,7 @@ function solr_sitewise_search_views_default_views() {
       <?php endif; ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Field: Indexed Node: Gallery Date */
+  /* Field: Indexed Node: Publish Date */
   $handler->display->display_options['fields']['field_publish_date']['id'] = 'field_publish_date';
   $handler->display->display_options['fields']['field_publish_date']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['fields']['field_publish_date']['field'] = 'field_publish_date';
@@ -183,15 +184,16 @@ function solr_sitewise_search_views_default_views() {
   $handler->display->display_options['fields']['title_field']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['label'] = '';
-  $handler->display->display_options['fields']['title_field']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title_field']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['title_field']['alter']['path'] = '[url]';
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field']['type'] = 'text_plain';
   /* Field: Indexed Node: Short Title */
   $handler->display->display_options['fields']['field_short_title']['id'] = 'field_short_title';
   $handler->display->display_options['fields']['field_short_title']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['fields']['field_short_title']['field'] = 'field_short_title';
   $handler->display->display_options['fields']['field_short_title']['label'] = '';
+  $handler->display->display_options['fields']['field_short_title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_short_title']['alter']['path'] = '[url]';
   $handler->display->display_options['fields']['field_short_title']['alter']['link_class'] = 'akdn-solr-short-link';
   $handler->display->display_options['fields']['field_short_title']['element_label_colon'] = FALSE;
@@ -239,15 +241,15 @@ function solr_sitewise_search_views_default_views() {
   $handler->display->display_options['sorts']['search_api_relevance']['order'] = 'DESC';
   $handler->display->display_options['sorts']['search_api_relevance']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['search_api_relevance']['expose']['label'] = 'Relevance';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;  
-  /* Sort criterion: Indexed Node: Gallery Date */
+  /* Sort criterion: Indexed Node: Publish Date */
   $handler->display->display_options['sorts']['field_publish_date']['id'] = 'field_publish_date';
   $handler->display->display_options['sorts']['field_publish_date']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['sorts']['field_publish_date']['field'] = 'field_publish_date';
   $handler->display->display_options['sorts']['field_publish_date']['order'] = 'DESC';
   $handler->display->display_options['sorts']['field_publish_date']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['field_publish_date']['expose']['label'] = 'Date';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Indexed Node: Content type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'search_api_index_akdn';
@@ -303,7 +305,7 @@ function solr_sitewise_search_views_default_views() {
     'field_custom_meta_tags' => 'field_custom_meta_tags',
     'search_api_aggregation_1' => 'search_api_aggregation_1',
   );
-  /* Filter criterion: Exclude from search */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_exclude_from_search']['id'] = 'field_exclude_from_search';
   $handler->display->display_options['filters']['field_exclude_from_search']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['filters']['field_exclude_from_search']['field'] = 'field_exclude_from_search';
@@ -360,7 +362,7 @@ function solr_sitewise_search_views_default_views() {
   $handler->display->display_options['fields']['field_short_title']['settings'] = array(
     'trim_length' => '600',
   );
-  /* Field: Indexed Node: Gallery Date */
+  /* Field: Indexed Node: Publish Date */
   $handler->display->display_options['fields']['field_publish_date']['id'] = 'field_publish_date';
   $handler->display->display_options['fields']['field_publish_date']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['fields']['field_publish_date']['field'] = 'field_publish_date';
@@ -505,8 +507,8 @@ function solr_sitewise_search_views_default_views() {
     t('[title_field]'),
     t('More'),
     t('[entity_type]'),
-    t('Chronologically'),
     t('Relevance'),
+    t('Date'),
     t('Fulltext search'),
     t('What\'s new'),
     t(' More'),
