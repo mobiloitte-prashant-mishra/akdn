@@ -10642,23 +10642,23 @@ privacy-policy',
         'settings' => array(
           'description' => '',
           'php' => 'if (arg(0) == "node" && is_numeric(arg(1))) {
-  $node_data = menu_get_object();
-  $mlid = $node_data->menu_node_links[key($node_data->menu_node_links)];
-  $plid =  $mlid->mlid;
-$result = db_query("SELECT  COUNT(*) AS count
-FROM  node  LEFT JOIN  field_data_field_about_page  field_data_field_about_page ON node.nid = field_data_field_about_page.entity_id AND field_data_field_about_page.entity_type = \'node\' AND field_data_field_about_page.deleted = \'0\'
-LEFT JOIN  node  node_field_data_field_about_page ON field_data_field_about_page.field_about_page_nid = node_field_data_field_about_page.nid
-LEFT JOIN  menu_node  menu_node ON node.nid = menu_node.nid
-LEFT JOIN  menu_links  menu_links ON menu_node.mlid = menu_links.mlid
-WHERE  menu_links.plid = :plid  AND node.status = \'1\' AND node.type IN  (\'page\', \'geography\', \'hub_page\')", array(\':plid\' => $plid));
-$record = $result->fetchField(); 
-  if($record == 0 || $record == 1 ) {
-    return TRUE;
-  } else {
-   return FALSE;
- }
-}
-',
+    $node_data = menu_get_object();
+    $mlid = $node_data->menu_node_links[key($node_data->menu_node_links)];
+    $plid =  $mlid->mlid;
+  $result = db_query("SELECT  COUNT(*) AS count
+  FROM  node  LEFT JOIN  field_data_field_about_page  field_data_field_about_page ON node.nid = field_data_field_about_page.entity_id AND field_data_field_about_page.entity_type = \'node\' AND field_data_field_about_page.deleted = \'0\'
+  LEFT JOIN  node  node_field_data_field_about_page ON field_data_field_about_page.field_about_page_nid = node_field_data_field_about_page.nid
+  LEFT JOIN  menu_node  menu_node ON node.nid = menu_node.nid
+  LEFT JOIN  menu_links  menu_links ON menu_node.mlid = menu_links.mlid
+  WHERE  menu_links.plid = :plid  AND node.status = \'1\' AND node.type IN  (\'page\', \'geography\', \'hub_page\')", array(\':plid\' => $plid));
+  $record = $result->fetchField(); 
+    if($record == 0 || $record == 1 ) {
+      return TRUE;
+    } else {
+     return FALSE;
+   }
+  }
+  ',
         ),
         'not' => FALSE,
       ),
@@ -10702,23 +10702,23 @@ $record = $result->fetchField();
         'settings' => array(
           'description' => '',
           'php' => 'if (arg(0) == "node" && is_numeric(arg(1))) {
-  $node_data = menu_get_object();
-  $mlid = $node_data->menu_node_links[key($node_data->menu_node_links)];
-  $plid =  $mlid->mlid;
-$result = db_query("SELECT  COUNT(*) AS count
-FROM  node  LEFT JOIN  field_data_field_about_page  field_data_field_about_page ON node.nid = field_data_field_about_page.entity_id AND field_data_field_about_page.entity_type = \'node\' AND field_data_field_about_page.deleted = \'0\'
-LEFT JOIN  node  node_field_data_field_about_page ON field_data_field_about_page.field_about_page_nid = node_field_data_field_about_page.nid
-LEFT JOIN  menu_node  menu_node ON node.nid = menu_node.nid
-LEFT JOIN  menu_links  menu_links ON menu_node.mlid = menu_links.mlid
-WHERE  menu_links.plid = :plid  AND node.status = \'1\' AND node.type IN  (\'page\', \'geography\', \'hub_page\')", array(\':plid\' => $plid));
-$record = $result->fetchField(); 
-  if($record == 0 || $record == 1 ) {
-    return TRUE;
-  } else {
-   return FALSE;
- }
-}
-',
+    $node_data = menu_get_object();
+    $mlid = $node_data->menu_node_links[key($node_data->menu_node_links)];
+    $plid =  $mlid->mlid;
+  $result = db_query("SELECT  COUNT(*) AS count
+  FROM  node  LEFT JOIN  field_data_field_about_page  field_data_field_about_page ON node.nid = field_data_field_about_page.entity_id AND field_data_field_about_page.entity_type = \'node\' AND field_data_field_about_page.deleted = \'0\'
+  LEFT JOIN  node  node_field_data_field_about_page ON field_data_field_about_page.field_about_page_nid = node_field_data_field_about_page.nid
+  LEFT JOIN  menu_node  menu_node ON node.nid = menu_node.nid
+  LEFT JOIN  menu_links  menu_links ON menu_node.mlid = menu_links.mlid
+  WHERE  menu_links.plid = :plid  AND node.status = \'1\' AND node.type IN  (\'page\', \'geography\', \'hub_page\')", array(\':plid\' => $plid));
+  $record = $result->fetchField(); 
+    if($record == 0 || $record == 1 ) {
+      return TRUE;
+    } else {
+     return FALSE;
+   }
+  }
+  ',
         ),
         'not' => FALSE,
       ),
@@ -10961,23 +10961,23 @@ $record = $result->fetchField();
         'settings' => array(
           'description' => '',
           'php' => 'if (arg(0) == "node" && is_numeric(arg(1))) {
-  $node_data = menu_get_object();
-  $mlid = $node_data->menu_node_links[key($node_data->menu_node_links)];
-  $plid =  $mlid->mlid;
-$result = db_query("SELECT  COUNT(*) AS count
-FROM  node  LEFT JOIN  field_data_field_about_page  field_data_field_about_page ON node.nid = field_data_field_about_page.entity_id AND field_data_field_about_page.entity_type = \'node\' AND field_data_field_about_page.deleted = \'0\'
-LEFT JOIN  node  node_field_data_field_about_page ON field_data_field_about_page.field_about_page_nid = node_field_data_field_about_page.nid
-LEFT JOIN  menu_node  menu_node ON node.nid = menu_node.nid
-LEFT JOIN  menu_links  menu_links ON menu_node.mlid = menu_links.mlid
-WHERE  menu_links.plid = :plid  AND node.status = \'1\' AND node.type IN  (\'page\', \'geography\', \'hub_page\')", array(\':plid\' => $plid));
-$record = $result->fetchField(); 
-  if($record > 1 ) {
-    return TRUE;
-  } else {
-   return FALSE;
- }
-}
-',
+    $node_data = menu_get_object();
+    $mlid = $node_data->menu_node_links[key($node_data->menu_node_links)];
+    $plid =  $mlid->mlid;
+  $result = db_query("SELECT  COUNT(*) AS count
+  FROM  node  LEFT JOIN  field_data_field_about_page  field_data_field_about_page ON node.nid = field_data_field_about_page.entity_id AND field_data_field_about_page.entity_type = \'node\' AND field_data_field_about_page.deleted = \'0\'
+  LEFT JOIN  node  node_field_data_field_about_page ON field_data_field_about_page.field_about_page_nid = node_field_data_field_about_page.nid
+  LEFT JOIN  menu_node  menu_node ON node.nid = menu_node.nid
+  LEFT JOIN  menu_links  menu_links ON menu_node.mlid = menu_links.mlid
+  WHERE  menu_links.plid = :plid  AND node.status = \'1\' AND node.type IN  (\'page\', \'geography\', \'hub_page\')", array(\':plid\' => $plid));
+  $record = $result->fetchField(); 
+    if($record > 1 ) {
+      return TRUE;
+    } else {
+     return FALSE;
+   }
+  }
+  ',
         ),
         'not' => FALSE,
       ),
@@ -11203,10 +11203,10 @@ $record = $result->fetchField();
         'settings' => array(
           'description' => 'Has content',
           'php' => '$view = views_get_view_result(\'facts_blocks\', \'facts_block\', arg(1));
-$result = count($view);
-if (!empty($result)) {
-return true;
-}',
+  $result = count($view);
+  if (!empty($result)) {
+  return true;
+  }',
         ),
         'not' => FALSE,
       ),
@@ -11643,30 +11643,30 @@ return true;
     'admin_title' => 'About page short title',
     'title' => '',
     'body' => '<?php
-$node = menu_get_object();
-print \'<div class = "whatsnew-right-content">\';
-if (isset($node->field_about_page)) {
-  $about = node_load(reset($node->field_about_page)[0][\'nid\']);
-  if (isset($about->nid)) {
-    print \'<p class = "whats-new-gold">AKDN IN</p>\';
-    print \'<div class = "grid-whatsnew-block_subtitle">\'. reset($about->field_short_title)[0][\'value\'] .\'</div>\';
-    if (empty(reset($about->body)[0][\'value\'])) {
-      if(!empty(reset($about->body)[0][\'summary\'])) {
-        print \'<div class="grid-whatsnew-block_body">\'. reset($about->body)[0][\'summary\'] .\' </div>\';
-      }
-    }
-    else {
-      if(!empty(reset($about->body)[0][\'summary\'])) {
-        print \'<div class="grid-whatsnew-block_body">\'. reset($about->body)[0][\'summary\'] .\' <a  href="\'. url("node/{$about->nid}") .\'" class= "views-more-link">More</a></div>\';
+  $node = menu_get_object();
+  print \'<div class = "whatsnew-right-content">\';
+  if (isset($node->field_about_page)) {
+    $about = node_load(reset($node->field_about_page)[0][\'nid\']);
+    if (isset($about->nid)) {
+      print \'<p class = "whats-new-gold">AKDN IN</p>\';
+      print \'<div class = "grid-whatsnew-block_subtitle">\'. reset($about->field_short_title)[0][\'value\'] .\'</div>\';
+      if (empty(reset($about->body)[0][\'value\'])) {
+        if(!empty(reset($about->body)[0][\'summary\'])) {
+          print \'<div class="grid-whatsnew-block_body">\'. reset($about->body)[0][\'summary\'] .\' </div>\';
+        }
       }
       else {
-        print \'<div class="grid-whatsnew-block_body">\'. text_summary(reset($about->body)[0][\'value\'], reset($about->body)[0][\'format\'], 1200) .\' <a  href="\'. url("node/{$about->nid}") .\'" class= "views-more-link">More</a></div>\';
+        if(!empty(reset($about->body)[0][\'summary\'])) {
+          print \'<div class="grid-whatsnew-block_body">\'. reset($about->body)[0][\'summary\'] .\' <a  href="\'. url("node/{$about->nid}") .\'" class= "views-more-link">More</a></div>\';
+        }
+        else {
+          print \'<div class="grid-whatsnew-block_body">\'. text_summary(reset($about->body)[0][\'value\'], reset($about->body)[0][\'format\'], 1200) .\' <a  href="\'. url("node/{$about->nid}") .\'" class= "views-more-link">More</a></div>\';
+        }
       }
+      print \'</div>\';
     }
-    print \'</div>\';
   }
-}
-?>',
+  ?>',
     'format' => 'php_code',
     'substitute' => 1,
   );
@@ -11776,11 +11776,39 @@ if (isset($node->field_about_page)) {
   $display->content['new-7ba9ddae-f068-456a-9240-c96026f06190'] = $pane;
   $display->panels['middle'][6] = 'new-7ba9ddae-f068-456a-9240-c96026f06190';
   $pane = new stdClass();
+  $pane->pid = 'new-642806ab-f0a4-4cb4-b822-c7cb8ff4c406';
+  $pane->panel = 'top';
+  $pane->type = 'node_title';
+  $pane->subtype = 'node_title';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'link' => 0,
+    'markup' => 'h1',
+    'id' => '',
+    'class' => 'title',
+    'context' => 'argument_entity_id:node_1',
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '642806ab-f0a4-4cb4-b822-c7cb8ff4c406';
+  $display->content['new-642806ab-f0a4-4cb4-b822-c7cb8ff4c406'] = $pane;
+  $display->panels['top'][0] = 'new-642806ab-f0a4-4cb4-b822-c7cb8ff4c406';
+  $pane = new stdClass();
   $pane->pid = 'new-0eb361ba-c3d1-4c99-8071-7c127bd87af0';
   $pane->panel = 'top';
   $pane->type = 'page_title';
   $pane->subtype = 'page_title';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'markup' => 'h1',
@@ -11795,11 +11823,11 @@ if (isset($node->field_about_page)) {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 0;
+  $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = '0eb361ba-c3d1-4c99-8071-7c127bd87af0';
   $display->content['new-0eb361ba-c3d1-4c99-8071-7c127bd87af0'] = $pane;
-  $display->panels['top'][0] = 'new-0eb361ba-c3d1-4c99-8071-7c127bd87af0';
+  $display->panels['top'][1] = 'new-0eb361ba-c3d1-4c99-8071-7c127bd87af0';
   $pane = new stdClass();
   $pane->pid = 'new-e57d3140-3539-4280-8f29-0c5d5fee1856';
   $pane->panel = 'top';
@@ -11817,11 +11845,11 @@ if (isset($node->field_about_page)) {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = 'e57d3140-3539-4280-8f29-0c5d5fee1856';
   $display->content['new-e57d3140-3539-4280-8f29-0c5d5fee1856'] = $pane;
-  $display->panels['top'][1] = 'new-e57d3140-3539-4280-8f29-0c5d5fee1856';
+  $display->panels['top'][2] = 'new-e57d3140-3539-4280-8f29-0c5d5fee1856';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
