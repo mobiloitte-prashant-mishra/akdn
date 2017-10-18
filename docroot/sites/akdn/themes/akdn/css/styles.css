@@ -21417,6 +21417,10 @@ div#block-views-exp-solr-site-search-page {
 }
 /* line 37, ../sass/_global-change.scss */
 .photograph-detail-banner .galleryformatter .gallery-slides .slide-button {
+  font-size: 0;
+}
+/* line 41, ../sass/_global-change.scss */
+.photograph-detail-banner .galleryformatter .gallery-slides:hover .slide-button {
   top: 42%;
   position: absolute;
   display: block;
@@ -21428,14 +21432,14 @@ div#block-views-exp-solr-site-search-page {
   border: 4px solid #000;
   border-radius: 50% 50%;
 }
-/* line 48, ../sass/_global-change.scss */
-.photograph-detail-banner .galleryformatter .gallery-slides .slide-button.prev-slide {
+/* line 52, ../sass/_global-change.scss */
+.photograph-detail-banner .galleryformatter .gallery-slides:hover .slide-button.prev-slide {
   background: white url(../images/left-arrow.png) center center no-repeat;
   background-size: 34px 34px;
   left: 6px;
 }
-/* line 53, ../sass/_global-change.scss */
-.photograph-detail-banner .galleryformatter .gallery-slides .slide-button.next-slide {
+/* line 57, ../sass/_global-change.scss */
+.photograph-detail-banner .galleryformatter .gallery-slides:hover .slide-button.next-slide {
   background: white url(../images/right-arrow.png) center center no-repeat;
   background-size: 34px 34px;
   left: auto;
