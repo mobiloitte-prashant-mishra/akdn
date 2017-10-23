@@ -14298,11 +14298,11 @@ h2.header-name a:active, h2.header-name a:focus {
 /* line 3549, ../sass/_akdn-redesign.scss */
 .press-release-detail .slide-text h3, .press-release-detail .slide-text .caption {
   font-size: 14px;
-  font-style: italic;
+  font-style: normal;
 }
 /* line 3555, ../sass/_akdn-redesign.scss */
 .press-release-detail .slide-text .image-copytight {
-  font-style: normal;
+  font-style: italic;
 }
 /* line 3561, ../sass/_akdn-redesign.scss */
 .press-release-detail .field-type-text {
