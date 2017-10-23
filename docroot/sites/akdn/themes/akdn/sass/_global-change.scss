@@ -43,19 +43,19 @@ div#block-views-exp-solr-site-search-page {
                 display: block;
                 cursor: pointer;
                 font-size: 0;
-                width: 50px;
-                height: 50px;
+                width: 40px;
+                height: 40px;
                 opacity: .5;
                 border: 4px solid #000;
                 border-radius: 50% 50%;
                 &.prev-slide {
                     background: white url(../images/left-arrow.png) center center no-repeat;                
-                    background-size: 34px 34px;                
+                    background-size: 24px 24px;                
                     left: 6px;
                 }
                 &.next-slide {
                     background: white url(../images/right-arrow.png) center center no-repeat;
-                    background-size: 34px 34px;                
+                    background-size: 24px 24px;                
                     left: auto;
                     right: 6px;
                 }
@@ -63,4 +63,44 @@ div#block-views-exp-solr-site-search-page {
         }
 
     }
+}
+
+/*AKDN- 1362*/
+.view-featured-slideshow {
+    position: relative;
+    .flex-direction-nav {
+        display: none;
+    }
+    .flex-nav-container:hover {
+        .flex-direction-nav {
+            display: block;
+            li {
+                a {
+                    top: 42%;
+                    position: absolute;
+                    display: block;
+                    cursor: pointer;
+                    font-size: 0;
+                    width: 40px;
+                    height: 40px;
+                    opacity: .5;
+                    border: 4px solid #000;
+                    border-radius: 50% 50%;
+
+                    &.prev {
+                        background: white url(../images/left-arrow.png) center center no-repeat;                
+                        background-size: 24px 24px;                
+                        left: 6px;
+                    }
+                    &.next {
+                        background: white url(../images/right-arrow.png) center center no-repeat;
+                        background-size: 24px 24px;                
+                        left: auto;
+                        right: 6px;
+                    }
+                }
+            }
+        }
+    }
+
 }
