@@ -12008,10 +12008,10 @@ print $explode[1];
 	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_hub_page_image]</div>
-	<div class="slide-text">
-	<div class="caption">[field_image_caption]</div>
-	<div class="caption image-copytight">[field_image_copytight]</div>
-	</div>';
+	  <div class="slide-text">
+	  <div class="caption">[field_image_caption]</div>
+	  <div class="caption image-copytight">[field_image_copytight]</div>
+	  </div>';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	/* Field: Colorbox: Colorbox trigger */
 	$handler->display->display_options['fields']['colorbox']['id'] = 'colorbox';
@@ -12219,10 +12219,10 @@ print $explode[1];
 	  t('Basic page Slideshow'),
 	  t('image from field_hub_page_image'),
 	  t('<div class="slide">[field_hub_page_image]</div>
-	<div class="slide-text">
-	<div class="caption">[field_image_caption]</div>
-	<div class="caption image-copytight">[field_image_copytight]</div>
-	</div>'),
+	  <div class="slide-text">
+	  <div class="caption">[field_image_caption]</div>
+	  <div class="caption image-copytight">[field_image_copytight]</div>
+	  </div>'),
 	  t('All'),
 	  t('Baisc Page summary'),
 	  t('[body-summary]'),
