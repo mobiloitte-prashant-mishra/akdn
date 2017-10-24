@@ -29471,7 +29471,7 @@ print $content;
 <div class="caption image-copytight">[field_image_copytight]</div>
 </div>'),
         t('Gallery/photographs Detail Slideshow'),
-    );
+    );    
     $export['press_center_detail_page_slideshows'] = $view;
 
     $view = new view();
