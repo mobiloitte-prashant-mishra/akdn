@@ -13503,11 +13503,13 @@ ul.primary li {
 }
 
 /* Search page */
-/* line 2712, ../sass/_akdn-redesign.scss */
-.view-solr-search-pages-1 .views-field-image-public-uri img {
-  width: auto;
-}
-
+/*.view-solr-search-pages-1{
+    .views-field-image-public-uri{
+        img{
+           width: auto;
+        }
+    }
+}*/
 /* line 2717, ../sass/_akdn-redesign.scss */
 .page-search {
   /*akdn filter for search page specific */

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * solr_search_bundle_2.views_default.inc
@@ -573,11 +574,19 @@ if (function_exists(\'custom_solr_get_what_new_header\')) {
 print $output;
 ?>';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Indexed Node: Image Uri for nodes [event/article/publication/speech/gallery/video/page/geography] */
+  $handler->display->display_options['fields']['image_public_uri']['id'] = 'image_public_uri';
+  $handler->display->display_options['fields']['image_public_uri']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['fields']['image_public_uri']['field'] = 'image_public_uri';
+  $handler->display->display_options['fields']['image_public_uri']['label'] = '';
+  $handler->display->display_options['fields']['image_public_uri']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['image_public_uri']['link_to_entity'] = 0;
   /* Field: Indexed Node: Article Image */
   $handler->display->display_options['fields']['field_article_img']['id'] = 'field_article_img';
   $handler->display->display_options['fields']['field_article_img']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['fields']['field_article_img']['field'] = 'field_article_img';
   $handler->display->display_options['fields']['field_article_img']['label'] = '';
+  $handler->display->display_options['fields']['field_article_img']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_article_img']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_article_img']['element_class'] = 'grid-media-block_image grid-media-block_image-pressrelease';
   $handler->display->display_options['fields']['field_article_img']['element_label_colon'] = FALSE;
@@ -746,11 +755,19 @@ print $output;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid']['separator'] = '';
   $handler->display->display_options['fields']['nid']['link_to_entity'] = 0;
+  /* Field: Indexed Node: Image Uri for nodes [event/article/publication/speech/gallery/video/page/geography] */
+  $handler->display->display_options['fields']['image_public_uri']['id'] = 'image_public_uri';
+  $handler->display->display_options['fields']['image_public_uri']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['fields']['image_public_uri']['field'] = 'image_public_uri';
+  $handler->display->display_options['fields']['image_public_uri']['label'] = '';
+  $handler->display->display_options['fields']['image_public_uri']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['image_public_uri']['link_to_entity'] = 0;
   /* Field: Indexed Node: Event Image */
   $handler->display->display_options['fields']['field_event_image']['id'] = 'field_event_image';
   $handler->display->display_options['fields']['field_event_image']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['fields']['field_event_image']['field'] = 'field_event_image';
   $handler->display->display_options['fields']['field_event_image']['label'] = '';
+  $handler->display->display_options['fields']['field_event_image']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_event_image']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_event_image']['element_class'] = 'grid-media-block_image grid-media-block_image-events';
   $handler->display->display_options['fields']['field_event_image']['element_label_colon'] = FALSE;
@@ -889,11 +906,19 @@ print $output;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid']['separator'] = '';
   $handler->display->display_options['fields']['nid']['link_to_entity'] = 0;
+  /* Field: Indexed Node: Image Uri for nodes [event/article/publication/speech/gallery/video/page/geography] */
+  $handler->display->display_options['fields']['image_public_uri']['id'] = 'image_public_uri';
+  $handler->display->display_options['fields']['image_public_uri']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['fields']['image_public_uri']['field'] = 'image_public_uri';
+  $handler->display->display_options['fields']['image_public_uri']['label'] = '';
+  $handler->display->display_options['fields']['image_public_uri']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['image_public_uri']['link_to_entity'] = 0;
   /* Field: Indexed Node: Images */
   $handler->display->display_options['fields']['field_gallery_images']['id'] = 'field_gallery_images';
   $handler->display->display_options['fields']['field_gallery_images']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['fields']['field_gallery_images']['field'] = 'field_gallery_images';
   $handler->display->display_options['fields']['field_gallery_images']['label'] = '';
+  $handler->display->display_options['fields']['field_gallery_images']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_gallery_images']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_gallery_images']['element_class'] = 'grid-media-block_image grid-media-block_image-gallery';
   $handler->display->display_options['fields']['field_gallery_images']['element_label_colon'] = FALSE;
@@ -1067,11 +1092,19 @@ print $output;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid']['separator'] = '';
   $handler->display->display_options['fields']['nid']['link_to_entity'] = 0;
+  /* Field: Indexed Node: Image Uri for nodes [event/article/publication/speech/gallery/video/page/geography] */
+  $handler->display->display_options['fields']['image_public_uri']['id'] = 'image_public_uri';
+  $handler->display->display_options['fields']['image_public_uri']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['fields']['image_public_uri']['field'] = 'image_public_uri';
+  $handler->display->display_options['fields']['image_public_uri']['label'] = '';
+  $handler->display->display_options['fields']['image_public_uri']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['image_public_uri']['link_to_entity'] = 0;
   /* Field: Indexed Node: Image */
   $handler->display->display_options['fields']['field_podcast_image']['id'] = 'field_podcast_image';
   $handler->display->display_options['fields']['field_podcast_image']['table'] = 'search_api_index_akdn';
   $handler->display->display_options['fields']['field_podcast_image']['field'] = 'field_podcast_image';
   $handler->display->display_options['fields']['field_podcast_image']['label'] = '';
+  $handler->display->display_options['fields']['field_podcast_image']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_podcast_image']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_podcast_image']['element_class'] = 'grid-media-block_image grid-media-block_image-videos';
   $handler->display->display_options['fields']['field_podcast_image']['element_label_colon'] = FALSE;
