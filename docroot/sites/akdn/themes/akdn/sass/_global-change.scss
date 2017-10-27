@@ -111,12 +111,21 @@ div#block-views-exp-solr-site-search-page {
            .gallery-thumbs {
                li {
                    max-width: 100% !important;
-                   min-width: 276px;
+                   min-width: 310px;
                    padding: 0 10px;
                    a {
                        padding-right: 0;
                    }
                }
+               .wrapper {
+                 padding: 0 20px;
+               }
+           }
+           .gallery-slides .gallery-slide {
+             max-width: 100%;
+           }
+           .gallery-frame {
+             width: auto !important;
            }
        }
    }
