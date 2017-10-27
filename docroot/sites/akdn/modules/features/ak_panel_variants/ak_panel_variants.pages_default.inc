@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * ak_panel_variants.pages_default.inc
@@ -18923,5 +18924,4 @@ function ak_panel_variants_default_page_manager_pages() {
   $pages['subscription'] = $page;
 
   return $pages;
-
 }
