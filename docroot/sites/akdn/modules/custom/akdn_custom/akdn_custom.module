@@ -2261,7 +2261,7 @@ function akdn_block_forms($form, &$form_state, $delta) {
   $form = array();
   switch ($delta) {
     case 'akdn_date_filter':
-      $format = 'Y-m-d';
+      $format = 'd-m-Y';
       $date_filter_flag = 0;
       if(!empty($_GET['from'])) {
         $from = !empty($_GET['from']) ? date('Y-m-d',$_GET['from']) : '';
