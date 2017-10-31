@@ -8959,6 +8959,13 @@ html {
     }
   }
 }
+body:not(.page-press-centre-galleries,.node-type-agency) {
+  .carousel-left {
+    .flex-direction-nav {
+      display: none;
+    }
+  }
+}
 
 //Custom css for brightcove video player in video detail page
 .playerbox .video-js {
