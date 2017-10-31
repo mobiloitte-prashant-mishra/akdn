@@ -19218,11 +19218,16 @@ html.js fieldset.collapsed {
 }
 
 /* line 8964, ../sass/_akdn-redesign.scss */
-body:not(.page-press-centre-galleries, .node-type-agency) .carousel-left .flex-direction-nav {
+.page-press-centre-galleries .carousel-left .flex-direction-nav, .node-type-agency .carousel-left .flex-direction-nav {
+  display: block;
+}
+
+/* line 8970, ../sass/_akdn-redesign.scss */
+.carousel-left .flex-direction-nav {
   display: none;
 }
 
-/* line 8971, ../sass/_akdn-redesign.scss */
+/* line 8976, ../sass/_akdn-redesign.scss */
 .playerbox .video-js {
   width: 100%;
   height: 100%;

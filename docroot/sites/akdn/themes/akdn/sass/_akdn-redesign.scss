@@ -8959,11 +8959,16 @@ html {
     }
   }
 }
-body:not(.page-press-centre-galleries,.node-type-agency) {
+.page-press-centre-galleries,.node-type-agency {
   .carousel-left {
     .flex-direction-nav {
-      display: none;
+      display: block;
     }
+  }
+}
+.carousel-left {
+  .flex-direction-nav {
+    display: none;
   }
 }
 
