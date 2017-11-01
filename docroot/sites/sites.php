@@ -10,5 +10,6 @@ $sites = array(
   "default" => 'akdn',
   "akdn3ra.prod.acquia-sites.com" => 'akdn',
   "new.akdn.org" => 'akdn',
+  "local-akdn.com" => 'akdn',
 );
 ?>

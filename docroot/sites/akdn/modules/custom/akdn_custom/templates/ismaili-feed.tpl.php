@@ -21,11 +21,11 @@
         <?php print $image; ?>
       </div>
     <?php } ?>
-    <?php if (($type == 'speech') && $imagespeech) { ?>
+      <?php if (($type == 'speech') && $imagespeech) { ?>
       <div class="news-image">
         <?php print $imagespeech; ?>
       </div>
-    <?php } ?>         
+    <?php } ?> 
     <?php if ($primary_cat) { ?>
       <div class="article-type">
         <?php print $primary_cat; ?>
