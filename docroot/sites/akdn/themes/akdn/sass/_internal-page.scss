@@ -24,7 +24,7 @@ $width479-mobilesmall:     479px;
 $width374-mobilesmallp:    374px;
 
 
-h3 { 
+h3 {
     margin: 0;
 }
 a:hover {
@@ -35,7 +35,7 @@ a:hover {
     font-family: 'universltstd-bold';
     src: url('../fonts/universltstd-bold-598412d236533.eot');
     src: local('☺'), url('../fonts/universltstd-bold-598412d236533.woff') format('woff'),
-         url('../fonts/universltstd-bold-598412d236533.ttf') format('truetype'), 
+         url('../fonts/universltstd-bold-598412d236533.ttf') format('truetype'),
          url('../fonts/universltstd-bold-598412d236533.svg') format('svg');
     font-weight: normal;
     font-style: normal;
@@ -44,7 +44,7 @@ a:hover {
 	font-family: 'universltstd-light';
 	src: url('../fonts/univers-lt-std-45-light-5984549a39169.eot');
 	src: local('☺'), url('fonts/univers-lt-std-45-light-5984549a39169.woff') format('woff'),
-             url('../fonts/univers-lt-std-45-light-5984549a39169.ttf') format('truetype'), 
+             url('../fonts/univers-lt-std-45-light-5984549a39169.ttf') format('truetype'),
              url('../fonts/univers-lt-std-45-light-5984549a39169.svg') format('svg');
 	font-weight: normal;
 	font-style: normal;
@@ -68,7 +68,7 @@ a:hover {
 
     h1 {
         margin: 0 0 20px;
-        
+
         a {
             width: 120px;
             height: 55px;
@@ -98,13 +98,30 @@ a:hover {
                 line-height: 22px;
                 text-transform: uppercase;
                 @media only screen and (max-width: $width479-mobilesmall) {
-                  font-size: 12px;
-                } 
+                  font-size: 26px;
+                  font-weight: bold;
+                  position: relative;
+                  &:after {
+                    content: "";
+                    height: 16px;
+                    width: 5px;
+                    background: white;
+                    display: block;
+                    position: absolute;
+                    top: 4px;
+                    right: -14px;
+                  }
+                }
             }
             span {
                 padding-left: 10px;
                 display: inline-block;
                 vertical-align: top;
+                @media only screen and (max-width: $width479-mobilesmall) {
+                  padding-left: 0;
+                  padding-top: 5px;
+                  padding-bottom: 5px;
+                }
             }
         }
     }
@@ -156,7 +173,7 @@ a:hover {
                 line-height: inherit !important;
                 text-align: left !important;
               }
-           }            
+           }
         }
         input[type=submit] {
           display: inline-block;
@@ -242,7 +259,7 @@ a:hover {
             color: $color_brown;
             font: 45px "Times New Roman, sans-Serif";
             @media only screen and (max-width: $width991-ipadl) {
-              font-size: 30px;
+              font-size: 24px;
             }
         }
         .social-media-block {
@@ -284,12 +301,12 @@ a:hover {
                 .grid-social-block_picture {
                     img {
                         width: 340px;
-                        @media only screen and (max-width: $width1172) { 
+                        @media only screen and (max-width: $width1172) {
                             width: 100%;
                         }
                     }
-                }                
-            }    
+                }
+            }
         }
       .grid-social-block_title {
          padding: 0;
@@ -384,7 +401,7 @@ a:hover {
                     margin: 0 0 10px;
                     min-height: 70px;
                     a {
-                       color: $color_black; 
+                       color: $color_black;
                     }
                 }
                 .news-date {
@@ -405,8 +422,8 @@ a:hover {
                         text-transform: uppercase;
                         font-size: 16px;
                     }
-                    .inthemedia-read-more { 
-                        @media only screen and (max-width: $width767-mobile) { 
+                    .inthemedia-read-more {
+                        @media only screen and (max-width: $width767-mobile) {
                            float: left;
                         }
                     }
@@ -415,14 +432,14 @@ a:hover {
                         float: left;
                         margin: 0 5px 0 0;
                         &.media {
-                          display: none;   
-                        }                        
+                          display: none;
+                        }
                     }
                 .inthemedia-read-more {
                     margin: 0 5px 0 0;
                     float: left;
                     display: none;
-                    @media only screen and (max-width: $width767-mobile) { 
+                    @media only screen and (max-width: $width767-mobile) {
                         float: none;
                     }
                     &.media {
@@ -433,12 +450,12 @@ a:hover {
             }
         }
     }
-    
+
     /* News from community*/
     .news-community {
         @extend .news-block;
-        .inthemedia-read-more {            
-            @media only screen and (max-width: $width767-mobile) { 
+        .inthemedia-read-more {
+            @media only screen and (max-width: $width767-mobile) {
                 float: left;
             }
         }
@@ -446,9 +463,9 @@ a:hover {
             min-height: 27px;
         }
     }
-    
+
     /*Multimedia and career block*/
-    .multimedia-block {  
+    .multimedia-block {
         width: 769px;
         float: left;
         padding-right: 25px;
@@ -469,10 +486,10 @@ a:hover {
             }
             .grid-social-block_date {
                 margin: -25px 0 5px;
-            }            
+            }
         }
     }
-    
+
     .akdn_news_page_careers_content {
         float: right;
         width: 371px;
@@ -488,9 +505,9 @@ a:hover {
         .akdn-news-page-careers {
             margin-top: 20px;
 /*            .career-akdn-logo {
-                background: url('../images/__logo.png') center 0 no-repeat; 
+                background: url('../images/__logo.png') center 0 no-repeat;
                 height: 56px;
-                width: 100%; 
+                width: 100%;
                 margin-bottom: 20px;
             }*/
             .careers-block-content {
@@ -506,7 +523,7 @@ a:hover {
                 .job-description {
                    font-family: $font-universe-light;
                    margin-bottom: 10px;
-                }                
+                }
             }
             .job-link {
                a {
@@ -524,7 +541,7 @@ a:hover {
             }
         }
     }
-    
+
     .internal-news-page-footer {
         padding: 20px 0;
         font-size: $font-18;
@@ -542,7 +559,7 @@ a:hover {
         }
         .internal-news-page-footer-right {
             float: right;
-            @media only screen and (max-width: $width768-ipadp) { 
+            @media only screen and (max-width: $width768-ipadp) {
                 float: none;
             }
             @media only screen and (max-width: $width767-mobile) {
@@ -560,7 +577,7 @@ a:hover {
             }
         }
     }
-    
+
 }
 
 @media only screen and (max-width: $width1172) {
