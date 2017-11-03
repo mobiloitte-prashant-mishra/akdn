@@ -487,6 +487,9 @@ a:hover {
             }
             .grid-social-block_date {
                 margin: -25px 0 5px;
+                @media only screen and (max-width: $width767-mobile) {
+                  margin-top: 0;
+                }
             }
         }
     }
