@@ -2,7 +2,7 @@
 
 /**
  * @file
- * ak_panel_variants.pages_default.inc
+ * ak_panel_variants.pages_default.inc 
  */
 
 /**
