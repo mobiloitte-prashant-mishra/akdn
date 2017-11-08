@@ -8099,6 +8099,7 @@ if (isset($node->field_about_page)) {
   $handler->conf['display'] = $display;
   $export['node_view_panel_context_21'] = $handler;
 
+
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
@@ -8191,7 +8192,7 @@ privacy-policy',
   $pane->panel = 'left';
   $pane->type = 'node_title';
   $pane->subtype = 'node_title';
-  $pane->shown = FALSE;
+  $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
     'link' => 0,
@@ -8221,7 +8222,7 @@ privacy-policy',
   $pane->panel = 'left';
   $pane->type = 'entity_field';
   $pane->subtype = 'node:field_short_title';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'label' => 'hidden',
