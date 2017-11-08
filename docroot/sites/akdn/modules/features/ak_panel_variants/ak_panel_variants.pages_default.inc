@@ -8087,475 +8087,508 @@ if (isset($node->field_about_page)) {
   $handler->conf['display'] = $display;
   $export['node_view_panel_context_21'] = $handler;
 
-  $handler = new stdClass();
-  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
-  $handler->api_version = 1;
-  $handler->name = 'node_view_panel_context_22';
-  $handler->task = 'node_view';
-  $handler->subtask = '';
-  $handler->handler = 'panel_context';
-  $handler->weight = -7;
-  $handler->conf = array(
-    'title' => 'Custom Content',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
-    'access' => array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'node_type',
-          'settings' => array(
-            'type' => array(
-              'custom_content' => 'custom_content',
-            ),
-          ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
-        ),
-        1 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'akdn-social
-terms-conditions
-privacy-policy',
-          ),
-          'context' => 'empty',
-          'not' => TRUE,
-        ),
-      ),
-      'logic' => 'and',
-    ),
+  $view = new view();
+  $view->name = 'solr_site_search';
+  $view->description = '';
+  $view->tag = 'press center';
+  $view->base_table = 'search_api_index_akdn';
+  $view->human_name = 'solr_site_search';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Recent Speeches';
+  $handler->display->display_options['css_class'] = 'akdn-solr-listing';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '16';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'field_short_title' => 'field_short_title',
+    'body_summary' => 'body_summary',
+    'nothing' => 'nothing',
   );
-  $display = new panels_display();
-  $display->layout = 'omega_24_twocol_18_6';
-  $display->layout_settings = array();
-  $display->panel_settings = array(
-    'style_settings' => array(
-      'default' => NULL,
-      11 => NULL,
-      12 => NULL,
-      13 => NULL,
-      21 => NULL,
-      22 => NULL,
-      23 => NULL,
-      31 => NULL,
-      32 => NULL,
-      33 => NULL,
-      41 => NULL,
-      42 => NULL,
-      43 => NULL,
-      44 => NULL,
-      51 => NULL,
-      52 => NULL,
-      53 => NULL,
-      54 => NULL,
-      61 => NULL,
-      62 => NULL,
-      63 => NULL,
-      64 => NULL,
-      71 => NULL,
-      72 => NULL,
-      73 => NULL,
-      74 => NULL,
-      'left' => NULL,
-      'right' => NULL,
-    ),
+  /* Field: Indexed Node: Node ID */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+
+  /* Display: Site Search */
+  $handler = $view->new_display('page', 'Site Search', 'page');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Search Results';
+  $handler->display->display_options['display_description'] = 'Site Search';
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['search_api_bypass_access'] = 0;
+  $handler->display->display_options['query']['options']['entity_access'] = 0;
+  $handler->display->display_options['query']['options']['parse_mode'] = 'direct';
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
+  $handler->display->display_options['exposed_block'] = TRUE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: PHP */
+  $handler->display->display_options['header']['php']['id'] = 'php';
+  $handler->display->display_options['header']['php']['table'] = 'views';
+  $handler->display->display_options['header']['php']['field'] = 'php';
+  $handler->display->display_options['header']['php']['php_output'] = '<?php
+      $title = t("Search Results");
+      /*$view_all_label = t(\'| View All\');
+      $path = \'search\';
+      $link = l($view_all_label, $path);
+      */
+      $output = "<div class=\'press-center-header\'><span class=\'press-center-header-label\'>";
+      $output .= $title;
+      $output .= "</span>";
+      /*
+      $output .= "<span class=\'press-center-header-link\'>";
+      $output .= $link;
+      $output .= "</span>";
+      */
+      $output .= "</div>";
+      print $output;
+      ?>';
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'No results found!';
+  $handler->display->display_options['empty']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Indexed Node: Type of the Node */
+  $handler->display->display_options['fields']['entity_type_1']['id'] = 'entity_type_1';
+  $handler->display->display_options['fields']['entity_type_1']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['fields']['entity_type_1']['field'] = 'entity_type';
+  $handler->display->display_options['fields']['entity_type_1']['label'] = '';
+  $handler->display->display_options['fields']['entity_type_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['entity_type_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['entity_type_1']['link_to_entity'] = 0;
+  /* Field: Indexed Node: Media Source */
+  $handler->display->display_options['fields']['field_media_source']['id'] = 'field_media_source';
+  $handler->display->display_options['fields']['field_media_source']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['fields']['field_media_source']['field'] = 'field_media_source';
+  $handler->display->display_options['fields']['field_media_source']['label'] = '';
+  $handler->display->display_options['fields']['field_media_source']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_media_source']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_media_source']['alter']['path'] = '[field_media_source-url]';
+  $handler->display->display_options['fields']['field_media_source']['alter']['target'] = '_blank';
+  $handler->display->display_options['fields']['field_media_source']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_media_source']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_media_source']['type'] = 'link_plain';
+  /* Field: Indexed Node: URL */
+  $handler->display->display_options['fields']['url']['id'] = 'url';
+  $handler->display->display_options['fields']['url']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['fields']['url']['field'] = 'url';
+  $handler->display->display_options['fields']['url']['label'] = '';
+  $handler->display->display_options['fields']['url']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['url']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['url']['alter']['text'] = '[field_media_source][url] ';
+  $handler->display->display_options['fields']['url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['url']['display_as_link'] = FALSE;
+  $handler->display->display_options['fields']['url']['link_to_entity'] = 0;
+  /* Field: Indexed Node: Image Uri for nodes [event/article/publication/speech/gallery/video/page/geography] */
+  $handler->display->display_options['fields']['image_public_uri']['id'] = 'image_public_uri';
+  $handler->display->display_options['fields']['image_public_uri']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['fields']['image_public_uri']['field'] = 'image_public_uri';
+  $handler->display->display_options['fields']['image_public_uri']['label'] = '';
+  $handler->display->display_options['fields']['image_public_uri']['element_class'] = 'akdn-solr-img-link';
+  $handler->display->display_options['fields']['image_public_uri']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['image_public_uri']['link_to_entity'] = 0;
+  /* Field: Global: PHP */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['php']['element_class'] = 'akdn-solr-short-link';
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php if (isset($data->_entity_properties[\'node_short_title\']) && !empty($data->_entity_properties[\'node_short_title\']) && $data->_entity_properties[\'node_type\'] != \'hub_page\' && $data->_entity_properties[\'node_type\'] != \'page\'): ?>
+        <?php print l($data->_entity_properties[\'node_short_title\'], \'node/\' . $data->_entity_properties[\'nid\']); ?>
+      <?php else : ?>
+        <?php print l($data->_entity_properties[\'node_title\'], \'node/\' . $data->_entity_properties[\'nid\']); ?>
+      <?php endif; ?>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Field: Indexed Node: Publish Date */
+  $handler->display->display_options['fields']['field_publish_date']['id'] = 'field_publish_date';
+  $handler->display->display_options['fields']['field_publish_date']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['fields']['field_publish_date']['field'] = 'field_publish_date';
+  $handler->display->display_options['fields']['field_publish_date']['label'] = '';
+  $handler->display->display_options['fields']['field_publish_date']['alter']['path'] = '[url]';
+  $handler->display->display_options['fields']['field_publish_date']['element_class'] = 'akdn-solr-date-link';
+  $handler->display->display_options['fields']['field_publish_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_publish_date']['settings'] = array(
+    'format_type' => 'date_only',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
   );
-  $display->cache = array();
-  $display->title = '';
-  $display->uuid = 'c91c91e3-a843-4312-b0d3-05c1fac9f986';
-  $display->storage_type = 'page_manager';
-  $display->storage_id = 'node_view_panel_context_22';
-  $display->content = array();
-  $display->panels = array();
-  $pane = new stdClass();
-  $pane->pid = 'new-a5a2207c-cd63-45f6-9f76-e4cea0ab5483';
-  $pane->panel = 'left';
-  $pane->type = 'node_title';
-  $pane->subtype = 'node_title';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'link' => 0,
-    'markup' => 'none',
-    'id' => '',
-    'class' => '',
-    'context' => 'argument_entity_id:node_1',
-    'override_title' => 1,
-    'override_title_text' => '',
+  /* Field: Indexed Node: Date */
+  $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
+  $handler->display->display_options['fields']['field_event_date']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
+  $handler->display->display_options['fields']['field_event_date']['label'] = '';
+  $handler->display->display_options['fields']['field_event_date']['alter']['path'] = '[url]';
+  $handler->display->display_options['fields']['field_event_date']['element_class'] = 'akdn-solr-date-link';
+  $handler->display->display_options['fields']['field_event_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_event_date']['settings'] = array(
+    'format_type' => 'date_only',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
   );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
+  /* Field: Indexed Node: Title */
+  $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['label'] = '';
+  $handler->display->display_options['fields']['title_field']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['title_field']['alter']['path'] = '[url]';
+  $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field']['element_wrapper_type'] = 'div';
+  /* Field: Indexed Node: Short Title */
+  $handler->display->display_options['fields']['field_short_title']['id'] = 'field_short_title';
+  $handler->display->display_options['fields']['field_short_title']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['fields']['field_short_title']['field'] = 'field_short_title';
+  $handler->display->display_options['fields']['field_short_title']['label'] = '';
+  $handler->display->display_options['fields']['field_short_title']['alter']['path'] = '[url]';
+  $handler->display->display_options['fields']['field_short_title']['alter']['link_class'] = 'akdn-solr-short-link';
+  $handler->display->display_options['fields']['field_short_title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_short_title']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_short_title']['empty'] = '[title_field]';
+  $handler->display->display_options['fields']['field_short_title']['type'] = 'text_plain';
+  $handler->display->display_options['fields']['field_short_title']['settings'] = array(
+    'trim_length' => '600',
   );
-  $pane->css = array(
-    'css_id' => '',
-    'css_class' => 'basic-page-custom-title',
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'More';
+  $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = '[url]';
+  $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'akdn-solr-more-link';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Field: Indexed Node: Type of the Node */
+  $handler->display->display_options['fields']['entity_type']['id'] = 'entity_type';
+  $handler->display->display_options['fields']['entity_type']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['fields']['entity_type']['field'] = 'entity_type';
+  $handler->display->display_options['fields']['entity_type']['label'] = '';
+  $handler->display->display_options['fields']['entity_type']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['entity_type']['alter']['text'] = '[entity_type]';
+  $handler->display->display_options['fields']['entity_type']['element_class'] = 'akdn-solr-type-of-node';
+  $handler->display->display_options['fields']['entity_type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['entity_type']['link_to_entity'] = 0;
+  /* Field: Search: Excerpt */
+  $handler->display->display_options['fields']['search_api_excerpt']['id'] = 'search_api_excerpt';
+  $handler->display->display_options['fields']['search_api_excerpt']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['fields']['search_api_excerpt']['field'] = 'search_api_excerpt';
+  $handler->display->display_options['fields']['search_api_excerpt']['label'] = '';
+  $handler->display->display_options['fields']['search_api_excerpt']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['search_api_excerpt']['alter']['preserve_tags'] = '<strong>';
+  $handler->display->display_options['fields']['search_api_excerpt']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['search_api_excerpt']['link_to_entity'] = 0;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Search: Relevance */
+  $handler->display->display_options['sorts']['search_api_relevance']['id'] = 'search_api_relevance';
+  $handler->display->display_options['sorts']['search_api_relevance']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['sorts']['search_api_relevance']['field'] = 'search_api_relevance';
+  $handler->display->display_options['sorts']['search_api_relevance']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['search_api_relevance']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['search_api_relevance']['expose']['label'] = 'Relevance';
+  /* Sort criterion: Indexed Node: Publish Date */
+  $handler->display->display_options['sorts']['field_publish_date']['id'] = 'field_publish_date';
+  $handler->display->display_options['sorts']['field_publish_date']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['sorts']['field_publish_date']['field'] = 'field_publish_date';
+  $handler->display->display_options['sorts']['field_publish_date']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['field_publish_date']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['field_publish_date']['expose']['label'] = 'Date';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Indexed Node: Content type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'akmi_artists' => 'akmi_artists',
+    'akmi_performance' => 'akmi_performance',
+    'agency' => 'agency',
+    'architecture_project' => 'architecture_project',
+    'article' => 'article',
+    'award_cycle' => 'award_cycle',
+    'page' => 'page',
+    'custom_content' => 'custom_content',
+    'event' => 'event',
+    'gallery' => 'gallery',
+    'geography' => 'geography',
+    'podcast' => 'podcast',
+    'publication' => 'publication',
+    'speech' => 'speech',
+    'project' => 'project',
+    'focus_area' => 'focus_area',
   );
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = 'a5a2207c-cd63-45f6-9f76-e4cea0ab5483';
-  $display->content['new-a5a2207c-cd63-45f6-9f76-e4cea0ab5483'] = $pane;
-  $display->panels['left'][0] = 'new-a5a2207c-cd63-45f6-9f76-e4cea0ab5483';
-  $pane = new stdClass();
-  $pane->pid = 'new-c550aa88-5c72-4517-b886-41a3e34acde7';
-  $pane->panel = 'left';
-  $pane->type = 'entity_field';
-  $pane->subtype = 'node:field_short_title';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'label' => 'hidden',
-    'formatter' => 'text_default',
-    'delta_limit' => 0,
-    'delta_offset' => '0',
-    'delta_reversed' => FALSE,
-    'formatter_settings' => array(),
-    'context' => 'argument_entity_id:node_1',
-    'override_title' => 1,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Indexed Node: Status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = array(
+    1 => '1',
   );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  /* Filter criterion: Search: Fulltext search */
+  $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['operator'] = 'OR';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['group'] = 1;
+  $handler->display->display_options['filters']['search_api_views_fulltext']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator_id'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['label'] = 'Fulltext search';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['identifier'] = 'text';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    6 => 0,
+    5 => 0,
+    3 => 0,
+    11 => 0,
   );
-  $pane->css = array(
-    'css_id' => '',
-    'css_class' => 'basic-page-custom-title',
+  $handler->display->display_options['filters']['search_api_views_fulltext']['fields'] = array(
+    'field_custom_meta_tags' => 'field_custom_meta_tags',
+    'search_api_aggregation_1' => 'search_api_aggregation_1',
   );
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = 'c550aa88-5c72-4517-b886-41a3e34acde7';
-  $display->content['new-c550aa88-5c72-4517-b886-41a3e34acde7'] = $pane;
-  $display->panels['left'][1] = 'new-c550aa88-5c72-4517-b886-41a3e34acde7';
-  $pane = new stdClass();
-  $pane->pid = 'new-42e822ca-bc51-4b22-a7fa-070bc30dfbcb';
-  $pane->panel = 'left';
-  $pane->type = 'views';
-  $pane->subtype = 'basic_pages_view';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '5',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
-    'args' => '',
-    'url' => '',
-    'display' => 'basic_page_summary',
-    'context' => array(
-      0 => '',
-    ),
-    'override_title' => 1,
-    'override_title_text' => '',
+  /* Filter criterion: Exclude from search */
+  $handler->display->display_options['filters']['field_exclude_from_search']['id'] = 'field_exclude_from_search';
+  $handler->display->display_options['filters']['field_exclude_from_search']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['filters']['field_exclude_from_search']['field'] = 'field_exclude_from_search';
+  $handler->display->display_options['filters']['field_exclude_from_search']['ui_name'] = 'Exclude from search';
+  $handler->display->display_options['filters']['field_exclude_from_search']['operator'] = '<>';
+  $handler->display->display_options['filters']['field_exclude_from_search']['value'] = array(
+    1 => '1',
   );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
+  $handler->display->display_options['path'] = 'search';
+
+  /* Display: Site Search */
+  $handler = $view->new_display('page', 'Site Search', 'page_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'What\'s new';
+  $handler->display->display_options['display_description'] = 'Site Search';
+  $handler->display->display_options['exposed_block'] = TRUE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'No results found!';
+  $handler->display->display_options['empty']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Indexed Node: URL */
+  $handler->display->display_options['fields']['url']['id'] = 'url';
+  $handler->display->display_options['fields']['url']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['fields']['url']['field'] = 'url';
+  $handler->display->display_options['fields']['url']['label'] = '';
+  $handler->display->display_options['fields']['url']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['url']['display_as_link'] = FALSE;
+  $handler->display->display_options['fields']['url']['link_to_entity'] = 0;
+  /* Field: Indexed Node: Image Uri for nodes [event/article/publication/speech/gallery/video/page/geography] */
+  $handler->display->display_options['fields']['image_public_uri']['id'] = 'image_public_uri';
+  $handler->display->display_options['fields']['image_public_uri']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['fields']['image_public_uri']['field'] = 'image_public_uri';
+  $handler->display->display_options['fields']['image_public_uri']['label'] = '';
+  $handler->display->display_options['fields']['image_public_uri']['element_class'] = 'akdn-solr-img-link';
+  $handler->display->display_options['fields']['image_public_uri']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['image_public_uri']['link_to_entity'] = 0;
+  /* Field: Indexed Node: Short Title */
+  $handler->display->display_options['fields']['field_short_title']['id'] = 'field_short_title';
+  $handler->display->display_options['fields']['field_short_title']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['fields']['field_short_title']['field'] = 'field_short_title';
+  $handler->display->display_options['fields']['field_short_title']['label'] = '';
+  $handler->display->display_options['fields']['field_short_title']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_short_title']['alter']['path'] = '[url]';
+  $handler->display->display_options['fields']['field_short_title']['alter']['link_class'] = 'akdn-solr-short-link';
+  $handler->display->display_options['fields']['field_short_title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_short_title']['type'] = 'text_plain';
+  $handler->display->display_options['fields']['field_short_title']['settings'] = array(
+    'trim_length' => '600',
   );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 2;
-  $pane->locks = array();
-  $pane->uuid = '42e822ca-bc51-4b22-a7fa-070bc30dfbcb';
-  $display->content['new-42e822ca-bc51-4b22-a7fa-070bc30dfbcb'] = $pane;
-  $display->panels['left'][2] = 'new-42e822ca-bc51-4b22-a7fa-070bc30dfbcb';
-  $pane = new stdClass();
-  $pane->pid = 'new-b9caf433-e7db-43b3-ba41-4d4d96b48954';
-  $pane->panel = 'left';
-  $pane->type = 'node_body';
-  $pane->subtype = 'node_body';
-  $pane->shown = TRUE;
-  $pane->access = array(
-    'plugins' => array(
-      0 => array(
-        'name' => 'entity_field_value:node:custom_content:field_basic_page_choose_layout',
-        'settings' => array(
-          'field_basic_page_choose_layout' => array(
-            'en' => array(
-              0 => array(
-                'value' => 'basic',
-              ),
-            ),
-          ),
-          'field_basic_page_choose_layout_value' => 'basic',
-        ),
-        'context' => 'argument_entity_id:node_1',
-        'not' => FALSE,
-      ),
-    ),
+  /* Field: Indexed Node: Publish Date */
+  $handler->display->display_options['fields']['field_publish_date']['id'] = 'field_publish_date';
+  $handler->display->display_options['fields']['field_publish_date']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['fields']['field_publish_date']['field'] = 'field_publish_date';
+  $handler->display->display_options['fields']['field_publish_date']['label'] = '';
+  $handler->display->display_options['fields']['field_publish_date']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_publish_date']['alter']['path'] = '[url]';
+  $handler->display->display_options['fields']['field_publish_date']['element_class'] = 'akdn-solr-date-link';
+  $handler->display->display_options['fields']['field_publish_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_publish_date']['settings'] = array(
+    'format_type' => 'date_only',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
   );
-  $pane->configuration = array(
-    'context' => 'argument_entity_id:node_1',
-    'override_title' => 1,
-    'override_title_text' => '',
+  /* Field: Indexed Node: Date */
+  $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
+  $handler->display->display_options['fields']['field_event_date']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
+  $handler->display->display_options['fields']['field_event_date']['label'] = '';
+  $handler->display->display_options['fields']['field_event_date']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_event_date']['alter']['path'] = '[url]';
+  $handler->display->display_options['fields']['field_event_date']['element_class'] = 'akdn-solr-date-link';
+  $handler->display->display_options['fields']['field_event_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_event_date']['settings'] = array(
+    'format_type' => 'date_only',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
   );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
+  /* Field: Indexed Node: Type of the Node */
+  $handler->display->display_options['fields']['entity_type']['id'] = 'entity_type';
+  $handler->display->display_options['fields']['entity_type']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['fields']['entity_type']['field'] = 'entity_type';
+  $handler->display->display_options['fields']['entity_type']['label'] = '';
+  $handler->display->display_options['fields']['entity_type']['element_class'] = 'akdn-solr-type-of-node';
+  $handler->display->display_options['fields']['entity_type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['entity_type']['link_to_entity'] = 0;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = ' More';
+  $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = '[url]';
+  $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'akdn-solr-more-link';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Indexed Node: Time of Event Start/Article,publication,podcast,speech,gallery,project Publish */
+  $handler->display->display_options['sorts']['event_date_start_time']['id'] = 'event_date_start_time';
+  $handler->display->display_options['sorts']['event_date_start_time']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['sorts']['event_date_start_time']['field'] = 'event_date_start_time';
+  $handler->display->display_options['sorts']['event_date_start_time']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['operator'] = 'OR';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'AND',
   );
-  $pane->css = array(
-    'css_id' => '',
-    'css_class' => 'basic-page-custom-body',
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Indexed Node: Content type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'event' => 'event',
+    'speech' => 'speech',
   );
-  $pane->extras = array();
-  $pane->position = 3;
-  $pane->locks = array();
-  $pane->uuid = 'b9caf433-e7db-43b3-ba41-4d4d96b48954';
-  $display->content['new-b9caf433-e7db-43b3-ba41-4d4d96b48954'] = $pane;
-  $display->panels['left'][3] = 'new-b9caf433-e7db-43b3-ba41-4d4d96b48954';
-  $pane = new stdClass();
-  $pane->pid = 'new-24d44d98-25dd-4110-b778-c63f4c59f000';
-  $pane->panel = 'left';
-  $pane->type = 'block';
-  $pane->subtype = 'akdn_custom-basic_page_accordian_style_block';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 0,
-    'override_title_text' => '',
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Indexed Node: Status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = array(
+    1 => '1',
   );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  /* Filter criterion: Indexed Node: Promoted to frontpage */
+  $handler->display->display_options['filters']['promote']['id'] = 'promote';
+  $handler->display->display_options['filters']['promote']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['filters']['promote']['field'] = 'promote';
+  $handler->display->display_options['filters']['promote']['value'] = '1';
+  $handler->display->display_options['filters']['promote']['group'] = 1;
+  /* Filter criterion: Indexed Node: Article Type */
+  $handler->display->display_options['filters']['field_article_cat']['id'] = 'field_article_cat';
+  $handler->display->display_options['filters']['field_article_cat']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['filters']['field_article_cat']['field'] = 'field_article_cat';
+  $handler->display->display_options['filters']['field_article_cat']['operator'] = '<>';
+  $handler->display->display_options['filters']['field_article_cat']['value'] = array(
+    2611 => '2611',
+    2612 => '2612',
   );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 4;
-  $pane->locks = array();
-  $pane->uuid = '24d44d98-25dd-4110-b778-c63f4c59f000';
-  $display->content['new-24d44d98-25dd-4110-b778-c63f4c59f000'] = $pane;
-  $display->panels['left'][4] = 'new-24d44d98-25dd-4110-b778-c63f4c59f000';
-  $pane = new stdClass();
-  $pane->pid = 'new-d8250acf-ee9b-4aef-8ef3-cf626a1cf4a2';
-  $pane->panel = 'left';
-  $pane->type = 'block';
-  $pane->subtype = 'akdn_custom-basic_page_link_to_style_block';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 0,
-    'override_title_text' => '',
+  $handler->display->display_options['filters']['field_article_cat']['group'] = 2;
+  /* Filter criterion: Indexed Node: Content type */
+  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
+  $handler->display->display_options['filters']['type_1']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['filters']['type_1']['field'] = 'type';
+  $handler->display->display_options['filters']['type_1']['value'] = array(
+    'article' => 'article',
   );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
+  $handler->display->display_options['filters']['type_1']['group'] = 2;
+  /* Filter criterion: Indexed Node: Status */
+  $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
+  $handler->display->display_options['filters']['status_1']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['filters']['status_1']['field'] = 'status';
+  $handler->display->display_options['filters']['status_1']['value'] = array(
+    1 => '1',
   );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 5;
-  $pane->locks = array();
-  $pane->uuid = 'd8250acf-ee9b-4aef-8ef3-cf626a1cf4a2';
-  $display->content['new-d8250acf-ee9b-4aef-8ef3-cf626a1cf4a2'] = $pane;
-  $display->panels['left'][5] = 'new-d8250acf-ee9b-4aef-8ef3-cf626a1cf4a2';
-  $pane = new stdClass();
-  $pane->pid = 'new-e7cee5f8-abf1-4500-bda3-028f599a30ef';
-  $pane->panel = 'right';
-  $pane->type = 'views';
-  $pane->subtype = 'custom_header_block';
-  $pane->shown = TRUE;
-  $pane->access = array(
-    'plugins' => array(
-      0 => array(
-        'name' => 'entity_field_value:node:custom_content:field_rchb_show_block',
-        'settings' => array(
-          'field_rchb_show_block' => array(
-            'und' => array(
-              0 => array(
-                'value' => 1,
-              ),
-            ),
-          ),
-          'field_rchb_show_block_value' => array(
-            0 => 1,
-          ),
-        ),
-        'context' => 'argument_entity_id:node_1',
-        'not' => FALSE,
-      ),
-    ),
+  $handler->display->display_options['filters']['status_1']['group'] = 2;
+  /* Filter criterion: Indexed Node: Promoted to frontpage */
+  $handler->display->display_options['filters']['promote_1']['id'] = 'promote_1';
+  $handler->display->display_options['filters']['promote_1']['table'] = 'search_api_index_akdn';
+  $handler->display->display_options['filters']['promote_1']['field'] = 'promote';
+  $handler->display->display_options['filters']['promote_1']['value'] = '1';
+  $handler->display->display_options['filters']['promote_1']['group'] = 2;
+  $handler->display->display_options['path'] = 'what-is-new';
+  $translatables['solr_site_search'] = array(
+    t('Master'),
+    t('Recent Speeches'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('Node ID'),
+    t('.'),
+    t(','),
+    t('Site Search'),
+    t('Search Results'),
+    t('No results found!'),
+    t('[field_media_source][url] '),
+    t('[title_field]'),
+    t('More'),
+    t('[entity_type]'),
+    t('Relevance'),
+    t('Date'),
+    t('Fulltext search'),
+    t('What\'s new'),
+    t(' More'),
   );
-  $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '1',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
-    'args' => '',
-    'url' => '',
-    'display' => 'custom_header_block_view',
-    'override_title' => 0,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array(
-    'css_id' => '',
-    'css_class' => 'custom-page-header-block',
-  );
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = 'e7cee5f8-abf1-4500-bda3-028f599a30ef';
-  $display->content['new-e7cee5f8-abf1-4500-bda3-028f599a30ef'] = $pane;
-  $display->panels['right'][0] = 'new-e7cee5f8-abf1-4500-bda3-028f599a30ef';
-  $pane = new stdClass();
-  $pane->pid = 'new-96750ec7-139d-4d98-8162-7cfb5567b1bc';
-  $pane->panel = 'right';
-  $pane->type = 'views';
-  $pane->subtype = 'hub_pages';
-  $pane->shown = TRUE;
-  $pane->access = array(
-    'plugins' => array(),
-  );
-  $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '1',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
-    'args' => '',
-    'url' => '',
-    'display' => 'other_activities',
-    'context' => array(
-      0 => '',
-      1 => '',
-    ),
-    'override_title' => 0,
-    'override_title_text' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array(
-    'css_id' => '',
-    'css_class' => 'other-activities-title',
-  );
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = '96750ec7-139d-4d98-8162-7cfb5567b1bc';
-  $display->content['new-96750ec7-139d-4d98-8162-7cfb5567b1bc'] = $pane;
-  $display->panels['right'][1] = 'new-96750ec7-139d-4d98-8162-7cfb5567b1bc';
-  $pane = new stdClass();
-  $pane->pid = 'new-b9e71951-5bc6-4c9b-a0b9-216475259839';
-  $pane->panel = 'right';
-  $pane->type = 'block';
-  $pane->subtype = 'akdn_custom-all_areas_of_activity';
-  $pane->shown = TRUE;
-  $pane->access = array(
-    'plugins' => array(),
-  );
-  $pane->configuration = array(
-    'override_title' => 0,
-    'override_title_text' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 2;
-  $pane->locks = array();
-  $pane->uuid = 'b9e71951-5bc6-4c9b-a0b9-216475259839';
-  $display->content['new-b9e71951-5bc6-4c9b-a0b9-216475259839'] = $pane;
-  $display->panels['right'][2] = 'new-b9e71951-5bc6-4c9b-a0b9-216475259839';
-  $pane = new stdClass();
-  $pane->pid = 'new-94b74415-18fd-4315-aedc-6cbbb273e136';
-  $pane->panel = 'right';
-  $pane->type = 'views';
-  $pane->subtype = 'hub_pages';
-  $pane->shown = TRUE;
-  $pane->access = array(
-    'plugins' => array(),
-  );
-  $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
-    'args' => '',
-    'url' => '',
-    'display' => 'custom_block',
-    'context' => array(
-      0 => 'argument_entity_id:node_1.nid',
-    ),
-    'override_title' => 1,
-    'override_title_text' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array(
-    'css_id' => '',
-    'css_class' => 'basic-page-custom-block-right',
-  );
-  $pane->extras = array();
-  $pane->position = 3;
-  $pane->locks = array();
-  $pane->uuid = '94b74415-18fd-4315-aedc-6cbbb273e136';
-  $display->content['new-94b74415-18fd-4315-aedc-6cbbb273e136'] = $pane;
-  $display->panels['right'][3] = 'new-94b74415-18fd-4315-aedc-6cbbb273e136';
-  $pane = new stdClass();
-  $pane->pid = 'new-43c9f034-ba51-4c2e-a311-b4de2fa0530d';
-  $pane->panel = 'right';
-  $pane->type = 'block';
-  $pane->subtype = 'akdn_custom-right_panel_press_center_block';
-  $pane->shown = TRUE;
-  $pane->access = array(
-    'plugins' => array(),
-  );
-  $pane->configuration = array(
-    'override_title' => 0,
-    'override_title_text' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 4;
-  $pane->locks = array();
-  $pane->uuid = '43c9f034-ba51-4c2e-a311-b4de2fa0530d';
-  $display->content['new-43c9f034-ba51-4c2e-a311-b4de2fa0530d'] = $pane;
-  $display->panels['right'][4] = 'new-43c9f034-ba51-4c2e-a311-b4de2fa0530d';
-  $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = '0';
-  $handler->conf['display'] = $display;
   $export['node_view_panel_context_22'] = $handler;
 
   $handler = new stdClass();

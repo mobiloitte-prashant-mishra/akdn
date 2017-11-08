@@ -32,6 +32,9 @@ if ($row->{'_entity_properties'}['entity_type'] == 'In the media') {
 }
 elseif ($row->{'_entity_properties'}['entity_type'] == 'geography' ||
         ($row->{'_entity_properties'}['entity_type'] == 'Info Page' && $row->{'_entity_properties'}['entity object']->type == 'akmi_artists') ||
+        ($row->{'_entity_properties'}['entity_type'] == 'Info Page' && $row->{'_entity_properties'}['entity object']->type == 'geography') ||
+        ($row->{'_entity_properties'}['entity_type'] == 'Info Page' && $row->{'_entity_properties'}['entity object']->type == 'custom_content') ||
+        ($row->{'_entity_properties'}['entity_type'] == 'Info Page' && $row->{'_entity_properties'}['entity object']->type == 'agency') ||
         ($row->{'_entity_properties'}['entity_type'] == 'Info Page' && $row->{'_entity_properties'}['entity object']->type == 'akmi_performance')) {
   $output = l($row->{'_entity_properties'}['entity object']->title, 'node/' . $row->{'_entity_properties'}['search_api_id'], array('html' => TRUE));
 }
