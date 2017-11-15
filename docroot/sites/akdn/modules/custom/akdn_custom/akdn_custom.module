@@ -1193,7 +1193,17 @@ function akdn_right_panel_press_center_block() {
         $count = db_query("Select node.nid from node node left join workbench_moderation_node_history workbench ON node.nid = workbench.nid left join taxonomy_index tax ON tax.nid = node.nid where tax.tid = $tid AND node.type = 'speech' AND workbench.state = 'published' AND workbench.published = 1")->rowCount();
       }
       if ($key == 'publications') {
-        $count = db_query("Select node.nid from node node left join workbench_moderation_node_history workbench ON node.nid = workbench.nid left join taxonomy_index tax ON tax.nid = node.nid where tax.tid = $tid AND node.type = 'publication' AND workbench.state = 'published' AND workbench.published = 1 ORDER BY node.created DESC LIMIT 1")->rowCount();
+        $view = views_get_view('solr_search_pages_1');
+        $view->set_display('page_4');
+        $view->build('page_4');
+        $query = $view->query->getSearchApiQuery();
+        $filter = $query->createFilter('AND');
+        $filter->condition('field_country', $tid, '=');
+        $query->filter($filter);
+        $view->execute();
+        $result = $view->result;
+        $count = count($result);
+//        $count = db_query("Select node.nid from node node left join workbench_moderation_node_history workbench ON node.nid = workbench.nid left join taxonomy_index tax ON tax.nid = node.nid where tax.tid = $tid AND node.type = 'publication' AND workbench.state = 'published' AND workbench.published = 1 ORDER BY node.created DESC LIMIT 1")->rowCount();
       }
       if ($key == 'galleries') {
         $count = db_query("Select node.nid from node node left join workbench_moderation_node_history workbench ON node.nid = workbench.nid left join taxonomy_index tax ON tax.nid = node.nid where tax.tid = $tid AND node.type = 'gallery' AND workbench.state = 'published' AND workbench.published = 1")->rowCount();
