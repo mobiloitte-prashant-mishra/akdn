@@ -1210,7 +1210,6 @@ function akdn_right_panel_press_center_block() {
       if ($key == 'publications') {
         $view = views_get_view('solr_search_pages_1');
         $view->set_display('page_4');
-        $view->pre_execute();
         $view->build('page_4');
         $query = $view->query->getSearchApiQuery();
         $filter = $query->createFilter('AND');
