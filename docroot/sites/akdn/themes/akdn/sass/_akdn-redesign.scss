@@ -3550,7 +3550,10 @@ h2.header-name a {
       @extend %font_arial;
 
       font-size: 14px;
-      font-style: italic;
+      font-style: normal;
+    }
+    .image-copytight {
+        font-style: italic;
     }
   }
 
