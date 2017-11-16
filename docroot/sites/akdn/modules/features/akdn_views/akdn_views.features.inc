@@ -325,6 +325,8 @@ function akdn_views_fe_nodequeue_export_fields() {
       6 => 'project',
       7 => 'publication',
       8 => 'speech',
+      9 => 'project',
+      10 => 'focus_area',
     ),
     'roles' => array(),
     'count' => 0,
