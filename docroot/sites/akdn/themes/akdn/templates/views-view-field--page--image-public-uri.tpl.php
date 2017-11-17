@@ -30,11 +30,12 @@ if (isset($row->{'_entity_properties'}['image_public_uri'])) {
 }
 
 // Apply image style article_listing_thumbnail for the image
-if(arg(0) == 'search'){
-  $style = 'article_listing_thumbnail';
-}else{
-  $style = 'social_sharing_image';
-}
+//if(arg(0) == 'search'){
+//  $style = 'article_listing_thumbnail';
+//}else{
+//  $style = 'social_sharing_image';
+//}
+$style = 'article_listing_thumbnail';
 $image = theme('image_style', array(
     'style_name' => $style,
     'path' => $image_uri,
