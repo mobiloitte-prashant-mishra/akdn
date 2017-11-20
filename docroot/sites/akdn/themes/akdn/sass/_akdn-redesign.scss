@@ -3865,6 +3865,14 @@ h2.header-name a {
     width: 50%;
     float: none;
   }
+  
+  .pane-node-field-publication-isbn{
+      .field-name-field-publication-isbn{
+          padding: 0;
+          margin: 0 0 -20px 0;
+          font-size: 18px;
+      }
+  }
 
   .pane-node-body {
     display: inline-block;
