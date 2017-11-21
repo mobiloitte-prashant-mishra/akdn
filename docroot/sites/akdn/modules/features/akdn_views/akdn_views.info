@@ -83,5 +83,6 @@ features[views_view][] = speech_center
 features[views_view][] = speech_quotes_xml
 features[views_view][] = speeches
 features[views_view][] = view_for_caption_and_copyright_export
+features[views_view][] = basic_pages_view_draft
 features_exclude[dependencies][ctools] = ctools
 features_exclude[dependencies][nodequeue] = nodequeue

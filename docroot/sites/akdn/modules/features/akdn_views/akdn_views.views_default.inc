@@ -11905,13 +11905,10 @@ print $explode[1];
 	$handler->display->display_options['sorts']['created']['table'] = 'node';
 	$handler->display->display_options['sorts']['created']['field'] = 'created';
 	$handler->display->display_options['sorts']['created']['order'] = 'DESC';
-	/* Filter criterion: Content: Published */
-	$handler->display->display_options['filters']['status']['id'] = 'status';
-	$handler->display->display_options['filters']['status']['table'] = 'node';
-	$handler->display->display_options['filters']['status']['field'] = 'status';
-	$handler->display->display_options['filters']['status']['value'] = 1;
-	$handler->display->display_options['filters']['status']['group'] = 1;
-	$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+	/* Filter criterion: Content: Published or admin */
+	$handler->display->display_options['filters']['status_extra']['id'] = 'status_extra';
+	$handler->display->display_options['filters']['status_extra']['table'] = 'node';
+	$handler->display->display_options['filters']['status_extra']['field'] = 'status_extra';
 
 	/* Display: Basic page Slideshow */
 	$handler = $view->new_display('block', 'Basic page Slideshow', 'basic_page_slideshow');
@@ -12008,10 +12005,10 @@ print $explode[1];
 	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_hub_page_image]</div>
-	  <div class="slide-text">
-	  <div class="caption">[field_image_caption]</div>
-	  <div class="caption image-copytight">[field_image_copytight]</div>
-	  </div>';
+		  <div class="slide-text">
+		  <div class="caption">[field_image_caption]</div>
+		  <div class="caption image-copytight">[field_image_copytight]</div>
+		  </div>';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	/* Field: Colorbox: Colorbox trigger */
 	$handler->display->display_options['fields']['colorbox']['id'] = 'colorbox';
@@ -12076,13 +12073,6 @@ print $explode[1];
 	$handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
 	$handler->display->display_options['defaults']['filter_groups'] = FALSE;
 	$handler->display->display_options['defaults']['filters'] = FALSE;
-	/* Filter criterion: Content: Published */
-	$handler->display->display_options['filters']['status']['id'] = 'status';
-	$handler->display->display_options['filters']['status']['table'] = 'node';
-	$handler->display->display_options['filters']['status']['field'] = 'status';
-	$handler->display->display_options['filters']['status']['value'] = 1;
-	$handler->display->display_options['filters']['status']['group'] = 1;
-	$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
 	/* Filter criterion: Content: choose layout (field_basic_page_choose_layout) */
 	$handler->display->display_options['filters']['field_basic_page_choose_layout_value']['id'] = 'field_basic_page_choose_layout_value';
 	$handler->display->display_options['filters']['field_basic_page_choose_layout_value']['table'] = 'field_data_field_basic_page_choose_layout';
@@ -12091,6 +12081,10 @@ print $explode[1];
 	$handler->display->display_options['filters']['field_basic_page_choose_layout_value']['value'] = array(
 	  'accordian' => 'accordian',
 	);
+	/* Filter criterion: Content: Published or admin */
+	$handler->display->display_options['filters']['status_extra']['id'] = 'status_extra';
+	$handler->display->display_options['filters']['status_extra']['table'] = 'node';
+	$handler->display->display_options['filters']['status_extra']['field'] = 'status_extra';
 
 	/* Display: Custom Content Header */
 	$handler = $view->new_display('block', 'Custom Content Header', 'custom_content_header');
@@ -12184,13 +12178,6 @@ print $explode[1];
 	$handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
 	$handler->display->display_options['defaults']['filter_groups'] = FALSE;
 	$handler->display->display_options['defaults']['filters'] = FALSE;
-	/* Filter criterion: Content: Published */
-	$handler->display->display_options['filters']['status']['id'] = 'status';
-	$handler->display->display_options['filters']['status']['table'] = 'node';
-	$handler->display->display_options['filters']['status']['field'] = 'status';
-	$handler->display->display_options['filters']['status']['value'] = 1;
-	$handler->display->display_options['filters']['status']['group'] = 1;
-	$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
 	/* Filter criterion: Content: choose layout (field_basic_page_choose_layout) */
 	$handler->display->display_options['filters']['field_basic_page_choose_layout_value']['id'] = 'field_basic_page_choose_layout_value';
 	$handler->display->display_options['filters']['field_basic_page_choose_layout_value']['table'] = 'field_data_field_basic_page_choose_layout';
@@ -12207,6 +12194,10 @@ print $explode[1];
 	$handler->display->display_options['filters']['language']['value'] = array(
 	  '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
 	);
+	/* Filter criterion: Content: Published or admin */
+	$handler->display->display_options['filters']['status_extra']['id'] = 'status_extra';
+	$handler->display->display_options['filters']['status_extra']['table'] = 'node';
+	$handler->display->display_options['filters']['status_extra']['field'] = 'status_extra';
 	$translatables['basic_pages_view'] = array(
 	  t('Master'),
 	  t('Basic Pages Flex slider'),
@@ -12219,10 +12210,10 @@ print $explode[1];
 	  t('Basic page Slideshow'),
 	  t('image from field_hub_page_image'),
 	  t('<div class="slide">[field_hub_page_image]</div>
-	  <div class="slide-text">
-	  <div class="caption">[field_image_caption]</div>
-	  <div class="caption image-copytight">[field_image_copytight]</div>
-	  </div>'),
+		  <div class="slide-text">
+		  <div class="caption">[field_image_caption]</div>
+		  <div class="caption image-copytight">[field_image_copytight]</div>
+		  </div>'),
 	  t('All'),
 	  t('Baisc Page summary'),
 	  t('[body-summary]'),
@@ -38981,6 +38972,90 @@ foreach ($result as $record) {
         t('Data export'),
     );
     $export['view_for_caption_and_copyright_export'] = $view;
+    
+	$view = new view();
+	$view->name = 'basic_pages_view_draft';
+	$view->description = '';
+	$view->tag = 'default';
+	$view->base_table = 'node_revision';
+	$view->human_name = 'Basic Pages View Draft';
+	$view->core = 7;
+	$view->api_version = '3.0';
+	$view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+	/* Display: Master */
+	$handler = $view->new_display('default', 'Master', 'default');
+	$handler->display->display_options['use_more_always'] = FALSE;
+	$handler->display->display_options['access']['type'] = 'perm';
+	$handler->display->display_options['access']['perm'] = 'view revisions';
+	$handler->display->display_options['cache']['type'] = 'none';
+	$handler->display->display_options['query']['type'] = 'views_query';
+	$handler->display->display_options['exposed_form']['type'] = 'basic';
+	$handler->display->display_options['pager']['type'] = 'some';
+	$handler->display->display_options['pager']['options']['items_per_page'] = '1';
+	$handler->display->display_options['pager']['options']['offset'] = '0';
+	$handler->display->display_options['style_plugin'] = 'default';
+	$handler->display->display_options['row_plugin'] = 'fields';
+	/* Field: Content (historical data): Body */
+	$handler->display->display_options['fields']['body-revision_id']['id'] = 'body-revision_id';
+	$handler->display->display_options['fields']['body-revision_id']['table'] = 'field_revision_body';
+	$handler->display->display_options['fields']['body-revision_id']['field'] = 'body-revision_id';
+	$handler->display->display_options['fields']['body-revision_id']['label'] = '';
+	$handler->display->display_options['fields']['body-revision_id']['element_type'] = 'div';
+	$handler->display->display_options['fields']['body-revision_id']['element_class'] = 'body-summary';
+	$handler->display->display_options['fields']['body-revision_id']['element_label_colon'] = FALSE;
+	$handler->display->display_options['fields']['body-revision_id']['element_wrapper_type'] = 'div';
+	$handler->display->display_options['fields']['body-revision_id']['element_wrapper_class'] = 'basic-page-summary';
+	$handler->display->display_options['fields']['body-revision_id']['type'] = 'text_summary_or_trimmed';
+	$handler->display->display_options['fields']['body-revision_id']['settings'] = array(
+	  'trim_length' => '1000',
+	);
+	/* Sort criterion: Content revision: Vid */
+	$handler->display->display_options['sorts']['vid']['id'] = 'vid';
+	$handler->display->display_options['sorts']['vid']['table'] = 'node_revision';
+	$handler->display->display_options['sorts']['vid']['field'] = 'vid';
+	$handler->display->display_options['sorts']['vid']['order'] = 'DESC';
+	/* Contextual filter: Content revision: Nid */
+	$handler->display->display_options['arguments']['nid']['id'] = 'nid';
+	$handler->display->display_options['arguments']['nid']['table'] = 'node_revision';
+	$handler->display->display_options['arguments']['nid']['field'] = 'nid';
+	$handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+	$handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+	$handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+	$handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+	$handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+
+	/* Display: Baisc Page summary Draft */
+	$handler = $view->new_display('block', 'Baisc Page summary Draft', 'basic_page_summary_draft');
+
+	/* Display: Baisc Page Accordian summary Draft */
+	$handler = $view->new_display('block', 'Baisc Page Accordian summary Draft', 'basic_page_accordian_view_draft');
+	$handler->display->display_options['defaults']['fields'] = FALSE;
+	/* Field: Content (historical data): Body */
+	$handler->display->display_options['fields']['body-revision_id']['id'] = 'body-revision_id';
+	$handler->display->display_options['fields']['body-revision_id']['table'] = 'field_revision_body';
+	$handler->display->display_options['fields']['body-revision_id']['field'] = 'body-revision_id';
+	$handler->display->display_options['fields']['body-revision_id']['label'] = '';
+	$handler->display->display_options['fields']['body-revision_id']['element_type'] = 'div';
+	$handler->display->display_options['fields']['body-revision_id']['element_class'] = 'basic-page-accordian-summary';
+	$handler->display->display_options['fields']['body-revision_id']['element_label_colon'] = FALSE;
+	$handler->display->display_options['fields']['body-revision_id']['type'] = 'text_summary_or_trimmed';
+	$handler->display->display_options['fields']['body-revision_id']['settings'] = array(
+	  'trim_length' => '1000',
+	);
+	$translatables['basic_pages_view_draft'] = array(
+	  t('Master'),
+	  t('more'),
+	  t('Apply'),
+	  t('Reset'),
+	  t('Sort by'),
+	  t('Asc'),
+	  t('Desc'),
+	  t('All'),
+	  t('Baisc Page summary Draft'),
+	  t('Baisc Page Accordian summary Draft'),
+	);
+	$export['basic_pages_view_draft'] = $view;	
 
     return $export;
 }
