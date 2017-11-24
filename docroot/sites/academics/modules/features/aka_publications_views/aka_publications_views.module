@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AKA Publications views feature.
+ */
+
+include_once 'aka_publications_views.features.inc';

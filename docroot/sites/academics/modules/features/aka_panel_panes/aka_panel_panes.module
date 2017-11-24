@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AKA Panel Panes feature.
+ */
+
+include_once 'aka_panel_panes.features.inc';

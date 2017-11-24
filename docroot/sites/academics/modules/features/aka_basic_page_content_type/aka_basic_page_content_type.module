@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AKA Basic Page Content Type feature.
+ */
+
+include_once 'aka_basic_page_content_type.features.inc';

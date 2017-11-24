@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AKA Slideshow Home Content Type feature.
+ */
+
+include_once 'aka_slideshow_home_content_type.features.inc';

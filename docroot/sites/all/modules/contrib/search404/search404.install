@@ -9,15 +9,16 @@
  */
 function search404_install() {
   variable_set('site_404', 'search404');
-  variable_set('search404_page_title', 'Page not found');
 }
 
 function search404_uninstall() {
   if (variable_get('site_404', '') == 'search404') {
     variable_del('site_404');
   }
+  variable_del('search404_no_redirect');
   variable_del('search404_redirect_301');
   variable_del('search404_do_google_cse');
+  variable_del('search404_do_google_cse_adv');
   variable_del('search404_do_search_by_page');
   variable_del('search404_first');
   variable_del('search404_jump');
@@ -32,4 +33,6 @@ function search404_uninstall() {
   variable_del('search404_use_or');
   variable_del('search404_use_search_engine');
   variable_del('search404_disable_error_message');
+  variable_del('search404_do_custom_search');
+  variable_del('search404_custom_search_path');
 }
