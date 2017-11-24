@@ -16234,6 +16234,7 @@ map area {
 }
 
 /* line 5753, ../sass/_akdn-redesign.scss */
+.media:hover .field-show-hide-block,
 .media-half-left:hover .field-show-hide-block,
 .media-half-right:hover .field-show-hide-block,
 .media-full:hover .field-show-hide-block,
