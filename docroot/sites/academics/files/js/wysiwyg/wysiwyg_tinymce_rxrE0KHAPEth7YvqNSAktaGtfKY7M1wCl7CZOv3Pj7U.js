@@ -1,1 +1,0 @@
-window.tinyMCEPreInit = {"base":"\/AKDN_REDESIGN\/docroot\/sites\/all\/libraries\/tinymce\/jscripts\/tiny_mce","suffix":"","query":""};
