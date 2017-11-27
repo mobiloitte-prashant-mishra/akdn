@@ -747,7 +747,5 @@ function media_wysiwyg_theme() {
  * Override the template file when view mode is WYSIWYG to provide template that allows linked images.
  */
 function media_wysiwyg_preprocess_file_entity(&$variables) {
-  if ($variables['view_mode'] == 'wysiwyg') {
     $variables['theme_hook_suggestions'][] = 'media_wysiwyg';
-  }
 }
