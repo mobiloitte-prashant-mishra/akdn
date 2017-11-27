@@ -26,9 +26,7 @@ index b9c68e2..def37af 100644
 + * Override the template file when view mode is WYSIWYG to provide template that allows linked images.
 + */
 +function media_wysiwyg_preprocess_file_entity(&$variables) {
-+  if ($variables['view_mode'] == 'wysiwyg') {
 +    $variables['theme_hook_suggestions'][] = 'media_wysiwyg';
-+  }
 +}
 diff --git a/modules/media_wysiwyg/templates/media_wysiwyg.tpl.php b/modules/media_wysiwyg/templates/media_wysiwyg.tpl.php
 new file mode 100644
