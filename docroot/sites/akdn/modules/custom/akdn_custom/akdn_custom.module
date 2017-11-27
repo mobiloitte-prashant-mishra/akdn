@@ -4729,3 +4729,23 @@ function akdn_custom_search_api_solr_documents_alter(array &$documents, SearchAp
     }
   }
 }
+/**
+ * hook_field_display_alter().
+ * @global type $language
+ * @param type $display
+ * @param type $context
+ */
+function akdn_custom_field_display_alter(&$display, $context){
+  if(($context['entity_type'] == 'file') && ($context['entity_type']->type == 'image')){
+    $file_entity = $context['entity'];
+    $caption = $file_entity->field_image_caption[$language->language][0]['value'];
+    $file_wrapper = entity_metadata_wrapper('file', $file_entity);
+    $caption = $file_wrapper->field_image_caption->value(); 
+    $copyright = $file_wrapper->field_image_copytight->value(); 
+    // caption and copyright empty
+    if(empty($caption) && empty($copyright)){
+      unset($context['entity']->field_image_caption);
+      unset($context['entity']->field_image_copytight);
+    }
+  }
+}
