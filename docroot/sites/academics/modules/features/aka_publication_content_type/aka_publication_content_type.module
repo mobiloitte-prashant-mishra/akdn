@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AKA Publication Content Type feature.
+ */
+
+include_once 'aka_publication_content_type.features.inc';

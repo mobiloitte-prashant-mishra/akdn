@@ -1,0 +1,50 @@
+<?php
+
+class FaviconSecurityTestCase extends FaviconTestBase {
+
+  /**
+   * @{inheritdoc}
+   */
+  public static function getInfo() {
+    return array(
+      'name' => 'Favicon security',
+      'description' => 'Validates that insecure favicon files cannot be used.',
+      'group' => 'Favicon',
+    );
+  }
+
+  /**
+   * Test that the favicon is not allowed to be set to an insecure file.
+   */
+  public function testFaviconSecurity() {
+    $account = $this->drupalCreateUser(array('administer themes', 'access administration pages'));
+    $this->drupalLogin($account);
+
+    $edit = array(
+      'default_favicon' => FALSE,
+      'favicon_path' => 'index.php',
+    );
+    $this->drupalPost('admin/appearance/settings/bartik', $edit, 'Save configuration');
+    $this->assertText('The file index.php has an invalid MIME type of application/x-httpd-php for use as a shortcut icon.');
+
+    // Assert the value was not saved.
+    $this->assertThemeSetting('bartik', 'favicon_path', NULL);
+    $this->assertFavicon(DrupalFavicon::DEFAULT_URI, 'bartik');
+
+    $edit['favicon_path'] = 'misc/feed.png';
+    $this->drupalPost(NULL, $edit, 'Save configuration');
+    $this->assertText('The configuration options have been saved.');
+
+    // Assert the value was saved.
+    $this->assertThemeSetting('bartik', 'favicon_path', 'misc/feed.png');
+    // This will test that the favicon calculation cache is cleared.
+    $this->assertFavicon('misc/feed.png', 'bartik');
+
+    // Test that we still will not use an insecure file, even if set manually.
+    $settings = variable_get('theme_bartik_settings', array());
+    $settings['favicon_path'] = 'index.php';
+    variable_set('theme_bartik_settings', $settings);
+    $this->assertThemeSetting('bartik', 'favicon_path', 'index.php');
+    $this->assertFavicon(FALSE, 'bartik', FALSE);
+  }
+}

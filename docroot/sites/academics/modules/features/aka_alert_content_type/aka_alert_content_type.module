@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AKA Alert Content Type feature.
+ */
+
+include_once 'aka_alert_content_type.features.inc';

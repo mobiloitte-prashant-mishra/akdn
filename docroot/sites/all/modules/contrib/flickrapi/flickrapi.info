@@ -8,9 +8,9 @@ dependencies[] = oauth_common
 
 configure = admin/config/media/flickrapi
 
-; Information added by drupal.org packaging script on 2012-04-29
-version = "7.x-1.4"
+; Information added by Drupal.org packaging script on 2014-07-11
+version = "7.x-1.5"
 core = "7.x"
 project = "flickrapi"
-datestamp = "1335690056"
+datestamp = "1405072731"
 
