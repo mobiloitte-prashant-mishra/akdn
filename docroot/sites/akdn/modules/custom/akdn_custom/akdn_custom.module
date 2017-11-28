@@ -1330,14 +1330,16 @@ function akdn_basic_page_link_to_style_block() {
         $output .= '<div class = "link_to_image">';
         $output .= '<div class = "image-caption-show-hide-block">';
         $output .= theme('image_style', $accordian_image);
-        $output .= '<div class="caption-copyright-wrapper">';
-        $output .= '<div class="image-caption-wrapper">';
-        $output .= $image_caption;
-        $output .= '</div>';
-        $output .= '<div class="image-copytight-wrapper">';
-        $output .= $image_copyright;
-        $output .= '</div>';
-        $output .= '</div>';
+        if(!empty($image_caption) || !empty($image_copyright)){
+          $output .= '<div class="caption-copyright-wrapper">';
+          $output .= '<div class="image-caption-wrapper">';
+          $output .= $image_caption;
+          $output .= '</div>';
+          $output .= '<div class="image-copytight-wrapper">';
+          $output .= $image_copyright;
+          $output .= '</div>';        
+          $output .= '</div>';
+        }
         $output .= '</div>';
         $output .= '</div>';
       }
@@ -4570,8 +4572,10 @@ function akdn_custom_media_wysiwyg_token_to_markup_alter(&$element, $tag_info, $
   $file_entity = $element['content'];
   $caption = $file_entity['field_image_caption']['#items'][0]['value'];
   $copyright = $file_entity['field_image_copytight']['#items'][0]['value'];
-  if (empty($caption) && empty($copyright)) {
+  if(empty($caption)){
     unset($element['content']['field_image_caption']);
+  }
+  if(empty($copyright)){
     unset($element['content']['field_image_copytight']);
   }
 }
