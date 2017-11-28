@@ -170,7 +170,7 @@ function flickrapi_admin_settings_submit($form, &$form_state) {
   // If the Access Permissions have changed, we need to re-authenticate.
   if ($perm_element = $form_state['complete form']['advanced']['flickrapi_access_permissions']) {
     if ($perm_element['#value'] != $perm_element['#default_value']) {
-      //_flickrapi_oauth_clear();
+      _flickrapi_oauth_clear();
     }
   }
 
@@ -207,7 +207,7 @@ function flickrapi_oauth_authenticate() {
     $sig_method = DrupalOAuthClient::signatureMethod();
     $client = new DrupalOAuthClient($consumer, NULL, $sig_method);
     try {
-      if ($request_token = $client->getRequestToken('http://www.flickr.com/services/oauth/request_token', array('callback' => $callback))) {
+      if ($request_token = $client->getRequestToken('https://www.flickr.com/services/oauth/request_token', array('callback' => $callback))) {
         $request_token->write();
       }
     }
@@ -219,7 +219,7 @@ function flickrapi_oauth_authenticate() {
     }
 
     $auth_url = $client->getAuthorizationUrl(
-      'http://www.flickr.com/services/oauth/authorize', array(
+      'https://www.flickr.com/services/oauth/authorize', array(
         'callback' => $callback,
         'params' => array(
           'perms' => variable_get('flickrapi_access_permissions', array('read')),
@@ -246,7 +246,7 @@ function flickrapi_oauth_token_verify() {
   $request_token = DrupalOAuthToken::loadByKey($_GET['oauth_token'], $consumer, OAUTH_COMMON_TOKEN_TYPE_REQUEST);
 
   $client = new DrupalOAuthClient($consumer, $request_token);
-  $access_token = $client->getAccessToken('http://www.flickr.com/services/oauth/access_token', array(
+  $access_token = $client->getAccessToken('https://www.flickr.com/services/oauth/access_token', array(
     'verifier' => $_GET['oauth_verifier'])
   );
 

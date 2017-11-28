@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AKA Spotlight views feature.
+ */
+
+include_once 'aka_spotlight_views.features.inc';

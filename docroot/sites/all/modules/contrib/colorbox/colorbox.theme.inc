@@ -8,15 +8,19 @@
 /**
  * Returns HTML for an Colorbox image field formatter.
  *
- * @param $variables
+ * @param array $variables
  *   An associative array containing:
  *   - item: An array of image data.
  *   - image_style: An optional image style.
  *   - path: An array containing the link 'path' and link 'options'.
  *
+ * @return string
+ *   An HTML string representing the themed output.
+ *
  * @ingroup themeable
  */
 function theme_colorbox_image_formatter($variables) {
+  static $gallery_token = NULL;
   $item = $variables['item'];
   $entity_type = $variables['entity_type'];
   $entity = $variables['entity'];
@@ -30,9 +34,33 @@ function theme_colorbox_image_formatter($variables) {
     'style_name' => $settings['colorbox_node_style'],
   );
 
+  if ($variables['delta'] == 0 && !empty($settings['colorbox_node_style_first'])) {
+    $image['style_name'] = $settings['colorbox_node_style_first'];
+  }
+
   if (isset($item['width']) && isset($item['height'])) {
     $image['width'] = $item['width'];
     $image['height'] = $item['height'];
+  }
+
+  if (isset($item['attributes'])) {
+    $image['attributes'] = $item['attributes'];
+  }
+
+  // Allow image attributes to be overridden.
+  if (isset($variables['item']['override']['attributes'])) {
+    foreach (array('width', 'height', 'alt', 'title') as $key) {
+      if (isset($variables['item']['override']['attributes'][$key])) {
+        $image[$key] = $variables['item']['override']['attributes'][$key];
+        unset($variables['item']['override']['attributes'][$key]);
+      }
+    }
+    if (isset($image['attributes'])) {
+      $image['attributes'] = $variables['item']['override']['attributes'] + $image['attributes'];
+    }
+    else {
+      $image['attributes'] = $variables['item']['override']['attributes'];
+    }
   }
 
   $entity_title = entity_label($entity_type, $entity);
@@ -99,6 +127,16 @@ function theme_colorbox_image_formatter($variables) {
       $gallery_id = '';
   }
 
+  // If gallery id is not empty add unique per-request token to avoid images being added manually to galleries.
+  if (!empty($gallery_id) && variable_get('colorbox_unique_token', 1)) {
+    // Check if gallery token has already been set, we need to reuse the token for the whole request.
+    if (is_null($gallery_token)) {
+      // We use a short token since randomness is not critical.
+      $gallery_token = drupal_random_key(8);
+    }
+    $gallery_id = $gallery_id . '-' . $gallery_token;
+  }
+
   if ($style_name = $settings['colorbox_image_style']) {
     $path = image_style_url($style_name, $image['path']);
   }
@@ -112,12 +150,15 @@ function theme_colorbox_image_formatter($variables) {
 /**
  * Returns HTML for an image using a specific Colorbox image style.
  *
- * @param $variables
+ * @param array $variables
  *   An associative array containing:
  *   - image: image item as array.
  *   - path: The path of the image that should be displayed in the Colorbox.
  *   - title: The title text that will be used as a caption in the Colorbox.
  *   - gid: Gallery id for Colorbox image grouping.
+ *
+ * @return string
+ *   An HTML string containing a link to the given path.
  *
  * @ingroup themeable
  */
@@ -141,9 +182,8 @@ function theme_colorbox_imagefield($variables) {
     'attributes' => array(
       'title' => $variables['title'],
       'class' => $class,
-      'rel' => $variables['gid'],
+      'data-colorbox-gallery' => $variables['gid'],
     ),
-    'language' => array('language' => NULL),
   );
 
   return l($image, $options['path'], $options);
@@ -151,12 +191,15 @@ function theme_colorbox_imagefield($variables) {
 
 /**
  * Preprocess variables for the colorbox-insert-image.tpl.php file.
+ *
+ * @param array $variables
  */
 function template_preprocess_colorbox_insert_image(&$variables) {
-  $variables['file'] = file_load($variables['item']['fid']);
-  $variables['style_name'] = $variables['item']['style_name'];
-  $variables['width'] = $variables['item']['width'];
-  $variables['height'] = $variables['item']['height'];
+  $item = $variables['item'];
+  $variables['file'] = file_load($item['fid']);
+  $variables['style_name'] = $item['style_name'];
+  $variables['width'] = isset($item['width']) ? $item['width'] : NULL;
+  $variables['height'] = isset($item['height']) ? $item['height'] : NULL;
 
   // Determine dimensions of the image after the image style transformations.
   image_style_transform_dimensions($variables['style_name'], $variables);

@@ -5721,20 +5721,26 @@ map {
   }
 }
 
-.media-one-third-left {
+.media-one-third-left,
+.media-media_third_left{
   @extend %l_flt;
 
   width: 32%;
   margin: 0 15px 10px 0;
 }
 
-.media-one-third-right {
+.media-one-third-right,
+.media-media_right_third{
   @extend %r_flt;
 
   width: 32%;
   margin: 0 0 10px 15px;
 }
-
+.media-media_third_left,
+.media-media_right_third,
+.media-media_left_half,
+.media-media_half_right,
+.media-media_large,
 .media-half-left,
 .media-half-right,
 .media-full,
@@ -5749,30 +5755,30 @@ map {
   }
 }
 
-.media-half-left, .media-element.file-media-left-half {
+.media-half-left, .media-media_left_half, .media-element.file-media-left-half {
   float: left;
   width: 50%;
   margin: 0 15px 10px 0;
 }
 
-.media-half-right, .media-element.file-media-half-right {
+.media-half-right, .media-media_half_right, .media-element.file-media-half-right {
   float: right;
   width: 50%;
   margin: 0 15px 0 10px;
 }
 
-.media-full {
+.media-full, .media-media_large {
   width: 50%;
   margin: 0 15px 10px 0;
 }
 
-.media-element.file-media-third-left, .media-one-third-left {
+.media-element.file-media-third-left, .media-one-third-left , .media-media_third_left{
   width: 32%;
   float: left;
   margin: 0 15px 10px 0;
 }
 
-.media-element.file-media-right-third, .media-one-third-right {
+.media-element.file-media-right-third, .media-one-third-right, .media-media_right_third {
   width: 32%;
   float: right;
   margin: 0 15px 0 10px;
@@ -5781,7 +5787,11 @@ map {
 .media-one-third-left .media-element.file-media-third-left,
 .media-one-third-right .media-element.file-media-right-third,
 .media-half-left .media-element.file-media-left-half,
-.media-half-right .media-element.file-media-half-right {
+.media-half-right .media-element.file-media-half-right, 
+.media-media_right_third .media-element.file-media-right-third,
+.media-media_third_left .media-element.file-media-third-left,
+.media-media_left_half .media-element.file-media-left-half,
+.media-media_half_right .media-element.file-media-half-right {
   width: 100%;
   float: initial;
   margin: 0;

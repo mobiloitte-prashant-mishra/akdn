@@ -1,0 +1,10 @@
+<?php
+
+/**
+ * Implements hook_uninstall().
+ */
+function favicon_uninstall() {
+  variable_del('favicon_uri');
+  variable_del('favicon_delivery_callback');
+  variable_del('favicon_page_cache_maximum_size');
+}

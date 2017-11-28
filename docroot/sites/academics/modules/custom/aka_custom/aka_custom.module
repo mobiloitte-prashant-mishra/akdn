@@ -1,0 +1,12 @@
+<?php
+/**
+ * Implements Hook_init()
+ */
+function aka_custom_init(){
+    global $theme;
+    global $base_url;
+    if($theme == 'seven') {
+         $link = $base_url . '/sites/all/themes/academies/css/admin.css';
+         drupal_add_css($link,array('weight' => CSS_THEME));
+    }
+}
