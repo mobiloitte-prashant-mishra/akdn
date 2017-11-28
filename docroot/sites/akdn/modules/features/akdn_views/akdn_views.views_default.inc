@@ -5428,19 +5428,19 @@ return $cycle_id;';
     $handler->display->display_options['style_options']['slideshow_type'] = 'flexslider_views_slideshow';
     $handler->display->display_options['style_options']['slideshow_skin'] = 'default';
     $handler->display->display_options['style_options']['skin_info'] = array(
-        'class' => 'default',
-        'name' => 'Default',
-        'module' => 'views_slideshow',
-        'path' => '',
-        'stylesheets' => array(),
+      'class' => 'default',
+      'name' => 'Default',
+      'module' => 'views_slideshow',
+      'path' => '',
+      'stylesheets' => array(),
     );
     $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['weight'] = '1';
     $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
     $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-        'field_akmi_additional_images' => 0,
-        'field_image_caption' => 0,
-        'nothing' => 0,
-        'nothing_1' => 0,
+      'field_akmi_additional_images' => 0,
+      'field_image_caption' => 0,
+      'nothing' => 0,
+      'nothing_1' => 0,
     );
     $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
     $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -5448,10 +5448,10 @@ return $cycle_id;';
     $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
     $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
     $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-        'field_akmi_additional_images' => 0,
-        'field_image_caption' => 0,
-        'nothing' => 0,
-        'nothing_1' => 0,
+      'field_akmi_additional_images' => 0,
+      'field_image_caption' => 0,
+      'nothing' => 0,
+      'nothing_1' => 0,
     );
     $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
     $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -5488,8 +5488,8 @@ return $cycle_id;';
     $handler->display->display_options['fields']['field_feature_image']['element_label_colon'] = FALSE;
     $handler->display->display_options['fields']['field_feature_image']['click_sort_column'] = 'fid';
     $handler->display->display_options['fields']['field_feature_image']['settings'] = array(
-        'image_style' => 'featured_content',
-        'image_link' => '',
+      'image_style' => 'featured_content',
+      'image_link' => '',
     );
     /* Field: File: Caption */
     $handler->display->display_options['fields']['field_image_caption_1']['id'] = 'field_image_caption_1';
@@ -5509,8 +5509,8 @@ return $cycle_id;';
     $handler->display->display_options['fields']['field_akmi_additional_images']['empty'] = '[field_feature_image]';
     $handler->display->display_options['fields']['field_akmi_additional_images']['click_sort_column'] = 'fid';
     $handler->display->display_options['fields']['field_akmi_additional_images']['settings'] = array(
-        'image_style' => 'featured_content',
-        'image_link' => '',
+      'image_style' => 'featured_content',
+      'image_link' => '',
     );
     $handler->display->display_options['fields']['field_akmi_additional_images']['group_rows'] = FALSE;
     $handler->display->display_options['fields']['field_akmi_additional_images']['delta_offset'] = '0';
@@ -5529,8 +5529,8 @@ return $cycle_id;';
     $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
     $handler->display->display_options['fields']['nothing']['label'] = '';
     $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_akmi_additional_images]</div>
-<div class="slide-text"><h3>[field_image_caption]</h3>
-</div>';
+    <div class="slide-text"><h3>[field_image_caption]</h3>
+    </div>';
     $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
     $handler->display->display_options['defaults']['arguments'] = FALSE;
     /* Contextual filter: Content: Nid */
@@ -5556,7 +5556,7 @@ return $cycle_id;';
     $handler->display->display_options['filters']['type']['table'] = 'node';
     $handler->display->display_options['filters']['type']['field'] = 'type';
     $handler->display->display_options['filters']['type']['value'] = array(
-        'akmi_artists' => 'akmi_artists',
+      'akmi_artists' => 'akmi_artists',
     );
 
     /* Display: Artist Detail Page */
@@ -5585,7 +5585,6 @@ return $cycle_id;';
     $handler->display->display_options['fields']['field_artist_related_instruments']['table'] = 'field_data_field_artist_related_instruments';
     $handler->display->display_options['fields']['field_artist_related_instruments']['field'] = 'field_artist_related_instruments';
     $handler->display->display_options['fields']['field_artist_related_instruments']['label'] = 'Instruments';
-    $handler->display->display_options['fields']['field_artist_related_instruments']['alter']['alter_text'] = TRUE;
     $handler->display->display_options['fields']['field_artist_related_instruments']['alter']['text'] = '<a href="/akmi/instruments#[field_artist_related_instruments]">[field_artist_related_instruments]</a>';
     $handler->display->display_options['fields']['field_artist_related_instruments']['element_type'] = 'div';
     $handler->display->display_options['fields']['field_artist_related_instruments']['element_class'] = 'akaa-technicalinfo-link';
@@ -5594,7 +5593,6 @@ return $cycle_id;';
     $handler->display->display_options['fields']['field_artist_related_instruments']['element_wrapper_type'] = 'div';
     $handler->display->display_options['fields']['field_artist_related_instruments']['element_wrapper_class'] = 'akaa-technicalinfo-row';
     $handler->display->display_options['fields']['field_artist_related_instruments']['element_default_classes'] = FALSE;
-    $handler->display->display_options['fields']['field_artist_related_instruments']['type'] = 'node_reference_plain';
     $handler->display->display_options['fields']['field_artist_related_instruments']['delta_offset'] = '0';
     /* Field: Content: Other Instruments */
     $handler->display->display_options['fields']['field_text_related_instruments']['id'] = 'field_text_related_instruments';
@@ -5658,25 +5656,25 @@ return $cycle_id;';
     $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
     $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
     $handler->display->display_options['fields']['php']['php_output'] = '<?php
-  $node = node_load($row->nid);
-  $video = reset($node->field_artist_related_videos);
-  $output = \'\';
-  foreach($video as $value) {
-    $output .= \'<div class = "video-container">\';
-   $output .= \'<span class="youtube-play-button"></span>\';
-    $output .= \'<div class = "rows">\';
-    if ($value[\'filemime\'] == \'video/youtube\') {
-      $explode = explode(\'youtube://v/\', $value[\'uri\']);
-      $image = \'<img src = "http://img.youtube.com/vi/\'.$explode[1].\'/0.jpg">\';
-      $output .= \'<a class= colorbox-inline init-colorbox-inline-processed cboxElement href = "https://www.youtube.com/embed/\'.$explode[1].\'?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0">\'.$image.\'</a>\';
-    }
-    else {
-      $explode = explode(\'brightcove://\', $value[\'uri\']);
-    }
-    $output .= \'</div></div>\';
-  }
-print $output;
-?>';
+      $node = node_load($row->nid);
+      $video = reset($node->field_artist_related_videos);
+      $output = \'\';
+      foreach($video as $value) {
+        $output .= \'<div class = "video-container">\';
+       $output .= \'<span class="youtube-play-button"></span>\';
+        $output .= \'<div class = "rows">\';
+        if ($value[\'filemime\'] == \'video/youtube\') {
+          $explode = explode(\'youtube://v/\', $value[\'uri\']);
+          $image = \'<img src = "http://img.youtube.com/vi/\'.$explode[1].\'/0.jpg">\';
+          $output .= \'<a class= colorbox-inline init-colorbox-inline-processed cboxElement href = "https://www.youtube.com/embed/\'.$explode[1].\'?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0">\'.$image.\'</a>\';
+        }
+        else {
+          $explode = explode(\'brightcove://\', $value[\'uri\']);
+        }
+        $output .= \'</div></div>\';
+      }
+    print $output;
+    ?>';
     $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
     $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
     $handler->display->display_options['defaults']['arguments'] = FALSE;
@@ -5721,8 +5719,8 @@ print $output;
     $handler->display->display_options['fields']['field_feature_image']['element_default_classes'] = FALSE;
     $handler->display->display_options['fields']['field_feature_image']['click_sort_column'] = 'fid';
     $handler->display->display_options['fields']['field_feature_image']['settings'] = array(
-        'image_style' => 'social_sharing_image',
-        'image_link' => 'content',
+      'image_style' => 'social_sharing_image',
+      'image_link' => 'content',
     );
     /* Field: Content: Title */
     $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -5747,9 +5745,9 @@ print $output;
     $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
     $handler->display->display_options['fields']['nothing']['label'] = '';
     $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="other_cycle">
-  <div class="project_title">[title]</div>
-  <div class="view_links">[nid]</div>
-</div>';
+      <div class="project_title">[title]</div>
+      <div class="view_links">[nid]</div>
+    </div>';
     $handler->display->display_options['fields']['nothing']['element_type'] = '0';
     $handler->display->display_options['fields']['nothing']['element_label_type'] = '0';
     $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -5785,7 +5783,7 @@ print $output;
     $handler->display->display_options['filters']['type']['table'] = 'node';
     $handler->display->display_options['filters']['type']['field'] = 'type';
     $handler->display->display_options['filters']['type']['value'] = array(
-        'akmi_artists' => 'akmi_artists',
+      'akmi_artists' => 'akmi_artists',
     );
 
     /* Display: All Artists */
@@ -5834,7 +5832,7 @@ print $output;
     $handler->display->display_options['filters']['type']['table'] = 'node';
     $handler->display->display_options['filters']['type']['field'] = 'type';
     $handler->display->display_options['filters']['type']['value'] = array(
-        'akmi_artists' => 'akmi_artists',
+      'akmi_artists' => 'akmi_artists',
     );
 
     /* Display: AKMI Artist Related Informations */
@@ -5890,7 +5888,7 @@ print $output;
     $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
     $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
     $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
-        'akmi_artists' => 'akmi_artists',
+      'akmi_artists' => 'akmi_artists',
     );
     $handler->display->display_options['defaults']['filter_groups'] = FALSE;
     $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -5906,48 +5904,48 @@ print $output;
     $handler->display->display_options['filters']['type']['table'] = 'node';
     $handler->display->display_options['filters']['type']['field'] = 'type';
     $handler->display->display_options['filters']['type']['value'] = array(
-        'akmi_artists' => 'akmi_artists',
+      'akmi_artists' => 'akmi_artists',
     );
     /* Filter criterion: Content: Show Block (field_right_show_block) */
     $handler->display->display_options['filters']['field_right_show_block_value']['id'] = 'field_right_show_block_value';
     $handler->display->display_options['filters']['field_right_show_block_value']['table'] = 'field_data_field_right_show_block';
     $handler->display->display_options['filters']['field_right_show_block_value']['field'] = 'field_right_show_block_value';
     $handler->display->display_options['filters']['field_right_show_block_value']['value'] = array(
-        1 => '1',
+      1 => '1',
     );
     $translatables['akmi_artists_views'] = array(
-        t('Master'),
-        t('AKMI Artists Views'),
-        t('more'),
-        t('Apply'),
-        t('Reset'),
-        t('Sort by'),
-        t('Asc'),
-        t('Desc'),
-        t('AKMI Artist image carousel'),
-        t('image from field_akmi_additional_images'),
-        t('image from field_feature_image'),
-        t('[field_feature_image]'),
-        t('[field_image_caption_1]'),
-        t('<div class="slide">[field_akmi_additional_images]</div>
-<div class="slide-text"><h3>[field_image_caption]</h3>
-</div>'),
-        t('All'),
-        t('Artist Detail Page'),
-        t('Performance year with AKMI'),
-        t('Instruments'),
-        t('<a href="/akmi/instruments#[field_artist_related_instruments]">[field_artist_related_instruments]</a>'),
-        t('Country of Origin'),
-        t('AKMI Other Artists'),
-        t('Other Artists'),
-        t('View'),
-        t('<div class="other_cycle">
-  <div class="project_title">[title]</div>
-  <div class="view_links">[nid]</div>
-</div>'),
-        t('All Artists'),
-        t('AKMI Artist Related Informations'),
-        t('<h2 class="pane-title">[field_specify_a_block_title]</h2>'),
+      t('Master'),
+      t('AKMI Artists Views'),
+      t('more'),
+      t('Apply'),
+      t('Reset'),
+      t('Sort by'),
+      t('Asc'),
+      t('Desc'),
+      t('AKMI Artist image carousel'),
+      t('image from field_akmi_additional_images'),
+      t('image from field_feature_image'),
+      t('[field_feature_image]'),
+      t('[field_image_caption_1]'),
+      t('<div class="slide">[field_akmi_additional_images]</div>
+    <div class="slide-text"><h3>[field_image_caption]</h3>
+    </div>'),
+      t('All'),
+      t('Artist Detail Page'),
+      t('Performance year with AKMI'),
+      t('Instruments'),
+      t('<a href="/akmi/instruments#[field_artist_related_instruments]">[field_artist_related_instruments]</a>'),
+      t('Country of Origin'),
+      t('AKMI Other Artists'),
+      t('Other Artists'),
+      t('View'),
+      t('<div class="other_cycle">
+      <div class="project_title">[title]</div>
+      <div class="view_links">[nid]</div>
+    </div>'),
+      t('All Artists'),
+      t('AKMI Artist Related Informations'),
+      t('<h2 class="pane-title">[field_specify_a_block_title]</h2>'),
     );
     $export['akmi_artists_views'] = $view;
 
