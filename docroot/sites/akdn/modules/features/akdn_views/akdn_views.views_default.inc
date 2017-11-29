@@ -5373,567 +5373,565 @@ return $cycle_id;';
   $export['akaa_projects_map'] = $view;
 
   $view = new view();
-  $view->name = 'akmi_artists_views';
-  $view->description = '';
-  $view->tag = 'default';
-  $view->base_table = 'node';
-  $view->human_name = 'AKMI Artists Views';
-  $view->core = 7;
-  $view->api_version = '3.0';
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+	$view->name = 'akmi_artists_views';
+	$view->description = '';
+	$view->tag = 'default';
+	$view->base_table = 'node';
+	$view->human_name = 'AKMI Artists Views';
+	$view->core = 7;
+	$view->api_version = '3.0';
+	$view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
-  /* Display: Master */
-  $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'AKMI Artists Views';
-  $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'none';
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+	/* Display: Master */
+	$handler = $view->new_display('default', 'Master', 'default');
+	$handler->display->display_options['title'] = 'AKMI Artists Views';
+	$handler->display->display_options['use_more_always'] = FALSE;
+	$handler->display->display_options['access']['type'] = 'perm';
+	$handler->display->display_options['cache']['type'] = 'none';
+	$handler->display->display_options['query']['type'] = 'views_query';
+	$handler->display->display_options['exposed_form']['type'] = 'basic';
+	$handler->display->display_options['pager']['type'] = 'some';
+	$handler->display->display_options['pager']['options']['items_per_page'] = '50';
+	$handler->display->display_options['pager']['options']['offset'] = '0';
+	$handler->display->display_options['style_plugin'] = 'default';
+	$handler->display->display_options['row_plugin'] = 'fields';
+	$handler->display->display_options['row_options']['hide_empty'] = TRUE;
+	/* Field: Content: Title */
+	$handler->display->display_options['fields']['title']['id'] = 'title';
+	$handler->display->display_options['fields']['title']['table'] = 'node';
+	$handler->display->display_options['fields']['title']['field'] = 'title';
+	$handler->display->display_options['fields']['title']['label'] = '';
+	$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+	$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+	/* Sort criterion: Content: Post date */
+	$handler->display->display_options['sorts']['created']['id'] = 'created';
+	$handler->display->display_options['sorts']['created']['table'] = 'node';
+	$handler->display->display_options['sorts']['created']['field'] = 'created';
+	$handler->display->display_options['sorts']['created']['order'] = 'DESC';
+	/* Filter criterion: Content: Published */
+	$handler->display->display_options['filters']['status']['id'] = 'status';
+	$handler->display->display_options['filters']['status']['table'] = 'node';
+	$handler->display->display_options['filters']['status']['field'] = 'status';
+	$handler->display->display_options['filters']['status']['value'] = 1;
+	$handler->display->display_options['filters']['status']['group'] = 1;
+	$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
 
-  /* Display: AKMI Artist image carousel */
-  $handler = $view->new_display('block', 'AKMI Artist image carousel', 'image_artist_carousel');
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'slideshow';
-  $handler->display->display_options['style_options']['flexslider_views_slideshow']['caption_field'] = 'none';
-  $handler->display->display_options['style_options']['slideshow_type'] = 'flexslider_views_slideshow';
-  $handler->display->display_options['style_options']['slideshow_skin'] = 'default';
-  $handler->display->display_options['style_options']['skin_info'] = array(
-    'class' => 'default',
-    'name' => 'Default',
-    'module' => 'views_slideshow',
-    'path' => '',
-    'stylesheets' => array(),
-  );
-  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['weight'] = '1';
-  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
-  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-    'field_akmi_additional_images' => 0,
-    'field_image_caption' => 0,
-    'nothing' => 0,
-    'nothing_1' => 0,
-  );
-  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
-  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
-  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_slide_counter']['weight'] = '1';
-  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
-  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
-  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-    'field_akmi_additional_images' => 0,
-    'field_image_caption' => 0,
-    'nothing' => 0,
-    'nothing_1' => 0,
-  );
-  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
-  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
-  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_slide_counter']['weight'] = '1';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['timeout'] = '5000';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['speed'] = '700';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['delay'] = '0';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['start_paused'] = 0;
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['remember_slide_days'] = '1';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['items_per_slide'] = '1';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['wait_for_image_load_timeout'] = '3000';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['cleartype'] = 0;
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['cleartypenobg'] = 0;
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Additional Images (field_akmi_additional_images:fid) */
-  $handler->display->display_options['relationships']['field_akmi_additional_images_fid']['id'] = 'field_akmi_additional_images_fid';
-  $handler->display->display_options['relationships']['field_akmi_additional_images_fid']['table'] = 'field_data_field_akmi_additional_images';
-  $handler->display->display_options['relationships']['field_akmi_additional_images_fid']['field'] = 'field_akmi_additional_images_fid';
-  /* Relationship: Content: Slideshow Image (field_feature_image:fid) */
-  $handler->display->display_options['relationships']['field_feature_image_fid']['id'] = 'field_feature_image_fid';
-  $handler->display->display_options['relationships']['field_feature_image_fid']['table'] = 'field_data_field_feature_image';
-  $handler->display->display_options['relationships']['field_feature_image_fid']['field'] = 'field_feature_image_fid';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Slideshow Image */
-  $handler->display->display_options['fields']['field_feature_image']['id'] = 'field_feature_image';
-  $handler->display->display_options['fields']['field_feature_image']['table'] = 'field_data_field_feature_image';
-  $handler->display->display_options['fields']['field_feature_image']['field'] = 'field_feature_image';
-  $handler->display->display_options['fields']['field_feature_image']['label'] = '';
-  $handler->display->display_options['fields']['field_feature_image']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_feature_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_feature_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_feature_image']['settings'] = array(
-    'image_style' => 'featured_content',
-    'image_link' => '',
-  );
-  /* Field: File: Caption */
-  $handler->display->display_options['fields']['field_image_caption_1']['id'] = 'field_image_caption_1';
-  $handler->display->display_options['fields']['field_image_caption_1']['table'] = 'field_data_field_image_caption';
-  $handler->display->display_options['fields']['field_image_caption_1']['field'] = 'field_image_caption';
-  $handler->display->display_options['fields']['field_image_caption_1']['relationship'] = 'field_feature_image_fid';
-  $handler->display->display_options['fields']['field_image_caption_1']['label'] = '';
-  $handler->display->display_options['fields']['field_image_caption_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_image_caption_1']['element_label_colon'] = FALSE;
-  /* Field: Content: Additional Images */
-  $handler->display->display_options['fields']['field_akmi_additional_images']['id'] = 'field_akmi_additional_images';
-  $handler->display->display_options['fields']['field_akmi_additional_images']['table'] = 'field_data_field_akmi_additional_images';
-  $handler->display->display_options['fields']['field_akmi_additional_images']['field'] = 'field_akmi_additional_images';
-  $handler->display->display_options['fields']['field_akmi_additional_images']['label'] = '';
-  $handler->display->display_options['fields']['field_akmi_additional_images']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_akmi_additional_images']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_akmi_additional_images']['empty'] = '[field_feature_image]';
-  $handler->display->display_options['fields']['field_akmi_additional_images']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_akmi_additional_images']['settings'] = array(
-    'image_style' => 'featured_content',
-    'image_link' => '',
-  );
-  $handler->display->display_options['fields']['field_akmi_additional_images']['group_rows'] = FALSE;
-  $handler->display->display_options['fields']['field_akmi_additional_images']['delta_offset'] = '0';
-  /* Field: File: Caption */
-  $handler->display->display_options['fields']['field_image_caption']['id'] = 'field_image_caption';
-  $handler->display->display_options['fields']['field_image_caption']['table'] = 'field_data_field_image_caption';
-  $handler->display->display_options['fields']['field_image_caption']['field'] = 'field_image_caption';
-  $handler->display->display_options['fields']['field_image_caption']['relationship'] = 'field_akmi_additional_images_fid';
-  $handler->display->display_options['fields']['field_image_caption']['label'] = '';
-  $handler->display->display_options['fields']['field_image_caption']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_image_caption']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image_caption']['empty'] = '[field_image_caption_1]';
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_akmi_additional_images]</div>
-<div class="slide-text"><h3>[field_image_caption]</h3>
-</div>';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nid */
-  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['table'] = 'node';
-  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['default_action'] = 'not found';
-  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'akmi_artists' => 'akmi_artists',
-  );
+	/* Display: AKMI Artist image carousel */
+	$handler = $view->new_display('block', 'AKMI Artist image carousel', 'image_artist_carousel');
+	$handler->display->display_options['defaults']['pager'] = FALSE;
+	$handler->display->display_options['pager']['type'] = 'some';
+	$handler->display->display_options['pager']['options']['items_per_page'] = '10';
+	$handler->display->display_options['pager']['options']['offset'] = '0';
+	$handler->display->display_options['defaults']['style_plugin'] = FALSE;
+	$handler->display->display_options['style_plugin'] = 'slideshow';
+	$handler->display->display_options['style_options']['flexslider_views_slideshow']['caption_field'] = 'none';
+	$handler->display->display_options['style_options']['slideshow_type'] = 'flexslider_views_slideshow';
+	$handler->display->display_options['style_options']['slideshow_skin'] = 'default';
+	$handler->display->display_options['style_options']['skin_info'] = array(
+	  'class' => 'default',
+	  'name' => 'Default',
+	  'module' => 'views_slideshow',
+	  'path' => '',
+	  'stylesheets' => array(),
+	);
+	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['weight'] = '1';
+	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
+	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
+	  'field_akmi_additional_images' => 0,
+	  'field_image_caption' => 0,
+	  'nothing' => 0,
+	  'nothing_1' => 0,
+	);
+	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
+	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
+	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_slide_counter']['weight'] = '1';
+	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
+	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
+	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
+	  'field_akmi_additional_images' => 0,
+	  'field_image_caption' => 0,
+	  'nothing' => 0,
+	  'nothing_1' => 0,
+	);
+	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
+	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
+	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_slide_counter']['weight'] = '1';
+	$handler->display->display_options['style_options']['views_slideshow_cycle']['timeout'] = '5000';
+	$handler->display->display_options['style_options']['views_slideshow_cycle']['speed'] = '700';
+	$handler->display->display_options['style_options']['views_slideshow_cycle']['delay'] = '0';
+	$handler->display->display_options['style_options']['views_slideshow_cycle']['start_paused'] = 0;
+	$handler->display->display_options['style_options']['views_slideshow_cycle']['remember_slide_days'] = '1';
+	$handler->display->display_options['style_options']['views_slideshow_cycle']['items_per_slide'] = '1';
+	$handler->display->display_options['style_options']['views_slideshow_cycle']['wait_for_image_load_timeout'] = '3000';
+	$handler->display->display_options['style_options']['views_slideshow_cycle']['cleartype'] = 0;
+	$handler->display->display_options['style_options']['views_slideshow_cycle']['cleartypenobg'] = 0;
+	$handler->display->display_options['defaults']['style_options'] = FALSE;
+	$handler->display->display_options['defaults']['row_plugin'] = FALSE;
+	$handler->display->display_options['row_plugin'] = 'fields';
+	$handler->display->display_options['defaults']['row_options'] = FALSE;
+	$handler->display->display_options['defaults']['relationships'] = FALSE;
+	/* Relationship: Content: Additional Images (field_akmi_additional_images:fid) */
+	$handler->display->display_options['relationships']['field_akmi_additional_images_fid']['id'] = 'field_akmi_additional_images_fid';
+	$handler->display->display_options['relationships']['field_akmi_additional_images_fid']['table'] = 'field_data_field_akmi_additional_images';
+	$handler->display->display_options['relationships']['field_akmi_additional_images_fid']['field'] = 'field_akmi_additional_images_fid';
+	/* Relationship: Content: Slideshow Image (field_feature_image:fid) */
+	$handler->display->display_options['relationships']['field_feature_image_fid']['id'] = 'field_feature_image_fid';
+	$handler->display->display_options['relationships']['field_feature_image_fid']['table'] = 'field_data_field_feature_image';
+	$handler->display->display_options['relationships']['field_feature_image_fid']['field'] = 'field_feature_image_fid';
+	$handler->display->display_options['defaults']['fields'] = FALSE;
+	/* Field: Content: Slideshow Image */
+	$handler->display->display_options['fields']['field_feature_image']['id'] = 'field_feature_image';
+	$handler->display->display_options['fields']['field_feature_image']['table'] = 'field_data_field_feature_image';
+	$handler->display->display_options['fields']['field_feature_image']['field'] = 'field_feature_image';
+	$handler->display->display_options['fields']['field_feature_image']['label'] = '';
+	$handler->display->display_options['fields']['field_feature_image']['exclude'] = TRUE;
+	$handler->display->display_options['fields']['field_feature_image']['element_label_colon'] = FALSE;
+	$handler->display->display_options['fields']['field_feature_image']['click_sort_column'] = 'fid';
+	$handler->display->display_options['fields']['field_feature_image']['settings'] = array(
+	  'image_style' => 'featured_content',
+	  'image_link' => '',
+	);
+	/* Field: File: Caption */
+	$handler->display->display_options['fields']['field_image_caption_1']['id'] = 'field_image_caption_1';
+	$handler->display->display_options['fields']['field_image_caption_1']['table'] = 'field_data_field_image_caption';
+	$handler->display->display_options['fields']['field_image_caption_1']['field'] = 'field_image_caption';
+	$handler->display->display_options['fields']['field_image_caption_1']['relationship'] = 'field_feature_image_fid';
+	$handler->display->display_options['fields']['field_image_caption_1']['label'] = '';
+	$handler->display->display_options['fields']['field_image_caption_1']['exclude'] = TRUE;
+	$handler->display->display_options['fields']['field_image_caption_1']['element_label_colon'] = FALSE;
+	/* Field: Content: Additional Images */
+	$handler->display->display_options['fields']['field_akmi_additional_images']['id'] = 'field_akmi_additional_images';
+	$handler->display->display_options['fields']['field_akmi_additional_images']['table'] = 'field_data_field_akmi_additional_images';
+	$handler->display->display_options['fields']['field_akmi_additional_images']['field'] = 'field_akmi_additional_images';
+	$handler->display->display_options['fields']['field_akmi_additional_images']['label'] = '';
+	$handler->display->display_options['fields']['field_akmi_additional_images']['exclude'] = TRUE;
+	$handler->display->display_options['fields']['field_akmi_additional_images']['element_label_colon'] = FALSE;
+	$handler->display->display_options['fields']['field_akmi_additional_images']['empty'] = '[field_feature_image]';
+	$handler->display->display_options['fields']['field_akmi_additional_images']['click_sort_column'] = 'fid';
+	$handler->display->display_options['fields']['field_akmi_additional_images']['settings'] = array(
+	  'image_style' => 'featured_content',
+	  'image_link' => '',
+	);
+	$handler->display->display_options['fields']['field_akmi_additional_images']['group_rows'] = FALSE;
+	$handler->display->display_options['fields']['field_akmi_additional_images']['delta_offset'] = '0';
+	/* Field: File: Caption */
+	$handler->display->display_options['fields']['field_image_caption']['id'] = 'field_image_caption';
+	$handler->display->display_options['fields']['field_image_caption']['table'] = 'field_data_field_image_caption';
+	$handler->display->display_options['fields']['field_image_caption']['field'] = 'field_image_caption';
+	$handler->display->display_options['fields']['field_image_caption']['relationship'] = 'field_akmi_additional_images_fid';
+	$handler->display->display_options['fields']['field_image_caption']['label'] = '';
+	$handler->display->display_options['fields']['field_image_caption']['exclude'] = TRUE;
+	$handler->display->display_options['fields']['field_image_caption']['element_label_colon'] = FALSE;
+	$handler->display->display_options['fields']['field_image_caption']['empty'] = '[field_image_caption_1]';
+	/* Field: Global: Custom text */
+	$handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+	$handler->display->display_options['fields']['nothing']['table'] = 'views';
+	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+	$handler->display->display_options['fields']['nothing']['label'] = '';
+	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_akmi_additional_images]</div>
+	<div class="slide-text"><h3>[field_image_caption]</h3>
+	</div>';
+	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+	$handler->display->display_options['defaults']['arguments'] = FALSE;
+	/* Contextual filter: Content: Nid */
+	$handler->display->display_options['arguments']['nid']['id'] = 'nid';
+	$handler->display->display_options['arguments']['nid']['table'] = 'node';
+	$handler->display->display_options['arguments']['nid']['field'] = 'nid';
+	$handler->display->display_options['arguments']['nid']['default_action'] = 'not found';
+	$handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
+	$handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+	$handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+	$handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+	$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+	$handler->display->display_options['defaults']['filters'] = FALSE;
+	/* Filter criterion: Content: Published */
+	$handler->display->display_options['filters']['status']['id'] = 'status';
+	$handler->display->display_options['filters']['status']['table'] = 'node';
+	$handler->display->display_options['filters']['status']['field'] = 'status';
+	$handler->display->display_options['filters']['status']['value'] = 1;
+	$handler->display->display_options['filters']['status']['group'] = 1;
+	$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+	/* Filter criterion: Content: Type */
+	$handler->display->display_options['filters']['type']['id'] = 'type';
+	$handler->display->display_options['filters']['type']['table'] = 'node';
+	$handler->display->display_options['filters']['type']['field'] = 'type';
+	$handler->display->display_options['filters']['type']['value'] = array(
+	  'akmi_artists' => 'akmi_artists',
+	);
 
-  /* Display: Artist Detail Page */
-  $handler = $view->new_display('block', 'Artist Detail Page', 'block_1');
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Vocal Artist? */
-  $handler->display->display_options['fields']['field_vocal_artist_check']['id'] = 'field_vocal_artist_check';
-  $handler->display->display_options['fields']['field_vocal_artist_check']['table'] = 'field_data_field_vocal_artist_check';
-  $handler->display->display_options['fields']['field_vocal_artist_check']['field'] = 'field_vocal_artist_check';
-  $handler->display->display_options['fields']['field_vocal_artist_check']['label'] = '';
-  $handler->display->display_options['fields']['field_vocal_artist_check']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_vocal_artist_check']['element_class'] = 'akaa-technicalinfo-row akmi-vocal-artist';
-  $handler->display->display_options['fields']['field_vocal_artist_check']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_vocal_artist_check']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_vocal_artist_check']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_vocal_artist_check']['hide_empty'] = TRUE;
-  /* Field: Content: Performance Year With AKMI */
-  $handler->display->display_options['fields']['field_performance_year']['id'] = 'field_performance_year';
-  $handler->display->display_options['fields']['field_performance_year']['table'] = 'field_data_field_performance_year';
-  $handler->display->display_options['fields']['field_performance_year']['field'] = 'field_performance_year';
-  $handler->display->display_options['fields']['field_performance_year']['label'] = 'Performance year with AKMI';
-  $handler->display->display_options['fields']['field_performance_year']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_performance_year']['element_class'] = 'akaa-technicalinfo-value';
-  $handler->display->display_options['fields']['field_performance_year']['element_label_type'] = 'div';
-  $handler->display->display_options['fields']['field_performance_year']['element_label_class'] = 'akaa-technicalinfo-label';
-  $handler->display->display_options['fields']['field_performance_year']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_performance_year']['element_wrapper_class'] = 'akaa-technicalinfo-row';
-  $handler->display->display_options['fields']['field_performance_year']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_performance_year']['type'] = 'taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_performance_year']['delta_offset'] = '0';
-  /* Field: Content: Related Instruments */
-  $handler->display->display_options['fields']['field_artist_related_instruments']['id'] = 'field_artist_related_instruments';
-  $handler->display->display_options['fields']['field_artist_related_instruments']['table'] = 'field_data_field_artist_related_instruments';
-  $handler->display->display_options['fields']['field_artist_related_instruments']['field'] = 'field_artist_related_instruments';
-  $handler->display->display_options['fields']['field_artist_related_instruments']['label'] = 'Instruments';
-  $handler->display->display_options['fields']['field_artist_related_instruments']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_artist_related_instruments']['alter']['text'] = '<a href="/akmi/instruments#[field_artist_related_instruments]">[field_artist_related_instruments]</a>';
-  $handler->display->display_options['fields']['field_artist_related_instruments']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_artist_related_instruments']['element_class'] = 'akaa-technicalinfo-link';
-  $handler->display->display_options['fields']['field_artist_related_instruments']['element_label_type'] = 'div';
-  $handler->display->display_options['fields']['field_artist_related_instruments']['element_label_class'] = 'akaa-technicalinfo-label';
-  $handler->display->display_options['fields']['field_artist_related_instruments']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_artist_related_instruments']['element_wrapper_class'] = 'akaa-technicalinfo-row';
-  $handler->display->display_options['fields']['field_artist_related_instruments']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_artist_related_instruments']['type'] = 'node_reference_plain';
-  $handler->display->display_options['fields']['field_artist_related_instruments']['delta_offset'] = '0';
-  /* Field: Content: Country of Origin */
-  $handler->display->display_options['fields']['field_artist_country_origin']['id'] = 'field_artist_country_origin';
-  $handler->display->display_options['fields']['field_artist_country_origin']['table'] = 'field_data_field_artist_country_origin';
-  $handler->display->display_options['fields']['field_artist_country_origin']['field'] = 'field_artist_country_origin';
-  $handler->display->display_options['fields']['field_artist_country_origin']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_artist_country_origin']['element_class'] = 'akaa-technicalinfo-value';
-  $handler->display->display_options['fields']['field_artist_country_origin']['element_label_type'] = 'div';
-  $handler->display->display_options['fields']['field_artist_country_origin']['element_label_class'] = 'akaa-technicalinfo-label';
-  $handler->display->display_options['fields']['field_artist_country_origin']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_artist_country_origin']['element_wrapper_class'] = 'akaa-technicalinfo-row';
-  $handler->display->display_options['fields']['field_artist_country_origin']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_artist_country_origin']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'akaa-technicalinfo-row';
-  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
-  /* Field: Global: PHP */
-  $handler->display->display_options['fields']['php']['id'] = 'php';
-  $handler->display->display_options['fields']['php']['table'] = 'views';
-  $handler->display->display_options['fields']['php']['field'] = 'php';
-  $handler->display->display_options['fields']['php']['label'] = '';
-  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<?php
-  $node = node_load($row->nid);
-  $video = reset($node->field_artist_related_videos);
-  $output = \'\';
-  foreach($video as $value) {
-    $output .= \'<div class = "video-container">\';
-   $output .= \'<span class="youtube-play-button"></span>\';
-    $output .= \'<div class = "rows">\';
-    if ($value[\'filemime\'] == \'video/youtube\') {
-      $explode = explode(\'youtube://v/\', $value[\'uri\']);
-      $image = \'<img src = "http://img.youtube.com/vi/\'.$explode[1].\'/0.jpg">\';
-      $output .= \'<a class= colorbox-inline init-colorbox-inline-processed cboxElement href = "https://www.youtube.com/embed/\'.$explode[1].\'?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0">\'.$image.\'</a>\';
-    }
-    else {
-      $explode = explode(\'brightcove://\', $value[\'uri\']);
-    }
-    $output .= \'</div></div>\';
-  }
-print $output;
-?>';
-  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
-  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nid */
-  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['table'] = 'node';
-  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+	/* Display: Artist Detail Page */
+	$handler = $view->new_display('block', 'Artist Detail Page', 'block_1');
+	$handler->display->display_options['defaults']['pager'] = FALSE;
+	$handler->display->display_options['pager']['type'] = 'some';
+	$handler->display->display_options['pager']['options']['items_per_page'] = '10';
+	$handler->display->display_options['pager']['options']['offset'] = '0';
+	$handler->display->display_options['defaults']['fields'] = FALSE;
+	/* Field: Content: Vocal Artist? */
+	$handler->display->display_options['fields']['field_vocal_artist_check']['id'] = 'field_vocal_artist_check';
+	$handler->display->display_options['fields']['field_vocal_artist_check']['table'] = 'field_data_field_vocal_artist_check';
+	$handler->display->display_options['fields']['field_vocal_artist_check']['field'] = 'field_vocal_artist_check';
+	$handler->display->display_options['fields']['field_vocal_artist_check']['label'] = '';
+	$handler->display->display_options['fields']['field_vocal_artist_check']['element_type'] = 'div';
+	$handler->display->display_options['fields']['field_vocal_artist_check']['element_class'] = 'akaa-technicalinfo-row akmi-vocal-artist';
+	$handler->display->display_options['fields']['field_vocal_artist_check']['element_label_colon'] = FALSE;
+	$handler->display->display_options['fields']['field_vocal_artist_check']['element_wrapper_type'] = '0';
+	$handler->display->display_options['fields']['field_vocal_artist_check']['element_default_classes'] = FALSE;
+	$handler->display->display_options['fields']['field_vocal_artist_check']['hide_empty'] = TRUE;
+	/* Field: Content: Performance Year */
+	$handler->display->display_options['fields']['field_performance_year']['id'] = 'field_performance_year';
+	$handler->display->display_options['fields']['field_performance_year']['table'] = 'field_data_field_performance_year';
+	$handler->display->display_options['fields']['field_performance_year']['field'] = 'field_performance_year';
+	$handler->display->display_options['fields']['field_performance_year']['label'] = 'Performance year with AKMI';
+	$handler->display->display_options['fields']['field_performance_year']['element_type'] = 'div';
+	$handler->display->display_options['fields']['field_performance_year']['element_class'] = 'akaa-technicalinfo-value';
+	$handler->display->display_options['fields']['field_performance_year']['element_label_type'] = 'div';
+	$handler->display->display_options['fields']['field_performance_year']['element_label_class'] = 'akaa-technicalinfo-label';
+	$handler->display->display_options['fields']['field_performance_year']['element_wrapper_type'] = 'div';
+	$handler->display->display_options['fields']['field_performance_year']['element_wrapper_class'] = 'akaa-technicalinfo-row';
+	$handler->display->display_options['fields']['field_performance_year']['element_default_classes'] = FALSE;
+	$handler->display->display_options['fields']['field_performance_year']['type'] = 'taxonomy_term_reference_plain';
+	$handler->display->display_options['fields']['field_performance_year']['delta_offset'] = '0';
+	/* Field: Content: Related Instruments */
+	$handler->display->display_options['fields']['field_artist_related_instruments']['id'] = 'field_artist_related_instruments';
+	$handler->display->display_options['fields']['field_artist_related_instruments']['table'] = 'field_data_field_artist_related_instruments';
+	$handler->display->display_options['fields']['field_artist_related_instruments']['field'] = 'field_artist_related_instruments';
+	$handler->display->display_options['fields']['field_artist_related_instruments']['label'] = 'Instruments';
+	$handler->display->display_options['fields']['field_artist_related_instruments']['alter']['text'] = '<a href="/akmi/instruments#[field_artist_related_instruments]">[field_artist_related_instruments]</a>';
+	$handler->display->display_options['fields']['field_artist_related_instruments']['element_type'] = 'div';
+	$handler->display->display_options['fields']['field_artist_related_instruments']['element_class'] = 'akaa-technicalinfo-link';
+	$handler->display->display_options['fields']['field_artist_related_instruments']['element_label_type'] = 'div';
+	$handler->display->display_options['fields']['field_artist_related_instruments']['element_label_class'] = 'akaa-technicalinfo-label';
+	$handler->display->display_options['fields']['field_artist_related_instruments']['element_wrapper_type'] = 'div';
+	$handler->display->display_options['fields']['field_artist_related_instruments']['element_wrapper_class'] = 'akaa-technicalinfo-row';
+	$handler->display->display_options['fields']['field_artist_related_instruments']['element_default_classes'] = FALSE;
+	$handler->display->display_options['fields']['field_artist_related_instruments']['delta_offset'] = '0';
+	/* Field: Content: Country of Origin */
+	$handler->display->display_options['fields']['field_artist_country_origin']['id'] = 'field_artist_country_origin';
+	$handler->display->display_options['fields']['field_artist_country_origin']['table'] = 'field_data_field_artist_country_origin';
+	$handler->display->display_options['fields']['field_artist_country_origin']['field'] = 'field_artist_country_origin';
+	$handler->display->display_options['fields']['field_artist_country_origin']['element_type'] = 'div';
+	$handler->display->display_options['fields']['field_artist_country_origin']['element_class'] = 'akaa-technicalinfo-value';
+	$handler->display->display_options['fields']['field_artist_country_origin']['element_label_type'] = 'div';
+	$handler->display->display_options['fields']['field_artist_country_origin']['element_label_class'] = 'akaa-technicalinfo-label';
+	$handler->display->display_options['fields']['field_artist_country_origin']['element_wrapper_type'] = 'div';
+	$handler->display->display_options['fields']['field_artist_country_origin']['element_wrapper_class'] = 'akaa-technicalinfo-row';
+	$handler->display->display_options['fields']['field_artist_country_origin']['element_default_classes'] = FALSE;
+	$handler->display->display_options['fields']['field_artist_country_origin']['type'] = 'taxonomy_term_reference_plain';
+	/* Field: Content: Nid */
+	$handler->display->display_options['fields']['nid']['id'] = 'nid';
+	$handler->display->display_options['fields']['nid']['table'] = 'node';
+	$handler->display->display_options['fields']['nid']['field'] = 'nid';
+	$handler->display->display_options['fields']['nid']['label'] = '';
+	$handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+	$handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+	/* Field: Global: Custom text */
+	$handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+	$handler->display->display_options['fields']['nothing']['table'] = 'views';
+	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+	$handler->display->display_options['fields']['nothing']['label'] = '';
+	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+	$handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'div';
+	$handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'akaa-technicalinfo-row';
+	$handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
+	/* Field: Global: PHP */
+	$handler->display->display_options['fields']['php']['id'] = 'php';
+	$handler->display->display_options['fields']['php']['table'] = 'views';
+	$handler->display->display_options['fields']['php']['field'] = 'php';
+	$handler->display->display_options['fields']['php']['label'] = '';
+	$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+	$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+	$handler->display->display_options['fields']['php']['php_output'] = '<?php
+	  $node = node_load($row->nid);
+	  $video = reset($node->field_artist_related_videos);
+	  $output = \'\';
+	  foreach($video as $value) {
+		$output .= \'<div class = "video-container">\';
+	   $output .= \'<span class="youtube-play-button"></span>\';
+		$output .= \'<div class = "rows">\';
+		if ($value[\'filemime\'] == \'video/youtube\') {
+		  $explode = explode(\'youtube://v/\', $value[\'uri\']);
+		  $image = \'<img src = "http://img.youtube.com/vi/\'.$explode[1].\'/0.jpg">\';
+		  $output .= \'<a class= colorbox-inline init-colorbox-inline-processed cboxElement href = "https://www.youtube.com/embed/\'.$explode[1].\'?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0">\'.$image.\'</a>\';
+		}
+		else {
+		  $explode = explode(\'brightcove://\', $value[\'uri\']);
+		}
+		$output .= \'</div></div>\';
+	  }
+	print $output;
+	?>';
+	$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+	$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+	$handler->display->display_options['defaults']['arguments'] = FALSE;
+	/* Contextual filter: Content: Nid */
+	$handler->display->display_options['arguments']['nid']['id'] = 'nid';
+	$handler->display->display_options['arguments']['nid']['table'] = 'node';
+	$handler->display->display_options['arguments']['nid']['field'] = 'nid';
+	$handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+	$handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
+	$handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+	$handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+	$handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
 
-  /* Display: AKMI Other Artists */
-  $handler = $view->new_display('block', 'AKMI Other Artists', 'block_2');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Other Artists';
-  $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['css_class'] = 'akaa-other-cycle-wrap';
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'akaa-other-cycle-row';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Slideshow Image */
-  $handler->display->display_options['fields']['field_feature_image']['id'] = 'field_feature_image';
-  $handler->display->display_options['fields']['field_feature_image']['table'] = 'field_data_field_feature_image';
-  $handler->display->display_options['fields']['field_feature_image']['field'] = 'field_feature_image';
-  $handler->display->display_options['fields']['field_feature_image']['label'] = '';
-  $handler->display->display_options['fields']['field_feature_image']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_feature_image']['element_class'] = 'akaa-other-cycle-image';
-  $handler->display->display_options['fields']['field_feature_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_feature_image']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_feature_image']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_feature_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_feature_image']['settings'] = array(
-    'image_style' => 'social_sharing_image',
-    'image_link' => 'content',
-  );
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['text'] = 'View';
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['nid']['link_to_node'] = TRUE;
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="other_cycle">
-  <div class="project_title">[title]</div>
-  <div class="view_links">[nid]</div>
-</div>';
-  $handler->display->display_options['fields']['nothing']['element_type'] = '0';
-  $handler->display->display_options['fields']['nothing']['element_label_type'] = '0';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
-  $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Global: Random */
-  $handler->display->display_options['sorts']['random']['id'] = 'random';
-  $handler->display->display_options['sorts']['random']['table'] = 'views';
-  $handler->display->display_options['sorts']['random']['field'] = 'random';
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nid */
-  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['table'] = 'node';
-  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
-  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['nid']['not'] = TRUE;
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'akmi_artists' => 'akmi_artists',
-  );
+	/* Display: AKMI Other Artists */
+	$handler = $view->new_display('block', 'AKMI Other Artists', 'block_2');
+	$handler->display->display_options['defaults']['title'] = FALSE;
+	$handler->display->display_options['title'] = 'Other Artists';
+	$handler->display->display_options['defaults']['css_class'] = FALSE;
+	$handler->display->display_options['css_class'] = 'akaa-other-cycle-wrap';
+	$handler->display->display_options['defaults']['pager'] = FALSE;
+	$handler->display->display_options['pager']['type'] = 'some';
+	$handler->display->display_options['pager']['options']['items_per_page'] = '1';
+	$handler->display->display_options['pager']['options']['offset'] = '0';
+	$handler->display->display_options['defaults']['style_plugin'] = FALSE;
+	$handler->display->display_options['style_plugin'] = 'default';
+	$handler->display->display_options['style_options']['row_class'] = 'akaa-other-cycle-row';
+	$handler->display->display_options['defaults']['style_options'] = FALSE;
+	$handler->display->display_options['defaults']['row_plugin'] = FALSE;
+	$handler->display->display_options['row_plugin'] = 'fields';
+	$handler->display->display_options['defaults']['row_options'] = FALSE;
+	$handler->display->display_options['defaults']['relationships'] = FALSE;
+	$handler->display->display_options['defaults']['fields'] = FALSE;
+	/* Field: Content: Slideshow Image */
+	$handler->display->display_options['fields']['field_feature_image']['id'] = 'field_feature_image';
+	$handler->display->display_options['fields']['field_feature_image']['table'] = 'field_data_field_feature_image';
+	$handler->display->display_options['fields']['field_feature_image']['field'] = 'field_feature_image';
+	$handler->display->display_options['fields']['field_feature_image']['label'] = '';
+	$handler->display->display_options['fields']['field_feature_image']['element_type'] = 'div';
+	$handler->display->display_options['fields']['field_feature_image']['element_class'] = 'akaa-other-cycle-image';
+	$handler->display->display_options['fields']['field_feature_image']['element_label_colon'] = FALSE;
+	$handler->display->display_options['fields']['field_feature_image']['element_wrapper_type'] = '0';
+	$handler->display->display_options['fields']['field_feature_image']['element_default_classes'] = FALSE;
+	$handler->display->display_options['fields']['field_feature_image']['click_sort_column'] = 'fid';
+	$handler->display->display_options['fields']['field_feature_image']['settings'] = array(
+	  'image_style' => 'social_sharing_image',
+	  'image_link' => 'content',
+	);
+	/* Field: Content: Title */
+	$handler->display->display_options['fields']['title']['id'] = 'title';
+	$handler->display->display_options['fields']['title']['table'] = 'node';
+	$handler->display->display_options['fields']['title']['field'] = 'title';
+	$handler->display->display_options['fields']['title']['label'] = '';
+	$handler->display->display_options['fields']['title']['exclude'] = TRUE;
+	$handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+	/* Field: Content: Nid */
+	$handler->display->display_options['fields']['nid']['id'] = 'nid';
+	$handler->display->display_options['fields']['nid']['table'] = 'node';
+	$handler->display->display_options['fields']['nid']['field'] = 'nid';
+	$handler->display->display_options['fields']['nid']['label'] = '';
+	$handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+	$handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
+	$handler->display->display_options['fields']['nid']['alter']['text'] = 'View';
+	$handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+	$handler->display->display_options['fields']['nid']['link_to_node'] = TRUE;
+	/* Field: Global: Custom text */
+	$handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+	$handler->display->display_options['fields']['nothing']['table'] = 'views';
+	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+	$handler->display->display_options['fields']['nothing']['label'] = '';
+	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="other_cycle">
+	  <div class="project_title">[title]</div>
+	  <div class="view_links">[nid]</div>
+	</div>';
+	$handler->display->display_options['fields']['nothing']['element_type'] = '0';
+	$handler->display->display_options['fields']['nothing']['element_label_type'] = '0';
+	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+	$handler->display->display_options['fields']['nothing']['element_wrapper_type'] = '0';
+	$handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
+	$handler->display->display_options['defaults']['sorts'] = FALSE;
+	/* Sort criterion: Global: Random */
+	$handler->display->display_options['sorts']['random']['id'] = 'random';
+	$handler->display->display_options['sorts']['random']['table'] = 'views';
+	$handler->display->display_options['sorts']['random']['field'] = 'random';
+	$handler->display->display_options['defaults']['arguments'] = FALSE;
+	/* Contextual filter: Content: Nid */
+	$handler->display->display_options['arguments']['nid']['id'] = 'nid';
+	$handler->display->display_options['arguments']['nid']['table'] = 'node';
+	$handler->display->display_options['arguments']['nid']['field'] = 'nid';
+	$handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+	$handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+	$handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+	$handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+	$handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+	$handler->display->display_options['arguments']['nid']['not'] = TRUE;
+	$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+	$handler->display->display_options['defaults']['filters'] = FALSE;
+	/* Filter criterion: Content: Published */
+	$handler->display->display_options['filters']['status']['id'] = 'status';
+	$handler->display->display_options['filters']['status']['table'] = 'node';
+	$handler->display->display_options['filters']['status']['field'] = 'status';
+	$handler->display->display_options['filters']['status']['value'] = 1;
+	$handler->display->display_options['filters']['status']['group'] = 1;
+	$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+	/* Filter criterion: Content: Type */
+	$handler->display->display_options['filters']['type']['id'] = 'type';
+	$handler->display->display_options['filters']['type']['table'] = 'node';
+	$handler->display->display_options['filters']['type']['field'] = 'type';
+	$handler->display->display_options['filters']['type']['value'] = array(
+	  'akmi_artists' => 'akmi_artists',
+	);
 
-  /* Display: All Artists */
-  $handler = $view->new_display('block', 'All Artists', 'block_3');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'All Artists';
-  $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['css_class'] = 'akaa-all-award-cycle-wrapper';
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'akaa-all-award-cycle-row';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Title */
-  $handler->display->display_options['sorts']['title']['id'] = 'title';
-  $handler->display->display_options['sorts']['title']['table'] = 'node';
-  $handler->display->display_options['sorts']['title']['field'] = 'title';
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'akmi_artists' => 'akmi_artists',
-  );
+	/* Display: All Artists */
+	$handler = $view->new_display('block', 'All Artists', 'block_3');
+	$handler->display->display_options['defaults']['title'] = FALSE;
+	$handler->display->display_options['title'] = 'All Artists';
+	$handler->display->display_options['defaults']['css_class'] = FALSE;
+	$handler->display->display_options['css_class'] = 'akaa-all-award-cycle-wrapper';
+	$handler->display->display_options['defaults']['pager'] = FALSE;
+	$handler->display->display_options['pager']['type'] = 'some';
+	$handler->display->display_options['pager']['options']['items_per_page'] = '50';
+	$handler->display->display_options['pager']['options']['offset'] = '0';
+	$handler->display->display_options['defaults']['style_plugin'] = FALSE;
+	$handler->display->display_options['style_plugin'] = 'default';
+	$handler->display->display_options['style_options']['row_class'] = 'akaa-all-award-cycle-row';
+	$handler->display->display_options['defaults']['style_options'] = FALSE;
+	$handler->display->display_options['defaults']['row_plugin'] = FALSE;
+	$handler->display->display_options['row_plugin'] = 'fields';
+	$handler->display->display_options['defaults']['row_options'] = FALSE;
+	$handler->display->display_options['defaults']['fields'] = FALSE;
+	/* Field: Content: Title */
+	$handler->display->display_options['fields']['title']['id'] = 'title';
+	$handler->display->display_options['fields']['title']['table'] = 'node';
+	$handler->display->display_options['fields']['title']['field'] = 'title';
+	$handler->display->display_options['fields']['title']['label'] = '';
+	$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+	$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+	$handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+	$handler->display->display_options['defaults']['sorts'] = FALSE;
+	/* Sort criterion: Content: Title */
+	$handler->display->display_options['sorts']['title']['id'] = 'title';
+	$handler->display->display_options['sorts']['title']['table'] = 'node';
+	$handler->display->display_options['sorts']['title']['field'] = 'title';
+	$handler->display->display_options['defaults']['arguments'] = FALSE;
+	$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+	$handler->display->display_options['defaults']['filters'] = FALSE;
+	/* Filter criterion: Content: Published */
+	$handler->display->display_options['filters']['status']['id'] = 'status';
+	$handler->display->display_options['filters']['status']['table'] = 'node';
+	$handler->display->display_options['filters']['status']['field'] = 'status';
+	$handler->display->display_options['filters']['status']['value'] = 1;
+	$handler->display->display_options['filters']['status']['group'] = 1;
+	$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+	/* Filter criterion: Content: Type */
+	$handler->display->display_options['filters']['type']['id'] = 'type';
+	$handler->display->display_options['filters']['type']['table'] = 'node';
+	$handler->display->display_options['filters']['type']['field'] = 'type';
+	$handler->display->display_options['filters']['type']['value'] = array(
+	  'akmi_artists' => 'akmi_artists',
+	);
 
-  /* Display: AKMI Artist Related Informations */
-  $handler = $view->new_display('block', 'AKMI Artist Related Informations', 'block_4');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Unfiltered text */
-  $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
-  $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
-  $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
-  $handler->display->display_options['header']['area_text_custom']['content'] = '<h2 class="pane-title">[field_specify_a_block_title]</h2>';
-  $handler->display->display_options['header']['area_text_custom']['tokenize'] = TRUE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Add Links */
-  $handler->display->display_options['fields']['field_block_add_links']['id'] = 'field_block_add_links';
-  $handler->display->display_options['fields']['field_block_add_links']['table'] = 'field_data_field_block_add_links';
-  $handler->display->display_options['fields']['field_block_add_links']['field'] = 'field_block_add_links';
-  $handler->display->display_options['fields']['field_block_add_links']['label'] = '';
-  $handler->display->display_options['fields']['field_block_add_links']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_block_add_links']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_block_add_links']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_block_add_links']['multi_type'] = 'ul';
-  /* Field: Content: Specify the Block Title */
-  $handler->display->display_options['fields']['field_specify_a_block_title']['id'] = 'field_specify_a_block_title';
-  $handler->display->display_options['fields']['field_specify_a_block_title']['table'] = 'field_data_field_specify_a_block_title';
-  $handler->display->display_options['fields']['field_specify_a_block_title']['field'] = 'field_specify_a_block_title';
-  $handler->display->display_options['fields']['field_specify_a_block_title']['label'] = '';
-  $handler->display->display_options['fields']['field_specify_a_block_title']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_specify_a_block_title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nid */
-  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['table'] = 'node';
-  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
-  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
-  $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
-    'akmi_artists' => 'akmi_artists',
-  );
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'akmi_artists' => 'akmi_artists',
-  );
-  /* Filter criterion: Content: Show Block (field_right_show_block) */
-  $handler->display->display_options['filters']['field_right_show_block_value']['id'] = 'field_right_show_block_value';
-  $handler->display->display_options['filters']['field_right_show_block_value']['table'] = 'field_data_field_right_show_block';
-  $handler->display->display_options['filters']['field_right_show_block_value']['field'] = 'field_right_show_block_value';
-  $handler->display->display_options['filters']['field_right_show_block_value']['value'] = array(
-    1 => '1',
-  );
-  $translatables['akmi_artists_views'] = array(
-    t('Master'),
-    t('AKMI Artists Views'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('AKMI Artist image carousel'),
-    t('image from field_akmi_additional_images'),
-    t('image from field_feature_image'),
-    t('[field_feature_image]'),
-    t('[field_image_caption_1]'),
-    t('<div class="slide">[field_akmi_additional_images]</div>
-<div class="slide-text"><h3>[field_image_caption]</h3>
-</div>'),
-    t('All'),
-    t('Artist Detail Page'),
-    t('Performance year with AKMI'),
-    t('Instruments'),
-    t('<a href="/akmi/instruments#[field_artist_related_instruments]">[field_artist_related_instruments]</a>'),
-    t('Country of Origin'),
-    t('AKMI Other Artists'),
-    t('Other Artists'),
-    t('View'),
-    t('<div class="other_cycle">
-  <div class="project_title">[title]</div>
-  <div class="view_links">[nid]</div>
-</div>'),
-    t('All Artists'),
-    t('AKMI Artist Related Informations'),
-    t('<h2 class="pane-title">[field_specify_a_block_title]</h2>'),
-  );
+	/* Display: AKMI Artist Related Informations */
+	$handler = $view->new_display('block', 'AKMI Artist Related Informations', 'block_4');
+	$handler->display->display_options['defaults']['title'] = FALSE;
+	$handler->display->display_options['defaults']['pager'] = FALSE;
+	$handler->display->display_options['pager']['type'] = 'some';
+	$handler->display->display_options['pager']['options']['items_per_page'] = '1';
+	$handler->display->display_options['pager']['options']['offset'] = '0';
+	$handler->display->display_options['defaults']['header'] = FALSE;
+	/* Header: Global: Unfiltered text */
+	$handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
+	$handler->display->display_options['header']['area_text_custom']['table'] = 'views';
+	$handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
+	$handler->display->display_options['header']['area_text_custom']['content'] = '<h2 class="pane-title">[field_specify_a_block_title]</h2>';
+	$handler->display->display_options['header']['area_text_custom']['tokenize'] = TRUE;
+	$handler->display->display_options['defaults']['fields'] = FALSE;
+	/* Field: Content: Title */
+	$handler->display->display_options['fields']['title']['id'] = 'title';
+	$handler->display->display_options['fields']['title']['table'] = 'node';
+	$handler->display->display_options['fields']['title']['field'] = 'title';
+	$handler->display->display_options['fields']['title']['label'] = '';
+	$handler->display->display_options['fields']['title']['exclude'] = TRUE;
+	$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+	$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+	$handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+	/* Field: Content: Add Links */
+	$handler->display->display_options['fields']['field_block_add_links']['id'] = 'field_block_add_links';
+	$handler->display->display_options['fields']['field_block_add_links']['table'] = 'field_data_field_block_add_links';
+	$handler->display->display_options['fields']['field_block_add_links']['field'] = 'field_block_add_links';
+	$handler->display->display_options['fields']['field_block_add_links']['label'] = '';
+	$handler->display->display_options['fields']['field_block_add_links']['element_label_colon'] = FALSE;
+	$handler->display->display_options['fields']['field_block_add_links']['click_sort_column'] = 'url';
+	$handler->display->display_options['fields']['field_block_add_links']['delta_offset'] = '0';
+	$handler->display->display_options['fields']['field_block_add_links']['multi_type'] = 'ul';
+	/* Field: Content: Specify the Block Title */
+	$handler->display->display_options['fields']['field_specify_a_block_title']['id'] = 'field_specify_a_block_title';
+	$handler->display->display_options['fields']['field_specify_a_block_title']['table'] = 'field_data_field_specify_a_block_title';
+	$handler->display->display_options['fields']['field_specify_a_block_title']['field'] = 'field_specify_a_block_title';
+	$handler->display->display_options['fields']['field_specify_a_block_title']['label'] = '';
+	$handler->display->display_options['fields']['field_specify_a_block_title']['exclude'] = TRUE;
+	$handler->display->display_options['fields']['field_specify_a_block_title']['element_label_colon'] = FALSE;
+	$handler->display->display_options['defaults']['arguments'] = FALSE;
+	/* Contextual filter: Content: Nid */
+	$handler->display->display_options['arguments']['nid']['id'] = 'nid';
+	$handler->display->display_options['arguments']['nid']['table'] = 'node';
+	$handler->display->display_options['arguments']['nid']['field'] = 'nid';
+	$handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+	$handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+	$handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+	$handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+	$handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+	$handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
+	$handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
+	$handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
+	  'akmi_artists' => 'akmi_artists',
+	);
+	$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+	$handler->display->display_options['defaults']['filters'] = FALSE;
+	/* Filter criterion: Content: Published */
+	$handler->display->display_options['filters']['status']['id'] = 'status';
+	$handler->display->display_options['filters']['status']['table'] = 'node';
+	$handler->display->display_options['filters']['status']['field'] = 'status';
+	$handler->display->display_options['filters']['status']['value'] = 1;
+	$handler->display->display_options['filters']['status']['group'] = 1;
+	$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+	/* Filter criterion: Content: Type */
+	$handler->display->display_options['filters']['type']['id'] = 'type';
+	$handler->display->display_options['filters']['type']['table'] = 'node';
+	$handler->display->display_options['filters']['type']['field'] = 'type';
+	$handler->display->display_options['filters']['type']['value'] = array(
+	  'akmi_artists' => 'akmi_artists',
+	);
+	/* Filter criterion: Content: Show Block (field_right_show_block) */
+	$handler->display->display_options['filters']['field_right_show_block_value']['id'] = 'field_right_show_block_value';
+	$handler->display->display_options['filters']['field_right_show_block_value']['table'] = 'field_data_field_right_show_block';
+	$handler->display->display_options['filters']['field_right_show_block_value']['field'] = 'field_right_show_block_value';
+	$handler->display->display_options['filters']['field_right_show_block_value']['value'] = array(
+	  1 => '1',
+	);
+	$translatables['akmi_artists_views'] = array(
+	  t('Master'),
+	  t('AKMI Artists Views'),
+	  t('more'),
+	  t('Apply'),
+	  t('Reset'),
+	  t('Sort by'),
+	  t('Asc'),
+	  t('Desc'),
+	  t('AKMI Artist image carousel'),
+	  t('image from field_akmi_additional_images'),
+	  t('image from field_feature_image'),
+	  t('[field_feature_image]'),
+	  t('[field_image_caption_1]'),
+	  t('<div class="slide">[field_akmi_additional_images]</div>
+	<div class="slide-text"><h3>[field_image_caption]</h3>
+	</div>'),
+	  t('All'),
+	  t('Artist Detail Page'),
+	  t('Performance year with AKMI'),
+	  t('Instruments'),
+	  t('<a href="/akmi/instruments#[field_artist_related_instruments]">[field_artist_related_instruments]</a>'),
+	  t('Country of Origin'),
+	  t('AKMI Other Artists'),
+	  t('Other Artists'),
+	  t('View'),
+	  t('<div class="other_cycle">
+	  <div class="project_title">[title]</div>
+	  <div class="view_links">[nid]</div>
+	</div>'),
+	  t('All Artists'),
+	  t('AKMI Artist Related Informations'),
+	  t('<h2 class="pane-title">[field_specify_a_block_title]</h2>'),
+	);
   $export['akmi_artists_views'] = $view;
 
   $view = new view();
