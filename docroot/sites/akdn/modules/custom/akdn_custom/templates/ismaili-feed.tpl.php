@@ -2,15 +2,13 @@
     <div class="view-content">
   <?php
   foreach ($output as $key => $value) {
-//    print '<pre>';
-//    print_r($value); die;
     $image = $value->Image;
     $imagespeech = $value->Imagespeech;
     $primary_cat = $value->Primary;
     $title = $value->Title;
     $type = $value->Type;
     $date = $value->Date;
-    $body = $value->Body;
+    $body = strip_tags($value->Body);
     $read_more = $value->Read;
     $link = trim($value->Link);
     ?>
