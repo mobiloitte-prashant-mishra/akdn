@@ -3799,12 +3799,14 @@ function akdn_custom_preprocess_views_view_field__award_cycle_news__page_2__noth
 
 function akdn_custom_preprocess_views_view_field__hub_pages__country_hub_subpages__field_short_title(&$variables) {
   $row = $variables['row'];
-  $output = '';
+  $language = $output = '';
   if ($row->_field_data['nid']['entity']->type == 'page') {
-    $title = $row->_field_data['nid']['entity']->field_short_title[key($row->_field_data['nid']['entity']->field_short_title)][0]['value'];
+    $language = $row->_field_data['nid']['entity']->field_short_title;
+    $title = $row->_field_data['nid']['entity']->field_short_title[key($language)][0]['value'];
   }
   if ($row->_field_data['nid']['entity']->type == 'hub_page') {
-    $title = $row->_field_data['nid']['entity']->title_field[key($row->_field_data['nid']['entity']->title_field)][0]['value'];
+    $language = $row->_field_data['nid']['entity']->title_field;
+    $title = $row->_field_data['nid']['entity']->title_field[key($language)][0]['value'];
   }
 
   $output .= l($title, 'node/' . $row->_field_data['nid']['entity']->nid);
