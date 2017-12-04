@@ -6,10 +6,11 @@
 function locationmap_help($path, $arg) {
   switch ($path) {
     case 'admin/help#locationmap':
-      $output = '<p>' . t('The Location Map module displays a map of your geographic location with Google Maps.') . ' ' .
-        l(t('The page for the map'), 'locationmap') . ' ' . t('is automatically generated.') . ' ' .
-        t('A block is also created that displays a thumbnail of the map, linking to the map page.') . ' ' .
-        t('This can be assigned to a page region on the') . ' ' . l(t('block administration page'), 'admin/structure/block') . '.</p>';
+      $output = '<p>' . t('The Location Map module displays a map of your geographic location with Google Maps. The @map_page for the map is automatically generated. A block is also created that displays a thumbnail of the map, linking to the map page. This can be assigned to a page region on the @block_admin_page.',
+        array(
+          '@map_page' => l(t('map page'), 'locationmap'),
+          'block_admin_page' => l(t('block administration page'), 'admin/structure/block')
+        )) . '.</p>';
       return $output;
   }
 }
@@ -82,7 +83,8 @@ function locationmap_admin_settings($form, &$form_state) {
     '#type' => 'textfield',
     '#title' => t('Title'),
     '#default_value' => variable_get('locationmap_title', t('Our Location')),
-    '#description' => t("The title of the automatically generated ") . l(t('map page'), 'locationmap') . '.',
+    '#description' => t("The title of the automatically generated @map_page.",
+      array('@map_page' => l(t('map page'), 'locationmap'))),
   );
 
   $form['info']['locationmap_address'] = array('#type' => 'textfield',
@@ -134,11 +136,17 @@ function locationmap_admin_settings($form, &$form_state) {
     '#size' => 10,
   );
 
+  $form['info']['locationmap_scroll'] = array('#type' => 'checkbox',
+    '#title' => t('Scrollwheel zooming'),
+    '#default_value' => variable_get('locationmap_scroll', 1),
+    '#description' => t("Enable zooming on the map using the mouse's scrollwheel."),
+  );
+
   $form['info']['latlng'] = array(
     '#type' => 'fieldset',
     '#title' => t('Geographical coordinates'),
     '#collapsible' => FALSE,
-    '#description' => t('Geographical coordinates for your location. Location map will try to obtain this information from Google using the address above. You are also able to fine-tune this by dragging the marker on the' . ' ' . l(t('map page'), 'locationmap') . '. Under normal circumstances you would not set these coordinates manually.'),
+    '#description' => t('Geographical coordinates for your location. Location map will try to obtain this information from Google using the address above. You are also able to fine-tune this by dragging the marker on the @map_page. Under normal circumstances you would not set these coordinates manually.', array('@map_page' => l(t('map page'), 'locationmap'))),
   );
 
   $form['info']['latlng']['locationmap_lat'] = array(
@@ -155,10 +163,17 @@ function locationmap_admin_settings($form, &$form_state) {
 
   $form['info']['locationmap_info'] = array(
     '#type' => 'text_format',
-    '#title' => t('Marker Information'),
+    '#title' => t('Marker information'),
     '#default_value' => $locationmap_info['value'],
     '#format' => $locationmap_info['format'],
     '#description' => t('The description that will be shown when a user clicks on the marker. If this field is empty, the address will be used.'),
+  );
+
+  $form['info']['locationmap_popinfo'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Display marker information on page load'),
+    '#description' => t('This always applies to the page view.  The block must be set to interactive mode to see marker information.'),
+    '#default_value' => variable_get('locationmap_popinfo', false),
   );
 
   $form['info']['locationmap_body'] = array(
@@ -238,11 +253,11 @@ function locationmap_page() {
   $defaults = array(
     'value' => '',
     'format' => filter_default_format(),
-  ); 
+  );
   $locationmap_info_defaults = array(
     'value' => 'Fiordland, New Zealand',
     'format' => filter_default_format(),
-  ); 
+  );
   $locationmap_title = variable_get('locationmap_title', t('Our Location'));
   $locationmap_info = variable_get('locationmap_info', $locationmap_info_defaults);
   $locationmap_body = variable_get('locationmap_body', $defaults);
@@ -250,7 +265,7 @@ function locationmap_page() {
 
   $path = drupal_get_path('module', 'locationmap');
 
-  drupal_add_js('//maps.google.com/maps/api/js?v=3&sensor=false',  array('type' => 'external', 'weight' => 5));
+  drupal_add_js('//maps.google.com/maps/api/js?v=3',  array('type' => 'external', 'weight' => 5));
   drupal_add_js($path . '/locationmap.js', array('type' => 'file', 'weight' => 6, 'scope' => 'footer'));
 
   $locationmap_css_options = array(
@@ -260,20 +275,22 @@ function locationmap_page() {
 
   $locationmap_settings = array(
     'address' => variable_get('locationmap_address', 'Fiordland, New Zealand'),
-    'info' => $locationmap_info['value'],
+    'info' => check_markup($locationmap_info['value'],$locationmap_info['format']),
+    'popinfo' => variable_get('locationmap_popinfo', false),
     'lat' => variable_get('locationmap_lat', '-46.0868686'),
     'lng' => variable_get('locationmap_lng', '166.6822074'),
     'zoom' => variable_get('locationmap_zoom', 10),
     'type' => variable_get('locationmap_type', 'google.maps.MapTypeId.ROADMAP'),
     'admin' => user_access('administer locationmap'),
+    'scroll' => variable_get('locationmap_scroll', 1),
   );
   if (!$locationmap_settings['info']) {
     $locationmap_settings['info'] = $locationmap_settings['address'];
   }
   drupal_add_js(array('locationmap' => $locationmap_settings), 'setting');
-  $output = '<div id="locationmap_body">' . $locationmap_body['value'] . '</div>';
+  $output = '<div id="locationmap_body">' . check_markup($locationmap_body['value'],$locationmap_body['format']) . '</div>';
   $output .= theme('locationmap_map');
-  $output .= '<div id="locationmap_footer">' . $locationmap_footer['value'] . '</div>';
+  $output .= '<div id="locationmap_footer">' . check_markup($locationmap_footer['value'],$locationmap_footer['format']) . '</div>';
   if (user_access('administer locationmap')) {
     // TODO: Remove drupal_render and update to D7 desired behaviour. See http://drupal.org/update/modules/6/7#unrendered
     $form = drupal_get_form('locationmap_in_place_edit_form');
@@ -292,14 +309,13 @@ function locationmap_geocode_for_address($address) {
 
   $url_options = array(
     'query' => array(
-      'sensor' => 'false',
       'address' => $address
     ),
   );
 
   $options = array(
     'max_redirects' => 10,
-    'timeout' => 120, 
+    'timeout' => 120,
   );
 
   $response = drupal_http_request(url('http://maps.googleapis.com/maps/api/geocode/json', $url_options), $options);
@@ -309,8 +325,13 @@ function locationmap_geocode_for_address($address) {
   }
 
   $data = json_decode($response->data);
-  $location = $data->results[0]->geometry->location;
-  return array($location->lat, $location->lng);
+  if (isset($data->results) && !empty($data->results)) {
+    $location = $data->results[0]->geometry->location;
+    return array($location->lat, $location->lng);
+  }
+
+  // Fallback
+  return FALSE;
 }
 
 /**
@@ -340,21 +361,21 @@ function locationmap_in_place_edit_form($form, &$form_state) {
     '#prefix' => '<p>',
     '#markup' => t('Click and drag marker to fine tune position of your location. Set zoom level below.'),
     '#suffix' => '</p>',
-    );
+  );
   $form['locationmap_lat'] = array('#type' => 'textfield',
-	'#title' => t('Latitude'),
+    '#title' => t('Latitude'),
     '#default_value' => variable_get('locationmap_lat', ''),
-    );
+  );
   $form['locationmap_lng'] = array('#type' => 'textfield',
-	'#title' => t('Longitude'),
+    '#title' => t('Longitude'),
     '#default_value' => variable_get('locationmap_lng', ''),
-    );
+  );
   $form['locationmap_zoom'] = array('#type' => 'textfield',
-	'#title' => t('Zoom level'),
+    '#title' => t('Zoom level'),
     '#default_value' => variable_get('locationmap_zoom', ''),
-    );
+  );
   $form['submit'] = array(
-  	'#type' => 'submit',
+    '#type' => 'submit',
     '#value' => t('Save new location and zoom level'),
   );
   return($form);
@@ -460,7 +481,6 @@ function locationmap_static_image_url($w = 200, $h = 150) {
   $image_url = '//maps.googleapis.com/maps/api/staticmap?zoom=' . variable_get('locationmap_zoom', 5);
   $image_url .= "&amp;size={$w}x{$h}";
   $image_url .= '&amp;markers=' . variable_get('locationmap_lat', 0) . ',' . variable_get('locationmap_lng', 0);
-  $image_url .= "&amp;sensor=false";
   return($image_url);
 }
 
@@ -477,16 +497,24 @@ function locationmap_block_image() {
     $width = variable_get('locationmap_block_mapwidth', 160);
     $height = variable_get('locationmap_block_mapheight', 120);
     $path = drupal_get_path('module', 'locationmap');
-    drupal_add_js('//maps.google.com/maps/api/js?v=3&sensor=false',  array('type' => 'external', 'weight' => 5));
+    $locationmap_info_defaults = array(
+      'value' => 'Fiordland, New Zealand',
+      'format' => filter_default_format(),
+    );
+    $locationmap_info = variable_get('locationmap_info', $locationmap_info_defaults);
+    drupal_add_js('//maps.google.com/maps/api/js?v=3',  array('type' => 'external', 'weight' => 5));
     drupal_add_js($path . '/locationmap.js', array('type' => 'file', 'weight' => 6, 'scope' => 'footer'));
+    drupal_add_css($path . '/locationmap.css');
     $locationmap_settings = array(
       'address' => variable_get('locationmap_address', 'Fiordland, New Zealand'),
-      'info' => variable_get('locationmap_info', 'Fiordland, New Zealand'),
+      'info' => $locationmap_info['value'],
+      'popinfo' => variable_get('locationmap_popinfo', false),
       'lat' => variable_get('locationmap_lat', '-46.0868686'),
       'lng' => variable_get('locationmap_lng', '166.6822074'),
       'zoom' => variable_get('locationmap_zoom', 10),
       'type' => variable_get('locationmap_type', 'G_NORMAL_MAP'),
       'admin' => user_access('administer locationmap'),
+      'scroll' => variable_get('locationmap_scroll', 1),
     );
     if (!$locationmap_settings['info']) {
       $locationmap_settings['info'] = $locationmap_settings['address'];
@@ -596,4 +624,123 @@ function locationmap_theme() {
       ),
     ),
   );
+}
+
+function locationmap_variable_info() {
+  $variables = array();
+
+  $variables['locationmap_address'] = array(
+    'type' => 'string',
+    'title' => t('Address of your location'),
+    'localize' => TRUE,
+    'group' => 'location_map',
+  );
+  $variables['locationmap_block_mapwidth'] = array(
+    'title' => 'Block map width',
+    'type' => 'number',
+    'group' => 'location_map',
+  );
+  $variables['locationmap_block_mapheight'] = array(
+    'title' => 'Block map height',
+    'type' => 'number',
+    'group' => 'location_map',
+  );
+  $variables['locationmap_block_text_top'] = array(
+    'title' => t('Additional text to show above the image'),
+    'type' => 'string',
+    'localize' => TRUE,
+    'group' => 'location_map',
+  );
+  $variables['locationmap_block_type'] = array(
+    'title' => t('Map type'),
+    'type' => 'select',
+    'options' => array(
+      'image' => t('Static image'),
+      'interactive' => t('Interactive map'),
+    ),
+    'group' => 'location_map',
+  );
+  $variables['locationmap_body'] = array(
+    'type' => 'text_format',
+    'title' => t('Additional information (displayed above map)'),
+    'localize' => TRUE,
+    'group' => 'location_map',
+  );
+  $variables['locationmap_footer'] = array(
+    'type' => 'text_format',
+    'title' => t('Additional information (displayed below map)'),
+    'localize' => TRUE,
+    'group' => 'location_map',
+  );
+  $variables['locationmap_height'] = array(
+    'title' => t('Map height'),
+    'type' => 'number',
+    'group' => 'location_map',
+  );
+  $variables['locationmap_info'] = array(
+    'type' => 'text_format',
+    'title' => t('Marker information'),
+    'localize' => TRUE,
+    'group' => 'location_map',
+  );
+  $variables['locationmap_lat'] = array(
+    'title' => t('Latitude'),
+    'type' => 'number',
+    'group' => 'location_map',
+  );
+  $variables['locationmap_lng'] = array(
+    'title' => t('Longitude'),
+    'type' => 'number',
+    'group' => 'location_map',
+  );
+  $variables['locationmap_popinfo'] = array(
+    'type' => 'boolean',
+    'title' => t('Display marker information on page load'),
+    'group' => 'location_map',
+  );
+  $variables['locationmap_scroll'] = array(
+    'type' => 'boolean',
+    'title' => t('Enable zoom with scrollwheel'),
+    'group' => 'location_map',
+  );
+  $variables['locationmap_title'] = array(
+    'type' => 'string',
+    'title' => t('Title'),
+    'localize' => TRUE,
+    'group' => 'location_map',
+  );
+  $variables['locationmap_type'] = array(
+    'title' => t('Map type'),
+    'type' => 'select',
+    'options' => array(
+      'google.maps.MapTypeId.ROADMAP' => 'the default view',
+      'google.maps.MapTypeId.SATELLITE' => 'showing Google Earth satellite images',
+      'google.maps.MapTypeId.HYBRID' => 'showing a mixture of normal and satellite views',
+      'google.maps.MapTypeId.TERRAIN' => 'showing a physical map based on terrain information',
+    ),
+    'group' => 'location_map',
+  );
+  $variables['locationmap_width'] = array(
+    'title' => t('Map width'),
+    'type' => 'number',
+    'group' => 'location_map',
+  );
+  $variables['locationmap_zoom'] = array(
+    'title' => t('Scrollwheel zooming'),
+    'type' => 'boolean',
+    'group' => 'location_map',
+  );
+
+  return $variables;
+}
+
+function locationmap_variable_group_info() {
+  $groups = array();
+  $groups['location_map'] = array(
+    'title' => t('Location Map'),
+    'description' => t('Variables from the Location Map module.'),
+    'access' => 'administer site configuration',
+    'path' => array('admin/config/system/variable/location_map'),
+  );
+  return $groups;
 }

@@ -1,35 +1,33 @@
 <?php
-
 /**
  * @file
  * Support for processing entity reference fields in Migrate.
  */
 
 /**
- * Implement hook_migrate_api().
+ * Implements hook_migrate_api().
  */
 function entityreference_migrate_api() {
-  return array('api' => 2);
+  return array(
+    'api' => 2,
+    'field handlers' => array('MigrateEntityReferenceFieldHandler'),
+  );
 }
 
-class MigrateEntityReferenceFieldHandler extends MigrateFieldHandler {
-  public function __construct() {
-    $this->registerTypes(array('entityreference'));
-  }
+/**
+ * Extended class for handling entityreference fields.
+ */
+class MigrateEntityReferenceFieldHandler extends MigrateSimpleFieldHandler {
 
-  public function prepare($entity, array $field_info, array $instance, array $values) {
-    $migration = Migration::currentMigration();
-    $arguments = (isset($values['arguments']))? $values['arguments']: array();
-    $language = $this->getFieldLanguage($entity, $field_info, $arguments);
-    // Setup the standard Field API array for saving.
-    $delta = 0;
-    foreach ($values as $value) {
-      $return[$language][$delta]['target_id'] = $value;
-      $delta++;
-    }
-    if (!isset($return)) {
-      $return = NULL;
-    }
-    return $return;
+  /**
+   * Constructor.
+   */
+  public function __construct() {
+    parent::__construct(array(
+      'value_key' => 'target_id',
+      'skip_empty' => TRUE,
+    ));
+
+    $this->registerTypes(array('entityreference'));
   }
 }

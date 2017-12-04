@@ -74,24 +74,13 @@ class SearchApiAcquiaSearchConnection extends SearchApiSolrConnection {
   }
 
   /**
-   * Send an optimize command.
-   *
-   * We want to control the schedule of optimize commands ourselves,
-   * so do a method override to make ->optimize() a no-op.
-   *
-   * @see SearchApiSolrConnection::optimize()
-   */
-  public function optimize($waitFlush = true, $waitSearcher = true, $timeout = 3600) {
-    return TRUE;
-  }
-
-  /**
    * Modify the url and add headers appropriate to authenticate to Acquia Search.
    *
    * @return
    *  The nonce used in the request.
    */
   public function prepareRequest(&$url, &$options, $use_data = TRUE) {
+    // Add a unique request ID to the URL.
     $id = uniqid();
     if (!stristr($url,'?')) {
       $url .= "?";
@@ -100,6 +89,12 @@ class SearchApiAcquiaSearchConnection extends SearchApiSolrConnection {
       $url .= "&";
     }
     $url .= 'request_id=' . $id;
+    // If we're hosted on Acquia, and have an Acquia request ID,
+    // append it to the request so that we map Solr queries to Acquia search requests.
+    if (isset($_ENV['HTTP_X_REQUEST_ID'])) {
+      $xid = empty($_ENV['HTTP_X_REQUEST_ID']) ? '-' : $_ENV['HTTP_X_REQUEST_ID'];
+      $url .= '&x-request-id=' . rawurlencode($xid);
+    }
     if ($use_data && isset($options['data'])) {
       list($cookie, $nonce) = $this->authCookie($url, $options['data']);
     }

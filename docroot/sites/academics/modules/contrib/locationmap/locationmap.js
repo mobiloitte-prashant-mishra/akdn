@@ -7,7 +7,8 @@
         zoom: parseInt(Drupal.settings.locationmap.zoom),
         center: target_point,
         mapTypeId: eval(Drupal.settings.locationmap.type),
-        mapTypeControl: true
+        mapTypeControl: true,
+        scrollwheel: Boolean(Drupal.settings.locationmap.scroll)
         };
 
       var map = new google.maps.Map(document.getElementById("locationmap_map"), mapOptions);
@@ -27,6 +28,9 @@
       google.maps.event.addListener(marker, 'click', function() {
         infowindow.open(map, marker);
       });
+      if (Drupal.settings.locationmap.popinfo) {
+        infowindow.open(map, marker);
+      }
 
       // Allow fine tuning of the marker position in admin mode.
       if (Drupal.settings.locationmap.admin) {
