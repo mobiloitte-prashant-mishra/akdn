@@ -132,7 +132,10 @@ function locationmap_update_106() {
  */
 function locationmap_uninstall() {
   variable_del('locationmap_address');
+  variable_del('locationmap_block_mapwidth');
+  variable_del('locationmap_block_mapheight');
   variable_del('locationmap_block_text_top');
+  variable_del('locationmap_block_type');
   variable_del('locationmap_body');
   variable_del('locationmap_footer');
   variable_del('locationmap_height');
@@ -140,6 +143,8 @@ function locationmap_uninstall() {
   variable_del('locationmap_key');
   variable_del('locationmap_lat');
   variable_del('locationmap_lng');
+  variable_del('locationmap_popinfo');
+  variable_del('locationmap_scroll');
   variable_del('locationmap_title');
   variable_del('locationmap_type');
   variable_del('locationmap_width');

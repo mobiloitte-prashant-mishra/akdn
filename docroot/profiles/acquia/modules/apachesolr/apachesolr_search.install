@@ -94,8 +94,6 @@ function apachesolr_search_schema() {
         'minimum_version' => 3,
         'current_version' => 3,
       ),
-      // Includes all search page specific configurations.
-      'export callback' => 'apachesolr_search_page_settings_export',
     ),
     'fields' => array(
       'page_id' => array(
@@ -159,10 +157,6 @@ function apachesolr_search_schema() {
  * Implements hook_uninstall().
  */
 function apachesolr_search_uninstall() {
-  $stored = variable_get('apachesolr_index_last', array());
-  unset($stored['apachesolr_search']);
-  variable_set('apachesolr_index_last', $stored);
-
   $active = variable_get('search_active_modules', array('node', 'user'));
   $idx = array_search('apachesolr_search', $active);
   if ($idx !== FALSE) {
@@ -219,7 +213,6 @@ function apachesolr_search_update_7002() {
         'minimum_version' => 3,
         'current_version' => 3,
       ),
-      'export callback' => 'apachesolr_search_page_settings_export',
     ),
     'fields' => array(
       'page_id' => array(
@@ -376,6 +369,7 @@ function apachesolr_search_update_7005(&$sandbox) {
  * Remove all apachesolr_search env variables for show_facets if it is zero
  */
 function apachesolr_search_update_7006() {
+  module_load_include('module', 'apachesolr');
   $environments = apachesolr_load_all_environments();
   foreach ($environments as $environment) {
     $show_facets = apachesolr_environment_variable_get($environment['env_id'], 'apachesolr_search_show_facets', 0);
