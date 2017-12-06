@@ -33,6 +33,9 @@ function akdn_context_strongarm() {
         'redirect' => array(
           'weight' => '8',
         ),
+        'redirect' => array(
+          'weight' => '30',
+        ),
       ),
       'display' => array(),
     ),

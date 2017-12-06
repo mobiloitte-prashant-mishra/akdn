@@ -156,10 +156,11 @@ function _akaa_see_also_block() {
       $get_count = _akaa_node_count($key, $tid, $cycle_tid);
       if ($get_count > 0) {
         if ($key == 2 || $key == 4 || $key == 2611) {
+          $key = $value;
           if ($value == 'Press Releases') {
             $value = 'Press Releases';
-          }
-          $key = $value;
+            $key = 'Press Release';
+          }          
         }
         if ($value == "Videos") {
           $key = 'Video';

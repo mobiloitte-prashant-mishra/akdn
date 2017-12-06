@@ -2,15 +2,13 @@
     <div class="view-content">
   <?php
   foreach ($output as $key => $value) {
-//    print '<pre>';
-//    print_r($value); die;
     $image = $value->Image;
     $imagespeech = $value->Imagespeech;
     $primary_cat = $value->Primary;
     $title = $value->Title;
     $type = $value->Type;
     $date = $value->Date;
-    $body = $value->Body;
+    $body = strip_tags($value->Body);
     $read_more = $value->Read;
     $link = trim($value->Link);
     ?>
@@ -21,11 +19,11 @@
         <?php print $image; ?>
       </div>
     <?php } ?>
-    <?php if (($type == 'speech') && $imagespeech) { ?>
+      <?php if (($type == 'speech') && $imagespeech) { ?>
       <div class="news-image">
         <?php print $imagespeech; ?>
       </div>
-    <?php } ?>         
+    <?php } ?> 
     <?php if ($primary_cat) { ?>
       <div class="article-type">
         <?php print $primary_cat; ?>
