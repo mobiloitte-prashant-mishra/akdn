@@ -134,7 +134,8 @@ function akdn_custom_download_file() {
 function akdn_custom_open_pdf_file() {
   $arg = arg(1);
   $node = node_load($arg);
-  $field_upload_factsheet = $node->field_upload_factsheet[key($node->field_upload_factsheet)][0]['uri'];
+  $field_upload = $node->field_upload_factsheet;
+  $field_upload_factsheet = $node->field_upload_factsheet[key($field_upload)][0]['uri'];
   $file_url = file_create_url($field_upload_factsheet);
   if (empty($node->nid) || empty($node) || !$node->status || !file_exists($field_upload_factsheet)) {
     return drupal_access_denied();
@@ -955,7 +956,8 @@ function akdn_custom_content_breadcrumb() {
   if (empty($node)) {
     return;
   }
-  $bread = $node->field_custom_breadcrumbs[key($node->field_custom_breadcrumbs)];
+  $field_custom = $node->field_custom_breadcrumbs;
+  $bread = $node->field_custom_breadcrumbs[key($field_custom)];
   $count = count($bread);
   $output = '<div class="static_text">You are here</div>';
   $output .= '<div class="breadcrumb contextual-links-region">';
@@ -1001,7 +1003,8 @@ function akdn_all_areas_of_activity() {
   if (isset($nid) && is_numeric($nid)) {
 
     $node = node_load($nid);
-    $key = key($node->menu_node_links);
+    $menu_node_links = $node->menu_node_links;
+    $key = key($menu_node_links);
     $output = '';
     $output_header = '<div class = "all-activities-btn">';
     $output_header .= '<h2 class = "pane-title">All Areas of Activities</h2>';
@@ -1013,50 +1016,58 @@ function akdn_all_areas_of_activity() {
       $node_load = node_load($values->nid);
 
       if ($values->node_type == 'hub_page') {
-        $key1 = key($node_load->menu_node_links);
+        $menu_node_links1 = $node_load->menu_node_links;
+        $key1 = key($menu_node_links1);
         $get_activities1 = get_areas_of_activities($key1);
         foreach ($get_activities1 as $values1) {
           $node_load1 = node_load($values1->nid);
           if ($values1->node_type == 'hub_page') {
-            $key1 = key($node_load1->menu_node_links);
+            $menu_node_links1 = $node_load1->menu_node_links;
+            $key1 = key($menu_node_links);
             $get_activities2 = get_areas_of_activities($key1);
             foreach ($get_activities2 as $values2) {
               $node_load2 = node_load($values2->nid);
               if ($values2->node_type == 'hub_page') {
-                $key2 = key($node_load2->menu_node_links);
+                $menu_node_links2 = $node_load2->menu_node_links;
+                $key2 = key($menu_node_links2);
                 $get_activities3 = get_areas_of_activities($key2);
               }
               else {
+                $field_short_title2 = $node_load2->field_short_title;
                 $output .= '<div class= "all-activities-row">';
                 $output .= '<div class = "all-activities-short-title">';
-                $output .= l($node_load2->field_short_title[key($node_load2->field_short_title)][0]['value'], 'node/' . $node_load2->nid);
+                $output .= l($node_load2->field_short_title[key($field_short_title2)][0]['value'], 'node/' . $node_load2->nid);
                 $output .= '</div>';
                 $output .= '</div>';
               }
             }
           }
           else {
+            $field_short_title1 = $node_load1->field_short_title;
             $output .= '<div class= "all-activities-row">';
             $output .= '<div class = "all-activities-short-title">';
-            $output .= l($node_load1->field_short_title[key($node_load1->field_short_title)][0]['value'], 'node/' . $node_load1->nid);
+            $output .= l($node_load1->field_short_title[key($field_short_title1)][0]['value'], 'node/' . $node_load1->nid);
             $output .= '</div>';
             $output .= '</div>';
           }
         }
       }
       else {
-        $title = $node_load->field_short_title[key($node_load->field_short_title)][0]['value'];
-        $output .= '<div class= "all-activities-row">';
-        $output .= '<div class= "all-activities-short-title">';
-        if ($title == 'Aga Khan Award for Architecture') {
-          $output .= l($node_load->field_short_title[key($node_load->field_short_title)][0]['value'], "node/9576");
-        }
-        elseif ($title == 'Aga Khan Music Initiative') {
-          $output .= l($node_load->field_short_title[key($node_load->field_short_title)][0]['value'], "node/22106");
-        }
-        else {
-          $output .= l($node_load->field_short_title[key($node_load->field_short_title)][0]['value'], 'node/' . $node_load->nid);
-        }
+         $field_short_title = $node_load->field_short_title;
+         $title = $node_load->field_short_title[key($field_short_title)][0]['value'];
+            $output .= '<div class= "all-activities-row">';
+            $output .= '<div class= "all-activities-short-title">';
+         if ($title == 'Aga Khan Award for Architecture' ) {
+            $field_short_title = $node_load->field_short_title;
+            $output .= l($node_load->field_short_title[key($field_short_title)][0]['value'], "node/9576");
+          } elseif ($title == 'Aga Khan Music Initiative') {
+                   $field_short_title = $node_load->field_short_title;
+                   $output .= l($node_load->field_short_title[key($field_short_title)][0]['value'], "node/22106");
+            }
+            else {
+              $field_short_title = $node_load->field_short_title;
+              $output .= l($node_load->field_short_title[key($field_short_title)][0]['value'], 'node/' . $node_load->nid);
+          }
 
         $output .= '</div>';
         $output .= '</div>';
@@ -1105,26 +1116,30 @@ function akdn_return_other_acctivity_hub_pages_list() {
   $test = array();
   if (isset($nid) && is_numeric($nid)) {
     $node = node_load($nid);
-    $key = key($node->menu_node_links);
+    $menu_node_links = $node->menu_node_links;
+    $key = key($menu_node_links);
     $test[] = $key;
     $get_activities = get_areas_of_activities_helper($key);
     if (!empty($get_activities)) {
       foreach ($get_activities as $values) {
         $node1 = node_load($values->nid);
-        $key1 = key($node1->menu_node_links);
+        $menu_node_links1 = $node1->menu_node_links;
+        $key1 = key($menu_node_links1);
         $test[] = $key1;
         $get_activities1 = get_areas_of_activities_helper($key1);
         if (!empty($get_activities1)) {
           foreach ($get_activities1 as $values1) {
             $node2 = node_load($values1->nid);
-            $key2 = key($node2->menu_node_links);
+            $menu_node_links2 = $node2->menu_node_links;
+            $key2 = key($menu_node_links2);
             $test[] = $key2;
             $get_activities2 = get_areas_of_activities_helper($key2);
 
             if (!empty($get_activities2)) {
               foreach ($get_activities2 as $values2) {
                 $node3 = node_load($values2->nid);
-                $key3 = key($node3->menu_node_links);
+                $menu_node_links3 = $node3->menu_node_links;
+                $key3 = key($menu_node_links3);
                 $test[] = $key3;
               }
             }
@@ -1178,17 +1193,20 @@ function akdn_right_panel_press_center_block() {
   }
 
   if (!empty($node->field_geography_term)) {
-    $tid = $node->field_geography_term[key($node->field_geography_term)][0]['tid'];
+    $field_geography = $node->field_geography_term;
+    $tid = $node->field_geography_term[key($field_geography)][0]['tid'];
     $filter = 'field_country';
     $load = taxonomy_term_load($tid);
     $name = $load->name;
   }
   if (!empty($node->field_agency_term)) {
-    $tid = $node->field_agency_term[key($node->field_agency_term)][0]['tid'];
+    $field_agency = $node->field_agency_term;
+    $tid = $node->field_agency_term[key($field_agency)][0]['tid'];
     $filter = 'field_agency';
     $nid = nat_get_nids($tid);
     $node_load = node_load(key($nid));
-    $name = $node_load->field_agency_acronym[key($node_load->field_agency_acronym)][0]['value'];
+    $field_agency_acronym = $node_load->field_agency_acronym;
+    $name = $node_load->field_agency_acronym[key($field_agency_acronym)][0]['value'];
   }
 
   $output = '';
@@ -1318,13 +1336,14 @@ function akdn_basic_page_link_to_style_block() {
   if (empty($node)) {
     return;
   }
-
-  $layout_type = $node->field_basic_page_choose_layout[key($node->field_basic_page_choose_layout)][0]['value'];
+  $field_layout_type = $node->field_basic_page_choose_layout;
+  $layout_type = $node->field_basic_page_choose_layout[key($field_layout_type)][0]['value'];
 
   if ($layout_type == 'morelink') {
     $output = '';
     $output .= '<div class = "basic-page-accordian-main-container">';
-    $field_collection = $node->field_basic_page_accordian_style[key($node->field_basic_page_accordian_style)];
+    $field_accordian_style = $node->field_basic_page_accordian_style;
+    $field_collection = $node->field_basic_page_accordian_style[key($field_accordian_style)];
     $i = 1;
     foreach ($field_collection as $values) {
       $output .= '<div class = "accordian-rows">';
@@ -1429,17 +1448,28 @@ function akdn_basic_page_accordian_style_block() {
   if (empty($node)) {
     return;
   }
-  $layout_type = $node->field_basic_page_choose_layout[key($node->field_basic_page_choose_layout)][0]['value'];
+  $field_basic_page_choose_layout = $node->field_basic_page_choose_layout;
+  $layout_type = $node->field_basic_page_choose_layout[key($field_basic_page_choose_layout)][0]['value'];
 
   if ($layout_type == 'accordian') {
     $output = '';
     $quick_links = '';
     $output .= '<div class = "basic-page-accordian-main-container">';
-    $field_collection = $node->field_basic_page_accordian_style[key($node->field_basic_page_accordian_style)];
+    $field_basic_page_accordian_style = $node->field_basic_page_accordian_style;
+    $field_collection = $node->field_basic_page_accordian_style[key($field_basic_page_accordian_style)];
     $i = 1;
     foreach ($field_collection as $values) {
       $id = 'accordian-title-' . $i;
       $field_values = entity_revision_load('field_collection_item', $values['revision_id']);
+
+      $field_basic_page_accordian_image = $field_values->field_basic_page_accordian_image;
+      $image = reset($field_basic_page_accordian_image);
+      $lang_caption = key($image[0]['field_image_caption']);
+      $image_caption = $image[0]['field_image_caption'][$lang_caption][0]['value'];
+      $lang_copyright = key($image[0]['field_image_copytight']);
+      $image_copyright = $image[0]['field_image_copytight'][$lang_copyright][0]['value'];
+      $field_basic_accordian_rel_links = $field_values->field_basic_accordian_rel_links;
+      $related_links = reset($field_basic_accordian_rel_links);
       $output .= '<div id = "' . $id . '" class = "basic-page-accordian-rows">';
       $output .= '<div class = accordian-image-rel-wrapper>';
       if (!empty($field_values->field_basic_page_accordian_image)) {
@@ -1565,7 +1595,8 @@ function fact_sheet_top_links_block() {
   $arg = arg(1);
   if (!empty($arg)) {
     $node = node_load($arg);
-    $show = $node->field_show_fact_block[key($node->field_show_fact_block)][0]['value'];
+    $field_show_fact_block = $node->field_show_fact_block;
+    $show = $node->field_show_fact_block[key($field_show_fact_block)][0]['value'];
     $view = views_get_view_result('facts_blocks', 'facts_block', $node->nid);
     $result = count($view);
     if ($show == 1 && !empty($result)) {
@@ -1575,7 +1606,8 @@ function fact_sheet_top_links_block() {
       $output = '';
       $output .= '<p><span>' . substr($name, 0, 1) . '</span><span>' . substr($name, 1) . ' AT A GLANCE</span></p><ul>';
       if (!empty($node->field_fact_sheet_upload)) {
-        $file_id = $node->field_fact_sheet_upload[key($node->field_fact_sheet_upload)][0]['fid'];
+        $field_fact_sheet_upload = $node->field_fact_sheet_upload;
+        $file_id = $node->field_fact_sheet_upload[key($field_fact_sheet_upload)][0]['fid'];
         $url = l('FACT SHEET', 'factsheet/' . str_replace(' ', '-', $name) . '/' . $file_id);
         $output .= '<li>' . $url . '</li>';
       }
@@ -1616,8 +1648,10 @@ function fact_sheet_top_links_block() {
 function fact_block_visible_show() {
   $arg = arg(1);
   $node = node_load($arg);
-  $select = $node->field_select_fact_sheet[key($node->field_select_fact_sheet)][0]['value'];
-  $show = $node->field_show_fact_block[key($node->field_show_fact_block)][0]['value'];
+  $field_select_fact_sheet = $node->field_select_fact_sheet;
+  $select = $node->field_select_fact_sheet[key($field_select_fact_sheet)][0]['value'];
+  $field_show_fact_block = $node->field_show_fact_block;
+  $show = $node->field_show_fact_block[key($field_show_fact_block)][0]['value'];
   if ($show == 1 && $select == 0) {
     $content = views_embed_view('facts_blocks', 'facts_block', $node->nid);
     return $content;
@@ -1631,14 +1665,16 @@ function fact_block_visible_show() {
 function news_and_resources_top_links() {
   $arg = arg(1);
   $node = node_load($arg);
-  $show = $node->field_show_news_and_resources[key($node->field_show_news_and_resources)][0]['value'];
+  $field_show_news_and_resources = $node->field_show_news_and_resources;
+  $show = $node->field_show_news_and_resources[key($field_show_news_and_resources)][0]['value'];
   if ($show == 1) {
     $term = nat_get_terms_by_vocabulary($arg);
     $term = array_values($term);
     $name = $term[0]->name;
     $ntid = $term[0]->tid;
-
-    $links = $node->field_news_and_resources_link[key($node->field_news_and_resources_link)];
+    
+    $field_news_and_resources_link = $node->field_news_and_resources_link;
+    $links = $node->field_news_and_resources_link[key($field_news_and_resources_link)];
     $output = '';
     $output .= '<p><span>N</span><span>ews & Resources</span></p><ul>';
     foreach ($links as $value) {
@@ -1708,7 +1744,8 @@ function in_array_r($needle, $haystack, $strict = FALSE) {
 function what_we_do_news_and_resources() {
   $arg = arg(1);
   $load = node_load($arg);
-  $show = $load->field_show_news_and_resources[key($load->field_show_news_and_resources)][0]['value'];
+  $field_show_news_and_resources = $load->field_show_news_and_resources;
+  $show = $load->field_show_news_and_resources[key($field_show_news_and_resources)][0]['value'];
 
   if ($show == 1) {
     $term = nat_get_terms_by_vocabulary($arg);
@@ -1757,48 +1794,56 @@ function what_we_do_news_and_resources() {
     if ($load->type == 'geography' || $load->type == 'agency') {
 
       if (!empty($load->field_select_news_res_content)) {
-
-        if (in_array_r('news', $load->field_select_news_res_content[key($load->field_select_news_res_content)])) {
+        $field_select_news_res_content = $load->field_select_news_res_content;
+        if (in_array_r('news', $load->field_select_news_res_content[key($field_select_news_res_content)])) {
           $news_query = akdn_custom_query_get_article_type_nid_and_published_date($ntid, 2);
           $array[$news_query[0]->nid] = $news_query[0]->date_formatted;
         }
-
-        if (in_array_r('in-the-media', $load->field_select_news_res_content[key($load->field_select_news_res_content)])) {
+        
+        $field_select_news_res_content = $load->field_select_news_res_content;
+        if (in_array_r('in-the-media', $load->field_select_news_res_content[key($field_select_news_res_content)])) {
           $in_media_query = akdn_custom_query_get_article_type_nid_and_published_date($ntid, 2611);
           $array[$in_media_query[0]->nid] = $in_media_query[0]->date_formatted;
         }
-
-        if (in_array_r('press-release', $load->field_select_news_res_content[key($load->field_select_news_res_content)])) {
+        
+        $field_select_news_res_content = $load->field_select_news_res_content;
+        if (in_array_r('press-release', $load->field_select_news_res_content[key($field_select_news_res_content)])) {
           $press_release_query = akdn_custom_query_get_article_type_nid_and_published_date($ntid, 4);
           $array[$press_release_query[0]->nid] = $press_release_query[0]->date_formatted;
         }
-
-        if (in_array_r('publications', $load->field_select_news_res_content[key($load->field_select_news_res_content)])) {
+        
+        $field_select_news_res_content = $load->field_select_news_res_content;
+        if (in_array_r('publications', $load->field_select_news_res_content[key($field_select_news_res_content)])) {
           $publication = akdn_custom_query_get_nid_and_published_date($ntid, 'publication');
           $array[$publication[0]->nid] = $publication[0]->date_formatted;
         }
-
-        if (in_array_r('speeches', $load->field_select_news_res_content[key($load->field_select_news_res_content)])) {
+        
+        $field_select_news_res_content = $load->field_select_news_res_content;
+        if (in_array_r('speeches', $load->field_select_news_res_content[key($field_select_news_res_content)])) {
           $speeches = akdn_custom_query_get_nid_and_published_date($ntid, 'speech');
           $array[$speeches[0]->nid] = $speeches[0]->date_formatted;
         }
-
-        if (in_array_r('videos', $load->field_select_news_res_content[key($load->field_select_news_res_content)])) {
+        
+        $field_select_news_res_content = $load->field_select_news_res_content;
+        if (in_array_r('videos', $load->field_select_news_res_content[key($field_select_news_res_content)])) {
           $videos = akdn_custom_query_get_nid_and_published_date($ntid, 'podcast');
           $array[$videos[0]->nid] = $videos[0]->date_formatted;
         }
 
-        if (in_array_r('photographs', $load->field_select_news_res_content[key($load->field_select_news_res_content)])) {
+        $field_select_news_res_content = $load->field_select_news_res_content;
+        if (in_array_r('photographs', $load->field_select_news_res_content[key($field_select_news_res_content)])) {
           $photographs = akdn_custom_query_get_nid_and_published_date($ntid, 'gallery');
           $array[$photographs[0]->nid] = $photographs[0]->date_formatted;
         }
 
-        if (in_array_r('events', $load->field_select_news_res_content[key($load->field_select_news_res_content)])) {
+        $field_select_news_res_content = $load->field_select_news_res_content;
+        if (in_array_r('events', $load->field_select_news_res_content[key($field_select_news_res_content)])) {
           $events = akdn_custom_query_get_nid_and_published_date($ntid, 'event');
           $array[$events[0]->nid] = $events[0]->date_formatted;
         }
 
-        if (in_array_r('projects', $load->field_select_news_res_content[key($load->field_select_news_res_content)])) {
+        $field_select_news_res_content = $load->field_select_news_res_content;
+        if (in_array_r('projects', $load->field_select_news_res_content[key(field_select_news_res_content)])) {
           $projects = akdn_custom_query_get_nid_and_published_date($ntid, 'project');
           $array[$projects[0]->nid] = $projects[0]->date_formatted;
         }
@@ -1846,7 +1891,8 @@ function what_we_do_news_and_resources() {
       $attribute = array();
 
       if ($node->type == 'article') {
-        $tid = $node->field_article_cat[key($node->field_article_cat)][0]['tid'];
+        $field_article_cat = $node->field_article_cat;
+        $tid = $node->field_article_cat[key($field_article_cat)][0]['tid'];
         $term = taxonomy_term_load($tid);
         $name = $term->name;
         if ($name == 'Press Release') {
@@ -1857,8 +1903,9 @@ function what_we_do_news_and_resources() {
         if ($name == 'In the media') {
           $url = 'in-the-media';
           $type = 'In the Media';
-          $source = reset($node->field_media_source)[0]['url'];
-          $attribute = array('attributes' => array('target' => '_blank'));
+          $field_media_source = $node->field_media_source;
+          $source = reset($field_media_source)[0]['url'];
+          $attribute = array('attributes' => array('target'=>'_blank'));
           $read = l('View', $source, $attribute);
         }
         if ($name == 'News') {
@@ -1976,12 +2023,15 @@ function what_we_do_news_and_resources() {
         }
       }
       $output .= '<div class= "type">' . $type . '</div>';
-      $output .= '<div class= "date">' . date('d F Y', $node->field_publish_date[key($node->field_publish_date)][0]['value']) . '</div>';
+      $field_publish_date = $node->field_publish_date;
+      $output .= '<div class= "date">' . date('d F Y', $node->field_publish_date[key($field_publish_date)][0]['value']) . '</div>';
       if ($name == 'In the media') {
-        $output .= '<div class= "title">' . l($node->field_short_title[key($node->field_short_title)][0]['value'], $source, $attribute) . '</div>';
+       $field_short_title = $node->field_short_title;
+       $output .= '<div class= "title">' . l($node->field_short_title[key($field_short_title)][0]['value'], $source, $attribute) . '</div>';
       }
       else {
-        $output .= '<div class= "title">' . l($node->field_short_title[key($node->field_short_title)][0]['value'], 'node/' . $node->nid) . '</div>';
+        $field_short_title = $node->field_short_title;
+      	$output .= '<div class= "title">' . l($node->field_short_title[key($field_short_title)][0]['value'], 'node/' . $node->nid) . '</div>';
       }
       $output .= '<span class= "read">[' . $read . '</span>';
       $output .= '<span class= "readall">' . " | " . $readall . ']</span>';
@@ -3819,10 +3869,12 @@ function akdn_custom_preprocess_views_view_field__hub_pages__country_hub_pages__
   $row = $variables['row'];
   $output = '';
   if ($row->_field_data['nid']['entity']->type == 'page') {
-    $title = $row->_field_data['nid']['entity']->field_short_title[key($row->_field_data['nid']['entity']->field_short_title)][0]['value'];
+    $field_short_title = $row->_field_data['nid']['entity']->field_short_title;
+    $title = $row->_field_data['nid']['entity']->field_short_title[key($field_short_title)][0]['value'];
   }
   if ($row->_field_data['nid']['entity']->type == 'hub_page') {
-    $title = $row->_field_data['nid']['entity']->title_field[key($row->_field_data['nid']['entity']->title_field)][0]['value'];
+    $title_field = $row->_field_data['nid']['entity']->title_field;
+    $title = $row->_field_data['nid']['entity']->title_field[key($title_field)][0]['value'];
   }
   $output .= '<div class = "hub_pages-title">';
   if ($title == 'Aga Khan Award for Architecture') {
