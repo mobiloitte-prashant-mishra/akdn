@@ -508,7 +508,7 @@ if (file_exists('/var/www/site-php')) {
 /*
  *  Memcache Settings
  */
-/*
+
 if (isset($conf['memcache_servers'])) {
   $conf['cache_backends'][] = './sites/all/modules/contrib/memcache/memcache.inc';
   $conf['cache_default_class'] = 'MemCacheDrupal';
@@ -520,4 +520,4 @@ if (array_key_exists('AH_SITE_ENVIRONMENT', $_ENV)) {
  // Set shared temp directory so multi-file uploads will work.
  $conf['plupload_temporary_uri'] = "/mnt/gfs/{$_ENV['AH_SITE_GROUP']}.{$_ENV['AH_SITE_ENVIRONMENT']}/tmp";
 }
-*/
+
