@@ -281,7 +281,7 @@ ini_set('session.gc_maxlifetime', 200000);
  */
 ini_set('session.cookie_lifetime', 2000000);
 ini_set ('display_errors', '0');
-ini_set('memory_limit', '2048M');
+ini_set('memory_limit', '512M');
 /**
  * If you encounter a situation where users post a large amount of text, and
  * the result is stripped out upon viewing but can still be edited, Drupal's
@@ -508,13 +508,13 @@ if (file_exists('/var/www/site-php')) {
 /*
  *  Memcache Settings
  */
-/*
+
 if (isset($conf['memcache_servers'])) {
   $conf['cache_backends'][] = './sites/all/modules/contrib/memcache/memcache.inc';
   $conf['cache_default_class'] = 'MemCacheDrupal';
   $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
 }
-*/
+
 
 // Check for Acquia environment.
 if (array_key_exists('AH_SITE_ENVIRONMENT', $_ENV)) {
