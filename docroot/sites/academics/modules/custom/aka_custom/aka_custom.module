@@ -34,7 +34,7 @@ function _batch_process_admin_image_path_change_script(&$context) {
   if (!isset($context['sandbox']['progress'])) {
     $total_row = db_query("SELECT count(nid) FROM {node} n 
                                   INNER JOIN {field_data_body} bd
-                                  ON n.nid = bd.entity_id WHERE nid = 7766")->fetchField();
+                                  ON n.nid = bd.entity_id")->fetchField();
     $context['sandbox']['max'] = $total_row;
     $context['sandbox']['progress'] = 0;
     $context['sandbox']['from_limit'] = 0;
@@ -42,7 +42,7 @@ function _batch_process_admin_image_path_change_script(&$context) {
 
   $query2 = db_query("SELECT nid FROM {node} n 
                                   INNER JOIN {field_data_body} bd
-                                  ON n.nid = bd.entity_id  WHERE nid = 7766
+                                  ON n.nid = bd.entity_id
                                 LIMIT {$context['sandbox']['from_limit']} , {$limit}");
   foreach ($query2 as $key => $value) {
     $node_obj = node_load($value->nid);
