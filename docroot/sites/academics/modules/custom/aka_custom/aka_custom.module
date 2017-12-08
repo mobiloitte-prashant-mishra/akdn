@@ -4,13 +4,6 @@
  * Implements Hook_init()
  */
 function aka_custom_init() {
-//  $node = node_load(8076);
-//  $body = $node->body[LANGUAGE_NONE][0]['value'];
-//  $body = preg_replace("/\<img src=\"\/sites\/default\/files/", "<img src=\"/sites/academics/files", $body);
-//  $body = preg_replace("/href=\"http:\/\/www.agakhanacademies\.org\/sites\/default\/files/", "href=\"http://www.agakhanacademies.org/sites/academics/files", $body);
-//  $node->body[LANGUAGE_NONE][0]['value'] = $body;
-//  field_attach_update('node', $node);
-//  dsm($body);
 //  global $theme;
 //  global $base_url;
 //  if ($theme == 'seven') {
@@ -37,10 +30,11 @@ function _batch_process_admin_image_path_change_script(&$context) {
   set_time_limit(3000000000);
   $context['finished'] = 0;
   $limit = 10;
+  global $base_url;
   if (!isset($context['sandbox']['progress'])) {
     $total_row = db_query("SELECT count(nid) FROM {node} n 
                                   INNER JOIN {field_data_body} bd
-                                  ON n.nid = bd.entity_id WHERE nid = 8076")->fetchField();
+                                  ON n.nid = bd.entity_id WHERE nid = 7766")->fetchField();
     $context['sandbox']['max'] = $total_row;
     $context['sandbox']['progress'] = 0;
     $context['sandbox']['from_limit'] = 0;
@@ -48,14 +42,14 @@ function _batch_process_admin_image_path_change_script(&$context) {
 
   $query2 = db_query("SELECT nid FROM {node} n 
                                   INNER JOIN {field_data_body} bd
-                                  ON n.nid = bd.entity_id  WHERE nid = 8076
+                                  ON n.nid = bd.entity_id  WHERE nid = 7766
                                 LIMIT {$context['sandbox']['from_limit']} , {$limit}");
   foreach ($query2 as $key => $value) {
     $node_obj = node_load($value->nid);
     
     $body = $node_obj->body[LANGUAGE_NONE][0]['value'];
     $body = preg_replace("/\<img src=\"\/sites\/default\/files/", "<img src=\"/sites/academics/files", $body);
-    $body = preg_replace("/href=\"http:\/\/www.agakhanacademies\.org\/sites\/default\/files/", "href=\"http://www.agakhanacademies.org/sites/academics/files", $body);
+    $body = preg_replace("/href=\"http:\/\/(www\.)?agakhanacademies\.org\/sites\/default\/files/", "href=\"{$base_url}/sites/academics/files", $body);
     $node_obj->body[LANGUAGE_NONE][0]['value'] = $body;
     field_attach_update('node', $node_obj);
 
