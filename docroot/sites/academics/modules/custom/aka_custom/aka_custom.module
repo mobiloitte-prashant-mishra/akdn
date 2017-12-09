@@ -50,6 +50,7 @@ function _batch_process_admin_image_path_change_script(&$context) {
     $body = $node_obj->body[LANGUAGE_NONE][0]['value'];
     $body = preg_replace("/\<img src=\"\/sites\/default\/files/", "<img src=\"/sites/academics/files", $body);
     $body = preg_replace("/href=\"http:\/\/(www\.)?agakhanacademies\.org\/sites\/default\/files/", "href=\"{$base_url}/sites/academics/files", $body);
+    $body = preg_replace("/href=\"\/sites\/default\/files/", "href=\"{$base_url}/sites/academics/files", $body);
     $node_obj->body[LANGUAGE_NONE][0]['value'] = $body;
     field_attach_update('node', $node_obj);
 
