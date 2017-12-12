@@ -263,7 +263,7 @@ $drupal_hash_salt = '';
  * PHP's garbage collection for clearing sessions, ensure that garbage
  * collection occurs by using the most common settings.
  */
-$conf['http_request_timeout'] = 10000
+$conf['http_request_timeout'] = 10000;
 ini_set('session.gc_probability', 1);
 ini_set('session.gc_divisor', 100);
 
