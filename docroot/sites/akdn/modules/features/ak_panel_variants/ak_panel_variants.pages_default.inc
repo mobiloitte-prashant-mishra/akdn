@@ -1890,7 +1890,8 @@ if (isset($node->field_about_page)) {
   $about = node_load($node->field_about_page[$node->language][0][\'nid\']);
   if (isset($about->nid)) {
     print \'<p class = "whats-new-gold">ABOUT THE</p>\';
-    print \'<div class = "grid-whatsnew-block_subtitle">\'. $about->field_short_title[key($about->field_short_title)][0][\'value\'] .\'</div>\';
+    $short_title_language = $about->field_short_title;
+    print \'<div class = "grid-whatsnew-block_subtitle">\'. $about->field_short_title[key($short_title_language)][0][\'value\'] .\'</div>\';
   if (isset($about->body[$about->language][0][\'summary\']) && !empty($about->body[$about->language][0][\'summary\']))
     print \'<div class="grid-whatsnew-block_body">\'. $about->body[$about->language][0][\'summary\'] .\' <a href="\'. url("node/{$about->nid}" ) .\'" class= "views-more-link">More</a></div>\';
   else
@@ -6870,7 +6871,8 @@ if (isset($node->field_about_page)) {
   $about = node_load($node->field_about_page[$node->language][0][\'nid\']);
   if (isset($about->nid)) {
     print \'<p class = "whats-new-gold">AKDN AND</p>\';
-    print \'<div class = "grid-whatsnew-block_subtitle">\'. $about->field_short_title[key($about->field_short_title)][0][\'value\'] .\'</div>\';
+    $short_title_language = $about->field_short_title;
+    print \'<div class = "grid-whatsnew-block_subtitle">\'. $about->field_short_title[key($short_title_language)][0][\'value\'] .\'</div>\';
   if (isset($about->body[$about->language][0][\'summary\']) && !empty($about->body[$about->language][0][\'summary\']))
     print \'<div class="grid-whatsnew-block_body">\'. $about->body[$about->language][0][\'summary\'].\'</div>\';
   else
