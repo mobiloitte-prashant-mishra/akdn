@@ -1339,7 +1339,7 @@ function _scs_custom_import_file_attributes_by_fid($fid, $article_image_source_d
   if ($fid > 0 && !empty($article_image_source_data)) {
     $file = file_load($fid);
 
-    $file->field_image_caption[$node_language][0]['value'] = (array)$article_image_source_data->Caption;
+    $file->field_image_caption[$node_language][0]['value'] = $article_image_source_data->Caption;
     $file->field_image_caption[$node_language][0]['format'] = 'plain_text';
     $file->field_image_copytight['und'][0]['value'] = $article_image_source_data->Copyright;
     $file->field_file_image_title_text['und'][0]['value'] = $article_image_source_data->title;
