@@ -28805,16 +28805,16 @@ print $content;
     $handler->display->display_options['style_options']['slideshow_type'] = 'flexslider_views_slideshow';
     $handler->display->display_options['style_options']['slideshow_skin'] = 'default';
     $handler->display->display_options['style_options']['skin_info'] = array(
-        'class' => 'default',
-        'name' => 'Default',
-        'module' => 'views_slideshow',
-        'path' => '',
-        'stylesheets' => array(),
+      'class' => 'default',
+      'name' => 'Default',
+      'module' => 'views_slideshow',
+      'path' => '',
+      'stylesheets' => array(),
     );
     $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['weight'] = '1';
     $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
     $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-        'field_article_img' => 0,
+      'field_article_img' => 0,
     );
     $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
     $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -28822,7 +28822,7 @@ print $content;
     $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
     $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
     $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-        'field_article_img' => 0,
+      'field_article_img' => 0,
     );
     $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
     $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -28851,8 +28851,8 @@ print $content;
     $handler->display->display_options['fields']['field_article_img']['element_label_colon'] = FALSE;
     $handler->display->display_options['fields']['field_article_img']['click_sort_column'] = 'fid';
     $handler->display->display_options['fields']['field_article_img']['settings'] = array(
-        'image_style' => 'featured_content',
-        'image_link' => '',
+      'image_style' => 'featured_content',
+      'image_link' => '',
     );
     $handler->display->display_options['fields']['field_article_img']['group_rows'] = FALSE;
     $handler->display->display_options['fields']['field_article_img']['delta_offset'] = '0';
@@ -28876,12 +28876,12 @@ print $content;
     $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
     $handler->display->display_options['fields']['nothing']['label'] = '';
     $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_article_img]</div>
-<div class="slide-text"><h3>[field_image_caption]</h3>
-<div class = "copyright"><h3>Copyright [field_image_copytight]</h3>
-</div>
-</div>
+    <div class="slide-text"><h3>[field_image_caption]</h3>
+    <div class = "copyright"><h3>Copyright [field_image_copytight]</h3>
+    </div>
+    </div>
 
-';
+    ';
     $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
     /* Sort criterion: Content: Post date */
     $handler->display->display_options['sorts']['created']['id'] = 'created';
@@ -28909,7 +28909,7 @@ print $content;
     $handler->display->display_options['filters']['type']['table'] = 'node';
     $handler->display->display_options['filters']['type']['field'] = 'type';
     $handler->display->display_options['filters']['type']['value'] = array(
-        'article' => 'article',
+      'article' => 'article',
     );
 
     /* Display: Press Center Article type Slideshows */
@@ -28935,13 +28935,13 @@ print $content;
     $handler->display->display_options['fields']['field_article_img_et']['click_sort_column'] = 'fid';
     $handler->display->display_options['fields']['field_article_img_et']['type'] = 'colorbox';
     $handler->display->display_options['fields']['field_article_img_et']['settings'] = array(
-        'colorbox_node_style' => 'two_third_width_carousel_grid_inner',
-        'colorbox_node_style_first' => '',
-        'colorbox_image_style' => '',
-        'colorbox_gallery' => 'post',
-        'colorbox_gallery_custom' => '',
-        'colorbox_caption' => 'custom',
-        'colorbox_caption_custom' => '[file:field-image-caption]^[file:field-image-copytight]',
+      'colorbox_node_style' => 'two_third_width_carousel_grid_inner',
+      'colorbox_node_style_first' => '',
+      'colorbox_image_style' => '',
+      'colorbox_gallery' => 'post',
+      'colorbox_gallery_custom' => '',
+      'colorbox_caption' => 'custom',
+      'colorbox_caption_custom' => '[file:field-image-caption]^[file:field-image-copytight]',
     );
     $handler->display->display_options['fields']['field_article_img_et']['group_rows'] = FALSE;
     $handler->display->display_options['fields']['field_article_img_et']['delta_offset'] = '0';
@@ -28965,11 +28965,11 @@ print $content;
     $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
     $handler->display->display_options['fields']['nothing']['label'] = '';
     $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_article_img_et]</div>
-<div class="slide-text">
-<div class="caption">[field_image_caption]</div>
-<div class="caption image-copytight">[field_image_copytight]</div>
-</div>
-';
+    <div class="slide-text">
+    <div class="caption">[field_image_caption]</div>
+    <div class="caption image-copytight">[field_image_copytight]</div>
+    </div>
+    ';
     $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
     /* Field: Colorbox: Colorbox trigger */
     $handler->display->display_options['fields']['colorbox']['id'] = 'colorbox';
@@ -28995,7 +28995,7 @@ print $content;
     $handler->display->display_options['filters']['type']['table'] = 'node';
     $handler->display->display_options['filters']['type']['field'] = 'type';
     $handler->display->display_options['filters']['type']['value'] = array(
-        'article' => 'article',
+      'article' => 'article',
     );
     $handler->display->display_options['filters']['type']['group'] = 1;
     /* Filter criterion: Content: Article Image (field_article_img:language) */
@@ -29003,14 +29003,14 @@ print $content;
     $handler->display->display_options['filters']['language']['table'] = 'field_data_field_article_img';
     $handler->display->display_options['filters']['language']['field'] = 'language';
     $handler->display->display_options['filters']['language']['value'] = array(
-        '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+      '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
     );
 
     /* Display: Project Details Slideshow */
     $handler = $view->new_display('block', 'Project Details Slideshow', 'block_1');
     $handler->display->display_options['defaults']['title'] = FALSE;
     $handler->display->display_options['defaults']['relationships'] = FALSE;
-    /* Relationship: Content: Image (field_project_image:fid) */
+    /* Relationship: Content: Images (field_project_image:fid) */
     $handler->display->display_options['relationships']['field_project_image_fid']['id'] = 'field_project_image_fid';
     $handler->display->display_options['relationships']['field_project_image_fid']['table'] = 'field_data_field_project_image';
     $handler->display->display_options['relationships']['field_project_image_fid']['field'] = 'field_project_image_fid';
@@ -29026,7 +29026,7 @@ print $content;
     $handler->display->display_options['fields']['field_image_caption']['alter']['ellipsis'] = FALSE;
     $handler->display->display_options['fields']['field_image_caption']['element_label_colon'] = FALSE;
     $handler->display->display_options['fields']['field_image_caption']['type'] = 'text_plain';
-    /* Field: Entity translation: Image: translated */
+    /* Field: Entity translation: Images: translated */
     $handler->display->display_options['fields']['field_project_image_et']['id'] = 'field_project_image_et';
     $handler->display->display_options['fields']['field_project_image_et']['table'] = 'field_data_field_project_image';
     $handler->display->display_options['fields']['field_project_image_et']['field'] = 'field_project_image_et';
@@ -29036,13 +29036,13 @@ print $content;
     $handler->display->display_options['fields']['field_project_image_et']['click_sort_column'] = 'fid';
     $handler->display->display_options['fields']['field_project_image_et']['type'] = 'colorbox';
     $handler->display->display_options['fields']['field_project_image_et']['settings'] = array(
-        'colorbox_node_style' => 'two_third_width_carousel_grid_inner',
-        'colorbox_node_style_first' => '',
-        'colorbox_image_style' => '',
-        'colorbox_gallery' => 'post',
-        'colorbox_gallery_custom' => '',
-        'colorbox_caption' => 'custom',
-        'colorbox_caption_custom' => '[file:field-image-caption]^[file:field-image-copytight]',
+      'colorbox_node_style' => 'two_third_width_carousel_grid_inner',
+      'colorbox_node_style_first' => '',
+      'colorbox_image_style' => '',
+      'colorbox_gallery' => 'post',
+      'colorbox_gallery_custom' => '',
+      'colorbox_caption' => 'custom',
+      'colorbox_caption_custom' => '[file:field-image-caption]^[file:field-image-copytight]',
     );
     $handler->display->display_options['fields']['field_project_image_et']['group_rows'] = FALSE;
     $handler->display->display_options['fields']['field_project_image_et']['delta_offset'] = '0';
@@ -29058,10 +29058,10 @@ print $content;
     $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
     $handler->display->display_options['fields']['nothing']['label'] = '';
     $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_project_image_et]</div>
-<div class="slide-text">
-<div class="caption">[field_image_caption]</div>
-<div class="caption image-copytight">[field_image_copytight]</div>
-</div>';
+    <div class="slide-text">
+    <div class="caption">[field_image_caption]</div>
+    <div class="caption image-copytight">[field_image_copytight]</div>
+    </div>';
     $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
     /* Field: Colorbox: Colorbox trigger */
     $handler->display->display_options['fields']['colorbox']['id'] = 'colorbox';
@@ -29087,15 +29087,15 @@ print $content;
     $handler->display->display_options['filters']['type']['table'] = 'node';
     $handler->display->display_options['filters']['type']['field'] = 'type';
     $handler->display->display_options['filters']['type']['value'] = array(
-        'project' => 'project',
+      'project' => 'project',
     );
     $handler->display->display_options['filters']['type']['group'] = 1;
-    /* Filter criterion: Content: Image (field_project_image:language) */
+    /* Filter criterion: Content: Images (field_project_image:language) */
     $handler->display->display_options['filters']['language']['id'] = 'language';
     $handler->display->display_options['filters']['language']['table'] = 'field_data_field_project_image';
     $handler->display->display_options['filters']['language']['field'] = 'language';
     $handler->display->display_options['filters']['language']['value'] = array(
-        '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+      '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
     );
     $handler->display->display_options['block_description'] = 'Projects Detail Slideshow';
 
@@ -29122,13 +29122,13 @@ print $content;
     $handler->display->display_options['fields']['field_event_image_et']['click_sort_column'] = 'fid';
     $handler->display->display_options['fields']['field_event_image_et']['type'] = 'colorbox';
     $handler->display->display_options['fields']['field_event_image_et']['settings'] = array(
-        'colorbox_node_style' => 'two_third_width_carousel_grid_inner',
-        'colorbox_node_style_first' => '',
-        'colorbox_image_style' => '',
-        'colorbox_gallery' => 'post',
-        'colorbox_gallery_custom' => '',
-        'colorbox_caption' => 'custom',
-        'colorbox_caption_custom' => '[file:field-image-caption]^[file:field-image-copytight]',
+      'colorbox_node_style' => 'two_third_width_carousel_grid_inner',
+      'colorbox_node_style_first' => '',
+      'colorbox_image_style' => '',
+      'colorbox_gallery' => 'post',
+      'colorbox_gallery_custom' => '',
+      'colorbox_caption' => 'custom',
+      'colorbox_caption_custom' => '[file:field-image-caption]^[file:field-image-copytight]',
     );
     $handler->display->display_options['fields']['field_event_image_et']['group_rows'] = FALSE;
     $handler->display->display_options['fields']['field_event_image_et']['delta_offset'] = '0';
@@ -29155,10 +29155,10 @@ print $content;
     $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
     $handler->display->display_options['fields']['nothing']['label'] = '';
     $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_event_image_et]</div>
-<div class="slide-text">
-<div class="caption">[field_image_caption]</div>
-<div class="caption image-copytight">[field_image_copytight]</div>
-</div>';
+    <div class="slide-text">
+    <div class="caption">[field_image_caption]</div>
+    <div class="caption image-copytight">[field_image_copytight]</div>
+    </div>';
     $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
     /* Field: Colorbox: Colorbox trigger */
     $handler->display->display_options['fields']['colorbox']['id'] = 'colorbox';
@@ -29184,7 +29184,7 @@ print $content;
     $handler->display->display_options['filters']['type']['table'] = 'node';
     $handler->display->display_options['filters']['type']['field'] = 'type';
     $handler->display->display_options['filters']['type']['value'] = array(
-        'event' => 'event',
+      'event' => 'event',
     );
     $handler->display->display_options['filters']['type']['group'] = 1;
     /* Filter criterion: Content: Event Image (field_event_image:language) */
@@ -29192,7 +29192,7 @@ print $content;
     $handler->display->display_options['filters']['language']['table'] = 'field_data_field_event_image';
     $handler->display->display_options['filters']['language']['field'] = 'language';
     $handler->display->display_options['filters']['language']['value'] = array(
-        '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+      '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
     );
     $handler->display->display_options['block_description'] = 'Events Detail Slideshow';
 
@@ -29215,13 +29215,13 @@ print $content;
     $handler->display->display_options['fields']['field_speech_image_et']['click_sort_column'] = 'fid';
     $handler->display->display_options['fields']['field_speech_image_et']['type'] = 'colorbox';
     $handler->display->display_options['fields']['field_speech_image_et']['settings'] = array(
-        'colorbox_node_style' => 'two_third_width_carousel_grid_inner',
-        'colorbox_node_style_first' => '',
-        'colorbox_image_style' => '',
-        'colorbox_gallery' => 'post',
-        'colorbox_gallery_custom' => '',
-        'colorbox_caption' => 'custom',
-        'colorbox_caption_custom' => '[file:field-image-caption]^[file:field-image-copytight]',
+      'colorbox_node_style' => 'two_third_width_carousel_grid_inner',
+      'colorbox_node_style_first' => '',
+      'colorbox_image_style' => '',
+      'colorbox_gallery' => 'post',
+      'colorbox_gallery_custom' => '',
+      'colorbox_caption' => 'custom',
+      'colorbox_caption_custom' => '[file:field-image-caption]^[file:field-image-copytight]',
     );
     $handler->display->display_options['fields']['field_speech_image_et']['group_rows'] = FALSE;
     $handler->display->display_options['fields']['field_speech_image_et']['delta_offset'] = '0';
@@ -29245,10 +29245,10 @@ print $content;
     $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
     $handler->display->display_options['fields']['nothing']['label'] = '';
     $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_speech_image_et]</div>
-<div class="slide-text">
-<div class="caption">[field_image_caption]</div>
-<div class="caption image-copytight">[field_image_copytight]</div>
-</div>';
+    <div class="slide-text">
+    <div class="caption">[field_image_caption]</div>
+    <div class="caption image-copytight">[field_image_copytight]</div>
+    </div>';
     $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
     /* Field: Colorbox: Colorbox trigger */
     $handler->display->display_options['fields']['colorbox']['id'] = 'colorbox';
@@ -29274,7 +29274,7 @@ print $content;
     $handler->display->display_options['filters']['type']['table'] = 'node';
     $handler->display->display_options['filters']['type']['field'] = 'type';
     $handler->display->display_options['filters']['type']['value'] = array(
-        'speech' => 'speech',
+      'speech' => 'speech',
     );
     $handler->display->display_options['filters']['type']['group'] = 1;
     /* Filter criterion: Content: Image (field_speech_image:language) */
@@ -29282,7 +29282,7 @@ print $content;
     $handler->display->display_options['filters']['language']['table'] = 'field_data_field_speech_image';
     $handler->display->display_options['filters']['language']['field'] = 'language';
     $handler->display->display_options['filters']['language']['value'] = array(
-        '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+      '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
     );
     $handler->display->display_options['block_description'] = 'Speech Detail Slideshow';
 
@@ -29323,13 +29323,13 @@ print $content;
     $handler->display->display_options['fields']['field_gallery_images_et']['click_sort_column'] = 'fid';
     $handler->display->display_options['fields']['field_gallery_images_et']['type'] = 'colorbox';
     $handler->display->display_options['fields']['field_gallery_images_et']['settings'] = array(
-        'colorbox_node_style' => 'two_third_width_carousel_grid_inner',
-        'colorbox_node_style_first' => '',
-        'colorbox_image_style' => 'featured_content',
-        'colorbox_gallery' => 'post',
-        'colorbox_gallery_custom' => '',
-        'colorbox_caption' => 'custom',
-        'colorbox_caption_custom' => '[file:field-image-caption]^[file:field-image-copytight]',
+      'colorbox_node_style' => 'two_third_width_carousel_grid_inner',
+      'colorbox_node_style_first' => '',
+      'colorbox_image_style' => 'featured_content',
+      'colorbox_gallery' => 'post',
+      'colorbox_gallery_custom' => '',
+      'colorbox_caption' => 'custom',
+      'colorbox_caption_custom' => '[file:field-image-caption]^[file:field-image-copytight]',
     );
     $handler->display->display_options['fields']['field_gallery_images_et']['group_rows'] = FALSE;
     $handler->display->display_options['fields']['field_gallery_images_et']['delta_offset'] = '0';
@@ -29356,12 +29356,12 @@ print $content;
     $handler->display->display_options['fields']['field_gallery_images_1']['click_sort_column'] = 'fid';
     $handler->display->display_options['fields']['field_gallery_images_1']['type'] = 'colorbox';
     $handler->display->display_options['fields']['field_gallery_images_1']['settings'] = array(
-        'colorbox_node_style' => 'featured_content',
-        'colorbox_image_style' => 'featured_content',
-        'colorbox_gallery' => 'post',
-        'colorbox_gallery_custom' => '',
-        'colorbox_caption' => 'auto',
-        'colorbox_caption_custom' => '',
+      'colorbox_node_style' => 'featured_content',
+      'colorbox_image_style' => 'featured_content',
+      'colorbox_gallery' => 'post',
+      'colorbox_gallery_custom' => '',
+      'colorbox_caption' => 'auto',
+      'colorbox_caption_custom' => '',
     );
     $handler->display->display_options['fields']['field_gallery_images_1']['group_rows'] = FALSE;
     $handler->display->display_options['fields']['field_gallery_images_1']['delta_offset'] = '0';
@@ -29371,10 +29371,10 @@ print $content;
     $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
     $handler->display->display_options['fields']['nothing']['label'] = '';
     $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_gallery_images_et]</div>
-<div class="slide-text">
-<div class="caption">[field_image_caption]</div>
-<div class="caption image-copytight">[field_image_copytight]</div>
-</div>';
+    <div class="slide-text">
+    <div class="caption">[field_image_caption]</div>
+    <div class="caption image-copytight">[field_image_copytight]</div>
+    </div>';
     $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
     /* Field: Colorbox: Colorbox trigger */
     $handler->display->display_options['fields']['colorbox']['id'] = 'colorbox';
@@ -29400,7 +29400,7 @@ print $content;
     $handler->display->display_options['filters']['type']['table'] = 'node';
     $handler->display->display_options['filters']['type']['field'] = 'type';
     $handler->display->display_options['filters']['type']['value'] = array(
-        'gallery' => 'gallery',
+      'gallery' => 'gallery',
     );
     $handler->display->display_options['filters']['type']['group'] = 1;
     /* Filter criterion: Content: Images (field_gallery_images:language) */
@@ -29408,70 +29408,70 @@ print $content;
     $handler->display->display_options['filters']['language']['table'] = 'field_data_field_gallery_images';
     $handler->display->display_options['filters']['language']['field'] = 'language';
     $handler->display->display_options['filters']['language']['value'] = array(
-        '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+      '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
     );
     $handler->display->display_options['block_description'] = 'Gallery/photographs Detail Slideshow';
     $translatables['press_center_detail_page_slideshows'] = array(
-        t('Master'),
-        t('Press Center Detail Page News Slideshows'),
-        t('more'),
-        t('Apply'),
-        t('Reset'),
-        t('Sort by'),
-        t('Asc'),
-        t('Desc'),
-        t('field_article_img'),
-        t('Caption'),
-        t('Copyright'),
-        t('<div class="slide">[field_article_img]</div>
-<div class="slide-text"><h3>[field_image_caption]</h3>
-<div class = "copyright"><h3>Copyright [field_image_copytight]</h3>
-</div>
-</div>
+      t('Master'),
+      t('Press Center Detail Page News Slideshows'),
+      t('more'),
+      t('Apply'),
+      t('Reset'),
+      t('Sort by'),
+      t('Asc'),
+      t('Desc'),
+      t('field_article_img'),
+      t('Caption'),
+      t('Copyright'),
+      t('<div class="slide">[field_article_img]</div>
+    <div class="slide-text"><h3>[field_image_caption]</h3>
+    <div class = "copyright"><h3>Copyright [field_image_copytight]</h3>
+    </div>
+    </div>
 
-'),
-        t('All'),
-        t('Press Center Article type Slideshows'),
-        t('image from field_article_img'),
-        t('<div class="slide">[field_article_img_et]</div>
-<div class="slide-text">
-<div class="caption">[field_image_caption]</div>
-<div class="caption image-copytight">[field_image_copytight]</div>
-</div>
-'),
-        t('Project Details Slideshow'),
-        t('image from field_project_image'),
-        t('<div class="slide">[field_project_image_et]</div>
-<div class="slide-text">
-<div class="caption">[field_image_caption]</div>
-<div class="caption image-copytight">[field_image_copytight]</div>
-</div>'),
-        t('Projects Detail Slideshow'),
-        t('Events Details Slideshow'),
-        t('image from field_event_image'),
-        t('<div class="slide">[field_event_image_et]</div>
-<div class="slide-text">
-<div class="caption">[field_image_caption]</div>
-<div class="caption image-copytight">[field_image_copytight]</div>
-</div>'),
-        t('Events Detail Slideshow'),
-        t('Speech Details Slideshow'),
-        t('image from field_speech_image'),
-        t('<div class="slide">[field_speech_image_et]</div>
-<div class="slide-text">
-<div class="caption">[field_image_caption]</div>
-<div class="caption image-copytight">[field_image_copytight]</div>
-</div>'),
-        t('Speech Detail Slideshow'),
-        t('Photographs Details Slideshow'),
-        t('image from field_gallery_images'),
-        t('<div class="slide">[field_gallery_images_et]</div>
-<div class="slide-text">
-<div class="caption">[field_image_caption]</div>
-<div class="caption image-copytight">[field_image_copytight]</div>
-</div>'),
-        t('Gallery/photographs Detail Slideshow'),
-    );    
+    '),
+      t('All'),
+      t('Press Center Article type Slideshows'),
+      t('image from field_article_img'),
+      t('<div class="slide">[field_article_img_et]</div>
+    <div class="slide-text">
+    <div class="caption">[field_image_caption]</div>
+    <div class="caption image-copytight">[field_image_copytight]</div>
+    </div>
+    '),
+      t('Project Details Slideshow'),
+      t('image from field_project_image'),
+      t('<div class="slide">[field_project_image_et]</div>
+    <div class="slide-text">
+    <div class="caption">[field_image_caption]</div>
+    <div class="caption image-copytight">[field_image_copytight]</div>
+    </div>'),
+      t('Projects Detail Slideshow'),
+      t('Events Details Slideshow'),
+      t('image from field_event_image'),
+      t('<div class="slide">[field_event_image_et]</div>
+    <div class="slide-text">
+    <div class="caption">[field_image_caption]</div>
+    <div class="caption image-copytight">[field_image_copytight]</div>
+    </div>'),
+      t('Events Detail Slideshow'),
+      t('Speech Details Slideshow'),
+      t('image from field_speech_image'),
+      t('<div class="slide">[field_speech_image_et]</div>
+    <div class="slide-text">
+    <div class="caption">[field_image_caption]</div>
+    <div class="caption image-copytight">[field_image_copytight]</div>
+    </div>'),
+      t('Speech Detail Slideshow'),
+      t('Photographs Details Slideshow'),
+      t('image from field_gallery_images'),
+      t('<div class="slide">[field_gallery_images_et]</div>
+    <div class="slide-text">
+    <div class="caption">[field_image_caption]</div>
+    <div class="caption image-copytight">[field_image_copytight]</div>
+    </div>'),
+      t('Gallery/photographs Detail Slideshow'),
+    );  
     $export['press_center_detail_page_slideshows'] = $view;
 
     $view = new view();
