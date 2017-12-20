@@ -1,0 +1,14 @@
+/*Admin css custom*/
+.media-element {
+  float: left;
+  padding: 5px 30px 20px 0;
+  clear: both;
+}
+.caption {
+    width: 172px;
+    float: left;
+    font-style: italic;
+    color: #666;
+    clear: both;
+    margin: -20px 30px 20px 0;
+}

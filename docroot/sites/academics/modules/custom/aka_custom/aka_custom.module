@@ -1,0 +1,89 @@
+<?php
+
+/**
+ * Implements Hook_init()
+ */
+function aka_custom_init() {
+//  global $theme;
+//  global $base_url;
+//  if ($theme == 'seven') {
+//    $link = $base_url . '/sites/all/themes/academies/css/admin.css';
+//    drupal_add_css($link, array('weight' => CSS_THEME));
+//  }
+}
+
+/**
+ * Implementation of hook_menu
+ *
+ */
+function aka_custom_menu() {
+  $items['admin/image-path-change'] = array(
+    'title' => 'Image path change',
+    'page callback' => 'image_path_change',
+    'access arguments' => array('access content'),
+    'file' => 'includes/image-path-change.admin.inc',
+  );
+  return $items;
+}
+
+function _batch_process_admin_image_path_change_script(&$context) {
+  set_time_limit(3000000000);
+  $context['finished'] = 0;
+  $limit = 10;
+  global $base_url;
+  if (!isset($context['sandbox']['progress'])) {
+    $total_row = db_query("SELECT count(nid) FROM {node} n 
+                                  INNER JOIN {field_data_body} bd
+                                  ON n.nid = bd.entity_id")->fetchField();
+    $context['sandbox']['max'] = $total_row;
+    $context['sandbox']['progress'] = 0;
+    $context['sandbox']['from_limit'] = 0;
+  }
+
+  $query2 = db_query("SELECT nid FROM {node} n 
+                                  INNER JOIN {field_data_body} bd
+                                  ON n.nid = bd.entity_id
+                                LIMIT {$context['sandbox']['from_limit']} , {$limit}");
+  foreach ($query2 as $key => $value) {
+    $node_obj = node_load($value->nid);
+    
+    $body = $node_obj->body[LANGUAGE_NONE][0]['value'];
+    $body = preg_replace("/\<img src=\"\/sites\/default\/files/", "<img src=\"/sites/academics/files", $body);
+    $body = preg_replace("/href=\"http:\/\/(www\.)?agakhanacademies\.org\/sites\/default\/files/", "href=\"{$base_url}/sites/academics/files", $body);
+    $body = preg_replace("/href=\"\/sites\/default\/files/", "href=\"{$base_url}/sites/academics/files", $body);
+    $node_obj->body[LANGUAGE_NONE][0]['value'] = $body;
+    field_attach_update('node', $node_obj);
+
+    $context['results'][] = check_plain($node_obj->nid);
+    $context['sandbox']['progress'] ++;
+    $context['sandbox']['from_limit'] ++;
+    $context['message'] = t("%nid => %title is updated", array('%nid' => $node_obj->nid, '%title' => $node_obj->title));
+  }
+
+  if ($context['sandbox']['progress'] == $context['sandbox']['max']) {
+    $context['finished'] = 1;
+  }
+}
+
+/**
+ * Batch 'finished' callback
+ * @param type $success
+ * @param type $results
+ * @param type $operations
+ * @author Samit khulve
+ */
+function batch_admin_image_path_change_finished($success, $results, $operations) {
+  if ($success) {
+    // Here we do something meaningful with the results.
+    $message = 'Total ' . (count($results)) . ' Records write';
+    $message .= theme('item_list', $results);
+    drupal_set_message($message);
+  }
+  else {
+    // An error occurred.
+    // $operations contains the operations that remained unprocessed.
+    $error_operation = reset($operations);
+    $message = t('An error occurred while processing %error_operation with arguments: @arguments', array('%error_operation' => $error_operation[0], '@arguments' => print_r($error_operation[1], TRUE)));
+    drupal_set_message($message, 'error');
+  }
+}

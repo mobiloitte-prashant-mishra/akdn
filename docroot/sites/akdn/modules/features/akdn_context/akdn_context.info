@@ -78,6 +78,7 @@ features[context][] = publications_listing_page
 features[context][] = publications_page
 features[context][] = remove_footer
 features[context][] = search
+features[context][] = site_search
 features[context][] = sitewide
 features[context][] = speech-mobile-meta
 features[context][] = speech_themes

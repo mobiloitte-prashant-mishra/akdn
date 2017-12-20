@@ -1,0 +1,34 @@
+<?php
+
+abstract class FaviconTestBase extends DrupalWebTestCase {
+
+  protected $profile = 'testing';
+
+  /**
+   * @{inheritdoc}
+   */
+  public function setUp() {
+    parent::setUp('favicon');
+  }
+
+  public function assertThemeSetting($theme, $key, $expected) {
+    $settings = variable_get('theme_' . $theme . '_settings', array());
+    if ($expected === NULL) {
+      $this->assertTrue(!isset($settings[$key]), 'theme_' . $theme . '_settings[' . $key . '] is not set.');
+    }
+    else {
+      $this->assertIdentical($settings[$key], $expected, 'theme_' . $theme . '_settings[' . $key . '] is set to ' . var_export($expected, TRUE) . '.');
+    }
+  }
+
+  public function assertFavicon($expected, $theme = NULL, $cache = TRUE) {
+    try {
+      $favicon = DrupalFavicon::fetchFile($theme, $cache);
+      $this->assertIdentical($favicon->uri, $expected, 'DrupalFavicon::getFile(' . var_export($theme, TRUE) . ', ' . var_export($cache, TRUE) . ') returned ' . var_export($favicon, TRUE) . ', expected ' . var_export($expected, TRUE) . '.');
+    }
+    catch (DrupalFaviconValidationException $e) {
+      $this->assertFalse($expected, 'DrupalFavicon::getFile(' . var_export($theme, TRUE) . ', ' . var_export($cache, TRUE) . ') threw DrupalFaviconValidationException.');
+    }
+  }
+
+}

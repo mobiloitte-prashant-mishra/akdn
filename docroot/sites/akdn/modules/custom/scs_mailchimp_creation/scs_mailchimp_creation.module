@@ -16,7 +16,8 @@ module_load_include('module', 'mailchimp', 'mailchimp');
  */
 function scs_mailchimp_creation_node_insert($node) {
   if ($node->is_new == 1 && $node->type == 'simplenews') {
-    $new_tid = $node->field_simplenews_term[key($node->field_simplenews_term)][0]['tid'];
+    $field_simplenews_term = $node->field_simplenews_term;
+    $new_tid = $node->field_simplenews_term[key($field_simplenews_term)][0]['tid'];
     $load_new_tid = taxonomy_term_load($new_tid);
     $t_name = $load_new_tid->name;
     $get_segments = mailchimp_get_segments(variable_get('list_id'));

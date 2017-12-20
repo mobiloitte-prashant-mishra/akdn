@@ -1,0 +1,4 @@
+name = Academies Custom
+description = Custom module for Academies.
+core = 7.x
+package = Academies.

@@ -23,20 +23,24 @@
  */
 ?>
 <?php
-if ($row->{'_entity_properties'}['entity_type'] == 'In the media') {
-  $exurl = $row->{'_entity_properties'}['entity object']->field_media_source[LANGUAGE_NONE][0]['url'];
-  $output = l($output, $exurl, array(
-    'html' => TRUE,
-    'attributes' => array('target' => '_blank')
-  ));
-}
-elseif ($row->{'_entity_properties'}['entity_type'] == 'geography' ||
-        ($row->{'_entity_properties'}['entity_type'] == 'Info Page' && $row->{'_entity_properties'}['entity object']->type == 'akmi_artists') ||
-        ($row->{'_entity_properties'}['entity_type'] == 'Info Page' && $row->{'_entity_properties'}['entity object']->type == 'akmi_performance')) {
-  $output = l($row->{'_entity_properties'}['entity object']->title, 'node/' . $row->{'_entity_properties'}['search_api_id'], array('html' => TRUE));
-}
-else {
-  $output = l($output, 'node/' . $row->{'_entity_properties'}['search_api_id'], array('html' => TRUE));
-}
+$output = l($row->{'_entity_properties'}['entity object']->title, 'node/' . $row->{'_entity_properties'}['search_api_id'], array('html' => TRUE));
+//if ($row->{'_entity_properties'}['entity_type'] == 'In the media') {
+//  $exurl = $row->{'_entity_properties'}['entity object']->field_media_source[LANGUAGE_NONE][0]['url'];
+//  $output = l($output, $exurl, array(
+//    'html' => TRUE,
+//    'attributes' => array('target' => '_blank')
+//  ));
+//}
+//elseif ($row->{'_entity_properties'}['entity_type'] == 'geography' ||
+//        ($row->{'_entity_properties'}['entity_type'] == 'Info Page' && $row->{'_entity_properties'}['entity object']->type == 'akmi_artists') ||
+//        ($row->{'_entity_properties'}['entity_type'] == 'Info Page' && $row->{'_entity_properties'}['entity object']->type == 'geography') ||
+//        ($row->{'_entity_properties'}['entity_type'] == 'Info Page' && $row->{'_entity_properties'}['entity object']->type == 'custom_content') ||
+//        ($row->{'_entity_properties'}['entity_type'] == 'Info Page' && $row->{'_entity_properties'}['entity object']->type == 'agency') ||
+//        ($row->{'_entity_properties'}['entity_type'] == 'Info Page' && $row->{'_entity_properties'}['entity object']->type == 'akmi_performance')) {
+//  $output = l($row->{'_entity_properties'}['entity object']->title, 'node/' . $row->{'_entity_properties'}['search_api_id'], array('html' => TRUE));
+//}
+//else {
+//  $output = l($output, 'node/' . $row->{'_entity_properties'}['search_api_id'], array('html' => TRUE));
+//}
 print $output;
 ?>

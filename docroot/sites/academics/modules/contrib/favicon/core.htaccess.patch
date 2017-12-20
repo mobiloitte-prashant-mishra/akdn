@@ -1,0 +1,13 @@
+diff --git a/.htaccess b/.htaccess
+index 7ccb6a2..420797c 100644
+--- a/.htaccess
++++ b/.htaccess
+@@ -113,7 +113,7 @@ DirectoryIndex index.php index.html index.htm
+   # index.php. Clean URLs are handled in drupal_environment_initialize().
+   RewriteCond %{REQUEST_FILENAME} !-f
+   RewriteCond %{REQUEST_FILENAME} !-d
+-  RewriteCond %{REQUEST_URI} !=/favicon.ico
++  #RewriteCond %{REQUEST_URI} !=/favicon.ico
+   RewriteRule ^ index.php [L]
+ 
+   # Rules to correctly serve gzip compressed CSS and JS files.

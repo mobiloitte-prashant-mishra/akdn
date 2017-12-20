@@ -1,0 +1,125 @@
+<?php
+
+/**
+ * @file
+ * Module file for favicon module.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function favicon_menu() {
+  $items['favicon.ico'] = array(
+    'page callback' => 'favicon_get_favicon_file',
+    'delivery callback' => 'favicon_deliver_favicon_file',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+  $items['admin/config/system/favicon'] = array(
+    'title' => 'Favicon',
+    'description' => 'Manage favicon settings.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('favicon_settings_form'),
+    'access arguments' => array('administer site configuration'),
+    'file' => 'favicon.admin.inc',
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_html_head_alter().
+ */
+function favicon_html_head_alter(&$elements) {
+  $file = favicon_get_favicon_file();
+  if (empty($file) || $file->uri === DrupalFavicon::DEFAULT_URI) {
+    return;
+  }
+
+  // Replace the existing shortcut icon link with the actual URL.
+  $file->url = file_create_url($file->uri);
+  if (!isset($elements['drupal_add_html_head_link:shortcut icon:' . $file->url])) {
+    foreach ($elements as $key => $element) {
+      if (strpos($key, 'drupal_add_html_head_link:shortcut icon:') === 0) {
+        $new_key = 'drupal_add_html_head_link:shortcut icon:' . $file->url;
+        $elements[$new_key] = $elements[$key];
+        $elements[$new_key]['#attributes']['href'] = $file->url;
+        $elements[$new_key]['#attributes']['type'] = $file->filemime;
+        unset($elements[$key]);
+      }
+    }
+  }
+}
+
+/**
+ * Fetches the favicon URI.
+ *
+ * This will attempt to retrieve the calculated favicon based on the current
+ * theme and base URL.
+ *
+ * @return object|bool
+ *   A favicon file object if one was found, or FALSE if there was a failure.
+ */
+function favicon_get_favicon_file() {
+  $file = &drupal_static(__FUNCTION__);
+
+  if (!isset($file)) {
+    try {
+      $file = DrupalFavicon::fetchFile();
+    }
+    catch (Exception $e) {
+      watchdog_exception('favicon', $e);
+      $file = FALSE;
+    }
+  }
+
+  return $file;
+}
+
+/**
+ * Delivery callback; send the favicon file through configured delivery method.
+ *
+ * @param object $file
+ *   The favicon file object.
+ */
+function favicon_deliver_favicon_file($file) {
+  // Drupal doesn't support static class methods as delivery callbacks, so
+  // we just need to use a wrapper here.
+  $callback = variable_get('favicon_delivery_callback', 'DrupalFavicon::deliverFileTransfer');
+  call_user_func($callback, $file);
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function favicon_form_system_theme_settings_alter(&$form, &$form_state) {
+  $form['#validate'][] = 'favicon_form_system_theme_settings_validate';
+  $form['#submit'][] = 'favicon_cache_clear';
+}
+
+/**
+ * Form validate handler for the system_theme_settings form.
+ */
+function favicon_form_system_theme_settings_validate($form, $form_state) {
+  if (!empty($form_state['values']['favicon_path'])) {
+    if ($uri = _system_theme_settings_validate_path($form_state['values']['favicon_path'])) {
+      try {
+        DrupalFavicon::getFileFromUri($uri);
+      }
+      catch (DrupalFaviconValidationException $e) {
+        form_set_error('favicon_path', filter_xss($e->getMessage()));
+      }
+    }
+  }
+}
+
+/**
+ * Clears all favicon caches.
+ */
+function favicon_cache_clear() {
+  drupal_static_reset('favicon_get_favicon_file');
+  // Clear the favicon cache.
+  cache_clear_all('favicon', 'cache', TRUE);
+  // Clear the page cache.
+  cache_clear_all(NULL, 'cache_page');
+}

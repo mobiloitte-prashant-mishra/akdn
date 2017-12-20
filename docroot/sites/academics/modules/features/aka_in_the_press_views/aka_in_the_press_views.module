@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AKA In The Press views feature.
+ */
+
+include_once 'aka_in_the_press_views.features.inc';

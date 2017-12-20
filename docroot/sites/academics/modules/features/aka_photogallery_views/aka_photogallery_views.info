@@ -1,0 +1,13 @@
+name = AKA Photogallery views
+description = AKA Photogallery views
+core = 7.x
+package = Views
+version = 7.x-1.0
+dependencies[] = aka_cck_fields
+dependencies[] = aka_newsletter_content_type
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = photo_gallery
+features_exclude[dependencies][ctools] = ctools
+project path = sites/all/modules/features

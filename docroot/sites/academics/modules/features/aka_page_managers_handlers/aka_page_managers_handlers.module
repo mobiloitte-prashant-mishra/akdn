@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AKA page managers handlers feature.
+ */
+
+include_once 'aka_page_managers_handlers.features.inc';
