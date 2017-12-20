@@ -17,11 +17,11 @@ function manualcrop_global_settings_form() {
     '#default_value' => variable_get('manualcrop_cache_control', TRUE),
   );
 
-  $form['manualcrop_force_effect_order'] = array(
+  $form['manualcrop_skip_js_check'] = array(
     '#type' => 'checkbox',
-    '#title' => t('Force Manual Crop effects to run first'),
-    '#description' => t('Manual Crop effects must execute before the dimentions of the original image are changed. <strong>Disable at your own risk!</strong'),
-    '#default_value' => variable_get('manualcrop_force_effect_order', TRUE),
+    '#title' => t('Skip javascript cookie check'),
+    '#description' => t("Don't check if the javascript cookie has been set."),
+    '#default_value' => variable_get('manualcrop_skip_js_check', FALSE),
   );
 
   $form['#submit'] = array('manualcrop_global_settings_form_submit');
@@ -244,13 +244,6 @@ function manualcrop_reuse_form($data) {
     '#required' => TRUE,
   );
 
-  $form['apply_all_effects'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Apply all effects'),
-    '#description' => t('Apply all effects of the base image style.'),
-    '#default_value' => !empty($data['apply_all_effects']),
-  );
-
   return $form;
 }
 
@@ -302,15 +295,9 @@ function manualcrop_auto_reuse_form($data) {
     ),
   );
 
-  if (empty($data['style_priority'])) {
-    // Make sure the style_priority key exists.
-    $data['style_priority'] = array();
-  }
-  else {
-    // Put the styles in their correct order.
-    $styles = array_merge(array_fill_keys($data['style_priority'], 0), $styles);
-    $styles = array_filter($styles);
-  }
+  // Get the styles in their correct order.
+  $styles = array_merge(array_fill_keys($data['style_priority'], 0), $styles);
+  $styles = array_filter($styles);
 
   // Add each crop image style as row with a weight (priority) element.
   $maxweight = count($data['style_priority']);
@@ -327,7 +314,7 @@ function manualcrop_auto_reuse_form($data) {
     $form['style_priority'][$style_name] = &$weight;
     $form['style_priority']['#rows'][] = array(
       'data' => array(
-        array('data' => check_plain($label)),
+        array('data' => $label),
         array('data' => &$weight),
       ),
       'class' => array('draggable'),
@@ -348,13 +335,6 @@ function manualcrop_auto_reuse_form($data) {
   if (isset($styles[arg(5)])) {
     unset($styles[arg(5)]);
   }
-
-  $form['apply_all_effects'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Apply all effects'),
-    '#description' => t('Apply all effects of the reused image style.'),
-    '#default_value' => !empty($data['apply_all_effects']),
-  );
 
   $form['fallback_style'] = array(
     '#type' => 'select',
@@ -415,7 +395,7 @@ function manualcrop_form_image_effect_form_alter(&$form, &$form_state) {
     // Add the effect info on submit.
     array_unshift($form['#submit'], 'manualcrop_add_effect_info');
   }
-  elseif (!empty($style['effects']) && variable_get('manualcrop_force_effect_order', TRUE)) {
+  elseif (!empty($style['effects'])) {
     // Force the effect order for none-Manual Crop effects.
     $form['#submit'][] = 'manualcrop_force_effect_order';
   }
@@ -477,10 +457,8 @@ function manualcrop_form_image_style_form_alter(&$form, &$form_state) {
       $form['#submit'] = array('image_style_form_submit');
     }
 
-    if (variable_get('manualcrop_force_effect_order', TRUE)) {
-      // Reorder effects on submit.
-      $form['#submit'][] = 'manualcrop_force_effect_order';
-    }
+    // Reorder effects on submit.
+    $form['#submit'][] = 'manualcrop_force_effect_order';
 
     // Update style name in effect data.
     $form['#submit'][] = 'manualcrop_update_style_name';
@@ -694,7 +672,7 @@ function manualcrop_field_widget_settings_form($widget_type, $settings) {
     $form['manualcrop']['manualcrop_instant_crop'] = array(
       '#type' => 'checkbox',
       '#title' => t('Crop after upload'),
-      '#description' => t('Open the cropping tool immediatly after a file upload. Please note that this feature requires a single image style to be enabled. Also it will only be applied for screens of at least 768px width.'),
+      '#description' => t('Open the cropping tool direct after the file upload. Note that this will only work if you <strong>enable only one image style</strong>.'),
       '#default_value' => $settings['manualcrop_instant_crop'],
     );
   }
@@ -728,8 +706,6 @@ function manualcrop_field_widget_settings_form($widget_type, $settings) {
     ),
     '#default_value' => $settings['manualcrop_styles_mode'],
   );
-
-  $style_options = array_map('check_plain', $style_options);
 
   $form['manualcrop']['manualcrop_styles_list'] = array(
     '#type' => 'checkboxes',
