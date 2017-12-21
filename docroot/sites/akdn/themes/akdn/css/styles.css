@@ -19268,6 +19268,11 @@ html.js fieldset.collapsed {
   height: 100%;
 }
 
+/* line 8998, ../sass/_akdn-redesign.scss */
+.field-name-body object {
+  width: 100%;
+}
+
 /*
 * Media Queries
 *
