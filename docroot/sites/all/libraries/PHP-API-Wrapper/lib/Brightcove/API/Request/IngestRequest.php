@@ -10,9 +10,39 @@ class IngestRequest extends ObjectBase {
    */
   protected $master;
 
+  /**
+   * @var string
+   */
   protected $profile;
 
+  /**
+   * @var array
+   */
   protected $callbacks;
+
+  /**
+   * @var IngestImage
+   */
+  protected $poster;
+
+  /**
+   * @var IngestImage
+   */
+  protected $thumbnail;
+
+  /**
+   * @var bool
+   */
+  protected $capture_images;
+
+  /**
+   * @var IngestTextTrack[]
+   */
+  protected $text_tracks;
+
+  public function __construct() {
+    $this->fieldAliases["capture_images"] = "capture-images";
+  }
 
   public static function createRequest($url, $profile) {
     $request = new self();
@@ -28,6 +58,10 @@ class IngestRequest extends ObjectBase {
     $this->applyProperty($json, 'master');
     $this->applyProperty($json, 'profile');
     $this->applyProperty($json, 'callbacks');
+    $this->applyProperty($json, 'poster');
+    $this->applyProperty($json, 'thumbnail');
+    $this->applyProperty($json, 'capture_images');
+    $this->applyProperty($json, 'text_tracks', NULL, IngestTextTrack::class, TRUE);
   }
 
   /**
@@ -78,6 +112,74 @@ class IngestRequest extends ObjectBase {
   public function setCallbacks(array $callbacks) {
     $this->callbacks = $callbacks;
     $this->fieldChanged('callbacks');
+    return $this;
+  }
+
+  /**
+   * @return IngestImage
+   */
+  public function getPoster() {
+    return $this->poster;
+  }
+
+  /**
+   * @param IngestImage $poster
+   * @return IngestRequest
+   */
+  public function setPoster(IngestImage $poster) {
+    $this->poster = $poster;
+    $this->fieldChanged('poster');
+    return $this;
+  }
+
+  /**
+   * @return IngestImage
+   */
+  public function getThumbnail() {
+    return $this->thumbnail;
+  }
+
+  /**
+   * @param IngestImage $thumbnail
+   * @return IngestRequest
+   */
+  public function setThumbnail(IngestImage $thumbnail) {
+    $this->thumbnail = $thumbnail;
+    $this->fieldChanged('thumbnail');
+    return $this;
+  }
+
+  /**
+   * @return bool
+   */
+  public function getCaptureImages() {
+    return $this->capture_images;
+  }
+
+  /**
+   * @param bool $capture_images
+   * @return IngestRequestMaster
+   */
+  public function setCaptureImages($capture_images) {
+    $this->capture_images = $capture_images;
+    $this->fieldChanged('capture_images');
+    return $this;
+  }
+
+  /**
+   * @return IngestTextTrack[]
+   */
+  public function getTextTracks() {
+    return $this->text_tracks;
+  }
+
+  /**
+   * @param IngestTextTrack[] $text_tracks
+   * @return IngestRequest
+   */
+  public function setTextTracks(array $text_tracks) {
+    $this->text_tracks = $text_tracks;
+    $this->fieldChanged('text_tracks');
     return $this;
   }
 }

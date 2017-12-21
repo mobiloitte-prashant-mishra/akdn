@@ -1,6 +1,8 @@
 <?php
 namespace Brightcove\API;
 
+use Brightcove\API\Request\SubscriptionRequest;
+use Brightcove\Object\Subscription;
 use Brightcove\Object\Video\Video;
 use Brightcove\Object\Video\Source;
 use Brightcove\Object\Video\Images;
@@ -101,6 +103,7 @@ class CMS extends API {
    * @return Video $video
    */
   public function updateVideo(Video $video) {
+    $video->fieldUnchanged('account_id', 'id');
     return $this->cmsRequest('PATCH', "/videos/{$video->getId()}", Video::class, FALSE, $video);
   }
 
@@ -163,6 +166,7 @@ class CMS extends API {
    * @return Playlist
    */
   public function updatePlaylist(Playlist $playlist) {
+    $playlist->fieldUnchanged('id');
     return $this->cmsRequest('PATCH', "/playlists/{$playlist->getId()}", Playlist::class, FALSE, $playlist);
   }
 
@@ -192,4 +196,35 @@ class CMS extends API {
   public function getVideosInPlaylist($playlist_id) {
     return $this->cmsRequest('GET', "/playlists/{$playlist_id}/videos", Video::class, TRUE);
   }
+
+  /**
+   * @return Subscription[]|null
+   */
+  public function getSubscriptions() {
+    return $this->cmsRequest('GET', '/subscriptions', Subscription::class, TRUE);
+  }
+
+  /**
+   * @param string $subscription_id
+   * @return Subscription
+   */
+  public function getSubscription($subscription_id)  {
+    return $this->cmsRequest('GET', "/subscriptions/{$subscription_id}", Subscription::class);
+  }
+
+  /**
+   * @param SubscriptionRequest $request
+   * @return Subscription|null
+   */
+  public function createSubscription(SubscriptionRequest $request) {
+    return $this->cmsRequest('POST', '/subscriptions', Subscription::class, FALSE, $request);
+  }
+
+  /**
+   * @param string $subscription_id
+   */
+  public function deleteSubscription($subscription_id) {
+    $this->cmsRequest('DELETE', "/subscriptions/{$subscription_id}", NULL);
+  }
+
 }

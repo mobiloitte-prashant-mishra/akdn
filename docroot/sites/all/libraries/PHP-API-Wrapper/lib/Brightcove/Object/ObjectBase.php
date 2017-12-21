@@ -16,22 +16,50 @@ class ObjectBase implements ObjectInterface {
   private $changedFields = [];
 
   /**
+   * Key-value pairs of field aliases. This will be used when the field gets serialized.
+   *
+   * @var array
+   */
+  protected $fieldAliases = [];
+
+  /**
    * Marks a field as changed.
    *
    * All property setters should call this function.
    *
    * @param string $field_name
    */
-  protected function fieldChanged($field_name) {
+  public function fieldChanged($field_name) {
     $this->changedFields[] = $field_name;
+  }
+
+  /**
+   * Marks a field or fields unchanged.
+   *
+   * @param $field_name
+   */
+  public function fieldUnchanged($field_name) {
+    $fields = func_get_args();
+    $this->changedFields = array_diff($this->changedFields, $fields);
+  }
+
+  /**
+   * Resolves the field name alias if there's any.
+   *
+   * @param string $name
+   * @return string
+   */
+  protected function canonicalFieldName($name) {
+    return isset($this->fieldAliases[$name]) ? $this->fieldAliases[$name] : $name;
   }
 
   public function postJSON() {
     $data = [];
     foreach ($this as $field => $val) {
-      if ($field === 'changedFields' || $val === NULL) {
+      if ($field === 'changedFields' || $field === 'fieldAliases' || $val === NULL) {
         continue;
       }
+      $field = $this->canonicalFieldName($field);
       if ($val instanceof ObjectInterface) {
         $data[$field] = $val->postJSON();
       }
@@ -59,6 +87,8 @@ class ObjectBase implements ObjectInterface {
       if ($val === NULL) {
         continue;
       }
+
+      $field = $this->canonicalFieldName($field);
 
       if ($val instanceof ObjectInterface) {
         $data[$field] = $val->patchJSON();
