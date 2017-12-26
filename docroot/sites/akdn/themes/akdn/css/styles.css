@@ -19273,19 +19273,6 @@ html.js fieldset.collapsed {
   width: 100%;
 }
 
-/* line 9004, ../sass/_akdn-redesign.scss */
-.pane-akdn-custom-akdn-custom-v-p-for-archi .bc-player-default_default .vjs-big-play-button {
-  width: 50px;
-  height: 46px;
-  top: 32%;
-  left: 40%;
-  border-radius: 25px;
-}
-/* line 9011, ../sass/_akdn-redesign.scss */
-.pane-akdn-custom-akdn-custom-v-p-for-archi .bc-player-default_default .vjs-big-play-button:before {
-  margin: 8px auto;
-}
-
 /*
 * Media Queries
 *
