@@ -19268,7 +19268,12 @@ html.js fieldset.collapsed {
   height: 100%;
 }
 
-/* line 8999, ../sass/_akdn-redesign.scss */
+/* line 8998, ../sass/_akdn-redesign.scss */
+.field-name-body iframe {
+  width: 100%;
+}
+
+/* line 9002, ../sass/_akdn-redesign.scss */
 .pane-akdn-custom-akdn-custom-v-p-for-archi .bc-player-default_default .vjs-big-play-button {
   width: 50px;
   height: 46px;
@@ -19276,7 +19281,7 @@ html.js fieldset.collapsed {
   left: 40%;
   border-radius: 25px;
 }
-/* line 9006, ../sass/_akdn-redesign.scss */
+/* line 9009, ../sass/_akdn-redesign.scss */
 .pane-akdn-custom-akdn-custom-v-p-for-archi .bc-player-default_default .vjs-big-play-button:before {
   margin: 8px auto;
 }
