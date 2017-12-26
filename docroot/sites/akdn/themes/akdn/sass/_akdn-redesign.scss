@@ -8995,10 +8995,11 @@ html {
       width: 100%;
       height: 100%;
  }
- .field-name-body object{
-     width: 100%;
- }
-
+ .field-name-body{ 
+    object, iframe{
+        width: 100%;
+    }
+ }   
  .pane-akdn-custom-akdn-custom-v-p-for-archi {
      .bc-player-default_default .vjs-big-play-button{
          width: 50px;
