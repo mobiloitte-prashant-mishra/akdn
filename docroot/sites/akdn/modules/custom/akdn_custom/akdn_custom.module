@@ -4088,8 +4088,14 @@ function akdn_custom_video_player() {
   if (isset($entity->field_podcast_video[$entity->language][0]['uri'])) {
     //bightcove video
     $video_temp = explode('brightcove://', $entity->field_podcast_video[$entity->language][0]['uri']);
-    $exploded_str = explode('/',$video_temp[1]);
-    $video = $exploded_str[1];
+
+    if(is_numeric($video_temp[1])){
+      $video = $video_temp[1];
+    }else{
+      $exploded_str = explode('/',$video_temp[1]);
+      $video = $exploded_str[1];
+    }
+        
     //youtube
     $youtube_temp = explode('youtube://v/', $entity->field_podcast_video[$entity->language][0]['uri']);
     $youtube_video_id = $youtube_temp[1];
@@ -4158,8 +4164,13 @@ function akdn_custom_video_player_speech() {
   if (isset($entity->field_speech_video['und'][0]['uri'])) {
     //bightcove video
     $video_temp = explode('brightcove://', $entity->field_speech_video['und'][0]['uri']);
-    $exploded_str = explode('/',$video_temp[1]);
-    $video = $exploded_str[1];
+    if(is_numeric($video_temp[1])){
+      $video = $video_temp[1];
+    }else{
+      $exploded_str = explode('/',$video_temp[1]);
+      $video = $exploded_str[1];
+    }
+
     //youtube
     $youtube_temp = explode('youtube://v/', $entity->field_speech_video['und'][0]['uri']);
     $youtube_video_id = $youtube_temp[1];
@@ -4231,8 +4242,13 @@ function akdn_custom_v_p_for_archi() {
     //bightcove video
     $video_temp = explode('brightcove://', $entity->field_podcast_video[$entity->language][0]['uri']);
     
-    $exploded_str = explode('/',$video_temp[1]);
-    $video = $exploded_str[1];
+    if(is_numeric($video_temp[1])){
+      $video = $video_temp[1];
+    }else{
+      $exploded_str = explode('/',$video_temp[1]);
+      $video = $exploded_str[1];
+    }
+   
     //youtube
     $youtube_temp = explode('youtube://v/', $entity->field_podcast_video[$entity->language][0]['uri']);
     $youtube_video_id = $youtube_temp[1];
