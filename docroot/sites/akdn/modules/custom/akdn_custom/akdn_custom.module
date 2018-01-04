@@ -4100,7 +4100,7 @@ function akdn_custom_video_player() {
     $youtube_temp = explode('youtube://v/', $entity->field_podcast_video[$entity->language][0]['uri']);
     $youtube_video_id = $youtube_temp[1];
   }
-  if (($video_temp[1]) && (stripos($video_temp, 'brightcove://') !== FALSE)) {
+  if (!empty($video)) {
 //    $output .= '<div class="playerbox" height="460">
 //                      <video 
 //                        data-video-id="' . $video . '"
@@ -4175,7 +4175,7 @@ function akdn_custom_video_player_speech() {
     $youtube_temp = explode('youtube://v/', $entity->field_speech_video['und'][0]['uri']);
     $youtube_video_id = $youtube_temp[1];
   }
-  if (($video_temp[1]) && (stripos($video_temp, 'brightcove://') !== FALSE)) {
+  if (!empty($video)) {
 //    $output = '<script type="text/javascript" src="//admin.brightcove.com/js/BrightcoveExperiences.js"></script>';
 //    $output .= '<div class="playerbox">
 //    <object id="player1" class="BrightcoveExperience">
@@ -4253,7 +4253,7 @@ function akdn_custom_v_p_for_archi() {
     $youtube_temp = explode('youtube://v/', $entity->field_podcast_video[$entity->language][0]['uri']);
     $youtube_video_id = $youtube_temp[1];
   }
-  if (($video_temp[1]) && (stripos($video_temp, 'brightcove://') !== FALSE)) {
+  if (!empty($video)) {
 //    $output = '<script type="text/javascript" src="//admin.brightcove.com/js/BrightcoveExperiences.js"></script>';
 //    $output .= '<div class="playerbox">
 //    <object id="player1" class="BrightcoveExperience">
