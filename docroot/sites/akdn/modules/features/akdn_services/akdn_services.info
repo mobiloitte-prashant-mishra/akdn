@@ -1,0 +1,11 @@
+name = AKDN Services
+description = AKDN API related to contents
+core = 7.x
+package = AKDN.org
+version = 7.x-1.0
+dependencies[] = ctools
+dependencies[] = rest_server
+dependencies[] = services
+features[ctools][] = services:services:3
+features[features_api][] = api:2
+features[services_endpoint][] = content_pages

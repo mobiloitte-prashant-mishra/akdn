@@ -4846,6 +4846,7 @@ function akdn_custom_search_api_solr_documents_alter(array &$documents, SearchAp
     }
   }
 }
+
 /**
  * hook_media_wysiwyg_token_to_markup_alter().
  * @param type $element
@@ -4862,4 +4863,78 @@ function akdn_custom_media_wysiwyg_token_to_markup_alter(&$element, $tag_info, $
   if(empty($copyright)){
     unset($element['content']['field_image_copytight']);
   }
+}
+
+/**
+ * Implementation of hook_services_resources().
+ */
+function akdn_custom_services_resources() {
+  return array(
+    'akdn_resource' => array(
+      'retrieve' => array(
+        'help' => 'Retrievs all nodes for with attached term id',
+        'callback' => '_nodes_related_term_id_retrieve',
+        'access arguments' => array('access content'),
+        'args' => array(
+          array(
+            'name' => 'tid',
+            'type' => 'int',
+            'description' => 'Retrievs all nodes for with attached term id',
+            'source' => array('path' => '0'),
+            'optional' => FALSE,
+          ),
+          array(
+            'name' => 'pager',
+            'type' => 'int',
+            'description' => t('Whether the nodes are to be used with a pager (the case on most Drupal pages) or not (in an XML feed, for example).'),
+            'source' => array('data' => 'pager'),
+            'optional' => TRUE,
+            'default value' => TRUE,
+          ),
+          array(
+            'name' => 'limit',
+            'type' => 'int',
+            'description' => t('Maximum number of nodes to find.'),
+            'source' => array('data' => 'limit'),
+            'optional' => TRUE,
+            'default value' => FALSE,
+          ),
+          array(
+            'name' => 'order',
+            'type' => 'int',
+            'description' => t('The order clause for the query that retrieve the nodes.'),
+            'source' => array('data' => 'order'),
+            'optional' => TRUE,
+            'default value' => array('t.sticky' => 'DESC', 't.created' => 'DESC'),
+          ),
+        ),
+      ),
+    ),
+  );
+}
+
+/**
+ * get nodes using taxonomy term id
+ * @param type $tid
+ * @param type $pager
+ * @param type $limit
+ * @param type $order
+ * @return type
+ */
+function _nodes_related_term_id_retrieve($tid, $pager, $limit, $order) {
+//  print $pager; die;
+  $result = taxonomy_select_nodes($tid, (bool) $pager, $limit, $order);
+  foreach ($result as $nid) {
+    $node = node_load($nid);
+    $node = (array) $node;
+    $s_node = (object) array_slice($node, 0, 20);
+    if ($uri = services_resource_uri(array('node', $nid))) {
+      $s_node->uri = $uri;
+    }
+    $nodes[] = $s_node;
+  }
+  if (empty($nodes)) {
+    return services_error(t('No nodes were found with tid @tid', array('@tid' => $tid)), 404);
+  }
+  return $nodes;
 }
