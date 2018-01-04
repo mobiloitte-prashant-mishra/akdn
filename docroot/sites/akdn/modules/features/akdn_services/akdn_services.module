@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AKDN Services feature.
+ */
+
+include_once 'akdn_services.features.inc';
