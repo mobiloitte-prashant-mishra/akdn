@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AKDN File View Modes feature.
+ */
+
+include_once 'akdn_file_view_modes.features.inc';
