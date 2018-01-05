@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * ak_panel_variants.pages_default.inc
@@ -8305,7 +8306,19 @@ privacy-policy',
   $pane->type = 'views';
   $pane->subtype = 'basic_pages_view';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '0',
+          'paths' => 'node/*/draft',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+    ),
+  );
   $pane->configuration = array(
     'override_pager_settings' => 0,
     'use_pager' => 0,
@@ -8336,6 +8349,140 @@ privacy-policy',
   $pane->uuid = '42e822ca-bc51-4b22-a7fa-070bc30dfbcb';
   $display->content['new-42e822ca-bc51-4b22-a7fa-070bc30dfbcb'] = $pane;
   $display->panels['left'][2] = 'new-42e822ca-bc51-4b22-a7fa-070bc30dfbcb';
+  $pane = new stdClass();
+  $pane->pid = 'new-c3a0c5e9-8464-4c17-9a18-5254ecc129a9';
+  $pane->panel = 'left';
+  $pane->type = 'views';
+  $pane->subtype = 'basic_pages_view_draft';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'node/*/draft',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+      1 => array(
+        'name' => 'entity_field_value:node:custom_content:field_basic_page_choose_layout',
+        'settings' => array(
+          'field_basic_page_choose_layout' => array(
+            'en' => array(
+              0 => array(
+                'value' => 'accordian',
+              ),
+            ),
+          ),
+          'field_basic_page_choose_layout_value' => array(
+            0 => 'accordian',
+          ),
+        ),
+        'context' => 'argument_entity_id:node_1',
+        'not' => TRUE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'override_pager_settings' => 0,
+    'use_pager' => 0,
+    'nodes_per_page' => '1',
+    'pager_id' => '0',
+    'offset' => '0',
+    'more_link' => 0,
+    'feed_icons' => 0,
+    'panel_args' => 0,
+    'link_to_view' => 0,
+    'args' => '',
+    'url' => '',
+    'display' => 'basic_page_summary_draft',
+    'context' => array(
+      0 => '',
+    ),
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 3;
+  $pane->locks = array();
+  $pane->uuid = 'c3a0c5e9-8464-4c17-9a18-5254ecc129a9';
+  $display->content['new-c3a0c5e9-8464-4c17-9a18-5254ecc129a9'] = $pane;
+  $display->panels['left'][3] = 'new-c3a0c5e9-8464-4c17-9a18-5254ecc129a9';
+  $pane = new stdClass();
+  $pane->pid = 'new-0256f115-9442-4bc8-989a-ded9da80e47e';
+  $pane->panel = 'left';
+  $pane->type = 'views';
+  $pane->subtype = 'basic_pages_view_draft';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'node/*/draft',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+      1 => array(
+        'name' => 'entity_field_value:node:custom_content:field_basic_page_choose_layout',
+        'settings' => array(
+          'field_basic_page_choose_layout' => array(
+            'en' => array(
+              0 => array(
+                'value' => 'accordian',
+              ),
+            ),
+          ),
+          'field_basic_page_choose_layout_value' => array(
+            0 => 'accordian',
+          ),
+        ),
+        'context' => 'argument_entity_id:node_1',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'override_pager_settings' => 0,
+    'use_pager' => 0,
+    'nodes_per_page' => '1',
+    'pager_id' => '0',
+    'offset' => '0',
+    'more_link' => 0,
+    'feed_icons' => 0,
+    'panel_args' => 0,
+    'link_to_view' => 0,
+    'args' => '',
+    'url' => '',
+    'display' => 'basic_page_accordian_view_draft',
+    'context' => array(
+      0 => '',
+    ),
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 4;
+  $pane->locks = array();
+  $pane->uuid = '0256f115-9442-4bc8-989a-ded9da80e47e';
+  $display->content['new-0256f115-9442-4bc8-989a-ded9da80e47e'] = $pane;
+  $display->panels['left'][4] = 'new-0256f115-9442-4bc8-989a-ded9da80e47e';
   $pane = new stdClass();
   $pane->pid = 'new-b9caf433-e7db-43b3-ba41-4d4d96b48954';
   $pane->panel = 'left';
@@ -8375,11 +8522,11 @@ privacy-policy',
     'css_class' => 'basic-page-custom-body',
   );
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 5;
   $pane->locks = array();
   $pane->uuid = 'b9caf433-e7db-43b3-ba41-4d4d96b48954';
   $display->content['new-b9caf433-e7db-43b3-ba41-4d4d96b48954'] = $pane;
-  $display->panels['left'][3] = 'new-b9caf433-e7db-43b3-ba41-4d4d96b48954';
+  $display->panels['left'][5] = 'new-b9caf433-e7db-43b3-ba41-4d4d96b48954';
   $pane = new stdClass();
   $pane->pid = 'new-24d44d98-25dd-4110-b778-c63f4c59f000';
   $pane->panel = 'left';
@@ -8397,11 +8544,11 @@ privacy-policy',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 4;
+  $pane->position = 6;
   $pane->locks = array();
   $pane->uuid = '24d44d98-25dd-4110-b778-c63f4c59f000';
   $display->content['new-24d44d98-25dd-4110-b778-c63f4c59f000'] = $pane;
-  $display->panels['left'][4] = 'new-24d44d98-25dd-4110-b778-c63f4c59f000';
+  $display->panels['left'][6] = 'new-24d44d98-25dd-4110-b778-c63f4c59f000';
   $pane = new stdClass();
   $pane->pid = 'new-d8250acf-ee9b-4aef-8ef3-cf626a1cf4a2';
   $pane->panel = 'left';
@@ -8419,11 +8566,11 @@ privacy-policy',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 5;
+  $pane->position = 7;
   $pane->locks = array();
   $pane->uuid = 'd8250acf-ee9b-4aef-8ef3-cf626a1cf4a2';
   $display->content['new-d8250acf-ee9b-4aef-8ef3-cf626a1cf4a2'] = $pane;
-  $display->panels['left'][5] = 'new-d8250acf-ee9b-4aef-8ef3-cf626a1cf4a2';
+  $display->panels['left'][7] = 'new-d8250acf-ee9b-4aef-8ef3-cf626a1cf4a2';
   $pane = new stdClass();
   $pane->pid = 'new-e7cee5f8-abf1-4500-bda3-028f599a30ef';
   $pane->panel = 'right';
@@ -18946,5 +19093,4 @@ function ak_panel_variants_default_page_manager_pages() {
   $pages['subscription'] = $page;
 
   return $pages;
-
 }
