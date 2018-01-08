@@ -15,6 +15,6 @@ $sites = array(
   "akdn.local" => 'akdn',
   "akdn3academies1.prod.acquia-sites.com" => 'academics',
   "akdn3academies2.prod.acquia-sites.com" => 'academics',
-  //"www.akdn.org/academics-site" => 'academics',
+  "www.akdn.org/academics-site" => 'academics',
 );
 ?>
