@@ -3583,6 +3583,7 @@ h2.header-name a {
     padding: 0 15px;
     font-size: 16px;
     line-height: 24px;
+    clear: right;
 
     a {
       color: #b49759;
@@ -5966,14 +5967,14 @@ map {
       width: 100% !important;
       margin-bottom: 5px;
 
-      .slide-button {
+/*      .slide-button {
         display: none !important;
-      }
+      }*/
     }
 
     .gallery-thumbs {
       width: 100% !important;
-      padding: 0 40px 0 45px;
+      padding: 0 1px !important;
 
       .wrapper {
         width: 100%;
@@ -8932,6 +8933,60 @@ html {
     &:before {
       display: none;
     }
+  }
+}
+
+//Hide Press Releases pdf download icon title
+.press-release-detail-type div.pane-node-field-attachment .pane-title{
+    display:none!important;
+}
+
+//search page title
+.page-search {
+  .view-solr-site-search {
+    .views-row {
+      .views-field-title-field {
+        a {
+        font-size: 16px;
+        font-weight: normal;
+        color: #000;
+          &:hover {
+          text-decoration: none;
+          color: #000;
+          }
+        }
+      }
+      .views-field-search-api-excerpt {
+        font-size: 14px;
+        font-style: italic;
+      }
+    }
+  }
+}
+
+.page-search {
+  .akdn-filter-js-wrapper {
+    .filter-agency-block {
+      .item-list {
+        li {
+          a {
+          text-transform: none;
+          }
+        }
+      }
+    }
+  }
+}
+.page-press-centre-galleries,.node-type-agency {
+  .carousel-left {
+    .flex-direction-nav {
+      display: block;
+    }
+  }
+}
+.carousel-left {
+  .flex-direction-nav {
+    display: none;
   }
 }
 

@@ -1,8 +1,13 @@
+/**
+ * @file
+ * Colorbox module style js.
+ */
+
 (function ($) {
 
 Drupal.behaviors.initColorboxDefaultStyle = {
   attach: function (context, settings) {
-    $(document).bind('cbox_complete', function () {
+    $(context).bind('cbox_complete', function () {
       // Only run if there is a title.
       if ($('#cboxTitle:empty', context).length == false) {
         $('#cboxLoadedContent img', context).bind('mouseover', function () {

@@ -75,18 +75,21 @@ function rules_action_breadcrumb_set(array $titles, array $paths) {
 /**
  * Action Implementation: Send mail.
  */
-function rules_action_mail($to, $subject, $message, $from = NULL, $settings, RulesState $state, RulesPlugin $element) {
+function rules_action_mail($to, $subject, $message, $from = NULL, $langcode, $settings, RulesState $state, RulesPlugin $element) {
   $to = str_replace(array("\r", "\n"), '', $to);
   $from = !empty($from) ? str_replace(array("\r", "\n"), '', $from) : NULL;
   $params = array(
     'subject' => $subject,
     'message' => $message,
+    'langcode' => $langcode,
   );
   // Set a unique key for this mail.
   $name = isset($element->root()->name) ? $element->root()->name : 'unnamed';
   $key = 'rules_action_mail_' . $name . '_' . $element->elementId();
+  $languages = language_list();
+  $language = isset($languages[$langcode]) ? $languages[$langcode] : language_default();
 
-  $message = drupal_mail('rules', $key, $to, language_default(), $params, $from);
+  $message = drupal_mail('rules', $key, $to, $language, $params, $from);
   if ($message['result']) {
     watchdog('rules', 'Successfully sent email to %recipient', array('%recipient' => $to));
   }
@@ -112,21 +115,25 @@ function rules_action_mail_to_users_of_role($roles, $subject, $message, $from = 
   $params = array(
     'subject' => $subject,
     'message' => $message,
-    'action' => $element,
-    'state' => $state,
   );
   // Set a unique key for this mail.
   $name = isset($element->root()->name) ? $element->root()->name : 'unnamed';
-  $key = 'rules_action_mail_to_users_of_role_' . $name . '_' . $element->elementId();
+  $key = 'rules_action_mail_to_users_of_role_' . $name . '_' . $element->elementId();  $languages = language_list();
 
   $message = array('result' => TRUE);
   foreach ($result as $row) {
     $message = drupal_mail('rules', $key, $row->mail, language_default(), $params, $from);
-    if (!$message['result']) {
+    // If $message['result'] is FALSE, then it's likely that email sending is
+    // failing at the moment, and we should just abort sending any more. If
+    // however, $mesage['result'] is NULL, then it's likely that a module has
+    // aborted sending this particular email to this particular user, and we
+    // should just keep on sending emails to the other users.
+    // For more information on the result value, see drupal_mail().
+    if ($message['result'] === FALSE) {
       break;
     }
   }
-  if ($message['result']) {
+  if ($message['result'] !== FALSE) {
     $role_names = array_intersect_key(user_roles(TRUE), array_flip($roles));
     watchdog('rules', 'Successfully sent email to the role(s) %roles.', array('%roles' => implode(', ', $role_names)));
   }
@@ -144,6 +151,17 @@ function rules_mail($key, &$message, $params) {
 }
 
 /**
+ * Action: Block an IP address.
+ */
+function rules_action_block_ip($ip_address = NULL) {
+  if (empty($ip_address)) {
+    $ip_address = ip_address();
+  }
+  db_insert('blocked_ips')->fields(array('ip' => $ip_address))->execute();
+  watchdog('rules', 'Banned IP address %ip', array('%ip' => $ip_address));
+}
+
+/**
  * A class implementing a rules input evaluator processing tokens.
  */
 class RulesTokenEvaluator extends RulesDataInputEvaluator {
@@ -151,9 +169,7 @@ class RulesTokenEvaluator extends RulesDataInputEvaluator {
   public function prepare($text, $var_info) {
     $text = is_array($text) ? implode('', $text) : $text;
     // Skip this evaluator if there are no tokens.
-    // TODO: Make our own token_scan variant based on the RulesTokenEvaluator.
-    // see: http://drupal.org/node/1547160#comment-6315998
-    $this->setting = token_scan($text) || _rules_system_find_variables($text) ? TRUE : NULL;
+    $this->setting = token_scan($text) ? TRUE : NULL;
   }
 
   /**
@@ -171,18 +187,6 @@ class RulesTokenEvaluator extends RulesDataInputEvaluator {
     $data = array();
     // We also support replacing tokens in a list of textual values.
     $whole_text = is_array($text) ? implode('', $text) : $text;
-
-    // Process variable tokens.
-    foreach (_rules_system_find_variables($whole_text) as $var_name => $token) {
-      $var_name = str_replace('-', '_', $var_name);
-      if (isset($var_info[$var_name]) && _rules_system_valid_text_type($var_info[$var_name]['type'])) {
-        $type = $var_info[$var_name]['type'];
-        $data = rules_unwrap_data(array($type => $state->get($var_name)), array($type => $var_info[$var_name]));
-        $replacements[$token] = $data[$type];
-      }
-    }
-
-    // Process real tokens.
     foreach (token_scan($whole_text) as $var_name => $tokens) {
       $var_name = str_replace('-', '_', $var_name);
       if (isset($var_info[$var_name]) && ($token_type = _rules_system_token_map_type($var_info[$var_name]['type']))) {
@@ -193,6 +197,9 @@ class RulesTokenEvaluator extends RulesDataInputEvaluator {
       else {
         $replacements += token_generate($var_name, $tokens, array(), $options);
       }
+      // Remove tokens if no replacement value is found. As token_replace() does
+      // if 'clear' is set.
+      $replacements += array_fill_keys($tokens, '');
     }
 
     // Optionally clean the list of replacement values.
@@ -213,6 +220,15 @@ class RulesTokenEvaluator extends RulesDataInputEvaluator {
     return str_replace($tokens, $values, $text);
   }
 
+  /**
+   * Create documentation about the available replacement patterns.
+   *
+   * @param array $var_info
+   *   Array with the available variables.
+   *
+   * @return array
+   *   Renderable array with the replacement pattern documentation.
+   */
   public static function help($var_info) {
     $render = array(
       '#type' => 'fieldset',
@@ -222,26 +238,6 @@ class RulesTokenEvaluator extends RulesDataInputEvaluator {
       '#description' => t('Note that token replacements containing chained objects – such as [node:author:uid] – are not listed here, but are still available. The <em>data selection</em> input mode may help you find more complex replacement patterns. See <a href="@url">the online documentation</a> for more information about complex replacement patterns.',
         array('@url' => rules_external_help('chained-tokens'))),
     );
-
-    // Add token information for variables.
-    $rows = array();
-    foreach ($var_info as $var_name => $info) {
-      if (_rules_system_valid_text_type($info['type'])) {
-        $token = '[' . str_replace('_', '-', $var_name) . ']';
-        $description = !empty($info['description']) ? $info['description'] : '';
-        $rows[] = array(check_plain($token), check_plain($info['label']), check_plain($description));
-      }
-    };
-    if ($rows) {
-      $render['rules_variables'] = array(
-        '#theme' => 'table',
-        '#header' => array(t('Token'), t('Label'), t('Description')),
-        '#prefix' => '<h3>' . t('Replacement patterns for Rules variables') . '</h3>',
-        '#rows' => $rows,
-      );
-    }
-
-    // Add token information for real tokens.
     $token_info = token_info();
     foreach ($var_info as $name => $info) {
       $token_types[$name] = _rules_system_token_map_type($info['type']);
@@ -256,7 +252,11 @@ class RulesTokenEvaluator extends RulesDataInputEvaluator {
         );
         foreach ($token_info['tokens'][$token_type] as $token => $info) {
           $token = '[' . str_replace('_', '-', $name) . ':' . $token . ']';
-          $render[$name]['#rows'][$token] = array(check_plain($token), check_plain($info['name']), check_plain($info['description']));
+          $render[$name]['#rows'][$token] = array(
+            check_plain($token),
+            check_plain($info['name']),
+            check_plain($info['description']),
+          );
         }
       }
     }
@@ -277,46 +277,6 @@ function _rules_system_token_map_type($type) {
     return $cache['data_info'][$type]['token type'];
   }
   return $type;
-}
-
-/**
- * Find variable tokens in a string of text. Variable tokens look like
- * typical tokens, but *cannot* include colons.
- *
- * Valid: [my-variable] or [my_variable]
- * Not valid: [my-variable:my-text-property]
- */
-function _rules_system_find_variables($text) {
-  // Derived from token_scan() regex.
-  // TODO: Replace with public token_scan() replacement to include all helpers
-  // in the class and use "protected" for making helpers private.
-  // see: http://drupal.org/node/1547160#comment-6315998
-  preg_match_all('/\[([^\s\[\]:]*)\]/x', $text, $matches);
-  $var_names = $matches[1];
-  $results = array();
-  for ($i = 0; $i < count($var_names); $i++) {
-    $results[$var_names[$i]] = $matches[0][$i];
-  }
-  return $results;
-}
-
-/**
- * Determine whether a variable type is suitable for embedding inside text.
- * Also check the parent data type if there is one.
- */
-function _rules_system_valid_text_type($type) {
-  // TODO: expose Rules' token integration that adds support for the data
-  // types provided by _rules_system_token_map_type()
-  // see: http://drupal.org/node/1547160#comment-6315998
-  $data_types = rules_fetch_data('data_info');
-  $valid_types = array('text', 'text_formatted', 'integer', 'decimal', 'uri');
-  if (in_array($type, $valid_types)) {
-    return TRUE;
-  }
-  elseif (!empty($data_types[$type]['parent']) && in_array($data_types[$type]['parent'], $valid_types)) {
-    return TRUE;
-  }
-  return FALSE;
 }
 
 /**

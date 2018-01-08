@@ -269,6 +269,9 @@ class RulesState {
    *
    * @param $selector
    *   The selector string, e.g. "node:author:mail".
+   * @param $langcode
+   *   (optional) The language code used to get the argument value if the
+   *   argument value should be translated. Defaults to LANGUAGE_NONE.
    *
    * @return EntityMetadataWrapper
    *   The wrapper for the given selector.
@@ -276,7 +279,7 @@ class RulesState {
    * @throws RulesEvaluationException
    *   Throws a RulesEvaluationException in case the selector cannot be applied.
    */
-  public function applyDataSelector($selector) {
+  public function applyDataSelector($selector, $langcode = LANGUAGE_NONE) {
     $parts = explode(':', str_replace('-', '_', $selector), 2);
     $wrapper = $this->get($parts[0]);
     if (count($parts) == 1) {
@@ -288,6 +291,11 @@ class RulesState {
     try {
       foreach (explode(':', $parts[1]) as $name) {
         if ($wrapper instanceof EntityListWrapper || $wrapper instanceof EntityStructureWrapper) {
+          // Make sure we are usign the right language. Wrappers might be cached
+          // and have previous langcodes set, so always set the right language.
+          if ($wrapper instanceof EntityStructureWrapper) {
+            $wrapper->language($langcode);
+          }
           $wrapper = $wrapper->get($name);
         }
         else {
@@ -500,10 +508,9 @@ class RulesData  {
         // before the child-wrapper is created.
         if (count($parts) == 1) {
           // Support asserting a type in case of generic entity references only.
-          if (isset($assertion['type']) && $var_info[$parts[0]]['type'] == 'entity') {
-            if (entity_get_info($assertion['type'])) {
-              $var_info[$parts[0]]['type'] = $assertion['type'];
-            }
+          $var_type = &$var_info[$parts[0]]['type'];
+          if (isset($assertion['type']) && ($var_type == 'entity' || $var_type == 'list<entity>')) {
+            $var_type = $assertion['type'];
             unset($assertion['type']);
           }
           // Add any single bundle directly to the variable info, so the

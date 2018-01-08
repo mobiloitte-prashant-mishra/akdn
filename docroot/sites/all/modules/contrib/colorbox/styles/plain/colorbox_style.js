@@ -1,8 +1,13 @@
+/**
+ * @file
+ * Colorbox module style js.
+ */
+
 (function ($) {
 
 Drupal.behaviors.initColorboxPlainStyle = {
   attach: function (context, settings) {
-    $(document).bind('cbox_complete', function () {
+    $(context).bind('cbox_complete', function () {
       // Make all the controls invisible.
       $('#cboxCurrent, #cboxSlideshow, #cboxPrevious, #cboxNext', context).addClass('element-invisible');
       // Replace "Close" with "×" and show.
@@ -24,7 +29,7 @@ Drupal.behaviors.initColorboxPlainStyle = {
         }
       });
     });
-    $(document).bind('cbox_closed', function () {
+    $(context).bind('cbox_closed', function () {
       $('#cboxClose', context).removeClass('cbox-close-plain');
     });
   }

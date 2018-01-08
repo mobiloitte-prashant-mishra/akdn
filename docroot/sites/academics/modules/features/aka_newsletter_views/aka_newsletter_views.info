@@ -1,0 +1,14 @@
+name = AKA Newsletter views
+description = AKA Newsletter views
+core = 7.x
+package = Views
+version = 7.x-1.0
+dependencies[] = aka_cck_fields
+dependencies[] = aka_newsletter_content_type
+dependencies[] = views
+dependencies[] = views_accordion
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = newsletters
+features_exclude[dependencies][ctools] = ctools
+project path = sites/all/modules/features

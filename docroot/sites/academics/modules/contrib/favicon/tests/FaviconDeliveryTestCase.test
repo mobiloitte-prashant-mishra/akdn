@@ -1,0 +1,60 @@
+<?php
+
+class FaviconDeliveryTestCase extends FaviconTestBase {
+
+  /**
+   * @{inheritdoc}
+   */
+  public static function getInfo() {
+    return array(
+      'name' => 'Favicon delivery',
+      'description' => 'Tests the various delivery methods for favicons.',
+      'group' => 'Favicon',
+    );
+  }
+
+  public function setUp() {
+    parent::setUp();
+
+    // Enable page caching.
+    variable_set('cache', TRUE);
+  }
+
+  public function testDelivery() {
+    $favicon_contents = file_get_contents(DrupalFavicon::DEFAULT_URI);
+    $account = $this->drupalCreateUser(array('administer site configuration'));
+
+    // Set the delivery back to the default method.
+    $this->drupalLogin($account);
+    $this->drupalPost('admin/config/system/favicon', array(), 'Save configuration');
+
+    $this->drupalGet('favicon.ico');
+    $this->assertUrl('favicon.ico');
+    $this->assertIdentical($this->drupalGetContent(), $favicon_contents);
+
+    // Hit favicon.ico as an anonymous user. This should cause the page to be cached.
+    $this->drupalLogout();
+    $this->drupalGet('favicon.ico');
+    $this->assertUrl('favicon.ico');
+    $this->assertIdentical($this->drupalGetContent(), $favicon_contents);
+
+    $this->drupalLogin($account);
+    $edit = array(
+      'favicon_delivery_callback' => 'DrupalFavicon::deliverFileRedirect',
+    );
+    $this->drupalPost('admin/config/system/favicon', $edit, 'Save configuration');
+
+    $this->drupalGet('favicon.ico');
+    $this->assertUrl(file_create_url('misc/favicon.ico'));
+    $this->assertIdentical($this->drupalGetContent(), $favicon_contents);
+
+    // Test that the earlier page cache was cleared.
+    $this->drupalLogout();
+    $this->drupalGet('favicon.ico');
+    $this->assertUrl(file_create_url('misc/favicon.ico'));
+    $this->assertIdentical($this->drupalGetContent(), $favicon_contents);
+
+    // @todo Add testing for page cache being skipped if file is too large.
+    // @todo Add testing for integration with Redirect module.
+  }
+}

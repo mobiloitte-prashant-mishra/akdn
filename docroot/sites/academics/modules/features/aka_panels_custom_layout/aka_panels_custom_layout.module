@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AKA panels custom layout feature.
+ */
+
+include_once 'aka_panels_custom_layout.features.inc';

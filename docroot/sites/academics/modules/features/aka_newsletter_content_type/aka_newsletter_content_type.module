@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AKA Newsletter Content Type feature.
+ */
+
+include_once 'aka_newsletter_content_type.features.inc';
