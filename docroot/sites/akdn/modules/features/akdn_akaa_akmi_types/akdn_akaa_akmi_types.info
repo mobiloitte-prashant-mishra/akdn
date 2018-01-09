@@ -10,7 +10,6 @@ dependencies[] = akdn_context
 dependencies[] = akdn_press_centre_types
 dependencies[] = audiofield
 dependencies[] = autocomplete_deluxe
-dependencies[] = brightcove_field
 dependencies[] = ctools
 dependencies[] = date
 dependencies[] = emfield
