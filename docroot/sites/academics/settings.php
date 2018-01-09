@@ -182,9 +182,9 @@ $databases = array (
   array (
     'default' =>
     array (
-      'database' => 'akdn3academies1',
-      'username' => 's39873',
-      'password' => '9m3T72xRFhLNepf',
+      'database' => 'akdn3db165449',
+      'username' => 's21222',
+      'password' => 'KTLM4nDPRMZ5PZR',
       'host' => '127.0.0.1',
       'port' => '',
       'driver' => 'mysql',
@@ -245,7 +245,7 @@ $drupal_hash_salt = 'UY2huecCJOhaVGOxgJdQM4QWuXsPbLQiJMZU-SlfidU';
  * It is not allowed to have a trailing slash; Drupal will add it
  * for you.
  */
- $base_url = 'http://akdn3academies1.prod.acquia-sites.com';  // NO trailing slash!
+ #$base_url = 'http://akdn3academies1.prod.acquia-sites.com';  // NO trailing slash!
 
 /**
  * PHP settings:
@@ -515,5 +515,5 @@ $conf['drupal_http_request_fails'] = FALSE; // Disable system warning caused by 
 // settings.php for development on your local workstation, set $db_url
 // (Drupal 5 or 6) or $databases (Drupal 7) as described in comments above.
 if (file_exists('/var/www/site-php')) {
-  require '/var/www/site-php/akdn3/akdn3-settings.inc';
+  require '/var/www/site-php/akdn3/academies1-settings.inc';
 }
