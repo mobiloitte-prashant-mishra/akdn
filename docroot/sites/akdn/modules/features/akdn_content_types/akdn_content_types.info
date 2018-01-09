@@ -6,6 +6,7 @@ version = 7.x-1.1
 project = akdn_content_types
 dependencies[] = acdx_node_reference
 dependencies[] = bigint
+dependencies[] = brightcove_field
 dependencies[] = ctools
 dependencies[] = custom_solr
 dependencies[] = features
