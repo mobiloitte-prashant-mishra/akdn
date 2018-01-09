@@ -8762,6 +8762,7 @@ map {
   margin-top: 30px;
   float: left;
   clear: both;
+  width: 100%;
 
   .playerbox {
     height: auto;
@@ -8995,6 +8996,10 @@ html {
       width: 100%;
       height: 100%;
  }
- .field-name-body object{
-     width: 100%;
+ .field-name-body {
+     object, iframe{
+         width: 100%;
+     }
  }
+ 
+
