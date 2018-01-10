@@ -94,7 +94,7 @@ function akdn_custom_menu() {
     'access arguments' => array('access content'),
     'delivery callback' => 'drupal_json_output',
     'type' => MENU_CALLBACK,
-  );    
+  );
   return $items;
 }
 
@@ -933,10 +933,10 @@ function akdn_custom_block_view($delta = '') {
       }
 
       if ($search_url == '') {
-        
+
       }
       else {
-        
+
       }
 
       $search_urls = '<div class="akdn_search_urls_block">' . $search_url . '</div>';
@@ -1347,7 +1347,7 @@ function akdn_basic_page_link_to_style_block() {
     $i = 1;
     foreach ($field_collection as $values) {
       $output .= '<div class = "accordian-rows">';
-      
+
       $id = 'accordian-title-' . $i;
       $field_values = entity_revision_load('field_collection_item', $values['revision_id']);
       $output .= '<div class = "image-wrapper">';
@@ -1375,7 +1375,7 @@ function akdn_basic_page_link_to_style_block() {
           $output .= '</div>';
           $output .= '<div class="image-copytight-wrapper">';
           $output .= $image_copyright;
-          $output .= '</div>';        
+          $output .= '</div>';
           $output .= '</div>';
         }
         $output .= '</div>';
@@ -1477,7 +1477,7 @@ function akdn_basic_page_accordian_style_block() {
         $image_caption = $image[0]['field_image_caption'][$lang_caption][0]['value'];
         $lang_copyright = key($image[0]['field_image_copytight']);
         $image_copyright = $image[0]['field_image_copytight'][$lang_copyright][0]['value'];
-        $related_links = reset($field_values->field_basic_accordian_rel_links);        
+        $related_links = reset($field_values->field_basic_accordian_rel_links);
         $accordian_image = array(
           'style_name' => 'social_sharing_image',
           'path' => $image[0]['uri'],
@@ -1671,7 +1671,7 @@ function news_and_resources_top_links() {
     $term = array_values($term);
     $name = $term[0]->name;
     $ntid = $term[0]->tid;
-    
+
     $field_news_and_resources_link = $node->field_news_and_resources_link;
     $links = $node->field_news_and_resources_link[key($field_news_and_resources_link)];
     $output = '';
@@ -1798,31 +1798,31 @@ function what_we_do_news_and_resources() {
           $news_query = akdn_custom_query_get_article_type_nid_and_published_date($ntid, 2);
           $array[$news_query[0]->nid] = $news_query[0]->date_formatted;
         }
-        
+
         $field_select_news_res_content = $load->field_select_news_res_content;
         if (in_array_r('in-the-media', $load->field_select_news_res_content[key($field_select_news_res_content)])) {
           $in_media_query = akdn_custom_query_get_article_type_nid_and_published_date($ntid, 2611);
           $array[$in_media_query[0]->nid] = $in_media_query[0]->date_formatted;
         }
-        
+
         $field_select_news_res_content = $load->field_select_news_res_content;
         if (in_array_r('press-release', $load->field_select_news_res_content[key($field_select_news_res_content)])) {
           $press_release_query = akdn_custom_query_get_article_type_nid_and_published_date($ntid, 4);
           $array[$press_release_query[0]->nid] = $press_release_query[0]->date_formatted;
         }
-        
+
         $field_select_news_res_content = $load->field_select_news_res_content;
         if (in_array_r('publications', $load->field_select_news_res_content[key($field_select_news_res_content)])) {
           $publication = akdn_custom_query_get_nid_and_published_date($ntid, 'publication');
           $array[$publication[0]->nid] = $publication[0]->date_formatted;
         }
-        
+
         $field_select_news_res_content = $load->field_select_news_res_content;
         if (in_array_r('speeches', $load->field_select_news_res_content[key($field_select_news_res_content)])) {
           $speeches = akdn_custom_query_get_nid_and_published_date($ntid, 'speech');
           $array[$speeches[0]->nid] = $speeches[0]->date_formatted;
         }
-        
+
         $field_select_news_res_content = $load->field_select_news_res_content;
         if (in_array_r('videos', $load->field_select_news_res_content[key($field_select_news_res_content)])) {
           $videos = akdn_custom_query_get_nid_and_published_date($ntid, 'podcast');
@@ -3555,7 +3555,7 @@ function akdn_custom_theme($existing, $type, $theme, $path) {
       'akdn_custom_preprocess_views_view_field__solr_site_search__page__title_field',
     ),
     'arguments' => array('view' => NULL),
-  );  
+  );
   $themes['ismaili_feed'] = array(
     'template' => 'templates/ismaili-feed',
     'arguments' => array('output' => NULL),
@@ -4094,35 +4094,35 @@ function akdn_custom_video_player() {
       $exploded_str = explode('/',$video_temp[1]);
       $video = $exploded_str[1];
     }
-        
+
     //youtube
     $youtube_temp = explode('youtube://v/', $entity->field_podcast_video[$entity->language][0]['uri']);
     $youtube_video_id = $youtube_temp[1];
   }
   if (!empty($video)) {
 //    $output .= '<div class="playerbox" height="460">
-//                      <video 
+//                      <video
 //                        data-video-id="' . $video . '"
-//                        data-account="648715333001" 
-//                        data-player="SJCRhP7Eb" 
-//                        data-embed="default" 
-//                        data-application-id 
-//                        class="video-js" 
+//                        data-account="648715333001"
+//                        data-player="SJCRhP7Eb"
+//                        data-embed="default"
+//                        data-application-id
+//                        class="video-js"
 //                        controls>
 //                      </video>
 //                      <script src="//players.brightcove.net/648715333001/SJCRhP7Eb_default/index.min.js"></script>
 //                </div>';
-    $output .='<video data-video-id="'.$video.'" 
+    $output .='<video data-video-id="'.$video.'"
                   data-account="648715333001"
-                  data-player="rJtUYHMyl" 
-                  data-embed="default" 
-                  data-application-id 
-                  class="video-js" 
+                  data-player="rJtUYHMyl"
+                  data-embed="default"
+                  data-application-id
+                  class="video-js"
                   controls
                   style="width: 100%; height: 500px;">
                 </video>
                 <script src="//players.brightcove.net/648715333001/rJtUYHMyl_default/index.min.js"></script>';
-   
+
 //    drupal_add_js($drupal_get_path . '/js/akdn_brightcove.js');
     return $output;
   }
@@ -4240,14 +4240,14 @@ function akdn_custom_v_p_for_archi() {
   if (isset($entity->field_podcast_video[$entity->language][0]['uri'])) {
     //bightcove video
     $video_temp = explode('brightcove://', $entity->field_podcast_video[$entity->language][0]['uri']);
-    
+
     if(is_numeric($video_temp[1])){
       $video = $video_temp[1];
     }else{
       $exploded_str = explode('/',$video_temp[1]);
       $video = $exploded_str[1];
     }
-   
+
     //youtube
     $youtube_temp = explode('youtube://v/', $entity->field_podcast_video[$entity->language][0]['uri']);
     $youtube_video_id = $youtube_temp[1];
@@ -4273,12 +4273,12 @@ function akdn_custom_v_p_for_archi() {
 //  </div>';
 //    //$output .= '<script type="text/javascript">brightcove.createExperiences();</script>';
 //    drupal_add_js($drupal_get_path . '/js/akdn_brightcove.js');
-//    $output ='<video data-video-id="'.$video.'" 
+//    $output ='<video data-video-id="'.$video.'"
 //                  data-account="648715333001"
-//                  data-player="rJtUYHMyl" 
-//                  data-embed="default" 
-//                  data-application-id 
-//                  class="video-js" 
+//                  data-player="rJtUYHMyl"
+//                  data-embed="default"
+//                  data-application-id
+//                  class="video-js"
 //                  controls
 //                  style="width: 100%; height: 200px;">
 //                </video>
@@ -4293,7 +4293,7 @@ function akdn_custom_v_p_for_archi() {
       style="width: 100%; height: 200px;">
       </video>
     <script src="//players.brightcove.net/648715333001/rJtUYHMyl_default/index.min.js"></script>';
-    
+
     return $output;
   }
   elseif (($youtube_temp[1]) && (stripos($youtube_temp, 'youtube://v/') !== FALSE)) {
@@ -4536,18 +4536,18 @@ function akdn_custom_form_simplenews_node_form_alter(&$form, &$form_state, &$for
       'toc' => empty($form_state['input']['scs_toc']) ? FALSE : TRUE,
     ));
   }
-}  
-  
+}
+
 /**
  * Call back for media-file
  */
 function media_file() {
   $fids = db_query("SELECT fm.fid, fm.filename, fm.filemime FROM {file_managed} fm
                               INNER JOIN {field_data_field_article_img} fai
-                              ON fm.fid = fai.field_article_img_fid  
+                              ON fm.fid = fai.field_article_img_fid
                                  AND(fai.entity_type = 'node' AND fai.bundle = 'article')
                               INNER JOIN {field_data_field_folder} ff
-                              ON fai.field_article_img_fid = ff.entity_id 
+                              ON fai.field_article_img_fid = ff.entity_id
                                  AND (ff.entity_type = 'file' AND ff.bundle = 'image')")->fetchAll();
   $media_arr = array();
   foreach ($fids as $key => $value) {
@@ -4627,10 +4627,10 @@ function akdn_custom_search_api_solr_query_alter(array &$call_args, SearchApiQue
 //        $facet_node_types_items = $facet_item[1]->getFilters();
 //        // This is my facet item I wont to change solr query on "page" and also add node type "custom content" to the filter.
 //        foreach ($facet_node_types_items as $key => $node_types) {
-//          if ($node_types[0] == 'type' && $node_types[1] === 'page') {       
+//          if ($node_types[0] == 'type' && $node_types[1] === 'page') {
 //            $call_args['params']['fq'][2] = $call_args['params']['fq'][2] . ' OR  ss_entity_type:"custom content"';
 //            break;
-//          }          
+//          }
 //        }
 //      }
 //     }
@@ -4809,8 +4809,8 @@ function config_blocks_display($node_obj) {
  * @return type
  */
 function get_config_block_type($nid) {
-  $block_type_value = db_query("SELECT field_block_type_value FROM {field_data_field_block_type} 
-                                                    WHERE entity_type = 'node' 
+  $block_type_value = db_query("SELECT field_block_type_value FROM {field_data_field_block_type}
+                                                    WHERE entity_type = 'node'
                                                     AND bundle = 'config_block'
                                                     AND entity_id = :nid", array(':nid' => $nid))->fetchField();
 

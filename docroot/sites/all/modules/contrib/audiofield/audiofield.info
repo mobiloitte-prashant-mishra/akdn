@@ -7,7 +7,7 @@ files[] = audiofield.install
 files[] = audiofield.module
 files[] = audiofield_formatter.inc
 files[] = audiofield_widget.inc
-
+configure = admin/config/media/audiofield
 
 
 ; Information added by drupal.org packaging script on 2011-02-20
@@ -17,9 +17,9 @@ project = "audiofield"
 datestamp = "1298203622"
 
 
-; Information added by drupal.org packaging script on 2012-10-08
-version = "7.x-1.0-beta8"
+; Information added by Drupal.org packaging script on 2016-10-04
+version = "7.x-1.2"
 core = "7.x"
 project = "audiofield"
-datestamp = "1349709067"
+datestamp = "1475601867"
 
