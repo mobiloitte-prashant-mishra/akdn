@@ -8,12 +8,14 @@
   Drupal.behaviors.audio_js = {
     attach: function(context) {
       var SWFpath = Drupal.settings.audio_js.swf;
-      audiojs.events.ready(function() {
-        var as = audiojs.createAll({
-          css: false,
-          swfLocation: SWFpath,
-        });
-      });
+      var as = audiojs.createAll({
+        css: false,
+        swfLocation: SWFpath,
+        init: function()
+          {
+            $(".audiojs-item").removeClass("audiojs-item");
+          }
+        }, $(".audiojs-item"));
     }
   };
 })(jQuery);
