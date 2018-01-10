@@ -3540,6 +3540,11 @@ h2.header-name a {
   }
 }
 
+.slide-text {
+    .image-copytight {
+        font-style: italic;
+    }
+  }
 // New detail page AKDN-719.
 // Inner Detail pages ".press-release-detail"
 .press-release-detail {
@@ -3559,9 +3564,9 @@ h2.header-name a {
       font-size: 14px;
       font-style: normal;
     }
-    .image-copytight {
+/*    .image-copytight {
         font-style: italic;
-    }
+    }*/
   }
 
   /*Details Page Title */
