@@ -3,6 +3,10 @@
   position: absolute;
 }
 
+.audiojs-label {
+  font-weight: bold;
+}
+
 .audiojs-mini .audiojs {
   background: #404040;
   background-image: -moz-linear-gradient(center top,#444 0%,#555 50%,#444 51%,#444 100%);

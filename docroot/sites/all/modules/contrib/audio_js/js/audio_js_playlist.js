@@ -24,13 +24,18 @@
             audio.load($('a', next).attr('data-src'));
             audio.play();
           };
+        },
+        init: function()
+        {
+          $(".audiojs-item").removeClass("audiojs-item");
         }
-      });
+      }, $(".audiojs-item"));
       // Load in the first track.
       var audio = a[0];
       first = $('ol a').attr('data-src');
       $('ol li').first().addClass('playing');
       audio.load(first);
+
       // Load in a track on click.
       $('ol li').click(function(e) {
         e.preventDefault();
