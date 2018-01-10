@@ -49,6 +49,29 @@ function audiofield_field_widget_info() {
 }
 
 /**
+ * Implements hook_field_widget_settings_form().
+ */
+function audiofield_field_widget_settings_form($field, $instance) {
+  $widget = $instance['widget'];
+  $settings = $widget['settings'];
+
+  $form['progress_indicator'] = array(
+    '#type' => 'radios',
+    '#title' => t('Progress indicator'),
+    '#options' => array(
+      'throbber' => t('Throbber'),
+      'bar' => t('Bar with progress meter'),
+    ),
+    '#default_value' => $settings['progress_indicator'],
+    '#description' => t('The throbber display does not show the status of uploads but takes up less space. The progress bar is helpful for monitoring progress on large uploads.'),
+    '#weight' => 16,
+    '#access' => file_progress_implementation(),
+  );
+
+  return $form;
+}
+
+/**
  * Implements hook_field_widget_form().
  */
 function audiofield_field_widget_form(&$form, &$form_state, $field, $instance, $langcode, $items, $delta, $element) {
@@ -60,7 +83,7 @@ function audiofield_field_widget_form(&$form, &$form_state, $field, $instance, $
   $settings = $instance['settings'];
 
   foreach (element_children($elements) as $delta) {
-    $elements[$delta]['#process'] = array('audiofield_field_widget_process');
+    $elements[$delta]['#process'] = array_merge(element_info_property('managed_file', '#process', array()), array('audiofield_field_widget_process'));
   }
   if ($field['cardinality'] == 1) {
     // If there's only one field, return it as delta 0.
@@ -85,7 +108,6 @@ function audiofield_field_widget_form(&$form, &$form_state, $field, $instance, $
  */
 function audiofield_field_widget_process($element, &$form_state, $form) {
   $fid = isset($element['#value']['fid']) ? $element['#value']['fid'] : 0;
-  $element = file_managed_file_process($element, $form_state, $form);
   
   $item = $element['#value'];
   $item['fid'] = $element['fid']['#value'];
@@ -108,7 +130,7 @@ function audiofield_field_widget_process($element, &$form_state, $form) {
   }
   if ($fid && $element['#file']) {
     $audiofile = file_create_url($element['#file']->uri);
-    $info = pathinfo($audiofile);
+    $info = pathinfo($element['#file']->uri);
     $op = $info['extension'];
     $element['filename'] = array(
       '#type' => 'markup',
@@ -160,13 +182,33 @@ function audiofield_field_formatter_view($entity_type, $entity, $field, $instanc
 
   switch ($display['type']) {
     case 'audiofield_embedded' :
-      foreach ($items as $delta => $item) {
-        $elements[] = array('#markup' => theme('audiofield_formatter_audiofield_embedded', array('file' => (object) $item)));
-      }
-      break;
     case 'audiofield_nodownload':
+      global $user;
       foreach ($items as $delta => $item) {
-        $elements[] = array('#markup' => theme('audiofield_formatter_audiofield_nodownload', array('file' => (object) $item)));
+        $audiofile = file_create_url($item['uri']);
+        $info = pathinfo($item['uri']);
+        $op = $info['extension'];
+        $options = array(
+          'entity_type' => $entity_type,
+          'entity' => $entity,
+          'field' => $field,
+          'instance' => $instance,
+          'langcode' => $langcode,
+          'items' => $items,
+          'display' => $display,
+        );
+
+        $download_link = '';
+        if($display['type'] == 'audiofield_embedded') {
+          if ($user->uid == $item['uid'] && user_access('download own audio files')) {
+            $download_link .= '<div class="audio-download"><b>' . t('Download') . ':</b>' . theme('file_link', array('file' => (object) $item)) . '</div>';
+          }
+          elseif (user_access('download all audio files')) {
+            //If user has permission to download all audio files, then display download link
+            $download_link .= '<div class="audio-download"><b>' . t('Download') . ':</b>' . theme('file_link', array('file' => (object) $item)) . '</div>';
+          }
+        }
+        $elements[] = array('#markup' => audiofield_get_player($audiofile, $op, $options).$download_link);
       }
       break;
   }
