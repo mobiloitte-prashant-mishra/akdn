@@ -23,6 +23,15 @@ class SearchApiDenormalizedEntityField extends SearchApiAbstractProcessor {
   public function configurationForm() {
     $form = parent::configurationForm();
 
+    $form['permutation_limit'] = array(
+      '#type' => 'fieldset',
+      '#collapsible' => TRUE,
+      '#collapsed' => FALSE,
+      '#title' => t('Permutation limits'),
+      '#description' => t('Defines how man permutations should be processed. Can become handy if you just want to have one item of a muti-value field. Leave empty for no limit.'),
+      '#weight' => 1,
+    );
+
     $entity_type = $this->index->datasource()->getEntityType();
     $entity_info = entity_get_info($this->index->datasource()->getEntityType());
     $bundle_infos = field_info_instances($this->index->datasource()->getEntityType());
@@ -35,6 +44,18 @@ class SearchApiDenormalizedEntityField extends SearchApiAbstractProcessor {
         $instance = field_read_instance($entity_type, $field_name, reset($field_info['bundles'][$entity_type]));
         if (!empty($field_info['cardinality']) && ($field_info['cardinality'] == FIELD_CARDINALITY_UNLIMITED || $field_info['cardinality'] > 1)) {
           $options[$field_name] = $instance['label'] . ' (' . $field_name . ')';
+          $form['permutation_limit'][$field_name] = array(
+            '#type' => 'textfield',
+            '#title' => $instance['label'] . ' (' . $field_name . ')',
+            '#size' => 4,
+            '#maxlength' => 10,
+            '#states' => array(
+              'visible' => array(
+                ':input[name$="[denormalization_field][' . $field_name . ']"]' => array('checked' => TRUE),
+              ),
+            ),
+            '#default_value' => !empty($this->options['permutation_limit'][$field_name]) ? $this->options['permutation_limit'][$field_name] : NULL,
+          );
         }
       }
     }
@@ -61,10 +82,37 @@ class SearchApiDenormalizedEntityField extends SearchApiAbstractProcessor {
    * Returns the fields to denormalize on.
    *
    * @return array
-   *   The list of fields to use for denormalization.
+   *   Associative list of fields to use for denormalization. The value in the
+   *   array defines the permutation limit. 0 means no limit.
    */
   public function getDenormalizationFields() {
-    return array_filter($this->options['denormalization_field']);
+    $fields = &drupal_static(__FUNCTION__, array());
+    if (empty($fields)) {
+      $fields = array_filter($this->options['denormalization_field']);
+      foreach ($fields as $field_name => $field) {
+        $fields[$field_name] = 0;
+        if (!empty($this->options['permutation_limit'][$field]) && is_numeric($this->options['permutation_limit'][$field])) {
+          $fields[$field_name] = (int) $this->options['permutation_limit'][$field];
+        }
+      }
+    }
+    return $fields;
+  }
+
+  /**
+   * Returns the permutation limit of a field.
+   *
+   * @param string $field
+   *   The field to get the limit for.
+   *
+   * @return int
+   *   The number of permutations to generate from this field. 0 means no limit.
+   */
+  public function getDenormalizationFieldLimit($field) {
+    if (!empty($this->options['permutation_limit'][$field]) && is_numeric($this->options['permutation_limit'][$field])) {
+      return (int) $this->options['permutation_limit'][$field];
+    }
+    return 0;
   }
 
   /**

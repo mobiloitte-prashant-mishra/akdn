@@ -34,6 +34,10 @@ function multiblock_block_info() {
   $blocks = multiblock_get_block(NULL);
   foreach ($blocks as $block) {
     $blocks[$block->delta] = array('info' => $block->title);
+    $cache = db_query('SELECT cache FROM {block} WHERE module = :module AND delta = :orig_delta', array(':module' => $block->module, ':orig_delta' => $block->orig_delta))->fetchField();
+    if ($cache){
+      $blocks[$block->delta]['cache'] = $cache;
+    }
   }
   return $blocks;
 }
@@ -83,9 +87,26 @@ function multiblock_get_block($delta = NULL, $reset = FALSE) {
 }
 
 /**
- * Dispatch a hook_block call to it's respective module. Paramater $delta
+ * Dispatch a hook_block call to its respective module. Paramater $delta
  * is the new multiblock delta that we're using and $op is the op we are
  * dispatching.
+ *
+ * @param $delta
+ *   The delta of the multiblock block, which is different from the delta
+ *   of the block in the original module
+ *
+ * @param $op
+ *   Can be configure, view, save...
+ *
+ * @edit
+ *   Information originally passed to multiblock's corresponding hook.
+ *   For example, a call to multiblock_block_view($delta, $edit) will
+ *   result in a call to multiblock_call_block($delta, 'view', $edit).
+ *   Note that Drupal's API does not call for $edit parameters for
+ *   hook_node_view() or hook_node_configure(), but multiblock does.
+ *
+ * @return
+ *   Information returned by the corresponding module_invoke() call.
  */
 function multiblock_call_block($delta, $op, $edit) {
   $result = db_query("SELECT module, orig_delta, delta, multi_settings FROM {multiblock} WHERE delta = :delta", array(
@@ -97,13 +118,21 @@ function multiblock_call_block($delta, $op, $edit) {
       $edit['multiblock_delta'] = array(
         '#type' => 'value',
         '#value' => $block_info->delta,
-        );
+      );
     }
-    if ($op == 'save') {
-      $block = module_invoke($block_info->module, 'block_'. $op, $block_info->orig_delta, $edit);
-    }
-    else {
-      $block = module_invoke($block_info->module, 'block_'. $op, $block_info->orig_delta);
+    // This will result in a call to the original module's hook_block_view(),
+    // hook_block_configure(), or hook_block_save() function. In cases where
+    // modules define multiblock-enabled blocks (that is, in their
+    // hook_block_info() function, they return an associative array of block
+    // machine names to arrays with 'mb_enabled' => TRUE for each mb-enabled
+    // block), these modules' hook_block_view() and hook_block_configure()
+    // functions will have an extra $edit = array() parameter, in which
+    // information about multiblock is passed. This will allow blocks to
+    // contain and display different configuration information per instance.
+    $block = module_invoke($block_info->module, 'block_'. $op, $block_info->orig_delta, $edit);
+    if ($op == 'view') {
+      $block['orig_module'] = $block_info->module;
+      $block['orig_delta'] = $block_info->orig_delta;
     }
     return $block;
   }
@@ -125,10 +154,12 @@ function multiblock_general() {
 
   // Fetch "Add Instance" form.
   if (isset($req_block)) {
-    $form = drupal_render(drupal_get_form('multiblock_add_form', $blocks, $req_block));
+    $get_form = drupal_get_form('multiblock_add_form', $blocks, $req_block);
+    $form = drupal_render($get_form);
   }
   else {
-    $form = drupal_render(drupal_get_form('multiblock_add_form', $blocks));
+    $get_form = drupal_get_form('multiblock_add_form', $blocks);
+    $form = drupal_render($get_form);
   }
 
   // Get an array of existing blocks.
@@ -286,6 +317,14 @@ function multiblock_add_form_submit($form, &$form_state) {
       ->condition('delta', $form_state['values']['instance'], '=')
       ->execute();
 
+      $block = multiblock_get_block($form_state['values']['instance'], TRUE);
+
+      $cache = db_query('SELECT cache FROM {block} WHERE module = :module AND delta = :orig_delta', array(":module" => $block->module, ":orig_delta" => $block->orig_delta))->fetchField();
+      
+      if ($cache){
+        db_query('UPDATE {block} SET cache = :cache WHERE delta = :delta AND module = :multiblock', array(':cache' => $cache, ':delta' => $block->delta, ':multiblock' => 'multiblock'));
+      }
+
     $form_state['redirect'] = 'admin/structure/block/instances';
     return;
   }
@@ -336,6 +375,19 @@ function multiblock_theme() {
       'arguments' => array('add_block_form' => NULL, 'multiblocks' => NULL, 'edit' => NULL),
       ),
     );
+}
+
+/**
+ * Implements hook_preprocess_block().
+ *
+ * Add "{orig_module}" and "{orig_module}-{orig_delta}-instance" classes to
+ * multiblock blocks.
+ */
+function multiblock_preprocess_block(&$variables) {
+  if ($variables['block']->module == 'multiblock') {
+    $variables['classes_array'][] = drupal_html_class('block-' . $variables['block']->orig_module);
+    $variables['classes_array'][] = drupal_html_class('block-' . $variables['block']->orig_module) . '-' . $variables['block']->orig_delta . '-instance';
+  }
 }
 
 /**

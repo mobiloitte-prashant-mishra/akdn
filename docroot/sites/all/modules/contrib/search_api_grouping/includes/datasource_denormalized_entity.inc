@@ -556,6 +556,25 @@ class DenormalizedEntityIndexHijack extends SearchApiIndex {
   }
 
   /**
+   * Returns the permutation limit of a field.
+   *
+   * @param SearchApiIndex $index
+   *   The index to fetch the configuration from.
+   * @param string $field
+   *   The field to get the limit for.
+   *
+   * @return int
+   *   The number of permutations to generate from this field. 0 means no limit.
+   */
+  public static function getDenormalizeProcessorFieldLimit(SearchApiIndex $index, $field) {
+    $processors = $index->getProcessors();
+    if (!empty($processors['search_api_denormalized_entity_field'])) {
+      return $processors['search_api_denormalized_entity_field']->getDenormalizationFieldLimit($field);
+    }
+    return array();
+  }
+
+  /**
    * Returns the fields to denormalize on.
    *
    * @param SearchApiIndex $index
