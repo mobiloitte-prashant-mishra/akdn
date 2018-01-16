@@ -42,19 +42,22 @@ function search_api_grouping_search_api_solr_field_mapping_alter(SearchApiIndex 
     foreach ($fields as $field => $map) {
       // Split field and property.
       $field_name = $field;
+      $property = NULL;
       if (stristr($field, ':')) {
         list($field_name, $property) = explode(':', $field, 2);
       }
 
-      // If denormalization based on this field is enabled we convert the field
-      // from multi-value (Xm) to single value (Xs).
-      if (isset($denormalize_fields[$field_name]) && strpos($map, 'm') === 1 && strpos($field, 'field_') === 0) {
-        $fields[$field] = substr_replace($map, 's', 1, 1);
-      }
-      // If grouping is enabled based on this field we've to convert integer
-      // fields to type string.
-      if (isset($grouping_fields[$field_name]) && substr($map, 0, 1) != 's') {
-        $fields[$field] = substr_replace($map, 's', 0, 1);
+      if (empty($property)) {
+        // If denormalization based on this field is enabled we convert the field
+        // from multi-value (Xm) to single value (Xs).
+        if (isset($denormalize_fields[$field_name]) && strpos($map, 'm') === 1 && strpos($field, 'field_') === 0) {
+          $fields[$field] = substr_replace($map, 's', 1, 1);
+        }
+        // If grouping is enabled based on this field we've to convert integer
+        // fields to type string.
+        if (isset($grouping_fields[$field_name]) && substr($map, 0, 1) != 's') {
+          $fields[$field] = substr_replace($map, 's', 0, 1);
+        }
       }
     }
   }
@@ -248,7 +251,10 @@ function search_api_grouping_generate_pseudo_keys($entity, $entity_type, $fields
  * @param object $entity
  *   The entity object.
  * @param array $fields
- *   Field names to use when computing the cartesian product.
+ *   Associative array of field names to use when computing the cartesian
+ *   product.
+ *   The array key is the field name, the value the permutation limit.
+ *   To disable limit use 0.
  * @param array $keys
  *   Recursive data holder stores array of field indexes to use in generating
  *   pseudo document.
@@ -257,9 +263,14 @@ function search_api_grouping_generate_pseudo_keys($entity, $entity_type, $fields
  */
 function search_api_grouping_generate_keys($entity_type, $entity, $fields, &$keys) {
   if (!empty($fields)) {
-    $field_name = array_shift($fields);
+    $field_name = key($fields);
+    $permutation_limit = array_shift($fields);
     if (!empty($field_name)) {
       $values = field_get_items($entity_type, $entity, $field_name);
+      // Limit values if the permutations are limited.
+      if (is_array($values) && $permutation_limit) {
+        $values = array_slice($values, 0, $permutation_limit);
+      }
       if (!empty($keys)) {
         $newkeys = array();
         // Develop the cross-product of existing keys and our new values.
@@ -376,4 +387,13 @@ function search_api_grouping_generate_permuatations($queue_item) {
       }
     }
   }
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function search_api_grouping_views_api() {
+  return array(
+    'api' => 3,
+  );
 }
