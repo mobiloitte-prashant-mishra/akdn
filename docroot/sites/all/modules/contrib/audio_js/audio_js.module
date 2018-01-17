@@ -31,16 +31,20 @@ function audio_js_field_formatter_info() {
         'audio_js_preload' => 0,
         'audio_js_autoplay' => 0,
         'audio_js_loop' => 0,
+        'audio_js_label' => 0,
+        'audio_js_playlist' => 0,
         'audio_js_style' => 'default',
       ),
     ),
-    'audio_js_playlist' => array(
-      'label' => t('audio.js playlist'),
-      'field types' => array('file'),
+    'audio_js_link' => array(
+      'label' => t('audio.js'),
+      'field types' => array('link_field'),
       'settings'  => array(
         'audio_js_preload' => 0,
         'audio_js_autoplay' => 0,
-        'audio_js_loop' => 1,
+        'audio_js_loop' => 0,
+        'audio_js_label' => 0,
+        'audio_js_playlist' => 0,
         'audio_js_style' => 'default',
       ),
     ),
@@ -76,6 +80,18 @@ function audio_js_field_formatter_settings_form($field, $instance, $view_mode, $
     '#description' => t('Loop playback'),
     '#default_value' => $settings['audio_js_loop'],
   );
+  $element['audio_js_label'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Display file description as label'),
+    '#description' => t('For single player only'),
+    '#default_value' => $settings['audio_js_label'],
+  );
+  $element['audio_js_playlist'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Disable Playlist'),
+    '#description' => t('Multiple items are automatically displayed as a playlist. Check this to make each item an individual player.'),
+    '#default_value' => $settings['audio_js_playlist'],
+  );
   $element['audio_js_style'] = array(
     '#type' => 'select',
     '#title' => t('Style'),
@@ -103,6 +119,10 @@ function audio_js_field_formatter_settings_summary($field, $instance, $view_mode
   $summary .= t('Autoplay: @setting', array('@setting' => $autoplay_setting)) . '<br />';
   $loop_setting = ($settings['audio_js_loop'] ? 'true' : 'false');
   $summary .= t('Loop: @setting', array('@setting' => $loop_setting)) . '<br />';
+  $label_setting = ($settings['audio_js_label'] ? 'true' : 'false');
+  $summary .= t('Label: @setting', array('@setting' => $label_setting)) . '<br />';
+  $playlist_setting = ($settings['audio_js_playlist'] ? 'true' : 'false');
+  $summary .= t('Playlist: @setting', array('@setting' => $playlist_setting)) . '<br />';
   $style_setting = check_plain($settings['audio_js_style']);
   $summary .= t('Style: @setting', array('@setting' => $style_setting)) . '<br />';
   return $summary;
@@ -114,7 +134,6 @@ function audio_js_field_formatter_settings_summary($field, $instance, $view_mode
 function audio_js_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
   $element = array();
   $settings = $display['settings'];
-
   // Include main audio.js library.
   if (module_exists('libraries')) {
     $audiojs_path = libraries_get_path('audiojs');
@@ -125,69 +144,77 @@ function audio_js_field_formatter_view($entity_type, $entity, $field, $instance,
   $css_style = check_plain($settings['audio_js_style']);
   drupal_add_css($module_path . '/css/audio_js_' . $css_style . '.css');
 
-  switch ($display['type']) {
-    case 'audio_js':
-      foreach ($items as $delta => $item) {
-        $variables = array(
-          'uri' => $item['uri'],
-          'preload' => $settings['audio_js_preload'],
-          'autoplay' => $settings['audio_js_autoplay'],
-          'loop' => $settings['audio_js_loop'],
-          'class' => $css_style,
-        );
-        $file_parts = pathinfo($item['uri']);
-        if($file_parts['extension'] == 'mp3') {
-          $element[$delta]['#markup'] = theme('audio_js_audio_tag', $variables); 
-        }
+  // Test whether you create a single player or a playlist.
+  if (!empty($items[1]) && $settings['audio_js_playlist'] == 0) {
+    // Create playlist player.
+    $variables = array(
+      'preload' => $settings['audio_js_preload'],
+      'autoplay' => $settings['audio_js_autoplay'],
+      'class' => $css_style,
+    );
+    $element[0]['#markup'] = theme('audio_js_audio_tag_for_playlist', $variables);
+    $list = array();
+    foreach ($items as $delta => $item) {
+      // Get the file url and label.
+      $file = _audio_js_get_items_info($display['type'], $instance, $item);
+      // Make sure the file is a mp3.
+      $file_parts = pathinfo($file['url']);
+      if ($file_parts['extension'] == 'mp3') {
+        $list[] = l($file['label'], NULL, array(
+          'attributes' => array('data-src' => $file['url']),
+          'fragment' => 'audio',
+          'external' => TRUE,
+        ));
+      } else {
+        drupal_set_message("Invalid file type. The audio.js player only supports mp3 files.", "warning");
       }
-      $settings = array(
-        'swf' => base_path() . $audiojs_path . "/audiojs/audiojs.swf",
-      );
-      if (!empty($items)) {
-        drupal_add_js(array('audio_js' => $settings), 'setting');
-        drupal_add_js($module_path . '/js/audio_js_init.js', 'file');
-      }
-      break;
-
-    case 'audio_js_playlist':
+    }
+    $element[0]['#suffix'] = theme('item_list', array(
+      'items' => $list,
+      'title' => '',
+      'type' => 'ol',
+      'attributes' => array('class' => array('audiojs-playlist')),
+    ));
+    // Close opening tag in audio_js_audio_tag_for_playlist theme.
+    $element[0]['#suffix'] .= '</div>';
+    $loop = ($settings['audio_js_loop'] ? TRUE : FALSE);
+    $settings = array(
+      'loop' => $loop,
+      'swf' => base_path() . $audiojs_path . "/audiojs/audiojs.swf",
+    );
+    if (!empty($items)) {
+      drupal_add_js(array('audio_js' => $settings), 'setting');
+      drupal_add_js($module_path . '/js/audio_js_playlist.js', 'file');
+    }
+  } else {
+    // Create single player.
+    foreach ($items as $delta => $item) {
+      // Get the file url and label.
+      $file = _audio_js_get_items_info($display['type'], $instance, $item);
       $variables = array(
+        'url' => $file['url'],
+        'description' => $file['label'],
+        'label' => $settings['audio_js_label'],
         'preload' => $settings['audio_js_preload'],
         'autoplay' => $settings['audio_js_autoplay'],
+        'loop' => $settings['audio_js_loop'],
         'class' => $css_style,
       );
-      $element[0]['#markup'] = theme('audio_js_audio_tag_for_playlist', $variables);
-      $list = array();
-      foreach ($items as $delta => $item) {
-        $file_parts = pathinfo($item['uri']);
-        if($file_parts['extension'] == 'mp3') {
-          // If the description is available use that, else use the filename.
-          $label = (!empty($item['description']) ? check_plain($item['description']) : $item['filename']);
-          $list[] = l($label, NULL, array(
-            'attributes' => array('data-src' => file_create_url($item['uri'])),
-            'fragment' => 'audio',
-            'external' => TRUE,
-          ));
-        } else {
-          drupal_set_message("Invalid file type. The audio.js player only supports mp3 files.", "warning");
-        }
+      // Make sure the file is a mp3.
+      $file_parts = pathinfo($file['url']);
+      if ($file_parts['extension'] == 'mp3') {
+        $element[$delta]['#markup'] = theme('audio_js_audio_tag', $variables);
+      } else {
+        drupal_set_message("Invalid file type. The audio.js player only supports mp3 files.", "warning");
       }
-      $element[0]['#suffix'] = theme('item_list', array(
-        'items' => $list,
-        'title' => '',
-        'type' => 'ol',
-        'attributes' => array('class' => array('audiojs-playlist')),
-      ));
-      $element[0]['#suffix'] .= '</div>';
-      $loop = ($settings['audio_js_loop'] ? TRUE : FALSE);
-      $settings = array(
-        'loop' => $loop,
-        'swf' => base_path() . $audiojs_path . "/audiojs/audiojs.swf",
-      );
-      if (!empty($items)) {
-        drupal_add_js(array('audio_js' => $settings), 'setting');
-        drupal_add_js($module_path . '/js/audio_js_playlist.js', 'file');
-      }
-      break;
+    }
+    $settings = array(
+      'swf' => base_path() . $audiojs_path . "/audiojs/audiojs.swf",
+    );
+    if (!empty($items)) {
+      drupal_add_js(array('audio_js' => $settings), 'setting');
+      drupal_add_js($module_path . '/js/audio_js_init.js', 'file');
+    }
   }
   return $element;
 }
@@ -199,7 +226,7 @@ function audio_js_theme($existing, $type, $theme, $path) {
   return array(
     'audio_js_audio_tag' => array(
       'variables' => array(
-        'uri' => NULL,
+        'url' => NULL,
         'preload' => FALSE,
         'autoplay' => FALSE,
         'loop' => FALSE,
@@ -221,13 +248,17 @@ function audio_js_theme($existing, $type, $theme, $path) {
  */
 function theme_audio_js_audio_tag($variables) {
   $preload = $variables['preload'] ? 'auto' : 'none';
+  $output = '';
   // If autoplay than we need to preload.
   if ($variables['autoplay']) {
     $preload = 'auto';
   }
-  $output = '<div class="audiojs-' . $variables['class'] . '"><audio preload="' . $preload . '" ' .
+  if ($variables['label']) {
+    $output = '<div class="audiojs-label">' . $variables['description'] . '</div>';
+  }
+  $output .= '<div class="audiojs-' . $variables['class'] . '"><audio preload="' . $preload . '" ' .
   ($variables['autoplay'] ? 'autoplay="autoplay" ' : '') .
-  ($variables['loop'] ? 'loop="loop" ' : '') . '><source src="' . file_create_url($variables['uri']) . '"/></audio></div>';
+  ($variables['loop'] ? 'loop="loop" ' : '') . '  class="audiojs-item"><source src="' . $variables['url'] . '"/></audio></div>';
 
   return $output;
 }
@@ -236,13 +267,50 @@ function theme_audio_js_audio_tag($variables) {
  * Theme for audio_js_audio_tag_for_playlist.
  */
 function theme_audio_js_audio_tag_for_playlist($variables) {
-  $preload = $variables['preload'] ? 'preload' : 'none';
+  $preload = $variables['preload'] ? 'auto' : 'none';
   // If autoplay than we need to preload.
   if ($variables['autoplay']) {
-    $preload = 'preload';
-  }
-  $output = '<div class="audiojs-' . $variables['class'] . '"><audio preload="' . $preload . '" ' . ($variables['autoplay'] ? 'autoplay="autoplay" ' : '') .
-  '/></audio>';
+    $preload = 'auto';
+  }  
+  $output = '<div class="audiojs-' . $variables['class'] . '">';
+  $output .= '<audio preload="' . $preload . '" ' . ($variables['autoplay'] ? 'autoplay="autoplay" ' : '') . ' class="audiojs-item"/></audio>';
 
   return $output;
+}
+
+/**
+ * Returns url and label for give item.
+ */
+function _audio_js_get_items_info($type, $instance, $item) {
+  $file = array();
+  switch ($type) {
+    case 'audio_js':
+      if (!empty($item['uri'])) {
+        $file['url'] = file_create_url($item['uri']);
+        // If the description is available use that, else use the filename.
+        $file['label'] = (!empty($item['description']) ? check_plain($item['description']) : $item['filename']);
+      } else {
+        $file['url'] = '';
+        $file['label'] = 'Song ' . $delta;
+      }
+      break;
+
+    case 'audio_js_link':
+      if (!empty($item['url'])) {
+        $file['url'] = $item['url'];
+        $link_title = $instance['settings']['title'];
+        if ($link_title == 'value' || $link_title == 'required') {
+          $file['label'] = $item['title'];
+        } else {
+          $file_parts = pathinfo($item['title']);
+          $file['label'] = $file_parts['filename'];
+        }
+      } else {
+        $file['url'] = '';
+        $file['label'] = 'Song ' . $delta;
+      }
+      break;
+
+  }
+  return $file;
 }
