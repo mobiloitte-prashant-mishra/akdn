@@ -21,7 +21,7 @@
 	max-width: 800px;
 }
 .media-item{
-    height: 155px;
+    min-height: 155px;
 }
 .media-item .label-wrapper label{
     padding: 4px 4px !important;
