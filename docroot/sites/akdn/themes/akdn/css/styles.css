@@ -14325,16 +14325,14 @@ h2.header-name a:active, h2.header-name a:focus {
   padding: 0 15px;
   overflow: hidden;
 }
-/* line 3560, ../sass/_akdn-redesign.scss */
-.press-release-detail .slide-text {
-  /*    .image-copytight {
-          font-style: italic;
-      }*/
-}
 /* line 3561, ../sass/_akdn-redesign.scss */
 .press-release-detail .slide-text h3, .press-release-detail .slide-text .caption {
   font-size: 14px;
   font-style: normal;
+}
+/* line 3567, ../sass/_akdn-redesign.scss */
+.press-release-detail .slide-text .image-copytight {
+  font-style: italic;
 }
 /* line 3573, ../sass/_akdn-redesign.scss */
 .press-release-detail .field-type-text {
