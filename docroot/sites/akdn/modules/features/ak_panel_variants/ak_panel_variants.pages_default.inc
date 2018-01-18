@@ -75,10 +75,10 @@ function ak_panel_variants_default_page_manager_handlers() {
           'settings' => array(
             'visibility_setting' => '0',
             'paths' => 'agencies/aga-khan-award-architecture-0
-architecture
-node/22106
-our-agencies/aga-khan-music-initiative
-akmi',
+  architecture
+  node/22106
+  our-agencies/aga-khan-music-initiative
+  akmi',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -458,9 +458,18 @@ akmi',
   $pane->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'akdn_custom.akdn_custom_access_plugin',
-        'settings' => NULL,
-        'context' => 'argument_entity_id:node_1',
+        'name' => 'php',
+        'settings' => array(
+          'description' => 'Banner automatic',
+          'php' => 'global $language;
+  $node = $contexts[\'argument_entity_id:node_1\']->data;
+  if(!empty($node->field_featured_content_area)){
+    $banner = $node->field_featured_content_area[$language->language][0][\'value\'];
+    if($banner){ return false; }
+  }
+
+  ',
+        ),
         'not' => FALSE,
       ),
     ),
@@ -507,17 +516,24 @@ akmi',
   $pane->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'akdn_custom.akdn_custom_access_plugin',
-        'settings' => NULL,
-        'context' => 'argument_entity_id:node_1',
-        'not' => TRUE,
+        'name' => 'php',
+        'settings' => array(
+          'description' => 'Banner automatic',
+          'php' => 'global $language;
+  $node = $contexts[\'argument_entity_id:node_1\']->data;
+  if(!empty($node->field_featured_content_area)){
+    $banner = $node->field_featured_content_area[$language->language][0][\'value\'];
+    if($banner){ return true; }
+  }',
+        ),
+        'not' => FALSE,
       ),
     ),
   );
   $pane->configuration = array(
     'override_pager_settings' => 0,
     'use_pager' => 0,
-    'nodes_per_page' => '2',
+    'nodes_per_page' => '0',
     'pager_id' => '0',
     'offset' => '0',
     'more_link' => 0,
@@ -532,6 +548,7 @@ akmi',
     ),
     'override_title' => 0,
     'override_title_text' => '',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -558,30 +575,30 @@ akmi',
     'admin_title' => 'About page information',
     'title' => '',
     'body' => '<?php
-$node = menu_get_object();
-print \'<div class = "whatsnew-right-content">\';
-if (isset($node->field_about_page)) {
-  $about = node_load(reset($node->field_about_page)[0][\'nid\']);
-  if (isset($about->nid)) {
-    print \'<p class = "whats-new-gold">ABOUT THE</p>\';
-    print \'<div class = "grid-whatsnew-block_subtitle">\'. reset($about->field_short_title)[0][\'value\'] .\'</div>\';
-    if (empty(reset($about->body)[0][\'value\'])) {
-      if(!empty(reset($about->body)[0][\'summary\'])) {
-        print \'<div class="grid-whatsnew-block_body">\'. reset($about->body)[0][\'summary\'] .\' </div>\';
-      }
-    }
-    else {
-      if(!empty(reset($about->body)[0][\'summary\'])) {
-        print \'<div class="grid-whatsnew-block_body">\'. reset($about->body)[0][\'summary\'] .\' <a  href="\'. url("node/{$about->nid}") .\'" class= "views-more-link">More</a></div>\';
+  $node = menu_get_object();
+  print \'<div class = "whatsnew-right-content">\';
+  if (isset($node->field_about_page)) {
+    $about = node_load(reset($node->field_about_page)[0][\'nid\']);
+    if (isset($about->nid)) {
+      print \'<p class = "whats-new-gold">ABOUT THE</p>\';
+      print \'<div class = "grid-whatsnew-block_subtitle">\'. reset($about->field_short_title)[0][\'value\'] .\'</div>\';
+      if (empty(reset($about->body)[0][\'value\'])) {
+        if(!empty(reset($about->body)[0][\'summary\'])) {
+          print \'<div class="grid-whatsnew-block_body">\'. reset($about->body)[0][\'summary\'] .\' </div>\';
+        }
       }
       else {
-        print \'<div class="grid-whatsnew-block_body">\'. text_summary(reset($about->body)[0][\'value\'], reset($about->body)[0][\'format\'], 1200) .\' <a  href="\'. url("node/{$about->nid}") .\'" class= "views-more-link">More</a></div>\';
+        if(!empty(reset($about->body)[0][\'summary\'])) {
+          print \'<div class="grid-whatsnew-block_body">\'. reset($about->body)[0][\'summary\'] .\' <a  href="\'. url("node/{$about->nid}") .\'" class= "views-more-link">More</a></div>\';
+        }
+        else {
+          print \'<div class="grid-whatsnew-block_body">\'. text_summary(reset($about->body)[0][\'value\'], reset($about->body)[0][\'format\'], 1200) .\' <a  href="\'. url("node/{$about->nid}") .\'" class= "views-more-link">More</a></div>\';
+        }
       }
+      print \'</div>\';
     }
-    print \'</div>\';
   }
-}
-?>',
+  ?>',
     'format' => 'php_code',
     'substitute' => 0,
   );
@@ -828,10 +845,10 @@ if (isset($node->field_about_page)) {
         'settings' => array(
           'description' => 'Has content',
           'php' => '$view = views_get_view_result(\'facts_blocks\', \'facts_block\', arg(1));
-$result = count($view);
-if (!empty($result)) {
-return true;
-}',
+  $result = count($view);
+  if (!empty($result)) {
+  return true;
+  }',
         ),
         'not' => FALSE,
       ),

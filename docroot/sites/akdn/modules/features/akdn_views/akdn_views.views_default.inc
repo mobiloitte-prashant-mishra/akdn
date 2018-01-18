@@ -20192,7 +20192,6 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['style_options']['views_slideshow_cycle']['timeout'] = '5000';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['speed'] = '700';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['delay'] = '0';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['start_paused'] = 0;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['remember_slide_days'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['items_per_slide'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['wait_for_image_load_timeout'] = '3000';
@@ -20211,7 +20210,7 @@ if ($data->node_type == "featured_content") {
     'featured_articles' => 0,
     'featured_exhibition' => 0,
   );
-  /* Relationship: Content: Images (field_project_image:fid) */
+  /* Relationship: Content: Image (field_project_image:fid) */
   $handler->display->display_options['relationships']['field_project_image_fid']['id'] = 'field_project_image_fid';
   $handler->display->display_options['relationships']['field_project_image_fid']['table'] = 'field_data_field_project_image';
   $handler->display->display_options['relationships']['field_project_image_fid']['field'] = 'field_project_image_fid';
@@ -20283,12 +20282,12 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_feature_image]</div>
-<div class="slide-text"><h3>[title]</h3>
-[field_caption]
-[field_feature_link]
-</div>
+  <div class="slide-text"><h3>[title]</h3>
+  [field_caption]
+  [field_feature_link]
+  </div>
 
-';
+  ';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
@@ -20411,7 +20410,6 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['style_options']['views_slideshow_cycle']['timeout'] = '5000';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['speed'] = '700';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['delay'] = '0';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['start_paused'] = 0;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['remember_slide_days'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['items_per_slide'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['wait_for_image_load_timeout'] = '3000';
@@ -20429,7 +20427,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['relationships']['field_featured_content_nodes_nid']['label'] = 'field_banner_item_nodes';
   $handler->display->display_options['relationships']['field_featured_content_nodes_nid']['required'] = TRUE;
   $handler->display->display_options['relationships']['field_featured_content_nodes_nid']['delta'] = '-1';
-  /* Relationship: Content (historical data): Images (field_project_image:fid) */
+  /* Relationship: Content (historical data): Image (field_project_image:fid) */
   $handler->display->display_options['relationships']['field_project_image_fid']['id'] = 'field_project_image_fid';
   $handler->display->display_options['relationships']['field_project_image_fid']['table'] = 'field_revision_field_project_image';
   $handler->display->display_options['relationships']['field_project_image_fid']['field'] = 'field_project_image_fid';
@@ -20473,7 +20471,7 @@ if ($data->node_type == "featured_content") {
     'image_style' => 'featured_content',
     'image_link' => '',
   );
-  /* Field: Content: Images */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_project_image']['id'] = 'field_project_image';
   $handler->display->display_options['fields']['field_project_image']['table'] = 'field_data_field_project_image';
   $handler->display->display_options['fields']['field_project_image']['field'] = 'field_project_image';
@@ -20565,24 +20563,24 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
-if ($data->node_field_data_field_featured_content_nodes_type == "featured_content") {
-  if (!empty($data->field_field_feature_link)) {
-    $url = "<a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
-    print $url;
+  if ($data->node_field_data_field_featured_content_nodes_type == "featured_content") {
+    if (!empty($data->field_field_feature_link)) {
+      $url = "<a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+      print $url;
+    }
+    else { return \'\'; }
   }
-  else { return \'\'; }
-}
-else {
-  if (!empty($data->field_field_media_source)){
-    $url = "<a href=\'{$data->field_field_media_source[0][\'raw\'][\'url\']}\' target=\'_blank\'>";
-    print $url;
-  }else{
-    $node_path = drupal_get_path_alias(\'node/\' . $row->nid);
-    $url =  " <a href=\'/$node_path\'>";
-    print $url;
+  else {
+    if (!empty($data->field_field_media_source)){
+      $url = "<a href=\'{$data->field_field_media_source[0][\'raw\'][\'url\']}\' target=\'_blank\'>";
+      print $url;
+    }else{
+      $node_path = drupal_get_path_alias(\'node/\' . $row->nid);
+      $url =  " <a href=\'/$node_path\'>";
+      print $url;
+    }
   }
-}
-?>';
+  ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Field: Caption Custom PHP */
@@ -20595,27 +20593,27 @@ else {
   $handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-$caption = $data->field_field_caption[0][\'rendered\'][\'#markup\'];
-if (empty($caption)) {
-  if ($data->node_type == \'project\') {
-    $caption = $data->field_field_project_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'][key($data->field_field_project_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'])][0][\'value\'];
+  $caption = $data->field_field_caption[0][\'rendered\'][\'#markup\'];
+  if (empty($caption)) {
+    if ($data->node_type == \'project\') {
+      $caption = $data->field_field_project_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'][key($data->field_field_project_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'])][0][\'value\'];
+    }
+    else {
+      $caption = $data->field_field_feature_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'][key($data->field_field_feature_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'])][0][\'value\'];
+    }
+  }
+  if (isset($caption)) {
+    $val = $caption;
+    $value = text_summary($val, NULL, 75);
+    if (strlen($val) > strlen($value)) {
+      $value = rtrim($value) . "...";
+    }
   }
   else {
-    $caption = $data->field_field_feature_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'][key($data->field_field_feature_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'])][0][\'value\'];
+    $value = \'\';
   }
-}
-if (isset($caption)) {
-  $val = $caption;
-  $value = text_summary($val, NULL, 75);
-  if (strlen($val) > strlen($value)) {
-    $value = rtrim($value) . "...";
-  }
-}
-else {
-  $value = \'\';
-}
-print $value;
-?>';
+  print $value;
+  ?>';
   $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
   /* Field: Global: Custom text */
@@ -20624,19 +20622,17 @@ print $value;
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[php][field_feature_image][field_project_image]</div></a>
-<div class="slide-text">
-<h3>[title_field]</h3>
-[php_1]
-[php]More </a>
-</div>';
+  <div class="slide-text">
+  <h3>[title_field]</h3>
+  [php_1]
+  [php]More </a>
+  </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['relationship'] = 'field_featured_content_nodes_nid';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Content (historical data): Banner Item Content (field_featured_content_nodes:delta) */
+  $handler->display->display_options['sorts']['delta_1']['id'] = 'delta_1';
+  $handler->display->display_options['sorts']['delta_1']['table'] = 'field_revision_field_featured_content_nodes';
+  $handler->display->display_options['sorts']['delta_1']['field'] = 'delta';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content revision: Vid */
   $handler->display->display_options['arguments']['vid']['id'] = 'vid';
@@ -20754,7 +20750,6 @@ print $value;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['timeout'] = '5000';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['speed'] = '700';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['delay'] = '0';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['start_paused'] = 0;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['remember_slide_days'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['items_per_slide'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['wait_for_image_load_timeout'] = '3000';
@@ -20771,7 +20766,7 @@ print $value;
   $handler->display->display_options['relationships']['field_featured_content_nodes_nid']['field'] = 'field_featured_content_nodes_nid';
   $handler->display->display_options['relationships']['field_featured_content_nodes_nid']['label'] = 'field_banner_item_nodes';
   $handler->display->display_options['relationships']['field_featured_content_nodes_nid']['delta'] = '-1';
-  /* Relationship: Content (historical data): Images (field_project_image:fid) */
+  /* Relationship: Content (historical data): Image (field_project_image:fid) */
   $handler->display->display_options['relationships']['field_project_image_fid']['id'] = 'field_project_image_fid';
   $handler->display->display_options['relationships']['field_project_image_fid']['table'] = 'field_revision_field_project_image';
   $handler->display->display_options['relationships']['field_project_image_fid']['field'] = 'field_project_image_fid';
@@ -20892,23 +20887,23 @@ print $value;
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
-if ($data->node_type == "featured_content") {
-  if (!empty($data->field_field_feature_link)) {
-    $url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
-    print $url;
+  if ($data->node_type == "featured_content") {
+    if (!empty($data->field_field_feature_link)) {
+      $url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+      print $url;
+    }
+    else { print \' <a class="banner-no-link">\'; }
+  } else {
+    if (!empty($data->field_field_media_source)){
+      $url = "<a href=\'{$data->field_field_media_source[0][\'raw\'][\'url\']}\' target=\'_blank\'>";
+      print $url;
+    }else{
+      $node_path = drupal_get_path_alias(\'node/\' . $row->nid);
+      $url =  " <a href=\'/$node_path\'>";
+      print $url;
+    }
   }
-  else { print \' <a class="banner-no-link">\'; }
-} else {
-  if (!empty($data->field_field_media_source)){
-    $url = "<a href=\'{$data->field_field_media_source[0][\'raw\'][\'url\']}\' target=\'_blank\'>";
-    print $url;
-  }else{
-    $node_path = drupal_get_path_alias(\'node/\' . $row->nid);
-    $url =  " <a href=\'/$node_path\'>";
-    print $url;
-  }
-}
-?>';
+  ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Field: Caption Custom PHP */
@@ -20921,27 +20916,27 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-$caption = $data->field_field_caption[0][\'rendered\'][\'#markup\'];
-if (empty($caption)) {
-  if ($data->node_type == \'project\') {
-    $caption = $data->field_field_project_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'][key($data->field_field_project_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'])][0][\'value\'];
+  $caption = $data->field_field_caption[0][\'rendered\'][\'#markup\'];
+  if (empty($caption)) {
+    if ($data->node_type == \'project\') {
+      $caption = $data->field_field_project_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'][key($data->field_field_project_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'])][0][\'value\'];
+    }
+    else {
+      $caption = $data->field_field_feature_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'][key($data->field_field_feature_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'])][0][\'value\'];
+    }
+  }
+  if (isset($caption)) {
+    $val = $caption;
+    $value = text_summary($val, NULL, 75);
+    if (strlen($val) > strlen($value)) {
+      $value = rtrim($value) . "...";
+    }
   }
   else {
-    $caption = $data->field_field_feature_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'][key($data->field_field_feature_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'])][0][\'value\'];
+    $value = \'\';
   }
-}
-if (isset($caption)) {
-  $val = $caption;
-  $value = text_summary($val, NULL, 75);
-  if (strlen($val) > strlen($value)) {
-    $value = rtrim($value) . "...";
-  }
-}
-else {
-  $value = \'\';
-}
-print $value;
-?>';
+  print $value;
+  ?>';
   $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
   /* Field: Global: Custom text */
@@ -20950,19 +20945,17 @@ print $value;
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[php][field_feature_image]</a></div>
-<div class="slide-text">
-<h3>[title_field]</h3>
-[php_1]
-[php]More </a>
-</div>';
+  <div class="slide-text">
+  <h3>[title_field]</h3>
+  [php_1]
+  [php]More </a>
+  </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['relationship'] = 'field_featured_content_nodes_nid';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Content (historical data): Banner Item Content (field_featured_content_nodes:delta) */
+  $handler->display->display_options['sorts']['delta']['id'] = 'delta';
+  $handler->display->display_options['sorts']['delta']['table'] = 'field_revision_field_featured_content_nodes';
+  $handler->display->display_options['sorts']['delta']['field'] = 'delta';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content revision: Vid */
   $handler->display->display_options['arguments']['vid']['id'] = 'vid';
@@ -21047,29 +21040,29 @@ print $value;
     t('file_project_image'),
     t('file_feature_image'),
     t('<div class="slide">[field_feature_image]</div>
-<div class="slide-text"><h3>[title]</h3>
-[field_caption]
-[field_feature_link]
-</div>
+  <div class="slide-text"><h3>[title]</h3>
+  [field_caption]
+  [field_feature_link]
+  </div>
 
-'),
+  '),
     t('<div class="slide-pager">•</div>'),
     t('Flexslider Manual A/G/FAA Block'),
     t('field_banner_item_nodes'),
     t('<div class="slide">[php][field_feature_image][field_project_image]</div></a>
-<div class="slide-text">
-<h3>[title_field]</h3>
-[php_1]
-[php]More </a>
-</div>'),
+  <div class="slide-text">
+  <h3>[title_field]</h3>
+  [php_1]
+  [php]More </a>
+  </div>'),
     t('All'),
     t('Flexslider Manual A/G/FA Cycle Block1'),
     t('<div class="slide">[php][field_feature_image]</a></div>
-<div class="slide-text">
-<h3>[title_field]</h3>
-[php_1]
-[php]More </a>
-</div>'),
+  <div class="slide-text">
+  <h3>[title_field]</h3>
+  [php_1]
+  [php]More </a>
+  </div>'),
   );
   $export['featured_slideshow_manual'] = $view;
 
