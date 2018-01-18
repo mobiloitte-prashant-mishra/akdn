@@ -20,3 +20,9 @@
 #akdn-custom-project-carousel-admin {
 	max-width: 800px;
 }
+.media-item{
+    min-height: 155px;
+}
+.media-item .label-wrapper label{
+    padding: 4px 4px !important;
+}
