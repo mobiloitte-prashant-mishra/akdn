@@ -67,12 +67,12 @@ class twitter_puller {
     // if the first character is @, then consider the key a username
     elseif ($prefix == "@") {
       $key = drupal_substr($this->twitkey, 1);
-      $url = 'http://api.twitter.com/1/statuses/user_timeline.json?screen_name='. urlencode($key) .'&include_rts='. $rts .'&count='. $num .'&exclude_replies='. $exclude_replies;
+      $url = 'http://api.twitter.com/1/statuses/user_timeline.json?screen_name=' . urlencode($key) . '&include_rts=' . $rts . '&count=' . $num . '&exclude_replies=' . $exclude_replies;
     }
     // if the first character is ~, then consider the key a favorites feed
     elseif ($prefix == "~") {
       $key = drupal_substr($this->twitkey, 1);
-      $url = 'http://api.twitter.com/1/favorites/'.urlencode($key).'.json?count='.$num;
+      $url = 'http://api.twitter.com/1/favorites/' . urlencode($key) . '.json?count=' . $num;
     }
     // otherwise, use the key as a search term
     else {
@@ -127,6 +127,9 @@ class twitter_puller {
     $key = drupal_substr($this->twitkey, 1);
     $rts = !empty($this->rts)?'1':'false';
     $exclude_replies = !empty($this->exclude_replies)?'true':'false';
+    // Twitter API params.
+    $twitter_account = NULL;
+    $access_global = TRUE;
 
     // Start building the parameters for the twitter api.
     $params = array(
@@ -143,6 +146,9 @@ class twitter_puller {
           $params['screen_name']        = $key;
           $params['include_rts']        = $rts;
           $params['exclude_replies']    = $exclude_replies;
+          if ($twitter_account = twitter_account_load($key, FALSE)) {
+            $access_global = FALSE;
+          }
         }
         else {
           // Since we have at least one slash, we are going to get a list.
@@ -168,7 +174,7 @@ class twitter_puller {
         break;
     }
 
-    $twitter = twitter_connect();
+    $twitter = twitter_connect($twitter_account, $access_global);
     if (!$twitter) {
       watchdog('Twitter Pull', 'Twitter module is not properly configured and could not be used.');
       return FALSE;
@@ -207,21 +213,23 @@ class twitter_puller {
         // Convert arrays to objects.
         $item = json_decode(json_encode($item), FALSE);
 
-        $user = $item->user;
+        $twitter_user = $item->user;
         if (variable_get('twitter_pull_retweet_user', TRUE) && !empty($item->retweeted_status)) {
-          $user = $item->retweeted_status->user;
+          $twitter_user = $item->retweeted_status->user;
         }
         // when importing lists $user is an array and not an object, secure $user as object.
-        $user = (object) $user;
+        $twitter_user = (object) $twitter_user;
         
         $obj->id = check_plain($item->id_str);
-        $obj->username = check_plain(!empty($user->name) ? $user->name : $item->from_user);
-
-        $obj->screenname = check_plain(!empty($user->screen_name) ? $user->screen_name : $item->from_user);
+        // The name is the user's 'human-readable' name.
+        $obj->username = check_plain(!empty($twitter_user->name) ? $twitter_user->name : $item->from_user);
+        // The screen_name is the Twitter machine name, i.e., the string that is
+        // commonly seen with an '@' prefixed.
+        $obj->screenname = check_plain(!empty($twitter_user->screen_name) ? $twitter_user->screen_name : $item->from_user);
 
         //retrieve the user photo
-        $obj->userphoto = check_plain(!empty($user->profile_image_url) ? $user->profile_image_url : $item->profile_image_url);
-        $obj->userphoto_https = check_plain(!empty($user->profile_image_url_https) ? $user->profile_image_url_https : $item->profile_image_url_https);
+        $obj->userphoto = check_plain(!empty($twitter_user->profile_image_url) ? $twitter_user->profile_image_url : $item->profile_image_url);
+        $obj->userphoto_https = check_plain(!empty($twitter_user->profile_image_url_https) ? $twitter_user->profile_image_url_https : $item->profile_image_url_https);
 
         $obj->text = filter_xss($item->text);
         //-- Convert date to unix timestamp so themer can easily work with it.
