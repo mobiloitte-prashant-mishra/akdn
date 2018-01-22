@@ -339,7 +339,7 @@ abstract class SocialContent {
       '#default_value' => isset($settings['language']) ? $settings['language'] : NULL,
       '#required' => FALSE,
     );
-    if (module_exists('entity_translation')) {
+    if (module_exists('entity_translation')) {      
       $form['translate'] = array(
         '#type' => 'select',
         '#title' => t('Translate'),
@@ -608,7 +608,7 @@ abstract class SocialContent {
         // or else it will throw an exception.
         // Set the title.
         $property_info = $wrapper->getPropertyInfo();
-        if (isset($property_info['title'])) {
+        if (isset($property_info['title'])) {        
           if (empty($row->title)) {
             $wrapper->title->set($this->getLabel() . ' : ' . $row->id);
           }
@@ -676,13 +676,33 @@ abstract class SocialContent {
         }
         elseif ($property_info[$field_name]['type'] == 'text') {
           $value = self::validateText($value);
-        }
+        }        
         elseif (in_array($property_info[$field_name]['type'], array('text_formatted', 'field_item_textsummary'))) {
           $value = self::validateText($value);
           $value = is_array($value) ? $value : array('value' => $value, 'format' => 'filtered_html');
         }
         elseif ($property_info[$field_name]['type'] == 'field_item_link') {
           $value = array('url' => $value);
+        }
+        elseif (in_array($property_info[$field_name]['type'], array('list<taxonomy_term>', 'taxonomy_term'))) {
+          $terms = array();
+          $vid = taxonomy_vocabulary_machine_name_load($property_info[$field_name]['bundle'])->vid;
+          if ($value && !is_array($value)) {
+            $value = array($value);
+          }
+          foreach ($value as $name) {
+            $name = self::validateText($name);
+            $term = taxonomy_get_term_by_name($name, $property_info[$field_name]['bundle']);
+            if (!$term) {
+              $term = new stdClass();
+              $term->name = $name;
+              $term->vid = $vid;
+              taxonomy_term_save($term);
+              $term = taxonomy_get_term_by_name($name, $property_info[$field_name]['bundle']);
+            }
+            $terms[] = array_pop($term)->tid;
+          }
+          $value = $terms;
         }
         if ($value) {
           $wrapper->{$field_name}->set($value);
@@ -717,7 +737,7 @@ abstract class SocialContent {
         'status' => 1,
         'language' => $langcode,
         'source' => $source_language,
-      );
+      ); 
       $handler->setTranslation($translation, $values);
       field_attach_update('node', $node);
     }
@@ -793,15 +813,11 @@ abstract class SocialContent {
       ->condition('instance', $this->settings['instance']['id'])
       ->execute()
       ->fetchField();
+
     if ($exists) {
-      //TODO find better way to handle node exit;
-      $node_load = node_load($exists);
-      if($node_load->nid >0){
-        watchdog('social_content', '%global : %id already exists', array('%global' => $this->getMachineName(), '%id' => $row->id));
-      }else{
-        return TRUE;
-      }
+      watchdog('social_content', '%global : %id already exists', array('%global' => $this->getMachineName(), '%id' => $row->id));
     }
+
     return !$exists;
   }
 
