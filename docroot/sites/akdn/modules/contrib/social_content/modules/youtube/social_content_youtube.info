@@ -8,9 +8,9 @@ dependencies[] = image
 dependencies[] = text
 files[]= social_content_youtube.class.inc
 
-; Information added by Drupal.org packaging script on 2015-11-19
-version = "7.x-2.0-beta7+3-dev"
+; Information added by Drupal.org packaging script on 2017-12-15
+version = "7.x-2.0-beta10"
 core = "7.x"
 project = "social_content"
-datestamp = "1447971550"
+datestamp = "1513378388"
 
