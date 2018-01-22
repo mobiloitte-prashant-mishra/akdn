@@ -105,7 +105,7 @@ class SocialContentInstagram extends SocialContent {
       '#title' => t('Redirect path'),
       '#default_value' => $redirect_uri,
       '#description' => t('Used when generating access token. Leave alone if not sure.') . '<br/>' .
-        t('You will need to specify this URL (!url) in your <a href="!instagram_app">Instagram app</a>.', array(
+        t('You will need to specify the full URL (i.e. !url) in your <a href="!instagram_app">Instagram app</a> (Security tab) as a valid redirect URI.', array(
           '!url' => url($redirect_uri, array('absolute' => TRUE)),
           '!instagram_app' => 'https://instagram.com/developer/clients/manage/',
         )
@@ -164,8 +164,8 @@ class SocialContentInstagram extends SocialContent {
     $form['user_id'] = array(
       '#type' => 'textfield',
       '#title' => t('Instagram User ID'),
-      '#description' => t("The Instagram user id to pull the statuses from. E.g. '235448524'. Use !link to get it.", array(
-        '!link' => l('jelled.com/instagram/lookup-user-id', 'http://jelled.com/instagram/lookup-user-id'),
+      '#description' => t("The Instagram user id to pull the statuses from. E.g. '235448524'. To get it, see !link.", array(
+        '!link' => l('youtu.be/8JqdvQKfB3s', 'https://youtu.be/8JqdvQKfB3s'),
       )),
       '#default_value' => isset($settings['user_id']) ? $settings['user_id'] : NULL,
       '#states' => array(
@@ -173,12 +173,12 @@ class SocialContentInstagram extends SocialContent {
           '.social-content-instagram-type' => array('value' => 'account'),
         ),
       ),
-      '#element_validate' => array('element_validate_integer_positive'),
+      '#element_validate' => array('element_validate_number'),
     );
     $form['hashtag'] = array(
       '#type' => 'textfield',
       '#title' => t('Instagram hashtag'),
-      '#description' => t("The Instagram #hashtag to pull the statuses from. Leading '#' is not required."),
+      '#description' => t("The Instagram #hashtag to pull the statuses from. Do not put a leading '#'. Note that to import public content a non-sandbox app is required. See <a href='https://www.instagram.com/developer/sandbox'>instagram.com/developer/sandbox</a>."),
       '#default_value' => isset($settings['hashtag']) ? $settings['hashtag'] : NULL,
       '#states' => array(
         'visible' => array(
@@ -378,6 +378,7 @@ class SocialContentInstagram extends SocialContent {
     $mappings = $this->getFieldMappings();
     $row->created = $row->created_time;
     $row->user_id = $row->user->id;
+    $row->hashtag = $row->tags;
     $row->user_name = $row->user->username;
     $row->user_link = 'http://instagram.com/' . $row->user_name;
 
@@ -424,6 +425,7 @@ class SocialContentInstagram extends SocialContent {
       'client_id' => $global_settings['client_id'],
       'redirect_uri' => url($global_settings['redirect_uri'], array('query' => array(drupal_get_destination()), 'absolute' => TRUE)),
       'response_type' => 'code',
+      'scope' => 'public_content',
     );
     return url($global_settings['api_url'] . '/oauth/authorize', array('query' => $query, 'external' => TRUE));
   }
