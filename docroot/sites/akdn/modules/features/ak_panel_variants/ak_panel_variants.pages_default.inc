@@ -465,7 +465,7 @@ function ak_panel_variants_default_page_manager_handlers() {
   $node = $contexts[\'argument_entity_id:node_1\']->data;
   if(!empty($node->field_featured_content_area)){
     $banner = $node->field_featured_content_area[$language->language][0][\'value\'];
-    if($banner){ return false; }
+    if(!$banner){ return true; }
   }
 
   ',
@@ -518,7 +518,7 @@ function ak_panel_variants_default_page_manager_handlers() {
       0 => array(
         'name' => 'php',
         'settings' => array(
-          'description' => 'Banner automatic',
+          'description' => 'Banner manual',
           'php' => 'global $language;
   $node = $contexts[\'argument_entity_id:node_1\']->data;
   if(!empty($node->field_featured_content_area)){
