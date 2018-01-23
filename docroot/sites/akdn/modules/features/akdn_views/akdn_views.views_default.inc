@@ -20336,6 +20336,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['filters']['type_1']['table'] = 'node';
   $handler->display->display_options['filters']['type_1']['field'] = 'type';
   $handler->display->display_options['filters']['type_1']['value'] = array(
+    'architecture_project' => 'architecture_project',
     'article' => 'article',
     'event' => 'event',
     'gallery' => 'gallery',
@@ -20656,6 +20657,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['filters']['type_3']['field'] = 'type';
   $handler->display->display_options['filters']['type_3']['relationship'] = 'field_featured_content_nodes_nid';
   $handler->display->display_options['filters']['type_3']['value'] = array(
+    'architecture_project' => 'architecture_project',
     'article' => 'article',
     'page' => 'page',
     'event' => 'event',
