@@ -1750,6 +1750,7 @@ function in_array_r($needle, $haystack, $strict = FALSE) {
  *
  */
 function what_we_do_news_and_resources() {
+  global $language;
   $arg = arg(1);
   $load = node_load($arg);
   $field_show_news_and_resources = $load->field_show_news_and_resources;
@@ -1922,7 +1923,7 @@ function what_we_do_news_and_resources() {
           $read = l('View', 'node/' . $node->nid, $attribute);
         }
 
-        $image = reset($node->field_article_img);
+        $image = $node->field_article_img[$language->language];
 
         /* displaying default image if image not uploaded for article */
         if (empty($image)) {
@@ -1975,7 +1976,7 @@ function what_we_do_news_and_resources() {
 
       if ($node->type == 'publication') {
         $type = 'Publications';
-        $image = reset($node->field_publication_image);
+        $image = $node->field_publication_image[$language->language];
         if (empty($image)) {
           $info = field_info_instance('node', 'field_publication_image', 'publication');
           $file = (array) file_load($info['settings']['default_image']);
@@ -2034,12 +2035,17 @@ function what_we_do_news_and_resources() {
       $field_publish_date = $node->field_publish_date;
       $output .= '<div class= "date">' . date('d F Y', $node->field_publish_date[key($field_publish_date)][0]['value']) . '</div>';
       if ($name == 'In the media') {
-       $field_short_title = $node->field_short_title;
-       $output .= '<div class= "title">' . l($node->field_short_title[key($field_short_title)][0]['value'], $source, $attribute) . '</div>';
+        $field_short_title = $node->field_short_title;
+        $output .= '<div class= "title">' . l($node->field_short_title[$language->language][0]['value'], $source, $attribute) . '</div>';
+      }
+      else if ($node->type == 'publication' || ($node->type == 'article' && $name != 'In the media')) {
+        $field_short_title = $node->field_short_title;
+        $output .= '<div class= "title">' . l($node->field_short_title[$language->language][0]['value'], 'node/' . $node->nid) . '</div>';
       }
       else {
         $field_short_title = $node->field_short_title;
-      	$output .= '<div class= "title">' . l($node->field_short_title[key($field_short_title)][0]['value'], 'node/' . $node->nid) . '</div>';
+
+        $output .= '<div class= "title">' . l($node->field_short_title[key($field_short_title)][0]['value'], 'node/' . $node->nid) . '</div>';
       }
       $output .= '<span class= "read">[' . $read . '</span>';
       $output .= '<span class= "readall">' . " | " . $readall . ']</span>';
