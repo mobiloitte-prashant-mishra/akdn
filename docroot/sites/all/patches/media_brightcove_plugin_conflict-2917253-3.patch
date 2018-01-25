@@ -1,0 +1,13 @@
+diff --git a/sites/all/modules/brightcove/brightcove_media/brightcove_media.module b/sites/all/modules/brightcove/brightcove_media/brightcove_media.module
+index efe6893..8d4964b 100644
+--- a/sites/all/modules/brightcove/brightcove_media/brightcove_media.module
++++ b/sites/all/modules/brightcove/brightcove_media/brightcove_media.module
+@@ -373,7 +373,7 @@ function brightcove_media_upload_form($form, &$form_state) {
+     'client' => $client,
+   ]));
+ 
+-  $form['uploadform']['submit'] = [
++  $form['uploadform']['brightcove_submit'] = [
+     '#type' => 'button',
+     '#name' => 'upload',
+     '#value' => t('Upload and attach'),
