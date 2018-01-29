@@ -2603,35 +2603,40 @@ function _akdn_custom_lang_related_info_links() {
   global $language;
   global $base_url;
   $lang = $language->language;
-  $output = '<div class="view-header">Related information</div><div class="view-content">';
 
   if (arg(0) == 'node' && is_numeric(arg(1))) {
     $node = node_load(arg(1));
     $field = $node->field_block_add_links[$lang];
-
-    foreach ($field as $key => $value) {
-      if (strpos($value['url'], 'www')) {
-        $url = $value['url'];
-      }
-      else {
-        $url = '/' . $value['url'];
-      }
-      $target = $value['attributes']['target'];
-      $output .= '<div class="views-row ">';
-      if ($target == '_blank') {
-        $output .= '<div class="field-content custom-page-block-link">
+    if (!empty($field)) {
+      $output = '<div class="view-header">Related information</div><div class="view-content">';
+      foreach ($field as $key => $value) {
+        if (strpos($value['url'], 'www')) {
+          $url = $value['url'];
+        }
+        else {
+          $url = '/' . $value['url'];
+        }
+        $target = $value['attributes']['target'];
+        $output .= '<div class="views-row ">';
+        if ($target == '_blank') {
+          $output .= '<div class="field-content custom-page-block-link">
     <a href="' . $url . '" target="' . $target . '">' . $value['title'] . '</a></div>';
-      }
-      else {
-        $output .= '<div class="field-content custom-page-block-link">
+        }
+        else {
+          $output .= '<div class="field-content custom-page-block-link">
     <a href="' . $url . '">' . $value['title'] . '</a></div>';
-      }
+        }
 
+        $output .= '</div>';
+      }
       $output .= '</div>';
+      return $output;
     }
+    return NULL;
   }
-  $output .= '</div>';
-  return $output;
+  else {
+    return NULL;
+  }
 }
 
 function _akdn_custom_lang_links($main_switcher = FALSE) {
