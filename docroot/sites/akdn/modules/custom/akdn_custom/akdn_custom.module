@@ -2604,6 +2604,7 @@ function _akdn_custom_lang_related_info_links() {
   global $base_url;
   $lang = $language->language;
 
+  
   if (arg(0) == 'node' && is_numeric(arg(1))) {
     $node = node_load(arg(1));
     $field = $node->field_block_add_links[$lang];
