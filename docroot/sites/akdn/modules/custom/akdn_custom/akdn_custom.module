@@ -655,6 +655,14 @@ function akdn_custom_block_info() {
       'info' => t('Custom Language Switcher'),
       'cache' => DRUPAL_NO_CACHE,
     ),
+    'page_lang_switcher' => array(
+      'info' => t('Custom Onpage Language Switcher'),
+      'cache' => DRUPAL_NO_CACHE,
+    ),
+    'where_we_work_related_info' => array(
+      'info' => t('Custom Where We Work Related Info'),
+      'cache' => DRUPAL_NO_CACHE,
+    ),
     'akaa_resources' => array(
       'info' => t('AKAA Resources Links'),
       'cache' => DRUPAL_NO_CACHE,
@@ -776,7 +784,18 @@ function akdn_custom_block_view($delta = '') {
         $block['subject'] = t('This page is also available in');
       }
       break;
-
+    case 'page_lang_switcher':
+      if ($links = _akdn_custom_lang_links()) {
+        $block['content'] = $links;
+        $block['subject'] = t('Also Available In: ');
+      }
+      break;
+    case 'where_we_work_related_info':
+      if ($add_links = _akdn_custom_lang_related_info_links()) {
+        $block['content'] = $add_links;
+        $block['subject'] = t('Related Information ');
+      }
+      break;
     case 'ac_lang_switch':
       if ($links = _akdn_custom_lang_links(TRUE)) {
         $block['content'] = $links;
@@ -2572,6 +2591,41 @@ function akaa_get_resources_links() {
   return $links;
 }
 
+function _akdn_custom_lang_related_info_links() {
+  global $language;
+  global $base_url;
+  $lang = $language->language;
+  $output = '<div class="view-header">Related information</div><div class="view-content">';
+
+  if (arg(0) == 'node' && is_numeric(arg(1))) {
+    $node = node_load(arg(1));
+    $field = $node->field_block_add_links[$lang];
+
+    foreach ($field as $key => $value) {
+      if (strpos($value['url'], 'www')) {
+        $url = $value['url'];
+      }
+      else {
+        $url = '/' . $value['url'];
+      }
+      $target = $value['attributes']['target'];
+      $output .= '<div class="views-row ">';
+      if ($target == '_blank') {
+        $output .= '<div class="field-content custom-page-block-link">
+    <a href="' . $url . '" target="' . $target . '">' . $value['title'] . '</a></div>';
+      }
+      else {
+        $output .= '<div class="field-content custom-page-block-link">
+    <a href="' . $url . '">' . $value['title'] . '</a></div>';
+      }
+
+      $output .= '</div>';
+    }
+  }
+  $output .= '</div>';
+  return $output;
+}
+
 function _akdn_custom_lang_links($main_switcher = FALSE) {
   if (drupal_multilingual()) {
     $path = drupal_is_front_page() ? '<front>' : $_GET['q'];
@@ -4154,6 +4208,20 @@ function akdn_custom_video_player() {
 }
 
 function akdn_custom_search_api_solr_search_results_alter(array &$results, SearchApiQueryInterface $query, $response) {
+  global $language;
+  $data_array = $results['search_api_solr_response']->response->docs;
+  $query = db_query("SELECT language, entity_id FROM entity_translation WHERE entity_id = :nid", array(':nid' => $data->item_id))->fetchAll();
+//  foreach ($data_array as $data) {
+//      $query = db_query("SELECT language, entity_id FROM entity_translation WHERE entity_id = :nid", array(':nid' => $data->item_id))->fetchAll();
+//    if (count($query) > 1) {
+//      $node = node_load($data->item_id);
+//      $data->ss_image_public_uri = $node->field_publication_image[$language->language][0]['uri'];
+//
+//    }
+//  }
+
+
+
   if (strpos($_SERVER['REQUEST_URI'], "agency") !== false) {
     unset($results['results']['9576']);
     unset($results['results']['22106']);
@@ -4604,6 +4672,8 @@ function akdn_custom_ctools_plugin_directory($module, $plugin) {
 }
 
 function akdn_custom_search_api_solr_query_alter(array &$call_args, SearchApiQueryInterface $query) {
+//  print_r($call_args['params']);
+//  die();
 // $node_types = node_type_get_types();
 // foreach ($node_types as $node_type) {
 //
