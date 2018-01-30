@@ -1,0 +1,80 @@
+.block-akdn-custom-page-lang-switcher {
+    background: #f4f1e8;
+    margin-bottom: 20px;
+    padding: 20px;
+    line-height: normal;
+}
+
+.block-akdn-custom-page-lang-switcher h2 {
+    color: #3c0202;
+    font-size: 15px;
+    float: left;
+    text-transform: uppercase;
+    margin: 0 8px 0 0;
+    padding: 0;
+}
+
+.block-akdn-custom-page-lang-switcher .content {
+    float: left;
+    width: calc(100% - 260px);
+}
+
+.block-akdn-custom-page-lang-switcher .content ul {
+    padding: 0;
+    margin: 0;
+}
+
+.block-akdn-custom-page-lang-switcher .content ul li {
+    list-style: none;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.block-akdn-custom-page-lang-switcher .content ul li a {
+    border-left: 1px solid #3c0202;
+    padding: 0 10px;
+}
+
+.block-akdn-custom-page-lang-switcher .content ul li:first-child.active + li a {
+    border-left: 0 none;
+    padding: 0 10px 0 0;
+}
+
+.block-akdn-custom-page-lang-switcher .content ul li.first a {
+    border-left: 0 none;
+    padding: 0 10px 0 0;
+}
+
+@media only screen and (max-width: 767px) {
+    .block-akdn-custom-page-lang-switcher .content {
+        width: 100%;
+        padding-top: 5px;
+    }
+}
+
+
+/*RTL CSS*/
+html[dir='rtl'] .block-akdn-custom-page-lang-switcher h2 {
+    float: right;
+    margin: 0 0 0 8px;
+}
+
+html[dir='rtl'] .block-akdn-custom-page-lang-switcher .content {
+    float: right;
+}
+
+html[dir='rtl'] .block-akdn-custom-page-lang-switcher .content ul li a {
+    border-right: 1px solid #3c0202;
+    border-left: 0 none;
+    padding: 0 10px;
+}
+
+html[dir='rtl'] .block-akdn-custom-page-lang-switcher .content ul li:first-child.active + li a {
+    border: 0 none;
+    padding: 0 0 0 10px;
+}
+
+html[dir='rtl'] .block-akdn-custom-page-lang-switcher .content ul li.first a {
+    border: 0 none;
+    padding: 0 0 0 10px;
+}
