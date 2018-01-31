@@ -1,0 +1,16 @@
+diff --git a/docroot/sites/all/modules/contrib/manualcrop/manualcrop.helpers.inc b/docroot/sites/all/modules/contrib/manualcrop/manualcrop.helpers.inc
+index dcd38f62f..65069fb4f 100644
+--- a/docroot/sites/all/modules/contrib/manualcrop/manualcrop.helpers.inc
++++ b/docroot/sites/all/modules/contrib/manualcrop/manualcrop.helpers.inc
+@@ -251,7 +251,10 @@ function manualcrop_croptool_process(&$form, &$form_state, &$element, $file, $se
+     // Add the dependencies and croptool.
+     $js_identifier = _manualcrop_js_identifier(is_array($instance) ? $instance : $file);
+     _manualcrop_attach_dependencies($element, $form_state, $js_identifier, $settings);
+-    _manualcrop_add_croptool($container, $value, $form_state, $file->fid, $js_identifier, $styles, $required, $settings);
++
++    if ($form_state['build_info']['form_id'] == 'file_entity_edit' || $instance['widget']['type'] == 'image_image') {
++      _manualcrop_add_croptool($container, $value, $form_state, $file->fid, $js_identifier, $styles, $required, $settings);
++    }
+ 
+     return TRUE;
+   }

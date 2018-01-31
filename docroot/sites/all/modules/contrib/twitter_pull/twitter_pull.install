@@ -39,9 +39,9 @@ function twitter_pull_requirements($phase) {
     }
     // Load the twitter module.
     module_load_include('inc', 'twitter');
-    
-    $twitter = twitter_connect();
-    if (!$twitter) {
+
+    $accounts = twitter_load_authenticated_accounts(NULL, TRUE);
+    if (empty($accounts)) {
       return array(
         'twittter_pull_auth' => array(
           'title' => t('Twitter Pull Authentication'),
