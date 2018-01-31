@@ -4,6 +4,8 @@
  * Implements hook_init().
  */
 function akdn_custom_init() {
+//  print_r(node_load(arg(1)));
+//  die();
   $drupal_get_path = drupal_get_path('module', 'akdn_custom');
 
   if (arg(0) == 'media' && arg(1) == 'browser') {
@@ -1014,6 +1016,8 @@ function akdn_custom_content_breadcrumb() {
  *
  */
 function akdn_all_areas_of_activity() {
+  global $language;
+  $lang = $language->language;
   $arr = menu_get_active_trail();
   $output = '';
   $top_menu = $arr[1];
@@ -1034,7 +1038,7 @@ function akdn_all_areas_of_activity() {
     $key = key($menu_node_links);
     $output = '';
     $output_header = '<div class = "all-activities-btn">';
-    $output_header .= '<h2 class = "pane-title">All Areas of Activities</h2>';
+    $output_header .= '<h2 class = "pane-title">' . t("All Areas of Activities") . '</h2>';
     $output_header .= '<div class = "all-activities-sidebar">';
     $get_activities = get_areas_of_activities($key);
     //
@@ -1063,7 +1067,7 @@ function akdn_all_areas_of_activity() {
                 $field_short_title2 = $node_load2->field_short_title;
                 $output .= '<div class= "all-activities-row">';
                 $output .= '<div class = "all-activities-short-title">';
-                $output .= l($node_load2->field_short_title[key($field_short_title2)][0]['value'], 'node/' . $node_load2->nid);
+                $output .= l($node_load2->field_short_title[$lang][0]['value'], 'node/' . $node_load2->nid);
                 $output .= '</div>';
                 $output .= '</div>';
               }
@@ -1073,7 +1077,7 @@ function akdn_all_areas_of_activity() {
             $field_short_title1 = $node_load1->field_short_title;
             $output .= '<div class= "all-activities-row">';
             $output .= '<div class = "all-activities-short-title">';
-            $output .= l($node_load1->field_short_title[key($field_short_title1)][0]['value'], 'node/' . $node_load1->nid);
+            $output .= l($node_load1->field_short_title[$lang][0]['value'], 'node/' . $node_load1->nid);
             $output .= '</div>';
             $output .= '</div>';
           }
@@ -1086,15 +1090,16 @@ function akdn_all_areas_of_activity() {
             $output .= '<div class= "all-activities-short-title">';
          if ($title == 'Aga Khan Award for Architecture' ) {
             $field_short_title = $node_load->field_short_title;
-            $output .= l($node_load->field_short_title[key($field_short_title)][0]['value'], "node/9576");
-          } elseif ($title == 'Aga Khan Music Initiative') {
-                   $field_short_title = $node_load->field_short_title;
-                   $output .= l($node_load->field_short_title[key($field_short_title)][0]['value'], "node/22106");
-            }
-            else {
-              $field_short_title = $node_load->field_short_title;
-              $output .= l($node_load->field_short_title[key($field_short_title)][0]['value'], 'node/' . $node_load->nid);
-          }
+            $output .= l($node_load->field_short_title[$lang][0]['value'], "node/9576");
+        }
+        elseif ($title == 'Aga Khan Music Initiative') {
+          $field_short_title = $node_load->field_short_title;
+          $output .= l($node_load->field_short_title[$lang][0]['value'], "node/22106");
+        }
+        else {
+          $field_short_title = $node_load->field_short_title;
+          $output .= l($node_load->field_short_title[$lang][0]['value'], 'node/' . $node_load->nid);
+        }
 
         $output .= '</div>';
         $output .= '</div>';
@@ -1201,15 +1206,15 @@ function akdn_right_panel_press_center_block() {
   $arg = arg(1);
   $node = array();
   $array = array(
-    'news' => 'News',
-    'in-the-media' => 'In the Media',
-    'press-releases' => 'Press Releases',
-    'publications' => 'Publications',
-    'speeches' => 'Speeches',
-    'videos' => 'Videos',
-    'galleries' => 'Photographs',
-    'events' => 'Events',
-    'projects' => 'Spotlights'
+    'news' => t('News'),
+    'in-the-media' => t('In the Media'),
+    'press-releases' => t('Press Releases'),
+    'publications' => t('Publications'),
+    'speeches' => t('Speeches'),
+    'videos' => t('Videos'),
+    'galleries' => t('Photographs'),
+    'events' => t('Events'),
+    'projects' => t('Spotlights')
   );
   if (arg(2) == 'draft') {
     $vid = get_latest_revision_id($arg);
@@ -1925,12 +1930,12 @@ function what_we_do_news_and_resources() {
         $name = $term->name;
         if ($name == 'Press Release') {
           $url = 'press-releases';
-          $type = 'Press Releases';
+          $type = t('Press Releases');
           $read = l('View', 'node/' . $node->nid, $attribute);
         }
         if ($name == 'In the media') {
           $url = 'in-the-media';
-          $type = 'In the Media';
+          $type = t('In the Media');
           $field_media_source = $node->field_media_source;
           $source = reset($field_media_source)[0]['url'];
           $attribute = array('attributes' => array('target'=>'_blank'));
@@ -2609,7 +2614,7 @@ function _akdn_custom_lang_related_info_links() {
     $node = node_load(arg(1));
     $field = $node->field_block_add_links[$lang];
     if (!empty($field)) {
-      $output = '<div class="view-header">Related information</div><div class="view-content">';
+      $output = '<div class="view-header">' . t("Related information") . '</div><div class="view-content">';
       foreach ($field as $key => $value) {
         if (strpos($value['url'], 'www')) {
           $url = $value['url'];
