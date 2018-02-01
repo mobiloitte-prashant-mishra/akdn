@@ -182,7 +182,7 @@ $databases = array (
   array (
     'default' =>
     array (
-      'database' => 'akdn3db165449',
+      'database' => 'akdn3academies1',
       'username' => 's39873',
       'password' => '9m3T72xRFhLNepf',
       'host' => '127.0.0.1',
