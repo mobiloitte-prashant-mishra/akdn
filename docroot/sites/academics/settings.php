@@ -183,8 +183,8 @@ $databases = array (
     'default' =>
     array (
       'database' => 'akdn3db165449',
-      'username' => 's21222',
-      'password' => 'KTLM4nDPRMZ5PZR',
+      'username' => 's39873',
+      'password' => '9m3T72xRFhLNepf',
       'host' => '127.0.0.1',
       'port' => '',
       'driver' => 'mysql',
