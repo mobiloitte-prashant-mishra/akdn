@@ -224,5 +224,14 @@ function academies_preprocess_html(&$vars) {
 		$vars['classes_array'][]='term-' . $node->field_academy_name_taxonomy['und']['0']['tid'];
 	}
 }
-
+function academies_page_alter(&$pages) {  
+  global $base_url;
+  $favicon = $base_url."/sites/academics/academiesfavicon_0.ico";
+//  print '<pre>';
+//  print_r(drupal_strip_dangerous_protocols($favicon)); die;
+  $type = theme_get_setting('favicon_mimetype');
+//  $type = 'image/x-icon';
+//  print_r($type); die;
+  drupal_add_html_head_link(array('rel' => 'shortcut icon', 'href' => drupal_strip_dangerous_protocols($favicon), 'type' => $type));
+}
 
