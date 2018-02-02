@@ -182,15 +182,9 @@ $databases = array (
   array (
     'default' =>
     array (
-<<<<<<< HEAD
       'database' => 'akdn3academies2',
       'username' => 's39874',
       'password' => 'aFfBj8VFX2XPEL7',
-=======
-      'database' => 'akdn3db165449',
-      'username' => 's21222',
-      'password' => 'KTLM4nDPRMZ5PZR',
->>>>>>> AKDN-1366-draft-mode
       'host' => '127.0.0.1',
       'port' => '',
       'driver' => 'mysql',
@@ -251,11 +245,7 @@ $drupal_hash_salt = 'UY2huecCJOhaVGOxgJdQM4QWuXsPbLQiJMZU-SlfidU';
  * It is not allowed to have a trailing slash; Drupal will add it
  * for you.
  */
-<<<<<<< HEAD
- $base_url = 'http://akdn3academies2.prod.acquia-sites.com';  // NO trailing slash!
-=======
  #$base_url = 'http://akdn3academies1.prod.acquia-sites.com';  // NO trailing slash!
->>>>>>> AKDN-1366-draft-mode
 
 /**
  * PHP settings:
