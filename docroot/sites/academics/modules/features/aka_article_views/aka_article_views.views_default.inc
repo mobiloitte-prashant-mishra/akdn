@@ -27,11 +27,8 @@ function aka_article_views_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['quantity'] = '4';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'item';
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -75,11 +72,6 @@ function aka_article_views_views_default_views() {
   $handler->display->display_options['sorts']['field_date_value']['table'] = 'field_data_field_date';
   $handler->display->display_options['sorts']['field_date_value']['field'] = 'field_date_value';
   $handler->display->display_options['sorts']['field_date_value']['order'] = 'DESC';
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   /* Contextual filter: Content: Has taxonomy term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
   $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_index';
@@ -120,7 +112,6 @@ function aka_article_views_views_default_views() {
   $handler->display->display_options['filters']['field_academy_name_taxonomy_tid']['id'] = 'field_academy_name_taxonomy_tid';
   $handler->display->display_options['filters']['field_academy_name_taxonomy_tid']['table'] = 'field_data_field_academy_name_taxonomy';
   $handler->display->display_options['filters']['field_academy_name_taxonomy_tid']['field'] = 'field_academy_name_taxonomy_tid';
-  $handler->display->display_options['filters']['field_academy_name_taxonomy_tid']['value'] = '';
   $handler->display->display_options['filters']['field_academy_name_taxonomy_tid']['vocabulary'] = 'academy_name';
 
   /* Display: Block: news page general */
@@ -137,7 +128,7 @@ function aka_article_views_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['quantity'] = '4';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Thumbnail image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
@@ -227,17 +218,6 @@ function aka_article_views_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Field: Date (field_date) */
-  $handler->display->display_options['sorts']['field_date_value']['id'] = 'field_date_value';
-  $handler->display->display_options['sorts']['field_date_value']['table'] = 'field_data_field_date';
-  $handler->display->display_options['sorts']['field_date_value']['field'] = 'field_date_value';
-  $handler->display->display_options['sorts']['field_date_value']['order'] = 'DESC';
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
 
   /* Display: Block: news home general */
   $handler = $view->new_display('block', 'Block: news home general', 'block_2');
@@ -290,17 +270,6 @@ function aka_article_views_views_default_views() {
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_length' => '200',
   );
-  $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Field: Date (field_date) */
-  $handler->display->display_options['sorts']['field_date_value']['id'] = 'field_date_value';
-  $handler->display->display_options['sorts']['field_date_value']['table'] = 'field_data_field_date';
-  $handler->display->display_options['sorts']['field_date_value']['field'] = 'field_date_value';
-  $handler->display->display_options['sorts']['field_date_value']['order'] = 'DESC';
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -358,7 +327,6 @@ function aka_article_views_views_default_views() {
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
-    'show_remaining_days' => 0,
   );
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
@@ -427,6 +395,10 @@ function aka_article_views_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
+    t('<br />[body]'),
+    t('All'),
+    t('Block: news page general'),
+    t('All recent news'),
     t('Items per page'),
     t('- All -'),
     t('Offset'),
@@ -434,10 +406,6 @@ function aka_article_views_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('<br />[body]'),
-    t('All'),
-    t('Block: news page general'),
-    t('All recent news'),
     t('<br>[body]'),
     t('Block: news right general'),
     t('What\'s New'),
