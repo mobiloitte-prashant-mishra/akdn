@@ -1616,11 +1616,13 @@ function akdn_custom_filter_heading() {
  *
  */
 function fact_sheet_top_links_block() {
+  global $language;
+  $lang = $language->language;
   $arg = arg(1);
   if (!empty($arg)) {
     $node = node_load($arg);
     $field_show_fact_block = $node->field_show_fact_block;
-    $show = $node->field_show_fact_block[key($field_show_fact_block)][0]['value'];
+    $show = $node->field_show_fact_block[$lang][0]['value'];
     $view = views_get_view_result('facts_blocks', 'facts_block', $node->nid);
     $result = count($view);
     if ($show == 1 && !empty($result)) {
@@ -1628,15 +1630,15 @@ function fact_sheet_top_links_block() {
       $term = array_values($term);
       $name = $term[0]->name;
       $output = '';
-      $output .= '<p><span>' . substr($name, 0, 1) . '</span><span>' . substr($name, 1) . ' AT A GLANCE</span></p><ul>';
+      $output .= '<p><span>' . substr($name, 0, 1) . '</span><span>' . substr($name, 1) . t(" AT A GLANCE") . '</span></p><ul>';
       if (!empty($node->field_fact_sheet_upload)) {
         $field_fact_sheet_upload = $node->field_fact_sheet_upload;
-        $file_id = $node->field_fact_sheet_upload[key($field_fact_sheet_upload)][0]['fid'];
+        $file_id = $node->field_fact_sheet_upload[$lang][0]['fid'];
         $url = l('FACT SHEET', 'factsheet/' . str_replace(' ', '-', $name) . '/' . $file_id);
         $output .= '<li>' . $url . '</li>';
       }
-      if ($node->field_facts_url_links['und']) {
-        foreach ($node->field_facts_url_links['und'] as $value) {
+      if ($node->field_facts_url_links[$lang]) {
+        foreach ($node->field_facts_url_links[$lang] as $value) {
           if ($value['attributes']['target'] == '_blank') {
             $options = array(
               'attributes' => array(
@@ -1655,7 +1657,7 @@ function fact_sheet_top_links_block() {
               ),
             );
             //$output .= '<li>' . l($value['title'], $value['url']) . '</li>';
-            $url = ulr($value['url']);
+            $url = url($value['url']);
             $output .= '<li><a href="' . $url . '" >' . $value['title'] . '</a></li>';
           }
         }
@@ -1670,12 +1672,14 @@ function fact_sheet_top_links_block() {
  *  Show Hide Fact block
  */
 function fact_block_visible_show() {
+  global $language;
+  $lang = $language->language;
   $arg = arg(1);
   $node = node_load($arg);
   $field_select_fact_sheet = $node->field_select_fact_sheet;
-  $select = $node->field_select_fact_sheet[key($field_select_fact_sheet)][0]['value'];
+  $select = $node->field_select_fact_sheet[$lang][0]['value'];
   $field_show_fact_block = $node->field_show_fact_block;
-  $show = $node->field_show_fact_block[key($field_show_fact_block)][0]['value'];
+  $show = $node->field_show_fact_block[$lang][0]['value'];
   if ($show == 1 && $select == 0) {
     $content = views_embed_view('facts_blocks', 'facts_block', $node->nid);
     return $content;
@@ -1687,10 +1691,12 @@ function fact_block_visible_show() {
  *
  */
 function news_and_resources_top_links() {
+  global $language;
+  $lang = $language->language;
   $arg = arg(1);
   $node = node_load($arg);
   $field_show_news_and_resources = $node->field_show_news_and_resources;
-  $show = $node->field_show_news_and_resources[key($field_show_news_and_resources)][0]['value'];
+  $show = $node->field_show_news_and_resources[$lang][0]['value'];
   if ($show == 1) {
     $term = nat_get_terms_by_vocabulary($arg);
     $term = array_values($term);
@@ -1698,37 +1704,37 @@ function news_and_resources_top_links() {
     $ntid = $term[0]->tid;
     
     $field_news_and_resources_link = $node->field_news_and_resources_link;
-    $links = $node->field_news_and_resources_link[key($field_news_and_resources_link)];
+    $links = $node->field_news_and_resources_link[$lang];
     $output = '';
-    $output .= '<p><span>N</span><span>ews & Resources</span></p><ul>';
+    $output .= t('<p><span>N</span><span>ews & Resources</span></p><ul>');
     foreach ($links as $value) {
       if ($value['value'] == 'news') {
-        $text = 'News';
+        $text = t('News');
       }
       if ($value['value'] == 'in-the-media') {
-        $text = 'In the Media';
+        $text = t('In the Media');
       }
       if ($value['value'] == 'press-releases') {
-        $text = 'Press Releases';
+        $text = t('Press Releases');
       }
       if ($value['value'] == 'publications') {
-        $text = 'Publications';
+        $text = t('Publications');
       }
       if ($value['value'] == 'speeches') {
-        $text = 'Speeches';
+        $text = t('Speeches');
       }
       if ($value['value'] == 'videos') {
-        $text = 'Videos';
+        $text = t('Videos');
       }
       if ($value['value'] == 'events') {
-        $text = 'Events';
+        $text = t('Events');
       }
       if ($value['value'] == 'photographs') {
-        $text = 'Photographs';
+        $text = t('Photographs');
         $value['value'] = 'galleries';
       }
       if ($value['value'] == 'projects') {
-        $text = 'Spotlights';
+        $text = t('Spotlights');
       }
       switch ($node->type) {
         case 'focus_area':
@@ -1767,10 +1773,11 @@ function in_array_r($needle, $haystack, $strict = FALSE) {
  */
 function what_we_do_news_and_resources() {
   global $language;
+  $lang = $language->language;
   $arg = arg(1);
   $load = node_load($arg);
   $field_show_news_and_resources = $load->field_show_news_and_resources;
-  $show = $load->field_show_news_and_resources[key($field_show_news_and_resources)][0]['value'];
+  $show = $load->field_show_news_and_resources[$lang][0]['value'];
 
   if ($show == 1) {
     $term = nat_get_terms_by_vocabulary($arg);
@@ -1917,7 +1924,10 @@ function what_we_do_news_and_resources() {
 
       if ($node->type == 'article') {
         $field_article_cat = $node->field_article_cat;
-        $tid = $node->field_article_cat[key($field_article_cat)][0]['tid'];
+        $tid = $node->field_article_cat[$lang][0]['tid'];
+        if (empty($tid)) {
+          $tid = $node->field_article_cat[key($field_article_cat)][0]['tid'];
+        }
         $term = taxonomy_term_load($tid);
         $name = $term->name;
         if ($name == 'Press Release') {
