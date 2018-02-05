@@ -727,25 +727,3 @@ function media_wysiwyg_media_browser_params_alter(&$params) {
     ) + $params;
   }
 }
-
-/**
- * Implements hook_theme().
- * Allow linked images in WYSIWYG
- */
-function media_wysiwyg_theme() {
-  return array(
-    'media_wysiwyg' => array(
-      'render element' => 'elements',
-      'template' => 'templates/media_wysiwyg',
-    ),
-  );
-}
-
-/**
- * Implements hook_preprocess_file_entity().
- *
- * Override the template file when view mode is WYSIWYG to provide template that allows linked images.
- */
-function media_wysiwyg_preprocess_file_entity(&$variables) {
-    $variables['theme_hook_suggestions'][] = 'media_wysiwyg';
-}
