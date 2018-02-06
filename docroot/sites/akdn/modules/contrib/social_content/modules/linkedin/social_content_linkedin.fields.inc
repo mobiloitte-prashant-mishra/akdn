@@ -183,6 +183,82 @@ function social_content_linkedin_create_fields() {
         ),
       ),
     ),
+    'field_linkedin_update_link' => array(
+      'translatable' => '0',
+      'entity_types' => array(),
+      'settings' => array(
+        'attributes' => array(
+          'target' => 'default',
+          'class' => '',
+          'rel' => '',
+        ),
+        'url' => 0,
+        'title' => 'optional',
+        'title_value' => '',
+        'title_maxlength' => 128,
+        'enable_tokens' => 1,
+        'display' => array(
+          'url_cutoff' => 80,
+        ),
+      ),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_field_linkedin_update_link' => array(
+                'url' => 'field_linkedin_update_link_url',
+                'title' => 'field_linkedin_update_link_title',
+                'attributes' => 'field_linkedin_update_link_attributes',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_field_linkedin_update_link' => array(
+                'url' => 'field_linkedin_update_link_url',
+                'title' => 'field_linkedin_update_link_title',
+                'attributes' => 'field_linkedin_update_link_attributes',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'field_name' => 'field_linkedin_update_link',
+      'type' => 'link_field',
+      'module' => 'link',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'columns' => array(
+        'url' => array(
+          'type' => 'varchar',
+          'length' => 2048,
+          'not null' => FALSE,
+          'sortable' => TRUE,
+        ),
+        'title' => array(
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+          'sortable' => TRUE,
+        ),
+        'attributes' => array(
+          'type' => 'text',
+          'size' => 'medium',
+          'not null' => FALSE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          'linkedin',
+        ),
+      ),
+    ),
     'field_linkedin_external_id' => array(
       'translatable' => '0',
       'entity_types' => array(),
@@ -358,6 +434,58 @@ function social_content_linkedin_create_instances() {
       'description' => '',
       'default_value' => NULL,
       'field_name' => 'field_linkedin_link',
+      'entity_type' => 'node',
+      'bundle' => 'linkedin',
+      'deleted' => '0',
+    ),
+    'field_linkedin_update_link' => array(
+      'label' => 'Linkedin update link',
+      'widget' => array(
+        'weight' => '33',
+        'type' => 'link_field',
+        'module' => 'link',
+        'active' => 0,
+        'settings' => array(),
+      ),
+      'settings' => array(
+        'validate_url' => 0,
+        'url' => 0,
+        'title' => 'none',
+        'title_value' => '',
+        'title_maxlength' => '128',
+        'display' => array(
+          'url_cutoff' => '80',
+        ),
+        'attributes' => array(
+          'target' => '_blank',
+          'rel' => '',
+          'class' => '',
+          'configurable_title' => 0,
+          'title' => '',
+        ),
+        'rel_remove' => 'default',
+        'enable_tokens' => 1,
+        'user_register_form' => FALSE,
+      ),
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'type' => 'link_default',
+          'settings' => array(),
+          'module' => 'link',
+          'weight' => 3,
+        ),
+        'teaser' => array(
+          'type' => 'hidden',
+          'label' => 'above',
+          'settings' => array(),
+          'weight' => 0,
+        ),
+      ),
+      'required' => 0,
+      'description' => '',
+      'default_value' => NULL,
+      'field_name' => 'field_linkedin_update_link',
       'entity_type' => 'node',
       'bundle' => 'linkedin',
       'deleted' => '0',

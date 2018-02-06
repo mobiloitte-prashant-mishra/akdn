@@ -251,14 +251,6 @@ function akdn_custom_views_query_alter(&$view, &$query) {
  * Implements hook_views_pre_render().
  */
 function akdn_custom_views_pre_render(&$view) {
-  if($view->name == 'featured_slideshow_manual' && $view->current_display == 'block_4'){
-    $newView = (object)array();
-    foreach ($view->result as $key => $value) {
-      $newView->result[$value->node_field_revision_field_featured_content_nodes_nid] = $value;
-    }
-    unset($view->result);
-    $view->result = $newView->result;
-  }
   // Open 'In the media type links in new tab'
   if ($view->name == 'featured_slideshow' && $view->current_display == 'block_2') {
     foreach ($view->result as $result) {
@@ -4954,6 +4946,25 @@ function akdn_custom_search_api_solr_documents_alter(array &$documents, SearchAp
 }
 
 /**
+ * hook_media_wysiwyg_token_to_markup_alter().
+ * @param type $element
+ * @param type $tag_info
+ * @param type $settings
+ */
+function akdn_custom_media_wysiwyg_token_to_markup_alter(&$element, $tag_info, $settings) {
+  $file_entity = $element['content'];
+  $caption = $file_entity['field_image_caption']['#items'][0]['value'];
+  $copyright = $file_entity['field_image_copytight']['#items'][0]['value'];
+  if(empty($caption)){
+    unset($element['content']['field_image_caption']);
+  }
+  if(empty($copyright)){
+    unset($element['content']['field_image_copytight']);
+  }
+}
+
+
+/**
  * Implementation of hook_services_resources().
  */
 function akdn_custom_services_resources() {
@@ -5027,20 +5038,3 @@ function _nodes_related_term_id_retrieve($tid, $pager, $limit, $order) {
   return $nodes;
 }
 
-/**
- * hook_media_wysiwyg_token_to_markup_alter().
- * @param type $element
- * @param type $tag_info
- * @param type $settings
- */
-function akdn_custom_media_wysiwyg_token_to_markup_alter(&$element, $tag_info, $settings) {
-  $file_entity = $element['content'];
-  $caption = $file_entity['field_image_caption']['#items'][0]['value'];
-  $copyright = $file_entity['field_image_copytight']['#items'][0]['value'];
-  if(empty($caption)){
-    unset($element['content']['field_image_caption']);
-  }
-  if(empty($copyright)){
-    unset($element['content']['field_image_copytight']);
-  }
-}

@@ -373,7 +373,7 @@ function brightcove_media_upload_form($form, &$form_state) {
     'client' => $client,
   ]));
 
-  $form['uploadform']['submit'] = [
+  $form['uploadform']['brightcove_submit'] = [
     '#type' => 'button',
     '#name' => 'upload',
     '#value' => t('Upload and attach'),

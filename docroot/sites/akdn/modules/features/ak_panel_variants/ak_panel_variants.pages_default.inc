@@ -74,10 +74,10 @@ function ak_panel_variants_default_page_manager_handlers() {
           'settings' => array(
             'visibility_setting' => '0',
             'paths' => 'agencies/aga-khan-award-architecture-0
-  architecture
-  node/22106
-  our-agencies/aga-khan-music-initiative
-  akmi',
+architecture
+node/22106
+our-agencies/aga-khan-music-initiative
+akmi',
           ),
           'context' => 'empty',
           'not' => FALSE,
