@@ -4642,7 +4642,7 @@ if (isset($node->field_about_page)) {
   $display->content['new-4917c162-4251-4e18-a8c8-51cad0e41184'] = $pane;
   $display->panels['right'][4] = 'new-4917c162-4251-4e18-a8c8-51cad0e41184';
   $display->hide_title = PANELS_TITLE_NONE;
-  $display->title_pane = 'new-ce365a39-54a0-4640-a592-f401386db51b';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['node_view_panel_context_16'] = $handler;
 
