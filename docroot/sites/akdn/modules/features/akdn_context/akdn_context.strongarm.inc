@@ -105,7 +105,7 @@ function akdn_context_strongarm() {
           'weight' => '5',
         ),
         'language' => array(
-          'weight' => '4',
+          'weight' => '0',
         ),
         'redirect' => array(
           'weight' => '8',
