@@ -137,6 +137,7 @@ function akdn_content_types_field_default_field_bases() {
         ),
       ),
       'entity_translation_sync' => FALSE,
+      'options_list_callback' => 'title_taxonomy_allowed_values',
     ),
     'translatable' => 1,
     'type' => 'taxonomy_term_reference',
@@ -301,7 +302,7 @@ function akdn_content_types_field_default_field_bases() {
       ),
       'uri_scheme' => 'public',
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'image',
   );
 
@@ -327,8 +328,9 @@ function akdn_content_types_field_default_field_bases() {
         ),
       ),
       'entity_translation_sync' => FALSE,
+      'options_list_callback' => 'title_taxonomy_allowed_values',
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'taxonomy_term_reference',
   );
 
@@ -354,7 +356,7 @@ function akdn_content_types_field_default_field_bases() {
       ),
       'uri_scheme' => 'public',
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'file',
   );
 
@@ -401,7 +403,7 @@ function akdn_content_types_field_default_field_bases() {
       ),
       'uri_scheme' => 'public',
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'image',
   );
 
@@ -461,7 +463,7 @@ function akdn_content_types_field_default_field_bases() {
       'title_value' => '',
       'url' => 0,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'link_field',
   );
 
@@ -491,7 +493,7 @@ function akdn_content_types_field_default_field_bases() {
       'title_value' => '',
       'url' => 0,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'link_field',
   );
 
@@ -516,7 +518,7 @@ function akdn_content_types_field_default_field_bases() {
       ),
       'uri_scheme' => 'public',
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'image',
   );
 
@@ -565,7 +567,7 @@ function akdn_content_types_field_default_field_bases() {
       'entity_translation_sync' => FALSE,
       'max_length' => 255,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'text',
   );
 
@@ -917,7 +919,7 @@ function akdn_content_types_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-// Exported field_base: 'field_exclude_from_search'.
+  // Exported field_base: 'field_exclude_from_search'.
   $field_bases['field_exclude_from_search'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -939,10 +941,10 @@ function akdn_content_types_field_default_field_bases() {
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'list_boolean',
-  );  
-  
+  );
+
   // Exported field_base: 'field_fact_sheet_reference'.
   $field_bases['field_fact_sheet_reference'] = array(
     'active' => 1,
@@ -996,7 +998,7 @@ function akdn_content_types_field_default_field_bases() {
         'view_name' => '',
       ),
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'node_reference',
   );
 
@@ -1022,7 +1024,7 @@ function akdn_content_types_field_default_field_bases() {
       ),
       'uri_scheme' => 'public',
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'file',
   );
 
@@ -1052,7 +1054,7 @@ function akdn_content_types_field_default_field_bases() {
       'title_value' => '',
       'url' => 0,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'link_field',
   );
 
@@ -1215,11 +1217,11 @@ function akdn_content_types_field_default_field_bases() {
       ),
     ),
     'locked' => 0,
-    'module' => 'brightcove_field',
+    'module' => 'brightcove',
     'settings' => array(
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'brightcove_field',
   );
 
@@ -1245,8 +1247,9 @@ function akdn_content_types_field_default_field_bases() {
         ),
       ),
       'entity_translation_sync' => FALSE,
+      'options_list_callback' => 'title_taxonomy_allowed_values',
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'taxonomy_term_reference',
   );
 
@@ -1296,7 +1299,7 @@ function akdn_content_types_field_default_field_bases() {
         'view_name' => 'hub_pages',
       ),
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'node_reference',
   );
 
@@ -1556,7 +1559,7 @@ function akdn_content_types_field_default_field_bases() {
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'list_boolean',
   );
 
@@ -1586,7 +1589,7 @@ function akdn_content_types_field_default_field_bases() {
       'title_value' => '',
       'url' => 0,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'link_field',
   );
 
@@ -1619,7 +1622,7 @@ function akdn_content_types_field_default_field_bases() {
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'list_text',
   );
 
@@ -1644,7 +1647,7 @@ function akdn_content_types_field_default_field_bases() {
       ),
       'uri_scheme' => 'public',
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'image',
   );
 
@@ -1665,7 +1668,7 @@ function akdn_content_types_field_default_field_bases() {
     'settings' => array(
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'text_long',
   );
 
@@ -1894,7 +1897,7 @@ function akdn_content_types_field_default_field_bases() {
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'list_boolean',
   );
 
@@ -1927,7 +1930,7 @@ function akdn_content_types_field_default_field_bases() {
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'list_text',
   );
 
@@ -1975,7 +1978,7 @@ function akdn_content_types_field_default_field_bases() {
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'list_boolean',
   );
 
@@ -2001,7 +2004,7 @@ function akdn_content_types_field_default_field_bases() {
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'list_boolean',
   );
 
@@ -2027,7 +2030,7 @@ function akdn_content_types_field_default_field_bases() {
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'list_boolean',
   );
 
@@ -2057,7 +2060,7 @@ function akdn_content_types_field_default_field_bases() {
       'title_value' => '',
       'url' => 0,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'link_field',
   );
 
@@ -2171,7 +2174,7 @@ function akdn_content_types_field_default_field_bases() {
     'settings' => array(
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'text_with_summary',
   );
 
@@ -2197,7 +2200,7 @@ function akdn_content_types_field_default_field_bases() {
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'list_boolean',
   );
 
@@ -2276,6 +2279,33 @@ function akdn_content_types_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'list_text',
+  );
+
+  // Exported field_base: 'field_videos'.
+  $field_bases['field_videos'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_videos',
+    'indexes' => array(
+      'revision_id' => array(
+        0 => 'revision_id',
+      ),
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'field_collection',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'hide_blank_items' => TRUE,
+      'hide_initial_item' => FALSE,
+      'path' => '',
+    ),
+    'translatable' => 1,
+    'type' => 'field_collection',
   );
 
   // Exported field_base: 'title_field'.
