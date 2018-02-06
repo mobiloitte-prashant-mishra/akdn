@@ -182,9 +182,9 @@ $databases = array (
   array (
     'default' =>
     array (
-      'database' => 'akdn3acaddb165446',
-      'username' => 's39873',
-      'password' => '9m3T72xRFhLNepf',
+      'database' => 'akdn3academies2',
+      'username' => 's39874',
+      'password' => 'aFfBj8VFX2XPEL7',
       'host' => '127.0.0.1',
       'port' => '',
       'driver' => 'mysql',
@@ -246,7 +246,7 @@ $drupal_hash_salt = 'UY2huecCJOhaVGOxgJdQM4QWuXsPbLQiJMZU-SlfidU';
  * for you.
  */
 
- $base_url = 'http://akdn3academies1.prod.acquia-sites.com';  // NO trailing slash!
+ #$base_url = 'http://new.agakhanacademies.org';  // NO trailing slash
 
 /**
  * PHP settings:
