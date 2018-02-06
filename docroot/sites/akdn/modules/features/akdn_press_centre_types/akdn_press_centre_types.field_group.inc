@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function akdn_press_centre_types_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -39,7 +39,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_article_details_group|node|article|form'] = $field_group;
+  $field_groups['group_article_details_group|node|article|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -74,7 +74,7 @@ function akdn_press_centre_types_field_group_info() {
       'formatter' => 'closed',
     ),
   );
-  $export['group_article_details|node|article|form'] = $field_group;
+  $field_groups['group_article_details|node|article|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -100,10 +100,11 @@ function akdn_press_centre_types_field_group_info() {
       'formatter' => '',
       'instance_settings' => array(
         'classes' => ' group-article field-group-tabs',
+        'id' => 'node_article_form_group_article',
       ),
     ),
   );
-  $export['group_article|node|article|form'] = $field_group;
+  $field_groups['group_article|node|article|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -132,7 +133,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_banner_item|node|speech_quote|form'] = $field_group;
+  $field_groups['group_banner_item|node|speech_quote|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -162,7 +163,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_basic_info|node|speech_quote|form'] = $field_group;
+  $field_groups['group_basic_info|node|speech_quote|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -189,11 +190,12 @@ function akdn_press_centre_types_field_group_info() {
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'node_article_full_group_body_wrapper',
       ),
       'formatter' => 'open',
     ),
   );
-  $export['group_body_wrapper|node|article|full'] = $field_group;
+  $field_groups['group_body_wrapper|node|article|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -220,7 +222,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_deprecated|node|project|form'] = $field_group;
+  $field_groups['group_deprecated|node|project|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -247,7 +249,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_deprecated|node|speech|form'] = $field_group;
+  $field_groups['group_deprecated|node|speech|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -277,7 +279,7 @@ function akdn_press_centre_types_field_group_info() {
       'formatter' => 'closed',
     ),
   );
-  $export['group_details_pub|node|speech|form'] = $field_group;
+  $field_groups['group_details_pub|node|speech|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -311,7 +313,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_details_speech|node|speech|form'] = $field_group;
+  $field_groups['group_details_speech|node|speech|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -342,7 +344,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_event_categories|node|event|form'] = $field_group;
+  $field_groups['group_event_categories|node|event|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -376,7 +378,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_event_details|node|event|form'] = $field_group;
+  $field_groups['group_event_details|node|event|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -402,10 +404,11 @@ function akdn_press_centre_types_field_group_info() {
       'formatter' => '',
       'instance_settings' => array(
         'classes' => ' group-event field-group-tabs',
+        'id' => 'node_event_form_group_event',
       ),
     ),
   );
-  $export['group_event|node|event|form'] = $field_group;
+  $field_groups['group_event|node|event|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -436,7 +439,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_featured_content|node|article|form'] = $field_group;
+  $field_groups['group_featured_content|node|article|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -467,7 +470,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_featured_content|node|event|form'] = $field_group;
+  $field_groups['group_featured_content|node|event|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -498,7 +501,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_featured_content|node|gallery|form'] = $field_group;
+  $field_groups['group_featured_content|node|gallery|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -529,7 +532,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_featured_content|node|podcast|form'] = $field_group;
+  $field_groups['group_featured_content|node|podcast|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -559,7 +562,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_featured_content|node|project|form'] = $field_group;
+  $field_groups['group_featured_content|node|project|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -590,7 +593,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_featured_content|node|publication|form'] = $field_group;
+  $field_groups['group_featured_content|node|publication|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -621,7 +624,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_featured_content|node|speech|form'] = $field_group;
+  $field_groups['group_featured_content|node|speech|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -652,7 +655,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_gallery_categories|node|gallery|form'] = $field_group;
+  $field_groups['group_gallery_categories|node|gallery|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -683,7 +686,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_gallery_details|node|gallery|form'] = $field_group;
+  $field_groups['group_gallery_details|node|gallery|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -710,7 +713,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_gallery_images|node|gallery|form'] = $field_group;
+  $field_groups['group_gallery_images|node|gallery|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -736,10 +739,11 @@ function akdn_press_centre_types_field_group_info() {
       'formatter' => '',
       'instance_settings' => array(
         'classes' => ' group-gallery field-group-tabs',
+        'id' => 'node_gallery_form_group_gallery',
       ),
     ),
   );
-  $export['group_gallery|node|gallery|form'] = $field_group;
+  $field_groups['group_gallery|node|gallery|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -769,7 +773,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_media|node|podcast|form'] = $field_group;
+  $field_groups['group_media|node|podcast|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -797,7 +801,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_media|node|publication|form'] = $field_group;
+  $field_groups['group_media|node|publication|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -826,7 +830,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_media|node|speech|form'] = $field_group;
+  $field_groups['group_media|node|speech|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -857,11 +861,12 @@ function akdn_press_centre_types_field_group_info() {
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'node_podcast_full_group_meta_information',
       ),
       'formatter' => 'open',
     ),
   );
-  $export['group_meta_information|node|podcast|full'] = $field_group;
+  $field_groups['group_meta_information|node|podcast|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -892,11 +897,12 @@ function akdn_press_centre_types_field_group_info() {
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'node_article_full_group_meta_info',
       ),
       'formatter' => 'open',
     ),
   );
-  $export['group_meta_info|node|article|full'] = $field_group;
+  $field_groups['group_meta_info|node|article|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -925,11 +931,12 @@ function akdn_press_centre_types_field_group_info() {
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'node_gallery_full_group_meta_info',
       ),
       'formatter' => 'open',
     ),
   );
-  $export['group_meta_info|node|gallery|full'] = $field_group;
+  $field_groups['group_meta_info|node|gallery|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -957,7 +964,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_newsletter_details|node|article|form'] = $field_group;
+  $field_groups['group_newsletter_details|node|article|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -985,7 +992,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_newsletter_details|node|event|form'] = $field_group;
+  $field_groups['group_newsletter_details|node|event|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1013,7 +1020,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_newsletter_details|node|gallery|form'] = $field_group;
+  $field_groups['group_newsletter_details|node|gallery|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1041,7 +1048,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_newsletter_details|node|podcast|form'] = $field_group;
+  $field_groups['group_newsletter_details|node|podcast|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1069,7 +1076,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_newsletter_details|node|project|form'] = $field_group;
+  $field_groups['group_newsletter_details|node|project|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1097,7 +1104,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_newsletter_details|node|publication|form'] = $field_group;
+  $field_groups['group_newsletter_details|node|publication|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1125,7 +1132,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_newsletter_details|node|speech|form'] = $field_group;
+  $field_groups['group_newsletter_details|node|speech|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1156,7 +1163,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_podcast_categories|node|podcast|form'] = $field_group;
+  $field_groups['group_podcast_categories|node|podcast|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1187,7 +1194,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_podcast_details|node|podcast|form'] = $field_group;
+  $field_groups['group_podcast_details|node|podcast|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1213,10 +1220,11 @@ function akdn_press_centre_types_field_group_info() {
       'formatter' => '',
       'instance_settings' => array(
         'classes' => ' group-podcast field-group-tabs',
+        'id' => 'node_podcast_form_group_podcast',
       ),
     ),
   );
-  $export['group_podcast|node|podcast|form'] = $field_group;
+  $field_groups['group_podcast|node|podcast|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1247,7 +1255,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_project_categories|node|project|form'] = $field_group;
+  $field_groups['group_project_categories|node|project|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1283,7 +1291,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_project_details|node|project|form'] = $field_group;
+  $field_groups['group_project_details|node|project|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1312,7 +1320,7 @@ function akdn_press_centre_types_field_group_info() {
       'formatter' => 'closed',
     ),
   );
-  $export['group_project_image|node|project|form'] = $field_group;
+  $field_groups['group_project_image|node|project|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1338,10 +1346,11 @@ function akdn_press_centre_types_field_group_info() {
       'formatter' => '',
       'instance_settings' => array(
         'classes' => ' group-project field-group-tabs',
+        'id' => 'node_project_form_group_project',
       ),
     ),
   );
-  $export['group_project|node|project|form'] = $field_group;
+  $field_groups['group_project|node|project|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1374,7 +1383,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_pub_categories|node|publication|form'] = $field_group;
+  $field_groups['group_pub_categories|node|publication|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1407,7 +1416,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_pub_details|node|publication|form'] = $field_group;
+  $field_groups['group_pub_details|node|publication|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1433,10 +1442,11 @@ function akdn_press_centre_types_field_group_info() {
       'formatter' => '',
       'instance_settings' => array(
         'classes' => ' group-publication field-group-tabs',
+        'id' => 'node_publication_form_group_publication',
       ),
     ),
   );
-  $export['group_publication|node|publication|form'] = $field_group;
+  $field_groups['group_publication|node|publication|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1464,7 +1474,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_quotes_categories|node|speech_quote|form'] = $field_group;
+  $field_groups['group_quotes_categories|node|speech_quote|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1502,7 +1512,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_related_content|node|article|form'] = $field_group;
+  $field_groups['group_related_content|node|article|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1540,7 +1550,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_related_content|node|event|form'] = $field_group;
+  $field_groups['group_related_content|node|event|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1578,7 +1588,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_related_content|node|gallery|form'] = $field_group;
+  $field_groups['group_related_content|node|gallery|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1616,7 +1626,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_related_content|node|podcast|form'] = $field_group;
+  $field_groups['group_related_content|node|podcast|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1654,7 +1664,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_related_content|node|publication|form'] = $field_group;
+  $field_groups['group_related_content|node|publication|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1692,7 +1702,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_related_content|node|speech|form'] = $field_group;
+  $field_groups['group_related_content|node|speech|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1722,7 +1732,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_speech_basic_info|node|speech|form'] = $field_group;
+  $field_groups['group_speech_basic_info|node|speech|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1753,7 +1763,7 @@ function akdn_press_centre_types_field_group_info() {
       ),
     ),
   );
-  $export['group_speech_categories|node|speech|form'] = $field_group;
+  $field_groups['group_speech_categories|node|speech|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1777,10 +1787,11 @@ function akdn_press_centre_types_field_group_info() {
       'formatter' => '',
       'instance_settings' => array(
         'classes' => ' group-speech-quote field-group-tabs',
+        'id' => 'node_speech_quote_form_group_speech_quote',
       ),
     ),
   );
-  $export['group_speech_quote|node|speech_quote|form'] = $field_group;
+  $field_groups['group_speech_quote|node|speech_quote|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1809,10 +1820,48 @@ function akdn_press_centre_types_field_group_info() {
       'formatter' => '',
       'instance_settings' => array(
         'classes' => ' group-speech field-group-tabs',
+        'id' => 'node_speech_form_group_speech',
       ),
     ),
   );
-  $export['group_speech|node|speech|form'] = $field_group;
+  $field_groups['group_speech|node|speech|form'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Article');
+  t('Article Categories');
+  t('Article Details');
+  t('Banner Item');
+  t('Basic Info');
+  t('Body Wrapper Div');
+  t('Deprecated');
+  t('Event');
+  t('Event Categories');
+  t('Event Details');
+  t('Gallery');
+  t('Gallery Categories');
+  t('Gallery Details');
+  t('Images');
+  t('Media');
+  t('Meta Info');
+  t('Meta Information');
+  t('Newsletter Details');
+  t('Podcast');
+  t('Podcast Categories');
+  t('Podcast Details');
+  t('Project');
+  t('Project Categories');
+  t('Project Details');
+  t('Publication');
+  t('Publication Categories');
+  t('Publication Details');
+  t('Quotes Categories');
+  t('Related Content');
+  t('Speech');
+  t('Speech Basic Info');
+  t('Speech Categories');
+  t('Speech Details');
+  t('Speech Quote');
+
+  return $field_groups;
 }
