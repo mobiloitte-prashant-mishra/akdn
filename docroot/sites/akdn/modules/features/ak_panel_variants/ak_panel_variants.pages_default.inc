@@ -574,8 +574,8 @@ akmi',
     'admin_title' => 'About page information',
     'title' => '',
     'body' => '<?php
-global $language;
-$lang = $language->language;
+  global $language;
+  $lang = $language->language;
   $node = menu_get_object();
   print \'<div class = "whatsnew-right-content">\';
   if (isset($node->field_about_page)) {
