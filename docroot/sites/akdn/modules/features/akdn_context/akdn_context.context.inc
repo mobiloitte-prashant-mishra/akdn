@@ -977,12 +977,7 @@ function akdn_context_context_default_contexts() {
           'region' => 'branding',
           'weight' => '-10',
         ),
-        'akdn_custom-page_lang_switcher' => array(
-          'module' => 'akdn_custom',
-          'delta' => 'page_lang_switcher',
-          'region' => 'branding',
-          'weight' => '-9',
-        ),
+        
       ),
     ),
   );
