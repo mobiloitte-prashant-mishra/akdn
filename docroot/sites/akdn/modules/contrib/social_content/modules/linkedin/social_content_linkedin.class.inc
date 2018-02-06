@@ -53,6 +53,7 @@ class SocialContentLinkedin extends SocialContent {
       'account_name' => 'field_linkedin_account_name',
       'account_link' => 'field_linkedin_account_link',
       'link' => 'field_linkedin_link',
+      'update_link' => 'field_linkedin_update_link',
       'picture' => 'field_linkedin_picture',
     ) + parent::fields();
   }
@@ -99,7 +100,7 @@ class SocialContentLinkedin extends SocialContent {
       '#title' => t('Access Token'),
       '#default_value' => isset($settings['access_token']) ? $settings['access_token'] : NULL,
       '#description' => $token_generator_link ? $token_generator_link : t('To generate an Access Token, save this form first.'),
-      '#maxlength' => 300,
+      '#maxlength' => 2000,
     );
     $form['api_url'] = array(
       '#type' => 'textfield',
@@ -115,6 +116,15 @@ class SocialContentLinkedin extends SocialContent {
       '#title' => t('API version'),
       '#description' => t("i.e. 'v1'."),
       '#default_value' => isset($settings['api_version']) ? $settings['api_version'] : 'v1',
+      '#required' => TRUE,
+    );
+    $form['update_url'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Update URL'),
+      '#description' => t('The base URL to a status update. Default is !url', array(
+        '!url' => 'https://www.linkedin.com/feed/update/urn:li:activity:',
+      )),
+      '#default_value' => isset($settings['update_url']) ? $settings['update_url'] : 'https://www.linkedin.com/feed/update/urn:li:activity:',
       '#required' => TRUE,
     );
     $form['oauth_url'] = array(
@@ -180,6 +190,7 @@ class SocialContentLinkedin extends SocialContent {
     $global_settings = $this->settings['global'];
 
     if (empty($global_settings['access_token'])) {
+      watchdog('social_content_linkedin', 'Error fetching feed, data: %data', array('%data' => "empty access token"), WATCHDOG_WARNING);
       drupal_set_message(t('Error: Access Token is empty.'), 'error');
     }
     else if (!empty($settings['company_id'])) {
@@ -207,6 +218,7 @@ class SocialContentLinkedin extends SocialContent {
         }
       }
       else {
+        watchdog('social_content_linkedin', 'Error fetching feed, data: %data', array('%data' => $result->data), WATCHDOG_WARNING);
         drupal_set_message(t('Error: @error', array('@error' => $result->data)), 'error');
       }
     }
@@ -238,6 +250,9 @@ class SocialContentLinkedin extends SocialContent {
       $row->account_link = 'https://www.linkedin.com/company/' . $row->account_id;
 
       $row->link = $row->updateContent->companyStatusUpdate->share->content->submittedUrl;
+
+      $global_settings = $this->settings['global'];
+      $row->update_link = $global_settings['update_url'] . explode('-', $row->updateKey)[2];
 
       $image_url = $row->updateContent->companyStatusUpdate->share->content->submittedImageUrl;
       if ($image_url) {

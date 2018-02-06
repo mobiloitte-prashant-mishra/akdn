@@ -8,9 +8,9 @@ files[] = twitter_pull.install
 files[] = plugins/twitter_pull_box.inc
 files[] = twitter_pull.class.inc
 
-; Information added by drupal.org packaging script on 2013-08-02
-version = "7.x-2.0-alpha2"
+; Information added by Drupal.org packaging script on 2015-11-05
+version = "7.x-2.0-alpha3"
 core = "7.x"
 project = "twitter_pull"
-datestamp = "1375430182"
+datestamp = "1446721745"
 
