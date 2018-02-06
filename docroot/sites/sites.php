@@ -11,10 +11,12 @@ $sites = array(
   "akdn3ra.prod.acquia-sites.com" => 'akdn',
   "new.akdn.org" => 'akdn',
   "local-akdn.com" => 'akdn',
+  "local-academics.com" => 'academics',
   //"agakhanacademies.org" => 'academies',
   "akdn.local" => 'akdn',
   "akdn3academies1.prod.acquia-sites.com" => 'academics',
   "akdn3academies2.prod.acquia-sites.com" => 'academics',
+  "new.agakhanacademies.org" => 'academics',
   "www.akdn.org/academics-site" => 'academics',
 );
 ?>
