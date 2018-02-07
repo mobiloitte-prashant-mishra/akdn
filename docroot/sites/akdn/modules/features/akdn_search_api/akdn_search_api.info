@@ -10,4 +10,3 @@ dependencies[] = search_api_acquia
 dependencies[] = search_api_solr
 features[features_api][] = api:2
 mtime = 1458163060
-
