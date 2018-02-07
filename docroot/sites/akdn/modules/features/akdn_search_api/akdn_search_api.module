@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the AKDN Search API feature.
  */
+
+include_once 'akdn_search_api.features.inc';
