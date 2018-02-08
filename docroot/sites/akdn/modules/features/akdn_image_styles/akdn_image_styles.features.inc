@@ -207,18 +207,18 @@ function akdn_image_styles_image_default_styles() {
   $styles['banner_item_standard_home_page'] = array(
     'label' => 'Full Page Width Carousel',
     'effects' => array(
-      196 => array(
+      291 => array(
         'name' => 'manualcrop_crop',
         'data' => array(
           'width' => 1140,
           'height' => 500,
-          'keepproportions' => 0,
+          'keepproportions' => 1,
           'reuse_crop_style' => '',
           'style_name' => 'banner_item_standard_home_page',
         ),
         'weight' => 0,
       ),
-      197 => array(
+      296 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 1140,
@@ -628,7 +628,7 @@ function akdn_image_styles_image_default_styles() {
   $styles['standard_listing_aspect_switcher'] = array(
     'label' => 'Standard Listing Aspect Switcher',
     'effects' => array(
-      21 => array(
+      276 => array(
         'name' => 'image_scale',
         'data' => array(
           'width' => 360,
@@ -637,7 +637,7 @@ function akdn_image_styles_image_default_styles() {
         ),
         'weight' => -10,
       ),
-      20 => array(
+      281 => array(
         'name' => 'canvasactions_aspect',
         'data' => array(
           'portrait' => 'social_feeds',
