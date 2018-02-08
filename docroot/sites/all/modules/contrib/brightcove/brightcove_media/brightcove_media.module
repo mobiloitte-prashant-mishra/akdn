@@ -491,6 +491,9 @@ function brightcove_media_browser_form_submit($form, &$form_state) {
   try {
     // Save the remote file
     $file = file_uri_to_object($uri, TRUE);
+    if ($uploaded_video = _brightcove_media_session_value_get(BRIGHTCOVE_MEDIA_SESSION_VALUE_NAME_UPLOADED)) {
+      $file->filename = $uploaded_video->filename;
+    }
     file_save($file);
   }
   catch (Exception $e) {
