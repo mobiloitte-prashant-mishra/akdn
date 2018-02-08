@@ -10,7 +10,7 @@
  */
 function theme_scs_sortable_table($form) {
   $form = $form['form'];
-  $headers = array(t('Node title'), t('Weight'));
+  $headers = array(t('Node title'), t('Weight'), t('View mode'));
   $rows = array();
 
   $nids = element_children($form['nodes']);
@@ -26,6 +26,7 @@ function theme_scs_sortable_table($form) {
     $row = array();
     $row[] = $titles[$nid];
     $row[] = drupal_render($form['nodes'][$nid]['weight']);
+    $row[] = drupal_render($form['nodes'][$nid]['view_mode']);
     $rows[] = array(
       'data' => $row,
       'class' => array('draggable'),
@@ -44,16 +45,15 @@ function theme_scs_sortable_table($form) {
 /**
  * Preprocess for scs_newsletter.
  */
-function scs_preprocess_scs_newsletter(&$vars) {
+function template_preprocess_scs_newsletter(&$vars) {
   // Add Table of Contents (if required)
   if ($vars['toc']) {
     $vars['toc'] = theme('scs_toc', array('nodes' => $vars['nodes']));
   }
 
   // Render each node using the correct view mode
-  $view_mode = variable_get('scs_view_mode', 'scs');
   foreach ($vars['nodes'] as $nid => $node) {
-    $build = node_view($node, $view_mode);
+    $build = node_view($node, $node->scs_view_mode);
 
     // Strip out contextual links
     unset($build['#contextual_links']['node']);
