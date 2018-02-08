@@ -388,8 +388,8 @@ function _webform_analysis_addressfield($component, $sids = array(), $single = F
  *   Textual output formatted for human reading.
  */
 function _webform_table_addressfield($component, $value) {
-  if (!empty($value[0])) {
-    return theme('addressfield_formatter', array('address' => $value[0]));
+  if (!empty($value[0]['addressfield'])) {
+    return theme('addressfield_formatter', array('address' => $value[0]['addressfield']));
   }
   return '';
 }
@@ -453,13 +453,13 @@ function _webform_csv_data_addressfield($component, $export_options, $value) {
   if (!empty($component['extra']['csv_separate']) && $component['extra']['csv_separate'] == 1) {
     $return = array();
     foreach (addressfield_tokens_property_names() as $key => $name) {
-      $return[] = (isset($value[0][$key])) ? $value[0][$key] : '';
+      $return[] = (isset($value[0]['addressfield'][$key])) ? $value[0]['addressfield'][$key] : '';
     }
     return $return;
   }
   else {
     if (!empty($value[0])) {
-      return theme('addressfield_formatter__linear', array('address' => $value[0]));
+      return theme('addressfield_formatter__linear', array('address' => $value[0]['addressfield']));
     }
     return '';
   }
