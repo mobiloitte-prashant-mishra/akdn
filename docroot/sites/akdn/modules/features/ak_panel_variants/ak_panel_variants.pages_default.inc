@@ -4155,65 +4155,15 @@ if (isset($node->field_about_page)) {
           'name' => 'entity_field_value:node:page:field_tags',
           'settings' => array(
             'field_tags' => array(
-              'en' => array(
+              'und' => array(
                 0 => array(
                   'tid' => '9006',
-                  'vid' => '1',
-                  'name' => 'about us',
-                  'description' => NULL,
-                  'format' => NULL,
-                  'weight' => '0',
-                  'uuid' => '2c2927dc-3de8-442a-a679-cd3894eeb8f6',
-                  'vocabulary_machine_name' => 'tags',
-                  'metatags' => array(),
-                  'rdf_mapping' => array(
-                    'rdftype' => array(
-                      0 => 'skos:Concept',
-                    ),
-                    'name' => array(
-                      'predicates' => array(
-                        0 => 'rdfs:label',
-                        1 => 'skos:prefLabel',
-                      ),
-                    ),
-                    'description' => array(
-                      'predicates' => array(
-                        0 => 'skos:definition',
-                      ),
-                    ),
-                    'vid' => array(
-                      'predicates' => array(
-                        0 => 'skos:inScheme',
-                      ),
-                      'type' => 'rel',
-                    ),
-                    'parent' => array(
-                      'predicates' => array(
-                        0 => 'skos:broader',
-                      ),
-                      'type' => 'rel',
-                    ),
-                  ),
-                  'translations' => (object) array(
-                    'original' => 'en',
-                    'data' => array(
-                      'en' => array(
-                        'entity_type' => 'taxonomy_term',
-                        'entity_id' => '9006',
-                        'language' => 'en',
-                        'source' => '',
-                        'uid' => '1',
-                        'status' => '1',
-                        'translate' => '0',
-                        'created' => '1449839991',
-                        'changed' => '1449839991',
-                      ),
-                    ),
-                  ),
                 ),
               ),
             ),
-            'field_tags_tid' => 'about us',
+            'field_tags_tid' => array(
+              0 => '9006',
+            ),
           ),
           'context' => 'argument_entity_id:node_1',
           'not' => TRUE,
@@ -4701,65 +4651,15 @@ if (isset($node->field_about_page)) {
           'name' => 'entity_field_value:node:page:field_tags',
           'settings' => array(
             'field_tags' => array(
-              'en' => array(
+              'und' => array(
                 0 => array(
                   'tid' => '9006',
-                  'vid' => '1',
-                  'name' => 'about us',
-                  'description' => NULL,
-                  'format' => NULL,
-                  'weight' => '0',
-                  'uuid' => '2c2927dc-3de8-442a-a679-cd3894eeb8f6',
-                  'vocabulary_machine_name' => 'tags',
-                  'metatags' => array(),
-                  'rdf_mapping' => array(
-                    'rdftype' => array(
-                      0 => 'skos:Concept',
-                    ),
-                    'name' => array(
-                      'predicates' => array(
-                        0 => 'rdfs:label',
-                        1 => 'skos:prefLabel',
-                      ),
-                    ),
-                    'description' => array(
-                      'predicates' => array(
-                        0 => 'skos:definition',
-                      ),
-                    ),
-                    'vid' => array(
-                      'predicates' => array(
-                        0 => 'skos:inScheme',
-                      ),
-                      'type' => 'rel',
-                    ),
-                    'parent' => array(
-                      'predicates' => array(
-                        0 => 'skos:broader',
-                      ),
-                      'type' => 'rel',
-                    ),
-                  ),
-                  'translations' => (object) array(
-                    'original' => 'en',
-                    'data' => array(
-                      'en' => array(
-                        'entity_type' => 'taxonomy_term',
-                        'entity_id' => '9006',
-                        'language' => 'en',
-                        'source' => '',
-                        'uid' => '1',
-                        'status' => '1',
-                        'translate' => '0',
-                        'created' => '1449839991',
-                        'changed' => '1449839991',
-                      ),
-                    ),
-                  ),
                 ),
               ),
             ),
-            'field_tags_tid' => 'about us',
+            'field_tags_tid' => array(
+              0 => '9006',
+            ),
           ),
           'context' => 'argument_entity_id:node_1',
           'not' => FALSE,

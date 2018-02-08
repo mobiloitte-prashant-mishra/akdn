@@ -2153,7 +2153,7 @@ function akdn_content_types_field_default_field_bases() {
       'entity_translation_sync' => FALSE,
       'options_list_callback' => NULL,
     ),
-    'translatable' => 1,
+    'translatable' => 0,
     'type' => 'taxonomy_term_reference',
   );
 
