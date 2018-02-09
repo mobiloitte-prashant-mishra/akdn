@@ -546,7 +546,7 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
       ),
       'uri_scheme' => 'public',
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'image',
   );
 
@@ -1580,7 +1580,7 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
     'settings' => array(
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'text_with_summary',
   );
 
