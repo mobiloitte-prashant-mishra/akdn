@@ -236,6 +236,7 @@ features[field_instance][] = node-breaking_news-field_facts_links
 features[field_instance][] = node-breaking_news-field_facts_show_on_homepage
 features[field_instance][] = node-breaking_news-field_news_publication_date
 features[field_instance][] = node-breaking_news-field_news_see_also
+features[field_instance][] = node-breaking_news-title_field
 features[field_instance][] = node-custom_content-body
 features[field_instance][] = node-custom_content-field_agency_logo
 features[field_instance][] = node-custom_content-field_agency_term
