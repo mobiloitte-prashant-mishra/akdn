@@ -1933,6 +1933,7 @@ print $content;
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'in-media-container';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['cache'] = FALSE;
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
@@ -2066,7 +2067,7 @@ print $content;
         ),
         'rewrite' => array(
           'filter_rewrite_values' => 'All|
-1|Show Award recipients only',
+  1|Show Award recipients only',
         ),
       ),
     ),
@@ -2202,13 +2203,13 @@ print $content;
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="grid-media-block_image">[field_project_image]</div>
-<div class="grid-media-block_description">
-  <div class="media-desc">
-    <div class="date">[field_building_type]</div>
-    <div class="title">[field_short_title]</div>
-<div class="country-city-readmore">[field_arch_country], [field_city] [view_node]</div>
-  </div>
-</div>';
+  <div class="grid-media-block_description">
+    <div class="media-desc">
+      <div class="date">[field_building_type]</div>
+      <div class="title">[field_short_title]</div>
+  <div class="country-city-readmore">[field_arch_country], [field_city] [view_node]</div>
+    </div>
+  </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
@@ -2431,26 +2432,26 @@ print $content;
   $handler->display->display_options['fields']['field_project_image']['label'] = '';
   $handler->display->display_options['fields']['field_project_image']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_project_image']['alter']['text'] = '<div class="pc-listing-img">
-	[field_project_image]
-</div>
-<div class="pc-listing-info">
-	<div class="pc-title">
-		[field_short_title]
-	</div>
-</div>';
+    [field_project_image]
+  </div>
+  <div class="pc-listing-info">
+    <div class="pc-title">
+      [field_short_title]
+    </div>
+  </div>';
   $handler->display->display_options['fields']['field_project_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_project_image']['element_wrapper_class'] = 'listing-page-views-image';
   $handler->display->display_options['fields']['field_project_image']['empty'] = '<div class="pc-listing-info no-img">
-	<div class="pc-title">
-		<a class="title-link" href="/node/[nid]">[title]</a>
-	</div>
-	<div class="pc-date">[field_building_type]
-	</div>
-	<div class="pc-body">
-		[body]&nbsp;
-		<span class="read-more">|&nbsp;<a class="more-link" href="/node/[nid]">More</a></span>
-	</div>
-</div>';
+    <div class="pc-title">
+      <a class="title-link" href="/node/[nid]">[title]</a>
+    </div>
+    <div class="pc-date">[field_building_type]
+    </div>
+    <div class="pc-body">
+      [body]&nbsp;
+      <span class="read-more">|&nbsp;<a class="more-link" href="/node/[nid]">More</a></span>
+    </div>
+  </div>';
   $handler->display->display_options['fields']['field_project_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_project_image']['settings'] = array(
     'image_style' => 'small_thumbnail',
@@ -2488,9 +2489,9 @@ print $content;
   $handler->display->display_options['arguments']['term_node_tid_depth']['default_action'] = 'default';
   $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_type'] = 'php';
   $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_options']['code'] = '$term_explode = explode(\'/\',drupal_get_path_alias(\'node/\'.arg(1)));
-$term_name = $term_explode[1];
-$term = array_pop(taxonomy_get_term_by_name(str_replace(\'-\', \' \', $term_name)));
-return $term->tid;';
+  $term_name = $term_explode[1];
+  $term = array_pop(taxonomy_get_term_by_name(str_replace(\'-\', \' \', $term_name)));
+  return $term->tid;';
   $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['term_node_tid_depth']['summary_options']['items_per_page'] = '25';
@@ -2617,10 +2618,10 @@ return $term->tid;';
   $handler->display->display_options['header']['php']['table'] = 'views';
   $handler->display->display_options['header']['php']['field'] = 'php';
   $handler->display->display_options['header']['php']['php_output'] = '<?php $term_explode = explode(\'/\',$_SERVER["REQUEST_URI"]);
-$term = taxonomy_term_load(array_pop($term_explode));
-$name = str_replace(\'cycle\', \'Cycle\',$term->name);
+  $term = taxonomy_term_load(array_pop($term_explode));
+  $name = str_replace(\'cycle\', \'Cycle\',$term->name);
 
-print \'<h2>\'.$name." Award Recipients</h2>"; ?>';
+  print \'<h2>\'.$name." Award Recipients</h2>"; ?>';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Has taxonomy term ID (with depth) */
   $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
@@ -2679,10 +2680,10 @@ print \'<h2>\'.$name." Award Recipients</h2>"; ?>';
   $handler->display->display_options['header']['php']['table'] = 'views';
   $handler->display->display_options['header']['php']['field'] = 'php';
   $handler->display->display_options['header']['php']['php_output'] = '<?php $term_explode = explode(\'/\',$_SERVER["REQUEST_URI"]);
-$term = taxonomy_term_load(array_pop($term_explode));
-$name = str_replace(\'cycle\', \'Cycle\',$term->name);
+  $term = taxonomy_term_load(array_pop($term_explode));
+  $name = str_replace(\'cycle\', \'Cycle\',$term->name);
 
-print \'<h2>\'.$name." Award Recipients</h2>"; ?>';
+  print \'<h2>\'.$name." Award Recipients</h2>"; ?>';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -2720,10 +2721,10 @@ print \'<h2>\'.$name." Award Recipients</h2>"; ?>';
   $handler->display->display_options['fields']['php']['field'] = 'php';
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_value'] = 'drupal_set_message(\'test\');
-$term_explode = explode(\'/\',drupal_get_path_alias(\'node/\'.arg(2)));
-$term_name = $term_explode[1];
-$term = array_pop(taxonomy_get_term_by_name(str_replace(\'-\', \' \', $term_name)));
-drupal_set_message($term->tid);';
+  $term_explode = explode(\'/\',drupal_get_path_alias(\'node/\'.arg(2)));
+  $term_name = $term_explode[1];
+  $term = array_pop(taxonomy_get_term_by_name(str_replace(\'-\', \' \', $term_name)));
+  drupal_set_message($term->tid);';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
@@ -2734,9 +2735,9 @@ drupal_set_message($term->tid);';
   $handler->display->display_options['arguments']['term_node_tid_depth']['default_action'] = 'default';
   $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_type'] = 'php';
   $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_options']['code'] = '$term_explode = explode(\'/\',drupal_get_path_alias(\'node/\'.arg(2)));
-$term_name = $term_explode[1];
-$term = array_pop(taxonomy_get_term_by_name(str_replace(\'-\', \' \', $term_name)));
-return $term->tid;';
+  $term_name = $term_explode[1];
+  $term = array_pop(taxonomy_get_term_by_name(str_replace(\'-\', \' \', $term_name)));
+  return $term->tid;';
   $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['term_node_tid_depth']['summary_options']['items_per_page'] = '25';
@@ -2857,9 +2858,9 @@ return $term->tid;';
   $handler->display->display_options['header']['php']['table'] = 'views';
   $handler->display->display_options['header']['php']['field'] = 'php';
   $handler->display->display_options['header']['php']['php_output'] = '<h2 class="pane-title">Other projects in <?php
-$term = taxonomy_term_load($view->args[0]);
-print $term->name; ?>:</h2>
-';
+  $term = taxonomy_term_load($view->args[0]);
+  print $term->name; ?>:</h2>
+  ';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Cycle Year (field_cycle_year) */
@@ -2932,9 +2933,9 @@ print $term->name; ?>:</h2>
   $handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php_1']['php_value'] = '$node = node_load($data->nid);
-$term = taxonomy_term_load($node->field_cycle_year[\'und\'][\'0\'][\'tid\']);
-$str = str_replace(" ", "-", $term->name);
-return $str;';
+  $term = taxonomy_term_load($node->field_cycle_year[\'und\'][\'0\'][\'tid\']);
+  $str = str_replace(" ", "-", $term->name);
+  return $str;';
   $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
   /* Field: Global: PHP */
@@ -2946,11 +2947,11 @@ return $str;';
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_value'] = '$proj = node_load($data->nid);
-if ($proj->field_winner[\'und\'][0][\'value\'] == \'1\') {
-return \'Recipient\';
-} else {
-return \'Shortlisted\';
-}';
+  if ($proj->field_winner[\'und\'][0][\'value\'] == \'1\') {
+  return \'Recipient\';
+  } else {
+  return \'Shortlisted\';
+  }';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Field: Content: Short Title */
@@ -2985,9 +2986,9 @@ return \'Shortlisted\';
   $handler->display->display_options['arguments']['field_arch_country_tid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['field_arch_country_tid']['default_argument_type'] = 'php';
   $handler->display->display_options['arguments']['field_arch_country_tid']['default_argument_options']['code'] = '$this_node = node_load(arg(1));
-$this_country = array_pop($this_node->field_arch_country);
-$this_country_id = $this_country[\'0\'][\'tid\'];
-return $this_country_id;';
+  $this_country = array_pop($this_node->field_arch_country);
+  $this_country_id = $this_country[\'0\'][\'tid\'];
+  return $this_country_id;';
   $handler->display->display_options['arguments']['field_arch_country_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_arch_country_tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_arch_country_tid']['summary_options']['items_per_page'] = '25';
@@ -3014,8 +3015,8 @@ return $this_country_id;';
   $handler->display->display_options['filters']['php']['field'] = 'php';
   $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if ($data->nid == arg(1)) {
-return TRUE;
-}';
+  return TRUE;
+  }';
 
   /* Display: AKAA Similar Projects - Building Type */
   $handler = $view->new_display('block', 'AKAA Similar Projects - Building Type', 'block_3');
@@ -3106,8 +3107,8 @@ return TRUE;
   $handler->display->display_options['header']['php']['table'] = 'views';
   $handler->display->display_options['header']['php']['field'] = 'php';
   $handler->display->display_options['header']['php']['php_output'] = '<h2 class="pane-title">Other projects of the <?php
-$term = taxonomy_term_load($view->args[0]);
-print $term->name; ?> building type:</h2>';
+  $term = taxonomy_term_load($view->args[0]);
+  print $term->name; ?> building type:</h2>';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Cycle Year (field_cycle_year) */
@@ -3195,9 +3196,9 @@ print $term->name; ?> building type:</h2>';
   $handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php_1']['php_value'] = '$node = node_load($data->nid);
-$term = taxonomy_term_load($node->field_cycle_year[\'und\'][\'0\'][\'tid\']);
-$str = str_replace(" ", "-", $term->name);
-return $str;';
+  $term = taxonomy_term_load($node->field_cycle_year[\'und\'][\'0\'][\'tid\']);
+  $str = str_replace(" ", "-", $term->name);
+  return $str;';
   $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
   /* Field: Global: PHP */
@@ -3209,11 +3210,11 @@ return $str;';
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_value'] = '$proj = node_load($data->nid);
-if ($proj->field_winner[\'und\'][0][\'value\'] == \'1\') {
-return \'Recipient\';
-} else {
-return \'Shortlisted\';
-}';
+  if ($proj->field_winner[\'und\'][0][\'value\'] == \'1\') {
+  return \'Recipient\';
+  } else {
+  return \'Shortlisted\';
+  }';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Field: Content: Short Title */
@@ -3236,9 +3237,9 @@ return \'Shortlisted\';
   $handler->display->display_options['arguments']['field_building_type_tid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['field_building_type_tid']['default_argument_type'] = 'php';
   $handler->display->display_options['arguments']['field_building_type_tid']['default_argument_options']['code'] = '$this_node = node_load(arg(1));
-$this_building_type = array_pop($this_node->field_building_type);
-$this_building_type_id = $this_building_type[\'0\'][\'tid\'];
-return $this_building_type_id;';
+  $this_building_type = array_pop($this_node->field_building_type);
+  $this_building_type_id = $this_building_type[\'0\'][\'tid\'];
+  return $this_building_type_id;';
   $handler->display->display_options['arguments']['field_building_type_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_building_type_tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_building_type_tid']['summary_options']['items_per_page'] = '25';
@@ -3265,8 +3266,8 @@ return $this_building_type_id;';
   $handler->display->display_options['filters']['php']['field'] = 'php';
   $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if ($data->nid == arg(1)) {
-return TRUE;
-}';
+  return TRUE;
+  }';
 
   /* Display: AKAA Projects Listing Page */
   $handler = $view->new_display('page', 'AKAA Projects Listing Page', 'page_3');
@@ -3666,13 +3667,13 @@ return TRUE;
   $handler->display->display_options['arguments']['field_cycle_year_tid']['default_action'] = 'not found';
   $handler->display->display_options['arguments']['field_cycle_year_tid']['default_argument_type'] = 'php';
   $handler->display->display_options['arguments']['field_cycle_year_tid']['default_argument_options']['code'] = 'if(isset($_GET[\'f\'])){
-    foreach($_GET[\'f\'] as $value){
-      $val = explode(\':\', $value);
-      if($val[0] ==\'field_cycle_year\'){
-       return $val[1];
+      foreach($_GET[\'f\'] as $value){
+        $val = explode(\':\', $value);
+        if($val[0] ==\'field_cycle_year\'){
+         return $val[1];
+        }
       }
-    }
-  }';
+    }';
   $handler->display->display_options['arguments']['field_cycle_year_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_cycle_year_tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_cycle_year_tid']['summary_options']['items_per_page'] = '25';
@@ -3744,16 +3745,16 @@ return TRUE;
   $handler->display->display_options['fields']['field_project_image']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_project_image']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_project_image']['empty'] = '<div class="pc-listing-info no-img">
-	<div class="pc-title">
-		<a class="title-link" href="/node/[nid]">[title]</a>
-	</div>
-	<div class="pc-date">[field_building_type]
-	</div>
-	<div class="pc-body">
-		[body]&nbsp;
-		<span class="read-more">|&nbsp;<a class="more-link" href="/node/[nid]">More</a></span>
-	</div>
-</div>';
+    <div class="pc-title">
+      <a class="title-link" href="/node/[nid]">[title]</a>
+    </div>
+    <div class="pc-date">[field_building_type]
+    </div>
+    <div class="pc-body">
+      [body]&nbsp;
+      <span class="read-more">|&nbsp;<a class="more-link" href="/node/[nid]">More</a></span>
+    </div>
+  </div>';
   $handler->display->display_options['fields']['field_project_image']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_project_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_project_image']['settings'] = array(
@@ -3800,14 +3801,14 @@ return TRUE;
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="pc-listing-img">[field_project_image]</div>
-<div class="pc-listing-info">
-  <div class="pc-title">[field_short_title]</div>
-  <div class="pc-body">
-    <div class="pc-body-wrapper">[body]
-      <div class="read-more">[view_node]</div>
+  <div class="pc-listing-info">
+    <div class="pc-title">[field_short_title]</div>
+    <div class="pc-body">
+      <div class="pc-body-wrapper">[body]
+        <div class="read-more">[view_node]</div>
+      </div>
     </div>
-  </div>
-</div>';
+  </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Short Title (field_short_title) */
@@ -3822,9 +3823,9 @@ return TRUE;
   $handler->display->display_options['arguments']['term_node_tid_depth']['default_action'] = 'default';
   $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_type'] = 'php';
   $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_options']['code'] = '$term_explode = explode(\'/\',drupal_get_path_alias(\'node/\'.arg(1)));
-$term_name = $term_explode[1];
-$term = array_pop(taxonomy_get_term_by_name(str_replace(\'-\', \' \', $term_name)));
-return $term->tid;';
+  $term_name = $term_explode[1];
+  $term = array_pop(taxonomy_get_term_by_name(str_replace(\'-\', \' \', $term_name)));
+  return $term->tid;';
   $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['term_node_tid_depth']['summary_options']['items_per_page'] = '25';
@@ -3906,16 +3907,16 @@ return $term->tid;';
   $handler->display->display_options['fields']['field_project_image']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_project_image']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_project_image']['empty'] = '<div class="pc-listing-info no-img">
-	<div class="pc-title">
-		<a class="title-link" href="/node/[nid]">[title]</a>
-	</div>
-	<div class="pc-date">[field_building_type]
-	</div>
-	<div class="pc-body">
-		[body]&nbsp;
-		<span class="read-more">|&nbsp;<a class="more-link" href="/node/[nid]">More</a></span>
-	</div>
-</div>';
+    <div class="pc-title">
+      <a class="title-link" href="/node/[nid]">[title]</a>
+    </div>
+    <div class="pc-date">[field_building_type]
+    </div>
+    <div class="pc-body">
+      [body]&nbsp;
+      <span class="read-more">|&nbsp;<a class="more-link" href="/node/[nid]">More</a></span>
+    </div>
+  </div>';
   $handler->display->display_options['fields']['field_project_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_project_image']['settings'] = array(
     'image_style' => 'social_sharing_image',
@@ -3981,18 +3982,18 @@ return $term->tid;';
   $handler->display->display_options['arguments']['term_node_tid_depth']['default_action'] = 'default';
   $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_type'] = 'php';
   $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_options']['code'] = '$term_explode = explode(\'/\',drupal_get_path_alias(\'node/\'.arg(1)));
-$term_name = $term_explode[1];
-$term = array_pop(taxonomy_get_term_by_name(str_replace(\'-\', \' \', $term_name)));
-$exclude = $term->tid;
-$name = \'award_cycle\';
-$myvoc = taxonomy_vocabulary_machine_name_load($name);
-$tree = taxonomy_get_tree($myvoc->vid);
-foreach ($tree as $term) {
-if ($exclude != $term->tid)
- $tid[] = $term->tid;
-}
-$tids = implode(\',\', $tid);
-return $tids;';
+  $term_name = $term_explode[1];
+  $term = array_pop(taxonomy_get_term_by_name(str_replace(\'-\', \' \', $term_name)));
+  $exclude = $term->tid;
+  $name = \'award_cycle\';
+  $myvoc = taxonomy_vocabulary_machine_name_load($name);
+  $tree = taxonomy_get_tree($myvoc->vid);
+  foreach ($tree as $term) {
+  if ($exclude != $term->tid)
+   $tid[] = $term->tid;
+  }
+  $tids = implode(\',\', $tid);
+  return $tids;';
   $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['term_node_tid_depth']['summary_options']['items_per_page'] = '25';
@@ -4125,8 +4126,8 @@ return $tids;';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div><a href = "/architecture/press-centre?f[0]=field_cycle_year:[tid]" class="akaa-award-cycle-related-link">Cycle News</a></div>
-<div><a href = "/architecture/steering-committee/[nid]" class="akaa-award-cycle-related-link">Steering Committee</a></div>
-<div><a href = "/architecture/master-jury/[nid]" class="akaa-award-cycle-related-link">Master Jury</a></div>';
+  <div><a href = "/architecture/steering-committee/[nid]" class="akaa-award-cycle-related-link">Steering Committee</a></div>
+  <div><a href = "/architecture/master-jury/[nid]" class="akaa-award-cycle-related-link">Master Jury</a></div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Field: Content: awards cycle Links */
   $handler->display->display_options['fields']['field_awards_cycle_links']['id'] = 'field_awards_cycle_links';
@@ -4289,9 +4290,9 @@ return $tids;';
   $handler->display->display_options['arguments']['field_cycle_year_tid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['field_cycle_year_tid']['default_argument_type'] = 'php';
   $handler->display->display_options['arguments']['field_cycle_year_tid']['default_argument_options']['code'] = '$nid = arg(1);
- $node = node_load($nid);
- $cycle_id = reset($node->field_cycle_year)[0][\'tid\'];
-return $cycle_id;';
+   $node = node_load($nid);
+   $cycle_id = reset($node->field_cycle_year)[0][\'tid\'];
+  return $cycle_id;';
   $handler->display->display_options['arguments']['field_cycle_year_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_cycle_year_tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_cycle_year_tid']['summary_options']['items_per_page'] = '25';
@@ -4375,9 +4376,9 @@ return $cycle_id;';
   $handler->display->display_options['arguments']['field_cycle_year_tid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['field_cycle_year_tid']['default_argument_type'] = 'php';
   $handler->display->display_options['arguments']['field_cycle_year_tid']['default_argument_options']['code'] = '$nid = arg(1);
- $node = node_load($nid);
- $cycle_id = reset($node->field_cycle_year)[0][\'tid\'];
-return $cycle_id;';
+   $node = node_load($nid);
+   $cycle_id = reset($node->field_cycle_year)[0][\'tid\'];
+  return $cycle_id;';
   $handler->display->display_options['arguments']['field_cycle_year_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_cycle_year_tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_cycle_year_tid']['summary_options']['items_per_page'] = '25';
@@ -4449,8 +4450,8 @@ return $cycle_id;';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div><a href = "/architecture/press-centre?f[0]=field_cycle_year:[tid]" class="akaa-award-cycle-related-link">Cycle News</a></div>
-<div><a href = "/architecture/steering-committee/[nid]" class="akaa-award-cycle-related-link">Steering Committee</a></div>
-<div><a href = "/architecture/master-jury/[nid]" class="akaa-award-cycle-related-link">Master Jury</a></div>';
+  <div><a href = "/architecture/steering-committee/[nid]" class="akaa-award-cycle-related-link">Steering Committee</a></div>
+  <div><a href = "/architecture/master-jury/[nid]" class="akaa-award-cycle-related-link">Master Jury</a></div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Field: Content: awards cycle Links */
   $handler->display->display_options['fields']['field_awards_cycle_links']['id'] = 'field_awards_cycle_links';
@@ -4587,8 +4588,8 @@ return $cycle_id;';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div><a href = "/architecture/press-centre?f[0]=field_cycle_year:[tid]" class="akaa-award-cycle-related-link">Cycle News</a></div>
-<div><a href = "/architecture/steering-committee/[nid]" class="akaa-award-cycle-related-link">Steering Committee</a></div>
-<div><a href = "/architecture/master-jury/[nid]" class="akaa-award-cycle-related-link">Master Jury</a></div>';
+  <div><a href = "/architecture/steering-committee/[nid]" class="akaa-award-cycle-related-link">Steering Committee</a></div>
+  <div><a href = "/architecture/master-jury/[nid]" class="akaa-award-cycle-related-link">Master Jury</a></div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Field: Content: awards cycle Links */
   $handler->display->display_options['fields']['field_awards_cycle_links']['id'] = 'field_awards_cycle_links';
@@ -4725,16 +4726,16 @@ return $cycle_id;';
   $handler->display->display_options['fields']['field_project_image']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_project_image']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_project_image']['empty'] = '<div class="pc-listing-info no-img">
-	<div class="pc-title">
-		<a class="title-link" href="/node/[nid]">[title]</a>
-	</div>
-	<div class="pc-date">[field_building_type]
-	</div>
-	<div class="pc-body">
-		[body]&nbsp;
-		<span class="read-more">|&nbsp;<a class="more-link" href="/node/[nid]">More</a></span>
-	</div>
-</div>';
+    <div class="pc-title">
+      <a class="title-link" href="/node/[nid]">[title]</a>
+    </div>
+    <div class="pc-date">[field_building_type]
+    </div>
+    <div class="pc-body">
+      [body]&nbsp;
+      <span class="read-more">|&nbsp;<a class="more-link" href="/node/[nid]">More</a></span>
+    </div>
+  </div>';
   $handler->display->display_options['fields']['field_project_image']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_project_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_project_image']['settings'] = array(
@@ -4781,14 +4782,14 @@ return $cycle_id;';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="pc-listing-img">[field_project_image]</div>
-<div class="pc-listing-info">
-  <div class="pc-title">[field_short_title]</div>
-  <div class="pc-body">
-    <div class="pc-body-wrapper">[body]
-      <div class="read-more">[view_node]</div>
+  <div class="pc-listing-info">
+    <div class="pc-title">[field_short_title]</div>
+    <div class="pc-body">
+      <div class="pc-body-wrapper">[body]
+        <div class="read-more">[view_node]</div>
+      </div>
     </div>
-  </div>
-</div>';
+  </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Short Title (field_short_title) */
@@ -4803,9 +4804,9 @@ return $cycle_id;';
   $handler->display->display_options['arguments']['term_node_tid_depth']['default_action'] = 'default';
   $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_type'] = 'php';
   $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_options']['code'] = '$term_explode = explode(\'/\',drupal_get_path_alias(\'node/\'.arg(1)));
-$term_name = $term_explode[1];
-$term = array_pop(taxonomy_get_term_by_name(str_replace(\'-\', \' \', $term_name)));
-return $term->tid;';
+  $term_name = $term_explode[1];
+  $term = array_pop(taxonomy_get_term_by_name(str_replace(\'-\', \' \', $term_name)));
+  return $term->tid;';
   $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['term_node_tid_depth']['summary_options']['items_per_page'] = '25';
@@ -4872,9 +4873,9 @@ return $term->tid;';
   $handler->display->display_options['arguments']['field_cycle_year_tid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['field_cycle_year_tid']['default_argument_type'] = 'php';
   $handler->display->display_options['arguments']['field_cycle_year_tid']['default_argument_options']['code'] = '$nid = arg(1);
- $node = node_load($nid);
- $cycle_id = reset($node->field_cycle_year)[0][\'tid\'];
-return $cycle_id;';
+   $node = node_load($nid);
+   $cycle_id = reset($node->field_cycle_year)[0][\'tid\'];
+  return $cycle_id;';
   $handler->display->display_options['arguments']['field_cycle_year_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_cycle_year_tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_cycle_year_tid']['summary_options']['items_per_page'] = '25';
@@ -4925,8 +4926,7 @@ return $cycle_id;';
     t('RESET'),
     t('Advanced options'),
     t('Show Award recipients only'),
-    t('All|
-1|Show Award recipients only'),
+    t('All|1|Show Award recipients only'),
     t('Show More'),
     t('No projects found!'),
     t('term from field_cycle_year'),
@@ -4936,34 +4936,34 @@ return $cycle_id;';
     t('[field_short_title]'),
     t('More'),
     t('<div class="grid-media-block_image">[field_project_image]</div>
-<div class="grid-media-block_description">
-  <div class="media-desc">
-    <div class="date">[field_building_type]</div>
-    <div class="title">[field_short_title]</div>
-<div class="country-city-readmore">[field_arch_country], [field_city] [view_node]</div>
-  </div>
-</div>'),
+  <div class="grid-media-block_description">
+    <div class="media-desc">
+      <div class="date">[field_building_type]</div>
+      <div class="title">[field_short_title]</div>
+  <div class="country-city-readmore">[field_arch_country], [field_city] [view_node]</div>
+    </div>
+  </div>'),
     t('Cycle Year'),
     t('Cycle Projects Listing'),
     t('<div class="pc-listing-img">
-	[field_project_image]
-</div>
-<div class="pc-listing-info">
-	<div class="pc-title">
-		[field_short_title]
-	</div>
-</div>'),
+    [field_project_image]
+  </div>
+  <div class="pc-listing-info">
+    <div class="pc-title">
+      [field_short_title]
+    </div>
+  </div>'),
     t('<div class="pc-listing-info no-img">
-	<div class="pc-title">
-		<a class="title-link" href="/node/[nid]">[title]</a>
-	</div>
-	<div class="pc-date">[field_building_type]
-	</div>
-	<div class="pc-body">
-		[body]&nbsp;
-		<span class="read-more">|&nbsp;<a class="more-link" href="/node/[nid]">More</a></span>
-	</div>
-</div>'),
+    <div class="pc-title">
+      <a class="title-link" href="/node/[nid]">[title]</a>
+    </div>
+    <div class="pc-date">[field_building_type]
+    </div>
+    <div class="pc-body">
+      [body]&nbsp;
+      <span class="read-more">|&nbsp;<a class="more-link" href="/node/[nid]">More</a></span>
+    </div>
+  </div>'),
     t('All'),
     t('Cycle Award Recipients'),
     t('Cycle Shortlisted Projects'),
@@ -5001,14 +5001,14 @@ return $cycle_id;';
     t('Cycle Projects Listing Block Recipients'),
     t('<div class = "title">Award Recipients</div>'),
     t('<div class="pc-listing-img">[field_project_image]</div>
-<div class="pc-listing-info">
-  <div class="pc-title">[field_short_title]</div>
-  <div class="pc-body">
-    <div class="pc-body-wrapper">[body]
-      <div class="read-more">[view_node]</div>
+  <div class="pc-listing-info">
+    <div class="pc-title">[field_short_title]</div>
+    <div class="pc-body">
+      <div class="pc-body-wrapper">[body]
+        <div class="read-more">[view_node]</div>
+      </div>
     </div>
-  </div>
-</div>'),
+  </div>'),
     t('Other Cycles Block'),
     t('OTHER CYCLES'),
     t('([field_building_type] , [field_arch_country])'),
@@ -5018,8 +5018,8 @@ return $cycle_id;';
     t('Related Information'),
     t('Nid'),
     t('<div><a href = "/architecture/press-centre?f[0]=field_cycle_year:[tid]" class="akaa-award-cycle-related-link">Cycle News</a></div>
-<div><a href = "/architecture/steering-committee/[nid]" class="akaa-award-cycle-related-link">Steering Committee</a></div>
-<div><a href = "/architecture/master-jury/[nid]" class="akaa-award-cycle-related-link">Master Jury</a></div>'),
+  <div><a href = "/architecture/steering-committee/[nid]" class="akaa-award-cycle-related-link">Steering Committee</a></div>
+  <div><a href = "/architecture/master-jury/[nid]" class="akaa-award-cycle-related-link">Master Jury</a></div>'),
     t('Other Projects'),
     t('Other projects'),
     t('([field_building_type], [field_arch_country])'),
