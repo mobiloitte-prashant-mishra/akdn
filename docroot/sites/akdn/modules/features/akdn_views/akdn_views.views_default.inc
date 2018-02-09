@@ -28572,11 +28572,26 @@ print $content;
   $handler->display->display_options['empty']['area']['content'] = '<span id="what-is-new-news-nofound" class="nofound">&nbsp;</span>';
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Entity translation: Event Image: translated */
+  $handler->display->display_options['fields']['field_event_image_et']['id'] = 'field_event_image_et';
+  $handler->display->display_options['fields']['field_event_image_et']['table'] = 'field_data_field_event_image';
+  $handler->display->display_options['fields']['field_event_image_et']['field'] = 'field_event_image_et';
+  $handler->display->display_options['fields']['field_event_image_et']['label'] = '';
+  $handler->display->display_options['fields']['field_event_image_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_event_image_et']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_event_image_et']['settings'] = array(
+    'image_style' => 'gallery_thumbnail',
+    'image_link' => 'content',
+  );
+  $handler->display->display_options['fields']['field_event_image_et']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_event_image_et']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_event_image_et']['multi_type'] = 'ul';
   /* Field: Content: Event Image */
   $handler->display->display_options['fields']['field_event_image']['id'] = 'field_event_image';
   $handler->display->display_options['fields']['field_event_image']['table'] = 'field_data_field_event_image';
   $handler->display->display_options['fields']['field_event_image']['field'] = 'field_event_image';
   $handler->display->display_options['fields']['field_event_image']['label'] = '';
+  $handler->display->display_options['fields']['field_event_image']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_event_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_event_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_event_image']['settings'] = array(
@@ -28586,6 +28601,13 @@ print $content;
   $handler->display->display_options['fields']['field_event_image']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_event_image']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_event_image']['multi_type'] = 'ul';
+  /* Field: Entity translation: Short Title: translated */
+  $handler->display->display_options['fields']['field_short_title_et']['id'] = 'field_short_title_et';
+  $handler->display->display_options['fields']['field_short_title_et']['table'] = 'field_data_field_short_title';
+  $handler->display->display_options['fields']['field_short_title_et']['field'] = 'field_short_title_et';
+  $handler->display->display_options['fields']['field_short_title_et']['label'] = '';
+  $handler->display->display_options['fields']['field_short_title_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_short_title_et']['element_label_colon'] = FALSE;
   /* Field: Content: Short Title */
   $handler->display->display_options['fields']['field_short_title']['id'] = 'field_short_title';
   $handler->display->display_options['fields']['field_short_title']['table'] = 'field_data_field_short_title';
@@ -28605,8 +28627,11 @@ print $content;
   $handler->display->display_options['fields']['view_node_2']['ui_name'] = 'Short Title as Link';
   $handler->display->display_options['fields']['view_node_2']['label'] = '';
   $handler->display->display_options['fields']['view_node_2']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['view_node_2']['alter']['text'] = '[field_short_title]';
+  $handler->display->display_options['fields']['view_node_2']['alter']['text'] = '[field_short_title_et]';
   $handler->display->display_options['fields']['view_node_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_node_2']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['view_node_2']['node_in_colorbox_height'] = '600';
+  $handler->display->display_options['fields']['view_node_2']['node_in_colorbox_rel'] = '';
   /* Field: Content: Date */
   $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
   $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
@@ -28933,105 +28958,6 @@ print $content;
   );
   $handler->display->display_options['filters']['type_2']['group'] = 1;
   $handler->display->display_options['block_description'] = 'Recent Photograph';
-  $translatables['press_center'] = array(
-    t('Master'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('<span class="presscenter-right-more-btn"><a href="/press-centre/speeches">More Speeches</a></span>'),
-    t('| More'),
-    t('Front Page Left block'),
-    t('[field_short_title]'),
-    t('<div class="pc-listing-img">
-	[field_event_img]
-</div>
-<div class="pc-listing-info">
-	<div class="pc-title">
-		<a class="title-link" href="/node/[nid]">[field_short_title]</a>
-	</div>
-	<div class="pc-body">
-		<span class="pc-body-wrapper">[body]</span>&nbsp;<span class="read-more"><a class="more-link" href="/node/[nid]">|&nbsp;More</a></span>
-	</div>
-</div>'),
-    t('<div class="pc-listing-img">
-	[field_article_img]
-</div>
-<div class="pc-listing-info">
-	<div class="pc-title">
-		<a class="title-link" href="[path]">[field_short_title]</a>
-	</div>
-	<div class="pc-body">
-		<span class="pc-body-wrapper">[body]</span>&nbsp;<span class="read-more"><a class="more-link" href="[path]">|&nbsp;More</a></span>
-	</div>
-</div>'),
-    t('<div class="pc-listing-img">
-	[field_event_image][field_speech_image]
-</div>
-<div class="pc-listing-info">
-	<div class="pc-title">
-		<a class="title-link" href="/node/[nid]">[field_short_title]</a>
-	</div>
-	<div class="pc-body">
-		<span class="pc-body-wrapper">[body]</span>&nbsp;<span class="read-more"><a class="more-link" href="/node/[nid]">|&nbsp;More</a></span>
-	</div>
-</div>'),
-    t('Front Page Right block'),
-    t('Related information'),
-    t('View'),
-    t('[view_node] | [php]'),
-    t('<div class="sidebar-content-type">[php_1]</div>
-<div class="sidebar-content-title">[view_node_1]</div>
-<div class="sidebar-content-links">[php]</div>'),
-    t('A/G/FA Right block'),
-    t('What\'s New'),
-    t('All'),
-    t('Projects Page Right block'),
-    t('Related'),
-    t('Press Centre Right block'),
-    t('Hub Page Right block'),
-    t('(disabled) Press Center Middle block'),
-    t('[title_field]'),
-    t('(disabled) Press Center page'),
-    t('PRESS CENTER'),
-    t('A Right block'),
-    t('What\'s New - News'),
-    t('<span id="what-is-new-news-nofound" class="nofound">&nbsp;</span>'),
-    t('News'),
-    t('What\'s New - Press Release'),
-    t('Press Releases'),
-    t('What\'s New - In the Media'),
-    t('What\'s new - in the media'),
-    t('In the Media'),
-    t('What\'s New - News Proj'),
-    t('What\'s New - Press Release Proj'),
-    t('Press Release'),
-    t('What\'s New - In the Media Proj'),
-    t('Recent News - News'),
-    t('<span class="presscenter-right-more-btn"><a href="/press-centre/news">More news stories</a></span>'),
-    t('Recent News'),
-    t('Recent Video - Video'),
-    t('<span class="presscenter-right-more-btn"><a href="/press-centre/videos">More Videos</a></span>'),
-    t('Recent Video'),
-    t('Recent Events - Events'),
-    t('<span class="presscenter-right-more-btn"><a href="/press-centre/events">More Events</a></span>'),
-    t('[field_event_date]'),
-    t('Recent Event'),
-    t('Recent Speech - Speech'),
-    t('Recent Speech'),
-    t('Recent Photographs - Photographs'),
-    t('<span class="presscenter-right-more-btn"><a href="/press-centre/galleries">More Photographs</a></span>'),
-    t('Recent Photograph'),
-  );
   $export['press_center'] = $view;
 
   $view = new view();
