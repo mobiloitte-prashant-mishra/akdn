@@ -9,7 +9,6 @@
  */
 function akdn_akaa_akmi_types_field_default_field_bases() {
   $field_bases = array();
-
   // Exported field_base: 'field_add_short_video'.
   $field_bases['field_add_short_video'] = array(
     'active' => 1,

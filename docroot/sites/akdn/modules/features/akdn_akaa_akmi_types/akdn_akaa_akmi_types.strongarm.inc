@@ -201,6 +201,7 @@ function akdn_akaa_akmi_types_strongarm() {
       'project_subtitle_summary' => array(
         'custom_settings' => FALSE,
       ),
+
     ),
     'extra_fields' => array(
       'form' => array(

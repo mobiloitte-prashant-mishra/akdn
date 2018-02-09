@@ -8,6 +8,7 @@
  * Implements hook_taxonomy_default_vocabularies().
  */
 function akdn_akaa_akmi_types_taxonomy_default_vocabularies() {
+
   return array(
     'akmi_event_type' => array(
       'name' => 'AKMI Event Type',
