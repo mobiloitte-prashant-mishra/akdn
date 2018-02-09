@@ -9,7 +9,6 @@
  */
 function akdn_akaa_akmi_types_field_default_field_instances() {
   $field_instances = array();
-
   // Exported field_instance:
   // 'field_collection_item-field_press_kits-field_press_kit_file'.
   $field_instances['field_collection_item-field_press_kits-field_press_kit_file'] = array(

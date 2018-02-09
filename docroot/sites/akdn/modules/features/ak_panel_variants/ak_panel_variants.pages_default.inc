@@ -4548,7 +4548,7 @@ if (isset($node->field_about_page)) {
   $pane->panel = 'right';
   $pane->type = 'block';
   $pane->subtype = 'akdn_custom-right_panel_press_center_block';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,
@@ -4570,7 +4570,7 @@ if (isset($node->field_about_page)) {
   $pane->panel = 'right';
   $pane->type = 'block';
   $pane->subtype = 'akdn_custom-where_we_work_related_info';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
@@ -8797,7 +8797,7 @@ if (isset($node->field_about_page)) {
   $pane->panel = 'right';
   $pane->type = 'block';
   $pane->subtype = 'akdn_custom-right_panel_press_center_block';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array(
     'plugins' => array(),
   );
@@ -8821,7 +8821,7 @@ if (isset($node->field_about_page)) {
   $pane->panel = 'right';
   $pane->type = 'views';
   $pane->subtype = 'custom_header_block';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array(
     'plugins' => array(
       0 => array(

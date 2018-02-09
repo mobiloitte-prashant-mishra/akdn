@@ -1058,7 +1058,7 @@ function akdn_all_areas_of_activity() {
             if ($values1->node_type == 'hub_page') {
               $menu_node_links1 = $node_load1->menu_node_links;
               $key1 = key($menu_node_links);
-              $get_activities2 = get_areas_of_activities($lang);
+              $get_activities2 = get_areas_of_activities($key1);
               foreach ($get_activities2 as $values2) {
                 $node_load2 = node_load($values2->nid);
                 if ($values2->node_type == 'hub_page') {
@@ -1067,61 +1067,49 @@ function akdn_all_areas_of_activity() {
                   $get_activities3 = get_areas_of_activities($key2);
                 }
                 else {
-                  $field_short_title2 = $node_load2->field_short_title;
+                  $title = (isset($node_load2->field_short_title[$lang][0]['value'])) ? $node_load2->field_short_title[$lang][0]['value'] : $node_load2->field_short_title['en'][0]['value'];
+                  if (empty($title)) {
+                    $title = $node_load2->field_short_title['und'][0]['value'];
+                  }
+
                   $output .= '<div class= "all-activities-row">';
                   $output .= '<div class = "all-activities-short-title">';
-                  if ($node_load2->field_short_title[$lang][0]['value']) {
-                    $output .= l($node_load2->field_short_title[$lang][0]['value'], 'node/' . $node_load2->nid);
-                  }
-                  else {
-                    $output .= l($node_load2->field_short_title['en'][0]['value'], 'node/' . $node_load2->nid);
-                  }
+                  $output .= l($title, 'node/' . $node_load2->nid);
                   $output .= '</div>';
                   $output .= '</div>';
                 }
               }
             }
             else {
-              $field_short_title1 = $node_load1->field_short_title;
+              $title = (isset($node_load1->field_short_title[$lang][0]['value'])) ? $node_load1->field_short_title[$lang][0]['value'] : $node_load1->field_short_title['en'][0]['value'];
+              if (empty($title)) {
+                $title = $node_load1->field_short_title['und'][0]['value'];
+              }
+
               $output .= '<div class= "all-activities-row">';
               $output .= '<div class = "all-activities-short-title">';
-              $output .= l($node_load1->field_short_title[$lang][0]['value'], 'node/' . $node_load1->nid);
+              $output .= l($title, 'node/' . $node_load1->nid);
               $output .= '</div>';
               $output .= '</div>';
             }
           }
         }
         else {
-          $field_short_title = $node_load->field_short_title;
-          $title = $node_load->field_short_title[$lang][0]['value'];
+          $title = (isset($node_load->field_short_title[$lang][0]['value'])) ? $node_load->field_short_title[$lang][0]['value'] : $node_load->field_short_title['en'][0]['value'];
+          if (empty($title)) {
+            $title = $node_load->field_short_title['und'][0]['value'];
+          }
+
           $output .= '<div class= "all-activities-row">';
           $output .= '<div class= "all-activities-short-title">';
           if ($title == 'Aga Khan Award for Architecture') {
-            $field_short_title = $node_load->field_short_title;
-            if ($node_load->field_short_title[$lang][0]['value']) {
-              $output .= l($node_load->field_short_title[$lang][0]['value'], "node/9576");
-            }
-            else {
-              $output .= l($node_load->field_short_title['en'][0]['value'], "node/9576");
-            }
+            $output .= l($title, "node/9576");
           }
           elseif ($title == 'Aga Khan Music Initiative') {
-            $field_short_title = $node_load->field_short_title;
-            if ($node_load->field_short_title[$lang][0]['value']) {
-              $output .= l($node_load->field_short_title[$lang][0]['value'], "node/22106");
-            }
-            else {
-              $output .= l($node_load->field_short_title['en'][0]['value'], "node/22106");
-            }
+            $output .= l($title, "node/22106");
           }
           else {
-            $field_short_title = $node_load->field_short_title;
-            if ($node_load->field_short_title[$lang][0]['value']) {
-              $output .= l($node_load->field_short_title[$lang][0]['value'], 'node/' . $node_load->nid);
-            }
-            else {
-              $output .= l($node_load->field_short_title['en'][0]['value'], 'node/' . $node_load->nid);
-            }
+            $output .= l($title, 'node/' . $node_load->nid);
           }
 
           $output .= '</div>';
