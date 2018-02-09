@@ -24554,12 +24554,12 @@ print \'<h2>\'.reset($node->field_short_title)[0][\'value\'].\' : Steering Commi
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Footer: Global: Text area */
-  $handler->display->display_options['footer']['area']['id'] = 'area';
-  $handler->display->display_options['footer']['area']['table'] = 'views';
-  $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<span class="presscenter-right-more-btn"><a href="/press-centre/speeches">More Speeches</a></span>';
-  $handler->display->display_options['footer']['area']['format'] = 'full_html';
+  /* Footer: Global: PHP */
+  $handler->display->display_options['footer']['php']['id'] = 'php';
+  $handler->display->display_options['footer']['php']['table'] = 'views';
+  $handler->display->display_options['footer']['php']['field'] = 'php';
+  $handler->display->display_options['footer']['php']['empty'] = TRUE;
+  $handler->display->display_options['footer']['php']['php_output'] = '<span class="presscenter-right-more-btn"><a href="/press-centre/speeches"><?php echo t("More Speeches"); ?></a></span>';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -27786,7 +27786,7 @@ return $term->tid;';
   $handler->display->display_options['fields']['php']['alter']['text'] = '[view_node] | [php]';
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<a href=\'/press-centre/news\'>View All</a>';
+  $handler->display->display_options['fields']['php']['php_output'] = '<a href=\'/press-centre/news\'><?php echo t("View All");?></a>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
@@ -27849,75 +27849,21 @@ return $term->tid;';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Article Image */
-  $handler->display->display_options['fields']['field_article_img']['id'] = 'field_article_img';
-  $handler->display->display_options['fields']['field_article_img']['table'] = 'field_data_field_article_img';
-  $handler->display->display_options['fields']['field_article_img']['field'] = 'field_article_img';
-  $handler->display->display_options['fields']['field_article_img']['label'] = '';
-  $handler->display->display_options['fields']['field_article_img']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_article_img']['element_class'] = 'views-field-field-image';
-  $handler->display->display_options['fields']['field_article_img']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_article_img']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_article_img']['type'] = 'cs_adaptive_image';
-  $handler->display->display_options['fields']['field_article_img']['settings'] = array(
-    'relationship' => 'none',
-    'ui_name' => '',
-    'custom_label' => 0,
-    'label' => '',
-    'element_label_colon' => 0,
-    'exclude' => 0,
-    'element_type_enable' => 0,
-    'element_type' => '',
-    'element_class_enable' => 0,
-    'element_class' => '',
-    'element_label_type_enable' => 0,
-    'element_label_type' => '',
-    'element_label_class_enable' => 0,
-    'element_label_class' => '',
-    'element_wrapper_type_enable' => 0,
-    'element_wrapper_type' => '',
-    'element_wrapper_class_enable' => 0,
-    'element_wrapper_class' => '',
-    'element_default_classes' => 1,
-    'alter' => array(
-      'alter_text' => 0,
-      'text' => '',
-      'make_link' => 0,
-      'path' => '',
-      'absolute' => 0,
-      'replace_spaces' => 0,
-      'external' => 0,
-      'path_case' => 'none',
-      'link_class' => '',
-      'alt' => '',
-      'rel' => '',
-      'prefix' => '',
-      'suffix' => '',
-      'target' => '',
-      'trim' => 0,
-      'max_length' => '',
-      'word_boundary' => 1,
-      'ellipsis' => 1,
-      'more_link' => 0,
-      'more_link_text' => '',
-      'more_link_path' => '',
-      'html' => 0,
-      'strip_tags' => 0,
-      'preserve_tags' => '',
-      'trim_whitespace' => 0,
-      'nl2br' => 0,
-    ),
-    'empty' => '',
-    'empty_zero' => 0,
-    'hide_empty' => 0,
-    'hide_alter_empty' => 1,
-    'click_sort_column' => 'fid',
-    'type' => 'cs_adaptive_image',
-    'field_api_classes' => 0,
+  /* Field: Entity translation: Article Image: translated */
+  $handler->display->display_options['fields']['field_article_img_et']['id'] = 'field_article_img_et';
+  $handler->display->display_options['fields']['field_article_img_et']['table'] = 'field_data_field_article_img';
+  $handler->display->display_options['fields']['field_article_img_et']['field'] = 'field_article_img_et';
+  $handler->display->display_options['fields']['field_article_img_et']['label'] = '';
+  $handler->display->display_options['fields']['field_article_img_et']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_article_img_et']['element_class'] = 'views-field-field-image';
+  $handler->display->display_options['fields']['field_article_img_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_article_img_et']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_article_img_et']['type'] = 'cs_adaptive_image';
+  $handler->display->display_options['fields']['field_article_img_et']['settings'] = array(
     'image_link' => '',
     'styles' => array(
       'breakpoint_1' => '981',
-      'style_1' => 'mini_feature_narrow',
+      'style_1' => '',
       'breakpoint_2' => '',
       'style_2' => '',
       'breakpoint_3' => '',
@@ -27930,6 +27876,36 @@ return $term->tid;';
       'fallback_style' => '',
     ),
   );
+  $handler->display->display_options['fields']['field_article_img_et']['delta_offset'] = '0';
+  /* Field: Content: Article Image */
+  $handler->display->display_options['fields']['field_article_img']['id'] = 'field_article_img';
+  $handler->display->display_options['fields']['field_article_img']['table'] = 'field_data_field_article_img';
+  $handler->display->display_options['fields']['field_article_img']['field'] = 'field_article_img';
+  $handler->display->display_options['fields']['field_article_img']['label'] = '';
+  $handler->display->display_options['fields']['field_article_img']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_article_img']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_article_img']['element_class'] = 'views-field-field-image';
+  $handler->display->display_options['fields']['field_article_img']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_article_img']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_article_img']['type'] = 'cs_adaptive_image';
+  $handler->display->display_options['fields']['field_article_img']['settings'] = array(
+    'image_link' => '',
+    'styles' => array(
+      'breakpoint_1' => '981',
+      'style_1' => '',
+      'breakpoint_2' => '',
+      'style_2' => '',
+      'breakpoint_3' => '',
+      'style_3' => '',
+      'breakpoint_4' => '',
+      'style_4' => '',
+      'breakpoint_5' => '',
+      'style_5' => '',
+      'max_style' => 'mini_feature',
+      'fallback_style' => '',
+    ),
+  );
+  $handler->display->display_options['fields']['field_article_img']['delta_offset'] = '0';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -27937,6 +27913,13 @@ return $term->tid;';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Press Release';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Field: Entity translation: Short Title: translated */
+  $handler->display->display_options['fields']['field_short_title_et']['id'] = 'field_short_title_et';
+  $handler->display->display_options['fields']['field_short_title_et']['table'] = 'field_data_field_short_title';
+  $handler->display->display_options['fields']['field_short_title_et']['field'] = 'field_short_title_et';
+  $handler->display->display_options['fields']['field_short_title_et']['label'] = '';
+  $handler->display->display_options['fields']['field_short_title_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_short_title_et']['element_label_colon'] = FALSE;
   /* Field: Content: Short Title */
   $handler->display->display_options['fields']['field_short_title']['id'] = 'field_short_title';
   $handler->display->display_options['fields']['field_short_title']['table'] = 'field_data_field_short_title';
@@ -27951,8 +27934,11 @@ return $term->tid;';
   $handler->display->display_options['fields']['view_node_2']['ui_name'] = 'Short Title as Link';
   $handler->display->display_options['fields']['view_node_2']['label'] = '';
   $handler->display->display_options['fields']['view_node_2']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['view_node_2']['alter']['text'] = '[field_short_title]';
+  $handler->display->display_options['fields']['view_node_2']['alter']['text'] = '[field_short_title_et]';
   $handler->display->display_options['fields']['view_node_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_node_2']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['view_node_2']['node_in_colorbox_height'] = '600';
+  $handler->display->display_options['fields']['view_node_2']['node_in_colorbox_rel'] = '';
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -27981,7 +27967,7 @@ return $term->tid;';
   $handler->display->display_options['fields']['php']['alter']['text'] = '[view_node] | [php]';
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<a href=\'/press-centre/news\'>View All</a>';
+  $handler->display->display_options['fields']['php']['php_output'] = '<a href=\'/press-centre/news\'><?php echo t("View All");?></a>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
@@ -28043,6 +28029,16 @@ return $term->tid;';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['content'] = '<?php
+$out = \'<span class="presscenter-right-more-btn"><a href="/press-centre/speeches">\'.t("More Speeches").\'</a></span>\';
+echo $out;
+?>';
+  $handler->display->display_options['footer']['area']['format'] = 'php_code';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Article Image */
   $handler->display->display_options['fields']['field_article_img']['id'] = 'field_article_img';
@@ -28125,6 +28121,34 @@ return $term->tid;';
       'fallback_style' => '',
     ),
   );
+  /* Field: Entity translation: Article Image: translated */
+  $handler->display->display_options['fields']['field_article_img_et']['id'] = 'field_article_img_et';
+  $handler->display->display_options['fields']['field_article_img_et']['table'] = 'field_data_field_article_img';
+  $handler->display->display_options['fields']['field_article_img_et']['field'] = 'field_article_img_et';
+  $handler->display->display_options['fields']['field_article_img_et']['label'] = '';
+  $handler->display->display_options['fields']['field_article_img_et']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_article_img_et']['element_class'] = 'views-field-field-image';
+  $handler->display->display_options['fields']['field_article_img_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_article_img_et']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_article_img_et']['type'] = 'cs_adaptive_image';
+  $handler->display->display_options['fields']['field_article_img_et']['settings'] = array(
+    'image_link' => 'content',
+    'styles' => array(
+      'breakpoint_1' => '981',
+      'style_1' => '',
+      'breakpoint_2' => '',
+      'style_2' => '',
+      'breakpoint_3' => '',
+      'style_3' => '',
+      'breakpoint_4' => '',
+      'style_4' => '',
+      'breakpoint_5' => '',
+      'style_5' => '',
+      'max_style' => 'mini_feature',
+      'fallback_style' => '',
+    ),
+  );
+  $handler->display->display_options['fields']['field_article_img_et']['delta_offset'] = '0';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -28132,6 +28156,13 @@ return $term->tid;';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = 'In the Media';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Field: Entity translation: Short Title: translated */
+  $handler->display->display_options['fields']['field_short_title_et']['id'] = 'field_short_title_et';
+  $handler->display->display_options['fields']['field_short_title_et']['table'] = 'field_data_field_short_title';
+  $handler->display->display_options['fields']['field_short_title_et']['field'] = 'field_short_title_et';
+  $handler->display->display_options['fields']['field_short_title_et']['label'] = '';
+  $handler->display->display_options['fields']['field_short_title_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_short_title_et']['element_label_colon'] = FALSE;
   /* Field: Content: Short Title */
   $handler->display->display_options['fields']['field_short_title']['id'] = 'field_short_title';
   $handler->display->display_options['fields']['field_short_title']['table'] = 'field_data_field_short_title';
@@ -28146,8 +28177,21 @@ return $term->tid;';
   $handler->display->display_options['fields']['view_node_2']['ui_name'] = 'Short Title as Link';
   $handler->display->display_options['fields']['view_node_2']['label'] = '';
   $handler->display->display_options['fields']['view_node_2']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['view_node_2']['alter']['text'] = '[field_short_title]';
+  $handler->display->display_options['fields']['view_node_2']['alter']['text'] = '[field_short_title_et]';
   $handler->display->display_options['fields']['view_node_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_node_2']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['view_node_2']['node_in_colorbox_height'] = '600';
+  $handler->display->display_options['fields']['view_node_2']['node_in_colorbox_rel'] = '';
+  /* Field: Entity translation: Body: translated */
+  $handler->display->display_options['fields']['body_et']['id'] = 'body_et';
+  $handler->display->display_options['fields']['body_et']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body_et']['field'] = 'body_et';
+  $handler->display->display_options['fields']['body_et']['label'] = '';
+  $handler->display->display_options['fields']['body_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body_et']['type'] = 'text_summary_or_trimmed';
+  $handler->display->display_options['fields']['body_et']['settings'] = array(
+    'trim_length' => '100',
+  );
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -28176,7 +28220,7 @@ return $term->tid;';
   $handler->display->display_options['fields']['php']['alter']['text'] = '[view_node] | [php]';
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<a href=\'/press-centre/news\'>View All</a>';
+  $handler->display->display_options['fields']['php']['php_output'] = '<a href=\'/press-centre/news\'><?php echo t("View All"); ?></a>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
@@ -28252,13 +28296,13 @@ $content = \'<h2 class="pane-title">\'.$akdn_text.\'</h2><div class="view-header
 print $content;
 ?>';
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Footer: Global: Text area */
-  $handler->display->display_options['footer']['area']['id'] = 'area';
-  $handler->display->display_options['footer']['area']['table'] = 'views';
-  $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['empty'] = TRUE;
-  $handler->display->display_options['footer']['area']['content'] = '<span class="presscenter-right-more-btn"><a href="/press-centre/news">More news stories</a></span>';
-  $handler->display->display_options['footer']['area']['format'] = 'full_html';
+  /* Footer: Global: PHP */
+  $handler->display->display_options['footer']['php']['id'] = 'php';
+  $handler->display->display_options['footer']['php']['table'] = 'views';
+  $handler->display->display_options['footer']['php']['field'] = 'php';
+  $handler->display->display_options['footer']['php']['empty'] = TRUE;
+  $handler->display->display_options['footer']['php']['php_output'] = '<span class="presscenter-right-more-btn"><a href="/press-centre/news"><?php echo t("More news stories"); ?></a></span>
+';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
@@ -28423,12 +28467,13 @@ $content = \'<h2 class="pane-title">\'.$akdn_text.\'</h2><div class="view-header
 print $content;
 ?>';
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Footer: Global: Text area */
-  $handler->display->display_options['footer']['area']['id'] = 'area';
-  $handler->display->display_options['footer']['area']['table'] = 'views';
-  $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<span class="presscenter-right-more-btn"><a href="/press-centre/videos">More Videos</a></span>';
-  $handler->display->display_options['footer']['area']['format'] = 'full_html';
+  /* Footer: Global: PHP */
+  $handler->display->display_options['footer']['php']['id'] = 'php';
+  $handler->display->display_options['footer']['php']['table'] = 'views';
+  $handler->display->display_options['footer']['php']['field'] = 'php';
+  $handler->display->display_options['footer']['php']['empty'] = TRUE;
+  $handler->display->display_options['footer']['php']['php_output'] = '<span class="presscenter-right-more-btn"><a href="/press-centre/videos"><?php echo t("More Videos"); ?></a></span>
+';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
@@ -28438,6 +28483,17 @@ print $content;
   $handler->display->display_options['empty']['area']['content'] = '<span id="what-is-new-news-nofound" class="nofound">&nbsp;</span>';
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Entity translation: Image: translated */
+  $handler->display->display_options['fields']['field_podcast_image_et']['id'] = 'field_podcast_image_et';
+  $handler->display->display_options['fields']['field_podcast_image_et']['table'] = 'field_data_field_podcast_image';
+  $handler->display->display_options['fields']['field_podcast_image_et']['field'] = 'field_podcast_image_et';
+  $handler->display->display_options['fields']['field_podcast_image_et']['label'] = '';
+  $handler->display->display_options['fields']['field_podcast_image_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_podcast_image_et']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_podcast_image_et']['settings'] = array(
+    'image_style' => 'gallery_thumbnail',
+    'image_link' => 'content',
+  );
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_podcast_image_1']['id'] = 'field_podcast_image_1';
   $handler->display->display_options['fields']['field_podcast_image_1']['table'] = 'field_data_field_podcast_image';
@@ -28451,6 +28507,13 @@ print $content;
     'image_style' => 'gallery_thumbnail',
     'image_link' => 'content',
   );
+  /* Field: Entity translation: Short Title: translated */
+  $handler->display->display_options['fields']['field_short_title_et']['id'] = 'field_short_title_et';
+  $handler->display->display_options['fields']['field_short_title_et']['table'] = 'field_data_field_short_title';
+  $handler->display->display_options['fields']['field_short_title_et']['field'] = 'field_short_title_et';
+  $handler->display->display_options['fields']['field_short_title_et']['label'] = '';
+  $handler->display->display_options['fields']['field_short_title_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_short_title_et']['element_label_colon'] = FALSE;
   /* Field: Content: Short Title */
   $handler->display->display_options['fields']['field_short_title']['id'] = 'field_short_title';
   $handler->display->display_options['fields']['field_short_title']['table'] = 'field_data_field_short_title';
@@ -28470,8 +28533,11 @@ print $content;
   $handler->display->display_options['fields']['view_node_2']['ui_name'] = 'Short Title as Link';
   $handler->display->display_options['fields']['view_node_2']['label'] = '';
   $handler->display->display_options['fields']['view_node_2']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['view_node_2']['alter']['text'] = '[field_short_title]';
+  $handler->display->display_options['fields']['view_node_2']['alter']['text'] = '[field_short_title_et]';
   $handler->display->display_options['fields']['view_node_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_node_2']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['view_node_2']['node_in_colorbox_height'] = '600';
+  $handler->display->display_options['fields']['view_node_2']['node_in_colorbox_rel'] = '';
   /* Field: Content: Publish Date */
   $handler->display->display_options['fields']['field_publish_date']['id'] = 'field_publish_date';
   $handler->display->display_options['fields']['field_publish_date']['table'] = 'field_data_field_publish_date';
@@ -28557,12 +28623,13 @@ $content = \'<h2 class="pane-title">\'.$akdn_text.\'</h2><div class="view-header
 print $content;
 ?>';
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Footer: Global: Text area */
-  $handler->display->display_options['footer']['area']['id'] = 'area';
-  $handler->display->display_options['footer']['area']['table'] = 'views';
-  $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<span class="presscenter-right-more-btn"><a href="/press-centre/events">More Events</a></span>';
-  $handler->display->display_options['footer']['area']['format'] = 'full_html';
+  /* Footer: Global: PHP */
+  $handler->display->display_options['footer']['php']['id'] = 'php';
+  $handler->display->display_options['footer']['php']['table'] = 'views';
+  $handler->display->display_options['footer']['php']['field'] = 'php';
+  $handler->display->display_options['footer']['php']['empty'] = TRUE;
+  $handler->display->display_options['footer']['php']['php_output'] = '<span class="presscenter-right-more-btn"><a href="/press-centre/events"><?php echo t("More Events");?></a></span>
+';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
@@ -28741,11 +28808,26 @@ print $content;
   $handler->display->display_options['empty']['area']['content'] = '<span id="what-is-new-news-nofound" class="nofound">&nbsp;</span>';
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Entity translation: Image: translated */
+  $handler->display->display_options['fields']['field_speech_image_et']['id'] = 'field_speech_image_et';
+  $handler->display->display_options['fields']['field_speech_image_et']['table'] = 'field_data_field_speech_image';
+  $handler->display->display_options['fields']['field_speech_image_et']['field'] = 'field_speech_image_et';
+  $handler->display->display_options['fields']['field_speech_image_et']['label'] = '';
+  $handler->display->display_options['fields']['field_speech_image_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_speech_image_et']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_speech_image_et']['settings'] = array(
+    'image_style' => 'gallery_thumbnail',
+    'image_link' => 'content',
+  );
+  $handler->display->display_options['fields']['field_speech_image_et']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_speech_image_et']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_speech_image_et']['multi_type'] = 'ul';
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_speech_image']['id'] = 'field_speech_image';
   $handler->display->display_options['fields']['field_speech_image']['table'] = 'field_data_field_speech_image';
   $handler->display->display_options['fields']['field_speech_image']['field'] = 'field_speech_image';
   $handler->display->display_options['fields']['field_speech_image']['label'] = '';
+  $handler->display->display_options['fields']['field_speech_image']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_speech_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_speech_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_speech_image']['settings'] = array(
@@ -28755,6 +28837,13 @@ print $content;
   $handler->display->display_options['fields']['field_speech_image']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_speech_image']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_speech_image']['multi_type'] = 'ul';
+  /* Field: Entity translation: Short Title: translated */
+  $handler->display->display_options['fields']['field_short_title_et']['id'] = 'field_short_title_et';
+  $handler->display->display_options['fields']['field_short_title_et']['table'] = 'field_data_field_short_title';
+  $handler->display->display_options['fields']['field_short_title_et']['field'] = 'field_short_title_et';
+  $handler->display->display_options['fields']['field_short_title_et']['label'] = '';
+  $handler->display->display_options['fields']['field_short_title_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_short_title_et']['element_label_colon'] = FALSE;
   /* Field: Content: Short Title */
   $handler->display->display_options['fields']['field_short_title']['id'] = 'field_short_title';
   $handler->display->display_options['fields']['field_short_title']['table'] = 'field_data_field_short_title';
@@ -28774,8 +28863,11 @@ print $content;
   $handler->display->display_options['fields']['view_node_2']['ui_name'] = 'Short Title as Link';
   $handler->display->display_options['fields']['view_node_2']['label'] = '';
   $handler->display->display_options['fields']['view_node_2']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['view_node_2']['alter']['text'] = '[field_short_title]';
+  $handler->display->display_options['fields']['view_node_2']['alter']['text'] = '[field_short_title_et]';
   $handler->display->display_options['fields']['view_node_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_node_2']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['view_node_2']['node_in_colorbox_height'] = '600';
+  $handler->display->display_options['fields']['view_node_2']['node_in_colorbox_rel'] = '';
   /* Field: Content: Publish Date */
   $handler->display->display_options['fields']['field_publish_date']['id'] = 'field_publish_date';
   $handler->display->display_options['fields']['field_publish_date']['table'] = 'field_data_field_publish_date';
@@ -28862,14 +28954,29 @@ $content = \'<h2 class="pane-title">\'.$akdn_text.\'</h2><div class="view-header
 print $content;
 ?>';
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Footer: Global: Text area */
-  $handler->display->display_options['footer']['area']['id'] = 'area';
-  $handler->display->display_options['footer']['area']['table'] = 'views';
-  $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<span class="presscenter-right-more-btn"><a href="/press-centre/galleries">More Photographs</a></span>';
-  $handler->display->display_options['footer']['area']['format'] = 'full_html';
+  /* Footer: Global: PHP */
+  $handler->display->display_options['footer']['php']['id'] = 'php';
+  $handler->display->display_options['footer']['php']['table'] = 'views';
+  $handler->display->display_options['footer']['php']['field'] = 'php';
+  $handler->display->display_options['footer']['php']['empty'] = TRUE;
+  $handler->display->display_options['footer']['php']['php_output'] = '<span class="presscenter-right-more-btn"><a href="/press-centre/galleries"><?php t("More Photographs"); ?></a></span>
+';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Entity translation: Images: translated */
+  $handler->display->display_options['fields']['field_gallery_images_et']['id'] = 'field_gallery_images_et';
+  $handler->display->display_options['fields']['field_gallery_images_et']['table'] = 'field_data_field_gallery_images';
+  $handler->display->display_options['fields']['field_gallery_images_et']['field'] = 'field_gallery_images_et';
+  $handler->display->display_options['fields']['field_gallery_images_et']['label'] = '';
+  $handler->display->display_options['fields']['field_gallery_images_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_gallery_images_et']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_gallery_images_et']['settings'] = array(
+    'image_style' => 'gallery_thumbnail',
+    'image_link' => 'content',
+  );
+  $handler->display->display_options['fields']['field_gallery_images_et']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_gallery_images_et']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_gallery_images_et']['multi_type'] = 'ul';
   /* Field: Content: Images */
   $handler->display->display_options['fields']['field_gallery_images_1']['id'] = 'field_gallery_images_1';
   $handler->display->display_options['fields']['field_gallery_images_1']['table'] = 'field_data_field_gallery_images';
@@ -28884,6 +28991,13 @@ print $content;
   $handler->display->display_options['fields']['field_gallery_images_1']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_gallery_images_1']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_gallery_images_1']['multi_type'] = 'ul';
+  /* Field: Entity translation: Short Title: translated */
+  $handler->display->display_options['fields']['field_short_title_et']['id'] = 'field_short_title_et';
+  $handler->display->display_options['fields']['field_short_title_et']['table'] = 'field_data_field_short_title';
+  $handler->display->display_options['fields']['field_short_title_et']['field'] = 'field_short_title_et';
+  $handler->display->display_options['fields']['field_short_title_et']['label'] = '';
+  $handler->display->display_options['fields']['field_short_title_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_short_title_et']['element_label_colon'] = FALSE;
   /* Field: Content: Short Title */
   $handler->display->display_options['fields']['field_short_title']['id'] = 'field_short_title';
   $handler->display->display_options['fields']['field_short_title']['table'] = 'field_data_field_short_title';
@@ -28898,8 +29012,11 @@ print $content;
   $handler->display->display_options['fields']['view_node_2']['ui_name'] = 'Short Title as Link';
   $handler->display->display_options['fields']['view_node_2']['label'] = '';
   $handler->display->display_options['fields']['view_node_2']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['view_node_2']['alter']['text'] = '[field_short_title]';
+  $handler->display->display_options['fields']['view_node_2']['alter']['text'] = '[field_short_title_et]';
   $handler->display->display_options['fields']['view_node_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_node_2']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['view_node_2']['node_in_colorbox_height'] = '600';
+  $handler->display->display_options['fields']['view_node_2']['node_in_colorbox_rel'] = '';
   /* Field: Content: Publish Date */
   $handler->display->display_options['fields']['field_publish_date']['id'] = 'field_publish_date';
   $handler->display->display_options['fields']['field_publish_date']['table'] = 'field_data_field_publish_date';
