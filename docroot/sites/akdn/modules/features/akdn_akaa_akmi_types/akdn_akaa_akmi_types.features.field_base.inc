@@ -2450,7 +2450,7 @@ function akdn_akaa_akmi_types_field_default_field_bases() {
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'list_boolean',
   );
 
