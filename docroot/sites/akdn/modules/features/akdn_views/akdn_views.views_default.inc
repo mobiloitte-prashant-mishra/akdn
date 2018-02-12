@@ -24567,7 +24567,7 @@ print \'<h2>\'.reset($node->field_short_title)[0][\'value\'].\' : Steering Commi
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Article Image */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_article_img']['id'] = 'field_article_img';
   $handler->display->display_options['fields']['field_article_img']['table'] = 'field_data_field_article_img';
   $handler->display->display_options['fields']['field_article_img']['field'] = 'field_article_img';
@@ -24789,7 +24789,7 @@ $whats_new_label = "View all";
     'image_style' => 'article_listing_thumbnail',
     'image_link' => 'content',
   );
-  /* Field: Content: Article Image */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_article_img']['id'] = 'field_article_img';
   $handler->display->display_options['fields']['field_article_img']['table'] = 'field_data_field_article_img';
   $handler->display->display_options['fields']['field_article_img']['field'] = 'field_article_img';
@@ -24968,7 +24968,7 @@ $whats_new_label = "View all";
     'image_style' => 'mini_feature',
     'image_link' => 'content',
   );
-  /* Field: Content: Article Image */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_article_img']['id'] = 'field_article_img';
   $handler->display->display_options['fields']['field_article_img']['table'] = 'field_data_field_article_img';
   $handler->display->display_options['fields']['field_article_img']['field'] = 'field_article_img';
@@ -25690,7 +25690,7 @@ return $term->tid;';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Article Image */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_article_img']['id'] = 'field_article_img';
   $handler->display->display_options['fields']['field_article_img']['table'] = 'field_data_field_article_img';
   $handler->display->display_options['fields']['field_article_img']['field'] = 'field_article_img';
@@ -26697,7 +26697,7 @@ return $type[$row->type];';
     'image_style' => 'square_thumbnail',
     'image_link' => 'content',
   );
-  /* Field: Content: Article Image */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_article_img']['id'] = 'field_article_img';
   $handler->display->display_options['fields']['field_article_img']['table'] = 'field_data_field_article_img';
   $handler->display->display_options['fields']['field_article_img']['field'] = 'field_article_img';
@@ -26876,7 +26876,7 @@ return $type[$row->type];';
   );
   $handler->display->display_options['fields']['field_gallery_images']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_gallery_images']['delta_offset'] = '0';
-  /* Field: Content: Article Image */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_article_img']['id'] = 'field_article_img';
   $handler->display->display_options['fields']['field_article_img']['table'] = 'field_data_field_article_img';
   $handler->display->display_options['fields']['field_article_img']['field'] = 'field_article_img';
@@ -27181,7 +27181,7 @@ return $term->tid;';
   $handler->display->display_options['empty']['area']['content'] = '<span id="what-is-new-news-nofound" class="nofound">&nbsp;</span>';
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Article Image */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_article_img']['id'] = 'field_article_img';
   $handler->display->display_options['fields']['field_article_img']['table'] = 'field_data_field_article_img';
   $handler->display->display_options['fields']['field_article_img']['field'] = 'field_article_img';
@@ -27317,7 +27317,7 @@ return $term->tid;';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Article Image */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_article_img']['id'] = 'field_article_img';
   $handler->display->display_options['fields']['field_article_img']['table'] = 'field_data_field_article_img';
   $handler->display->display_options['fields']['field_article_img']['field'] = 'field_article_img';
@@ -27519,7 +27519,7 @@ return $term->tid;';
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Article Image */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_article_img']['id'] = 'field_article_img';
   $handler->display->display_options['fields']['field_article_img']['table'] = 'field_data_field_article_img';
   $handler->display->display_options['fields']['field_article_img']['field'] = 'field_article_img';
@@ -27654,7 +27654,7 @@ return $term->tid;';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Article Image */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_article_img']['id'] = 'field_article_img';
   $handler->display->display_options['fields']['field_article_img']['table'] = 'field_data_field_article_img';
   $handler->display->display_options['fields']['field_article_img']['field'] = 'field_article_img';
@@ -27849,7 +27849,7 @@ return $term->tid;';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Entity translation: Article Image: translated */
+  /* Field: Entity translation: Image: translated */
   $handler->display->display_options['fields']['field_article_img_et']['id'] = 'field_article_img_et';
   $handler->display->display_options['fields']['field_article_img_et']['table'] = 'field_data_field_article_img';
   $handler->display->display_options['fields']['field_article_img_et']['field'] = 'field_article_img_et';
@@ -27877,7 +27877,7 @@ return $term->tid;';
     ),
   );
   $handler->display->display_options['fields']['field_article_img_et']['delta_offset'] = '0';
-  /* Field: Content: Article Image */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_article_img']['id'] = 'field_article_img';
   $handler->display->display_options['fields']['field_article_img']['table'] = 'field_data_field_article_img';
   $handler->display->display_options['fields']['field_article_img']['field'] = 'field_article_img';
@@ -28040,7 +28040,7 @@ echo $out;
 ?>';
   $handler->display->display_options['footer']['area']['format'] = 'php_code';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Article Image */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_article_img']['id'] = 'field_article_img';
   $handler->display->display_options['fields']['field_article_img']['table'] = 'field_data_field_article_img';
   $handler->display->display_options['fields']['field_article_img']['field'] = 'field_article_img';
@@ -28121,7 +28121,7 @@ echo $out;
       'fallback_style' => '',
     ),
   );
-  /* Field: Entity translation: Article Image: translated */
+  /* Field: Entity translation: Image: translated */
   $handler->display->display_options['fields']['field_article_img_et']['id'] = 'field_article_img_et';
   $handler->display->display_options['fields']['field_article_img_et']['table'] = 'field_data_field_article_img';
   $handler->display->display_options['fields']['field_article_img_et']['field'] = 'field_article_img_et';
@@ -28311,8 +28311,13 @@ print $content;
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = '<span id="what-is-new-news-nofound" class="nofound">&nbsp;</span>';
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Entity translation: translations */
+  $handler->display->display_options['relationships']['entity_translations']['id'] = 'entity_translations';
+  $handler->display->display_options['relationships']['entity_translations']['table'] = 'node';
+  $handler->display->display_options['relationships']['entity_translations']['field'] = 'entity_translations';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Article Image */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_article_img']['id'] = 'field_article_img';
   $handler->display->display_options['fields']['field_article_img']['table'] = 'field_data_field_article_img';
   $handler->display->display_options['fields']['field_article_img']['field'] = 'field_article_img';
@@ -28329,7 +28334,7 @@ print $content;
   $handler->display->display_options['fields']['field_article_img']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_article_img']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_article_img']['multi_type'] = 'ul';
-  /* Field: Entity translation: Article Image: translated */
+  /* Field: Entity translation: Image: translated */
   $handler->display->display_options['fields']['field_article_img_et']['id'] = 'field_article_img_et';
   $handler->display->display_options['fields']['field_article_img_et']['table'] = 'field_data_field_article_img';
   $handler->display->display_options['fields']['field_article_img_et']['field'] = 'field_article_img_et';
@@ -28436,6 +28441,14 @@ print $content;
   $handler->display->display_options['filters']['tid_1']['group'] = 1;
   $handler->display->display_options['filters']['tid_1']['type'] = 'select';
   $handler->display->display_options['filters']['tid_1']['vocabulary'] = 'article_type';
+  /* Filter criterion: Entity translation: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'entity_translation';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['relationship'] = 'entity_translations';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
   $handler->display->display_options['block_description'] = 'Recent News';
 
   /* Display: Recent Video - Video */
@@ -28482,6 +28495,11 @@ print $content;
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = '<span id="what-is-new-news-nofound" class="nofound">&nbsp;</span>';
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Entity translation: translations */
+  $handler->display->display_options['relationships']['entity_translations']['id'] = 'entity_translations';
+  $handler->display->display_options['relationships']['entity_translations']['table'] = 'node';
+  $handler->display->display_options['relationships']['entity_translations']['field'] = 'entity_translations';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Entity translation: Image: translated */
   $handler->display->display_options['fields']['field_podcast_image_et']['id'] = 'field_podcast_image_et';
@@ -28499,6 +28517,7 @@ print $content;
   $handler->display->display_options['fields']['field_podcast_image_1']['table'] = 'field_data_field_podcast_image';
   $handler->display->display_options['fields']['field_podcast_image_1']['field'] = 'field_podcast_image';
   $handler->display->display_options['fields']['field_podcast_image_1']['label'] = '';
+  $handler->display->display_options['fields']['field_podcast_image_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_podcast_image_1']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_podcast_image_1']['element_class'] = 'video-image-thumbnail';
   $handler->display->display_options['fields']['field_podcast_image_1']['element_label_colon'] = FALSE;
@@ -28591,6 +28610,14 @@ print $content;
     'podcast' => 'podcast',
   );
   $handler->display->display_options['filters']['type_2']['group'] = 1;
+  /* Filter criterion: Entity translation: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'entity_translation';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['relationship'] = 'entity_translations';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
   $handler->display->display_options['block_description'] = 'Recent Video';
 
   /* Display: Recent Events - Events */
@@ -28638,6 +28665,11 @@ print $content;
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = '<span id="what-is-new-news-nofound" class="nofound">&nbsp;</span>';
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Entity translation: translations */
+  $handler->display->display_options['relationships']['entity_translations']['id'] = 'entity_translations';
+  $handler->display->display_options['relationships']['entity_translations']['table'] = 'node';
+  $handler->display->display_options['relationships']['entity_translations']['field'] = 'entity_translations';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Entity translation: Event Image: translated */
   $handler->display->display_options['fields']['field_event_image_et']['id'] = 'field_event_image_et';
@@ -28769,6 +28801,14 @@ print $content;
     'event' => 'event',
   );
   $handler->display->display_options['filters']['type_2']['group'] = 1;
+  /* Filter criterion: Entity translation: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'entity_translation';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['relationship'] = 'entity_translations';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
   $handler->display->display_options['block_description'] = 'Recent Event';
 
   /* Display: Recent Speech - Speech */
@@ -28807,6 +28847,11 @@ print $content;
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = '<span id="what-is-new-news-nofound" class="nofound">&nbsp;</span>';
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Entity translation: translations */
+  $handler->display->display_options['relationships']['entity_translations']['id'] = 'entity_translations';
+  $handler->display->display_options['relationships']['entity_translations']['table'] = 'node';
+  $handler->display->display_options['relationships']['entity_translations']['field'] = 'entity_translations';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Entity translation: Image: translated */
   $handler->display->display_options['fields']['field_speech_image_et']['id'] = 'field_speech_image_et';
@@ -28922,6 +28967,14 @@ print $content;
     'speech' => 'speech',
   );
   $handler->display->display_options['filters']['type_2']['group'] = 1;
+  /* Filter criterion: Entity translation: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'entity_translation';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['relationship'] = 'entity_translations';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
   $handler->display->display_options['block_description'] = 'Recent Speech';
 
   /* Display: Recent Photographs - Photographs */
@@ -28982,6 +29035,7 @@ print $content;
   $handler->display->display_options['fields']['field_gallery_images_1']['table'] = 'field_data_field_gallery_images';
   $handler->display->display_options['fields']['field_gallery_images_1']['field'] = 'field_gallery_images';
   $handler->display->display_options['fields']['field_gallery_images_1']['label'] = '';
+  $handler->display->display_options['fields']['field_gallery_images_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_gallery_images_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_gallery_images_1']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_gallery_images_1']['settings'] = array(
