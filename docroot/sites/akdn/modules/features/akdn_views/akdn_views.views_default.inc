@@ -36159,6 +36159,11 @@ if (count($rows) == 0) {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_publication_image']['id'] = 'field_publication_image';
@@ -36625,21 +36630,44 @@ $content = \'<h2 class="pane-title">\'.$akdn_text.\'</h2><div class="view-header
 print $content;
 ?>';
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Footer: Global: Text area */
-  $handler->display->display_options['footer']['area']['id'] = 'area';
-  $handler->display->display_options['footer']['area']['table'] = 'views';
-  $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<span class="presscenter-right-more-btn"><a href="/press-centre/publications">More Publications</a></span>';
-  $handler->display->display_options['footer']['area']['format'] = 'full_html';
+  /* Footer: Global: PHP */
+  $handler->display->display_options['footer']['php']['id'] = 'php';
+  $handler->display->display_options['footer']['php']['table'] = 'views';
+  $handler->display->display_options['footer']['php']['field'] = 'php';
+  $handler->display->display_options['footer']['php']['empty'] = TRUE;
+  $handler->display->display_options['footer']['php']['php_output'] = '<span class="presscenter-right-more-btn"><a href="/press-centre/publications"><?php echo t("More Publications"); ?></a></span>
+';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Entity translation: translations */
+  $handler->display->display_options['relationships']['entity_translations']['id'] = 'entity_translations';
+  $handler->display->display_options['relationships']['entity_translations']['table'] = 'node';
+  $handler->display->display_options['relationships']['entity_translations']['field'] = 'entity_translations';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Entity translation: Title: translated */
+  $handler->display->display_options['fields']['title_field_et']['id'] = 'title_field_et';
+  $handler->display->display_options['fields']['title_field_et']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field_et']['field'] = 'title_field_et';
+  $handler->display->display_options['fields']['title_field_et']['label'] = '';
+  $handler->display->display_options['fields']['title_field_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field_et']['settings'] = array(
+    'title_style' => '_none',
+    'title_link' => 'content',
+    'title_class' => '',
+  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['text'] = '[title_field_et]';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_rel'] = '';
   /* Field: Content: Link */
   $handler->display->display_options['fields']['view_node_1']['id'] = 'view_node_1';
   $handler->display->display_options['fields']['view_node_1']['table'] = 'views_entity_node';
@@ -36694,8 +36722,18 @@ print $content;
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
+global $language,$base_url;
+$lang = $language->language;
 $nid = $row->nid;
+$translations = $data->_field_data[\'nid\'][\'entity\']->translations->data;
+
+if(array_key_exists($lang,$translations) && $lang != \'en\'){
 $path = \'node/\'.$nid;
+}
+else{
+$path = $base_url. \'/node/\'.$nid;
+}
+
 /*if($row->tid){
 $param = "field_agency:$row->tid";
 //, array(\'query\'=> array(\'f[0]\'=>$param))
@@ -36709,6 +36747,34 @@ print $content;
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Field: Entity translation: File: translated */
+  $handler->display->display_options['fields']['field_publication_file_et']['id'] = 'field_publication_file_et';
+  $handler->display->display_options['fields']['field_publication_file_et']['table'] = 'field_data_field_publication_file';
+  $handler->display->display_options['fields']['field_publication_file_et']['field'] = 'field_publication_file_et';
+  $handler->display->display_options['fields']['field_publication_file_et']['label'] = '';
+  $handler->display->display_options['fields']['field_publication_file_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_publication_file_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_publication_file_et']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_publication_file_et']['type'] = 'file_download_link';
+  $handler->display->display_options['fields']['field_publication_file_et']['settings'] = array(
+    'text' => 'Download',
+  );
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Publish Date (field_publish_date) */
+  $handler->display->display_options['sorts']['field_publish_date_value']['id'] = 'field_publish_date_value';
+  $handler->display->display_options['sorts']['field_publish_date_value']['table'] = 'field_data_field_publish_date';
+  $handler->display->display_options['sorts']['field_publish_date_value']['field'] = 'field_publish_date_value';
+  $handler->display->display_options['sorts']['field_publish_date_value']['order'] = 'DESC';
+  /* Sort criterion: Content: Sticky */
+  $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['table'] = 'node';
+  $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['order'] = 'DESC';
+  /* Sort criterion: Entity translation: Language */
+  $handler->display->display_options['sorts']['language']['id'] = 'language';
+  $handler->display->display_options['sorts']['language']['table'] = 'entity_translation';
+  $handler->display->display_options['sorts']['language']['field'] = 'language';
+  $handler->display->display_options['sorts']['language']['relationship'] = 'entity_translations';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -36720,6 +36786,30 @@ print $content;
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['nid']['not'] = TRUE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'publication' => 'publication',
+  );
+  /* Filter criterion: Entity translation: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'entity_translation';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['relationship'] = 'entity_translations';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
 
   /* Display: About this publication block */
   $handler = $view->new_display('block', 'About this publication block', 'about_this_publication');
@@ -36838,58 +36928,6 @@ print $content;
   );
   $handler->display->display_options['filters']['language_1']['group'] = 1;
   $handler->display->display_options['block_caching'] = '-1';
-  $translatables['publications'] = array(
-    t('Master'),
-    t('Publications'),
-    t('View all publications'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('term'),
-    t('File'),
-    t('Block'),
-    t('more'),
-    t('[field_short_title]'),
-    t('Agency Listings Block'),
-    t('Click on the links below to download brochures on AKDN Agencies:'),
-    t('Sorry, no publications are available at this time.'),
-    t('queue'),
-    t('file_publication_file'),
-    t('File Size'),
-    t('([extension])'),
-    t('Publications Right Block'),
-    t('<none>'),
-    t('Links'),
-    t('Speeches'),
-    t('Press Releases'),
-    t('Events'),
-    t('Audio/Video'),
-    t('Photos'),
-    t('In the Media'),
-    t('News'),
-    t('Projects'),
-    t('All'),
-    t('References'),
-    t('AKAA Footer'),
-    t('Recent Publication'),
-    t('Latest Publication Right Side Block'),
-    t('<span class="presscenter-right-more-btn"><a href="/press-centre/publications">More Publications</a></span>'),
-    t('About this publication block'),
-    t('ABOUT THIS PUBLICATION'),
-    t('file from field_publication_file'),
-    t('Last Updated'),
-    t('Size'),
-    t('<div class="publish-date">Last Updated: [field_publish_date]</div>'),
-  );
   $export['publications'] = $view;
 
   $view = new view();
