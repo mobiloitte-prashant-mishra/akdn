@@ -316,8 +316,9 @@ function akdn_akaa_akmi_types_field_group_info() {
       2 => 'field_custom_breadcrumbs',
       3 => 'field_short_title',
       4 => 'field_custom_meta_tags',
-      5 => 'title',
-      6 => 'path',
+      5 => 'field_article_img',
+      6 => 'title',
+      7 => 'path',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
