@@ -7,32 +7,50 @@
 /**
  * Displays a search page.
  *
- * @param $id
+ * @param string $id
  *   The search page's machine name.
- * @param $keys
+ * @param string|null $keys
  *   The keys to search for.
+ * @param array $overridden_options
+ *   An associative array of page options that should be overridden for this
+ *   search only.
  */
-function search_api_page_view($id, $keys = NULL) {
+function search_api_page_view($id, $keys = NULL, $overridden_options = array()) {
   $page = search_api_page_load($id);
   if (!$page) {
     return MENU_NOT_FOUND;
   }
 
-  // Pre-process keys (unescape \ and /).
-  $keys = explode("\\\\", $keys);
-  $keys = str_replace("\\", "/", $keys);
-  $keys = implode("\\", $keys);
+  // Merge in overridden options.
+  if ($overridden_options && is_array($overridden_options)) {
+    $page->original_options = $page->options;
+    $page->options = $overridden_options + $page->options;
+  }
 
+  // Pre-process keys (unescape \ and /).
+  if (isset($keys) && $keys !== '') {
+    $keys = explode("\\\\", $keys);
+    $keys = str_replace("\\", "/", $keys);
+    $keys = implode("\\", $keys);
+  }
+  else {
+    $keys = NULL;
+  }
+
+  $ret = array(
+    '#theme' => 'search_api_page_full_page',
+  );
   $ret['#contextual_links']['search_api_page'] = array(
     'admin/config/search/search_api/page',
     array($page->machine_name),
   );
 
   if (!isset($page->options['result_page_search_form']) || $page->options['result_page_search_form']) {
-    $ret['form'] = drupal_get_form('search_api_page_search_form', $page, $keys);
+    $ret['#form'] = drupal_get_form('search_api_page_search_form', $page, $keys);
   }
 
-  if ($keys) {
+  // Do a search if we have keys, or our empty behavior and facets dictate.
+  if ($keys || !empty($page->options['empty_behavior'])) {
     // Override per_page setting with GET parameter.
     $limit = $page->options['per_page'];
     if (!empty($page->options['get_per_page'])
@@ -53,9 +71,18 @@ function search_api_page_view($id, $keys = NULL) {
       return $ret;
     }
 
+    if (empty($results)) {
+      return $ret;
+    }
+
+    $ret['#results']['#theme'] = "search_api_page_results__{$page->machine_name}";
+    $ret['#results']['#index'] = search_api_index_load($page->index_id);
+    $ret['#results']['#view_mode'] = isset($page->options['view_mode']) ? $page->options['view_mode'] : 'search_api_page_result';
+    $ret['#results']['#page'] = $page;
+
     // If spellcheck results were returned then add them to the render array.
     if (isset($results['search_api_spellcheck'])) {
-      $ret['results']['#spellcheck'] = array(
+      $ret['#results']['#spellcheck'] = array(
         '#theme' => 'search_api_spellcheck',
         '#spellcheck' => $results['search_api_spellcheck'],
       // Let the theme function know where the key is stored by passing its arg
@@ -68,17 +95,17 @@ function search_api_page_view($id, $keys = NULL) {
       );
     }
 
-    $ret['results']['#theme'] = "search_api_page_results__{$page->machine_name}";
-    $ret['results']['#index'] = search_api_index_load($page->index_id);
-    $ret['results']['#results'] = $results;
-    $ret['results']['#view_mode'] = isset($page->options['view_mode']) ? $page->options['view_mode'] : 'search_api_page_result';
-    $ret['results']['#keys'] = $keys;
-    $ret['results']['#page'] = $page;
+    $ret['#results']['#results'] = $results;
+    $ret['#results']['#keys'] = $keys;
+    // Add a clean-up function to reset page options to their original values.
+    if ($overridden_options) {
+      $ret['#results']['#post_render'] = array('search_api_page_reset_original_options');
+    }
 
     // Load pager.
     if ($results['result count'] > $limit) {
       pager_default_initialize($results['result count'], $limit);
-      $ret['results']['#pager']['#theme'] = 'pager';
+      $ret['#results']['#pager']['#theme'] = 'pager';
     }
 
     if (!empty($results['ignored'])) {
@@ -95,22 +122,42 @@ function search_api_page_view($id, $keys = NULL) {
 }
 
 /**
+ * Processes variables for search-api-page-full-page.tpl.php
+ *
+ * The $variables array contains the following arguments:
+ * - $form
+ * - $results
+ *
+ * @see search-api-page-full-page.tpl.php
+ */
+function template_preprocess_search_api_page_full_page(&$variables) {
+  $machine_name = $variables['results']['#page']->machine_name;
+  $variables['theme_hook_suggestions'][] = 'search-api-page-full-page__' . $machine_name;
+}
+
+/**
  * Executes a search.
  *
  * @param Entity $page
  *   The page for which a search should be executed.
- * @param string $keys
- *   The keywords to search for.
+ * @param string|null $keys
+ *   The keywords to search for, or NULL for a search without keywords.
  * @param int $limit
  *   The maximum number of results to return.
  *
- * @return array
- *   The search results as returned by SearchApiQueryInterface::execute().
+ * @return array|false
+ *   FALSE if no keys were given, no facet filters are present and the page is
+ *   configured to show no results in this case. Otherwise, the search results
+ *   as returned by SearchApiQueryInterface::execute().
+ *
+ * @throws SearchApiException
+ *   If an error occurred during the search.
  */
-function search_api_page_search_execute(Entity $page, $keys, $limit = 10) {
+function search_api_page_search_execute(Entity $page, $keys = NULL, $limit = 10) {
   $offset = pager_find_page() * $limit;
   $options = array(
     'search id' => 'search_api_page:' . $page->path,
+    'search_api_page id' => $page->machine_name,
     'parse mode' => $page->options['mode'],
   );
 
@@ -137,7 +184,38 @@ function search_api_page_search_execute(Entity $page, $keys, $limit = 10) {
       $query->filter($filter);
     }
   }
-  return $query->execute();
+  $results = $query->execute();
+  if (!$keys && $page->options['empty_behavior'] === 'blocks' && !search_api_page_query_has_facets($query)) {
+    return FALSE;
+  }
+  return $results;
+}
+
+/**
+ * Determines whether an executed query had any facet filters set.
+ *
+ * @param SearchApiQueryInterface $query
+ *   The query in question.
+ *
+ * @return bool
+ *   TRUE if there are filters with a "facet:*" tag present in the query object,
+ *   FALSE otherwise.
+ */
+function search_api_page_query_has_facets(SearchApiQueryInterface $query) {
+  // Check that the search server supports facets.
+  $index = $query->getIndex();
+  if (module_exists('facetapi') && $index->server()->supportsFeature('search_api_facets')) {
+    // Load the search index's adapter plugin and process the facets.
+    $adapter = facetapi_adapter_load('search_api@' . $index->machine_name);
+    $adapter->processFacets();
+
+    // Check if there are any active facets and return a boolean accordingly.
+    return (bool) $adapter->getAllActiveItems();
+  }
+
+  // If the search server doesn't support facets, there aren't any facet filters
+  // set by definition.
+  return FALSE;
 }
 
 /**
@@ -152,13 +230,36 @@ function search_api_page_search_execute(Entity $page, $keys, $limit = 10) {
  *   The ISO 639 language code of the language represented by $lang.
  */
 function _search_api_page_map_languages($lang) {
-    if ($lang == 'current') {
-      return $GLOBALS['language_content']->language;
-    }
-    elseif ($lang == 'default') {
-      return language_default('language');
-    }
-    return $lang;
+  if ($lang == 'current') {
+    return $GLOBALS['language_content']->language;
+  }
+  elseif ($lang == 'default') {
+    return language_default('language');
+  }
+  return $lang;
+}
+
+/**
+ * Resets the page's options, if they were overridden, to their original values.
+ *
+ * Used as a "#post_render" callback for the search page results in
+ * search_api_page_view().
+ *
+ * @param string $children
+ *   The rendered output of the element.
+ * @param array $element
+ *   The rendered element.
+ *
+ * @return array
+ *   The processed rendered output of the element.
+ */
+function search_api_page_reset_original_options($children, array $element) {
+  $page = $element['#page'];
+  if (!empty($page->original_options)) {
+    $page->options = $page->original_options;
+    unset($page->original_options);
+  }
+  return $children;
 }
 
 /**
@@ -179,20 +280,30 @@ function _search_api_page_map_languages($lang) {
  */
 function template_preprocess_search_api_page_results(array &$variables) {
   $results = $variables['results'];
-
-  $variables['items'] = $variables['index']->loadItems(array_keys($variables['results']['results']));
+  $results += array(
+    'results' => array(),
+  );
+  $variables += array(
+    'items' => array(),
+  );
+  if ($results['results'] && empty($variables['items'])) {
+    $variables['items'] = $variables['index']->loadItems(array_keys($results['results']));
+  }
   $variables['result_count'] = $results['result count'];
-  $variables['sec'] = round($results['performance']['complete'], 3);
+  $variables['sec'] = 0;
+  if (isset($results['performance']['complete'])) {
+    $variables['sec'] = round($results['performance']['complete'], 3);
+  }
   $variables['search_performance'] = array(
-      '#theme' => 'search_api_page_search_performance',
-      '#markup' => format_plural(
-        $results['result count'],
-        'The search found 1 result in @sec seconds.',
-        'The search found @count results in @sec seconds.',
-        array('@sec' => $variables['sec'])
-      ),
-      '#prefix' => '<p class="search-performance">',
-      '#suffix' => '</p>',
+    '#theme' => 'search_api_page_search_performance',
+    '#markup' => format_plural(
+      $results['result count'],
+      'The search found 1 result in @sec seconds.',
+      'The search found @count results in @sec seconds.',
+      array('@sec' => $variables['sec'])
+    ),
+    '#prefix' => '<p class="search-performance">',
+    '#suffix' => '</p>',
   );
 
   // Make the help text depend on the parse mode used.
@@ -235,23 +346,28 @@ function template_preprocess_search_api_page_results(array &$variables) {
   );
   $variables['classes'] = implode(' ', $classes_array);
 
-  // If other than native search_api_page_result view mode
-  // (Teaser, Full content, RSS and so forth)
+  // Distinguish between the native search_api_page_result "view mode" and
+  // proper entity view modes (e.g., Teaser, Full content, RSS and so forth).
+  $variables['search_results'] = array();
   if ($variables['view_mode'] != 'search_api_page_result') {
-    $variables['search_results'] = entity_view($variables['index']->item_type, $variables['items'], $variables['view_mode']);
-  }
-  else {
-    $variables['search_results'] = array();
-    foreach ($results['results'] as $item) {
-      $variables['search_results'][] = array(
-        '#theme' => 'search_api_page_result',
-        '#index' => $variables['index'],
-        '#result' => $item,
-        '#item' => $variables['items'][$item['id']],
-      );
+    // Check if we have any entities to show and, if yes, show them.
+    if (!empty($variables['items'])) {
+      $variables['search_results'] = entity_view($variables['index']->getEntityType(), $variables['items'], $variables['view_mode']);
     }
   }
-  // Load css
+  else {
+    foreach ($results['results'] as $item) {
+      if(!empty($variables['items'][$item['id']])) {
+        $variables['search_results'][] = array(
+          '#theme' => 'search_api_page_result',
+          '#index' => $variables['index'],
+          '#result' => $item,
+          '#item' => $variables['items'][$item['id']],
+        );
+      }
+    }
+  }
+  // Load CSS.
   $base_path = drupal_get_path('module', 'search_api_page') . '/';
   drupal_add_css($base_path . 'search_api_page.css');
 }
