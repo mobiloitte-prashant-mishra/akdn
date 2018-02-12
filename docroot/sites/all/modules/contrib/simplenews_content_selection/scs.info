@@ -5,9 +5,9 @@ package = Mail
 dependencies[] = simplenews
 configure = admin/config/services/simplenews/settings/scs
 
-; Information added by drupal.org packaging script on 2013-03-27
-version = "7.x-2.0"
+; Information added by Drupal.org packaging script on 2016-01-12
+version = "7.x-2.1"
 core = "7.x"
 project = "simplenews_content_selection"
-datestamp = "1364379618"
+datestamp = "1452591864"
 
