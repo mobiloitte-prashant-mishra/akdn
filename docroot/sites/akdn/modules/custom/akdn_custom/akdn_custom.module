@@ -6,6 +6,19 @@
 function akdn_custom_init() {
 //  print_r(node_load(arg(1)));
 //  die();
+  $nid = arg(1);
+  global $language, $base_url;
+  $lang = $language->language;
+
+  if ($nid) {
+    $node = node_load($nid);
+    $translations = $node->translations->data;
+
+    if (!empty($translations) && !array_key_exists($lang, $translations)) {
+      drupal_goto($base_url . '/node/' . $nid);
+    }
+  }
+
   $drupal_get_path = drupal_get_path('module', 'akdn_custom');
 
   if (arg(0) == 'media' && arg(1) == 'browser') {
@@ -20,6 +33,24 @@ function akdn_custom_init() {
   drupal_add_js($drupal_get_path . '/js/jquery.jcarousel.js');
   drupal_add_js($drupal_get_path . '/js/akdn_custom.js');
   drupal_add_js($drupal_get_path . '/js/jquery.parss.uncompressed.js');
+}
+
+function akdn_custom_page_language_url($nid) {
+  global $language;
+  $lang = $language->language;
+
+  if ($nid) {
+    $node = noad_load($nid);
+    $translations = $noad->translations->data;
+
+    if (array_key_exists($lang, $translations)) {
+      return $lang;
+    }
+    else {
+      $en = 'en';
+      return $en;
+    }
+  }
 }
 
 /**
@@ -1016,7 +1047,7 @@ function akdn_custom_content_breadcrumb() {
  *
  */
 function akdn_all_areas_of_activity() {
-  global $language;
+  global $language, $base_url;
   $lang = $language->language;
   $arr = menu_get_active_trail();
   $output = '';
@@ -1048,7 +1079,15 @@ function akdn_all_areas_of_activity() {
       foreach ($get_activities as $values) {
 
         $node_load = node_load($values->nid);
-       
+        $translations = $node_load->translations->data;
+
+        if (array_key_exists($lang, $translations)) {
+          $link = 1;
+        }
+        else {
+          $link = 0;
+        }
+
         if ($values->node_type == 'hub_page') {
           $menu_node_links1 = $node_load->menu_node_links;
           $key1 = key($menu_node_links1);
@@ -1074,7 +1113,8 @@ function akdn_all_areas_of_activity() {
 
                   $output .= '<div class= "all-activities-row">';
                   $output .= '<div class = "all-activities-short-title">';
-                  $output .= l($title, 'node/' . $node_load2->nid);
+                  $output .= ($link == 1) ? l($title, 'node/' . $node_load2->nid) : l($title, $base_url . '/node/' . $node_load2->nid);
+                  //$output .= l($title, 'node/' . $node_load2->nid);
                   $output .= '</div>';
                   $output .= '</div>';
                 }
@@ -1088,7 +1128,8 @@ function akdn_all_areas_of_activity() {
 
               $output .= '<div class= "all-activities-row">';
               $output .= '<div class = "all-activities-short-title">';
-              $output .= l($title, 'node/' . $node_load1->nid);
+              $output .= ($link == 1) ? l($title, 'node/' . $node_load1->nid) : l($title, $base_url . '/node/' . $node_load1->nid);
+              //$output .= l($title, 'node/' . $node_load1->nid);
               $output .= '</div>';
               $output .= '</div>';
             }
@@ -1103,13 +1144,13 @@ function akdn_all_areas_of_activity() {
           $output .= '<div class= "all-activities-row">';
           $output .= '<div class= "all-activities-short-title">';
           if ($title == 'Aga Khan Award for Architecture') {
-            $output .= l($title, "node/9576");
+            $output .= ($link == 1) ? l($title, "node/9576") : l($title, $base_url . "/node/9576");
           }
           elseif ($title == 'Aga Khan Music Initiative') {
-            $output .= l($title, "node/22106");
+            $output .= ($link == 1) ? l($title, "node/22106") : l($title, $base_url . "/node/22106");
           }
           else {
-            $output .= l($title, 'node/' . $node_load->nid);
+            $output .= ($link == 1) ? l($title, 'node/' . $node_load->nid) : l($title, $base_url . '/node/' . $node_load->nid);
           }
 
           $output .= '</div>';
