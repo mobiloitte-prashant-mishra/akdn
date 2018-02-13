@@ -1770,7 +1770,7 @@ function akdn_content_types_field_default_field_bases() {
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'list_boolean',
   );
 
@@ -1815,7 +1815,7 @@ function akdn_content_types_field_default_field_bases() {
         'view_name' => '',
       ),
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'node_reference',
   );
 

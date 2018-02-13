@@ -16053,14 +16053,17 @@ global $language;
     $lang = $language->language;
     $array = $data->field_field_caption;
     if ($data->node_type == \'article\') {
-      $array = $data->field_field_image_caption;
+	$array = (isset($data->field_field_image_caption[$lang])) ?  $data->field_field_image_caption[$lang] : $data->field_field_image_caption;
+      //$array = $data->field_field_image_caption;
     }
     if (empty($array)) {
       if ($data->node_type == \'project\') {
-        $array = $data->field_field_image_caption_1;
+	$array = (isset($data->field_field_image_caption_1[$lang])) ?  $data->field_field_image_caption_1[$lang] : $data->field_field_image_caption_1;
+        //$array = $data->field_field_image_caption_1;
       }
       else {
-        $array = $data->field_field_image_caption;
+	$array = (isset($data->field_field_image_caption[$lang])) ?  $data->field_field_image_caption[$lang] : $data->field_field_image_caption;
+        //$array = $data->field_field_image_caption;
       }
     }
     $value = \'\';
@@ -16214,7 +16217,24 @@ return $exclude_nid;';
   $handler->display->display_options['filters']['language']['table'] = 'field_data_field_feature_image';
   $handler->display->display_options['filters']['language']['field'] = 'language';
   $handler->display->display_options['filters']['language']['value'] = array(
+    'all' => 'all',
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
     '***DEFAULT_LANGUAGE***' => '***DEFAULT_LANGUAGE***',
+    'und' => 'und',
+    'en' => 'en',
+    'fr' => 'fr',
+    'ar' => 'ar',
+    'zh-hans' => 'zh-hans',
+    'de' => 'de',
+    'it' => 'it',
+    'ky' => 'ky',
+    'ms' => 'ms',
+    'fa' => 'fa',
+    'pt' => 'pt',
+    'ru' => 'ru',
+    'es' => 'es',
+    'tg' => 'tg',
+    'ur' => 'ur',
   );
 
   /* Display: Flexslider Manual A/G/FA Block */
@@ -16354,6 +16374,13 @@ return $exclude_nid;';
   $handler->display->display_options['fields']['title_field']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 1;
+  /* Field: Entity translation: Title: translated */
+  $handler->display->display_options['fields']['title_field_et']['id'] = 'title_field_et';
+  $handler->display->display_options['fields']['title_field_et']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field_et']['field'] = 'title_field_et';
+  $handler->display->display_options['fields']['title_field_et']['label'] = '';
+  $handler->display->display_options['fields']['title_field_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field_et']['element_label_colon'] = FALSE;
   /* Field: Content: Caption */
   $handler->display->display_options['fields']['field_caption']['id'] = 'field_caption';
   $handler->display->display_options['fields']['field_caption']['table'] = 'field_data_field_caption';
@@ -16471,14 +16498,14 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
 $array = $data->field_field_caption;
 if ($data->node_type == \'article\') {
-  $array =$data->field_field_image_caption;
+  $array = (isset($data->field_field_image_caption[$lang])) ?  $data->field_field_image_caption[$lang] : $data->field_field_image_caption;
 }
 if (empty($array)) {
   if ($data->node_type == \'project\') {
-    $array = $data->field_field_image_caption_1;
+    $array = (isset($data->field_field_image_caption_1[$lang])) ?  $data->field_field_image_caption_1[$lang] : $data->field_field_image_caption_1;
   }
   else {
-    $array = $data->field_field_image_caption;
+    $array = (isset($data->field_field_image_caption[$lang])) ?  $data->field_field_image_caption[$lang] : $data->field_field_image_caption;
   }
 }
 if (isset($array[0][\'rendered\'][\'#markup\'])) {
@@ -20322,148 +20349,6 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['filters']['status_extra_1']['field'] = 'status_extra';
   $handler->display->display_options['filters']['status_extra_1']['group'] = 2;
   $handler->display->display_options['block_description'] = 'AKMI Flexslider Block';
-  $translatables['featured_slideshow'] = array(
-    t('Master'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('queue'),
-    t('file_project_image'),
-    t('file_feature_image'),
-    t('<div class="slide">[field_feature_image]</div>
-<div class="slide-text"><h3>[title]</h3>
-[field_caption]
-[field_feature_link]
-</div>
-
-'),
-    t('<div class="slide-pager">•</div>'),
-    t('Flexslider Block'),
-    t('<div class="slide">[php][field_feature_image][field_project_image]</div></a>
-<div class="slide-text">
-<h3>AGA KHAN DEVELOPMENT NETWORK</h3>
-[title_field] [php]More</a>
-</div>'),
-    t('Flexslider A/G/FA Block'),
-    t('[php_1]'),
-    t('[php]| More </a>'),
-    t('<div class="slide [field_article_cat]">[field_project_image][field_feature_image]</div>
-<div class="slide-text"><h3>[title]</h3>
-[php_1]
-[php]
-</div>'),
-    t('All'),
-    t('Flexslider Manual A/G/FA Block'),
-    t('Uncle'),
-    t('<div class="slider-caption"></div>'),
-    t('field_banner_item_nodes'),
-    t('PHP'),
-    t('<div class="slide">[php_2][field_feature_image][field_project_image]</a></div>
-<div class="slide-text">
-<h3>[php][title_field]</a></h3>
-[php_1]
-[php]| More </a>
-</div>'),
-    t('Block'),
-    t('Flexslider Project Block'),
-    t('<div class="slide">[field_project_image]</div>
-<div class="slide-text">
-[php]
-</div>'),
-    t('Flexslider Hub Page Block'),
-    t('<div class="slide">[field_feature_image]</div>
-<div class="slide-text"><h3>[php][title_field]</a></h3>
-[field_caption]
-[php]| More </a>
-</div>'),
-    t('Flexslider Press Centre Block'),
-    t('<div class="slide">[field_feature_image][field_project_image]</div>
-<div class="slide-text">
-[php_1]
-[php]  More </a>
-</div>
-
-'),
-    t('About Us Slideshow'),
-    t('<div class="slide">[field_feature_image][field_project_image]</div>
-<div class="slide-text">
-[php_1]
-[php]| More </a>
-</div>
-
-'),
-    t('AKAA Flexslider Block'),
-    t('<div class="slide">[php][field_feature_image]</a></div>
-<div class="slide-text">
-[php_1]
-[php]More</a>
-</div>
-
-'),
-    t('AKAA Cycle Auto Block'),
-    t('term from field_cycle_year'),
-    t('Image Link'),
-    t('<div class="slide">[php_2][field_feature_image]</a></div>
-<div class="slide-text">
-[php_1]
-[php]More</a>
-</div>
-
-'),
-    t('AKAA Cycle Manual Block'),
-    t('field_featured_content_nodes'),
-    t('<div class="slide">[php_2][field_project_image]</a></div>
-<div class="slide-text">
-[php_1]
-[php]| More </a>
-</div>
-
-'),
-    t('AKAA Project Block'),
-    t('test'),
-    t('<div class="slide">[field_project_image]</div>
-<div class="slide-text">
-[php_1]
-</div>
-'),
-    t('Additional Project Images'),
-    t('<a href="[field_project_image]" rel="gallery" class="colorbox"></a>'),
-    t('Flexslider Hub Page Default'),
-    t('<div class="slide">[php][field_project_image][field_feature_image]</a></div>
-<div class="slide-text"><h3>[title]</h3>
-[php_1]
-[php]| More </a>
-</div>
-
-'),
-    t('Flexslider A/G/FA Approach To Developement'),
-    t('<div class="slide">[field_project_image][field_feature_image]</div>
-<div class="slide-text"><h3>[title]</h3>
-[php_1]
-[php]
-</div>
-
-'),
-    t('Flexisider Approach to Developement'),
-    t('Flexslider Geography Block'),
-    t('<div class="slide">[php][field_feature_image][field_project_image]</div></a>
-<div class="slide-text">
-<h3>[title_field]</h3>
-[php_1]
-[php]More </a>
-</div>'),
-    t('AKMI Flexslider Block'),
-  );
   $export['featured_slideshow'] = $view;
 
   $view = new view();
