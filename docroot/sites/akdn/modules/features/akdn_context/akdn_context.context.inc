@@ -922,17 +922,17 @@ function akdn_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'akdn_custom-page_lang_switcher' => array(
+          'module' => 'akdn_custom',
+          'delta' => 'page_lang_switcher',
+          'region' => 'branding',
+          'weight' => '-1',
+        ),
         'akdn_custom-geography_agency_logo_title' => array(
           'module' => 'akdn_custom',
           'delta' => 'geography_agency_logo_title',
           'region' => 'branding',
           'weight' => '-9',
-        ),
-        'akdn_custom-page_lang_switcher' => array(
-          'module' => 'akdn_custom',
-          'delta' => 'page_lang_switcher',
-          'region' => 'branding',
-          'weight' => '-8',
         ),
       ),
     ),
