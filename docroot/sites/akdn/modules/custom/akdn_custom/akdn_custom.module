@@ -10,14 +10,14 @@ function akdn_custom_init() {
   global $language, $base_url;
   $lang = $language->language;
 
-  if ($nid) {
-    $node = node_load($nid);
-    $translations = $node->translations->data;
-
-    if (!empty($translations) && !array_key_exists($lang, $translations)) {
-      drupal_goto($base_url . '/node/' . $nid);
-    }
-  }
+//  if ($nid && arg(2) != 'edit') {
+//    $node = node_load($nid);
+//    $translations = $node->translations->data;
+//
+//    if (!empty($translations) && !array_key_exists($lang, $translations)) {
+//      drupal_goto($base_url . '/node/' . $nid);
+//    }
+//  }
 
   $drupal_get_path = drupal_get_path('module', 'akdn_custom');
 
