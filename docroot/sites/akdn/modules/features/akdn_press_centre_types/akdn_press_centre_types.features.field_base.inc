@@ -38,6 +38,62 @@ function akdn_press_centre_types_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
+  // Exported field_base: 'field_akmi_page'.
+  $field_bases['field_akmi_page'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_akmi_page',
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'akmi_pages',
+          'parent' => 0,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'options_list_callback' => 'title_taxonomy_allowed_values',
+    ),
+    'translatable' => 1,
+    'type' => 'taxonomy_term_reference',
+  );
+
+  // Exported field_base: 'field_akmi_pages'.
+  $field_bases['field_akmi_pages'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_akmi_pages',
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'akmi_pages',
+          'parent' => 0,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'options_list_callback' => 'title_taxonomy_allowed_values',
+    ),
+    'translatable' => 0,
+    'type' => 'taxonomy_term_reference',
+  );
+
   // Exported field_base: 'field_article_author'.
   $field_bases['field_article_author'] = array(
     'active' => 1,
@@ -135,6 +191,7 @@ function akdn_press_centre_types_field_default_field_bases() {
         ),
       ),
       'entity_translation_sync' => FALSE,
+      'options_list_callback' => 'title_taxonomy_allowed_values',
     ),
     'translatable' => 0,
     'type' => 'taxonomy_term_reference',
@@ -162,7 +219,7 @@ function akdn_press_centre_types_field_default_field_bases() {
       ),
       'uri_scheme' => 'public',
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'file',
   );
 
@@ -306,6 +363,7 @@ function akdn_press_centre_types_field_default_field_bases() {
         ),
       ),
       'entity_translation_sync' => FALSE,
+      'options_list_callback' => 'title_taxonomy_allowed_values',
     ),
     'translatable' => 0,
     'type' => 'taxonomy_term_reference',
@@ -511,7 +569,7 @@ function akdn_press_centre_types_field_default_field_bases() {
         'view_name' => 'events',
       ),
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'node_reference',
   );
 
@@ -596,7 +654,7 @@ function akdn_press_centre_types_field_default_field_bases() {
       'title_value' => '',
       'url' => 0,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'link_field',
   );
 
@@ -626,7 +684,7 @@ function akdn_press_centre_types_field_default_field_bases() {
       'title_value' => '',
       'url' => 0,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'link_field',
   );
 
@@ -656,7 +714,7 @@ function akdn_press_centre_types_field_default_field_bases() {
       'title_value' => '',
       'url' => 0,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'link_field',
   );
 
@@ -701,7 +759,7 @@ function akdn_press_centre_types_field_default_field_bases() {
         'view_name' => 'galleries',
       ),
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'node_reference',
   );
 
@@ -885,7 +943,7 @@ function akdn_press_centre_types_field_default_field_bases() {
         'view_name' => 'podcasts',
       ),
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'node_reference',
   );
 
@@ -930,7 +988,7 @@ function akdn_press_centre_types_field_default_field_bases() {
         'view_name' => 'article_reference',
       ),
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'node_reference',
   );
 
@@ -1417,7 +1475,7 @@ function akdn_press_centre_types_field_default_field_bases() {
         'view_name' => 'article_reference',
       ),
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'node_reference',
   );
 
@@ -1492,7 +1550,7 @@ function akdn_press_centre_types_field_default_field_bases() {
         'view_name' => 'article_reference',
       ),
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'node_reference',
   );
 
@@ -1582,7 +1640,7 @@ function akdn_press_centre_types_field_default_field_bases() {
         'view_name' => 'publications',
       ),
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'node_reference',
   );
 
@@ -1923,6 +1981,7 @@ function akdn_press_centre_types_field_default_field_bases() {
         ),
       ),
       'entity_translation_sync' => FALSE,
+      'options_list_callback' => 'title_taxonomy_allowed_values',
     ),
     'translatable' => 0,
     'type' => 'taxonomy_term_reference',
@@ -2024,7 +2083,7 @@ function akdn_press_centre_types_field_default_field_bases() {
         'view_name' => 'speeches',
       ),
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'node_reference',
   );
 
@@ -2050,7 +2109,7 @@ function akdn_press_centre_types_field_default_field_bases() {
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'list_boolean',
   );
 

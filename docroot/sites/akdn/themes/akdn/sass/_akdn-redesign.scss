@@ -3881,7 +3881,7 @@ h2.header-name a {
     width: 50%;
     float: none;
   }
-  
+
   .pane-node-field-publication-isbn{
       .field-name-field-publication-isbn{
           padding: 0;
@@ -5800,7 +5800,7 @@ map {
 .media-one-third-left .media-element.file-media-third-left,
 .media-one-third-right .media-element.file-media-right-third,
 .media-half-left .media-element.file-media-left-half,
-.media-half-right .media-element.file-media-half-right, 
+.media-half-right .media-element.file-media-half-right,
 .media-media_right_third .media-element.file-media-right-third,
 .media-media_third_left .media-element.file-media-third-left,
 .media-media_left_half .media-element.file-media-left-half,
@@ -9001,10 +9001,9 @@ html {
       width: 100%;
       height: 100%;
  }
- .field-name-body {
-     object, iframe{
-         width: 100%;
-     }
- }
- 
 
+ .field-name-body{
+    object, iframe{
+      width: 100%;
+    }
+ }
