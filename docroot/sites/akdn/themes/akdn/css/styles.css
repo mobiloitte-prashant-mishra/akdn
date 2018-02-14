@@ -12218,7 +12218,7 @@ h1.title {
 }
 /* line 1353, ../sass/_akdn-redesign.scss */
 .akdn-basic-page-about-us .file img {
-  width: auto;
+  width: 100%;
   vertical-align: text-top;
   margin-right: 3px;
 }
