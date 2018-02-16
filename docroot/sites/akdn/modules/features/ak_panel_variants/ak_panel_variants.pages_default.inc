@@ -877,7 +877,33 @@ akmi',
   $pane->type = 'views';
   $pane->subtype = 'facts_blocks';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'php',
+        'settings' => array(
+          'description' => 'agency fact manual view',
+          'php' => 'global $language;
+  $lang = $language->language;
+  $arg = arg(1);
+  $node = node_load($arg);
+  $field_select_fact_sheet = $node->field_select_fact_sheet;
+  if ($node->field_select_fact_sheet[$lang][0][\'value\']) {
+    $select = $node->field_select_fact_sheet[$lang][0][\'value\'];
+  }
+
+  $field_show_fact_block = $node->field_show_fact_block;
+  if ($node->field_show_fact_block[$lang][0][\'value\']) {
+    $show = $node->field_show_fact_block[$lang][0][\'value\'];
+  }
+  if ($show == 1 && $select == 1) {
+    return true;
+  }',
+        ),
+        'not' => FALSE,
+      ),
+    ),
+  );
   $pane->configuration = array(
     'override_pager_settings' => 0,
     'use_pager' => 0,
