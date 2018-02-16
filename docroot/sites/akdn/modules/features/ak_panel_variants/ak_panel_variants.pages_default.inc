@@ -6346,7 +6346,33 @@ return true;
   $pane->type = 'views';
   $pane->subtype = 'facts_blocks';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'php',
+        'settings' => array(
+          'description' => 'fact manual view',
+          'php' => 'global $language;
+  $lang = $language->language;
+  $arg = arg(1);
+  $node = node_load($arg);
+  $field_select_fact_sheet = $node->field_select_fact_sheet;
+  if ($node->field_select_fact_sheet[$lang][0][\'value\']) {
+    $select = $node->field_select_fact_sheet[$lang][0][\'value\'];
+  }
+
+  $field_show_fact_block = $node->field_show_fact_block;
+  if ($node->field_show_fact_block[$lang][0][\'value\']) {
+    $show = $node->field_show_fact_block[$lang][0][\'value\'];
+  }
+  if ($show == 1 && $select == 1) {
+    return true;
+  }',
+        ),
+        'not' => FALSE,
+      ),
+    ),
+  );
   $pane->configuration = array(
     'override_pager_settings' => 0,
     'use_pager' => 0,
@@ -6879,24 +6905,29 @@ return true;
     'admin_title' => 'About page information',
     'title' => '',
     'body' => '<?php
+global $language;
+$lang = $language->language;
 $node = menu_get_object();
 print \'<div class = "whatsnew-right-content">\';
 if (isset($node->field_about_page)) {
-  $about = node_load($node->field_about_page[$node->language][0][\'nid\']);
+  $about = node_load($node->field_about_page[$lang][0][\'nid\']);
   if (isset($about->nid)) {
-    print \'<p class = "whats-new-gold">AKDN AND</p>\';
-    $short_title_language = $about->field_short_title;
-    print \'<div class = "grid-whatsnew-block_subtitle">\'. $about->field_short_title[key($short_title_language)][0][\'value\'] .\'</div>\';
-  if (isset($about->body[$about->language][0][\'summary\']) && !empty($about->body[$about->language][0][\'summary\']))
-    print \'<div class="grid-whatsnew-block_body">\'. $about->body[$about->language][0][\'summary\'].\'</div>\';
+    print \'<p class = "whats-new-gold">\'.t("AKDN AND").\'</p>\';
+	$short_title_language = (isset($about->field_short_title[$lang])) ?  $about->field_short_title[$lang] : $about->field_short_title[\'und\'];
+    print \'<div class = "grid-whatsnew-block_subtitle">\'. $short_title_language[0][\'value\'] .\'</div>\';
+
+$body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'und\'];
+  if (isset($body[0][\'summary\']) && !empty($body[0][\'summary\']))
+    print \'<div class="grid-whatsnew-block_body">\'. $body[0][\'summary\'].\'</div>\';
   else
-      print \'<div class="grid-whatsnew-block_body">\'. text_summary($about->body[$about->language][0][\'value\'], $about->body[$about->language][0][\'format\'], 1200) .\'</div>\';
+      print \'<div class="grid-whatsnew-block_body">\'. text_summary($body[0][\'value\'], $body[0][\'format\'], 1200) .\'</div>\';
   }
   print \'</div>\';
 }
 ?>',
     'format' => 'php_code',
     'substitute' => 1,
+    'title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -11543,7 +11574,33 @@ privacy-policy',
   $pane->type = 'views';
   $pane->subtype = 'facts_blocks';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'php',
+        'settings' => array(
+          'description' => 'fact manual view',
+          'php' => 'global $language;
+  $lang = $language->language;
+  $arg = arg(1);
+  $node = node_load($arg);
+  $field_select_fact_sheet = $node->field_select_fact_sheet;
+  if ($node->field_select_fact_sheet[$lang][0][\'value\']) {
+    $select = $node->field_select_fact_sheet[$lang][0][\'value\'];
+  }
+
+  $field_show_fact_block = $node->field_show_fact_block;
+  if ($node->field_show_fact_block[$lang][0][\'value\']) {
+    $show = $node->field_show_fact_block[$lang][0][\'value\'];
+  }
+  if ($show == 1 && $select == 1) {
+    return true;
+  }',
+        ),
+        'not' => FALSE,
+      ),
+    ),
+  );
   $pane->configuration = array(
     'override_pager_settings' => 0,
     'use_pager' => 0,
@@ -11835,18 +11892,16 @@ privacy-policy',
   $pane->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'entity_field_value:node:agency:field_featured_content_area',
+        'name' => 'php',
         'settings' => array(
-          'field_featured_content_area' => array(
-            'en' => array(
-              0 => array(
-                'value' => '0',
-              ),
-            ),
-          ),
-          'field_featured_content_area_value' => '0',
+          'description' => 'Banner automatic',
+          'php' => 'global $language;
+ $node = $contexts[\'argument_entity_id:node_1\']->data;
+ if(!empty($node->field_featured_content_area)){
+   $banner = $node->field_featured_content_area[$language->language][0][\'value\'];
+   if(!$banner){ return true; }
+ }',
         ),
-        'context' => 'argument_entity_id:node_1',
         'not' => FALSE,
       ),
     ),
@@ -11893,18 +11948,16 @@ privacy-policy',
   $pane->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'entity_field_value:node:geography:field_featured_content_area',
+        'name' => 'php',
         'settings' => array(
-          'field_featured_content_area' => array(
-            'en' => array(
-              0 => array(
-                'value' => '1',
-              ),
-            ),
-          ),
-          'field_featured_content_area_value' => '1',
+          'description' => 'Banner manual',
+          'php' => 'global $language;
+ $node = $contexts[\'argument_entity_id:node_1\']->data;
+ if(!empty($node->field_featured_content_area)){
+   $banner = $node->field_featured_content_area[$language->language][0][\'value\'];
+   if($banner){ return true; }
+ }',
         ),
-        'context' => 'argument_entity_id:node_1',
         'not' => FALSE,
       ),
     ),
