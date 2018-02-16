@@ -4,6 +4,9 @@
  * Implements hook_init().
  */
 function akdn_custom_init() {
+//  print_r(node_load(arg(1)));
+//  die();
+
   $nid = arg(1);
   global $language, $base_url;
   $lang = $language->language;
@@ -1987,55 +1990,57 @@ function what_we_do_news_and_resources() {
 
       if (!empty($load->field_select_news_res_content)) {
         $field_select_news_res_content = $load->field_select_news_res_content;
-        if (in_array_r('news', $load->field_select_news_res_content[key($field_select_news_res_content)])) {
+
+        $res_content_array = isset($load->field_select_news_res_content[$lang]) ? $load->field_select_news_res_content[$lang] : $load->field_select_news_res_content['und'];
+        if (in_array_r('news', $res_content_array)) {
           $news_query = akdn_custom_query_get_article_type_nid_and_published_date($ntid, 2);
           $array[$news_query[0]->nid] = $news_query[0]->date_formatted;
         }
 
         $field_select_news_res_content = $load->field_select_news_res_content;
-        if (in_array_r('in-the-media', $load->field_select_news_res_content[key($field_select_news_res_content)])) {
+        if (in_array_r('in-the-media', $res_content_array)) {
           $in_media_query = akdn_custom_query_get_article_type_nid_and_published_date($ntid, 2611);
           $array[$in_media_query[0]->nid] = $in_media_query[0]->date_formatted;
         }
 
         $field_select_news_res_content = $load->field_select_news_res_content;
-        if (in_array_r('press-release', $load->field_select_news_res_content[key($field_select_news_res_content)])) {
+        if (in_array_r('press-release', $res_content_array)) {
           $press_release_query = akdn_custom_query_get_article_type_nid_and_published_date($ntid, 4);
           $array[$press_release_query[0]->nid] = $press_release_query[0]->date_formatted;
         }
 
         $field_select_news_res_content = $load->field_select_news_res_content;
-        if (in_array_r('publications', $load->field_select_news_res_content[key($field_select_news_res_content)])) {
+        if (in_array_r('publications', $res_content_array)) {
           $publication = akdn_custom_query_get_nid_and_published_date($ntid, 'publication');
           $array[$publication[0]->nid] = $publication[0]->date_formatted;
         }
 
         $field_select_news_res_content = $load->field_select_news_res_content;
-        if (in_array_r('speeches', $load->field_select_news_res_content[key($field_select_news_res_content)])) {
+        if (in_array_r('speeches', $res_content_array)) {
           $speeches = akdn_custom_query_get_nid_and_published_date($ntid, 'speech');
           $array[$speeches[0]->nid] = $speeches[0]->date_formatted;
         }
 
         $field_select_news_res_content = $load->field_select_news_res_content;
-        if (in_array_r('videos', $load->field_select_news_res_content[key($field_select_news_res_content)])) {
+        if (in_array_r('videos', $res_content_array)) {
           $videos = akdn_custom_query_get_nid_and_published_date($ntid, 'podcast');
           $array[$videos[0]->nid] = $videos[0]->date_formatted;
         }
 
         $field_select_news_res_content = $load->field_select_news_res_content;
-        if (in_array_r('photographs', $load->field_select_news_res_content[key($field_select_news_res_content)])) {
+        if (in_array_r('photographs', $res_content_array)) {
           $photographs = akdn_custom_query_get_nid_and_published_date($ntid, 'gallery');
           $array[$photographs[0]->nid] = $photographs[0]->date_formatted;
         }
 
         $field_select_news_res_content = $load->field_select_news_res_content;
-        if (in_array_r('events', $load->field_select_news_res_content[key($field_select_news_res_content)])) {
+        if (in_array_r('events', $res_content_array)) {
           $events = akdn_custom_query_get_nid_and_published_date($ntid, 'event');
           $array[$events[0]->nid] = $events[0]->date_formatted;
         }
 
         $field_select_news_res_content = $load->field_select_news_res_content;
-        if (in_array_r('projects', $load->field_select_news_res_content[key(field_select_news_res_content)])) {
+        if (in_array_r('projects', $res_content_array)) {
           $projects = akdn_custom_query_get_nid_and_published_date($ntid, 'project');
           $array[$projects[0]->nid] = $projects[0]->date_formatted;
         }
