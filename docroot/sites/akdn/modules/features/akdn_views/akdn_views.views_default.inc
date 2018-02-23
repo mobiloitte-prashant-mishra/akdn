@@ -12602,6 +12602,11 @@ print $explode[1];
   $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
   $handler->display->display_options['header']['area_text_custom']['content'] = '<h2 class="block-title">[field_header_title]</h2>';
   $handler->display->display_options['header']['area_text_custom']['tokenize'] = TRUE;
+  /* Relationship: Content: Reference Custom Header Block (field_reference_custom_header_bl) */
+  $handler->display->display_options['relationships']['field_reference_custom_header_bl_nid']['id'] = 'field_reference_custom_header_bl_nid';
+  $handler->display->display_options['relationships']['field_reference_custom_header_bl_nid']['table'] = 'field_data_field_reference_custom_header_bl';
+  $handler->display->display_options['relationships']['field_reference_custom_header_bl_nid']['field'] = 'field_reference_custom_header_bl_nid';
+  $handler->display->display_options['relationships']['field_reference_custom_header_bl_nid']['delta'] = '-1';
   /* Field: Content: header link */
   $handler->display->display_options['fields']['field_header_link']['id'] = 'field_header_link';
   $handler->display->display_options['fields']['field_header_link']['table'] = 'field_data_field_header_link';
@@ -13085,6 +13090,57 @@ print $explode[1];
   $handler->display->display_options['filters']['field_header_link_url']['field'] = 'field_header_link_url';
   $handler->display->display_options['filters']['field_header_link_url']['operator'] = 'not empty';
   $handler->display->display_options['block_description'] = 'Custom Listing Page RHS';
+
+  /* Display: custom header block */
+  $handler = $view->new_display('block', 'custom header block', 'block_6');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: header link */
+  $handler->display->display_options['fields']['field_header_link']['id'] = 'field_header_link';
+  $handler->display->display_options['fields']['field_header_link']['table'] = 'field_data_field_header_link';
+  $handler->display->display_options['fields']['field_header_link']['field'] = 'field_header_link';
+  $handler->display->display_options['fields']['field_header_link']['relationship'] = 'field_reference_custom_header_bl_nid';
+  $handler->display->display_options['fields']['field_header_link']['label'] = '';
+  $handler->display->display_options['fields']['field_header_link']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_header_link']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_header_link']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_header_link']['multi_type'] = 'ul';
+  /* Field: Content: Header Title */
+  $handler->display->display_options['fields']['field_header_title']['id'] = 'field_header_title';
+  $handler->display->display_options['fields']['field_header_title']['table'] = 'field_data_field_header_title';
+  $handler->display->display_options['fields']['field_header_title']['field'] = 'field_header_title';
+  $handler->display->display_options['fields']['field_header_title']['relationship'] = 'field_reference_custom_header_bl_nid';
+  $handler->display->display_options['fields']['field_header_title']['label'] = '';
+  $handler->display->display_options['fields']['field_header_title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_header_title']['element_type'] = 'h2';
+  $handler->display->display_options['fields']['field_header_title']['element_class'] = 'block-title';
+  $handler->display->display_options['fields']['field_header_title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['relationship'] = 'field_reference_custom_header_bl_nid';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Show Block (field_rchb_show_block) */
+  $handler->display->display_options['filters']['field_rchb_show_block_value']['id'] = 'field_rchb_show_block_value';
+  $handler->display->display_options['filters']['field_rchb_show_block_value']['table'] = 'field_data_field_rchb_show_block';
+  $handler->display->display_options['filters']['field_rchb_show_block_value']['field'] = 'field_rchb_show_block_value';
+  $handler->display->display_options['filters']['field_rchb_show_block_value']['value'] = array(
+    1 => '1',
+  );
   $translatables['custom_header_block'] = array(
     t('Master'),
     t('more'),
@@ -13094,6 +13150,7 @@ print $explode[1];
     t('Asc'),
     t('Desc'),
     t('<h2 class="block-title">[field_header_title]</h2>'),
+    t('field_reference_custom_header_bl'),
     t('AKAA Project Locations RHS'),
     t('AKAA Stay connection -itunes'),
     t('<div class="title"><span class="social-icon-image"></span>[title]<span>[field_short_title]</span></div>'),
@@ -13109,6 +13166,8 @@ print $explode[1];
     t('AKMI Event Calender RHS'),
     t('AKAA Press Centre RHS'),
     t('Custom Listing Page RHS'),
+    t('custom header block'),
+    t('All'),
   );
   $export['custom_header_block'] = $view;
 
