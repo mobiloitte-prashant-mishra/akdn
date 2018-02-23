@@ -8243,8 +8243,8 @@ if (isset($node->field_about_page)) {
           'settings' => array(
             'visibility_setting' => '1',
             'paths' => 'akdn-social
-  terms-conditions
-  privacy-policy',
+    terms-conditions
+    privacy-policy',
           ),
           'context' => 'empty',
           'not' => TRUE,
@@ -8669,7 +8669,7 @@ if (isset($node->field_about_page)) {
   $pane->panel = 'right';
   $pane->type = 'views';
   $pane->subtype = 'custom_header_block';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -8874,6 +8874,44 @@ if (isset($node->field_about_page)) {
   $pane->uuid = 'e7cee5f8-abf1-4500-bda3-028f599a30ef';
   $display->content['new-e7cee5f8-abf1-4500-bda3-028f599a30ef'] = $pane;
   $display->panels['right'][5] = 'new-e7cee5f8-abf1-4500-bda3-028f599a30ef';
+  $pane = new stdClass();
+  $pane->pid = 'new-5536cd27-2232-48b2-b9f0-745411216764';
+  $pane->panel = 'right';
+  $pane->type = 'views';
+  $pane->subtype = 'custom_header_block';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_pager_settings' => 0,
+    'use_pager' => 0,
+    'nodes_per_page' => '1',
+    'pager_id' => '0',
+    'offset' => '0',
+    'more_link' => 0,
+    'feed_icons' => 0,
+    'panel_args' => 0,
+    'link_to_view' => 0,
+    'args' => '',
+    'url' => '',
+    'display' => 'block_6',
+    'context' => array(
+      0 => '',
+    ),
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 6;
+  $pane->locks = array();
+  $pane->uuid = '5536cd27-2232-48b2-b9f0-745411216764';
+  $display->content['new-5536cd27-2232-48b2-b9f0-745411216764'] = $pane;
+  $display->panels['right'][6] = 'new-5536cd27-2232-48b2-b9f0-745411216764';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
