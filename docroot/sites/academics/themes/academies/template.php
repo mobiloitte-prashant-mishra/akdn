@@ -225,4 +225,3 @@ function academies_preprocess_html(&$vars) {
 	}
 }
 
-

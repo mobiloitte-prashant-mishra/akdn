@@ -32,6 +32,7 @@ function akdn_views_fe_nodequeue_export_fields() {
     'reference' => 0,
     'reverse' => 0,
     'i18n' => 0,
+    'insert_at_front' => 0,
     'subqueues' => 1,
     'types' => array(
       0 => 'project',
@@ -55,6 +56,7 @@ function akdn_views_fe_nodequeue_export_fields() {
     'reference' => 0,
     'reverse' => 0,
     'i18n' => 0,
+    'insert_at_front' => 0,
     'subqueues' => 1,
     'types' => array(
       0 => 'article',
@@ -85,6 +87,7 @@ function akdn_views_fe_nodequeue_export_fields() {
     'reference' => 0,
     'reverse' => 0,
     'i18n' => 0,
+    'insert_at_front' => 0,
     'subqueues' => 1,
     'types' => array(
       0 => 'article',
@@ -115,6 +118,7 @@ function akdn_views_fe_nodequeue_export_fields() {
     'reference' => 0,
     'reverse' => 0,
     'i18n' => 1,
+    'insert_at_front' => 0,
     'subqueues' => 1,
     'types' => array(
       0 => 'publication',
@@ -138,6 +142,7 @@ function akdn_views_fe_nodequeue_export_fields() {
     'reference' => 0,
     'reverse' => 0,
     'i18n' => 1,
+    'insert_at_front' => 0,
     'subqueues' => 1,
     'types' => array(
       0 => 'architecture_project',
@@ -169,6 +174,7 @@ function akdn_views_fe_nodequeue_export_fields() {
     'reference' => 0,
     'reverse' => 0,
     'i18n' => 0,
+    'insert_at_front' => 0,
     'subqueues' => 1,
     'types' => array(
       0 => 'podcast',
@@ -192,6 +198,7 @@ function akdn_views_fe_nodequeue_export_fields() {
     'reference' => 0,
     'reverse' => 0,
     'i18n' => 0,
+    'insert_at_front' => 0,
     'subqueues' => 1,
     'types' => array(
       0 => 'event',
@@ -215,6 +222,7 @@ function akdn_views_fe_nodequeue_export_fields() {
     'reference' => 0,
     'reverse' => 0,
     'i18n' => 0,
+    'insert_at_front' => 0,
     'subqueues' => 1,
     'types' => array(
       0 => 'akmi_cd_dvd',
@@ -245,6 +253,7 @@ function akdn_views_fe_nodequeue_export_fields() {
     'reference' => 0,
     'reverse' => 0,
     'i18n' => 0,
+    'insert_at_front' => 0,
     'subqueues' => 1,
     'types' => array(
       0 => 'featured_content',
@@ -268,6 +277,7 @@ function akdn_views_fe_nodequeue_export_fields() {
     'reference' => 0,
     'reverse' => 0,
     'i18n' => 0,
+    'insert_at_front' => 0,
     'subqueues' => 1,
     'types' => array(
       0 => 'featured_content',
@@ -291,6 +301,7 @@ function akdn_views_fe_nodequeue_export_fields() {
     'reference' => 0,
     'reverse' => 0,
     'i18n' => 0,
+    'insert_at_front' => 0,
     'subqueues' => 1,
     'types' => array(
       0 => 'article',
@@ -314,6 +325,7 @@ function akdn_views_fe_nodequeue_export_fields() {
     'reference' => 0,
     'reverse' => 0,
     'i18n' => 1,
+    'insert_at_front' => 0,
     'subqueues' => 1,
     'types' => array(
       0 => 'article',
@@ -346,6 +358,7 @@ function akdn_views_fe_nodequeue_export_fields() {
     'reference' => 0,
     'reverse' => 0,
     'i18n' => 0,
+    'insert_at_front' => 0,
     'subqueues' => 1,
     'types' => array(
       0 => 'project',
@@ -369,6 +382,7 @@ function akdn_views_fe_nodequeue_export_fields() {
     'reference' => 0,
     'reverse' => 0,
     'i18n' => 0,
+    'insert_at_front' => 0,
     'subqueues' => 1,
     'types' => array(
       0 => 'project',
@@ -392,6 +406,7 @@ function akdn_views_fe_nodequeue_export_fields() {
     'reference' => 0,
     'reverse' => 0,
     'i18n' => 1,
+    'insert_at_front' => 0,
     'subqueues' => 1,
     'types' => array(
       0 => 'article',
@@ -421,6 +436,7 @@ function akdn_views_fe_nodequeue_export_fields() {
     'reference' => 0,
     'reverse' => 0,
     'i18n' => 0,
+    'insert_at_front' => 0,
     'subqueues' => 1,
     'types' => array(
       0 => 'speech_quote',
@@ -444,6 +460,7 @@ function akdn_views_fe_nodequeue_export_fields() {
     'reference' => 0,
     'reverse' => 0,
     'i18n' => 0,
+    'insert_at_front' => 0,
     'subqueues' => 1,
     'types' => array(
       0 => 'speech_theme',
@@ -467,6 +484,7 @@ function akdn_views_fe_nodequeue_export_fields() {
     'reference' => 0,
     'reverse' => 0,
     'i18n' => 0,
+    'insert_at_front' => 0,
     'subqueues' => 1,
     'types' => array(
       0 => 'agency',
