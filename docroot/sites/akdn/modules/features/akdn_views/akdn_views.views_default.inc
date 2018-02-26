@@ -12602,6 +12602,11 @@ print $explode[1];
   $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
   $handler->display->display_options['header']['area_text_custom']['content'] = '<h2 class="block-title">[field_header_title]</h2>';
   $handler->display->display_options['header']['area_text_custom']['tokenize'] = TRUE;
+  /* Relationship: Content: Reference Custom Header Block (field_reference_custom_header_bl) */
+  $handler->display->display_options['relationships']['field_reference_custom_header_bl_nid']['id'] = 'field_reference_custom_header_bl_nid';
+  $handler->display->display_options['relationships']['field_reference_custom_header_bl_nid']['table'] = 'field_data_field_reference_custom_header_bl';
+  $handler->display->display_options['relationships']['field_reference_custom_header_bl_nid']['field'] = 'field_reference_custom_header_bl_nid';
+  $handler->display->display_options['relationships']['field_reference_custom_header_bl_nid']['delta'] = '-1';
   /* Field: Content: header link */
   $handler->display->display_options['fields']['field_header_link']['id'] = 'field_header_link';
   $handler->display->display_options['fields']['field_header_link']['table'] = 'field_data_field_header_link';
@@ -13085,6 +13090,57 @@ print $explode[1];
   $handler->display->display_options['filters']['field_header_link_url']['field'] = 'field_header_link_url';
   $handler->display->display_options['filters']['field_header_link_url']['operator'] = 'not empty';
   $handler->display->display_options['block_description'] = 'Custom Listing Page RHS';
+
+  /* Display: custom header block */
+  $handler = $view->new_display('block', 'custom header block', 'block_6');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: header link */
+  $handler->display->display_options['fields']['field_header_link']['id'] = 'field_header_link';
+  $handler->display->display_options['fields']['field_header_link']['table'] = 'field_data_field_header_link';
+  $handler->display->display_options['fields']['field_header_link']['field'] = 'field_header_link';
+  $handler->display->display_options['fields']['field_header_link']['relationship'] = 'field_reference_custom_header_bl_nid';
+  $handler->display->display_options['fields']['field_header_link']['label'] = '';
+  $handler->display->display_options['fields']['field_header_link']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_header_link']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_header_link']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_header_link']['multi_type'] = 'ul';
+  /* Field: Content: Header Title */
+  $handler->display->display_options['fields']['field_header_title']['id'] = 'field_header_title';
+  $handler->display->display_options['fields']['field_header_title']['table'] = 'field_data_field_header_title';
+  $handler->display->display_options['fields']['field_header_title']['field'] = 'field_header_title';
+  $handler->display->display_options['fields']['field_header_title']['relationship'] = 'field_reference_custom_header_bl_nid';
+  $handler->display->display_options['fields']['field_header_title']['label'] = '';
+  $handler->display->display_options['fields']['field_header_title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_header_title']['element_type'] = 'h2';
+  $handler->display->display_options['fields']['field_header_title']['element_class'] = 'block-title';
+  $handler->display->display_options['fields']['field_header_title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['relationship'] = 'field_reference_custom_header_bl_nid';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Show Block (field_rchb_show_block) */
+  $handler->display->display_options['filters']['field_rchb_show_block_value']['id'] = 'field_rchb_show_block_value';
+  $handler->display->display_options['filters']['field_rchb_show_block_value']['table'] = 'field_data_field_rchb_show_block';
+  $handler->display->display_options['filters']['field_rchb_show_block_value']['field'] = 'field_rchb_show_block_value';
+  $handler->display->display_options['filters']['field_rchb_show_block_value']['value'] = array(
+    1 => '1',
+  );
   $translatables['custom_header_block'] = array(
     t('Master'),
     t('more'),
@@ -13094,6 +13150,7 @@ print $explode[1];
     t('Asc'),
     t('Desc'),
     t('<h2 class="block-title">[field_header_title]</h2>'),
+    t('field_reference_custom_header_bl'),
     t('AKAA Project Locations RHS'),
     t('AKAA Stay connection -itunes'),
     t('<div class="title"><span class="social-icon-image"></span>[title]<span>[field_short_title]</span></div>'),
@@ -13109,6 +13166,8 @@ print $explode[1];
     t('AKMI Event Calender RHS'),
     t('AKAA Press Centre RHS'),
     t('Custom Listing Page RHS'),
+    t('custom header block'),
+    t('All'),
   );
   $export['custom_header_block'] = $view;
 
@@ -14985,6 +15044,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['relationship'] = 'field_fact_sheet_reference_nid';
   $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['exclude'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['max_length'] = '300';
   $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['body']['element_type'] = 'div';
@@ -14998,11 +15058,36 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['field_facts_links']['field'] = 'field_facts_links';
   $handler->display->display_options['fields']['field_facts_links']['relationship'] = 'field_fact_sheet_reference_nid';
   $handler->display->display_options['fields']['field_facts_links']['label'] = '';
+  $handler->display->display_options['fields']['field_facts_links']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_facts_links']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_facts_links']['element_class'] = 'facts-block_morelinks';
   $handler->display->display_options['fields']['field_facts_links']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_facts_links']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_facts_links']['click_sort_column'] = 'url';
+  /* Field: Entity translation: Body: translated */
+  $handler->display->display_options['fields']['body_et']['id'] = 'body_et';
+  $handler->display->display_options['fields']['body_et']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body_et']['field'] = 'body_et';
+  $handler->display->display_options['fields']['body_et']['relationship'] = 'field_fact_sheet_reference_nid';
+  $handler->display->display_options['fields']['body_et']['label'] = '';
+  $handler->display->display_options['fields']['body_et']['alter']['max_length'] = '300';
+  $handler->display->display_options['fields']['body_et']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['body_et']['element_type'] = 'div';
+  $handler->display->display_options['fields']['body_et']['element_class'] = 'facts-block_body';
+  $handler->display->display_options['fields']['body_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body_et']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['body_et']['type'] = 'text_plain';
+  /* Field: Entity translation: Facts Links: translated */
+  $handler->display->display_options['fields']['field_facts_links_et']['id'] = 'field_facts_links_et';
+  $handler->display->display_options['fields']['field_facts_links_et']['table'] = 'field_data_field_facts_links';
+  $handler->display->display_options['fields']['field_facts_links_et']['field'] = 'field_facts_links_et';
+  $handler->display->display_options['fields']['field_facts_links_et']['relationship'] = 'field_fact_sheet_reference_nid';
+  $handler->display->display_options['fields']['field_facts_links_et']['label'] = '';
+  $handler->display->display_options['fields']['field_facts_links_et']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_facts_links_et']['element_class'] = 'facts-block_morelinks';
+  $handler->display->display_options['fields']['field_facts_links_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_facts_links_et']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_facts_links_et']['click_sort_column'] = 'url';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Sticky */
   $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
@@ -15222,29 +15307,6 @@ print file_create_url($row->uri);
   $handler->display->display_options['filters']['status_extra']['table'] = 'node';
   $handler->display->display_options['filters']['status_extra']['field'] = 'status_extra';
   $handler->display->display_options['block_description'] = 'Facts Block For AKMI';
-  $translatables['facts_blocks'] = array(
-    t('Master'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('<div class="facts-block_section-top">
-  <div class="facts-block_icon-wrapper"><div class="facts-block_icon">[field_facts_icon]</div></div>
-  <div class="facts-block_number">[title]</div>
-</div>'),
-    t('Facts Block On Home Page'),
-    t('Facts Block On Hub pages'),
-    t('All'),
-    t('About Us Page Facts Block'),
-    t('About Us Facts Block'),
-    t('F/A/G Facts Block '),
-    t('Manual F/A/G Fact Block'),
-    t('field_fact_sheet_reference'),
-    t('Facts Block For AKAA'),
-    t('Facts Block For AKMI'),
-  );
   $export['facts_blocks'] = $view;
 
   $view = new view();
@@ -21712,12 +21774,17 @@ print 9576;
   $handler->display->display_options['defaults']['cache'] = FALSE;
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: PHP */
+  $handler->display->display_options['header']['php']['id'] = 'php';
+  $handler->display->display_options['header']['php']['table'] = 'views';
+  $handler->display->display_options['header']['php']['field'] = 'php';
+  $handler->display->display_options['header']['php']['php_output'] = '<h2 class="pane-title"><?php print t("Agencies"); ?></h2>
+';
   /* Header: Global: Unfiltered text */
   $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
   $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
   $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
-  $handler->display->display_options['header']['area_text_custom']['content'] = '<h2 class="pane-title">Agencies</h2>
-<p>[field_custom_agency_text]</p>';
+  $handler->display->display_options['header']['area_text_custom']['content'] = '<p>[field_custom_agency_text]</p>';
   $handler->display->display_options['header']['area_text_custom']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: NAT: Nid */
@@ -21751,6 +21818,17 @@ print 9576;
     'focus_areas' => 0,
   );
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['relationship'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
+  $handler->display->display_options['fields']['nid']['node_in_colorbox_rel'] = '';
   /* Field: Content: Custom Agency Text */
   $handler->display->display_options['fields']['field_custom_agency_text']['id'] = 'field_custom_agency_text';
   $handler->display->display_options['fields']['field_custom_agency_text']['table'] = 'field_data_field_custom_agency_text';
@@ -21770,14 +21848,30 @@ print 9576;
     'image_style' => 'agency_listing_logos',
     'image_link' => '',
   );
+  /* Field: Entity translation: Title: translated */
+  $handler->display->display_options['fields']['title_field_et']['id'] = 'title_field_et';
+  $handler->display->display_options['fields']['title_field_et']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field_et']['field'] = 'title_field_et';
+  $handler->display->display_options['fields']['title_field_et']['relationship'] = 'nid';
+  $handler->display->display_options['fields']['title_field_et']['label'] = '';
+  $handler->display->display_options['fields']['title_field_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field_et']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['relationship'] = 'nid';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['text'] = '[title_field_et]';
+  $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['path'] = 'node/[nid]';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_rel'] = '';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
@@ -21900,32 +21994,6 @@ print 9576;
   $handler->display->display_options['filters']['field_article_cat_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_article_cat_tid']['vocabulary'] = 'article_type';
   $handler->display->display_options['filters']['field_article_cat_tid']['hierarchy'] = 1;
-  $translatables['focus_areas'] = array(
-    t('Master'),
-    t('Thematic Areas'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('field_about_page'),
-    t('queue'),
-    t('[body] [view_node] '),
-    t('| More'),
-    t('[body] <span class="more-link">[nothing_1]</span>'),
-    t('Page'),
-    t('Block'),
-    t('What We Do Summary Text'),
-    t('What We Do - Summary text'),
-    t('All'),
-    t('Whate We do - Agency Block'),
-    t('<h2 class="pane-title">Agencies</h2>
-<p>[field_custom_agency_text]</p>'),
-    t('NAT Node'),
-    t('term'),
-    t('Block 2'),
-  );
   $export['focus_areas'] = $view;
 
   $view = new view();
@@ -34859,13 +34927,13 @@ $term[] = $object;
  $name = $term[0]->name;
  $tid = $term[0]->tid;
  $url = \'press-centre/projects\';
- $str = \'More \'.$name.\' Spotlights\';
- $str_one = \'All Spotlights\';
+ $str = t("More ").$name. t(" Spotlights");
+ $str_one = t(\'All Spotlights\');
  $query = array(\'query\' => array(\'f[0]\' => \'field_focus_area:\'.$tid));
  $redirect = l(t($str), $url,  $query);
  $redirect_one = l(t($str_one), $url);
  $output .= \'<div class = "what-we-do-sub-navbar">\';
- $output .= \'<p><span>S</span><span>potlights</span></p>\';
+ $output .= t(\'<p><span>S</span><span>potlights</span></p>\');
  $output .= \'<ul><li>\';
  $output .= $redirect;
  $output .= \'</li><li>\';
@@ -35087,7 +35155,7 @@ $term[] = $object;
    $redirect = l(t($str), $url,  $query);
    $redirect_one = l(t($str_one), $url);
    $output .= \'<div class = "what-we-do-sub-navbar">\';
-   $output .= \'<p><span>S</span><span>potlights</span></p>\';
+   $output .= t(\'<p><span>S</span><span>potlights</span></p>\');
    $output .= \'<ul><li>\';
    $output .= $redirect;
    $output .= \'</li><li>\';
@@ -35959,42 +36027,6 @@ if (count($rows) == 0) {
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
-  $translatables['projects'] = array(
-    t('Master'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('[field_short_title]'),
-    t('<div class="slide-text">[view_node]</div>
-<div class="slide">[field_project_image]</div>'),
-    t('Front jCarousel Block'),
-    t('queue'),
-    t('A/G/FA jCarousel Block'),
-    t('NAT Node'),
-    t('All'),
-    t('Hub Page jCarousel Block'),
-    t('Focus Area Project Block'),
-    t('Projects'),
-    t('project_inner_wrap'),
-    t('project-body-wrap'),
-    t('More'),
-    t('(old) flex block'),
-    t('Focus Area Manual Project Block'),
-    t('projects'),
-    t('field_project_listing_content'),
-    t('Nid'),
-    t('Agency Listing jCarousel Block'),
-    t('Focus Area Listing jCarousel Block'),
-    t('Geographies Listing jCarousel Block'),
-    t('Project Page jCarousel Block'),
-    t('Related Projects'),
-    t('References'),
-    t('Press Center jCarousel Block'),
-    t('About Us jCarousel Block'),
-  );
   $export['projects'] = $view;
 
   $view = new view();
