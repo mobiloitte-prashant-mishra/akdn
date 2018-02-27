@@ -4,6 +4,19 @@
  * Implements hook_init().
  */
 function akdn_custom_init() {
+  $nid = arg(1);
+  global $language, $base_url;
+  $lang = $language->language;
+
+  if ($nid && empty(arg(2))) {
+    $node = node_load($nid);
+    $translations = $node->translations->data;
+
+    if (!empty($translations) && !array_key_exists($lang, $translations)) {
+      drupal_goto($base_url . '/node/' . $nid);
+    }
+  }
+
   $drupal_get_path = drupal_get_path('module', 'akdn_custom');
 
   if (arg(0) == 'media' && arg(1) == 'browser') {
@@ -18,6 +31,24 @@ function akdn_custom_init() {
   drupal_add_js($drupal_get_path . '/js/jquery.jcarousel.js');
   drupal_add_js($drupal_get_path . '/js/akdn_custom.js');
   drupal_add_js($drupal_get_path . '/js/jquery.parss.uncompressed.js');
+}
+
+function akdn_custom_page_language_url($nid) {
+  global $language;
+  $lang = $language->language;
+
+  if ($nid) {
+    $node = noad_load($nid);
+    $translations = $noad->translations->data;
+
+    if (array_key_exists($lang, $translations)) {
+      return $lang;
+    }
+    else {
+      $en = 'en';
+      return $en;
+    }
+  }
 }
 
 /**
@@ -94,7 +125,7 @@ function akdn_custom_menu() {
     'access arguments' => array('access content'),
     'delivery callback' => 'drupal_json_output',
     'type' => MENU_CALLBACK,
-  );    
+  );
   return $items;
 }
 
@@ -399,13 +430,21 @@ function captcha_title_change_after_build($form, &$form_state) {
  * hook_node_view(node, view_mode, langcode)
  */
 function akdn_custom_node_view($node, $view_mode, $langcode) {
+  global $language;
+  $lang = $language->language;
   if ($node->type === 'simplenews') {
     $data = array();
     $data['title'] = $node->field_newsletter_social_title[LANGUAGE_NONE][0]['value'];
+    //$data['title'] = (isset($node->field_newsletter_social_title[$lang])) ? $node->field_newsletter_social_title[$lang][0]['value'] : $node->field_newsletter_social_title['und'][0]['value'];
+
     $data['type'] = $node->field_newsletter_social_type[LANGUAGE_NONE][0]['value'];
+    //$data['type'] = (isset($node->field_newsletter_social_type[$lang])) ? $node->field_newsletter_social_type[$lang][0]['value'] : $node->field_newsletter_social_type['und'][0]['value'];
     $data['summary'] = $node->field_newsletter_social_summary[LANGUAGE_NONE][0]['value'];
+    //$data['summary'] = (isset($node->field_newsletter_social_summary[$lang])) ? $node->field_newsletter_social_summary[$lang][0]['value'] : $node->field_newsletter_social_summary['und'][0]['value'];
     $data['url'] = $node->field_newsletter_social_url[LANGUAGE_NONE][0]['url'];
+    //$data['url'] = (isset($node->field_newsletter_social_url[$lang])) ? $node->field_newsletter_social_url[$lang][0]['url'] : $node->field_newsletter_social_url['und'][0]['url'];
     $url = $node->field_newsletter_social_image[LANGUAGE_NONE][0]['uri'];
+    //$url = (isset($node->field_newsletter_social_image[$lang])) ? $node->field_newsletter_social_image[$lang][0]['uri'] : $node->field_newsletter_social_image['und'][0]['uri'];
     $thumb_image = array(
       'style_name' => 'newsletter_social_image',
       'path' => $url,
@@ -655,6 +694,14 @@ function akdn_custom_block_info() {
       'info' => t('Custom Language Switcher'),
       'cache' => DRUPAL_NO_CACHE,
     ),
+    'page_lang_switcher' => array(
+      'info' => t('Custom Onpage Language Switcher'),
+      'cache' => DRUPAL_NO_CACHE,
+    ),
+    'where_we_work_related_info' => array(
+      'info' => t('Custom Where We Work Related Info'),
+      'cache' => DRUPAL_NO_CACHE,
+    ),
     'akaa_resources' => array(
       'info' => t('AKAA Resources Links'),
       'cache' => DRUPAL_NO_CACHE,
@@ -776,7 +823,18 @@ function akdn_custom_block_view($delta = '') {
         $block['subject'] = t('This page is also available in');
       }
       break;
-
+    case 'page_lang_switcher':
+      if ($links = _akdn_custom_lang_links()) {
+        $block['content'] = $links;
+        $block['subject'] = t('Also Available In: ');
+      }
+      break;
+    case 'where_we_work_related_info':
+      if ($add_links = _akdn_custom_lang_related_info_links()) {
+        $block['content'] = $add_links;
+        $block['subject'] = t('Related Information ');
+      }
+      break;
     case 'ac_lang_switch':
       if ($links = _akdn_custom_lang_links(TRUE)) {
         $block['content'] = $links;
@@ -933,10 +991,10 @@ function akdn_custom_block_view($delta = '') {
       }
 
       if ($search_url == '') {
-        
+
       }
       else {
-        
+
       }
 
       $search_urls = '<div class="akdn_search_urls_block">' . $search_url . '</div>';
@@ -987,6 +1045,8 @@ function akdn_custom_content_breadcrumb() {
  *
  */
 function akdn_all_areas_of_activity() {
+  global $language, $base_url;
+  $lang = $language->language;
   $arr = menu_get_active_trail();
   $output = '';
   $top_menu = $arr[1];
@@ -1000,85 +1060,110 @@ function akdn_all_areas_of_activity() {
 
   $nid = explode('/', $menu_item['link_path']);
   $nid = $nid[1];
+  
   if (isset($nid) && is_numeric($nid)) {
 
     $node = node_load($nid);
     $menu_node_links = $node->menu_node_links;
+    
     $key = key($menu_node_links);
-    $output = '';
-    $output_header = '<div class = "all-activities-btn">';
-    $output_header .= '<h2 class = "pane-title">All Areas of Activities</h2>';
-    $output_header .= '<div class = "all-activities-sidebar">';
     $get_activities = get_areas_of_activities($key);
-    //
-    foreach ($get_activities as $values) {
+    if (!empty($get_activities)) {
+      $output = '';
+      $output_header = '<div class = "all-activities-btn">';
+      $output_header .= '<h2 class = "pane-title">' . t("All Areas of Activities") . '</h2>';
+      $output_header .= '<div class = "all-activities-sidebar">';
 
-      $node_load = node_load($values->nid);
 
-      if ($values->node_type == 'hub_page') {
-        $menu_node_links1 = $node_load->menu_node_links;
-        $key1 = key($menu_node_links1);
-        $get_activities1 = get_areas_of_activities($key1);
-        foreach ($get_activities1 as $values1) {
-          $node_load1 = node_load($values1->nid);
-          if ($values1->node_type == 'hub_page') {
-            $menu_node_links1 = $node_load1->menu_node_links;
-            $key1 = key($menu_node_links);
-            $get_activities2 = get_areas_of_activities($key1);
-            foreach ($get_activities2 as $values2) {
-              $node_load2 = node_load($values2->nid);
-              if ($values2->node_type == 'hub_page') {
-                $menu_node_links2 = $node_load2->menu_node_links;
-                $key2 = key($menu_node_links2);
-                $get_activities3 = get_areas_of_activities($key2);
-              }
-              else {
-                $field_short_title2 = $node_load2->field_short_title;
-                $output .= '<div class= "all-activities-row">';
-                $output .= '<div class = "all-activities-short-title">';
-                $output .= l($node_load2->field_short_title[key($field_short_title2)][0]['value'], 'node/' . $node_load2->nid);
-                $output .= '</div>';
-                $output .= '</div>';
-              }
-            }
-          }
-          else {
-            $field_short_title1 = $node_load1->field_short_title;
-            $output .= '<div class= "all-activities-row">';
-            $output .= '<div class = "all-activities-short-title">';
-            $output .= l($node_load1->field_short_title[key($field_short_title1)][0]['value'], 'node/' . $node_load1->nid);
-            $output .= '</div>';
-            $output .= '</div>';
-          }
+      foreach ($get_activities as $values) {
+
+        $node_load = node_load($values->nid);
+        $translations = $node_load->translations->data;
+
+        if (array_key_exists($lang, $translations)) {
+          $link = 1;
         }
-      }
-      else {
-         $field_short_title = $node_load->field_short_title;
-         $title = $node_load->field_short_title[key($field_short_title)][0]['value'];
-            $output .= '<div class= "all-activities-row">';
-            $output .= '<div class= "all-activities-short-title">';
-         if ($title == 'Aga Khan Award for Architecture' ) {
-            $field_short_title = $node_load->field_short_title;
-            $output .= l($node_load->field_short_title[key($field_short_title)][0]['value'], "node/9576");
-          } elseif ($title == 'Aga Khan Music Initiative') {
-                   $field_short_title = $node_load->field_short_title;
-                   $output .= l($node_load->field_short_title[key($field_short_title)][0]['value'], "node/22106");
+        else {
+          $link = 0;
+        }
+
+        if ($values->node_type == 'hub_page') {
+          $menu_node_links1 = $node_load->menu_node_links;
+          $key1 = key($menu_node_links1);
+          $get_activities1 = get_areas_of_activities($key1);
+          foreach ($get_activities1 as $values1) {
+            $node_load1 = node_load($values1->nid);
+            if ($values1->node_type == 'hub_page') {
+              $menu_node_links1 = $node_load1->menu_node_links;
+              $key1 = key($menu_node_links);
+              $get_activities2 = get_areas_of_activities($key1);
+              foreach ($get_activities2 as $values2) {
+                $node_load2 = node_load($values2->nid);
+                if ($values2->node_type == 'hub_page') {
+                  $menu_node_links2 = $node_load2->menu_node_links;
+                  $key2 = key($menu_node_links2);
+                  $get_activities3 = get_areas_of_activities($key2);
+                }
+                else {
+                  $title = (isset($node_load2->field_short_title[$lang][0]['value'])) ? $node_load2->field_short_title[$lang][0]['value'] : $node_load2->field_short_title['en'][0]['value'];
+                  if (empty($title)) {
+                    $title = $node_load2->field_short_title['und'][0]['value'];
+                  }
+
+                  $output .= '<div class= "all-activities-row">';
+                  $output .= '<div class = "all-activities-short-title">';
+                  $output .= ($link == 1) ? l($title, 'node/' . $node_load2->nid) : l($title, $base_url . '/node/' . $node_load2->nid);
+                  //$output .= l($title, 'node/' . $node_load2->nid);
+                  $output .= '</div>';
+                  $output .= '</div>';
+                }
+              }
             }
             else {
-              $field_short_title = $node_load->field_short_title;
-              $output .= l($node_load->field_short_title[key($field_short_title)][0]['value'], 'node/' . $node_load->nid);
+              $title = (isset($node_load1->field_short_title[$lang][0]['value'])) ? $node_load1->field_short_title[$lang][0]['value'] : $node_load1->field_short_title['en'][0]['value'];
+              if (empty($title)) {
+                $title = $node_load1->field_short_title['und'][0]['value'];
+              }
+
+              $output .= '<div class= "all-activities-row">';
+              $output .= '<div class = "all-activities-short-title">';
+              $output .= ($link == 1) ? l($title, 'node/' . $node_load1->nid) : l($title, $base_url . '/node/' . $node_load1->nid);
+              //$output .= l($title, 'node/' . $node_load1->nid);
+              $output .= '</div>';
+              $output .= '</div>';
+            }
+          }
+        }
+        else {
+          $title = (isset($node_load->field_short_title[$lang][0]['value'])) ? $node_load->field_short_title[$lang][0]['value'] : $node_load->field_short_title['en'][0]['value'];
+          if (empty($title)) {
+            $title = $node_load->field_short_title['und'][0]['value'];
           }
 
-        $output .= '</div>';
-        $output .= '</div>';
+          $output .= '<div class= "all-activities-row">';
+          $output .= '<div class= "all-activities-short-title">';
+          if ($title == 'Aga Khan Award for Architecture') {
+            $output .= ($link == 1) ? l($title, "node/9576") : l($title, $base_url . "/node/9576");
+          }
+          elseif ($title == 'Aga Khan Music Initiative') {
+            $output .= ($link == 1) ? l($title, "node/22106") : l($title, $base_url . "/node/22106");
+          }
+          else {
+            $output .= ($link == 1) ? l($title, 'node/' . $node_load->nid) : l($title, $base_url . '/node/' . $node_load->nid);
+          }
+
+          $output .= '</div>';
+          $output .= '</div>';
+        }
+      }
+      $output_base .= '</div></div>';
+      // If area of activity is empty then hide it.
+      $tmp = strip_tags($output);
+      if (!empty($tmp)) {
+        $output = $output_header . $output . $output_base;
       }
     }
-    $output_base .= '</div></div>';
-    // If area of activity is empty then hide it.
-    $tmp = strip_tags($output);
-    if (!empty($tmp)) {
-      $output = $output_header . $output . $output_base;
-    }
+    
   }
   return $output;
 }
@@ -1174,15 +1259,15 @@ function akdn_right_panel_press_center_block() {
   $arg = arg(1);
   $node = array();
   $array = array(
-    'news' => 'News',
-    'in-the-media' => 'In the Media',
-    'press-releases' => 'Press Releases',
-    'publications' => 'Publications',
-    'speeches' => 'Speeches',
-    'videos' => 'Videos',
-    'galleries' => 'Photographs',
-    'events' => 'Events',
-    'projects' => 'Spotlights'
+    'news' => t('News'),
+    'in-the-media' => t('In the Media'),
+    'press-releases' => t('Press Releases'),
+    'publications' => t('Publications'),
+    'speeches' => t('Speeches'),
+    'videos' => t('Videos'),
+    'galleries' => t('Photographs'),
+    'events' => t('Events'),
+    'projects' => t('Spotlights')
   );
   if (arg(2) == 'draft') {
     $vid = get_latest_revision_id($arg);
@@ -1208,7 +1293,6 @@ function akdn_right_panel_press_center_block() {
     $field_agency_acronym = $node_load->field_agency_acronym;
     $name = $node_load->field_agency_acronym[key($field_agency_acronym)][0]['value'];
   }
-
   $output = '';
   if (!empty($tid)) {
     foreach ($array as $key => $values) {
@@ -1321,6 +1405,8 @@ function akdn_geography_agency_logo_title() {
  *
  */
 function akdn_basic_page_link_to_style_block() {
+  global $language;
+  $lang = $language->language;
   $nid = arg(1);
   $node = array();
   if (!is_numeric($nid)) {
@@ -1336,27 +1422,35 @@ function akdn_basic_page_link_to_style_block() {
   if (empty($node)) {
     return;
   }
-  $field_layout_type = $node->field_basic_page_choose_layout;
-  $layout_type = $node->field_basic_page_choose_layout[key($field_layout_type)][0]['value'];
 
+  $layout_type = (isset($node->field_basic_page_choose_layout[$lang])) ? $node->field_basic_page_choose_layout[$lang][0]['value'] : $node->field_basic_page_choose_layout['und'][0]['value'];
+ 
   if ($layout_type == 'morelink') {
     $output = '';
     $output .= '<div class = "basic-page-accordian-main-container">';
-    $field_accordian_style = $node->field_basic_page_accordian_style;
-    $field_collection = $node->field_basic_page_accordian_style[key($field_accordian_style)];
+
+    $field_collection = (isset($node->field_basic_page_accordian_style[$lang])) ? $node->field_basic_page_accordian_style[$lang] : $node->field_basic_page_accordian_style['und'];
+
+
     $i = 1;
+     
     foreach ($field_collection as $values) {
       $output .= '<div class = "accordian-rows">';
-      
+
       $id = 'accordian-title-' . $i;
       $field_values = entity_revision_load('field_collection_item', $values['revision_id']);
+
+      
+
       $output .= '<div class = "image-wrapper">';
       if (!empty($field_values->field_basic_page_accordian_image)) {
-        $image = reset($field_values->field_basic_page_accordian_image);
-        $lang_caption = key($image[0]['field_image_caption']);
-        $image_caption = $image[0]['field_image_caption'][$lang_caption][0]['value'];
-        $lang_copyright = key($image[0]['field_image_copytight']);
-        $image_copyright = $image[0]['field_image_copytight'][$lang_copyright][0]['value'];
+        $image = (isset($field_values->field_basic_page_accordian_image[$lang])) ? $field_values->field_basic_page_accordian_image[$lang] : $field_values->field_basic_page_accordian_image['und'];
+
+        
+        $image_caption = (isset($image[0]['field_image_caption'][$lang])) ? $image[0]['field_image_caption'][$lang][0]['value'] : $image[0]['field_image_caption']['und'][0]['value'];
+
+        $image_copyright = (isset($image[0]['field_image_copytight'][$lang])) ? $image[0]['field_image_copytight'][$lang][0]['value'] : $image[0]['field_image_copytight']['und'][0]['value'];
+
         $accordian_image = array(
           'style_name' => 'social_sharing_image',
           'path' => $image[0]['uri'],
@@ -1365,6 +1459,8 @@ function akdn_basic_page_link_to_style_block() {
           'alt' => $image[0]['alt'],
           'title' => $image[0]['title'],
         );
+
+        
         $output .= '<div class = "link_to_image">';
         $output .= '<div class = "image-caption-show-hide-block">';
         $output .= theme('image_style', $accordian_image);
@@ -1375,7 +1471,7 @@ function akdn_basic_page_link_to_style_block() {
           $output .= '</div>';
           $output .= '<div class="image-copytight-wrapper">';
           $output .= $image_copyright;
-          $output .= '</div>';        
+          $output .= '</div>';
           $output .= '</div>';
         }
         $output .= '</div>';
@@ -1384,19 +1480,38 @@ function akdn_basic_page_link_to_style_block() {
       $output .= '</div>';
       $output .= '<div class = "body-text-wrapper">';
       $output .= '<div class = "basic_page_title">';
-      $title = reset($field_values->field_basic_page_accordian_title);
+      
+      if ($field_values->field_basic_page_accordian_title[$lang]) {
+        $title = $field_values->field_basic_page_accordian_title[$lang];
+      }
+      else {
+        $title = $field_values->field_basic_page_accordian_title['und'];
+      }
+      
       if (!empty($title)) {
         $output .= $title[0]['value'];
       }
       $output .= '</div>';
       $output .= '<div class = "body-wrapper">';
-      $body = reset($field_values->field_text);
+      if ($field_values->field_text[$lang]) {
+        $body = $field_values->field_text[$lang];
+      }
+      else {
+        $body = $field_values->field_text['und'];
+      }
+      
       if (!empty($body)) {
         $output .= '<div class = accordian-summary>';
         $output .= check_markup($body[0]['value'], $body[0]['format']);
         $output .= '</div>';
       }
-      $more_link = reset($field_values->field_basic_add_more_link);
+      if ($field_values->field_basic_add_more_link[$lang]) {
+        $more_link = $field_values->field_basic_add_more_link[$lang];
+      }
+      else {
+        $more_link = $field_values->field_basic_add_more_link['und'];
+      }
+   
       if (!empty($more_link)) {
         $output .= '<span class = "basic_page_more_link">';
         $url = link_cleanup_url($more_link[0]['url']);
@@ -1432,6 +1547,8 @@ function get_latest_revision_id($nid) {
  *
  */
 function akdn_basic_page_accordian_style_block() {
+  global $language;
+  $lang = $language->language;
   $nid = arg(1);
   $node = array();
   if (!is_numeric($nid)) {
@@ -1448,119 +1565,173 @@ function akdn_basic_page_accordian_style_block() {
   if (empty($node)) {
     return;
   }
-  $field_basic_page_choose_layout = $node->field_basic_page_choose_layout;
-  $layout_type = $node->field_basic_page_choose_layout[key($field_basic_page_choose_layout)][0]['value'];
 
+  if ($node->field_basic_page_choose_layout[$lang][0]['value']) {
+    $layout_type = $node->field_basic_page_choose_layout[$lang][0]['value'];
+  }
+  else {
+    $layout_type = $node->field_basic_page_choose_layout['und'][0]['value'];
+  }
+  
   if ($layout_type == 'accordian') {
     $output = '';
     $quick_links = '';
     $output .= '<div class = "basic-page-accordian-main-container">';
-    $field_basic_page_accordian_style = $node->field_basic_page_accordian_style;
-    $field_collection = $node->field_basic_page_accordian_style[key($field_basic_page_accordian_style)];
-    $i = 1;
-    foreach ($field_collection as $values) {
-      $id = 'accordian-title-' . $i;
-      $field_values = entity_revision_load('field_collection_item', $values['revision_id']);
 
-      $field_basic_page_accordian_image = $field_values->field_basic_page_accordian_image;
-      $image = reset($field_basic_page_accordian_image);
-      $lang_caption = key($image[0]['field_image_caption']);
-      $image_caption = $image[0]['field_image_caption'][$lang_caption][0]['value'];
-      $lang_copyright = key($image[0]['field_image_copytight']);
-      $image_copyright = $image[0]['field_image_copytight'][$lang_copyright][0]['value'];
-      $field_basic_accordian_rel_links = $field_values->field_basic_accordian_rel_links;
-      $related_links = reset($field_basic_accordian_rel_links);
-      $output .= '<div id = "' . $id . '" class = "basic-page-accordian-rows">';
-      $output .= '<div class = accordian-image-rel-wrapper>';
-      if (!empty($field_values->field_basic_page_accordian_image)) {
-        $image = reset($field_values->field_basic_page_accordian_image);
-        $lang_caption = key($image[0]['field_image_caption']);
-        $image_caption = $image[0]['field_image_caption'][$lang_caption][0]['value'];
-        $lang_copyright = key($image[0]['field_image_copytight']);
-        $image_copyright = $image[0]['field_image_copytight'][$lang_copyright][0]['value'];
-        $related_links = reset($field_values->field_basic_accordian_rel_links);        
-        $accordian_image = array(
-          'style_name' => 'social_sharing_image',
-          'path' => $image[0]['uri'],
-          'width' => '',
-          'height' => '',
-          'alt' => $image[0]['alt'],
-          'title' => $image[0]['title'],
-        );
-        $output .= '<div class = "image image-caption-show-hide-block">';
-        $output .= theme('image_style', $accordian_image);
-        $output .= '<div class="caption-copyright-wrapper">';
-        $output .= '<div class="image-caption-wrapper">';
-        $output .= $image_caption;
-        $output .= '</div>';
-        $output .= '<div class="image-copytight-wrapper">';
-        $output .= $image_copyright;
-        $output .= '</div>';
-        $output .= '</div>';
-        $output .= '</div>';
-      }
-      if (!empty($related_links)) {
-        $output .= '<div class = "according-related-heading collapse"><span class = "related-heading">Related Information</span>';
-        $rel_links = '';
-        foreach ($related_links as $links) {
-          $url = link_cleanup_url($links['url']);
-          $target = $links['attributes']['target'];
-          if ($target === '_blank') {
-            $rel_links .= '<div class = "accordian_rel_links">';
-            $rel_links .= l($links['title'], $url, array('attributes' => array('target' => '_blank')));
-            $rel_links .= '</div>';
+    if ($node->field_basic_page_accordian_style[$lang]) {
+      $field_collection = $node->field_basic_page_accordian_style[$lang];
+    }
+    else {
+      $field_collection = $node->field_basic_page_accordian_style['und'];
+    }
+    $i = 1;
+    if ($field_collection) {
+      foreach ($field_collection as $values) {
+        $id = 'accordian-title-' . $i;
+        $field_values = entity_revision_load('field_collection_item', $values['revision_id']);
+
+        $output .= '<div id = "' . $id . '" class = "basic-page-accordian-rows">';
+        $output .= '<div class = accordian-image-rel-wrapper>';
+
+        if (!empty($field_values->field_basic_page_accordian_image)) {
+          $field_basic_page_accordian_image = $field_values->field_basic_page_accordian_image;
+
+          $image = (isset($field_values->field_basic_page_accordian_image[$lang])) ? $field_values->field_basic_page_accordian_image[$lang] : $field_values->field_basic_page_accordian_image['und'];
+
+          $image_caption = (isset($image[0]['field_image_caption'][$lang])) ? $image[0]['field_image_caption'][$lang][0]['value'] : $image[0]['field_image_caption']['und'][0]['value'];
+
+          $image_copyright = (isset($image[0]['field_image_copytight'][$lang])) ? $image[0]['field_image_copytight'][$lang][0]['value'] : $image[0]['field_image_copytight']['und'][0]['value'];
+
+
+          $field_basic_accordian_rel_links = $field_values->field_basic_accordian_rel_links;
+          if ($field_basic_accordian_rel_links[$lang]) {
+            $related_links = $field_basic_accordian_rel_links[$lang];
           }
           else {
-            $rel_links .= '<div class = "accordian_rel_links">';
-            $rel_links .= l($links['title'], $url);
-            $rel_links .= '</div>';
+            $related_links = $field_basic_accordian_rel_links['und'];
           }
+
+          $accordian_image = array(
+            'style_name' => 'social_sharing_image',
+            'path' => $image[0]['uri'],
+            'width' => '',
+            'height' => '',
+            'alt' => $image[0]['alt'],
+            'title' => $image[0]['title'],
+          );
+
+          $output .= '<div class = "image image-caption-show-hide-block">';
+          $output .= theme('image_style', $accordian_image);
+          $output .= '<div class="caption-copyright-wrapper">';
+          $output .= '<div class="image-caption-wrapper">';
+          $output .= $image_caption;
+          $output .= '</div>';
+          $output .= '<div class="image-copytight-wrapper">';
+          $output .= $image_copyright;
+          $output .= '</div>';
+          $output .= '</div>';
+          $output .= '</div>';
         }
-        $output .= $rel_links . '</div>';
-      }
-      $output .= '</div>';
-      $output .= '<div class = "accordian-title-right-summary">';
-      $title = reset($field_values->field_basic_page_accordian_title);
-      if (!empty($title)) {
-        $output .= '<div class ="accordian-title">';
-        $output .= $title[0]['value'];
+        if (!empty($related_links)) {
+          $output .= '<div class = "according-related-heading collapse"><span class = "related-heading">' . t("Related Information") . '</span>';
+          $rel_links = '';
+          foreach ($related_links as $links) {
+            $url = link_cleanup_url($links['url']);
+            $target = $links['attributes']['target'];
+            if ($target === '_blank') {
+              $rel_links .= '<div class = "accordian_rel_links">';
+              $rel_links .= l($links['title'], $url, array('attributes' => array('target' => '_blank')));
+              $rel_links .= '</div>';
+            }
+            else {
+              $rel_links .= '<div class = "accordian_rel_links">';
+              $rel_links .= l($links['title'], $url);
+              $rel_links .= '</div>';
+            }
+          }
+          $output .= $rel_links . '</div>';
+        }
         $output .= '</div>';
-        $quick_links1 .= '<li><div class = "quick-links-title"><a href = #' . $id . '>' . $title[0]['value'] . '</a></div></li>';
-      }
-      $body = reset($field_values->field_text);
-      if (!empty($body)) {
-        if (strpos($body[0]['value'], '<!--break-->') !== FALSE) {
-          $explode = explode('<!--break-->', $body[0]['value']);
-          $output .= '<div class = accordian-summary>';
-          $output .= check_markup($explode[0], $body[0]['format']);
-          $output .= '</div>';
-          $output .= '<div class = "accordian-main-body collapse">';
-          $output .= check_markup($explode[1], $body[0]['format']);
-          $output .= '</div>';
+        $output .= '<div class = "accordian-title-right-summary">';
+        if ($field_values->field_basic_page_accordian_title[$lang]) {
+          $title = $field_values->field_basic_page_accordian_title[$lang];
+        }
+        if (!empty($related_links)) {
+          $output .= '<div class = "according-related-heading collapse"><span class = "related-heading">' . t("Related Information") . '</span>';
+          $rel_links = '';
+          foreach ($related_links as $links) {
+            $url = link_cleanup_url($links['url']);
+            $target = $links['attributes']['target'];
+            if ($target === '_blank') {
+              $rel_links .= '<div class = "accordian_rel_links">';
+              $rel_links .= l($links['title'], $url, array('attributes' => array('target' => '_blank')));
+              $rel_links .= '</div>';
+            }
+            else {
+              $rel_links .= '<div class = "accordian_rel_links">';
+              $rel_links .= l($links['title'], $url);
+              $rel_links .= '</div>';
+            }
+          }
+          $output .= $rel_links . '</div>';
+        }
+        $output .= '</div>';
+        $output .= '<div class = "accordian-title-right-summary">';
+        if ($field_values->field_basic_page_accordian_title[$lang]) {
+          $title = $field_values->field_basic_page_accordian_title[$lang];
         }
         else {
-          $str = wordwrap($body[0]['value'], 400);
-          $str = explode("\n", $str);
-          $output .= '<div class = accordian-summary>';
-          $output .= check_markup($str[0], $body[0]['format']);
-          $output .= '</div>';
-          $output .= '<div class = "accordian-main-body collapse">';
-          $output .= check_markup($str[1], $body[0]['format']);
-          $output .= '</div>';
+          $title = $field_values->field_basic_page_accordian_title['und'];
         }
+        if (!empty($title)) {
+          $output .= '<div class ="accordian-title">';
+          $output .= $title[0]['value'];
+          $output .= '</div>';
+          $quick_links1 .= '<li><div class = "quick-links-title"><a href = #' . $id . '>' . $title[0]['value'] . '</a></div></li>';
+        }
+        if ($field_values->field_text[$lang]) {
+          $body = $field_values->field_text[$lang];
+        }
+        else {
+          $body = $field_values->field_text['und'];
+        }
+        if (!empty($body)) {
+          if (strpos($body[0]['value'], '<!--break-->') !== FALSE) {
+            $explode = explode('<!--break-->', $body[0]['value']);
+            $output .= '<div class = accordian-summary>';
+            $output .= check_markup($explode[0], $body[0]['format']);
+            $output .= '</div>';
+            $output .= '<div class = "accordian-main-body collapse">';
+            $output .= check_markup($explode[1], $body[0]['format']);
+            $output .= '</div>';
+          }
+          else {
+            $str = wordwrap($body[0]['value'], 400);
+            $str = explode("\n", $str);
+            $output .= '<div class = accordian-summary>';
+            $output .= check_markup($str[0], $body[0]['format']);
+            $output .= '</div>';
+            $output .= '<div class = "accordian-main-body collapse">';
+            $output .= check_markup($str[1], $body[0]['format']);
+            $output .= '</div>';
+          }
+        }
+        $output .= '</div>';
+        $output .= '<div class = "accordian-icon" onclick="accordian_click(this)">icon</div>';
+        $output .= '</div>';
+        $i++;
       }
-      $output .= '</div>';
-      $output .= '<div class = "accordian-icon" onclick="accordian_click(this)">icon</div>';
-      $output .= '</div>';
-      $i++;
     }
+
     $output .= '</div>';
+    
     $quick_links .= '<div class = "accordian-quick-links">';
     $quick_links .= '<div class = "heading">Quick Links</div>';
     $quick_links .= '<ul>' . $quick_links1 . '</ul>';
     $quick_links .= '</div>';
     $html_output .= $quick_links;
     $html_output .= $output;
+    
     return $html_output;
   }
 }
@@ -1592,11 +1763,20 @@ function akdn_custom_filter_heading() {
  *
  */
 function fact_sheet_top_links_block() {
+  global $language;
+  $lang = $language->language;
   $arg = arg(1);
   if (!empty($arg)) {
     $node = node_load($arg);
     $field_show_fact_block = $node->field_show_fact_block;
-    $show = $node->field_show_fact_block[key($field_show_fact_block)][0]['value'];
+
+    if ($node->field_show_fact_block[$lang][0]['value']) {
+      $show = $node->field_show_fact_block[$lang][0]['value'];
+    }
+    else {
+      $show = $node->field_show_fact_block['und'][0]['value'];
+    }
+
     $view = views_get_view_result('facts_blocks', 'facts_block', $node->nid);
     $result = count($view);
     if ($show == 1 && !empty($result)) {
@@ -1604,15 +1784,21 @@ function fact_sheet_top_links_block() {
       $term = array_values($term);
       $name = $term[0]->name;
       $output = '';
-      $output .= '<p><span>' . substr($name, 0, 1) . '</span><span>' . substr($name, 1) . ' AT A GLANCE</span></p><ul>';
+      $output .= '<p><span>' . substr($name, 0, 1) . '</span><span>' . substr($name, 1) . t(" AT A GLANCE") . '</span></p><ul>';
       if (!empty($node->field_fact_sheet_upload)) {
         $field_fact_sheet_upload = $node->field_fact_sheet_upload;
-        $file_id = $node->field_fact_sheet_upload[key($field_fact_sheet_upload)][0]['fid'];
+        $file_id = $node->field_fact_sheet_upload[$lang][0]['fid'];
         $url = l('FACT SHEET', 'factsheet/' . str_replace(' ', '-', $name) . '/' . $file_id);
         $output .= '<li>' . $url . '</li>';
       }
-      if ($node->field_facts_url_links['und']) {
-        foreach ($node->field_facts_url_links['und'] as $value) {
+      if ($node->field_facts_url_links[$lang]) {
+        $field_facts_url_links = $node->field_facts_url_links[$lang];
+      }
+      else {
+        $field_facts_url_links = $node->field_facts_url_links['und'];
+      }
+      if ($field_facts_url_links) {
+        foreach ($field_facts_url_links as $value) {
           if ($value['attributes']['target'] == '_blank') {
             $options = array(
               'attributes' => array(
@@ -1631,7 +1817,7 @@ function fact_sheet_top_links_block() {
               ),
             );
             //$output .= '<li>' . l($value['title'], $value['url']) . '</li>';
-            $url = ulr($value['url']);
+            $url = url($value['url']);
             $output .= '<li><a href="' . $url . '" >' . $value['title'] . '</a></li>';
           }
         }
@@ -1646,12 +1832,26 @@ function fact_sheet_top_links_block() {
  *  Show Hide Fact block
  */
 function fact_block_visible_show() {
+  global $language;
+  $lang = $language->language;
   $arg = arg(1);
   $node = node_load($arg);
   $field_select_fact_sheet = $node->field_select_fact_sheet;
-  $select = $node->field_select_fact_sheet[key($field_select_fact_sheet)][0]['value'];
+  if ($node->field_select_fact_sheet[$lang][0]['value']) {
+    $select = $node->field_select_fact_sheet[$lang][0]['value'];
+  }
+  else {
+    $select = $node->field_select_fact_sheet['und'][0]['value'];
+  }
+
   $field_show_fact_block = $node->field_show_fact_block;
-  $show = $node->field_show_fact_block[key($field_show_fact_block)][0]['value'];
+  if ($node->field_show_fact_block[$lang][0]['value']) {
+    $show = $node->field_show_fact_block[$lang][0]['value'];
+  }
+  else {
+    $show = $node->field_show_fact_block['und'][0]['value'];
+  }
+
   if ($show == 1 && $select == 0) {
     $content = views_embed_view('facts_blocks', 'facts_block', $node->nid);
     return $content;
@@ -1663,48 +1863,59 @@ function fact_block_visible_show() {
  *
  */
 function news_and_resources_top_links() {
+  global $language;
+  $lang = $language->language;
   $arg = arg(1);
   $node = node_load($arg);
-  $field_show_news_and_resources = $node->field_show_news_and_resources;
-  $show = $node->field_show_news_and_resources[key($field_show_news_and_resources)][0]['value'];
+
+  if ($node->field_show_news_and_resources[$lang][0]['value']) {
+    $show = $node->field_show_news_and_resources[$lang][0]['value'];
+  }
+  else {
+    $show = $node->field_show_news_and_resources['und'][0]['value'];
+  }
   if ($show == 1) {
     $term = nat_get_terms_by_vocabulary($arg);
     $term = array_values($term);
     $name = $term[0]->name;
     $ntid = $term[0]->tid;
-    
-    $field_news_and_resources_link = $node->field_news_and_resources_link;
-    $links = $node->field_news_and_resources_link[key($field_news_and_resources_link)];
+
+    if ($node->field_news_and_resources_link[$lang]) {
+      $links = $node->field_news_and_resources_link[$lang];
+    }
+    else {
+      $links = $node->field_news_and_resources_link['und'];
+    }
     $output = '';
-    $output .= '<p><span>N</span><span>ews & Resources</span></p><ul>';
+    $output .= t('<p><span>N</span><span>ews & Resources</span></p><ul>');
     foreach ($links as $value) {
       if ($value['value'] == 'news') {
-        $text = 'News';
+        $text = t('News');
       }
       if ($value['value'] == 'in-the-media') {
-        $text = 'In the Media';
+        $text = t('In the Media');
       }
       if ($value['value'] == 'press-releases') {
-        $text = 'Press Releases';
+        $text = t('Press Releases');
       }
       if ($value['value'] == 'publications') {
-        $text = 'Publications';
+        $text = t('Publications');
       }
       if ($value['value'] == 'speeches') {
-        $text = 'Speeches';
+        $text = t('Speeches');
       }
       if ($value['value'] == 'videos') {
-        $text = 'Videos';
+        $text = t('Videos');
       }
       if ($value['value'] == 'events') {
-        $text = 'Events';
+        $text = t('Events');
       }
       if ($value['value'] == 'photographs') {
-        $text = 'Photographs';
+        $text = t('Photographs');
         $value['value'] = 'galleries';
       }
       if ($value['value'] == 'projects') {
-        $text = 'Spotlights';
+        $text = t('Spotlights');
       }
       switch ($node->type) {
         case 'focus_area':
@@ -1742,10 +1953,16 @@ function in_array_r($needle, $haystack, $strict = FALSE) {
  *
  */
 function what_we_do_news_and_resources() {
+  global $language;
+  $lang = $language->language;
   $arg = arg(1);
   $load = node_load($arg);
-  $field_show_news_and_resources = $load->field_show_news_and_resources;
-  $show = $load->field_show_news_and_resources[key($field_show_news_and_resources)][0]['value'];
+  if ($load->field_show_news_and_resources[$lang][0]['value']) {
+    $show = $load->field_show_news_and_resources[$lang][0]['value'];
+  }
+  else {
+    $show = $load->field_show_news_and_resources['und'][0]['value'];
+  }
 
   if ($show == 1) {
     $term = nat_get_terms_by_vocabulary($arg);
@@ -1795,55 +2012,57 @@ function what_we_do_news_and_resources() {
 
       if (!empty($load->field_select_news_res_content)) {
         $field_select_news_res_content = $load->field_select_news_res_content;
-        if (in_array_r('news', $load->field_select_news_res_content[key($field_select_news_res_content)])) {
+
+        $res_content_array = isset($load->field_select_news_res_content[$lang]) ? $load->field_select_news_res_content[$lang] : $load->field_select_news_res_content['und'];
+        if (in_array_r('news', $res_content_array)) {
           $news_query = akdn_custom_query_get_article_type_nid_and_published_date($ntid, 2);
           $array[$news_query[0]->nid] = $news_query[0]->date_formatted;
         }
-        
+
         $field_select_news_res_content = $load->field_select_news_res_content;
-        if (in_array_r('in-the-media', $load->field_select_news_res_content[key($field_select_news_res_content)])) {
+        if (in_array_r('in-the-media', $res_content_array)) {
           $in_media_query = akdn_custom_query_get_article_type_nid_and_published_date($ntid, 2611);
           $array[$in_media_query[0]->nid] = $in_media_query[0]->date_formatted;
         }
-        
+
         $field_select_news_res_content = $load->field_select_news_res_content;
-        if (in_array_r('press-release', $load->field_select_news_res_content[key($field_select_news_res_content)])) {
+        if (in_array_r('press-release', $res_content_array)) {
           $press_release_query = akdn_custom_query_get_article_type_nid_and_published_date($ntid, 4);
           $array[$press_release_query[0]->nid] = $press_release_query[0]->date_formatted;
         }
-        
+
         $field_select_news_res_content = $load->field_select_news_res_content;
-        if (in_array_r('publications', $load->field_select_news_res_content[key($field_select_news_res_content)])) {
+        if (in_array_r('publications', $res_content_array)) {
           $publication = akdn_custom_query_get_nid_and_published_date($ntid, 'publication');
           $array[$publication[0]->nid] = $publication[0]->date_formatted;
         }
-        
+
         $field_select_news_res_content = $load->field_select_news_res_content;
-        if (in_array_r('speeches', $load->field_select_news_res_content[key($field_select_news_res_content)])) {
+        if (in_array_r('speeches', $res_content_array)) {
           $speeches = akdn_custom_query_get_nid_and_published_date($ntid, 'speech');
           $array[$speeches[0]->nid] = $speeches[0]->date_formatted;
         }
-        
+
         $field_select_news_res_content = $load->field_select_news_res_content;
-        if (in_array_r('videos', $load->field_select_news_res_content[key($field_select_news_res_content)])) {
+        if (in_array_r('videos', $res_content_array)) {
           $videos = akdn_custom_query_get_nid_and_published_date($ntid, 'podcast');
           $array[$videos[0]->nid] = $videos[0]->date_formatted;
         }
 
         $field_select_news_res_content = $load->field_select_news_res_content;
-        if (in_array_r('photographs', $load->field_select_news_res_content[key($field_select_news_res_content)])) {
+        if (in_array_r('photographs', $res_content_array)) {
           $photographs = akdn_custom_query_get_nid_and_published_date($ntid, 'gallery');
           $array[$photographs[0]->nid] = $photographs[0]->date_formatted;
         }
 
         $field_select_news_res_content = $load->field_select_news_res_content;
-        if (in_array_r('events', $load->field_select_news_res_content[key($field_select_news_res_content)])) {
+        if (in_array_r('events', $res_content_array)) {
           $events = akdn_custom_query_get_nid_and_published_date($ntid, 'event');
           $array[$events[0]->nid] = $events[0]->date_formatted;
         }
 
         $field_select_news_res_content = $load->field_select_news_res_content;
-        if (in_array_r('projects', $load->field_select_news_res_content[key(field_select_news_res_content)])) {
+        if (in_array_r('projects', $res_content_array)) {
           $projects = akdn_custom_query_get_nid_and_published_date($ntid, 'project');
           $array[$projects[0]->nid] = $projects[0]->date_formatted;
         }
@@ -1892,29 +2111,50 @@ function what_we_do_news_and_resources() {
 
       if ($node->type == 'article') {
         $field_article_cat = $node->field_article_cat;
-        $tid = $node->field_article_cat[key($field_article_cat)][0]['tid'];
+        $tid = $node->field_article_cat[$lang][0]['tid'];
+        if (empty($tid)) {
+          if ($node->field_article_cat[$lang][0]['tid']) {
+            $tid = $node->field_article_cat[$lang][0]['tid'];
+          }
+          else {
+            $tid = $node->field_article_cat['und'][0]['tid'];
+          }
+        }
         $term = taxonomy_term_load($tid);
         $name = $term->name;
         if ($name == 'Press Release') {
           $url = 'press-releases';
-          $type = 'Press Releases';
-          $read = l('View', 'node/' . $node->nid, $attribute);
+          $type = t('Press Releases');
+          $read = l(t('View'), 'node/' . $node->nid, $attribute);
         }
         if ($name == 'In the media') {
           $url = 'in-the-media';
-          $type = 'In the Media';
+          $type = t('In the Media');
           $field_media_source = $node->field_media_source;
-          $source = reset($field_media_source)[0]['url'];
+          if ($field_media_source[$lang][0]['url']) {
+            $source = $field_media_source[$lang][0]['url'];
+          }
+          else {
+            $source = $field_media_source['und'][0]['url'];
+          }
           $attribute = array('attributes' => array('target'=>'_blank'));
-          $read = l('View', $source, $attribute);
+          $read = l(t('View'), $source, $attribute);
         }
         if ($name == 'News') {
           $type = 'News';
           $url = 'news';
-          $read = l('View', 'node/' . $node->nid, $attribute);
+          $read = l(t('View'), 'node/' . $node->nid, $attribute);
         }
 
-        $image = reset($node->field_article_img);
+        if ($node->field_article_img[$lang]) {
+          $image = $node->field_article_img[$lang];
+        }
+        else {
+          $image = $node->field_article_img['und'];
+        }
+        if (empty($image)) {
+          $image = $node->field_article_img['en'];
+        }
 
         /* displaying default image if image not uploaded for article */
         if (empty($image)) {
@@ -1923,85 +2163,145 @@ function what_we_do_news_and_resources() {
           $image = array($file);
         }
         //$read = l('View', 'node/' . $node->nid, $attribute);
-        $readall = l('View all', 'press-centre/' . $url, array('query' => array('f[0]' => $filter . ':' . $ntid)));
+        $readall = l(t('View all'), 'press-centre/' . $url, array('query' => array('f[0]' => $filter . ':' . $ntid)));
       }
       if ($node->type == 'podcast') {
         //$name = 'podcast';
         $type = 'Videos';
-        $image = reset($node->field_podcast_image);
+        if ($node->field_podcast_image[$lang]) {
+          $image = $node->field_podcast_image[$lang];
+        }
+        else {
+          $image = $node->field_podcast_image['und'];
+        }
+
+        if (empty($image)) {
+          $image = $node->field_podcast_image['en'];
+        }
+
         if (empty($image)) {
           $info = field_info_instance('node', 'field_podcast_image', 'podcast');
           $file = (array) file_load($info['settings']['default_image']);
           $image = array($file);
         }
         $title = $node->title;
-        $read = l('View', 'node/' . $node->nid);
-        $readall = l('View all', 'press-centre/videos', array('query' => array('f[0]' => $filter . ':' . $ntid)));
+        $read = l(t('View'), 'node/' . $node->nid);
+        $readall = l(t('View all'), 'press-centre/videos', array('query' => array('f[0]' => $filter . ':' . $ntid)));
       }
 
       if ($node->type == 'gallery') {
         $type = 'Photographs';
-        $image = reset($node->field_gallery_images);
+        if ($node->field_gallery_images[$lang]) {
+          $image = $node->field_gallery_images[$lang];
+        }
+        else {
+          $image = $node->field_gallery_images['und'];
+        }
+
+        if (empty($image)) {
+          $image = $node->field_gallery_images['en'];
+        }
+
         if (empty($image)) {
           $info = field_info_instance('node', 'field_gallery_images', 'gallery');
           $file = (array) file_load($info['settings']['default_image']);
           $image = array($file);
         }
         $title = $node->title;
-        $read = l('View', 'node/' . $node->nid);
-        $readall = l('View all', 'press-centre/galleries', array('query' => array('f[0]' => $filter . ':' . $ntid)));
+        $read = l(t('View'), 'node/' . $node->nid);
+        $readall = l(t('View all'), 'press-centre/galleries', array('query' => array('f[0]' => $filter . ':' . $ntid)));
       }
 
       if ($node->type == 'event') {
         $type = 'Events';
-        $image = reset($node->field_event_image);
+        if ($node->field_event_image[$lang]) {
+          $image = $node->field_event_image[$lang];
+        }
+        else {
+          $image = $node->field_event_image['und'];
+        }
+
+        if (empty($image)) {
+          $image = $node->field_event_image['en'];
+        }
+
         if (empty($image)) {
           $info = field_info_instance('node', 'field_event_image', 'event');
           $file = (array) file_load($info['settings']['default_image']);
           $image = array($file);
         }
         $title = $node->title;
-        $read = l('View', 'node/' . $node->nid);
-        $readall = l('View all', 'press-centre/events', array('query' => array('f[0]' => $filter . ':' . $ntid)));
+        $read = l(t('View'), 'node/' . $node->nid);
+        $readall = l(t('View all'), 'press-centre/events', array('query' => array('f[0]' => $filter . ':' . $ntid)));
       }
 
       if ($node->type == 'publication') {
         $type = 'Publications';
-        $image = reset($node->field_publication_image);
+        if ($node->field_publication_image[$lang]) {
+          $image = $node->field_publication_image[$lang];
+        }
+        else {
+          $image = $node->field_publication_image['und'];
+        }
+
+        if (empty($image)) {
+          $image = $node->field_publication_image['en'];
+        }
+
         if (empty($image)) {
           $info = field_info_instance('node', 'field_publication_image', 'publication');
           $file = (array) file_load($info['settings']['default_image']);
           $image = array($file);
         }
         $title = $node->title;
-        $read = l('View', 'node/' . $node->nid);
-        $readall = l('View all', 'press-centre/publications', array('query' => array('f[0]' => $filter . ':' . $ntid)));
+        $read = l(t('View'), 'node/' . $node->nid);
+        $readall = l(t('View all'), 'press-centre/publications', array('query' => array('f[0]' => $filter . ':' . $ntid)));
       }
 
       if ($node->type == 'speech') {
         $type = 'Speeches';
-        $image = reset($node->field_speech_image);
+        if ($node->field_speech_image[$lang]) {
+          $image = $node->field_speech_image[$lang];
+        }
+        else {
+          $image = $node->field_speech_image['und'];
+        }
+
+        if (empty($image)) {
+          $image = $node->field_speech_image['en'];
+        }
+
         if (empty($image)) {
           $info = field_info_instance('node', 'field_speech_image', 'speech');
           $file = (array) file_load($info['settings']['default_image']);
           $image = array($file);
         }
         $title = $node->title;
-        $read = l('View', 'node/' . $node->nid);
-        $readall = l('View all', 'press-centre/speeches', array('query' => array('f[0]' => $filter . ':' . $ntid)));
+        $read = l(t('View'), 'node/' . $node->nid);
+        $readall = l(t('View all'), 'press-centre/speeches', array('query' => array('f[0]' => $filter . ':' . $ntid)));
       }
 
       if ($node->type == 'project') {
         $type = 'Spotlights';
-        $image = reset($node->field_project_image);
+        if ($node->field_project_image[$lang]) {
+          $image = $node->field_project_image[$lang];
+        }
+        else {
+          $image = $node->field_project_image['und'];
+        }
+
+        if (empty($image)) {
+          $image = $node->field_project_image['en'];
+        }
+
         if (empty($image)) {
           $info = field_info_instance('node', 'field_project_image', 'project');
           $file = (array) file_load($info['settings']['default_image']);
           $image = array($file);
         }
         $title = $node->title;
-        $read = l('View', 'node/' . $node->nid);
-        $readall = l('View all', 'press-centre/projects', array('query' => array('f[0]' => $filter . ':' . $ntid)));
+        $read = l(t('View'), 'node/' . $node->nid);
+        $readall = l(t('View all'), 'press-centre/projects', array('query' => array('f[0]' => $filter . ':' . $ntid)));
       }
 
       $output .= '<div class = "what-we-do-inner-wrapper"><div class= "what-we-do-subwrapper">';
@@ -2026,12 +2326,34 @@ function what_we_do_news_and_resources() {
       $field_publish_date = $node->field_publish_date;
       $output .= '<div class= "date">' . date('d F Y', $node->field_publish_date[key($field_publish_date)][0]['value']) . '</div>';
       if ($name == 'In the media') {
-       $field_short_title = $node->field_short_title;
-       $output .= '<div class= "title">' . l($node->field_short_title[key($field_short_title)][0]['value'], $source, $attribute) . '</div>';
+        $field_short_title = $node->field_short_title;
+        if ($node->field_short_title[$lang][0]['value']) {
+          $short_title = $node->field_short_title[$lang][0]['value'];
+        }
+        else {
+          $short_title = $node->field_short_title['und'][0]['value'];
+        }
+        $output .= '<div class= "title">' . l($short_title, $source, $attribute) . '</div>';
+      }
+      else if ($node->type == 'publication' || ($node->type == 'article' && $name != 'In the media')) {
+        $field_short_title = $node->field_short_title;
+        if ($node->field_short_title[$lang][0]['value']) {
+          $short_title = $node->field_short_title[$lang][0]['value'];
+        }
+        else {
+          $short_title = $node->field_short_title['und'][0]['value'];
+        }
+        $output .= '<div class= "title">' . l($short_title, 'node/' . $node->nid) . '</div>';
       }
       else {
         $field_short_title = $node->field_short_title;
-      	$output .= '<div class= "title">' . l($node->field_short_title[key($field_short_title)][0]['value'], 'node/' . $node->nid) . '</div>';
+        if ($node->field_short_title[$lang][0]['value']) {
+          $short_title = $node->field_short_title[$lang][0]['value'];
+        }
+        else {
+          $short_title = $node->field_short_title['und'][0]['value'];
+        }
+        $output .= '<div class= "title">' . l($short_title, 'node/' . $node->nid) . '</div>';
       }
       $output .= '<span class= "read">[' . $read . '</span>';
       $output .= '<span class= "readall">' . " | " . $readall . ']</span>';
@@ -2564,6 +2886,47 @@ function akaa_get_resources_links() {
   $links[] = l(t('Project Locations'), 'architecture/projects/map');
 
   return $links;
+}
+
+function _akdn_custom_lang_related_info_links() {
+  global $language;
+  global $base_url;
+  $lang = $language->language;
+
+  
+  if (arg(0) == 'node' && is_numeric(arg(1))) {
+    $node = node_load(arg(1));
+    $field = $node->field_block_add_links[$lang];
+    if (!empty($field)) {
+      $output = '<div class="view-header">' . t("Related information") . '</div><div class="view-content">';
+      foreach ($field as $key => $value) {
+        if (strpos($value['url'], 'www')) {
+          $url = $value['url'];
+        }
+        else {
+          $url = '/' . $value['url'];
+        }
+        $target = $value['attributes']['target'];
+        $output .= '<div class="views-row ">';
+        if ($target == '_blank') {
+          $output .= '<div class="field-content custom-page-block-link">
+    <a href="' . $url . '" target="' . $target . '">' . $value['title'] . '</a></div>';
+        }
+        else {
+          $output .= '<div class="field-content custom-page-block-link">
+    <a href="' . $url . '">' . $value['title'] . '</a></div>';
+        }
+
+        $output .= '</div>';
+      }
+      $output .= '</div>';
+      return $output;
+    }
+    return NULL;
+  }
+  else {
+    return NULL;
+  }
 }
 
 function _akdn_custom_lang_links($main_switcher = FALSE) {
@@ -3556,7 +3919,7 @@ function akdn_custom_theme($existing, $type, $theme, $path) {
       'akdn_custom_preprocess_views_view_field__solr_site_search__page__title_field',
     ),
     'arguments' => array('view' => NULL),
-  );  
+  );
   $themes['ismaili_feed'] = array(
     'template' => 'templates/ismaili-feed',
     'arguments' => array('output' => NULL),
@@ -3921,15 +4284,17 @@ function akdn_custom_preprocess_views_view_field__hub_pages__other_activities__n
  */
 function akdn_custom_preprocess_views_view_field__focus_areas__what_we_do_summary_text__nothing(&$variables) {
   $row = $variables['row'];
-  $language = $row->_field_data['node_field_data_field_about_page_nid']['entity']->language;
-  $body = $row->_field_data['node_field_data_field_about_page_nid']['entity']->body[$language][0]['value'];
+  global $language;
+  $lang = $language->language;
+  //$language = $row->_field_data['node_field_data_field_about_page_nid']['entity']->language;
+  $body = $row->_field_data['node_field_data_field_about_page_nid']['entity']->body[$lang][0]['value'];
   if (!empty($body)) {
     $explode = explode('<!--break-->', $body);
     $output = '';
     $output .= '<div class="what-we-do-body-more">';
     $output .= check_markup($explode[0], 'full_html');
     if (!empty($explode[1])) {
-      $output .= '<span><a href="javascript:void(0);" class="morelink">More</a></span>';
+      $output .= '<span><a href="javascript:void(0);" class="morelink">' . t("More") . '</a></span>';
     }
     $output .= '</div>';
     $output .= '<div class="what-we-do-body-more-body collapse">';
@@ -4095,35 +4460,35 @@ function akdn_custom_video_player() {
       $exploded_str = explode('/',$video_temp[1]);
       $video = $exploded_str[1];
     }
-        
+
     //youtube
     $youtube_temp = explode('youtube://v/', $entity->field_podcast_video[$entity->language][0]['uri']);
     $youtube_video_id = $youtube_temp[1];
   }
   if (!empty($video)) {
 //    $output .= '<div class="playerbox" height="460">
-//                      <video 
+//                      <video
 //                        data-video-id="' . $video . '"
-//                        data-account="648715333001" 
-//                        data-player="SJCRhP7Eb" 
-//                        data-embed="default" 
-//                        data-application-id 
-//                        class="video-js" 
+//                        data-account="648715333001"
+//                        data-player="SJCRhP7Eb"
+//                        data-embed="default"
+//                        data-application-id
+//                        class="video-js"
 //                        controls>
 //                      </video>
 //                      <script src="//players.brightcove.net/648715333001/SJCRhP7Eb_default/index.min.js"></script>
 //                </div>';
-    $output .='<video data-video-id="'.$video.'" 
+    $output .='<video data-video-id="'.$video.'"
                   data-account="648715333001"
-                  data-player="rJtUYHMyl" 
-                  data-embed="default" 
-                  data-application-id 
-                  class="video-js" 
+                  data-player="rJtUYHMyl"
+                  data-embed="default"
+                  data-application-id
+                  class="video-js"
                   controls
                   style="width: 100%; height: 500px;">
                 </video>
                 <script src="//players.brightcove.net/648715333001/rJtUYHMyl_default/index.min.js"></script>';
-   
+
 //    drupal_add_js($drupal_get_path . '/js/akdn_brightcove.js');
     return $output;
   }
@@ -4148,6 +4513,20 @@ function akdn_custom_video_player() {
 }
 
 function akdn_custom_search_api_solr_search_results_alter(array &$results, SearchApiQueryInterface $query, $response) {
+  global $language;
+  $data_array = $results['search_api_solr_response']->response->docs;
+  $query = db_query("SELECT language, entity_id FROM entity_translation WHERE entity_id = :nid", array(':nid' => $data->item_id))->fetchAll();
+//  foreach ($data_array as $data) {
+//      $query = db_query("SELECT language, entity_id FROM entity_translation WHERE entity_id = :nid", array(':nid' => $data->item_id))->fetchAll();
+//    if (count($query) > 1) {
+//      $node = node_load($data->item_id);
+//      $data->ss_image_public_uri = $node->field_publication_image[$language->language][0]['uri'];
+//
+//    }
+//  }
+
+
+
   if (strpos($_SERVER['REQUEST_URI'], "agency") !== false) {
     unset($results['results']['9576']);
     unset($results['results']['22106']);
@@ -4241,14 +4620,14 @@ function akdn_custom_v_p_for_archi() {
   if (isset($entity->field_podcast_video[$entity->language][0]['uri'])) {
     //bightcove video
     $video_temp = explode('brightcove://', $entity->field_podcast_video[$entity->language][0]['uri']);
-    
+
     if(is_numeric($video_temp[1])){
       $video = $video_temp[1];
     }else{
       $exploded_str = explode('/',$video_temp[1]);
       $video = $exploded_str[1];
     }
-   
+
     //youtube
     $youtube_temp = explode('youtube://v/', $entity->field_podcast_video[$entity->language][0]['uri']);
     $youtube_video_id = $youtube_temp[1];
@@ -4274,12 +4653,12 @@ function akdn_custom_v_p_for_archi() {
 //  </div>';
 //    //$output .= '<script type="text/javascript">brightcove.createExperiences();</script>';
 //    drupal_add_js($drupal_get_path . '/js/akdn_brightcove.js');
-//    $output ='<video data-video-id="'.$video.'" 
+//    $output ='<video data-video-id="'.$video.'"
 //                  data-account="648715333001"
-//                  data-player="rJtUYHMyl" 
-//                  data-embed="default" 
-//                  data-application-id 
-//                  class="video-js" 
+//                  data-player="rJtUYHMyl"
+//                  data-embed="default"
+//                  data-application-id
+//                  class="video-js"
 //                  controls
 //                  style="width: 100%; height: 200px;">
 //                </video>
@@ -4294,7 +4673,7 @@ function akdn_custom_v_p_for_archi() {
       style="width: 100%; height: 200px;">
       </video>
     <script src="//players.brightcove.net/648715333001/rJtUYHMyl_default/index.min.js"></script>';
-    
+
     return $output;
   }
   elseif (($youtube_temp[1]) && (stripos($youtube_temp, 'youtube://v/') !== FALSE)) {
@@ -4537,18 +4916,18 @@ function akdn_custom_form_simplenews_node_form_alter(&$form, &$form_state, &$for
       'toc' => empty($form_state['input']['scs_toc']) ? FALSE : TRUE,
     ));
   }
-}  
-  
+}
+
 /**
  * Call back for media-file
  */
 function media_file() {
   $fids = db_query("SELECT fm.fid, fm.filename, fm.filemime FROM {file_managed} fm
                               INNER JOIN {field_data_field_article_img} fai
-                              ON fm.fid = fai.field_article_img_fid  
+                              ON fm.fid = fai.field_article_img_fid
                                  AND(fai.entity_type = 'node' AND fai.bundle = 'article')
                               INNER JOIN {field_data_field_folder} ff
-                              ON fai.field_article_img_fid = ff.entity_id 
+                              ON fai.field_article_img_fid = ff.entity_id
                                  AND (ff.entity_type = 'file' AND ff.bundle = 'image')")->fetchAll();
   $media_arr = array();
   foreach ($fids as $key => $value) {
@@ -4598,6 +4977,8 @@ function akdn_custom_ctools_plugin_directory($module, $plugin) {
 }
 
 function akdn_custom_search_api_solr_query_alter(array &$call_args, SearchApiQueryInterface $query) {
+//  print_r($call_args['params']);
+//  die();
 // $node_types = node_type_get_types();
 // foreach ($node_types as $node_type) {
 //
@@ -4628,10 +5009,10 @@ function akdn_custom_search_api_solr_query_alter(array &$call_args, SearchApiQue
 //        $facet_node_types_items = $facet_item[1]->getFilters();
 //        // This is my facet item I wont to change solr query on "page" and also add node type "custom content" to the filter.
 //        foreach ($facet_node_types_items as $key => $node_types) {
-//          if ($node_types[0] == 'type' && $node_types[1] === 'page') {       
+//          if ($node_types[0] == 'type' && $node_types[1] === 'page') {
 //            $call_args['params']['fq'][2] = $call_args['params']['fq'][2] . ' OR  ss_entity_type:"custom content"';
 //            break;
-//          }          
+//          }
 //        }
 //      }
 //     }
@@ -4810,8 +5191,8 @@ function config_blocks_display($node_obj) {
  * @return type
  */
 function get_config_block_type($nid) {
-  $block_type_value = db_query("SELECT field_block_type_value FROM {field_data_field_block_type} 
-                                                    WHERE entity_type = 'node' 
+  $block_type_value = db_query("SELECT field_block_type_value FROM {field_data_field_block_type}
+                                                    WHERE entity_type = 'node'
                                                     AND bundle = 'config_block'
                                                     AND entity_id = :nid", array(':nid' => $nid))->fetchField();
 
@@ -4845,6 +5226,24 @@ function akdn_custom_search_api_solr_documents_alter(array &$documents, SearchAp
         }
       }
     }
+  }
+}
+
+/**
+ * hook_media_wysiwyg_token_to_markup_alter().
+ * @param type $element
+ * @param type $tag_info
+ * @param type $settings
+ */
+function akdn_custom_media_wysiwyg_token_to_markup_alter(&$element, $tag_info, $settings) {
+  $file_entity = $element['content'];
+  $caption = $file_entity['field_image_caption']['#items'][0]['value'];
+  $copyright = $file_entity['field_image_copytight']['#items'][0]['value'];
+  if(empty($caption)){
+    unset($element['content']['field_image_caption']);
+  }
+  if(empty($copyright)){
+    unset($element['content']['field_image_copytight']);
   }
 }
 
@@ -4922,20 +5321,4 @@ function _nodes_related_term_id_retrieve($tid, $pager, $limit, $order) {
   return $nodes;
 }
 
-/**
- * hook_media_wysiwyg_token_to_markup_alter().
- * @param type $element
- * @param type $tag_info
- * @param type $settings
- */
-function akdn_custom_media_wysiwyg_token_to_markup_alter(&$element, $tag_info, $settings) {
-  $file_entity = $element['content'];
-  $caption = $file_entity['field_image_caption']['#items'][0]['value'];
-  $copyright = $file_entity['field_image_copytight']['#items'][0]['value'];
-  if(empty($caption)){
-    unset($element['content']['field_image_caption']);
-  }
-  if(empty($copyright)){
-    unset($element['content']['field_image_copytight']);
-  }
-}
+
