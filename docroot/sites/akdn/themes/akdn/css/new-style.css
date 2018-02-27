@@ -93,3 +93,31 @@ html[dir='rtl'] .pane-akdn-custom-page-lang-switcher .pane-content ul li.first a
     border: 0 none;
     padding: 0 0 0 10px;
 }
+
+html[dir='rtl'] .static_text {
+    float: right;
+    margin: 9px 0 0 8px;
+}
+
+html[dir='rtl'] .breadcrumb {
+    text-align: right;
+}
+
+html[dir='rtl'] .breadcrumb .inline {
+    float: right;
+}
+
+html[dir='rtl'] .breadcrumb .delimiter {
+    float: right;
+    margin: 0 5px;
+}
+
+html[dir='rtl'] .slide-text {
+    text-align: right;
+    padding: 10px 15px 10px 110px
+}
+
+html[dir='rtl'] .pane-node-body li:before {
+    margin-left: 0;
+    margin-right: -14px;
+}
