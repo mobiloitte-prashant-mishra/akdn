@@ -11876,6 +11876,7 @@ print $explode[1];
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Content: Title */
@@ -11932,7 +11933,6 @@ print $explode[1];
   $handler->display->display_options['style_options']['views_slideshow_cycle']['timeout'] = '5000';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['speed'] = '700';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['delay'] = '0';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['start_paused'] = 0;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['remember_slide_days'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['items_per_slide'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['wait_for_image_load_timeout'] = '3000';
@@ -11947,6 +11947,11 @@ print $explode[1];
   $handler->display->display_options['relationships']['field_hub_page_image_fid']['id'] = 'field_hub_page_image_fid';
   $handler->display->display_options['relationships']['field_hub_page_image_fid']['table'] = 'field_data_field_hub_page_image';
   $handler->display->display_options['relationships']['field_hub_page_image_fid']['field'] = 'field_hub_page_image_fid';
+  $handler->display->display_options['relationships']['field_hub_page_image_fid']['required'] = TRUE;
+  /* Relationship: Content: Entity translation: translations */
+  $handler->display->display_options['relationships']['entity_translations']['id'] = 'entity_translations';
+  $handler->display->display_options['relationships']['entity_translations']['table'] = 'node';
+  $handler->display->display_options['relationships']['entity_translations']['field'] = 'entity_translations';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_hub_page_image']['id'] = 'field_hub_page_image';
@@ -11968,6 +11973,26 @@ print $explode[1];
   );
   $handler->display->display_options['fields']['field_hub_page_image']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_hub_page_image']['delta_offset'] = '0';
+  /* Field: Entity translation: Image: translated */
+  $handler->display->display_options['fields']['field_hub_page_image_et']['id'] = 'field_hub_page_image_et';
+  $handler->display->display_options['fields']['field_hub_page_image_et']['table'] = 'field_data_field_hub_page_image';
+  $handler->display->display_options['fields']['field_hub_page_image_et']['field'] = 'field_hub_page_image_et';
+  $handler->display->display_options['fields']['field_hub_page_image_et']['label'] = '';
+  $handler->display->display_options['fields']['field_hub_page_image_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_hub_page_image_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_hub_page_image_et']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_hub_page_image_et']['type'] = 'colorbox';
+  $handler->display->display_options['fields']['field_hub_page_image_et']['settings'] = array(
+    'colorbox_node_style' => 'two_third_width_carousel_grid_inner',
+    'colorbox_node_style_first' => '',
+    'colorbox_image_style' => '',
+    'colorbox_gallery' => 'post',
+    'colorbox_gallery_custom' => '',
+    'colorbox_caption' => 'custom',
+    'colorbox_caption_custom' => '[file:field-image-caption]^[file:field-image-copytight]',
+  );
+  $handler->display->display_options['fields']['field_hub_page_image_et']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_hub_page_image_et']['delta_offset'] = '0';
   /* Field: File: Caption */
   $handler->display->display_options['fields']['field_image_caption']['id'] = 'field_image_caption';
   $handler->display->display_options['fields']['field_image_caption']['table'] = 'field_data_field_image_caption';
@@ -11976,6 +12001,14 @@ print $explode[1];
   $handler->display->display_options['fields']['field_image_caption']['label'] = '';
   $handler->display->display_options['fields']['field_image_caption']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_image_caption']['element_label_colon'] = FALSE;
+  /* Field: Entity translation: Caption: translated */
+  $handler->display->display_options['fields']['field_image_caption_et']['id'] = 'field_image_caption_et';
+  $handler->display->display_options['fields']['field_image_caption_et']['table'] = 'field_data_field_image_caption';
+  $handler->display->display_options['fields']['field_image_caption_et']['field'] = 'field_image_caption_et';
+  $handler->display->display_options['fields']['field_image_caption_et']['relationship'] = 'field_hub_page_image_fid';
+  $handler->display->display_options['fields']['field_image_caption_et']['label'] = '';
+  $handler->display->display_options['fields']['field_image_caption_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_image_caption_et']['element_label_colon'] = FALSE;
   /* Field: File: Copyright */
   $handler->display->display_options['fields']['field_image_copytight']['id'] = 'field_image_copytight';
   $handler->display->display_options['fields']['field_image_copytight']['table'] = 'field_data_field_image_copytight';
@@ -11984,15 +12017,23 @@ print $explode[1];
   $handler->display->display_options['fields']['field_image_copytight']['label'] = '';
   $handler->display->display_options['fields']['field_image_copytight']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_image_copytight']['element_label_colon'] = FALSE;
+  /* Field: Entity translation: Copyright: translated */
+  $handler->display->display_options['fields']['field_image_copytight_et']['id'] = 'field_image_copytight_et';
+  $handler->display->display_options['fields']['field_image_copytight_et']['table'] = 'field_data_field_image_copytight';
+  $handler->display->display_options['fields']['field_image_copytight_et']['field'] = 'field_image_copytight_et';
+  $handler->display->display_options['fields']['field_image_copytight_et']['relationship'] = 'field_hub_page_image_fid';
+  $handler->display->display_options['fields']['field_image_copytight_et']['label'] = '';
+  $handler->display->display_options['fields']['field_image_copytight_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_image_copytight_et']['element_label_colon'] = FALSE;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_hub_page_image]</div>
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_hub_page_image_et]</div>
         <div class="slide-text">
-        <div class="caption">[field_image_caption]</div>
-        <div class="caption image-copytight">[field_image_copytight]</div>
+        <div class="caption">[field_image_caption_et]</div>
+        <div class="caption image-copytight">[field_image_copytight_et]</div>
         </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Field: Colorbox: Colorbox trigger */
@@ -12015,6 +12056,27 @@ print $explode[1];
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published or admin */
+  $handler->display->display_options['filters']['status_extra']['id'] = 'status_extra';
+  $handler->display->display_options['filters']['status_extra']['table'] = 'node';
+  $handler->display->display_options['filters']['status_extra']['field'] = 'status_extra';
+  /* Filter criterion: Entity translation: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'entity_translation';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['relationship'] = 'entity_translations';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+  /* Filter criterion: Content: Image (field_hub_page_image:language) */
+  $handler->display->display_options['filters']['language_1']['id'] = 'language_1';
+  $handler->display->display_options['filters']['language_1']['table'] = 'field_data_field_hub_page_image';
+  $handler->display->display_options['filters']['language_1']['field'] = 'language';
+  $handler->display->display_options['filters']['language_1']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
 
   /* Display: Baisc Page summary */
   $handler = $view->new_display('block', 'Baisc Page summary', 'basic_page_summary');
@@ -12177,37 +12239,29 @@ print $explode[1];
   $handler->display->display_options['filters']['language']['field'] = 'language';
   $handler->display->display_options['filters']['language']['relationship'] = 'entity_translations';
   $handler->display->display_options['filters']['language']['value'] = array(
+    'all' => 'all',
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+    '***DEFAULT_LANGUAGE***' => '***DEFAULT_LANGUAGE***',
+    'und' => 'und',
+    'en' => 'en',
+    'fr' => 'fr',
+    'ar' => 'ar',
+    'zh-hans' => 'zh-hans',
+    'de' => 'de',
+    'it' => 'it',
+    'ky' => 'ky',
+    'ms' => 'ms',
+    'fa' => 'fa',
+    'pt' => 'pt',
+    'ru' => 'ru',
+    'es' => 'es',
+    'tg' => 'tg',
+    'ur' => 'ur',
   );
   /* Filter criterion: Content: Published or admin */
   $handler->display->display_options['filters']['status_extra']['id'] = 'status_extra';
   $handler->display->display_options['filters']['status_extra']['table'] = 'node';
   $handler->display->display_options['filters']['status_extra']['field'] = 'status_extra';
-  $translatables['basic_pages_view'] = array(
-    t('Master'),
-    t('Basic Pages Flex slider'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Basic page Slideshow'),
-    t('image from field_hub_page_image'),
-    t('<div class="slide">[field_hub_page_image]</div>
-        <div class="slide-text">
-        <div class="caption">[field_image_caption]</div>
-        <div class="caption image-copytight">[field_image_copytight]</div>
-        </div>'),
-    t('All'),
-    t('Baisc Page summary'),
-    t('[body-summary]'),
-    t('Custom Content Header'),
-    t('[field_short_title]'),
-    t('<div class = "basic-page-custom-logo-title">[title]</div>'),
-    t('Baisc Page Accordian summary'),
-    t('Translations'),
-  );
   $export['basic_pages_view'] = $view;
 
   $view = new view();
