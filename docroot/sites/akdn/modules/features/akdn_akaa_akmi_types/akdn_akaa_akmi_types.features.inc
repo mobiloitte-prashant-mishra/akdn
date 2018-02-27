@@ -20,6 +20,7 @@ function akdn_akaa_akmi_types_ctools_plugin_api($module = NULL, $api = NULL) {
  * Implements hook_node_info().
  */
 function akdn_akaa_akmi_types_node_info() {
+
   $items = array(
     'akmi_cd_dvd' => array(
       'name' => t('AKMI CD/DVD'),
