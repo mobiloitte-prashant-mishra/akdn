@@ -20761,6 +20761,11 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['relationships']['field_feature_image_fid']['table'] = 'field_revision_field_feature_image';
   $handler->display->display_options['relationships']['field_feature_image_fid']['field'] = 'field_feature_image_fid';
   $handler->display->display_options['relationships']['field_feature_image_fid']['label'] = 'file_feature_image';
+  /* Relationship: Content: Entity translation: translations */
+  $handler->display->display_options['relationships']['entity_translations']['id'] = 'entity_translations';
+  $handler->display->display_options['relationships']['entity_translations']['table'] = 'node';
+  $handler->display->display_options['relationships']['entity_translations']['field'] = 'entity_translations';
+  $handler->display->display_options['relationships']['entity_translations']['relationship'] = 'field_featured_content_nodes_nid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Media Source */
   $handler->display->display_options['fields']['field_media_source']['id'] = 'field_media_source';
@@ -21028,6 +21033,13 @@ $lang = $language->language;
     'featured_content' => 'featured_content',
   );
   $handler->display->display_options['filters']['type']['group'] = 2;
+  /* Filter criterion: Content (historical data): Banner Item Content (field_featured_content_nodes:language) */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'field_revision_field_featured_content_nodes';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
 
   /* Display: Flexslider Manual A/G/FA Cycle Block1 */
   $handler = $view->new_display('block', 'Flexslider Manual A/G/FA Cycle Block1', 'block_1');

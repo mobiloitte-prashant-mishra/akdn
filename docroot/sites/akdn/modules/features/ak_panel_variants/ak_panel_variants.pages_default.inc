@@ -4517,23 +4517,7 @@ if (isset($node->field_about_page)) {
   $pane->subtype = 'akdn_custom-where_we_work_related_info';
   $pane->shown = TRUE;
   $pane->access = array(
-    'plugins' => array(
-      0 => array(
-        'name' => 'entity_field_value:node:page:field_right_show_block',
-        'settings' => array(
-          'field_right_show_block' => array(
-            'en' => array(
-              0 => array(
-                'value' => 1,
-              ),
-            ),
-          ),
-          'field_right_show_block_value' => '1',
-        ),
-        'context' => 'argument_entity_id:node_1',
-        'not' => FALSE,
-      ),
-    ),
+    'plugins' => array(),
   );
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -6813,18 +6797,22 @@ return true;
   $pane->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'entity_field_value:node:focus_area:field_featured_content_area',
+        'name' => 'php',
         'settings' => array(
-          'field_featured_content_area' => array(
-            'en' => array(
-              0 => array(
-                'value' => '1',
-              ),
-            ),
-          ),
-          'field_featured_content_area_value' => '1',
+          'description' => 'Banner automatic',
+          'php' => 'global $language;
+  $lang = $language->language;
+  $arg = arg(1);
+  $node = node_load($arg);
+  $field_featured_content_area = $node->field_featured_content_area;
+  if ($node->field_featured_content_area[$lang][0][\'value\']) {
+    $select = $node->field_featured_content_area[$lang][0][\'value\'];
+  }
+
+  if ($select == 1) {
+    return true;
+  }',
         ),
-        'context' => 'argument_entity_id:node_1',
         'not' => TRUE,
       ),
     ),
@@ -6871,18 +6859,22 @@ return true;
   $pane->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'entity_field_value:node:focus_area:field_featured_content_area',
+        'name' => 'php',
         'settings' => array(
-          'field_featured_content_area' => array(
-            'en' => array(
-              0 => array(
-                'value' => '1',
-              ),
-            ),
-          ),
-          'field_featured_content_area_value' => '1',
+          'description' => 'banners mannual',
+          'php' => 'global $language;
+  $lang = $language->language;
+  $arg = arg(1);
+  $node = node_load($arg);
+  $field_featured_content_area = $node->field_featured_content_area;
+  if ($node->field_featured_content_area[$lang][0][\'value\']) {
+    $select = $node->field_featured_content_area[$lang][0][\'value\'];
+  }
+
+  if ($select == 1) {
+    return true;
+  }',
         ),
-        'context' => 'argument_entity_id:node_1',
         'not' => FALSE,
       ),
     ),
