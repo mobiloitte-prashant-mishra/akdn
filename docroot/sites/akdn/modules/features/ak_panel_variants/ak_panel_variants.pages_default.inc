@@ -4624,7 +4624,7 @@ if (isset($node->field_about_page)) {
   $pane->panel = 'right';
   $pane->type = 'block';
   $pane->subtype = 'akdn_custom-right_panel_press_center_block';
-  $pane->shown = FALSE;
+  $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,
@@ -8965,7 +8965,7 @@ $body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'und
   $pane->panel = 'right';
   $pane->type = 'block';
   $pane->subtype = 'akdn_custom-right_panel_press_center_block';
-  $pane->shown = FALSE;
+  $pane->shown = TRUE;
   $pane->access = array(
     'plugins' => array(),
   );
@@ -13972,7 +13972,7 @@ print \'<h2 class="pane-title">\'.t(\'More projects by\').\'</h2>\';
   $pane->panel = 'right';
   $pane->type = 'block';
   $pane->subtype = 'menu-menu-see-also';
-  $pane->shown = FALSE;
+  $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,
