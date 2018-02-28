@@ -20723,6 +20723,11 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['relationships']['field_feature_image_fid']['table'] = 'field_revision_field_feature_image';
   $handler->display->display_options['relationships']['field_feature_image_fid']['field'] = 'field_feature_image_fid';
   $handler->display->display_options['relationships']['field_feature_image_fid']['label'] = 'file_feature_image';
+  /* Relationship: Content: Entity translation: translations */
+  $handler->display->display_options['relationships']['entity_translations']['id'] = 'entity_translations';
+  $handler->display->display_options['relationships']['entity_translations']['table'] = 'node';
+  $handler->display->display_options['relationships']['entity_translations']['field'] = 'entity_translations';
+  $handler->display->display_options['relationships']['entity_translations']['relationship'] = 'field_featured_content_nodes_nid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Media Source */
   $handler->display->display_options['fields']['field_media_source']['id'] = 'field_media_source';
@@ -20849,6 +20854,9 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
+global $language;
+$lang = $language->language;
+if($lang == \'en\'){$lang = \'\';}else{$lang = $lang.\'/\';}
   if ($data->node_field_data_field_featured_content_nodes_type == "featured_content") {
     if (!empty($data->field_field_feature_link)) {
       $url = "<a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
@@ -20861,7 +20869,7 @@ if ($data->node_type == "featured_content") {
       $url = "<a href=\'{$data->field_field_media_source[0][\'raw\'][\'url\']}\' target=\'_blank\'>";
       print $url;
     }else{
-      $node_path = drupal_get_path_alias(\'node/\' . $row->nid);
+      $node_path = $lang.drupal_get_path_alias(\'node/\' . $row->nid);
       $url =  " <a href=\'/$node_path\'>";
       print $url;
     }
@@ -20879,13 +20887,15 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
+global $language;
+$lang = $language->language;
   $caption = $data->field_field_caption[0][\'rendered\'][\'#markup\'];
   if (empty($caption)) {
     if ($data->node_type == \'project\') {
       $caption = $data->field_field_project_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'][key($data->field_field_project_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'])][0][\'value\'];
     }
     else {
-      $caption = $data->field_field_feature_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'][key($data->field_field_feature_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'])][0][\'value\'];
+      $caption = isset($data->field_field_feature_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'][$lang]) ? $data->field_field_feature_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'][$lang][0][\'value\'] : $data->field_field_feature_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'][key($data->field_field_feature_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'])][0][\'value\'];
     }
   }
   if (isset($caption)) {
@@ -20985,6 +20995,13 @@ if ($data->node_type == "featured_content") {
     'featured_content' => 'featured_content',
   );
   $handler->display->display_options['filters']['type']['group'] = 2;
+  /* Filter criterion: Content (historical data): Banner Item Content (field_featured_content_nodes:language) */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'field_revision_field_featured_content_nodes';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
 
   /* Display: Flexslider Manual A/G/FA Cycle Block1 */
   $handler = $view->new_display('block', 'Flexslider Manual A/G/FA Cycle Block1', 'block_1');
@@ -21308,49 +21325,6 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['filters']['status_extra_1']['field'] = 'status_extra';
   $handler->display->display_options['filters']['status_extra_1']['relationship'] = 'field_featured_content_nodes_nid';
   $handler->display->display_options['filters']['status_extra_1']['group'] = 2;
-  $translatables['featured_slideshow_manual'] = array(
-    t('Master'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('queue'),
-    t('file_project_image'),
-    t('file_feature_image'),
-    t('<div class="slide">[field_feature_image]</div>
-  <div class="slide-text"><h3>[title]</h3>
-  [field_caption]
-  [field_feature_link]
-  </div>
-
-  '),
-    t('<div class="slide-pager">•</div>'),
-    t('Flexslider Manual A/G/FAA Block'),
-    t('field_banner_item_nodes'),
-    t('<div class="slide">[php][field_feature_image][field_project_image]</div></a>
-  <div class="slide-text">
-  <h3>[title_field]</h3>
-  [php_1]
-  [php]More </a>
-  </div>'),
-    t('All'),
-    t('Flexslider Manual A/G/FA Cycle Block1'),
-    t('<div class="slide">[php][field_feature_image]</a></div>
-  <div class="slide-text">
-  <h3>[title_field]</h3>
-  [php_1]
-  [php]More </a>
-  </div>'),
-  );
   $export['featured_slideshow_manual'] = $view;
 
   $view = new view();
