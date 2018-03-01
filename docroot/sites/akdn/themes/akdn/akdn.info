@@ -361,7 +361,6 @@ stylesheets[all][] = css/admin_menu_toolbar.css
 stylesheets[all][] = css/style.css
 stylesheets[all][] = css/styles.css
 stylesheets[all][] = css/jquery.mCustomScrollbar.css
-stylesheets[all][] = css/new-style.css
 scripts[] = js/jquery.lettering.js
 scripts[] = js/jquery.ba-replacetext.min.js
 scripts[] = js/script.js
