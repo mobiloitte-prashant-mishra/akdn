@@ -7312,8 +7312,12 @@ map {
     margin: 0 auto !important;
     padding: 0 !important;
     list-style: none;
+    font-size: 18px;
+/*    line-height: 26px;*/
+    margin-bottom: 10px !important;
 
     a {
+      margin-bottom: 0px;  
       @extend %other_activities_links;
     }
   }
