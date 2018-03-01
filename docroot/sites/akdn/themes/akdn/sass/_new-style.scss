@@ -1,0 +1,121 @@
+.block-akdn-custom-page-lang-switcher,
+.pane-akdn-custom-page-lang-switcher {
+    background: #f4f1e8;
+    margin-bottom: 20px;
+    padding: 20px;
+    line-height: normal;
+    height: 56px;
+    
+    h2 {
+        color: #3c0202;
+        font-size: 15px;
+        float: left;
+        text-transform: uppercase;
+        margin: 0 8px 0 0;
+        padding: 0;
+    }
+}
+
+.block-akdn-custom-page-lang-switcher .content,
+.pane-akdn-custom-page-lang-switcher .pane-content {
+    float: left;
+    width: calc(100% - 260px);
+    
+    @media only screen and (max-width: 767px) {
+        width: 100%;
+        padding-top: 5px;
+    }
+    
+    ul {
+        padding: 0;
+        margin: 0;
+        
+        li {
+            list-style: none;
+            display: inline-block;
+            padding-bottom: 5px;
+            
+            a {
+                border-left: 1px solid #3c0202;
+                padding: 0 10px;
+            }
+            
+            &:first-child.active + li a {
+                border-left: 0 none;
+                padding: 0 10px 0 0;
+            }
+            
+            &.first a {
+                border-left: 0 none;
+                padding: 0 10px 0 0;
+            }
+        }
+    }
+}
+
+
+/*RTL CSS*/
+html[dir='rtl'] {
+    .block-akdn-custom-page-lang-switcher,
+    .pane-akdn-custom-page-lang-switcher {
+        h2 {
+            float: right;
+            margin: 0 0 0 8px;
+        }
+    }
+
+    .block-akdn-custom-page-lang-switcher .content,
+    .pane-akdn-custom-page-lang-switcher .pane-content {
+        float: right;
+        
+        ul li {
+            a {
+                border-right: 1px solid #3c0202;
+                border-left: 0 none;
+                padding: 0 10px;
+            }
+            
+            &:first-child.active + li a {
+                border: 0 none;
+                padding: 0 0 0 10px;
+            }
+            
+            &.first a {
+                border: 0 none;
+                padding: 0 0 0 10px;
+            }
+        }
+    }
+    
+    .static_text {
+        float: right;
+        margin: 9px 0 0 8px;
+    }
+
+    .breadcrumb {
+        text-align: right;
+        
+        .inline {
+            float: right;
+        }
+        
+        .delimiter {
+            float: right;
+            margin: 0 5px;
+        }
+    }
+
+    .slide-text {
+        text-align: right;
+        padding: 10px 15px 10px 110px
+    }
+
+    .pane-node-body li:before {
+        margin-left: 0;
+        margin-right: -14px;
+    }
+    .flex-nav-container ol.flex-control-nav {
+        right: auto;
+        left: 10px;
+    }
+}
