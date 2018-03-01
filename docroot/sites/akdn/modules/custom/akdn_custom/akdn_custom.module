@@ -4,16 +4,17 @@
  * Implements hook_init().
  */
 function akdn_custom_init() {
-  $nid = arg(1);
   global $language, $base_url;
   $lang = $language->language;
-
-  if ($nid && empty(arg(2))) {
+  $nid = arg(1);
+  if (arg(0) == 'node' && is_numeric($nid) && empty(arg(2))) {
     $node = node_load($nid);
     $translations = $node->translations->data;
 
-    if (!empty($translations) && !array_key_exists($lang, $translations)) {
-      drupal_goto($base_url . '/node/' . $nid);
+    if (!array_key_exists('und', $translations)) {
+      if (!empty($translations) && !array_key_exists($lang, $translations)) {
+        drupal_goto($base_url . '/node/' . $nid);
+      }
     }
   }
 
