@@ -593,13 +593,27 @@ print $output;
   $handler->display->display_options['fields']['field_agency_acronym']['label'] = '';
   $handler->display->display_options['fields']['field_agency_acronym']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_agency_acronym']['element_label_colon'] = FALSE;
+  /* Field: Entity translation: Acronym: translated */
+  $handler->display->display_options['fields']['field_agency_acronym_et']['id'] = 'field_agency_acronym_et';
+  $handler->display->display_options['fields']['field_agency_acronym_et']['table'] = 'field_data_field_agency_acronym';
+  $handler->display->display_options['fields']['field_agency_acronym_et']['field'] = 'field_agency_acronym_et';
+  $handler->display->display_options['fields']['field_agency_acronym_et']['label'] = '';
+  $handler->display->display_options['fields']['field_agency_acronym_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_agency_acronym_et']['element_label_colon'] = FALSE;
+  /* Field: Entity translation: Title: translated */
+  $handler->display->display_options['fields']['title_field_et']['id'] = 'title_field_et';
+  $handler->display->display_options['fields']['title_field_et']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field_et']['field'] = 'title_field_et';
+  $handler->display->display_options['fields']['title_field_et']['label'] = '';
+  $handler->display->display_options['fields']['title_field_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field_et']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['label'] = '';
   $handler->display->display_options['fields']['title_field']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['title_field']['alter']['text'] = '[field_agency_acronym] - [title_field]';
+  $handler->display->display_options['fields']['title_field']['alter']['text'] = '[field_agency_acronym_et] - [title_field_et]';
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 1;
 
@@ -644,12 +658,21 @@ print $output;
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Entity translation: Acronym: translated */
+  $handler->display->display_options['fields']['field_agency_acronym_et']['id'] = 'field_agency_acronym_et';
+  $handler->display->display_options['fields']['field_agency_acronym_et']['table'] = 'field_data_field_agency_acronym';
+  $handler->display->display_options['fields']['field_agency_acronym_et']['field'] = 'field_agency_acronym_et';
+  $handler->display->display_options['fields']['field_agency_acronym_et']['label'] = '';
+  $handler->display->display_options['fields']['field_agency_acronym_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_agency_acronym_et']['element_label_colon'] = FALSE;
   /* Field: Content: Acronym */
   $handler->display->display_options['fields']['field_agency_acronym']['id'] = 'field_agency_acronym';
   $handler->display->display_options['fields']['field_agency_acronym']['table'] = 'field_data_field_agency_acronym';
   $handler->display->display_options['fields']['field_agency_acronym']['field'] = 'field_agency_acronym';
   $handler->display->display_options['fields']['field_agency_acronym']['label'] = '';
   $handler->display->display_options['fields']['field_agency_acronym']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_agency_acronym']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_agency_acronym']['alter']['text'] = '[field_agency_acronym_et] ';
   $handler->display->display_options['fields']['field_agency_acronym']['element_label_colon'] = FALSE;
   /* Field: Content: Link */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
@@ -659,11 +682,20 @@ print $output;
   $handler->display->display_options['fields']['view_node']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['view_node']['alter']['text'] = '[field_agency_acronym]';
   $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
+  /* Field: Entity translation: Title: translated */
+  $handler->display->display_options['fields']['title_field_et']['id'] = 'title_field_et';
+  $handler->display->display_options['fields']['title_field_et']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field_et']['field'] = 'title_field_et';
+  $handler->display->display_options['fields']['title_field_et']['label'] = '';
+  $handler->display->display_options['fields']['title_field_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field_et']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['label'] = '';
+  $handler->display->display_options['fields']['title_field']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title_field']['alter']['text'] = '[title_field_et] ';
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 1;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
@@ -918,29 +950,6 @@ print $output;
   $handler->display->display_options['filters']['field_more_blocks_value']['operator'] = 'not';
   $handler->display->display_options['filters']['field_more_blocks_value']['value'] = array(
     1 => '1',
-  );
-  $translatables['agencies'] = array(
-    t('Master'),
-    t('Agencies'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('field_about_page'),
-    t('[title_field] ([field_agency_acronym])'),
-    t('| More'),
-    t('[body] <span class="more-link">[view_node]</span>'),
-    t('Page'),
-    t('Block'),
-    t('[field_agency_acronym] - [title_field]'),
-    t('Footer Block'),
-    t('[field_agency_acronym]'),
-    t('Related Agencies'),
-    t('Related agencies'),
-    t('All'),
-    t('Geography'),
   );
   $export['agencies'] = $view;
 
