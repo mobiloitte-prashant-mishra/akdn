@@ -383,7 +383,7 @@ function akdn_custom_form_validation($form, &$form_state) {
     }
   }
   if (!$valid) {
-    form_set_error('mailshot_subscribe', 'Subscriptions field is required');
+    form_set_error('mailshot_subscribe', t('Subscriptions field is required'));
   }
 }
 
@@ -2402,7 +2402,7 @@ function akdn_search_forms($form, &$form_state, $delta) {
       );
       //$text = '<li><span class="search_toggle">' . t('Search') . '</span></li>';
       $text = '';
-      $text .= ' <li>' . l('Subscribe', 'subscribe', array(
+      $text .= ' <li>' . l(t("Subscribe"), 'subscribe', array(
             'attributes' =>
             array(
               'title' => t('Mail'),
@@ -2410,7 +2410,7 @@ function akdn_search_forms($form, &$form_state, $delta) {
             )
               )
           ) . '</li>';
-      $text .= '<li>' . l('Mail', 'forward', array(
+      $text .= '<li>' . l(t("Mail"), 'forward', array(
             'query' => array('path' => current_path()),
             'attributes' => array(
               'title' => t('Send this page by email'),
@@ -2419,8 +2419,8 @@ function akdn_search_forms($form, &$form_state, $delta) {
           )) . '</li>';
       $block = module_invoke('addthis', 'block_view', 'addthis_block');
       $addthis_block = render($block['content']);
-      $text .= '<li><div style="display:none!important;">' . $addthis_block . '</div><a href="javascript:;" class="addthis_button share_toggle" title="Share this page">Share</a></li>';
-      $text .= '<li>' . l('Print', current_path() . '#', array(
+      $text .= '<li><div style="display:none!important;">' . $addthis_block . '</div><a href="javascript:;" class="addthis_button share_toggle" title="Share this page">' . t("Share") . '</a></li>';
+      $text .= '<li>' . l(t("Print"), current_path() . '#', array(
             'attributes' => array(
               'title' => t('Print this page'),
               'rel' => 'nofollow',
