@@ -280,6 +280,7 @@ features[field_instance][] = node-facts_block-field_facts_number
 features[field_instance][] = node-facts_block-field_facts_show_on_homepage
 features[field_instance][] = node-facts_block-field_focus_area
 features[field_instance][] = node-facts_block-field_tags
+features[field_instance][] = node-facts_block-title_field
 features[field_instance][] = node-featured_content-field_agency
 features[field_instance][] = node-featured_content-field_akmi_activity
 features[field_instance][] = node-featured_content-field_caption

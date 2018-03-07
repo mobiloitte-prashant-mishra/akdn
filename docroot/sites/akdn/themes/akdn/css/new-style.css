@@ -1,11 +1,14 @@
-.block-akdn-custom-page-lang-switcher {
+.block-akdn-custom-page-lang-switcher,
+.pane-akdn-custom-page-lang-switcher {
     background: #f4f1e8;
     margin-bottom: 20px;
     padding: 20px;
     line-height: normal;
+    height: 56px;
 }
 
-.block-akdn-custom-page-lang-switcher h2 {
+.block-akdn-custom-page-lang-switcher h2,
+.pane-akdn-custom-page-lang-switcher h2 {
     color: #3c0202;
     font-size: 15px;
     float: left;
@@ -14,39 +17,46 @@
     padding: 0;
 }
 
-.block-akdn-custom-page-lang-switcher .content {
+.block-akdn-custom-page-lang-switcher .content,
+.pane-akdn-custom-page-lang-switcher .pane-content {
     float: left;
     width: calc(100% - 260px);
 }
 
-.block-akdn-custom-page-lang-switcher .content ul {
+.block-akdn-custom-page-lang-switcher .content ul,
+.pane-akdn-custom-page-lang-switcher .pane-content ul {
     padding: 0;
     margin: 0;
 }
 
-.block-akdn-custom-page-lang-switcher .content ul li {
+.block-akdn-custom-page-lang-switcher .content ul li,
+.pane-akdn-custom-page-lang-switcher .pane-content ul li {
     list-style: none;
     display: inline-block;
     padding-bottom: 5px;
 }
 
-.block-akdn-custom-page-lang-switcher .content ul li a {
+.block-akdn-custom-page-lang-switcher .content ul li a,
+.pane-akdn-custom-page-lang-switcher .pane-content ul li a {
     border-left: 1px solid #3c0202;
     padding: 0 10px;
 }
 
-.block-akdn-custom-page-lang-switcher .content ul li:first-child.active + li a {
+.block-akdn-custom-page-lang-switcher .content ul li:first-child.active + li a,
+.pane-akdn-custom-page-lang-switcher .pane-content ul li:first-child.active + li a {
     border-left: 0 none;
     padding: 0 10px 0 0;
 }
 
-.block-akdn-custom-page-lang-switcher .content ul li.first a {
+.block-akdn-custom-page-lang-switcher .content ul li.first a,
+.pane-akdn-custom-page-lang-switcher .pane-content ul li.first a {
     border-left: 0 none;
     padding: 0 10px 0 0;
 }
 
 @media only screen and (max-width: 767px) {
-    .block-akdn-custom-page-lang-switcher .content {
+    .block-akdn-custom-page-lang-switcher .content,
+    .pane-akdn-custom-page-lang-switcher .pane-content {
         width: 100%;
         padding-top: 5px;
     }
@@ -54,27 +64,60 @@
 
 
 /*RTL CSS*/
-html[dir='rtl'] .block-akdn-custom-page-lang-switcher h2 {
+html[dir='rtl'] .block-akdn-custom-page-lang-switcher h2,
+html[dir='rtl'] .pane-akdn-custom-page-lang-switcher h2 {
     float: right;
     margin: 0 0 0 8px;
 }
 
-html[dir='rtl'] .block-akdn-custom-page-lang-switcher .content {
+html[dir='rtl'] .block-akdn-custom-page-lang-switcher .content,
+html[dir='rtl'] .pane-akdn-custom-page-lang-switcher .pane-content {
     float: right;
 }
 
-html[dir='rtl'] .block-akdn-custom-page-lang-switcher .content ul li a {
+html[dir='rtl'] .block-akdn-custom-page-lang-switcher .content ul li a,
+html[dir='rtl'] .pane-akdn-custom-page-lang-switcher .pane-content ul li a {
     border-right: 1px solid #3c0202;
     border-left: 0 none;
     padding: 0 10px;
 }
 
-html[dir='rtl'] .block-akdn-custom-page-lang-switcher .content ul li:first-child.active + li a {
+html[dir='rtl'] .block-akdn-custom-page-lang-switcher .content ul li:first-child.active + li a,
+html[dir='rtl'] .pane-akdn-custom-page-lang-switcher .pane-content ul li:first-child.active + li a {
     border: 0 none;
     padding: 0 0 0 10px;
 }
 
-html[dir='rtl'] .block-akdn-custom-page-lang-switcher .content ul li.first a {
+html[dir='rtl'] .block-akdn-custom-page-lang-switcher .content ul li.first a,
+html[dir='rtl'] .pane-akdn-custom-page-lang-switcher .pane-content ul li.first a {
     border: 0 none;
     padding: 0 0 0 10px;
+}
+
+html[dir='rtl'] .static_text {
+    float: right;
+    margin: 9px 0 0 8px;
+}
+
+html[dir='rtl'] .breadcrumb {
+    text-align: right;
+}
+
+html[dir='rtl'] .breadcrumb .inline {
+    float: right;
+}
+
+html[dir='rtl'] .breadcrumb .delimiter {
+    float: right;
+    margin: 0 5px;
+}
+
+html[dir='rtl'] .slide-text {
+    text-align: right;
+    padding: 10px 15px 10px 110px
+}
+
+html[dir='rtl'] .pane-node-body li:before {
+    margin-left: 0;
+    margin-right: -14px;
 }
