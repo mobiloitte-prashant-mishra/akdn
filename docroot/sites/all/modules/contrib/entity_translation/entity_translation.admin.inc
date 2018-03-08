@@ -627,10 +627,15 @@ function entity_translation_translatable_batch($translatable, $field_name, $copy
       }
     }
     else {
-      $entities = array();
-      foreach ($partial_entities as $key => $value) {
-        $entyty = entity_revision_load($entity_type, $key);
-        $entities[$key] = $entyty;
+      if ($entity_type == 'node') {
+        $entities = array();
+        foreach ($partial_entities as $key => $value) {
+          $entyty = entity_revision_load($entity_type, $key);
+          $entities[$key] = $entyty;
+        }
+      }
+      else if ($entity_type == 'file') {
+        $entities = entity_load($entity_type, array_keys($partial_entities));
       }
     }
 
