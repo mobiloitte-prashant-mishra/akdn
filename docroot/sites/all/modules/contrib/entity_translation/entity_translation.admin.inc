@@ -627,7 +627,11 @@ function entity_translation_translatable_batch($translatable, $field_name, $copy
       }
     }
     else {
-      $entities = entity_load($entity_type, array_keys($partial_entities));
+      $entities = array();
+      foreach ($partial_entities as $key => $value) {
+        $entyty = entity_revision_load($entity_type, $key);
+        $entities[$key] = $entyty;
+      }
     }
 
     foreach ($entities as $entity) {
@@ -691,6 +695,10 @@ function entity_translation_translatable_batch($translatable, $field_name, $copy
   }
 
   $context['finished'] = $context['sandbox']['progress'] / $context['sandbox']['max'];
+  // If no progress was made then set as finished to avoid infinite loop.
+  if ($offset == $context['sandbox']['progress']) {
+    $context['finished'] = 1;
+  }
 }
 
 /**
