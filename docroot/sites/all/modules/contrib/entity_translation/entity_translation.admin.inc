@@ -664,7 +664,9 @@ function entity_translation_translatable_batch($translatable, $field_name, $copy
         $translations = $handler->getTranslations();
         if ($copy_all_languages && !empty($translations->data)) {
           foreach ($translations->data as $translation) {
-            $entity->{$field_name}[$translation['language']] = $entity->{$field_name}[LANGUAGE_NONE];
+            if (empty($entity->{$field_name}[$translation['language']])) {
+              $entity->{$field_name}[$translation['language']] = $entity->{$field_name}[LANGUAGE_NONE];
+            }
           }
         }
         else {
