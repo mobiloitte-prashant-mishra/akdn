@@ -694,25 +694,25 @@ function entity_translation_translatable_batch($translatable, $field_name, $copy
         }
         _entity_translation_update_field($entity_type, $entity, $field_name);
       }
-      elseif ($translatable && !isset($entity->{$field_name}[LANGUAGE_NONE]) && isset($entity->{$field_name}['en'])) {
-        $translations = $handler->getTranslations();
-        if ($copy_all_languages && !empty($translations->data)) {
-          foreach ($translations->data as $translation) {
-            if (empty($entity->{$field_name}[$translation['language']])) {
-              $entity->{$field_name}[$translation['language']] = $entity->{$field_name}['en'];
-            }
-          }
-        }
-        else {
-          $entity->{$field_name}[$langcode] = $entity->{$field_name}[LANGUAGE_NONE];
-        }
-
-        // Store the original value.
-        _entity_translation_update_field($entity_type, $entity, $field_name);
-        $entity->{$field_name}[LANGUAGE_NONE] = array();
-        // Remove the language neutral value.
-        _entity_translation_update_field($entity_type, $entity, $field_name);
-      }
+//      elseif ($translatable && !isset($entity->{$field_name}[LANGUAGE_NONE]) && isset($entity->{$field_name}['en'])) {
+//        $translations = $handler->getTranslations();
+//        if ($copy_all_languages && !empty($translations->data)) {
+//          foreach ($translations->data as $translation) {
+//            if (empty($entity->{$field_name}[$translation['language']])) {
+//              $entity->{$field_name}[$translation['language']] = $entity->{$field_name}['en'];
+//            }
+//          }
+//        }
+//        else {
+//          $entity->{$field_name}[$langcode] = $entity->{$field_name}[LANGUAGE_NONE];
+//        }
+//
+//        // Store the original value.
+//        _entity_translation_update_field($entity_type, $entity, $field_name);
+//        $entity->{$field_name}[LANGUAGE_NONE] = array();
+//        // Remove the language neutral value.
+//        _entity_translation_update_field($entity_type, $entity, $field_name);
+//      }
       else {
         // No need to save unchanged entities.
         continue;
