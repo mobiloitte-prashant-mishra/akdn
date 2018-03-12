@@ -21820,6 +21820,10 @@ html[dir='rtl'] .quicklinks_social_block, html[dir='rtl'] .panel-whatwedo, html[
 html[dir='rtl'] .social-box li:first-child a {
   margin-left: 10px;
 }
+/* line 153, ../sass/_new-style.scss */
+html[dir='rtl'] .region-footer-second {
+  text-align: center;
+}
 
 /* Global site change*/
 /* for search page*/
