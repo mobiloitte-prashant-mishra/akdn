@@ -21811,16 +21811,12 @@ html[dir='rtl'] #mini-panel-geography_footer_menu .pane-title {
 html[dir='rtl'] #mini-panel-geography_footer_menu .pane-title .nolink:after, html[dir='rtl'] #mini-panel-geography_footer_menu .pane-title a:after {
   right: initial;
   left: 0;
-  -moz-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -webkit-transform: rotate(180deg);
-  transform: rotate(180deg);
 }
-/* line 142, ../sass/_new-style.scss */
+/* line 141, ../sass/_new-style.scss */
 html[dir='rtl'] .quicklinks_social_block, html[dir='rtl'] .panel-whatwedo, html[dir='rtl'] .pane-geography-footer-menu, html[dir='rtl'] .pane-agencies {
   float: right;
 }
-/* line 148, ../sass/_new-style.scss */
+/* line 147, ../sass/_new-style.scss */
 html[dir='rtl'] .social-box li:first-child a {
   margin-left: 10px;
 }
