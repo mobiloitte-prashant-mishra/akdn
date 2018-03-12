@@ -22018,6 +22018,10 @@ img {
 .social-box li:first-child a {
   margin-left: 10px;
 }
+/* line 153, ../sass/_new-style.scss */
+html[dir='rtl'] .region-footer-second {
+  text-align: center;
+}
 
 /* Global site change*/
 /* for search page*/
