@@ -330,7 +330,6 @@ img {
       &:after {
         right: initial;
         left: 0;
-        @include transform(rotate(180deg));
       }
     }
   }
