@@ -244,13 +244,13 @@ html[dir='rtl'] {
         }
       }
     }
+  }
 
-    .form-submit {
-      right: inherit;
-      left: 0;
-      margin: 12px 1px 0 7px;
-      transform: rotate(90deg);
-    }
+  .form-submit {
+    right: inherit;
+    left: 0;
+    margin: 12px 1px 0 7px;
+    transform: rotate(90deg);
   }
 
   .main-navbar  {
@@ -315,4 +315,35 @@ html[dir='rtl'] {
 
 img {
   width: auto;
+}
+
+//Footer
+.pane-agencies td {
+  text-align: right;
+}
+
+#mini-panel-geography_footer_menu {
+  .pane-title {
+    position: relative;
+
+    .nolink, a {
+      &:after {
+        right: initial;
+        left: 0;
+        @include transform(rotate(180deg));
+      }
+    }
+  }
+}
+
+.quicklinks_social_block, .panel-whatwedo, .pane-geography-footer-menu, .pane-agencies {
+  float: right;
+}
+
+.social-box {
+  li:first-child {
+    a {
+      margin-left: 10px;
+    }
+  }
 }
