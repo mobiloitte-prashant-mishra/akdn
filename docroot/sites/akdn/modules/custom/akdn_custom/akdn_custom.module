@@ -1742,10 +1742,17 @@ function in_array_r($needle, $haystack, $strict = FALSE) {
  *
  */
 function what_we_do_news_and_resources() {
+  global $language;
+  $lang = $language->language;
   $arg = arg(1);
   $load = node_load($arg);
-  $field_show_news_and_resources = $load->field_show_news_and_resources;
-  $show = $load->field_show_news_and_resources[key($field_show_news_and_resources)][0]['value'];
+  $show = 0;
+  if ($load->field_show_news_and_resources[$lang][0]['value']) {
+    $show = $load->field_show_news_and_resources[$lang][0]['value'];
+  }
+  else {
+    $show = $load->field_show_news_and_resources['und'][0]['value'];
+  }
 
   if ($show == 1) {
     $term = nat_get_terms_by_vocabulary($arg);
@@ -1799,31 +1806,31 @@ function what_we_do_news_and_resources() {
           $news_query = akdn_custom_query_get_article_type_nid_and_published_date($ntid, 2);
           $array[$news_query[0]->nid] = $news_query[0]->date_formatted;
         }
-        
+
         $field_select_news_res_content = $load->field_select_news_res_content;
         if (in_array_r('in-the-media', $load->field_select_news_res_content[key($field_select_news_res_content)])) {
           $in_media_query = akdn_custom_query_get_article_type_nid_and_published_date($ntid, 2611);
           $array[$in_media_query[0]->nid] = $in_media_query[0]->date_formatted;
         }
-        
+
         $field_select_news_res_content = $load->field_select_news_res_content;
         if (in_array_r('press-release', $load->field_select_news_res_content[key($field_select_news_res_content)])) {
           $press_release_query = akdn_custom_query_get_article_type_nid_and_published_date($ntid, 4);
           $array[$press_release_query[0]->nid] = $press_release_query[0]->date_formatted;
         }
-        
+
         $field_select_news_res_content = $load->field_select_news_res_content;
         if (in_array_r('publications', $load->field_select_news_res_content[key($field_select_news_res_content)])) {
           $publication = akdn_custom_query_get_nid_and_published_date($ntid, 'publication');
           $array[$publication[0]->nid] = $publication[0]->date_formatted;
         }
-        
+
         $field_select_news_res_content = $load->field_select_news_res_content;
         if (in_array_r('speeches', $load->field_select_news_res_content[key($field_select_news_res_content)])) {
           $speeches = akdn_custom_query_get_nid_and_published_date($ntid, 'speech');
           $array[$speeches[0]->nid] = $speeches[0]->date_formatted;
         }
-        
+
         $field_select_news_res_content = $load->field_select_news_res_content;
         if (in_array_r('videos', $load->field_select_news_res_content[key($field_select_news_res_content)])) {
           $videos = akdn_custom_query_get_nid_and_published_date($ntid, 'podcast');
@@ -1892,30 +1899,51 @@ function what_we_do_news_and_resources() {
 
       if ($node->type == 'article') {
         $field_article_cat = $node->field_article_cat;
-        $tid = $node->field_article_cat[key($field_article_cat)][0]['tid'];
+        $tid = $node->field_article_cat[$lang][0]['tid'];
+        if (empty($tid)) {
+          if ($node->field_article_cat[$lang][0]['tid']) {
+            $tid = $node->field_article_cat[$lang][0]['tid'];
+          }
+          else {
+            $tid = $node->field_article_cat['und'][0]['tid'];
+          }
+        }
         $term = taxonomy_term_load($tid);
         $name = $term->name;
         if ($name == 'Press Release') {
           $url = 'press-releases';
-          $type = 'Press Releases';
-          $read = l('View', 'node/' . $node->nid, $attribute);
+          $type = t('Press Releases');
+          $read = l(t('View'), 'node/' . $node->nid, $attribute);
         }
         if ($name == 'In the media') {
           $url = 'in-the-media';
-          $type = 'In the Media';
+          $type = t('In the Media');
           $field_media_source = $node->field_media_source;
-          $source = reset($field_media_source)[0]['url'];
-          $attribute = array('attributes' => array('target'=>'_blank'));
-          $read = l('View', $source, $attribute);
+          if ($field_media_source[$lang][0]['url']) {
+            $source = $field_media_source[$lang][0]['url'];
+          }
+          else {
+            $source = $field_media_source['und'][0]['url'];
+          }
+          $attribute = array('attributes' => array('target' => '_blank'));
+          $read = l(t('View'), $source, $attribute);
         }
         if ($name == 'News') {
           $type = 'News';
           $url = 'news';
-          $read = l('View', 'node/' . $node->nid, $attribute);
+          $read = l(t('View'), 'node/' . $node->nid, $attribute);
         }
 
-        $image = reset($node->field_article_img);
+        if ($node->field_article_img[$lang]) {
+          $image = $node->field_article_img[$lang];
+        }
+        else {
+          $image = $node->field_article_img['en'];
+        }
 
+        if (empty($image)) {
+          $image = $node->field_article_img['und'];
+        }
         /* displaying default image if image not uploaded for article */
         if (empty($image)) {
           $info = field_info_instance('node', 'field_article_img', 'article');
@@ -1923,85 +1951,133 @@ function what_we_do_news_and_resources() {
           $image = array($file);
         }
         //$read = l('View', 'node/' . $node->nid, $attribute);
-        $readall = l('View all', 'press-centre/' . $url, array('query' => array('f[0]' => $filter . ':' . $ntid)));
+        $readall = l(t('View all'), 'press-centre/' . $url, array('query' => array('f[0]' => $filter . ':' . $ntid)));
       }
       if ($node->type == 'podcast') {
         //$name = 'podcast';
         $type = 'Videos';
-        $image = reset($node->field_podcast_image);
+        if ($node->field_podcast_image[$lang]) {
+          $image = $node->field_podcast_image[$lang];
+        }
+        else {
+          $image = $node->field_podcast_image['en'];
+        }
+        if (empty($image)) {
+          $image = $node->field_podcast_image['und'];
+        }
         if (empty($image)) {
           $info = field_info_instance('node', 'field_podcast_image', 'podcast');
           $file = (array) file_load($info['settings']['default_image']);
           $image = array($file);
         }
         $title = $node->title;
-        $read = l('View', 'node/' . $node->nid);
-        $readall = l('View all', 'press-centre/videos', array('query' => array('f[0]' => $filter . ':' . $ntid)));
+        $read = l(t('View'), 'node/' . $node->nid);
+        $readall = l(t('View all'), 'press-centre/videos', array('query' => array('f[0]' => $filter . ':' . $ntid)));
       }
 
       if ($node->type == 'gallery') {
         $type = 'Photographs';
-        $image = reset($node->field_gallery_images);
+        if ($node->field_gallery_images[$lang]) {
+          $image = $node->field_gallery_images[$lang];
+        }
+        else {
+          $image = $node->field_gallery_images['en'];
+        }
+        if (empty($image)) {
+          $image = $node->field_gallery_images['und'];
+        }
         if (empty($image)) {
           $info = field_info_instance('node', 'field_gallery_images', 'gallery');
           $file = (array) file_load($info['settings']['default_image']);
           $image = array($file);
         }
         $title = $node->title;
-        $read = l('View', 'node/' . $node->nid);
-        $readall = l('View all', 'press-centre/galleries', array('query' => array('f[0]' => $filter . ':' . $ntid)));
+        $read = l(t('View'), 'node/' . $node->nid);
+        $readall = l(t('View all'), 'press-centre/galleries', array('query' => array('f[0]' => $filter . ':' . $ntid)));
       }
 
       if ($node->type == 'event') {
         $type = 'Events';
-        $image = reset($node->field_event_image);
+        if ($node->field_event_image[$lang]) {
+          $image = $node->field_event_image[$lang];
+        }
+        else {
+          $image = $node->field_event_image['en'];
+        }
+        if (empty($image)) {
+          $image = $node->field_event_image['und'];
+        }
         if (empty($image)) {
           $info = field_info_instance('node', 'field_event_image', 'event');
           $file = (array) file_load($info['settings']['default_image']);
           $image = array($file);
         }
         $title = $node->title;
-        $read = l('View', 'node/' . $node->nid);
-        $readall = l('View all', 'press-centre/events', array('query' => array('f[0]' => $filter . ':' . $ntid)));
+        $read = l(t('View'), 'node/' . $node->nid);
+        $readall = l(t('View all'), 'press-centre/events', array('query' => array('f[0]' => $filter . ':' . $ntid)));
       }
 
       if ($node->type == 'publication') {
         $type = 'Publications';
-        $image = reset($node->field_publication_image);
+        if ($node->field_publication_image[$lang]) {
+          $image = $node->field_publication_image[$lang];
+        }
+        else {
+          $image = $node->field_publication_image['en'];
+        }
+        if (empty($image)) {
+          $image = $node->field_publication_image['und'];
+        }
         if (empty($image)) {
           $info = field_info_instance('node', 'field_publication_image', 'publication');
           $file = (array) file_load($info['settings']['default_image']);
           $image = array($file);
         }
         $title = $node->title;
-        $read = l('View', 'node/' . $node->nid);
-        $readall = l('View all', 'press-centre/publications', array('query' => array('f[0]' => $filter . ':' . $ntid)));
+        $read = l(t('View'), 'node/' . $node->nid);
+        $readall = l(t('View all'), 'press-centre/publications', array('query' => array('f[0]' => $filter . ':' . $ntid)));
       }
 
       if ($node->type == 'speech') {
         $type = 'Speeches';
-        $image = reset($node->field_speech_image);
+        if ($node->field_speech_image[$lang]) {
+          $image = $node->field_speech_image[$lang];
+        }
+        else {
+          $image = $node->field_speech_image['en'];
+        }
+        if (empty($image)) {
+          $image = $node->field_speech_image['und'];
+        }
         if (empty($image)) {
           $info = field_info_instance('node', 'field_speech_image', 'speech');
           $file = (array) file_load($info['settings']['default_image']);
           $image = array($file);
         }
         $title = $node->title;
-        $read = l('View', 'node/' . $node->nid);
-        $readall = l('View all', 'press-centre/speeches', array('query' => array('f[0]' => $filter . ':' . $ntid)));
+        $read = l(t('View'), 'node/' . $node->nid);
+        $readall = l(t('View all'), 'press-centre/speeches', array('query' => array('f[0]' => $filter . ':' . $ntid)));
       }
 
       if ($node->type == 'project') {
         $type = 'Spotlights';
-        $image = reset($node->field_project_image);
+        if ($node->field_project_image[$lang]) {
+          $image = $node->field_project_image[$lang];
+        }
+        else {
+          $image = $node->field_project_image['en'];
+        }
+        if (empty($image)) {
+          $image = $node->field_project_image['und'];
+        }
         if (empty($image)) {
           $info = field_info_instance('node', 'field_project_image', 'project');
           $file = (array) file_load($info['settings']['default_image']);
           $image = array($file);
         }
         $title = $node->title;
-        $read = l('View', 'node/' . $node->nid);
-        $readall = l('View all', 'press-centre/projects', array('query' => array('f[0]' => $filter . ':' . $ntid)));
+        $read = l(t('View'), 'node/' . $node->nid);
+        $readall = l(t('View all'), 'press-centre/projects', array('query' => array('f[0]' => $filter . ':' . $ntid)));
       }
 
       $output .= '<div class = "what-we-do-inner-wrapper"><div class= "what-we-do-subwrapper">';
@@ -2026,12 +2102,34 @@ function what_we_do_news_and_resources() {
       $field_publish_date = $node->field_publish_date;
       $output .= '<div class= "date">' . date('d F Y', $node->field_publish_date[key($field_publish_date)][0]['value']) . '</div>';
       if ($name == 'In the media') {
-       $field_short_title = $node->field_short_title;
-       $output .= '<div class= "title">' . l($node->field_short_title[key($field_short_title)][0]['value'], $source, $attribute) . '</div>';
+        $field_short_title = $node->field_short_title;
+        if ($node->field_short_title[$lang][0]['value']) {
+          $short_title = $node->field_short_title[$lang][0]['value'];
+        }
+        else {
+          $short_title = $node->field_short_title['und'][0]['value'];
+        }
+        $output .= '<div class= "title">' . l($short_title, $source, $attribute) . '</div>';
+      }
+      else if ($node->type == 'publication' || ($node->type == 'article' && $name != 'In the media')) {
+        $field_short_title = $node->field_short_title;
+        if ($node->field_short_title[$lang][0]['value']) {
+          $short_title = $node->field_short_title[$lang][0]['value'];
+        }
+        else {
+          $short_title = $node->field_short_title['und'][0]['value'];
+        }
+        $output .= '<div class= "title">' . l($short_title, 'node/' . $node->nid) . '</div>';
       }
       else {
         $field_short_title = $node->field_short_title;
-      	$output .= '<div class= "title">' . l($node->field_short_title[key($field_short_title)][0]['value'], 'node/' . $node->nid) . '</div>';
+        if ($node->field_short_title[$lang][0]['value']) {
+          $short_title = $node->field_short_title[$lang][0]['value'];
+        }
+        else {
+          $short_title = $node->field_short_title['und'][0]['value'];
+        }
+        $output .= '<div class= "title">' . l($short_title, 'node/' . $node->nid) . '</div>';
       }
       $output .= '<span class= "read">[' . $read . '</span>';
       $output .= '<span class= "readall">' . " | " . $readall . ']</span>';
