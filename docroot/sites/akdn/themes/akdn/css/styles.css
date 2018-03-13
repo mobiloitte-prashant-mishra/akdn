@@ -22151,6 +22151,128 @@ html[dir='rtl'] .breaking-news-text-wrapper .breaking-news-left {
 html[dir='rtl'] .breaking-news-text-wrapper .breaking-news-right {
   float: right;
 }
+/* line 493, ../sass/_new-style.scss */
+html[dir='rtl'] .panel-display.panel-1col {
+  overflow: hidden;
+}
+/* line 499, ../sass/_new-style.scss */
+html[dir='rtl'] .custom-subscribe .subs-left {
+  float: right;
+  text-align: right;
+}
+@media all and (max-width: 767px) {
+  /* line 499, ../sass/_new-style.scss */
+  html[dir='rtl'] .custom-subscribe .subs-left {
+    padding: 0;
+  }
+}
+/* line 508, ../sass/_new-style.scss */
+html[dir='rtl'] .custom-subscribe .subs-right {
+  float: right;
+}
+/* line 511, ../sass/_new-style.scss */
+html[dir='rtl'] .custom-subscribe .subs-right .mc-field-group {
+  overflow: auto;
+}
+/* line 514, ../sass/_new-style.scss */
+html[dir='rtl'] .custom-subscribe .subs-right .mc-field-group label {
+  float: right;
+  text-align: right;
+  height: auto !important;
+}
+@media all and (max-width: 767px) {
+  /* line 514, ../sass/_new-style.scss */
+  html[dir='rtl'] .custom-subscribe .subs-right .mc-field-group label {
+    float: none;
+    width: 100% !important;
+  }
+}
+@media all and (max-width: 767px) {
+  /* line 525, ../sass/_new-style.scss */
+  html[dir='rtl'] .custom-subscribe .subs-right .mc-field-group input, html[dir='rtl'] .custom-subscribe .subs-right .mc-field-group select {
+    width: 100% !important;
+    margin: 0;
+  }
+}
+/* line 534, ../sass/_new-style.scss */
+html[dir='rtl'] .custom-subscribe select {
+  padding-left: 10px !important;
+  background-position: 1% center;
+}
+/* line 539, ../sass/_new-style.scss */
+html[dir='rtl'] .custom-subscribe .elements {
+  float: right !important;
+  margin-right: 10px;
+}
+@media all and (max-width: 1078px) {
+  /* line 539, ../sass/_new-style.scss */
+  html[dir='rtl'] .custom-subscribe .elements {
+    margin-right: 0px;
+  }
+}
+@media all and (max-width: 767px) {
+  /* line 549, ../sass/_new-style.scss */
+  html[dir='rtl'] .custom-subscribe.subs-subscriptions .subs-right, html[dir='rtl'] .custom-subscribe.subs-acceptance .subs-right {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+/* line 557, ../sass/_new-style.scss */
+html[dir='rtl'] .custom-subscribe.subs-subscriptions .input-group li, html[dir='rtl'] .custom-subscribe.subs-acceptance .input-group li {
+  overflow: auto;
+}
+/* line 560, ../sass/_new-style.scss */
+html[dir='rtl'] .custom-subscribe.subs-subscriptions .input-group li label, html[dir='rtl'] .custom-subscribe.subs-acceptance .input-group li label {
+  float: right;
+  text-align: right;
+  margin: 0;
+  width: auto !important;
+}
+/* line 567, ../sass/_new-style.scss */
+html[dir='rtl'] .custom-subscribe.subs-subscriptions .input-group li input, html[dir='rtl'] .custom-subscribe.subs-acceptance .input-group li input {
+  float: right;
+  width: auto !important;
+  margin-top: 5px;
+}
+/* line 579, ../sass/_new-style.scss */
+html[dir='rtl'] .custom-subscribe.subs-acceptance .input-group li label {
+  width: 89% !important;
+}
+/* line 588, ../sass/_new-style.scss */
+html[dir='rtl'] #mc_embed_signup_scroll .form-note {
+  float: right !important;
+  text-align: right;
+}
+/* line 593, ../sass/_new-style.scss */
+html[dir='rtl'] #mc_embed_signup_scroll .subs_btn_wrap {
+  float: left !important;
+}
+/* line 596, ../sass/_new-style.scss */
+html[dir='rtl'] #mc_embed_signup_scroll .subs_btn_wrap .form-submit {
+  transform: none;
+}
+/* line 607, ../sass/_new-style.scss */
+html[dir='rtl'] .node-type-webform .region-content .node-webform .webform-client-form label {
+  float: right;
+  width: auto;
+}
+/* line 612, ../sass/_new-style.scss */
+html[dir='rtl'] .node-type-webform .region-content .node-webform .webform-client-form .form-textarea-wrapper {
+  float: left;
+}
+/* line 616, ../sass/_new-style.scss */
+html[dir='rtl'] .node-type-webform .region-content .node-webform .webform-client-form select {
+  padding-left: 10px !important;
+  background-position: 1% center;
+}
+/* line 621, ../sass/_new-style.scss */
+html[dir='rtl'] .node-type-webform .region-content .node-webform .webform-client-form .form-actions {
+  float: left;
+}
+/* line 624, ../sass/_new-style.scss */
+html[dir='rtl'] .node-type-webform .region-content .node-webform .webform-client-form .form-actions .form-submit {
+  transform: none;
+}
 
 /* Global site change*/
 /* for search page*/
