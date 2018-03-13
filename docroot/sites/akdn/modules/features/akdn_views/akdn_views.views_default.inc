@@ -12266,6 +12266,7 @@ print $explode[1];
   $handler->display->display_options['filters']['status_extra']['table'] = 'node';
   $handler->display->display_options['filters']['status_extra']['field'] = 'status_extra';
   $export['basic_pages_view'] = $view;
+<<<<<<< HEAD
 
   $view = new view();
   $view->name = 'basic_pages_view_draft';
@@ -12350,6 +12351,8 @@ print $explode[1];
     t('Baisc Page Accordian summary Draft'),
   );
   $export['basic_pages_view_draft'] = $view;
+=======
+>>>>>>> AKDN-1563-basic-slidshow-new
 
   $view = new view();
   $view->name = 'breaking_news';
