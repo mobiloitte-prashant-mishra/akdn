@@ -598,4 +598,31 @@ html[dir='rtl'] {
       }
     }
   }
+
+  /// Contact Us Form
+  .node-type-webform {
+    .region-content {
+      .node-webform {
+        .webform-client-form {
+          label {
+            float: right;
+            width: auto;
+          }
+
+          .form-textarea-wrapper {
+            float: left;
+          }
+
+          select {
+            padding-left: 10px !important;
+            background-position: 1% center;
+          }
+
+          .form-actions {
+            float: left;
+          }
+        }
+      }
+    }
+  }
 }

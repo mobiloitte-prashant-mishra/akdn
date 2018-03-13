@@ -22247,9 +22247,27 @@ html[dir='rtl'] #mc_embed_signup_scroll .form-note {
 html[dir='rtl'] #mc_embed_signup_scroll .subs_btn_wrap {
   float: left !important;
 }
-/* line 227, ../sass/_new-style.scss */
+/* line 596, ../sass/_new-style.scss */
 html[dir='rtl'] #mc_embed_signup_scroll .subs_btn_wrap .form-submit {
   transform: none;
+}
+/* line 607, ../sass/_new-style.scss */
+html[dir='rtl'] .node-type-webform .region-content .node-webform .webform-client-form label {
+  float: right;
+  width: auto;
+}
+/* line 612, ../sass/_new-style.scss */
+html[dir='rtl'] .node-type-webform .region-content .node-webform .webform-client-form .form-textarea-wrapper {
+  float: left;
+}
+/* line 616, ../sass/_new-style.scss */
+html[dir='rtl'] .node-type-webform .region-content .node-webform .webform-client-form select {
+  padding-left: 10px !important;
+  background-position: 1% center;
+}
+/* line 621, ../sass/_new-style.scss */
+html[dir='rtl'] .node-type-webform .region-content .node-webform .webform-client-form .form-actions {
+  float: left;
 }
 
 /* Global site change*/
