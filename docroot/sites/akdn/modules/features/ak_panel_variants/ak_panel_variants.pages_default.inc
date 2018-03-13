@@ -6818,7 +6818,6 @@ return true;
     return true;
   }',
         ),
-        'context' => 'argument_entity_id:node_1',
         'not' => TRUE,
       ),
     ),
@@ -6881,7 +6880,6 @@ return true;
     return true;
   }',
         ),
-        'context' => 'argument_entity_id:node_1',
         'not' => FALSE,
       ),
     ),
