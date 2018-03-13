@@ -584,10 +584,10 @@ function entity_translation_translatable_batch($translatable, $field_name, $copy
     // How many entities will need processing?
     $query = new EntityFieldQuery();
     $count = $query
-      ->fieldCondition($field_name)
-      ->age(FIELD_LOAD_REVISION)
-      ->count()
-      ->execute();
+        ->fieldCondition($field_name)
+        ->age(FIELD_LOAD_REVISION)
+        ->count()
+        ->execute();
 
     if (intval($count) === 0) {
       // Nothing to do.
@@ -603,11 +603,11 @@ function entity_translation_translatable_batch($translatable, $field_name, $copy
   $offset = $context['sandbox']['progress'];
   $query = new EntityFieldQuery();
   $result = $query
-    ->fieldCondition($field_name)
-    ->entityOrderBy('entity_id')
-    ->age(FIELD_LOAD_REVISION)
-    ->range($offset, $limit)
-    ->execute();
+      ->fieldCondition($field_name)
+      ->entityOrderBy('entity_id')
+      ->age(FIELD_LOAD_REVISION)
+      ->range($offset, $limit)
+      ->execute();
 
   foreach ($result as $entity_type => $partial_entities) {
 
@@ -627,70 +627,87 @@ function entity_translation_translatable_batch($translatable, $field_name, $copy
       }
     }
     else {
-      $entities = entity_load($entity_type, array_keys($partial_entities));
-    }
-
-    foreach ($entities as $entity) {
-      $context['sandbox']['progress']++;
-      $handler = entity_translation_get_handler($entity_type, $entity);
-      $langcode = $handler->getLanguage();
-
-      // Skip process for language neutral entities.
-      if ($langcode == LANGUAGE_NONE) {
-        continue;
-      }
-
-      // We need a two-steps approach while updating field translations: given
-      // that field-specific update functions might rely on the stored values to
-      // perform their processing, see for instance file_field_update(), first
-      // we need to store the new translations and only after we can remove the
-      // old ones. Otherwise we might have data loss, since the removal of the
-      // old translations might occur before the new ones are stored.
-      if ($translatable && isset($entity->{$field_name}[LANGUAGE_NONE])) {
-        // If the field is being switched to translatable and has data for
-        // LANGUAGE_NONE then we need to move the data to the right language.
-        // In case the 'Copy translations' option was selected, move the
-        // available LANGUAGE_NONE field data into all existing translation
-        // languages, otherwise only into the entity's language.
-        $translations = $handler->getTranslations();
-        if ($copy_all_languages && !empty($translations->data)) {
-          foreach ($translations->data as $translation) {
-            $entity->{$field_name}[$translation['language']] = $entity->{$field_name}[LANGUAGE_NONE];
-          }
+      if ($entity_type == 'node') {
+        $entities = array();
+        foreach ($partial_entities as $key => $value) {
+          $entyty = entity_revision_load($entity_type, $key);
+          $entities[$key] = $entyty;
         }
-        else {
-          $entity->{$field_name}[$langcode] = $entity->{$field_name}[LANGUAGE_NONE];
-        }
-
-        // Store the original value.
-        _entity_translation_update_field($entity_type, $entity, $field_name);
-        $entity->{$field_name}[LANGUAGE_NONE] = array();
-        // Remove the language neutral value.
-        _entity_translation_update_field($entity_type, $entity, $field_name);
-      }
-      elseif (!$translatable && isset($entity->{$field_name}[$langcode])) {
-        // The field has been marked untranslatable and has data in the entity
-        // language: we need to move it to LANGUAGE_NONE and drop the other
-        // translations.
-        $entity->{$field_name}[LANGUAGE_NONE] = $entity->{$field_name}[$langcode];
-        // Store the original value.
-        _entity_translation_update_field($entity_type, $entity, $field_name);
-        // Remove translations.
-        foreach ($entity->{$field_name} as $langcode => $items) {
-          if ($langcode != LANGUAGE_NONE) {
-            $entity->{$field_name}[$langcode] = array();
-          }
-        }
-        _entity_translation_update_field($entity_type, $entity, $field_name);
       }
       else {
-        // No need to save unchanged entities.
-        continue;
+        $entities = entity_load($entity_type, array_keys($partial_entities));
+      }
+    }
+
+    if (!empty($entities)) {
+      foreach ($entities as $entity) {
+        $context['sandbox']['progress'] ++;
+        $handler = entity_translation_get_handler($entity_type, $entity);
+        $langcode = $handler->getLanguage();
+
+        // Skip process for language neutral entities.
+        if ($langcode == LANGUAGE_NONE) {
+          continue;
+        }
+
+        // We need a two-steps approach while updating field translations: given
+        // that field-specific update functions might rely on the stored values to
+        // perform their processing, see for instance file_field_update(), first
+        // we need to store the new translations and only after we can remove the
+        // old ones. Otherwise we might have data loss, since the removal of the
+        // old translations might occur before the new ones are stored.
+        if ($translatable && isset($entity->{$field_name}[LANGUAGE_NONE])) {
+          // If the field is being switched to translatable and has data for
+          // LANGUAGE_NONE then we need to move the data to the right language.
+          // In case the 'Copy translations' option was selected, move the
+          // available LANGUAGE_NONE field data into all existing translation
+          // languages, otherwise only into the entity's language.
+          $translations = $handler->getTranslations();
+          if ($copy_all_languages && !empty($translations->data)) {
+            foreach ($translations->data as $translation) {
+              if (empty($entity->{$field_name}[$translation['language']])) {
+                $entity->{$field_name}[$translation['language']] = $entity->{$field_name}[LANGUAGE_NONE];
+              }
+            }
+          }
+          else {
+            $entity->{$field_name}[$langcode] = $entity->{$field_name}[LANGUAGE_NONE];
+          }
+
+          // Store the original value.
+          _entity_translation_update_field($entity_type, $entity, $field_name);
+          $entity->{$field_name}[LANGUAGE_NONE] = array();
+          // Remove the language neutral value.
+          _entity_translation_update_field($entity_type, $entity, $field_name);
+        }
+        elseif (!$translatable && isset($entity->{$field_name}[$langcode])) {
+          // The field has been marked untranslatable and has data in the entity
+          // language: we need to move it to LANGUAGE_NONE and drop the other
+          // translations.
+          $entity->{$field_name}[LANGUAGE_NONE] = $entity->{$field_name}[$langcode];
+          // Store the original value.
+          _entity_translation_update_field($entity_type, $entity, $field_name);
+          // Remove translations.
+          foreach ($entity->{$field_name} as $langcode => $items) {
+            if ($langcode != LANGUAGE_NONE) {
+              $entity->{$field_name}[$langcode] = array();
+            }
+          }
+          _entity_translation_update_field($entity_type, $entity, $field_name);
+        }
+        else {
+          // No need to save unchanged entities.
+          continue;
+        }
       }
     }
   }
 
   $context['finished'] = $context['sandbox']['progress'] / $context['sandbox']['max'];
+  // If no progress was made then set as finished to avoid infinite loop.
+  if ($offset == $context['sandbox']['progress']) {
+    $context['finished'] = 1;
+  }
 }
 
 /**
