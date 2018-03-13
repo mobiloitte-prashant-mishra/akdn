@@ -5,7 +5,7 @@
     padding: 20px;
     line-height: normal;
     height: 56px;
-    
+
     h2 {
         color: #3c0202;
         font-size: 15px;
@@ -20,31 +20,31 @@
 .pane-akdn-custom-page-lang-switcher .pane-content {
     float: left;
     width: calc(100% - 260px);
-    
+
     @media only screen and (max-width: 767px) {
         width: 100%;
         padding-top: 5px;
     }
-    
+
     ul {
         padding: 0;
         margin: 0;
-        
+
         li {
             list-style: none;
             display: inline-block;
             padding-bottom: 5px;
-            
+
             a {
                 border-left: 1px solid #3c0202;
                 padding: 0 10px;
             }
-            
+
             &:first-child.active + li a {
                 border-left: 0 none;
                 padding: 0 10px 0 0;
             }
-            
+
             &.first a {
                 border-left: 0 none;
                 padding: 0 10px 0 0;
@@ -67,26 +67,26 @@ html[dir='rtl'] {
     .block-akdn-custom-page-lang-switcher .content,
     .pane-akdn-custom-page-lang-switcher .pane-content {
         float: right;
-        
+
         ul li {
             a {
                 border-right: 1px solid #3c0202;
                 border-left: 0 none;
                 padding: 0 10px;
             }
-            
+
             &:first-child.active + li a {
                 border: 0 none;
                 padding: 0 0 0 10px;
             }
-            
+
             &.first a {
                 border: 0 none;
                 padding: 0 0 0 10px;
             }
         }
     }
-    
+
     .static_text {
         float: right;
         margin: 9px 0 0 8px;
@@ -94,11 +94,11 @@ html[dir='rtl'] {
 
     .breadcrumb {
         text-align: right;
-        
+
         .inline {
             float: right;
         }
-        
+
         .delimiter {
             float: right;
             margin: 0 5px;
@@ -107,7 +107,7 @@ html[dir='rtl'] {
 
     .slide-text {
         text-align: right;
-        padding: 10px 15px 10px 110px
+        padding: 10px 15px 10px 125px
     }
 
     .pane-node-body li:before {
@@ -118,4 +118,90 @@ html[dir='rtl'] {
         right: auto;
         left: 10px;
     }
+}
+
+img {
+  width: auto;
+}
+
+/* Homepage */
+/// Banner
+.flex-control-nav {
+  li:first-child {
+    margin-left: 5px;
+  }
+  li:last-child {
+    margin-left: 0px;
+  }
+}
+
+.slide-text {
+  a {
+    display: inline-block;
+  }
+}
+
+/// what's new section
+.sub-navbar {
+  .pane-content {
+    p {
+      float: none;
+      display: inline;
+      background-color: #fff;
+    }
+
+    ul {
+      float: left;
+      margin: -25px auto 0;
+
+      @media all and (max-width: 767px) {
+        margin: 10px auto 0;
+      }
+
+      li {
+        float: right;
+
+        &:last-child {
+          a {
+            border-right: 1px solid #999;
+            padding-left: 0;
+            padding-right: 10px;
+          }
+        }
+
+        &:first-child {
+          a {
+            border-right: none;
+          }
+        }
+      }
+    }
+  }
+
+  p {
+    &:after {
+      margin: -12px 185px 0 0px;
+
+      @media all and (min-width: 1200px) {
+        margin: -12px 210px 0 0px;
+      }
+    }
+  }
+}
+
+/// Social Feeds
+.pane-facebook-feeds {
+  float: right;
+}
+
+.grid-social-block_title {
+  .title {
+    padding-left: 0;
+    padding-right: 56px;
+  }
+}
+
+.social-icon-image {
+  left: initial;
+  right: 15px;
 }
