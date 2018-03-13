@@ -22018,8 +22018,9 @@ img {
 .social-box li:first-child a {
   margin-left: 10px;
 }
-/* line 349, ../sass/_new-style.scss */
-.social-box .region-footer-second {
+
+/* line 350, ../sass/_new-style.scss */
+.region-footer-second {
   text-align: center;
 }
 
