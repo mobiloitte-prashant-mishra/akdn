@@ -449,7 +449,10 @@ img {
 
   .image {
     padding: 0 0px 0 20px;
-    width: 100%;
+
+    img {
+      width: 100%;
+    }
 
     @media all and (max-width: 767px) {
       padding: 0px;
