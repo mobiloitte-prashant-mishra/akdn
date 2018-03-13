@@ -21397,49 +21397,6 @@ $lang = $language->language;
   $handler->display->display_options['filters']['status_extra_1']['field'] = 'status_extra';
   $handler->display->display_options['filters']['status_extra_1']['relationship'] = 'field_featured_content_nodes_nid';
   $handler->display->display_options['filters']['status_extra_1']['group'] = 2;
-  $translatables['featured_slideshow_manual'] = array(
-    t('Master'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('queue'),
-    t('file_project_image'),
-    t('file_feature_image'),
-    t('<div class="slide">[field_feature_image]</div>
-  <div class="slide-text"><h3>[title]</h3>
-  [field_caption]
-  [field_feature_link]
-  </div>
-
-  '),
-    t('<div class="slide-pager">•</div>'),
-    t('Flexslider Manual A/G/FAA Block'),
-    t('field_banner_item_nodes'),
-    t('<div class="slide">[php][field_feature_image][field_project_image]</div></a>
-  <div class="slide-text">
-  <h3>[title_field]</h3>
-  [php_1]
-  [php]More </a>
-  </div>'),
-    t('All'),
-    t('Flexslider Manual A/G/FA Cycle Block1'),
-    t('<div class="slide">[php][field_feature_image]</a></div>
-  <div class="slide-text">
-  <h3>[title_field]</h3>
-  [php_1]
-  [php]More </a>
-  </div>'),
-  );
   $export['featured_slideshow_manual'] = $view;
 
   $view = new view();
