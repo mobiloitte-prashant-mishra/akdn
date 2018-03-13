@@ -579,21 +579,26 @@ akmi',
   $node = menu_get_object();
   print \'<div class = "whatsnew-right-content">\';
   if (isset($node->field_about_page)) {
-    $about = node_load($node->field_about_page[$lang][0][\'nid\']);
+    $about = (isset($node->field_about_page[$lang])) ?  node_load($node->field_about_page[$lang][0][\'nid\']) : node_load($node->field_about_page[\'und\'][0][\'nid\']);
+   if(empty($about)){
+      $about = node_load($node->field_about_page[\'en\'][0][\'nid\']);
+   }
     if (isset($about->nid)) {
       print \'<p class = "whats-new-gold">\'.t("ABOUT THE").\'</p>\';
-      print \'<div class = "grid-whatsnew-block_subtitle">\'. $about->field_short_title[$lang][0][\'value\'] .\'</div>\';
-      if (empty($about->body[$lang][0][\'value\'])) {
-        if(!empty($about->body[$lang][0][\'summary\'])) {
-          print \'<div class="grid-whatsnew-block_body">\'. $about->body[$lang][0][\'summary\'] .\' </div>\';
+$short_title_language = (isset($about->field_short_title[$lang])) ?  $about->field_short_title[$lang] : $about->field_short_title[\'und\'];
+      print \'<div class = "grid-whatsnew-block_subtitle">\'. $short_title_language[0][\'value\'] .\'</div>\';
+$body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'und\'];
+      if (empty($body[0][\'value\'])) {
+        if(!empty($body[0][\'summary\'])) {
+          print \'<div class="grid-whatsnew-block_body">\'. $body[0][\'summary\'] .\' </div>\';
         }
       }
       else {
-        if(!empty($about->body[$lang][0][\'summary\'])) {
-          print \'<div class="grid-whatsnew-block_body">\'. $about->body[$lang][0][\'summary\'] .\' <a  href="\'. url("node/{$about->nid}") .\'" class= "views-more-link">\'.t("More").\'</a></div>\';
+        if(!empty($body[0][\'summary\'])) {
+          print \'<div class="grid-whatsnew-block_body">\'. $body[0][\'summary\'] .\' <a  href="\'. url("node/{$about->nid}") .\'" class= "views-more-link">\'.t("More").\'</a></div>\';
         }
         else {
-          print \'<div class="grid-whatsnew-block_body">\'. text_summary($about->body[$lang][0][\'value\'], $about->body[$lang][0][\'format\'], 1200) .\' <a  href="\'. url("node/{$about->nid}") .\'" class= "views-more-link">\'.t("More").\'</a></div>\';
+          print \'<div class="grid-whatsnew-block_body">\'. text_summary($body[0][\'value\'], $body[0][\'format\'], 1200) .\' <a  href="\'. url("node/{$about->nid}") .\'" class= "views-more-link">\'.t("More").\'</a></div>\';
         }
       }
       print \'</div>\';
@@ -4517,23 +4522,7 @@ if (isset($node->field_about_page)) {
   $pane->subtype = 'akdn_custom-where_we_work_related_info';
   $pane->shown = TRUE;
   $pane->access = array(
-    'plugins' => array(
-      0 => array(
-        'name' => 'entity_field_value:node:page:field_right_show_block',
-        'settings' => array(
-          'field_right_show_block' => array(
-            'en' => array(
-              0 => array(
-                'value' => 1,
-              ),
-            ),
-          ),
-          'field_right_show_block_value' => '1',
-        ),
-        'context' => 'argument_entity_id:node_1',
-        'not' => FALSE,
-      ),
-    ),
+    'plugins' => array(),
   );
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -6813,16 +6802,21 @@ return true;
   $pane->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'entity_field_value:node:focus_area:field_featured_content_area',
+        'name' => 'php',
         'settings' => array(
-          'field_featured_content_area' => array(
-            'en' => array(
-              0 => array(
-                'value' => '1',
-              ),
-            ),
-          ),
-          'field_featured_content_area_value' => '1',
+          'description' => 'Banner automatic',
+          'php' => 'global $language;
+  $lang = $language->language;
+  $arg = arg(1);
+  $node = node_load($arg);
+  $field_featured_content_area = $node->field_featured_content_area;
+  if ($node->field_featured_content_area[$lang][0][\'value\']) {
+    $select = $node->field_featured_content_area[$lang][0][\'value\'];
+  }
+
+  if ($select == 1) {
+    return true;
+  }',
         ),
         'context' => 'argument_entity_id:node_1',
         'not' => TRUE,
@@ -6871,16 +6865,21 @@ return true;
   $pane->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'entity_field_value:node:focus_area:field_featured_content_area',
+        'name' => 'php',
         'settings' => array(
-          'field_featured_content_area' => array(
-            'en' => array(
-              0 => array(
-                'value' => '1',
-              ),
-            ),
-          ),
-          'field_featured_content_area_value' => '1',
+          'description' => 'banners mannual',
+          'php' => 'global $language;
+  $lang = $language->language;
+  $arg = arg(1);
+  $node = node_load($arg);
+  $field_featured_content_area = $node->field_featured_content_area;
+  if ($node->field_featured_content_area[$lang][0][\'value\']) {
+    $select = $node->field_featured_content_area[$lang][0][\'value\'];
+  }
+
+  if ($select == 1) {
+    return true;
+  }',
         ),
         'context' => 'argument_entity_id:node_1',
         'not' => FALSE,
@@ -6936,7 +6935,8 @@ $lang = $language->language;
 $node = menu_get_object();
 print \'<div class = "whatsnew-right-content">\';
 if (isset($node->field_about_page)) {
-  $about = node_load($node->field_about_page[$lang][0][\'nid\']);
+
+$about = (isset($node->field_about_page[$lang])) ?  node_load($node->field_about_page[$lang][0][\'nid\']) : node_load($node->field_about_page[\'und\'][0][\'nid\']);
   if (isset($about->nid)) {
     print \'<p class = "whats-new-gold">\'.t("AKDN AND").\'</p>\';
 	$short_title_language = (isset($about->field_short_title[$lang])) ?  $about->field_short_title[$lang] : $about->field_short_title[\'und\'];
@@ -8869,7 +8869,7 @@ $body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'und
   $pane->panel = 'right';
   $pane->type = 'block';
   $pane->subtype = 'akdn_custom-right_panel_press_center_block';
-  $pane->shown = FALSE;
+  $pane->shown = TRUE;
   $pane->access = array(
     'plugins' => array(),
   );
@@ -13874,7 +13874,7 @@ print \'<h2 class="pane-title">\'.t(\'More projects by\').\'</h2>\';
   $pane->panel = 'right';
   $pane->type = 'block';
   $pane->subtype = 'menu-menu-see-also';
-  $pane->shown = FALSE;
+  $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,
