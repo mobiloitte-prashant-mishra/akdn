@@ -620,6 +620,10 @@ html[dir='rtl'] {
 
           .form-actions {
             float: left;
+
+            .form-submit {
+              transform: none;
+            }
           }
         }
       }
