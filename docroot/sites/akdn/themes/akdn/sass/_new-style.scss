@@ -5,7 +5,7 @@
     padding: 20px;
     line-height: normal;
     height: 56px;
-    
+
     h2 {
         color: #3c0202;
         font-size: 15px;
@@ -20,31 +20,31 @@
 .pane-akdn-custom-page-lang-switcher .pane-content {
     float: left;
     width: calc(100% - 260px);
-    
+
     @media only screen and (max-width: 767px) {
         width: 100%;
         padding-top: 5px;
     }
-    
+
     ul {
         padding: 0;
         margin: 0;
-        
+
         li {
             list-style: none;
             display: inline-block;
             padding-bottom: 5px;
-            
+
             a {
                 border-left: 1px solid #3c0202;
                 padding: 0 10px;
             }
-            
+
             &:first-child.active + li a {
                 border-left: 0 none;
                 padding: 0 10px 0 0;
             }
-            
+
             &.first a {
                 border-left: 0 none;
                 padding: 0 10px 0 0;
@@ -67,26 +67,26 @@ html[dir='rtl'] {
     .block-akdn-custom-page-lang-switcher .content,
     .pane-akdn-custom-page-lang-switcher .pane-content {
         float: right;
-        
+
         ul li {
             a {
                 border-right: 1px solid #3c0202;
                 border-left: 0 none;
                 padding: 0 10px;
             }
-            
+
             &:first-child.active + li a {
                 border: 0 none;
                 padding: 0 0 0 10px;
             }
-            
+
             &.first a {
                 border: 0 none;
                 padding: 0 0 0 10px;
             }
         }
     }
-    
+
     .static_text {
         float: right;
         margin: 9px 0 0 8px;
@@ -94,11 +94,11 @@ html[dir='rtl'] {
 
     .breadcrumb {
         text-align: right;
-        
+
         .inline {
             float: right;
         }
-        
+
         .delimiter {
             float: right;
             margin: 0 5px;
@@ -118,4 +118,111 @@ html[dir='rtl'] {
         right: auto;
         left: 10px;
     }
+}
+
+/// Subscribe form
+img {
+  width: auto;
+}
+
+.panel-display {
+  &.panel-1col {
+    overflow: hidden;
+  }
+}
+
+.custom-subscribe {
+  .subs-left {
+    float: right;
+    text-align: right;
+
+    @media all and (max-width: 767px) {
+      padding: 0;
+    }
+  }
+
+  .subs-right {
+    float: right;
+
+    .mc-field-group {
+      overflow: auto;
+
+      label {
+        float: right;
+        text-align: right;
+
+        @media all and (max-width: 767px) {
+          float: none;
+          width: 100% !important;
+          height: auto !important;
+        }
+      }
+
+      input, select {
+        @media all and (max-width: 767px) {
+          width: 100% !important;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  select {
+    padding-left: 10px !important;
+    background-position: 1% center;
+  }
+
+  .elements {
+    float: right !important;
+    margin-right: 10px;
+  }
+
+  &.subs-subscriptions, &.subs-acceptance {
+    .subs-right {
+      @media all and (max-width: 767px) {
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+    }
+
+    .input-group {
+      li {
+        overflow: auto;
+
+        label {
+          float: right;
+          text-align: right;
+          margin: 0;
+          width: auto !important;
+        }
+
+        input {
+          float: right;
+          width: auto !important;
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+
+  &.subs-acceptance {
+    .input-group {
+      li {
+        label {
+          width: 89% !important;
+        }
+      }
+    }
+  }
+}
+
+#mc_embed_signup_scroll {
+  .form-note {
+    float: right !important;
+    text-align: right;
+  }
+
+  .subs_btn_wrap {
+    float: left !important;
+  }
 }
