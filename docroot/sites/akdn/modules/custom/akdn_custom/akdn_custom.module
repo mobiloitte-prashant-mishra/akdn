@@ -438,6 +438,7 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
     unset($form['field_basic_page_choose_layout'][$lang]['#options']['_none']);
   }
 
+  // Default images to appear in all translations - Jatin Rupeja
   if ($form_id == 'gallery_node_form' && arg(3) == 'add') {
     global $language;
     $lang = $language->language;
@@ -459,6 +460,7 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
     }
   }
 
+  // Default images to appear in all translations - Jatin Rupeja
   if ($form_id == 'article_node_form' && arg(3) == 'add') {
     global $language;
     $lang = $language->language;
