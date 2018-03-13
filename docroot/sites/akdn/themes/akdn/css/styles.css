@@ -21895,6 +21895,10 @@ html[dir='rtl'] #mc_embed_signup_scroll .form-note {
 html[dir='rtl'] #mc_embed_signup_scroll .subs_btn_wrap {
   float: left !important;
 }
+/* line 227, ../sass/_new-style.scss */
+html[dir='rtl'] #mc_embed_signup_scroll .subs_btn_wrap .form-submit {
+  transform: none;
+}
 
 /* Global site change*/
 /* for search page*/

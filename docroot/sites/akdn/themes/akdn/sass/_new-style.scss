@@ -223,6 +223,10 @@ html[dir='rtl'] {
 
     .subs_btn_wrap {
       float: left !important;
+
+      .form-submit {
+        transform: none;
+      }
     }
   }
 }
