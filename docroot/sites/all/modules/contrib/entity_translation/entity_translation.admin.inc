@@ -634,7 +634,14 @@ function entity_translation_translatable_batch($translatable, $field_name, $copy
           $entities[$key] = $entyty;
         }
       }
-      else {
+      else if ($entity_type == 'field_collection_item') {
+        $entities = array();
+        foreach ($partial_entities as $key => $value) {
+          $entyty = entity_revision_load($entity_type, $key);
+          $entities[$key] = $entyty;
+        }
+      }
+      else if ($entity_type == 'file') {
         $entities = entity_load($entity_type, array_keys($partial_entities));
       }
     }
