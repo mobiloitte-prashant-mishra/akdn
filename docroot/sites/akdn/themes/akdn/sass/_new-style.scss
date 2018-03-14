@@ -5,7 +5,7 @@
     padding: 20px;
     line-height: normal;
     height: 56px;
-    
+
     h2 {
         color: #3c0202;
         font-size: 15px;
@@ -20,31 +20,31 @@
 .pane-akdn-custom-page-lang-switcher .pane-content {
     float: left;
     width: calc(100% - 260px);
-    
+
     @media only screen and (max-width: 767px) {
         width: 100%;
         padding-top: 5px;
     }
-    
+
     ul {
         padding: 0;
         margin: 0;
-        
+
         li {
             list-style: none;
             display: inline-block;
             padding-bottom: 5px;
-            
+
             a {
                 border-left: 1px solid #3c0202;
                 padding: 0 10px;
             }
-            
+
             &:first-child.active + li a {
                 border-left: 0 none;
                 padding: 0 10px 0 0;
             }
-            
+
             &.first a {
                 border-left: 0 none;
                 padding: 0 10px 0 0;
@@ -67,26 +67,26 @@ html[dir='rtl'] {
     .block-akdn-custom-page-lang-switcher .content,
     .pane-akdn-custom-page-lang-switcher .pane-content {
         float: right;
-        
+
         ul li {
             a {
                 border-right: 1px solid #3c0202;
                 border-left: 0 none;
                 padding: 0 10px;
             }
-            
+
             &:first-child.active + li a {
                 border: 0 none;
                 padding: 0 0 0 10px;
             }
-            
+
             &.first a {
                 border: 0 none;
                 padding: 0 0 0 10px;
             }
         }
     }
-    
+
     .static_text {
         float: right;
         margin: 9px 0 0 8px;
@@ -94,11 +94,11 @@ html[dir='rtl'] {
 
     .breadcrumb {
         text-align: right;
-        
+
         .inline {
             float: right;
         }
-        
+
         .delimiter {
             float: right;
             margin: 0 5px;
@@ -118,4 +118,18 @@ html[dir='rtl'] {
         right: auto;
         left: 10px;
     }
+
+    /// Photograph section
+    img{
+      width: auto;
+    }
+
+  .gallery-processed {
+    .gallery-slides {
+      .gallery-slide {
+        left: initial;
+        right: 0;
+      }
+    }
+  }
 }
