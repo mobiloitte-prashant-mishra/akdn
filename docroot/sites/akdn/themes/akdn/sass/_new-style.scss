@@ -629,4 +629,14 @@ html[dir='rtl'] {
       }
     }
   }
+
+  /// Photograph section
+  .gallery-processed {
+    .gallery-slides {
+      .gallery-slide {
+        left: initial;
+        right: 0;
+      }
+    }
+  }
 }

@@ -22273,6 +22273,11 @@ html[dir='rtl'] .node-type-webform .region-content .node-webform .webform-client
 html[dir='rtl'] .node-type-webform .region-content .node-webform .webform-client-form .form-actions .form-submit {
   transform: none;
 }
+/* line 636, ../sass/_new-style.scss */
+html[dir='rtl'] .gallery-processed .gallery-slides .gallery-slide {
+  left: initial;
+  right: 0;
+}
 
 /* Global site change*/
 /* for search page*/
