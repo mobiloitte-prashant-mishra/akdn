@@ -1,5 +1,6 @@
---- /home/jatin.rupeja/Desktop/entity_translation.admin.inc	2018-03-13 18:35:26.670016000 +0530
-+++ entity_translation.admin.inc	2018-03-14 10:24:52.078375660 +0530
+diff -u et/entity_translation.admin.inc et_new/entity_translation.admin.inc
+--- entity_translation.admin.inc	2018-03-13 18:35:26.670016000 +0530
++++ entity_translation.admin.inc	2018-03-14 11:32:31.216134000 +0530
 @@ -584,10 +584,10 @@
      // How many entities will need processing?
      $query = new EntityFieldQuery();
@@ -32,12 +33,18 @@
  
    foreach ($result as $entity_type => $partial_entities) {
  
-@@ -634,67 +634,71 @@
+@@ -634,67 +634,78 @@
            $entities[$key] = $entyty;
          }
        }
--      else if ($entity_type == 'file') {
-+      else {
++      else if ($entity_type == 'field_collection_item') {
++        $entities = array();
++        foreach ($partial_entities as $key => $value) {
++          $entyty = entity_revision_load($entity_type, $key);
++          $entities[$key] = $entyty;
++        }
++      }
+       else if ($entity_type == 'file') {
          $entities = entity_load($entity_type, array_keys($partial_entities));
        }
      }
@@ -156,3 +163,19 @@
        }
      }
    }
+diff -u et/entity_translation.module et_new/entity_translation.module
+--- entity_translation.module	2018-03-14 12:15:02.428089000 +0530
++++ entity_translation.module	2018-03-14 12:17:33.652086000 +0530
+@@ -2085,7 +2085,11 @@
+  */
+ function entity_translation_entity_save($entity_type, $entity) {
+   // Entity module isn't required, but use it if it's available.
+-  if (module_exists('entity')) {
++  if ($entity_type == 'field_collection_item') {
++    field_attach_presave($entity_type, $entity);
++    field_attach_update($entity_type, $entity);
++  }
++  else if (module_exists('entity')) {
+     entity_save($entity_type, $entity);
+   }
+   // Fall back to field_attach_* functions otherwise.
