@@ -12429,55 +12429,72 @@ print $explode[1];
   $handler->display->display_options['fields']['field_news_see_also']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_news_see_also']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_news_see_also']['hide_empty'] = TRUE;
+  /* Field: Entity translation: Breaking News Image: translated */
+  $handler->display->display_options['fields']['field_breaking_news_image_et']['id'] = 'field_breaking_news_image_et';
+  $handler->display->display_options['fields']['field_breaking_news_image_et']['table'] = 'field_data_field_breaking_news_image';
+  $handler->display->display_options['fields']['field_breaking_news_image_et']['field'] = 'field_breaking_news_image_et';
+  $handler->display->display_options['fields']['field_breaking_news_image_et']['label'] = '';
+  $handler->display->display_options['fields']['field_breaking_news_image_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_breaking_news_image_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_breaking_news_image_et']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_breaking_news_image_et']['settings'] = array(
+    'image_style' => 'social_sharing_image',
+    'image_link' => '',
+  );
+  /* Field: Entity translation: Title: translated */
+  $handler->display->display_options['fields']['title_field_et']['id'] = 'title_field_et';
+  $handler->display->display_options['fields']['title_field_et']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field_et']['field'] = 'title_field_et';
+  $handler->display->display_options['fields']['title_field_et']['label'] = '';
+  $handler->display->display_options['fields']['title_field_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field_et']['type'] = 'text_plain';
+  /* Field: Entity translation: Body: translated */
+  $handler->display->display_options['fields']['body_et']['id'] = 'body_et';
+  $handler->display->display_options['fields']['body_et']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body_et']['field'] = 'body_et';
+  $handler->display->display_options['fields']['body_et']['label'] = '';
+  $handler->display->display_options['fields']['body_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['body_et']['alter']['max_length'] = '300';
+  $handler->display->display_options['fields']['body_et']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['body_et']['element_label_colon'] = FALSE;
+  /* Field: Entity translation: Facts Links: translated */
+  $handler->display->display_options['fields']['field_facts_links_et']['id'] = 'field_facts_links_et';
+  $handler->display->display_options['fields']['field_facts_links_et']['table'] = 'field_data_field_facts_links';
+  $handler->display->display_options['fields']['field_facts_links_et']['field'] = 'field_facts_links_et';
+  $handler->display->display_options['fields']['field_facts_links_et']['label'] = '';
+  $handler->display->display_options['fields']['field_facts_links_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_facts_links_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_facts_links_et']['click_sort_column'] = 'url';
+  /* Field: Entity translation: See Also: translated */
+  $handler->display->display_options['fields']['field_news_see_also_et']['id'] = 'field_news_see_also_et';
+  $handler->display->display_options['fields']['field_news_see_also_et']['table'] = 'field_data_field_news_see_also';
+  $handler->display->display_options['fields']['field_news_see_also_et']['field'] = 'field_news_see_also_et';
+  $handler->display->display_options['fields']['field_news_see_also_et']['label'] = '';
+  $handler->display->display_options['fields']['field_news_see_also_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_news_see_also_et']['element_label_colon'] = FALSE;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="breaking-news-image"><div class="image">[field_breaking_news_image] </div></div>
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="breaking-news-image"><div class="image">[field_breaking_news_image_et] </div></div>
 <div class="breaking-news-text-wrapper">
-<div class="title">[title]</div>
+<div class="title">[title_field_et]</div>
 <div class="breaking-news-left">
 <div class="news-left-text">
 <div class="date">[field_news_publication_date]</div>
-<div class="desc">[body] </div>
-<div class="link">[field_facts_links]</div>
+<div class="desc">[body_et] </div>
+<div class="link">[field_facts_links_et]</div>
 </div>
 </div>
 <div class="breaking-news-right">
-[field_news_see_also]
+[field_news_see_also_et]
 </div>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_class'] = 'breaking-news-custom-wrap';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  $translatables['breaking_news'] = array(
-    t('Master'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Latest News'),
-    t('More'),
-    t('See Also'),
-    t('<div class="breaking-news-image"><div class="image">[field_breaking_news_image] </div></div>
-<div class="breaking-news-text-wrapper">
-<div class="title">[title]</div>
-<div class="breaking-news-left">
-<div class="news-left-text">
-<div class="date">[field_news_publication_date]</div>
-<div class="desc">[body] </div>
-<div class="link">[field_facts_links]</div>
-</div>
-</div>
-<div class="breaking-news-right">
-[field_news_see_also]
-</div>
-</div>'),
-    t('Breaking News'),
-  );
   $export['breaking_news'] = $view;
 
   $view = new view();
