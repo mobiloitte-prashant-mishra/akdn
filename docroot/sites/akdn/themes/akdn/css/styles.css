@@ -21854,36 +21854,149 @@ html[dir='rtl'] .media.media-media_third_left, html[dir='rtl'] .media.media-medi
 html[dir='rtl'] .block-akdn-breadcrumb-trail .content {
   margin-bottom: 10px;
 }
-/* line 188, ../sass/_new-style.scss */
+/* line 187, ../sass/_new-style.scss */
+html[dir='rtl'] .pane-akdn-custom {
+  margin-bottom: 27px;
+}
+/* line 192, ../sass/_new-style.scss */
 html[dir='rtl'] .akdn-basic-page-about-us .accordian-quick-links {
   padding-left: 0;
   padding-right: 20px;
 }
-/* line 192, ../sass/_new-style.scss */
+/* line 196, ../sass/_new-style.scss */
 html[dir='rtl'] .akdn-basic-page-about-us .accordian-quick-links:before {
   right: 0;
   left: initial;
 }
-/* line 199, ../sass/_new-style.scss */
+/* line 203, ../sass/_new-style.scss */
 html[dir='rtl'] .accordian-icon {
   right: initial;
   left: 0;
 }
-/* line 207, ../sass/_new-style.scss */
+/* line 211, ../sass/_new-style.scss */
 html[dir='rtl'] .flexslider ul.slides li img {
   width: 100%;
 }
-/* line 214, ../sass/_new-style.scss */
+/* line 218, ../sass/_new-style.scss */
 html[dir='rtl'] p[align="left"] {
   text-align: right;
 }
-/* line 218, ../sass/_new-style.scss */
+/* line 222, ../sass/_new-style.scss */
 html[dir='rtl'] blockquote {
   border-left: none;
   border-right: 5px solid #eeeeee;
 }
+/* line 227, ../sass/_new-style.scss */
+html[dir='rtl'] .whatwedo-left {
+  float: right;
+}
+/* line 232, ../sass/_new-style.scss */
+html[dir='rtl'] .whatwedo-right:before {
+  left: initial;
+  right: 0;
+}
+/* line 237, ../sass/_new-style.scss */
+html[dir='rtl'] .whatwedo-right .views-field-field-agency-logo {
+  left: initial;
+  right: 0;
+}
+/* line 241, ../sass/_new-style.scss */
+html[dir='rtl'] .whatwedo-right .views-field-field-agency-logo img {
+  width: 100%;
+}
+/* line 246, ../sass/_new-style.scss */
+html[dir='rtl'] .whatwedo-right .views-field-title {
+  padding-right: 46px;
+  float: right;
+}
+/* line 253, ../sass/_new-style.scss */
+html[dir='rtl'] .whatwedo-body .pane-featured-slideshow {
+  float: right;
+}
+/* line 258, ../sass/_new-style.scss */
+html[dir='rtl'] .what-we-do-body-more, html[dir='rtl'] .context-his-highness-aga-khan .pane-node-body .field-type-text-with-summary, .context-his-highness-aga-khan .pane-node-body html[dir='rtl'] .field-type-text-with-summary {
+  padding-left: 0;
+  padding-right: 20px;
+}
+/* line 262, ../sass/_new-style.scss */
+html[dir='rtl'] .what-we-do-body-more:before, html[dir='rtl'] .context-his-highness-aga-khan .pane-node-body .field-type-text-with-summary:before, .context-his-highness-aga-khan .pane-node-body html[dir='rtl'] .field-type-text-with-summary:before {
+  border-left: 0;
+  border-right: 4px solid #b4965a;
+  left: initial;
+  right: 0;
+}
+/* line 271, ../sass/_new-style.scss */
+html[dir='rtl'] .sub-navbar ul {
+  float: left;
+}
+/* line 274, ../sass/_new-style.scss */
+html[dir='rtl'] .sub-navbar ul li {
+  float: right;
+}
+/* line 277, ../sass/_new-style.scss */
+html[dir='rtl'] .sub-navbar ul li a {
+  padding: 0 10px;
+  border-right: 1px solid #999999;
+}
+/* line 283, ../sass/_new-style.scss */
+html[dir='rtl'] .sub-navbar ul li:first-child a {
+  padding-right: 10px;
+  border: none;
+}
+/* line 290, ../sass/_new-style.scss */
+html[dir='rtl'] .sub-navbar ul li:last-child a {
+  padding-left: 0;
+}
+/* line 301, ../sass/_new-style.scss */
+html[dir='rtl'] .node-type-focus-area .sub-navbar p:after {
+  margin: -6px 150px 0 0px;
+}
+/* line 306, ../sass/_new-style.scss */
+html[dir='rtl'] .node-type-focus-area .sub-navbar p span:last-child {
+  padding-left: 10px;
+}
+/* line 315, ../sass/_new-style.scss */
+html[dir='rtl'] .slide-text a {
+  display: inline-block;
+}
+/* line 322, ../sass/_new-style.scss */
+html[dir='rtl'] .flex-control-nav li:first-child {
+  margin-left: 5px;
+}
+/* line 326, ../sass/_new-style.scss */
+html[dir='rtl'] .flex-control-nav li:last-child {
+  margin-left: 0px;
+}
+/* line 334, ../sass/_new-style.scss */
+html[dir='rtl'] .project-inner-wrap .views-field-field-project-image img {
+  width: 100%;
+}
+/* line 340, ../sass/_new-style.scss */
+html[dir='rtl'] .whatwedo-project-row,
+html[dir='rtl'] .akdn-facts-block-row,
+html[dir='rtl'] .what-we-do-inner-wrapper {
+  float: right;
+}
+/* line 346, ../sass/_new-style.scss */
+html[dir='rtl'] .akdn-facts-block-row {
+  border-right: 1px solid #e1d6bd;
+}
+/* line 349, ../sass/_new-style.scss */
+html[dir='rtl'] .akdn-facts-block-row:first-child {
+  border: none;
+}
+/* line 356, ../sass/_new-style.scss */
+html[dir='rtl'] .what-we-do-subwrapper .read {
+  padding-left: 0;
+  padding-right: 15px;
+}
+/* line 361, ../sass/_new-style.scss */
+html[dir='rtl'] .what-we-do-subwrapper .readall {
+  padding-left: 15;
+  padding-right: 0px;
+}
 
-/* line 224, ../sass/_new-style.scss */
+/* line 368, ../sass/_new-style.scss */
 img {
   width: auto;
 }

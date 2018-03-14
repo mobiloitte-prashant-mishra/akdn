@@ -184,6 +184,10 @@ html[dir='rtl'] {
     }
   }
 
+  .pane-akdn-custom {
+    margin-bottom: 27px;
+  }
+
   .akdn-basic-page-about-us {
     .accordian-quick-links {
       padding-left: 0;
@@ -218,6 +222,146 @@ html[dir='rtl'] {
   blockquote {
     border-left: none;
     border-right: 5px solid #eeeeee;
+  }
+
+  .whatwedo-left {
+    float: right;
+  }
+
+  .whatwedo-right {
+    &:before {
+      left: initial;
+      right: 0;
+    }
+
+    .views-field-field-agency-logo {
+      left: initial;
+      right: 0;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .views-field-title {
+      padding-right: 46px;
+      float: right;
+    }
+  }
+
+  .whatwedo-body {
+    .pane-featured-slideshow {
+      float: right;
+    }
+  }
+
+  .what-we-do-body-more {
+    padding-left: 0;
+    padding-right: 20px;
+
+    &:before {
+      border-left: 0;
+      border-right: 4px solid #b4965a;
+      left: initial;
+      right: 0;
+    }
+  }
+
+  .sub-navbar{
+    ul {
+      float: left;
+
+      li {
+        float: right;
+
+        a {
+          padding: 0 10px;
+          border-right: 1px solid #999999;
+        }
+
+        &:first-child {
+          a {
+            padding-right: 10px;
+            border: none;
+          }
+        }
+
+        &:last-child {
+          a {
+            padding-left: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .node-type-focus-area {
+    .sub-navbar {
+      p{
+        &:after {
+          margin: -6px 150px 0 0px;
+        }
+
+        span {
+          &:last-child {
+            padding-left: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .slide-text {
+    a {
+      display: inline-block;
+    }
+  }
+
+  .flex-control-nav {
+    li {
+      &:first-child {
+        margin-left: 5px;
+      }
+
+      &:last-child {
+        margin-left: 0px;
+      }
+    }
+  }
+
+  .project-inner-wrap {
+    .views-field-field-project-image {
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .whatwedo-project-row,
+  .akdn-facts-block-row,
+  .what-we-do-inner-wrapper {
+    float: right;
+  }
+
+  .akdn-facts-block-row {
+    border-right: 1px solid #e1d6bd;
+
+    &:first-child {
+      border: none;
+    }
+  }
+
+
+  .what-we-do-subwrapper {
+    .read {
+      padding-left: 0;
+      padding-right: 15px;
+    }
+
+    .readall {
+      padding-left: 15;
+      padding-right: 0px;
+    }
   }
 }
 
