@@ -8218,8 +8218,8 @@ if (isset($node->field_about_page)) {
           'settings' => array(
             'visibility_setting' => '1',
             'paths' => 'akdn-social
-    terms-conditions
-    privacy-policy',
+      terms-conditions
+      privacy-policy',
           ),
           'context' => 'empty',
           'not' => TRUE,
@@ -8742,13 +8742,28 @@ if (isset($node->field_about_page)) {
   $display->content['new-b9e71951-5bc6-4c9b-a0b9-216475259839'] = $pane;
   $display->panels['right'][2] = 'new-b9e71951-5bc6-4c9b-a0b9-216475259839';
   $pane = new stdClass();
-  $pane->pid = 'new-ee136e69-97ed-49f5-8b02-47f236bde784';
+  $pane->pid = 'new-5ad0e171-484b-4069-a6a8-84522103a560';
   $pane->panel = 'right';
-  $pane->type = 'block';
-  $pane->subtype = 'akdn_custom-where_we_work_related_info';
+  $pane->type = 'views';
+  $pane->subtype = 'hub_pages';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
+    'override_pager_settings' => 0,
+    'use_pager' => 0,
+    'nodes_per_page' => '0',
+    'pager_id' => '0',
+    'offset' => '0',
+    'more_link' => 0,
+    'feed_icons' => 0,
+    'panel_args' => 0,
+    'link_to_view' => 0,
+    'args' => '',
+    'url' => '',
+    'display' => 'custom_block',
+    'context' => array(
+      0 => 'argument_entity_id:node_1.nid',
+    ),
     'override_title' => 1,
     'override_title_text' => '',
     'override_title_heading' => 'h2',
@@ -8764,9 +8779,9 @@ if (isset($node->field_about_page)) {
   $pane->extras = array();
   $pane->position = 3;
   $pane->locks = array();
-  $pane->uuid = 'ee136e69-97ed-49f5-8b02-47f236bde784';
-  $display->content['new-ee136e69-97ed-49f5-8b02-47f236bde784'] = $pane;
-  $display->panels['right'][3] = 'new-ee136e69-97ed-49f5-8b02-47f236bde784';
+  $pane->uuid = '5ad0e171-484b-4069-a6a8-84522103a560';
+  $display->content['new-5ad0e171-484b-4069-a6a8-84522103a560'] = $pane;
+  $display->panels['right'][3] = 'new-5ad0e171-484b-4069-a6a8-84522103a560';
   $pane = new stdClass();
   $pane->pid = 'new-43c9f034-ba51-4c2e-a311-b4de2fa0530d';
   $pane->panel = 'right';

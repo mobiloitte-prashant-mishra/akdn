@@ -1047,13 +1047,25 @@ function workbench_moderation_node_form_submit($form, &$form_state) {
  *   A node editing form.
  */
 function workbench_moderation_node_edit_page_override($node) {
-  // Check to see if this is an existing node
+  // Check to see if this is an existing node.
   if (isset($node->nid)) {
     if (workbench_moderation_node_type_moderated($node->type)) {
-      // Load the node moderation data
+      // Load the node moderation data.
       workbench_moderation_node_data($node);
-      // We ONLY edit the current revision
+
+      // Remember the last active language defined by Entity Translation.
+      if (module_invoke('entity_translation', 'enabled', 'node', $node)) {
+        $factory = EntityTranslationHandlerFactory::getInstance();
+        $entity_translation_last_active_language = $factory->getLastHandler('node')->getActiveLanguage();
+      }
+
+      // We ONLY edit the current revision.
       $node = workbench_moderation_node_current_load($node);
+
+      // Re-apply the last active language defined by Entity Translation.
+      if (isset($entity_translation_last_active_language)) {
+        entity_translation_get_handler('node', $node)->setActiveLanguage($entity_translation_last_active_language);
+      }
     }
   }
   // Ensure we have the editing code.
