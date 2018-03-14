@@ -151,7 +151,7 @@ html[dir='rtl'] {
       float: right;
       padding-right: 0;
       padding-left: 15px;
-      
+
       @media all and (max-width: 767px) {
         padding-left: 0px;
       }
@@ -159,6 +159,22 @@ html[dir='rtl'] {
       img {
         width: 100%;
       }
+    }
+  }
+
+  .media {
+    &.media-element.file-media-right-third,
+    &.media-one-third-right,
+    &.media-media_right_third,
+    &.media-media_half_right {
+      float: left;
+      margin: 0 15px 10px 0px;
+    }
+
+    &.media-media_third_left,
+    &.media-media_left_half {
+      float: right;;
+      margin: 0 0px 10px 15px;
     }
   }
 
@@ -183,6 +199,25 @@ html[dir='rtl'] {
   .accordian-icon {
     right: initial;
     left: 0;
+  }
+
+  .flexslider {
+    ul.slides {
+      li {
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  p[align="left"] {
+    text-align: right;
+  }
+
+  blockquote {
+    border-left: none;
+    border-right: 5px solid #eeeeee;
   }
 }
 

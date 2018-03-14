@@ -21841,26 +21841,49 @@ html[dir='rtl'] .section-content .link_to_image img, html[dir='rtl'] .section-co
   width: 100%;
 }
 /* line 166, ../sass/_new-style.scss */
+html[dir='rtl'] .media.media-element.file-media-right-third, html[dir='rtl'] .media.media-one-third-right, html[dir='rtl'] .media.media-media_right_third, html[dir='rtl'] .media.media-media_half_right {
+  float: left;
+  margin: 0 15px 10px 0px;
+}
+/* line 174, ../sass/_new-style.scss */
+html[dir='rtl'] .media.media-media_third_left, html[dir='rtl'] .media.media-media_left_half {
+  float: right;
+  margin: 0 0px 10px 15px;
+}
+/* line 182, ../sass/_new-style.scss */
 html[dir='rtl'] .block-akdn-breadcrumb-trail .content {
   margin-bottom: 10px;
 }
-/* line 172, ../sass/_new-style.scss */
+/* line 188, ../sass/_new-style.scss */
 html[dir='rtl'] .akdn-basic-page-about-us .accordian-quick-links {
   padding-left: 0;
   padding-right: 20px;
 }
-/* line 176, ../sass/_new-style.scss */
+/* line 192, ../sass/_new-style.scss */
 html[dir='rtl'] .akdn-basic-page-about-us .accordian-quick-links:before {
   right: 0;
   left: initial;
 }
-/* line 183, ../sass/_new-style.scss */
+/* line 199, ../sass/_new-style.scss */
 html[dir='rtl'] .accordian-icon {
   right: initial;
   left: 0;
 }
+/* line 207, ../sass/_new-style.scss */
+html[dir='rtl'] .flexslider ul.slides li img {
+  width: 100%;
+}
+/* line 214, ../sass/_new-style.scss */
+html[dir='rtl'] p[align="left"] {
+  text-align: right;
+}
+/* line 218, ../sass/_new-style.scss */
+html[dir='rtl'] blockquote {
+  border-left: none;
+  border-right: 5px solid #eeeeee;
+}
 
-/* line 189, ../sass/_new-style.scss */
+/* line 224, ../sass/_new-style.scss */
 img {
   width: auto;
 }
