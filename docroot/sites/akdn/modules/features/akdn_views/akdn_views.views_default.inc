@@ -1068,11 +1068,11 @@ print t(\'THE AWARD AT A GLANCE\');
   $handler->display->display_options['filters']['type']['value'] = array(
     'agency' => 'agency',
   );
-  /* Filter criterion: Content: Show Social Share Block (field_show_social_share) */
-  $handler->display->display_options['filters']['field_show_social_share_value']['id'] = 'field_show_social_share_value';
-  $handler->display->display_options['filters']['field_show_social_share_value']['table'] = 'field_data_field_show_social_share';
-  $handler->display->display_options['filters']['field_show_social_share_value']['field'] = 'field_show_social_share_value';
-  $handler->display->display_options['filters']['field_show_social_share_value']['value'] = array(
+  /* Filter criterion: Content: Show Social Share Block (field_show_social_share:language) */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'field_data_field_show_social_share';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
     1 => '1',
   );
   $handler->display->display_options['block_description'] = 'Stay connections to the akaa';
@@ -1136,11 +1136,11 @@ print t(\'THE AWARD AT A GLANCE\');
   $handler->display->display_options['filters']['type']['value'] = array(
     'agency' => 'agency',
   );
-  /* Filter criterion: Content: Show Fact Block (field_show_fact_block) */
-  $handler->display->display_options['filters']['field_show_fact_block_value']['id'] = 'field_show_fact_block_value';
-  $handler->display->display_options['filters']['field_show_fact_block_value']['table'] = 'field_data_field_show_fact_block';
-  $handler->display->display_options['filters']['field_show_fact_block_value']['field'] = 'field_show_fact_block_value';
-  $handler->display->display_options['filters']['field_show_fact_block_value']['value'] = array(
+  /* Filter criterion: Content: Show Fact Block (field_show_fact_block:language) */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'field_data_field_show_fact_block';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
     1 => '1',
   );
   $handler->display->display_options['block_description'] = 'The award at a glance';
@@ -1218,11 +1218,11 @@ print t(\'THE AWARD AT A GLANCE\');
   $handler->display->display_options['filters']['status_extra']['id'] = 'status_extra';
   $handler->display->display_options['filters']['status_extra']['table'] = 'node';
   $handler->display->display_options['filters']['status_extra']['field'] = 'status_extra';
-  /* Filter criterion: Content: Show Block (field_show_news_and_resources) */
-  $handler->display->display_options['filters']['field_show_news_and_resources_value']['id'] = 'field_show_news_and_resources_value';
-  $handler->display->display_options['filters']['field_show_news_and_resources_value']['table'] = 'field_data_field_show_news_and_resources';
-  $handler->display->display_options['filters']['field_show_news_and_resources_value']['field'] = 'field_show_news_and_resources_value';
-  $handler->display->display_options['filters']['field_show_news_and_resources_value']['value'] = array(
+  /* Filter criterion: Content: Show Block (field_show_news_and_resources:language) */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'field_data_field_show_news_and_resources';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
     1 => '1',
   );
   $handler->display->display_options['block_description'] = 'AKAA  News & Resources Links';
