@@ -311,8 +311,38 @@ html[dir='rtl'] {
       }
     }
   }
+
+  //Footer
+  .pane-agencies td {
+    text-align: right;
+  }
+
+  #mini-panel-geography_footer_menu {
+    .pane-title {
+      position: relative;
+
+      .nolink, a {
+        &:after {
+          right: initial;
+          left: 0;
+        }
+      }
+    }
+  }
+
+  .quicklinks_social_block, .panel-whatwedo, .pane-geography-footer-menu, .pane-agencies {
+    float: right;
+  }
+
+  .social-box {
+    li:first-child {
+      a {
+        margin-left: 10px;
+      }
+    }
+  }
 }
 
-img {
-  width: auto;
+.region-footer-second {
+  text-align: center;
 }
