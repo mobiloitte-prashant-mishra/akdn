@@ -620,6 +620,15 @@ html[dir='rtl'] {
       }
     }
   }
+
+  .gallery-processed {
+    .gallery-slides {
+      .gallery-slide {
+        left: initial;
+        right: 0;
+      }
+    }
+  }
 }
 
 .region-footer-second {
