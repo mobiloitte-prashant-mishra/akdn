@@ -22102,33 +22102,37 @@ html[dir='rtl'] .akdn-filter-js-wrapper .form-submit, html[dir='rtl'] .akdn-filt
 /* line 483, ../sass/_new-style.scss */
 html[dir='rtl'] .akdn-filter-js-wrapper .form-submit {
   margin: 0 2% 0 0;
+  -moz-transform: none;
+  -ms-transform: none;
+  -webkit-transform: none;
+  transform: none;
 }
-/* line 488, ../sass/_new-style.scss */
+/* line 489, ../sass/_new-style.scss */
 html[dir='rtl'] .akdn-filter-wrapper {
   float: right;
   padding: 0 0 0 15px;
 }
-/* line 494, ../sass/_new-style.scss */
+/* line 495, ../sass/_new-style.scss */
 html[dir='rtl'] .akdn-filter-wrapper .item-list li input[type="checkbox"] {
   margin: 2px -18px 0 0;
 }
-/* line 501, ../sass/_new-style.scss */
+/* line 502, ../sass/_new-style.scss */
 html[dir='rtl'] #backtotop {
   right: initial;
   left: 20px;
 }
-/* line 507, ../sass/_new-style.scss */
+/* line 508, ../sass/_new-style.scss */
 html[dir='rtl'] .publication-list-container .views-row {
   float: right;
   border-left: none;
   border-right: 1px solid #b5995a;
 }
-/* line 512, ../sass/_new-style.scss */
+/* line 513, ../sass/_new-style.scss */
 html[dir='rtl'] .publication-list-container .views-row:nth-child(5n-4) {
   border-right: none;
 }
 
-/* line 519, ../sass/_new-style.scss */
+/* line 520, ../sass/_new-style.scss */
 img {
   width: auto;
 }

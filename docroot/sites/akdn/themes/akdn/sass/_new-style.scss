@@ -482,6 +482,7 @@ html[dir='rtl'] {
 
     .form-submit {
       margin: 0 2% 0 0;
+      @include transform(none);
     }
   }
 
