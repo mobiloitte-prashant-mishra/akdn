@@ -7423,7 +7423,7 @@ a.thumbnail.active {
 .progress-bar-striped {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
   background-size: 40px 40px;
 }
 
@@ -7443,7 +7443,7 @@ a.thumbnail.active {
 .progress-striped .progress-bar-success {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
 }
 
 /* line 77, ../sass/sass-extensions/bootstrap/_progress-bars.scss */
@@ -7454,7 +7454,7 @@ a.thumbnail.active {
 .progress-striped .progress-bar-info {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
 }
 
 /* line 81, ../sass/sass-extensions/bootstrap/_progress-bars.scss */
@@ -7465,7 +7465,7 @@ a.thumbnail.active {
 .progress-striped .progress-bar-warning {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
 }
 
 /* line 85, ../sass/sass-extensions/bootstrap/_progress-bars.scss */
@@ -7476,7 +7476,7 @@ a.thumbnail.active {
 .progress-striped .progress-bar-danger {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
 }
 
 /* line 1, ../sass/sass-extensions/bootstrap/_media.scss */
@@ -21889,115 +21889,246 @@ html[dir='rtl'] blockquote {
 /* line 227, ../sass/_new-style.scss */
 html[dir='rtl'] .whatwedo-left {
   float: right;
+  padding-left: 15px;
+  padding-right: 0;
 }
-/* line 232, ../sass/_new-style.scss */
+/* line 234, ../sass/_new-style.scss */
 html[dir='rtl'] .whatwedo-right:before {
   left: initial;
   right: 0;
 }
-/* line 237, ../sass/_new-style.scss */
+/* line 239, ../sass/_new-style.scss */
 html[dir='rtl'] .whatwedo-right .views-field-field-agency-logo {
   left: initial;
   right: 0;
 }
-/* line 241, ../sass/_new-style.scss */
+/* line 243, ../sass/_new-style.scss */
 html[dir='rtl'] .whatwedo-right .views-field-field-agency-logo img {
   width: 100%;
 }
-/* line 246, ../sass/_new-style.scss */
+/* line 248, ../sass/_new-style.scss */
 html[dir='rtl'] .whatwedo-right .views-field-title {
   padding-right: 46px;
   float: right;
 }
-/* line 254, ../sass/_new-style.scss */
+/* line 257, ../sass/_new-style.scss */
 html[dir='rtl'] .whatwedo-body .pane-featured-slideshow,
-html[dir='rtl'] .geography-page .pane-featured-slideshow {
+html[dir='rtl'] .geography-page .pane-featured-slideshow,
+html[dir='rtl'] .node-type-agency .pane-featured-slideshow {
   float: right;
 }
-/* line 259, ../sass/_new-style.scss */
+/* line 264, ../sass/_new-style.scss */
+html[dir='rtl'] .carousel-left .banner-slideshow-views > .view-content {
+  float: right;
+}
+/* line 270, ../sass/_new-style.scss */
 html[dir='rtl'] .what-we-do-body-more, html[dir='rtl'] .context-his-highness-aga-khan .pane-node-body .field-type-text-with-summary, .context-his-highness-aga-khan .pane-node-body html[dir='rtl'] .field-type-text-with-summary {
   padding-left: 0;
   padding-right: 20px;
 }
-/* line 263, ../sass/_new-style.scss */
+/* line 274, ../sass/_new-style.scss */
 html[dir='rtl'] .what-we-do-body-more:before, html[dir='rtl'] .context-his-highness-aga-khan .pane-node-body .field-type-text-with-summary:before, .context-his-highness-aga-khan .pane-node-body html[dir='rtl'] .field-type-text-with-summary:before {
   border-left: 0;
   border-right: 4px solid #b4965a;
   left: initial;
   right: 0;
 }
-/* line 272, ../sass/_new-style.scss */
+/* line 283, ../sass/_new-style.scss */
 html[dir='rtl'] .sub-navbar ul {
   float: left;
 }
-/* line 275, ../sass/_new-style.scss */
+/* line 286, ../sass/_new-style.scss */
 html[dir='rtl'] .sub-navbar ul li {
   float: right;
 }
-/* line 278, ../sass/_new-style.scss */
+/* line 289, ../sass/_new-style.scss */
 html[dir='rtl'] .sub-navbar ul li a {
   padding: 0 10px;
   border-right: 1px solid #999999;
 }
-/* line 284, ../sass/_new-style.scss */
+/* line 295, ../sass/_new-style.scss */
 html[dir='rtl'] .sub-navbar ul li:first-child a {
   padding-right: 10px;
   border: none;
 }
-/* line 291, ../sass/_new-style.scss */
+/* line 302, ../sass/_new-style.scss */
 html[dir='rtl'] .sub-navbar ul li:last-child a {
   padding-left: 0;
 }
-/* line 302, ../sass/_new-style.scss */
-html[dir='rtl'] .node-type-focus-area .sub-navbar p:after {
+/* line 310, ../sass/_new-style.scss */
+html[dir='rtl'] .sub-navbar p.indexfix:after {
   margin: -6px 150px 0 0px;
 }
-/* line 307, ../sass/_new-style.scss */
-html[dir='rtl'] .node-type-focus-area .sub-navbar p span:last-child {
+/* line 315, ../sass/_new-style.scss */
+html[dir='rtl'] .sub-navbar p.indexfix span:last-child {
   padding-left: 10px;
 }
-/* line 316, ../sass/_new-style.scss */
+/* line 323, ../sass/_new-style.scss */
 html[dir='rtl'] .slide-text a {
   display: inline-block;
 }
-/* line 323, ../sass/_new-style.scss */
+/* line 330, ../sass/_new-style.scss */
 html[dir='rtl'] .flex-control-nav li:first-child {
   margin-left: 5px;
 }
-/* line 327, ../sass/_new-style.scss */
+/* line 334, ../sass/_new-style.scss */
 html[dir='rtl'] .flex-control-nav li:last-child {
   margin-left: 0px;
 }
-/* line 335, ../sass/_new-style.scss */
+/* line 342, ../sass/_new-style.scss */
 html[dir='rtl'] .project-inner-wrap .views-field-field-project-image img {
   width: 100%;
 }
-/* line 341, ../sass/_new-style.scss */
+/* line 348, ../sass/_new-style.scss */
 html[dir='rtl'] .whatwedo-project-row,
 html[dir='rtl'] .akdn-facts-block-row,
 html[dir='rtl'] .what-we-do-inner-wrapper {
   float: right;
 }
-/* line 347, ../sass/_new-style.scss */
+/* line 353, ../sass/_new-style.scss */
+html[dir='rtl'] .whatwedo-project-row img,
+html[dir='rtl'] .akdn-facts-block-row img,
+html[dir='rtl'] .what-we-do-inner-wrapper img {
+  width: 100%;
+}
+/* line 358, ../sass/_new-style.scss */
 html[dir='rtl'] .akdn-facts-block-row {
   border-right: 1px solid #e1d6bd;
 }
-/* line 350, ../sass/_new-style.scss */
+/* line 361, ../sass/_new-style.scss */
 html[dir='rtl'] .akdn-facts-block-row:first-child {
   border: none;
 }
-/* line 357, ../sass/_new-style.scss */
+/* line 368, ../sass/_new-style.scss */
 html[dir='rtl'] .what-we-do-subwrapper .read {
   padding-left: 0;
   padding-right: 15px;
 }
-/* line 362, ../sass/_new-style.scss */
+/* line 373, ../sass/_new-style.scss */
 html[dir='rtl'] .what-we-do-subwrapper .readall {
   padding-left: 15;
   padding-right: 0px;
 }
+/* line 383, ../sass/_new-style.scss */
+html[dir='rtl'] .geography-page .pane-hub-pages:not(.other-activities-title) .pane-title:after,
+html[dir='rtl'] .node-type-agency .pane-hub-pages:not(.other-activities-title) .pane-title:after {
+  margin: -7px 290px 0 0;
+}
+/* line 391, ../sass/_new-style.scss */
+html[dir='rtl'] .geography-page .www-summary .field-type-text-with-summary:before,
+html[dir='rtl'] .node-type-agency .www-summary .field-type-text-with-summary:before {
+  left: initial;
+  right: 0;
+}
+/* line 399, ../sass/_new-style.scss */
+html[dir='rtl'] .geography-page .country-activity-tile .hub-pages-row,
+html[dir='rtl'] .node-type-agency .country-activity-tile .hub-pages-row {
+  float: right;
+}
+/* line 402, ../sass/_new-style.scss */
+html[dir='rtl'] .geography-page .country-activity-tile .hub-pages-row img,
+html[dir='rtl'] .node-type-agency .country-activity-tile .hub-pages-row img {
+  width: 100%;
+}
+/* line 407, ../sass/_new-style.scss */
+html[dir='rtl'] .geography-page .country-activity-tile .hub-pages-row .country_activity_link a,
+html[dir='rtl'] .node-type-agency .country-activity-tile .hub-pages-row .country_activity_link a {
+  right: initial;
+  left: 5px;
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+/* line 414, ../sass/_new-style.scss */
+html[dir='rtl'] .geography-page .country-activity-tile .hub-pages-row .hub_pages-title,
+html[dir='rtl'] .node-type-agency .country-activity-tile .hub-pages-row .hub_pages-title {
+  padding: 10px 15px 10px 35px;
+}
+/* line 420, ../sass/_new-style.scss */
+html[dir='rtl'] .geography-page .what-we-do-main-wrapper,
+html[dir='rtl'] .node-type-agency .what-we-do-main-wrapper {
+  float: right;
+}
+/* line 425, ../sass/_new-style.scss */
+html[dir='rtl'] .geography-page .www-body li,
+html[dir='rtl'] .node-type-agency .www-body li {
+  left: initial;
+  right: 1em;
+}
+/* line 430, ../sass/_new-style.scss */
+html[dir='rtl'] .geography-page .www-body img,
+html[dir='rtl'] .node-type-agency .www-body img {
+  width: 100%;
+}
+/* line 437, ../sass/_new-style.scss */
+html[dir='rtl'] .facts-block_icon img {
+  width: auto;
+}
+/* line 443, ../sass/_new-style.scss */
+html[dir='rtl'] .see-also-brochure-image img {
+  width: 100%;
+}
+/* line 448, ../sass/_new-style.scss */
+html[dir='rtl'] .in-media-block {
+  float: right;
+}
+/* line 451, ../sass/_new-style.scss */
+html[dir='rtl'] .in-media-block:before {
+  left: initial;
+  right: 15px;
+}
+/* line 457, ../sass/_new-style.scss */
+html[dir='rtl'] .grid-media-block_description {
+  padding: 15px 10px 5px 0px;
+}
+/* line 460, ../sass/_new-style.scss */
+html[dir='rtl'] .grid-media-block_description .date {
+  float: right;
+}
+/* line 467, ../sass/_new-style.scss */
+html[dir='rtl'] .akdn-filter-show-hide h2:after {
+  float: left;
+}
+/* line 474, ../sass/_new-style.scss */
+html[dir='rtl'] .akdn-filter-js-wrapper ul {
+  padding-right: 18px;
+  padding-left: 0;
+}
+/* line 479, ../sass/_new-style.scss */
+html[dir='rtl'] .akdn-filter-js-wrapper .form-submit, html[dir='rtl'] .akdn-filter-js-wrapper .akdn-solr-rest-link {
+  float: right;
+}
+/* line 483, ../sass/_new-style.scss */
+html[dir='rtl'] .akdn-filter-js-wrapper .form-submit {
+  margin: 0 2% 0 0;
+}
+/* line 488, ../sass/_new-style.scss */
+html[dir='rtl'] .akdn-filter-wrapper {
+  float: right;
+  padding: 0 0 0 15px;
+}
+/* line 494, ../sass/_new-style.scss */
+html[dir='rtl'] .akdn-filter-wrapper .item-list li input[type="checkbox"] {
+  margin: 2px -18px 0 0;
+}
+/* line 501, ../sass/_new-style.scss */
+html[dir='rtl'] #backtotop {
+  right: initial;
+  left: 20px;
+}
+/* line 507, ../sass/_new-style.scss */
+html[dir='rtl'] .publication-list-container .views-row {
+  float: right;
+  border-left: none;
+  border-right: 1px solid #b5995a;
+}
+/* line 512, ../sass/_new-style.scss */
+html[dir='rtl'] .publication-list-container .views-row:nth-child(5n-4) {
+  border-right: none;
+}
 
-/* line 369, ../sass/_new-style.scss */
+/* line 519, ../sass/_new-style.scss */
 img {
   width: auto;
 }

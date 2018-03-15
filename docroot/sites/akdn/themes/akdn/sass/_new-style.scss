@@ -226,6 +226,8 @@ html[dir='rtl'] {
 
   .whatwedo-left {
     float: right;
+    padding-left: 15px;
+    padding-right: 0;
   }
 
   .whatwedo-right {
@@ -250,9 +252,18 @@ html[dir='rtl'] {
   }
 
   .whatwedo-body,
-  .geography-page {
+  .geography-page,
+  .node-type-agency {
     .pane-featured-slideshow {
       float: right;
+    }
+  }
+
+  .carousel-left {
+    .banner-slideshow-views {
+      & > .view-content {
+        float: right;
+      }
     }
   }
 
@@ -294,19 +305,15 @@ html[dir='rtl'] {
         }
       }
     }
-  }
 
-  .node-type-focus-area {
-    .sub-navbar {
-      p{
-        &:after {
-          margin: -6px 150px 0 0px;
-        }
+    p.indexfix {
+      &:after {
+        margin: -6px 150px 0 0px;
+      }
 
-        span {
-          &:last-child {
-            padding-left: 10px;
-          }
+      span {
+        &:last-child {
+          padding-left: 10px;
         }
       }
     }
@@ -342,6 +349,10 @@ html[dir='rtl'] {
   .akdn-facts-block-row,
   .what-we-do-inner-wrapper {
     float: right;
+
+    img {
+      width: 100%;
+    }
   }
 
   .akdn-facts-block-row {
@@ -362,6 +373,145 @@ html[dir='rtl'] {
     .readall {
       padding-left: 15;
       padding-right: 0px;
+    }
+  }
+
+  .geography-page,
+  .node-type-agency {
+    .pane-hub-pages:not(.other-activities-title) {
+      .pane-title {
+        &:after {
+          margin: -7px 290px 0 0;
+        }
+      }
+    }
+
+    .www-summary {
+      .field-type-text-with-summary {
+        &:before {
+          left: initial;
+          right: 0;
+        }
+      }
+    }
+
+    .country-activity-tile {
+      .hub-pages-row {
+        float: right;
+
+        img {
+          width: 100%;
+        }
+
+        .country_activity_link {
+          a {
+            right: initial;
+            left: 5px;
+            @include transform(rotate(180deg));
+          }
+        }
+
+        .hub_pages-title {
+            padding: 10px 15px 10px 35px;
+        }
+      }
+    }
+
+    .what-we-do-main-wrapper {
+      float: right;
+    }
+
+    .www-body {
+      li {
+        left: initial;
+        right: 1em;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .facts-block_icon {
+    img {
+      width: auto;
+    }
+  }
+
+  .see-also-brochure-image {
+    img {
+      width: 100%;
+    }
+  }
+
+  .in-media-block {
+    float: right;
+
+    &:before {
+      left: initial;
+      right: 15px;
+    }
+  }
+
+  .grid-media-block_description {
+    padding: 15px 10px 5px 0px;
+
+    .date {
+      float: right;
+    }
+  }
+
+  .akdn-filter-show-hide {
+    h2 {
+      &:after {
+        float: left;
+      }
+    }
+  }
+
+  .akdn-filter-js-wrapper {
+    ul {
+      padding-right: 18px;
+      padding-left: 0;
+    }
+
+    .form-submit, .akdn-solr-rest-link {
+      float: right;
+    }
+
+    .form-submit {
+      margin: 0 2% 0 0;
+    }
+  }
+
+  .akdn-filter-wrapper {
+    float: right;
+    padding: 0 0 0 15px;
+
+    .item-list {
+      li {
+        input[type="checkbox"] {
+          margin: 2px -18px 0 0;
+        }
+      }
+    }
+  }
+
+  #backtotop {
+    right: initial;
+    left: 20px;
+  }
+
+  .publication-list-container {
+    .views-row {
+      float: right;
+      border-left: none;
+      border-right: 1px solid #b5995a;
+
+      &:nth-child(5n-4) {
+        border-right: none;
+      }
     }
   }
 }
