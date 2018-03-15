@@ -1026,6 +1026,48 @@ html[dir='rtl'] {
       }
     }
   }
+
+  // Node pages
+  .all-activities-btn {
+    h2.pane-title {
+      padding: 12px 10px 12px 30px !important;
+
+      &:after {
+        right: initial;
+        left: 10px;
+      }
+    }
+  }
+
+  .hub-page-press-center-right {
+    ul {
+      padding-right: 0;
+    }
+  }
+
+  .press-release-detail {
+    .pane-email {
+      float: right;
+    }
+
+    .print_mail,
+    .pane-addthis,
+    .print_html {
+      margin: 0 0 0 12px;
+      float: right;
+    }
+  }
+
+  .presscenter-right-more-btn {
+    a:after {
+      float: left;
+      @include transform(rotate(180deg));
+    }
+  }
+}
+
+img {
+  width: auto;
 }
 
 .region-footer-second {

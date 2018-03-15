@@ -22602,8 +22602,45 @@ html[dir='rtl'] .publication-list-container .views-row {
 html[dir='rtl'] .publication-list-container .views-row:nth-child(5n-4) {
   border-right: none;
 }
+/* line 1032, ../sass/_new-style.scss */
+html[dir='rtl'] .all-activities-btn h2.pane-title {
+  padding: 12px 10px 12px 30px !important;
+}
+/* line 1035, ../sass/_new-style.scss */
+html[dir='rtl'] .all-activities-btn h2.pane-title:after {
+  right: initial;
+  left: 10px;
+}
+/* line 1043, ../sass/_new-style.scss */
+html[dir='rtl'] .hub-page-press-center-right ul {
+  padding-right: 0;
+}
+/* line 1049, ../sass/_new-style.scss */
+html[dir='rtl'] .press-release-detail .pane-email {
+  float: right;
+}
+/* line 1053, ../sass/_new-style.scss */
+html[dir='rtl'] .press-release-detail .print_mail,
+html[dir='rtl'] .press-release-detail .pane-addthis,
+html[dir='rtl'] .press-release-detail .print_html {
+  margin: 0 0 0 12px;
+  float: right;
+}
+/* line 1062, ../sass/_new-style.scss */
+html[dir='rtl'] .presscenter-right-more-btn a:after {
+  float: left;
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
 
-/* line 1031, ../sass/_new-style.scss */
+/* line 1069, ../sass/_new-style.scss */
+img {
+  width: auto;
+}
+
+/* line 1073, ../sass/_new-style.scss */
 .region-footer-second {
   text-align: center;
 }
