@@ -21736,6 +21736,10 @@ a:hover {
 }
 
 /*RTL CSS*/
+/* line 58, ../sass/_new-style.scss */
+html[dir='rtl'] {
+  /* Homepage */
+}
 /* line 61, ../sass/_new-style.scss */
 html[dir='rtl'] .block-akdn-custom-page-lang-switcher h2,
 html[dir='rtl'] .pane-akdn-custom-page-lang-switcher h2 {
@@ -22009,8 +22013,139 @@ html[dir='rtl'] .quicklinks_social_block, html[dir='rtl'] .panel-whatwedo, html[
 html[dir='rtl'] .social-box li:first-child a {
   margin-left: 10px;
 }
-/* line 344, ../sass/_new-style.scss */
-html[dir='rtl'] .region-footer-second {
+/* line 347, ../sass/_new-style.scss */
+html[dir='rtl'] .flex-control-nav li:first-child {
+  margin-left: 5px;
+}
+/* line 350, ../sass/_new-style.scss */
+html[dir='rtl'] .flex-control-nav li:last-child {
+  margin-left: 0px;
+}
+/* line 356, ../sass/_new-style.scss */
+html[dir='rtl'] .slide-text a {
+  display: inline-block;
+}
+/* line 364, ../sass/_new-style.scss */
+html[dir='rtl'] .sub-navbar .pane-content p {
+  float: none;
+  display: inline;
+  background-color: #fff;
+}
+/* line 370, ../sass/_new-style.scss */
+html[dir='rtl'] .sub-navbar .pane-content ul {
+  float: left;
+  margin: -25px auto 0;
+}
+@media all and (max-width: 767px) {
+  /* line 370, ../sass/_new-style.scss */
+  html[dir='rtl'] .sub-navbar .pane-content ul {
+    margin: 10px auto 0;
+  }
+}
+/* line 378, ../sass/_new-style.scss */
+html[dir='rtl'] .sub-navbar .pane-content ul li {
+  float: right;
+}
+/* line 382, ../sass/_new-style.scss */
+html[dir='rtl'] .sub-navbar .pane-content ul li:last-child a {
+  border-right: 1px solid #999;
+  padding-left: 0;
+  padding-right: 10px;
+}
+/* line 390, ../sass/_new-style.scss */
+html[dir='rtl'] .sub-navbar .pane-content ul li:first-child a {
+  border-right: none;
+}
+/* line 399, ../sass/_new-style.scss */
+html[dir='rtl'] .sub-navbar p:after {
+  margin: -12px 185px 0 0px;
+}
+@media all and (min-width: 1200px) {
+  /* line 399, ../sass/_new-style.scss */
+  html[dir='rtl'] .sub-navbar p:after {
+    margin: -12px 210px 0 0px;
+  }
+}
+/* line 410, ../sass/_new-style.scss */
+html[dir='rtl'] .pane-facebook-feeds {
+  float: right;
+}
+/* line 415, ../sass/_new-style.scss */
+html[dir='rtl'] .grid-social-block_title .title {
+  padding-left: 0;
+  padding-right: 56px;
+}
+/* line 421, ../sass/_new-style.scss */
+html[dir='rtl'] .social-icon-image {
+  left: initial;
+  right: 15px;
+}
+/* line 427, ../sass/_new-style.scss */
+html[dir='rtl'] .breaking-news-custom-wrap {
+  display: table;
+}
+/* line 431, ../sass/_new-style.scss */
+html[dir='rtl'] .breaking-news-image {
+  float: right;
+  display: table-cell;
+  width: 40%;
+}
+@media all and (max-width: 767px) {
+  /* line 431, ../sass/_new-style.scss */
+  html[dir='rtl'] .breaking-news-image {
+    width: 100%;
+  }
+}
+/* line 440, ../sass/_new-style.scss */
+html[dir='rtl'] .breaking-news-image .image {
+  padding: 0 0px 0 20px;
+}
+/* line 443, ../sass/_new-style.scss */
+html[dir='rtl'] .breaking-news-image .image img {
+  width: 100%;
+}
+@media all and (max-width: 767px) {
+  /* line 440, ../sass/_new-style.scss */
+  html[dir='rtl'] .breaking-news-image .image {
+    padding: 0px;
+  }
+}
+/* line 453, ../sass/_new-style.scss */
+html[dir='rtl'] .breaking-news-text-wrapper {
+  float: right;
+  display: table-cell;
+  width: 60%;
+}
+@media all and (max-width: 767px) {
+  /* line 453, ../sass/_new-style.scss */
+  html[dir='rtl'] .breaking-news-text-wrapper {
+    width: 100%;
+  }
+}
+/* line 462, ../sass/_new-style.scss */
+html[dir='rtl'] .breaking-news-text-wrapper .title {
+  text-align: right;
+}
+/* line 466, ../sass/_new-style.scss */
+html[dir='rtl'] .breaking-news-text-wrapper .breaking-news-left {
+  float: right;
+  padding: 0 10px 0 15px;
+  border-right: none;
+  border-left: 1px solid #b5995a;
+}
+@media all and (max-width: 767px) {
+  /* line 466, ../sass/_new-style.scss */
+  html[dir='rtl'] .breaking-news-text-wrapper .breaking-news-left {
+    border-left: none;
+  }
+}
+/* line 477, ../sass/_new-style.scss */
+html[dir='rtl'] .breaking-news-text-wrapper .breaking-news-right {
+  float: right;
+}
+
+/* line 483, ../sass/_new-style.scss */
+.region-footer-second {
   text-align: center;
 }
 
