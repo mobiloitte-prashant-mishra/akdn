@@ -1031,6 +1031,7 @@ print t(\'THE AWARD AT A GLANCE\');
   $handler->display->display_options['fields']['field_social_sharing_links']['table'] = 'field_data_field_social_sharing_links';
   $handler->display->display_options['fields']['field_social_sharing_links']['field'] = 'field_social_sharing_links';
   $handler->display->display_options['fields']['field_social_sharing_links']['label'] = '';
+  $handler->display->display_options['fields']['field_social_sharing_links']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_social_sharing_links']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_social_sharing_links']['element_class'] = 'sub-navbar-rightlinks';
   $handler->display->display_options['fields']['field_social_sharing_links']['element_label_colon'] = FALSE;
@@ -1039,6 +1040,18 @@ print t(\'THE AWARD AT A GLANCE\');
   $handler->display->display_options['fields']['field_social_sharing_links']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_social_sharing_links']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_social_sharing_links']['multi_type'] = 'ul';
+  /* Field: Entity translation: social sharing links: translated */
+  $handler->display->display_options['fields']['field_social_sharing_links_et']['id'] = 'field_social_sharing_links_et';
+  $handler->display->display_options['fields']['field_social_sharing_links_et']['table'] = 'field_data_field_social_sharing_links';
+  $handler->display->display_options['fields']['field_social_sharing_links_et']['field'] = 'field_social_sharing_links_et';
+  $handler->display->display_options['fields']['field_social_sharing_links_et']['label'] = '';
+  $handler->display->display_options['fields']['field_social_sharing_links_et']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_social_sharing_links_et']['element_class'] = 'sub-navbar-rightlinks';
+  $handler->display->display_options['fields']['field_social_sharing_links_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_social_sharing_links_et']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_social_sharing_links_et']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_social_sharing_links_et']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_social_sharing_links_et']['multi_type'] = 'ul';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -1086,6 +1099,7 @@ print t(\'THE AWARD AT A GLANCE\');
   $handler->display->display_options['fields']['field_facts_url_links']['table'] = 'field_data_field_facts_url_links';
   $handler->display->display_options['fields']['field_facts_url_links']['field'] = 'field_facts_url_links';
   $handler->display->display_options['fields']['field_facts_url_links']['label'] = '';
+  $handler->display->display_options['fields']['field_facts_url_links']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_facts_url_links']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_facts_url_links']['element_class'] = 'sub-navbar-rightlinks';
   $handler->display->display_options['fields']['field_facts_url_links']['element_label_colon'] = FALSE;
@@ -1094,6 +1108,18 @@ print t(\'THE AWARD AT A GLANCE\');
   $handler->display->display_options['fields']['field_facts_url_links']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_facts_url_links']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_facts_url_links']['multi_type'] = 'ul';
+  /* Field: Entity translation: At Glance Links: translated */
+  $handler->display->display_options['fields']['field_facts_url_links_et']['id'] = 'field_facts_url_links_et';
+  $handler->display->display_options['fields']['field_facts_url_links_et']['table'] = 'field_data_field_facts_url_links';
+  $handler->display->display_options['fields']['field_facts_url_links_et']['field'] = 'field_facts_url_links_et';
+  $handler->display->display_options['fields']['field_facts_url_links_et']['label'] = '';
+  $handler->display->display_options['fields']['field_facts_url_links_et']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_facts_url_links_et']['element_class'] = 'sub-navbar-rightlinks';
+  $handler->display->display_options['fields']['field_facts_url_links_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_facts_url_links_et']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_facts_url_links_et']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_facts_url_links_et']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_facts_url_links_et']['multi_type'] = 'ul';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -1127,18 +1153,18 @@ print t(\'THE AWARD AT A GLANCE\');
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<p><span>N</span><span>EWS & RESOURCES</span></p>';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  /* Header: Global: PHP */
+  $handler->display->display_options['header']['php']['id'] = 'php';
+  $handler->display->display_options['header']['php']['table'] = 'views';
+  $handler->display->display_options['header']['php']['field'] = 'php';
+  $handler->display->display_options['header']['php']['php_output'] = '<?php echo t("<p><span>N</span><span>EWS & RESOURCES</span></p>"); ?>';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<ul>
   <li><a href="/architecture/press-centre?f[0]=entity_type:gallery" title="AKAA Photographs">Photographs</a></li>
    <li><a href="/architecture/press-centre?f[0]=entity_type:Video" title="AKAA Videos">Videos</a></li>
@@ -1147,6 +1173,22 @@ print t(\'THE AWARD AT A GLANCE\');
   <li><a href="/architecture/projects/map" title="AKAA Project Locations">Project Locations</a></li>
 </ul>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Field: Global: PHP */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_output'] = '<ul>
+  <li><a href="/architecture/press-centre?f[0]=entity_type:gallery" title="AKAA Photographs"><?php echo t(\'Photographs\');?></a></li>
+   <li><a href="/architecture/press-centre?f[0]=entity_type:Video" title="AKAA Videos"><?php echo t(\'Videos\');?></a></li>
+    <li><a href="/architecture/press-centre?f[0]=entity_type:event" title="AKAA Events"><?php echo t(\'Events\');?></a></li>
+      <li><a href="/architecture/press-centre?f[0]=entity_type:speech" title="AKAA Speeches"><?php echo t(\'Speeches\');?></a></li>
+  <li><a href="/architecture/projects/map" title="AKAA Project Locations"><?php echo t(\'Project Locations\');?></a></li>
+</ul>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Published */
   $handler->display->display_options['sorts']['status']['id'] = 'status';
@@ -1663,49 +1705,6 @@ print $content;
   $handler->display->display_options['filters']['language']['field'] = 'language';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
-  );
-  $translatables['akaa_home_page'] = array(
-    t('Master'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('At Glance Links'),
-    t('All'),
-    t('Social Sharing Links'),
-    t('<p><span>S</span><span>TAY CONNECTED TO THE AKAA</span></p>'),
-    t('Stay connections to the akaa'),
-    t('The award at a glance'),
-    t('<p><span>T</span><span>HE AWARD AT A GLANCE</span></p>'),
-    t('News & Resource Links'),
-    t('<p><span>N</span><span>EWS & RESOURCES</span></p>'),
-    t('<ul>
-  <li><a href="/architecture/press-centre?f[0]=entity_type:gallery" title="AKAA Photographs">Photographs</a></li>
-   <li><a href="/architecture/press-centre?f[0]=entity_type:Video" title="AKAA Videos">Videos</a></li>
-    <li><a href="/architecture/press-centre?f[0]=entity_type:event" title="AKAA Events">Events</a></li>
-      <li><a href="/architecture/press-centre?f[0]=entity_type:speech" title="AKAA Speeches">Speeches</a></li>
-  <li><a href="/architecture/projects/map" title="AKAA Project Locations">Project Locations</a></li>
-</ul>'),
-    t('AKAA  News & Resources Links'),
-    t('AKAA Publication'),
-    t('<div class="what-we-do-subwrapper">
-<div class="image">[field_publication_image]</div>
-<div class="type">[type]</div>
-<div class="date">[field_publish_date]</div>
-<div class="title">[field_short_title]</div>
-<span class="viewmore">[php]</span>
-</div>'),
-    t('AKAA Press Release'),
-    t('<div class="what-we-do-subwrapper">
-<div class="image">[field_article_img]</div>
-<div class="type">[field_article_cat]</div>
-<div class="date">[field_publish_date]</div>
-<div class="title">[field_short_title]</div>
-<span class="viewmore">[php]</span>
-</div>'),
-    t('AKAA In the Media'),
   );
   $export['akaa_home_page'] = $view;
 
