@@ -22243,8 +22243,30 @@ html[dir='rtl'] #mc_embed_signup_scroll .subs_btn_wrap {
 html[dir='rtl'] #mc_embed_signup_scroll .subs_btn_wrap .form-submit {
   transform: none;
 }
+/* line 598, ../sass/_new-style.scss */
+html[dir='rtl'] .node-type-webform .region-content .node-webform .webform-client-form label {
+  float: right;
+  width: auto;
+}
+/* line 603, ../sass/_new-style.scss */
+html[dir='rtl'] .node-type-webform .region-content .node-webform .webform-client-form .form-textarea-wrapper {
+  float: left;
+}
+/* line 607, ../sass/_new-style.scss */
+html[dir='rtl'] .node-type-webform .region-content .node-webform .webform-client-form select {
+  padding-left: 10px !important;
+  background-position: 1% center;
+}
+/* line 612, ../sass/_new-style.scss */
+html[dir='rtl'] .node-type-webform .region-content .node-webform .webform-client-form .form-actions {
+  float: left;
+}
+/* line 615, ../sass/_new-style.scss */
+html[dir='rtl'] .node-type-webform .region-content .node-webform .webform-client-form .form-actions .form-submit {
+  transform: none;
+}
 
-/* line 594, ../sass/_new-style.scss */
+/* line 625, ../sass/_new-style.scss */
 .region-footer-second {
   text-align: center;
 }
