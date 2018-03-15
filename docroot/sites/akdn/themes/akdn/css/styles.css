@@ -22265,8 +22265,13 @@ html[dir='rtl'] .node-type-webform .region-content .node-webform .webform-client
 html[dir='rtl'] .node-type-webform .region-content .node-webform .webform-client-form .form-actions .form-submit {
   transform: none;
 }
+/* line 626, ../sass/_new-style.scss */
+html[dir='rtl'] .gallery-processed .gallery-slides .gallery-slide {
+  left: initial;
+  right: 0;
+}
 
-/* line 625, ../sass/_new-style.scss */
+/* line 634, ../sass/_new-style.scss */
 .region-footer-second {
   text-align: center;
 }
