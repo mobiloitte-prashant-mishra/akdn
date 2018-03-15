@@ -5,7 +5,7 @@
     padding: 20px;
     line-height: normal;
     height: 56px;
-    
+
     h2 {
         color: #3c0202;
         font-size: 15px;
@@ -20,31 +20,31 @@
 .pane-akdn-custom-page-lang-switcher .pane-content {
     float: left;
     width: calc(100% - 260px);
-    
+
     @media only screen and (max-width: 767px) {
         width: 100%;
         padding-top: 5px;
     }
-    
+
     ul {
         padding: 0;
         margin: 0;
-        
+
         li {
             list-style: none;
             display: inline-block;
             padding-bottom: 5px;
-            
+
             a {
                 border-left: 1px solid #3c0202;
                 padding: 0 10px;
             }
-            
+
             &:first-child.active + li a {
                 border-left: 0 none;
                 padding: 0 10px 0 0;
             }
-            
+
             &.first a {
                 border-left: 0 none;
                 padding: 0 10px 0 0;
@@ -56,66 +56,263 @@
 
 /*RTL CSS*/
 html[dir='rtl'] {
-    .block-akdn-custom-page-lang-switcher,
-    .pane-akdn-custom-page-lang-switcher {
-        h2 {
-            float: right;
-            margin: 0 0 0 8px;
-        }
+  .block-akdn-custom-page-lang-switcher,
+  .pane-akdn-custom-page-lang-switcher {
+    h2 {
+      float: right;
+      margin: 0 0 0 8px;
     }
+  }
 
-    .block-akdn-custom-page-lang-switcher .content,
-    .pane-akdn-custom-page-lang-switcher .pane-content {
+  .block-akdn-custom-page-lang-switcher .content,
+  .pane-akdn-custom-page-lang-switcher .pane-content {
+    float: right;
+
+    ul li {
+      a {
+        border-right: 1px solid #3c0202;
+        border-left: 0 none;
+        padding: 0 10px;
+      }
+
+      &:first-child.active + li a {
+        border: 0 none;
+        padding: 0 0 0 10px;
+      }
+
+      &.first a {
+        border: 0 none;
+        padding: 0 0 0 10px;
+      }
+    }
+  }
+
+  .static_text {
+    float: right;
+    margin: 9px 0 0 8px;
+  }
+
+  .breadcrumb {
+    text-align: right;
+
+    .inline {
         float: right;
-        
-        ul li {
-            a {
-                border-right: 1px solid #3c0202;
-                border-left: 0 none;
-                padding: 0 10px;
-            }
-            
-            &:first-child.active + li a {
-                border: 0 none;
-                padding: 0 0 0 10px;
-            }
-            
-            &.first a {
-                border: 0 none;
-                padding: 0 0 0 10px;
-            }
-        }
     }
-    
-    .static_text {
+
+    .delimiter {
         float: right;
-        margin: 9px 0 0 8px;
+        margin: 0 5px;
+    }
+  }
+
+  .slide-text {
+    text-align: right;
+    padding: 10px 15px 10px 110px
+  }
+
+  .pane-node-body li:before {
+    margin-left: 0;
+    margin-right: -14px;
+  }
+
+  .flex-nav-container ol.flex-control-nav {
+    right: auto;
+    left: 10px;
+
+    li {
+      &:first-child {
+        margin-left: 5px;
+      }
+
+      &:last-child {
+          margin-left: 0;
+      }
+    }
+  }
+
+  .whatwedo-right {
+    .views-field-field-agency-logo {
+      left: auto;
+      right: 0;
+      float: right;
     }
 
-    .breadcrumb {
-        text-align: right;
-        
-        .inline {
-            float: right;
+    .views-field-title {
+      float: right;
+      padding-left: 0;
+      padding-right: 46px;
+    }
+  }
+
+  .sub-navbar ul {
+    float: left;
+
+    li {
+      float: right;
+
+      &:first-child a {
+        border: 0 none;
+      }
+
+      &:last-child a {
+        padding: 0 10px 0 0;
+        border-left: 0 none;
+        border-right: 1px solid;
+      }
+    }
+  }
+
+  .sub-navbar p span + span {
+    padding-left: 5px;
+    padding-right: 0;
+  }
+
+  .sub-navbar p:after {
+    margin-left: 0;
+  }
+
+  .views-align-left {
+    text-align: right;
+  }
+
+  .location-links h2 .nolink:after, .location-links h2 a:after {
+    content: "\e257";
+    left: 0;
+    right: auto;
+  }
+
+  .social-box li:first-child a {
+    margin-left: 10px;
+  }
+
+  // Header
+  .logo-container {
+    float: right;
+  }
+
+  .top-navbar {
+    float: left;
+    text-align: left;
+
+    ul:not(.dropdown-menu) {
+      float: left;
+
+      li:first-child {
+        overflow: auto;
+        margin: 0;
+      }
+
+      li:nth-child(2) {
+        border-left: none;
+        border-right: 1px solid #b2b2b2;
+        text-align: left;
+
+        @media all and (max-width: 480px) {
+          border-right: none;
         }
-        
-        .delimiter {
-            float: right;
-            margin: 0 5px;
+      }
+
+      li:nth-child(5) {
+        padding-left: 0;
+      }
+
+      li:last-child {
+        padding-left: 0;
+
+        @media all and (max-width: 991px) {
+          padding-left: 2px;
+          padding-right: 10px;
         }
+      }
     }
 
-    .slide-text {
-        text-align: right;
-        padding: 10px 15px 10px 110px
+    .form-item-search {
+      .form-control {
+        padding: 6px 6px 6px 25px;
+
+        &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+          text-align: left;
+        }
+        &::-moz-placeholder { /* Firefox 19+ */
+          text-align: left;
+        }
+        &:-ms-input-placeholder { /* IE 10+ */
+          text-align: left;
+        }
+        &:-moz-placeholder { /* Firefox 18- */
+          text-align: left;
+        }
+      }
     }
 
-    .pane-node-body li:before {
-        margin-left: 0;
-        margin-right: -14px;
+    .form-submit {
+      right: inherit;
+      left: 0;
+      margin: 12px 1px 0 7px;
+      transform: rotate(90deg);
     }
-    .flex-nav-container ol.flex-control-nav {
-        right: auto;
-        left: 10px;
+  }
+
+  .main-navbar  {
+    float: left;
+    clear: none;
+
+    @media only screen and (max-width: 992px) {
+      clear: left;
+
+      &:before, &:after {
+        right: initial;
+        left: 12px;
+      }
     }
+
+    .menu-block-wrapper {
+      & > ul {
+        & > li {
+          &:last-child {
+            .nolink {
+              padding-right: 10px !important;
+              border-right: 1px solid #999;
+              padding-left: 0;
+            }
+          }
+          @media all and (max-width: 991px) {
+            &:first-child {
+              padding-right: 10px;
+            }
+
+            .subnav {
+              float: left;
+            }
+          }
+        }
+      }
+    }
+
+    li {
+      float: right;
+
+      &:first-child {
+        .nolink {
+          padding-right: 0px !important;
+          border-right: none;
+
+          @media all and (max-width: 991px) {
+            padding-right: 10px !important;
+          }
+        }
+      }
+
+      .menu {
+        .nolink {
+          text-align: right;
+          float: right;
+        }
+      }
+    }
+  }
+}
+
+img {
+  width: auto;
 }
