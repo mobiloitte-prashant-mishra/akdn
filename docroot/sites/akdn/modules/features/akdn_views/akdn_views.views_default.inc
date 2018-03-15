@@ -10864,6 +10864,7 @@ print $output;
     'image_style' => 'social_sharing_image',
     'image_link' => 'content',
   );
+  $handler->display->display_options['fields']['field_project_image_et']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_project_image_et']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Global: Random */
