@@ -110,9 +110,15 @@ html[dir='rtl'] {
     padding: 10px 15px 10px 110px
   }
 
-  .pane-node-body li:before {
-    margin-left: 0;
-    margin-right: -14px;
+  .pane-node-body {
+    li:before {
+      margin-left: 0;
+      margin-right: -14px;
+    }
+    ul {
+      padding-left: 15px;
+      padding-right: 0;
+    }
   }
 
   .flex-nav-container ol.flex-control-nav {
@@ -1063,6 +1069,10 @@ html[dir='rtl'] {
       float: left;
       @include transform(rotate(180deg));
     }
+  }
+
+  .main-navbar {
+    clear: left;
   }
 }
 
