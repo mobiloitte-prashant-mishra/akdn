@@ -12504,6 +12504,14 @@ print $explode[1];
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<?php echo t("Latest News");?>';
+  $handler->display->display_options['header']['area']['format'] = 'php_code';
+  $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Breaking News Image */
   $handler->display->display_options['fields']['field_breaking_news_image']['id'] = 'field_breaking_news_image';
@@ -12570,55 +12578,72 @@ print $explode[1];
   $handler->display->display_options['fields']['field_news_see_also']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_news_see_also']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_news_see_also']['hide_empty'] = TRUE;
+  /* Field: Entity translation: Breaking News Image: translated */
+  $handler->display->display_options['fields']['field_breaking_news_image_et']['id'] = 'field_breaking_news_image_et';
+  $handler->display->display_options['fields']['field_breaking_news_image_et']['table'] = 'field_data_field_breaking_news_image';
+  $handler->display->display_options['fields']['field_breaking_news_image_et']['field'] = 'field_breaking_news_image_et';
+  $handler->display->display_options['fields']['field_breaking_news_image_et']['label'] = '';
+  $handler->display->display_options['fields']['field_breaking_news_image_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_breaking_news_image_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_breaking_news_image_et']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_breaking_news_image_et']['settings'] = array(
+    'image_style' => 'social_sharing_image',
+    'image_link' => '',
+  );
+  /* Field: Entity translation: Title: translated */
+  $handler->display->display_options['fields']['title_field_et']['id'] = 'title_field_et';
+  $handler->display->display_options['fields']['title_field_et']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field_et']['field'] = 'title_field_et';
+  $handler->display->display_options['fields']['title_field_et']['label'] = '';
+  $handler->display->display_options['fields']['title_field_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field_et']['type'] = 'text_plain';
+  /* Field: Entity translation: Body: translated */
+  $handler->display->display_options['fields']['body_et']['id'] = 'body_et';
+  $handler->display->display_options['fields']['body_et']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body_et']['field'] = 'body_et';
+  $handler->display->display_options['fields']['body_et']['label'] = '';
+  $handler->display->display_options['fields']['body_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['body_et']['alter']['max_length'] = '300';
+  $handler->display->display_options['fields']['body_et']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['body_et']['element_label_colon'] = FALSE;
+  /* Field: Entity translation: Facts Links: translated */
+  $handler->display->display_options['fields']['field_facts_links_et']['id'] = 'field_facts_links_et';
+  $handler->display->display_options['fields']['field_facts_links_et']['table'] = 'field_data_field_facts_links';
+  $handler->display->display_options['fields']['field_facts_links_et']['field'] = 'field_facts_links_et';
+  $handler->display->display_options['fields']['field_facts_links_et']['label'] = '';
+  $handler->display->display_options['fields']['field_facts_links_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_facts_links_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_facts_links_et']['click_sort_column'] = 'url';
+  /* Field: Entity translation: See Also: translated */
+  $handler->display->display_options['fields']['field_news_see_also_et']['id'] = 'field_news_see_also_et';
+  $handler->display->display_options['fields']['field_news_see_also_et']['table'] = 'field_data_field_news_see_also';
+  $handler->display->display_options['fields']['field_news_see_also_et']['field'] = 'field_news_see_also_et';
+  $handler->display->display_options['fields']['field_news_see_also_et']['label'] = '';
+  $handler->display->display_options['fields']['field_news_see_also_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_news_see_also_et']['element_label_colon'] = FALSE;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="breaking-news-image"><div class="image">[field_breaking_news_image] </div></div>
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="breaking-news-image"><div class="image">[field_breaking_news_image_et] </div></div>
 <div class="breaking-news-text-wrapper">
-<div class="title">[title]</div>
+<div class="title">[title_field_et]</div>
 <div class="breaking-news-left">
 <div class="news-left-text">
 <div class="date">[field_news_publication_date]</div>
-<div class="desc">[body] </div>
-<div class="link">[field_facts_links]</div>
+<div class="desc">[body_et] </div>
+<div class="link">[field_facts_links_et]</div>
 </div>
 </div>
 <div class="breaking-news-right">
-[field_news_see_also]
+[field_news_see_also_et]
 </div>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_class'] = 'breaking-news-custom-wrap';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  $translatables['breaking_news'] = array(
-    t('Master'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Latest News'),
-    t('More'),
-    t('See Also'),
-    t('<div class="breaking-news-image"><div class="image">[field_breaking_news_image] </div></div>
-<div class="breaking-news-text-wrapper">
-<div class="title">[title]</div>
-<div class="breaking-news-left">
-<div class="news-left-text">
-<div class="date">[field_news_publication_date]</div>
-<div class="desc">[body] </div>
-<div class="link">[field_facts_links]</div>
-</div>
-</div>
-<div class="breaking-news-right">
-[field_news_see_also]
-</div>
-</div>'),
-    t('Breaking News'),
-  );
   $export['breaking_news'] = $view;
 
   $view = new view();
@@ -14739,7 +14764,135 @@ print file_create_url($row->uri);
 
   /* Display: Facts Block On Home Page */
   $handler = $view->new_display('block', 'Facts Block On Home Page', 'block');
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Entity translation: translations */
+  $handler->display->display_options['relationships']['entity_translations']['id'] = 'entity_translations';
+  $handler->display->display_options['relationships']['entity_translations']['table'] = 'node';
+  $handler->display->display_options['relationships']['entity_translations']['field'] = 'entity_translations';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'div';
+  $handler->display->display_options['fields']['title']['element_class'] = 'facts-block_title';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Facts Number */
+  $handler->display->display_options['fields']['field_facts_number']['id'] = 'field_facts_number';
+  $handler->display->display_options['fields']['field_facts_number']['table'] = 'field_data_field_facts_number';
+  $handler->display->display_options['fields']['field_facts_number']['field'] = 'field_facts_number';
+  $handler->display->display_options['fields']['field_facts_number']['label'] = '';
+  $handler->display->display_options['fields']['field_facts_number']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_facts_number']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_facts_number']['element_class'] = 'facts-block_number';
+  $handler->display->display_options['fields']['field_facts_number']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_facts_number']['element_wrapper_type'] = '0';
+  /* Field: Entity translation: Title: translated */
+  $handler->display->display_options['fields']['title_field_et']['id'] = 'title_field_et';
+  $handler->display->display_options['fields']['title_field_et']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field_et']['field'] = 'title_field_et';
+  $handler->display->display_options['fields']['title_field_et']['label'] = '';
+  $handler->display->display_options['fields']['title_field_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field_et']['element_label_colon'] = FALSE;
+  /* Field: Content: Facts Icon */
+  $handler->display->display_options['fields']['field_facts_icon']['id'] = 'field_facts_icon';
+  $handler->display->display_options['fields']['field_facts_icon']['table'] = 'field_data_field_facts_icon';
+  $handler->display->display_options['fields']['field_facts_icon']['field'] = 'field_facts_icon';
+  $handler->display->display_options['fields']['field_facts_icon']['label'] = '';
+  $handler->display->display_options['fields']['field_facts_icon']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_facts_icon']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_facts_icon']['element_class'] = 'facts-block_icon';
+  $handler->display->display_options['fields']['field_facts_icon']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_facts_icon']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_facts_icon']['settings'] = array(
+    'image_style' => '',
+    'image_link' => '',
+  );
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="facts-block_section-top">
+  <div class="facts-block_icon-wrapper"><div class="facts-block_icon">[field_facts_icon]</div></div>
+  <div class="facts-block_number">[title_field_et]</div>
+</div>';
+  $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_class'] = 'facts-block_stats';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = '0';
+  /* Field: Entity translation: Body: translated */
+  $handler->display->display_options['fields']['body_et']['id'] = 'body_et';
+  $handler->display->display_options['fields']['body_et']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body_et']['field'] = 'body_et';
+  $handler->display->display_options['fields']['body_et']['label'] = '';
+  $handler->display->display_options['fields']['body_et']['element_type'] = 'div';
+  $handler->display->display_options['fields']['body_et']['element_class'] = 'facts-block_body';
+  $handler->display->display_options['fields']['body_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body_et']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['body_et']['type'] = 'text_plain';
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['body']['alter']['max_length'] = '300';
+  $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['body']['element_type'] = 'div';
+  $handler->display->display_options['fields']['body']['element_class'] = 'facts-block_body';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['body']['type'] = 'text_plain';
+  /* Field: Entity translation: Facts Links: translated */
+  $handler->display->display_options['fields']['field_facts_links_et']['id'] = 'field_facts_links_et';
+  $handler->display->display_options['fields']['field_facts_links_et']['table'] = 'field_data_field_facts_links';
+  $handler->display->display_options['fields']['field_facts_links_et']['field'] = 'field_facts_links_et';
+  $handler->display->display_options['fields']['field_facts_links_et']['label'] = '';
+  $handler->display->display_options['fields']['field_facts_links_et']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_facts_links_et']['element_class'] = 'facts-block_morelinks';
+  $handler->display->display_options['fields']['field_facts_links_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_facts_links_et']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_facts_links_et']['click_sort_column'] = 'url';
+  /* Field: Content: Facts Links */
+  $handler->display->display_options['fields']['field_facts_links']['id'] = 'field_facts_links';
+  $handler->display->display_options['fields']['field_facts_links']['table'] = 'field_data_field_facts_links';
+  $handler->display->display_options['fields']['field_facts_links']['field'] = 'field_facts_links';
+  $handler->display->display_options['fields']['field_facts_links']['label'] = '';
+  $handler->display->display_options['fields']['field_facts_links']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_facts_links']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_facts_links']['element_class'] = 'facts-block_morelinks';
+  $handler->display->display_options['fields']['field_facts_links']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_facts_links']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_facts_links']['click_sort_column'] = 'url';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'facts_block' => 'facts_block',
+  );
+  /* Filter criterion: Content: Show ON Homepage (field_facts_show_on_homepage) */
+  $handler->display->display_options['filters']['field_facts_show_on_homepage_value']['id'] = 'field_facts_show_on_homepage_value';
+  $handler->display->display_options['filters']['field_facts_show_on_homepage_value']['table'] = 'field_data_field_facts_show_on_homepage';
+  $handler->display->display_options['filters']['field_facts_show_on_homepage_value']['field'] = 'field_facts_show_on_homepage_value';
+  $handler->display->display_options['filters']['field_facts_show_on_homepage_value']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['filters']['field_facts_show_on_homepage_value']['reduce_duplicates'] = TRUE;
 
   /* Display: Facts Block On Hub pages */
   $handler = $view->new_display('block', 'Facts Block On Hub pages', 'block_1');
@@ -15677,6 +15830,18 @@ print file_create_url($row->uri);
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Entity translation: Slideshow Image: translated */
+  $handler->display->display_options['fields']['field_feature_image_et']['id'] = 'field_feature_image_et';
+  $handler->display->display_options['fields']['field_feature_image_et']['table'] = 'field_data_field_feature_image';
+  $handler->display->display_options['fields']['field_feature_image_et']['field'] = 'field_feature_image_et';
+  $handler->display->display_options['fields']['field_feature_image_et']['label'] = '';
+  $handler->display->display_options['fields']['field_feature_image_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_feature_image_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_feature_image_et']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_feature_image_et']['settings'] = array(
+    'image_style' => 'banner_item_standard_home_page',
+    'image_link' => '',
+  );
   /* Field: Content: Slideshow Image */
   $handler->display->display_options['fields']['field_feature_image']['id'] = 'field_feature_image';
   $handler->display->display_options['fields']['field_feature_image']['table'] = 'field_data_field_feature_image';
@@ -15690,6 +15855,21 @@ print file_create_url($row->uri);
     'image_style' => 'banner_item_standard_home_page',
     'image_link' => '',
   );
+
+  /* Field: Entity translation: Image: translated */
+  $handler->display->display_options['fields']['field_project_image_et']['id'] = 'field_project_image_et';
+  $handler->display->display_options['fields']['field_project_image_et']['table'] = 'field_data_field_project_image';
+  $handler->display->display_options['fields']['field_project_image_et']['field'] = 'field_project_image_et';
+  $handler->display->display_options['fields']['field_project_image_et']['label'] = '';
+  $handler->display->display_options['fields']['field_project_image_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_project_image_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_project_image_et']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_project_image_et']['settings'] = array(
+    'image_style' => 'banner_item_standard_home_page',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_project_image_et']['delta_offset'] = '0';
+
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_project_image']['id'] = 'field_project_image';
   $handler->display->display_options['fields']['field_project_image']['table'] = 'field_data_field_project_image';
@@ -15705,6 +15885,14 @@ print file_create_url($row->uri);
   );
   $handler->display->display_options['fields']['field_project_image']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_project_image']['delta_offset'] = '0';
+  /* Field: Entity translation: Title: translated */
+  $handler->display->display_options['fields']['title_field_et']['id'] = 'title_field_et';
+  $handler->display->display_options['fields']['title_field_et']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field_et']['field'] = 'title_field_et';
+  $handler->display->display_options['fields']['title_field_et']['label'] = '';
+  $handler->display->display_options['fields']['title_field_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field_et']['type'] = 'text_plain';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
@@ -15819,6 +16007,12 @@ print $value;
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
+global $language;
+$lang = $language->language;
+if($lang != \'en\'){
+$langu = \'/\'.$lang.\'/\';}
+else{
+$langu = \'/\';}
 if ($data->node_type == "featured_content") {
   if (!empty($data->field_field_feature_link)) {
     $url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
@@ -15827,21 +16021,34 @@ if ($data->node_type == "featured_content") {
   else { print \' <a class="banner-no-link">\'; }
 } else {
   $node_path = drupal_get_path_alias(\'node/\' . $data->nid);
-  $url =  " <a href=\'/$node_path\'>";
+  $node_url = $langu.$node_path;
+  $url =  " <a href= \'$node_url\'>";
   print $url;
 }
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Field: Global: PHP */
+  $handler->display->display_options['fields']['php_2']['id'] = 'php_2';
+  $handler->display->display_options['fields']['php_2']['table'] = 'views';
+  $handler->display->display_options['fields']['php_2']['field'] = 'php';
+  $handler->display->display_options['fields']['php_2']['label'] = '';
+  $handler->display->display_options['fields']['php_2']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['php_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_2']['php_output'] = '<?php echo t("AGA KHAN DEVELOPMENT NETWORK");?></h3>
+';
+  $handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[php][field_feature_image][field_project_image]</div></a>
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[php][field_feature_image_et][field_project_image_et]</div></a>
 <div class="slide-text">
-<h3>AGA KHAN DEVELOPMENT NETWORK</h3>
-[title_field] [php]More</a>
+<h3>[php_2]</h3>
+[title_field_et] [php]More</a>
 </div>';
   $handler->display->display_options['fields']['nothing']['alter']['max_length'] = '104';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -16019,6 +16226,18 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Entity translation: Slideshow Image: translated */
+  $handler->display->display_options['fields']['field_feature_image_et']['id'] = 'field_feature_image_et';
+  $handler->display->display_options['fields']['field_feature_image_et']['table'] = 'field_data_field_feature_image';
+  $handler->display->display_options['fields']['field_feature_image_et']['field'] = 'field_feature_image_et';
+  $handler->display->display_options['fields']['field_feature_image_et']['label'] = '';
+  $handler->display->display_options['fields']['field_feature_image_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_feature_image_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_feature_image_et']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_feature_image_et']['settings'] = array(
+    'image_style' => 'featured_content',
+    'image_link' => 'content',
+  );
   /* Field: Content: Slideshow Image */
   $handler->display->display_options['fields']['field_feature_image']['id'] = 'field_feature_image';
   $handler->display->display_options['fields']['field_feature_image']['table'] = 'field_data_field_feature_image';
@@ -16032,6 +16251,22 @@ if ($data->node_type == "featured_content") {
     'image_style' => 'featured_content',
     'image_link' => 'content',
   );
+
+  /* Field: Entity translation: Image: translated */
+  $handler->display->display_options['fields']['field_project_image_et']['id'] = 'field_project_image_et';
+  $handler->display->display_options['fields']['field_project_image_et']['table'] = 'field_data_field_project_image';
+  $handler->display->display_options['fields']['field_project_image_et']['field'] = 'field_project_image_et';
+  $handler->display->display_options['fields']['field_project_image_et']['label'] = '';
+  $handler->display->display_options['fields']['field_project_image_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_project_image_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_project_image_et']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_project_image_et']['settings'] = array(
+    'image_style' => 'featured_content',
+    'image_link' => 'content',
+  );
+  $handler->display->display_options['fields']['field_project_image_et']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_project_image_et']['delta_offset'] = '0';
+
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_project_image']['id'] = 'field_project_image';
   $handler->display->display_options['fields']['field_project_image']['table'] = 'field_data_field_project_image';
@@ -16127,6 +16362,8 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
+global $language;
+$lang = $language->language;
 if ($data->node_type == "featured_content") {
   if (!empty($data->field_field_feature_link)) {
     $url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>More</a>";
@@ -16134,11 +16371,17 @@ if ($data->node_type == "featured_content") {
   }
   else { print \' <a class="banner-no-link">More</a>\'; }
 } else {
-  $tid = $data->_field_data[\'nid\'][\'entity\']->field_article_cat[\'und\'][0][\'tid\'];
+  $tid = isset($data->_field_data[\'nid\'][\'entity\']->field_article_cat[$lang][0][\'tid\']) ? $data->_field_data[\'nid\'][\'entity\']->field_article_cat[$lang][0][\'tid\'] : $data->_field_data[\'nid\'][\'entity\']->field_article_cat[\'en\'][0][\'tid\'];
+  if(empty($tid)){
+    $tid = $data->_field_data[\'nid\'][\'entity\']->field_article_cat[\'und\'][0][\'tid\'];
+  }
   $term = taxonomy_term_load($tid);
   $name = $term->name;
   if($name == \'In the media\') {
-  $node_path =  $data->_field_data[\'nid\'][\'entity\']->field_media_source[\'und\'][0][\'url\'];
+  $node_path =  isset($data->_field_data[\'nid\'][\'entity\']->field_media_source[$lang][0][\'url\']) ? $data->_field_data[\'nid\'][\'entity\']->field_media_source[$lang][0][\'url\'] : $data->_field_data[\'nid\'][\'entity\']->field_media_source[\'en\'][0][\'url\'] ;
+  if(empty($node_path)){
+    $node_path =  $data->_field_data[\'nid\'][\'entity\']->field_media_source[\'und\'][0][\'url\'] ;
+  }
   $url =  " <a href=\'$node_path\' target=\'_blank\'>More</a>";
   print $url;
 } else {
@@ -16222,7 +16465,7 @@ global $language;
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide [field_article_cat]">[field_project_image][field_feature_image]</div>
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide [field_article_cat]">[field_project_image_et][field_feature_image_et]</div>
 <div class="slide-text"><h3>[title_field_et]</h3>
 [php_1]
 [php]
@@ -16606,6 +16849,8 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
+global $language;
+$lang = $language->language;
 $array = $data->field_field_caption;
 if ($data->node_type == \'article\') {
   $array = (isset($data->field_field_image_caption[$lang])) ?  $data->field_field_image_caption[$lang] : $data->field_field_image_caption;
@@ -16646,6 +16891,34 @@ print $value;
 [php]| More </a>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Field: Entity translation: Slideshow Image: translated */
+  $handler->display->display_options['fields']['field_feature_image_et']['id'] = 'field_feature_image_et';
+  $handler->display->display_options['fields']['field_feature_image_et']['table'] = 'field_data_field_feature_image';
+  $handler->display->display_options['fields']['field_feature_image_et']['field'] = 'field_feature_image_et';
+  $handler->display->display_options['fields']['field_feature_image_et']['relationship'] = 'field_featured_content_nodes_nid';
+  $handler->display->display_options['fields']['field_feature_image_et']['label'] = '';
+  $handler->display->display_options['fields']['field_feature_image_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_feature_image_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_feature_image_et']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_feature_image_et']['settings'] = array(
+    'image_style' => 'featured_content',
+    'image_link' => '',
+  );
+  /* Field: Entity translation: Image: translated */
+  $handler->display->display_options['fields']['field_project_image_et']['id'] = 'field_project_image_et';
+  $handler->display->display_options['fields']['field_project_image_et']['table'] = 'field_data_field_project_image';
+  $handler->display->display_options['fields']['field_project_image_et']['field'] = 'field_project_image_et';
+  $handler->display->display_options['fields']['field_project_image_et']['relationship'] = 'field_featured_content_nodes_nid';
+  $handler->display->display_options['fields']['field_project_image_et']['label'] = '';
+  $handler->display->display_options['fields']['field_project_image_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_project_image_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_project_image_et']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_project_image_et']['settings'] = array(
+    'image_style' => 'featured_content',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_project_image_et']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_project_image_et']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Sticky */
   $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
@@ -18024,12 +18297,32 @@ if ($data->node_type == "featured_content") {
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Field: Entity translation: Caption: translated */
+  $handler->display->display_options['fields']['field_caption_et']['id'] = 'field_caption_et';
+  $handler->display->display_options['fields']['field_caption_et']['table'] = 'field_data_field_caption';
+  $handler->display->display_options['fields']['field_caption_et']['field'] = 'field_caption_et';
+  $handler->display->display_options['fields']['field_caption_et']['label'] = '';
+  $handler->display->display_options['fields']['field_caption_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_caption_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_caption_et']['type'] = 'text_plain';
+  /* Field: Entity translation: Slideshow Image: translated */
+  $handler->display->display_options['fields']['field_feature_image_et']['id'] = 'field_feature_image_et';
+  $handler->display->display_options['fields']['field_feature_image_et']['table'] = 'field_data_field_feature_image';
+  $handler->display->display_options['fields']['field_feature_image_et']['field'] = 'field_feature_image_et';
+  $handler->display->display_options['fields']['field_feature_image_et']['label'] = '';
+  $handler->display->display_options['fields']['field_feature_image_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_feature_image_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_feature_image_et']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_feature_image_et']['settings'] = array(
+    'image_style' => 'featured_content',
+    'image_link' => '',
+  );
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[php][field_feature_image]</a></div>
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[php][field_feature_image_et]</a></div>
 <div class="slide-text">
 [php_1]
 [php]More</a>
@@ -27492,6 +27785,20 @@ return $term->tid;';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: PHP */
+  $handler->display->display_options['footer']['php']['id'] = 'php';
+  $handler->display->display_options['footer']['php']['table'] = 'views';
+  $handler->display->display_options['footer']['php']['field'] = 'php';
+  $handler->display->display_options['footer']['php']['empty'] = TRUE;
+  $handler->display->display_options['footer']['php']['php_output'] = '<?php
+global $language;
+$lang = $language->language;
+if($lang != \'en\'){
+$langu = \'/\'.$lang.\'/\';}
+else{
+$langu = \'/\';}
+?><span class="presscenter-right-more-btn"><a href="<?php echo $langu;?>press-centre/speeches"><?php echo t("More Speeches"); ?></a></span>';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Image */
@@ -27628,6 +27935,21 @@ return $term->tid;';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: PHP */
+  $handler->display->display_options['footer']['php']['id'] = 'php';
+  $handler->display->display_options['footer']['php']['table'] = 'views';
+  $handler->display->display_options['footer']['php']['field'] = 'php';
+  $handler->display->display_options['footer']['php']['empty'] = TRUE;
+  $handler->display->display_options['footer']['php']['php_output'] = '<?php
+global $language;
+$lang = $language->language;
+if($lang != \'en\'){
+$langu = \'/\'.$lang.\'/\';}
+else{
+$langu = \'/\';}
+?>
+<span class="presscenter-right-more-btn"><a href="<?php echo $langu;?>press-centre/speeches"><?php echo t("More Speeches"); ?></a></span>';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_article_img']['id'] = 'field_article_img';
@@ -27823,7 +28145,23 @@ return $term->tid;';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: PHP */
+  $handler->display->display_options['footer']['php']['id'] = 'php';
+  $handler->display->display_options['footer']['php']['table'] = 'views';
+  $handler->display->display_options['footer']['php']['field'] = 'php';
+  $handler->display->display_options['footer']['php']['empty'] = TRUE;
+  $handler->display->display_options['footer']['php']['php_output'] = '<?php
+global $language;
+$lang = $language->language;
+if($lang != \'en\'){
+$langu = \'/\'.$lang.\'/\';}
+else{
+$langu = \'/\';}
+?>
+<span class="presscenter-right-more-btn"><a href="<?php echo $langu;?>press-centre/speeches"><?php echo t("More Speeches"); ?></a></span>';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+
   /* Field: Entity translation: Image: translated */
   $handler->display->display_options['fields']['field_article_img_et']['id'] = 'field_article_img_et';
   $handler->display->display_options['fields']['field_article_img_et']['table'] = 'field_data_field_article_img';
@@ -27852,6 +28190,7 @@ return $term->tid;';
     ),
   );
   $handler->display->display_options['fields']['field_article_img_et']['delta_offset'] = '0';
+
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_article_img']['id'] = 'field_article_img';
   $handler->display->display_options['fields']['field_article_img']['table'] = 'field_data_field_article_img';
@@ -28010,7 +28349,13 @@ return $term->tid;';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
   $handler->display->display_options['footer']['area']['content'] = '<?php
-$out = \'<span class="presscenter-right-more-btn"><a href="/press-centre/speeches">\'.t("More Speeches").\'</a></span>\';
+global $language;
+$lang = $language->language;
+if($lang != \'en\'){
+$langu = \'/\'.$lang.\'/\';}
+else{
+$langu = \'/\';}
+$out = \'<span class="presscenter-right-more-btn"><a href="\'.$langu.\'press-centre/speeches">\'.t("More Speeches").\'</a></span>\';
 echo $out;
 ?>';
   $handler->display->display_options['footer']['area']['format'] = 'php_code';
@@ -28276,7 +28621,14 @@ print $content;
   $handler->display->display_options['footer']['php']['table'] = 'views';
   $handler->display->display_options['footer']['php']['field'] = 'php';
   $handler->display->display_options['footer']['php']['empty'] = TRUE;
-  $handler->display->display_options['footer']['php']['php_output'] = '<span class="presscenter-right-more-btn"><a href="/press-centre/news"><?php echo t("More news stories"); ?></a></span>
+  $handler->display->display_options['footer']['php']['php_output'] = '<?php
+global $language;
+$lang = $language->language;
+if($lang != \'en\'){
+$langu = \'/\'.$lang.\'/\';}
+else{
+$langu = \'/\';}
+?><span class="presscenter-right-more-btn"><a href="<?php echo $langu;?>press-centre/news"><?php echo t("More news stories"); ?></a></span>
 ';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: Text area */
@@ -28424,6 +28776,7 @@ print $content;
   $handler->display->display_options['filters']['language']['relationship'] = 'entity_translations';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+    'en' => 'en',
   );
   $handler->display->display_options['block_description'] = 'Recent News';
 
@@ -28461,7 +28814,14 @@ print $content;
   $handler->display->display_options['footer']['php']['table'] = 'views';
   $handler->display->display_options['footer']['php']['field'] = 'php';
   $handler->display->display_options['footer']['php']['empty'] = TRUE;
-  $handler->display->display_options['footer']['php']['php_output'] = '<span class="presscenter-right-more-btn"><a href="/press-centre/videos"><?php echo t("More Videos"); ?></a></span>
+  $handler->display->display_options['footer']['php']['php_output'] = '<?php
+global $language;
+$lang = $language->language;
+if($lang != \'en\'){
+$langu = \'/\'.$lang.\'/\';}
+else{
+$langu = \'/\';}
+?><span class="presscenter-right-more-btn"><a href="<?php echo $langu;?>press-centre/videos"><?php echo t("More Videos"); ?></a></span>
 ';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: Text area */
@@ -28593,6 +28953,7 @@ print $content;
   $handler->display->display_options['filters']['language']['relationship'] = 'entity_translations';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+    'en' => 'en',
   );
   $handler->display->display_options['block_description'] = 'Recent Video';
 
@@ -28631,7 +28992,15 @@ print $content;
   $handler->display->display_options['footer']['php']['table'] = 'views';
   $handler->display->display_options['footer']['php']['field'] = 'php';
   $handler->display->display_options['footer']['php']['empty'] = TRUE;
-  $handler->display->display_options['footer']['php']['php_output'] = '<span class="presscenter-right-more-btn"><a href="/press-centre/events"><?php echo t("More Events");?></a></span>
+  $handler->display->display_options['footer']['php']['php_output'] = '<?php
+global $language;
+$lang = $language->language;
+if($lang != \'en\'){
+$langu = \'/\'.$lang.\'/\';}
+else{
+$langu = \'/\';}
+?>
+<span class="presscenter-right-more-btn"><a href="<?php echo $langu;?>press-centre/events"><?php echo t("More Events");?></a></span>
 ';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: Text area */
@@ -28784,6 +29153,7 @@ print $content;
   $handler->display->display_options['filters']['language']['relationship'] = 'entity_translations';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+    'en' => 'en',
   );
   $handler->display->display_options['block_description'] = 'Recent Event';
 
@@ -28815,6 +29185,19 @@ $text = t(\'Speeches\');
 $content = \'<h2 class="pane-title">\'.$akdn_text.\'</h2><div class="view-header">\'.$text.\'</div>\';
 print $content;
 ?>';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: PHP */
+  $handler->display->display_options['footer']['php']['id'] = 'php';
+  $handler->display->display_options['footer']['php']['table'] = 'views';
+  $handler->display->display_options['footer']['php']['field'] = 'php';
+  $handler->display->display_options['footer']['php']['empty'] = TRUE;
+  $handler->display->display_options['footer']['php']['php_output'] = '<?php
+global $language;
+$lang = $language->language;
+if($lang != \'en\'){
+$langu = \'/\'.$lang.\'/\';}
+else{
+$langu = \'/\';}?><span class="presscenter-right-more-btn"><a href="<?php echo $langu;?>press-centre/speeches"><?php echo t("More Speeches"); ?></a></span>';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
@@ -28950,6 +29333,7 @@ print $content;
   $handler->display->display_options['filters']['language']['relationship'] = 'entity_translations';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+    'en' => 'en',
   );
   $handler->display->display_options['block_description'] = 'Recent Speech';
 
@@ -28988,11 +29372,17 @@ print $content;
   $handler->display->display_options['footer']['php']['table'] = 'views';
   $handler->display->display_options['footer']['php']['field'] = 'php';
   $handler->display->display_options['footer']['php']['empty'] = TRUE;
-  $handler->display->display_options['footer']['php']['php_output'] = '<span class="presscenter-right-more-btn"><a href="/press-centre/galleries"><?php echo t("More Photographs"); ?></a></span>
+  $handler->display->display_options['footer']['php']['php_output'] = '<?php
+global $language;
+$lang = $language->language;
+if($lang != \'en\'){
+$langu = \'/\'.$lang.\'/\';}
+else{
+$langu = \'/\';}
+?><span class="presscenter-right-more-btn"><a href="<?php echo $langu;?>press-centre/galleries"><?php echo t("More Photographs"); ?></a></span>
 ';
   $handler->display->display_options['defaults']['empty'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Entity translation: translations */
   $handler->display->display_options['relationships']['entity_translations']['id'] = 'entity_translations';
   $handler->display->display_options['relationships']['entity_translations']['table'] = 'node';
@@ -29118,6 +29508,7 @@ print $content;
   $handler->display->display_options['filters']['language']['relationship'] = 'entity_translations';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+    'en' => 'en',
   );
   $handler->display->display_options['block_description'] = 'Recent Photograph';
   $export['press_center'] = $view;
@@ -37088,8 +37479,7 @@ print $content;
   $handler->display->display_options['fields']['field_project_image']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_project_image']['multi_type'] = 'ul';
   $handler->display->display_options['fields']['field_project_image']['separator'] = '';
-
-  /* Field: Entity translation: Images: translated */
+  /* Field: Entity translation: Image: translated */
   $handler->display->display_options['fields']['field_project_image_et']['id'] = 'field_project_image_et';
   $handler->display->display_options['fields']['field_project_image_et']['table'] = 'field_data_field_project_image';
   $handler->display->display_options['fields']['field_project_image_et']['field'] = 'field_project_image_et';
@@ -37181,6 +37571,16 @@ print $content;
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Content: Sticky */
+  $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['table'] = 'node';
+  $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -37205,7 +37605,12 @@ print $content;
   $handler->display->display_options['filters']['language']['relationship'] = 'entity_translations';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+    'en' => 'en',
   );
+  $handler->display->display_options['filters']['language']['expose']['operator_id'] = 'language_op';
+  $handler->display->display_options['filters']['language']['expose']['label'] = 'Language';
+  $handler->display->display_options['filters']['language']['expose']['operator'] = 'language_op';
+  $handler->display->display_options['filters']['language']['expose']['identifier'] = 'language';
   $export['recent_projects'] = $view;
 
   $view = new view();
