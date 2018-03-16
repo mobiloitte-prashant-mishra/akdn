@@ -385,36 +385,36 @@ function akdn_internal_news_page_views_default_views() {
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
-  switch($row->type_1){
-    case \'article\':
-       $article_node = node_load($row->nid);
-       $node_wrapper = entity_metadata_wrapper(\'node\', $article_node);
-       $article_type = $node_wrapper->field_article_cat->value();
-       $url_name = str_replace(\' \',\'-\',strtolower($article_type->name));
-       $url = \'/press-centre/\'.$url_name.\'s\';
-       $display_name = \'All \'.$article_type->name.\'s\';
-       if($article_type->name == \'In the media\' || $article_type->name == \'News\'){
-          $url = \'/press-centre/\'.$url_name;
-          $display_name = \'All \'.$article_type->name;
-        }
-       if($article_type->name == \'Spotlight\'){
-          $url = \'/press-centre/projects\';
-        }
-       print \'<a href="\'.$url.\'">\'.$display_name.\'</a>\';
-       break;
-   case \'gallery\':
-       $url = \'/press-centre/galleries\';
-       print \'<a href="\'.$url.\'">All Photographs</a>\';
-       break;
-   case \'default\':
-       $url_name = str_replace(\'_\',\'-\',$row->type_1);
-       $display_name = str_replace(\'_\',\' \',strtoupper($row->type_1));
-       $url = \'/press-centre/\'.$url_name.\'s\';
-       print \'<a href="\'.$url.\'">All \'.$display_name.\'s</a>\';
-       break;
-  }
+    switch($row->type_1){
+      case \'article\':
+         $article_node = node_load($row->nid);
+         $node_wrapper = entity_metadata_wrapper(\'node\', $article_node);
+         $article_type = $node_wrapper->field_article_cat->value();
+         $url_name = str_replace(\' \',\'-\',strtolower($article_type->name));
+         $url = \'/press-centre/\'.$url_name.\'s\';
+         $display_name = \'All \'.$article_type->name.\'s\';
+         if($article_type->name == \'In the media\' || $article_type->name == \'News\'){
+            $url = \'/press-centre/\'.$url_name;
+            $display_name = \'All \'.$article_type->name;
+          }
+         if($article_type->name == \'Spotlight\'){
+            $url = \'/press-centre/projects\';
+          }
+         print \'<a href="\'.$url.\'">\'.$display_name.\'</a>\';
+         break;
+     case \'gallery\':
+         $url = \'/press-centre/galleries\';
+         print \'<a href="\'.$url.\'">All Photographs</a>\';
+         break;
+     case \'default\':
+         $url_name = str_replace(\'_\',\'-\',$row->type_1);
+         $display_name = str_replace(\'_\',\' \',strtoupper($row->type_1));
+         $url = \'/press-centre/\'.$url_name.\'s\';
+         print \'<a href="\'.$url.\'">All \'.$display_name.\'s</a>\';
+         break;
+    }
 
-  ?>';
+    ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Sort criterion: Content: Publish Date (field_publish_date) */
@@ -597,10 +597,10 @@ function akdn_internal_news_page_views_default_views() {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_publication_image]
-  [field_speech_image] 
-<div class="all-read-more [field_article_cat_1]"><a href="/node/[nid]" target="_blank">[field_article_img]</a></div><div class="inthemedia-read-more [field_article_cat_1]">[nothing_3]</div> 
-  [field_gallery_images]
-  [field_event_image]';
+    [field_speech_image] 
+  <div class="all-read-more [field_article_cat_1]"><a href="/node/[nid]" target="_blank">[field_article_img]</a></div><div class="inthemedia-read-more [field_article_cat_1]">[nothing_3]</div> 
+    [field_gallery_images]
+    [field_event_image]';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'news-image';
@@ -646,11 +646,11 @@ function akdn_internal_news_page_views_default_views() {
   $handler->display->display_options['fields']['nothing_4']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_4']['label'] = '';
   $handler->display->display_options['fields']['nothing_4']['alter']['text'] = '<div class="all-read-more [field_article_cat_1]">
-<h4><a href="/node/[nid]" target="_blank">[field_short_title_et]</a></h4>
-</div>
-<div class="inthemedia-read-more [field_article_cat_1]">
-<h4><a href="[field_media_source]" target="_blank">[field_short_title_et]</a></h4>
-</div>';
+  <h4><a href="/node/[nid]" target="_blank">[field_short_title_et]</a></h4>
+  </div>
+  <div class="inthemedia-read-more [field_article_cat_1]">
+  <h4><a href="[field_media_source]" target="_blank">[field_short_title_et]</a></h4>
+  </div>';
   $handler->display->display_options['fields']['nothing_4']['alter']['path'] = '[field_media_source]';
   $handler->display->display_options['fields']['nothing_4']['alter']['external'] = TRUE;
   $handler->display->display_options['fields']['nothing_4']['alter']['target'] = '_blank';
@@ -680,6 +680,7 @@ function akdn_internal_news_page_views_default_views() {
   $handler->display->display_options['fields']['body_et']['alter']['max_length'] = '200';
   $handler->display->display_options['fields']['body_et']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['body_et']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['body_et']['alter']['html'] = TRUE;
   $handler->display->display_options['fields']['body_et']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body_et']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['body_et']['element_wrapper_class'] = 'news-body';
@@ -723,40 +724,40 @@ function akdn_internal_news_page_views_default_views() {
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
-  switch($row->type_1){
-    case \'article\':
-       $article_node = node_load($row->nid);
-       $node_wrapper = entity_metadata_wrapper(\'node\', $article_node);
-       $article_type = $node_wrapper->field_article_cat->value();
-       $url_name = str_replace(\' \',\'-\',strtolower($article_type->name));
-       $url = \'/press-centre/\'.$url_name.\'s\';
-       $display_name = \'All \'.$article_type->name.\'s\';
-       if($article_type->name == \'In the media\' || $article_type->name == \'News\'){
-          $url = \'/press-centre/\'.$url_name;
-          $display_name = \'All \'.$article_type->name;
-        }
-       if($article_type->name == \'Spotlight\'){
-          $url = \'/press-centre/projects\';
-        }
-       print \'<a href="\'.$url.\'" target="_blank">\'.$display_name.\'</a>\';
-       break;
-   case \'gallery\':
-       $url = \'/press-centre/galleries\';
-       print \'<a href="\'.$url.\'" target="_blank">All Photographs</a>\';
-       break;
-  case \'speech\':
-       $url = \'/press-centre/speeches\';
-       print \'<a href="\'.$url.\'" target="_blank">All Speeches</a>\';
-       break;
-   default:
-       $url_name = str_replace(\'_\',\'-\',$row->type_1);
-       $display_name = str_replace(\'_\',\' \',$row->type_1);
-       $url = \'/press-centre/\'.$url_name.\'s\';
-       print \'<a href="\'.$url.\'" target="_blank">All \'.$display_name.\'s</a>\';
-       break;
-  }
+    switch($row->type_1){
+      case \'article\':
+         $article_node = node_load($row->nid);
+         $node_wrapper = entity_metadata_wrapper(\'node\', $article_node);
+         $article_type = $node_wrapper->field_article_cat->value();
+         $url_name = str_replace(\' \',\'-\',strtolower($article_type->name));
+         $url = \'/press-centre/\'.$url_name.\'s\';
+         $display_name = \'All \'.$article_type->name.\'s\';
+         if($article_type->name == \'In the media\' || $article_type->name == \'News\'){
+            $url = \'/press-centre/\'.$url_name;
+            $display_name = \'All \'.$article_type->name;
+          }
+         if($article_type->name == \'Spotlight\'){
+            $url = \'/press-centre/projects\';
+          }
+         print \'<a href="\'.$url.\'" target="_blank">\'.$display_name.\'</a>\';
+         break;
+     case \'gallery\':
+         $url = \'/press-centre/galleries\';
+         print \'<a href="\'.$url.\'" target="_blank">All Photographs</a>\';
+         break;
+    case \'speech\':
+         $url = \'/press-centre/speeches\';
+         print \'<a href="\'.$url.\'" target="_blank">All Speeches</a>\';
+         break;
+     default:
+         $url_name = str_replace(\'_\',\'-\',$row->type_1);
+         $display_name = str_replace(\'_\',\' \',$row->type_1);
+         $url = \'/press-centre/\'.$url_name.\'s\';
+         print \'<a href="\'.$url.\'" target="_blank">All \'.$display_name.\'s</a>\';
+         break;
+    }
 
-  ?>';
+    ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Field: Global: Custom text */
@@ -850,8 +851,8 @@ function akdn_internal_news_page_views_default_views() {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="social_sharing">
-    <span class="play-video" id="[field_youtube_external_id]"><a class="colorbox-inline" href="https://www.youtube.com/embed/[field_youtube_external_id]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0">[field_youtube_picture]</a></span>
-    </div>';
+      <span class="play-video" id="[field_youtube_external_id]"><a class="colorbox-inline" href="https://www.youtube.com/embed/[field_youtube_external_id]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0">[field_youtube_picture]</a></span>
+      </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -916,16 +917,16 @@ function akdn_internal_news_page_views_default_views() {
     t('inthemedia image'),
     t('[field_article_img]'),
     t('[field_publication_image]
-  [field_speech_image] 
-<div class="all-read-more [field_article_cat_1]"><a href="/node/[nid]" target="_blank">[field_article_img]</a></div><div class="inthemedia-read-more [field_article_cat_1]">[nothing_3]</div> 
-  [field_gallery_images]
-  [field_event_image]'),
+    [field_speech_image] 
+  <div class="all-read-more [field_article_cat_1]"><a href="/node/[nid]" target="_blank">[field_article_img]</a></div><div class="inthemedia-read-more [field_article_cat_1]">[nothing_3]</div> 
+    [field_gallery_images]
+    [field_event_image]'),
     t('<div class="all-read-more [field_article_cat_1]">
-<h4><a href="/node/[nid]" target="_blank">[field_short_title_et]</a></h4>
-</div>
-<div class="inthemedia-read-more [field_article_cat_1]">
-<h4><a href="[field_media_source]" target="_blank">[field_short_title_et]</a></h4>
-</div>'),
+  <h4><a href="/node/[nid]" target="_blank">[field_short_title_et]</a></h4>
+  </div>
+  <div class="inthemedia-read-more [field_article_cat_1]">
+  <h4><a href="[field_media_source]" target="_blank">[field_short_title_et]</a></h4>
+  </div>'),
     t('Read More'),
     t('in the media read more'),
     t('<div class="all-read-more [field_article_cat_1]">[ [view_node]</div><div class="inthemedia-read-more [field_article_cat_1]">[ [nothing_2]</div> | [php] ]'),
@@ -934,8 +935,8 @@ function akdn_internal_news_page_views_default_views() {
     t('Picture'),
     t('Youtube link'),
     t('<div class="social_sharing">
-    <span class="play-video" id="[field_youtube_external_id]"><a class="colorbox-inline" href="https://www.youtube.com/embed/[field_youtube_external_id]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0">[field_youtube_picture]</a></span>
-    </div>'),
+      <span class="play-video" id="[field_youtube_external_id]"><a class="colorbox-inline" href="https://www.youtube.com/embed/[field_youtube_external_id]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0">[field_youtube_picture]</a></span>
+      </div>'),
     t('Multimedia Block 1'),
   );
   $export['akdn_internal_news_pages_blocks'] = $view;
