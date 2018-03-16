@@ -15500,6 +15500,12 @@ print $value;
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
+global $language;
+$lang = $language->language;
+if($lang != \'en\'){
+$langu = \'/\'.$lang.\'/\';}
+else{
+$langu = \'/\';}
 if ($data->node_type == "featured_content") {
   if (!empty($data->field_field_feature_link)) {
     $url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
@@ -15508,7 +15514,8 @@ if ($data->node_type == "featured_content") {
   else { print \' <a class="banner-no-link">\'; }
 } else {
   $node_path = drupal_get_path_alias(\'node/\' . $data->nid);
-  $url =  " <a href=\'/$node_path\'>";
+  $node_url = $langu.$node_path;
+  $url =  " <a href= \'$node_url\'>";
   print $url;
 }
 ?>';
