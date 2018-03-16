@@ -111,6 +111,9 @@ html[dir='rtl'] {
   }
 
   .pane-node-body {
+    overflow: auto;
+    width: 100%;
+
     li:before {
       margin-left: 0;
       margin-right: -14px;
@@ -654,6 +657,8 @@ html[dir='rtl'] {
     }
 
     .basic-page-summary {
+      float: right;
+
       .body-summary {
         padding: 0 20px 0 0;
 
@@ -1074,8 +1079,21 @@ html[dir='rtl'] {
   .main-navbar {
     clear: left;
   }
+
+  .akdn-publication-details {
+    .pane-node-field-publication-image,
+    .pane-node-field-publication-file,
+    .related-block-info {
+        float: right;
+        clear: right;
+    }
+  }
 }
 
 .region-footer-second {
   text-align: center;
+}
+
+img {
+  width: auto;
 }
