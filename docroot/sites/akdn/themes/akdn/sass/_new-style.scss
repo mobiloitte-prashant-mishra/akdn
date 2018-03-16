@@ -1074,6 +1074,15 @@ html[dir='rtl'] {
   .main-navbar {
     clear: left;
   }
+
+  .akdn-publication-details {
+    .pane-node-field-publication-image,
+    .pane-node-field-publication-file,
+    .related-block-info {
+        float: right;
+        clear: right;
+    }
+  }
 }
 
 .region-footer-second {

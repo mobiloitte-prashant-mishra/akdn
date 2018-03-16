@@ -22643,8 +22643,15 @@ html[dir='rtl'] .presscenter-right-more-btn a:after {
 html[dir='rtl'] .main-navbar {
   clear: left;
 }
-
 /* line 1079, ../sass/_new-style.scss */
+html[dir='rtl'] .akdn-publication-details .pane-node-field-publication-image,
+html[dir='rtl'] .akdn-publication-details .pane-node-field-publication-file,
+html[dir='rtl'] .akdn-publication-details .related-block-info {
+  float: right;
+  clear: right;
+}
+
+/* line 1088, ../sass/_new-style.scss */
 .region-footer-second {
   text-align: center;
 }
