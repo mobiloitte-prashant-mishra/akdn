@@ -580,15 +580,15 @@ akmi',
   $node = menu_get_object();
   print \'<div class = "whatsnew-right-content">\';
   if (isset($node->field_about_page)) {
-    $about = (isset($node->field_about_page[$lang])) ?  node_load($node->field_about_page[$lang][0][\'nid\']) : node_load($node->field_about_page[\'und\'][0][\'nid\']);
+    $about = (isset($node->field_about_page[$lang])) ?  node_load($node->field_about_page[$lang][0][\'nid\']) : node_load($node->field_about_page[\'en\'][0][\'nid\']);
    if(empty($about)){
       $about = node_load($node->field_about_page[\'en\'][0][\'nid\']);
    }
     if (isset($about->nid)) {
       print \'<p class = "whats-new-gold">\'.t("ABOUT THE").\'</p>\';
-$short_title_language = (isset($about->field_short_title[$lang])) ?  $about->field_short_title[$lang] : $about->field_short_title[\'und\'];
+$short_title_language = (isset($about->field_short_title[$lang])) ?  $about->field_short_title[$lang] : $about->field_short_title[\'en\'];
       print \'<div class = "grid-whatsnew-block_subtitle">\'. $short_title_language[0][\'value\'] .\'</div>\';
-$body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'und\'];
+$body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'en\'];
       if (empty($body[0][\'value\'])) {
         if(!empty($body[0][\'summary\'])) {
           print \'<div class="grid-whatsnew-block_body">\'. $body[0][\'summary\'] .\' </div>\';
@@ -3873,7 +3873,26 @@ if (isset($node->field_about_page)) {
   $pane->type = 'entity_field';
   $pane->subtype = 'node:field_article_link';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'logic' => 'and',
+    'plugins' => array(
+      0 => array(
+        'name' => 'php',
+        'settings' => array(
+          'description' => 'Has data',
+          'php' => 'global $language;
+  $lang = $language->language;
+  $arg = arg(1);
+  $node = node_load($arg);
+  if ($node->field_article_link[$lang][0]) {
+    return true;
+  }
+',
+        ),
+        'not' => FALSE,
+      ),
+    ),
+  );
   $pane->configuration = array(
     'label' => 'hidden',
     'formatter' => 'link_default',
@@ -4469,7 +4488,7 @@ if (isset($node->field_about_page)) {
   $display->content['new-978c05e0-04ae-44d4-87c5-2050dd21e3e0'] = $pane;
   $display->panels['left'][5] = 'new-978c05e0-04ae-44d4-87c5-2050dd21e3e0';
   $pane = new stdClass();
-  $pane->pid = 'new-ce365a39-54a0-4640-a592-f401386db51b';
+  $pane->pid = 'new-3deff9b1-6f75-4f20-ac32-10d709298bf4';
   $pane->panel = 'left';
   $pane->type = 'entity_field';
   $pane->subtype = 'node:body';
@@ -4629,7 +4648,7 @@ if (isset($node->field_about_page)) {
   $pane->panel = 'right';
   $pane->type = 'block';
   $pane->subtype = 'akdn_custom-right_panel_press_center_block';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,
@@ -7051,13 +7070,14 @@ $lang = $language->language;
 $node = menu_get_object();
 print \'<div class = "whatsnew-right-content">\';
 if (isset($node->field_about_page)) {
-$about = (isset($node->field_about_page[$lang])) ?  node_load($node->field_about_page[$lang][0][\'nid\']) : node_load($node->field_about_page[\'und\'][0][\'nid\']);
+
+$about = (isset($node->field_about_page[$lang])) ?  node_load($node->field_about_page[$lang][0][\'nid\']) : node_load($node->field_about_page[\'en\'][0][\'nid\']);
   if (isset($about->nid)) {
     print \'<p class = "whats-new-gold">\'.t("AKDN AND").\'</p>\';
-	$short_title_language = (isset($about->field_short_title[$lang])) ?  $about->field_short_title[$lang] : $about->field_short_title[\'und\'];
+	$short_title_language = (isset($about->field_short_title[$lang])) ?  $about->field_short_title[$lang] : $about->field_short_title[\'en\'];
     print \'<div class = "grid-whatsnew-block_subtitle">\'. $short_title_language[0][\'value\'] .\'</div>\';
 
-$body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'und\'];
+$body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'en\'];
   if (isset($body[0][\'summary\']) && !empty($body[0][\'summary\']))
     print \'<div class="grid-whatsnew-block_body">\'. $body[0][\'summary\'].\'</div>\';
   else
@@ -12208,12 +12228,12 @@ $lang = $language->language;
   $node = menu_get_object();
   print \'<div class = "whatsnew-right-content">\';
   if (isset($node->field_about_page)) {
-$about = (isset($node->field_about_page[$lang])) ?  node_load($node->field_about_page[$lang][0][\'nid\']) : node_load($node->field_about_page[\'und\'][0][\'nid\']);
+$about = (isset($node->field_about_page[$lang])) ?  node_load($node->field_about_page[$lang][0][\'nid\']) : node_load($node->field_about_page[\'en\'][0][\'nid\']);
     if (isset($about->nid)) {
       print \'<p class = "whats-new-gold">\'.t("AKDN IN").\'</p>\';
-$short_title_language = (isset($about->field_short_title[$lang])) ?  $about->field_short_title[$lang] : $about->field_short_title[\'und\'];
+$short_title_language = (isset($about->field_short_title[$lang])) ?  $about->field_short_title[$lang] : $about->field_short_title[\'en\'];
       print \'<div class = "grid-whatsnew-block_subtitle">\'. $short_title_language[0][\'value\'] .\'</div>\';
-$body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'und\'];
+$body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'en\'];
       if (empty($body[0][\'value\'])) {
         if(!empty($body[0][\'summary\'])) {
           print \'<div class="grid-whatsnew-block_body">\'. $body[0][\'summary\'] .\' </div>\';
