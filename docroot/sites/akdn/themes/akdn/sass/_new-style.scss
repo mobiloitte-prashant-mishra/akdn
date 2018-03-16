@@ -111,9 +111,6 @@ html[dir='rtl'] {
   }
 
   .pane-node-body {
-    overflow: auto;
-    width: 100%;
-
     li:before {
       margin-left: 0;
       margin-right: -14px;
@@ -1087,6 +1084,11 @@ html[dir='rtl'] {
         float: right;
         clear: right;
     }
+  }
+
+  table {
+    float: none;
+    clear: right;
   }
 }
 
