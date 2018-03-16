@@ -111,6 +111,8 @@ html[dir='rtl'] {
   }
 
   .pane-node-body {
+    clear: right;
+
     li:before {
       margin-left: 0;
       margin-right: -14px;
@@ -1081,8 +1083,20 @@ html[dir='rtl'] {
     .pane-node-field-publication-image,
     .pane-node-field-publication-file,
     .related-block-info {
-        float: right;
-        clear: right;
+      float: right;
+      clear: right;
+    }
+  }
+
+  .press-release-detail {
+    .related-block-info {
+      float: right;
+      clear: right;
+      padding: 0 15px 0 25px;
+    }
+
+    .pane-node-body {
+      clear: left;
     }
   }
 
