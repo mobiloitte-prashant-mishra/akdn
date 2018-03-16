@@ -2085,7 +2085,11 @@ function path_entity_translation_delete($entity_type, $entity, $langcode) {
  */
 function entity_translation_entity_save($entity_type, $entity) {
   // Entity module isn't required, but use it if it's available.
-  if (module_exists('entity')) {
+  if ($entity_type == 'field_collection_item') {
+    field_attach_presave($entity_type, $entity);
+    field_attach_update($entity_type, $entity);
+  }
+  else if (module_exists('entity')) {
     entity_save($entity_type, $entity);
   }
   // Fall back to field_attach_* functions otherwise.
