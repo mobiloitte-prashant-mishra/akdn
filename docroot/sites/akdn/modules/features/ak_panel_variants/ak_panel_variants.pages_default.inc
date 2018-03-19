@@ -579,15 +579,15 @@ akmi',
   $node = menu_get_object();
   print \'<div class = "whatsnew-right-content">\';
   if (isset($node->field_about_page)) {
-    $about = (isset($node->field_about_page[$lang])) ?  node_load($node->field_about_page[$lang][0][\'nid\']) : node_load($node->field_about_page[\'und\'][0][\'nid\']);
+    $about = (isset($node->field_about_page[$lang])) ?  node_load($node->field_about_page[$lang][0][\'nid\']) : node_load($node->field_about_page[\'en\'][0][\'nid\']);
    if(empty($about)){
       $about = node_load($node->field_about_page[\'en\'][0][\'nid\']);
    }
     if (isset($about->nid)) {
       print \'<p class = "whats-new-gold">\'.t("ABOUT THE").\'</p>\';
-$short_title_language = (isset($about->field_short_title[$lang])) ?  $about->field_short_title[$lang] : $about->field_short_title[\'und\'];
+$short_title_language = (isset($about->field_short_title[$lang])) ?  $about->field_short_title[$lang] : $about->field_short_title[\'en\'];
       print \'<div class = "grid-whatsnew-block_subtitle">\'. $short_title_language[0][\'value\'] .\'</div>\';
-$body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'und\'];
+$body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'en\'];
       if (empty($body[0][\'value\'])) {
         if(!empty($body[0][\'summary\'])) {
           print \'<div class="grid-whatsnew-block_body">\'. $body[0][\'summary\'] .\' </div>\';
@@ -3874,7 +3874,26 @@ if (isset($node->field_about_page)) {
   $pane->type = 'entity_field';
   $pane->subtype = 'node:field_article_link';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'logic' => 'and',
+    'plugins' => array(
+      0 => array(
+        'name' => 'php',
+        'settings' => array(
+          'description' => 'Has data',
+          'php' => 'global $language;
+  $lang = $language->language;
+  $arg = arg(1);
+  $node = node_load($arg);
+  if ($node->field_article_link[$lang][0]) {
+    return true;
+  }
+',
+        ),
+        'not' => FALSE,
+      ),
+    ),
+  );
   $pane->configuration = array(
     'label' => 'hidden',
     'formatter' => 'link_default',
@@ -4182,22 +4201,34 @@ if (isset($node->field_about_page)) {
           'context' => 'argument_entity_id:node_1',
           'not' => FALSE,
         ),
-        1 => array(
-          'name' => 'entity_field_value:node:page:field_tags',
+        2 => array(
+          'name' => 'php',
           'settings' => array(
-            'field_tags' => array(
-              'und' => array(
-                0 => array(
-                  'tid' => '9006',
-                ),
-              ),
-            ),
-            'field_tags_tid' => array(
-              0 => '9006',
-            ),
+            'description' => 'if not about us',
+            'php' => 'global $language;
+  $lang = $language->language;
+  $arg = arg(1);
+  $node = node_load($arg);
+
+  if (!empty($node->field_tags[$lang])) {
+    foreach ($node->field_tags[$lang] as $value) {
+      if (!in_array(\'9006\', $value)) {
+       return true;
+      }
+    }
+  }
+  else if(!empty($node->field_tags[\'und\'])){
+    foreach ($node->field_tags[\'und\'] as $value) {
+      if (!in_array(\'9006\', $value)) {
+       return true;
+      }
+    }
+  }
+else if(empty($node->field_tags)){
+return true;
+}',
           ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => TRUE,
+          'not' => FALSE,
         ),
       ),
       'logic' => 'and',
@@ -4662,21 +4693,30 @@ if (isset($node->field_about_page)) {
           'context' => 'argument_entity_id:node_1',
           'not' => FALSE,
         ),
-        1 => array(
-          'name' => 'entity_field_value:node:page:field_tags',
+        2 => array(
+          'name' => 'php',
           'settings' => array(
-            'field_tags' => array(
-              'und' => array(
-                0 => array(
-                  'tid' => '9006',
-                ),
-              ),
-            ),
-            'field_tags_tid' => array(
-              0 => '9006',
-            ),
+            'description' => 'If about us',
+            'php' => 'global $language;
+  $lang = $language->language;
+  $arg = arg(1);
+  $node = node_load($arg);
+
+  if (!empty($node->field_tags[$lang])) {
+    foreach ($node->field_tags[$lang] as $value) {
+      if (in_array(\'9006\', $value)) {
+       return true;
+      }
+    }
+  }
+  else if(!empty($node->field_tags[\'und\'])){
+    foreach ($node->field_tags[\'und\'] as $value) {
+      if (in_array(\'9006\', $value)) {
+       return true;
+      }
+    }
+  }',
           ),
-          'context' => 'argument_entity_id:node_1',
           'not' => FALSE,
         ),
       ),
@@ -4862,11 +4902,41 @@ if (isset($node->field_about_page)) {
   $display->content['new-ead81ad7-6708-496c-b468-9899a207cf02'] = $pane;
   $display->panels['left'][3] = 'new-ead81ad7-6708-496c-b468-9899a207cf02';
   $pane = new stdClass();
-  $pane->pid = 'new-ce365a39-54a0-4640-a592-f401386db51b';
+  $pane->pid = 'new-b2e4e398-5ca7-412b-920c-fa11b78c68a5';
   $pane->panel = 'left';
   $pane->type = 'entity_field';
   $pane->subtype = 'node:body';
   $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'label' => 'hidden',
+    'formatter' => 'text_default',
+    'delta_limit' => 0,
+    'delta_offset' => '0',
+    'delta_reversed' => FALSE,
+    'formatter_settings' => array(),
+    'context' => 'argument_entity_id:node_1',
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 4;
+  $pane->locks = array();
+  $pane->uuid = 'b2e4e398-5ca7-412b-920c-fa11b78c68a5';
+  $display->content['new-b2e4e398-5ca7-412b-920c-fa11b78c68a5'] = $pane;
+  $display->panels['left'][4] = 'new-b2e4e398-5ca7-412b-920c-fa11b78c68a5';
+  $pane = new stdClass();
+  $pane->pid = 'new-ce365a39-54a0-4640-a592-f401386db51b';
+  $pane->panel = 'left';
+  $pane->type = 'entity_field';
+  $pane->subtype = 'node:body';
+  $pane->shown = FALSE;
   $pane->access = array(
     'plugins' => array(
       0 => array(
@@ -4903,11 +4973,11 @@ if (isset($node->field_about_page)) {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 4;
+  $pane->position = 5;
   $pane->locks = array();
   $pane->uuid = 'ce365a39-54a0-4640-a592-f401386db51b';
   $display->content['new-ce365a39-54a0-4640-a592-f401386db51b'] = $pane;
-  $display->panels['left'][4] = 'new-ce365a39-54a0-4640-a592-f401386db51b';
+  $display->panels['left'][5] = 'new-ce365a39-54a0-4640-a592-f401386db51b';
   $pane = new stdClass();
   $pane->pid = 'new-f879c6a6-330e-44ca-993a-7bc0f7540aae';
   $pane->panel = 'left';
@@ -4942,11 +5012,11 @@ if (isset($node->field_about_page)) {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 5;
+  $pane->position = 6;
   $pane->locks = array();
   $pane->uuid = 'f879c6a6-330e-44ca-993a-7bc0f7540aae';
   $display->content['new-f879c6a6-330e-44ca-993a-7bc0f7540aae'] = $pane;
-  $display->panels['left'][5] = 'new-f879c6a6-330e-44ca-993a-7bc0f7540aae';
+  $display->panels['left'][6] = 'new-f879c6a6-330e-44ca-993a-7bc0f7540aae';
   $pane = new stdClass();
   $pane->pid = 'new-0e473413-6d44-4b34-be60-8216ffee9e90';
   $pane->panel = 'left';
@@ -4991,11 +5061,11 @@ if (isset($node->field_about_page)) {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 6;
+  $pane->position = 7;
   $pane->locks = array();
   $pane->uuid = '0e473413-6d44-4b34-be60-8216ffee9e90';
   $display->content['new-0e473413-6d44-4b34-be60-8216ffee9e90'] = $pane;
-  $display->panels['left'][6] = 'new-0e473413-6d44-4b34-be60-8216ffee9e90';
+  $display->panels['left'][7] = 'new-0e473413-6d44-4b34-be60-8216ffee9e90';
   $pane = new stdClass();
   $pane->pid = 'new-2e93ac35-a31c-4683-bca3-303fc0ad1a51';
   $pane->panel = 'left';
@@ -5013,11 +5083,11 @@ if (isset($node->field_about_page)) {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 7;
+  $pane->position = 8;
   $pane->locks = array();
   $pane->uuid = '2e93ac35-a31c-4683-bca3-303fc0ad1a51';
   $display->content['new-2e93ac35-a31c-4683-bca3-303fc0ad1a51'] = $pane;
-  $display->panels['left'][7] = 'new-2e93ac35-a31c-4683-bca3-303fc0ad1a51';
+  $display->panels['left'][8] = 'new-2e93ac35-a31c-4683-bca3-303fc0ad1a51';
   $pane = new stdClass();
   $pane->pid = 'new-41c75d0f-d755-49a8-9a60-d71dc47fb48b';
   $pane->panel = 'left';
@@ -5035,11 +5105,11 @@ if (isset($node->field_about_page)) {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 8;
+  $pane->position = 9;
   $pane->locks = array();
   $pane->uuid = '41c75d0f-d755-49a8-9a60-d71dc47fb48b';
   $display->content['new-41c75d0f-d755-49a8-9a60-d71dc47fb48b'] = $pane;
-  $display->panels['left'][8] = 'new-41c75d0f-d755-49a8-9a60-d71dc47fb48b';
+  $display->panels['left'][9] = 'new-41c75d0f-d755-49a8-9a60-d71dc47fb48b';
   $pane = new stdClass();
   $pane->pid = 'new-b0c486e5-a3a9-4a89-b9df-9c471042a68d';
   $pane->panel = 'right';
@@ -6934,13 +7004,13 @@ $node = menu_get_object();
 print \'<div class = "whatsnew-right-content">\';
 if (isset($node->field_about_page)) {
 
-$about = (isset($node->field_about_page[$lang])) ?  node_load($node->field_about_page[$lang][0][\'nid\']) : node_load($node->field_about_page[\'und\'][0][\'nid\']);
+$about = (isset($node->field_about_page[$lang])) ?  node_load($node->field_about_page[$lang][0][\'nid\']) : node_load($node->field_about_page[\'en\'][0][\'nid\']);
   if (isset($about->nid)) {
     print \'<p class = "whats-new-gold">\'.t("AKDN AND").\'</p>\';
-	$short_title_language = (isset($about->field_short_title[$lang])) ?  $about->field_short_title[$lang] : $about->field_short_title[\'und\'];
+	$short_title_language = (isset($about->field_short_title[$lang])) ?  $about->field_short_title[$lang] : $about->field_short_title[\'en\'];
     print \'<div class = "grid-whatsnew-block_subtitle">\'. $short_title_language[0][\'value\'] .\'</div>\';
 
-$body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'und\'];
+$body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'en\'];
   if (isset($body[0][\'summary\']) && !empty($body[0][\'summary\']))
     print \'<div class="grid-whatsnew-block_body">\'. $body[0][\'summary\'].\'</div>\';
   else
@@ -12088,12 +12158,12 @@ $lang = $language->language;
   $node = menu_get_object();
   print \'<div class = "whatsnew-right-content">\';
   if (isset($node->field_about_page)) {
-$about = (isset($node->field_about_page[$lang])) ?  node_load($node->field_about_page[$lang][0][\'nid\']) : node_load($node->field_about_page[\'und\'][0][\'nid\']);
+$about = (isset($node->field_about_page[$lang])) ?  node_load($node->field_about_page[$lang][0][\'nid\']) : node_load($node->field_about_page[\'en\'][0][\'nid\']);
     if (isset($about->nid)) {
       print \'<p class = "whats-new-gold">\'.t("AKDN IN").\'</p>\';
-$short_title_language = (isset($about->field_short_title[$lang])) ?  $about->field_short_title[$lang] : $about->field_short_title[\'und\'];
+$short_title_language = (isset($about->field_short_title[$lang])) ?  $about->field_short_title[$lang] : $about->field_short_title[\'en\'];
       print \'<div class = "grid-whatsnew-block_subtitle">\'. $short_title_language[0][\'value\'] .\'</div>\';
-$body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'und\'];
+$body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'en\'];
       if (empty($body[0][\'value\'])) {
         if(!empty($body[0][\'summary\'])) {
           print \'<div class="grid-whatsnew-block_body">\'. $body[0][\'summary\'] .\' </div>\';
