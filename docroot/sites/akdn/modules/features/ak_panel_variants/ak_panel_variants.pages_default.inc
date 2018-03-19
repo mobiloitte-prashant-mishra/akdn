@@ -4212,18 +4212,21 @@ if (isset($node->field_about_page)) {
 
   if (!empty($node->field_tags[$lang])) {
     foreach ($node->field_tags[$lang] as $value) {
-      if (in_array(\'9006\', $value)) {
-       return false;
+      if (!in_array(\'9006\', $value)) {
+       return true;
       }
     }
   }
   else if(!empty($node->field_tags[\'und\'])){
     foreach ($node->field_tags[\'und\'] as $value) {
-      if (in_array(\'9006\', $value)) {
-       return false;
+      if (!in_array(\'9006\', $value)) {
+       return true;
       }
     }
-  }',
+  }
+else if(empty($node->field_tags)){
+return true;
+}',
           ),
           'not' => FALSE,
         ),
