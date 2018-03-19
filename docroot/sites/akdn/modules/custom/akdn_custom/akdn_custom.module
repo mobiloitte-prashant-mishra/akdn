@@ -245,7 +245,18 @@ function akdn_custom_switcher_settings($form, &$form_state) {
  * Implements hook_views_query_alter().
  */
 function akdn_custom_views_query_alter(&$view, &$query) {
-  // Changes inner join to left join in press center block view to handle the
+  //Remove dublicate facts block after trasnlation
+  if ($view->name == 'facts_blocks' && ($view->current_display == 'block' || $view->current_display == 'block_2' )) {
+    global $language;
+    $lang_name = $language->name;
+    $lang = $language->language;
+
+    $query->where[1][conditions][2]['field'] = "field_data_field_facts_show_on_homepage_value_0.language";
+    $query->where[1][conditions][2]['value'] = $lang;
+    $query->where[1][conditions][2]['operator'] = "=";
+  }
+
+  //Changes inner join to left join in press center block view to handle the
   // and/or filters properly.
   if ($view->name == 'press_center' && ($view->current_display == 'block_2' || $view->current_display == 'block_3')) {
     $query->table_queue['taxonomy_index']['join']->type = 'LEFT';
