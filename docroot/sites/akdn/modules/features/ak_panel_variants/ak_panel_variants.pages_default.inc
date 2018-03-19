@@ -4063,72 +4063,31 @@ if (isset($node->field_about_page)) {
           'context' => 'argument_entity_id:node_1',
           'not' => FALSE,
         ),
-        1 => array(
-          'name' => 'entity_field_value:node:page:field_tags',
+        2 => array(
+          'name' => 'php',
           'settings' => array(
-            'field_tags' => array(
-              'en' => array(
-                0 => array(
-                  'tid' => '9006',
-                  'vid' => '1',
-                  'name' => 'about us',
-                  'description' => NULL,
-                  'format' => NULL,
-                  'weight' => '0',
-                  'uuid' => '2c2927dc-3de8-442a-a679-cd3894eeb8f6',
-                  'vocabulary_machine_name' => 'tags',
-                  'metatags' => array(),
-                  'rdf_mapping' => array(
-                    'rdftype' => array(
-                      0 => 'skos:Concept',
-                    ),
-                    'name' => array(
-                      'predicates' => array(
-                        0 => 'rdfs:label',
-                        1 => 'skos:prefLabel',
-                      ),
-                    ),
-                    'description' => array(
-                      'predicates' => array(
-                        0 => 'skos:definition',
-                      ),
-                    ),
-                    'vid' => array(
-                      'predicates' => array(
-                        0 => 'skos:inScheme',
-                      ),
-                      'type' => 'rel',
-                    ),
-                    'parent' => array(
-                      'predicates' => array(
-                        0 => 'skos:broader',
-                      ),
-                      'type' => 'rel',
-                    ),
-                  ),
-                  'translations' => (object) array(
-                    'original' => 'en',
-                    'data' => array(
-                      'en' => array(
-                        'entity_type' => 'taxonomy_term',
-                        'entity_id' => '9006',
-                        'language' => 'en',
-                        'source' => '',
-                        'uid' => '1',
-                        'status' => '1',
-                        'translate' => '0',
-                        'created' => '1449839991',
-                        'changed' => '1449839991',
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            'field_tags_tid' => 'about us',
+            'description' => 'if not about us',
+            'php' => 'global $language;
+  $lang = $language->language;
+  $arg = arg(1);
+  $node = node_load($arg);
+
+  if (!empty($node->field_tags[$lang])) {
+    foreach ($node->field_tags[$lang] as $value) {
+      if (in_array(\'9006\', $value)) {
+       return false;
+      }
+    }
+  }
+  else if(!empty($node->field_tags[\'und\'])){
+    foreach ($node->field_tags[\'und\'] as $value) {
+      if (in_array(\'9006\', $value)) {
+       return false;
+      }
+    }
+  }',
           ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => TRUE,
+          'not' => FALSE,
         ),
       ),
       'logic' => 'and',
@@ -4351,31 +4310,12 @@ if (isset($node->field_about_page)) {
   $display->content['new-978c05e0-04ae-44d4-87c5-2050dd21e3e0'] = $pane;
   $display->panels['left'][5] = 'new-978c05e0-04ae-44d4-87c5-2050dd21e3e0';
   $pane = new stdClass();
-  $pane->pid = 'new-ce365a39-54a0-4640-a592-f401386db51b';
+  $pane->pid = 'new-3deff9b1-6f75-4f20-ac32-10d709298bf4';
   $pane->panel = 'left';
   $pane->type = 'entity_field';
   $pane->subtype = 'node:body';
   $pane->shown = TRUE;
-  $pane->access = array(
-    'plugins' => array(
-      0 => array(
-        'name' => 'entity_field_value:node:page:field_basic_page_choose_layout',
-        'settings' => array(
-          'field_basic_page_choose_layout' => array(
-            'en' => array(
-              0 => array(
-                'value' => 'basic',
-              ),
-            ),
-          ),
-          'field_basic_page_choose_layout_value' => 'basic',
-        ),
-        'context' => 'argument_entity_id:node_1',
-        'not' => FALSE,
-      ),
-    ),
-    'logic' => 'or',
-  );
+  $pane->access = array();
   $pane->configuration = array(
     'label' => 'hidden',
     'formatter' => 'text_default',
@@ -4385,7 +4325,8 @@ if (isset($node->field_about_page)) {
     'formatter_settings' => array(),
     'context' => 'argument_entity_id:node_1',
     'override_title' => 0,
-    'override_title_text' => '%keywords',
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -4395,9 +4336,9 @@ if (isset($node->field_about_page)) {
   $pane->extras = array();
   $pane->position = 6;
   $pane->locks = array();
-  $pane->uuid = 'ce365a39-54a0-4640-a592-f401386db51b';
-  $display->content['new-ce365a39-54a0-4640-a592-f401386db51b'] = $pane;
-  $display->panels['left'][6] = 'new-ce365a39-54a0-4640-a592-f401386db51b';
+  $pane->uuid = '3deff9b1-6f75-4f20-ac32-10d709298bf4';
+  $display->content['new-3deff9b1-6f75-4f20-ac32-10d709298bf4'] = $pane;
+  $display->panels['left'][6] = 'new-3deff9b1-6f75-4f20-ac32-10d709298bf4';
   $pane = new stdClass();
   $pane->pid = 'new-3986cc86-c5dc-4b2d-87be-a79b11104126';
   $pane->panel = 'right';
@@ -4465,29 +4406,13 @@ if (isset($node->field_about_page)) {
   $display->content['new-30dd8388-863a-45d5-8cba-bf7c62008352'] = $pane;
   $display->panels['right'][1] = 'new-30dd8388-863a-45d5-8cba-bf7c62008352';
   $pane = new stdClass();
-  $pane->pid = 'new-5a9767a2-2ea8-4413-83ad-f671a40dee42';
+  $pane->pid = 'new-7dc95966-db2d-42f1-b160-4bc304d671e5';
   $pane->panel = 'right';
-  $pane->type = 'views';
-  $pane->subtype = 'hub_pages';
+  $pane->type = 'block';
+  $pane->subtype = 'akdn_custom-where_we_work_related_info';
   $pane->shown = TRUE;
   $pane->access = array(
-    'plugins' => array(
-      0 => array(
-        'name' => 'entity_field_value:node:page:field_right_show_block',
-        'settings' => array(
-          'field_right_show_block' => array(
-            'en' => array(
-              0 => array(
-                'value' => 1,
-              ),
-            ),
-          ),
-          'field_right_show_block_value' => '1',
-        ),
-        'context' => 'argument_entity_id:node_1',
-        'not' => FALSE,
-      ),
-    ),
+    'plugins' => array(),
   );
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -4507,6 +4432,7 @@ if (isset($node->field_about_page)) {
     ),
     'override_title' => 1,
     'override_title_text' => '',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -4519,15 +4445,15 @@ if (isset($node->field_about_page)) {
   $pane->extras = array();
   $pane->position = 2;
   $pane->locks = array();
-  $pane->uuid = '5a9767a2-2ea8-4413-83ad-f671a40dee42';
-  $display->content['new-5a9767a2-2ea8-4413-83ad-f671a40dee42'] = $pane;
-  $display->panels['right'][2] = 'new-5a9767a2-2ea8-4413-83ad-f671a40dee42';
+  $pane->uuid = '7dc95966-db2d-42f1-b160-4bc304d671e5';
+  $display->content['new-7dc95966-db2d-42f1-b160-4bc304d671e5'] = $pane;
+  $display->panels['right'][2] = 'new-7dc95966-db2d-42f1-b160-4bc304d671e5';
   $pane = new stdClass();
   $pane->pid = 'new-5a495f2d-9b47-4a7c-9e4d-91a24978ac15';
   $pane->panel = 'right';
   $pane->type = 'block';
   $pane->subtype = 'akdn_custom-right_panel_press_center_block';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,
@@ -4544,8 +4470,34 @@ if (isset($node->field_about_page)) {
   $pane->uuid = '5a495f2d-9b47-4a7c-9e4d-91a24978ac15';
   $display->content['new-5a495f2d-9b47-4a7c-9e4d-91a24978ac15'] = $pane;
   $display->panels['right'][3] = 'new-5a495f2d-9b47-4a7c-9e4d-91a24978ac15';
+  $pane = new stdClass();
+  $pane->pid = 'new-4917c162-4251-4e18-a8c8-51cad0e41184';
+  $pane->panel = 'right';
+  $pane->type = 'block';
+  $pane->subtype = 'akdn_custom-where_we_work_related_info';
+  $pane->shown = FALSE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'hub-page-rural-development',
+  );
+  $pane->extras = array();
+  $pane->position = 4;
+  $pane->locks = array();
+  $pane->uuid = '4917c162-4251-4e18-a8c8-51cad0e41184';
+  $display->content['new-4917c162-4251-4e18-a8c8-51cad0e41184'] = $pane;
+  $display->panels['right'][4] = 'new-4917c162-4251-4e18-a8c8-51cad0e41184';
   $display->hide_title = PANELS_TITLE_NONE;
-  $display->title_pane = 'new-ce365a39-54a0-4640-a592-f401386db51b';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['node_view_panel_context_16'] = $handler;
 
@@ -4611,6 +4563,13 @@ if (isset($node->field_about_page)) {
 
   if (!empty($node->field_tags[$lang])) {
     foreach ($node->field_tags[$lang] as $value) {
+      if (in_array(\'9006\', $value)) {
+       return true;
+      }
+    }
+  }
+  else if(!empty($node->field_tags[\'und\'])){
+    foreach ($node->field_tags[\'und\'] as $value) {
       if (in_array(\'9006\', $value)) {
        return true;
       }
