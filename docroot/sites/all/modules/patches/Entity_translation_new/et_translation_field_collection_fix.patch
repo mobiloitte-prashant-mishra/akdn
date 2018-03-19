@@ -1,4 +1,4 @@
-diff -u et/entity_translation.admin.inc et_new/entity_translation.admin.inc
+diff -u entity_translation.admin.inc entity_translation.admin.inc
 --- entity_translation.admin.inc	2018-03-13 18:35:26.670016000 +0530
 +++ entity_translation.admin.inc	2018-03-14 11:32:31.216134000 +0530
 @@ -584,10 +584,10 @@
@@ -163,19 +163,15 @@ diff -u et/entity_translation.admin.inc et_new/entity_translation.admin.inc
        }
      }
    }
-diff -u et/entity_translation.module et_new/entity_translation.module
+diff -u entity_translation.module entity_translation.module
 --- entity_translation.module	2018-03-14 12:15:02.428089000 +0530
-+++ entity_translation.module	2018-03-14 12:17:33.652086000 +0530
-@@ -2085,7 +2085,11 @@
++++ entity_translation.module	2018-03-19 14:29:16.440703470 +0530
+@@ -2085,6 +2085,7 @@
   */
  function entity_translation_entity_save($entity_type, $entity) {
    // Entity module isn't required, but use it if it's available.
--  if (module_exists('entity')) {
-+  if ($entity_type == 'field_collection_item') {
-+    field_attach_presave($entity_type, $entity);
-+    field_attach_update($entity_type, $entity);
-+  }
-+  else if (module_exists('entity')) {
++
+   if (module_exists('entity')) {
      entity_save($entity_type, $entity);
    }
-   // Fall back to field_attach_* functions otherwise.
+Only in et_new: entity_translation.module~
