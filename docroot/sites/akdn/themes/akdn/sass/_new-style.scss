@@ -110,9 +110,17 @@ html[dir='rtl'] {
     padding: 10px 15px 10px 110px
   }
 
-  .pane-node-body li:before {
-    margin-left: 0;
-    margin-right: -14px;
+  .pane-node-body {
+    clear: right;
+
+    li:before {
+      margin-left: 0;
+      margin-right: -14px;
+    }
+    ul {
+      padding-left: 15px;
+      padding-right: 0;
+    }
   }
 
   .flex-nav-container ol.flex-control-nav {
@@ -244,13 +252,13 @@ html[dir='rtl'] {
         }
       }
     }
-  }
 
-  .form-submit {
-    right: inherit;
-    left: 0;
-    margin: 12px 1px 0 7px;
-    transform: rotate(90deg);
+    .form-submit {
+      right: inherit;
+      left: 0;
+      margin: 12px 1px 0 7px;
+      transform: rotate(90deg);
+    }
   }
 
   .main-navbar  {
@@ -312,10 +320,6 @@ html[dir='rtl'] {
     }
   }
 
-  img {
-    width: auto;
-  }
-
   //Footer
   .pane-agencies td {
     text-align: right;
@@ -345,11 +349,6 @@ html[dir='rtl'] {
       }
     }
   }
-
-  .region-footer-second {
-    text-align: center;
-  }
-
   /* Homepage */
   /// Banner
   .flex-control-nav {
@@ -630,7 +629,6 @@ html[dir='rtl'] {
     }
   }
 
-  /// Photograph section
   .gallery-processed {
     .gallery-slides {
       .gallery-slide {
@@ -658,6 +656,8 @@ html[dir='rtl'] {
     }
 
     .basic-page-summary {
+      float: right;
+
       .body-summary {
         padding: 0 20px 0 0;
 
@@ -1036,4 +1036,84 @@ html[dir='rtl'] {
       }
     }
   }
+
+  // Node pages
+  .all-activities-btn {
+    h2.pane-title {
+      padding: 12px 10px 12px 30px !important;
+
+      &:after {
+        right: initial;
+        left: 10px;
+      }
+    }
+  }
+
+  .hub-page-press-center-right {
+    ul {
+      padding-right: 0;
+    }
+  }
+
+  .press-release-detail {
+    .pane-email {
+      float: right;
+    }
+
+    .print_mail,
+    .pane-addthis,
+    .print_html {
+      margin: 0 0 0 12px;
+      float: right;
+    }
+  }
+
+  .presscenter-right-more-btn {
+    a:after {
+      float: left;
+      @include transform(rotate(180deg));
+    }
+  }
+
+  .main-navbar {
+    clear: left;
+  }
+
+  .akdn-publication-details {
+    .pane-node-field-publication-image,
+    .pane-node-field-publication-file,
+    .related-block-info {
+      float: right;
+      clear: right;
+    }
+  }
+
+  .press-release-detail {
+    .related-block-info {
+      float: right;
+      clear: right;
+      padding: 0 15px 0 25px;
+    }
+
+    .pane-node-body {
+      clear: left;
+    }
+  }
+
+  table {
+    float: none;
+    clear: right;
+  }
+
+  .gallery-thumbs {
+    ul {
+      li {
+        float: right;
+      }
+    }
+  }
+}
+
+.region-footer-second {
+  text-align: center;
 }
