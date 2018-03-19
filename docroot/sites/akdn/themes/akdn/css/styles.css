@@ -22673,8 +22673,12 @@ html[dir='rtl'] table {
   float: none;
   clear: right;
 }
+/* line 1110, ../sass/_new-style.scss */
+html[dir='rtl'] .gallery-thumbs ul li {
+  float: right;
+}
 
-/* line 1109, ../sass/_new-style.scss */
+/* line 1117, ../sass/_new-style.scss */
 .region-footer-second {
   text-align: center;
 }
@@ -23059,3 +23063,5 @@ div#block-views-exp-solr-site-search-page {
     width: 100%;
   }
 }
+
+/*# sourceMappingURL=styles.css.map */
