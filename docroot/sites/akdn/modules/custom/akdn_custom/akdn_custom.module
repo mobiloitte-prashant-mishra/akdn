@@ -215,11 +215,10 @@ function akdn_custom_views_query_alter(&$view, &$query) {
     global $language;
     $lang_name = $language->name;
     $lang = $language->language;
-    $count = count($query->where);
-    $query->add_where(++$count, 'field_data_field_facts_show_on_homepage.language', $lang, 'IN');
-//    $query->where[1][conditions][2]['field'] = "field_data_field_facts_show_on_homepage.language";
-//    $query->where[1][conditions][2]['value'] = $lang;
-//    $query->where[1][conditions][2]['operator'] = "=";
+
+    $query->where[1][conditions][2]['field'] = "field_data_field_facts_show_on_homepage.language";
+    $query->where[1][conditions][2]['value'] = $lang;
+    $query->where[1][conditions][2]['operator'] = "=";
   }
 
   //Changes inner join to left join in press center block view to handle the
