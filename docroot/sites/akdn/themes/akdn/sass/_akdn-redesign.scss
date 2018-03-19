@@ -8754,6 +8754,15 @@ map {
     background-color: rgba(0, 0, 0, 0.5);
   }
 }
+.front{
+    #colorbox{
+        #cboxContent{
+            #cboxPrevious, #cboxNext, #cboxCurrent{
+                display: none !important; 
+            }
+        }
+    }
+}
 
 // Shift - Enter code
 .basic-page-custom-summary-italics {

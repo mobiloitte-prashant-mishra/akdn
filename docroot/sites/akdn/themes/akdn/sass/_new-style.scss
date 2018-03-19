@@ -1104,6 +1104,14 @@ html[dir='rtl'] {
     float: none;
     clear: right;
   }
+
+  .gallery-thumbs {
+    ul {
+      li {
+        float: right;
+      }
+    }
+  }
 }
 
 .region-footer-second {
