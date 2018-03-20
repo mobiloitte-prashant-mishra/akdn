@@ -257,8 +257,14 @@ function akdn_custom_views_query_alter(&$view, &$query) {
     else if ($view->current_display == 'block_2') {
       $query->where[1][conditions][2]['field'] = "field_data_field_facts_show_on_homepage.language";
     }
-    $query->where[1][conditions][2]['value'] = $lang;
-    $query->where[1][conditions][2]['operator'] = "=";
+    $array[] = $lang;
+    $array[] = 'en';
+
+    $query->where[1][conditions][2]['value'] = $array;
+    $query->where[1][conditions][2]['operator'] = "IN";
+
+    $query->add_field('node', 'nid', 'node_nid', array('function' => 'groupby'));
+    $query->add_groupby('node.nid');
   }
 
   //Changes inner join to left join in press center block view to handle the
@@ -4420,13 +4426,10 @@ function akdn_custom_preprocess_views_view_field__focus_areas__what_we_do_summar
   $lang = $language->language;
   $row = $variables['row'];
 
-  $language = $row->_field_data['node_field_data_field_about_page_nid']['entity']->language;
+  //$language = $row->_field_data['node_field_data_field_about_page_nid']['entity']->language;
   $body = $row->_field_data['node_field_data_field_about_page_nid']['entity']->body[$lang][0]['value'];
   if (empty($body)) {
     $body = $row->_field_data['node_field_data_field_about_page_nid']['entity']->body['en'][0]['value'];
-  }
-  if (empty($body)) {
-    $body = $row->_field_data['node_field_data_field_about_page_nid']['entity']->body['und'][0]['value'];
   }
   if (!empty($body)) {
     $explode = explode('<!--break-->', $body);
