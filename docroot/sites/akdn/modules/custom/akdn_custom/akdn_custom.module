@@ -257,8 +257,14 @@ function akdn_custom_views_query_alter(&$view, &$query) {
     else if ($view->current_display == 'block_2') {
       $query->where[1][conditions][2]['field'] = "field_data_field_facts_show_on_homepage.language";
     }
-    $query->where[1][conditions][2]['value'] = $lang;
-    $query->where[1][conditions][2]['operator'] = "=";
+    $array[] = $lang;
+    $array[] = 'en';
+
+    $query->where[1][conditions][2]['value'] = $array;
+    $query->where[1][conditions][2]['operator'] = "IN";
+
+    $query->add_field('node', 'nid', 'node_nid', array('function' => 'groupby'));
+    $query->add_groupby('node.nid');
   }
 
   //Changes inner join to left join in press center block view to handle the
