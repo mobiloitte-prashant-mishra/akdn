@@ -3923,14 +3923,13 @@ function akdn_custom_preprocess_views_view_field__focus_areas__what_we_do_summar
   global $language;
   $lang = $language->language;
   $row = $variables['row'];
-
+  $body = '';
   $language = $row->_field_data['node_field_data_field_about_page_nid']['entity']->language;
-  $body = $row->_field_data['node_field_data_field_about_page_nid']['entity']->body[$lang][0]['value'];
-  if (empty($body)) {
-    $body = $row->_field_data['node_field_data_field_about_page_nid']['entity']->body['en'][0]['value'];
+  if (isset($row->_field_data['node_field_data_field_about_page_nid']['entity']->body[$lang])) {
+    $body = $row->_field_data['node_field_data_field_about_page_nid']['entity']->body[$lang][0]['value'];
   }
   if (empty($body)) {
-    $body = $row->_field_data['node_field_data_field_about_page_nid']['entity']->body['und'][0]['value'];
+    $body = $row->_field_data['node_field_data_field_about_page_nid']['entity']->body[$language][0]['value'];
   }
   if (!empty($body)) {
     $explode = explode('<!--break-->', $body);
