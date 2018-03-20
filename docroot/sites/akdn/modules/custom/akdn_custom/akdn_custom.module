@@ -3920,16 +3920,22 @@ function akdn_custom_preprocess_views_view_field__hub_pages__other_activities__n
  *
  */
 function akdn_custom_preprocess_views_view_field__focus_areas__what_we_do_summary_text__nothing(&$variables) {
+  global $language;
+  $lang = $language->language;
   $row = $variables['row'];
+
   $language = $row->_field_data['node_field_data_field_about_page_nid']['entity']->language;
-  $body = $row->_field_data['node_field_data_field_about_page_nid']['entity']->body[$language][0]['value'];
+  $body = $row->_field_data['node_field_data_field_about_page_nid']['entity']->body[$lang][0]['value'];
+  if (empty($body)) {
+    $row->_field_data['node_field_data_field_about_page_nid']['entity']->body['en'][0]['value'];
+  }
   if (!empty($body)) {
     $explode = explode('<!--break-->', $body);
     $output = '';
     $output .= '<div class="what-we-do-body-more">';
     $output .= check_markup($explode[0], 'full_html');
     if (!empty($explode[1])) {
-      $output .= '<span><a href="javascript:void(0);" class="morelink">More</a></span>';
+      $output .= '<span><a href="javascript:void(0);" class="morelink">' . t("More") . '</a></span>';
     }
     $output .= '</div>';
     $output .= '<div class="what-we-do-body-more-body collapse">';
