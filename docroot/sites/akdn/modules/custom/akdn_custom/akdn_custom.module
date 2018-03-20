@@ -4416,11 +4416,18 @@ function akdn_custom_preprocess_views_view_field__hub_pages__other_activities__n
  *
  */
 function akdn_custom_preprocess_views_view_field__focus_areas__what_we_do_summary_text__nothing(&$variables) {
-  $row = $variables['row'];
   global $language;
   $lang = $language->language;
-  //$language = $row->_field_data['node_field_data_field_about_page_nid']['entity']->language;
+  $row = $variables['row'];
+
+  $language = $row->_field_data['node_field_data_field_about_page_nid']['entity']->language;
   $body = $row->_field_data['node_field_data_field_about_page_nid']['entity']->body[$lang][0]['value'];
+  if (empty($body)) {
+    $body = $row->_field_data['node_field_data_field_about_page_nid']['entity']->body['en'][0]['value'];
+  }
+  if (empty($body)) {
+    $body = $row->_field_data['node_field_data_field_about_page_nid']['entity']->body['und'][0]['value'];
+  }
   if (!empty($body)) {
     $explode = explode('<!--break-->', $body);
     $output = '';
