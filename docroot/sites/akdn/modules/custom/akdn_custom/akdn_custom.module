@@ -951,17 +951,20 @@ function akdn_custom_block_view($delta = '') {
  *
  */
 function akdn_custom_content_breadcrumb() {
+  global $language;
+  $lang = $language->language;
   $nid = arg(1);
   $node = node_load($nid);
   if (empty($node)) {
     return;
   }
   $field_custom = $node->field_custom_breadcrumbs;
-  $bread = $node->field_custom_breadcrumbs[key($field_custom)];
+  $bread = isset($node->field_custom_breadcrumbs[$lang]) ? $node->field_custom_breadcrumbs[$lang] : $node->field_custom_breadcrumbs['en'];
+
   $count = count($bread);
-  $output = '<div class="static_text">You are here</div>';
+  $output = '<div class="static_text">' . t("You are here") . '</div>';
   $output .= '<div class="breadcrumb contextual-links-region">';
-  $output .= '<span>' . l('Home', '', array('absolute' => TRUE)) . '</span>';
+  $output .= '<span>' . l(t('Home'), '', array('absolute' => TRUE)) . '</span>';
   $output .= '<span class="delimiter">|</span>';
   $i = 1;
   foreach ($bread as $crumb) {
