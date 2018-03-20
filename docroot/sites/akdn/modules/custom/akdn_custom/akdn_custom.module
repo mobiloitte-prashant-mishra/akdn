@@ -216,7 +216,12 @@ function akdn_custom_views_query_alter(&$view, &$query) {
     $lang_name = $language->name;
     $lang = $language->language;
 
-    $query->where[1][conditions][2]['field'] = "field_data_field_facts_show_on_homepage_value_0.language";
+    if ($view->current_display == 'block') {
+      $query->where[1][conditions][2]['field'] = "field_data_field_facts_show_on_homepage_value_0.language";
+    }
+    else if ($view->current_display == 'block_2') {
+      $query->where[1][conditions][2]['field'] = "field_data_field_facts_show_on_homepage.language";
+    }
     $query->where[1][conditions][2]['value'] = $lang;
     $query->where[1][conditions][2]['operator'] = "=";
   }
