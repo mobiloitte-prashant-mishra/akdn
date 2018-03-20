@@ -1742,4 +1742,5 @@ node/26851/*',
   $export['thematic_areas'] = $path_breadcrumb;
 
   return $export;
+
 }
