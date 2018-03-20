@@ -180,7 +180,7 @@ akmi',
       3 => '<none>',
     ),
     'home' => 1,
-    'translatable' => 1,
+    'translatable' => 0,
     'arguments' => array(),
     'access' => array(
       'plugins' => array(
@@ -257,7 +257,7 @@ node/26851/*',
       3 => '<none>',
     ),
     'home' => 1,
-    'translatable' => 1,
+    'translatable' => 0,
     'arguments' => array(
       'node' => array(
         'position' => 1,
@@ -305,7 +305,7 @@ node/26851/*',
       3 => '<none>',
     ),
     'home' => 1,
-    'translatable' => 1,
+    'translatable' => 0,
     'arguments' => array(),
     'access' => array(
       'plugins' => array(
@@ -344,7 +344,7 @@ node/26851/*',
       3 => '<none>',
     ),
     'home' => 1,
-    'translatable' => 1,
+    'translatable' => 0,
     'arguments' => array(
       'term' => array(
         'position' => 2,
@@ -374,7 +374,7 @@ node/26851/*',
       3 => '<none>',
     ),
     'home' => 1,
-    'translatable' => 1,
+    'translatable' => 0,
     'arguments' => array(),
     'access' => array(),
   );
@@ -439,7 +439,7 @@ node/26851/*',
       3 => '<none>',
     ),
     'home' => 1,
-    'translatable' => 1,
+    'translatable' => 0,
     'arguments' => array(
       'node' => array(
         'position' => 1,
@@ -528,7 +528,7 @@ node/26851/*',
       4 => '<none>',
     ),
     'home' => 1,
-    'translatable' => 1,
+    'translatable' => 0,
     'arguments' => array(
       'node' => array(
         'position' => 1,
@@ -654,7 +654,7 @@ node/26851/*',
       3 => '<none>',
     ),
     'home' => 1,
-    'translatable' => 1,
+    'translatable' => 0,
     'arguments' => array(),
     'access' => array(),
   );
@@ -680,7 +680,7 @@ node/26851/*',
       3 => '<none>',
     ),
     'home' => 1,
-    'translatable' => 1,
+    'translatable' => 0,
     'arguments' => array(),
     'access' => array(
       'plugins' => array(
@@ -758,7 +758,7 @@ node/26851/*',
       3 => '<none>',
     ),
     'home' => 1,
-    'translatable' => 1,
+    'translatable' => 0,
     'arguments' => array(
       'node' => array(
         'position' => 1,
@@ -802,7 +802,7 @@ node/26851/*',
       1 => '<none>',
     ),
     'home' => 1,
-    'translatable' => 1,
+    'translatable' => 0,
     'arguments' => array(
       'node' => array(
         'position' => 1,
@@ -913,7 +913,7 @@ node/26851/*',
       1 => '<none>',
     ),
     'home' => 1,
-    'translatable' => 1,
+    'translatable' => 0,
     'arguments' => array(
       'node' => array(
         'position' => 1,
@@ -955,7 +955,7 @@ node/26851/*',
       0 => '<none>',
     ),
     'home' => 1,
-    'translatable' => 1,
+    'translatable' => 0,
     'arguments' => array(),
     'access' => array(
       'plugins' => array(
@@ -992,7 +992,7 @@ node/26851/*',
       2 => '<none>',
     ),
     'home' => 1,
-    'translatable' => 1,
+    'translatable' => 0,
     'arguments' => array(
       'node' => array(
         'position' => 1,
@@ -1063,14 +1063,14 @@ node/26851/*',
   $path_breadcrumb->data = array(
     'titles' => array(
       0 => 'Where we work',
-      1 => '%node:title_field',
+      1 => '!page_title',
     ),
     'paths' => array(
       0 => '<none>',
       1 => '<none>',
     ),
     'home' => 1,
-    'translatable' => 1,
+    'translatable' => 0,
     'arguments' => array(
       'node' => array(
         'position' => 1,
@@ -1118,7 +1118,7 @@ node/26851/*',
       3 => '<none>',
     ),
     'home' => 1,
-    'translatable' => 1,
+    'translatable' => 0,
     'arguments' => array(
       'node' => array(
         'position' => 1,
@@ -1164,7 +1164,7 @@ node/26851/*',
       2 => '<none>',
     ),
     'home' => 1,
-    'translatable' => 1,
+    'translatable' => 0,
     'arguments' => array(
       'node' => array(
         'position' => 1,
@@ -1210,7 +1210,7 @@ node/26851/*',
       2 => '<none>',
     ),
     'home' => 1,
-    'translatable' => 1,
+    'translatable' => 0,
     'arguments' => array(
       'node' => array(
         'position' => 1,
@@ -1256,7 +1256,7 @@ node/26851/*',
       2 => '<none>',
     ),
     'home' => 1,
-    'translatable' => 1,
+    'translatable' => 0,
     'arguments' => array(
       'node' => array(
         'position' => 1,
@@ -1315,7 +1315,7 @@ node/26851/*',
       1 => '<none>',
     ),
     'home' => 1,
-    'translatable' => 1,
+    'translatable' => 0,
     'arguments' => array(
       'node' => array(
         'position' => 1,
@@ -1343,7 +1343,7 @@ node/26851/*',
       2 => '<none>',
     ),
     'home' => 1,
-    'translatable' => 1,
+    'translatable' => 0,
     'arguments' => array(
       'node' => array(
         'position' => 1,
@@ -1404,7 +1404,7 @@ node/26851/*',
       2 => '<none>',
     ),
     'home' => 1,
-    'translatable' => 1,
+    'translatable' => 0,
     'arguments' => array(
       'node' => array(
         'position' => 1,
@@ -1450,7 +1450,7 @@ node/26851/*',
       2 => '<none>',
     ),
     'home' => 1,
-    'translatable' => 1,
+    'translatable' => 0,
     'arguments' => array(
       'node' => array(
         'position' => 1,
@@ -1496,7 +1496,7 @@ node/26851/*',
       2 => '<none>',
     ),
     'home' => 1,
-    'translatable' => 1,
+    'translatable' => 0,
     'arguments' => array(
       'node' => array(
         'position' => 1,
@@ -1557,7 +1557,7 @@ node/26851/*',
       2 => '<none>',
     ),
     'home' => 1,
-    'translatable' => 1,
+    'translatable' => 0,
     'arguments' => array(
       'node' => array(
         'position' => 1,
@@ -1599,7 +1599,7 @@ node/26851/*',
       0 => '<none>',
     ),
     'home' => 0,
-    'translatable' => 1,
+    'translatable' => 0,
     'arguments' => array(),
     'access' => array(
       'plugins' => array(
@@ -1632,7 +1632,7 @@ node/26851/*',
       0 => '<none>',
     ),
     'home' => 1,
-    'translatable' => 1,
+    'translatable' => 0,
     'arguments' => array(),
     'access' => array(),
   );
@@ -1654,7 +1654,7 @@ node/26851/*',
       1 => '<none>',
     ),
     'home' => 1,
-    'translatable' => 1,
+    'translatable' => 0,
     'arguments' => array(),
     'access' => array(
       'plugins' => array(),
@@ -1677,7 +1677,7 @@ node/26851/*',
       0 => '/subscribe',
     ),
     'home' => 1,
-    'translatable' => 1,
+    'translatable' => 0,
     'arguments' => array(),
     'access' => array(
       'plugins' => array(
@@ -1705,14 +1705,14 @@ node/26851/*',
   $path_breadcrumb->data = array(
     'titles' => array(
       0 => 'What we do',
-      1 => '%node:title_field',
+      1 => '!page_title',
     ),
     'paths' => array(
       0 => '<none>',
       1 => '<none>',
     ),
     'home' => 1,
-    'translatable' => 1,
+    'translatable' => 0,
     'arguments' => array(
       'node' => array(
         'position' => 1,
@@ -1742,4 +1742,5 @@ node/26851/*',
   $export['thematic_areas'] = $path_breadcrumb;
 
   return $export;
+
 }
