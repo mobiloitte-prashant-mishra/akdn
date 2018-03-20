@@ -3929,6 +3929,7 @@ function akdn_custom_preprocess_views_view_field__focus_areas__what_we_do_summar
     $body = $row->_field_data['node_field_data_field_about_page_nid']['entity']->body[$lang][0]['value'];
   }
   if (empty($body)) {
+
     $body = $row->_field_data['node_field_data_field_about_page_nid']['entity']->body[$language][0]['value'];
   }
   if (!empty($body)) {
