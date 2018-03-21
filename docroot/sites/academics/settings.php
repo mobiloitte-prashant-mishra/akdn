@@ -1,5 +1,5 @@
 <?php
-$conf['file_temporary_path'] = '/mnt/tmp/academies';
+
 /**
  * @file
  * Drupal site-specific configuration file.
