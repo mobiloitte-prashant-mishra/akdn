@@ -382,10 +382,10 @@ function plupload_handle_uploads() {
   // fortunate, because it would be difficult for us to get the correct list of
   // allowed extensions to pass in to file_munge_filename() from this point in
   // the code (outside the form API).
-  /*
+  
   if (empty($file_name) || !preg_match('/^\w+\.tmp$/', $file_name)) {
     die('{"jsonrpc" : "2.0", "error" : {"code": 105, "message": "Invalid temporary file name."}, "id" : "id"}');
-  }*/
+  }
 
   // Look for the content type header.
   if (isset($_SERVER["HTTP_CONTENT_TYPE"])) {
