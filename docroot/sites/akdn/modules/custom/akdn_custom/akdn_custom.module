@@ -1432,6 +1432,8 @@ function get_latest_revision_id($nid) {
  *
  */
 function akdn_basic_page_accordian_style_block() {
+  global $language;
+  $lang = $language->language;
   $nid = arg(1);
   $node = array();
   if (!is_numeric($nid)) {
@@ -1448,119 +1450,149 @@ function akdn_basic_page_accordian_style_block() {
   if (empty($node)) {
     return;
   }
-  $field_basic_page_choose_layout = $node->field_basic_page_choose_layout;
-  $layout_type = $node->field_basic_page_choose_layout[key($field_basic_page_choose_layout)][0]['value'];
+
+  if ($node->field_basic_page_choose_layout[$lang][0]['value']) {
+    $layout_type = $node->field_basic_page_choose_layout[$lang][0]['value'];
+  }
+  else {
+    $layout_type = $node->field_basic_page_choose_layout['und'][0]['value'];
+  }
 
   if ($layout_type == 'accordian') {
     $output = '';
     $quick_links = '';
     $output .= '<div class = "basic-page-accordian-main-container">';
-    $field_basic_page_accordian_style = $node->field_basic_page_accordian_style;
-    $field_collection = $node->field_basic_page_accordian_style[key($field_basic_page_accordian_style)];
-    $i = 1;
-    foreach ($field_collection as $values) {
-      $id = 'accordian-title-' . $i;
-      $field_values = entity_revision_load('field_collection_item', $values['revision_id']);
 
-      $field_basic_page_accordian_image = $field_values->field_basic_page_accordian_image;
-      $image = reset($field_basic_page_accordian_image);
-      $lang_caption = key($image[0]['field_image_caption']);
-      $image_caption = $image[0]['field_image_caption'][$lang_caption][0]['value'];
-      $lang_copyright = key($image[0]['field_image_copytight']);
-      $image_copyright = $image[0]['field_image_copytight'][$lang_copyright][0]['value'];
-      $field_basic_accordian_rel_links = $field_values->field_basic_accordian_rel_links;
-      $related_links = reset($field_basic_accordian_rel_links);
-      $output .= '<div id = "' . $id . '" class = "basic-page-accordian-rows">';
-      $output .= '<div class = accordian-image-rel-wrapper>';
-      if (!empty($field_values->field_basic_page_accordian_image)) {
-        $image = reset($field_values->field_basic_page_accordian_image);
-        $lang_caption = key($image[0]['field_image_caption']);
-        $image_caption = $image[0]['field_image_caption'][$lang_caption][0]['value'];
-        $lang_copyright = key($image[0]['field_image_copytight']);
-        $image_copyright = $image[0]['field_image_copytight'][$lang_copyright][0]['value'];
-        $related_links = reset($field_values->field_basic_accordian_rel_links);        
-        $accordian_image = array(
-          'style_name' => 'social_sharing_image',
-          'path' => $image[0]['uri'],
-          'width' => '',
-          'height' => '',
-          'alt' => $image[0]['alt'],
-          'title' => $image[0]['title'],
-        );
-        $output .= '<div class = "image image-caption-show-hide-block">';
-        $output .= theme('image_style', $accordian_image);
-        $output .= '<div class="caption-copyright-wrapper">';
-        $output .= '<div class="image-caption-wrapper">';
-        $output .= $image_caption;
-        $output .= '</div>';
-        $output .= '<div class="image-copytight-wrapper">';
-        $output .= $image_copyright;
-        $output .= '</div>';
-        $output .= '</div>';
-        $output .= '</div>';
-      }
-      if (!empty($related_links)) {
-        $output .= '<div class = "according-related-heading collapse"><span class = "related-heading">Related Information</span>';
-        $rel_links = '';
-        foreach ($related_links as $links) {
-          $url = link_cleanup_url($links['url']);
-          $target = $links['attributes']['target'];
-          if ($target === '_blank') {
-            $rel_links .= '<div class = "accordian_rel_links">';
-            $rel_links .= l($links['title'], $url, array('attributes' => array('target' => '_blank')));
-            $rel_links .= '</div>';
+    if ($node->field_basic_page_accordian_style[$lang]) {
+      $field_collection = $node->field_basic_page_accordian_style[$lang];
+    }
+    else {
+      $field_collection = $node->field_basic_page_accordian_style['und'];
+    }
+    $i = 1;
+    if ($field_collection) {
+      foreach ($field_collection as $values) {
+        $id = 'accordian-title-' . $i;
+        $field_values = entity_revision_load('field_collection_item', $values['revision_id']);
+
+        $output .= '<div id = "' . $id . '" class = "basic-page-accordian-rows">';
+        $output .= '<div class = accordian-image-rel-wrapper>';
+
+        if (!empty($field_values->field_basic_page_accordian_image)) {
+          $field_basic_page_accordian_image = $field_values->field_basic_page_accordian_image;
+
+          $image = (isset($field_values->field_basic_page_accordian_image[$lang])) ? $field_values->field_basic_page_accordian_image[$lang] : $field_values->field_basic_page_accordian_image['und'];
+
+          $image_caption = (isset($image[0]['field_image_caption'][$lang])) ? $image[0]['field_image_caption'][$lang][0]['value'] : $image[0]['field_image_caption']['und'][0]['value'];
+
+          $image_copyright = (isset($image[0]['field_image_copytight'][$lang])) ? $image[0]['field_image_copytight'][$lang][0]['value'] : $image[0]['field_image_copytight']['und'][0]['value'];
+
+
+          $field_basic_accordian_rel_links = $field_values->field_basic_accordian_rel_links;
+          if ($field_basic_accordian_rel_links[$lang]) {
+            $related_links = $field_basic_accordian_rel_links[$lang];
           }
           else {
-            $rel_links .= '<div class = "accordian_rel_links">';
-            $rel_links .= l($links['title'], $url);
-            $rel_links .= '</div>';
+            $related_links = $field_basic_accordian_rel_links['und'];
           }
+
+          $accordian_image = array(
+            'style_name' => 'social_sharing_image',
+            'path' => $image[0]['uri'],
+            'width' => '',
+            'height' => '',
+            'alt' => $image[0]['alt'],
+            'title' => $image[0]['title'],
+          );
+
+          $output .= '<div class = "image image-caption-show-hide-block">';
+          $output .= theme('image_style', $accordian_image);
+          $output .= '<div class="caption-copyright-wrapper">';
+          $output .= '<div class="image-caption-wrapper">';
+          $output .= $image_caption;
+          $output .= '</div>';
+          $output .= '<div class="image-copytight-wrapper">';
+          $output .= $image_copyright;
+          $output .= '</div>';
+          $output .= '</div>';
+          $output .= '</div>';
         }
-        $output .= $rel_links . '</div>';
-      }
-      $output .= '</div>';
-      $output .= '<div class = "accordian-title-right-summary">';
-      $title = reset($field_values->field_basic_page_accordian_title);
-      if (!empty($title)) {
-        $output .= '<div class ="accordian-title">';
-        $output .= $title[0]['value'];
+        if (!empty($related_links)) {
+          $output .= '<div class = "according-related-heading collapse"><span class = "related-heading">' . t("Related Information") . '</span>';
+          $rel_links = '';
+          foreach ($related_links as $links) {
+            $url = link_cleanup_url($links['url']);
+            $target = $links['attributes']['target'];
+            if ($target === '_blank') {
+              $rel_links .= '<div class = "accordian_rel_links">';
+              $rel_links .= l($links['title'], $url, array('attributes' => array('target' => '_blank')));
+              $rel_links .= '</div>';
+            }
+            else {
+              $rel_links .= '<div class = "accordian_rel_links">';
+              $rel_links .= l($links['title'], $url);
+              $rel_links .= '</div>';
+            }
+          }
+          $output .= $rel_links . '</div>';
+        }
         $output .= '</div>';
-        $quick_links1 .= '<li><div class = "quick-links-title"><a href = #' . $id . '>' . $title[0]['value'] . '</a></div></li>';
-      }
-      $body = reset($field_values->field_text);
-      if (!empty($body)) {
-        if (strpos($body[0]['value'], '<!--break-->') !== FALSE) {
-          $explode = explode('<!--break-->', $body[0]['value']);
-          $output .= '<div class = accordian-summary>';
-          $output .= check_markup($explode[0], $body[0]['format']);
-          $output .= '</div>';
-          $output .= '<div class = "accordian-main-body collapse">';
-          $output .= check_markup($explode[1], $body[0]['format']);
-          $output .= '</div>';
+        $output .= '<div class = "accordian-title-right-summary">';
+        if ($field_values->field_basic_page_accordian_title[$lang]) {
+          $title = $field_values->field_basic_page_accordian_title[$lang];
         }
         else {
-          $str = wordwrap($body[0]['value'], 400);
-          $str = explode("\n", $str);
-          $output .= '<div class = accordian-summary>';
-          $output .= check_markup($str[0], $body[0]['format']);
-          $output .= '</div>';
-          $output .= '<div class = "accordian-main-body collapse">';
-          $output .= check_markup($str[1], $body[0]['format']);
-          $output .= '</div>';
+          $title = $field_values->field_basic_page_accordian_title['und'];
         }
+        if (!empty($title)) {
+          $output .= '<div class ="accordian-title">';
+          $output .= $title[0]['value'];
+          $output .= '</div>';
+          $quick_links1 .= '<li><div class = "quick-links-title"><a href = #' . $id . '>' . $title[0]['value'] . '</a></div></li>';
+        }
+        if ($field_values->field_text[$lang]) {
+          $body = $field_values->field_text[$lang];
+        }
+        else {
+          $body = $field_values->field_text['und'];
+        }
+        if (!empty($body)) {
+          if (strpos($body[0]['value'], '<!--break-->') !== FALSE) {
+            $explode = explode('<!--break-->', $body[0]['value']);
+            $output .= '<div class = accordian-summary>';
+            $output .= check_markup($explode[0], $body[0]['format']);
+            $output .= '</div>';
+            $output .= '<div class = "accordian-main-body collapse">';
+            $output .= check_markup($explode[1], $body[0]['format']);
+            $output .= '</div>';
+          }
+          else {
+            $str = wordwrap($body[0]['value'], 400);
+            $str = explode("\n", $str);
+            $output .= '<div class = accordian-summary>';
+            $output .= check_markup($str[0], $body[0]['format']);
+            $output .= '</div>';
+            $output .= '<div class = "accordian-main-body collapse">';
+            $output .= check_markup($str[1], $body[0]['format']);
+            $output .= '</div>';
+          }
+        }
+        $output .= '</div>';
+        $output .= '<div class = "accordian-icon" onclick="accordian_click(this)">icon</div>';
+        $output .= '</div>';
+        $i++;
       }
-      $output .= '</div>';
-      $output .= '<div class = "accordian-icon" onclick="accordian_click(this)">icon</div>';
-      $output .= '</div>';
-      $i++;
     }
+
     $output .= '</div>';
+
     $quick_links .= '<div class = "accordian-quick-links">';
-    $quick_links .= '<div class = "heading">Quick Links</div>';
+    $quick_links .= '<div class = "heading">' . t("Quick Links") . '</div>';
     $quick_links .= '<ul>' . $quick_links1 . '</ul>';
     $quick_links .= '</div>';
     $html_output .= $quick_links;
     $html_output .= $output;
+
     return $html_output;
   }
 }
