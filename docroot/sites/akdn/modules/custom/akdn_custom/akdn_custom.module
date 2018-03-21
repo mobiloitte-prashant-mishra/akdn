@@ -6,7 +6,7 @@
 function akdn_custom_init() {
   global $language, $base_url;
   $lang = $language->language;
-  
+
   $nid = arg(1);
   if (arg(0) == 'node' && is_numeric($nid) && empty(arg(2))) {
     $node = node_load($nid);
@@ -102,19 +102,19 @@ function akdn_custom_menu() {
     'type' => MENU_NORMAL_ITEM,
     ); */
   $items['search/google-search'] = array(
-     'title' => 'Google Search',
-     'type' => MENU_CALLBACK,
-     'access callback' => TRUE,
-     'page callback' => 'akdn_custom_google_search',
-     'file' => 'includes/akdn_custom.google_search.inc',
-    );
-   $items['custom-import-handler/update/%'] = array(
-     'title' => 'syndicate Node update',
-     'page callback' => '_syndicate_node_update',
-     'page arguments' => array(2),
-     'access callback' => TRUE,
-     'type' => MENU_CALLBACK,
-   );
+    'title' => 'Google Search',
+    'type' => MENU_CALLBACK,
+    'access callback' => TRUE,
+    'page callback' => 'akdn_custom_google_search',
+    'file' => 'includes/akdn_custom.google_search.inc',
+  );
+  $items['custom-import-handler/update/%'] = array(
+    'title' => 'syndicate Node update',
+    'page callback' => '_syndicate_node_update',
+    'page arguments' => array(2),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
   $items['media-file'] = array(
     'title' => '',
     'page callback' => 'media_file',
@@ -1207,12 +1207,12 @@ function akdn_all_areas_of_activity() {
 
   $nid = explode('/', $menu_item['link_path']);
   $nid = $nid[1];
-  
+
   if (isset($nid) && is_numeric($nid)) {
 
     $node = node_load($nid);
     $menu_node_links = $node->menu_node_links;
-    
+
     $key = key($menu_node_links);
     $get_activities = get_areas_of_activities($key);
     if (!empty($get_activities)) {
@@ -1310,7 +1310,6 @@ function akdn_all_areas_of_activity() {
         $output = $output_header . $output . $output_base;
       }
     }
-    
   }
   return $output;
 }
@@ -1551,7 +1550,7 @@ function akdn_geography_agency_logo_title() {
  * Basic Page Layout link to page stayle display
  *
  */
-function akdn_basic_page_accordian_style_block() {
+function akdn_basic_page_link_to_style_block() {
   global $language;
   $lang = $language->language;
   $nid = arg(1);
@@ -1566,67 +1565,52 @@ function akdn_basic_page_accordian_style_block() {
   else {
     $node = node_load($nid);
   }
-
   if (empty($node)) {
     return;
   }
 
-  if ($node->field_basic_page_choose_layout[$lang][0]['value']) {
-    $layout_type = $node->field_basic_page_choose_layout[$lang][0]['value'];
-  }
-  else {
-    $layout_type = $node->field_basic_page_choose_layout['und'][0]['value'];
-  }
+  $layout_type = (isset($node->field_basic_page_choose_layout[$lang])) ? $node->field_basic_page_choose_layout[$lang][0]['value'] : $node->field_basic_page_choose_layout['und'][0]['value'];
 
-  if ($layout_type == 'accordian') {
+  if ($layout_type == 'morelink') {
     $output = '';
-    $quick_links = '';
     $output .= '<div class = "basic-page-accordian-main-container">';
 
-    if ($node->field_basic_page_accordian_style[$lang]) {
-      $field_collection = $node->field_basic_page_accordian_style[$lang];
-    }
-    else {
-      $field_collection = $node->field_basic_page_accordian_style['und'];
-    }
+    $field_collection = (isset($node->field_basic_page_accordian_style[$lang])) ? $node->field_basic_page_accordian_style[$lang] : $node->field_basic_page_accordian_style['und'];
+
+
     $i = 1;
-    if ($field_collection) {
-      foreach ($field_collection as $values) {
-        $id = 'accordian-title-' . $i;
-        $field_values = entity_revision_load('field_collection_item', $values['revision_id']);
 
-        $output .= '<div id = "' . $id . '" class = "basic-page-accordian-rows">';
-        $output .= '<div class = accordian-image-rel-wrapper>';
+    foreach ($field_collection as $values) {
+      $output .= '<div class = "accordian-rows">';
 
-        if (!empty($field_values->field_basic_page_accordian_image)) {
-          $field_basic_page_accordian_image = $field_values->field_basic_page_accordian_image;
-
-          $image = (isset($field_values->field_basic_page_accordian_image[$lang])) ? $field_values->field_basic_page_accordian_image[$lang] : $field_values->field_basic_page_accordian_image['und'];
-
-          $image_caption = (isset($image[0]['field_image_caption'][$lang])) ? $image[0]['field_image_caption'][$lang][0]['value'] : $image[0]['field_image_caption']['und'][0]['value'];
-
-          $image_copyright = (isset($image[0]['field_image_copytight'][$lang])) ? $image[0]['field_image_copytight'][$lang][0]['value'] : $image[0]['field_image_copytight']['und'][0]['value'];
+      $id = 'accordian-title-' . $i;
+      $field_values = entity_revision_load('field_collection_item', $values['revision_id']);
 
 
-          $field_basic_accordian_rel_links = $field_values->field_basic_accordian_rel_links;
-          if ($field_basic_accordian_rel_links[$lang]) {
-            $related_links = $field_basic_accordian_rel_links[$lang];
-          }
-          else {
-            $related_links = $field_basic_accordian_rel_links['und'];
-          }
 
-          $accordian_image = array(
-            'style_name' => 'social_sharing_image',
-            'path' => $image[0]['uri'],
-            'width' => '',
-            'height' => '',
-            'alt' => $image[0]['alt'],
-            'title' => $image[0]['title'],
-          );
+      $output .= '<div class = "image-wrapper">';
+      if (!empty($field_values->field_basic_page_accordian_image)) {
+        $image = (isset($field_values->field_basic_page_accordian_image[$lang])) ? $field_values->field_basic_page_accordian_image[$lang] : $field_values->field_basic_page_accordian_image['und'];
 
-          $output .= '<div class = "image image-caption-show-hide-block">';
-          $output .= theme('image_style', $accordian_image);
+
+        $image_caption = (isset($image[0]['field_image_caption'][$lang])) ? $image[0]['field_image_caption'][$lang][0]['value'] : $image[0]['field_image_caption']['und'][0]['value'];
+
+        $image_copyright = (isset($image[0]['field_image_copytight'][$lang])) ? $image[0]['field_image_copytight'][$lang][0]['value'] : $image[0]['field_image_copytight']['und'][0]['value'];
+
+        $accordian_image = array(
+          'style_name' => 'social_sharing_image',
+          'path' => $image[0]['uri'],
+          'width' => '',
+          'height' => '',
+          'alt' => $image[0]['alt'],
+          'title' => $image[0]['title'],
+        );
+
+
+        $output .= '<div class = "link_to_image">';
+        $output .= '<div class = "image-caption-show-hide-block">';
+        $output .= theme('image_style', $accordian_image);
+        if (!empty($image_caption) || !empty($image_copyright)) {
           $output .= '<div class="caption-copyright-wrapper">';
           $output .= '<div class="image-caption-wrapper">';
           $output .= $image_caption;
@@ -1635,85 +1619,64 @@ function akdn_basic_page_accordian_style_block() {
           $output .= $image_copyright;
           $output .= '</div>';
           $output .= '</div>';
-          $output .= '</div>';
-        }
-        if (!empty($related_links)) {
-          $output .= '<div class = "according-related-heading collapse"><span class = "related-heading">' . t("Related Information") . '</span>';
-          $rel_links = '';
-          foreach ($related_links as $links) {
-            $url = link_cleanup_url($links['url']);
-            $target = $links['attributes']['target'];
-            if ($target === '_blank') {
-              $rel_links .= '<div class = "accordian_rel_links">';
-              $rel_links .= l($links['title'], $url, array('attributes' => array('target' => '_blank')));
-              $rel_links .= '</div>';
-            }
-            else {
-              $rel_links .= '<div class = "accordian_rel_links">';
-              $rel_links .= l($links['title'], $url);
-              $rel_links .= '</div>';
-            }
-          }
-          $output .= $rel_links . '</div>';
         }
         $output .= '</div>';
-        $output .= '<div class = "accordian-title-right-summary">';
-        if ($field_values->field_basic_page_accordian_title[$lang]) {
-          $title = $field_values->field_basic_page_accordian_title[$lang];
-        }
-        else {
-          $title = $field_values->field_basic_page_accordian_title['und'];
-        }
-        if (!empty($title)) {
-          $output .= '<div class ="accordian-title">';
-          $output .= $title[0]['value'];
-          $output .= '</div>';
-          $quick_links1 .= '<li><div class = "quick-links-title"><a href = #' . $id . '>' . $title[0]['value'] . '</a></div></li>';
-        }
-        if ($field_values->field_text[$lang]) {
-          $body = $field_values->field_text[$lang];
-        }
-        else {
-          $body = $field_values->field_text['und'];
-        }
-        if (!empty($body)) {
-          if (strpos($body[0]['value'], '<!--break-->') !== FALSE) {
-            $explode = explode('<!--break-->', $body[0]['value']);
-            $output .= '<div class = accordian-summary>';
-            $output .= check_markup($explode[0], $body[0]['format']);
-            $output .= '</div>';
-            $output .= '<div class = "accordian-main-body collapse">';
-            $output .= check_markup($explode[1], $body[0]['format']);
-            $output .= '</div>';
-          }
-          else {
-            $str = wordwrap($body[0]['value'], 400);
-            $str = explode("\n", $str);
-            $output .= '<div class = accordian-summary>';
-            $output .= check_markup($str[0], $body[0]['format']);
-            $output .= '</div>';
-            $output .= '<div class = "accordian-main-body collapse">';
-            $output .= check_markup($str[1], $body[0]['format']);
-            $output .= '</div>';
-          }
-        }
         $output .= '</div>';
-        $output .= '<div class = "accordian-icon" onclick="accordian_click(this)">icon</div>';
-        $output .= '</div>';
-        $i++;
       }
+      $output .= '</div>';
+      $output .= '<div class = "body-text-wrapper">';
+      $output .= '<div class = "basic_page_title">';
+
+      if ($field_values->field_basic_page_accordian_title[$lang]) {
+        $title = $field_values->field_basic_page_accordian_title[$lang];
+      }
+      else {
+        $title = $field_values->field_basic_page_accordian_title['und'];
+      }
+
+      if (!empty($title)) {
+        $output .= $title[0]['value'];
+      }
+      $output .= '</div>';
+      $output .= '<div class = "body-wrapper">';
+      if ($field_values->field_text[$lang]) {
+        $body = $field_values->field_text[$lang];
+      }
+      else {
+        $body = $field_values->field_text['und'];
+      }
+
+      if (!empty($body)) {
+        $output .= '<div class = accordian-summary>';
+        $output .= check_markup($body[0]['value'], $body[0]['format']);
+        $output .= '</div>';
+      }
+      if ($field_values->field_basic_add_more_link[$lang]) {
+        $more_link = $field_values->field_basic_add_more_link[$lang];
+      }
+      else {
+        $more_link = $field_values->field_basic_add_more_link['und'];
+      }
+
+      if (!empty($more_link)) {
+        $output .= '<span class = "basic_page_more_link">';
+        $url = link_cleanup_url($more_link[0]['url']);
+        $target = $more_link[0]['attributes']['target'];
+        $link = '';
+        if ($target === '_blank') {
+          $link = l('More', $url, array('attributes' => array('target' => '_blank')));
+        }
+        else {
+          $link = l('More', $url);
+        }
+        $output .= $link;
+        $output .= '</span>';
+      }
+      $output .= '</div></div>';
+      $output .= '</div>';
     }
-
     $output .= '</div>';
-
-    $quick_links .= '<div class = "accordian-quick-links">';
-    $quick_links .= '<div class = "heading">Quick Links</div>';
-    $quick_links .= '<ul>' . $quick_links1 . '</ul>';
-    $quick_links .= '</div>';
-    $html_output .= $quick_links;
-    $html_output .= $output;
-
-    return $html_output;
+    return $output;
   }
 }
 
@@ -1756,7 +1719,7 @@ function akdn_basic_page_accordian_style_block() {
   else {
     $layout_type = $node->field_basic_page_choose_layout['und'][0]['value'];
   }
-  
+
   if ($layout_type == 'accordian') {
     $output = '';
     $quick_links = '';
@@ -1840,30 +1803,30 @@ function akdn_basic_page_accordian_style_block() {
         if ($field_values->field_basic_page_accordian_title[$lang]) {
           $title = $field_values->field_basic_page_accordian_title[$lang];
         }
-        if (!empty($related_links)) {
-          $output .= '<div class = "according-related-heading collapse"><span class = "related-heading">' . t("Related Information") . '</span>';
-          $rel_links = '';
-          foreach ($related_links as $links) {
-            $url = link_cleanup_url($links['url']);
-            $target = $links['attributes']['target'];
-            if ($target === '_blank') {
-              $rel_links .= '<div class = "accordian_rel_links">';
-              $rel_links .= l($links['title'], $url, array('attributes' => array('target' => '_blank')));
-              $rel_links .= '</div>';
-            }
-            else {
-              $rel_links .= '<div class = "accordian_rel_links">';
-              $rel_links .= l($links['title'], $url);
-              $rel_links .= '</div>';
-            }
-          }
-          $output .= $rel_links . '</div>';
-        }
-        $output .= '</div>';
-        $output .= '<div class = "accordian-title-right-summary">';
-        if ($field_values->field_basic_page_accordian_title[$lang]) {
-          $title = $field_values->field_basic_page_accordian_title[$lang];
-        }
+//        if (!empty($related_links)) {
+//          $output .= '<div class = "according-related-heading collapse"><span class = "related-heading">' . t("Related Information") . '</span>';
+//          $rel_links = '';
+//          foreach ($related_links as $links) {
+//            $url = link_cleanup_url($links['url']);
+//            $target = $links['attributes']['target'];
+//            if ($target === '_blank') {
+//              $rel_links .= '<div class = "accordian_rel_links">';
+//              $rel_links .= l($links['title'], $url, array('attributes' => array('target' => '_blank')));
+//              $rel_links .= '</div>';
+//            }
+//            else {
+//              $rel_links .= '<div class = "accordian_rel_links">';
+//              $rel_links .= l($links['title'], $url);
+//              $rel_links .= '</div>';
+//            }
+//          }
+//          $output .= $rel_links . '</div>';
+//        }
+//        $output .= '</div>';
+//        $output .= '<div class = "accordian-title-right-summary">';
+//        if ($field_values->field_basic_page_accordian_title[$lang]) {
+//          $title = $field_values->field_basic_page_accordian_title[$lang];
+//        }
         else {
           $title = $field_values->field_basic_page_accordian_title['und'];
         }
@@ -1908,12 +1871,14 @@ function akdn_basic_page_accordian_style_block() {
     }
 
     $output .= '</div>';
+
     $quick_links .= '<div class = "accordian-quick-links">';
     $quick_links .= '<div class = "heading">Quick Links</div>';
     $quick_links .= '<ul>' . $quick_links1 . '</ul>';
     $quick_links .= '</div>';
     $html_output .= $quick_links;
     $html_output .= $output;
+
     return $html_output;
   }
 }
@@ -3070,7 +3035,7 @@ function _akdn_custom_lang_related_info_links() {
   global $base_url;
   $lang = $language->language;
 
-  
+
   if (arg(0) == 'node' && is_numeric(arg(1))) {
     $node = node_load(arg(1));
     $field = $node->field_block_add_links[$lang];
@@ -4115,38 +4080,37 @@ function akdn_custom_preprocess_views_view_field__solr_site_search__page__title_
   $row_node_object = $row->_entity_properties['entity object'];
   $title = $output = '';
   if ($row_node_object->type == 'page' || $row_node_object->type == 'custom_content') {
-    if(!empty($row_node_object->field_geography_term) || !empty($row_node_object->field_agency_term)){
-      if(isset($row_node_object->title_field['en'][0]['value']) &&
-          $row_node_object->title_field['en'][0]['value'] != NULL){
+    if (!empty($row_node_object->field_geography_term) || !empty($row_node_object->field_agency_term)) {
+      if (isset($row_node_object->title_field['en'][0]['value']) &&
+          $row_node_object->title_field['en'][0]['value'] != NULL) {
         $title = $row_node_object->title_field['en'][0]['value'];
       }
-      else{
+      else {
         $title = $row_node_object->title;
       }
     }
-    else{
-      if(isset($row_node_object->title_field['en'][0]['value']) &&
-          $row_node_object->title_field['en'][0]['value'] != NULL){
+    else {
+      if (isset($row_node_object->title_field['en'][0]['value']) &&
+          $row_node_object->title_field['en'][0]['value'] != NULL) {
         $title = $row_node_object->title_field['en'][0]['value'];
       }
-      else{
+      else {
         $title = $row_node_object->title;
       }
     }
   }
-  else{
-     if(isset($row_node_object->title_field['en'][0]['value']) &&
-          $row_node_object->title_field['en'][0]['value'] != NULL){
-        $title = $row_node_object->title_field['en'][0]['value'];
-      }
-      else{
-        $title = $row_node_object->title;
-      }
+  else {
+    if (isset($row_node_object->title_field['en'][0]['value']) &&
+        $row_node_object->title_field['en'][0]['value'] != NULL) {
+      $title = $row_node_object->title_field['en'][0]['value'];
+    }
+    else {
+      $title = $row_node_object->title;
+    }
   }
   $output .= l($title, 'node/' . $row_node_object->nid);
   $variables['output'] = $output;
 }
-
 
 /**
  * Cycle list box
@@ -4591,6 +4555,7 @@ function akdn_custom_node_update($node) {
  *
   implements hook_facet_items_alter(&$build, &$settings)
  */
+
 function akdn_custom_facet_items_alter(&$build, &$settings) {
   if ($settings->facet == "entity_type") {
     // Save Custom Page number to add on the combined facet item.
@@ -4635,10 +4600,11 @@ function akdn_custom_video_player() {
     //bightcove video
     $video_temp = explode('brightcove://', $entity->field_podcast_video[$entity->language][0]['uri']);
 
-    if(is_numeric($video_temp[1])){
+    if (is_numeric($video_temp[1])) {
       $video = $video_temp[1];
-    }else{
-      $exploded_str = explode('/',$video_temp[1]);
+    }
+    else {
+      $exploded_str = explode('/', $video_temp[1]);
       $video = $exploded_str[1];
     }
 
@@ -4659,7 +4625,7 @@ function akdn_custom_video_player() {
 //                      </video>
 //                      <script src="//players.brightcove.net/648715333001/SJCRhP7Eb_default/index.min.js"></script>
 //                </div>';
-    $output .='<video data-video-id="'.$video.'"
+    $output .= '<video data-video-id="' . $video . '"
                   data-account="648715333001"
                   data-player="rJtUYHMyl"
                   data-embed="default"
@@ -4724,10 +4690,11 @@ function akdn_custom_video_player_speech() {
   if (isset($entity->field_speech_video['und'][0]['uri'])) {
     //bightcove video
     $video_temp = explode('brightcove://', $entity->field_speech_video['und'][0]['uri']);
-    if(is_numeric($video_temp[1])){
+    if (is_numeric($video_temp[1])) {
       $video = $video_temp[1];
-    }else{
-      $exploded_str = explode('/',$video_temp[1]);
+    }
+    else {
+      $exploded_str = explode('/', $video_temp[1]);
       $video = $exploded_str[1];
     }
 
@@ -4754,7 +4721,7 @@ function akdn_custom_video_player_speech() {
 //      <param name="autoStart" value="false" />
 //    </object>
 //  </div>';
-    $output = '<video data-video-id="'.$video.'"
+    $output = '<video data-video-id="' . $video . '"
                 data-account="648715333001"
                 data-player="rJtUYHMyl"
                 data-embed="default"
@@ -4802,10 +4769,11 @@ function akdn_custom_v_p_for_archi() {
     //bightcove video
     $video_temp = explode('brightcove://', $entity->field_podcast_video[$entity->language][0]['uri']);
 
-    if(is_numeric($video_temp[1])){
+    if (is_numeric($video_temp[1])) {
       $video = $video_temp[1];
-    }else{
-      $exploded_str = explode('/',$video_temp[1]);
+    }
+    else {
+      $exploded_str = explode('/', $video_temp[1]);
       $video = $exploded_str[1];
     }
 
@@ -4844,7 +4812,7 @@ function akdn_custom_v_p_for_archi() {
 //                  style="width: 100%; height: 200px;">
 //                </video>
 //                <script src="//players.brightcove.net/648715333001/rJtUYHMyl_default/index.min.js"></script>';
-    $output = '<video data-video-id="'.$video.'"
+    $output = '<video data-video-id="' . $video . '"
       data-account="648715333001"
       data-player="rJtUYHMyl"
       data-embed="default"
@@ -5112,38 +5080,38 @@ function media_file() {
                                  AND (ff.entity_type = 'file' AND ff.bundle = 'image')")->fetchAll();
   $media_arr = array();
   foreach ($fids as $key => $value) {
-      $media_arr[] = array(
-        'fid' => $value->fid,
-        'filename' => $value->filename,
-        'filemime' => $value->filemime,
-      );
+    $media_arr[] = array(
+      'fid' => $value->fid,
+      'filename' => $value->filename,
+      'filemime' => $value->filemime,
+    );
   }
- return array(
-        'version' => $media_arr
- );
+  return array(
+    'version' => $media_arr
+  );
 }
 
 /**
  * Call back for media-file-single/%
  */
-function media_file_single($fid){
-  if(isset($fid) && is_numeric($fid)){
+function media_file_single($fid) {
+  if (isset($fid) && is_numeric($fid)) {
     $image_entity = entity_load('file', array($fid));
     $image_entity = $image_entity[$fid];
     $folder_term_name = taxonomy_term_load($image_entity->field_folder['und'][0]['tid']);
-      $media_arr = array(
-        'fid' => $image_entity->fid,
-        'filename' => $image_entity->filename,
-        'filemime' => $image_entity->filemime,
-        'uri' => $image_entity->uri,
-        'field_folder' => $image_entity->field_folder['und'][0]['tid'],
-        'field_folder_term_name' => $folder_term_name->name,
-        'field_image_copytight' => $image_entity->field_image_copytight['und'][0]['value'],
-        'field_image_caption' => $image_entity->field_image_caption['en'][0]['value'],
-      );
-      return $media_arr;
+    $media_arr = array(
+      'fid' => $image_entity->fid,
+      'filename' => $image_entity->filename,
+      'filemime' => $image_entity->filemime,
+      'uri' => $image_entity->uri,
+      'field_folder' => $image_entity->field_folder['und'][0]['tid'],
+      'field_folder_term_name' => $folder_term_name->name,
+      'field_image_copytight' => $image_entity->field_image_copytight['und'][0]['value'],
+      'field_image_caption' => $image_entity->field_image_caption['en'][0]['value'],
+    );
+    return $media_arr;
   }
-  else{
+  else {
     return 'samit';
   }
 }
@@ -5231,7 +5199,8 @@ function akdn_search_forms_internal_news_page_submit($form, &$form_state) {
     )
   );
 }
-function akdn_custom_views_post_render(&$view, &$output, &$cache){
+
+function akdn_custom_views_post_render(&$view, &$output, &$cache) {
 //  if($view->name == '')
 //  print '<pre>';
 //  print_r($output); die;
@@ -5420,10 +5389,10 @@ function akdn_custom_media_wysiwyg_token_to_markup_alter(&$element, $tag_info, $
   $file_entity = $element['content'];
   $caption = $file_entity['field_image_caption']['#items'][0]['value'];
   $copyright = $file_entity['field_image_copytight']['#items'][0]['value'];
-  if(empty($caption)){
+  if (empty($caption)) {
     unset($element['content']['field_image_caption']);
   }
-  if(empty($copyright)){
+  if (empty($copyright)) {
     unset($element['content']['field_image_copytight']);
   }
 }
@@ -5501,5 +5470,3 @@ function _nodes_related_term_id_retrieve($tid, $pager, $limit, $order) {
   }
   return $nodes;
 }
-
-
