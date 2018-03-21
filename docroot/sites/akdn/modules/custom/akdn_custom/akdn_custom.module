@@ -1518,7 +1518,9 @@ function akdn_basic_page_accordian_style_block() {
           $output .= '</div>';
         }
         if (!empty($related_links)) {
+
           $output .= '<div class = "according-related-heading collapse"><span class = "related-heading">' . t("Related Information") . '</span>';
+
           $rel_links = '';
           foreach ($related_links as $links) {
             $url = link_cleanup_url($links['url']);
@@ -1537,8 +1539,10 @@ function akdn_basic_page_accordian_style_block() {
           $output .= $rel_links . '</div>';
         }
         $output .= '</div>';
+
         $output .= '<div class = "accordian-title-right-summary">';
         if ($field_values->field_basic_page_accordian_title[$lang]) {
+
           $title = $field_values->field_basic_page_accordian_title[$lang];
         }
         else {
