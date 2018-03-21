@@ -1556,6 +1556,7 @@ function akdn_basic_page_accordian_style_block() {
         else {
           $body = $field_values->field_text['und'];
         }
+
         if (!empty($body)) {
           if (strpos($body[0]['value'], '<!--break-->') !== FALSE) {
             $explode = explode('<!--break-->', $body[0]['value']);
