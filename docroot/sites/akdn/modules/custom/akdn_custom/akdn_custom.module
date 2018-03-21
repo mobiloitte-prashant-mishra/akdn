@@ -1842,7 +1842,6 @@ function akdn_basic_page_accordian_style_block() {
         else {
           $body = $field_values->field_text['und'];
         }
-
         if (!empty($body)) {
           if (strpos($body[0]['value'], '<!--break-->') !== FALSE) {
             $explode = explode('<!--break-->', $body[0]['value']);
@@ -1873,7 +1872,7 @@ function akdn_basic_page_accordian_style_block() {
 
     $output .= '</div>';
     $quick_links .= '<div class = "accordian-quick-links">';
-    $quick_links .= '<div class = "heading">' . t("Quick Links") . '</div>';
+    $quick_links .= '<div class = "heading">Quick Links</div>';
     $quick_links .= '<ul>' . $quick_links1 . '</ul>';
     $quick_links .= '</div>';
     $html_output .= $quick_links;
