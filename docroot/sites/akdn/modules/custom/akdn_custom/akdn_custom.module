@@ -1719,6 +1719,13 @@ function akdn_basic_page_accordian_style_block() {
   else {
     $layout_type = $node->field_basic_page_choose_layout['und'][0]['value'];
   }
+
+  if ($node->field_basic_page_choose_layout[$lang][0]['value']) {
+    $layout_type = $node->field_basic_page_choose_layout[$lang][0]['value'];
+  }
+  else {
+    $layout_type = $node->field_basic_page_choose_layout['und'][0]['value'];
+  }
   
   if ($layout_type == 'accordian') {
     $output = '';
@@ -1803,30 +1810,6 @@ function akdn_basic_page_accordian_style_block() {
         if ($field_values->field_basic_page_accordian_title[$lang]) {
           $title = $field_values->field_basic_page_accordian_title[$lang];
         }
-        if (!empty($related_links)) {
-          $output .= '<div class = "according-related-heading collapse"><span class = "related-heading">' . t("Related Information") . '</span>';
-          $rel_links = '';
-          foreach ($related_links as $links) {
-            $url = link_cleanup_url($links['url']);
-            $target = $links['attributes']['target'];
-            if ($target === '_blank') {
-              $rel_links .= '<div class = "accordian_rel_links">';
-              $rel_links .= l($links['title'], $url, array('attributes' => array('target' => '_blank')));
-              $rel_links .= '</div>';
-            }
-            else {
-              $rel_links .= '<div class = "accordian_rel_links">';
-              $rel_links .= l($links['title'], $url);
-              $rel_links .= '</div>';
-            }
-          }
-          $output .= $rel_links . '</div>';
-        }
-        $output .= '</div>';
-        $output .= '<div class = "accordian-title-right-summary">';
-        if ($field_values->field_basic_page_accordian_title[$lang]) {
-          $title = $field_values->field_basic_page_accordian_title[$lang];
-        }
         else {
           $title = $field_values->field_basic_page_accordian_title['und'];
         }
@@ -1871,14 +1854,14 @@ function akdn_basic_page_accordian_style_block() {
     }
 
     $output .= '</div>';
-    
+
     $quick_links .= '<div class = "accordian-quick-links">';
-    $quick_links .= '<div class = "heading">Quick Links</div>';
+    $quick_links .= '<div class = "heading">' . t("Quick Links") . '</div>';
     $quick_links .= '<ul>' . $quick_links1 . '</ul>';
     $quick_links .= '</div>';
     $html_output .= $quick_links;
     $html_output .= $output;
-    
+
     return $html_output;
   }
 }
