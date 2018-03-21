@@ -13745,7 +13745,8 @@ print \'<h2 class="pane-title">\'.t(\'More projects by\').\'</h2>\';
           'settings' => array(
             'visibility_setting' => '1',
             'paths' => 'agencies/aga-khan-award-architecture-0
-architecture',
+architecture
+node/9576',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -13808,6 +13809,29 @@ architecture',
   $display->content['new-9cc31b64-51e0-4186-a81a-7e24a4962442'] = $pane;
   $display->panels['middle'][0] = 'new-9cc31b64-51e0-4186-a81a-7e24a4962442';
   $pane = new stdClass();
+  $pane->pid = 'new-376c976e-e45d-4a06-acff-aefa2f61c649';
+  $pane->panel = 'middle';
+  $pane->type = 'block';
+  $pane->subtype = 'akdn_custom-page_lang_switcher';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '376c976e-e45d-4a06-acff-aefa2f61c649';
+  $display->content['new-376c976e-e45d-4a06-acff-aefa2f61c649'] = $pane;
+  $display->panels['middle'][1] = 'new-376c976e-e45d-4a06-acff-aefa2f61c649';
+  $pane = new stdClass();
   $pane->pid = 'new-e17359a1-b697-4cc1-8e4f-352d22515840';
   $pane->panel = 'middle';
   $pane->type = 'block';
@@ -13824,11 +13848,11 @@ architecture',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = 'e17359a1-b697-4cc1-8e4f-352d22515840';
   $display->content['new-e17359a1-b697-4cc1-8e4f-352d22515840'] = $pane;
-  $display->panels['middle'][1] = 'new-e17359a1-b697-4cc1-8e4f-352d22515840';
+  $display->panels['middle'][2] = 'new-e17359a1-b697-4cc1-8e4f-352d22515840';
   $pane = new stdClass();
   $pane->pid = 'new-55f1ca01-60f3-4a80-9da3-c3f43371ec2d';
   $pane->panel = 'middle';
@@ -13879,11 +13903,11 @@ architecture',
     'css_class' => 'pane-featured-slideshow banner-slideshow-views-no-title',
   );
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = '55f1ca01-60f3-4a80-9da3-c3f43371ec2d';
   $display->content['new-55f1ca01-60f3-4a80-9da3-c3f43371ec2d'] = $pane;
-  $display->panels['middle'][2] = 'new-55f1ca01-60f3-4a80-9da3-c3f43371ec2d';
+  $display->panels['middle'][3] = 'new-55f1ca01-60f3-4a80-9da3-c3f43371ec2d';
   $pane = new stdClass();
   $pane->pid = 'new-a6140b18-4691-460a-b8df-592cf86a5018';
   $pane->panel = 'middle';
@@ -13937,11 +13961,11 @@ architecture',
     'css_class' => 'pane-featured-slideshow banner-slideshow-views-no-title',
   );
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 4;
   $pane->locks = array();
   $pane->uuid = 'a6140b18-4691-460a-b8df-592cf86a5018';
   $display->content['new-a6140b18-4691-460a-b8df-592cf86a5018'] = $pane;
-  $display->panels['middle'][3] = 'new-a6140b18-4691-460a-b8df-592cf86a5018';
+  $display->panels['middle'][4] = 'new-a6140b18-4691-460a-b8df-592cf86a5018';
   $pane = new stdClass();
   $pane->pid = 'new-5e446bed-c7e4-4a41-970c-3c45c215c7f0';
   $pane->panel = 'middle';
@@ -13995,11 +14019,11 @@ architecture',
     'css_class' => 'pane-featured-slideshow banner-slideshow-views-no-title',
   );
   $pane->extras = array();
-  $pane->position = 4;
+  $pane->position = 5;
   $pane->locks = array();
   $pane->uuid = '5e446bed-c7e4-4a41-970c-3c45c215c7f0';
   $display->content['new-5e446bed-c7e4-4a41-970c-3c45c215c7f0'] = $pane;
-  $display->panels['middle'][4] = 'new-5e446bed-c7e4-4a41-970c-3c45c215c7f0';
+  $display->panels['middle'][5] = 'new-5e446bed-c7e4-4a41-970c-3c45c215c7f0';
   $pane = new stdClass();
   $pane->pid = 'new-08e79d72-112f-4f20-93a7-ff60656c4084';
   $pane->panel = 'middle';
@@ -14011,26 +14035,34 @@ architecture',
     'admin_title' => 'About page information',
     'title' => '',
     'body' => '<?php
+global $language;
+$lang = $language->language;
+
 $node = menu_get_object();
+
 print \'<div class = "whatsnew-right-content">\';
 if (isset($node->field_about_page)) {
-  $about = node_load($node->field_about_page[$node->language][0][\'nid\']);
+$about = (isset($node->field_about_page[$lang])) ?  node_load($node->field_about_page[$lang][0][\'nid\']) : node_load($node->field_about_page[$node->language][0][\'nid\']);
   if (isset($about->nid)) {
-    print \'<p class = "whats-new-gold">ABOUT THE</p>\';
-    print \'<div class = "grid-whatsnew-block_subtitle">\'. $about->field_short_title[$about->language][0][\'value\'] .\'</div>\';
-    if (!empty($about->body[$about->language][0][\'summary\']) && !empty($about->body[$about->language][0][\'value\']))
-      print \'<div class="grid-whatsnew-block_body">\'. $about->body[$about->language][0][\'summary\'] .\' <a class = "views-more-link-akaa" href="\'.
-      url("node/{$about->nid}") .\'">More</a></div>\';
-    else if (!empty($about->body[$about->language][0][\'summary\']) && empty($about->body[$about->language][0][\'value\'])) 
-      print \'<div class="grid-whatsnew-block_body">\'. $about->body[$about->language][0][\'summary\'] .\'</div>\';
+    print \'<p class = "whats-new-gold">\'.t("ABOUT THE").\'</p>\';
+$short_title_language = (isset($about->field_short_title[$lang])) ?  $about->field_short_title[$lang] : $about->field_short_title[$about->language];
+    print \'<div class = "grid-whatsnew-block_subtitle">\'. $short_title_language[0][\'value\'] .\'</div>\';
+$body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[$about->language];
+
+    if (!empty($body[0][\'summary\']) && !empty($body[0][\'value\']))
+      print \'<div class="grid-whatsnew-block_body">\'. $body[0][\'summary\'] .\' <a class = "views-more-link-akaa" href="\'.
+      url("node/{$about->nid}") .\'">\'.t("More").\'</a></div>\';
+    else if (!empty($body[0][\'summary\']) && empty($body[0][\'value\']))
+      print \'<div class="grid-whatsnew-block_body">\'. $body[0][\'summary\'] .\'</div>\';
     else
-      print \'<div class="grid-whatsnew-block_body">\'. text_summary($about->body[$about->language][0][\'value\'], $about->body[$about->language][0][\'format\'], 1200) .\' <a class = "views-more-link-akaa" href="\'.url("node/{$about->nid}") .\'">More</a></div>\';
+      print \'<div class="grid-whatsnew-block_body">\'. text_summary($body[0][\'value\'], $body[0][\'format\'], 1200) .\' <a class = "views-more-link-akaa" href="\'.url("node/{$about->nid}") .\'">\'.t("More").\'</a></div>\';
    }
 }
 print \'</div>\';
 ?>',
     'format' => 'php_code',
     'substitute' => 0,
+    'title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -14041,17 +14073,17 @@ print \'</div>\';
     'css_class' => 'whatsnew-right',
   );
   $pane->extras = array();
-  $pane->position = 5;
+  $pane->position = 6;
   $pane->locks = array();
   $pane->uuid = '08e79d72-112f-4f20-93a7-ff60656c4084';
   $display->content['new-08e79d72-112f-4f20-93a7-ff60656c4084'] = $pane;
-  $display->panels['middle'][5] = 'new-08e79d72-112f-4f20-93a7-ff60656c4084';
+  $display->panels['middle'][6] = 'new-08e79d72-112f-4f20-93a7-ff60656c4084';
   $pane = new stdClass();
   $pane->pid = 'new-d19e0a11-792e-48eb-8586-daad72910091';
   $pane->panel = 'middle';
   $pane->type = 'block';
   $pane->subtype = 'akdn_custom-ac_lang_switch';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
@@ -14066,11 +14098,11 @@ print \'</div>\';
     'css_class' => 'pane-locale-language-content',
   );
   $pane->extras = array();
-  $pane->position = 6;
+  $pane->position = 7;
   $pane->locks = array();
   $pane->uuid = 'd19e0a11-792e-48eb-8586-daad72910091';
   $display->content['new-d19e0a11-792e-48eb-8586-daad72910091'] = $pane;
-  $display->panels['middle'][6] = 'new-d19e0a11-792e-48eb-8586-daad72910091';
+  $display->panels['middle'][7] = 'new-d19e0a11-792e-48eb-8586-daad72910091';
   $pane = new stdClass();
   $pane->pid = 'new-ecf0c6b1-bd15-431a-b89d-47c68396466d';
   $pane->panel = 'middle';
@@ -14092,11 +14124,11 @@ print \'</div>\';
     'css_class' => 'akaa-projectfinder-wrapper',
   );
   $pane->extras = array();
-  $pane->position = 7;
+  $pane->position = 8;
   $pane->locks = array();
   $pane->uuid = 'ecf0c6b1-bd15-431a-b89d-47c68396466d';
   $display->content['new-ecf0c6b1-bd15-431a-b89d-47c68396466d'] = $pane;
-  $display->panels['middle'][7] = 'new-ecf0c6b1-bd15-431a-b89d-47c68396466d';
+  $display->panels['middle'][8] = 'new-ecf0c6b1-bd15-431a-b89d-47c68396466d';
   $pane = new stdClass();
   $pane->pid = 'new-d5101811-d924-4637-89a5-faa7d27d2ae3';
   $pane->panel = 'middle';
@@ -14126,11 +14158,11 @@ print \'</div>\';
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 8;
+  $pane->position = 9;
   $pane->locks = array();
   $pane->uuid = 'd5101811-d924-4637-89a5-faa7d27d2ae3';
   $display->content['new-d5101811-d924-4637-89a5-faa7d27d2ae3'] = $pane;
-  $display->panels['middle'][8] = 'new-d5101811-d924-4637-89a5-faa7d27d2ae3';
+  $display->panels['middle'][9] = 'new-d5101811-d924-4637-89a5-faa7d27d2ae3';
   $pane = new stdClass();
   $pane->pid = 'new-afb751dc-43b0-4132-96ca-fa0a4f0c6226';
   $pane->panel = 'middle';
@@ -14143,13 +14175,13 @@ print \'</div>\';
     'title' => '',
     'body' => '<?php
 print  \'<div class="sub-navbar">
-<div class="pane-content">
-   <p><span>I</span><span>NFORMATION ON THE AWARD</span></p>
+<div class="pane-content">\' . t("<p><span>I</span><span>NFORMATION ON THE AWARD</span></p>") .\'
 </div>
 </div>\';
 ?>',
     'format' => 'php_code',
     'substitute' => 1,
+    'title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -14160,11 +14192,11 @@ print  \'<div class="sub-navbar">
     'css_class' => 'akaa-award-cycle-header-title',
   );
   $pane->extras = array();
-  $pane->position = 9;
+  $pane->position = 10;
   $pane->locks = array();
   $pane->uuid = 'afb751dc-43b0-4132-96ca-fa0a4f0c6226';
   $display->content['new-afb751dc-43b0-4132-96ca-fa0a4f0c6226'] = $pane;
-  $display->panels['middle'][9] = 'new-afb751dc-43b0-4132-96ca-fa0a4f0c6226';
+  $display->panels['middle'][10] = 'new-afb751dc-43b0-4132-96ca-fa0a4f0c6226';
   $pane = new stdClass();
   $pane->pid = 'new-0c225ca9-d185-4dff-a620-7e6bdf67a6ab';
   $pane->panel = 'middle';
@@ -14193,11 +14225,11 @@ print  \'<div class="sub-navbar">
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 10;
+  $pane->position = 11;
   $pane->locks = array();
   $pane->uuid = '0c225ca9-d185-4dff-a620-7e6bdf67a6ab';
   $display->content['new-0c225ca9-d185-4dff-a620-7e6bdf67a6ab'] = $pane;
-  $display->panels['middle'][10] = 'new-0c225ca9-d185-4dff-a620-7e6bdf67a6ab';
+  $display->panels['middle'][11] = 'new-0c225ca9-d185-4dff-a620-7e6bdf67a6ab';
   $pane = new stdClass();
   $pane->pid = 'new-bbbce8f5-1405-4f60-9ff4-6089a1db986c';
   $pane->panel = 'middle';
@@ -14230,11 +14262,11 @@ print  \'<div class="sub-navbar">
     'css_class' => 'akaa-award-cycle-block',
   );
   $pane->extras = array();
-  $pane->position = 11;
+  $pane->position = 12;
   $pane->locks = array();
   $pane->uuid = 'bbbce8f5-1405-4f60-9ff4-6089a1db986c';
   $display->content['new-bbbce8f5-1405-4f60-9ff4-6089a1db986c'] = $pane;
-  $display->panels['middle'][11] = 'new-bbbce8f5-1405-4f60-9ff4-6089a1db986c';
+  $display->panels['middle'][12] = 'new-bbbce8f5-1405-4f60-9ff4-6089a1db986c';
   $pane = new stdClass();
   $pane->pid = 'new-827e7546-2c02-442a-bef7-6fbc7998ef28';
   $pane->panel = 'middle';
@@ -14267,11 +14299,11 @@ print  \'<div class="sub-navbar">
     'css_class' => 'akaa-award-cycle-block',
   );
   $pane->extras = array();
-  $pane->position = 12;
+  $pane->position = 13;
   $pane->locks = array();
   $pane->uuid = '827e7546-2c02-442a-bef7-6fbc7998ef28';
   $display->content['new-827e7546-2c02-442a-bef7-6fbc7998ef28'] = $pane;
-  $display->panels['middle'][12] = 'new-827e7546-2c02-442a-bef7-6fbc7998ef28';
+  $display->panels['middle'][13] = 'new-827e7546-2c02-442a-bef7-6fbc7998ef28';
   $pane = new stdClass();
   $pane->pid = 'new-a8f020c2-5ac8-481b-9971-8b5172feef79';
   $pane->panel = 'middle';
@@ -14304,11 +14336,11 @@ print  \'<div class="sub-navbar">
     'css_class' => 'akaa-award-cycle-block akaa-award-cycle-block-short-video',
   );
   $pane->extras = array();
-  $pane->position = 13;
+  $pane->position = 14;
   $pane->locks = array();
   $pane->uuid = 'a8f020c2-5ac8-481b-9971-8b5172feef79';
   $display->content['new-a8f020c2-5ac8-481b-9971-8b5172feef79'] = $pane;
-  $display->panels['middle'][13] = 'new-a8f020c2-5ac8-481b-9971-8b5172feef79';
+  $display->panels['middle'][14] = 'new-a8f020c2-5ac8-481b-9971-8b5172feef79';
   $pane = new stdClass();
   $pane->pid = 'new-64c9f564-9a04-45e9-8efe-2cca89097d84';
   $pane->panel = 'middle';
@@ -14337,11 +14369,11 @@ print  \'<div class="sub-navbar">
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 14;
+  $pane->position = 15;
   $pane->locks = array();
   $pane->uuid = '64c9f564-9a04-45e9-8efe-2cca89097d84';
   $display->content['new-64c9f564-9a04-45e9-8efe-2cca89097d84'] = $pane;
-  $display->panels['middle'][14] = 'new-64c9f564-9a04-45e9-8efe-2cca89097d84';
+  $display->panels['middle'][15] = 'new-64c9f564-9a04-45e9-8efe-2cca89097d84';
   $pane = new stdClass();
   $pane->pid = 'new-f2b827f4-3838-4e8f-b4a8-bfc41cbfdc00';
   $pane->panel = 'middle';
@@ -14371,11 +14403,11 @@ print  \'<div class="sub-navbar">
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 15;
+  $pane->position = 16;
   $pane->locks = array();
   $pane->uuid = 'f2b827f4-3838-4e8f-b4a8-bfc41cbfdc00';
   $display->content['new-f2b827f4-3838-4e8f-b4a8-bfc41cbfdc00'] = $pane;
-  $display->panels['middle'][15] = 'new-f2b827f4-3838-4e8f-b4a8-bfc41cbfdc00';
+  $display->panels['middle'][16] = 'new-f2b827f4-3838-4e8f-b4a8-bfc41cbfdc00';
   $pane = new stdClass();
   $pane->pid = 'new-1c331221-cabf-4cc5-a819-a950d29c0c1b';
   $pane->panel = 'middle';
@@ -14405,11 +14437,11 @@ print  \'<div class="sub-navbar">
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 16;
+  $pane->position = 17;
   $pane->locks = array();
   $pane->uuid = '1c331221-cabf-4cc5-a819-a950d29c0c1b';
   $display->content['new-1c331221-cabf-4cc5-a819-a950d29c0c1b'] = $pane;
-  $display->panels['middle'][16] = 'new-1c331221-cabf-4cc5-a819-a950d29c0c1b';
+  $display->panels['middle'][17] = 'new-1c331221-cabf-4cc5-a819-a950d29c0c1b';
   $pane = new stdClass();
   $pane->pid = 'new-af2d5300-2a06-4be8-bdfb-a9a62e265130';
   $pane->panel = 'middle';
@@ -14442,11 +14474,11 @@ print  \'<div class="sub-navbar">
     'css_class' => 'sub-navbar',
   );
   $pane->extras = array();
-  $pane->position = 17;
+  $pane->position = 18;
   $pane->locks = array();
   $pane->uuid = 'af2d5300-2a06-4be8-bdfb-a9a62e265130';
   $display->content['new-af2d5300-2a06-4be8-bdfb-a9a62e265130'] = $pane;
-  $display->panels['middle'][17] = 'new-af2d5300-2a06-4be8-bdfb-a9a62e265130';
+  $display->panels['middle'][18] = 'new-af2d5300-2a06-4be8-bdfb-a9a62e265130';
   $pane = new stdClass();
   $pane->pid = 'new-f8a44f3c-e295-4d4e-a247-2361a32ad602';
   $pane->panel = 'middle';
@@ -14455,19 +14487,17 @@ print  \'<div class="sub-navbar">
   $pane->shown = TRUE;
   $pane->access = array(
     'plugins' => array(
-      0 => array(
-        'name' => 'entity_field_value:node:agency:field_show_news_and_resources',
+      1 => array(
+        'name' => 'php',
         'settings' => array(
-          'field_show_news_and_resources' => array(
-            'und' => array(
-              0 => array(
-                'value' => 1,
-              ),
-            ),
-          ),
-          'field_show_news_and_resources_value' => '1',
+          'description' => 'show block 1',
+          'php' => 'global $language;
+  $node = $contexts[\'argument_entity_id:node_1\']->data;
+  if(!empty($node->field_show_news_and_resources)){
+    $news_and_resource = $node->field_show_news_and_resources[$language->language][0][\'value\'];
+    if(!empty($news_and_resource)){ return true; }
+  }',
         ),
-        'context' => 'argument_entity_id:node_1',
         'not' => FALSE,
       ),
     ),
@@ -14482,11 +14512,11 @@ print  \'<div class="sub-navbar">
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 18;
+  $pane->position = 19;
   $pane->locks = array();
   $pane->uuid = 'f8a44f3c-e295-4d4e-a247-2361a32ad602';
   $display->content['new-f8a44f3c-e295-4d4e-a247-2361a32ad602'] = $pane;
-  $display->panels['middle'][18] = 'new-f8a44f3c-e295-4d4e-a247-2361a32ad602';
+  $display->panels['middle'][19] = 'new-f8a44f3c-e295-4d4e-a247-2361a32ad602';
   $pane = new stdClass();
   $pane->pid = 'new-fed62927-7cea-40f0-a78b-77ac0f882c8b';
   $pane->panel = 'middle';
@@ -14516,11 +14546,11 @@ print  \'<div class="sub-navbar">
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 19;
+  $pane->position = 20;
   $pane->locks = array();
   $pane->uuid = 'fed62927-7cea-40f0-a78b-77ac0f882c8b';
   $display->content['new-fed62927-7cea-40f0-a78b-77ac0f882c8b'] = $pane;
-  $display->panels['middle'][19] = 'new-fed62927-7cea-40f0-a78b-77ac0f882c8b';
+  $display->panels['middle'][20] = 'new-fed62927-7cea-40f0-a78b-77ac0f882c8b';
   $pane = new stdClass();
   $pane->pid = 'new-1cf347f2-966d-45b5-98d8-272ccc335474';
   $pane->panel = 'middle';
@@ -14550,11 +14580,11 @@ print  \'<div class="sub-navbar">
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 20;
+  $pane->position = 21;
   $pane->locks = array();
   $pane->uuid = '1cf347f2-966d-45b5-98d8-272ccc335474';
   $display->content['new-1cf347f2-966d-45b5-98d8-272ccc335474'] = $pane;
-  $display->panels['middle'][20] = 'new-1cf347f2-966d-45b5-98d8-272ccc335474';
+  $display->panels['middle'][21] = 'new-1cf347f2-966d-45b5-98d8-272ccc335474';
   $pane = new stdClass();
   $pane->pid = 'new-c8da45b8-aaae-4b7c-8d2e-c8a71bcd1ea2';
   $pane->panel = 'middle';
@@ -14590,11 +14620,11 @@ print  \'<div class="sub-navbar">
     'css_class' => 'sub-navbar',
   );
   $pane->extras = array();
-  $pane->position = 21;
+  $pane->position = 22;
   $pane->locks = array();
   $pane->uuid = 'c8da45b8-aaae-4b7c-8d2e-c8a71bcd1ea2';
   $display->content['new-c8da45b8-aaae-4b7c-8d2e-c8a71bcd1ea2'] = $pane;
-  $display->panels['middle'][21] = 'new-c8da45b8-aaae-4b7c-8d2e-c8a71bcd1ea2';
+  $display->panels['middle'][22] = 'new-c8da45b8-aaae-4b7c-8d2e-c8a71bcd1ea2';
   $pane = new stdClass();
   $pane->pid = 'new-aa8f7339-4abd-4c7c-8842-d2228249505e';
   $pane->panel = 'middle';
@@ -14612,11 +14642,11 @@ print  \'<div class="sub-navbar">
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 22;
+  $pane->position = 23;
   $pane->locks = array();
   $pane->uuid = 'aa8f7339-4abd-4c7c-8842-d2228249505e';
   $display->content['new-aa8f7339-4abd-4c7c-8842-d2228249505e'] = $pane;
-  $display->panels['middle'][22] = 'new-aa8f7339-4abd-4c7c-8842-d2228249505e';
+  $display->panels['middle'][23] = 'new-aa8f7339-4abd-4c7c-8842-d2228249505e';
   $pane = new stdClass();
   $pane->pid = 'new-5d982b2f-e0e9-4417-9049-fb8379a058ef';
   $pane->panel = 'middle';
@@ -14646,11 +14676,11 @@ print  \'<div class="sub-navbar">
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 23;
+  $pane->position = 24;
   $pane->locks = array();
   $pane->uuid = '5d982b2f-e0e9-4417-9049-fb8379a058ef';
   $display->content['new-5d982b2f-e0e9-4417-9049-fb8379a058ef'] = $pane;
-  $display->panels['middle'][23] = 'new-5d982b2f-e0e9-4417-9049-fb8379a058ef';
+  $display->panels['middle'][24] = 'new-5d982b2f-e0e9-4417-9049-fb8379a058ef';
   $pane = new stdClass();
   $pane->pid = 'new-77380b88-c152-4f12-9c25-862d9c78be74';
   $pane->panel = 'middle';
@@ -14701,11 +14731,11 @@ return true;
     'css_class' => 'sub-navbar',
   );
   $pane->extras = array();
-  $pane->position = 24;
+  $pane->position = 25;
   $pane->locks = array();
   $pane->uuid = '77380b88-c152-4f12-9c25-862d9c78be74';
   $display->content['new-77380b88-c152-4f12-9c25-862d9c78be74'] = $pane;
-  $display->panels['middle'][24] = 'new-77380b88-c152-4f12-9c25-862d9c78be74';
+  $display->panels['middle'][25] = 'new-77380b88-c152-4f12-9c25-862d9c78be74';
   $pane = new stdClass();
   $pane->pid = 'new-8d63d0bf-8580-41db-a151-79c833868350';
   $pane->panel = 'middle';
@@ -14714,19 +14744,17 @@ return true;
   $pane->shown = TRUE;
   $pane->access = array(
     'plugins' => array(
-      0 => array(
-        'name' => 'entity_field_value:node:agency:field_show_fact_block',
+      1 => array(
+        'name' => 'php',
         'settings' => array(
-          'field_show_fact_block' => array(
-            'und' => array(
-              0 => array(
-                'value' => 1,
-              ),
-            ),
-          ),
-          'field_show_fact_block_value' => '1',
+          'description' => 'show fact block',
+          'php' => 'global $language;
+  $node = $contexts[\'argument_entity_id:node_1\']->data;
+  if(!empty($node->field_show_fact_block)){
+    $facts = $node->field_show_fact_block[$language->language][0][\'value\'];
+    if(!empty($facts)){ return true; }
+  }',
         ),
-        'context' => 'argument_entity_id:node_1',
         'not' => FALSE,
       ),
     ),
@@ -14753,11 +14781,11 @@ return true;
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 25;
+  $pane->position = 26;
   $pane->locks = array();
   $pane->uuid = '8d63d0bf-8580-41db-a151-79c833868350';
   $display->content['new-8d63d0bf-8580-41db-a151-79c833868350'] = $pane;
-  $display->panels['middle'][25] = 'new-8d63d0bf-8580-41db-a151-79c833868350';
+  $display->panels['middle'][26] = 'new-8d63d0bf-8580-41db-a151-79c833868350';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
