@@ -1160,11 +1160,11 @@ print t(\'THE AWARD AT A GLANCE\');
   $handler->display->display_options['filters']['type']['value'] = array(
     'agency' => 'agency',
   );
-  /* Filter criterion: Content: Show Fact Block (field_show_fact_block:language) */
-  $handler->display->display_options['filters']['language']['id'] = 'language';
-  $handler->display->display_options['filters']['language']['table'] = 'field_data_field_show_fact_block';
-  $handler->display->display_options['filters']['language']['field'] = 'language';
-  $handler->display->display_options['filters']['language']['value'] = array(
+  /* Filter criterion: Content: Show Fact Block (field_show_fact_block) */
+  $handler->display->display_options['filters']['field_show_fact_block_value']['id'] = 'field_show_fact_block_value';
+  $handler->display->display_options['filters']['field_show_fact_block_value']['table'] = 'field_data_field_show_fact_block';
+  $handler->display->display_options['filters']['field_show_fact_block_value']['field'] = 'field_show_fact_block_value';
+  $handler->display->display_options['filters']['field_show_fact_block_value']['value'] = array(
     1 => '1',
   );
   $handler->display->display_options['block_description'] = 'The award at a glance';
@@ -14716,7 +14716,134 @@ print file_create_url($row->uri);
 
   /* Display: Facts Block On Home Page */
   $handler = $view->new_display('block', 'Facts Block On Home Page', 'block');
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'div';
+  $handler->display->display_options['fields']['title']['element_class'] = 'facts-block_title';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Facts Number */
+  $handler->display->display_options['fields']['field_facts_number']['id'] = 'field_facts_number';
+  $handler->display->display_options['fields']['field_facts_number']['table'] = 'field_data_field_facts_number';
+  $handler->display->display_options['fields']['field_facts_number']['field'] = 'field_facts_number';
+  $handler->display->display_options['fields']['field_facts_number']['label'] = '';
+  $handler->display->display_options['fields']['field_facts_number']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_facts_number']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_facts_number']['element_class'] = 'facts-block_number';
+  $handler->display->display_options['fields']['field_facts_number']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_facts_number']['element_wrapper_type'] = '0';
+  /* Field: Entity translation: Title: translated */
+  $handler->display->display_options['fields']['title_field_et']['id'] = 'title_field_et';
+  $handler->display->display_options['fields']['title_field_et']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field_et']['field'] = 'title_field_et';
+  $handler->display->display_options['fields']['title_field_et']['label'] = '';
+  $handler->display->display_options['fields']['title_field_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field_et']['element_type'] = 'div';
+  $handler->display->display_options['fields']['title_field_et']['element_class'] = 'facts-block_title';
+  $handler->display->display_options['fields']['title_field_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field_et']['element_wrapper_type'] = '0';
+  /* Field: Content: Facts Icon */
+  $handler->display->display_options['fields']['field_facts_icon']['id'] = 'field_facts_icon';
+  $handler->display->display_options['fields']['field_facts_icon']['table'] = 'field_data_field_facts_icon';
+  $handler->display->display_options['fields']['field_facts_icon']['field'] = 'field_facts_icon';
+  $handler->display->display_options['fields']['field_facts_icon']['label'] = '';
+  $handler->display->display_options['fields']['field_facts_icon']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_facts_icon']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_facts_icon']['element_class'] = 'facts-block_icon';
+  $handler->display->display_options['fields']['field_facts_icon']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_facts_icon']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_facts_icon']['settings'] = array(
+    'image_style' => '',
+    'image_link' => '',
+  );
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="facts-block_section-top">
+  <div class="facts-block_icon-wrapper"><div class="facts-block_icon">[field_facts_icon]</div></div>
+  <div class="facts-block_number">[title_field_et]</div>
+</div>';
+  $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_class'] = 'facts-block_stats';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = '0';
+  /* Field: Entity translation: Body: translated */
+  $handler->display->display_options['fields']['body_et']['id'] = 'body_et';
+  $handler->display->display_options['fields']['body_et']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body_et']['field'] = 'body_et';
+  $handler->display->display_options['fields']['body_et']['label'] = '';
+  $handler->display->display_options['fields']['body_et']['element_type'] = 'div';
+  $handler->display->display_options['fields']['body_et']['element_class'] = 'facts-block_body';
+  $handler->display->display_options['fields']['body_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body_et']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['body_et']['type'] = 'text_plain';
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['body']['alter']['max_length'] = '300';
+  $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['body']['element_type'] = 'div';
+  $handler->display->display_options['fields']['body']['element_class'] = 'facts-block_body';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['body']['type'] = 'text_plain';
+  /* Field: Entity translation: Facts Links: translated */
+  $handler->display->display_options['fields']['field_facts_links_et']['id'] = 'field_facts_links_et';
+  $handler->display->display_options['fields']['field_facts_links_et']['table'] = 'field_data_field_facts_links';
+  $handler->display->display_options['fields']['field_facts_links_et']['field'] = 'field_facts_links_et';
+  $handler->display->display_options['fields']['field_facts_links_et']['label'] = '';
+  $handler->display->display_options['fields']['field_facts_links_et']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_facts_links_et']['element_class'] = 'facts-block_morelinks';
+  $handler->display->display_options['fields']['field_facts_links_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_facts_links_et']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_facts_links_et']['click_sort_column'] = 'url';
+  /* Field: Content: Facts Links */
+  $handler->display->display_options['fields']['field_facts_links']['id'] = 'field_facts_links';
+  $handler->display->display_options['fields']['field_facts_links']['table'] = 'field_data_field_facts_links';
+  $handler->display->display_options['fields']['field_facts_links']['field'] = 'field_facts_links';
+  $handler->display->display_options['fields']['field_facts_links']['label'] = '';
+  $handler->display->display_options['fields']['field_facts_links']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_facts_links']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_facts_links']['element_class'] = 'facts-block_morelinks';
+  $handler->display->display_options['fields']['field_facts_links']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_facts_links']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_facts_links']['click_sort_column'] = 'url';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'facts_block' => 'facts_block',
+  );
+  /* Filter criterion: Content: Show ON Homepage (field_facts_show_on_homepage) */
+  $handler->display->display_options['filters']['field_facts_show_on_homepage_value']['id'] = 'field_facts_show_on_homepage_value';
+  $handler->display->display_options['filters']['field_facts_show_on_homepage_value']['table'] = 'field_data_field_facts_show_on_homepage';
+  $handler->display->display_options['filters']['field_facts_show_on_homepage_value']['field'] = 'field_facts_show_on_homepage_value';
+  $handler->display->display_options['filters']['field_facts_show_on_homepage_value']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['filters']['field_facts_show_on_homepage_value']['reduce_duplicates'] = TRUE;
 
   /* Display: Facts Block On Hub pages */
   $handler = $view->new_display('block', 'Facts Block On Hub pages', 'block_1');
@@ -14724,6 +14851,114 @@ print file_create_url($row->uri);
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Entity translation: Title: translated */
+  $handler->display->display_options['fields']['title_field_et']['id'] = 'title_field_et';
+  $handler->display->display_options['fields']['title_field_et']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field_et']['field'] = 'title_field_et';
+  $handler->display->display_options['fields']['title_field_et']['label'] = '';
+  $handler->display->display_options['fields']['title_field_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field_et']['element_type'] = 'div';
+  $handler->display->display_options['fields']['title_field_et']['element_class'] = 'facts-block_title';
+  $handler->display->display_options['fields']['title_field_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field_et']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['title_field_et']['type'] = 'text_plain';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'div';
+  $handler->display->display_options['fields']['title']['element_class'] = 'facts-block_title';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Facts Number */
+  $handler->display->display_options['fields']['field_facts_number']['id'] = 'field_facts_number';
+  $handler->display->display_options['fields']['field_facts_number']['table'] = 'field_data_field_facts_number';
+  $handler->display->display_options['fields']['field_facts_number']['field'] = 'field_facts_number';
+  $handler->display->display_options['fields']['field_facts_number']['label'] = '';
+  $handler->display->display_options['fields']['field_facts_number']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_facts_number']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_facts_number']['element_class'] = 'facts-block_number';
+  $handler->display->display_options['fields']['field_facts_number']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_facts_number']['element_wrapper_type'] = '0';
+  /* Field: Content: Facts Icon */
+  $handler->display->display_options['fields']['field_facts_icon']['id'] = 'field_facts_icon';
+  $handler->display->display_options['fields']['field_facts_icon']['table'] = 'field_data_field_facts_icon';
+  $handler->display->display_options['fields']['field_facts_icon']['field'] = 'field_facts_icon';
+  $handler->display->display_options['fields']['field_facts_icon']['label'] = '';
+  $handler->display->display_options['fields']['field_facts_icon']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_facts_icon']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_facts_icon']['element_class'] = 'facts-block_icon';
+  $handler->display->display_options['fields']['field_facts_icon']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_facts_icon']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_facts_icon']['settings'] = array(
+    'image_style' => '',
+    'image_link' => '',
+  );
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="facts-block_section-top">
+  <div class="facts-block_icon-wrapper"><div class="facts-block_icon">[field_facts_icon]</div></div>
+  <div class="facts-block_number">[title_field_et]</div>
+</div>';
+  $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_class'] = 'facts-block_stats';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = '0';
+  /* Field: Entity translation: Body: translated */
+  $handler->display->display_options['fields']['body_et']['id'] = 'body_et';
+  $handler->display->display_options['fields']['body_et']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body_et']['field'] = 'body_et';
+  $handler->display->display_options['fields']['body_et']['label'] = '';
+  $handler->display->display_options['fields']['body_et']['alter']['max_length'] = '300';
+  $handler->display->display_options['fields']['body_et']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['body_et']['element_type'] = 'div';
+  $handler->display->display_options['fields']['body_et']['element_class'] = 'facts-block_body';
+  $handler->display->display_options['fields']['body_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body_et']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['body_et']['type'] = 'text_plain';
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['body']['alter']['max_length'] = '300';
+  $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['body']['element_type'] = 'div';
+  $handler->display->display_options['fields']['body']['element_class'] = 'facts-block_body';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['body']['type'] = 'text_plain';
+  /* Field: Content: Facts Links */
+  $handler->display->display_options['fields']['field_facts_links']['id'] = 'field_facts_links';
+  $handler->display->display_options['fields']['field_facts_links']['table'] = 'field_data_field_facts_links';
+  $handler->display->display_options['fields']['field_facts_links']['field'] = 'field_facts_links';
+  $handler->display->display_options['fields']['field_facts_links']['label'] = '';
+  $handler->display->display_options['fields']['field_facts_links']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_facts_links']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_facts_links']['element_class'] = 'facts-block_morelinks';
+  $handler->display->display_options['fields']['field_facts_links']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_facts_links']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_facts_links']['click_sort_column'] = 'url';
+  /* Field: Entity translation: Facts Links: translated */
+  $handler->display->display_options['fields']['field_facts_links_et']['id'] = 'field_facts_links_et';
+  $handler->display->display_options['fields']['field_facts_links_et']['table'] = 'field_data_field_facts_links';
+  $handler->display->display_options['fields']['field_facts_links_et']['field'] = 'field_facts_links_et';
+  $handler->display->display_options['fields']['field_facts_links_et']['label'] = '';
+  $handler->display->display_options['fields']['field_facts_links_et']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_facts_links_et']['element_class'] = 'facts-block_morelinks';
+  $handler->display->display_options['fields']['field_facts_links_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_facts_links_et']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_facts_links_et']['click_sort_column'] = 'url';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Field: Agency (field_agency) */
   $handler->display->display_options['arguments']['field_agency_tid']['id'] = 'field_agency_tid';
@@ -14759,6 +14994,115 @@ print file_create_url($row->uri);
 
   /* Display: About Us Page Facts Block */
   $handler = $view->new_display('block', 'About Us Page Facts Block', 'block_2');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Entity translation: Title: translated */
+  $handler->display->display_options['fields']['title_field_et']['id'] = 'title_field_et';
+  $handler->display->display_options['fields']['title_field_et']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field_et']['field'] = 'title_field_et';
+  $handler->display->display_options['fields']['title_field_et']['label'] = '';
+  $handler->display->display_options['fields']['title_field_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field_et']['element_type'] = 'div';
+  $handler->display->display_options['fields']['title_field_et']['element_class'] = 'facts-block_title';
+  $handler->display->display_options['fields']['title_field_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field_et']['element_wrapper_type'] = '0';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'div';
+  $handler->display->display_options['fields']['title']['element_class'] = 'facts-block_title';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_rel'] = '';
+  /* Field: Content: Facts Number */
+  $handler->display->display_options['fields']['field_facts_number']['id'] = 'field_facts_number';
+  $handler->display->display_options['fields']['field_facts_number']['table'] = 'field_data_field_facts_number';
+  $handler->display->display_options['fields']['field_facts_number']['field'] = 'field_facts_number';
+  $handler->display->display_options['fields']['field_facts_number']['label'] = '';
+  $handler->display->display_options['fields']['field_facts_number']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_facts_number']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_facts_number']['element_class'] = 'facts-block_number';
+  $handler->display->display_options['fields']['field_facts_number']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_facts_number']['element_wrapper_type'] = '0';
+  /* Field: Content: Facts Icon */
+  $handler->display->display_options['fields']['field_facts_icon']['id'] = 'field_facts_icon';
+  $handler->display->display_options['fields']['field_facts_icon']['table'] = 'field_data_field_facts_icon';
+  $handler->display->display_options['fields']['field_facts_icon']['field'] = 'field_facts_icon';
+  $handler->display->display_options['fields']['field_facts_icon']['label'] = '';
+  $handler->display->display_options['fields']['field_facts_icon']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_facts_icon']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_facts_icon']['element_class'] = 'facts-block_icon';
+  $handler->display->display_options['fields']['field_facts_icon']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_facts_icon']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_facts_icon']['settings'] = array(
+    'image_style' => '',
+    'image_link' => '',
+  );
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="facts-block_section-top">
+  <div class="facts-block_icon-wrapper"><div class="facts-block_icon">[field_facts_icon]</div></div>
+  <div class="facts-block_number">[title_field_et]</div>
+</div>';
+  $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_class'] = 'facts-block_stats';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = '0';
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['body']['alter']['max_length'] = '300';
+  $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['body']['element_type'] = 'div';
+  $handler->display->display_options['fields']['body']['element_class'] = 'facts-block_body';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['body']['type'] = 'text_plain';
+  /* Field: Entity translation: Body: translated */
+  $handler->display->display_options['fields']['body_et']['id'] = 'body_et';
+  $handler->display->display_options['fields']['body_et']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body_et']['field'] = 'body_et';
+  $handler->display->display_options['fields']['body_et']['label'] = '';
+  $handler->display->display_options['fields']['body_et']['alter']['max_length'] = '300';
+  $handler->display->display_options['fields']['body_et']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['body_et']['element_type'] = 'div';
+  $handler->display->display_options['fields']['body_et']['element_class'] = 'facts-block_body';
+  $handler->display->display_options['fields']['body_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body_et']['type'] = 'text_plain';
+  /* Field: Entity translation: Facts Links: translated */
+  $handler->display->display_options['fields']['field_facts_links_et']['id'] = 'field_facts_links_et';
+  $handler->display->display_options['fields']['field_facts_links_et']['table'] = 'field_data_field_facts_links';
+  $handler->display->display_options['fields']['field_facts_links_et']['field'] = 'field_facts_links_et';
+  $handler->display->display_options['fields']['field_facts_links_et']['label'] = '';
+  $handler->display->display_options['fields']['field_facts_links_et']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_facts_links_et']['element_class'] = 'facts-block_morelinks';
+  $handler->display->display_options['fields']['field_facts_links_et']['element_label_type'] = '0';
+  $handler->display->display_options['fields']['field_facts_links_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_facts_links_et']['click_sort_column'] = 'url';
+  /* Field: Content: Facts Links */
+  $handler->display->display_options['fields']['field_facts_links']['id'] = 'field_facts_links';
+  $handler->display->display_options['fields']['field_facts_links']['table'] = 'field_data_field_facts_links';
+  $handler->display->display_options['fields']['field_facts_links']['field'] = 'field_facts_links';
+  $handler->display->display_options['fields']['field_facts_links']['label'] = '';
+  $handler->display->display_options['fields']['field_facts_links']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_facts_links']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_facts_links']['element_class'] = 'facts-block_morelinks';
+  $handler->display->display_options['fields']['field_facts_links']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_facts_links']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_facts_links']['click_sort_column'] = 'url';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Type */
@@ -14781,6 +15125,115 @@ print file_create_url($row->uri);
   $handler = $view->new_display('block', 'F/A/G Facts Block ', 'facts_block');
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'div';
+  $handler->display->display_options['fields']['title']['element_class'] = 'facts-block_title';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_rel'] = '';
+  /* Field: Entity translation: Title: translated */
+  $handler->display->display_options['fields']['title_field_et']['id'] = 'title_field_et';
+  $handler->display->display_options['fields']['title_field_et']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field_et']['field'] = 'title_field_et';
+  $handler->display->display_options['fields']['title_field_et']['label'] = '';
+  $handler->display->display_options['fields']['title_field_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field_et']['element_type'] = 'div';
+  $handler->display->display_options['fields']['title_field_et']['element_class'] = 'facts-block_title';
+  $handler->display->display_options['fields']['title_field_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field_et']['element_wrapper_type'] = '0';
+  /* Field: Content: Facts Number */
+  $handler->display->display_options['fields']['field_facts_number']['id'] = 'field_facts_number';
+  $handler->display->display_options['fields']['field_facts_number']['table'] = 'field_data_field_facts_number';
+  $handler->display->display_options['fields']['field_facts_number']['field'] = 'field_facts_number';
+  $handler->display->display_options['fields']['field_facts_number']['label'] = '';
+  $handler->display->display_options['fields']['field_facts_number']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_facts_number']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_facts_number']['element_class'] = 'facts-block_number';
+  $handler->display->display_options['fields']['field_facts_number']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_facts_number']['element_wrapper_type'] = '0';
+  /* Field: Content: Facts Icon */
+  $handler->display->display_options['fields']['field_facts_icon']['id'] = 'field_facts_icon';
+  $handler->display->display_options['fields']['field_facts_icon']['table'] = 'field_data_field_facts_icon';
+  $handler->display->display_options['fields']['field_facts_icon']['field'] = 'field_facts_icon';
+  $handler->display->display_options['fields']['field_facts_icon']['label'] = '';
+  $handler->display->display_options['fields']['field_facts_icon']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_facts_icon']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_facts_icon']['element_class'] = 'facts-block_icon';
+  $handler->display->display_options['fields']['field_facts_icon']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_facts_icon']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_facts_icon']['settings'] = array(
+    'image_style' => '',
+    'image_link' => '',
+  );
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="facts-block_section-top">
+  <div class="facts-block_icon-wrapper"><div class="facts-block_icon">[field_facts_icon]</div></div>
+  <div class="facts-block_number">[title]</div>
+</div>';
+  $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_class'] = 'facts-block_stats';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = '0';
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['body']['alter']['max_length'] = '300';
+  $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['body']['element_type'] = 'div';
+  $handler->display->display_options['fields']['body']['element_class'] = 'facts-block_body';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['body']['type'] = 'text_plain';
+  /* Field: Content: Facts Links */
+  $handler->display->display_options['fields']['field_facts_links']['id'] = 'field_facts_links';
+  $handler->display->display_options['fields']['field_facts_links']['table'] = 'field_data_field_facts_links';
+  $handler->display->display_options['fields']['field_facts_links']['field'] = 'field_facts_links';
+  $handler->display->display_options['fields']['field_facts_links']['label'] = '';
+  $handler->display->display_options['fields']['field_facts_links']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_facts_links']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_facts_links']['element_class'] = 'facts-block_morelinks';
+  $handler->display->display_options['fields']['field_facts_links']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_facts_links']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_facts_links']['click_sort_column'] = 'url';
+  /* Field: Entity translation: Body: translated */
+  $handler->display->display_options['fields']['body_et']['id'] = 'body_et';
+  $handler->display->display_options['fields']['body_et']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body_et']['field'] = 'body_et';
+  $handler->display->display_options['fields']['body_et']['label'] = '';
+  $handler->display->display_options['fields']['body_et']['alter']['max_length'] = '300';
+  $handler->display->display_options['fields']['body_et']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['body_et']['element_type'] = 'div';
+  $handler->display->display_options['fields']['body_et']['element_class'] = 'facts-block_body';
+  $handler->display->display_options['fields']['body_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body_et']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['body_et']['type'] = 'text_plain';
+  /* Field: Entity translation: Facts Links: translated */
+  $handler->display->display_options['fields']['field_facts_links_et']['id'] = 'field_facts_links_et';
+  $handler->display->display_options['fields']['field_facts_links_et']['table'] = 'field_data_field_facts_links';
+  $handler->display->display_options['fields']['field_facts_links_et']['field'] = 'field_facts_links_et';
+  $handler->display->display_options['fields']['field_facts_links_et']['label'] = '';
+  $handler->display->display_options['fields']['field_facts_links_et']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_facts_links_et']['element_class'] = 'facts-block_morelinks';
+  $handler->display->display_options['fields']['field_facts_links_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_facts_links_et']['click_sort_column'] = 'url';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Global: Random */
   $handler->display->display_options['sorts']['random']['id'] = 'random';
@@ -14811,12 +15264,23 @@ print file_create_url($row->uri);
   $handler = $view->new_display('block', 'Manual F/A/G Fact Block', 'manual_fact_blocks');
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Fact Block Reference (field_fact_sheet_reference) */
+  /* Relationship: Content: Fact block Reference (field_fact_sheet_reference) */
   $handler->display->display_options['relationships']['field_fact_sheet_reference_nid']['id'] = 'field_fact_sheet_reference_nid';
   $handler->display->display_options['relationships']['field_fact_sheet_reference_nid']['table'] = 'field_data_field_fact_sheet_reference';
   $handler->display->display_options['relationships']['field_fact_sheet_reference_nid']['field'] = 'field_fact_sheet_reference_nid';
   $handler->display->display_options['relationships']['field_fact_sheet_reference_nid']['delta'] = '-1';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Entity translation: Title: translated */
+  $handler->display->display_options['fields']['title_field_et']['id'] = 'title_field_et';
+  $handler->display->display_options['fields']['title_field_et']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field_et']['field'] = 'title_field_et';
+  $handler->display->display_options['fields']['title_field_et']['relationship'] = 'field_fact_sheet_reference_nid';
+  $handler->display->display_options['fields']['title_field_et']['label'] = '';
+  $handler->display->display_options['fields']['title_field_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field_et']['element_type'] = 'div';
+  $handler->display->display_options['fields']['title_field_et']['element_class'] = 'facts-block_title';
+  $handler->display->display_options['fields']['title_field_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field_et']['element_wrapper_type'] = '0';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -14862,7 +15326,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="facts-block_section-top">
   <div class="facts-block_icon-wrapper"><div class="facts-block_icon">[field_facts_icon]</div></div>
-  <div class="facts-block_number">[title]</div>
+  <div class="facts-block_number">[title_field_et]</div>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_class'] = 'facts-block_stats';
@@ -14874,6 +15338,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['relationship'] = 'field_fact_sheet_reference_nid';
   $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['exclude'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['max_length'] = '300';
   $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['body']['element_type'] = 'div';
@@ -14887,11 +15352,36 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['field_facts_links']['field'] = 'field_facts_links';
   $handler->display->display_options['fields']['field_facts_links']['relationship'] = 'field_fact_sheet_reference_nid';
   $handler->display->display_options['fields']['field_facts_links']['label'] = '';
+  $handler->display->display_options['fields']['field_facts_links']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_facts_links']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_facts_links']['element_class'] = 'facts-block_morelinks';
   $handler->display->display_options['fields']['field_facts_links']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_facts_links']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_facts_links']['click_sort_column'] = 'url';
+  /* Field: Entity translation: Body: translated */
+  $handler->display->display_options['fields']['body_et']['id'] = 'body_et';
+  $handler->display->display_options['fields']['body_et']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body_et']['field'] = 'body_et';
+  $handler->display->display_options['fields']['body_et']['relationship'] = 'field_fact_sheet_reference_nid';
+  $handler->display->display_options['fields']['body_et']['label'] = '';
+  $handler->display->display_options['fields']['body_et']['alter']['max_length'] = '300';
+  $handler->display->display_options['fields']['body_et']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['body_et']['element_type'] = 'div';
+  $handler->display->display_options['fields']['body_et']['element_class'] = 'facts-block_body';
+  $handler->display->display_options['fields']['body_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body_et']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['body_et']['type'] = 'text_plain';
+  /* Field: Entity translation: Facts Links: translated */
+  $handler->display->display_options['fields']['field_facts_links_et']['id'] = 'field_facts_links_et';
+  $handler->display->display_options['fields']['field_facts_links_et']['table'] = 'field_data_field_facts_links';
+  $handler->display->display_options['fields']['field_facts_links_et']['field'] = 'field_facts_links_et';
+  $handler->display->display_options['fields']['field_facts_links_et']['relationship'] = 'field_fact_sheet_reference_nid';
+  $handler->display->display_options['fields']['field_facts_links_et']['label'] = '';
+  $handler->display->display_options['fields']['field_facts_links_et']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_facts_links_et']['element_class'] = 'facts-block_morelinks';
+  $handler->display->display_options['fields']['field_facts_links_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_facts_links_et']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_facts_links_et']['click_sort_column'] = 'url';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Sticky */
   $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
@@ -14937,6 +15427,17 @@ print file_create_url($row->uri);
   /* Display: Facts Block For AKAA */
   $handler = $view->new_display('block', 'Facts Block For AKAA', 'block_3');
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Entity translation: Title: translated */
+  $handler->display->display_options['fields']['title_field_et']['id'] = 'title_field_et';
+  $handler->display->display_options['fields']['title_field_et']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field_et']['field'] = 'title_field_et';
+  $handler->display->display_options['fields']['title_field_et']['label'] = '';
+  $handler->display->display_options['fields']['title_field_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field_et']['element_type'] = 'div';
+  $handler->display->display_options['fields']['title_field_et']['element_class'] = 'facts-block_title';
+  $handler->display->display_options['fields']['title_field_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field_et']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['title_field_et']['type'] = 'text_plain';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -14972,17 +15473,30 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="facts-block_section-top">
   <div class="facts-block_icon-wrapper"><div class="facts-block_icon">[field_facts_icon]</div></div>
-  <div class="facts-block_number">[title]</div>
+  <div class="facts-block_number">[title_field_et]</div>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_class'] = 'facts-block_stats';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = '0';
+  /* Field: Entity translation: Body: translated */
+  $handler->display->display_options['fields']['body_et']['id'] = 'body_et';
+  $handler->display->display_options['fields']['body_et']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body_et']['field'] = 'body_et';
+  $handler->display->display_options['fields']['body_et']['label'] = '';
+  $handler->display->display_options['fields']['body_et']['alter']['max_length'] = '300';
+  $handler->display->display_options['fields']['body_et']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['body_et']['element_type'] = 'div';
+  $handler->display->display_options['fields']['body_et']['element_class'] = 'facts-block_body';
+  $handler->display->display_options['fields']['body_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body_et']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['body_et']['type'] = 'text_plain';
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['exclude'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['max_length'] = '300';
   $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['body']['element_type'] = 'div';
@@ -14995,11 +15509,22 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['field_facts_links']['table'] = 'field_data_field_facts_links';
   $handler->display->display_options['fields']['field_facts_links']['field'] = 'field_facts_links';
   $handler->display->display_options['fields']['field_facts_links']['label'] = '';
+  $handler->display->display_options['fields']['field_facts_links']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_facts_links']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_facts_links']['element_class'] = 'facts-block_morelinks';
   $handler->display->display_options['fields']['field_facts_links']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_facts_links']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_facts_links']['click_sort_column'] = 'url';
+  /* Field: Entity translation: Facts Links: translated */
+  $handler->display->display_options['fields']['field_facts_links_et']['id'] = 'field_facts_links_et';
+  $handler->display->display_options['fields']['field_facts_links_et']['table'] = 'field_data_field_facts_links';
+  $handler->display->display_options['fields']['field_facts_links_et']['field'] = 'field_facts_links_et';
+  $handler->display->display_options['fields']['field_facts_links_et']['label'] = '';
+  $handler->display->display_options['fields']['field_facts_links_et']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_facts_links_et']['element_class'] = 'facts-block_morelinks';
+  $handler->display->display_options['fields']['field_facts_links_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_facts_links_et']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_facts_links_et']['click_sort_column'] = 'url';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Type */
@@ -15009,14 +15534,6 @@ print file_create_url($row->uri);
   $handler->display->display_options['filters']['type']['value'] = array(
     'facts_block' => 'facts_block',
   );
-  /* Filter criterion: Field: Tags (field_tags) */
-  $handler->display->display_options['filters']['field_tags_tid']['id'] = 'field_tags_tid';
-  $handler->display->display_options['filters']['field_tags_tid']['table'] = 'field_data_field_tags';
-  $handler->display->display_options['filters']['field_tags_tid']['field'] = 'field_tags_tid';
-  $handler->display->display_options['filters']['field_tags_tid']['value'] = array(
-    0 => '3881',
-  );
-  $handler->display->display_options['filters']['field_tags_tid']['vocabulary'] = 'tags';
   /* Filter criterion: Content: Published or admin */
   $handler->display->display_options['filters']['status_extra']['id'] = 'status_extra';
   $handler->display->display_options['filters']['status_extra']['table'] = 'node';
@@ -15111,29 +15628,6 @@ print file_create_url($row->uri);
   $handler->display->display_options['filters']['status_extra']['table'] = 'node';
   $handler->display->display_options['filters']['status_extra']['field'] = 'status_extra';
   $handler->display->display_options['block_description'] = 'Facts Block For AKMI';
-  $translatables['facts_blocks'] = array(
-    t('Master'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('<div class="facts-block_section-top">
-  <div class="facts-block_icon-wrapper"><div class="facts-block_icon">[field_facts_icon]</div></div>
-  <div class="facts-block_number">[title]</div>
-</div>'),
-    t('Facts Block On Home Page'),
-    t('Facts Block On Hub pages'),
-    t('All'),
-    t('About Us Page Facts Block'),
-    t('About Us Facts Block'),
-    t('F/A/G Facts Block '),
-    t('Manual F/A/G Fact Block'),
-    t('field_fact_sheet_reference'),
-    t('Facts Block For AKAA'),
-    t('Facts Block For AKMI'),
-  );
   $export['facts_blocks'] = $view;
 
   $view = new view();
