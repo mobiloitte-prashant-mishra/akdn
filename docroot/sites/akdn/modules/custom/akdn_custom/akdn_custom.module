@@ -3039,7 +3039,7 @@ function _akdn_custom_lang_related_info_links() {
   if (arg(0) == 'node' && is_numeric(arg(1))) {
     $node = node_load(arg(1));
     $field = $node->field_block_add_links[$lang];
-    $specific_title = $node->field_specify_a_block_title[$lang];
+    $specific_title = $node->field_specify_a_block_title[$lang][0]['value'];
     if (!empty($field)) {
       if (!empty($specific_title)) {
         $rel_title = $specific_title;
