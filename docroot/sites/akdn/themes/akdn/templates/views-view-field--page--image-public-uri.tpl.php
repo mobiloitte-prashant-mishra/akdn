@@ -21,30 +21,47 @@
  * regardless of any changes in the aliasing that might happen if
  * the view is modified.
  */
-$image_uri = $image_uri = "public://media/missingakdn.jpg";
+$image_uri = "public://media/missingakdn.jpg";
 if (isset($row->{'_entity_properties'}['image_public_uri'])) {
   $image_path = $row->{'_entity_properties'}['image_public_uri'];
-  if (file_exists($image_path)) {
-    $image_uri = $image_path;
+  $images_uris = explode(',', $image_path);
+  $image_lang_uris = array();
+  foreach ($images_uris as $img_value) {
+    $img_path = explode('!', $img_value);
+    $image_lang_uris[$img_path[0]] = $img_path[1];
+  }
+  global $language;
+  $langu = $language->language;
+
+  if (array_key_exists($langu, $image_lang_uris)) {
+    $image_uri_path = $image_lang_uris[$langu];
+  }
+  if (empty($image_uri)) {
+    $image_uri_path = $image_lang_uris[key($image_lang_uris)];
+  }
+
+  if (file_exists($image_uri_path)) {
+    $image_uri = $image_uri_path;
   }
 }
 
 // Apply image style article_listing_thumbnail for the image
-if(arg(0) == 'search'){
+if (arg(0) == 'search') {
   $style = 'article_listing_thumbnail';
-}else{
+}
+else {
   $style = 'social_sharing_image';
 }
 //$style = 'article_listing_thumbnail';
 $image = theme('image_style', array(
-    'style_name' => $style,
-    'path' => $image_uri,
-    'attributes' => array(
-      'class' => 'akdn-solr-img-link'
-    ),
-    'width' => NULL,
-    'height' => NULL,
-  )
+  'style_name' => $style,
+  'path' => $image_uri,
+  'attributes' => array(
+    'class' => 'akdn-solr-img-link'
+  ),
+  'width' => NULL,
+  'height' => NULL,
+    )
 );
 
 if ($row->{'_entity_properties'}['entity_type'] == 'In the media') {
