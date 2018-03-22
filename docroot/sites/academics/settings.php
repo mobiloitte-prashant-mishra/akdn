@@ -1,5 +1,5 @@
 <?php
-$conf['file_temporary_path'] = '/mnt/tmp/academies';
+
 /**
  * @file
  * Drupal site-specific configuration file.
@@ -246,7 +246,7 @@ $drupal_hash_salt = 'UY2huecCJOhaVGOxgJdQM4QWuXsPbLQiJMZU-SlfidU';
  * for you.
  */
 
- $base_url = 'http://new.agakhanacademies.org';  // NO trailing slash
+ #$base_url = 'http://new.agakhanacademies.org';  // NO trailing slash
 
 /**
  * PHP settings:
