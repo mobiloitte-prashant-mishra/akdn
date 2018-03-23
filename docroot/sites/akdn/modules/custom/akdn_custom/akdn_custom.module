@@ -643,14 +643,22 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
     $form['#validate'][] = 'akdn_custom_form_validation';
   }
 
+  if (isset($form['type']) && isset($form['type']['#value']) && $form['type']['#value'] . '_node_form' == $form_id && arg(2) == 'edit' && arg(3) != 'add') {
+    $form['body'][$lang][0]['summary']['#type'] = 'text_format';
+    $form['body'][$lang][0]['#format'] = 'full_html';
+    $script = 'jQuery(document).ready(function(){ jQuery("div[class$=\'-0-value\'] .link-edit-summary").click();
+        jQuery("div[class|=\'form-item-body-\']").show();
+      });';
+    drupal_add_js($script, 'inline');
+  }
   // Check that we're on a node edit form.
-  if (isset($form['type']) && isset($form['type']['#value']) && $form['type']['#value'] . '_node_form' == $form_id) {
+  if (isset($form['type']) && isset($form['type']['#value']) && $form['type']['#value'] . '_node_form' == $form_id && arg(3) == 'add') {
 
     if (!empty($form['body'])) {
       // Remove the delete button.
       $lang = $form['body']['#language'];
       // enable rich text editor on summary
-      $form['body'][$lang][0]['summary']['#type'] = 'text_field';
+      $form['body'][$lang][0]['summary']['#type'] = 'text_format';
       $form['body'][$lang][0]['summary']['#format'] = 'full_html';
       $form['#after_build'][] = 'akdn_custom_node_form_after_build';
       $actions = $form['actions']['submit']['#submit'];
