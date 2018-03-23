@@ -589,9 +589,6 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
       $form['body'][$lang][0]['summary']['#format'] = 'full_html';
       $form['#after_build'][] = 'akdn_custom_node_form_after_build';
       $actions = $form['actions']['submit']['#submit'];
-//      print '<pre>';
-//      print_r($form);
-//      die();
       array_unshift($actions, "akdn_custom_node_form_submit");
       $form['actions']['submit']['#submit'] = $actions;
       $save_edit_actions = $form['actions']['save_edit']['#submit'];
