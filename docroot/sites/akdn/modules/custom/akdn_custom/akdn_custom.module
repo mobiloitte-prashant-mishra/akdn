@@ -5480,24 +5480,6 @@ function _nodes_related_term_id_retrieve($tid, $pager, $limit, $order) {
 }
 
 /**
- * hook_media_wysiwyg_token_to_markup_alter().
- * @param type $element
- * @param type $tag_info
- * @param type $settings
- */
-function akdn_custom_media_wysiwyg_token_to_markup_alter(&$element, $tag_info, $settings) {
-  $file_entity = $element['content'];
-  $caption = $file_entity['field_image_caption']['#items'][0]['value'];
-  $copyright = $file_entity['field_image_copytight']['#items'][0]['value'];
-  if(empty($caption)){
-    unset($element['content']['field_image_caption']);
-  }
-  if(empty($copyright)){
-    unset($element['content']['field_image_copytight']);
-  }
-}
-
-/**
  * See Also Menu RHS Panel Block
  */
 function _akdn_custom_see_also_menu() {
