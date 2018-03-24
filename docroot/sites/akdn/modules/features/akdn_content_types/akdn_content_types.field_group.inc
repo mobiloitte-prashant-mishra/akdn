@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function akdn_content_types_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -40,7 +40,7 @@ function akdn_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_agency_deprecated|node|agency|form'] = $field_group;
+  $field_groups['group_agency_deprecated|node|agency|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -69,7 +69,7 @@ function akdn_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_agency_details|node|agency|form'] = $field_group;
+  $field_groups['group_agency_details|node|agency|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -100,7 +100,7 @@ function akdn_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_agency_footer|node|agency|form'] = $field_group;
+  $field_groups['group_agency_footer|node|agency|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -130,7 +130,7 @@ function akdn_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_agency_media|node|agency|form'] = $field_group;
+  $field_groups['group_agency_media|node|agency|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -158,7 +158,7 @@ function akdn_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_agency_text|node|agency|form'] = $field_group;
+  $field_groups['group_agency_text|node|agency|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -187,10 +187,11 @@ function akdn_content_types_field_group_info() {
       'formatter' => '',
       'instance_settings' => array(
         'classes' => ' group-agency field-group-tabs',
+        'id' => 'node_agency_form_group_agency',
       ),
     ),
   );
-  $export['group_agency|node|agency|form'] = $field_group;
+  $field_groups['group_agency|node|agency|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -219,7 +220,7 @@ function akdn_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_akaa_short_video|node|agency|form'] = $field_group;
+  $field_groups['group_akaa_short_video|node|agency|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -247,7 +248,7 @@ function akdn_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_baasic_pages_categories|node|page|form'] = $field_group;
+  $field_groups['group_baasic_pages_categories|node|page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -275,7 +276,7 @@ function akdn_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_basic_page_layout|node|hub_page|form'] = $field_group;
+  $field_groups['group_basic_page_layout|node|hub_page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -303,7 +304,7 @@ function akdn_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_basic_page_layout|node|page|form'] = $field_group;
+  $field_groups['group_basic_page_layout|node|page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -338,7 +339,7 @@ function akdn_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_basic_page_text|node|page|form'] = $field_group;
+  $field_groups['group_basic_page_text|node|page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -369,7 +370,7 @@ function akdn_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_brochure_details|node|geography|form'] = $field_group;
+  $field_groups['group_brochure_details|node|geography|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -398,7 +399,7 @@ function akdn_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_custom_right_side|node|geography|form'] = $field_group;
+  $field_groups['group_custom_right_side|node|geography|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -427,7 +428,7 @@ function akdn_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_custom_right_side|node|hub_page|form'] = $field_group;
+  $field_groups['group_custom_right_side|node|hub_page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -456,7 +457,7 @@ function akdn_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_custom_right_side|node|page|form'] = $field_group;
+  $field_groups['group_custom_right_side|node|page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -487,7 +488,7 @@ function akdn_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_deprecated|node|focus_area|form'] = $field_group;
+  $field_groups['group_deprecated|node|focus_area|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -517,7 +518,7 @@ function akdn_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_deprecated|node|geography|form'] = $field_group;
+  $field_groups['group_deprecated|node|geography|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -549,7 +550,7 @@ function akdn_content_types_field_group_info() {
       'formatter' => 'closed',
     ),
   );
-  $export['group_fact_sheet_visibiliity|node|agency|form'] = $field_group;
+  $field_groups['group_fact_sheet_visibiliity|node|agency|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -581,7 +582,7 @@ function akdn_content_types_field_group_info() {
       'formatter' => 'closed',
     ),
   );
-  $export['group_fact_sheet_visibiliity|node|focus_area|form'] = $field_group;
+  $field_groups['group_fact_sheet_visibiliity|node|focus_area|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -613,7 +614,7 @@ function akdn_content_types_field_group_info() {
       'formatter' => 'closed',
     ),
   );
-  $export['group_fact_sheet_visibiliity|node|geography|form'] = $field_group;
+  $field_groups['group_fact_sheet_visibiliity|node|geography|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -644,7 +645,7 @@ function akdn_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_featured_content|node|page|form'] = $field_group;
+  $field_groups['group_featured_content|node|page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -675,7 +676,7 @@ function akdn_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_focus_area_details|node|focus_area|form'] = $field_group;
+  $field_groups['group_focus_area_details|node|focus_area|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -703,7 +704,7 @@ function akdn_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_focus_area_project_listing|node|focus_area|form'] = $field_group;
+  $field_groups['group_focus_area_project_listing|node|focus_area|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -732,7 +733,7 @@ function akdn_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_focus_area_text|node|focus_area|form'] = $field_group;
+  $field_groups['group_focus_area_text|node|focus_area|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -761,10 +762,11 @@ function akdn_content_types_field_group_info() {
       'formatter' => '',
       'instance_settings' => array(
         'classes' => ' group-focus-area field-group-tabs',
+        'id' => 'node_focus_area_form_group_focus_area',
       ),
     ),
   );
-  $export['group_focus_area|node|focus_area|form'] = $field_group;
+  $field_groups['group_focus_area|node|focus_area|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -791,7 +793,7 @@ function akdn_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_footer|node|geography|form'] = $field_group;
+  $field_groups['group_footer|node|geography|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -819,7 +821,7 @@ function akdn_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_geog_text|node|geography|form'] = $field_group;
+  $field_groups['group_geog_text|node|geography|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -849,7 +851,7 @@ function akdn_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_geography_details|node|geography|form'] = $field_group;
+  $field_groups['group_geography_details|node|geography|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -877,10 +879,11 @@ function akdn_content_types_field_group_info() {
       'formatter' => '',
       'instance_settings' => array(
         'classes' => ' group-geography field-group-tabs',
+        'id' => 'node_geography_form_group_geography',
       ),
     ),
   );
-  $export['group_geography|node|geography|form'] = $field_group;
+  $field_groups['group_geography|node|geography|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -907,7 +910,7 @@ function akdn_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_home_page_slider|node|focus_area|form'] = $field_group;
+  $field_groups['group_home_page_slider|node|focus_area|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -935,7 +938,7 @@ function akdn_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_hub_page_categories|node|hub_page|form'] = $field_group;
+  $field_groups['group_hub_page_categories|node|hub_page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -966,7 +969,7 @@ function akdn_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_hub_page_details|node|hub_page|form'] = $field_group;
+  $field_groups['group_hub_page_details|node|hub_page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -991,10 +994,11 @@ function akdn_content_types_field_group_info() {
       'formatter' => '',
       'instance_settings' => array(
         'classes' => ' group-hub-page field-group-tabs',
+        'id' => 'node_hub_page_form_group_hub_page',
       ),
     ),
   );
-  $export['group_hub_page|node|hub_page|form'] = $field_group;
+  $field_groups['group_hub_page|node|hub_page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1024,7 +1028,7 @@ function akdn_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_media|node|focus_area|form'] = $field_group;
+  $field_groups['group_media|node|focus_area|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1052,7 +1056,7 @@ function akdn_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_media|node|geography|form'] = $field_group;
+  $field_groups['group_media|node|geography|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1081,7 +1085,7 @@ function akdn_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_news_resouces_visible|node|agency|form'] = $field_group;
+  $field_groups['group_news_resouces_visible|node|agency|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1109,7 +1113,7 @@ function akdn_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_news_resouces_visible|node|focus_area|form'] = $field_group;
+  $field_groups['group_news_resouces_visible|node|focus_area|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1138,7 +1142,7 @@ function akdn_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_news_resouces_visible|node|geography|form'] = $field_group;
+  $field_groups['group_news_resouces_visible|node|geography|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1167,7 +1171,7 @@ function akdn_content_types_field_group_info() {
       'formatter' => 'closed',
     ),
   );
-  $export['group_newsletter_details|node|agency|form'] = $field_group;
+  $field_groups['group_newsletter_details|node|agency|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1195,7 +1199,7 @@ function akdn_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_newsletter_details|node|focus_area|form'] = $field_group;
+  $field_groups['group_newsletter_details|node|focus_area|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1223,7 +1227,7 @@ function akdn_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_newsletter_details|node|geography|form'] = $field_group;
+  $field_groups['group_newsletter_details|node|geography|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1251,7 +1255,7 @@ function akdn_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_newsletter_details|node|hub_page|form'] = $field_group;
+  $field_groups['group_newsletter_details|node|hub_page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1279,7 +1283,7 @@ function akdn_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_newsletter_details|node|page|form'] = $field_group;
+  $field_groups['group_newsletter_details|node|page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1308,7 +1312,40 @@ function akdn_content_types_field_group_info() {
       'formatter' => 'closed',
     ),
   );
-  $export['group_social_connection|node|agency|form'] = $field_group;
+  $field_groups['group_social_connection|node|agency|form'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('AKAA Short Video');
+  t('Agency');
+  t('Agency Details');
+  t('Agency Text');
+  t('Banner Item');
+  t('Basic Page Layout');
+  t('Basic Page Text');
+  t('Basic page Categories');
+  t('Brochure Details');
+  t('Choose Layout');
+  t('Customize Right Side Panel');
+  t('Deprecated');
+  t('Fact Block Visibility');
+  t('Fact block Visibility');
+  t('Focus Area');
+  t('Focus Area Details');
+  t('Focus Area Text');
+  t('Footer');
+  t('Geography');
+  t('Geography Details');
+  t('Geography Text');
+  t('Home Page Slider');
+  t('Hub Page');
+  t('Hub Page Categories');
+  t('Hub Page Details');
+  t('Media');
+  t('News and Resources Visibility');
+  t('Newsletter Details');
+  t('Project Listing');
+  t('Social connections Visibility');
+
+  return $field_groups;
 }

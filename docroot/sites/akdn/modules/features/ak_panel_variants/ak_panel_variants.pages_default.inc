@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * ak_panel_variants.pages_default.inc
@@ -580,15 +579,15 @@ akmi',
   $node = menu_get_object();
   print \'<div class = "whatsnew-right-content">\';
   if (isset($node->field_about_page)) {
-    $about = (isset($node->field_about_page[$lang])) ?  node_load($node->field_about_page[$lang][0][\'nid\']) : node_load($node->field_about_page[\'und\'][0][\'nid\']);
+    $about = (isset($node->field_about_page[$lang])) ?  node_load($node->field_about_page[$lang][0][\'nid\']) : node_load($node->field_about_page[\'en\'][0][\'nid\']);
    if(empty($about)){
       $about = node_load($node->field_about_page[\'en\'][0][\'nid\']);
    }
     if (isset($about->nid)) {
       print \'<p class = "whats-new-gold">\'.t("ABOUT THE").\'</p>\';
-$short_title_language = (isset($about->field_short_title[$lang])) ?  $about->field_short_title[$lang] : $about->field_short_title[\'und\'];
+$short_title_language = (isset($about->field_short_title[$lang])) ?  $about->field_short_title[$lang] : $about->field_short_title[\'en\'];
       print \'<div class = "grid-whatsnew-block_subtitle">\'. $short_title_language[0][\'value\'] .\'</div>\';
-$body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'und\'];
+$body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'en\'];
       if (empty($body[0][\'value\'])) {
         if(!empty($body[0][\'summary\'])) {
           print \'<div class="grid-whatsnew-block_body">\'. $body[0][\'summary\'] .\' </div>\';
@@ -2406,7 +2405,9 @@ if (isset($node->field_about_page)) {
                 ),
               ),
             ),
-            'field_article_cat_tid' => '2',
+            'field_article_cat_tid' => array(
+              0 => '2',
+            ),
           ),
           'context' => 'argument_entity_id:node_1',
           'not' => FALSE,
@@ -4185,65 +4186,15 @@ if (isset($node->field_about_page)) {
           'name' => 'entity_field_value:node:page:field_tags',
           'settings' => array(
             'field_tags' => array(
-              'en' => array(
+              'und' => array(
                 0 => array(
                   'tid' => '9006',
-                  'vid' => '1',
-                  'name' => 'about us',
-                  'description' => NULL,
-                  'format' => NULL,
-                  'weight' => '0',
-                  'uuid' => '2c2927dc-3de8-442a-a679-cd3894eeb8f6',
-                  'vocabulary_machine_name' => 'tags',
-                  'metatags' => array(),
-                  'rdf_mapping' => array(
-                    'rdftype' => array(
-                      0 => 'skos:Concept',
-                    ),
-                    'name' => array(
-                      'predicates' => array(
-                        0 => 'rdfs:label',
-                        1 => 'skos:prefLabel',
-                      ),
-                    ),
-                    'description' => array(
-                      'predicates' => array(
-                        0 => 'skos:definition',
-                      ),
-                    ),
-                    'vid' => array(
-                      'predicates' => array(
-                        0 => 'skos:inScheme',
-                      ),
-                      'type' => 'rel',
-                    ),
-                    'parent' => array(
-                      'predicates' => array(
-                        0 => 'skos:broader',
-                      ),
-                      'type' => 'rel',
-                    ),
-                  ),
-                  'translations' => (object) array(
-                    'original' => 'en',
-                    'data' => array(
-                      'en' => array(
-                        'entity_type' => 'taxonomy_term',
-                        'entity_id' => '9006',
-                        'language' => 'en',
-                        'source' => '',
-                        'uid' => '1',
-                        'status' => '1',
-                        'translate' => '0',
-                        'created' => '1449839991',
-                        'changed' => '1449839991',
-                      ),
-                    ),
-                  ),
                 ),
               ),
             ),
-            'field_tags_tid' => 'about us',
+            'field_tags_tid' => array(
+              0 => '9006',
+            ),
           ),
           'context' => 'argument_entity_id:node_1',
           'not' => TRUE,
@@ -4469,31 +4420,12 @@ if (isset($node->field_about_page)) {
   $display->content['new-978c05e0-04ae-44d4-87c5-2050dd21e3e0'] = $pane;
   $display->panels['left'][5] = 'new-978c05e0-04ae-44d4-87c5-2050dd21e3e0';
   $pane = new stdClass();
-  $pane->pid = 'new-ce365a39-54a0-4640-a592-f401386db51b';
+  $pane->pid = 'new-3deff9b1-6f75-4f20-ac32-10d709298bf4';
   $pane->panel = 'left';
   $pane->type = 'entity_field';
   $pane->subtype = 'node:body';
   $pane->shown = TRUE;
-  $pane->access = array(
-    'plugins' => array(
-      0 => array(
-        'name' => 'entity_field_value:node:page:field_basic_page_choose_layout',
-        'settings' => array(
-          'field_basic_page_choose_layout' => array(
-            'en' => array(
-              0 => array(
-                'value' => 'basic',
-              ),
-            ),
-          ),
-          'field_basic_page_choose_layout_value' => 'basic',
-        ),
-        'context' => 'argument_entity_id:node_1',
-        'not' => FALSE,
-      ),
-    ),
-    'logic' => 'or',
-  );
+  $pane->access = array();
   $pane->configuration = array(
     'label' => 'hidden',
     'formatter' => 'text_default',
@@ -4503,7 +4435,8 @@ if (isset($node->field_about_page)) {
     'formatter_settings' => array(),
     'context' => 'argument_entity_id:node_1',
     'override_title' => 0,
-    'override_title_text' => '%keywords',
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -4609,6 +4542,7 @@ if (isset($node->field_about_page)) {
     ),
     'override_title' => 1,
     'override_title_text' => '',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -4629,7 +4563,7 @@ if (isset($node->field_about_page)) {
   $pane->panel = 'right';
   $pane->type = 'block';
   $pane->subtype = 'akdn_custom-right_panel_press_center_block';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,
@@ -4732,65 +4666,15 @@ if (isset($node->field_about_page)) {
           'name' => 'entity_field_value:node:page:field_tags',
           'settings' => array(
             'field_tags' => array(
-              'en' => array(
+              'und' => array(
                 0 => array(
                   'tid' => '9006',
-                  'vid' => '1',
-                  'name' => 'about us',
-                  'description' => NULL,
-                  'format' => NULL,
-                  'weight' => '0',
-                  'uuid' => '2c2927dc-3de8-442a-a679-cd3894eeb8f6',
-                  'vocabulary_machine_name' => 'tags',
-                  'metatags' => array(),
-                  'rdf_mapping' => array(
-                    'rdftype' => array(
-                      0 => 'skos:Concept',
-                    ),
-                    'name' => array(
-                      'predicates' => array(
-                        0 => 'rdfs:label',
-                        1 => 'skos:prefLabel',
-                      ),
-                    ),
-                    'description' => array(
-                      'predicates' => array(
-                        0 => 'skos:definition',
-                      ),
-                    ),
-                    'vid' => array(
-                      'predicates' => array(
-                        0 => 'skos:inScheme',
-                      ),
-                      'type' => 'rel',
-                    ),
-                    'parent' => array(
-                      'predicates' => array(
-                        0 => 'skos:broader',
-                      ),
-                      'type' => 'rel',
-                    ),
-                  ),
-                  'translations' => (object) array(
-                    'original' => 'en',
-                    'data' => array(
-                      'en' => array(
-                        'entity_type' => 'taxonomy_term',
-                        'entity_id' => '9006',
-                        'language' => 'en',
-                        'source' => '',
-                        'uid' => '1',
-                        'status' => '1',
-                        'translate' => '0',
-                        'created' => '1449839991',
-                        'changed' => '1449839991',
-                      ),
-                    ),
-                  ),
                 ),
               ),
             ),
-            'field_tags_tid' => 'about us',
+            'field_tags_tid' => array(
+              0 => '9006',
+            ),
           ),
           'context' => 'argument_entity_id:node_1',
           'not' => FALSE,
@@ -7051,7 +6935,7 @@ $lang = $language->language;
 $node = menu_get_object();
 print \'<div class = "whatsnew-right-content">\';
 if (isset($node->field_about_page)) {
-$about = (isset($node->field_about_page[$lang])) ?  node_load($node->field_about_page[$lang][0][\'nid\']) : node_load($node->field_about_page[\'und\'][0][\'nid\']);
+$about = (isset($node->field_about_page[$lang])) ?  node_load($node->field_about_page[$lang][0][\'nid\']) : node_load($node->field_about_page[\'en\'][0][\'nid\']);
   if (isset($about->nid)) {
     print \'<p class = "whats-new-gold">\'.t("AKDN AND").\'</p>\';
 	$short_title_language = (isset($about->field_short_title[$lang])) ?  $about->field_short_title[$lang] : $about->field_short_title[\'und\'];
@@ -8008,7 +7892,7 @@ $body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'und
   $pane->configuration = array(
     'label' => 'hidden',
     'formatter' => 'galleryformatter_default',
-    'delta_limit' => '50',
+    'delta_limit' => '80',
     'delta_offset' => '0',
     'delta_reversed' => 0,
     'formatter_settings' => array(
@@ -8379,7 +8263,6 @@ $body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'und
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['node_view_panel_context_21'] = $handler;
-
 
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
@@ -12097,7 +11980,6 @@ privacy-policy',
    if(!$banner){ return true; }
  }',
         ),
-        'context' => 'argument_entity_id:node_1',
         'not' => FALSE,
       ),
     ),
@@ -12154,7 +12036,6 @@ privacy-policy',
    if($banner){ return true; }
  }',
         ),
-        'context' => 'argument_entity_id:node_1',
         'not' => FALSE,
       ),
     ),
@@ -19622,3 +19503,4 @@ function ak_panel_variants_default_page_manager_pages() {
   return $pages;
 
 }
+
