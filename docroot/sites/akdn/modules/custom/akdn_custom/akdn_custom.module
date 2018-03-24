@@ -1808,7 +1808,7 @@ function fact_sheet_top_links_block() {
     if ($show == 1 && !empty($result)) {
       $term = nat_get_terms_by_vocabulary($arg);
       $term = array_values($term);
-      $name = $term[0]->name;
+      $name = t($term[0]->name);
       $output = '';
       $output .= t('<p><span>' . substr($name, 0, 1) . '</span><span>' . substr($name, 1) . ' AT A GLANCE</span></p><ul>');
       if (!empty($node->field_fact_sheet_upload)) {
