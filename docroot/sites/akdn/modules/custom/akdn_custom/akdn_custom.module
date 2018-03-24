@@ -411,9 +411,9 @@ function akdn_custom_media_token_to_markup_alter(&$element, $tag, $settings) {
 /* node form after bulid for hide text format selecton on summary */
 
 function akdn_custom_node_form_after_build($form) {
-  $lang = $form['body']['#language'];
-  $form['body'][$lang][0]['summary']['format']['#prefix'] = '<div style="display:none;">';
-  $form['body'][$lang][0]['summary']['format']['#suffix'] = '</div>';
+//  $lang = $form['body']['#language'];
+//  $form['body'][$lang][0]['summary']['format']['#prefix'] = '<div style="display:none;">';
+//  $form['body'][$lang][0]['summary']['format']['#suffix'] = '</div>';
   return $form;
 }
 
@@ -428,6 +428,9 @@ function akdn_custom_node_form_submit($form, &$form_state) {
   }
   if (arg(0) == 'node' && arg(3) == 'add') {
     $summary = $form_state['values']['body'][$lang][0]['summary'];
+  }
+  if (arg(0) == 'node' && arg(1) == 'add') {
+    $summary = $form_state['values']['body'][$lang][0]['summary']['value'];
   }
   $form_state['values']['body'][$lang][0]['summary'] = $summary;
 }
