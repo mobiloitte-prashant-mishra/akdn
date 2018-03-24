@@ -861,6 +861,10 @@ function akdn_custom_block_info() {
       'info' => t('Custom Where We Work Related Info'),
       'cache' => DRUPAL_NO_CACHE,
     ),
+    'see_also_custom_block' => array(
+      'info' => t('Custom See ALso Block'),
+      'cache' => DRUPAL_NO_CACHE,
+    ),
     'akaa_resources' => array(
       'info' => t('AKAA Resources Links'),
       'cache' => DRUPAL_NO_CACHE,
@@ -999,6 +1003,10 @@ function akdn_custom_block_view($delta = '') {
         $block['content'] = $links;
         $block['subject'] = t('Languages');
       }
+      break;
+    case 'see_also_custom_block':
+      $block['content'] = _akdn_custom_see_also_menu();
+      $block['subject'] = t('SEE ALSO');
       break;
     case 'akaa_resources':
       $list = akaa_get_resources_links();
@@ -5509,3 +5517,71 @@ function _nodes_related_term_id_retrieve($tid, $pager, $limit, $order) {
 }
 
 
+/**
+ * See Also Menu RHS Panel Block
+ */
+function _akdn_custom_see_also_menu() {
+  global $language;
+  global $base_url;
+  $lang = $language->language;
+  if ($lang != 'en') {
+    $langu = '/' . $lang . '/';
+  }
+  else {
+    $langu = '/';
+  }
+
+  $arg = arg(1);
+  $node = node_load(arg(1));
+  $type = $node->type;
+  $article_type = $node->field_article_cat['und'][0]['tid'];
+
+  $menus = _menu_build_tree('menu-see-also');
+  $see_also = $menus['tree'];
+
+  $menu_array = array();
+  foreach ($see_also as $k => $v) {
+    $menu_array[$v['link']['router_path']] = $v['link']['link_title'];
+  }
+  asort($menu_array);
+
+  if ($type == 'article') {
+    switch ($article_type) {
+      case 4: $types = 'Press Releases';
+        break;
+      case 2: $types = 'News';
+        break;
+      case 2611: $types = 'In the Media';
+        break;
+    }
+  }
+  switch ($type) {
+    case 'speech': $types = 'Speeches';
+      break;
+    case 'event': $types = 'Events';
+      break;
+    case 'podcast': $types = 'Videos';
+      break;
+    case 'publication': $types = 'Publications';
+      break;
+    case 'project': $types = 'Projects';
+      break;
+    case 'gallery': $types = 'Photographs';
+      break;
+  }
+
+  $output = '<ul class="menu">';
+  foreach ($menu_array as $key => $value) {
+    $active_li = ' akdn-menu-active-trail';
+    $active_a = ' akdn-menu-active';
+
+    if ($types == $value) {
+      $output .= '<li class="leaf ' . $active_li . '"><a class="' . $types . $active_a . '" href="' . $langu . $key . '">' . t($value) . '</a></li>';
+    }
+    else {
+      $output .= '<li class="leaf "><a class="' . $types . '" href="' . $langu . $key . '">' . t($value) . '</a></li>';
+    }
+  }
+  $output .= '</ul>';
+  return $output;
+}

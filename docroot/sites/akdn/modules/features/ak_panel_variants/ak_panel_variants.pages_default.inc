@@ -2828,7 +2828,7 @@ if (isset($node->field_about_page)) {
   $pane->panel = 'right';
   $pane->type = 'block';
   $pane->subtype = 'menu-menu-see-also';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
@@ -2845,6 +2845,32 @@ if (isset($node->field_about_page)) {
   $pane->uuid = '762e4955-3e79-4e8e-a4bd-557ec96d19bf';
   $display->content['new-762e4955-3e79-4e8e-a4bd-557ec96d19bf'] = $pane;
   $display->panels['right'][1] = 'new-762e4955-3e79-4e8e-a4bd-557ec96d19bf';
+  $pane = new stdClass();
+  $pane->pid = 'new-bf3a9dc5-909f-41b2-ab15-e77b80c68210';
+  $pane->panel = 'right';
+  $pane->type = 'block';
+  $pane->subtype = 'akdn_custom-see_also_custom_block';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => 'SEE ALSO',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'pane-menu-menu-see-also pane-menu',
+  );
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = 'bf3a9dc5-909f-41b2-ab15-e77b80c68210';
+  $display->content['new-bf3a9dc5-909f-41b2-ab15-e77b80c68210'] = $pane;
+  $display->panels['right'][2] = 'new-bf3a9dc5-909f-41b2-ab15-e77b80c68210';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -3624,7 +3650,7 @@ if (isset($node->field_about_page)) {
   $pane->panel = 'right';
   $pane->type = 'block';
   $pane->subtype = 'menu-menu-see-also';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
@@ -3641,6 +3667,32 @@ if (isset($node->field_about_page)) {
   $pane->uuid = '0f7ac85a-443b-4581-ad9e-e8b9bf03dc9f';
   $display->content['new-0f7ac85a-443b-4581-ad9e-e8b9bf03dc9f'] = $pane;
   $display->panels['right'][4] = 'new-0f7ac85a-443b-4581-ad9e-e8b9bf03dc9f';
+  $pane = new stdClass();
+  $pane->pid = 'new-2f635a44-d436-4201-a780-e02d514de9be';
+  $pane->panel = 'right';
+  $pane->type = 'block';
+  $pane->subtype = 'akdn_custom-see_also_custom_block';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => 'SEE ALSO',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'pane-menu-menu-see-also pane-menu',
+  );
+  $pane->extras = array();
+  $pane->position = 5;
+  $pane->locks = array();
+  $pane->uuid = '2f635a44-d436-4201-a780-e02d514de9be';
+  $display->content['new-2f635a44-d436-4201-a780-e02d514de9be'] = $pane;
+  $display->panels['right'][5] = 'new-2f635a44-d436-4201-a780-e02d514de9be';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -4128,7 +4180,7 @@ if (isset($node->field_about_page)) {
   $pane->panel = 'right';
   $pane->type = 'block';
   $pane->subtype = 'menu-menu-see-also';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
@@ -4145,6 +4197,32 @@ if (isset($node->field_about_page)) {
   $pane->uuid = '762e4955-3e79-4e8e-a4bd-557ec96d19bf';
   $display->content['new-762e4955-3e79-4e8e-a4bd-557ec96d19bf'] = $pane;
   $display->panels['right'][1] = 'new-762e4955-3e79-4e8e-a4bd-557ec96d19bf';
+  $pane = new stdClass();
+  $pane->pid = 'new-f50a7336-e2a5-404d-abdc-425db4843fac';
+  $pane->panel = 'right';
+  $pane->type = 'block';
+  $pane->subtype = 'akdn_custom-see_also_custom_block';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => 'SEE ALSO',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'pane-menu-menu-see-also pane-menu',
+  );
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = 'f50a7336-e2a5-404d-abdc-425db4843fac';
+  $display->content['new-f50a7336-e2a5-404d-abdc-425db4843fac'] = $pane;
+  $display->panels['right'][2] = 'new-f50a7336-e2a5-404d-abdc-425db4843fac';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -5586,7 +5664,7 @@ return true;
   $pane->panel = 'right';
   $pane->type = 'block';
   $pane->subtype = 'menu-menu-see-also';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,
@@ -5603,6 +5681,32 @@ return true;
   $pane->uuid = 'ab061d57-ae2b-4913-87d9-5d11cc978619';
   $display->content['new-ab061d57-ae2b-4913-87d9-5d11cc978619'] = $pane;
   $display->panels['right'][1] = 'new-ab061d57-ae2b-4913-87d9-5d11cc978619';
+  $pane = new stdClass();
+  $pane->pid = 'new-4da3b5d4-4095-47ac-9700-88ff624f76c0';
+  $pane->panel = 'right';
+  $pane->type = 'block';
+  $pane->subtype = 'akdn_custom-see_also_custom_block';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => 'SEE ALSO',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'pane-menu-menu-see-also pane-menu',
+  );
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '4da3b5d4-4095-47ac-9700-88ff624f76c0';
+  $display->content['new-4da3b5d4-4095-47ac-9700-88ff624f76c0'] = $pane;
+  $display->panels['right'][2] = 'new-4da3b5d4-4095-47ac-9700-88ff624f76c0';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -6003,7 +6107,7 @@ return true;
   $pane->panel = 'right';
   $pane->type = 'block';
   $pane->subtype = 'menu-menu-see-also';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,
@@ -6020,6 +6124,32 @@ return true;
   $pane->uuid = 'ab061d57-ae2b-4913-87d9-5d11cc978619';
   $display->content['new-ab061d57-ae2b-4913-87d9-5d11cc978619'] = $pane;
   $display->panels['right'][1] = 'new-ab061d57-ae2b-4913-87d9-5d11cc978619';
+  $pane = new stdClass();
+  $pane->pid = 'new-b42a9a3f-e3d0-4a20-9e57-17c86049efb5';
+  $pane->panel = 'right';
+  $pane->type = 'block';
+  $pane->subtype = 'akdn_custom-see_also_custom_block';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => 'SEE ALSO',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'pane-menu-menu-see-also pane-menu',
+  );
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = 'b42a9a3f-e3d0-4a20-9e57-17c86049efb5';
+  $display->content['new-b42a9a3f-e3d0-4a20-9e57-17c86049efb5'] = $pane;
+  $display->panels['right'][2] = 'new-b42a9a3f-e3d0-4a20-9e57-17c86049efb5';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -7832,7 +7962,7 @@ $body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'en\
   $pane->panel = 'right';
   $pane->type = 'block';
   $pane->subtype = 'menu-menu-see-also';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,
@@ -7850,6 +7980,32 @@ $body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'en\
   $pane->uuid = 'ab061d57-ae2b-4913-87d9-5d11cc978619';
   $display->content['new-ab061d57-ae2b-4913-87d9-5d11cc978619'] = $pane;
   $display->panels['right'][1] = 'new-ab061d57-ae2b-4913-87d9-5d11cc978619';
+  $pane = new stdClass();
+  $pane->pid = 'new-ac65f1a4-1401-410b-9f23-7b57915112da';
+  $pane->panel = 'right';
+  $pane->type = 'block';
+  $pane->subtype = 'akdn_custom-see_also_custom_block';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => 'SEE ALSO',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'pane-menu-menu-see-also pane-menu',
+  );
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = 'ac65f1a4-1401-410b-9f23-7b57915112da';
+  $display->content['new-ac65f1a4-1401-410b-9f23-7b57915112da'] = $pane;
+  $display->panels['right'][2] = 'new-ac65f1a4-1401-410b-9f23-7b57915112da';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -8310,7 +8466,7 @@ $body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'en\
   $pane->panel = 'right';
   $pane->type = 'block';
   $pane->subtype = 'menu-menu-see-also';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,
@@ -8328,6 +8484,32 @@ $body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'en\
   $pane->uuid = 'ab061d57-ae2b-4913-87d9-5d11cc978619';
   $display->content['new-ab061d57-ae2b-4913-87d9-5d11cc978619'] = $pane;
   $display->panels['right'][1] = 'new-ab061d57-ae2b-4913-87d9-5d11cc978619';
+  $pane = new stdClass();
+  $pane->pid = 'new-454298b2-91bb-4c6a-88a8-d18786ab9455';
+  $pane->panel = 'right';
+  $pane->type = 'block';
+  $pane->subtype = 'akdn_custom-see_also_custom_block';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => 'SEE ALSO',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'pane-menu-menu-see-also pane-menu',
+  );
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '454298b2-91bb-4c6a-88a8-d18786ab9455';
+  $display->content['new-454298b2-91bb-4c6a-88a8-d18786ab9455'] = $pane;
+  $display->panels['right'][2] = 'new-454298b2-91bb-4c6a-88a8-d18786ab9455';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -13962,6 +14144,32 @@ print \'<h2 class="pane-title">\'.t(\'More projects by\').\'</h2>\';
   $pane->uuid = 'd0ff1784-99c6-46ad-86ef-1653d51faadd';
   $display->content['new-d0ff1784-99c6-46ad-86ef-1653d51faadd'] = $pane;
   $display->panels['right'][3] = 'new-d0ff1784-99c6-46ad-86ef-1653d51faadd';
+  $pane = new stdClass();
+  $pane->pid = 'new-64239a55-f4eb-4fca-95d2-9f3b7eff96f9';
+  $pane->panel = 'right';
+  $pane->type = 'block';
+  $pane->subtype = 'akdn_custom-see_also_custom_block';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => 'SEE ALSO',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'pane-menu-menu-see-also pane-menu',
+  );
+  $pane->extras = array();
+  $pane->position = 4;
+  $pane->locks = array();
+  $pane->uuid = '64239a55-f4eb-4fca-95d2-9f3b7eff96f9';
+  $display->content['new-64239a55-f4eb-4fca-95d2-9f3b7eff96f9'] = $pane;
+  $display->panels['right'][4] = 'new-64239a55-f4eb-4fca-95d2-9f3b7eff96f9';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
