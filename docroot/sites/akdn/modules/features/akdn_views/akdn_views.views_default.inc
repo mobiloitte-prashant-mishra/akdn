@@ -27784,6 +27784,20 @@ return $term->tid;';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: PHP */
+  $handler->display->display_options['footer']['php']['id'] = 'php';
+  $handler->display->display_options['footer']['php']['table'] = 'views';
+  $handler->display->display_options['footer']['php']['field'] = 'php';
+  $handler->display->display_options['footer']['php']['empty'] = TRUE;
+  $handler->display->display_options['footer']['php']['php_output'] = '<?php
+global $language;
+$lang = $language->language;
+if($lang != \'en\'){
+$langu = \'/\'.$lang.\'/\';}
+else{
+$langu = \'/\';}
+?><span class="presscenter-right-more-btn"><a href="<?php echo $langu;?>press-centre/speeches"><?php echo t("More Speeches"); ?></a></span>';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Image */
@@ -27920,6 +27934,21 @@ return $term->tid;';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: PHP */
+  $handler->display->display_options['footer']['php']['id'] = 'php';
+  $handler->display->display_options['footer']['php']['table'] = 'views';
+  $handler->display->display_options['footer']['php']['field'] = 'php';
+  $handler->display->display_options['footer']['php']['empty'] = TRUE;
+  $handler->display->display_options['footer']['php']['php_output'] = '<?php
+global $language;
+$lang = $language->language;
+if($lang != \'en\'){
+$langu = \'/\'.$lang.\'/\';}
+else{
+$langu = \'/\';}
+?>
+<span class="presscenter-right-more-btn"><a href="<?php echo $langu;?>press-centre/speeches"><?php echo t("More Speeches"); ?></a></span>';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_article_img']['id'] = 'field_article_img';
@@ -28115,8 +28144,24 @@ return $term->tid;';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: PHP */
+  $handler->display->display_options['footer']['php']['id'] = 'php';
+  $handler->display->display_options['footer']['php']['table'] = 'views';
+  $handler->display->display_options['footer']['php']['field'] = 'php';
+  $handler->display->display_options['footer']['php']['empty'] = TRUE;
+  $handler->display->display_options['footer']['php']['php_output'] = '<?php
+global $language;
+$lang = $language->language;
+if($lang != \'en\'){
+$langu = \'/\'.$lang.\'/\';}
+else{
+$langu = \'/\';}
+?>
+<span class="presscenter-right-more-btn"><a href="<?php echo $langu;?>press-centre/speeches"><?php echo t("More Speeches"); ?></a></span>';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Entity translation: Image: translated */
+
+  /* Field: Entity translation: Article Image: translated */
   $handler->display->display_options['fields']['field_article_img_et']['id'] = 'field_article_img_et';
   $handler->display->display_options['fields']['field_article_img_et']['table'] = 'field_data_field_article_img';
   $handler->display->display_options['fields']['field_article_img_et']['field'] = 'field_article_img_et';
@@ -28144,6 +28189,7 @@ return $term->tid;';
     ),
   );
   $handler->display->display_options['fields']['field_article_img_et']['delta_offset'] = '0';
+
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_article_img']['id'] = 'field_article_img';
   $handler->display->display_options['fields']['field_article_img']['table'] = 'field_data_field_article_img';
@@ -28302,7 +28348,13 @@ return $term->tid;';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
   $handler->display->display_options['footer']['area']['content'] = '<?php
-$out = \'<span class="presscenter-right-more-btn"><a href="/press-centre/speeches">\'.t("More Speeches").\'</a></span>\';
+global $language;
+$lang = $language->language;
+if($lang != \'en\'){
+$langu = \'/\'.$lang.\'/\';}
+else{
+$langu = \'/\';}
+$out = \'<span class="presscenter-right-more-btn"><a href="\'.$langu.\'press-centre/speeches">\'.t("More Speeches").\'</a></span>\';
 echo $out;
 ?>';
   $handler->display->display_options['footer']['area']['format'] = 'php_code';
@@ -28388,6 +28440,7 @@ echo $out;
       'fallback_style' => '',
     ),
   );
+
   /* Field: Entity translation: Image: translated */
   $handler->display->display_options['fields']['field_article_img_et']['id'] = 'field_article_img_et';
   $handler->display->display_options['fields']['field_article_img_et']['table'] = 'field_data_field_article_img';
@@ -28568,7 +28621,14 @@ print $content;
   $handler->display->display_options['footer']['php']['table'] = 'views';
   $handler->display->display_options['footer']['php']['field'] = 'php';
   $handler->display->display_options['footer']['php']['empty'] = TRUE;
-  $handler->display->display_options['footer']['php']['php_output'] = '<span class="presscenter-right-more-btn"><a href="/press-centre/news"><?php echo t("More news stories"); ?></a></span>
+  $handler->display->display_options['footer']['php']['php_output'] = '<?php
+global $language;
+$lang = $language->language;
+if($lang != \'en\'){
+$langu = \'/\'.$lang.\'/\';}
+else{
+$langu = \'/\';}
+?><span class="presscenter-right-more-btn"><a href="<?php echo $langu;?>press-centre/news"><?php echo t("More news stories"); ?></a></span>
 ';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: Text area */
@@ -28602,7 +28662,7 @@ print $content;
   $handler->display->display_options['fields']['field_article_img']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_article_img']['multi_type'] = 'ul';
 
-  /* Field: Entity translation: Image: translated */
+  /* Field: Entity translation: Article Image: translated */
   $handler->display->display_options['fields']['field_article_img_et']['id'] = 'field_article_img_et';
   $handler->display->display_options['fields']['field_article_img_et']['table'] = 'field_data_field_article_img';
   $handler->display->display_options['fields']['field_article_img_et']['field'] = 'field_article_img_et';
@@ -28716,6 +28776,7 @@ print $content;
   $handler->display->display_options['filters']['language']['relationship'] = 'entity_translations';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+    'en' => 'en',
   );
   $handler->display->display_options['block_description'] = 'Recent News';
 
@@ -28753,7 +28814,14 @@ print $content;
   $handler->display->display_options['footer']['php']['table'] = 'views';
   $handler->display->display_options['footer']['php']['field'] = 'php';
   $handler->display->display_options['footer']['php']['empty'] = TRUE;
-  $handler->display->display_options['footer']['php']['php_output'] = '<span class="presscenter-right-more-btn"><a href="/press-centre/videos"><?php echo t("More Videos"); ?></a></span>
+  $handler->display->display_options['footer']['php']['php_output'] = '<?php
+global $language;
+$lang = $language->language;
+if($lang != \'en\'){
+$langu = \'/\'.$lang.\'/\';}
+else{
+$langu = \'/\';}
+?><span class="presscenter-right-more-btn"><a href="<?php echo $langu;?>press-centre/videos"><?php echo t("More Videos"); ?></a></span>
 ';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: Text area */
@@ -28885,6 +28953,7 @@ print $content;
   $handler->display->display_options['filters']['language']['relationship'] = 'entity_translations';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+    'en' => 'en',
   );
   $handler->display->display_options['block_description'] = 'Recent Video';
 
@@ -28923,7 +28992,15 @@ print $content;
   $handler->display->display_options['footer']['php']['table'] = 'views';
   $handler->display->display_options['footer']['php']['field'] = 'php';
   $handler->display->display_options['footer']['php']['empty'] = TRUE;
-  $handler->display->display_options['footer']['php']['php_output'] = '<span class="presscenter-right-more-btn"><a href="/press-centre/events"><?php echo t("More Events");?></a></span>
+  $handler->display->display_options['footer']['php']['php_output'] = '<?php
+global $language;
+$lang = $language->language;
+if($lang != \'en\'){
+$langu = \'/\'.$lang.\'/\';}
+else{
+$langu = \'/\';}
+?>
+<span class="presscenter-right-more-btn"><a href="<?php echo $langu;?>press-centre/events"><?php echo t("More Events");?></a></span>
 ';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: Text area */
@@ -29076,6 +29153,7 @@ print $content;
   $handler->display->display_options['filters']['language']['relationship'] = 'entity_translations';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+    'en' => 'en',
   );
   $handler->display->display_options['block_description'] = 'Recent Event';
 
@@ -29107,6 +29185,19 @@ $text = t(\'Speeches\');
 $content = \'<h2 class="pane-title">\'.$akdn_text.\'</h2><div class="view-header">\'.$text.\'</div>\';
 print $content;
 ?>';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: PHP */
+  $handler->display->display_options['footer']['php']['id'] = 'php';
+  $handler->display->display_options['footer']['php']['table'] = 'views';
+  $handler->display->display_options['footer']['php']['field'] = 'php';
+  $handler->display->display_options['footer']['php']['empty'] = TRUE;
+  $handler->display->display_options['footer']['php']['php_output'] = '<?php
+global $language;
+$lang = $language->language;
+if($lang != \'en\'){
+$langu = \'/\'.$lang.\'/\';}
+else{
+$langu = \'/\';}?><span class="presscenter-right-more-btn"><a href="<?php echo $langu;?>press-centre/speeches"><?php echo t("More Speeches"); ?></a></span>';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
@@ -29242,6 +29333,7 @@ print $content;
   $handler->display->display_options['filters']['language']['relationship'] = 'entity_translations';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+    'en' => 'en',
   );
   $handler->display->display_options['block_description'] = 'Recent Speech';
 
@@ -29280,9 +29372,21 @@ print $content;
   $handler->display->display_options['footer']['php']['table'] = 'views';
   $handler->display->display_options['footer']['php']['field'] = 'php';
   $handler->display->display_options['footer']['php']['empty'] = TRUE;
-  $handler->display->display_options['footer']['php']['php_output'] = '<span class="presscenter-right-more-btn"><a href="/press-centre/galleries"><?php echo t("More Photographs"); ?></a></span>
+  $handler->display->display_options['footer']['php']['php_output'] = '<?php
+global $language;
+$lang = $language->language;
+if($lang != \'en\'){
+$langu = \'/\'.$lang.\'/\';}
+else{
+$langu = \'/\';}
+?><span class="presscenter-right-more-btn"><a href="<?php echo $langu;?>press-centre/galleries"><?php echo t("More Photographs"); ?></a></span>
 ';
   $handler->display->display_options['defaults']['empty'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Entity translation: translations */
+  $handler->display->display_options['relationships']['entity_translations']['id'] = 'entity_translations';
+  $handler->display->display_options['relationships']['entity_translations']['table'] = 'node';
+  $handler->display->display_options['relationships']['entity_translations']['field'] = 'entity_translations';
   $handler->display->display_options['defaults']['fields'] = FALSE;
 
   /* Relationship: Content: Entity translation: translations */
@@ -29410,6 +29514,7 @@ print $content;
   $handler->display->display_options['filters']['language']['relationship'] = 'entity_translations';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+    'en' => 'en',
   );
   $handler->display->display_options['block_description'] = 'Recent Photograph';
   $export['press_center'] = $view;
@@ -37472,6 +37577,16 @@ print $content;
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Content: Sticky */
+  $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['table'] = 'node';
+  $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -37496,7 +37611,12 @@ print $content;
   $handler->display->display_options['filters']['language']['relationship'] = 'entity_translations';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+    'en' => 'en',
   );
+  $handler->display->display_options['filters']['language']['expose']['operator_id'] = 'language_op';
+  $handler->display->display_options['filters']['language']['expose']['label'] = 'Language';
+  $handler->display->display_options['filters']['language']['expose']['operator'] = 'language_op';
+  $handler->display->display_options['filters']['language']['expose']['identifier'] = 'language';
   $export['recent_projects'] = $view;
 
   $view = new view();
