@@ -2177,12 +2177,12 @@ function what_we_do_news_and_resources() {
           $image = $node->field_article_img[$lang];
         }
         else {
-          $image = $node->field_article_img['und'];
-        }
-        if (empty($image)) {
           $image = $node->field_article_img['en'];
         }
 
+        if (empty($image)) {
+          $image = $node->field_article_img['und'];
+        }
         /* displaying default image if image not uploaded for article */
         if (empty($image)) {
           $info = field_info_instance('node', 'field_article_img', 'article');
@@ -2204,7 +2204,6 @@ function what_we_do_news_and_resources() {
         if (empty($image)) {
           $image = $node->field_podcast_image['und'];
         }
-
         if (empty($image)) {
           $info = field_info_instance('node', 'field_podcast_image', 'podcast');
           $file = (array) file_load($info['settings']['default_image']);
@@ -2226,7 +2225,6 @@ function what_we_do_news_and_resources() {
         if (empty($image)) {
           $image = $node->field_gallery_images['und'];
         }
-
         if (empty($image)) {
           $info = field_info_instance('node', 'field_gallery_images', 'gallery');
           $file = (array) file_load($info['settings']['default_image']);
