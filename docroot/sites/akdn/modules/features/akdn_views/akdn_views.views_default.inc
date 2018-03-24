@@ -1123,8 +1123,8 @@ print t(\'THE AWARD AT A GLANCE\');
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<p><span>T</span><span>HE AWARD AT A GLANCE</span></p>';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['header']['area']['content'] = '<?php echo t("<p><span>T</span><span>HE AWARD AT A GLANCE</span></p>"); ?>';
+  $handler->display->display_options['header']['area']['format'] = 'php_code';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: At Glance Links */
   $handler->display->display_options['fields']['field_facts_url_links']['id'] = 'field_facts_url_links';
@@ -22435,6 +22435,14 @@ print 9576;
   $handler->display->display_options['relationships']['field_about_page_nid']['field'] = 'field_about_page_nid';
   $handler->display->display_options['relationships']['field_about_page_nid']['delta'] = '-1';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Entity translation: Body: translated */
+  $handler->display->display_options['fields']['body_et']['id'] = 'body_et';
+  $handler->display->display_options['fields']['body_et']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body_et']['field'] = 'body_et';
+  $handler->display->display_options['fields']['body_et']['relationship'] = 'field_about_page_nid';
+  $handler->display->display_options['fields']['body_et']['label'] = '';
+  $handler->display->display_options['fields']['body_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['body_et']['element_label_colon'] = FALSE;
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -29795,13 +29803,6 @@ $langu = \'/\';}
   $handler->display->display_options['relationships']['entity_translations']['table'] = 'node';
   $handler->display->display_options['relationships']['entity_translations']['field'] = 'entity_translations';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-
-  /* Relationship: Content: Entity translation: translations */
-  $handler->display->display_options['relationships']['entity_translations']['id'] = 'entity_translations';
-  $handler->display->display_options['relationships']['entity_translations']['table'] = 'node';
-  $handler->display->display_options['relationships']['entity_translations']['field'] = 'entity_translations';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-
   /* Field: Entity translation: Images: translated */
   $handler->display->display_options['fields']['field_gallery_images_et']['id'] = 'field_gallery_images_et';
   $handler->display->display_options['fields']['field_gallery_images_et']['table'] = 'field_data_field_gallery_images';

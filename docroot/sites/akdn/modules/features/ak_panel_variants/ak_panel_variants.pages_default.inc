@@ -76,6 +76,7 @@ function ak_panel_variants_default_page_manager_handlers() {
             'paths' => 'agencies/aga-khan-award-architecture-0
 architecture
 node/22106
+node/9576
 our-agencies/aga-khan-music-initiative
 akmi',
           ),
@@ -4672,7 +4673,7 @@ return true;
   $pane->panel = 'right';
   $pane->type = 'block';
   $pane->subtype = 'akdn_custom-right_panel_press_center_block';
-  $pane->shown = FALSE;
+  $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,
@@ -14124,7 +14125,7 @@ print \'<h2 class="pane-title">\'.t(\'More projects by\').\'</h2>\';
   $pane->panel = 'right';
   $pane->type = 'block';
   $pane->subtype = 'menu-menu-see-also';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,
