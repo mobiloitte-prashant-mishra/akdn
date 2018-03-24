@@ -950,29 +950,6 @@ print $output;
   $handler->display->display_options['filters']['field_more_blocks_value']['value'] = array(
     1 => '1',
   );
-  $translatables['agencies'] = array(
-    t('Master'),
-    t('Agencies'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('field_about_page'),
-    t('[title_field] ([field_agency_acronym])'),
-    t('| More'),
-    t('[body] <span class="more-link">[view_node]</span>'),
-    t('Page'),
-    t('Block'),
-    t('[field_agency_acronym] - [title_field]'),
-    t('Footer Block'),
-    t('[field_agency_acronym]'),
-    t('Related Agencies'),
-    t('Related agencies'),
-    t('All'),
-    t('Geography'),
-  );
   $export['agencies'] = $view;
 
   $view = new view();
