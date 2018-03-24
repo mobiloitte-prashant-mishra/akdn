@@ -1813,8 +1813,8 @@ function fact_sheet_top_links_block() {
       $output .= t('<p><span>' . substr($name, 0, 1) . '</span><span>' . substr($name, 1) . ' AT A GLANCE</span></p><ul>');
       if (!empty($node->field_fact_sheet_upload)) {
         $field_fact_sheet_upload = $node->field_fact_sheet_upload;
-        $file_id = isset($node->field_fact_sheet_upload[$lang]) ? $node->field_fact_sheet_upload[$lang][0]['fid'] : $node->field_fact_sheet_upload['und'][0]['fid'];
-        $url = l('FACT SHEET', 'factsheet/' . str_replace(' ', '-', $name) . '/' . $file_id);
+        $file_id = $node->field_fact_sheet_upload[key($field_fact_sheet_upload)][0]['fid'];
+        $url = l(t('FACT SHEET'), 'factsheet/' . str_replace(' ', '-', $name) . '/' . $file_id);
         $output .= '<li>' . $url . '</li>';
       }
       if ($node->field_facts_url_links[$lang]) {
