@@ -11908,6 +11908,7 @@ print $explode[1];
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Content: Title */
@@ -11964,7 +11965,6 @@ print $explode[1];
   $handler->display->display_options['style_options']['views_slideshow_cycle']['timeout'] = '5000';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['speed'] = '700';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['delay'] = '0';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['start_paused'] = 0;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['remember_slide_days'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['items_per_slide'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['wait_for_image_load_timeout'] = '3000';
@@ -12062,10 +12062,10 @@ print $explode[1];
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_hub_page_image]</div>
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_hub_page_image_et]</div>
         <div class="slide-text">
-        <div class="caption">[field_image_caption]</div>
-        <div class="caption image-copytight">[field_image_copytight]</div>
+        <div class="caption">[field_image_caption_et]</div>
+        <div class="caption image-copytight">[field_image_copytight_et]</div>
         </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Field: Colorbox: Colorbox trigger */
@@ -12294,31 +12294,6 @@ print $explode[1];
   $handler->display->display_options['filters']['status_extra']['id'] = 'status_extra';
   $handler->display->display_options['filters']['status_extra']['table'] = 'node';
   $handler->display->display_options['filters']['status_extra']['field'] = 'status_extra';
-  $translatables['basic_pages_view'] = array(
-    t('Master'),
-    t('Basic Pages Flex slider'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Basic page Slideshow'),
-    t('image from field_hub_page_image'),
-    t('<div class="slide">[field_hub_page_image]</div>
-        <div class="slide-text">
-        <div class="caption">[field_image_caption]</div>
-        <div class="caption image-copytight">[field_image_copytight]</div>
-        </div>'),
-    t('All'),
-    t('Baisc Page summary'),
-    t('[body-summary]'),
-    t('Custom Content Header'),
-    t('[field_short_title]'),
-    t('<div class = "basic-page-custom-logo-title">[title]</div>'),
-    t('Baisc Page Accordian summary'),
-    t('Translations'),
-  );
   $export['basic_pages_view'] = $view;
 
   $view = new view();
