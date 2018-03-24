@@ -1,0 +1,26 @@
+--- entity_translation.admin.inc	2018-03-08 16:17:59.834572000 +0530
++++ entity_translation.admin.inc	2018-03-08 16:21:50.394585442 +0530
+@@ -627,7 +627,11 @@
+       }
+     }
+     else {
+-      $entities = entity_load($entity_type, array_keys($partial_entities));
++      $entities = array();
++      foreach ($partial_entities as $key => $value) {
++        $entyty = entity_revision_load($entity_type, $key);
++        $entities[$key] = $entyty;
++      }
+     }
+ 
+     foreach ($entities as $entity) {
+@@ -691,6 +695,10 @@
+   }
+ 
+   $context['finished'] = $context['sandbox']['progress'] / $context['sandbox']['max'];
++  // If no progress was made then set as finished to avoid infinite loop.
++  if ($offset == $context['sandbox']['progress']) {
++    $context['finished'] = 1;
++  }
+ }
+ 
+ /**
