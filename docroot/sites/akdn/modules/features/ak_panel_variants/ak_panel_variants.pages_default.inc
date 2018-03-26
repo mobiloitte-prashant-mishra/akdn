@@ -2854,7 +2854,7 @@ if (isset($node->field_about_page)) {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_title' => 1,
+    'override_title' => 0,
     'override_title_text' => 'SEE ALSO',
     'override_title_heading' => 'h2',
   );
@@ -3676,7 +3676,7 @@ if (isset($node->field_about_page)) {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_title' => 1,
+    'override_title' => 0,
     'override_title_text' => 'SEE ALSO',
     'override_title_heading' => 'h2',
   );
@@ -4206,7 +4206,7 @@ if (isset($node->field_about_page)) {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_title' => 1,
+    'override_title' => 0,
     'override_title_text' => 'SEE ALSO',
     'override_title_heading' => 'h2',
   );
@@ -5690,7 +5690,7 @@ return true;
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_title' => 1,
+    'override_title' => 0,
     'override_title_text' => 'SEE ALSO',
     'override_title_heading' => 'h2',
   );
@@ -6133,7 +6133,7 @@ return true;
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_title' => 1,
+    'override_title' => 0,
     'override_title_text' => 'SEE ALSO',
     'override_title_heading' => 'h2',
   );
@@ -7989,7 +7989,7 @@ $body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'en\
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_title' => 1,
+    'override_title' => 0,
     'override_title_text' => 'SEE ALSO',
     'override_title_heading' => 'h2',
   );
@@ -8493,7 +8493,7 @@ $body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'en\
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_title' => 1,
+    'override_title' => 0,
     'override_title_text' => 'SEE ALSO',
     'override_title_heading' => 'h2',
   );
@@ -14153,7 +14153,7 @@ print \'<h2 class="pane-title">\'.t(\'More projects by\').\'</h2>\';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_title' => 1,
+    'override_title' => 0,
     'override_title_text' => 'SEE ALSO',
     'override_title_heading' => 'h2',
   );
