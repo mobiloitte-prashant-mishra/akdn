@@ -40,9 +40,10 @@ if (isset($row->{'_entity_properties'}['image_public_uri'])) {
     $image_uri_path = $image_lang_uris[key($image_lang_uris)];
   }
 
-  if (file_exists($image_uri_path)) {
     $image_uri = $image_uri_path;
-  }
+//  if (file_exists($image_path)) {
+//    $image_uri = $image_path;
+//  }
 }
 
 // Apply image style article_listing_thumbnail for the image
