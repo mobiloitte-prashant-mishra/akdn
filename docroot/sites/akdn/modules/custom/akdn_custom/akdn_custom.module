@@ -411,9 +411,9 @@ function akdn_custom_media_token_to_markup_alter(&$element, $tag, $settings) {
 /* node form after bulid for hide text format selecton on summary */
 
 function akdn_custom_node_form_after_build($form) {
-  $lang = $form['body']['#language'];
-  $form['body'][$lang][0]['summary']['format']['#prefix'] = '<div style="display:none;">';
-  $form['body'][$lang][0]['summary']['format']['#suffix'] = '</div>';
+//  $lang = $form['body']['#language'];
+//  $form['body'][$lang][0]['summary']['format']['#prefix'] = '<div style="display:none;">';
+//  $form['body'][$lang][0]['summary']['format']['#suffix'] = '</div>';
   return $form;
 }
 
@@ -423,7 +423,15 @@ function akdn_custom_node_form_after_build($form) {
 
 function akdn_custom_node_form_submit($form, &$form_state) {
   $lang = $form['body']['#language'];
-  $summary = $form_state['values']['body'][$lang][0]['summary']['value'];
+  if (arg(0) == 'node' && is_numeric(arg(1)) && arg(2) == 'edit' && arg(3) != 'add') {
+    $summary = $form_state['values']['body'][$lang][0]['summary']['value'];
+  }
+  if (arg(0) == 'node' && arg(3) == 'add') {
+    $summary = $form_state['values']['body'][$lang][0]['summary'];
+  }
+  if (arg(0) == 'node' && arg(1) == 'add') {
+    $summary = $form_state['values']['body'][$lang][0]['summary']['value'];
+  }
   $form_state['values']['body'][$lang][0]['summary'] = $summary;
 }
 
@@ -643,6 +651,14 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
     $form['#validate'][] = 'akdn_custom_form_validation';
   }
 
+//  if (isset($form['type']) && isset($form['type']['#value']) && $form['type']['#value'] . '_node_form' == $form_id && arg(2) == 'edit' && arg(3) != 'add') {
+//    $form['body'][$lang][0]['summary']['#type'] = 'text_format';
+//    $form['body'][$lang][0]['#format'] = 'full_html';
+//    $script = 'jQuery(document).ready(function(){ jQuery("div[class$=\'-0-value\'] .link-edit-summary").click();
+//        jQuery("div[class|=\'form-item-body-\']").show();
+//      });';
+//    drupal_add_js($script, 'inline');
+//  }
   // Check that we're on a node edit form.
   if (isset($form['type']) && isset($form['type']['#value']) && $form['type']['#value'] . '_node_form' == $form_id) {
 
@@ -651,7 +667,7 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
       $lang = $form['body']['#language'];
       // enable rich text editor on summary
       $form['body'][$lang][0]['summary']['#type'] = 'text_format';
-      $form['body'][$lang][0]['summary']['#format'] = NULL;
+      $form['body'][$lang][0]['summary']['#format'] = 'full_html';
       $form['#after_build'][] = 'akdn_custom_node_form_after_build';
       $actions = $form['actions']['submit']['#submit'];
       array_unshift($actions, "akdn_custom_node_form_submit");
@@ -665,7 +681,6 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
         jQuery("div[class|=\'form-item-body-\']").hide();
       });';
       drupal_add_js($script, 'inline');
-
       // Check if this is a new node and if it has the entity translation form
       if (empty($form['nid']['#value']) && isset($form['language']['#options'])) {
         $form['language']['#default_value'] = 'en';
@@ -838,13 +853,17 @@ function akdn_custom_block_info() {
       'info' => t('Custom Language Switcher'),
       'cache' => DRUPAL_NO_CACHE,
     ),
-    'page_lang_switcher' => array(
+ 'page_lang_switcher' => array(
       'info' => t('Custom Onpage Language Switcher'),
       'cache' => DRUPAL_NO_CACHE,
     ),
     'where_we_work_related_info' => array(
       'info' => t('Custom Where We Work Related Info'),
-      'cache' => DRUPAL_NO_CACHE,
+       'cache' => DRUPAL_NO_CACHE,
+ ),
+ 'see_also_custom_block' => array(
+      'info' => t('Custom See ALso Block'),
+ 'cache' => DRUPAL_NO_CACHE,
     ),
     'akaa_resources' => array(
       'info' => t('AKAA Resources Links'),
@@ -984,6 +1003,10 @@ function akdn_custom_block_view($delta = '') {
         $block['content'] = $links;
         $block['subject'] = t('Languages');
       }
+      break;
+    case 'see_also_custom_block':
+      $block['content'] = _akdn_custom_see_also_menu();
+      $block['subject'] = t('SEE ALSO');
       break;
     case 'akaa_resources':
       $list = akaa_get_resources_links();
@@ -1402,6 +1425,9 @@ function get_areas_of_activities_helper($id) {
  * Press Center Right Panel Block
  */
 function akdn_right_panel_press_center_block() {
+  global $language;
+  $lang = $language->language;
+
   $arg = arg(1);
   $node = array();
   $array = array(
@@ -1437,7 +1463,7 @@ function akdn_right_panel_press_center_block() {
     $nid = nat_get_nids($tid);
     $node_load = node_load(key($nid));
     $field_agency_acronym = $node_load->field_agency_acronym;
-    $name = $node_load->field_agency_acronym[key($field_agency_acronym)][0]['value'];
+    $name = $node_load->field_agency_acronym[$lang][0]['value'];
   }
   $output = '';
   if (!empty($tid)) {
@@ -1488,7 +1514,7 @@ function akdn_right_panel_press_center_block() {
     if (!empty($rows)) {
       $output .= '<div class = "press-center-right-wrapper">';
       $output .= '<div class = "press-center-title">';
-      $output .= '<span>' . t('Press Centre') . ': ' . $name . '</span></div>';
+      $output .= '<span>' . t('Press Centre') . ': ' . t($name) . '</span></div>';
       $output .= '<ul>';
       $output .= $rows;
       $output .= '</ul></div>';
@@ -5476,4 +5502,73 @@ function _nodes_related_term_id_retrieve($tid, $pager, $limit, $order) {
     return services_error(t('No nodes were found with tid @tid', array('@tid' => $tid)), 404);
   }
   return $nodes;
+}
+
+/**
+ * See Also Menu RHS Panel Block
+ */
+function _akdn_custom_see_also_menu() {
+  global $language;
+  global $base_url;
+  $lang = $language->language;
+  if ($lang != 'en') {
+    $langu = '/' . $lang . '/';
+  }
+  else {
+    $langu = '/';
+  }
+
+  $arg = arg(1);
+  $node = node_load(arg(1));
+  $type = $node->type;
+  $article_type = $node->field_article_cat['und'][0]['tid'];
+
+  $menus = _menu_build_tree('menu-see-also');
+  $see_also = $menus['tree'];
+
+  $menu_array = array();
+  foreach ($see_also as $k => $v) {
+    $menu_array[$v['link']['router_path']] = $v['link']['link_title'];
+  }
+  asort($menu_array);
+
+  if ($type == 'article') {
+    switch ($article_type) {
+      case 4: $types = 'Press Releases';
+        break;
+      case 2: $types = 'News';
+        break;
+      case 2611: $types = 'In the Media';
+        break;
+    }
+  }
+  switch ($type) {
+    case 'speech': $types = 'Speeches';
+      break;
+    case 'event': $types = 'Events';
+      break;
+    case 'podcast': $types = 'Videos';
+      break;
+    case 'publication': $types = 'Publications';
+      break;
+    case 'project': $types = 'Projects';
+      break;
+    case 'gallery': $types = 'Photographs';
+      break;
+  }
+
+  $output = '<ul class="menu">';
+  foreach ($menu_array as $key => $value) {
+    $active_li = ' akdn-menu-active-trail';
+    $active_a = ' akdn-menu-active';
+
+    if ($types == $value) {
+      $output .= '<li class="leaf ' . $active_li . '"><a class="' . $types . $active_a . '" href="' . $langu . $key . '">' . t($value) . '</a></li>';
+    }
+    else {
+      $output .= '<li class="leaf "><a class="' . $types . '" href="' . $langu . $key . '">' . t($value) . '</a></li>';
+    }
+  }
+  $output .= '</ul>';
+  return $output;
 }
