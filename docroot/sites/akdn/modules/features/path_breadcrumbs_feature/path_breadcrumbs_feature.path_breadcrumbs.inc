@@ -25,7 +25,7 @@ function path_breadcrumbs_feature_path_breadcrumbs_settings_info() {
       1 => '<none>',
     ),
     'home' => 1,
-    'translatable' => 0,
+    'translatable' => 1,
     'arguments' => array(
       'node' => array(
         'position' => 1,
@@ -64,7 +64,7 @@ function path_breadcrumbs_feature_path_breadcrumbs_settings_info() {
       1 => '<none>',
     ),
     'home' => 1,
-    'translatable' => 0,
+    'translatable' => 1,
     'arguments' => array(
       'node' => array(
         'position' => 1,
@@ -122,7 +122,7 @@ architecture',
       2 => '<none>',
     ),
     'home' => 1,
-    'translatable' => 0,
+    'translatable' => 1,
     'arguments' => array(
       'node' => array(
         'position' => 1,
@@ -218,7 +218,7 @@ node/26851/*',
       2 => '<none>',
     ),
     'home' => 1,
-    'translatable' => 0,
+    'translatable' => 1,
     'arguments' => array(),
     'access' => array(
       'plugins' => array(
@@ -1034,7 +1034,7 @@ node/26851/*',
       0 => 'awards-received-agencies-akdn',
     ),
     'home' => 1,
-    'translatable' => 0,
+    'translatable' => 1,
     'arguments' => array(),
     'access' => array(
       'plugins' => array(
