@@ -24,9 +24,10 @@
 $image_uri = $image_uri = "public://media/missingakdn.jpg";
 if (isset($row->{'_entity_properties'}['image_public_uri'])) {
   $image_path = $row->{'_entity_properties'}['image_public_uri'];
-  if (file_exists($image_path)) {
-    $image_uri = $image_path;
-  }
+  $image_uri = $image_path;
+//  if (file_exists($image_path)) {
+//    $image_uri = $image_path;
+//  }
 }
 
 // Apply image style article_listing_thumbnail for the image
