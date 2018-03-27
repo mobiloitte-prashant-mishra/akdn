@@ -1425,6 +1425,9 @@ function get_areas_of_activities_helper($id) {
  * Press Center Right Panel Block
  */
 function akdn_right_panel_press_center_block() {
+  global $language;
+  $lang = $language->language;
+
   $arg = arg(1);
   $node = array();
   $array = array(
