@@ -1460,7 +1460,7 @@ function akdn_right_panel_press_center_block() {
     $nid = nat_get_nids($tid);
     $node_load = node_load(key($nid));
     $field_agency_acronym = $node_load->field_agency_acronym;
-    $name = $node_load->field_agency_acronym[key($field_agency_acronym)][0]['value'];
+    $name = $node_load->field_agency_acronym[$lang][0]['value'];
   }
   $output = '';
   if (!empty($tid)) {
@@ -1511,7 +1511,7 @@ function akdn_right_panel_press_center_block() {
     if (!empty($rows)) {
       $output .= '<div class = "press-center-right-wrapper">';
       $output .= '<div class = "press-center-title">';
-      $output .= '<span>' . t('Press Centre') . ': ' . $name . '</span></div>';
+      $output .= '<span>' . t('Press Centre') . ': ' . t($name) . '</span></div>';
       $output .= '<ul>';
       $output .= $rows;
       $output .= '</ul></div>';
