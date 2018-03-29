@@ -24,7 +24,7 @@
 $image_uri = "public://media/missingakdn.jpg";
 if (isset($row->{'_entity_properties'}['image_public_uri'])) {
   $image_path = $row->{'_entity_properties'}['image_public_uri'];
-<<<<<<< HEAD
+
   $images_uris = explode(',', $image_path);
   $image_lang_uris = array();
   foreach ($images_uris as $img_value) {
@@ -37,19 +37,13 @@ if (isset($row->{'_entity_properties'}['image_public_uri'])) {
   if (array_key_exists($langu, $image_lang_uris)) {
     $image_uri_path = $image_lang_uris[$langu];
   }
-  if (empty($image_uri)) {
+  else if (empty($image_uri_path)) {
     $image_uri_path = $image_lang_uris[key($image_lang_uris)];
   }
 
   if (file_exists($image_uri_path)) {
     $image_uri = $image_uri_path;
   }
-=======
-  $image_uri = $image_path;
-//  if (file_exists($image_path)) {
-//    $image_uri = $image_path;
-//  }
->>>>>>> AKDN-1604-listing-page-slider
 }
 
 // Apply image style article_listing_thumbnail for the image

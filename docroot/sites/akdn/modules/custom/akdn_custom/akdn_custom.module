@@ -861,6 +861,10 @@ function akdn_custom_block_info() {
       'info' => t('Custom Where We Work Related Info'),
       'cache' => DRUPAL_NO_CACHE,
     ),
+    'see_also_custom_block' => array(
+      'info' => t('Custom See ALso Block'),
+      'cache' => DRUPAL_NO_CACHE,
+    ),
  'see_also_custom_block' => array(
 'info' => t('Custom See ALso Block'),
       'cache' => DRUPAL_NO_CACHE,
@@ -1244,9 +1248,7 @@ function akdn_all_areas_of_activity() {
       $output_header .= '<h2 class = "pane-title">' . t("All Areas of Activities") . '</h2>';
       $output_header .= '<div class = "all-activities-sidebar">';
 
-
       foreach ($get_activities as $values) {
-
         $node_load = node_load($values->nid);
         $translations = $node_load->translations->data;
 
@@ -1425,6 +1427,9 @@ function get_areas_of_activities_helper($id) {
  * Press Center Right Panel Block
  */
 function akdn_right_panel_press_center_block() {
+  global $language;
+  $lang = $language->language;
+
   $arg = arg(1);
   $node = array();
   $array = array(
@@ -2329,10 +2334,6 @@ function what_we_do_news_and_resources() {
         if (empty($image)) {
           $image = $node->field_article_img['und'];
         }
-
-        if (empty($image)) {
-          $image = $node->field_article_img['und'];
-        }
         /* displaying default image if image not uploaded for article */
         if (empty($image)) {
           $info = field_info_instance('node', 'field_article_img', 'article');
@@ -2496,6 +2497,9 @@ function what_we_do_news_and_resources() {
           $short_title = $node->field_short_title[$lang][0]['value'];
         }
         else {
+          $short_title = $node->field_short_title['en'][0]['value'];
+        }
+        if (empty($short_title)) {
           $short_title = $node->field_short_title['und'][0]['value'];
         }
         $output .= '<div class= "title">' . l($short_title, $source, $attribute) . '</div>';
@@ -2506,6 +2510,9 @@ function what_we_do_news_and_resources() {
           $short_title = $node->field_short_title[$lang][0]['value'];
         }
         else {
+          $short_title = $node->field_short_title['en'][0]['value'];
+        }
+        if (empty($short_title)) {
           $short_title = $node->field_short_title['und'][0]['value'];
         }
         $output .= '<div class= "title">' . l($short_title, 'node/' . $node->nid) . '</div>';
@@ -2516,6 +2523,9 @@ function what_we_do_news_and_resources() {
           $short_title = $node->field_short_title[$lang][0]['value'];
         }
         else {
+          $short_title = $node->field_short_title['en'][0]['value'];
+        }
+        if (empty($short_title)) {
           $short_title = $node->field_short_title['und'][0]['value'];
         }
         $output .= '<div class= "title">' . l($short_title, 'node/' . $node->nid) . '</div>';
@@ -3062,8 +3072,15 @@ function _akdn_custom_lang_related_info_links() {
   if (arg(0) == 'node' && is_numeric(arg(1))) {
     $node = node_load(arg(1));
     $field = $node->field_block_add_links[$lang];
+    $specific_title = $node->field_specify_a_block_title[$lang][0]['value'];
     if (!empty($field)) {
-      $output = '<div class="view-header">' . t("Related information") . '</div><div class="view-content">';
+      if (!empty($specific_title)) {
+        $rel_title = $specific_title;
+      }
+      else {
+        $rel_title = t("Related information");
+      }
+      $output = '<div class="view-header">' . $rel_title . '</div><div class="view-content">';
       foreach ($field as $key => $value) {
         if (strpos($value['url'], 'www')) {
           $url = $value['url'];
@@ -4456,6 +4473,7 @@ function akdn_custom_preprocess_views_view_field__focus_areas__what_we_do_summar
   if (empty($body)) {
     $body = $row->_field_data['node_field_data_field_about_page_nid']['entity']->body['en'][0]['value'];
   }
+
   if (!empty($body)) {
     $explode = explode('<!--break-->', $body);
     $output = '';
@@ -5493,6 +5511,7 @@ function _nodes_related_term_id_retrieve($tid, $pager, $limit, $order) {
   }
   return $nodes;
 }
+
 
 /**
  * See Also Menu RHS Panel Block
