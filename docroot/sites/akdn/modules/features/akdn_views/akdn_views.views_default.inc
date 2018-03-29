@@ -29514,7 +29514,6 @@ print $content;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['timeout'] = '5000';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['speed'] = '700';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['delay'] = '0';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['start_paused'] = 0;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['remember_slide_days'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['items_per_slide'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['wait_for_image_load_timeout'] = '3000';
@@ -29545,7 +29544,7 @@ print $content;
     'agency_listing_page_publications' => 0,
     'press_centre' => 0,
   );
-  /* Relationship: Content: Images (field_project_image:fid) */
+  /* Relationship: Content: Image (field_project_image:fid) */
   $handler->display->display_options['relationships']['field_project_image_fid']['id'] = 'field_project_image_fid';
   $handler->display->display_options['relationships']['field_project_image_fid']['table'] = 'field_data_field_project_image';
   $handler->display->display_options['relationships']['field_project_image_fid']['field'] = 'field_project_image_fid';
@@ -29760,7 +29759,6 @@ print $content;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['timeout'] = '5000';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['speed'] = '700';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['delay'] = '0';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['start_paused'] = 0;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['remember_slide_days'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['items_per_slide'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['wait_for_image_load_timeout'] = '3000';
@@ -29771,9 +29769,20 @@ print $content;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: PHP */
+  $handler->display->display_options['header']['php']['id'] = 'php';
+  $handler->display->display_options['header']['php']['table'] = 'views';
+  $handler->display->display_options['header']['php']['field'] = 'php';
+  $handler->display->display_options['header']['php']['php_output'] = '<?php
+$params = drupal_get_query_parameters();
+$filter = $params[f];
+if(isset($filter) && !empty($filter)){
+drupal_add_css(\'.view-id-press_centre_listing_slideshows {display:none;}\', $option[\'type\'] = \'inline\');
+}
+?>';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Images (field_project_image:fid) */
+  /* Relationship: Content: Image (field_project_image:fid) */
   $handler->display->display_options['relationships']['field_project_image_fid']['id'] = 'field_project_image_fid';
   $handler->display->display_options['relationships']['field_project_image_fid']['table'] = 'field_data_field_project_image';
   $handler->display->display_options['relationships']['field_project_image_fid']['field'] = 'field_project_image_fid';
@@ -29806,7 +29815,7 @@ print $content;
     'image_style' => 'featured_content',
     'image_link' => '',
   );
-  /* Field: Content: Images */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_project_image']['id'] = 'field_project_image';
   $handler->display->display_options['fields']['field_project_image']['table'] = 'field_data_field_project_image';
   $handler->display->display_options['fields']['field_project_image']['field'] = 'field_project_image';
@@ -30150,7 +30159,6 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['style_options']['views_slideshow_cycle']['timeout'] = '5000';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['speed'] = '700';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['delay'] = '0';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['start_paused'] = 0;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['remember_slide_days'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['items_per_slide'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['wait_for_image_load_timeout'] = '3000';
@@ -30161,8 +30169,19 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: PHP */
+  $handler->display->display_options['header']['php']['id'] = 'php';
+  $handler->display->display_options['header']['php']['table'] = 'views';
+  $handler->display->display_options['header']['php']['field'] = 'php';
+  $handler->display->display_options['header']['php']['php_output'] = '<?php
+$params = drupal_get_query_parameters();
+$filter = $params[f];
+if(isset($filter) && !empty($filter)){
+drupal_add_css(\'.view-id-press_centre_listing_slideshows {display:none;}\', $option[\'type\'] = \'inline\');
+}
+?>';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Images (field_project_image:fid) */
+  /* Relationship: Content: Image (field_project_image:fid) */
   $handler->display->display_options['relationships']['field_project_image_fid']['id'] = 'field_project_image_fid';
   $handler->display->display_options['relationships']['field_project_image_fid']['table'] = 'field_data_field_project_image';
   $handler->display->display_options['relationships']['field_project_image_fid']['field'] = 'field_project_image_fid';
@@ -30182,6 +30201,13 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['field_short_title']['alter']['max_length'] = '55';
   $handler->display->display_options['fields']['field_short_title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['field_short_title']['element_label_colon'] = FALSE;
+  /* Field: Entity translation: Short Title: translated */
+  $handler->display->display_options['fields']['field_short_title_et']['id'] = 'field_short_title_et';
+  $handler->display->display_options['fields']['field_short_title_et']['table'] = 'field_data_field_short_title';
+  $handler->display->display_options['fields']['field_short_title_et']['field'] = 'field_short_title_et';
+  $handler->display->display_options['fields']['field_short_title_et']['label'] = '';
+  $handler->display->display_options['fields']['field_short_title_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_short_title_et']['element_label_colon'] = FALSE;
   /* Field: Content: Slideshow Image */
   $handler->display->display_options['fields']['field_feature_image']['id'] = 'field_feature_image';
   $handler->display->display_options['fields']['field_feature_image']['table'] = 'field_data_field_feature_image';
@@ -30195,7 +30221,19 @@ if ($data->node_type == "featured_content") {
     'image_style' => 'featured_content',
     'image_link' => '',
   );
-  /* Field: Content: Images */
+  /* Field: Entity translation: Slideshow Image: translated */
+  $handler->display->display_options['fields']['field_feature_image_et']['id'] = 'field_feature_image_et';
+  $handler->display->display_options['fields']['field_feature_image_et']['table'] = 'field_data_field_feature_image';
+  $handler->display->display_options['fields']['field_feature_image_et']['field'] = 'field_feature_image_et';
+  $handler->display->display_options['fields']['field_feature_image_et']['label'] = '';
+  $handler->display->display_options['fields']['field_feature_image_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_feature_image_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_feature_image_et']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_feature_image_et']['settings'] = array(
+    'image_style' => 'featured_content',
+    'image_link' => '',
+  );
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_project_image']['id'] = 'field_project_image';
   $handler->display->display_options['fields']['field_project_image']['table'] = 'field_data_field_project_image';
   $handler->display->display_options['fields']['field_project_image']['field'] = 'field_project_image';
@@ -30346,6 +30384,8 @@ print $value;
   $handler->display->display_options['fields']['php_2']['exclude'] = TRUE;
   $handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php_2']['php_output'] = '<?php
+global $language;
+$lang = $lanugage->language;
 if ($data->node_type == "featured_content") {
   if (!empty($data->field_field_feature_link)) {
     $url = "<a href=\'/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
@@ -30380,9 +30420,9 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[php_2][field_feature_image]</a></div>
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[php_2][field_feature_image_et]</a></div>
 <div class="slide-text">
-<h3>[title_field]</h3>
+<h3>[field_short_title_et]</h3>
 [php_1]
 [php]
 </div>';
@@ -30527,7 +30567,6 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['style_options']['views_slideshow_cycle']['timeout'] = '5000';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['speed'] = '700';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['delay'] = '0';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['start_paused'] = 0;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['remember_slide_days'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['items_per_slide'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['wait_for_image_load_timeout'] = '3000';
@@ -30538,6 +30577,17 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: PHP */
+  $handler->display->display_options['header']['php']['id'] = 'php';
+  $handler->display->display_options['header']['php']['table'] = 'views';
+  $handler->display->display_options['header']['php']['field'] = 'php';
+  $handler->display->display_options['header']['php']['php_output'] = '<?php
+$params = drupal_get_query_parameters();
+$filter = $params[f];
+if(isset($filter) && !empty($filter)){
+drupal_add_css(\'.view-id-press_centre_listing_slideshows {display:none;}\', $option[\'type\'] = \'inline\');
+}
+?>';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Image (field_speech_image:fid) */
   $handler->display->display_options['relationships']['field_speech_image_fid']['id'] = 'field_speech_image_fid';
@@ -30878,7 +30928,6 @@ print $value;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['timeout'] = '5000';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['speed'] = '700';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['delay'] = '0';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['start_paused'] = 0;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['remember_slide_days'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['items_per_slide'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['wait_for_image_load_timeout'] = '3000';
@@ -30889,6 +30938,17 @@ print $value;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: PHP */
+  $handler->display->display_options['header']['php']['id'] = 'php';
+  $handler->display->display_options['header']['php']['table'] = 'views';
+  $handler->display->display_options['header']['php']['field'] = 'php';
+  $handler->display->display_options['header']['php']['php_output'] = '<?php
+$params = drupal_get_query_parameters();
+$filter = $params[f];
+if(isset($filter) && !empty($filter)){
+drupal_add_css(\'.view-id-press_centre_listing_slideshows {display:none;}\', $option[\'type\'] = \'inline\');
+}
+?>';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   /* Footer: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
@@ -30897,7 +30957,7 @@ print $value;
   $handler->display->display_options['footer']['area']['content'] = '<div class="whats-slider-caption whatsnew-right"></div>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Images (field_project_image:fid) */
+  /* Relationship: Content: Image (field_project_image:fid) */
   $handler->display->display_options['relationships']['field_project_image_fid']['id'] = 'field_project_image_fid';
   $handler->display->display_options['relationships']['field_project_image_fid']['table'] = 'field_data_field_project_image';
   $handler->display->display_options['relationships']['field_project_image_fid']['field'] = 'field_project_image_fid';
@@ -30934,7 +30994,7 @@ print $value;
     'title_link' => 'content',
     'title_class' => '',
   );
-  /* Field: Content: Images */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_project_image']['id'] = 'field_project_image';
   $handler->display->display_options['fields']['field_project_image']['table'] = 'field_data_field_project_image';
   $handler->display->display_options['fields']['field_project_image']['field'] = 'field_project_image';
@@ -31182,7 +31242,7 @@ if ($data->node_type == "featured_content") {
     1 => '1',
   );
   $handler->display->display_options['filters']['field_create_featured_content_value']['group'] = 1;
-  /* Filter criterion: Content: Images (field_project_image:language) */
+  /* Filter criterion: Content: Image (field_project_image:language) */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'field_data_field_project_image';
   $handler->display->display_options['filters']['language']['field'] = 'language';
@@ -31264,7 +31324,6 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['style_options']['views_slideshow_cycle']['timeout'] = '5000';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['speed'] = '700';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['delay'] = '0';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['start_paused'] = 0;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['remember_slide_days'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['items_per_slide'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['wait_for_image_load_timeout'] = '3000';
@@ -31275,6 +31334,17 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: PHP */
+  $handler->display->display_options['header']['php']['id'] = 'php';
+  $handler->display->display_options['header']['php']['table'] = 'views';
+  $handler->display->display_options['header']['php']['field'] = 'php';
+  $handler->display->display_options['header']['php']['php_output'] = '<?php
+$params = drupal_get_query_parameters();
+$filter = $params[f];
+if(isset($filter) && !empty($filter)){
+drupal_add_css(\'.view-id-press_centre_listing_slideshows {display:none;}\', $option[\'type\'] = \'inline\');
+}
+?>';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   /* Footer: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
@@ -31285,7 +31355,7 @@ if ($data->node_type == "featured_content") {
 <div class="whats-slider-caption whatsnew-right"></div>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Images (field_project_image:fid) */
+  /* Relationship: Content: Image (field_project_image:fid) */
   $handler->display->display_options['relationships']['field_project_image_fid']['id'] = 'field_project_image_fid';
   $handler->display->display_options['relationships']['field_project_image_fid']['table'] = 'field_data_field_project_image';
   $handler->display->display_options['relationships']['field_project_image_fid']['field'] = 'field_project_image_fid';
@@ -31324,7 +31394,7 @@ if ($data->node_type == "featured_content") {
     'image_style' => 'featured_content',
     'image_link' => '',
   );
-  /* Field: Content: Images */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_project_image']['id'] = 'field_project_image';
   $handler->display->display_options['fields']['field_project_image']['table'] = 'field_data_field_project_image';
   $handler->display->display_options['fields']['field_project_image']['field'] = 'field_project_image';
@@ -31653,7 +31723,6 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['style_options']['views_slideshow_cycle']['timeout'] = '5000';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['speed'] = '700';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['delay'] = '0';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['start_paused'] = 0;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['remember_slide_days'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['items_per_slide'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['wait_for_image_load_timeout'] = '3000';
@@ -31664,6 +31733,17 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: PHP */
+  $handler->display->display_options['header']['php']['id'] = 'php';
+  $handler->display->display_options['header']['php']['table'] = 'views';
+  $handler->display->display_options['header']['php']['field'] = 'php';
+  $handler->display->display_options['header']['php']['php_output'] = '<?php
+$params = drupal_get_query_parameters();
+$filter = $params[f];
+if(isset($filter) && !empty($filter)){
+drupal_add_css(\'.view-id-press_centre_listing_slideshows {display:none;}\', $option[\'type\'] = \'inline\');
+}
+?>';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   /* Footer: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
@@ -31673,7 +31753,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['footer']['area']['content'] = '<div class="whats-slider-caption whatsnew-right"></div>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Images (field_project_image:fid) */
+  /* Relationship: Content: Image (field_project_image:fid) */
   $handler->display->display_options['relationships']['field_project_image_fid']['id'] = 'field_project_image_fid';
   $handler->display->display_options['relationships']['field_project_image_fid']['table'] = 'field_data_field_project_image';
   $handler->display->display_options['relationships']['field_project_image_fid']['field'] = 'field_project_image_fid';
@@ -31712,7 +31792,7 @@ if ($data->node_type == "featured_content") {
     'image_style' => 'featured_content',
     'image_link' => '',
   );
-  /* Field: Content: Images */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_project_image']['id'] = 'field_project_image';
   $handler->display->display_options['fields']['field_project_image']['table'] = 'field_data_field_project_image';
   $handler->display->display_options['fields']['field_project_image']['field'] = 'field_project_image';
@@ -32035,7 +32115,6 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['style_options']['views_slideshow_cycle']['timeout'] = '5000';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['speed'] = '700';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['delay'] = '0';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['start_paused'] = 0;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['remember_slide_days'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['items_per_slide'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['wait_for_image_load_timeout'] = '3000';
@@ -32046,8 +32125,19 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: PHP */
+  $handler->display->display_options['header']['php']['id'] = 'php';
+  $handler->display->display_options['header']['php']['table'] = 'views';
+  $handler->display->display_options['header']['php']['field'] = 'php';
+  $handler->display->display_options['header']['php']['php_output'] = '<?php
+$params = drupal_get_query_parameters();
+$filter = $params[f];
+if(isset($filter) && !empty($filter)){
+drupal_add_css(\'.view-id-press_centre_listing_slideshows {display:none;}\', $option[\'type\'] = \'inline\');
+}
+?>';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Images (field_project_image:fid) */
+  /* Relationship: Content: Image (field_project_image:fid) */
   $handler->display->display_options['relationships']['field_project_image_fid']['id'] = 'field_project_image_fid';
   $handler->display->display_options['relationships']['field_project_image_fid']['table'] = 'field_data_field_project_image';
   $handler->display->display_options['relationships']['field_project_image_fid']['field'] = 'field_project_image_fid';
@@ -32081,7 +32171,7 @@ if ($data->node_type == "featured_content") {
     'image_style' => 'featured_content',
     'image_link' => '',
   );
-  /* Field: Content: Images */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_project_image']['id'] = 'field_project_image';
   $handler->display->display_options['fields']['field_project_image']['table'] = 'field_data_field_project_image';
   $handler->display->display_options['fields']['field_project_image']['field'] = 'field_project_image';
@@ -32400,7 +32490,6 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['style_options']['views_slideshow_cycle']['timeout'] = '5000';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['speed'] = '700';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['delay'] = '0';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['start_paused'] = 0;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['remember_slide_days'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['items_per_slide'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['wait_for_image_load_timeout'] = '3000';
@@ -32411,6 +32500,17 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: PHP */
+  $handler->display->display_options['header']['php']['id'] = 'php';
+  $handler->display->display_options['header']['php']['table'] = 'views';
+  $handler->display->display_options['header']['php']['field'] = 'php';
+  $handler->display->display_options['header']['php']['php_output'] = '<?php
+$params = drupal_get_query_parameters();
+$filter = $params[f];
+if(isset($filter) && !empty($filter)){
+drupal_add_css(\'.view-id-press_centre_listing_slideshows {display:none;}\', $option[\'type\'] = \'inline\');
+}
+?>';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   /* Footer: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
@@ -32420,7 +32520,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['footer']['area']['content'] = '<div class="whats-slider-caption whatsnew-right"></div>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Images (field_project_image:fid) */
+  /* Relationship: Content: Image (field_project_image:fid) */
   $handler->display->display_options['relationships']['field_project_image_fid']['id'] = 'field_project_image_fid';
   $handler->display->display_options['relationships']['field_project_image_fid']['table'] = 'field_data_field_project_image';
   $handler->display->display_options['relationships']['field_project_image_fid']['field'] = 'field_project_image_fid';
@@ -32468,7 +32568,7 @@ if ($data->node_type == "featured_content") {
       'fallback_style' => 'featured_content',
     ),
   );
-  /* Field: Content: Images */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_project_image']['id'] = 'field_project_image';
   $handler->display->display_options['fields']['field_project_image']['table'] = 'field_data_field_project_image';
   $handler->display->display_options['fields']['field_project_image']['field'] = 'field_project_image';
@@ -32833,7 +32933,6 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['style_options']['views_slideshow_cycle']['timeout'] = '5000';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['speed'] = '700';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['delay'] = '0';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['start_paused'] = 0;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['remember_slide_days'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['items_per_slide'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['wait_for_image_load_timeout'] = '3000';
@@ -32846,7 +32945,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Images (field_project_image:fid) */
+  /* Relationship: Content: Image (field_project_image:fid) */
   $handler->display->display_options['relationships']['field_project_image_fid']['id'] = 'field_project_image_fid';
   $handler->display->display_options['relationships']['field_project_image_fid']['table'] = 'field_data_field_project_image';
   $handler->display->display_options['relationships']['field_project_image_fid']['field'] = 'field_project_image_fid';
@@ -32880,7 +32979,7 @@ if ($data->node_type == "featured_content") {
     'image_style' => 'featured_content',
     'image_link' => '',
   );
-  /* Field: Content: Images */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_project_image']['id'] = 'field_project_image';
   $handler->display->display_options['fields']['field_project_image']['table'] = 'field_data_field_project_image';
   $handler->display->display_options['fields']['field_project_image']['field'] = 'field_project_image';
@@ -33122,177 +33221,6 @@ if ($data->node_type == "featured_content") {
     0 => '0',
   );
   $handler->display->display_options['block_description'] = 'AKDN Banner Approach to Development';
-  $translatables['press_centre_listing_slideshows'] = array(
-    t('Master'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('<div class="whats-slider-caption whatsnew-right"></div>'),
-    t('queue'),
-    t('file_project_image'),
-    t('file_feature_image'),
-    t('<div class="slide">[field_feature_image]</div>
-<div class="slide-text"><h3>[title]</h3>
-[field_caption]
-[field_feature_link]
-</div>
-
-'),
-    t('<div class="slide-pager">•</div>'),
-    t('Press Release Block'),
-    t('[field_short_title]'),
-    t('[title_field]'),
-    t('<div class="slide">[php_2][field_feature_image]</a></div>
-<div class="slide-text">
-<h3>[field_short_title]</h3>
-[php_1]
-[php]
-</div>'),
-    t('[body-summary]'),
-    t('<div class="whats-slide-text">
-     <div class="view-content">
-       <div class="views-row views-row-1 views-row-odd views-row-first views-row-last whatsnew-right-content">
-         <p class="whats-new-gold">What\'s New</p>
-         <div class="field-content grid-whatsnew-block_title grid-whatsnew-block_title-in-media">
-[php_2][title_field]</a></div>
-         <div class="field-content grid-whatsnew-block_body grid-whatsnew-block_body-in-media">[body]</div>
-         </div>
-   </div>
-</div>'),
-    t('News Listing Block'),
-    t('Image Link'),
-    t('<div class="slide">[php_2][field_feature_image]</a></div>
-<div class="slide-text">
-<h3>[title_field]</h3>
-[php_1]
-[php]
-</div>'),
-    t('<div class="whats-slide-text">
-     <div class="view-content">
-       <div class="views-row views-row-1 views-row-odd views-row-first views-row-last whatsnew-right-content">
-         <p class="whats-new-gold">What\'s New</p>
-         <div class="field-content grid-whatsnew-block_title grid-whatsnew-block_title-in-media">[php_2][title_field]</a></div>
-         <div class="field-content grid-whatsnew-block_body grid-whatsnew-block_body-in-media">[body]</div>
-         </div>
-   </div>
-</div>'),
-    t('Speeches Listing Block'),
-    t('image from field_speech_image'),
-    t(', [field_publish_date]'),
-    t('[field_speech_speaker], '),
-    t('<div class="slide">[php_2][field_feature_image] </a></div>
-<div class="slide-text">
-<h3>[title_field]</h3>
-<div class="speech-slider-caption"> [field_caption][php_2] More</a></div>
-<div class="slider-content">
-</div>
-</div>'),
-    t('Projects Listing Block'),
-    t('<div class="slide">[php_2][field_project_image]</a></div>
-<div class="slide-text">
-<h3>[title_field]</h3>
-[php_1]
-[php]
-</div>
-'),
-    t('Nid'),
-    t('<div class="whats-slide-text">
-     <div class="view-content">
-       <div class="views-row views-row-1 views-row-odd views-row-first views-row-last whatsnew-right-content">
-         <p class="whats-new-gold">What\'s New</p>
-         <div class="field-content grid-whatsnew-block_title grid-whatsnew-block_title-in-media">[field_short_title]</div>
-         <div class="field-content grid-whatsnew-block_body grid-whatsnew-block_body-in-media">[body]</div>
-         </div>
-   </div>
-</div>'),
-    t('Galleries Listing Block'),
-    t('
-<div class="whats-slider-caption whatsnew-right"></div>'),
-    t('<div class="slide">[php_2][field_feature_image]</a></div>
-<div class="slide-text">
-<h3>[title_field]</h3>
-[php_1]
-[php]
-</div>
-'),
-    t('<div class="whats-slide-text">
-      <div class="view-content">
-        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last whatsnew-right-content">
-          <p class="whats-new-gold">What\'s New</p>
-          <div class="field-content grid-whatsnew-block_title grid-whatsnew-block_title-in-media">[php_2][title_field]</a></div>
-          <div class="field-content grid-whatsnew-block_body grid-whatsnew-block_body-in-media">[body]</div>
-          </div>
-    </div>
-</div>'),
-    t('Podcasts Listing Block'),
-    t('<div class="whats-slide-text">
-      <div class="view-content">
-        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last whatsnew-right-content">
-          <p class="whats-new-gold">What\'s New</p>
-          <div class="field-content grid-whatsnew-block_title grid-whatsnew-block_title-in-media">[title_field]</div>
-          <div class="field-content grid-whatsnew-block_body grid-whatsnew-block_body-in-media">[body]</div>
-          </div>
-    </div>
-</div>'),
-    t('Events Listing Block'),
-    t('<div class="whats-slide-text">
-      <div class="view-content">
-        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last whatsnew-right-content">
-          <p class="whats-new-gold">What\'s New</p>
-          <div class="field-content grid-whatsnew-block_title grid-whatsnew-block_title-in-media">[php_2][title_field]</a></div>
-          <div class="field-content grid-whatsnew-block_body grid-whatsnew-block_body-in-media"> [body]</a></div>
-          </div>
-    </div>
-</div>'),
-    t('In the Media Block'),
-    t('Media Source'),
-    t('- [field_media_source]'),
-    t('<div class="slide">[php_2][field_feature_image][field_project_image]</a></div>
-<div class="slide-text">
-<h3>[title_field]</h3>
-[field_caption]
-[php_2]More</a>
-</div>
-'),
-    t('More'),
-    t('<div class="whats-slide-text">
-      <div class="view-content">
-        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last whatsnew-right-content">
-          <p class="whats-new-gold">What\'s New</p>
-          <div class="field-content grid-whatsnew-block_title grid-whatsnew-block_title-in-media">[field_short_title]</div>
-          <div class="field-content grid-whatsnew-block_body grid-whatsnew-block_body-in-media">[body]</div>
-          </div>
-    </div>
-</div>'),
-    t('AKDN Approach to Development'),
-    t('<div class="slide">[php_2][field_feature_image][field_project_image]</a></div>
-<div class="slide-text">
-<h3>[field_short_title]</h3>
-[php_1]
-[php]
-</div>'),
-    t('<div class="whats-slide-text">
-     <div class="view-content">
-       <div class="views-row views-row-1 views-row-odd views-row-first views-row-last whatsnew-right-content">
-         <p>What\'s New</p>
-         <div class="field-content grid-whatsnew-block_title grid-whatsnew-block_title-in-media">
-[php_2][title_field]</a></div>
-         <div class="field-content grid-whatsnew-block_body grid-whatsnew-block_body-in-media"> [body] [php]</div>
-         </div>
-   </div>
-</div>'),
-    t('AKDN Banner Approach to Development'),
-  );
   $export['press_centre_listing_slideshows'] = $view;
 
   $view = new view();
