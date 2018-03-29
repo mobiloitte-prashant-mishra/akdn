@@ -30745,6 +30745,17 @@ $langu = \'/\';}
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: PHP */
+  $handler->display->display_options['header']['php']['id'] = 'php';
+  $handler->display->display_options['header']['php']['table'] = 'views';
+  $handler->display->display_options['header']['php']['field'] = 'php';
+  $handler->display->display_options['header']['php']['php_output'] = '<?php
+$params = drupal_get_query_parameters();
+$filter = $params[f];
+if(isset($filter) && !empty($filter)){
+drupal_add_css(\'.view-id-press_centre_listing_slideshows {display:none;}\', $option[\'type\'] = \'inline\');
+}
+?>';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Image (field_project_image:fid) */
@@ -31134,6 +31145,17 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: PHP */
+  $handler->display->display_options['header']['php']['id'] = 'php';
+  $handler->display->display_options['header']['php']['table'] = 'views';
+  $handler->display->display_options['header']['php']['field'] = 'php';
+  $handler->display->display_options['header']['php']['php_output'] = '<?php
+$params = drupal_get_query_parameters();
+$filter = $params[f];
+if(isset($filter) && !empty($filter)){
+drupal_add_css(\'.view-id-press_centre_listing_slideshows {display:none;}\', $option[\'type\'] = \'inline\');
+}
+?>';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Image (field_project_image:fid) */
   $handler->display->display_options['relationships']['field_project_image_fid']['id'] = 'field_project_image_fid';
@@ -31532,6 +31554,17 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: PHP */
+  $handler->display->display_options['header']['php']['id'] = 'php';
+  $handler->display->display_options['header']['php']['table'] = 'views';
+  $handler->display->display_options['header']['php']['field'] = 'php';
+  $handler->display->display_options['header']['php']['php_output'] = '<?php
+$params = drupal_get_query_parameters();
+$filter = $params[f];
+if(isset($filter) && !empty($filter)){
+drupal_add_css(\'.view-id-press_centre_listing_slideshows {display:none;}\', $option[\'type\'] = \'inline\');
+}
+?>';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Image (field_speech_image:fid) */
   $handler->display->display_options['relationships']['field_speech_image_fid']['id'] = 'field_speech_image_fid';
@@ -31882,6 +31915,17 @@ print $value;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: PHP */
+  $handler->display->display_options['header']['php']['id'] = 'php';
+  $handler->display->display_options['header']['php']['table'] = 'views';
+  $handler->display->display_options['header']['php']['field'] = 'php';
+  $handler->display->display_options['header']['php']['php_output'] = '<?php
+$params = drupal_get_query_parameters();
+$filter = $params[f];
+if(isset($filter) && !empty($filter)){
+drupal_add_css(\'.view-id-press_centre_listing_slideshows {display:none;}\', $option[\'type\'] = \'inline\');
+}
+?>';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   /* Footer: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
@@ -32267,6 +32311,17 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: PHP */
+  $handler->display->display_options['header']['php']['id'] = 'php';
+  $handler->display->display_options['header']['php']['table'] = 'views';
+  $handler->display->display_options['header']['php']['field'] = 'php';
+  $handler->display->display_options['header']['php']['php_output'] = '<?php
+$params = drupal_get_query_parameters();
+$filter = $params[f];
+if(isset($filter) && !empty($filter)){
+drupal_add_css(\'.view-id-press_centre_listing_slideshows {display:none;}\', $option[\'type\'] = \'inline\');
+}
+?>';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   /* Footer: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
@@ -32655,6 +32710,17 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: PHP */
+  $handler->display->display_options['header']['php']['id'] = 'php';
+  $handler->display->display_options['header']['php']['table'] = 'views';
+  $handler->display->display_options['header']['php']['field'] = 'php';
+  $handler->display->display_options['header']['php']['php_output'] = '<?php
+$params = drupal_get_query_parameters();
+$filter = $params[f];
+if(isset($filter) && !empty($filter)){
+drupal_add_css(\'.view-id-press_centre_listing_slideshows {display:none;}\', $option[\'type\'] = \'inline\');
+}
+?>';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   /* Footer: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
@@ -33036,6 +33102,17 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: PHP */
+  $handler->display->display_options['header']['php']['id'] = 'php';
+  $handler->display->display_options['header']['php']['table'] = 'views';
+  $handler->display->display_options['header']['php']['field'] = 'php';
+  $handler->display->display_options['header']['php']['php_output'] = '<?php
+$params = drupal_get_query_parameters();
+$filter = $params[f];
+if(isset($filter) && !empty($filter)){
+drupal_add_css(\'.view-id-press_centre_listing_slideshows {display:none;}\', $option[\'type\'] = \'inline\');
+}
+?>';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Image (field_project_image:fid) */
   $handler->display->display_options['relationships']['field_project_image_fid']['id'] = 'field_project_image_fid';
@@ -33400,6 +33477,17 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: PHP */
+  $handler->display->display_options['header']['php']['id'] = 'php';
+  $handler->display->display_options['header']['php']['table'] = 'views';
+  $handler->display->display_options['header']['php']['field'] = 'php';
+  $handler->display->display_options['header']['php']['php_output'] = '<?php
+$params = drupal_get_query_parameters();
+$filter = $params[f];
+if(isset($filter) && !empty($filter)){
+drupal_add_css(\'.view-id-press_centre_listing_slideshows {display:none;}\', $option[\'type\'] = \'inline\');
+}
+?>';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   /* Footer: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
@@ -34110,177 +34198,6 @@ if ($data->node_type == "featured_content") {
     0 => '0',
   );
   $handler->display->display_options['block_description'] = 'AKDN Banner Approach to Development';
-  $translatables['press_centre_listing_slideshows'] = array(
-    t('Master'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('<div class="whats-slider-caption whatsnew-right"></div>'),
-    t('queue'),
-    t('file_project_image'),
-    t('file_feature_image'),
-    t('<div class="slide">[field_feature_image]</div>
-<div class="slide-text"><h3>[title]</h3>
-[field_caption]
-[field_feature_link]
-</div>
-
-'),
-    t('<div class="slide-pager">•</div>'),
-    t('Press Release Block'),
-    t('[field_short_title]'),
-    t('[title_field]'),
-    t('<div class="slide">[php_2][field_feature_image]</a></div>
-<div class="slide-text">
-<h3>[field_short_title]</h3>
-[php_1]
-[php]
-</div>'),
-    t('[body-summary]'),
-    t('<div class="whats-slide-text">
-     <div class="view-content">
-       <div class="views-row views-row-1 views-row-odd views-row-first views-row-last whatsnew-right-content">
-         <p class="whats-new-gold">What\'s New</p>
-         <div class="field-content grid-whatsnew-block_title grid-whatsnew-block_title-in-media">
-[php_2][title_field]</a></div>
-         <div class="field-content grid-whatsnew-block_body grid-whatsnew-block_body-in-media">[body]</div>
-         </div>
-   </div>
-</div>'),
-    t('News Listing Block'),
-    t('Image Link'),
-    t('<div class="slide">[php_2][field_feature_image]</a></div>
-<div class="slide-text">
-<h3>[title_field]</h3>
-[php_1]
-[php]
-</div>'),
-    t('<div class="whats-slide-text">
-     <div class="view-content">
-       <div class="views-row views-row-1 views-row-odd views-row-first views-row-last whatsnew-right-content">
-         <p class="whats-new-gold">What\'s New</p>
-         <div class="field-content grid-whatsnew-block_title grid-whatsnew-block_title-in-media">[php_2][title_field]</a></div>
-         <div class="field-content grid-whatsnew-block_body grid-whatsnew-block_body-in-media">[body]</div>
-         </div>
-   </div>
-</div>'),
-    t('Speeches Listing Block'),
-    t('image from field_speech_image'),
-    t(', [field_publish_date]'),
-    t('[field_speech_speaker], '),
-    t('<div class="slide">[php_2][field_feature_image] </a></div>
-<div class="slide-text">
-<h3>[title_field]</h3>
-<div class="speech-slider-caption"> [field_caption][php_2] More</a></div>
-<div class="slider-content">
-</div>
-</div>'),
-    t('Projects Listing Block'),
-    t('<div class="slide">[php_2][field_project_image]</a></div>
-<div class="slide-text">
-<h3>[title_field]</h3>
-[php_1]
-[php]
-</div>
-'),
-    t('Nid'),
-    t('<div class="whats-slide-text">
-     <div class="view-content">
-       <div class="views-row views-row-1 views-row-odd views-row-first views-row-last whatsnew-right-content">
-         <p class="whats-new-gold">What\'s New</p>
-         <div class="field-content grid-whatsnew-block_title grid-whatsnew-block_title-in-media">[field_short_title]</div>
-         <div class="field-content grid-whatsnew-block_body grid-whatsnew-block_body-in-media">[body]</div>
-         </div>
-   </div>
-</div>'),
-    t('Galleries Listing Block'),
-    t('
-<div class="whats-slider-caption whatsnew-right"></div>'),
-    t('<div class="slide">[php_2][field_feature_image]</a></div>
-<div class="slide-text">
-<h3>[title_field]</h3>
-[php_1]
-[php]
-</div>
-'),
-    t('<div class="whats-slide-text">
-      <div class="view-content">
-        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last whatsnew-right-content">
-          <p class="whats-new-gold">What\'s New</p>
-          <div class="field-content grid-whatsnew-block_title grid-whatsnew-block_title-in-media">[php_2][title_field]</a></div>
-          <div class="field-content grid-whatsnew-block_body grid-whatsnew-block_body-in-media">[body]</div>
-          </div>
-    </div>
-</div>'),
-    t('Podcasts Listing Block'),
-    t('<div class="whats-slide-text">
-      <div class="view-content">
-        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last whatsnew-right-content">
-          <p class="whats-new-gold">What\'s New</p>
-          <div class="field-content grid-whatsnew-block_title grid-whatsnew-block_title-in-media">[title_field]</div>
-          <div class="field-content grid-whatsnew-block_body grid-whatsnew-block_body-in-media">[body]</div>
-          </div>
-    </div>
-</div>'),
-    t('Events Listing Block'),
-    t('<div class="whats-slide-text">
-      <div class="view-content">
-        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last whatsnew-right-content">
-          <p class="whats-new-gold">What\'s New</p>
-          <div class="field-content grid-whatsnew-block_title grid-whatsnew-block_title-in-media">[php_2][title_field]</a></div>
-          <div class="field-content grid-whatsnew-block_body grid-whatsnew-block_body-in-media"> [body]</a></div>
-          </div>
-    </div>
-</div>'),
-    t('In the Media Block'),
-    t('Media Source'),
-    t('- [field_media_source]'),
-    t('<div class="slide">[php_2][field_feature_image][field_project_image]</a></div>
-<div class="slide-text">
-<h3>[title_field]</h3>
-[field_caption]
-[php_2]More</a>
-</div>
-'),
-    t('More'),
-    t('<div class="whats-slide-text">
-      <div class="view-content">
-        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last whatsnew-right-content">
-          <p class="whats-new-gold">What\'s New</p>
-          <div class="field-content grid-whatsnew-block_title grid-whatsnew-block_title-in-media">[field_short_title]</div>
-          <div class="field-content grid-whatsnew-block_body grid-whatsnew-block_body-in-media">[body]</div>
-          </div>
-    </div>
-</div>'),
-    t('AKDN Approach to Development'),
-    t('<div class="slide">[php_2][field_feature_image][field_project_image]</a></div>
-<div class="slide-text">
-<h3>[field_short_title]</h3>
-[php_1]
-[php]
-</div>'),
-    t('<div class="whats-slide-text">
-     <div class="view-content">
-       <div class="views-row views-row-1 views-row-odd views-row-first views-row-last whatsnew-right-content">
-         <p>What\'s New</p>
-         <div class="field-content grid-whatsnew-block_title grid-whatsnew-block_title-in-media">
-[php_2][title_field]</a></div>
-         <div class="field-content grid-whatsnew-block_body grid-whatsnew-block_body-in-media"> [body] [php]</div>
-         </div>
-   </div>
-</div>'),
-    t('AKDN Banner Approach to Development'),
-  );
   $export['press_centre_listing_slideshows'] = $view;
 
   $view = new view();
