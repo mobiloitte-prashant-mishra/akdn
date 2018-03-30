@@ -1,0 +1,31 @@
+--- /home/jatin.rupeja/Desktop/entity_translation.admin.inc	2018-03-08 16:17:59.834572000 +0530
++++ entity_translation.admin.inc	2018-03-08 17:46:33.954861971 +0530
+@@ -627,7 +627,16 @@
+       }
+     }
+     else {
+-      $entities = entity_load($entity_type, array_keys($partial_entities));
++      if ($entity_type == 'node') {
++        $entities = array();
++        foreach ($partial_entities as $key => $value) {
++          $entyty = entity_revision_load($entity_type, $key);
++          $entities[$key] = $entyty;
++        }
++      }
++      else if ($entity_type == 'file') {
++        $entities = entity_load($entity_type, array_keys($partial_entities));
++      }
+     }
+ 
+     foreach ($entities as $entity) {
+@@ -691,6 +700,10 @@
+   }
+ 
+   $context['finished'] = $context['sandbox']['progress'] / $context['sandbox']['max'];
++  // If no progress was made then set as finished to avoid infinite loop.
++  if ($offset == $context['sandbox']['progress']) {
++    $context['finished'] = 1;
++  }
+ }
+ 
+ /**

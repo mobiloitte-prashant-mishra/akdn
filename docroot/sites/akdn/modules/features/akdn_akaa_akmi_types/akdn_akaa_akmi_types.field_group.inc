@@ -9,7 +9,6 @@
  */
 function akdn_akaa_akmi_types_field_group_info() {
   $export = array();
-
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
@@ -201,6 +200,7 @@ function akdn_akaa_akmi_types_field_group_info() {
       'formatter' => '',
       'instance_settings' => array(
         'classes' => ' group-banner-item field-group-tabs',
+        'id' => 'node_featured_content_form_group_banner_item',
       ),
     ),
   );
@@ -316,8 +316,9 @@ function akdn_akaa_akmi_types_field_group_info() {
       2 => 'field_custom_breadcrumbs',
       3 => 'field_short_title',
       4 => 'field_custom_meta_tags',
-      5 => 'title',
-      6 => 'path',
+      5 => 'field_article_img',
+      6 => 'title',
+      7 => 'path',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -512,6 +513,7 @@ function akdn_akaa_akmi_types_field_group_info() {
       'formatter' => '',
       'instance_settings' => array(
         'classes' => ' group-cycle field-group-tabs',
+        'id' => 'node_award_cycle_form_group_cycle',
       ),
     ),
   );
@@ -601,6 +603,7 @@ function akdn_akaa_akmi_types_field_group_info() {
         'description' => '',
         'classes' => ' group-location field-group-fieldset',
         'required_fields' => 1,
+        'id' => 'node_architecture_project_form_group_location',
       ),
     ),
   );
@@ -662,6 +665,7 @@ function akdn_akaa_akmi_types_field_group_info() {
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'node_person_full_group_meta_info',
       ),
       'formatter' => 'open',
     ),
@@ -816,6 +820,7 @@ function akdn_akaa_akmi_types_field_group_info() {
       'formatter' => '',
       'instance_settings' => array(
         'classes' => ' group-person field-group-tabs',
+        'id' => 'node_person_form_group_person',
       ),
     ),
   );
@@ -874,10 +879,40 @@ function akdn_akaa_akmi_types_field_group_info() {
       'formatter' => '',
       'instance_settings' => array(
         'classes' => ' group-project field-group-tabs',
+        'id' => 'node_architecture_project_form_group_project',
       ),
     ),
   );
   $export['group_project|node|architecture_project|form'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('AKAA Short Video');
+  t('Add CD/DVD Details');
+  t('Architecture Details');
+  t('Architecture Location');
+  t('Banner Item');
+  t('Banner Item Categories');
+  t('Banner Item Details');
+  t('Current Cycle Home Page Block Settings');
+  t('Custom Header Block');
+  t('Custom Page Details');
+  t('Custom Related Information ');
+  t('Customize Right Side Panel');
+  t('Cutom Page Layout');
+  t('Cycle');
+  t('Cycle Details');
+  t('Event Details');
+  t('Instrument Details');
+  t('Media');
+  t('Meta Info');
+  t('Newsletter Details');
+  t('Performance Details');
+  t('Person');
+  t('Person Categories');
+  t('Person details');
+  t('Project');
+  t('Project Details');
+
+  return $field_groups;
 }

@@ -495,11 +495,13 @@ function custom_solr_get_image_fieldname($type) {
  * @return type
  */
 function custom_solr_get_image_uri($data) {
-  $uri = '';
+   $uri = '';
+  $uris = array();
   foreach ($data as $lang => $image_data) {
-    $uri = $image_data[0]['uri'];
-    return $uri;
+    $uris[] = $lang . '!' . $image_data[0]['uri'];
   }
+  $uri = implode(',', $uris);
+  return $uri;
 }
 
 /**

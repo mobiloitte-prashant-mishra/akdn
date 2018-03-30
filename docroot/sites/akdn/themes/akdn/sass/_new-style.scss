@@ -117,5 +117,71 @@ html[dir='rtl'] {
     .flex-nav-container ol.flex-control-nav {
         right: auto;
         left: 10px;
+        
+        li {
+            &:first-child {
+                margin-left: 5px;
+            }
+
+            &:last-child {
+                margin-left: 0;
+            }
+        }
+    }
+    
+    .whatwedo-right {
+        .views-field-field-agency-logo {
+            left: auto;
+            right: 0;
+            float: right;
+        }
+
+        .views-field-title {
+            float: right;
+            padding-left: 0;
+            padding-right: 46px;
+        }
+    }
+    
+    .sub-navbar ul {
+        float: left;
+        
+        li {
+            float: right;
+            
+            &:first-child a {
+                border: 0 none;
+            }
+            
+            &:last-child a {
+                padding: 0 10px 0 0;
+                border-left: 0 none;
+                border-right: 1px solid;
+            }
+        }
+    }
+    
+    .sub-navbar p span + span {
+        padding-left: 5px;
+        padding-right: 0;
+    }
+    
+    .sub-navbar p:after {
+        margin-left: 0;
+    }
+    
+    .views-align-left {
+        text-align: right;
+    }
+    
+    .location-links h2 .nolink:after, .location-links h2 a:after {
+        content: "\e257";
+        left: 0;
+        right: auto;
+    }
+    
+    .social-box li:first-child a {
+        margin-left: 10px;
     }
 }
+
