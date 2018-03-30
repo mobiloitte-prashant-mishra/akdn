@@ -34,7 +34,7 @@ function akdn_context_field_default_field_bases() {
       'entity_translation_sync' => FALSE,
       'options_list_callback' => 'i18n_taxonomy_allowed_values',
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'taxonomy_term_reference',
   );
 
@@ -95,7 +95,7 @@ function akdn_context_field_default_field_bases() {
         'view_name' => '',
       ),
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'node_reference',
   );
 

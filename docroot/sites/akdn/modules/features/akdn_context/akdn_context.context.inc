@@ -11,7 +11,7 @@ function akdn_context_context_default_contexts() {
   $export = array();
 
   $context = new stdClass();
-  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->disabled = TRUE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'about_us';
   $context->description = 'Context settings for about us page';
@@ -1333,7 +1333,7 @@ function akdn_context_context_default_contexts() {
   $export['gallery_meta'] = $context;
 
   $context = new stdClass();
-  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->disabled = TRUE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'geography';
   $context->description = '';
@@ -2016,7 +2016,7 @@ function akdn_context_context_default_contexts() {
   $export['press_release'] = $context;
 
   $context = new stdClass();
-  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->disabled = TRUE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'project_details_page';
   $context->description = '';
@@ -2509,7 +2509,7 @@ function akdn_context_context_default_contexts() {
           'module' => 'akdn_custom',
           'delta' => 'akdn_breadcrumb_trail',
           'region' => 'branding',
-          'weight' => '-1',
+          'weight' => '1',
         ),
         'block-126' => array(
           'module' => 'block',
