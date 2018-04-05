@@ -477,6 +477,124 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
     unset($form['field_basic_page_choose_layout'][$lang]['#options']['_none']);
   }
 
+  // Default images to appear in all translations - Jatin Rupeja
+  if ($form_id == 'gallery_node_form' && arg(3) == 'add') {
+    global $language;
+    $lang = $language->language;
+
+    if ($lang != 'en') {
+      //For Body Summary
+      if (empty($form['#node']->body[$lang])) {
+        $node_lang = $form['#node']->language;
+        $en_data = $form['#node']->body['en'];
+        $und_data = $form['#node']->body['und'];
+        $node_lang_data = $form['#node']->body[$node_lang];
+
+        if (!empty($node_lang_data)) {
+          $form['#node']->body[$lang] = $node_lang_data;
+        }
+        elseif (!empty($en_data)) {
+          $form['#node']->body[$lang] = $en_data;
+        }
+      }
+
+      //For Field gallery Image
+      if (empty($form['#node']->field_gallery_images[$lang])) {
+        $node_lang = $form['#node']->language;
+        $en_data = $form['#node']->field_gallery_images['en'];
+        $und_data = $form['#node']->field_gallery_images['und'];
+        $node_lang_data = $form['#node']->field_gallery_images[$node_lang];
+        if (!empty($node_lang_data)) {
+          $form['#node']->field_gallery_images[$lang] = $node_lang_data;
+        }
+        elseif (!empty($en_data)) {
+          $form['#node']->field_gallery_images[$lang] = $en_data;
+        }
+      }
+    }
+  }
+
+  // Default images to appear in all translations - Jatin Rupeja
+  if ($form_id == 'article_node_form' && arg(3) == 'add') {
+    global $language;
+    $lang = $language->language;
+
+    if ($lang != 'en') {
+      //For Body Summary
+      if (empty($form['#node']->body[$lang])) {
+        $node_lang = $form['#node']->language;
+        $en_data = $form['#node']->body['en'];
+        $und_data = $form['#node']->body['und'];
+        $node_lang_data = $form['#node']->body[$node_lang];
+
+        if (!empty($node_lang_data)) {
+          $form['#node']->body[$lang] = $node_lang_data;
+        }
+        elseif (!empty($en_data)) {
+          $form['#node']->body[$lang] = $en_data;
+        }
+      }
+
+      //For Field Article Image
+      if (empty($form['#node']->field_article_img[$lang])) {
+        $node_lang = $form['#node']->language;
+        $en_data = $form['#node']->field_article_img['en'];
+        $und_data = $form['#node']->field_article_img['und'];
+        $node_lang_data = $form['#node']->field_article_img[$node_lang];
+        if (!empty($node_lang_data)) {
+          $form['#node']->field_article_img[$lang] = $node_lang_data;
+        }
+        elseif (!empty($en_data)) {
+          $form['#node']->field_article_img[$lang] = $en_data;
+        }
+      }
+    }
+  }
+
+  if ($form_id == 'event_node_form' && arg(3) == 'add') {
+    global $language;
+    $lang = $language->language;
+
+    if ($lang != 'en') {
+      //For Body Summary
+      if (empty($form['#node']->body[$lang])) {
+        $node_lang = $form['#node']->language;
+        $en_data = $form['#node']->body['en'];
+        $und_data = $form['#node']->body['und'];
+        $node_lang_data = $form['#node']->body[$node_lang];
+
+        if (!empty($node_lang_data)) {
+          $form['#node']->body[$lang] = $node_lang_data;
+        }
+        elseif (!empty($en_data)) {
+          $form['#node']->body[$lang] = $en_data;
+        }
+      }
+    }
+  }
+
+  if ($form_id == 'publication_node_form' && arg(3) == 'add') {
+    global $language;
+    $lang = $language->language;
+
+    if ($lang != 'en') {
+      //For Body Summary
+      if (empty($form['#node']->body[$lang])) {
+        $node_lang = $form['#node']->language;
+        $en_data = $form['#node']->body['en'];
+        $und_data = $form['#node']->body['und'];
+        $node_lang_data = $form['#node']->body[$node_lang];
+
+        if (!empty($node_lang_data)) {
+          $form['#node']->body[$lang] = $node_lang_data;
+        }
+        elseif (!empty($en_data)) {
+          $form['#node']->body[$lang] = $en_data;
+        }
+      }
+    }
+  }
+
   //Overriding form fields
   if ($form_id == 'webform_client_form_14371') {
     $form['#after_build'][] = 'captcha_title_change_after_build';
