@@ -46,18 +46,27 @@ function _batch_process_admin_image_path_change_script(&$context) {
                                 LIMIT {$context['sandbox']['from_limit']} , {$limit}");
   foreach ($query2 as $key => $value) {
     $node_obj = node_load($value->nid);
-//    if($node_obj->nid == 3866){
+//    if($node_obj->nid == 57){
 //      print_r($node_obj); die;
 //    }
-    
+//    print_r($body);
     $body = $node_obj->body[LANGUAGE_NONE][0]['value'];
-    $body = preg_replace("/\<img src=\"\/sites\/default\/files/", "<img src=\"/sites/academics/files", $body);
-    $body = preg_replace("/\<img src=\"http:\/\/(www\.)?agakhanacademies\.org\/sites\/default\/files/", "<img src=\"{$base_url}/sites/academics/files", $body);
-    $body = preg_replace("/href=\"http:\/\/(www\.)?agakhanacademies\.org\/sites\/default\/files/", "href=\"{$base_url}/sites/academics/files", $body);
-    $body = preg_replace("/href=\"\/sites\/default\/files/", "href=\"{$base_url}/sites/academics/files", $body);
+    $body = str_replace('new.agakhanacademies.org', 'agakhanacademies.org', $body);
+//    $body = preg_replace("/\<img src=\"\/sites\/default\/files/", "<img src=\"/sites/academics/files", $body);
+////    $body = preg_replace("/\<img src=\"http:\/\/(www\.)?agakhanacademies\.org\/sites\/default\/files/", "<img src=\"{$base_url}/sites/academics/files", $body);
+//    $body = preg_replace("/\<img src=\"http:\/\/(new\.)?agakhanacademies\.org\/sites/academics/files/", "<img src=\"{$base_url}/sites/academics/files/", $body);
+////    $body = preg_replace("/href=\"http:\/\/(www\.)?agakhanacademies\.org\/sites\/default\/files/", "href=\"{$base_url}/sites/academics/files", $body);
+//    $body = preg_replace("/href=\"http:\/\/(new\.)?agakhanacademies\.org\/sites/academics/files/", "href=\"{$base_url}/sites/academics/files/", $body);
+//    $body = preg_replace("/href=\"\/sites\/default\/files/", "href=\"{$base_url}/sites/academics/files", $body);
+   
+//    print_r($body);
     $node_obj->body[LANGUAGE_NONE][0]['value'] = $body;
     field_attach_update('node', $node_obj);
-
+    
+// if ($node_obj->nid == 57) {
+//      print_r($node_obj);
+//      die;
+//    }
     $context['results'][] = check_plain($node_obj->nid);
     $context['sandbox']['progress'] ++;
     $context['sandbox']['from_limit'] ++;
