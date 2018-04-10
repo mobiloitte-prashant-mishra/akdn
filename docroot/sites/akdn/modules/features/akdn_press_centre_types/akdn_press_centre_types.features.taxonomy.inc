@@ -9,6 +9,29 @@
  */
 function akdn_press_centre_types_taxonomy_default_vocabularies() {
   return array(
+    'akmi_pages' => array(
+      'name' => 'AKMI Pages',
+      'machine_name' => 'akmi_pages',
+      'description' => 'PAGES UNDER AKMI',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
     'article_type' => array(
       'name' => 'Article Type',
       'machine_name' => 'article_type',

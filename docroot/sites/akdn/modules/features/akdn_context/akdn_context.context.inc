@@ -11,7 +11,7 @@ function akdn_context_context_default_contexts() {
   $export = array();
 
   $context = new stdClass();
-  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->disabled = TRUE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'about_us';
   $context->description = 'Context settings for about us page';
@@ -131,6 +131,12 @@ function akdn_context_context_default_contexts() {
           'region' => 'branding',
           'weight' => '0',
         ),
+        'akdn_custom-page_lang_switcher' => array(
+          'module' => 'akdn_custom',
+          'delta' => 'page_lang_switcher',
+          'region' => 'branding',
+          'weight' => '1',
+        ),
       ),
     ),
   );
@@ -219,6 +225,12 @@ function akdn_context_context_default_contexts() {
           'region' => 'branding',
           'weight' => '-12',
         ),
+        'akdn_custom-page_lang_switcher' => array(
+          'module' => 'akdn_custom',
+          'delta' => 'page_lang_switcher',
+          'region' => 'branding',
+          'weight' => '-10',
+        ),
       ),
     ),
   );
@@ -261,6 +273,12 @@ function akdn_context_context_default_contexts() {
           'delta' => '56',
           'region' => 'branding',
           'weight' => '-10',
+        ),
+        'akdn_custom-page_lang_switcher' => array(
+          'module' => 'akdn_custom',
+          'delta' => 'page_lang_switcher',
+          'region' => 'branding',
+          'weight' => '-9',
         ),
         'panels_mini-akaa_sidebar' => array(
           'module' => 'panels_mini',
@@ -420,6 +438,12 @@ function akdn_context_context_default_contexts() {
           'region' => 'content',
           'weight' => '-10',
         ),
+        'akdn_custom-page_lang_switcher' => array(
+          'module' => 'akdn_custom',
+          'delta' => 'page_lang_switcher',
+          'region' => 'branding',
+          'weight' => '-10',
+        ),
         'views-custom_header_block-block' => array(
           'module' => 'views',
           'delta' => 'custom_header_block-block',
@@ -465,6 +489,12 @@ function akdn_context_context_default_contexts() {
           'region' => 'branding',
           'weight' => '-10',
         ),
+        'akdn_custom-page_lang_switcher' => array(
+          'module' => 'akdn_custom',
+          'delta' => 'page_lang_switcher',
+          'region' => 'branding',
+          'weight' => '-9',
+        ),
         'views-eb33bf32e585fe570819d020538cef8f' => array(
           'module' => 'views',
           'delta' => 'eb33bf32e585fe570819d020538cef8f',
@@ -509,6 +539,12 @@ function akdn_context_context_default_contexts() {
           'delta' => '161',
           'region' => 'branding',
           'weight' => '-10',
+        ),
+        'akdn_custom-page_lang_switcher' => array(
+          'module' => 'akdn_custom',
+          'delta' => 'page_lang_switcher',
+          'region' => 'branding',
+          'weight' => '-9',
         ),
         'views-eb33bf32e585fe570819d020538cef8f' => array(
           'module' => 'views',
@@ -572,6 +608,12 @@ function akdn_context_context_default_contexts() {
           'region' => 'branding',
           'weight' => '-10',
         ),
+        'akdn_custom-page_lang_switcher' => array(
+          'module' => 'akdn_custom',
+          'delta' => 'page_lang_switcher',
+          'region' => 'branding',
+          'weight' => '-9',
+        ),
       ),
     ),
   );
@@ -609,13 +651,19 @@ function akdn_context_context_default_contexts() {
           'module' => 'block',
           'delta' => '161',
           'region' => 'branding',
-          'weight' => '-8',
+          'weight' => '-10',
+        ),
+        'akdn_custom-page_lang_switcher' => array(
+          'module' => 'akdn_custom',
+          'delta' => 'page_lang_switcher',
+          'region' => 'branding',
+          'weight' => '-9',
         ),
         'views--exp-akmi_performance-page' => array(
           'module' => 'views',
           'delta' => '-exp-akmi_performance-page',
           'region' => 'branding',
-          'weight' => '10',
+          'weight' => '-8',
         ),
         'views-custom_header_block-block_4' => array(
           'module' => 'views',
@@ -668,6 +716,12 @@ function akdn_context_context_default_contexts() {
           'region' => 'branding',
           'weight' => '-10',
         ),
+        'akdn_custom-page_lang_switcher' => array(
+          'module' => 'akdn_custom',
+          'delta' => 'page_lang_switcher',
+          'region' => 'branding',
+          'weight' => '-9',
+        ),
       ),
     ),
   );
@@ -699,25 +753,31 @@ function akdn_context_context_default_contexts() {
           'module' => 'block',
           'delta' => '161',
           'region' => 'branding',
-          'weight' => '-2',
+          'weight' => '-10',
+        ),
+        'akdn_custom-page_lang_switcher' => array(
+          'module' => 'akdn_custom',
+          'delta' => 'page_lang_switcher',
+          'region' => 'branding',
+          'weight' => '-9',
         ),
         'akdn_custom-akdn_filter' => array(
           'module' => 'akdn_custom',
           'delta' => 'akdn_filter',
           'region' => 'branding',
-          'weight' => '1',
+          'weight' => '-8',
         ),
         'akdn_custom-akdn_date_filter' => array(
           'module' => 'akdn_custom',
           'delta' => 'akdn_date_filter',
           'region' => 'branding',
-          'weight' => '2',
+          'weight' => '-7',
         ),
         'facetapi-WnmJtCgdRqbDpG7QK7xYCqp5yvH0BHGJ' => array(
           'module' => 'facetapi',
           'delta' => 'WnmJtCgdRqbDpG7QK7xYCqp5yvH0BHGJ',
           'region' => 'branding',
-          'weight' => '3',
+          'weight' => '-6',
         ),
         'block-171' => array(
           'module' => 'block',
@@ -862,6 +922,12 @@ function akdn_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'akdn_custom-page_lang_switcher' => array(
+          'module' => 'akdn_custom',
+          'delta' => 'page_lang_switcher',
+          'region' => 'branding',
+          'weight' => '-1',
+        ),
         'akdn_custom-geography_agency_logo_title' => array(
           'module' => 'akdn_custom',
           'delta' => 'geography_agency_logo_title',
@@ -946,11 +1012,17 @@ function akdn_context_context_default_contexts() {
           'region' => 'branding',
           'weight' => '-10',
         ),
+        'akdn_custom-page_lang_switcher' => array(
+          'module' => 'akdn_custom',
+          'delta' => 'page_lang_switcher',
+          'region' => 'branding',
+          'weight' => '-9',
+        ),
         'akdn_custom-custom_content_breadcrumb' => array(
           'module' => 'akdn_custom',
           'delta' => 'custom_content_breadcrumb',
           'region' => 'branding',
-          'weight' => '-9',
+          'weight' => '-8',
         ),
       ),
     ),
@@ -1261,7 +1333,7 @@ function akdn_context_context_default_contexts() {
   $export['gallery_meta'] = $context;
 
   $context = new stdClass();
-  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->disabled = TRUE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'geography';
   $context->description = '';
@@ -1388,6 +1460,12 @@ function akdn_context_context_default_contexts() {
           'region' => 'branding',
           'weight' => '-10',
         ),
+        'akdn_custom-page_lang_switcher' => array(
+          'module' => 'akdn_custom',
+          'delta' => 'page_lang_switcher',
+          'region' => 'branding',
+          'weight' => '-9',
+        ),
       ),
     ),
   );
@@ -1498,6 +1576,12 @@ function akdn_context_context_default_contexts() {
           'delta' => 'geography_agency_logo_title',
           'region' => 'branding',
           'weight' => '-10',
+        ),
+        'akdn_custom-page_lang_switcher' => array(
+          'module' => 'akdn_custom',
+          'delta' => 'page_lang_switcher',
+          'region' => 'branding',
+          'weight' => '-9',
         ),
       ),
     ),
@@ -1932,7 +2016,7 @@ function akdn_context_context_default_contexts() {
   $export['press_release'] = $context;
 
   $context = new stdClass();
-  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->disabled = TRUE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'project_details_page';
   $context->description = '';
@@ -1956,11 +2040,17 @@ function akdn_context_context_default_contexts() {
           'region' => 'branding',
           'weight' => '-10',
         ),
+        'akdn_custom-page_lang_switcher' => array(
+          'module' => 'akdn_custom',
+          'delta' => 'page_lang_switcher',
+          'region' => 'branding',
+          'weight' => '-9',
+        ),
         'akdn_custom-akdn_breadcrumb_trail' => array(
           'module' => 'akdn_custom',
           'delta' => 'akdn_breadcrumb_trail',
           'region' => 'branding',
-          'weight' => '-9',
+          'weight' => '-8',
         ),
       ),
     ),
@@ -2419,7 +2509,7 @@ function akdn_context_context_default_contexts() {
           'module' => 'akdn_custom',
           'delta' => 'akdn_breadcrumb_trail',
           'region' => 'branding',
-          'weight' => '-1',
+          'weight' => '1',
         ),
         'block-126' => array(
           'module' => 'block',
