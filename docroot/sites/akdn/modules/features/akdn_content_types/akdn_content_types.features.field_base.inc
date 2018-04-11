@@ -463,7 +463,7 @@ function akdn_content_types_field_default_field_bases() {
       'title_value' => '',
       'url' => 0,
     ),
-    'translatable' => 1,
+    'translatable' => 0,
     'type' => 'link_field',
   );
 
@@ -493,7 +493,7 @@ function akdn_content_types_field_default_field_bases() {
       'title_value' => '',
       'url' => 0,
     ),
-    'translatable' => 1,
+    'translatable' => 0,
     'type' => 'link_field',
   );
 
@@ -518,7 +518,7 @@ function akdn_content_types_field_default_field_bases() {
       ),
       'uri_scheme' => 'public',
     ),
-    'translatable' => 1,
+    'translatable' => 0,
     'type' => 'image',
   );
 
@@ -567,7 +567,7 @@ function akdn_content_types_field_default_field_bases() {
       'entity_translation_sync' => FALSE,
       'max_length' => 255,
     ),
-    'translatable' => 1,
+    'translatable' => 0,
     'type' => 'text',
   );
 
@@ -2174,7 +2174,7 @@ function akdn_content_types_field_default_field_bases() {
     'settings' => array(
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 1,
+    'translatable' => 0,
     'type' => 'text_with_summary',
   );
 
