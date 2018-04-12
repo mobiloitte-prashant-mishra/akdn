@@ -4535,7 +4535,27 @@ return true;
   $pane->type = 'entity_field';
   $pane->subtype = 'node:body';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'entity_field_value:node:page:field_basic_page_choose_layout',
+        'settings' => array(
+          'field_basic_page_choose_layout' => array(
+            'en' => array(
+              0 => array(
+                'value' => 'basic',
+              ),
+            ),
+          ),
+          'field_basic_page_choose_layout_value' => array(
+            0 => 'basic',
+          ),
+        ),
+        'context' => 'argument_entity_id:node_1',
+        'not' => FALSE,
+      ),
+    ),
+  );
   $pane->configuration = array(
     'label' => 'hidden',
     'formatter' => 'text_default',
