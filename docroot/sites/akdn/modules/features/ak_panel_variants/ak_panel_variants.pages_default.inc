@@ -3034,7 +3034,28 @@ if (isset($node->field_about_page)) {
   $pane->type = 'entity_field';
   $pane->subtype = 'node:field_publication_file';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'php',
+        'settings' => array(
+          'description' => 'Has content',
+          'php' => 'global $language;
+  $lang = $language->language;
+  $arg = arg(1);
+  $node = node_load($arg);
+  if ($node->field_publication_file[$lang][0][\'uri\']) {
+    $select = $node->field_publication_file[$lang][0][\'uri\'];
+  }
+
+  if (!empty($select)) {
+    return true;
+  }',
+        ),
+        'not' => FALSE,
+      ),
+    ),
+  );
   $pane->configuration = array(
     'label' => 'hidden',
     'formatter' => 'file_download_link',
