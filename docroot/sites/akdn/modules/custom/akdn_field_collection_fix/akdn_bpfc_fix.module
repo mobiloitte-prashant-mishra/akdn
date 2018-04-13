@@ -1,0 +1,102 @@
+<?php
+
+
+/**
+ * Implementation of hook_menu
+ *
+ */
+function akdn_bpfc_fix_menu() {
+  $items['basic-page-accordian-revision'] = array(
+    'page callback' => 'akdn_custom_basic_page_accordian_revision',
+    'access arguments' => array('access content'),
+  );
+  return $items;
+}
+
+/**
+ * Call back for admin/image-path-change
+ * @global $user
+ */
+function akdn_custom_basic_page_accordian_revision() {
+  global $user;
+  if ($user->uid == 1) {
+    $batch = array(
+      'operations' => array(
+        array('_batch_process_basic_page_fc_script', array()),
+      ),
+      'finished' => 'batch_basic_page_fc_script_finished',
+      'title' => t('Basic page field collection revision id'),
+      'init_message' => t('Revision id change.'),
+      'progress_message' => t('Processed @current out of @total.'),
+      'error_message' => t('Revision id Batch has encountered an error.'),
+    );
+    batch_set($batch);
+    batch_process('home');
+  }
+  else {
+    drupal_access_denied();
+  }
+}
+
+function _batch_process_basic_page_fc_script(){
+// set_time_limit(3000000000);
+  $context['finished'] = 0;
+  $limit = 10;
+  if (!isset($context['sandbox']['progress'])) {
+    $total_row = db_query("SELECT count(entity_id) FROM {field_data_field_basic_page_accordian_style}")->fetchField();
+    $context['sandbox']['max'] = $total_row;
+    $context['sandbox']['progress'] = 0;
+    $context['sandbox']['from_limit'] = 0;
+  }
+  $revision_ids = db_select('field_data_field_basic_page_accordian_style', 'bp')
+                ->fields('bp', array('entity_id', 'field_basic_page_accordian_style_value', 'field_basic_page_accordian_style_revision_id'))
+                ->orderBy('entity_id', 'ASC')
+                ->execute()
+                ->fetchAll();
+
+   foreach($revision_ids as $key => $value){
+     $fc_load = entity_load('field_collection_item', array($value->field_basic_page_accordian_style_value));
+     if($fc_load[$value->field_basic_page_accordian_style_value]->revision_id != $value->field_basic_page_accordian_style_revision_id){
+       db_update('field_data_field_basic_page_accordian_style')
+            ->fields(array('field_basic_page_accordian_style_revision_id' => $fc_load[$value->field_basic_page_accordian_style_value]->revision_id))
+            ->condition('entity_id', $value->entity_id, '=')
+            ->condition('field_basic_page_accordian_style_value', $value->field_basic_page_accordian_style_value, '=')
+            ->execute();
+     }
+     
+    $context['results'][] = check_plain($value->field_basic_page_accordian_style_value);
+    $context['sandbox']['progress'] ++;
+    $context['sandbox']['from_limit'] ++;
+    $context['message'] = t("%fc_id (%rid_old) => %rid_new is updated", array(
+      '%fc_id' => $value->field_basic_page_accordian_style_value->nid, 
+      '%rid_old' => $value->field_basic_page_accordian_style_revision_id,
+      '%rid_new' => $fc_load->revision_id
+      ));
+   }
+   if ($context['sandbox']['progress'] == $context['sandbox']['max']) {
+    $context['finished'] = 1;
+  }
+}
+
+/**
+ * Batch 'finished' callback
+ * @param type $success
+ * @param type $results
+ * @param type $operations
+ * @author Samit khulve
+ */
+function batch_basic_page_fc_script_finished($success, $results, $operations) {
+  if ($success) {
+    // Here we do something meaningful with the results.
+    $message = 'Total ' . (count($results)) . ' Records write';
+    $message .= theme('item_list', $results);
+    drupal_set_message($message);
+  }
+  else {
+    // An error occurred.
+    // $operations contains the operations that remained unprocessed.
+    $error_operation = reset($operations);
+    $message = t('An error occurred while processing %error_operation with arguments: @arguments', array('%error_operation' => $error_operation[0], '@arguments' => print_r($error_operation[1], TRUE)));
+    drupal_set_message($message, 'error');
+  }
+}

@@ -58,8 +58,10 @@ function _batch_process_admin_image_path_change_script(&$context) {
 ////    $body = preg_replace("/href=\"http:\/\/(www\.)?agakhanacademies\.org\/sites\/default\/files/", "href=\"{$base_url}/sites/academics/files", $body);
 //    $body = preg_replace("/href=\"http:\/\/(new\.)?agakhanacademies\.org\/sites/academics/files/", "href=\"{$base_url}/sites/academics/files/", $body);
 //    $body = preg_replace("/href=\"\/sites\/default\/files/", "href=\"{$base_url}/sites/academics/files", $body);
-   
-//    print_r($body);
+
+//    $body = preg_replace("/\<img src=\"http:\/\/(www\.)?agakhanacademies\.org\/sites\/default\/files/", "<img src=\"{$base_url}/sites/academics/files", $body);
+//    $body = preg_replace("/href=\"http:\/\/(www\.)?agakhanacademies\.org\/sites\/default\/files/", "href=\"{$base_url}/sites/academics/files", $body);
+//    $body = preg_replace("/href=\"\/sites\/default\/files/", "href=\"{$base_url}/sites/academics/files", $body);
     $node_obj->body[LANGUAGE_NONE][0]['value'] = $body;
     field_attach_update('node', $node_obj);
     

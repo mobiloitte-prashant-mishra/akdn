@@ -76,6 +76,7 @@ function ak_panel_variants_default_page_manager_handlers() {
             'paths' => 'agencies/aga-khan-award-architecture-0
 architecture
 node/22106
+node/9576
 our-agencies/aga-khan-music-initiative
 akmi',
           ),
@@ -3033,7 +3034,28 @@ if (isset($node->field_about_page)) {
   $pane->type = 'entity_field';
   $pane->subtype = 'node:field_publication_file';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'php',
+        'settings' => array(
+          'description' => 'Has content',
+          'php' => 'global $language;
+  $lang = $language->language;
+  $arg = arg(1);
+  $node = node_load($arg);
+  if ($node->field_publication_file[$lang][0][\'uri\']) {
+    $select = $node->field_publication_file[$lang][0][\'uri\'];
+  }
+
+  if (!empty($select)) {
+    return true;
+  }',
+        ),
+        'not' => FALSE,
+      ),
+    ),
+  );
   $pane->configuration = array(
     'label' => 'hidden',
     'formatter' => 'file_download_link',
@@ -4534,7 +4556,27 @@ return true;
   $pane->type = 'entity_field';
   $pane->subtype = 'node:body';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'entity_field_value:node:page:field_basic_page_choose_layout',
+        'settings' => array(
+          'field_basic_page_choose_layout' => array(
+            'en' => array(
+              0 => array(
+                'value' => 'basic',
+              ),
+            ),
+          ),
+          'field_basic_page_choose_layout_value' => array(
+            0 => 'basic',
+          ),
+        ),
+        'context' => 'argument_entity_id:node_1',
+        'not' => FALSE,
+      ),
+    ),
+  );
   $pane->configuration = array(
     'label' => 'hidden',
     'formatter' => 'text_default',
@@ -4672,7 +4714,7 @@ return true;
   $pane->panel = 'right';
   $pane->type = 'block';
   $pane->subtype = 'akdn_custom-right_panel_press_center_block';
-  $pane->shown = FALSE;
+  $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,
@@ -14123,7 +14165,7 @@ print \'<h2 class="pane-title">\'.t(\'More projects by\').\'</h2>\';
   $pane->panel = 'right';
   $pane->type = 'block';
   $pane->subtype = 'menu-menu-see-also';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,
@@ -14238,7 +14280,8 @@ print \'<h2 class="pane-title">\'.t(\'More projects by\').\'</h2>\';
           'settings' => array(
             'visibility_setting' => '1',
             'paths' => 'agencies/aga-khan-award-architecture-0
-architecture',
+architecture
+node/9576',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -14301,6 +14344,29 @@ architecture',
   $display->content['new-9cc31b64-51e0-4186-a81a-7e24a4962442'] = $pane;
   $display->panels['middle'][0] = 'new-9cc31b64-51e0-4186-a81a-7e24a4962442';
   $pane = new stdClass();
+  $pane->pid = 'new-376c976e-e45d-4a06-acff-aefa2f61c649';
+  $pane->panel = 'middle';
+  $pane->type = 'block';
+  $pane->subtype = 'akdn_custom-page_lang_switcher';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '376c976e-e45d-4a06-acff-aefa2f61c649';
+  $display->content['new-376c976e-e45d-4a06-acff-aefa2f61c649'] = $pane;
+  $display->panels['middle'][1] = 'new-376c976e-e45d-4a06-acff-aefa2f61c649';
+  $pane = new stdClass();
   $pane->pid = 'new-e17359a1-b697-4cc1-8e4f-352d22515840';
   $pane->panel = 'middle';
   $pane->type = 'block';
@@ -14317,11 +14383,11 @@ architecture',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = 'e17359a1-b697-4cc1-8e4f-352d22515840';
   $display->content['new-e17359a1-b697-4cc1-8e4f-352d22515840'] = $pane;
-  $display->panels['middle'][1] = 'new-e17359a1-b697-4cc1-8e4f-352d22515840';
+  $display->panels['middle'][2] = 'new-e17359a1-b697-4cc1-8e4f-352d22515840';
   $pane = new stdClass();
   $pane->pid = 'new-376c976e-e45d-4a06-acff-aefa2f61c649';
   $pane->panel = 'middle';
@@ -14527,26 +14593,34 @@ architecture',
     'admin_title' => 'About page information',
     'title' => '',
     'body' => '<?php
+global $language;
+$lang = $language->language;
+
 $node = menu_get_object();
+
 print \'<div class = "whatsnew-right-content">\';
 if (isset($node->field_about_page)) {
-  $about = node_load($node->field_about_page[$node->language][0][\'nid\']);
+$about = (isset($node->field_about_page[$lang])) ?  node_load($node->field_about_page[$lang][0][\'nid\']) : node_load($node->field_about_page[$node->language][0][\'nid\']);
   if (isset($about->nid)) {
-    print \'<p class = "whats-new-gold">ABOUT THE</p>\';
-    print \'<div class = "grid-whatsnew-block_subtitle">\'. $about->field_short_title[$about->language][0][\'value\'] .\'</div>\';
-    if (!empty($about->body[$about->language][0][\'summary\']) && !empty($about->body[$about->language][0][\'value\']))
-      print \'<div class="grid-whatsnew-block_body">\'. $about->body[$about->language][0][\'summary\'] .\' <a class = "views-more-link-akaa" href="\'.
-      url("node/{$about->nid}") .\'">More</a></div>\';
-    else if (!empty($about->body[$about->language][0][\'summary\']) && empty($about->body[$about->language][0][\'value\'])) 
-      print \'<div class="grid-whatsnew-block_body">\'. $about->body[$about->language][0][\'summary\'] .\'</div>\';
+    print \'<p class = "whats-new-gold">\'.t("ABOUT THE").\'</p>\';
+$short_title_language = (isset($about->field_short_title[$lang])) ?  $about->field_short_title[$lang] : $about->field_short_title[$about->language];
+    print \'<div class = "grid-whatsnew-block_subtitle">\'. $short_title_language[0][\'value\'] .\'</div>\';
+$body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[$about->language];
+
+    if (!empty($body[0][\'summary\']) && !empty($body[0][\'value\']))
+      print \'<div class="grid-whatsnew-block_body">\'. $body[0][\'summary\'] .\' <a class = "views-more-link-akaa" href="\'.
+      url("node/{$about->nid}") .\'">\'.t("More").\'</a></div>\';
+    else if (!empty($body[0][\'summary\']) && empty($body[0][\'value\']))
+      print \'<div class="grid-whatsnew-block_body">\'. $body[0][\'summary\'] .\'</div>\';
     else
-      print \'<div class="grid-whatsnew-block_body">\'. text_summary($about->body[$about->language][0][\'value\'], $about->body[$about->language][0][\'format\'], 1200) .\' <a class = "views-more-link-akaa" href="\'.url("node/{$about->nid}") .\'">More</a></div>\';
+      print \'<div class="grid-whatsnew-block_body">\'. text_summary($body[0][\'value\'], $body[0][\'format\'], 1200) .\' <a class = "views-more-link-akaa" href="\'.url("node/{$about->nid}") .\'">\'.t("More").\'</a></div>\';
    }
 }
 print \'</div>\';
 ?>',
     'format' => 'php_code',
     'substitute' => 0,
+    'title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -14567,7 +14641,7 @@ print \'</div>\';
   $pane->panel = 'middle';
   $pane->type = 'block';
   $pane->subtype = 'akdn_custom-ac_lang_switch';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
@@ -14659,13 +14733,13 @@ print \'</div>\';
     'title' => '',
     'body' => '<?php
 print  \'<div class="sub-navbar">
-<div class="pane-content">
-   <p><span>I</span><span>NFORMATION ON THE AWARD</span></p>
+<div class="pane-content">\' . t("<p><span>I</span><span>NFORMATION ON THE AWARD</span></p>") .\'
 </div>
 </div>\';
 ?>',
     'format' => 'php_code',
     'substitute' => 1,
+    'title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -14971,19 +15045,17 @@ print  \'<div class="sub-navbar">
   $pane->shown = TRUE;
   $pane->access = array(
     'plugins' => array(
-      0 => array(
-        'name' => 'entity_field_value:node:agency:field_show_news_and_resources',
+      1 => array(
+        'name' => 'php',
         'settings' => array(
-          'field_show_news_and_resources' => array(
-            'und' => array(
-              0 => array(
-                'value' => 1,
-              ),
-            ),
-          ),
-          'field_show_news_and_resources_value' => '1',
+          'description' => 'show block 1',
+          'php' => 'global $language;
+  $node = $contexts[\'argument_entity_id:node_1\']->data;
+  if(!empty($node->field_show_news_and_resources)){
+    $news_and_resource = $node->field_show_news_and_resources[$language->language][0][\'value\'];
+    if(!empty($news_and_resource)){ return true; }
+  }',
         ),
-        'context' => 'argument_entity_id:node_1',
         'not' => FALSE,
       ),
     ),
@@ -15230,19 +15302,17 @@ return true;
   $pane->shown = TRUE;
   $pane->access = array(
     'plugins' => array(
-      0 => array(
-        'name' => 'entity_field_value:node:agency:field_show_fact_block',
+      1 => array(
+        'name' => 'php',
         'settings' => array(
-          'field_show_fact_block' => array(
-            'und' => array(
-              0 => array(
-                'value' => 1,
-              ),
-            ),
-          ),
-          'field_show_fact_block_value' => '1',
+          'description' => 'show fact block',
+          'php' => 'global $language;
+  $node = $contexts[\'argument_entity_id:node_1\']->data;
+  if(!empty($node->field_show_fact_block)){
+    $facts = $node->field_show_fact_block[$language->language][0][\'value\'];
+    if(!empty($facts)){ return true; }
+  }',
         ),
-        'context' => 'argument_entity_id:node_1',
         'not' => FALSE,
       ),
     ),

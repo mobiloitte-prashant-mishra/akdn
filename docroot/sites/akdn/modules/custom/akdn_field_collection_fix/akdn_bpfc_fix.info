@@ -1,0 +1,4 @@
+name = AKDN basic page field collection fix
+description = This is a module for field collection fix after entity translation script.
+core = 7.x
+package = Custom

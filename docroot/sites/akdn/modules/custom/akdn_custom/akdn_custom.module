@@ -853,17 +853,17 @@ function akdn_custom_block_info() {
       'info' => t('Custom Language Switcher'),
       'cache' => DRUPAL_NO_CACHE,
     ),
- 'page_lang_switcher' => array(
+    'page_lang_switcher' => array(
       'info' => t('Custom Onpage Language Switcher'),
       'cache' => DRUPAL_NO_CACHE,
     ),
     'where_we_work_related_info' => array(
       'info' => t('Custom Where We Work Related Info'),
-       'cache' => DRUPAL_NO_CACHE,
- ),
- 'see_also_custom_block' => array(
+      'cache' => DRUPAL_NO_CACHE,
+    ),
+    'see_also_custom_block' => array(
       'info' => t('Custom See ALso Block'),
- 'cache' => DRUPAL_NO_CACHE,
+      'cache' => DRUPAL_NO_CACHE,
     ),
     'akaa_resources' => array(
       'info' => t('AKAA Resources Links'),
@@ -1244,9 +1244,7 @@ function akdn_all_areas_of_activity() {
       $output_header .= '<h2 class = "pane-title">' . t("All Areas of Activities") . '</h2>';
       $output_header .= '<div class = "all-activities-sidebar">';
 
-
       foreach ($get_activities as $values) {
-
         $node_load = node_load($values->nid);
         $translations = $node_load->translations->data;
 
@@ -2130,7 +2128,6 @@ function what_we_do_news_and_resources() {
   $lang = $language->language;
   $arg = arg(1);
   $load = node_load($arg);
-
   $show = 0;
   if ($load->field_show_news_and_resources[$lang][0]['value']) {
     $show = $load->field_show_news_and_resources[$lang][0]['value'];
@@ -2313,7 +2310,6 @@ function what_we_do_news_and_resources() {
             $source = $field_media_source['und'][0]['url'];
           }
           $attribute = array('attributes' => array('target' => '_blank'));
-
           $read = l(t('View'), $source, $attribute);
         }
         if ($name == 'News') {
@@ -2327,10 +2323,6 @@ function what_we_do_news_and_resources() {
         }
         else {
           $image = $node->field_article_img['en'];
-        }
-
-        if (empty($image)) {
-          $image = $node->field_article_img['und'];
         }
 
         if (empty($image)) {
@@ -2499,6 +2491,9 @@ function what_we_do_news_and_resources() {
           $short_title = $node->field_short_title[$lang][0]['value'];
         }
         else {
+          $short_title = $node->field_short_title['en'][0]['value'];
+        }
+        if (empty($short_title)) {
           $short_title = $node->field_short_title['und'][0]['value'];
         }
         $output .= '<div class= "title">' . l($short_title, $source, $attribute) . '</div>';
@@ -2509,6 +2504,9 @@ function what_we_do_news_and_resources() {
           $short_title = $node->field_short_title[$lang][0]['value'];
         }
         else {
+          $short_title = $node->field_short_title['en'][0]['value'];
+        }
+        if (empty($short_title)) {
           $short_title = $node->field_short_title['und'][0]['value'];
         }
         $output .= '<div class= "title">' . l($short_title, 'node/' . $node->nid) . '</div>';
@@ -2519,6 +2517,9 @@ function what_we_do_news_and_resources() {
           $short_title = $node->field_short_title[$lang][0]['value'];
         }
         else {
+          $short_title = $node->field_short_title['en'][0]['value'];
+        }
+        if (empty($short_title)) {
           $short_title = $node->field_short_title['und'][0]['value'];
         }
         $output .= '<div class= "title">' . l($short_title, 'node/' . $node->nid) . '</div>';
@@ -5244,6 +5245,7 @@ function akdn_custom_views_post_render(&$view, &$output, &$cache) {
  */
 function config_blocks_display($node_obj) {
   $return_str = '';
+  global $language;
   $cb_ids = field_get_items('node', $node_obj, 'field_config_block_reference', LANGUAGE_NONE);
   foreach ($cb_ids as $key => $value) {
     $block_type = get_config_block_type($value['target_id']);
@@ -5259,7 +5261,7 @@ function config_blocks_display($node_obj) {
         $node_obj = node_load($value['target_id']);
         if (isset($node_obj) &&
             $node_obj->type == 'config_block' &&
-            (isset($node_obj->field_show_block['und'][0]['value']) && $node_obj->field_show_block['und'][0]['value'])) {
+            (isset($node_obj->field_show_block[$language->language][0]['value']) && $node_obj->field_show_block[$language->language][0]['value'])) {
 
           $instagram_feeds = $twitter_feeds = $facebook_feeds = '';
           $title = t('AKDN ON SOCIAL MEDIA');
