@@ -181,8 +181,7 @@ $databases = array (
   'default' =>
   array (
     'default' =>
-    array (
-<<<<<<< HEAD
+  array (
       'database' => 'akdn3academies1',
       'username' => 's39873',
       'password' => '9m3T72xRFhLNepf',

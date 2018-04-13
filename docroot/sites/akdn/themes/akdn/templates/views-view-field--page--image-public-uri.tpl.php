@@ -24,7 +24,6 @@
 $image_uri = "public://media/missingakdn.jpg";
 if (isset($row->{'_entity_properties'}['image_public_uri'])) {
   $image_path = $row->{'_entity_properties'}['image_public_uri'];
-
   $images_uris = explode(',', $image_path);
   $image_lang_uris = array();
   foreach ($images_uris as $img_value) {
