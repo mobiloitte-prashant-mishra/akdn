@@ -3044,11 +3044,15 @@ if (isset($node->field_about_page)) {
   $lang = $language->language;
   $arg = arg(1);
   $node = node_load($arg);
-  if ($node->field_publication_file[$lang][0][\'uri\']) {
-    $select = $node->field_publication_file[$lang][0][\'uri\'];
-  }
+  $node_lang = $node->language;
 
-  if (!empty($select)) {
+  if ($node->field_publication_file[$lang][0]["uri"]) {
+    $select = $node->field_publication_file[$lang][0]["uri"];
+  }
+ if($lang == "en" && $node_lang != "en"){
+   $show = !empty($node->field_publication_file[$lang][0]["uri"])?$node->field_publication_file[$lang][0]["uri"]:$node->field_publication_file[$node_lang][0]["uri"];
+  }
+  if (!empty($select) || !empty($show)) {
     return true;
   }',
         ),
