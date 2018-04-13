@@ -5242,6 +5242,7 @@ function akdn_custom_views_post_render(&$view, &$output, &$cache){
  */
 function config_blocks_display($node_obj) {
   $return_str = '';
+  global $language;
   $cb_ids = field_get_items('node', $node_obj, 'field_config_block_reference', LANGUAGE_NONE);
   foreach ($cb_ids as $key => $value) {
     $block_type = get_config_block_type($value['target_id']);
@@ -5257,7 +5258,7 @@ function config_blocks_display($node_obj) {
         $node_obj = node_load($value['target_id']);
         if (isset($node_obj) &&
             $node_obj->type == 'config_block' &&
-            (isset($node_obj->field_show_block['und'][0]['value']) && $node_obj->field_show_block['und'][0]['value'])) {
+            (isset($node_obj->field_show_block[$language->language][0]['value']) && $node_obj->field_show_block[$language->language][0]['value'])) {
 
           $instagram_feeds = $twitter_feeds = $facebook_feeds = '';
           $title = t('AKDN ON SOCIAL MEDIA');
