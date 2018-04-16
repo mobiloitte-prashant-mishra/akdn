@@ -49,7 +49,10 @@ if (isset($row->{'_entity_properties'}['image_public_uri'])) {
 if (arg(0) == 'search') {
   $style = 'article_listing_thumbnail';
 }
-else {
+elseif(arg(0) == 'press-centre' && arg(1) == 'publications') {
+  $style = 'publication_listing_image';
+//  $style = 'social_sharing_image';
+}else{
   $style = 'social_sharing_image';
 }
 //$style = 'article_listing_thumbnail';
