@@ -182,10 +182,10 @@ $databases = array (
   array (
     'default' =>
     array (
-      'database' => 'akdn3academies2',
-      'username' => 's39874',
-      'password' => 'aFfBj8VFX2XPEL7',
-      'host' => '127.0.0.1',
+      'database' => 'academics',
+      'username' => 'root',
+      'password' => 'root',
+      'host' => 'localhost',
       'port' => '',
       'driver' => 'mysql',
       'prefix' => '',
@@ -246,7 +246,7 @@ $drupal_hash_salt = 'UY2huecCJOhaVGOxgJdQM4QWuXsPbLQiJMZU-SlfidU';
  * for you.
  */
 
- #$base_url = 'http://new.agakhanacademies.org';  // NO trailing slash
+ #$base_url = 'http://agakhanacademies.org/';  // NO trailing slash!
 
 /**
  * PHP settings:
@@ -516,5 +516,5 @@ $conf['drupal_http_request_fails'] = FALSE; // Disable system warning caused by 
 // settings.php for development on your local workstation, set $db_url
 // (Drupal 5 or 6) or $databases (Drupal 7) as described in comments above.
 if (file_exists('/var/www/site-php')) {
-  require '/var/www/site-php/akdn3/akdn3-settings.inc';
+  require '/var/www/site-php/akdn3/academies1-settings.inc';
 }

@@ -1348,8 +1348,8 @@ print $output;
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'What\'s New';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['header']['area']['content'] = '<?php echo t("What\'s New");?>';
+  $handler->display->display_options['header']['area']['format'] = 'php_code';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Indexed Node: URL */
@@ -1500,16 +1500,23 @@ print $output;
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div class="header">Recent News</div>';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['header']['area']['content'] = '<div class="header"><?php echo t("Recent News");?></div>';
+  $handler->display->display_options['header']['area']['format'] = 'php_code';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   /* Footer: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
   $handler->display->display_options['footer']['area']['empty'] = TRUE;
-  $handler->display->display_options['footer']['area']['content'] = '<span class="view-more"><a href="/press-centre/news">More news stories</a></span>';
-  $handler->display->display_options['footer']['area']['format'] = 'full_html';
+  $handler->display->display_options['footer']['area']['content'] = '<?php 
+global $language;
+$lang = $language->language;
+if($lang != \'en\'){
+$langu = \'/\'.$lang.\'/\';}
+else{
+$langu = \'/\';}
+?><span class="view-more"><a href="<?php echo $langu;?>press-centre/news">More news stories</a></span>';
+  $handler->display->display_options['footer']['area']['format'] = 'php_code';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Indexed Node: URL */
@@ -1689,8 +1696,14 @@ print $content;
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<span class="presscenter-right-more-btn"><a href="/press-centre/press-releases">More Press Releases</a></span>';
-  $handler->display->display_options['footer']['area']['format'] = 'full_html';
+  $handler->display->display_options['footer']['area']['content'] = '<?php 
+global $language;
+$lang = $language->language;
+if($lang != \'en\'){
+$langu = \'/\'.$lang.\'/\';}
+else{
+$langu = \'/\';}?><span class="presscenter-right-more-btn"><a href="<?php echo $langu;?>press-centre/press-releases"><?php echo t("More Press Releases")?></a></span>';
+  $handler->display->display_options['footer']['area']['format'] = 'php_code';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Indexed Node: URL */
@@ -1801,96 +1814,6 @@ print $content;
     2612 => '2612',
   );
   $handler->display->display_options['block_description'] = 'Latest On AKDN (Press Release)';
-  $translatables['solr_search_pages_1'] = array(
-    t('Master'),
-    t('Recent Speeches'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('No results found!'),
-    t('Node ID'),
-    t('.'),
-    t(','),
-    t('Press Center: Recent Speeches'),
-    t('Speeches and Interviews'),
-    t('Solr Recent Speeches'),
-    t('Read'),
-    t('<div class="media-desc">
-<div class="date">[field_publish_date]</div>
-<div class="title">[field_short_title] 
-<div class="read-more">[view_node]</div>
-</div>
-</div>'),
-    t('Speeches quotes'),
-    t('Quote Finder'),
-    t('Solr Recent Speech Quotes'),
-    t('Speech Reference'),
-    t('<div class="media-desc">
-<div class="read-more"><a href="[url] ">Read full speech</a></div>
-</div>'),
-    t('Press Center - news'),
-    t('News'),
-    t('Projects'),
-    t('Spotlights'),
-    t('<div class="media-desc">
-<div class="title">[field_short_title]</div>
-<div class="title">[field_sub_title]
-<div class="read-more">[view_node]</div>
-</div>
-</div>'),
-    t('In The Media'),
-    t('<div class="media-desc">
-<div class="date">[field_publish_date] </div>
-<div class="source">[field_media_source]</div>
-<div class="title">[field_short_title] 
-<div class="read-more"><a href="[field_media_source_1]" target="_blank">Read</a> </div>
-</div>
-
-</div>
-'),
-    t('Press center - publication'),
-    t('Publications'),
-    t('Download'),
-    t('[view_node] | [field_publication_file]'),
-    t('In media Latest'),
-    t('What\'s New'),
-    t('More'),
-    t('Media Center Latest'),
-    t('News Block Details (Node)'),
-    t('News Block Details page'),
-    t('Related Information'),
-    t('All'),
-    t('Recent News'),
-    t('What\'s New News'),
-    t('<div class="header">Recent News</div>'),
-    t('<span class="view-more"><a href="/press-centre/news">More news stories</a></span>'),
-    t('<div class="news-footer">
-<span><a href="[url]">View</a></span>
-</div>'),
-    t('What\'s News News'),
-    t('Project Detail'),
-    t('Project Details'),
-    t('Recent Press Release'),
-    t('Press Release'),
-    t('<?php
-$akdn_text = t(\'Latest On AKDN\');
-$text = t(\'Press Releases\');
-$content = \'<h2 class="pane-title">\'.$akdn_text.\'</h2><div class="view-header">\'.$text.\'</div>\';
-print $content;
-?>'),
-    t('<span class="presscenter-right-more-btn"><a href="/press-centre/press-releases">More Press Releases</a></span>'),
-    t('Latest On AKDN (Press Release)'),
-  );
   $export['solr_search_pages_1'] = $view;
 
   return $export;
