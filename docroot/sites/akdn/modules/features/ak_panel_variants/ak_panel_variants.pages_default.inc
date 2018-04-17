@@ -4310,27 +4310,27 @@ if (isset($node->field_about_page)) {
           'settings' => array(
             'description' => 'if not about us',
             'php' => 'global $language;
-  $lang = $language->language;
-  $arg = arg(1);
-  $node = node_load($arg);
+    $lang = $language->language;
+    $arg = arg(1);
+    $node = node_load($arg);
 
-  if (!empty($node->field_tags[$lang])) {
-    foreach ($node->field_tags[$lang] as $value) {
-      if (!in_array(\'9006\', $value)) {
-       return true;
+    if (!empty($node->field_tags[$lang])) {
+      foreach ($node->field_tags[$lang] as $value) {
+        if (!in_array(\'9006\', $value)) {
+         return true;
+        }
       }
     }
-  }
-  else if(!empty($node->field_tags[\'und\'])){
-    foreach ($node->field_tags[\'und\'] as $value) {
-      if (!in_array(\'9006\', $value)) {
-       return true;
+    else if(!empty($node->field_tags[\'und\'])){
+      foreach ($node->field_tags[\'und\'] as $value) {
+        if (!in_array(\'9006\', $value)) {
+         return true;
+        }
       }
     }
-  }
-else if(empty($node->field_tags)){
-return true;
-}',
+  else if(empty($node->field_tags)){
+  return true;
+  }',
           ),
           'not' => FALSE,
         ),
@@ -4563,20 +4563,24 @@ return true;
   $pane->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'entity_field_value:node:page:field_basic_page_choose_layout',
+        'name' => 'php',
         'settings' => array(
-          'field_basic_page_choose_layout' => array(
-            'en' => array(
-              0 => array(
-                'value' => 'basic',
-              ),
-            ),
-          ),
-          'field_basic_page_choose_layout_value' => array(
-            0 => 'basic',
-          ),
+          'description' => 'Layout condition',
+          'php' => '  global $language;
+    $lang = $language->language;
+    $arg = arg(1);
+
+    $node = node_load($arg);
+    $node_lang = $node->language;
+
+    if ($node->field_basic_page_choose_layout[$lang][0][\'value\'] == \'basic\') {
+      $select = $node->field_basic_page_choose_layout[$lang][0][\'value\'];
+    }
+
+    if (!empty($select)) {
+      return true;
+    }',
         ),
-        'context' => 'argument_entity_id:node_1',
         'not' => FALSE,
       ),
     ),
