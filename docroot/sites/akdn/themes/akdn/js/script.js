@@ -365,14 +365,14 @@
         }
 
         function country_activity_title() {
-          $('.country-activity-tile .hub-pages-row > .views-field-field-short-title').height('auto');
+          $('.country-activity-tile .hub-pages-row > .views-field-field-short-title-et').height('auto');
           var ww = $(window).width();
           var maxHeight = -1;
-          $('.country-activity-tile .hub-pages-row > .views-field-field-short-title', context).each(function() {
+          $('.country-activity-tile .hub-pages-row > .views-field-field-short-title-et', context).each(function() {
             $(this).height('auto');
             maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
           });
-          $('.country-activity-tile .hub-pages-row > .views-field-field-short-title', context).each(function() {
+          $('.country-activity-tile .hub-pages-row > .views-field-field-short-title-et', context).each(function() {
             $(this).height('auto');
             $(this).height(maxHeight);
           });
@@ -380,7 +380,7 @@
 
         //icon valign
         function country_activity_icon_fix() {
-          $('.country-activity-tile .hub-pages-row > .views-field-field-short-title', context).each(function() {
+          $('.country-activity-tile .hub-pages-row > .views-field-field-short-title-et', context).each(function() {
             var $this = $(this);
             var $height = $this.height() - 26;
             var $final_height = $height/2;
