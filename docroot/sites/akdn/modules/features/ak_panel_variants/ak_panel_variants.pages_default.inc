@@ -6238,18 +6238,16 @@ if (isset($node->field_about_page)) {
   $pane->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'entity_field_value:node:focus_area:field_project_listing_area',
+        'name' => 'php',
         'settings' => array(
-          'field_project_listing_area' => array(
-            'und' => array(
-              0 => array(
-                'value' => '0',
-              ),
-            ),
-          ),
-          'field_project_listing_area_value' => '0',
+          'description' => 'Project Listing Automatic',
+          'php' => 'global $language;
+  $lang = $language->language;
+  $node = $contexts[\'argument_entity_id:node_1\']->data;
+  if(is_object($node) && !$node->field_project_listing_area[$lang][0][\'value\']){
+    return true;
+  }',
         ),
-        'context' => 'argument_entity_id:node_1',
         'not' => FALSE,
       ),
     ),
@@ -6296,18 +6294,16 @@ if (isset($node->field_about_page)) {
   $pane->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'entity_field_value:node:focus_area:field_project_listing_area',
+        'name' => 'php',
         'settings' => array(
-          'field_project_listing_area' => array(
-            'und' => array(
-              0 => array(
-                'value' => '1',
-              ),
-            ),
-          ),
-          'field_project_listing_area_value' => '1',
+          'description' => 'Project Listing Manual',
+          'php' => 'global $language;
+  $lang = $language->language;
+  $node = $contexts[\'argument_entity_id:node_1\']->data;
+  if(is_object($node) && $node->field_project_listing_area[$lang][0][\'value\']){
+    return true;
+  }',
         ),
-        'context' => 'argument_entity_id:node_1',
         'not' => FALSE,
       ),
     ),
@@ -6532,10 +6528,10 @@ if (isset($node->field_about_page)) {
         'settings' => array(
           'description' => 'Has content',
           'php' => '$view = views_get_view_result(\'facts_blocks\', \'facts_block\', arg(1));
-$result = count($view);
-if (!empty($result)) {
-return true;
-}',
+  $result = count($view);
+  if (!empty($result)) {
+  return true;
+  }',
         ),
         'not' => FALSE,
       ),
@@ -6569,21 +6565,21 @@ return true;
         'settings' => array(
           'description' => 'fact manual view',
           'php' => 'global $language;
-  $lang = $language->language;
-  $arg = arg(1);
-  $node = node_load($arg);
-  $field_select_fact_sheet = $node->field_select_fact_sheet;
-  if ($node->field_select_fact_sheet[$lang][0][\'value\']) {
-    $select = $node->field_select_fact_sheet[$lang][0][\'value\'];
-  }
+    $lang = $language->language;
+    $arg = arg(1);
+    $node = node_load($arg);
+    $field_select_fact_sheet = $node->field_select_fact_sheet;
+    if ($node->field_select_fact_sheet[$lang][0][\'value\']) {
+      $select = $node->field_select_fact_sheet[$lang][0][\'value\'];
+    }
 
-  $field_show_fact_block = $node->field_show_fact_block;
-  if ($node->field_show_fact_block[$lang][0][\'value\']) {
-    $show = $node->field_show_fact_block[$lang][0][\'value\'];
-  }
-  if ($show == 1 && $select == 1) {
-    return true;
-  }',
+    $field_show_fact_block = $node->field_show_fact_block;
+    if ($node->field_show_fact_block[$lang][0][\'value\']) {
+      $show = $node->field_show_fact_block[$lang][0][\'value\'];
+    }
+    if ($show == 1 && $select == 1) {
+      return true;
+    }',
         ),
         'not' => FALSE,
       ),
@@ -7007,17 +7003,17 @@ return true;
         'settings' => array(
           'description' => 'Banner automatic',
           'php' => 'global $language;
-  $lang = $language->language;
-  $arg = arg(1);
-  $node = node_load($arg);
-  $field_featured_content_area = $node->field_featured_content_area;
-  if ($node->field_featured_content_area[$lang][0][\'value\']) {
-    $select = $node->field_featured_content_area[$lang][0][\'value\'];
-  }
+    $lang = $language->language;
+    $arg = arg(1);
+    $node = node_load($arg);
+    $field_featured_content_area = $node->field_featured_content_area;
+    if ($node->field_featured_content_area[$lang][0][\'value\']) {
+      $select = $node->field_featured_content_area[$lang][0][\'value\'];
+    }
 
-  if ($select == 1) {
-    return true;
-  }',
+    if ($select == 1) {
+      return true;
+    }',
         ),
         'not' => TRUE,
       ),
@@ -7069,17 +7065,17 @@ return true;
         'settings' => array(
           'description' => 'banners mannual',
           'php' => 'global $language;
-  $lang = $language->language;
-  $arg = arg(1);
-  $node = node_load($arg);
-  $field_featured_content_area = $node->field_featured_content_area;
-  if ($node->field_featured_content_area[$lang][0][\'value\']) {
-    $select = $node->field_featured_content_area[$lang][0][\'value\'];
-  }
+    $lang = $language->language;
+    $arg = arg(1);
+    $node = node_load($arg);
+    $field_featured_content_area = $node->field_featured_content_area;
+    if ($node->field_featured_content_area[$lang][0][\'value\']) {
+      $select = $node->field_featured_content_area[$lang][0][\'value\'];
+    }
 
-  if ($select == 1) {
-    return true;
-  }',
+    if ($select == 1) {
+      return true;
+    }',
         ),
         'not' => FALSE,
       ),
@@ -7129,27 +7125,27 @@ return true;
     'admin_title' => 'About page information',
     'title' => '',
     'body' => '<?php
-global $language;
-$lang = $language->language;
-$node = menu_get_object();
-print \'<div class = "whatsnew-right-content">\';
-if (isset($node->field_about_page)) {
+  global $language;
+  $lang = $language->language;
+  $node = menu_get_object();
+  print \'<div class = "whatsnew-right-content">\';
+  if (isset($node->field_about_page)) {
 
-$about = (isset($node->field_about_page[$lang])) ?  node_load($node->field_about_page[$lang][0][\'nid\']) : node_load($node->field_about_page[\'en\'][0][\'nid\']);
-  if (isset($about->nid)) {
-    print \'<p class = "whats-new-gold">\'.t("AKDN AND").\'</p>\';
-	$short_title_language = (isset($about->field_short_title[$lang])) ?  $about->field_short_title[$lang] : $about->field_short_title[\'en\'];
-    print \'<div class = "grid-whatsnew-block_subtitle">\'. $short_title_language[0][\'value\'] .\'</div>\';
+  $about = (isset($node->field_about_page[$lang])) ?  node_load($node->field_about_page[$lang][0][\'nid\']) : node_load($node->field_about_page[\'en\'][0][\'nid\']);
+    if (isset($about->nid)) {
+      print \'<p class = "whats-new-gold">\'.t("AKDN AND").\'</p>\';
+    $short_title_language = (isset($about->field_short_title[$lang])) ?  $about->field_short_title[$lang] : $about->field_short_title[\'en\'];
+      print \'<div class = "grid-whatsnew-block_subtitle">\'. $short_title_language[0][\'value\'] .\'</div>\';
 
-$body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'en\'];
-  if (isset($body[0][\'summary\']) && !empty($body[0][\'summary\']))
-    print \'<div class="grid-whatsnew-block_body">\'. $body[0][\'summary\'].\'</div>\';
-  else
-      print \'<div class="grid-whatsnew-block_body">\'. text_summary($body[0][\'value\'], $body[0][\'format\'], 1200) .\'</div>\';
+  $body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'en\'];
+    if (isset($body[0][\'summary\']) && !empty($body[0][\'summary\']))
+      print \'<div class="grid-whatsnew-block_body">\'. $body[0][\'summary\'].\'</div>\';
+    else
+        print \'<div class="grid-whatsnew-block_body">\'. text_summary($body[0][\'value\'], $body[0][\'format\'], 1200) .\'</div>\';
+    }
+    print \'</div>\';
   }
-  print \'</div>\';
-}
-?>',
+  ?>',
     'format' => 'php_code',
     'substitute' => 1,
     'title_heading' => 'h2',
