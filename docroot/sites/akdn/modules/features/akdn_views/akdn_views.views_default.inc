@@ -22143,12 +22143,12 @@ $lang = $language->language;
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
-if ($row->nid == 2221) {
-print 9576;
-} else {
- print $row->nid;
-}
-?>';
+  if ($row->nid == 2221) {
+  print 9576;
+  } else {
+   print $row->nid;
+  }
+  ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Field: Content: Image */
@@ -22256,12 +22256,12 @@ print 9576;
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
-if ($row->nid == 2221) {
-print 9576;
-} else {
- print $row->nid;
-}
-?>';
+  if ($row->nid == 2221) {
+  print 9576;
+  } else {
+   print $row->nid;
+  }
+  ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Field: Content: Image */
@@ -22403,12 +22403,12 @@ print 9576;
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
-if ($row->nid == 2221) {
-print 9576;
-} else {
- print $row->nid;
-}
-?>';
+  if ($row->nid == 2221) {
+  print 9576;
+  } else {
+   print $row->nid;
+  }
+  ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Field: Content: Title */
@@ -22508,12 +22508,12 @@ print 9576;
   $handler->display->display_options['header']['php']['table'] = 'views';
   $handler->display->display_options['header']['php']['field'] = 'php';
   $handler->display->display_options['header']['php']['php_output'] = '<h2 class="pane-title"><?php print t("Agencies"); ?></h2>
-';
+  ';
   /* Header: Global: Unfiltered text */
   $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
   $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
   $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
-  $handler->display->display_options['header']['area_text_custom']['content'] = '<p>[field_custom_agency_text]</p>';
+  $handler->display->display_options['header']['area_text_custom']['content'] = '<p>[field_custom_agency_text_et]</p>';
   $handler->display->display_options['header']['area_text_custom']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: NAT: Nid */
@@ -22565,6 +22565,13 @@ print 9576;
   $handler->display->display_options['fields']['field_custom_agency_text']['label'] = '';
   $handler->display->display_options['fields']['field_custom_agency_text']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_custom_agency_text']['element_label_colon'] = FALSE;
+  /* Field: Entity translation: Custom Agency Text: translated */
+  $handler->display->display_options['fields']['field_custom_agency_text_et']['id'] = 'field_custom_agency_text_et';
+  $handler->display->display_options['fields']['field_custom_agency_text_et']['table'] = 'field_data_field_custom_agency_text';
+  $handler->display->display_options['fields']['field_custom_agency_text_et']['field'] = 'field_custom_agency_text_et';
+  $handler->display->display_options['fields']['field_custom_agency_text_et']['label'] = '';
+  $handler->display->display_options['fields']['field_custom_agency_text_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_custom_agency_text_et']['element_label_colon'] = FALSE;
   /* Field: Content: Logo */
   $handler->display->display_options['fields']['field_agency_logo']['id'] = 'field_agency_logo';
   $handler->display->display_options['fields']['field_agency_logo']['table'] = 'field_data_field_agency_logo';
