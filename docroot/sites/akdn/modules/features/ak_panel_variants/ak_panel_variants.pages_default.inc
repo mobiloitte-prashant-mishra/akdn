@@ -3859,7 +3859,7 @@ if (isset($node->field_about_page)) {
   $pane->panel = 'left';
   $pane->type = 'entity_field';
   $pane->subtype = 'node:title_field';
-  $pane->shown = FALSE;
+  $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
     'label' => 'hidden',
@@ -3883,36 +3883,6 @@ if (isset($node->field_about_page)) {
   $pane->uuid = 'a934ddda-3b96-493b-9dde-b4b75bf9a169';
   $display->content['new-a934ddda-3b96-493b-9dde-b4b75bf9a169'] = $pane;
   $display->panels['left'][1] = 'new-a934ddda-3b96-493b-9dde-b4b75bf9a169';
-  $pane = new stdClass();
-  $pane->pid = 'new-7dfb9994-9267-4ea8-b2ba-b2e7a061a9f5';
-  $pane->panel = 'left';
-  $pane->type = 'entity_field';
-  $pane->subtype = 'node:field_short_title';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'text_default',
-    'delta_limit' => 0,
-    'delta_offset' => '0',
-    'delta_reversed' => FALSE,
-    'formatter_settings' => array(),
-    'context' => 'argument_entity_id:node_1',
-    'override_title' => 1,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 2;
-  $pane->locks = array();
-  $pane->uuid = '7dfb9994-9267-4ea8-b2ba-b2e7a061a9f5';
-  $display->content['new-7dfb9994-9267-4ea8-b2ba-b2e7a061a9f5'] = $pane;
-  $display->panels['left'][2] = 'new-7dfb9994-9267-4ea8-b2ba-b2e7a061a9f5';
   $pane = new stdClass();
   $pane->pid = 'new-02ac1ca6-dfc8-46a1-a418-ea55b41e5e2b';
   $pane->panel = 'left';
@@ -3941,37 +3911,18 @@ if (isset($node->field_about_page)) {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = '02ac1ca6-dfc8-46a1-a418-ea55b41e5e2b';
   $display->content['new-02ac1ca6-dfc8-46a1-a418-ea55b41e5e2b'] = $pane;
-  $display->panels['left'][3] = 'new-02ac1ca6-dfc8-46a1-a418-ea55b41e5e2b';
+  $display->panels['left'][2] = 'new-02ac1ca6-dfc8-46a1-a418-ea55b41e5e2b';
   $pane = new stdClass();
   $pane->pid = 'new-6aaa45b1-0fb9-4890-bbdc-69c35ef64054';
   $pane->panel = 'left';
   $pane->type = 'entity_field';
   $pane->subtype = 'node:field_article_link';
   $pane->shown = TRUE;
-  $pane->access = array(
-    'logic' => 'and',
-    'plugins' => array(
-      0 => array(
-        'name' => 'php',
-        'settings' => array(
-          'description' => 'Has data',
-          'php' => 'global $language;
-  $lang = $language->language;
-  $arg = arg(1);
-  $node = node_load($arg);
-  if ($node->field_article_link[$lang][0]) {
-    return true;
-  }
-',
-        ),
-        'not' => FALSE,
-      ),
-    ),
-  );
+  $pane->access = array();
   $pane->configuration = array(
     'label' => 'hidden',
     'formatter' => 'link_default',
@@ -3989,11 +3940,11 @@ if (isset($node->field_about_page)) {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 4;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = '6aaa45b1-0fb9-4890-bbdc-69c35ef64054';
   $display->content['new-6aaa45b1-0fb9-4890-bbdc-69c35ef64054'] = $pane;
-  $display->panels['left'][4] = 'new-6aaa45b1-0fb9-4890-bbdc-69c35ef64054';
+  $display->panels['left'][3] = 'new-6aaa45b1-0fb9-4890-bbdc-69c35ef64054';
   $pane = new stdClass();
   $pane->pid = 'new-9ea4a774-fcdd-4dd9-915c-41c5ea380b0b';
   $pane->panel = 'left';
@@ -4018,11 +3969,11 @@ if (isset($node->field_about_page)) {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 5;
+  $pane->position = 4;
   $pane->locks = array();
   $pane->uuid = '9ea4a774-fcdd-4dd9-915c-41c5ea380b0b';
   $display->content['new-9ea4a774-fcdd-4dd9-915c-41c5ea380b0b'] = $pane;
-  $display->panels['left'][5] = 'new-9ea4a774-fcdd-4dd9-915c-41c5ea380b0b';
+  $display->panels['left'][4] = 'new-9ea4a774-fcdd-4dd9-915c-41c5ea380b0b';
   $pane = new stdClass();
   $pane->pid = 'new-c9a39808-df1a-40d0-95b5-4df82f629624';
   $pane->panel = 'left';
@@ -4040,11 +3991,11 @@ if (isset($node->field_about_page)) {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 6;
+  $pane->position = 5;
   $pane->locks = array();
   $pane->uuid = 'c9a39808-df1a-40d0-95b5-4df82f629624';
   $display->content['new-c9a39808-df1a-40d0-95b5-4df82f629624'] = $pane;
-  $display->panels['left'][6] = 'new-c9a39808-df1a-40d0-95b5-4df82f629624';
+  $display->panels['left'][5] = 'new-c9a39808-df1a-40d0-95b5-4df82f629624';
   $pane = new stdClass();
   $pane->pid = 'new-9c2e1bfd-4ffe-49eb-9c72-24dc1d03564b';
   $pane->panel = 'left';
@@ -4072,11 +4023,11 @@ if (isset($node->field_about_page)) {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 7;
+  $pane->position = 6;
   $pane->locks = array();
   $pane->uuid = '9c2e1bfd-4ffe-49eb-9c72-24dc1d03564b';
   $display->content['new-9c2e1bfd-4ffe-49eb-9c72-24dc1d03564b'] = $pane;
-  $display->panels['left'][7] = 'new-9c2e1bfd-4ffe-49eb-9c72-24dc1d03564b';
+  $display->panels['left'][6] = 'new-9c2e1bfd-4ffe-49eb-9c72-24dc1d03564b';
   $pane = new stdClass();
   $pane->pid = 'new-fe90b133-3b04-4ac2-80a7-e680ae96b24b';
   $pane->panel = 'left';
@@ -4097,11 +4048,11 @@ if (isset($node->field_about_page)) {
     'css_class' => 'pane-email',
   );
   $pane->extras = array();
-  $pane->position = 8;
+  $pane->position = 7;
   $pane->locks = array();
   $pane->uuid = 'fe90b133-3b04-4ac2-80a7-e680ae96b24b';
   $display->content['new-fe90b133-3b04-4ac2-80a7-e680ae96b24b'] = $pane;
-  $display->panels['left'][8] = 'new-fe90b133-3b04-4ac2-80a7-e680ae96b24b';
+  $display->panels['left'][7] = 'new-fe90b133-3b04-4ac2-80a7-e680ae96b24b';
   $pane = new stdClass();
   $pane->pid = 'new-e153faa6-28fb-4bc7-8b35-730cf81db15c';
   $pane->panel = 'left';
@@ -4133,11 +4084,11 @@ if (isset($node->field_about_page)) {
     'css_class' => 'pane-email',
   );
   $pane->extras = array();
-  $pane->position = 9;
+  $pane->position = 8;
   $pane->locks = array();
   $pane->uuid = 'e153faa6-28fb-4bc7-8b35-730cf81db15c';
   $display->content['new-e153faa6-28fb-4bc7-8b35-730cf81db15c'] = $pane;
-  $display->panels['left'][9] = 'new-e153faa6-28fb-4bc7-8b35-730cf81db15c';
+  $display->panels['left'][8] = 'new-e153faa6-28fb-4bc7-8b35-730cf81db15c';
   $pane = new stdClass();
   $pane->pid = 'new-ce365a39-54a0-4640-a592-f401386db51b';
   $pane->panel = 'left';
@@ -4162,11 +4113,11 @@ if (isset($node->field_about_page)) {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 10;
+  $pane->position = 9;
   $pane->locks = array();
   $pane->uuid = 'ce365a39-54a0-4640-a592-f401386db51b';
   $display->content['new-ce365a39-54a0-4640-a592-f401386db51b'] = $pane;
-  $display->panels['left'][10] = 'new-ce365a39-54a0-4640-a592-f401386db51b';
+  $display->panels['left'][9] = 'new-ce365a39-54a0-4640-a592-f401386db51b';
   $pane = new stdClass();
   $pane->pid = 'new-967fc408-4dcb-4d89-9e4c-a3f2ed2cdcf3';
   $pane->panel = 'right';
@@ -4224,7 +4175,7 @@ if (isset($node->field_about_page)) {
   $display->content['new-762e4955-3e79-4e8e-a4bd-557ec96d19bf'] = $pane;
   $display->panels['right'][1] = 'new-762e4955-3e79-4e8e-a4bd-557ec96d19bf';
   $pane = new stdClass();
-  $pane->pid = 'new-f50a7336-e2a5-404d-abdc-425db4843fac';
+  $pane->pid = 'new-4b4e4f04-fa2d-4fc6-843e-e1aac55feae8';
   $pane->panel = 'right';
   $pane->type = 'block';
   $pane->subtype = 'akdn_custom-see_also_custom_block';
@@ -4232,7 +4183,7 @@ if (isset($node->field_about_page)) {
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,
-    'override_title_text' => 'SEE ALSO',
+    'override_title_text' => '',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();
@@ -4246,9 +4197,9 @@ if (isset($node->field_about_page)) {
   $pane->extras = array();
   $pane->position = 2;
   $pane->locks = array();
-  $pane->uuid = 'f50a7336-e2a5-404d-abdc-425db4843fac';
-  $display->content['new-f50a7336-e2a5-404d-abdc-425db4843fac'] = $pane;
-  $display->panels['right'][2] = 'new-f50a7336-e2a5-404d-abdc-425db4843fac';
+  $pane->uuid = '4b4e4f04-fa2d-4fc6-843e-e1aac55feae8';
+  $display->content['new-4b4e4f04-fa2d-4fc6-843e-e1aac55feae8'] = $pane;
+  $display->panels['right'][2] = 'new-4b4e4f04-fa2d-4fc6-843e-e1aac55feae8';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -4310,27 +4261,27 @@ if (isset($node->field_about_page)) {
           'settings' => array(
             'description' => 'if not about us',
             'php' => 'global $language;
-  $lang = $language->language;
-  $arg = arg(1);
-  $node = node_load($arg);
+    $lang = $language->language;
+    $arg = arg(1);
+    $node = node_load($arg);
 
-  if (!empty($node->field_tags[$lang])) {
-    foreach ($node->field_tags[$lang] as $value) {
-      if (!in_array(\'9006\', $value)) {
-       return true;
+    if (!empty($node->field_tags[$lang])) {
+      foreach ($node->field_tags[$lang] as $value) {
+        if (!in_array(\'9006\', $value)) {
+         return true;
+        }
       }
     }
-  }
-  else if(!empty($node->field_tags[\'und\'])){
-    foreach ($node->field_tags[\'und\'] as $value) {
-      if (!in_array(\'9006\', $value)) {
-       return true;
+    else if(!empty($node->field_tags[\'und\'])){
+      foreach ($node->field_tags[\'und\'] as $value) {
+        if (!in_array(\'9006\', $value)) {
+         return true;
+        }
       }
     }
-  }
-else if(empty($node->field_tags)){
-return true;
-}',
+  else if(empty($node->field_tags)){
+  return true;
+  }',
           ),
           'not' => FALSE,
         ),
@@ -4563,20 +4514,24 @@ return true;
   $pane->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'entity_field_value:node:page:field_basic_page_choose_layout',
+        'name' => 'php',
         'settings' => array(
-          'field_basic_page_choose_layout' => array(
-            'en' => array(
-              0 => array(
-                'value' => 'basic',
-              ),
-            ),
-          ),
-          'field_basic_page_choose_layout_value' => array(
-            0 => 'basic',
-          ),
+          'description' => 'Layout condition',
+          'php' => '  global $language;
+    $lang = $language->language;
+    $arg = arg(1);
+
+    $node = node_load($arg);
+    $node_lang = $node->language;
+
+    if ($node->field_basic_page_choose_layout[$lang][0][\'value\'] == \'basic\') {
+      $select = $node->field_basic_page_choose_layout[$lang][0][\'value\'];
+    }
+
+    if (!empty($select)) {
+      return true;
+    }',
         ),
-        'context' => 'argument_entity_id:node_1',
         'not' => FALSE,
       ),
     ),
@@ -6283,18 +6238,16 @@ return true;
   $pane->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'entity_field_value:node:focus_area:field_project_listing_area',
+        'name' => 'php',
         'settings' => array(
-          'field_project_listing_area' => array(
-            'und' => array(
-              0 => array(
-                'value' => '0',
-              ),
-            ),
-          ),
-          'field_project_listing_area_value' => '0',
+          'description' => 'Project Listing Automatic',
+          'php' => 'global $language;
+  $lang = $language->language;
+  $node = $contexts[\'argument_entity_id:node_1\']->data;
+  if(is_object($node) && !$node->field_project_listing_area[$lang][0][\'value\']){
+    return true;
+  }',
         ),
-        'context' => 'argument_entity_id:node_1',
         'not' => FALSE,
       ),
     ),
@@ -6341,18 +6294,16 @@ return true;
   $pane->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'entity_field_value:node:focus_area:field_project_listing_area',
+        'name' => 'php',
         'settings' => array(
-          'field_project_listing_area' => array(
-            'und' => array(
-              0 => array(
-                'value' => '1',
-              ),
-            ),
-          ),
-          'field_project_listing_area_value' => '1',
+          'description' => 'Project Listing Manual',
+          'php' => 'global $language;
+  $lang = $language->language;
+  $node = $contexts[\'argument_entity_id:node_1\']->data;
+  if(is_object($node) && $node->field_project_listing_area[$lang][0][\'value\']){
+    return true;
+  }',
         ),
-        'context' => 'argument_entity_id:node_1',
         'not' => FALSE,
       ),
     ),
@@ -6577,10 +6528,10 @@ return true;
         'settings' => array(
           'description' => 'Has content',
           'php' => '$view = views_get_view_result(\'facts_blocks\', \'facts_block\', arg(1));
-$result = count($view);
-if (!empty($result)) {
-return true;
-}',
+  $result = count($view);
+  if (!empty($result)) {
+  return true;
+  }',
         ),
         'not' => FALSE,
       ),
@@ -6614,21 +6565,21 @@ return true;
         'settings' => array(
           'description' => 'fact manual view',
           'php' => 'global $language;
-  $lang = $language->language;
-  $arg = arg(1);
-  $node = node_load($arg);
-  $field_select_fact_sheet = $node->field_select_fact_sheet;
-  if ($node->field_select_fact_sheet[$lang][0][\'value\']) {
-    $select = $node->field_select_fact_sheet[$lang][0][\'value\'];
-  }
+    $lang = $language->language;
+    $arg = arg(1);
+    $node = node_load($arg);
+    $field_select_fact_sheet = $node->field_select_fact_sheet;
+    if ($node->field_select_fact_sheet[$lang][0][\'value\']) {
+      $select = $node->field_select_fact_sheet[$lang][0][\'value\'];
+    }
 
-  $field_show_fact_block = $node->field_show_fact_block;
-  if ($node->field_show_fact_block[$lang][0][\'value\']) {
-    $show = $node->field_show_fact_block[$lang][0][\'value\'];
-  }
-  if ($show == 1 && $select == 1) {
-    return true;
-  }',
+    $field_show_fact_block = $node->field_show_fact_block;
+    if ($node->field_show_fact_block[$lang][0][\'value\']) {
+      $show = $node->field_show_fact_block[$lang][0][\'value\'];
+    }
+    if ($show == 1 && $select == 1) {
+      return true;
+    }',
         ),
         'not' => FALSE,
       ),
@@ -7052,17 +7003,17 @@ return true;
         'settings' => array(
           'description' => 'Banner automatic',
           'php' => 'global $language;
-  $lang = $language->language;
-  $arg = arg(1);
-  $node = node_load($arg);
-  $field_featured_content_area = $node->field_featured_content_area;
-  if ($node->field_featured_content_area[$lang][0][\'value\']) {
-    $select = $node->field_featured_content_area[$lang][0][\'value\'];
-  }
+    $lang = $language->language;
+    $arg = arg(1);
+    $node = node_load($arg);
+    $field_featured_content_area = $node->field_featured_content_area;
+    if ($node->field_featured_content_area[$lang][0][\'value\']) {
+      $select = $node->field_featured_content_area[$lang][0][\'value\'];
+    }
 
-  if ($select == 1) {
-    return true;
-  }',
+    if ($select == 1) {
+      return true;
+    }',
         ),
         'not' => TRUE,
       ),
@@ -7114,17 +7065,17 @@ return true;
         'settings' => array(
           'description' => 'banners mannual',
           'php' => 'global $language;
-  $lang = $language->language;
-  $arg = arg(1);
-  $node = node_load($arg);
-  $field_featured_content_area = $node->field_featured_content_area;
-  if ($node->field_featured_content_area[$lang][0][\'value\']) {
-    $select = $node->field_featured_content_area[$lang][0][\'value\'];
-  }
+    $lang = $language->language;
+    $arg = arg(1);
+    $node = node_load($arg);
+    $field_featured_content_area = $node->field_featured_content_area;
+    if ($node->field_featured_content_area[$lang][0][\'value\']) {
+      $select = $node->field_featured_content_area[$lang][0][\'value\'];
+    }
 
-  if ($select == 1) {
-    return true;
-  }',
+    if ($select == 1) {
+      return true;
+    }',
         ),
         'not' => FALSE,
       ),
@@ -7174,26 +7125,27 @@ return true;
     'admin_title' => 'About page information',
     'title' => '',
     'body' => '<?php
-global $language;
-$lang = $language->language;
-$node = menu_get_object();
-print \'<div class = "whatsnew-right-content">\';
-if (isset($node->field_about_page)) {
-$about = (isset($node->field_about_page[$lang])) ?  node_load($node->field_about_page[$lang][0][\'nid\']) : node_load($node->field_about_page[\'en\'][0][\'nid\']);
-  if (isset($about->nid)) {
-    print \'<p class = "whats-new-gold">\'.t("AKDN AND").\'</p>\';
-	$short_title_language = (isset($about->field_short_title[$lang])) ?  $about->field_short_title[$lang] : $about->field_short_title[\'en\'];
-    print \'<div class = "grid-whatsnew-block_subtitle">\'. $short_title_language[0][\'value\'] .\'</div>\';
+  global $language;
+  $lang = $language->language;
+  $node = menu_get_object();
+  print \'<div class = "whatsnew-right-content">\';
+  if (isset($node->field_about_page)) {
 
-$body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'en\'];
-  if (isset($body[0][\'summary\']) && !empty($body[0][\'summary\']))
-    print \'<div class="grid-whatsnew-block_body">\'. $body[0][\'summary\'].\'</div>\';
-  else
-      print \'<div class="grid-whatsnew-block_body">\'. text_summary($body[0][\'value\'], $body[0][\'format\'], 1200) .\'</div>\';
+  $about = (isset($node->field_about_page[$lang])) ?  node_load($node->field_about_page[$lang][0][\'nid\']) : node_load($node->field_about_page[\'en\'][0][\'nid\']);
+    if (isset($about->nid)) {
+      print \'<p class = "whats-new-gold">\'.t("AKDN AND").\'</p>\';
+    $short_title_language = (isset($about->field_short_title[$lang])) ?  $about->field_short_title[$lang] : $about->field_short_title[\'en\'];
+      print \'<div class = "grid-whatsnew-block_subtitle">\'. $short_title_language[0][\'value\'] .\'</div>\';
+
+  $body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'en\'];
+    if (isset($body[0][\'summary\']) && !empty($body[0][\'summary\']))
+      print \'<div class="grid-whatsnew-block_body">\'. $body[0][\'summary\'].\'</div>\';
+    else
+        print \'<div class="grid-whatsnew-block_body">\'. text_summary($body[0][\'value\'], $body[0][\'format\'], 1200) .\'</div>\';
+    }
+    print \'</div>\';
   }
-  print \'</div>\';
-}
-?>',
+  ?>',
     'format' => 'php_code',
     'substitute' => 1,
     'title_heading' => 'h2',
