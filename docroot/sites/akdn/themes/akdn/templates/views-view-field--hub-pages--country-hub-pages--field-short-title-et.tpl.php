@@ -27,11 +27,13 @@ $row = $variables['row'];
 $output = '';
 if ($row->_field_data['nid']['entity']->type == 'page') {
   $field_short_title = $row->_field_data['nid']['entity']->field_short_title;
-  $title = $row->_field_data['nid']['entity']->field_short_title[key($field_short_title)][0]['value'];
+  //$title = $row->_field_data['nid']['entity']->field_short_title[key($field_short_title)][0]['value'];
+  $title = $row->field_field_short_title_et[0]['raw']['value'];
 }
 if ($row->_field_data['nid']['entity']->type == 'hub_page') {
   $title_field = $row->_field_data['nid']['entity']->title_field;
-  $title = $row->_field_data['nid']['entity']->title_field[key($title_field)][0]['value'];
+  //$title = $row->_field_data['nid']['entity']->title_field[key($title_field)][0]['value'];
+  $title = $row->field_field_short_title_et[0]['raw']['value'];
 }
 //$output .= '<div class = "hub_pages-title">';
 if ($title == 'Aga Khan Award for Architecture') {
