@@ -2631,7 +2631,7 @@ function akdn_breadcrumb_trail() {
     if ($key == 1) {
       $value = strip_tags($value);
     }
-    $trail[] = $value;
+    $trail[] = t($value);
   }
   if (!empty($trail)) {
     $output = '<div class = "static_text">' . t('You are here') . '</div>';
