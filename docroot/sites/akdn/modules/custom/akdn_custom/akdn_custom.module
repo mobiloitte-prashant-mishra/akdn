@@ -1230,12 +1230,12 @@ function akdn_all_areas_of_activity() {
 
   $nid = explode('/', $menu_item['link_path']);
   $nid = $nid[1];
-  
+
   if (isset($nid) && is_numeric($nid)) {
 
     $node = node_load($nid);
     $menu_node_links = $node->menu_node_links;
-    
+
     $key = key($menu_node_links);
     $get_activities = get_areas_of_activities($key);
     if (!empty($get_activities)) {
@@ -1331,7 +1331,7 @@ function akdn_all_areas_of_activity() {
         $output = $output_header . $output . $output_base;
       }
     }
-    
+
   }
   return $output;
 }
@@ -1595,7 +1595,7 @@ function akdn_basic_page_link_to_style_block() {
   }
 
   $layout_type = (isset($node->field_basic_page_choose_layout[$lang])) ? $node->field_basic_page_choose_layout[$lang][0]['value'] : $node->field_basic_page_choose_layout['und'][0]['value'];
- 
+
   if ($layout_type == 'morelink') {
     $output = '';
     $output .= '<div class = "basic-page-accordian-main-container">';
@@ -1604,20 +1604,20 @@ function akdn_basic_page_link_to_style_block() {
 
 
     $i = 1;
-     
+
     foreach ($field_collection as $values) {
       $output .= '<div class = "accordian-rows">';
 
       $id = 'accordian-title-' . $i;
       $field_values = entity_revision_load('field_collection_item', $values['revision_id']);
 
-      
+
 
       $output .= '<div class = "image-wrapper">';
       if (!empty($field_values->field_basic_page_accordian_image)) {
         $image = (isset($field_values->field_basic_page_accordian_image[$lang])) ? $field_values->field_basic_page_accordian_image[$lang] : $field_values->field_basic_page_accordian_image['und'];
 
-        
+
         $image_caption = (isset($image[0]['field_image_caption'][$lang])) ? $image[0]['field_image_caption'][$lang][0]['value'] : $image[0]['field_image_caption']['und'][0]['value'];
 
         $image_copyright = (isset($image[0]['field_image_copytight'][$lang])) ? $image[0]['field_image_copytight'][$lang][0]['value'] : $image[0]['field_image_copytight']['und'][0]['value'];
@@ -1631,7 +1631,7 @@ function akdn_basic_page_link_to_style_block() {
           'title' => $image[0]['title'],
         );
 
-        
+
         $output .= '<div class = "link_to_image">';
         $output .= '<div class = "image-caption-show-hide-block">';
         $output .= theme('image_style', $accordian_image);
@@ -1651,14 +1651,14 @@ function akdn_basic_page_link_to_style_block() {
       $output .= '</div>';
       $output .= '<div class = "body-text-wrapper">';
       $output .= '<div class = "basic_page_title">';
-      
+
       if ($field_values->field_basic_page_accordian_title[$lang]) {
         $title = $field_values->field_basic_page_accordian_title[$lang];
       }
       else {
         $title = $field_values->field_basic_page_accordian_title['und'];
       }
-      
+
       if (!empty($title)) {
         $output .= $title[0]['value'];
       }
@@ -1670,7 +1670,7 @@ function akdn_basic_page_link_to_style_block() {
       else {
         $body = $field_values->field_text['und'];
       }
-      
+
       if (!empty($body)) {
         $output .= '<div class = accordian-summary>';
         $output .= check_markup($body[0]['value'], $body[0]['format']);
@@ -1682,7 +1682,7 @@ function akdn_basic_page_link_to_style_block() {
       else {
         $more_link = $field_values->field_basic_add_more_link['und'];
       }
-   
+
       if (!empty($more_link)) {
         $output .= '<span class = "basic_page_more_link">';
         $url = link_cleanup_url($more_link[0]['url']);
@@ -1743,7 +1743,7 @@ function akdn_basic_page_accordian_style_block() {
   else {
     $layout_type = $node->field_basic_page_choose_layout['und'][0]['value'];
   }
-  
+
   if ($layout_type == 'accordian') {
     $output = '';
     $quick_links = '';
@@ -1895,14 +1895,14 @@ function akdn_basic_page_accordian_style_block() {
     }
 
     $output .= '</div>';
-    
+
     $quick_links .= '<div class = "accordian-quick-links">';
     $quick_links .= '<div class = "heading">Quick Links</div>';
     $quick_links .= '<ul>' . $quick_links1 . '</ul>';
     $quick_links .= '</div>';
     $html_output .= $quick_links;
     $html_output .= $output;
-    
+
     return $html_output;
   }
 }
@@ -2631,7 +2631,7 @@ function akdn_breadcrumb_trail() {
     if ($key == 1) {
       $value = strip_tags($value);
     }
-    $trail[] = $value;
+    $trail[] = t($value);
   }
   if (!empty($trail)) {
     $output = '<div class = "static_text">' . t('You are here') . '</div>';
@@ -3062,7 +3062,7 @@ function _akdn_custom_lang_related_info_links() {
   global $base_url;
   $lang = $language->language;
 
-  
+
   if (arg(0) == 'node' && is_numeric(arg(1))) {
     $node = node_load(arg(1));
     $field = $node->field_block_add_links[$lang];
