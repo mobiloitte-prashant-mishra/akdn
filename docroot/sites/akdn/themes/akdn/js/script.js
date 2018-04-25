@@ -146,9 +146,9 @@
          }
         });
 
-        $('.views-field-field-short-title .hub_pages-title', context).each(function() {
+        $('.views-field-field-short-title-et .hub_pages-title', context).each(function() {
          var $this = $(this);
-         var $rows = $this.closest('.views-field-field-short-title').next().find('.view-id-hub_pages .views-row');
+         var $rows = $this.closest('.views-field-field-short-title-et').next().find('.view-id-hub_pages .views-row');
          if ($rows.length) {
            $this.addClass('activity-icon-down');
            $this.find('a').removeAttr("href");
@@ -158,7 +158,7 @@
          }
         });
 
-        $('.views-field-field-hub-page-image', context).each(function() {
+        $('.views-field-field-hub-page-image-et', context).each(function() {
          var $this = $(this);
          var $rows = $this.next().next().find('.view-id-hub_pages .views-row');
          var $hreflink = $this.next().find('.hub_pages-title a').attr('href');
@@ -180,15 +180,15 @@
           }
         });
         // Areas of activity accordian
-        $('.views-field-field-short-title .hub_pages-title', context).click(function(event){
+        $('.views-field-field-short-title-et .hub_pages-title', context).click(function(event){
           if ($(this).hasClass('activity-icon-down')) {
-            $(this).closest('.views-field-field-short-title').next().find('.view-content').slideToggle();
-            $(this).closest('.views-field-field-short-title').next().find('.country_activity_link').toggleClass('active');
+            $(this).closest('.views-field-field-short-title-et').next().find('.view-content').slideToggle();
+            $(this).closest('.views-field-field-short-title-et').next().find('.country_activity_link').toggleClass('active');
            event.preventDefault();
           }
         });
          // Areas of activity accordian
-        $('.views-field-field-hub-page-image', context).click(function(event){
+        $('.views-field-field-hub-page-image-et', context).click(function(event){
           if ($(this).hasClass('activity-icon-down')) {
             $(this).next().next().find('.view-content').slideToggle();
             $(this).next().next().find('.country_activity_link').toggleClass('active');
