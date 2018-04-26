@@ -182,9 +182,9 @@ $databases = array (
   array (
     'default' =>
     array (
-      'database' => 'academics',
-      'username' => 'root',
-      'password' => 'root',
+      'database' => 'akdn3acaddb165447',
+      'username' => 's39874',
+      'password' => 'aFfBj8VFX2XPEL7',
       'host' => 'localhost',
       'port' => '',
       'driver' => 'mysql',
