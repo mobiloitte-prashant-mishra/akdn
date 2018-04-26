@@ -185,7 +185,7 @@ $databases = array (
       'database' => 'akdn3academies2',
       'username' => 's39874',
       'password' => 'aFfBj8VFX2XPEL7',
-      'host' => 'localhost',
+      'host' => '127.0.1.1',
       'port' => '',
       'driver' => 'mysql',
       'prefix' => '',
@@ -516,5 +516,5 @@ $conf['drupal_http_request_fails'] = FALSE; // Disable system warning caused by 
 // settings.php for development on your local workstation, set $db_url
 // (Drupal 5 or 6) or $databases (Drupal 7) as described in comments above.
 if (file_exists('/var/www/site-php')) {
-  require '/var/www/site-php/akdn3/academies1-settings.inc';
+  require '/var/www/site-php/akdn3/akdn3-settings.inc';
 }
