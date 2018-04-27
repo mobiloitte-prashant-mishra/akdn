@@ -992,19 +992,10 @@ th {
     padding: 0 10px !important;
   }
 }
-<<<<<<< HEAD
-@at-root {
-  @font-face {
-    font-family: 'Glyphicons Halflings';
-    src: url(../fonts/bootstrap/glyphicons-halflings-regular.eot);
-    src: url(../fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix) format("embedded-opentype"), url(../fonts/bootstrap/glyphicons-halflings-regular.woff2) format("woff2"), url(../fonts/bootstrap/glyphicons-halflings-regular.woff) format("woff"), url(../fonts/bootstrap/glyphicons-halflings-regular.ttf) format("truetype"), url(../fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format("svg");
-}
-=======
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url(../fonts/bootstrap/glyphicons-halflings-regular.eot?1520586926);
-  src: url(../fonts/bootstrap/glyphicons-halflings-regular.eot?&1520586926#iefix) format("embedded-opentype"), url(../fonts/bootstrap/glyphicons-halflings-regular.woff2?1520586926) format("woff2"), url(../fonts/bootstrap/glyphicons-halflings-regular.woff?1520586926) format("woff"), url(../fonts/bootstrap/glyphicons-halflings-regular.ttf?1520586926) format("truetype"), url(../fonts/bootstrap/glyphicons-halflings-regular.svg?1520586926#glyphicons_halflingsregular) format("svg");
->>>>>>> AKDN-translation-issues
+  src: url(../fonts/bootstrap/glyphicons-halflings-regular.eot?1524635056);
+  src: url(../fonts/bootstrap/glyphicons-halflings-regular.eot?&1524635056#iefix) format("embedded-opentype"), url(../fonts/bootstrap/glyphicons-halflings-regular.woff2?1524635056) format("woff2"), url(../fonts/bootstrap/glyphicons-halflings-regular.woff?1524635056) format("woff"), url(../fonts/bootstrap/glyphicons-halflings-regular.ttf?1524635056) format("truetype"), url(../fonts/bootstrap/glyphicons-halflings-regular.svg?1524635056#glyphicons_halflingsregular) format("svg");
 }
 /* line 24, ../sass/sass-extensions/bootstrap/_glyphicons.scss */
 .glyphicon, .location-links h2 .nolink:after, .location-links h2 a:after {
@@ -7432,7 +7423,7 @@ a.thumbnail.active {
 .progress-bar-striped {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
   background-size: 40px 40px;
 }
 
@@ -7452,7 +7443,7 @@ a.thumbnail.active {
 .progress-striped .progress-bar-success {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
 }
 
 /* line 77, ../sass/sass-extensions/bootstrap/_progress-bars.scss */
@@ -7463,7 +7454,7 @@ a.thumbnail.active {
 .progress-striped .progress-bar-info {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
 }
 
 /* line 81, ../sass/sass-extensions/bootstrap/_progress-bars.scss */
@@ -7474,7 +7465,7 @@ a.thumbnail.active {
 .progress-striped .progress-bar-warning {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
 }
 
 /* line 85, ../sass/sass-extensions/bootstrap/_progress-bars.scss */
@@ -7485,7 +7476,7 @@ a.thumbnail.active {
 .progress-striped .progress-bar-danger {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
 }
 
 /* line 1, ../sass/sass-extensions/bootstrap/_media.scss */
@@ -11138,11 +11129,7 @@ button.close {
   line-height: 1;
   margin: 8px 1px 0 0;
   color: #b2b2b2;
-<<<<<<< HEAD
-  background: white url('../images/magnifier.png?1493189792') no-repeat;
-=======
-  background: #fff url('../images/magnifier.png?1520586926') no-repeat;
->>>>>>> AKDN-translation-issues
+  background: #fff url('../images/magnifier.png?1524635056') no-repeat;
   background-size: contain;
   border-radius: 0;
   border: 0 none;
@@ -11889,11 +11876,7 @@ h1.title {
   padding: 0;
   font-size: 0;
   line-height: 1;
-<<<<<<< HEAD
-  background: url('../images/instagram.png?1493189792') no-repeat;
-=======
-  background: url('../images/instagram.png?1520586926') no-repeat;
->>>>>>> AKDN-translation-issues
+  background: url('../images/instagram.png?1524635056') no-repeat;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
@@ -12494,56 +12477,32 @@ h1.title {
 
 /* line 1630, ../sass/_akdn-redesign.scss */
 .facebook {
-<<<<<<< HEAD
-  background: url('../images/facebook.png?1493189792') no-repeat;
-=======
-  background: url('../images/facebook.png?1520586926') no-repeat;
->>>>>>> AKDN-translation-issues
+  background: url('../images/facebook.png?1524635056') no-repeat;
 }
 
 /* line 1630, ../sass/_akdn-redesign.scss */
 .twitter {
-<<<<<<< HEAD
-  background: url('../images/twitter.png?1493189792') no-repeat;
-=======
-  background: url('../images/twitter.png?1520586926') no-repeat;
->>>>>>> AKDN-translation-issues
+  background: url('../images/twitter.png?1524635056') no-repeat;
 }
 
 /* line 1630, ../sass/_akdn-redesign.scss */
 .youtube {
-<<<<<<< HEAD
-  background: url('../images/youtube.png?1493189792') no-repeat;
-=======
-  background: url('../images/youtube.png?1520586926') no-repeat;
->>>>>>> AKDN-translation-issues
+  background: url('../images/youtube.png?1524635056') no-repeat;
 }
 
 /* line 1630, ../sass/_akdn-redesign.scss */
 .instagram {
-<<<<<<< HEAD
-  background: url('../images/instagram.png?1493189792') no-repeat;
-=======
-  background: url('../images/instagram.png?1520586926') no-repeat;
->>>>>>> AKDN-translation-issues
+  background: url('../images/instagram.png?1524635056') no-repeat;
 }
 
 /* line 1630, ../sass/_akdn-redesign.scss */
 .vimeo {
-<<<<<<< HEAD
-  background: url('../images/vimeo.png?1493189792') no-repeat;
-=======
-  background: url('../images/vimeo.png?1520586926') no-repeat;
->>>>>>> AKDN-translation-issues
+  background: url('../images/vimeo.png?1524635056') no-repeat;
 }
 
 /* line 1630, ../sass/_akdn-redesign.scss */
 .akmi {
-<<<<<<< HEAD
-  background: url('../images/akmi.png?1493189792') no-repeat;
-=======
-  background: url('../images/akmi.png?1520586926') no-repeat;
->>>>>>> AKDN-translation-issues
+  background: url('../images/akmi.png?1524635056') no-repeat;
 }
 
 /* line 1635, ../sass/_akdn-redesign.scss */
@@ -12905,20 +12864,12 @@ h1.title {
   height: 22px;
   margin: 0 auto;
   padding: 0;
-<<<<<<< HEAD
-  background: url('../images/arrow-bottom.png?1493189792') no-repeat;
-=======
-  background: url('../images/arrow-bottom.png?1520586926') no-repeat;
->>>>>>> AKDN-translation-issues
+  background: url('../images/arrow-bottom.png?1524635056') no-repeat;
 }
 /* line 2062, ../sass/_akdn-redesign.scss */
 .akdn-filter-show-hide h2.active:after {
   content: "";
-<<<<<<< HEAD
-  background: url('../images/arrow-top.png?1493189792') no-repeat;
-=======
-  background: url('../images/arrow-top.png?1520586926') no-repeat;
->>>>>>> AKDN-translation-issues
+  background: url('../images/arrow-top.png?1524635056') no-repeat;
 }
 
 /* line 2069, ../sass/_akdn-redesign.scss */
@@ -13717,20 +13668,12 @@ ul.primary li {
   height: 22px;
   margin: 0 auto;
   padding: 0;
-<<<<<<< HEAD
-  background: url('../images/arrow-bottom.png?1493189792') no-repeat;
-=======
-  background: url('../images/arrow-bottom.png?1520586926') no-repeat;
->>>>>>> AKDN-translation-issues
+  background: url('../images/arrow-bottom.png?1524635056') no-repeat;
 }
 /* line 2890, ../sass/_akdn-redesign.scss */
 .page-search .akdn-filter-show-hide h2.active:after {
   content: "";
-<<<<<<< HEAD
-  background: url('../images/arrow-top.png?1493189792') no-repeat;
-=======
-  background: url('../images/arrow-top.png?1520586926') no-repeat;
->>>>>>> AKDN-translation-issues
+  background: url('../images/arrow-top.png?1524635056') no-repeat;
 }
 /* line 2897, ../sass/_akdn-redesign.scss */
 .page-search .akdn-filter-js-wrapper {
@@ -13945,11 +13888,7 @@ ul.primary li {
   font-size: 0;
   text-transform: uppercase;
   border: 0 none;
-<<<<<<< HEAD
-  background: url('../images/submit.png?1493189792') 0 0 no-repeat;
-=======
-  background: url('../images/submit.png?1520586926') 0 0 no-repeat;
->>>>>>> AKDN-translation-issues
+  background: url('../images/submit.png?1524635056') 0 0 no-repeat;
 }
 /* line 3118, ../sass/_akdn-redesign.scss */
 .node-webform .webform-client-form .form-actions input.form-submit:focus {
@@ -14034,11 +13973,7 @@ ul.primary li {
 .node-webform .webform-subscribe .form-actions input.form-submit {
   width: 180px;
   margin-left: 0 !important;
-<<<<<<< HEAD
-  background: url('../images/subscribe.png?1493189792') 0 0 no-repeat;
-=======
-  background: url('../images/subscribe.png?1520586926') 0 0 no-repeat;
->>>>>>> AKDN-translation-issues
+  background: url('../images/subscribe.png?1524635056') 0 0 no-repeat;
 }
 
 /* line 3217, ../sass/_akdn-redesign.scss */
@@ -14225,11 +14160,7 @@ h2.header-name a:active, h2.header-name a:focus {
 .geography-page .country-activity-tile .hub-pages-row .country_activity_link a,
 .node-type-agency .country-activity-tile .hub-pages-row .country_activity_link a {
   position: absolute;
-<<<<<<< HEAD
-  background: url('../images/arrows.png?1493189792') 0 -30px no-repeat;
-=======
-  background: url('../images/arrows.png?1520586926') 0 -30px no-repeat;
->>>>>>> AKDN-translation-issues
+  background: url('../images/arrows.png?1524635056') 0 -30px no-repeat;
   width: 26px;
   height: 26px;
   font-size: 0;
@@ -14706,11 +14637,7 @@ h2.header-name a:active, h2.header-name a:focus {
   height: 24px;
   margin-top: -2px;
   margin-left: 5px;
-<<<<<<< HEAD
-  background: url('../images/download-icon.jpg?1493189792') 0 0 no-repeat;
-=======
-  background: url('../images/download-icon.jpg?1520586926') 0 0 no-repeat;
->>>>>>> AKDN-translation-issues
+  background: url('../images/download-icon.jpg?1524635056') 0 0 no-repeat;
   background-size: contain;
 }
 /* line 3942, ../sass/_akdn-redesign.scss */
@@ -16787,20 +16714,12 @@ map area {
   height: 22px;
   margin: 0 auto;
   padding: 0;
-<<<<<<< HEAD
-  background: url('../images/arrow-bottom.png?1493189792') no-repeat;
-=======
-  background: url('../images/arrow-bottom.png?1520586926') no-repeat;
->>>>>>> AKDN-translation-issues
+  background: url('../images/arrow-bottom.png?1524635056') no-repeat;
 }
 /* line 6300, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .pane-title.active:after, .akaa-projectfinder-wrapper .block-title.active:after {
   content: "";
-<<<<<<< HEAD
-  background: url('../images/arrow-top.png?1493189792') no-repeat;
-=======
-  background: url('../images/arrow-top.png?1520586926') no-repeat;
->>>>>>> AKDN-translation-issues
+  background: url('../images/arrow-top.png?1524635056') no-repeat;
 }
 /* line 6306, ../sass/_akdn-redesign.scss */
 .akaa-projectfinder-wrapper .pane-content, .akaa-projectfinder-wrapper .content {
@@ -17059,11 +16978,7 @@ map area {
   height: 26px;
   font-size: 0;
   cursor: pointer;
-<<<<<<< HEAD
-  background: url('../images/arrows.png?1493189792') 0 -60px no-repeat;
-=======
-  background: url('../images/arrows.png?1520586926') 0 -60px no-repeat;
->>>>>>> AKDN-translation-issues
+  background: url('../images/arrows.png?1524635056') 0 -60px no-repeat;
 }
 /* line 6588, ../sass/_akdn-redesign.scss */
 .akaa-award-cycle-block-short-video .views-field-nothing .play-video a:hover, .akaa-award-cycle-block-short-video .views-field-nothing .play-video a:focus {
@@ -17121,11 +17036,7 @@ map area {
   height: 26px;
   font-size: 0;
   cursor: pointer;
-<<<<<<< HEAD
-  background: url('../images/arrows.png?1493189792') 0 -30px no-repeat;
-=======
-  background: url('../images/arrows.png?1520586926') 0 -30px no-repeat;
->>>>>>> AKDN-translation-issues
+  background: url('../images/arrows.png?1524635056') 0 -30px no-repeat;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -19027,17 +18938,17 @@ map area {
   font-size: 17px;
 }
 
-/* line 8617, ../sass/_akdn-redesign.scss */
+/* line 8618, ../sass/_akdn-redesign.scss */
 .page-press-centre.page-press-centre-press-releases .slide-text, .page-press-centre.page-press-centre-in-the-media .slide-text, .page-press-centre.page-press-centre-publications .slide-text, .page-press-centre.page-press-centre-galleries .slide-text, .page-press-centre.page-press-centre-speeches .slide-text, .page-press-centre.page-press-centre-projects .slide-text, .page-press-centre.page-press-centre-videos .slide-text, .page-press-centre.page-press-centre-events .slide-text, .page-press-centre.page-press-centre-news .slide-text {
   display: none !important;
 }
 
-/* line 8624, ../sass/_akdn-redesign.scss */
+/* line 8625, ../sass/_akdn-redesign.scss */
 .geography-grid-equalise > p {
   display: none;
 }
 
-/* line 8629, ../sass/_akdn-redesign.scss */
+/* line 8630, ../sass/_akdn-redesign.scss */
 .see-also-brochure-wrapper,
 .see-also-brochure-row {
   line-height: 22px;
@@ -19046,96 +18957,92 @@ map area {
   color: #000;
 }
 
-/* line 8643, ../sass/_akdn-redesign.scss */
+/* line 8644, ../sass/_akdn-redesign.scss */
 .see-also-brochure-image {
   margin-bottom: 10px;
 }
 
-/* line 8649, ../sass/_akdn-redesign.scss */
+/* line 8650, ../sass/_akdn-redesign.scss */
 .see-also-brochure-summary {
   margin-bottom: 2px;
   font-size: 16px;
   line-height: 22px;
 }
 
-/* line 8659, ../sass/_akdn-redesign.scss */
+/* line 8660, ../sass/_akdn-redesign.scss */
 .see-also-brochure-more {
   font-size: 16px;
 }
-/* line 8664, ../sass/_akdn-redesign.scss */
+/* line 8665, ../sass/_akdn-redesign.scss */
 .see-also-brochure-more a {
   color: #b49759;
   white-space: nowrap;
   line-height: 16px;
 }
-/* line 8669, ../sass/_akdn-redesign.scss */
+/* line 8670, ../sass/_akdn-redesign.scss */
 .see-also-brochure-more a:before {
   content: "[";
   display: inline-block;
   margin-right: 3px;
 }
-/* line 8675, ../sass/_akdn-redesign.scss */
+/* line 8676, ../sass/_akdn-redesign.scss */
 .see-also-brochure-more a:after {
   content: "]";
   display: inline-block;
   margin-left: 3px;
 }
-/* line 8681, ../sass/_akdn-redesign.scss */
+/* line 8682, ../sass/_akdn-redesign.scss */
 .see-also-brochure-more a:hover {
   text-decoration: underline;
 }
 
-/* line 8693, ../sass/_akdn-redesign.scss */
+/* line 8694, ../sass/_akdn-redesign.scss */
 .see-also-custom .view-header:before {
   margin-top: 50px !important;
 }
-/* line 8698, ../sass/_akdn-redesign.scss */
+/* line 8699, ../sass/_akdn-redesign.scss */
 .see-also-custom .view-content {
   margin-bottom: 0;
 }
-/* line 8703, ../sass/_akdn-redesign.scss */
+/* line 8704, ../sass/_akdn-redesign.scss */
 .see-also-custom .view-content a {
   color: #000;
   text-transform: none;
 }
-/* line 8707, ../sass/_akdn-redesign.scss */
+/* line 8708, ../sass/_akdn-redesign.scss */
 .see-also-custom .view-content a:hover, .see-also-custom .view-content a:focus {
   color: #B49759;
   text-decoration: none;
 }
 
-/* line 8716, ../sass/_akdn-redesign.scss */
+/* line 8717, ../sass/_akdn-redesign.scss */
 .www-body ul {
   margin-left: 0;
   padding: 0;
   list-style-position: outside;
 }
-/* line 8722, ../sass/_akdn-redesign.scss */
+/* line 8723, ../sass/_akdn-redesign.scss */
 .www-body li {
   position: relative;
   left: 1em;
 }
 
-/* line 8730, ../sass/_akdn-redesign.scss */
+/* line 8731, ../sass/_akdn-redesign.scss */
 .fb_hidecomm {
   width: 50px !important;
   height: 20px !important;
   overflow: hidden;
 }
 
-/* line 8737, ../sass/_akdn-redesign.scss */
+/* line 8738, ../sass/_akdn-redesign.scss */
 .akdn-logo-wrap {
   width: 120px;
   height: 55px;
-<<<<<<< HEAD
-  background: url('../images/akdn-logo.png?1493189792') no-repeat;
-=======
-  background: url('../images/akdn-logo.png?1520586926') no-repeat;
->>>>>>> AKDN-translation-issues
+  background: url('../images/akdn-logo.png?1524635056') no-repeat;
 }
 
 /* Projects Lightbox captions */
-/* line 8745, ../sass/_akdn-redesign.scss */
+/* line 8746, ../sass/_akdn-redesign.scss */
 #colorbox .slide-text-colorbox,
 #colorbox .image-caption {
   position: relative;
@@ -19148,23 +19055,23 @@ map area {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* line 8760, ../sass/_akdn-redesign.scss */
-.front #colorbox #cboxContent #cboxPrevious, .front #colorbox #cboxContent #cboxNext, .front #colorbox #cboxContent #cboxCurrent {
+/* line 8761, ../sass/_akdn-redesign.scss */
+.front #colorbox #cboxContent #cboxPrevious, .front #colorbox #cboxContent #cboxNext, .front #colorbox #cboxContent #cboxCurrent, .akmi-homepage #colorbox #cboxContent #cboxPrevious, .akmi-homepage #colorbox #cboxContent #cboxNext, .akmi-homepage #colorbox #cboxContent #cboxCurrent {
   display: none !important;
 }
 
-/* line 8768, ../sass/_akdn-redesign.scss */
+/* line 8769, ../sass/_akdn-redesign.scss */
 .basic-page-custom-summary-italics {
   font-style: italic !important;
 }
 
-/* line 8772, ../sass/_akdn-redesign.scss */
+/* line 8773, ../sass/_akdn-redesign.scss */
 .basic-page-custom-summary-bold {
   font-style: normal;
   font-weight: bold !important;
 }
 
-/* line 8778, ../sass/_akdn-redesign.scss */
+/* line 8779, ../sass/_akdn-redesign.scss */
 .custom-video-speech {
   display: block;
   margin-top: 30px;
@@ -19172,29 +19079,29 @@ map area {
   clear: both;
   width: 100%;
 }
-/* line 8785, ../sass/_akdn-redesign.scss */
+/* line 8786, ../sass/_akdn-redesign.scss */
 .custom-video-speech .playerbox {
   height: auto;
 }
 
-/* line 8791, ../sass/_akdn-redesign.scss */
+/* line 8792, ../sass/_akdn-redesign.scss */
 .akmi-custom-header-block {
   margin-bottom: 35px;
 }
 
-/* line 8796, ../sass/_akdn-redesign.scss */
+/* line 8797, ../sass/_akdn-redesign.scss */
 .footer-term-condition-links {
   margin-top: 3px;
   font-size: 13px;
   color: #b2b2b2;
 }
-/* line 8801, ../sass/_akdn-redesign.scss */
+/* line 8802, ../sass/_akdn-redesign.scss */
 .footer-term-condition-links a {
   font-size: 13px;
   color: #b2b2b2;
 }
 
-/* line 8808, ../sass/_akdn-redesign.scss */
+/* line 8809, ../sass/_akdn-redesign.scss */
 [id*='atic_']:not(#atic_facebook):not(#atic_twitter):not(#atic_linkedin),
 [class*='at3winsvc_']:not(.at3winsvc_facebook):not(.at3winsvc_twitter):not(.at3winsvc_linkedin),
 .atm-f,
@@ -19205,16 +19112,16 @@ map area {
   display: none !important;
 }
 
-/* line 8824, ../sass/_akdn-redesign.scss */
+/* line 8825, ../sass/_akdn-redesign.scss */
 .main-navbar .menu-block-wrapper > ul.menu > li:nth-of-type(4) > ul.menu > li:nth-of-type(3) {
   white-space: nowrap;
 }
 
-/* line 8835, ../sass/_akdn-redesign.scss */
+/* line 8836, ../sass/_akdn-redesign.scss */
 .pane-node-body li {
   list-style: none;
 }
-/* line 8838, ../sass/_akdn-redesign.scss */
+/* line 8839, ../sass/_akdn-redesign.scss */
 .pane-node-body li:before {
   content: "\2022";
   position: absolute;
@@ -19222,7 +19129,7 @@ map area {
   font-size: 18px;
 }
 
-/* line 8848, ../sass/_akdn-redesign.scss */
+/* line 8849, ../sass/_akdn-redesign.scss */
 .caption-copyright-wrapper {
   display: block;
   position: absolute;
@@ -19238,7 +19145,7 @@ map area {
   -o-transition: all 0.6s ease;
 }
 
-/* line 8863, ../sass/_akdn-redesign.scss */
+/* line 8864, ../sass/_akdn-redesign.scss */
 .image-caption-wrapper, .image-copytight-wrapper {
   display: block;
   width: 100%;
@@ -19253,40 +19160,40 @@ map area {
   overflow: auto;
 }
 
-/* line 8879, ../sass/_akdn-redesign.scss */
+/* line 8880, ../sass/_akdn-redesign.scss */
 .image-copytight-wrapper {
   font-size: 11px;
 }
 
-/* line 8885, ../sass/_akdn-redesign.scss */
+/* line 8886, ../sass/_akdn-redesign.scss */
 .image-caption-show-hide-block {
   position: relative;
 }
-/* line 8889, ../sass/_akdn-redesign.scss */
+/* line 8890, ../sass/_akdn-redesign.scss */
 .image-caption-show-hide-block:hover .caption-copyright-wrapper {
   bottom: 0;
   opacity: 1;
 }
 
 /* Fixed Text editor Image Upload fieldset */
-/* line 8900, ../sass/_akdn-redesign.scss */
+/* line 8901, ../sass/_akdn-redesign.scss */
 html.js fieldset.collapsed {
   height: auto;
 }
 
 /* AKDN-1392 remove custom header block margin */
-/* line 8910, ../sass/_akdn-redesign.scss */
+/* line 8911, ../sass/_akdn-redesign.scss */
 .pane-custom-header-block .akaa-projectinfo-map-related-info:before {
   margin-top: 0;
 }
 
-/* line 8917, ../sass/_akdn-redesign.scss */
+/* line 8918, ../sass/_akdn-redesign.scss */
 .media-video {
   display: block;
   float: left;
   width: 100%;
 }
-/* line 8921, ../sass/_akdn-redesign.scss */
+/* line 8922, ../sass/_akdn-redesign.scss */
 .media-video object,
 .media-video iframe,
 .media-video embed {
@@ -19294,7 +19201,7 @@ html.js fieldset.collapsed {
   height: 100% !important;
   float: left;
 }
-/* line 8928, ../sass/_akdn-redesign.scss */
+/* line 8929, ../sass/_akdn-redesign.scss */
 .media-video > object, .media-video > iframe, .media-video .media-youtube-outer-wrapper {
   display: block;
   width: 50% !important;
@@ -19302,69 +19209,69 @@ html.js fieldset.collapsed {
   margin: 3px 15px 10px 0;
   float: left;
 }
-/* line 8937, ../sass/_akdn-redesign.scss */
+/* line 8938, ../sass/_akdn-redesign.scss */
 .media-video .media-youtube-preview-wrapper {
   width: 100% !important;
   height: 100% !important;
 }
-/* line 8941, ../sass/_akdn-redesign.scss */
+/* line 8942, ../sass/_akdn-redesign.scss */
 .media-video > p {
   width: auto;
 }
-/* line 8943, ../sass/_akdn-redesign.scss */
+/* line 8944, ../sass/_akdn-redesign.scss */
 .media-video > p span {
   font-size: 16px !important;
 }
 
-/* line 8952, ../sass/_akdn-redesign.scss */
+/* line 8953, ../sass/_akdn-redesign.scss */
 .basic-page-custom-block-right.rem_brdr:before {
   display: none;
 }
 
-/* line 8959, ../sass/_akdn-redesign.scss */
+/* line 8960, ../sass/_akdn-redesign.scss */
 .press-release-detail-type div.pane-node-field-attachment .pane-title {
   display: none !important;
 }
 
-/* line 8968, ../sass/_akdn-redesign.scss */
+/* line 8969, ../sass/_akdn-redesign.scss */
 .page-search .view-solr-site-search .views-row .views-field-title-field a {
   font-size: 16px;
   font-weight: normal;
   color: #000;
 }
-/* line 8972, ../sass/_akdn-redesign.scss */
+/* line 8973, ../sass/_akdn-redesign.scss */
 .page-search .view-solr-site-search .views-row .views-field-title-field a:hover {
   text-decoration: none;
   color: #000;
 }
-/* line 8978, ../sass/_akdn-redesign.scss */
+/* line 8979, ../sass/_akdn-redesign.scss */
 .page-search .view-solr-site-search .views-row .views-field-search-api-excerpt {
   font-size: 14px;
   font-style: italic;
 }
 
-/* line 8991, ../sass/_akdn-redesign.scss */
+/* line 8992, ../sass/_akdn-redesign.scss */
 .page-search .akdn-filter-js-wrapper .filter-agency-block .item-list li a {
   text-transform: none;
 }
 
-/* line 9001, ../sass/_akdn-redesign.scss */
+/* line 9002, ../sass/_akdn-redesign.scss */
 .page-press-centre-galleries .carousel-left .flex-direction-nav, .node-type-agency .carousel-left .flex-direction-nav {
   display: block;
 }
 
-/* line 9007, ../sass/_akdn-redesign.scss */
+/* line 9008, ../sass/_akdn-redesign.scss */
 .carousel-left .flex-direction-nav {
   display: none;
 }
 
-/* line 9013, ../sass/_akdn-redesign.scss */
+/* line 9014, ../sass/_akdn-redesign.scss */
 .playerbox .video-js {
   width: 100%;
   height: 100%;
 }
 
-/* line 9019, ../sass/_akdn-redesign.scss */
+/* line 9020, ../sass/_akdn-redesign.scss */
 .field-name-body object, .field-name-body iframe {
   width: 100%;
 }
@@ -21244,11 +21151,7 @@ a:hover {
 /* line 178, ../sass/_internal-page.scss */
 #internal-page .search-block input[type=submit] {
   display: inline-block;
-<<<<<<< HEAD
-  background: url('../images/magnifier.png?1493189792') no-repeat;
-=======
-  background: url('../images/magnifier.png?1520586926') no-repeat;
->>>>>>> AKDN-translation-issues
+  background: url('../images/magnifier.png?1524635056') no-repeat;
   font-size: 0;
   border: 0;
   width: 15px;
@@ -22426,12 +22329,12 @@ html[dir='rtl'] .section-content .link_to_image, html[dir='rtl'] .section-conten
 html[dir='rtl'] .section-content .link_to_image img, html[dir='rtl'] .section-content .accordian-image-rel-wrapper img {
   width: 100%;
 }
-/* line 690, ../sass/_new-style.scss */
+/* line 687, ../sass/_new-style.scss */
 html[dir='rtl'] .media.media-element.file-media-right-third, html[dir='rtl'] .media.media-one-third-right, html[dir='rtl'] .media.media-media_right_third, html[dir='rtl'] .media.media-media_half_right {
   float: left;
   margin: 0 15px 10px 0px;
 }
-/* line 696, ../sass/_new-style.scss */
+/* line 695, ../sass/_new-style.scss */
 html[dir='rtl'] .media.media-media_third_left, html[dir='rtl'] .media.media-media_left_half {
   float: right;
   margin: 0 0px 10px 15px;
@@ -22565,7 +22468,7 @@ html[dir='rtl'] .flex-control-nav li:last-child {
 html[dir='rtl'] .project-inner-wrap .views-field-field-project-image img {
   width: 100%;
 }
-/* line 871, ../sass/_new-style.scss */
+/* line 869, ../sass/_new-style.scss */
 html[dir='rtl'] .whatwedo-project-row,
 html[dir='rtl'] .akdn-facts-block-row,
 html[dir='rtl'] .what-we-do-inner-wrapper {
@@ -22621,10 +22524,9 @@ html[dir='rtl'] .geography-page .country-activity-tile .hub-pages-row .country_a
 html[dir='rtl'] .node-type-agency .country-activity-tile .hub-pages-row .country_activity_link a {
   right: initial;
   left: 5px;
-  -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 /* line 935, ../sass/_new-style.scss */
@@ -22689,10 +22591,9 @@ html[dir='rtl'] .akdn-filter-js-wrapper .form-submit, html[dir='rtl'] .akdn-filt
 /* line 1004, ../sass/_new-style.scss */
 html[dir='rtl'] .akdn-filter-js-wrapper .form-submit {
   margin: 0 2% 0 0;
-  -webkit-transform: none;
   -moz-transform: none;
   -ms-transform: none;
-  -o-transform: none;
+  -webkit-transform: none;
   transform: none;
 }
 /* line 1010, ../sass/_new-style.scss */
@@ -22736,7 +22637,7 @@ html[dir='rtl'] .hub-page-press-center-right ul {
 html[dir='rtl'] .press-release-detail .pane-email {
   float: right;
 }
-/* line 1065, ../sass/_new-style.scss */
+/* line 1063, ../sass/_new-style.scss */
 html[dir='rtl'] .press-release-detail .print_mail,
 html[dir='rtl'] .press-release-detail .pane-addthis,
 html[dir='rtl'] .press-release-detail .print_html {
@@ -22746,17 +22647,16 @@ html[dir='rtl'] .press-release-detail .print_html {
 /* line 1072, ../sass/_new-style.scss */
 html[dir='rtl'] .presscenter-right-more-btn a:after {
   float: left;
-  -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 /* line 1078, ../sass/_new-style.scss */
 html[dir='rtl'] .main-navbar {
   clear: left;
 }
-/* line 1085, ../sass/_new-style.scss */
+/* line 1083, ../sass/_new-style.scss */
 html[dir='rtl'] .akdn-publication-details .pane-node-field-publication-image,
 html[dir='rtl'] .akdn-publication-details .pane-node-field-publication-file,
 html[dir='rtl'] .akdn-publication-details .related-block-info {
