@@ -10079,8 +10079,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
   $handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-  print l(t(\'News\'), \'award-cycle/\' . $row->tid . \'/news\');
-  ?>';
+    print l(t(\'News\'), \'award-cycle/\' . $row->tid . \'/news\');
+    ?>';
   $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
   /* Field: Content: Master Jury */
@@ -10117,14 +10117,14 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
-  $count = db_query(\'SELECT count(entity_id) FROM {field_data_field_cycle_year} WHERE field_cycle_year_tid = :tid AND bundle = :bundle\', array(\':tid\' => $row->tid, \':bundle\' => \'architecture_project\'))->fetchField();
-  if($count) {
-  print \'<a href="/architecture/shortlisted/\'.$row->tid.\'">Shortlisted Projects</a>\';
-  }
-  else {
-  print \'\';
-  }
-  ?>';
+    $count = db_query(\'SELECT count(entity_id) FROM {field_data_field_cycle_year} WHERE field_cycle_year_tid = :tid AND bundle = :bundle\', array(\':tid\' => $row->tid, \':bundle\' => \'architecture_project\'))->fetchField();
+    if($count) {
+    print \'<a href="/architecture/shortlisted/\'.$row->tid.\'">Shortlisted Projects</a>\';
+    }
+    else {
+    print \'\';
+    }
+    ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Field: Content: Calendar */
@@ -10249,8 +10249,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
   $handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-  print l(t(\'News\'), \'award-cycle/\' . $row->tid . \'/news\');
-  ?>';
+    print l(t(\'News\'), \'award-cycle/\' . $row->tid . \'/news\');
+    ?>';
   $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
   /* Field: Content: Master Jury */
@@ -10288,14 +10288,14 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
   $handler->display->display_options['fields']['php']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
-  $count = db_query(\'SELECT count(entity_id) FROM {field_data_field_cycle_year} WHERE field_cycle_year_tid = :tid AND bundle = :bundle\', array(\':tid\' => $row->tid, \':bundle\' => \'architecture_project\'))->fetchField();
-  if($count) {
-  print \'<a href="/architecture/shortlisted/\'.$row->tid.\'">Shortlisted Projects</a>\';
-  }
-  else {
-  print \'\';
-  }
-  ?>';
+    $count = db_query(\'SELECT count(entity_id) FROM {field_data_field_cycle_year} WHERE field_cycle_year_tid = :tid AND bundle = :bundle\', array(\':tid\' => $row->tid, \':bundle\' => \'architecture_project\'))->fetchField();
+    if($count) {
+    print \'<a href="/architecture/shortlisted/\'.$row->tid.\'">Shortlisted Projects</a>\';
+    }
+    else {
+    print \'\';
+    }
+    ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Field: Content: Press Materials */
@@ -10453,10 +10453,10 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
-  $term_explode = explode(\'/\',drupal_get_path_alias(\'node/\'.arg(1)));
-  $term_name = $term_explode[1];
-  $term = array_pop(taxonomy_get_term_by_name(str_replace(\'-\', \' \', $term_name)));
-  print \'<a href="/architecture/shortlisted/\'.$term->tid.\'">Shortlisted Projects</a>\'; ?>';
+    $term_explode = explode(\'/\',drupal_get_path_alias(\'node/\'.arg(1)));
+    $term_name = $term_explode[1];
+    $term = array_pop(taxonomy_get_term_by_name(str_replace(\'-\', \' \', $term_name)));
+    print \'<a href="/architecture/shortlisted/\'.$term->tid.\'">Shortlisted Projects</a>\'; ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Field: Content: Press Materials */
@@ -10593,24 +10593,24 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
   $handler->display->display_options['header']['php']['table'] = 'views';
   $handler->display->display_options['header']['php']['field'] = 'php';
   $handler->display->display_options['header']['php']['php_output'] = '<?php
-  $output = \'\';
-  $output .= \'<div class = "akaa-cycle-title">\';
-  $output .= t($view->result[0]->field_field_short_title[0][\'rendered\'][\'#markup\']);
-  $output .= \'</div>\';
-  print $output;
-  ?>';
+    $output = \'\';
+    $output .= \'<div class = "akaa-cycle-title">\';
+    $output .= t($view->result[0]->field_field_short_title[0][\'rendered\'][\'#markup\']);
+    $output .= \'</div>\';
+    print $output;
+    ?>';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   /* Footer: Global: PHP */
   $handler->display->display_options['footer']['php']['id'] = 'php';
   $handler->display->display_options['footer']['php']['table'] = 'views';
   $handler->display->display_options['footer']['php']['field'] = 'php';
   $handler->display->display_options['footer']['php']['php_output'] = '<?php
-  $output = \'\';
-  $output .= \'<div class = "akaa-icon-title">\';
-  $output .= \'<a href = "#">icon</a>\';
-  $output .= \'</div>\';
-  print $output;
-  ?>';
+    $output = \'\';
+    $output .= \'<div class = "akaa-icon-title">\';
+    $output .= \'<a href = "#">icon</a>\';
+    $output .= \'</div>\';
+    print $output;
+    ?>';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Short Title */
   $handler->display->display_options['fields']['field_short_title']['id'] = 'field_short_title';
@@ -10742,7 +10742,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
   $handler->display->display_options['header']['php']['table'] = 'views';
   $handler->display->display_options['header']['php']['field'] = 'php';
   $handler->display->display_options['header']['php']['php_output'] = '<div class = "akaa-cycle-title"><a href = "#"><?php echo t("Previous Cycles");?></a></div>
-  ';
+    ';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   /* Footer: Global: Unfiltered text */
   $handler->display->display_options['footer']['area_text_custom']['id'] = 'area_text_custom';
@@ -10927,11 +10927,11 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
-  $node = node_load($row->field_short_video_llink_et);
-  $video = reset($node->field_short_video_llink)[0][\'url\'];
-  $explode = explode(\'?v=\', $video);
-  print $explode[1];
-  ?>';
+    $node = node_load($row->field_short_video_llink_et);
+    $video = reset($node->field_short_video_llink)[0][\'url\'];
+    $explode = explode(\'?v=\', $video);
+    print $explode[1];
+    ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Field: Entity translation: Video Image: translated */
@@ -10940,7 +10940,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
   $handler->display->display_options['fields']['field_short_video_image_et']['field'] = 'field_short_video_image_et';
   $handler->display->display_options['fields']['field_short_video_image_et']['label'] = '';
   $handler->display->display_options['fields']['field_short_video_image_et']['alter']['text'] = '<img src = "http://img.youtube.com/vi/[php]/0.jpg">
-  [php]';
+    [php]';
   $handler->display->display_options['fields']['field_short_video_image_et']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_short_video_image_et']['alter']['path'] = 'https://www.youtube.com/embed/[php]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0';
   $handler->display->display_options['fields']['field_short_video_image_et']['alter']['link_class'] = 'colorbox-inline';
@@ -10960,7 +10960,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
   $handler->display->display_options['fields']['field_short_video_image']['label'] = '';
   $handler->display->display_options['fields']['field_short_video_image']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_short_video_image']['alter']['text'] = '<img src = "http://img.youtube.com/vi/[php]/0.jpg">
-  [php]';
+    [php]';
   $handler->display->display_options['fields']['field_short_video_image']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_short_video_image']['alter']['path'] = 'https://www.youtube.com/embed/[php]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0';
   $handler->display->display_options['fields']['field_short_video_image']['alter']['link_class'] = 'colorbox-inline';
@@ -10999,8 +10999,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="social_sharing">
-  <span class="play-video" id="[php]"><a class="colorbox-inline" href="https://www.youtube.com/embed/[php]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0">icon</a></span>
-  </div>';
+    <span class="play-video" id="[php]"><a class="colorbox-inline" href="https://www.youtube.com/embed/[php]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0">icon</a></span>
+    </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Post date */
@@ -11069,11 +11069,11 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
-  $node = node_load($row->field_short_video_llink_et);
-  $video = reset($node->field_short_video_llink_et)[0][\'url\'];
-  $explode = explode(\'?v=\', $video);
-  print $explode[1];
-  ?>';
+    $node = node_load($row->field_short_video_llink_et);
+    $video = reset($node->field_short_video_llink_et)[0][\'url\'];
+    $explode = explode(\'?v=\', $video);
+    print $explode[1];
+    ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Field: Entity translation: Video Image: translated */
@@ -11082,7 +11082,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
   $handler->display->display_options['fields']['field_short_video_image_et']['field'] = 'field_short_video_image_et';
   $handler->display->display_options['fields']['field_short_video_image_et']['label'] = '';
   $handler->display->display_options['fields']['field_short_video_image_et']['alter']['text'] = '<img src = "http://img.youtube.com/vi/[php]/0.jpg">
-  [php]';
+    [php]';
   $handler->display->display_options['fields']['field_short_video_image_et']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_short_video_image_et']['alter']['path'] = 'https://www.youtube.com/embed/[php]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0';
   $handler->display->display_options['fields']['field_short_video_image_et']['alter']['link_class'] = 'colorbox-inline';
@@ -11102,7 +11102,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
   $handler->display->display_options['fields']['field_short_video_image']['label'] = '';
   $handler->display->display_options['fields']['field_short_video_image']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_short_video_image']['alter']['text'] = '<img src = "http://img.youtube.com/vi/[php]/0.jpg">
-  [php]';
+    [php]';
   $handler->display->display_options['fields']['field_short_video_image']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_short_video_image']['alter']['path'] = 'https://www.youtube.com/embed/[php]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0';
   $handler->display->display_options['fields']['field_short_video_image']['alter']['link_class'] = 'colorbox-inline';
@@ -11148,8 +11148,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="social_sharing">
-  <span class="play-video" id="[php]"><a class="colorbox-inline" href="https://www.youtube.com/embed/[php]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0">icon</a></span>
-  </div>';
+    <span class="play-video" id="[php]"><a class="colorbox-inline" href="https://www.youtube.com/embed/[php]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0">icon</a></span>
+    </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Post date */
@@ -11291,11 +11291,11 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
-  $node = node_load($row->field_short_video_llink);
-  $video = reset($node->field_short_video_llink)[0][\'url\'];
-  $explode = explode(\'vimeo.com/\', $video);
-  print $explode[1];
-  ?>';
+    $node = node_load($row->field_short_video_llink);
+    $video = reset($node->field_short_video_llink)[0][\'url\'];
+    $explode = explode(\'vimeo.com/\', $video);
+    print $explode[1];
+    ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Field: Content: Video Image */
@@ -11304,10 +11304,10 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
   $handler->display->display_options['fields']['field_short_video_image']['field'] = 'field_short_video_image';
   $handler->display->display_options['fields']['field_short_video_image']['label'] = '';
   $handler->display->display_options['fields']['field_short_video_image']['alter']['text'] = '<img src = "http://img.youtube.com/vi/[php]/0.jpg">
-  [php]';
+    [php]';
   $handler->display->display_options['fields']['field_short_video_image']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_short_video_image']['alter']['path'] = 'http://player.vimeo.com/video/[php]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0';
-  $handler->display->display_options['fields']['field_short_video_image']['alter']['link_class'] = 'colorbox-inline';
+  $handler->display->display_options['fields']['field_short_video_image']['alter']['link_class'] = 'colorbox-load';
   $handler->display->display_options['fields']['field_short_video_image']['alter']['prefix'] = '<span class="youtube-play-button"></span>';
   $handler->display->display_options['fields']['field_short_video_image']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_short_video_image']['element_class'] = 'grid-social-block_picture grid-social-block_picture-youtube';
@@ -11324,8 +11324,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['text'] = '<div class="title">
-  <a class="colorbox-inline" href="http://player.vimeo.com/video/[php]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0"><span class="social-icon-image"></span>[title]</a>
-  </div>';
+    <a class="colorbox-load" href="http://player.vimeo.com/video/[php]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0"><span class="social-icon-image"></span>[title]</a>
+    </div>';
   $handler->display->display_options['fields']['title']['alter']['path'] = 'https://www.youtube.com/embed/[php]?autoplay=1&fs=1&amp;width=640&amp;height=360&amp;hl=en_US1&amp;iframe=true&amp;rel=0';
   $handler->display->display_options['fields']['title']['alter']['link_class'] = 'colorbox-inline init-colorbox-inline-processed cboxElement';
   $handler->display->display_options['fields']['title']['element_type'] = 'div';
@@ -11333,6 +11333,9 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_rel'] = '';
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
