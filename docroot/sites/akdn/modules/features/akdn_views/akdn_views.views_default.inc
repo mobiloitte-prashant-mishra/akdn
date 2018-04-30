@@ -31232,6 +31232,17 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_length' => '600',
   );
+  /* Field: Global: PHP */
+  $handler->display->display_options['fields']['php_3']['id'] = 'php_3';
+  $handler->display->display_options['fields']['php_3']['table'] = 'views';
+  $handler->display->display_options['fields']['php_3']['field'] = 'php';
+  $handler->display->display_options['fields']['php_3']['label'] = '';
+  $handler->display->display_options['fields']['php_3']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['php_3']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php_3']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_3']['php_output'] = '<?php
+    print t("What\'s New");
+  ?>';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing_2']['id'] = 'nothing_2';
   $handler->display->display_options['fields']['nothing_2']['table'] = 'views';
@@ -31240,7 +31251,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['nothing_2']['alter']['text'] = '<div class="whats-slide-text">
      <div class="view-content">
        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last whatsnew-right-content">
-         <p class="whats-new-gold">What\'s New</p>
+         <p class="whats-new-gold">[php_3]</p>
          <div class="field-content grid-whatsnew-block_title grid-whatsnew-block_title-in-media">
 [php_2][title_field]</a></div>
          <div class="field-content grid-whatsnew-block_body grid-whatsnew-block_body-in-media">[body]</div>
@@ -31645,6 +31656,17 @@ if ($data->node_type == "featured_content") {
 [php]
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Field: Global: PHP */
+  $handler->display->display_options['fields']['php_3']['id'] = 'php_3';
+  $handler->display->display_options['fields']['php_3']['table'] = 'views';
+  $handler->display->display_options['fields']['php_3']['field'] = 'php';
+  $handler->display->display_options['fields']['php_3']['label'] = '';
+  $handler->display->display_options['fields']['php_3']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['php_3']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php_3']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_3']['php_output'] = '<?php
+    print t("What\'s New");
+  ?>';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -31660,7 +31682,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<div class="whats-slide-text">
      <div class="view-content">
        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last whatsnew-right-content">
-         <p class="whats-new-gold">What\'s New</p>
+         <p class="whats-new-gold">[php_3]</p>
          <div class="field-content grid-whatsnew-block_title grid-whatsnew-block_title-in-media">[php_2][title_field]</a></div>
          <div class="field-content grid-whatsnew-block_body grid-whatsnew-block_body-in-media">[body]</div>
          </div>
@@ -32015,6 +32037,17 @@ print $value;
 </div>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Field: Global: PHP */
+  $handler->display->display_options['fields']['php_3']['id'] = 'php_3';
+  $handler->display->display_options['fields']['php_3']['table'] = 'views';
+  $handler->display->display_options['fields']['php_3']['field'] = 'php';
+  $handler->display->display_options['fields']['php_3']['label'] = '';
+  $handler->display->display_options['fields']['php_3']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['php_3']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php_3']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_3']['php_output'] = '<?php
+    print t("What\'s New");
+  ?>';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
   $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
@@ -32023,7 +32056,7 @@ print $value;
   $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<div class="whats-slide-text">
      <div class="view-content">
        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last whatsnew-right-content">
-         <p class="whats-new-gold">What\'s New</p>
+         <p class="whats-new-gold">[php_3]</p>
          <div class="field-content grid-whatsnew-block_title grid-whatsnew-block_title-in-media">[php_2][title_field]</a></div>
          <div class="field-content grid-whatsnew-block_body grid-whatsnew-block_body-in-media">[body]</div>
          </div>
@@ -32401,6 +32434,17 @@ if ($data->node_type == "featured_content") {
 </div>
 ';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Field: Global: PHP */
+  $handler->display->display_options['fields']['php_3']['id'] = 'php_3';
+  $handler->display->display_options['fields']['php_3']['table'] = 'views';
+  $handler->display->display_options['fields']['php_3']['field'] = 'php';
+  $handler->display->display_options['fields']['php_3']['label'] = '';
+  $handler->display->display_options['fields']['php_3']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['php_3']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php_3']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_3']['php_output'] = '<?php
+    print t("What\'s New");
+  ?>';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -32414,7 +32458,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<div class="whats-slide-text">
      <div class="view-content">
        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last whatsnew-right-content">
-         <p class="whats-new-gold">What\'s New</p>
+         <p class="whats-new-gold">[php_3]</p>
          <div class="field-content grid-whatsnew-block_title grid-whatsnew-block_title-in-media">[field_short_title]</div>
          <div class="field-content grid-whatsnew-block_body grid-whatsnew-block_body-in-media">[body]</div>
          </div>
@@ -32802,6 +32846,17 @@ if ($data->node_type == "featured_content") {
 </div>
 ';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Field: Global: PHP */
+  $handler->display->display_options['fields']['php_3']['id'] = 'php_3';
+  $handler->display->display_options['fields']['php_3']['table'] = 'views';
+  $handler->display->display_options['fields']['php_3']['field'] = 'php';
+  $handler->display->display_options['fields']['php_3']['label'] = '';
+  $handler->display->display_options['fields']['php_3']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['php_3']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php_3']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_3']['php_output'] = '<?php
+    print t("What\'s New");
+  ?>';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -32815,7 +32870,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<div class="whats-slide-text">
       <div class="view-content">
         <div class="views-row views-row-1 views-row-odd views-row-first views-row-last whatsnew-right-content">
-          <p class="whats-new-gold">What\'s New</p>
+          <p class="whats-new-gold">[php_3]</p>
           <div class="field-content grid-whatsnew-block_title grid-whatsnew-block_title-in-media">[php_2][title_field]</a></div>
           <div class="field-content grid-whatsnew-block_body grid-whatsnew-block_body-in-media">[body]</div>
           </div>
@@ -33200,6 +33255,17 @@ if ($data->node_type == "featured_content") {
 </div>
 ';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Field: Global: PHP */
+  $handler->display->display_options['fields']['php_3']['id'] = 'php_3';
+  $handler->display->display_options['fields']['php_3']['table'] = 'views';
+  $handler->display->display_options['fields']['php_3']['field'] = 'php';
+  $handler->display->display_options['fields']['php_3']['label'] = '';
+  $handler->display->display_options['fields']['php_3']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['php_3']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php_3']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_3']['php_output'] = '<?php
+    print t("What\'s New");
+  ?>';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -33215,7 +33281,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<div class="whats-slide-text">
       <div class="view-content">
         <div class="views-row views-row-1 views-row-odd views-row-first views-row-last whatsnew-right-content">
-          <p class="whats-new-gold">What\'s New</p>
+          <p class="whats-new-gold">[php_3]</p>
           <div class="field-content grid-whatsnew-block_title grid-whatsnew-block_title-in-media">[title_field]</div>
           <div class="field-content grid-whatsnew-block_body grid-whatsnew-block_body-in-media">[body]</div>
           </div>
@@ -33579,6 +33645,17 @@ if ($data->node_type == "featured_content") {
 </div>
 ';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Field: Global: PHP */
+  $handler->display->display_options['fields']['php_3']['id'] = 'php_3';
+  $handler->display->display_options['fields']['php_3']['table'] = 'views';
+  $handler->display->display_options['fields']['php_3']['field'] = 'php';
+  $handler->display->display_options['fields']['php_3']['label'] = '';
+  $handler->display->display_options['fields']['php_3']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['php_3']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php_3']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_3']['php_output'] = '<?php
+    print t("What\'s New");
+  ?>';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -33592,7 +33669,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<div class="whats-slide-text">
       <div class="view-content">
         <div class="views-row views-row-1 views-row-odd views-row-first views-row-last whatsnew-right-content">
-          <p class="whats-new-gold">What\'s New</p>
+          <p class="whats-new-gold">[php_3]</p>
           <div class="field-content grid-whatsnew-block_title grid-whatsnew-block_title-in-media">[php_2][title_field]</a></div>
           <div class="field-content grid-whatsnew-block_body grid-whatsnew-block_body-in-media"> [body]</a></div>
           </div>
@@ -34014,6 +34091,17 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_length' => '600',
   );
+  /* Field: Global: PHP */
+  $handler->display->display_options['fields']['php_3']['id'] = 'php_3';
+  $handler->display->display_options['fields']['php_3']['table'] = 'views';
+  $handler->display->display_options['fields']['php_3']['field'] = 'php';
+  $handler->display->display_options['fields']['php_3']['label'] = '';
+  $handler->display->display_options['fields']['php_3']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['php_3']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php_3']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_3']['php_output'] = '<?php
+    print t("What\'s New");
+  ?>';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
   $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
@@ -34022,7 +34110,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<div class="whats-slide-text">
       <div class="view-content">
         <div class="views-row views-row-1 views-row-odd views-row-first views-row-last whatsnew-right-content">
-          <p class="whats-new-gold">What\'s New</p>
+          <p class="whats-new-gold">[php_3]</p>
           <div class="field-content grid-whatsnew-block_title grid-whatsnew-block_title-in-media">[field_short_title]</div>
           <div class="field-content grid-whatsnew-block_body grid-whatsnew-block_body-in-media">[body]</div>
           </div>
@@ -37602,13 +37690,24 @@ print $content;
   $handler->display->display_options['fields']['field_publication_file']['field'] = 'field_publication_file';
   $handler->display->display_options['fields']['field_publication_file']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_publication_file']['click_sort_column'] = 'fid';
+  /* Field: Global: PHP */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php print t(\'Last Updated:\'); ?>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Field: Content: Publish Date */
   $handler->display->display_options['fields']['field_publish_date']['id'] = 'field_publish_date';
   $handler->display->display_options['fields']['field_publish_date']['table'] = 'field_data_field_publish_date';
   $handler->display->display_options['fields']['field_publish_date']['field'] = 'field_publish_date';
   $handler->display->display_options['fields']['field_publish_date']['label'] = '';
   $handler->display->display_options['fields']['field_publish_date']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_publish_date']['alter']['text'] = '<div class="publish-date">Last Updated: [field_publish_date]</div>';
+  $handler->display->display_options['fields']['field_publish_date']['alter']['text'] = '<div class="publish-date">[php] [field_publish_date]</div>';
   $handler->display->display_options['fields']['field_publish_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_publish_date']['settings'] = array(
     'format_type' => 'publish_date',

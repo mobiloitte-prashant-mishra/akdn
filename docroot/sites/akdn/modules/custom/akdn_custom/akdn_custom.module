@@ -1901,7 +1901,7 @@ function akdn_basic_page_accordian_style_block() {
     $output .= '</div>';
 
     $quick_links .= '<div class = "accordian-quick-links">';
-    $quick_links .= '<div class = "heading">Quick Links</div>';
+    $quick_links .= '<div class = "heading">' . t('Quick Links') . '</div>';
     $quick_links .= '<ul>' . $quick_links1 . '</ul>';
     $quick_links .= '</div>';
     $html_output .= $quick_links;
@@ -2319,7 +2319,7 @@ function what_we_do_news_and_resources() {
           $read = l(t('View'), $source, $attribute);
         }
         if ($name == 'News') {
-          $type = 'News';
+          $type = t('News');
           $url = 'news';
           $read = l(t('View'), 'node/' . $node->nid, $attribute);
         }
@@ -2345,7 +2345,7 @@ function what_we_do_news_and_resources() {
       }
       if ($node->type == 'podcast') {
         //$name = 'podcast';
-        $type = 'Videos';
+        $type = t('Videos');
         if ($node->field_podcast_image[$lang]) {
           $image = $node->field_podcast_image[$lang];
         }
@@ -2366,7 +2366,7 @@ function what_we_do_news_and_resources() {
       }
 
       if ($node->type == 'gallery') {
-        $type = 'Photographs';
+        $type = t('Photographs');
         if ($node->field_gallery_images[$lang]) {
           $image = $node->field_gallery_images[$lang];
         }
@@ -2387,7 +2387,7 @@ function what_we_do_news_and_resources() {
       }
 
       if ($node->type == 'event') {
-        $type = 'Events';
+        $type = t('Events');
         if ($node->field_event_image[$lang]) {
           $image = $node->field_event_image[$lang];
         }
@@ -2408,7 +2408,7 @@ function what_we_do_news_and_resources() {
       }
 
       if ($node->type == 'publication') {
-        $type = 'Publications';
+        $type = t('Publications');
         if ($node->field_publication_image[$lang]) {
           $image = $node->field_publication_image[$lang];
         }
@@ -2429,7 +2429,7 @@ function what_we_do_news_and_resources() {
       }
 
       if ($node->type == 'speech') {
-        $type = 'Speeches';
+        $type = t('Speeches');
         if ($node->field_speech_image[$lang]) {
           $image = $node->field_speech_image[$lang];
         }
@@ -2450,7 +2450,7 @@ function what_we_do_news_and_resources() {
       }
 
       if ($node->type == 'project') {
-        $type = 'Spotlights';
+        $type = t('Spotlights');
         if ($node->field_project_image[$lang]) {
           $image = $node->field_project_image[$lang];
         }
