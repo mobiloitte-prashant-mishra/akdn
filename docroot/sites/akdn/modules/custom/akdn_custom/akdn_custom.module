@@ -3082,21 +3082,21 @@ function _akdn_custom_lang_related_info_links() {
       }
       $output = '<div class="view-header">' . $rel_title . '</div><div class="view-content">';
       foreach ($field as $key => $value) {
-        if (strpos($value['url'], 'www')) {
+        if((preg_match('/((http|https)\:\/\/)?[a-zA-Z0-9\.\/\?\:@\-_=#]+\.([a-zA-Z0-9\&\.\/\?\:@\-_=#])*/', $value['url']))) {
           $url = $value['url'];
         }
         else {
-          $url = '/' . $value['url'];
+          $url = $base_url . '/'. $value['url'];
         }
         $target = $value['attributes']['target'];
         $output .= '<div class="views-row ">';
         if ($target == '_blank') {
-          $output .= '<div class="field-content custom-page-block-link">
-    <a href="' . $url . '" target="' . $target . '">' . $value['title'] . '</a></div>';
+          $custom_link = l($value['title'], $url, array('attributes' => array('target'=>'_blank', 'title' => $value['title'])));
+          $output .= '<div class="field-content custom-page-block-link">' . $custom_link . '</div>';
         }
         else {
-          $output .= '<div class="field-content custom-page-block-link">
-    <a href="' . $url . '">' . $value['title'] . '</a></div>';
+          $custom_link = l($value['title'], $url, array('attributes' => array('title' => $value['title'])));
+          $output .= '<div class="field-content custom-page-block-link">' . $custom_link . '</div>';
         }
 
         $output .= '</div>';
