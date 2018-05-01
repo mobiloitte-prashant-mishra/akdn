@@ -35282,7 +35282,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['field_focus_area_1']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_focus_area_1']['alter']['text'] = '-T';
   $handler->display->display_options['fields']['field_focus_area_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_focus_area_1']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_focus_area_1']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_focus_area_1']['delta_offset'] = '0';
   /* Field: Field: Agency */
   $handler->display->display_options['fields']['field_agency_1']['id'] = 'field_agency_1';
@@ -35293,7 +35293,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['field_agency_1']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_agency_1']['alter']['text'] = '-A';
   $handler->display->display_options['fields']['field_agency_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_agency_1']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_agency_1']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_agency_1']['delta_offset'] = '0';
   /* Field: Field: Geography */
   $handler->display->display_options['fields']['field_country_1']['id'] = 'field_country_1';
@@ -35304,16 +35304,16 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['field_country_1']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_country_1']['alter']['text'] = '-G';
   $handler->display->display_options['fields']['field_country_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_country_1']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_country_1']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_country_1']['delta_offset'] = '0';
-  /* Field: Global: Custom text */
+/* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<h2 class="pane-title hide[field_country_1][field_agency_1][field_focus_area_1]">MORE SPOTLIGHTS BY:</h2>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Field: Field: Geography */
+/* Field: Field: Geography */
   $handler->display->display_options['fields']['field_country']['id'] = 'field_country';
   $handler->display->display_options['fields']['field_country']['table'] = 'field_data_field_country';
   $handler->display->display_options['fields']['field_country']['field'] = 'field_country';
@@ -35322,9 +35322,9 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['field_country']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_country']['element_label_type'] = 'span';
   $handler->display->display_options['fields']['field_country']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_country']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_country']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_country']['delta_offset'] = '0';
-  /* Field: Field: Agency */
+/* Field: Field: Agency */
   $handler->display->display_options['fields']['field_agency']['id'] = 'field_agency';
   $handler->display->display_options['fields']['field_agency']['table'] = 'field_data_field_agency';
   $handler->display->display_options['fields']['field_agency']['field'] = 'field_agency';
@@ -35333,7 +35333,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['field_agency']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_agency']['element_label_type'] = 'span';
   $handler->display->display_options['fields']['field_agency']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_agency']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_agency']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_agency']['delta_offset'] = '0';
   /* Field: Field: Thematic Area */
   $handler->display->display_options['fields']['field_focus_area']['id'] = 'field_focus_area';
@@ -35344,7 +35344,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['field_focus_area']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_focus_area']['element_label_type'] = 'span';
   $handler->display->display_options['fields']['field_focus_area']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_focus_area']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_focus_area']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_focus_area']['delta_offset'] = '0';
   $translatables['project_pages'] = array(
     t('Master'),
@@ -35354,19 +35354,19 @@ if ($data->node_type == "featured_content") {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('-T'),
-    t('-A'),
-    t('-G'),
-    t('<h2 class="pane-title hide[field_country_1][field_agency_1][field_focus_area_1]">MORE PROJECTS BY:</h2>'),
+    t('T'),
+    t('A'),
+    t('G'),
+    t('<h2 class="panetitle hide[field_country_1][field_agency_1][field_focus_area_1]">MORE PROJECTS BY:</h2>'),
     t('Geography'),
-    t('<a href="/press-centre/projects?f[0]=field_country:[field_country-tid]">[field_country]</a>'),
+    t('<a href="/presscentre/projects?f[0]=field_country:[field_countrytid]">[field_country]</a>'),
     t('Agency'),
-    t('<a href="/press-centre/projects?f[0]=field_agency:[field_agency-tid]">[field_agency]</a>'),
+    t('<a href="/presscentre/projects?f[0]=field_agency:[field_agencytid]">[field_agency]</a>'),
     t('Thematic Area'),
-    t('<a href="/press-centre/projects?f[0]=field_focus_area:[field_focus_area-tid]">[field_focus_area]</a>'),
+    t('<a href="/presscentre/projects?f[0]=field_focus_area:[field_focus_areatid]">[field_focus_area]</a>'),
     t('All'),
     t('Block'),
-    t('<h2 class="pane-title hide[field_country_1][field_agency_1][field_focus_area_1]">MORE SPOTLIGHTS BY:</h2>'),
+    t('<h2 class="panetitle hide[field_country_1][field_agency_1][field_focus_area_1]">MORE SPOTLIGHTS BY:</h2>'),
   );
   $export['project_pages'] = $view;
 
