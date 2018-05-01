@@ -1158,7 +1158,7 @@ function akdn_custom_block_view($delta = '') {
       }
       elseif ((isset($arg[0]) && $arg[0] == 'search') && !isset($arg[1])) {
         $default_search_class = 'default';
-        $search_url = l('Switch to Google search', 'search/google-search', array('class' => array($google_search_class), 'title' => t('Google Search')));
+        $search_url = l(t('Switch to Google search'), 'search/google-search', array('class' => array($google_search_class), 'title' => t('Google Search')));
       }
 
       if ($search_url == '') {
