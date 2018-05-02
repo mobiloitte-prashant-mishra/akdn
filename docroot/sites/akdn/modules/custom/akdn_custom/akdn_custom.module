@@ -4436,6 +4436,7 @@ function akdn_custom_preprocess_views_view_field__hub_pages__country_hub_pages__
  */
 function akdn_custom_preprocess_views_view_field__hub_pages__other_activities__nothing(&$variables) {
   $arr = menu_get_active_trail();
+  global $language;
   $top_menu = $arr[1];
   if ($top_menu['link_title'] == "Where we work") {
     $menu_item = $arr[3];
@@ -4446,7 +4447,10 @@ function akdn_custom_preprocess_views_view_field__hub_pages__other_activities__n
   $nid = explode('/', $menu_item['link_path']);
   $nid = $nid[1];
   $node = node_load($nid);
-  $title = $node->title;
+  $title = NULL;
+  if(isset($node->title_field[$language->language][0]['value'])){
+    $title = $node->title_field[$language->language][0]['value'];
+  }
 
   $variables['other_activity_title'] = $title;
 }
