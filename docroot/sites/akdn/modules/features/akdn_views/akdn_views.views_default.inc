@@ -16372,6 +16372,17 @@ if ($data->node_type == "featured_content") {
 ';
   $handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
+	/* Field: Global: PHP */
+	$handler->display->display_options['fields']['php_3']['id'] = 'php_3';
+	$handler->display->display_options['fields']['php_3']['table'] = 'views';
+	$handler->display->display_options['fields']['php_3']['field'] = 'php';
+	$handler->display->display_options['fields']['php_3']['label'] = '';
+	$handler->display->display_options['fields']['php_3']['exclude'] = TRUE;
+	$handler->display->display_options['fields']['php_3']['element_label_colon'] = FALSE;
+	$handler->display->display_options['fields']['php_3']['use_php_setup'] = 0;
+	$handler->display->display_options['fields']['php_3']['php_output'] = '<?php print t(\'More\'); ?>';
+	$handler->display->display_options['fields']['php_3']['use_php_click_sortable'] = '0';
+	$handler->display->display_options['fields']['php_3']['php_click_sortable'] = '';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -16380,7 +16391,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[php][field_feature_image_et][field_project_image_et]</div></a>
 <div class="slide-text">
 <h3>[php_2]</h3>
-[title_field_et] [php]More</a>
+[title_field_et] [php][php_3]</a>
 </div>';
   $handler->display->display_options['fields']['nothing']['alter']['max_length'] = '104';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -16698,10 +16709,10 @@ global $language;
 $lang = $language->language;
 if ($data->node_type == "featured_content") {
   if (!empty($data->field_field_feature_link)) {
-    $url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>More</a>";
+    $url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>" . t(\'More\') . "</a>";
     print $url;
   }
-  else { print \' <a class="banner-no-link">More</a>\'; }
+  else { print \' <a class="banner-no-link">\' . t(\'More\') . \'</a>\'; }
 } else {
   $tid = isset($data->_field_data[\'nid\'][\'entity\']->field_article_cat[$lang][0][\'tid\']) ? $data->_field_data[\'nid\'][\'entity\']->field_article_cat[$lang][0][\'tid\'] : $data->_field_data[\'nid\'][\'entity\']->field_article_cat[\'en\'][0][\'tid\'];
   if(empty($tid)){
@@ -16714,11 +16725,11 @@ if ($data->node_type == "featured_content") {
   if(empty($node_path)){
     $node_path =  $data->_field_data[\'nid\'][\'entity\']->field_media_source[\'und\'][0][\'url\'] ;
   }
-  $url =  " <a href=\'$node_path\' target=\'_blank\'>More</a>";
+  $url =  " <a href=\'$node_path\' target=\'_blank\'>" . t(\'More\') . "</a>";
   print $url;
 } else {
   $node_path = drupal_get_path_alias(\'node/\' . $data->nid);
-  $url =  "<a href=\'/$node_path\'>More</a>";
+  $url =  "<a href=\'/$node_path\'>" . t(\'More\') . "</a>";
   print $url;
   }
 }
@@ -21616,6 +21627,17 @@ $lang = $language->language;
   ?>';
   $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
+	/* Field: Global: PHP */
+	$handler->display->display_options['fields']['php_2']['id'] = 'php_2';
+	$handler->display->display_options['fields']['php_2']['table'] = 'views';
+	$handler->display->display_options['fields']['php_2']['field'] = 'php';
+	$handler->display->display_options['fields']['php_2']['label'] = '';
+	$handler->display->display_options['fields']['php_2']['exclude'] = TRUE;
+	$handler->display->display_options['fields']['php_2']['element_label_colon'] = FALSE;
+	$handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
+	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php print t(\'More\'); ?>';
+	$handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
+	$handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -21625,7 +21647,7 @@ $lang = $language->language;
   <div class="slide-text">
   <h3>[title_field]</h3>
   [php_1]
-  [php]More </a>
+  [php][php_2] </a>
   </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
