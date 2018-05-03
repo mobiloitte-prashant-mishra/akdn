@@ -15397,7 +15397,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="facts-block_section-top">
   <div class="facts-block_icon-wrapper"><div class="facts-block_icon">[field_facts_icon]</div></div>
-  <div class="facts-block_number">[title]</div>
+  <div class="facts-block_number">[title_field_et]</div>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_class'] = 'facts-block_stats';
