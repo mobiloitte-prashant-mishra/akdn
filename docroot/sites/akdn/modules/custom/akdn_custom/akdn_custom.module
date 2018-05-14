@@ -1766,12 +1766,15 @@ function akdn_basic_page_accordian_style_block() {
 
         if (!empty($field_values->field_basic_page_accordian_image)) {
           $field_basic_page_accordian_image = $field_values->field_basic_page_accordian_image;
+          
+          $image_und = $field_values->field_basic_page_accordian_image['und'] ? $field_values->field_basic_page_accordian_image['und'] : $field_values->field_basic_page_accordian_image['en'];
+          $image = (isset($field_values->field_basic_page_accordian_image[$lang])) ? $field_values->field_basic_page_accordian_image[$lang] : $image_und;
 
-          $image = (isset($field_values->field_basic_page_accordian_image[$lang])) ? $field_values->field_basic_page_accordian_image[$lang] : $field_values->field_basic_page_accordian_image['und'];
+          $image_cption_und = $image[0]['field_image_caption']['und'][0]['value'] ? $image[0]['field_image_caption']['und'][0]['value'] : $image[0]['field_image_caption']['en'][0]['value'];
+          $image_caption = (isset($image[0]['field_image_caption'][$lang])) ? $image[0]['field_image_caption'][$lang][0]['value'] : $image_cption_und;
 
-          $image_caption = (isset($image[0]['field_image_caption'][$lang])) ? $image[0]['field_image_caption'][$lang][0]['value'] : $image[0]['field_image_caption']['und'][0]['value'];
-
-          $image_copyright = (isset($image[0]['field_image_copytight'][$lang])) ? $image[0]['field_image_copytight'][$lang][0]['value'] : $image[0]['field_image_copytight']['und'][0]['value'];
+          $image_copyright_und = $image[0]['field_image_copytight']['und'][0]['value'] ? $image[0]['field_image_copytight']['und'][0]['value'] : $image[0]['field_image_copytight']['en'][0]['value'];
+          $image_copyright = (isset($image[0]['field_image_copytight'][$lang])) ? $image[0]['field_image_copytight'][$lang][0]['value'] : $image_copyright_und;
 
 
           $field_basic_accordian_rel_links = $field_values->field_basic_accordian_rel_links;
