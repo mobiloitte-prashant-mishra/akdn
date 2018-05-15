@@ -3089,8 +3089,13 @@ function _akdn_custom_lang_related_info_links() {
           $url = $value['url'];
         }
         else {
-          $url = $base_url . '/'. $value['url'];
+          if($lang != 'en'){
+            $url = $base_url . '/'.$lang.'/'. $value['url'];
+          }else{
+            $url = $base_url . '/'. $value['url'];
+          }
         }
+
         $target = $value['attributes']['target'];
         $output .= '<div class="views-row ">';
         if ($target == '_blank') {
