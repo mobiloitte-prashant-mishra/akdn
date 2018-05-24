@@ -5139,7 +5139,7 @@ function akdn_content_types_field_default_field_instances() {
       'title_value' => '',
       'url' => 0,
       'user_register_form' => FALSE,
-      'validate_url' => 1,
+      'validate_url' => 0,
     ),
     'widget' => array(
       'active' => 0,
