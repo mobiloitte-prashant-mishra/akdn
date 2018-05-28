@@ -434,15 +434,6 @@ function akdn_content_types_strongarm() {
       'email_textalt' => array(
         'custom_settings' => FALSE,
       ),
-      'scs' => array(
-        'custom_settings' => TRUE,
-      ),
-      'colorbox' => array(
-        'custom_settings' => FALSE,
-      ),
-      'press_centre_rss_feeds' => array(
-        'custom_settings' => FALSE,
-      ),
     ),
     'extra_fields' => array(
       'form' => array(
