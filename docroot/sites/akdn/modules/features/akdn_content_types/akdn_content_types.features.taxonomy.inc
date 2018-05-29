@@ -16,6 +16,10 @@ function akdn_content_types_taxonomy_default_vocabularies() {
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
+      'language' => 'und',
+      'i18n_mode' => 1,
+      'base_i18n_mode' => 1,
+      'base_language' => 'und',
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -39,6 +43,10 @@ function akdn_content_types_taxonomy_default_vocabularies() {
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
+      'language' => 'und',
+      'i18n_mode' => 1,
+      'base_i18n_mode' => 1,
+      'base_language' => 'und',
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -62,6 +70,10 @@ function akdn_content_types_taxonomy_default_vocabularies() {
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
+      'language' => 'und',
+      'i18n_mode' => 0,
+      'base_i18n_mode' => 0,
+      'base_language' => 'und',
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -85,6 +97,10 @@ function akdn_content_types_taxonomy_default_vocabularies() {
       'hierarchy' => 0,
       'module' => 'simplenews',
       'weight' => 0,
+      'language' => 'und',
+      'i18n_mode' => 1,
+      'base_i18n_mode' => 1,
+      'base_language' => 'und',
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -108,6 +124,10 @@ function akdn_content_types_taxonomy_default_vocabularies() {
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
+      'language' => 'und',
+      'i18n_mode' => 0,
+      'base_i18n_mode' => 0,
+      'base_language' => 'und',
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
