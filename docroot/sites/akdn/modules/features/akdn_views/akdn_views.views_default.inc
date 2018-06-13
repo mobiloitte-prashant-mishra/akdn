@@ -21149,8 +21149,14 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Réinitialiser';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Trier par';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['tags']['first'] = 'Début';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = 'Préc';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'suite ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'Fin';
   $handler->display->display_options['style_plugin'] = 'slideshow';
   $handler->display->display_options['style_options']['slideshow_type'] = 'views_slideshow_cycle';
   $handler->display->display_options['style_options']['slideshow_skin'] = 'default';
@@ -21212,7 +21218,7 @@ if ($data->node_type == "featured_content") {
     'featured_articles' => 0,
     'featured_exhibition' => 0,
   );
-  /* Relationship: Content: Images (field_project_image:fid) */
+  /* Relationship: Content: Image (field_project_image:fid) */
   $handler->display->display_options['relationships']['field_project_image_fid']['id'] = 'field_project_image_fid';
   $handler->display->display_options['relationships']['field_project_image_fid']['table'] = 'field_data_field_project_image';
   $handler->display->display_options['relationships']['field_project_image_fid']['field'] = 'field_project_image_fid';
@@ -21284,12 +21290,12 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_feature_image]</div>
-  <div class="slide-text"><h3>[title]</h3>
-  [field_caption]
-  [field_feature_link]
-  </div>
+    <div class="slide-text"><h3>[title]</h3>
+    [field_caption]
+    [field_feature_link]
+    </div>
 
-  ';
+    ';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
@@ -21430,7 +21436,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['relationships']['field_featured_content_nodes_nid']['label'] = 'field_banner_item_nodes';
   $handler->display->display_options['relationships']['field_featured_content_nodes_nid']['required'] = TRUE;
   $handler->display->display_options['relationships']['field_featured_content_nodes_nid']['delta'] = '-1';
-  /* Relationship: Content (historical data): Images (field_project_image:fid) */
+  /* Relationship: Content (historical data): Image (field_project_image:fid) */
   $handler->display->display_options['relationships']['field_project_image_fid']['id'] = 'field_project_image_fid';
   $handler->display->display_options['relationships']['field_project_image_fid']['table'] = 'field_revision_field_project_image';
   $handler->display->display_options['relationships']['field_project_image_fid']['field'] = 'field_project_image_fid';
@@ -21479,7 +21485,7 @@ if ($data->node_type == "featured_content") {
     'image_style' => 'featured_content',
     'image_link' => '',
   );
-  /* Field: Content: Images */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_project_image']['id'] = 'field_project_image';
   $handler->display->display_options['fields']['field_project_image']['table'] = 'field_data_field_project_image';
   $handler->display->display_options['fields']['field_project_image']['field'] = 'field_project_image';
@@ -21571,27 +21577,27 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
-global $language;
-$lang = $language->language;
-if($lang == \'en\'){$lang = \'\';}else{$lang = $lang.\'/\';}
-  if ($data->node_field_data_field_featured_content_nodes_type == "featured_content") {
-    if (!empty($data->field_field_feature_link)) {
-      $url = "<a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
-      print $url;
+  global $language;
+  $lang = $language->language;
+  if($lang == \'en\'){$lang = \'\';}else{$lang = $lang.\'/\';}
+    if ($data->node_field_data_field_featured_content_nodes_type == "featured_content") {
+      if (!empty($data->field_field_feature_link)) {
+        $url = "<a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+        print $url;
+      }
+      else { return \'\'; }
     }
-    else { return \'\'; }
-  }
-  else {
-    if (!empty($data->field_field_media_source)){
-      $url = "<a href=\'{$data->field_field_media_source[0][\'raw\'][\'url\']}\' target=\'_blank\'>";
-      print $url;
-    }else{
-      $node_path = $lang.drupal_get_path_alias(\'node/\' . $row->nid);
-      $url =  " <a href=\'/$node_path\'>";
-      print $url;
+    else {
+      if (!empty($data->field_field_media_source)){
+        $url = "<a href=\'{$data->field_field_media_source[0][\'raw\'][\'url\']}\' target=\'_blank\'>";
+        print $url;
+      }else{
+        $node_path = $lang.drupal_get_path_alias(\'node/\' . $row->nid);
+        $url =  " <a href=\'/$node_path\'>";
+        print $url;
+      }
     }
-  }
-  ?>';
+    ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Field: Caption Custom PHP */
@@ -21604,53 +21610,53 @@ if($lang == \'en\'){$lang = \'\';}else{$lang = $lang.\'/\';}
   $handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-global $language;
-$lang = $language->language;
-  $caption = $data->field_field_caption[0][\'rendered\'][\'#markup\'];
-  if (empty($caption)) {
-    if ($data->node_type == \'project\') {
-      $caption = $data->field_field_project_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'][key($data->field_field_project_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'])][0][\'value\'];
+  global $language;
+  $lang = $language->language;
+    $caption = $data->field_field_caption[0][\'rendered\'][\'#markup\'];
+    if (empty($caption)) {
+      if ($data->node_type == \'project\') {
+        $caption = $data->field_field_project_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'][key($data->field_field_project_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'])][0][\'value\'];
+      }
+      else {
+        $caption = isset($data->field_field_feature_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'][$lang]) ? $data->field_field_feature_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'][$lang][0][\'value\'] : $data->field_field_feature_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'][\'en\'][0][\'value\'];
+      }
+    }
+    if (isset($caption)) {
+      $val = $caption;
+      $value = text_summary($val, NULL, 75);
+      if (strlen($val) > strlen($value)) {
+        $value = rtrim($value) . "...";
+      }
     }
     else {
-      $caption = isset($data->field_field_feature_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'][$lang]) ? $data->field_field_feature_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'][$lang][0][\'value\'] : $data->field_field_feature_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'][key($data->field_field_feature_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'])][0][\'value\'];
+      $value = \'\';
     }
-  }
-  if (isset($caption)) {
-    $val = $caption;
-    $value = text_summary($val, NULL, 75);
-    if (strlen($val) > strlen($value)) {
-      $value = rtrim($value) . "...";
-    }
-  }
-  else {
-    $value = \'\';
-  }
-  print $value;
-  ?>';
+    print $value;
+    ?>';
   $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
-	/* Field: Global: PHP */
-	$handler->display->display_options['fields']['php_2']['id'] = 'php_2';
-	$handler->display->display_options['fields']['php_2']['table'] = 'views';
-	$handler->display->display_options['fields']['php_2']['field'] = 'php';
-	$handler->display->display_options['fields']['php_2']['label'] = '';
-	$handler->display->display_options['fields']['php_2']['exclude'] = TRUE;
-	$handler->display->display_options['fields']['php_2']['element_label_colon'] = FALSE;
-	$handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
-	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php print t(\'More\'); ?>';
-	$handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
-	$handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
+  /* Field: Global: PHP */
+  $handler->display->display_options['fields']['php_2']['id'] = 'php_2';
+  $handler->display->display_options['fields']['php_2']['table'] = 'views';
+  $handler->display->display_options['fields']['php_2']['field'] = 'php';
+  $handler->display->display_options['fields']['php_2']['label'] = '';
+  $handler->display->display_options['fields']['php_2']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['php_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_2']['php_output'] = '<?php print t(\'More\'); ?>';
+  $handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[php][field_feature_image][field_project_image]</div></a>
-  <div class="slide-text">
-  <h3>[title_field]</h3>
-  [php_1]
-  [php][php_2] </a>
-  </div>';
+    <div class="slide-text">
+    <h3>[title_field]</h3>
+    [php_1]
+    [php][php_2] </a>
+    </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content (historical data): Banner Item Content (field_featured_content_nodes:delta) */
@@ -21798,7 +21804,7 @@ $lang = $language->language;
   $handler->display->display_options['relationships']['field_featured_content_nodes_nid']['field'] = 'field_featured_content_nodes_nid';
   $handler->display->display_options['relationships']['field_featured_content_nodes_nid']['label'] = 'field_banner_item_nodes';
   $handler->display->display_options['relationships']['field_featured_content_nodes_nid']['delta'] = '-1';
-  /* Relationship: Content (historical data): Images (field_project_image:fid) */
+  /* Relationship: Content (historical data): Image (field_project_image:fid) */
   $handler->display->display_options['relationships']['field_project_image_fid']['id'] = 'field_project_image_fid';
   $handler->display->display_options['relationships']['field_project_image_fid']['table'] = 'field_revision_field_project_image';
   $handler->display->display_options['relationships']['field_project_image_fid']['field'] = 'field_project_image_fid';
@@ -21919,31 +21925,31 @@ $lang = $language->language;
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
-global $language;
-$lang = $language->language;
-if($lang != \'en\'){ $langu = \'/\'.$lang.\'/\';}
-else{
-$langu = \'/\';
-}
-
-  if ($data->node_type == "featured_content") {
-    if (!empty($data->field_field_feature_link)) {
-      $url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
-      print $url;
-    }
-    else { print \' <a class="banner-no-link">\'; }
-  } else {
-    if (!empty($data->field_field_media_source)){
-      $url = "<a href=\'{$data->field_field_media_source[0][\'raw\'][\'url\']}\' target=\'_blank\'>";
-      print $url;
-    }else{
-      $node_path = drupal_get_path_alias(\'node/\' . $row->nid);
-      $urlz = $langu.$node_path;
-      $url =  " <a href=\'$urlz\'>";
-      print $url;
-    }
+  global $language;
+  $lang = $language->language;
+  if($lang != \'en\'){ $langu = \'/\'.$lang.\'/\';}
+  else{
+  $langu = \'/\';
   }
-  ?>';
+
+    if ($data->node_type == "featured_content") {
+      if (!empty($data->field_field_feature_link)) {
+        $url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+        print $url;
+      }
+      else { print \' <a class="banner-no-link">\'; }
+    } else {
+      if (!empty($data->field_field_media_source)){
+        $url = "<a href=\'{$data->field_field_media_source[0][\'raw\'][\'url\']}\' target=\'_blank\'>";
+        print $url;
+      }else{
+        $node_path = drupal_get_path_alias(\'node/\' . $row->nid);
+        $urlz = $langu.$node_path;
+        $url =  " <a href=\'$urlz\'>";
+        print $url;
+      }
+    }
+    ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Field: Caption Custom PHP */
@@ -21956,30 +21962,30 @@ $langu = \'/\';
   $handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-global $language;
-$lang = $language->language;
+  global $language;
+  $lang = $language->language;
 
-  $caption = $data->field_field_caption[0][\'rendered\'][\'#markup\'];
-  if (empty($caption)) {
-    if ($data->node_type == \'project\') {
-      $caption = $data->field_field_project_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'][$lang][0][\'value\'];
+    $caption = $data->field_field_caption[0][\'rendered\'][\'#markup\'];
+    if (empty($caption)) {
+      if ($data->node_type == \'project\') {
+        $caption = $data->field_field_project_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'][$lang][0][\'value\'];
+      }
+      else {
+        $caption = $data->field_field_feature_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'][$lang][0][\'value\'];
+      }
+    }
+    if (isset($caption)) {
+      $val = $caption;
+      $value = text_summary($val, NULL, 75);
+      if (strlen($val) > strlen($value)) {
+        $value = rtrim($value) . "...";
+      }
     }
     else {
-      $caption = $data->field_field_feature_image[0][\'rendered\'][\'#item\'][\'field_image_caption\'][$lang][0][\'value\'];
+      $value = \'\';
     }
-  }
-  if (isset($caption)) {
-    $val = $caption;
-    $value = text_summary($val, NULL, 75);
-    if (strlen($val) > strlen($value)) {
-      $value = rtrim($value) . "...";
-    }
-  }
-  else {
-    $value = \'\';
-  }
-  print $value;
-  ?>';
+    print $value;
+    ?>';
   $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
   /* Field: Entity translation: Slideshow Image: translated */
@@ -22023,11 +22029,11 @@ $lang = $language->language;
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[php][field_feature_image_et]</a></div>
-  <div class="slide-text">
-  <h3>[title_field_et]</h3>
-  [php_1]
-  [php]More </a>
-  </div>';
+    <div class="slide-text">
+    <h3>[title_field_et]</h3>
+    [php_1]
+    [php]More </a>
+    </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content (historical data): Banner Item Content (field_featured_content_nodes:delta) */
