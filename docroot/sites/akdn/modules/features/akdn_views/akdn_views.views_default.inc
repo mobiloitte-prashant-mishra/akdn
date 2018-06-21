@@ -15997,12 +15997,12 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_feature_image]</div>
-	<div class="slide-text"><h3>[title]</h3>
-	[field_caption]
-	[field_feature_link]
-	</div>
+		<div class="slide-text"><h3>[title]</h3>
+		[field_caption]
+		[field_feature_link]
+		</div>
 
-	';
+		';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	/* Field: Global: Custom text */
 	$handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
@@ -16220,22 +16220,6 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['field_caption']['settings'] = array(
 		'trim_length' => '150',
 	);
-	/* Field: Entity translation: Caption: translated */
-	$handler->display->display_options['fields']['field_image_caption_et']['id'] = 'field_image_caption_et';
-	$handler->display->display_options['fields']['field_image_caption_et']['table'] = 'field_data_field_image_caption';
-	$handler->display->display_options['fields']['field_image_caption_et']['field'] = 'field_image_caption_et';
-	$handler->display->display_options['fields']['field_image_caption_et']['relationship'] = 'field_project_image_fid';
-	$handler->display->display_options['fields']['field_image_caption_et']['label'] = '';
-	$handler->display->display_options['fields']['field_image_caption_et']['exclude'] = TRUE;
-	$handler->display->display_options['fields']['field_image_caption_et']['element_label_colon'] = FALSE;
-	/* Field: Entity translation: Caption: translated */
-	$handler->display->display_options['fields']['field_image_caption_et_1']['id'] = 'field_image_caption_et_1';
-	$handler->display->display_options['fields']['field_image_caption_et_1']['table'] = 'field_data_field_image_caption';
-	$handler->display->display_options['fields']['field_image_caption_et_1']['field'] = 'field_image_caption_et';
-	$handler->display->display_options['fields']['field_image_caption_et_1']['relationship'] = 'field_feature_image_fid';
-	$handler->display->display_options['fields']['field_image_caption_et_1']['label'] = '';
-	$handler->display->display_options['fields']['field_image_caption_et_1']['exclude'] = TRUE;
-	$handler->display->display_options['fields']['field_image_caption_et_1']['element_label_colon'] = FALSE;
 	/* Field: Content: Type */
 	$handler->display->display_options['fields']['type']['id'] = 'type';
 	$handler->display->display_options['fields']['type']['table'] = 'node';
@@ -16259,41 +16243,6 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['view_node']['label'] = '';
 	$handler->display->display_options['fields']['view_node']['exclude'] = TRUE;
 	$handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
-	/* Field: Caption Custom PHP */
-	$handler->display->display_options['fields']['php_1']['id'] = 'php_1';
-	$handler->display->display_options['fields']['php_1']['table'] = 'views';
-	$handler->display->display_options['fields']['php_1']['field'] = 'php';
-	$handler->display->display_options['fields']['php_1']['ui_name'] = 'Caption Custom PHP';
-	$handler->display->display_options['fields']['php_1']['label'] = '';
-	$handler->display->display_options['fields']['php_1']['exclude'] = TRUE;
-	$handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
-	$handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
-	$handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-	$array = $data->field_field_image_caption_et;
-	if (empty($array)) {
-		if ($data->node_type == \'project\') {
-		  $array = $data->field_field_image_caption_et;
-		}
-		else {
-		  $array = $data->field_field_image_caption_et_1;
-		}
-	}
-	if (isset($array[0][\'rendered\'][\'#markup\'])) {
-		$val = $array[0][\'rendered\'][\'#markup\'];
-		if (strlen($val) <= 125) {
-		$value = rtrim($val) . "...";
-		} else {
-		  $pos = strpos($val, \' \', 125);
-		  $value = substr($val,0,$pos) . "...";
-		}
-	}
-	else {
-		$value = \'\';
-	}
-	print $value;
-	?>';
-	$handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
-	$handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
 	/* Field: &#039;More&#039; Link Custom PHP */
 	$handler->display->display_options['fields']['php']['id'] = 'php';
 	$handler->display->display_options['fields']['php']['table'] = 'views';
@@ -16304,25 +16253,25 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php']['php_output'] = '<?php
-	global $language;
-	$lang = $language->language;
-	if($lang != \'en\'){
-	$langu = \'/\'.$lang.\'/\';}
-	else{
-	$langu = \'/\';}
-	if ($data->node_type == "featured_content") {
-		if (!empty($data->field_field_feature_link)) {
-		  $url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
-		  print $url;
+		global $language;
+		$lang = $language->language;
+		if($lang != \'en\'){
+		$langu = \'/\'.$lang.\'/\';}
+		else{
+		$langu = \'/\';}
+		if ($data->node_type == "featured_content") {
+			if (!empty($data->field_field_feature_link)) {
+				$url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+				print $url;
+			}
+			else { print \' <a class="banner-no-link">\'; }
+		} else {
+			$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
+			$node_url = $langu.$node_path;
+			$url =  " <a href= \'$node_url\'>";
+			print $url;
 		}
-		else { print \' <a class="banner-no-link">\'; }
-	} else {
-		$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
-		$node_url = $langu.$node_path;
-		$url =  " <a href= \'$node_url\'>";
-		print $url;
-	}
-	?>';
+		?>';
 	$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
 	/* Field: Global: PHP */
@@ -16334,7 +16283,7 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['php_2']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php echo t("AGA KHAN DEVELOPMENT NETWORK");?></h3>
-	';
+		';
 	$handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
 	/* Field: Global: PHP */
@@ -16354,10 +16303,10 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[php][field_feature_image_et][field_project_image_et]</div></a>
-	<div class="slide-text">
-	<h3>[php_2]</h3>
-	[title_field_et] [php][php_3]</a>
-	</div>';
+		<div class="slide-text">
+		<h3>[php_2]</h3>
+		[title_field_et] [php][php_3]</a>
+		</div>';
 	$handler->display->display_options['fields']['nothing']['alter']['max_length'] = '104';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	$handler->display->display_options['defaults']['sorts'] = FALSE;
@@ -16668,35 +16617,35 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php']['php_output'] = '<?php
-	global $language;
-	$lang = $language->language;
-	if ($data->node_type == "featured_content") {
-		if (!empty($data->field_field_feature_link)) {
-		  $url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>" . t(\'More\') . "</a>";
-		  print $url;
+		global $language;
+		$lang = $language->language;
+		if ($data->node_type == "featured_content") {
+			if (!empty($data->field_field_feature_link)) {
+				$url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>" . t(\'More\') . "</a>";
+				print $url;
+			}
+			else { print \' <a class="banner-no-link">\' . t(\'More\') . \'</a>\'; }
+		} else {
+			$tid = isset($data->_field_data[\'nid\'][\'entity\']->field_article_cat[$lang][0][\'tid\']) ? $data->_field_data[\'nid\'][\'entity\']->field_article_cat[$lang][0][\'tid\'] : $data->_field_data[\'nid\'][\'entity\']->field_article_cat[\'en\'][0][\'tid\'];
+			if(empty($tid)){
+				$tid = $data->_field_data[\'nid\'][\'entity\']->field_article_cat[\'und\'][0][\'tid\'];
+			}
+			$term = taxonomy_term_load($tid);
+			$name = $term->name;
+			if($name == \'In the media\') {
+			$node_path =  isset($data->_field_data[\'nid\'][\'entity\']->field_media_source[$lang][0][\'url\']) ? $data->_field_data[\'nid\'][\'entity\']->field_media_source[$lang][0][\'url\'] : $data->_field_data[\'nid\'][\'entity\']->field_media_source[\'en\'][0][\'url\'] ;
+			if(empty($node_path)){
+				$node_path =  $data->_field_data[\'nid\'][\'entity\']->field_media_source[\'und\'][0][\'url\'] ;
+			}
+			$url =  " <a href=\'$node_path\' target=\'_blank\'>" . t(\'More\') . "</a>";
+			print $url;
+		} else {
+			$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
+			$url =  "<a href=\'/$node_path\'>" . t(\'More\') . "</a>";
+			print $url;
+			}
 		}
-		else { print \' <a class="banner-no-link">\' . t(\'More\') . \'</a>\'; }
-	} else {
-		$tid = isset($data->_field_data[\'nid\'][\'entity\']->field_article_cat[$lang][0][\'tid\']) ? $data->_field_data[\'nid\'][\'entity\']->field_article_cat[$lang][0][\'tid\'] : $data->_field_data[\'nid\'][\'entity\']->field_article_cat[\'en\'][0][\'tid\'];
-		if(empty($tid)){
-		  $tid = $data->_field_data[\'nid\'][\'entity\']->field_article_cat[\'und\'][0][\'tid\'];
-		}
-		$term = taxonomy_term_load($tid);
-		$name = $term->name;
-		if($name == \'In the media\') {
-		$node_path =  isset($data->_field_data[\'nid\'][\'entity\']->field_media_source[$lang][0][\'url\']) ? $data->_field_data[\'nid\'][\'entity\']->field_media_source[$lang][0][\'url\'] : $data->_field_data[\'nid\'][\'entity\']->field_media_source[\'en\'][0][\'url\'] ;
-		if(empty($node_path)){
-		  $node_path =  $data->_field_data[\'nid\'][\'entity\']->field_media_source[\'und\'][0][\'url\'] ;
-		}
-		$url =  " <a href=\'$node_path\' target=\'_blank\'>" . t(\'More\') . "</a>";
-		print $url;
-	} else {
-		$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
-		$url =  "<a href=\'/$node_path\'>" . t(\'More\') . "</a>";
-		print $url;
-		}
-	}
-	?>';
+		?>';
 	$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
 	/* Field: Global: PHP */
@@ -16708,35 +16657,35 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-	global $language;
-		  $lang = $language->language;
-		  $array = $data->field_field_caption;
-		  if ($data->node_type == \'article\') {
-		$array = (isset($data->field_field_image_caption[$lang])) ?  $data->field_field_image_caption[$lang] : $data->field_field_image_caption;
-		    //$array = $data->field_field_image_caption;
-		  }
-		  if (empty($array)) {
-		    if ($data->node_type == \'project\') {
-		$array = (isset($data->field_field_image_caption_1[$lang])) ?  $data->field_field_image_caption_1[$lang] : $data->field_field_image_caption_1;
-		      //$array = $data->field_field_image_caption_1;
-		    }
-		    else {
-		$array = (isset($data->field_field_image_caption[$lang])) ?  $data->field_field_image_caption[$lang] : $data->field_field_image_caption;
-		      //$array = $data->field_field_image_caption;
-		    }
-		  }
-		  $value = \'\';
-		  if (isset($array[0][\'rendered\'][\'#markup\'])) {
-		    $value = $array[0][\'rendered\'][\'#markup\'];
-		  }
+		global $language;
+				$lang = $language->language;
+				$array = $data->field_field_caption;
+				if ($data->node_type == \'article\') {
+			$array = (isset($data->field_field_image_caption[$lang])) ?  $data->field_field_image_caption[$lang] : $data->field_field_image_caption;
+				  //$array = $data->field_field_image_caption;
+				}
+				if (empty($array)) {
+				  if ($data->node_type == \'project\') {
+			$array = (isset($data->field_field_image_caption_1[$lang])) ?  $data->field_field_image_caption_1[$lang] : $data->field_field_image_caption_1;
+				    //$array = $data->field_field_image_caption_1;
+				  }
+				  else {
+			$array = (isset($data->field_field_image_caption[$lang])) ?  $data->field_field_image_caption[$lang] : $data->field_field_image_caption;
+				    //$array = $data->field_field_image_caption;
+				  }
+				}
+				$value = \'\';
+				if (isset($array[0][\'rendered\'][\'#markup\'])) {
+				  $value = $array[0][\'rendered\'][\'#markup\'];
+				}
 
-		  $alter[\'max_length\'] = 75;
-		  $alter[\'word_boundary\'] = 1;
-		  $alter[\'ellipsis\'] = 1;
-		  $alter[\'html\'] = 1;
-		  $value = views_trim_text($alter, $value);
-		  print $value;
-	?>';
+				$alter[\'max_length\'] = 75;
+				$alter[\'word_boundary\'] = 1;
+				$alter[\'ellipsis\'] = 1;
+				$alter[\'html\'] = 1;
+				$value = views_trim_text($alter, $value);
+				print $value;
+		?>';
 	$handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
 	/* Field: Content: Caption */
@@ -16772,10 +16721,10 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide [field_article_cat]">[field_project_image_et][field_feature_image_et]</div>
-	<div class="slide-text"><h3>[title_field_et]</h3>
-	[php_1]
-	[php]
-	</div>';
+		<div class="slide-text"><h3>[title_field_et]</h3>
+		[php_1]
+		[php]
+		</div>';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	/* Field: Global: Custom text */
 	$handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
@@ -16830,10 +16779,10 @@ print file_create_url($row->uri);
 	$handler->display->display_options['arguments']['nid_1']['default_action'] = 'default';
 	$handler->display->display_options['arguments']['nid_1']['default_argument_type'] = 'php';
 	$handler->display->display_options['arguments']['nid_1']['default_argument_options']['code'] = '$exclude_nid = \'\';
-	if (function_exists(\'akdn_custom_nodes_to_exclude_pagewise\')) {
-		$exclude_nid = akdn_custom_nodes_to_exclude_pagewise();
-	}
-	return $exclude_nid;';
+		if (function_exists(\'akdn_custom_nodes_to_exclude_pagewise\')) {
+			$exclude_nid = akdn_custom_nodes_to_exclude_pagewise();
+		}
+		return $exclude_nid;';
 	$handler->display->display_options['arguments']['nid_1']['summary']['number_of_records'] = '0';
 	$handler->display->display_options['arguments']['nid_1']['summary']['format'] = 'default_summary';
 	$handler->display->display_options['arguments']['nid_1']['summary_options']['items_per_page'] = '25';
@@ -17109,17 +17058,17 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php
 
-	if ($data->node_type == "featured_content") {
-		if (!empty($data->field_field_feature_link)) {
-		  $url = "<a href=\'/".drupal_get_path_alias($data->field_field_feature_link[0][\'raw\'][\'url\'])."\'>";
-		  print $url;
+		if ($data->node_type == "featured_content") {
+			if (!empty($data->field_field_feature_link)) {
+				$url = "<a href=\'/".drupal_get_path_alias($data->field_field_feature_link[0][\'raw\'][\'url\'])."\'>";
+				print $url;
+			}
+			else { return \'\'; }
+		} else {
+			$url = "<a href=\'/".drupal_get_path_alias(\'node/\'.$data->nid)."\'>";
+			print $url;
 		}
-		else { return \'\'; }
-	} else {
-		$url = "<a href=\'/".drupal_get_path_alias(\'node/\'.$data->nid)."\'>";
-		print $url;
-	}
-	?>';
+		?>';
 	$handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
 	/* Field: &#039;More&#039; Link Custom PHP */
@@ -17132,17 +17081,17 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php']['php_output'] = '<?php
-	if ($data->node_type == "featured_content") {
-		if (!empty($data->field_field_feature_link)) {
-		  $url = " <a href=\'/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
-		  print $url;
+		if ($data->node_type == "featured_content") {
+			if (!empty($data->field_field_feature_link)) {
+				$url = " <a href=\'/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+				print $url;
+			}
+			else { print \' <a class="banner-no-link">\'; }
+		} else {
+			$url = " <a href=\'/node/{$data->nid}\'>";
+			print $url;
 		}
-		else { print \' <a class="banner-no-link">\'; }
-	} else {
-		$url = " <a href=\'/node/{$data->nid}\'>";
-		print $url;
-	}
-	?>';
+		?>';
 	$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
 	/* Field: Caption Custom PHP */
@@ -17155,34 +17104,34 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-	global $language;
-	$lang = $language->language;
-	$array = $data->field_field_caption;
-	if ($data->node_type == \'article\') {
-		$array = (isset($data->field_field_image_caption[$lang])) ?  $data->field_field_image_caption[$lang] : $data->field_field_image_caption;
-	}
-	if (empty($array)) {
-		if ($data->node_type == \'project\') {
-		  $array = (isset($data->field_field_image_caption_1[$lang])) ?  $data->field_field_image_caption_1[$lang] : $data->field_field_image_caption_1;
+		global $language;
+		$lang = $language->language;
+		$array = $data->field_field_caption;
+		if ($data->node_type == \'article\') {
+			$array = (isset($data->field_field_image_caption[$lang])) ?  $data->field_field_image_caption[$lang] : $data->field_field_image_caption;
+		}
+		if (empty($array)) {
+			if ($data->node_type == \'project\') {
+				$array = (isset($data->field_field_image_caption_1[$lang])) ?  $data->field_field_image_caption_1[$lang] : $data->field_field_image_caption_1;
+			}
+			else {
+				$array = (isset($data->field_field_image_caption[$lang])) ?  $data->field_field_image_caption[$lang] : $data->field_field_image_caption;
+			}
+		}
+		if (isset($array[0][\'rendered\'][\'#markup\'])) {
+			$val = $array[0][\'rendered\'][\'#markup\'];
+			if (strlen($val) <= 125) {
+			$value = rtrim($val) . "...";
+			} else {
+				$pos = strpos($val, \' \', 125);
+				$value = substr($val,0,$pos) . "...";
+			}
 		}
 		else {
-		  $array = (isset($data->field_field_image_caption[$lang])) ?  $data->field_field_image_caption[$lang] : $data->field_field_image_caption;
+			$value = \'\';
 		}
-	}
-	if (isset($array[0][\'rendered\'][\'#markup\'])) {
-		$val = $array[0][\'rendered\'][\'#markup\'];
-		if (strlen($val) <= 125) {
-		$value = rtrim($val) . "...";
-		} else {
-		  $pos = strpos($val, \' \', 125);
-		  $value = substr($val,0,$pos) . "...";
-		}
-	}
-	else {
-		$value = \'\';
-	}
-	print $value;
-	?>';
+		print $value;
+		?>';
 	$handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
 	/* Field: Global: Custom text */
@@ -17191,11 +17140,11 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[php_2][field_feature_image][field_project_image]</a></div>
-	<div class="slide-text">
-	<h3>[php][title_field]</a></h3>
-	[php_1]
-	[php]| More </a>
-	</div>';
+		<div class="slide-text">
+		<h3>[php][title_field]</a></h3>
+		[php_1]
+		[php]| More </a>
+		</div>';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	/* Field: Entity translation: Slideshow Image: translated */
 	$handler->display->display_options['fields']['field_feature_image_et']['id'] = 'field_feature_image_et';
@@ -17465,27 +17414,27 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['php_2']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php
-	$array = $data->field_field_caption;
-	if (empty($array)) {
-		if ($data->node_type == \'project\') {
-		  $array = $data->field_field_image_caption_1;
+		$array = $data->field_field_caption;
+		if (empty($array)) {
+			if ($data->node_type == \'project\') {
+				$array = $data->field_field_image_caption_1;
+			}
+			else {
+				$array = $data->field_field_image_caption;
+			}
 		}
-		else {
-		  $array = $data->field_field_image_caption;
+		$value = \'\';
+		if (isset($array[0][\'rendered\'][\'#markup\'])) {
+			$value = $array[0][\'rendered\'][\'#markup\'];
 		}
-	}
-	$value = \'\';
-	if (isset($array[0][\'rendered\'][\'#markup\'])) {
-		$value = $array[0][\'rendered\'][\'#markup\'];
-	}
 
-	$alter[\'max_length\'] = 104;
-	$alter[\'word_boundary\'] = 1;
-	$alter[\'ellipsis\'] = 1;
-	$alter[\'html\'] = 1;
-	$value = views_trim_text($alter, $value);
-	print $value;
-	?>';
+		$alter[\'max_length\'] = 104;
+		$alter[\'word_boundary\'] = 1;
+		$alter[\'ellipsis\'] = 1;
+		$alter[\'html\'] = 1;
+		$value = views_trim_text($alter, $value);
+		print $value;
+		?>';
 	$handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
 	/* Field: Content: Link */
@@ -17506,18 +17455,18 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-	if ($data->node_type == "featured_content") {
-		if (!empty($data->field_field_feature_link)) {
-		  $url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
-		  print $url;
+		if ($data->node_type == "featured_content") {
+			if (!empty($data->field_field_feature_link)) {
+				$url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+				print $url;
+			}
+			else { print \' <a class="banner-no-link">\'; }
+		} else {
+			$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
+			$url =  " <a href=\'/$node_path\'>";
+			print $url;
 		}
-		else { print \' <a class="banner-no-link">\'; }
-	} else {
-		$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
-		$url =  " <a href=\'/$node_path\'>";
-		print $url;
-	}
-	?>';
+		?>';
 	$handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
 	/* Field: Custom Caption PHP */
@@ -17530,21 +17479,21 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php']['php_output'] = '<?php
-	$array = $data->field_field_project_image_caption;
-	if (empty($array)) {
-		$array = $data->field_field_image_caption;
-	}
+		$array = $data->field_field_project_image_caption;
+		if (empty($array)) {
+			$array = $data->field_field_image_caption;
+		}
 
-	if (isset($array[0][\'rendered\'][\'#markup\'])) {
-		$val = $array[0][\'rendered\'][\'#markup\'];
-		$temp = truncate_utf8($val, 125, $wordsafe = TRUE, $add_ellipsis = FALSE, $min_wordsafe_length = 1);
-		$value = rtrim($temp) . "...";
-	}
-	else {
-		$value = \'\';
-	}
-	print $value;
-	?>';
+		if (isset($array[0][\'rendered\'][\'#markup\'])) {
+			$val = $array[0][\'rendered\'][\'#markup\'];
+			$temp = truncate_utf8($val, 125, $wordsafe = TRUE, $add_ellipsis = FALSE, $min_wordsafe_length = 1);
+			$value = rtrim($temp) . "...";
+		}
+		else {
+			$value = \'\';
+		}
+		print $value;
+		?>';
 	$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
 	/* Field: Global: Custom text */
@@ -17553,9 +17502,9 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_project_image]</div>
-	<div class="slide-text">
-	[php]
-	</div>';
+		<div class="slide-text">
+		[php]
+		</div>';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	$handler->display->display_options['defaults']['sorts'] = FALSE;
 	/* Sort criterion: Content: Sticky */
@@ -17742,17 +17691,17 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php']['php_output'] = '<?php
-	if ($data->node_type == "featured_content") {
-		if (!empty($data->field_field_feature_link)) {
-		  $url = " <a href=\'/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
-		  print $url;
+		if ($data->node_type == "featured_content") {
+			if (!empty($data->field_field_feature_link)) {
+				$url = " <a href=\'/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+				print $url;
+			}
+			else { print \' <a class="banner-no-link">\'; }
+		} else {
+			$url = " <a href=\'/node/{$data->nid}\'>";
+			print $url;
 		}
-		else { print \' <a class="banner-no-link">\'; }
-	} else {
-		$url = " <a href=\'/node/{$data->nid}\'>";
-		print $url;
-	}
-	?>';
+		?>';
 	$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
 	/* Field: Global: Custom text */
@@ -17761,10 +17710,10 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_feature_image]</div>
-	<div class="slide-text"><h3>[php][title_field]</a></h3>
-	[field_caption]
-	[php]| More </a>
-	</div>';
+		<div class="slide-text"><h3>[php][title_field]</a></h3>
+		[field_caption]
+		[php]| More </a>
+		</div>';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	$handler->display->display_options['defaults']['sorts'] = FALSE;
 	/* Sort criterion: Content: Sticky */
@@ -18014,18 +17963,18 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php']['php_output'] = '<?php
-	if ($data->node_type == "featured_content") {
-		if (!empty($data->field_field_feature_link)) {
-		  $url = " <a href=\'/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
-		  print $url;
+		if ($data->node_type == "featured_content") {
+			if (!empty($data->field_field_feature_link)) {
+				$url = " <a href=\'/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+				print $url;
+			}
+			else { print \' <a class="banner-no-link">\'; }
+		} else {
+			$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
+			$url = " <a href=\'/$node_path\'>";
+			print $url;
 		}
-		else { print \' <a class="banner-no-link">\'; }
-	} else {
-		$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
-		$url = " <a href=\'/$node_path\'>";
-		print $url;
-	}
-	?>';
+		?>';
 	$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
 	/* Field: Caption Custom PHP */
@@ -18038,33 +17987,33 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-	$array = $data->field_field_caption;
-	if ($data->node_type == \'article\') {
-		$array =$data->field_field_image_caption;
-	}
-	if (empty($array)) {
-		if ($data->node_type == \'project\') {
-		  $array = $data->field_field_image_caption_1;
+		$array = $data->field_field_caption;
+		if ($data->node_type == \'article\') {
+			$array =$data->field_field_image_caption;
+		}
+		if (empty($array)) {
+			if ($data->node_type == \'project\') {
+				$array = $data->field_field_image_caption_1;
+			}
+			else {
+				$array = $data->field_field_image_caption;
+			}
+		}
+
+		if (isset($array[0][\'rendered\'][\'#markup\'])) {
+			$val = $array[0][\'rendered\'][\'#markup\'];
+			if (strlen($val) <= 125) {
+			$value = rtrim($val) . "...";
+			} else {
+				$pos = strpos($val, \' \', 125);
+				$value = substr($val,0,$pos) . "...";
+			}
 		}
 		else {
-		  $array = $data->field_field_image_caption;
+			$value = \'\';
 		}
-	}
-
-	if (isset($array[0][\'rendered\'][\'#markup\'])) {
-		$val = $array[0][\'rendered\'][\'#markup\'];
-		if (strlen($val) <= 125) {
-		$value = rtrim($val) . "...";
-		} else {
-		  $pos = strpos($val, \' \', 125);
-		  $value = substr($val,0,$pos) . "...";
-		}
-	}
-	else {
-		$value = \'\';
-	}
-	print $value;
-	?>';
+		print $value;
+		?>';
 	$handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
 	/* Field: Global: Custom text */
@@ -18073,12 +18022,12 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_feature_image][field_project_image]</div>
-	<div class="slide-text">
-	[php_1]
-	[php]  More </a>
-	</div>
+		<div class="slide-text">
+		[php_1]
+		[php]  More </a>
+		</div>
 
-	';
+		';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	$handler->display->display_options['defaults']['sorts'] = FALSE;
 	/* Sort criterion: Nodequeue: Position */
@@ -18291,19 +18240,19 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php']['php_output'] = '<?php
-	if ($data->node_type == "featured_content") {
-		if (!empty($data->field_field_feature_link)) {
-		$node_path = drupal_get_path_alias(\'node/\' . $data->field_field_feature_link[0][\'raw\'][\'url\']);
-		$url = " <a href=\'/$node_path\'>";
-		  print $url;
+		if ($data->node_type == "featured_content") {
+			if (!empty($data->field_field_feature_link)) {
+			$node_path = drupal_get_path_alias(\'node/\' . $data->field_field_feature_link[0][\'raw\'][\'url\']);
+			$url = " <a href=\'/$node_path\'>";
+				print $url;
+			}
+			else { print \' <a class="banner-no-link">\'; }
+		} else {
+			$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
+			$url = " <a href=\'/$node_path\'>";
+			print $url;
 		}
-		else { print \' <a class="banner-no-link">\'; }
-	} else {
-		$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
-		$url = " <a href=\'/$node_path\'>";
-		print $url;
-	}
-	?>';
+		?>';
 	$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
 	/* Field: Caption Custom PHP */
@@ -18316,30 +18265,30 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-	$array = $data->field_field_caption;
-	if (empty($array)) {
-		if ($data->node_type == \'project\') {
-		  $array = $data->field_field_image_caption_1;
+		$array = $data->field_field_caption;
+		if (empty($array)) {
+			if ($data->node_type == \'project\') {
+				$array = $data->field_field_image_caption_1;
+			}
+			else {
+				$array = $data->field_field_image_caption;
+			}
+		}
+
+		if (isset($array[0][\'rendered\'][\'#markup\'])) {
+			$val = $array[0][\'rendered\'][\'#markup\'];
+			if (strlen($val) <= 125) {
+			$value = rtrim($val) . "...";
+			} else {
+				$pos = strpos($val, \' \', 125);
+				$value = substr($val,0,$pos) . "...";
+			}
 		}
 		else {
-		  $array = $data->field_field_image_caption;
+			$value = \'\';
 		}
-	}
-
-	if (isset($array[0][\'rendered\'][\'#markup\'])) {
-		$val = $array[0][\'rendered\'][\'#markup\'];
-		if (strlen($val) <= 125) {
-		$value = rtrim($val) . "...";
-		} else {
-		  $pos = strpos($val, \' \', 125);
-		  $value = substr($val,0,$pos) . "...";
-		}
-	}
-	else {
-		$value = \'\';
-	}
-	print $value;
-	?>';
+		print $value;
+		?>';
 	$handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
 	/* Field: Global: Custom text */
@@ -18348,12 +18297,12 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_feature_image][field_project_image]</div>
-	<div class="slide-text">
-	[php_1]
-	[php]| More </a>
-	</div>
+		<div class="slide-text">
+		[php_1]
+		[php]| More </a>
+		</div>
 
-	';
+		';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	$handler->display->display_options['defaults']['sorts'] = FALSE;
 	/* Sort criterion: Nodequeue: Position */
@@ -18575,30 +18524,30 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-	$array = $data->field_field_caption;
-	if (empty($array)) {
-		if ($data->node_type == \'project\') {
-		  $array = $data->field_field_image_caption_1;
+		$array = $data->field_field_caption;
+		if (empty($array)) {
+			if ($data->node_type == \'project\') {
+				$array = $data->field_field_image_caption_1;
+			}
+			else {
+				$array = $data->field_field_image_caption;
+			}
+		}
+
+		if (isset($array[0][\'rendered\'][\'#markup\'])) {
+			$val = $array[0][\'rendered\'][\'#markup\'];
+			if (strlen($val) <= 125) {
+			$value = rtrim($val) . "...";
+			} else {
+				$pos = strpos($val, \' \', 125);
+				$value = substr($val,0,$pos) . "...";
+			}
 		}
 		else {
-		  $array = $data->field_field_image_caption;
+			$value = \'\';
 		}
-	}
-
-	if (isset($array[0][\'rendered\'][\'#markup\'])) {
-		$val = $array[0][\'rendered\'][\'#markup\'];
-		if (strlen($val) <= 125) {
-		$value = rtrim($val) . "...";
-		} else {
-		  $pos = strpos($val, \' \', 125);
-		  $value = substr($val,0,$pos) . "...";
-		}
-	}
-	else {
-		$value = \'\';
-	}
-	print $value;
-	?>';
+		print $value;
+		?>';
 	$handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
 	/* Field: &#039;More&#039; Link Custom PHP */
@@ -18611,25 +18560,25 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php']['php_output'] = '<?php
-	global $language;
-	$lang = $language->language;
-	if($lang != \'en\'){ $langu = \'/\'.$lang.\'/\';}
-	else{
-	$langu = \'/\';
-	}
-	if ($data->node_type == "featured_content") {
-		if (!empty($data->field_field_feature_link)) {
-		  $url = " <a href=\'/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
-		  print $url;
+		global $language;
+		$lang = $language->language;
+		if($lang != \'en\'){ $langu = \'/\'.$lang.\'/\';}
+		else{
+		$langu = \'/\';
 		}
-		else { print \' <a class="banner-no-link">\'; }
-	} else {
-		$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
-		$urlz = $langu.$node_path;
-		$url =  " <a href=\'$urlz\'>";
-		print $url;
-	}
-	?>';
+		if ($data->node_type == "featured_content") {
+			if (!empty($data->field_field_feature_link)) {
+				$url = " <a href=\'/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+				print $url;
+			}
+			else { print \' <a class="banner-no-link">\'; }
+		} else {
+			$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
+			$urlz = $langu.$node_path;
+			$url =  " <a href=\'$urlz\'>";
+			print $url;
+		}
+		?>';
 	$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
 	/* Field: Global: Custom text */
@@ -18638,12 +18587,12 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[php][field_feature_image_et]</a></div>
-	<div class="slide-text">
-	[php_1]
-	[php]More</a>
-	</div>
+		<div class="slide-text">
+		[php_1]
+		[php]More</a>
+		</div>
 
-	';
+		';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	$handler->display->display_options['defaults']['sorts'] = FALSE;
 	/* Sort criterion: Nodequeue: Position */
@@ -18846,17 +18795,17 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php']['php_output'] = '<?php
-	if ($data->node_type == "featured_content") {
-		if (!empty($data->field_field_feature_link)) {
-		  $url = " <a href=\'/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
-		  print $url;
+		if ($data->node_type == "featured_content") {
+			if (!empty($data->field_field_feature_link)) {
+				$url = " <a href=\'/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+				print $url;
+			}
+			else { print \' <a class="banner-no-link">\'; }
+		} else {
+			$url = " <a href=\'/node/{$data->nid}\'>";
+			print $url;
 		}
-		else { print \' <a class="banner-no-link">\'; }
-	} else {
-		$url = " <a href=\'/node/{$data->nid}\'>";
-		print $url;
-	}
-	?>';
+		?>';
 	$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
 	/* Field: Caption Custom PHP */
@@ -18869,25 +18818,25 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-	$array = $data->field_field_caption;
-	if (empty($array) && $data->node_type == \'project\') {
-		 $array = $data->field_field_image_caption_1;
-	}
-	if (isset($array[0][\'rendered\'][\'#markup\'])) {
-		$val = $array[0][\'rendered\'][\'#markup\'];
-		if (strlen($val) > 125) {
-		  $pos = strpos($val, \' \', 100);
-		  $value = substr($val,0,$pos) . "...";
+		$array = $data->field_field_caption;
+		if (empty($array) && $data->node_type == \'project\') {
+			 $array = $data->field_field_image_caption_1;
+		}
+		if (isset($array[0][\'rendered\'][\'#markup\'])) {
+			$val = $array[0][\'rendered\'][\'#markup\'];
+			if (strlen($val) > 125) {
+				$pos = strpos($val, \' \', 100);
+				$value = substr($val,0,$pos) . "...";
+			}
+			else {
+				$value = rtrim($val) . "...";
+			}
 		}
 		else {
-		  $value = rtrim($val) . "...";
+			$value = \'\';
 		}
-	}
-	else {
-		$value = \'\';
-	}
-	print $value;
-	?>';
+		print $value;
+		?>';
 	$handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
 	/* Field: Global: PHP */
@@ -18899,17 +18848,17 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php
 
-	if ($data->node_type == "featured_content") {
-		if (!empty($data->field_field_feature_link)) {
-		  $url = "<a href=\'/".drupal_get_path_alias($data->field_field_feature_link[0][\'raw\'][\'url\'])."\'>";
-		  print $url;
+		if ($data->node_type == "featured_content") {
+			if (!empty($data->field_field_feature_link)) {
+				$url = "<a href=\'/".drupal_get_path_alias($data->field_field_feature_link[0][\'raw\'][\'url\'])."\'>";
+				print $url;
+			}
+			else { return \'\'; }
+		} else {
+			$url = "<a href=\'/".drupal_get_path_alias(\'node/\'.$data->nid)."\'>";
+			print $url;
 		}
-		else { return \'\'; }
-	} else {
-		$url = "<a href=\'/".drupal_get_path_alias(\'node/\'.$data->nid)."\'>";
-		print $url;
-	}
-	?>';
+		?>';
 	$handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
 	/* Field: Global: Custom text */
@@ -18918,12 +18867,12 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[php_2][field_feature_image]</a></div>
-	<div class="slide-text">
-	[php_1]
-	[php]More</a>
-	</div>
+		<div class="slide-text">
+		[php_1]
+		[php]More</a>
+		</div>
 
-	';
+		';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	/* Field: Content: Caption */
 	$handler->display->display_options['fields']['field_caption']['id'] = 'field_caption';
@@ -19177,17 +19126,17 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php']['php_output'] = '<?php
-	if ($data->node_type == "featured_content") {
-		if (!empty($data->field_field_feature_link)) {
-		  $url = " <a href=\'/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
-		  print $url;
+		if ($data->node_type == "featured_content") {
+			if (!empty($data->field_field_feature_link)) {
+				$url = " <a href=\'/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+				print $url;
+			}
+			else { print \' <a class="banner-no-link">\'; }
+		} else {
+			$url = " <a href=\'/node/{$data->nid}\'>";
+			print $url;
 		}
-		else { print \' <a class="banner-no-link">\'; }
-	} else {
-		$url = " <a href=\'/node/{$data->nid}\'>";
-		print $url;
-	}
-	?>';
+		?>';
 	$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
 	/* Field: Caption Custom PHP */
@@ -19200,30 +19149,30 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-	$array = $data->field_field_caption;
-	if (empty($array)) {
-		if ($data->node_type == \'project\') {
-		  $array = $data->field_field_image_caption_1;
+		$array = $data->field_field_caption;
+		if (empty($array)) {
+			if ($data->node_type == \'project\') {
+				$array = $data->field_field_image_caption_1;
+			}
+			else {
+				$array = $data->field_field_caption;
+			}
+		}
+
+		if (isset($array[0][\'rendered\'][\'#markup\'])) {
+			$val = $array[0][\'rendered\'][\'#markup\'];
+			if (strlen($val) <= 125) {
+			$value = rtrim($val) . "...";
+			} else {
+				$pos = strpos($val, \' \', 125);
+				$value = substr($val,0,$pos) . "...";
+			}
 		}
 		else {
-		  $array = $data->field_field_caption;
+			$value = \'\';
 		}
-	}
-
-	if (isset($array[0][\'rendered\'][\'#markup\'])) {
-		$val = $array[0][\'rendered\'][\'#markup\'];
-		if (strlen($val) <= 125) {
-		$value = rtrim($val) . "...";
-		} else {
-		  $pos = strpos($val, \' \', 125);
-		  $value = substr($val,0,$pos) . "...";
-		}
-	}
-	else {
-		$value = \'\';
-	}
-	print $value;
-	?>';
+		print $value;
+		?>';
 	$handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
 	/* Field: Global: PHP */
@@ -19235,17 +19184,17 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php
 
-	if ($data->node_type == "featured_content") {
-		if (!empty($data->field_field_feature_link)) {
-		  $url = "<a href=\'/".drupal_get_path_alias($data->field_field_feature_link[0][\'raw\'][\'url\'])."\'>";
-		  print $url;
+		if ($data->node_type == "featured_content") {
+			if (!empty($data->field_field_feature_link)) {
+				$url = "<a href=\'/".drupal_get_path_alias($data->field_field_feature_link[0][\'raw\'][\'url\'])."\'>";
+				print $url;
+			}
+			else { return \'\'; }
+		} else {
+			$url = "<a href=\'/".drupal_get_path_alias(\'node/\'.$data->nid)."\'>";
+			print $url;
 		}
-		else { return \'\'; }
-	} else {
-		$url = "<a href=\'/".drupal_get_path_alias(\'node/\'.$data->nid)."\'>";
-		print $url;
-	}
-	?>';
+		?>';
 	$handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
 	/* Field: Global: Custom text */
@@ -19254,12 +19203,12 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[php_2][field_project_image]</a></div>
-	<div class="slide-text">
-	[php_1]
-	[php]| More </a>
-	</div>
+		<div class="slide-text">
+		[php_1]
+		[php]| More </a>
+		</div>
 
-	';
+		';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	/* Field: Content: Caption */
 	$handler->display->display_options['fields']['field_caption_1']['id'] = 'field_caption_1';
@@ -19563,25 +19512,25 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-	$array = $data->field_field_caption;
-	$value = \'\';
-	if ($data->field_data_field_project_image_field_project_image_fid) {
-		 $array = $data->field_field_image_caption_1;
-	}
+		$array = $data->field_field_caption;
+		$value = \'\';
+		if ($data->field_data_field_project_image_field_project_image_fid) {
+			 $array = $data->field_field_image_caption_1;
+		}
 
-	if (isset($array[0][\'rendered\'][\'#markup\'])) {
-		//$value = $array[0][\'rendered\'][\'#markup\'];
-		//$val = $array[0][\'rendered\'][\'#markup\'];
-		//$value .= rtrim($val);
-		$value .= rtrim($array[0][\'rendered\'][\'#markup\']);
-		$value .= "</br>";
-		$value .= $data->field_field_image_copytight[0][\'rendered\'][\'#markup\'];
-	}
-	else {
-	 $value = \'\';
-	}
-	print \'<div>\'.$value.\'</div>\';
-	?>';
+		if (isset($array[0][\'rendered\'][\'#markup\'])) {
+			//$value = $array[0][\'rendered\'][\'#markup\'];
+			//$val = $array[0][\'rendered\'][\'#markup\'];
+			//$value .= rtrim($val);
+			$value .= rtrim($array[0][\'rendered\'][\'#markup\']);
+			$value .= "</br>";
+			$value .= $data->field_field_image_copytight[0][\'rendered\'][\'#markup\'];
+		}
+		else {
+		 $value = \'\';
+		}
+		print \'<div>\'.$value.\'</div>\';
+		?>';
 	$handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
 	/* Field: Global: Custom text */
@@ -19591,10 +19540,10 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_project_image]</div>
-	<div class="slide-text">
-	[php_1]
-	</div>
-	';
+		<div class="slide-text">
+		[php_1]
+		</div>
+		';
 	$handler->display->display_options['fields']['nothing']['alter']['path'] = 'node/[nid]?width=950&height=500&iframe=true';
 	$handler->display->display_options['fields']['nothing']['alter']['absolute'] = TRUE;
 	$handler->display->display_options['fields']['nothing']['alter']['replace_spaces'] = TRUE;
@@ -19608,9 +19557,9 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['colorbox']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['colorbox']['trigger_field'] = 'nothing';
 	$handler->display->display_options['fields']['colorbox']['popup'] = '<div class="slide">[field_project_image]</div>
-	<div class="image-caption">
-	[php_1]
-	</div>';
+		<div class="image-caption">
+		[php_1]
+		</div>';
 	$handler->display->display_options['fields']['colorbox']['gid'] = 1;
 	$handler->display->display_options['fields']['colorbox']['width'] = '700px';
 	$handler->display->display_options['fields']['colorbox']['height'] = '600px';
@@ -19875,18 +19824,18 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php']['php_output'] = '<?php
-	if ($data->node_type == "featured_content") {
-		if (!empty($data->field_field_feature_link)) {
-		  $url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
-		  print $url;
+		if ($data->node_type == "featured_content") {
+			if (!empty($data->field_field_feature_link)) {
+				$url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+				print $url;
+			}
+			else { print \' <a class="banner-no-link">\'; }
+		} else {
+			$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
+			$url =  " <a href=\'/$node_path\'>";
+			print $url;
 		}
-		else { print \' <a class="banner-no-link">\'; }
-	} else {
-		$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
-		$url =  " <a href=\'/$node_path\'>";
-		print $url;
-	}
-	?>';
+		?>';
 	$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
 	/* Field: Global: PHP */
@@ -19898,30 +19847,30 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-	$array = $data->field_field_caption;
-	if ($data->node_type == \'article\') {
-		$array =$data->field_field_image_caption;
-	}
-	if (empty($array)) {
-		if ($data->node_type == \'project\') {
-		  $array = $data->field_field_image_caption_1;
+		$array = $data->field_field_caption;
+		if ($data->node_type == \'article\') {
+			$array =$data->field_field_image_caption;
 		}
-		else {
-		  $array = $data->field_field_image_caption;
+		if (empty($array)) {
+			if ($data->node_type == \'project\') {
+				$array = $data->field_field_image_caption_1;
+			}
+			else {
+				$array = $data->field_field_image_caption;
+			}
 		}
-	}
-	$value = \'\';
-	if (isset($array[0][\'rendered\'][\'#markup\'])) {
-		$value = $array[0][\'rendered\'][\'#markup\'];
-	}
+		$value = \'\';
+		if (isset($array[0][\'rendered\'][\'#markup\'])) {
+			$value = $array[0][\'rendered\'][\'#markup\'];
+		}
 
-	$alter[\'max_length\'] = 104;
-	$alter[\'word_boundary\'] = 1;
-	$alter[\'ellipsis\'] = 1;
-	$alter[\'html\'] = 1;
-	$value = views_trim_text($alter, $value);
-	print $value;
-	?>';
+		$alter[\'max_length\'] = 104;
+		$alter[\'word_boundary\'] = 1;
+		$alter[\'ellipsis\'] = 1;
+		$alter[\'html\'] = 1;
+		$value = views_trim_text($alter, $value);
+		print $value;
+		?>';
 	$handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
 	/* Field: Content: Caption */
@@ -19954,12 +19903,12 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[php][field_project_image][field_feature_image]</a></div>
-	<div class="slide-text"><h3>[title]</h3>
-	[php_1]
-	[php]| More </a>
-	</div>
+		<div class="slide-text"><h3>[title]</h3>
+		[php_1]
+		[php]| More </a>
+		</div>
 
-	';
+		';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	/* Field: Global: Custom text */
 	$handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
@@ -20005,15 +19954,15 @@ print file_create_url($row->uri);
 	$handler->display->display_options['arguments']['nid']['default_action'] = 'default';
 	$handler->display->display_options['arguments']['nid']['default_argument_type'] = 'php';
 	$handler->display->display_options['arguments']['nid']['default_argument_options']['code'] = '$node = menu_get_object();
-	$lang = $node->language;
-	if (isset($node->field_agency_geography)) {
-	$id = $node->field_agency_geography[$lang][0][\'nid\'];
-	}
-	if ($id == "") {
-	$id = 0;
-	}
-	return $id;
-	';
+		$lang = $node->language;
+		if (isset($node->field_agency_geography)) {
+		$id = $node->field_agency_geography[$lang][0][\'nid\'];
+		}
+		if ($id == "") {
+		$id = 0;
+		}
+		return $id;
+		';
 	$handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
 	$handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
 	$handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
@@ -20284,18 +20233,18 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php']['php_output'] = '<?php
-	if ($data->node_type == "featured_content") {
-		if (!empty($data->field_field_feature_link)) {
-		  $url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>More</a>";
-		  print $url;
+		if ($data->node_type == "featured_content") {
+			if (!empty($data->field_field_feature_link)) {
+				$url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>More</a>";
+				print $url;
+			}
+			else { print \' <a class="banner-no-link">More</a>\'; }
+		} else {
+			$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
+			$url =  " <a href=\'/$node_path\'>More</a>";
+			print $url;
 		}
-		else { print \' <a class="banner-no-link">More</a>\'; }
-	} else {
-		$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
-		$url =  " <a href=\'/$node_path\'>More</a>";
-		print $url;
-	}
-	?>';
+		?>';
 	$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
 	/* Field: Global: PHP */
@@ -20307,30 +20256,30 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-	$array = $data->field_field_caption;
-	if ($data->node_type == \'article\') {
-		$array =$data->field_field_image_caption;
-	}
-	if (empty($array)) {
-		if ($data->node_type == \'project\') {
-		  $array = $data->field_field_image_caption_1;
+		$array = $data->field_field_caption;
+		if ($data->node_type == \'article\') {
+			$array =$data->field_field_image_caption;
 		}
-		else {
-		  $array = $data->field_field_image_caption;
+		if (empty($array)) {
+			if ($data->node_type == \'project\') {
+				$array = $data->field_field_image_caption_1;
+			}
+			else {
+				$array = $data->field_field_image_caption;
+			}
 		}
-	}
-	$value = \'\';
-	if (isset($array[0][\'rendered\'][\'#markup\'])) {
-		$value = $array[0][\'rendered\'][\'#markup\'];
-	}
+		$value = \'\';
+		if (isset($array[0][\'rendered\'][\'#markup\'])) {
+			$value = $array[0][\'rendered\'][\'#markup\'];
+		}
 
-	$alter[\'max_length\'] = 75;
-	$alter[\'word_boundary\'] = 1;
-	$alter[\'ellipsis\'] = 1;
-	$alter[\'html\'] = 1;
-	$value = views_trim_text($alter, $value);
-	print $value;
-	?>';
+		$alter[\'max_length\'] = 75;
+		$alter[\'word_boundary\'] = 1;
+		$alter[\'ellipsis\'] = 1;
+		$alter[\'html\'] = 1;
+		$value = views_trim_text($alter, $value);
+		print $value;
+		?>';
 	$handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
 	/* Field: Content: Caption */
@@ -20366,12 +20315,12 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_project_image][field_feature_image]</div>
-	<div class="slide-text"><h3>[title]</h3>
-	[php_1]
-	[php]
-	</div>
+		<div class="slide-text"><h3>[title]</h3>
+		[php_1]
+		[php]
+		</div>
 
-	';
+		';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	/* Field: Global: Custom text */
 	$handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
@@ -20607,29 +20556,29 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-	$array = $data->field_field_caption;
-	if (empty($array)) {
-		if ($data->node_type == \'project\') {
-		  $array = $data->field_field_image_caption_1;
+		$array = $data->field_field_caption;
+		if (empty($array)) {
+			if ($data->node_type == \'project\') {
+				$array = $data->field_field_image_caption_1;
+			}
+			else {
+				$array = $data->field_field_image_caption;
+			}
+		}
+		if (isset($array[0][\'rendered\'][\'#markup\'])) {
+			$val = $array[0][\'rendered\'][\'#markup\'];
+			if (strlen($val) <= 125) {
+			$value = rtrim($val) . "...";
+			} else {
+				$pos = strpos($val, \' \', 125);
+				$value = substr($val,0,$pos) . "...";
+			}
 		}
 		else {
-		  $array = $data->field_field_image_caption;
+			$value = \'\';
 		}
-	}
-	if (isset($array[0][\'rendered\'][\'#markup\'])) {
-		$val = $array[0][\'rendered\'][\'#markup\'];
-		if (strlen($val) <= 125) {
-		$value = rtrim($val) . "...";
-		} else {
-		  $pos = strpos($val, \' \', 125);
-		  $value = substr($val,0,$pos) . "...";
-		}
-	}
-	else {
-		$value = \'\';
-	}
-	print $value;
-	?>';
+		print $value;
+		?>';
 	$handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
 	/* Field: &#039;More&#039; Link Custom PHP */
@@ -20642,18 +20591,18 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php']['php_output'] = '<?php
-	if ($data->node_type == "featured_content") {
-		if (!empty($data->field_field_feature_link)) {
-		  $url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
-		  print $url;
+		if ($data->node_type == "featured_content") {
+			if (!empty($data->field_field_feature_link)) {
+				$url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+				print $url;
+			}
+			else { print \' <a class="banner-no-link">\'; }
+		} else {
+			$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
+			$url =  " <a href=\'/$node_path\'>";
+			print $url;
 		}
-		else { print \' <a class="banner-no-link">\'; }
-	} else {
-		$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
-		$url =  " <a href=\'/$node_path\'>";
-		print $url;
-	}
-	?>';
+		?>';
 	$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
 	/* Field: Global: Custom text */
@@ -20662,11 +20611,11 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[php][field_feature_image][field_project_image]</div></a>
-	<div class="slide-text">
-	<h3>[title_field]</h3>
-	[php_1]
-	[php]More </a>
-	</div>';
+		<div class="slide-text">
+		<h3>[title_field]</h3>
+		[php_1]
+		[php]More </a>
+		</div>';
 	$handler->display->display_options['fields']['nothing']['alter']['max_length'] = '104';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	$handler->display->display_options['defaults']['sorts'] = FALSE;
@@ -20937,30 +20886,30 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-	$array = $data->field_field_caption;
-	if (empty($array)) {
-		if ($data->node_type == \'project\') {
-		  $array = $data->field_field_image_caption_1;
+		$array = $data->field_field_caption;
+		if (empty($array)) {
+			if ($data->node_type == \'project\') {
+				$array = $data->field_field_image_caption_1;
+			}
+			else {
+				$array = $data->field_field_image_caption;
+			}
+		}
+
+		if (isset($array[0][\'rendered\'][\'#markup\'])) {
+			$val = $array[0][\'rendered\'][\'#markup\'];
+			if (strlen($val) <= 125) {
+			$value = rtrim($val) . "...";
+			} else {
+				$pos = strpos($val, \' \', 125);
+				$value = substr($val,0,$pos) . "...";
+			}
 		}
 		else {
-		  $array = $data->field_field_image_caption;
+			$value = \'\';
 		}
-	}
-
-	if (isset($array[0][\'rendered\'][\'#markup\'])) {
-		$val = $array[0][\'rendered\'][\'#markup\'];
-		if (strlen($val) <= 125) {
-		$value = rtrim($val) . "...";
-		} else {
-		  $pos = strpos($val, \' \', 125);
-		  $value = substr($val,0,$pos) . "...";
-		}
-	}
-	else {
-		$value = \'\';
-	}
-	print $value;
-	?>';
+		print $value;
+		?>';
 	$handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
 	/* Field: &#039;More&#039; Link Custom PHP */
@@ -20973,18 +20922,18 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php']['php_output'] = '<?php
-	if ($data->node_type == "featured_content") {
-		if (!empty($data->field_field_feature_link)) {
-		  $url = " <a href=\'/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
-		  print $url;
+		if ($data->node_type == "featured_content") {
+			if (!empty($data->field_field_feature_link)) {
+				$url = " <a href=\'/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+				print $url;
+			}
+			else { print \' <a class="banner-no-link">\'; }
+		} else {
+			$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
+			$url =  " <a href=\'/$node_path\'>";
+			print $url;
 		}
-		else { print \' <a class="banner-no-link">\'; }
-	} else {
-		$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
-		$url =  " <a href=\'/$node_path\'>";
-		print $url;
-	}
-	?>';
+		?>';
 	$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
 	/* Field: Global: Custom text */
@@ -20993,12 +20942,12 @@ print file_create_url($row->uri);
 	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[php][field_feature_image]</a></div>
-	<div class="slide-text">
-	[php_1]
-	[php]More</a>
-	</div>
+		<div class="slide-text">
+		[php_1]
+		[php]More</a>
+		</div>
 
-	';
+		';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	$handler->display->display_options['defaults']['sorts'] = FALSE;
 	/* Sort criterion: Nodequeue: Position */
