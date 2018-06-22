@@ -1,0 +1,16 @@
+diff --git a/modules/taxonomy/taxonomy.module b/modules/taxonomy/taxonomy.module
+index 9be7dfc..898bf6c 100644
+--- a/modules/taxonomy/taxonomy.module
++++ b/modules/taxonomy/taxonomy.module
+@@ -1642,9 +1642,9 @@ function taxonomy_allowed_values($field) {
+   $options = array();
+   foreach ($field['settings']['allowed_values'] as $tree) {
+     if ($vocabulary = taxonomy_vocabulary_machine_name_load($tree['vocabulary'])) {
+-      if ($terms = taxonomy_get_tree($vocabulary->vid, $tree['parent'])) {
++      if ($terms = taxonomy_get_tree($vocabulary->vid, $tree['parent'], NULL, TRUE)) {
+         foreach ($terms as $term) {
+-          $options[$term->tid] = str_repeat('-', $term->depth) . $term->name;
++          $options[$term->tid] = str_repeat('-', $term->depth) . entity_label('taxonomy_term', $term);
+         }
+       }
+     }
