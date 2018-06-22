@@ -29895,727 +29895,653 @@ $langu = \'/\';}
   $export['press_center'] = $view;
 
   $view = new view();
-  $view->name = 'press_center_detail_page_slideshows';
-  $view->description = '';
-  $view->tag = 'default';
-  $view->base_table = 'node';
-  $view->human_name = 'Press Center Detail Page Slideshows';
-  $view->core = 7;
-  $view->api_version = '3.0';
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+	$view->name = 'press_center_detail_page_slideshows';
+	$view->description = '';
+	$view->tag = 'default';
+	$view->base_table = 'node';
+	$view->human_name = 'Press Center Detail Page Slideshows';
+	$view->core = 7;
+	$view->api_version = '3.0';
+	$view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
-  /* Display: Master */
-  $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Press Center Detail Page News Slideshows';
-  $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'none';
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['query']['options']['distinct'] = TRUE;
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
-  $handler->display->display_options['style_plugin'] = 'slideshow';
-  $handler->display->display_options['style_options']['flexslider_views_slideshow']['caption_field'] = 'none';
-  $handler->display->display_options['style_options']['slideshow_type'] = 'flexslider_views_slideshow';
-  $handler->display->display_options['style_options']['slideshow_skin'] = 'default';
-  $handler->display->display_options['style_options']['skin_info'] = array(
-    'class' => 'default',
-    'name' => 'Default',
-    'module' => 'views_slideshow',
-    'path' => '',
-    'stylesheets' => array(),
-  );
-  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['weight'] = '1';
-  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
-  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-    'field_article_img' => 0,
-  );
-  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
-  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
-  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_slide_counter']['weight'] = '1';
-  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
-  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
-  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-    'field_article_img' => 0,
-  );
-  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
-  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
-  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_slide_counter']['weight'] = '1';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['timeout'] = '5000';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['speed'] = '700';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['delay'] = '0';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['remember_slide_days'] = '1';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['items_per_slide'] = '1';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['wait_for_image_load_timeout'] = '3000';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['cleartype'] = 0;
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['cleartypenobg'] = 0;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  /* Relationship: Content: Article Image (field_article_img:fid) */
-  $handler->display->display_options['relationships']['field_article_img_fid']['id'] = 'field_article_img_fid';
-  $handler->display->display_options['relationships']['field_article_img_fid']['table'] = 'field_data_field_article_img';
-  $handler->display->display_options['relationships']['field_article_img_fid']['field'] = 'field_article_img_fid';
-  $handler->display->display_options['relationships']['field_article_img_fid']['label'] = 'field_article_img';
-  /* Field: Content: Article Image */
-  $handler->display->display_options['fields']['field_article_img']['id'] = 'field_article_img';
-  $handler->display->display_options['fields']['field_article_img']['table'] = 'field_data_field_article_img';
-  $handler->display->display_options['fields']['field_article_img']['field'] = 'field_article_img';
-  $handler->display->display_options['fields']['field_article_img']['label'] = '';
-  $handler->display->display_options['fields']['field_article_img']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_article_img']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_article_img']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_article_img']['settings'] = array(
-    'image_style' => 'featured_content',
-    'image_link' => '',
-  );
-  $handler->display->display_options['fields']['field_article_img']['group_rows'] = FALSE;
-  $handler->display->display_options['fields']['field_article_img']['delta_offset'] = '0';
-  /* Field: File: Caption */
-  $handler->display->display_options['fields']['field_image_caption']['id'] = 'field_image_caption';
-  $handler->display->display_options['fields']['field_image_caption']['table'] = 'field_data_field_image_caption';
-  $handler->display->display_options['fields']['field_image_caption']['field'] = 'field_image_caption';
-  $handler->display->display_options['fields']['field_image_caption']['relationship'] = 'field_article_img_fid';
-  $handler->display->display_options['fields']['field_image_caption']['exclude'] = TRUE;
-  /* Field: File: Copyright */
-  $handler->display->display_options['fields']['field_image_copytight']['id'] = 'field_image_copytight';
-  $handler->display->display_options['fields']['field_image_copytight']['table'] = 'field_data_field_image_copytight';
-  $handler->display->display_options['fields']['field_image_copytight']['field'] = 'field_image_copytight';
-  $handler->display->display_options['fields']['field_image_copytight']['relationship'] = 'field_article_img_fid';
-  $handler->display->display_options['fields']['field_image_copytight']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_image_copytight']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image_copytight']['type'] = 'text_plain';
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_article_img]</div>
-    <div class="slide-text"><h3>[field_image_caption]</h3>
-    <div class = "copyright"><h3>Copyright [field_image_copytight]</h3>
-    </div>
-    </div>
+	/* Display: Master */
+	$handler = $view->new_display('default', 'Master', 'default');
+	$handler->display->display_options['title'] = 'Press Center Detail Page News Slideshows';
+	$handler->display->display_options['use_more_always'] = FALSE;
+	$handler->display->display_options['access']['type'] = 'perm';
+	$handler->display->display_options['cache']['type'] = 'none';
+	$handler->display->display_options['query']['type'] = 'views_query';
+	$handler->display->display_options['query']['options']['distinct'] = TRUE;
+	$handler->display->display_options['exposed_form']['type'] = 'basic';
+	$handler->display->display_options['pager']['type'] = 'some';
+	$handler->display->display_options['pager']['options']['items_per_page'] = '5';
+	$handler->display->display_options['style_plugin'] = 'slideshow';
+	$handler->display->display_options['style_options']['flexslider_views_slideshow']['caption_field'] = 'none';
+	$handler->display->display_options['style_options']['slideshow_type'] = 'flexslider_views_slideshow';
+	$handler->display->display_options['style_options']['slideshow_skin'] = 'default';
+	$handler->display->display_options['style_options']['skin_info'] = array(
+		'class' => 'default',
+		'name' => 'Default',
+		'module' => 'views_slideshow',
+		'path' => '',
+		'stylesheets' => array(),
+	);
+	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['weight'] = '1';
+	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
+	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
+		'field_article_img' => 0,
+	);
+	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
+	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
+	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_slide_counter']['weight'] = '1';
+	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
+	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
+	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
+		'field_article_img' => 0,
+	);
+	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
+	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
+	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_slide_counter']['weight'] = '1';
+	$handler->display->display_options['style_options']['views_slideshow_cycle']['timeout'] = '5000';
+	$handler->display->display_options['style_options']['views_slideshow_cycle']['speed'] = '700';
+	$handler->display->display_options['style_options']['views_slideshow_cycle']['delay'] = '0';
+	$handler->display->display_options['style_options']['views_slideshow_cycle']['remember_slide_days'] = '1';
+	$handler->display->display_options['style_options']['views_slideshow_cycle']['items_per_slide'] = '1';
+	$handler->display->display_options['style_options']['views_slideshow_cycle']['wait_for_image_load_timeout'] = '3000';
+	$handler->display->display_options['style_options']['views_slideshow_cycle']['cleartype'] = 0;
+	$handler->display->display_options['style_options']['views_slideshow_cycle']['cleartypenobg'] = 0;
+	$handler->display->display_options['row_plugin'] = 'fields';
+	/* Relationship: Content: Article Image (field_article_img:fid) */
+	$handler->display->display_options['relationships']['field_article_img_fid']['id'] = 'field_article_img_fid';
+	$handler->display->display_options['relationships']['field_article_img_fid']['table'] = 'field_data_field_article_img';
+	$handler->display->display_options['relationships']['field_article_img_fid']['field'] = 'field_article_img_fid';
+	$handler->display->display_options['relationships']['field_article_img_fid']['label'] = 'field_article_img';
+	/* Field: Content: Article Image */
+	$handler->display->display_options['fields']['field_article_img']['id'] = 'field_article_img';
+	$handler->display->display_options['fields']['field_article_img']['table'] = 'field_data_field_article_img';
+	$handler->display->display_options['fields']['field_article_img']['field'] = 'field_article_img';
+	$handler->display->display_options['fields']['field_article_img']['label'] = '';
+	$handler->display->display_options['fields']['field_article_img']['exclude'] = TRUE;
+	$handler->display->display_options['fields']['field_article_img']['element_label_colon'] = FALSE;
+	$handler->display->display_options['fields']['field_article_img']['click_sort_column'] = 'fid';
+	$handler->display->display_options['fields']['field_article_img']['settings'] = array(
+		'image_style' => 'featured_content',
+		'image_link' => '',
+	);
+	$handler->display->display_options['fields']['field_article_img']['group_rows'] = FALSE;
+	$handler->display->display_options['fields']['field_article_img']['delta_offset'] = '0';
+	/* Field: File: Caption */
+	$handler->display->display_options['fields']['field_image_caption']['id'] = 'field_image_caption';
+	$handler->display->display_options['fields']['field_image_caption']['table'] = 'field_data_field_image_caption';
+	$handler->display->display_options['fields']['field_image_caption']['field'] = 'field_image_caption';
+	$handler->display->display_options['fields']['field_image_caption']['relationship'] = 'field_article_img_fid';
+	$handler->display->display_options['fields']['field_image_caption']['exclude'] = TRUE;
+	/* Field: File: Copyright */
+	$handler->display->display_options['fields']['field_image_copytight']['id'] = 'field_image_copytight';
+	$handler->display->display_options['fields']['field_image_copytight']['table'] = 'field_data_field_image_copytight';
+	$handler->display->display_options['fields']['field_image_copytight']['field'] = 'field_image_copytight';
+	$handler->display->display_options['fields']['field_image_copytight']['relationship'] = 'field_article_img_fid';
+	$handler->display->display_options['fields']['field_image_copytight']['exclude'] = TRUE;
+	$handler->display->display_options['fields']['field_image_copytight']['element_label_colon'] = FALSE;
+	$handler->display->display_options['fields']['field_image_copytight']['type'] = 'text_plain';
+	/* Field: Global: Custom text */
+	$handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+	$handler->display->display_options['fields']['nothing']['table'] = 'views';
+	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+	$handler->display->display_options['fields']['nothing']['label'] = '';
+	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_article_img]</div>
+		  <div class="slide-text"><h3>[field_image_caption]</h3>
+		  <div class = "copyright"><h3>Copyright [field_image_copytight]</h3>
+		  </div>
+		  </div>
 
-    ';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Contextual filter: Content: Nid */
-  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['table'] = 'node';
-  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
-  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'article' => 'article',
-  );
+		  ';
+	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+	/* Contextual filter: Content: Nid */
+	$handler->display->display_options['arguments']['nid']['id'] = 'nid';
+	$handler->display->display_options['arguments']['nid']['table'] = 'node';
+	$handler->display->display_options['arguments']['nid']['field'] = 'nid';
+	$handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+	$handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+	$handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+	$handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+	$handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+	/* Filter criterion: Content: Published */
+	$handler->display->display_options['filters']['status']['id'] = 'status';
+	$handler->display->display_options['filters']['status']['table'] = 'node';
+	$handler->display->display_options['filters']['status']['field'] = 'status';
+	$handler->display->display_options['filters']['status']['value'] = 1;
+	$handler->display->display_options['filters']['status']['group'] = 1;
+	$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+	/* Filter criterion: Content: Type */
+	$handler->display->display_options['filters']['type']['id'] = 'type';
+	$handler->display->display_options['filters']['type']['table'] = 'node';
+	$handler->display->display_options['filters']['type']['field'] = 'type';
+	$handler->display->display_options['filters']['type']['value'] = array(
+		'article' => 'article',
+	);
 
-  /* Display: Press Center Article type Slideshows */
-  $handler = $view->new_display('block', 'Press Center Article type Slideshows', 'press_center_detail_pages');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['defaults']['query'] = FALSE;
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['query']['options']['distinct'] = TRUE;
-  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Article Image (field_article_img:fid) */
-  $handler->display->display_options['relationships']['field_article_img_fid']['id'] = 'field_article_img_fid';
-  $handler->display->display_options['relationships']['field_article_img_fid']['table'] = 'field_data_field_article_img';
-  $handler->display->display_options['relationships']['field_article_img_fid']['field'] = 'field_article_img_fid';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Entity translation: Article Image: translated */
-  $handler->display->display_options['fields']['field_article_img_et']['id'] = 'field_article_img_et';
-  $handler->display->display_options['fields']['field_article_img_et']['table'] = 'field_data_field_article_img';
-  $handler->display->display_options['fields']['field_article_img_et']['field'] = 'field_article_img_et';
-  $handler->display->display_options['fields']['field_article_img_et']['label'] = '';
-  $handler->display->display_options['fields']['field_article_img_et']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_article_img_et']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_article_img_et']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_article_img_et']['type'] = 'colorbox';
-  $handler->display->display_options['fields']['field_article_img_et']['settings'] = array(
-    'colorbox_node_style' => 'two_third_width_carousel_grid_inner',
-    'colorbox_node_style_first' => '',
-    'colorbox_image_style' => '',
-    'colorbox_gallery' => 'post',
-    'colorbox_gallery_custom' => '',
-    'colorbox_caption' => 'custom',
-    'colorbox_caption_custom' => '[file:field-image-caption]^[file:field-image-copytight]',
-  );
-  $handler->display->display_options['fields']['field_article_img_et']['group_rows'] = FALSE;
-  $handler->display->display_options['fields']['field_article_img_et']['delta_offset'] = '0';
-  /* Field: File: Caption */
-  $handler->display->display_options['fields']['field_image_caption']['id'] = 'field_image_caption';
-  $handler->display->display_options['fields']['field_image_caption']['table'] = 'field_data_field_image_caption';
-  $handler->display->display_options['fields']['field_image_caption']['field'] = 'field_image_caption';
-  $handler->display->display_options['fields']['field_image_caption']['relationship'] = 'field_article_img_fid';
-  $handler->display->display_options['fields']['field_image_caption']['label'] = '';
-  $handler->display->display_options['fields']['field_image_caption']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_image_caption']['element_label_colon'] = FALSE;
-  /* Field: File: Copyright */
-  $handler->display->display_options['fields']['field_image_copytight']['id'] = 'field_image_copytight';
-  $handler->display->display_options['fields']['field_image_copytight']['table'] = 'field_data_field_image_copytight';
-  $handler->display->display_options['fields']['field_image_copytight']['field'] = 'field_image_copytight';
-  $handler->display->display_options['fields']['field_image_copytight']['relationship'] = 'field_article_img_fid';
-  $handler->display->display_options['fields']['field_image_copytight']['exclude'] = TRUE;
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_article_img_et]</div>
-    <div class="slide-text">
-    <div class="caption">[field_image_caption]</div>
-    <div class="caption image-copytight">[field_image_copytight]</div>
-    </div>
-    ';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Field: Colorbox: Colorbox trigger */
-  $handler->display->display_options['fields']['colorbox']['id'] = 'colorbox';
-  $handler->display->display_options['fields']['colorbox']['table'] = 'colorbox';
-  $handler->display->display_options['fields']['colorbox']['field'] = 'colorbox';
-  $handler->display->display_options['fields']['colorbox']['label'] = '';
-  $handler->display->display_options['fields']['colorbox']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['colorbox']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['colorbox']['trigger_field'] = 'nothing';
-  $handler->display->display_options['fields']['colorbox']['popup'] = '<div class="slide">[field_article_img_et]</div>
-    <div class="slide-text">
-    <div class="caption">[field_image_caption]</div>
-    <div class="caption image-copytight">[field_image_copytight]</div>
-    </div>';
-  $handler->display->display_options['fields']['colorbox']['gid'] = 1;
-  $handler->display->display_options['fields']['colorbox']['width'] = '700px';
-  $handler->display->display_options['fields']['colorbox']['height'] = '600px';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'article' => 'article',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Article Image (field_article_img:language) */
-  $handler->display->display_options['filters']['language']['id'] = 'language';
-  $handler->display->display_options['filters']['language']['table'] = 'field_data_field_article_img';
-  $handler->display->display_options['filters']['language']['field'] = 'language';
-  $handler->display->display_options['filters']['language']['value'] = array(
-    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
-  );
+	/* Display: Press Center Article type Slideshows */
+	$handler = $view->new_display('block', 'Press Center Article type Slideshows', 'press_center_detail_pages');
+	$handler->display->display_options['defaults']['title'] = FALSE;
+	$handler->display->display_options['defaults']['query'] = FALSE;
+	$handler->display->display_options['query']['type'] = 'views_query';
+	$handler->display->display_options['query']['options']['distinct'] = TRUE;
+	$handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
+	$handler->display->display_options['defaults']['relationships'] = FALSE;
+	/* Relationship: Content: Article Image (field_article_img:fid) */
+	$handler->display->display_options['relationships']['field_article_img_fid']['id'] = 'field_article_img_fid';
+	$handler->display->display_options['relationships']['field_article_img_fid']['table'] = 'field_data_field_article_img';
+	$handler->display->display_options['relationships']['field_article_img_fid']['field'] = 'field_article_img_fid';
+	$handler->display->display_options['defaults']['fields'] = FALSE;
+	/* Field: Entity translation: Article Image: translated */
+	$handler->display->display_options['fields']['field_article_img_et']['id'] = 'field_article_img_et';
+	$handler->display->display_options['fields']['field_article_img_et']['table'] = 'field_data_field_article_img';
+	$handler->display->display_options['fields']['field_article_img_et']['field'] = 'field_article_img_et';
+	$handler->display->display_options['fields']['field_article_img_et']['label'] = '';
+	$handler->display->display_options['fields']['field_article_img_et']['exclude'] = TRUE;
+	$handler->display->display_options['fields']['field_article_img_et']['element_label_colon'] = FALSE;
+	$handler->display->display_options['fields']['field_article_img_et']['click_sort_column'] = 'fid';
+	$handler->display->display_options['fields']['field_article_img_et']['type'] = 'colorbox';
+	$handler->display->display_options['fields']['field_article_img_et']['settings'] = array(
+		'colorbox_node_style' => 'two_third_width_carousel_grid_inner',
+		'colorbox_node_style_first' => '',
+		'colorbox_image_style' => '',
+		'colorbox_gallery' => 'post',
+		'colorbox_gallery_custom' => '',
+		'colorbox_caption' => 'custom',
+		'colorbox_caption_custom' => '[file:field-image-caption]^[file:field-image-copytight]',
+	);
+	$handler->display->display_options['fields']['field_article_img_et']['group_rows'] = FALSE;
+	$handler->display->display_options['fields']['field_article_img_et']['delta_offset'] = '0';
+	/* Field: Entity translation: Caption: translated */
+	$handler->display->display_options['fields']['field_image_caption_et']['id'] = 'field_image_caption_et';
+	$handler->display->display_options['fields']['field_image_caption_et']['table'] = 'field_data_field_image_caption';
+	$handler->display->display_options['fields']['field_image_caption_et']['field'] = 'field_image_caption_et';
+	$handler->display->display_options['fields']['field_image_caption_et']['relationship'] = 'field_article_img_fid';
+	$handler->display->display_options['fields']['field_image_caption_et']['label'] = '';
+	$handler->display->display_options['fields']['field_image_caption_et']['exclude'] = TRUE;
+	$handler->display->display_options['fields']['field_image_caption_et']['element_label_colon'] = FALSE;
+	/* Field: Entity translation: Copyright: translated */
+	$handler->display->display_options['fields']['field_image_copytight_et']['id'] = 'field_image_copytight_et';
+	$handler->display->display_options['fields']['field_image_copytight_et']['table'] = 'field_data_field_image_copytight';
+	$handler->display->display_options['fields']['field_image_copytight_et']['field'] = 'field_image_copytight_et';
+	$handler->display->display_options['fields']['field_image_copytight_et']['relationship'] = 'field_article_img_fid';
+	$handler->display->display_options['fields']['field_image_copytight_et']['label'] = '';
+	$handler->display->display_options['fields']['field_image_copytight_et']['exclude'] = TRUE;
+	$handler->display->display_options['fields']['field_image_copytight_et']['element_label_colon'] = FALSE;
+	/* Field: Global: Custom text */
+	$handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+	$handler->display->display_options['fields']['nothing']['table'] = 'views';
+	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+	$handler->display->display_options['fields']['nothing']['label'] = '';
+	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_article_img_et]</div>
+		  <div class="slide-text">
+		  <div class="caption">[field_image_caption_et]</div>
+		  <div class="caption image-copytight">[field_image_copytight_et]</div>
+		  </div>
+		  ';
+	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+	/* Field: Colorbox: Colorbox trigger */
+	$handler->display->display_options['fields']['colorbox']['id'] = 'colorbox';
+	$handler->display->display_options['fields']['colorbox']['table'] = 'colorbox';
+	$handler->display->display_options['fields']['colorbox']['field'] = 'colorbox';
+	$handler->display->display_options['fields']['colorbox']['label'] = '';
+	$handler->display->display_options['fields']['colorbox']['exclude'] = TRUE;
+	$handler->display->display_options['fields']['colorbox']['element_label_colon'] = FALSE;
+	$handler->display->display_options['fields']['colorbox']['trigger_field'] = 'nothing';
+	$handler->display->display_options['fields']['colorbox']['popup'] = '<div class="slide">[field_article_img_et]</div>
+		  <div class="slide-text">
+		  <div class="caption">[field_image_caption_et]</div>
+		  <div class="caption image-copytight">[field_image_copytight_et]</div>
+		  </div>';
+	$handler->display->display_options['fields']['colorbox']['gid'] = 1;
+	$handler->display->display_options['fields']['colorbox']['width'] = '700px';
+	$handler->display->display_options['fields']['colorbox']['height'] = '600px';
+	$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+	$handler->display->display_options['defaults']['filters'] = FALSE;
+	/* Filter criterion: Content: Published */
+	$handler->display->display_options['filters']['status']['id'] = 'status';
+	$handler->display->display_options['filters']['status']['table'] = 'node';
+	$handler->display->display_options['filters']['status']['field'] = 'status';
+	$handler->display->display_options['filters']['status']['value'] = 1;
+	$handler->display->display_options['filters']['status']['group'] = 1;
+	$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+	/* Filter criterion: Content: Type */
+	$handler->display->display_options['filters']['type']['id'] = 'type';
+	$handler->display->display_options['filters']['type']['table'] = 'node';
+	$handler->display->display_options['filters']['type']['field'] = 'type';
+	$handler->display->display_options['filters']['type']['value'] = array(
+		'article' => 'article',
+	);
+	$handler->display->display_options['filters']['type']['group'] = 1;
+	/* Filter criterion: Content: Article Image (field_article_img:language) */
+	$handler->display->display_options['filters']['language']['id'] = 'language';
+	$handler->display->display_options['filters']['language']['table'] = 'field_data_field_article_img';
+	$handler->display->display_options['filters']['language']['field'] = 'language';
+	$handler->display->display_options['filters']['language']['value'] = array(
+		'***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+	);
 
-  /* Display: Project Details Slideshow */
-  $handler = $view->new_display('block', 'Project Details Slideshow', 'block_1');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Image (field_project_image:fid) */
-  $handler->display->display_options['relationships']['field_project_image_fid']['id'] = 'field_project_image_fid';
-  $handler->display->display_options['relationships']['field_project_image_fid']['table'] = 'field_data_field_project_image';
-  $handler->display->display_options['relationships']['field_project_image_fid']['field'] = 'field_project_image_fid';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: File: Caption */
-  $handler->display->display_options['fields']['field_image_caption']['id'] = 'field_image_caption';
-  $handler->display->display_options['fields']['field_image_caption']['table'] = 'field_data_field_image_caption';
-  $handler->display->display_options['fields']['field_image_caption']['field'] = 'field_image_caption';
-  $handler->display->display_options['fields']['field_image_caption']['relationship'] = 'field_project_image_fid';
-  $handler->display->display_options['fields']['field_image_caption']['label'] = '';
-  $handler->display->display_options['fields']['field_image_caption']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_image_caption']['alter']['max_length'] = '75';
-  $handler->display->display_options['fields']['field_image_caption']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['field_image_caption']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image_caption']['type'] = 'text_plain';
-  /* Field: Entity translation: Image: translated */
-  $handler->display->display_options['fields']['field_project_image_et']['id'] = 'field_project_image_et';
-  $handler->display->display_options['fields']['field_project_image_et']['table'] = 'field_data_field_project_image';
-  $handler->display->display_options['fields']['field_project_image_et']['field'] = 'field_project_image_et';
-  $handler->display->display_options['fields']['field_project_image_et']['label'] = '';
-  $handler->display->display_options['fields']['field_project_image_et']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_project_image_et']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_project_image_et']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_project_image_et']['type'] = 'colorbox';
-  $handler->display->display_options['fields']['field_project_image_et']['settings'] = array(
-    'colorbox_node_style' => 'two_third_width_carousel_grid_inner',
-    'colorbox_node_style_first' => '',
-    'colorbox_image_style' => '',
-    'colorbox_gallery' => 'post',
-    'colorbox_gallery_custom' => '',
-    'colorbox_caption' => 'custom',
-    'colorbox_caption_custom' => '[file:field-image-caption]^[file:field-image-copytight]',
-  );
-  $handler->display->display_options['fields']['field_project_image_et']['group_rows'] = FALSE;
-  $handler->display->display_options['fields']['field_project_image_et']['delta_offset'] = '0';
-  /* Field: File: Copyright */
-  $handler->display->display_options['fields']['field_image_copytight']['id'] = 'field_image_copytight';
-  $handler->display->display_options['fields']['field_image_copytight']['table'] = 'field_data_field_image_copytight';
-  $handler->display->display_options['fields']['field_image_copytight']['field'] = 'field_image_copytight';
-  $handler->display->display_options['fields']['field_image_copytight']['relationship'] = 'field_project_image_fid';
-  $handler->display->display_options['fields']['field_image_copytight']['exclude'] = TRUE;
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_project_image_et]</div>
-    <div class="slide-text">
-    <div class="caption">[field_image_caption]</div>
-    <div class="caption image-copytight">[field_image_copytight]</div>
-    </div>';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Field: Colorbox: Colorbox trigger */
-  $handler->display->display_options['fields']['colorbox']['id'] = 'colorbox';
-  $handler->display->display_options['fields']['colorbox']['table'] = 'colorbox';
-  $handler->display->display_options['fields']['colorbox']['field'] = 'colorbox';
-  $handler->display->display_options['fields']['colorbox']['label'] = '';
-  $handler->display->display_options['fields']['colorbox']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['colorbox']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['colorbox']['trigger_field'] = 'nothing';
-  $handler->display->display_options['fields']['colorbox']['popup'] = '<div class="slide">[field_project_image_et]</div>
-    <div class="slide-text-colorbox">
-    <div class="caption">[field_image_caption]</div>
-    <div class="caption image-copytight">[field_image_copytight]</div>
-    </div>';
-  $handler->display->display_options['fields']['colorbox']['gid'] = 1;
-  $handler->display->display_options['fields']['colorbox']['width'] = '800px';
-  $handler->display->display_options['fields']['colorbox']['height'] = '700px';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'project' => 'project',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Image (field_project_image:language) */
-  $handler->display->display_options['filters']['language']['id'] = 'language';
-  $handler->display->display_options['filters']['language']['table'] = 'field_data_field_project_image';
-  $handler->display->display_options['filters']['language']['field'] = 'language';
-  $handler->display->display_options['filters']['language']['value'] = array(
-    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
-  );
-  $handler->display->display_options['block_description'] = 'Projects Detail Slideshow';
+	/* Display: Project Details Slideshow */
+	$handler = $view->new_display('block', 'Project Details Slideshow', 'block_1');
+	$handler->display->display_options['defaults']['title'] = FALSE;
+	$handler->display->display_options['defaults']['relationships'] = FALSE;
+	/* Relationship: Content: Image (field_project_image:fid) */
+	$handler->display->display_options['relationships']['field_project_image_fid']['id'] = 'field_project_image_fid';
+	$handler->display->display_options['relationships']['field_project_image_fid']['table'] = 'field_data_field_project_image';
+	$handler->display->display_options['relationships']['field_project_image_fid']['field'] = 'field_project_image_fid';
+	$handler->display->display_options['defaults']['fields'] = FALSE;
+	/* Field: Entity translation: Caption: translated */
+	$handler->display->display_options['fields']['field_image_caption_et']['id'] = 'field_image_caption_et';
+	$handler->display->display_options['fields']['field_image_caption_et']['table'] = 'field_data_field_image_caption';
+	$handler->display->display_options['fields']['field_image_caption_et']['field'] = 'field_image_caption_et';
+	$handler->display->display_options['fields']['field_image_caption_et']['relationship'] = 'field_project_image_fid';
+	$handler->display->display_options['fields']['field_image_caption_et']['label'] = '';
+	$handler->display->display_options['fields']['field_image_caption_et']['exclude'] = TRUE;
+	$handler->display->display_options['fields']['field_image_caption_et']['element_label_colon'] = FALSE;
+	/* Field: Entity translation: Copyright: translated */
+	$handler->display->display_options['fields']['field_image_copytight_et']['id'] = 'field_image_copytight_et';
+	$handler->display->display_options['fields']['field_image_copytight_et']['table'] = 'field_data_field_image_copytight';
+	$handler->display->display_options['fields']['field_image_copytight_et']['field'] = 'field_image_copytight_et';
+	$handler->display->display_options['fields']['field_image_copytight_et']['relationship'] = 'field_project_image_fid';
+	$handler->display->display_options['fields']['field_image_copytight_et']['label'] = '';
+	$handler->display->display_options['fields']['field_image_copytight_et']['exclude'] = TRUE;
+	$handler->display->display_options['fields']['field_image_copytight_et']['element_label_colon'] = FALSE;
+	/* Field: Entity translation: Image: translated */
+	$handler->display->display_options['fields']['field_project_image_et']['id'] = 'field_project_image_et';
+	$handler->display->display_options['fields']['field_project_image_et']['table'] = 'field_data_field_project_image';
+	$handler->display->display_options['fields']['field_project_image_et']['field'] = 'field_project_image_et';
+	$handler->display->display_options['fields']['field_project_image_et']['label'] = '';
+	$handler->display->display_options['fields']['field_project_image_et']['exclude'] = TRUE;
+	$handler->display->display_options['fields']['field_project_image_et']['element_label_colon'] = FALSE;
+	$handler->display->display_options['fields']['field_project_image_et']['click_sort_column'] = 'fid';
+	$handler->display->display_options['fields']['field_project_image_et']['type'] = 'colorbox';
+	$handler->display->display_options['fields']['field_project_image_et']['settings'] = array(
+		'colorbox_node_style' => 'two_third_width_carousel_grid_inner',
+		'colorbox_node_style_first' => '',
+		'colorbox_image_style' => '',
+		'colorbox_gallery' => 'post',
+		'colorbox_gallery_custom' => '',
+		'colorbox_caption' => 'custom',
+		'colorbox_caption_custom' => '[file:field-image-caption]^[file:field-image-copytight]',
+	);
+	$handler->display->display_options['fields']['field_project_image_et']['group_rows'] = FALSE;
+	$handler->display->display_options['fields']['field_project_image_et']['delta_offset'] = '0';
+	/* Field: Global: Custom text */
+	$handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+	$handler->display->display_options['fields']['nothing']['table'] = 'views';
+	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+	$handler->display->display_options['fields']['nothing']['label'] = '';
+	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_project_image_et]</div>
+		  <div class="slide-text">
+		  <div class="caption">[field_image_caption_et]</div>
+		  <div class="caption image-copytight">[field_image_copytight_et]</div>
+		  </div>';
+	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+	/* Field: Colorbox: Colorbox trigger */
+	$handler->display->display_options['fields']['colorbox']['id'] = 'colorbox';
+	$handler->display->display_options['fields']['colorbox']['table'] = 'colorbox';
+	$handler->display->display_options['fields']['colorbox']['field'] = 'colorbox';
+	$handler->display->display_options['fields']['colorbox']['label'] = '';
+	$handler->display->display_options['fields']['colorbox']['exclude'] = TRUE;
+	$handler->display->display_options['fields']['colorbox']['element_label_colon'] = FALSE;
+	$handler->display->display_options['fields']['colorbox']['trigger_field'] = 'nothing';
+	$handler->display->display_options['fields']['colorbox']['popup'] = '<div class="slide">[field_project_image_et]</div>
+		  <div class="slide-text-colorbox">
+		  <div class="caption">[field_image_caption_et]</div>
+		  <div class="caption image-copytight">[field_image_copytight_et]</div>
+		  </div>';
+	$handler->display->display_options['fields']['colorbox']['gid'] = 1;
+	$handler->display->display_options['fields']['colorbox']['width'] = '800px';
+	$handler->display->display_options['fields']['colorbox']['height'] = '700px';
+	$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+	$handler->display->display_options['defaults']['filters'] = FALSE;
+	/* Filter criterion: Content: Published */
+	$handler->display->display_options['filters']['status']['id'] = 'status';
+	$handler->display->display_options['filters']['status']['table'] = 'node';
+	$handler->display->display_options['filters']['status']['field'] = 'status';
+	$handler->display->display_options['filters']['status']['value'] = 1;
+	$handler->display->display_options['filters']['status']['group'] = 1;
+	$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+	/* Filter criterion: Content: Type */
+	$handler->display->display_options['filters']['type']['id'] = 'type';
+	$handler->display->display_options['filters']['type']['table'] = 'node';
+	$handler->display->display_options['filters']['type']['field'] = 'type';
+	$handler->display->display_options['filters']['type']['value'] = array(
+		'project' => 'project',
+	);
+	$handler->display->display_options['filters']['type']['group'] = 1;
+	/* Filter criterion: Content: Image (field_project_image:language) */
+	$handler->display->display_options['filters']['language']['id'] = 'language';
+	$handler->display->display_options['filters']['language']['table'] = 'field_data_field_project_image';
+	$handler->display->display_options['filters']['language']['field'] = 'language';
+	$handler->display->display_options['filters']['language']['value'] = array(
+		'***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+	);
+	$handler->display->display_options['block_description'] = 'Projects Detail Slideshow';
 
-  /* Display: Events Details Slideshow */
-  $handler = $view->new_display('block', 'Events Details Slideshow', 'block_2');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['defaults']['query'] = FALSE;
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['query']['options']['distinct'] = TRUE;
-  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Event Image (field_event_image:fid) */
-  $handler->display->display_options['relationships']['field_event_image_fid']['id'] = 'field_event_image_fid';
-  $handler->display->display_options['relationships']['field_event_image_fid']['table'] = 'field_data_field_event_image';
-  $handler->display->display_options['relationships']['field_event_image_fid']['field'] = 'field_event_image_fid';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Entity translation: Event Image: translated */
-  $handler->display->display_options['fields']['field_event_image_et']['id'] = 'field_event_image_et';
-  $handler->display->display_options['fields']['field_event_image_et']['table'] = 'field_data_field_event_image';
-  $handler->display->display_options['fields']['field_event_image_et']['field'] = 'field_event_image_et';
-  $handler->display->display_options['fields']['field_event_image_et']['label'] = '';
-  $handler->display->display_options['fields']['field_event_image_et']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_event_image_et']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_event_image_et']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_event_image_et']['type'] = 'colorbox';
-  $handler->display->display_options['fields']['field_event_image_et']['settings'] = array(
-    'colorbox_node_style' => 'featured_content',
-    'colorbox_node_style_first' => '',
-    'colorbox_image_style' => '',
-    'colorbox_gallery' => 'post',
-    'colorbox_gallery_custom' => '',
-    'colorbox_caption' => 'custom',
-    'colorbox_caption_custom' => '[file:field-image-caption]^[file:field-image-copytight]',
-  );
-  $handler->display->display_options['fields']['field_event_image_et']['group_rows'] = FALSE;
-  $handler->display->display_options['fields']['field_event_image_et']['delta_offset'] = '0';
-  /* Field: File: Caption */
-  $handler->display->display_options['fields']['field_image_caption']['id'] = 'field_image_caption';
-  $handler->display->display_options['fields']['field_image_caption']['table'] = 'field_data_field_image_caption';
-  $handler->display->display_options['fields']['field_image_caption']['field'] = 'field_image_caption';
-  $handler->display->display_options['fields']['field_image_caption']['relationship'] = 'field_event_image_fid';
-  $handler->display->display_options['fields']['field_image_caption']['label'] = '';
-  $handler->display->display_options['fields']['field_image_caption']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_image_caption']['alter']['max_length'] = '75';
-  $handler->display->display_options['fields']['field_image_caption']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['field_image_caption']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image_caption']['type'] = 'text_plain';
-  /* Field: File: Copyright */
-  $handler->display->display_options['fields']['field_image_copytight']['id'] = 'field_image_copytight';
-  $handler->display->display_options['fields']['field_image_copytight']['table'] = 'field_data_field_image_copytight';
-  $handler->display->display_options['fields']['field_image_copytight']['field'] = 'field_image_copytight';
-  $handler->display->display_options['fields']['field_image_copytight']['relationship'] = 'field_event_image_fid';
-  $handler->display->display_options['fields']['field_image_copytight']['exclude'] = TRUE;
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_event_image_et]</div>
-    <div class="slide-text">
-    <div class="caption">[field_image_caption]</div>
-    <div class="caption image-copytight">[field_image_copytight]</div>
-    </div>';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Field: Colorbox: Colorbox trigger */
-  $handler->display->display_options['fields']['colorbox']['id'] = 'colorbox';
-  $handler->display->display_options['fields']['colorbox']['table'] = 'colorbox';
-  $handler->display->display_options['fields']['colorbox']['field'] = 'colorbox';
-  $handler->display->display_options['fields']['colorbox']['label'] = '';
-  $handler->display->display_options['fields']['colorbox']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['colorbox']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['colorbox']['trigger_field'] = 'nothing';
-  $handler->display->display_options['fields']['colorbox']['popup'] = '<div class="slide">[field_event_image_et]</div>
-    <div class="slide-text">
-    <div class="caption">[field_image_caption]</div>
-    <div class="caption image-copytight">[field_image_copytight]</div>
-    </div>';
-  $handler->display->display_options['fields']['colorbox']['gid'] = 1;
-  $handler->display->display_options['fields']['colorbox']['width'] = '700px';
-  $handler->display->display_options['fields']['colorbox']['height'] = '600px';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'event' => 'event',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Event Image (field_event_image:language) */
-  $handler->display->display_options['filters']['language']['id'] = 'language';
-  $handler->display->display_options['filters']['language']['table'] = 'field_data_field_event_image';
-  $handler->display->display_options['filters']['language']['field'] = 'language';
-  $handler->display->display_options['filters']['language']['value'] = array(
-    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
-  );
-  $handler->display->display_options['block_description'] = 'Events Detail Slideshow';
+	/* Display: Events Details Slideshow */
+	$handler = $view->new_display('block', 'Events Details Slideshow', 'block_2');
+	$handler->display->display_options['defaults']['title'] = FALSE;
+	$handler->display->display_options['defaults']['query'] = FALSE;
+	$handler->display->display_options['query']['type'] = 'views_query';
+	$handler->display->display_options['query']['options']['distinct'] = TRUE;
+	$handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
+	$handler->display->display_options['defaults']['relationships'] = FALSE;
+	/* Relationship: Content: Event Image (field_event_image:fid) */
+	$handler->display->display_options['relationships']['field_event_image_fid']['id'] = 'field_event_image_fid';
+	$handler->display->display_options['relationships']['field_event_image_fid']['table'] = 'field_data_field_event_image';
+	$handler->display->display_options['relationships']['field_event_image_fid']['field'] = 'field_event_image_fid';
+	$handler->display->display_options['defaults']['fields'] = FALSE;
+	/* Field: Entity translation: Event Image: translated */
+	$handler->display->display_options['fields']['field_event_image_et']['id'] = 'field_event_image_et';
+	$handler->display->display_options['fields']['field_event_image_et']['table'] = 'field_data_field_event_image';
+	$handler->display->display_options['fields']['field_event_image_et']['field'] = 'field_event_image_et';
+	$handler->display->display_options['fields']['field_event_image_et']['label'] = '';
+	$handler->display->display_options['fields']['field_event_image_et']['exclude'] = TRUE;
+	$handler->display->display_options['fields']['field_event_image_et']['element_label_colon'] = FALSE;
+	$handler->display->display_options['fields']['field_event_image_et']['click_sort_column'] = 'fid';
+	$handler->display->display_options['fields']['field_event_image_et']['type'] = 'colorbox';
+	$handler->display->display_options['fields']['field_event_image_et']['settings'] = array(
+		'colorbox_node_style' => 'featured_content',
+		'colorbox_node_style_first' => '',
+		'colorbox_image_style' => '',
+		'colorbox_gallery' => 'post',
+		'colorbox_gallery_custom' => '',
+		'colorbox_caption' => 'custom',
+		'colorbox_caption_custom' => '[file:field-image-caption]^[file:field-image-copytight]',
+	);
+	$handler->display->display_options['fields']['field_event_image_et']['group_rows'] = FALSE;
+	$handler->display->display_options['fields']['field_event_image_et']['delta_offset'] = '0';
+	/* Field: Entity translation: Caption: translated */
+	$handler->display->display_options['fields']['field_image_caption_et']['id'] = 'field_image_caption_et';
+	$handler->display->display_options['fields']['field_image_caption_et']['table'] = 'field_data_field_image_caption';
+	$handler->display->display_options['fields']['field_image_caption_et']['field'] = 'field_image_caption_et';
+	$handler->display->display_options['fields']['field_image_caption_et']['relationship'] = 'field_event_image_fid';
+	$handler->display->display_options['fields']['field_image_caption_et']['label'] = '';
+	$handler->display->display_options['fields']['field_image_caption_et']['exclude'] = TRUE;
+	$handler->display->display_options['fields']['field_image_caption_et']['element_label_colon'] = FALSE;
+	/* Field: Entity translation: Copyright: translated */
+	$handler->display->display_options['fields']['field_image_copytight_et']['id'] = 'field_image_copytight_et';
+	$handler->display->display_options['fields']['field_image_copytight_et']['table'] = 'field_data_field_image_copytight';
+	$handler->display->display_options['fields']['field_image_copytight_et']['field'] = 'field_image_copytight_et';
+	$handler->display->display_options['fields']['field_image_copytight_et']['relationship'] = 'field_event_image_fid';
+	$handler->display->display_options['fields']['field_image_copytight_et']['label'] = '';
+	$handler->display->display_options['fields']['field_image_copytight_et']['exclude'] = TRUE;
+	$handler->display->display_options['fields']['field_image_copytight_et']['element_label_colon'] = FALSE;
+	/* Field: Global: Custom text */
+	$handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+	$handler->display->display_options['fields']['nothing']['table'] = 'views';
+	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+	$handler->display->display_options['fields']['nothing']['label'] = '';
+	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_event_image_et]</div>
+		  <div class="slide-text">
+		  <div class="caption">[field_image_caption_et]</div>
+		  <div class="caption image-copytight">[field_image_copytight_et]</div>
+		  </div>';
+	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+	/* Field: Colorbox: Colorbox trigger */
+	$handler->display->display_options['fields']['colorbox']['id'] = 'colorbox';
+	$handler->display->display_options['fields']['colorbox']['table'] = 'colorbox';
+	$handler->display->display_options['fields']['colorbox']['field'] = 'colorbox';
+	$handler->display->display_options['fields']['colorbox']['label'] = '';
+	$handler->display->display_options['fields']['colorbox']['exclude'] = TRUE;
+	$handler->display->display_options['fields']['colorbox']['element_label_colon'] = FALSE;
+	$handler->display->display_options['fields']['colorbox']['trigger_field'] = 'nothing';
+	$handler->display->display_options['fields']['colorbox']['popup'] = '<div class="slide">[field_event_image_et]</div>
+		  <div class="slide-text">
+		  <div class="caption">[field_image_caption_et]</div>
+		  <div class="caption image-copytight">[field_image_copytight_et]</div>
+		  </div>';
+	$handler->display->display_options['fields']['colorbox']['gid'] = 1;
+	$handler->display->display_options['fields']['colorbox']['width'] = '700px';
+	$handler->display->display_options['fields']['colorbox']['height'] = '600px';
+	$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+	$handler->display->display_options['defaults']['filters'] = FALSE;
+	/* Filter criterion: Content: Published */
+	$handler->display->display_options['filters']['status']['id'] = 'status';
+	$handler->display->display_options['filters']['status']['table'] = 'node';
+	$handler->display->display_options['filters']['status']['field'] = 'status';
+	$handler->display->display_options['filters']['status']['value'] = 1;
+	$handler->display->display_options['filters']['status']['group'] = 1;
+	$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+	/* Filter criterion: Content: Type */
+	$handler->display->display_options['filters']['type']['id'] = 'type';
+	$handler->display->display_options['filters']['type']['table'] = 'node';
+	$handler->display->display_options['filters']['type']['field'] = 'type';
+	$handler->display->display_options['filters']['type']['value'] = array(
+		'event' => 'event',
+	);
+	$handler->display->display_options['filters']['type']['group'] = 1;
+	/* Filter criterion: Content: Event Image (field_event_image:language) */
+	$handler->display->display_options['filters']['language']['id'] = 'language';
+	$handler->display->display_options['filters']['language']['table'] = 'field_data_field_event_image';
+	$handler->display->display_options['filters']['language']['field'] = 'language';
+	$handler->display->display_options['filters']['language']['value'] = array(
+		'***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+	);
+	$handler->display->display_options['block_description'] = 'Events Detail Slideshow';
 
-  /* Display: Speech Details Slideshow */
-  $handler = $view->new_display('block', 'Speech Details Slideshow', 'block_3');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Image (field_speech_image:fid) */
-  $handler->display->display_options['relationships']['field_speech_image_fid']['id'] = 'field_speech_image_fid';
-  $handler->display->display_options['relationships']['field_speech_image_fid']['table'] = 'field_data_field_speech_image';
-  $handler->display->display_options['relationships']['field_speech_image_fid']['field'] = 'field_speech_image_fid';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Entity translation: Image: translated */
-  $handler->display->display_options['fields']['field_speech_image_et']['id'] = 'field_speech_image_et';
-  $handler->display->display_options['fields']['field_speech_image_et']['table'] = 'field_data_field_speech_image';
-  $handler->display->display_options['fields']['field_speech_image_et']['field'] = 'field_speech_image_et';
-  $handler->display->display_options['fields']['field_speech_image_et']['label'] = '';
-  $handler->display->display_options['fields']['field_speech_image_et']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_speech_image_et']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_speech_image_et']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_speech_image_et']['type'] = 'colorbox';
-  $handler->display->display_options['fields']['field_speech_image_et']['settings'] = array(
-    'colorbox_node_style' => 'two_third_width_carousel_grid_inner',
-    'colorbox_node_style_first' => '',
-    'colorbox_image_style' => '',
-    'colorbox_gallery' => 'post',
-    'colorbox_gallery_custom' => '',
-    'colorbox_caption' => 'custom',
-    'colorbox_caption_custom' => '[file:field-image-caption]^[file:field-image-copytight]',
-  );
-  $handler->display->display_options['fields']['field_speech_image_et']['group_rows'] = FALSE;
-  $handler->display->display_options['fields']['field_speech_image_et']['delta_offset'] = '0';
-  /* Field: File: Caption */
-  $handler->display->display_options['fields']['field_image_caption']['id'] = 'field_image_caption';
-  $handler->display->display_options['fields']['field_image_caption']['table'] = 'field_data_field_image_caption';
-  $handler->display->display_options['fields']['field_image_caption']['field'] = 'field_image_caption';
-  $handler->display->display_options['fields']['field_image_caption']['relationship'] = 'field_speech_image_fid';
-  $handler->display->display_options['fields']['field_image_caption']['label'] = '';
-  $handler->display->display_options['fields']['field_image_caption']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_image_caption']['element_label_colon'] = FALSE;
-  /* Field: File: Copyright */
-  $handler->display->display_options['fields']['field_image_copytight']['id'] = 'field_image_copytight';
-  $handler->display->display_options['fields']['field_image_copytight']['table'] = 'field_data_field_image_copytight';
-  $handler->display->display_options['fields']['field_image_copytight']['field'] = 'field_image_copytight';
-  $handler->display->display_options['fields']['field_image_copytight']['relationship'] = 'field_speech_image_fid';
-  $handler->display->display_options['fields']['field_image_copytight']['exclude'] = TRUE;
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_speech_image_et]</div>
-    <div class="slide-text">
-    <div class="caption">[field_image_caption]</div>
-    <div class="caption image-copytight">[field_image_copytight]</div>
-    </div>';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Field: Colorbox: Colorbox trigger */
-  $handler->display->display_options['fields']['colorbox']['id'] = 'colorbox';
-  $handler->display->display_options['fields']['colorbox']['table'] = 'colorbox';
-  $handler->display->display_options['fields']['colorbox']['field'] = 'colorbox';
-  $handler->display->display_options['fields']['colorbox']['label'] = '';
-  $handler->display->display_options['fields']['colorbox']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['colorbox']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['colorbox']['trigger_field'] = 'nothing';
-  $handler->display->display_options['fields']['colorbox']['popup'] = '<div class="slide">[field_speech_image_et]</div>
-    <div class="slide-text">
-    <div class="caption">[field_image_caption]</div>
-    <div class="caption image-copytight">[field_image_copytight]</div>
-    </div>';
-  $handler->display->display_options['fields']['colorbox']['gid'] = 1;
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'speech' => 'speech',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Image (field_speech_image:language) */
-  $handler->display->display_options['filters']['language']['id'] = 'language';
-  $handler->display->display_options['filters']['language']['table'] = 'field_data_field_speech_image';
-  $handler->display->display_options['filters']['language']['field'] = 'language';
-  $handler->display->display_options['filters']['language']['value'] = array(
-    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
-  );
-  $handler->display->display_options['block_description'] = 'Speech Detail Slideshow';
+	/* Display: Speech Details Slideshow */
+	$handler = $view->new_display('block', 'Speech Details Slideshow', 'block_3');
+	$handler->display->display_options['defaults']['title'] = FALSE;
+	$handler->display->display_options['defaults']['relationships'] = FALSE;
+	/* Relationship: Content: Image (field_speech_image:fid) */
+	$handler->display->display_options['relationships']['field_speech_image_fid']['id'] = 'field_speech_image_fid';
+	$handler->display->display_options['relationships']['field_speech_image_fid']['table'] = 'field_data_field_speech_image';
+	$handler->display->display_options['relationships']['field_speech_image_fid']['field'] = 'field_speech_image_fid';
+	$handler->display->display_options['defaults']['fields'] = FALSE;
+	/* Field: Entity translation: Image: translated */
+	$handler->display->display_options['fields']['field_speech_image_et']['id'] = 'field_speech_image_et';
+	$handler->display->display_options['fields']['field_speech_image_et']['table'] = 'field_data_field_speech_image';
+	$handler->display->display_options['fields']['field_speech_image_et']['field'] = 'field_speech_image_et';
+	$handler->display->display_options['fields']['field_speech_image_et']['label'] = '';
+	$handler->display->display_options['fields']['field_speech_image_et']['exclude'] = TRUE;
+	$handler->display->display_options['fields']['field_speech_image_et']['element_label_colon'] = FALSE;
+	$handler->display->display_options['fields']['field_speech_image_et']['click_sort_column'] = 'fid';
+	$handler->display->display_options['fields']['field_speech_image_et']['type'] = 'colorbox';
+	$handler->display->display_options['fields']['field_speech_image_et']['settings'] = array(
+		'colorbox_node_style' => 'two_third_width_carousel_grid_inner',
+		'colorbox_node_style_first' => '',
+		'colorbox_image_style' => '',
+		'colorbox_gallery' => 'post',
+		'colorbox_gallery_custom' => '',
+		'colorbox_caption' => 'custom',
+		'colorbox_caption_custom' => '[file:field-image-caption]^[file:field-image-copytight]',
+	);
+	$handler->display->display_options['fields']['field_speech_image_et']['group_rows'] = FALSE;
+	$handler->display->display_options['fields']['field_speech_image_et']['delta_offset'] = '0';
+	/* Field: Entity translation: Caption: translated */
+	$handler->display->display_options['fields']['field_image_caption_et']['id'] = 'field_image_caption_et';
+	$handler->display->display_options['fields']['field_image_caption_et']['table'] = 'field_data_field_image_caption';
+	$handler->display->display_options['fields']['field_image_caption_et']['field'] = 'field_image_caption_et';
+	$handler->display->display_options['fields']['field_image_caption_et']['relationship'] = 'field_speech_image_fid';
+	$handler->display->display_options['fields']['field_image_caption_et']['label'] = '';
+	$handler->display->display_options['fields']['field_image_caption_et']['exclude'] = TRUE;
+	$handler->display->display_options['fields']['field_image_caption_et']['element_label_colon'] = FALSE;
+	/* Field: Entity translation: Copyright: translated */
+	$handler->display->display_options['fields']['field_image_copytight_et']['id'] = 'field_image_copytight_et';
+	$handler->display->display_options['fields']['field_image_copytight_et']['table'] = 'field_data_field_image_copytight';
+	$handler->display->display_options['fields']['field_image_copytight_et']['field'] = 'field_image_copytight_et';
+	$handler->display->display_options['fields']['field_image_copytight_et']['relationship'] = 'field_speech_image_fid';
+	$handler->display->display_options['fields']['field_image_copytight_et']['label'] = '';
+	$handler->display->display_options['fields']['field_image_copytight_et']['exclude'] = TRUE;
+	$handler->display->display_options['fields']['field_image_copytight_et']['element_label_colon'] = FALSE;
+	/* Field: Global: Custom text */
+	$handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+	$handler->display->display_options['fields']['nothing']['table'] = 'views';
+	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+	$handler->display->display_options['fields']['nothing']['label'] = '';
+	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_speech_image_et]</div>
+		  <div class="slide-text">
+		  <div class="caption">[field_image_caption_et]</div>
+		  <div class="caption image-copytight">[field_image_copytight_et]</div>
+		  </div>';
+	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+	/* Field: Colorbox: Colorbox trigger */
+	$handler->display->display_options['fields']['colorbox']['id'] = 'colorbox';
+	$handler->display->display_options['fields']['colorbox']['table'] = 'colorbox';
+	$handler->display->display_options['fields']['colorbox']['field'] = 'colorbox';
+	$handler->display->display_options['fields']['colorbox']['label'] = '';
+	$handler->display->display_options['fields']['colorbox']['exclude'] = TRUE;
+	$handler->display->display_options['fields']['colorbox']['element_label_colon'] = FALSE;
+	$handler->display->display_options['fields']['colorbox']['trigger_field'] = 'nothing';
+	$handler->display->display_options['fields']['colorbox']['popup'] = '<div class="slide">[field_speech_image_et]</div>
+		  <div class="slide-text">
+		  <div class="caption">[field_image_caption_et]</div>
+		  <div class="caption image-copytight">[field_image_copytight_et]</div>
+		  </div>';
+	$handler->display->display_options['fields']['colorbox']['gid'] = 1;
+	$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+	$handler->display->display_options['defaults']['filters'] = FALSE;
+	/* Filter criterion: Content: Published */
+	$handler->display->display_options['filters']['status']['id'] = 'status';
+	$handler->display->display_options['filters']['status']['table'] = 'node';
+	$handler->display->display_options['filters']['status']['field'] = 'status';
+	$handler->display->display_options['filters']['status']['value'] = 1;
+	$handler->display->display_options['filters']['status']['group'] = 1;
+	$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+	/* Filter criterion: Content: Type */
+	$handler->display->display_options['filters']['type']['id'] = 'type';
+	$handler->display->display_options['filters']['type']['table'] = 'node';
+	$handler->display->display_options['filters']['type']['field'] = 'type';
+	$handler->display->display_options['filters']['type']['value'] = array(
+		'speech' => 'speech',
+	);
+	$handler->display->display_options['filters']['type']['group'] = 1;
+	/* Filter criterion: Content: Image (field_speech_image:language) */
+	$handler->display->display_options['filters']['language']['id'] = 'language';
+	$handler->display->display_options['filters']['language']['table'] = 'field_data_field_speech_image';
+	$handler->display->display_options['filters']['language']['field'] = 'language';
+	$handler->display->display_options['filters']['language']['value'] = array(
+		'***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+	);
+	$handler->display->display_options['block_description'] = 'Speech Detail Slideshow';
 
-  /* Display: Photographs Details Slideshow */
-  $handler = $view->new_display('block', 'Photographs Details Slideshow', 'block_4');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['css_class'] = 'photograph-carousel-list';
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'jcarousel';
-  $handler->display->display_options['style_options']['wrap'] = 'circular';
-  $handler->display->display_options['style_options']['visible'] = '1';
-  $handler->display->display_options['style_options']['auto'] = '0';
-  $handler->display->display_options['style_options']['autoPause'] = 1;
-  $handler->display->display_options['style_options']['easing'] = '';
-  $handler->display->display_options['style_options']['vertical'] = 0;
-  $handler->display->display_options['style_options']['navigation'] = 'after';
-  $handler->display->display_options['style_options']['ajax'] = 1;
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['inline'] = array(
-    'field_gallery_images_et' => 'field_gallery_images_et',
-    'field_image_caption' => 'field_image_caption',
-    'field_image_copytight' => 'field_image_copytight',
-    'field_gallery_images_1' => 'field_gallery_images_1',
-    'nothing' => 'nothing',
-  );
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Images (field_gallery_images:fid) */
-  $handler->display->display_options['relationships']['field_gallery_images_fid']['id'] = 'field_gallery_images_fid';
-  $handler->display->display_options['relationships']['field_gallery_images_fid']['table'] = 'field_data_field_gallery_images';
-  $handler->display->display_options['relationships']['field_gallery_images_fid']['field'] = 'field_gallery_images_fid';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Entity translation: Images: translated */
-  $handler->display->display_options['fields']['field_gallery_images_et']['id'] = 'field_gallery_images_et';
-  $handler->display->display_options['fields']['field_gallery_images_et']['table'] = 'field_data_field_gallery_images';
-  $handler->display->display_options['fields']['field_gallery_images_et']['field'] = 'field_gallery_images_et';
-  $handler->display->display_options['fields']['field_gallery_images_et']['label'] = '';
-  $handler->display->display_options['fields']['field_gallery_images_et']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_gallery_images_et']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_gallery_images_et']['type'] = 'colorbox';
-  $handler->display->display_options['fields']['field_gallery_images_et']['settings'] = array(
-    'colorbox_node_style' => 'two_third_width_carousel_grid_inner',
-    'colorbox_node_style_first' => '',
-    'colorbox_image_style' => '',
-    'colorbox_gallery' => 'post',
-    'colorbox_gallery_custom' => '',
-    'colorbox_caption' => 'custom',
-    'colorbox_caption_custom' => '[file:field-image-caption]^[file:field-image-copytight]',
-  );
-  $handler->display->display_options['fields']['field_gallery_images_et']['group_rows'] = FALSE;
-  $handler->display->display_options['fields']['field_gallery_images_et']['delta_offset'] = '0';
-  /* Field: File: Caption */
-  $handler->display->display_options['fields']['field_image_caption']['id'] = 'field_image_caption';
-  $handler->display->display_options['fields']['field_image_caption']['table'] = 'field_data_field_image_caption';
-  $handler->display->display_options['fields']['field_image_caption']['field'] = 'field_image_caption';
-  $handler->display->display_options['fields']['field_image_caption']['relationship'] = 'field_gallery_images_fid';
-  $handler->display->display_options['fields']['field_image_caption']['label'] = '';
-  $handler->display->display_options['fields']['field_image_caption']['element_label_colon'] = FALSE;
-  /* Field: File: Copyright */
-  $handler->display->display_options['fields']['field_image_copytight']['id'] = 'field_image_copytight';
-  $handler->display->display_options['fields']['field_image_copytight']['table'] = 'field_data_field_image_copytight';
-  $handler->display->display_options['fields']['field_image_copytight']['field'] = 'field_image_copytight';
-  $handler->display->display_options['fields']['field_image_copytight']['relationship'] = 'field_gallery_images_fid';
-  $handler->display->display_options['fields']['field_image_copytight']['exclude'] = TRUE;
-  /* Field: Content: Images */
-  $handler->display->display_options['fields']['field_gallery_images_1']['id'] = 'field_gallery_images_1';
-  $handler->display->display_options['fields']['field_gallery_images_1']['table'] = 'field_data_field_gallery_images';
-  $handler->display->display_options['fields']['field_gallery_images_1']['field'] = 'field_gallery_images';
-  $handler->display->display_options['fields']['field_gallery_images_1']['label'] = '';
-  $handler->display->display_options['fields']['field_gallery_images_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_gallery_images_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_gallery_images_1']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_gallery_images_1']['type'] = 'colorbox';
-  $handler->display->display_options['fields']['field_gallery_images_1']['settings'] = array(
-    'colorbox_node_style' => 'featured_content',
-    'colorbox_image_style' => 'featured_content',
-    'colorbox_gallery' => 'post',
-    'colorbox_gallery_custom' => '',
-    'colorbox_caption' => 'auto',
-    'colorbox_caption_custom' => '',
-  );
-  $handler->display->display_options['fields']['field_gallery_images_1']['group_rows'] = FALSE;
-  $handler->display->display_options['fields']['field_gallery_images_1']['delta_offset'] = '0';
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_gallery_images_et]</div>
-    <div class="slide-text">
-    <div class="caption">[field_image_caption]</div>
-    <div class="caption image-copytight">[field_image_copytight]</div>
-    </div>';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Field: Colorbox: Colorbox trigger */
-  $handler->display->display_options['fields']['colorbox']['id'] = 'colorbox';
-  $handler->display->display_options['fields']['colorbox']['table'] = 'colorbox';
-  $handler->display->display_options['fields']['colorbox']['field'] = 'colorbox';
-  $handler->display->display_options['fields']['colorbox']['label'] = '';
-  $handler->display->display_options['fields']['colorbox']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['colorbox']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['colorbox']['trigger_field'] = 'nothing';
-  $handler->display->display_options['fields']['colorbox']['popup'] = '<div class="slide">[field_gallery_images_et]</div>
-    <div class="slide-text">
-    <div class="caption">[field_image_caption]</div>
-    <div class="caption image-copytight">[field_image_copytight]</div>
-    </div>';
-  $handler->display->display_options['fields']['colorbox']['gid'] = 1;
-  $handler->display->display_options['fields']['colorbox']['width'] = '700px';
-  $handler->display->display_options['fields']['colorbox']['height'] = '600px';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'gallery' => 'gallery',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Images (field_gallery_images:language) */
-  $handler->display->display_options['filters']['language']['id'] = 'language';
-  $handler->display->display_options['filters']['language']['table'] = 'field_data_field_gallery_images';
-  $handler->display->display_options['filters']['language']['field'] = 'language';
-  $handler->display->display_options['filters']['language']['value'] = array(
-    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
-  );
-  $handler->display->display_options['block_description'] = 'Gallery/photographs Detail Slideshow';
-  $translatables['press_center_detail_page_slideshows'] = array(
-    t('Master'),
-    t('Press Center Detail Page News Slideshows'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('field_article_img'),
-    t('Caption'),
-    t('Copyright'),
-    t('<div class="slide">[field_article_img]</div>
-    <div class="slide-text"><h3>[field_image_caption]</h3>
-    <div class = "copyright"><h3>Copyright [field_image_copytight]</h3>
-    </div>
-    </div>
-
-    '),
-    t('All'),
-    t('Press Center Article type Slideshows'),
-    t('image from field_article_img'),
-    t('<div class="slide">[field_article_img_et]</div>
-    <div class="slide-text">
-    <div class="caption">[field_image_caption]</div>
-    <div class="caption image-copytight">[field_image_copytight]</div>
-    </div>
-    '),
-    t('Project Details Slideshow'),
-    t('image from field_project_image'),
-    t('<div class="slide">[field_project_image_et]</div>
-    <div class="slide-text">
-    <div class="caption">[field_image_caption]</div>
-    <div class="caption image-copytight">[field_image_copytight]</div>
-    </div>'),
-    t('Projects Detail Slideshow'),
-    t('Events Details Slideshow'),
-    t('image from field_event_image'),
-    t('<div class="slide">[field_event_image_et]</div>
-    <div class="slide-text">
-    <div class="caption">[field_image_caption]</div>
-    <div class="caption image-copytight">[field_image_copytight]</div>
-    </div>'),
-    t('Events Detail Slideshow'),
-    t('Speech Details Slideshow'),
-    t('image from field_speech_image'),
-    t('<div class="slide">[field_speech_image_et]</div>
-    <div class="slide-text">
-    <div class="caption">[field_image_caption]</div>
-    <div class="caption image-copytight">[field_image_copytight]</div>
-    </div>'),
-    t('Speech Detail Slideshow'),
-    t('Photographs Details Slideshow'),
-    t('image from field_gallery_images'),
-    t('<div class="slide">[field_gallery_images_et]</div>
-    <div class="slide-text">
-    <div class="caption">[field_image_caption]</div>
-    <div class="caption image-copytight">[field_image_copytight]</div>
-    </div>'),
-    t('Gallery/photographs Detail Slideshow'),
-  );
+	/* Display: Photographs Details Slideshow */
+	$handler = $view->new_display('block', 'Photographs Details Slideshow', 'block_4');
+	$handler->display->display_options['defaults']['title'] = FALSE;
+	$handler->display->display_options['defaults']['css_class'] = FALSE;
+	$handler->display->display_options['css_class'] = 'photograph-carousel-list';
+	$handler->display->display_options['defaults']['pager'] = FALSE;
+	$handler->display->display_options['pager']['type'] = 'none';
+	$handler->display->display_options['pager']['options']['offset'] = '0';
+	$handler->display->display_options['defaults']['style_plugin'] = FALSE;
+	$handler->display->display_options['style_plugin'] = 'jcarousel';
+	$handler->display->display_options['style_options']['wrap'] = 'circular';
+	$handler->display->display_options['style_options']['visible'] = '1';
+	$handler->display->display_options['style_options']['auto'] = '0';
+	$handler->display->display_options['style_options']['autoPause'] = 1;
+	$handler->display->display_options['style_options']['easing'] = '';
+	$handler->display->display_options['style_options']['vertical'] = 0;
+	$handler->display->display_options['style_options']['navigation'] = 'after';
+	$handler->display->display_options['style_options']['ajax'] = 1;
+	$handler->display->display_options['defaults']['style_options'] = FALSE;
+	$handler->display->display_options['defaults']['row_plugin'] = FALSE;
+	$handler->display->display_options['row_plugin'] = 'fields';
+	$handler->display->display_options['row_options']['inline'] = array(
+		'field_gallery_images_et' => 'field_gallery_images_et',
+		'field_image_caption' => 'field_image_caption',
+		'field_image_copytight' => 'field_image_copytight',
+		'field_gallery_images_1' => 'field_gallery_images_1',
+		'nothing' => 'nothing',
+	);
+	$handler->display->display_options['defaults']['row_options'] = FALSE;
+	$handler->display->display_options['defaults']['relationships'] = FALSE;
+	/* Relationship: Content: Images (field_gallery_images:fid) */
+	$handler->display->display_options['relationships']['field_gallery_images_fid']['id'] = 'field_gallery_images_fid';
+	$handler->display->display_options['relationships']['field_gallery_images_fid']['table'] = 'field_data_field_gallery_images';
+	$handler->display->display_options['relationships']['field_gallery_images_fid']['field'] = 'field_gallery_images_fid';
+	$handler->display->display_options['defaults']['fields'] = FALSE;
+	/* Field: Entity translation: Images: translated */
+	$handler->display->display_options['fields']['field_gallery_images_et']['id'] = 'field_gallery_images_et';
+	$handler->display->display_options['fields']['field_gallery_images_et']['table'] = 'field_data_field_gallery_images';
+	$handler->display->display_options['fields']['field_gallery_images_et']['field'] = 'field_gallery_images_et';
+	$handler->display->display_options['fields']['field_gallery_images_et']['label'] = '';
+	$handler->display->display_options['fields']['field_gallery_images_et']['exclude'] = TRUE;
+	$handler->display->display_options['fields']['field_gallery_images_et']['element_label_colon'] = FALSE;
+	$handler->display->display_options['fields']['field_gallery_images_et']['click_sort_column'] = 'fid';
+	$handler->display->display_options['fields']['field_gallery_images_et']['type'] = 'colorbox';
+	$handler->display->display_options['fields']['field_gallery_images_et']['settings'] = array(
+		'colorbox_node_style' => 'two_third_width_carousel_grid_inner',
+		'colorbox_node_style_first' => '',
+		'colorbox_image_style' => '',
+		'colorbox_gallery' => 'post',
+		'colorbox_gallery_custom' => '',
+		'colorbox_caption' => 'custom',
+		'colorbox_caption_custom' => '[file:field-image-caption]^[file:field-image-copytight]',
+	);
+	$handler->display->display_options['fields']['field_gallery_images_et']['group_rows'] = FALSE;
+	$handler->display->display_options['fields']['field_gallery_images_et']['delta_offset'] = '0';
+	/* Field: Entity translation: Caption: translated */
+	$handler->display->display_options['fields']['field_image_caption_et']['id'] = 'field_image_caption_et';
+	$handler->display->display_options['fields']['field_image_caption_et']['table'] = 'field_data_field_image_caption';
+	$handler->display->display_options['fields']['field_image_caption_et']['field'] = 'field_image_caption_et';
+	$handler->display->display_options['fields']['field_image_caption_et']['relationship'] = 'field_gallery_images_fid';
+	$handler->display->display_options['fields']['field_image_caption_et']['label'] = '';
+	$handler->display->display_options['fields']['field_image_caption_et']['exclude'] = TRUE;
+	$handler->display->display_options['fields']['field_image_caption_et']['element_label_colon'] = FALSE;
+	/* Field: Entity translation: Copyright: translated */
+	$handler->display->display_options['fields']['field_image_copytight_et']['id'] = 'field_image_copytight_et';
+	$handler->display->display_options['fields']['field_image_copytight_et']['table'] = 'field_data_field_image_copytight';
+	$handler->display->display_options['fields']['field_image_copytight_et']['field'] = 'field_image_copytight_et';
+	$handler->display->display_options['fields']['field_image_copytight_et']['relationship'] = 'field_gallery_images_fid';
+	$handler->display->display_options['fields']['field_image_copytight_et']['label'] = '';
+	$handler->display->display_options['fields']['field_image_copytight_et']['exclude'] = TRUE;
+	$handler->display->display_options['fields']['field_image_copytight_et']['element_label_colon'] = FALSE;
+	/* Field: Global: Custom text */
+	$handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+	$handler->display->display_options['fields']['nothing']['table'] = 'views';
+	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+	$handler->display->display_options['fields']['nothing']['label'] = '';
+	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_gallery_images_et]</div>
+		  <div class="slide-text">
+		  <div class="caption">[field_image_caption_et]</div>
+		  <div class="caption image-copytight">[field_image_copytight_et]</div>
+		  </div>';
+	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+	/* Field: Colorbox: Colorbox trigger */
+	$handler->display->display_options['fields']['colorbox']['id'] = 'colorbox';
+	$handler->display->display_options['fields']['colorbox']['table'] = 'colorbox';
+	$handler->display->display_options['fields']['colorbox']['field'] = 'colorbox';
+	$handler->display->display_options['fields']['colorbox']['label'] = '';
+	$handler->display->display_options['fields']['colorbox']['exclude'] = TRUE;
+	$handler->display->display_options['fields']['colorbox']['element_label_colon'] = FALSE;
+	$handler->display->display_options['fields']['colorbox']['trigger_field'] = 'nothing';
+	$handler->display->display_options['fields']['colorbox']['popup'] = '<div class="slide">[field_gallery_images_et]</div>
+		  <div class="slide-text">
+		  <div class="caption">[field_image_caption_et]</div>
+		  <div class="caption image-copytight">[field_image_copytight_et]</div>
+		  </div>';
+	$handler->display->display_options['fields']['colorbox']['gid'] = 1;
+	$handler->display->display_options['fields']['colorbox']['width'] = '700px';
+	$handler->display->display_options['fields']['colorbox']['height'] = '600px';
+	$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+	$handler->display->display_options['defaults']['filters'] = FALSE;
+	/* Filter criterion: Content: Published */
+	$handler->display->display_options['filters']['status']['id'] = 'status';
+	$handler->display->display_options['filters']['status']['table'] = 'node';
+	$handler->display->display_options['filters']['status']['field'] = 'status';
+	$handler->display->display_options['filters']['status']['value'] = 1;
+	$handler->display->display_options['filters']['status']['group'] = 1;
+	$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+	/* Filter criterion: Content: Type */
+	$handler->display->display_options['filters']['type']['id'] = 'type';
+	$handler->display->display_options['filters']['type']['table'] = 'node';
+	$handler->display->display_options['filters']['type']['field'] = 'type';
+	$handler->display->display_options['filters']['type']['value'] = array(
+		'gallery' => 'gallery',
+	);
+	$handler->display->display_options['filters']['type']['group'] = 1;
+	/* Filter criterion: Content: Images (field_gallery_images:language) */
+	$handler->display->display_options['filters']['language']['id'] = 'language';
+	$handler->display->display_options['filters']['language']['table'] = 'field_data_field_gallery_images';
+	$handler->display->display_options['filters']['language']['field'] = 'language';
+	$handler->display->display_options['filters']['language']['value'] = array(
+		'***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+	);
+	$handler->display->display_options['block_description'] = 'Gallery/photographs Detail Slideshow';
   $export['press_center_detail_page_slideshows'] = $view;
 
   $view = new view();
