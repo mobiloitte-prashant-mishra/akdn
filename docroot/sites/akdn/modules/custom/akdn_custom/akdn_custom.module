@@ -3722,10 +3722,10 @@ function akdn_custom_node_load($nodes, $types) {
       }
     }
   }
-//  if((arg(0) == 'node') && (arg(2) == 'current-revision') && !empty($node) && ($node->language != $language->language) && ($node->language != 'en') && (count($node->title_field) < 2)){
-//    $alias = $node->path['alias'];
-//    drupal_goto($base_url.'/'.$node->language.'/'.$alias);
-//  }
+  if((arg(0) == 'node') && (arg(2) == 'current-revision') && !empty($node) && ($node->language != $language->language) && ($node->language != 'en') && (count($node->title_field) < 2)){
+    $alias = $node->path['alias'];
+    drupal_goto($base_url.'/'.$node->language.'/'.$alias);
+  }
 }
 
 /**
