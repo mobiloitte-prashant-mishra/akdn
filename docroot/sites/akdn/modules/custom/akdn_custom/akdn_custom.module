@@ -3692,6 +3692,7 @@ function akdn_custom_get_thematic_focus_area($entity_id, $interval = .5) {
  * Implements hook_node_load().
  */
 function akdn_custom_node_load($nodes, $types) {
+  global $language, $base_url;
   $arg = arg();
   foreach ($nodes as $node) {
     // Check and remove tags for Speech print PDF section
@@ -3721,6 +3722,10 @@ function akdn_custom_node_load($nodes, $types) {
       }
     }
   }
+//  if((arg(0) == 'node') && (arg(2) == 'current-revision') && !empty($node) && ($node->language != $language->language) && ($node->language != 'en') && (count($node->title_field) < 2)){
+//    $alias = $node->path['alias'];
+//    drupal_goto($base_url.'/'.$node->language.'/'.$alias);
+//  }
 }
 
 /**
