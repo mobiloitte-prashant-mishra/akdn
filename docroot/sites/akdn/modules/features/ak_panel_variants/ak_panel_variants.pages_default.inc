@@ -591,7 +591,7 @@ $short_title_language = (isset($about->field_short_title[$lang])) ?  $about->fie
 $body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'en\'];
       if (empty($body[0][\'value\'])) {
         if(!empty($body[0][\'summary\'])) {
-          print \'<div class="grid-whatsnew-block_body">\'. $body[0][\'summary\'] .\' </div>\';
+          print \'<div class="grid-whatsnew-block_body">\'. $body[0][\'summary\'] . \' <a  href="\'. url("node/{$about->nid}") .\'" class= "views-more-link">\'.t("More") . \'</a> </div>\';
         }
       }
       else {
@@ -14317,7 +14317,7 @@ node/9576',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = '376c976e-e45d-4a06-acff-aefa2f61c649';
   $display->content['new-376c976e-e45d-4a06-acff-aefa2f61c649'] = $pane;
@@ -14344,29 +14344,6 @@ node/9576',
   $pane->uuid = 'e17359a1-b697-4cc1-8e4f-352d22515840';
   $display->content['new-e17359a1-b697-4cc1-8e4f-352d22515840'] = $pane;
   $display->panels['middle'][2] = 'new-e17359a1-b697-4cc1-8e4f-352d22515840';
-  $pane = new stdClass();
-  $pane->pid = 'new-376c976e-e45d-4a06-acff-aefa2f61c649';
-  $pane->panel = 'middle';
-  $pane->type = 'block';
-  $pane->subtype = 'akdn_custom-page_lang_switcher';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 0,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 2;
-  $pane->locks = array();
-  $pane->uuid = '376c976e-e45d-4a06-acff-aefa2f61c649';
-  $display->content['new-376c976e-e45d-4a06-acff-aefa2f61c649'] = $pane;
-  $display->panels['middle'][2] = 'new-376c976e-e45d-4a06-acff-aefa2f61c649';
   $pane = new stdClass();
   $pane->pid = 'new-55f1ca01-60f3-4a80-9da3-c3f43371ec2d';
   $pane->panel = 'middle';
@@ -19805,4 +19782,3 @@ function ak_panel_variants_default_page_manager_pages() {
   return $pages;
 
 }
-
