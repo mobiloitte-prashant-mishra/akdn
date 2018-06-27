@@ -74,11 +74,11 @@ function ak_panel_variants_default_page_manager_handlers() {
           'settings' => array(
             'visibility_setting' => '0',
             'paths' => 'agencies/aga-khan-award-architecture-0
-architecture
-node/22106
-node/9576
-our-agencies/aga-khan-music-initiative
-akmi',
+    architecture
+    node/22106
+    node/9576
+    our-agencies/aga-khan-music-initiative
+    akmi',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -462,13 +462,13 @@ akmi',
         'settings' => array(
           'description' => 'Banner automatic',
           'php' => 'global $language;
-  $node = $contexts[\'argument_entity_id:node_1\']->data;
-  if(!empty($node->field_featured_content_area)){
-    $banner = $node->field_featured_content_area[$language->language][0][\'value\'];
-    if(!$banner){ return true; }
-  }
+      $node = $contexts[\'argument_entity_id:node_1\']->data;
+      if(!empty($node->field_featured_content_area)){
+        $banner = $node->field_featured_content_area[$language->language][0][\'value\'];
+        if(!$banner){ return true; }
+      }
 
-  ',
+      ',
         ),
         'not' => FALSE,
       ),
@@ -520,11 +520,11 @@ akmi',
         'settings' => array(
           'description' => 'Banner manual',
           'php' => 'global $language;
-  $node = $contexts[\'argument_entity_id:node_1\']->data;
-  if(!empty($node->field_featured_content_area)){
-    $banner = $node->field_featured_content_area[$language->language][0][\'value\'];
-    if($banner){ return true; }
-  }',
+      $node = $contexts[\'argument_entity_id:node_1\']->data;
+      if(!empty($node->field_featured_content_area)){
+        $banner = $node->field_featured_content_area[$language->language][0][\'value\'];
+        if($banner){ return true; }
+      }',
         ),
         'not' => FALSE,
       ),
@@ -575,37 +575,37 @@ akmi',
     'admin_title' => 'About page information',
     'title' => '',
     'body' => '<?php
-  global $language;
-  $lang = $language->language;
-  $node = menu_get_object();
-  print \'<div class = "whatsnew-right-content">\';
-  if (isset($node->field_about_page)) {
-    $about = (isset($node->field_about_page[$lang])) ?  node_load($node->field_about_page[$lang][0][\'nid\']) : node_load($node->field_about_page[\'en\'][0][\'nid\']);
-   if(empty($about)){
-      $about = node_load($node->field_about_page[\'en\'][0][\'nid\']);
-   }
-    if (isset($about->nid)) {
-      print \'<p class = "whats-new-gold">\'.t("ABOUT THE").\'</p>\';
-$short_title_language = (isset($about->field_short_title[$lang])) ?  $about->field_short_title[$lang] : $about->field_short_title[\'en\'];
-      print \'<div class = "grid-whatsnew-block_subtitle">\'. $short_title_language[0][\'value\'] .\'</div>\';
-$body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'en\'];
-      if (empty($body[0][\'value\'])) {
-        if(!empty($body[0][\'summary\'])) {
-          print \'<div class="grid-whatsnew-block_body">\'. $body[0][\'summary\'] . \' <a  href="\'. url("node/{$about->nid}") .\'" class= "views-more-link">\'.t("More") . \'</a> </div>\';
+      global $language;
+      $lang = $language->language;
+      $node = menu_get_object();
+      print \'<div class = "whatsnew-right-content">\';
+      if (isset($node->field_about_page)) {
+        $about = (isset($node->field_about_page[$lang])) ?  node_load($node->field_about_page[$lang][0][\'nid\']) : node_load($node->field_about_page[\'en\'][0][\'nid\']);
+       if(empty($about)){
+          $about = node_load($node->field_about_page[\'en\'][0][\'nid\']);
+       }
+        if (isset($about->nid)) {
+          print \'<p class = "whats-new-gold">\'.t("ABOUT THE").\'</p>\';
+    $short_title_language = (isset($about->field_short_title[$lang])) ?  $about->field_short_title[$lang] : $about->field_short_title[\'en\'];
+          print \'<div class = "grid-whatsnew-block_subtitle">\'. $short_title_language[0][\'value\'] .\'</div>\';
+    $body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'en\'];
+          if (empty($body[0][\'value\'])) {
+            if(!empty($body[0][\'summary\'])) {
+              print \'<div class="grid-whatsnew-block_body">\'. $body[0][\'summary\']  . \' <a  href="\' . url("node/{$about->nid}") .\'" class= "views-more-link">\'.t("More") . \'</a></div>\';
+            }
+          }
+          else {
+            if(!empty($body[0][\'summary\'])) {
+              print \'<div class="grid-whatsnew-block_body">\'. $body[0][\'summary\'] .\' <a  href="\'. url("node/{$about->nid}") .\'" class= "views-more-link">\'.t("More").\'</a></div>\';
+            }
+            else {
+              print \'<div class="grid-whatsnew-block_body">\'. text_summary($body[0][\'value\'], $body[0][\'format\'], 1200) .\' <a  href="\'. url("node/{$about->nid}") .\'" class= "views-more-link">\'.t("More").\'</a></div>\';
+            }
+          }
+          print \'</div>\';
         }
       }
-      else {
-        if(!empty($body[0][\'summary\'])) {
-          print \'<div class="grid-whatsnew-block_body">\'. $body[0][\'summary\'] .\' <a  href="\'. url("node/{$about->nid}") .\'" class= "views-more-link">\'.t("More").\'</a></div>\';
-        }
-        else {
-          print \'<div class="grid-whatsnew-block_body">\'. text_summary($body[0][\'value\'], $body[0][\'format\'], 1200) .\' <a  href="\'. url("node/{$about->nid}") .\'" class= "views-more-link">\'.t("More").\'</a></div>\';
-        }
-      }
-      print \'</div>\';
-    }
-  }
-  ?>',
+      ?>',
     'format' => 'php_code',
     'substitute' => 0,
     'title_heading' => 'h2',
@@ -853,10 +853,10 @@ $body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'en\
         'settings' => array(
           'description' => 'Has content',
           'php' => '$view = views_get_view_result(\'facts_blocks\', \'facts_block\', arg(1));
-  $result = count($view);
-  if (!empty($result)) {
-  return true;
-  }',
+      $result = count($view);
+      if (!empty($result)) {
+      return true;
+      }',
         ),
         'not' => FALSE,
       ),
@@ -890,21 +890,21 @@ $body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'en\
         'settings' => array(
           'description' => 'agency fact manual view',
           'php' => 'global $language;
-  $lang = $language->language;
-  $arg = arg(1);
-  $node = node_load($arg);
-  $field_select_fact_sheet = $node->field_select_fact_sheet;
-  if ($node->field_select_fact_sheet[$lang][0][\'value\']) {
-    $select = $node->field_select_fact_sheet[$lang][0][\'value\'];
-  }
+      $lang = $language->language;
+      $arg = arg(1);
+      $node = node_load($arg);
+      $field_select_fact_sheet = $node->field_select_fact_sheet;
+      if ($node->field_select_fact_sheet[$lang][0][\'value\']) {
+        $select = $node->field_select_fact_sheet[$lang][0][\'value\'];
+      }
 
-  $field_show_fact_block = $node->field_show_fact_block;
-  if ($node->field_show_fact_block[$lang][0][\'value\']) {
-    $show = $node->field_show_fact_block[$lang][0][\'value\'];
-  }
-  if ($show == 1 && $select == 1) {
-    return true;
-  }',
+      $field_show_fact_block = $node->field_show_fact_block;
+      if ($node->field_show_fact_block[$lang][0][\'value\']) {
+        $show = $node->field_show_fact_block[$lang][0][\'value\'];
+      }
+      if ($show == 1 && $select == 1) {
+        return true;
+      }',
         ),
         'not' => FALSE,
       ),
@@ -1176,6 +1176,7 @@ $body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'en\
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
+
   $export['node_view_panel_context'] = $handler;
 
   $handler = new stdClass();
@@ -11318,7 +11319,7 @@ privacy-policy',
   LEFT JOIN  menu_node  menu_node ON node.nid = menu_node.nid
   LEFT JOIN  menu_links  menu_links ON menu_node.mlid = menu_links.mlid
   WHERE  menu_links.plid = :plid  AND node.status = \'1\' AND node.type IN  (\'page\', \'geography\', \'hub_page\')", array(\':plid\' => $plid));
-  $record = $result->fetchField(); 
+  $record = $result->fetchField();
     if($record == 0 || $record == 1 ) {
       return TRUE;
     } else {
@@ -11378,7 +11379,7 @@ privacy-policy',
   LEFT JOIN  menu_node  menu_node ON node.nid = menu_node.nid
   LEFT JOIN  menu_links  menu_links ON menu_node.mlid = menu_links.mlid
   WHERE  menu_links.plid = :plid  AND node.status = \'1\' AND node.type IN  (\'page\', \'geography\', \'hub_page\')", array(\':plid\' => $plid));
-  $record = $result->fetchField(); 
+  $record = $result->fetchField();
     if($record == 0 || $record == 1 ) {
       return TRUE;
     } else {
@@ -11637,7 +11638,7 @@ privacy-policy',
   LEFT JOIN  menu_node  menu_node ON node.nid = menu_node.nid
   LEFT JOIN  menu_links  menu_links ON menu_node.mlid = menu_links.mlid
   WHERE  menu_links.plid = :plid  AND node.status = \'1\' AND node.type IN  (\'page\', \'geography\', \'hub_page\')", array(\':plid\' => $plid));
-  $record = $result->fetchField(); 
+  $record = $result->fetchField();
     if($record > 1 ) {
       return TRUE;
     } else {
@@ -15613,7 +15614,7 @@ if (isset($node->field_about_page)) {
   if (isset($about->nid)) {
     if (isset($about->body[$about->language][0][\'summary\']) && !empty($about->body[$about->language][0][\'value\']))
       print \'<div class="about">\'. $about->body[$about->language][0][\'summary\'] .\' <a href="\'. url("node/{$about->nid}") .\'">[More]</a></div>\';
-    else if (!empty($about->body[$about->language][0][\'summary\']) && empty($about->body[$about->language][0][\'value\'])) 
+    else if (!empty($about->body[$about->language][0][\'summary\']) && empty($about->body[$about->language][0][\'value\']))
       print \'<div class="about">\'. $about->body[$about->language][0][\'summary\'] .\'</div>\';
     else
       print \'<div class="about">\'. text_summary($about->body[$about->language][0][\'value\'], $about->body[$about->language][0][\'format\'], 1200) .\' <a href="\'.
