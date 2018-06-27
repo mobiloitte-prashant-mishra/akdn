@@ -2293,7 +2293,7 @@ function what_we_do_news_and_resources() {
           }
         }
         $term = taxonomy_term_load($tid);
-        $name = $term->name;
+        $name = $term->name_original;
         if ($name == 'Press Release') {
           $url = 'press-releases';
           $type = t('Press Releases');
