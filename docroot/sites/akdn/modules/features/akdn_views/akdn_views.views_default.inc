@@ -22668,6 +22668,8 @@ print file_create_url($row->uri);
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Réinitialiser';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Trier par';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
@@ -22752,14 +22754,14 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
-    if ($row->type == "page") {
-      $text = (!empty($data->field_body[0][\'raw\'][\'safe_summary\']) ? $data->field_body[0][\'raw\'][\'safe_summary\'] : text_summary($data->field_body[0][\'raw\'][\'safe_value\'], NULL, 600));
-      echo strip_tags($text, "<b><i><span><br>");
-    } else {
-      $text = (!empty($data->field_body_1[0][\'raw\'][\'safe_summary\']) ? $data->field_body_1[0][\'raw\'][\'safe_summary\'] : text_summary($data->field_body_1[0][\'raw\'][\'safe_value\'], NULL, 600));
-      echo strip_tags($text, "<b><i><span><br>");
-    }
-    ?>';
+      if ($row->type == "page") {
+        $text = (!empty($data->field_body[0][\'raw\'][\'safe_summary\']) ? $data->field_body[0][\'raw\'][\'safe_summary\'] : text_summary($data->field_body[0][\'raw\'][\'safe_value\'], NULL, 600));
+        echo strip_tags($text, "<b><i><span><br>");
+      } else {
+        $text = (!empty($data->field_body_1[0][\'raw\'][\'safe_summary\']) ? $data->field_body_1[0][\'raw\'][\'safe_summary\'] : text_summary($data->field_body_1[0][\'raw\'][\'safe_value\'], NULL, 600));
+        echo strip_tags($text, "<b><i><span><br>");
+      }
+      ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Field: Content: Link */
@@ -22780,10 +22782,10 @@ print file_create_url($row->uri);
   $handler->display->display_options['arguments']['plid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['plid']['default_argument_type'] = 'php';
   $handler->display->display_options['arguments']['plid']['default_argument_options']['code'] = 'if (arg(0) == "node" && is_numeric(arg(1))) {
-      $node = node_load(arg(1));
-      $mlid = array_shift($node->menu_node_links);
-      return $mlid->mlid;
-    }';
+        $node = node_load(arg(1));
+        $mlid = array_shift($node->menu_node_links);
+        return $mlid->mlid;
+      }';
   $handler->display->display_options['arguments']['plid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['plid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['plid']['summary_options']['items_per_page'] = '25';
@@ -22875,10 +22877,10 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php_1']['php_output'] = '<?php if (isset($data->field_field_short_title[0][\'raw\'][\'value\']) && !empty($data->field_field_short_title[0][\'raw\'][\'value\'])): ?>
-      <?php print $data->field_field_short_title[0][\'raw\'][\'value\']; ?>
-    <?php else : ?>
-      <?php print $data->field_title_field[0][\'raw\'][\'value\']; ?>
-    <?php endif; ?>';
+        <?php print $data->field_field_short_title[0][\'raw\'][\'value\']; ?>
+      <?php else : ?>
+        <?php print $data->field_title_field[0][\'raw\'][\'value\']; ?>
+      <?php endif; ?>';
   $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
   /* Field: Content: Body */
@@ -22920,14 +22922,14 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
-    if ($row->type == "page") {
-      $text = (!empty($data->field_body[0][\'raw\'][\'safe_summary\']) ? text_summary($data->field_body[0][\'raw\'][\'safe_summary\'], NULL, 400) : text_summary($data->field_body[0][\'raw\'][\'safe_value\'], NULL, 400));
-      echo \'<p>\'.strip_tags($text, "<b><i><span><br>").\'</p>\';
-    } else {
-      $text = (!empty($data->field_body_1[0][\'raw\'][\'safe_summary\']) ? text_summary($data->field_body_1[0][\'raw\'][\'safe_summary\'], NULL, 400) : text_summary($data->field_body_1[0][\'raw\'][\'safe_value\'], NULL, 400));
-      echo \'<p>\'.strip_tags($text, "<b><i><span><br>").\'</p>\';
-    }
-    ?>';
+      if ($row->type == "page") {
+        $text = (!empty($data->field_body[0][\'raw\'][\'safe_summary\']) ? text_summary($data->field_body[0][\'raw\'][\'safe_summary\'], NULL, 400) : text_summary($data->field_body[0][\'raw\'][\'safe_value\'], NULL, 400));
+        echo \'<p>\'.strip_tags($text, "<b><i><span><br>").\'</p>\';
+      } else {
+        $text = (!empty($data->field_body_1[0][\'raw\'][\'safe_summary\']) ? text_summary($data->field_body_1[0][\'raw\'][\'safe_summary\'], NULL, 400) : text_summary($data->field_body_1[0][\'raw\'][\'safe_value\'], NULL, 400));
+        echo \'<p>\'.strip_tags($text, "<b><i><span><br>").\'</p>\';
+      }
+      ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Field: Content: Link */
@@ -22947,9 +22949,9 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['php_2']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php_2']['php_output'] = '<?php
-    $node_path = drupal_get_path_alias(\'node/\' . $row->nid);
-    print $node_path;
-    ?>';
+      $node_path = drupal_get_path_alias(\'node/\' . $row->nid);
+      print $node_path;
+      ?>';
   $handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
   /* Field: Content: Image */
@@ -22985,16 +22987,16 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="pc-listing-img">
-    [field_hub_page_image]
-    </div>
-    <div class="pc-listing-info">
-      <div class="pc-title">
-        <a class="title-link" href="/[field_more_link]">[php_1]</a>
+      [field_hub_page_image]
       </div>
-      <div class="pc-body">
-        <span class="pc-body-wrapper">[php]</span>&nbsp;<span class="read-more">[nothing_1]</span>
-      </div>
-    </div>';
+      <div class="pc-listing-info">
+        <div class="pc-title">
+          <a class="title-link" href="/[field_more_link]">[php_1]</a>
+        </div>
+        <div class="pc-body">
+          <span class="pc-body-wrapper">[php]</span>&nbsp;<span class="read-more">[nothing_1]</span>
+        </div>
+      </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 
   /* Display: A/G/FA 'About' Block */
@@ -23351,7 +23353,8 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['field_short_title_et']['table'] = 'field_data_field_short_title';
   $handler->display->display_options['fields']['field_short_title_et']['field'] = 'field_short_title_et';
   $handler->display->display_options['fields']['field_short_title_et']['label'] = '';
-  $handler->display->display_options['fields']['field_short_title_et']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_short_title_et']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_short_title_et']['alter']['text'] = '<a href="[path]">[field_short_title_et]</a>';
   $handler->display->display_options['fields']['field_short_title_et']['alter']['path'] = '[path]';
   $handler->display->display_options['fields']['field_short_title_et']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -23446,10 +23449,10 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php_1']['php_output'] = '<?php if (isset($data->field_field_short_title[0][\'raw\'][\'value\']) && !empty($data->field_field_short_title[0][\'raw\'][\'value\'])): ?>
-      <?php print $data->field_field_short_title[0][\'raw\'][\'value\']; ?>
-    <?php else : ?>
-      <?php print $data->field_title_field[0][\'raw\'][\'value\']; ?>
-    <?php endif; ?>';
+        <?php print $data->field_field_short_title[0][\'raw\'][\'value\']; ?>
+      <?php else : ?>
+        <?php print $data->field_title_field[0][\'raw\'][\'value\']; ?>
+      <?php endif; ?>';
   $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
   /* Field: Content: Body */
@@ -23488,14 +23491,14 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
-    if ($row->type == "page") {
-      $text = (!empty($data->field_body[0][\'raw\'][\'safe_summary\']) ? text_summary($data->field_body[0][\'raw\'][\'safe_summary\'], NULL, 400) : text_summary($data->field_body[0][\'raw\'][\'safe_value\'], NULL, 400));
-      echo \'<p>\'.$text.\'</p>\';
-    } else {
-      $text = (!empty($data->field_body_1[0][\'raw\'][\'safe_summary\']) ? text_summary($data->field_body_1[0][\'raw\'][\'safe_summary\'], NULL, 400) : text_summary($data->field_body_1[0][\'raw\'][\'safe_value\'], NULL, 400));
+      if ($row->type == "page") {
+        $text = (!empty($data->field_body[0][\'raw\'][\'safe_summary\']) ? text_summary($data->field_body[0][\'raw\'][\'safe_summary\'], NULL, 400) : text_summary($data->field_body[0][\'raw\'][\'safe_value\'], NULL, 400));
         echo \'<p>\'.$text.\'</p>\';
-    }
-    ?>';
+      } else {
+        $text = (!empty($data->field_body_1[0][\'raw\'][\'safe_summary\']) ? text_summary($data->field_body_1[0][\'raw\'][\'safe_summary\'], NULL, 400) : text_summary($data->field_body_1[0][\'raw\'][\'safe_value\'], NULL, 400));
+          echo \'<p>\'.$text.\'</p>\';
+      }
+      ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Field: Content: Link */
@@ -23515,9 +23518,9 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['php_2']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php_2']['php_output'] = '<?php
-    $node_path = drupal_get_path_alias(\'node/\' . $row->nid);
-    print $node_path;
-    ?>';
+      $node_path = drupal_get_path_alias(\'node/\' . $row->nid);
+      print $node_path;
+      ?>';
   $handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
   /* Field: Content: Image */
@@ -23542,19 +23545,19 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="pc-listing-img">
-    [field_hub_page_image]
-    </div>
-    <div class="pc-listing-info">
-      <div class="pc-title">
-        <a class="title-link" href="/[field_more_link]">[php_1]</a>
+      [field_hub_page_image]
       </div>
-      <div class="pc-body">
-        <span class="pc-body-wrapper">[php]
-    <span class="read-more"><a href="/[field_more_link]">More</a></span>
-    </span>
+      <div class="pc-listing-info">
+        <div class="pc-title">
+          <a class="title-link" href="/[field_more_link]">[php_1]</a>
+        </div>
+        <div class="pc-body">
+          <span class="pc-body-wrapper">[php]
+      <span class="read-more"><a href="/[field_more_link]">More</a></span>
+      </span>
 
-      </div>
-    </div>';
+        </div>
+      </div>';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_class'] = 'grid-about-us-block_description grid-about-us-block_description-hhak';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -23572,10 +23575,10 @@ print file_create_url($row->uri);
   $handler->display->display_options['arguments']['plid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['plid']['default_argument_type'] = 'php';
   $handler->display->display_options['arguments']['plid']['default_argument_options']['code'] = 'if (arg(0) == "node" && is_numeric(arg(1))) {
-      $node = node_load(arg(1));
-      $mlid = array_shift($node->menu_node_links);
-      return $mlid->mlid;
-    }';
+        $node = node_load(arg(1));
+        $mlid = array_shift($node->menu_node_links);
+        return $mlid->mlid;
+      }';
   $handler->display->display_options['arguments']['plid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['plid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['plid']['summary_options']['items_per_page'] = '25';
@@ -23677,10 +23680,10 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php_1']['php_output'] = '<?php if (isset($data->field_field_short_title[0][\'raw\'][\'value\']) && !empty($data->field_field_short_title[0][\'raw\'][\'value\'])): ?>
-      <?php print $data->field_field_short_title[0][\'raw\'][\'value\']; ?>
-    <?php else : ?>
-      <?php print $data->field_title_field[0][\'raw\'][\'value\']; ?>
-    <?php endif; ?>';
+        <?php print $data->field_field_short_title[0][\'raw\'][\'value\']; ?>
+      <?php else : ?>
+        <?php print $data->field_title_field[0][\'raw\'][\'value\']; ?>
+      <?php endif; ?>';
   $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
   /* Field: Content: Body */
@@ -23720,14 +23723,14 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
-    if ($row->type == "page") {
-      $text = (!empty($data->field_body[0][\'raw\'][\'safe_summary\']) ? text_summary($data->field_body[0][\'raw\'][\'safe_summary\'], NULL, 400) : text_summary($data->field_body[0][\'raw\'][\'safe_value\'], NULL, 400));
-      echo \'<p>\'.$text.\'</p>\';
-    } else {
-      $text = (!empty($data->field_body_1[0][\'raw\'][\'safe_summary\']) ? text_summary($data->field_body_1[0][\'raw\'][\'safe_summary\'], NULL, 400) : text_summary($data->field_body_1[0][\'raw\'][\'safe_value\'], NULL, 400));
+      if ($row->type == "page") {
+        $text = (!empty($data->field_body[0][\'raw\'][\'safe_summary\']) ? text_summary($data->field_body[0][\'raw\'][\'safe_summary\'], NULL, 400) : text_summary($data->field_body[0][\'raw\'][\'safe_value\'], NULL, 400));
         echo \'<p>\'.$text.\'</p>\';
-    }
-    ?>';
+      } else {
+        $text = (!empty($data->field_body_1[0][\'raw\'][\'safe_summary\']) ? text_summary($data->field_body_1[0][\'raw\'][\'safe_summary\'], NULL, 400) : text_summary($data->field_body_1[0][\'raw\'][\'safe_value\'], NULL, 400));
+          echo \'<p>\'.$text.\'</p>\';
+      }
+      ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Field: Global: PHP */
@@ -23739,9 +23742,9 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['php_2']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php_2']['php_output'] = '<?php
-    $node_path = drupal_get_path_alias(\'node/\' . $row->nid);
-    print $node_path;
-    ?>';
+      $node_path = drupal_get_path_alias(\'node/\' . $row->nid);
+      print $node_path;
+      ?>';
   $handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
   /* Field: Content: Image */
@@ -23764,6 +23767,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['field_article_link']['id'] = 'field_article_link';
   $handler->display->display_options['fields']['field_article_link']['table'] = 'field_data_field_article_link';
   $handler->display->display_options['fields']['field_article_link']['field'] = 'field_article_link';
+  $handler->display->display_options['fields']['field_article_link']['label'] = 'En savoir plus';
   $handler->display->display_options['fields']['field_article_link']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_article_link']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_article_link']['delta_offset'] = '0';
@@ -23787,20 +23791,20 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="pc-listing-img">
-    <div class="image">[field_hub_page_image]</div>
-    <div class="default-should-be-hide"><div class="related"><span>Related Information</span> [field_article_link]</div>
-    <div class="quick_links"><span>Quick Links: </span> [field_quick_links]</div></div>
-    </div>
-    <div class="pc-listing-info">
-      <div class="pc-title">
-        <a class="title-link" href="/[field_more_link]">[php_1]</a>
+      <div class="image">[field_hub_page_image]</div>
+      <div class="default-should-be-hide"><div class="related"><span>Related Information</span> [field_article_link]</div>
+      <div class="quick_links"><span>Quick Links: </span> [field_quick_links]</div></div>
       </div>
-      <div class="pc-body">
-        <span class="pc-body-wrapper">[php]
-    <span class="read-more"><span class="read-more-link">More</span></span>
-    </span>
-      </div>
-    </div>';
+      <div class="pc-listing-info">
+        <div class="pc-title">
+          <a class="title-link" href="/[field_more_link]">[php_1]</a>
+        </div>
+        <div class="pc-body">
+          <span class="pc-body-wrapper">[php]
+      <span class="read-more"><span class="read-more-link">More</span></span>
+      </span>
+        </div>
+      </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'grid-about-us-block_description grid-about-us-block_description-hhak';
@@ -23810,8 +23814,8 @@ print file_create_url($row->uri);
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
   $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<div class="text-description">
-    <div class="description">[body_2] </div>
-    </div>';
+      <div class="description">[body_2] </div>
+      </div>';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_class'] = 'default-should-be-hide';
@@ -23959,7 +23963,7 @@ print file_create_url($row->uri);
   $handler->display->display_options['arguments']['plid']['default_argument_type'] = 'php';
   $handler->display->display_options['arguments']['plid']['default_argument_options']['code'] = '$list_of_hub_pages = akdn_return_other_acctivity_hub_pages_list();
 
-    return $list_of_hub_pages;';
+      return $list_of_hub_pages;';
   $handler->display->display_options['arguments']['plid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['plid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['plid']['summary_options']['items_per_page'] = '25';
@@ -24042,10 +24046,10 @@ print file_create_url($row->uri);
   $handler->display->display_options['arguments']['plid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['plid']['default_argument_type'] = 'php';
   $handler->display->display_options['arguments']['plid']['default_argument_options']['code'] = 'if (arg(0) == "node" && is_numeric(arg(1))) {
-      $node = node_load(arg(1));
-    $mlid = $node->menu_node_links[key($node->menu_node_links)];
-      return $mlid->plid;
-    }';
+        $node = node_load(arg(1));
+      $mlid = $node->menu_node_links[key($node->menu_node_links)];
+        return $mlid->plid;
+      }';
   $handler->display->display_options['arguments']['plid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['plid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['plid']['summary_options']['items_per_page'] = '25';
@@ -24240,6 +24244,8 @@ print file_create_url($row->uri);
   $handler->display->display_options['filters']['field_country_show_block_value']['value'] = array(
     1 => '1',
   );
+
+
   $export['hub_pages'] = $view;
 
   $view = new view();
