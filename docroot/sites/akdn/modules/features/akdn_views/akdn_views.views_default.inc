@@ -35203,7 +35203,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide-text">[view_node]</div>
-<div class="slide">[field_project_image]</div>';
+  <div class="slide">[field_project_image]</div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Sticky */
   $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
@@ -35331,7 +35331,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide-text">[view_node]</div>
-<div class="slide">[field_project_image]</div>';
+  <div class="slide">[field_project_image]</div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Nodequeue: Position */
@@ -35524,31 +35524,31 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['header']['php']['table'] = 'views';
   $handler->display->display_options['header']['php']['field'] = 'php';
   $handler->display->display_options['header']['php']['php_output'] = '<?php
-$output = \'\';
-$term = nat_get_terms_by_vocabulary(arg(1));
-$term = array_values($term);
-if (empty($term)) {
-$object = new stdClass();
-$object->name = "Civil Society";
-$object->tid = 9126;
-$term[] = $object;
-}
- $name = $term[0]->name;
- $tid = $term[0]->tid;
- $url = \'press-centre/projects\';
- $str = t("More ").$name. t(" Spotlights");
- $str_one = t(\'All Spotlights\');
- $query = array(\'query\' => array(\'f[0]\' => \'field_focus_area:\'.$tid));
- $redirect = l(t($str), $url,  $query);
- $redirect_one = l(t($str_one), $url);
- $output .= \'<div class = "what-we-do-sub-navbar">\';
- $output .= t(\'<p><span>S</span><span>potlights</span></p>\');
- $output .= \'<ul><li>\';
- $output .= $redirect;
- $output .= \'</li><li>\';
- $output .= $redirect_one . \'</li></ul></div>\';
- print $output;
-?>';
+  $output = \'\';
+  $term = nat_get_terms_by_vocabulary(arg(1));
+  $term = array_values($term);
+  if (empty($term)) {
+  $object = new stdClass();
+  $object->name = "Civil Society";
+  $object->tid = 9126;
+  $term[] = $object;
+  }
+   $name = $term[0]->name;
+   $tid = $term[0]->tid;
+   $url = \'press-centre/projects\';
+   $str = "More " . $name . " Spotlights";
+   $str_one = t(\'All Spotlights\');
+   $query = array(\'query\' => array(\'f[0]\' => \'field_focus_area:\'.$tid));
+   $redirect = l(t($str), $url,  $query);
+   $redirect_one = l(t($str_one), $url);
+   $output .= \'<div class = "what-we-do-sub-navbar">\';
+   $output .= t(\'<p><span>S</span><span>potlights</span></p>\');
+   $output .= \'<ul><li>\';
+   $output .= $redirect;
+   $output .= \'</li><li>\';
+   $output .= $redirect_one . \'</li></ul></div>\';
+   print $output;
+  ?>';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
@@ -35752,25 +35752,25 @@ $term[] = $object;
   $handler->display->display_options['header']['php']['table'] = 'views';
   $handler->display->display_options['header']['php']['field'] = 'php';
   $handler->display->display_options['header']['php']['php_output'] = '<?php
-   $output = \'\';
-   $term = nat_get_terms_by_vocabulary(arg(1));
-   $term = array_values($term);
-   $name = $term[0]->name;
-   $tid = $term[0]->tid;
-   $url = \'press-centre/projects\';
-   $str = \'More \'.$name.\' spotlights\';
-   $str_one = \'All Spotlights\';
-   $query = array(\'query\' => array(\'f[0]\' => \'field_focus_area:\'.$tid));
-   $redirect = l(t($str), $url,  $query);
-   $redirect_one = l(t($str_one), $url);
-   $output .= \'<div class = "what-we-do-sub-navbar">\';
-   $output .= t(\'<p><span>S</span><span>potlights</span></p>\');
-   $output .= \'<ul><li>\';
-   $output .= $redirect;
-   $output .= \'</li><li>\';
-   $output .= $redirect_one . \'</li></ul></div>\';
-   print $output;
-?>';
+     $output = \'\';
+     $term = nat_get_terms_by_vocabulary(arg(1));
+     $term = array_values($term);
+     $name = $term[0]->name;
+     $tid = $term[0]->tid;
+     $url = \'press-centre/projects\';
+     $str = \'More \'.$name.\' spotlights\';
+     $str_one = \'All Spotlights\';
+     $query = array(\'query\' => array(\'f[0]\' => \'field_focus_area:\'.$tid));
+     $redirect = l(t($str), $url,  $query);
+     $redirect_one = l(t($str_one), $url);
+     $output .= \'<div class = "what-we-do-sub-navbar">\';
+     $output .= t(\'<p><span>S</span><span>potlights</span></p>\');
+     $output .= \'<ul><li>\';
+     $output .= $redirect;
+     $output .= \'</li><li>\';
+     $output .= $redirect_one . \'</li></ul></div>\';
+     print $output;
+  ?>';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Project Listing Content (field_project_listing_content) */
   $handler->display->display_options['relationships']['field_project_listing_content_nid']['id'] = 'field_project_listing_content_nid';
@@ -35898,10 +35898,10 @@ $term[] = $object;
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'php';
   $handler->display->display_options['access']['php_access'] = '$url = \'agencies\';
-$rows = db_query(\'SELECT u.url FROM {project_carousel_exceptions} u WHERE u.url = :url\', array(\':url\' => $url))->fetchAll();
-if (count($rows) == 0) {
-  return TRUE;
-} else { return FALSE;}';
+  $rows = db_query(\'SELECT u.url FROM {project_carousel_exceptions} u WHERE u.url = :url\', array(\':url\' => $url))->fetchAll();
+  if (count($rows) == 0) {
+    return TRUE;
+  } else { return FALSE;}';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'jcarousel';
   $handler->display->display_options['style_options']['wrap'] = 'both';
@@ -35954,7 +35954,7 @@ if (count($rows) == 0) {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide-text">[view_node]</div>
-<div class="slide">[field_project_image]</div>';
+  <div class="slide">[field_project_image]</div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -36004,10 +36004,10 @@ if (count($rows) == 0) {
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'php';
   $handler->display->display_options['access']['php_access'] = '$url = \'thematic-areas\';
-$rows = db_query(\'SELECT u.url FROM {project_carousel_exceptions} u WHERE u.url = :url\', array(\':url\' => $url))->fetchAll();
-if (count($rows) == 0) {
-  return TRUE;
-} else { return FALSE;}';
+  $rows = db_query(\'SELECT u.url FROM {project_carousel_exceptions} u WHERE u.url = :url\', array(\':url\' => $url))->fetchAll();
+  if (count($rows) == 0) {
+    return TRUE;
+  } else { return FALSE;}';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'jcarousel';
   $handler->display->display_options['style_options']['wrap'] = 'both';
@@ -36169,10 +36169,10 @@ if (count($rows) == 0) {
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'php';
   $handler->display->display_options['access']['php_access'] = '$url = $_SERVER["REQUEST_URI"];
-$rows = db_query(\'SELECT u.url FROM {project_carousel_exceptions} u WHERE u.url = :url\', array(\':url\' => $url))->fetchAll();
-if (count($rows) == 0) {
-  return TRUE;
-} else { return FALSE;}';
+  $rows = db_query(\'SELECT u.url FROM {project_carousel_exceptions} u WHERE u.url = :url\', array(\':url\' => $url))->fetchAll();
+  if (count($rows) == 0) {
+    return TRUE;
+  } else { return FALSE;}';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'jcarousel';
   $handler->display->display_options['style_options']['wrap'] = 'both';
@@ -36359,7 +36359,7 @@ if (count($rows) == 0) {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide-text">[view_node]</div>
-<div class="slide">[field_project_image]</div>';
+  <div class="slide">[field_project_image]</div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Nodequeue: Position */
@@ -36485,7 +36485,7 @@ if (count($rows) == 0) {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide-text">[view_node]</div>
-<div class="slide">[field_project_image]</div>';
+  <div class="slide">[field_project_image]</div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Nodequeue: Position */
@@ -36611,7 +36611,7 @@ if (count($rows) == 0) {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide-text">[view_node]</div>
-<div class="slide">[field_project_image]</div>';
+  <div class="slide">[field_project_image]</div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Nodequeue: Position */
@@ -36636,6 +36636,7 @@ if (count($rows) == 0) {
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
+
   $export['projects'] = $view;
 
   $view = new view();
