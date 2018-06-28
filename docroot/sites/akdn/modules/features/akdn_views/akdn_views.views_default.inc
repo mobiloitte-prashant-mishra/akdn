@@ -35533,9 +35533,10 @@ if ($data->node_type == "featured_content") {
   $object->tid = 9126;
   $term[] = $object;
   }
-   $name = $term[0]->name;
    $tid = $term[0]->tid;
-   $url = \'press-centre/projects\';
+  $term_load = taxonomy_term_load($tid);
+  $name = $term_load->name_original;
+  $url = \'press-centre/projects\';
    $str = "More " . $name . " Spotlights";
    $str_one = t(\'All Spotlights\');
    $query = array(\'query\' => array(\'f[0]\' => \'field_focus_area:\'.$tid));
@@ -36636,6 +36637,7 @@ if ($data->node_type == "featured_content") {
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
+
 
   $export['projects'] = $view;
 
