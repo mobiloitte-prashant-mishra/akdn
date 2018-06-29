@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AKDN Breaking news context feature.
+ */
+
+include_once 'akdn_breaking_news_context.features.inc';
