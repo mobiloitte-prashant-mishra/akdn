@@ -15,12 +15,14 @@ function akdn_context_default_fe_block_boxes() {
   $fe_block_boxes->format = 'php_code';
   $fe_block_boxes->machine_name = 'content_type_header';
   $fe_block_boxes->body = '<?php
+global $language ;
+$lang_name = $language->language;
 if (arg(0) == \'node\' && is_numeric(arg(1))) {
   $entity = node_load(arg(1));
 } else if (arg(0) == \'speeches-centre\') {
   if (arg(1) == \'themes\')
     $value = t(\'Speech Themes\');
-  else 
+  else
     $value = ucwords(str_replace(\'-\', \' \', arg(1)));
 } else {
  return;
@@ -31,12 +33,38 @@ switch($entity->type) {
     $value = \'<a href="/press-centre/projects">\' . t(\'Spotlight\') . \'</a>\';
     break;
   case \'article\':
-    $term = taxonomy_term_load($entity->field_article_cat[\'und\'][0][\'tid\']);
-    $value = $term->name;
-    if ($value == \'Blog\') { $value = \'<a href="/press-centre/news">\' . t(\'News\') . \'</a>\'; }
-    elseif ($value == \'In the media\') { $value = \'<a href="/press-centre/in-the-media">\' . t(\'In the Media\') . \'</a>\'; }
-    elseif ($value == \'Press Release\') { $value = \'<a href="/press-centre/press-releases">\' . t(\'Press Release\') . \'</a>\'; }
-    elseif ($value == \'News\') { $value = \'<a href="/press-centre/news">\' . t(\'News\') . \'</a>\'; }
+    reset($entity->field_article_cat);
+    $key = key($entity->field_article_cat);
+    $term = taxonomy_term_load($entity->field_article_cat[$key][0][\'tid\']);
+    $value = $term->name_original;
+    if ($value == \'Blog\') {
+      if ($lang_name == "en") {
+        $value = \'<a href="/press-centre/news">\' . t(\'News\') . \'</a>\';
+      } else {
+        $value = \'<a href="/\' . $lang_name . \'/press-centre/news">\' . t(\'News\') . \'</a>\';
+      }
+    }
+    elseif ($value == \'In the media\') {
+      if ($lang_name == "en") {
+        $value = \'<a href="/press-centre/in-the-media">\' . t(\'In the Media\') . \'</a>\';
+      } else {
+        $value = \'<a href="/\' . $lang_name . \'/press-centre/in-the-media">\' . t(\'In the Media\') . \'</a>\';
+      }
+    }
+    elseif ($value == \'Press Release\') {
+      if ($lang_name == "en") {
+        $value = \'<a href="/press-centre/press-releases">\' . t(\'Press Release\') . \'</a>\';
+      } else {
+        $value = \'<a href="/\' . $lang_name . \'/press-centre/press-releases">\' . t(\'Press Release\') . \'</a>\';
+      }
+    }
+    elseif ($value == \'News\') {
+      if ($lang_name == "en") {
+        $value = \'<a href="/press-centre/news">\' . t(\'News\') . \'</a>\';
+      } else {
+        $value = \'<a href="/\' . $lang_name . \'/press-centre/news">\' . t(\'News\') . \'</a>\';
+      }
+    }
     break;
   case \'event\':
     $value = \'<a href="/press-centre/events">\' . t(\'Event\') . \'</a>\';
@@ -62,7 +90,7 @@ if($event_type == \'interview\'){
 }else{
   $value = \'<a href="/press-centre/speeches">\' . t(\'Speech\') . \'</a>\';
 }
-  
+
     break;
   case \'speech_quote\':
     $value = t(\'Speech Quote\');
