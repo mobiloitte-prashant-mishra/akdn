@@ -74,11 +74,11 @@ function ak_panel_variants_default_page_manager_handlers() {
           'settings' => array(
             'visibility_setting' => '0',
             'paths' => 'agencies/aga-khan-award-architecture-0
-    architecture
-    node/22106
-    node/9576
-    our-agencies/aga-khan-music-initiative
-    akmi',
+architecture
+node/22106
+node/9576
+our-agencies/aga-khan-music-initiative
+akmi',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -8548,8 +8548,8 @@ if (isset($node->field_about_page)) {
           'settings' => array(
             'visibility_setting' => '1',
             'paths' => 'akdn-social
-      terms-conditions
-      privacy-policy',
+terms-conditions
+privacy-policy',
           ),
           'context' => 'empty',
           'not' => TRUE,
