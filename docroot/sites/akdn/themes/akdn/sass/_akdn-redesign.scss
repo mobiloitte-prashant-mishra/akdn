@@ -9030,8 +9030,12 @@ html {
             position:relative;
             line-height: 34px;
             > a{
-              font-size:16px;
+              font-size:18px;
               line-height: normal;
+              color: #b2b2b2;
+              &:hover{
+                color:#000;
+              }
               &:after{
                 content: "";
                 background: url(../images/internet.svg);
@@ -9048,8 +9052,8 @@ html {
               .language-switcher-locale-url{
                 display:none;
                 position:absolute;
-                left:0;
-                border:1px solid #000;
+                right:0;
+                border-bottom:1px solid #b2b2b2;
                 background: #fff;
                 z-index: 1;
                 li{
@@ -9060,12 +9064,22 @@ html {
                   padding-left: 10px;
                   padding-right: 10px;
                   a{
-                    font-size:14px;
-                    line-height: normal;
+                    font-size:18px;
+                    line-height:normal;
+                    color:#b2b2b2;
+                    padding-top:8px;
+                    display:block;
+                    border-top:1px solid #b2b2b2;
+                    &:hover{
+                      color:#000;
+                    }
                   }
                 }
               }
               &:hover{
+                >a{
+                  color:#000;
+                }
                 .language-switcher-locale-url{
                   display:block;
                 }
