@@ -19286,12 +19286,13 @@ html.js fieldset.collapsed {
   font-size: 18px;
   line-height: normal;
   color: #b2b2b2;
+  padding-left: 10px;
 }
-/* line 9036, ../sass/_akdn-redesign.scss */
+/* line 9037, ../sass/_akdn-redesign.scss */
 .top-navbar .content ul li.language_switcher > a:hover {
   color: #000;
 }
-/* line 9039, ../sass/_akdn-redesign.scss */
+/* line 9040, ../sass/_akdn-redesign.scss */
 .top-navbar .content ul li.language_switcher > a:after {
   content: "";
   background: url(../images/internet.svg);
@@ -19304,16 +19305,16 @@ html.js fieldset.collapsed {
   margin-left: 10px;
   margin-right: 10px;
 }
-/* line 9052, ../sass/_akdn-redesign.scss */
+/* line 9053, ../sass/_akdn-redesign.scss */
 .top-navbar .content ul li.language_switcher .language-switcher-locale-url {
   display: none;
   position: absolute;
-  right: 0;
+  left: 0;
   border-bottom: 1px solid #b2b2b2;
   background: #fff;
   z-index: 1;
 }
-/* line 9059, ../sass/_akdn-redesign.scss */
+/* line 9060, ../sass/_akdn-redesign.scss */
 .top-navbar .content ul li.language_switcher .language-switcher-locale-url li {
   display: block;
   border: none;
@@ -19322,7 +19323,7 @@ html.js fieldset.collapsed {
   padding-left: 10px;
   padding-right: 10px;
 }
-/* line 9066, ../sass/_akdn-redesign.scss */
+/* line 9067, ../sass/_akdn-redesign.scss */
 .top-navbar .content ul li.language_switcher .language-switcher-locale-url li a {
   font-size: 18px;
   line-height: normal;
@@ -19331,15 +19332,15 @@ html.js fieldset.collapsed {
   display: block;
   border-top: 1px solid #b2b2b2;
 }
-/* line 9073, ../sass/_akdn-redesign.scss */
+/* line 9074, ../sass/_akdn-redesign.scss */
 .top-navbar .content ul li.language_switcher .language-switcher-locale-url li a:hover {
   color: #000;
 }
-/* line 9080, ../sass/_akdn-redesign.scss */
+/* line 9081, ../sass/_akdn-redesign.scss */
 .top-navbar .content ul li.language_switcher:hover > a {
   color: #000;
 }
-/* line 9083, ../sass/_akdn-redesign.scss */
+/* line 9084, ../sass/_akdn-redesign.scss */
 .top-navbar .content ul li.language_switcher:hover .language-switcher-locale-url {
   display: block;
 }
