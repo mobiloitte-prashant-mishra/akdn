@@ -2868,6 +2868,10 @@ function akdn_block_forms($form, &$form_state, $delta) {
 function akdn_search_forms($form, &$form_state, $delta) {
   switch ($delta) {
     case 'akdn_search':
+      global $language;
+      $text = '';
+      $block = module_invoke('locale', 'block_view', 'language_content');
+      $switcher = '<li class="language_switcher"><a href="#">' . $language->native . '</a>' .  $block['content'] . '</li>';
       $default_value = "";
       if (current_path() == 'search' && isset($_GET['text'])) {
         $default_value = $_GET['text'];
@@ -2879,7 +2883,7 @@ function akdn_search_forms($form, &$form_state, $delta) {
           'class' => array('form-control'),
         ),
         '#default_value' => $default_value,
-        '#prefix' => '<ul><li>',
+        '#prefix' => '<ul>' . $switcher . '<li>',
         '#size' => 15,
       );
       $form['submit'] = array(
@@ -2891,8 +2895,7 @@ function akdn_search_forms($form, &$form_state, $delta) {
         ),
         '#suffix' => '</li>',
       );
-      //$text = '<li><span class="search_toggle">' . t('Search') . '</span></li>';
-      $text = '';
+      //$text .= '<li><span class="search_toggle">' . t('Search') . '</span></li>';
       $text .= ' <li>' . l(t("Subscribe"), 'subscribe', array(
             'attributes' =>
             array(
