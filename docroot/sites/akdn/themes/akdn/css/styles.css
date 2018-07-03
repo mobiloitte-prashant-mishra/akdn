@@ -19283,10 +19283,15 @@ html.js fieldset.collapsed {
 }
 /* line 9032, ../sass/_akdn-redesign.scss */
 .top-navbar .content ul li.language_switcher > a {
-  font-size: 16px;
+  font-size: 18px;
   line-height: normal;
+  color: #b2b2b2;
 }
-/* line 9035, ../sass/_akdn-redesign.scss */
+/* line 9036, ../sass/_akdn-redesign.scss */
+.top-navbar .content ul li.language_switcher > a:hover {
+  color: #000;
+}
+/* line 9039, ../sass/_akdn-redesign.scss */
 .top-navbar .content ul li.language_switcher > a:after {
   content: "";
   background: url(../images/internet.svg);
@@ -19299,16 +19304,16 @@ html.js fieldset.collapsed {
   margin-left: 10px;
   margin-right: 10px;
 }
-/* line 9048, ../sass/_akdn-redesign.scss */
+/* line 9052, ../sass/_akdn-redesign.scss */
 .top-navbar .content ul li.language_switcher .language-switcher-locale-url {
   display: none;
   position: absolute;
-  left: 0;
-  border: 1px solid #000;
+  right: 0;
+  border-bottom: 1px solid #b2b2b2;
   background: #fff;
   z-index: 1;
 }
-/* line 9055, ../sass/_akdn-redesign.scss */
+/* line 9059, ../sass/_akdn-redesign.scss */
 .top-navbar .content ul li.language_switcher .language-switcher-locale-url li {
   display: block;
   border: none;
@@ -19317,12 +19322,24 @@ html.js fieldset.collapsed {
   padding-left: 10px;
   padding-right: 10px;
 }
-/* line 9062, ../sass/_akdn-redesign.scss */
+/* line 9066, ../sass/_akdn-redesign.scss */
 .top-navbar .content ul li.language_switcher .language-switcher-locale-url li a {
-  font-size: 14px;
+  font-size: 18px;
   line-height: normal;
+  color: #b2b2b2;
+  padding-top: 8px;
+  display: block;
+  border-top: 1px solid #b2b2b2;
 }
-/* line 9069, ../sass/_akdn-redesign.scss */
+/* line 9073, ../sass/_akdn-redesign.scss */
+.top-navbar .content ul li.language_switcher .language-switcher-locale-url li a:hover {
+  color: #000;
+}
+/* line 9080, ../sass/_akdn-redesign.scss */
+.top-navbar .content ul li.language_switcher:hover > a {
+  color: #000;
+}
+/* line 9083, ../sass/_akdn-redesign.scss */
 .top-navbar .content ul li.language_switcher:hover .language-switcher-locale-url {
   display: block;
 }
