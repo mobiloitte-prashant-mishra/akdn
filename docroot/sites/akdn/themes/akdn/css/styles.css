@@ -19307,11 +19307,11 @@ html.js fieldset.collapsed {
   border: 1px solid #000;
   background: #fff;
   z-index: 1;
-  margin-top: 2px;
 }
-/* line 9056, ../sass/_akdn-redesign.scss */
+/* line 9055, ../sass/_akdn-redesign.scss */
 .top-navbar .content ul li.language_switcher .language-switcher-locale-url li {
   display: block;
+  border: none;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 10px;
@@ -19319,7 +19319,7 @@ html.js fieldset.collapsed {
 }
 /* line 9062, ../sass/_akdn-redesign.scss */
 .top-navbar .content ul li.language_switcher .language-switcher-locale-url li a {
-  font-size: 15px;
+  font-size: 14px;
   line-height: normal;
 }
 /* line 9069, ../sass/_akdn-redesign.scss */
