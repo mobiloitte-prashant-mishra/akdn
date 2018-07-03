@@ -9052,15 +9052,15 @@ html {
                 border:1px solid #000;
                 background: #fff;
                 z-index: 1;
-                margin-top:2px;
                 li{
                   display: block;
+                  border:none;
                   padding-top: 4px;
                   padding-bottom: 4px;
                   padding-left: 10px;
                   padding-right: 10px;
                   a{
-                    font-size:15px;
+                    font-size:14px;
                     line-height: normal;
                   }
                 }
