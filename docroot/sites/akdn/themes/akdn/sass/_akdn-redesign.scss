@@ -9033,6 +9033,7 @@ html {
               font-size:18px;
               line-height: normal;
               color: #b2b2b2;
+              padding-left:10px;
               &:hover{
                 color:#000;
               }
@@ -9052,7 +9053,7 @@ html {
               .language-switcher-locale-url{
                 display:none;
                 position:absolute;
-                right:0;
+                left:0;
                 border-bottom:1px solid #b2b2b2;
                 background: #fff;
                 z-index: 1;
