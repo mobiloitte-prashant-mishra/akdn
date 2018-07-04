@@ -1231,6 +1231,22 @@
         padding: 0 15px;
     }
 }
+html[dir='rtl']{
+    .top-navbar{
+        .content{
+            ul{
+                li.language_switcher {
+                    right: auto;
+                    left: 0;
+                    text-align: left;
+                    >a{
+                        padding-left:0;
+                    }
+                }
+            }
+        }
+    }
+}
 
 }
 
@@ -1309,7 +1325,7 @@
             font-size: 18px;
         }
         .subscribe_toggle {
-            line-height: 18px;
+            line-height: 10px;
         }
         .dropdown-menu {
             margin: -32px 0 0;
