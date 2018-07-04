@@ -19994,7 +19994,7 @@ html.js fieldset.collapsed {
     float: none;
     display: block;
     text-align: right;
-    top: 0;
+    top: 10px;
     right: 0;
   }
   /* line 680, ../sass/sass-extensions/_media-queries.scss */
