@@ -9029,6 +9029,7 @@ html {
           &.language_switcher{
             position:relative;
             line-height: 34px;
+            min-width: 140px;
             > a{
               font-size:18px;
               line-height: normal;
@@ -9059,11 +9060,14 @@ html {
                 z-index: 1;
                 li{
                   display: block;
-                  border:none;
+                  border:none !important;
                   padding-top: 4px;
                   padding-bottom: 4px;
                   padding-left: 10px;
                   padding-right: 10px;
+                  &.zh-hans, &.de, &.it, &.ky, &.ms, &.fa, &.ru, &.es, &.tg, &.ur{
+                    display:none;
+                  }
                   a{
                     font-size:18px;
                     line-height:normal;
