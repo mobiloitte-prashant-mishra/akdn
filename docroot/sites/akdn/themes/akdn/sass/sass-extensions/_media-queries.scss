@@ -630,7 +630,23 @@
 }
 
 }
-
+@media (min-width: $screen-sm-min){
+.top-navbar{
+  .content{
+      ul{
+        li{
+          &.language_switcher{
+            &:hover{
+                .language-switcher-locale-url{
+                    display:block;
+                }
+            }
+          }
+        }
+      }
+  }
+}
+}
 @media screen and (max-width: $screen-xs-max) {
     /*upto 767px*/
     %block_image {

@@ -8759,7 +8759,7 @@ map {
     #colorbox{
         #cboxContent{
             #cboxPrevious, #cboxNext, #cboxCurrent{
-                display: none !important; 
+                display: none !important;
             }
         }
     }
@@ -9035,6 +9035,7 @@ html {
               line-height: normal;
               color: #b2b2b2;
               padding-left:10px;
+              text-decoration: none;
               &:hover{
                 color:#000;
               }
@@ -9075,6 +9076,7 @@ html {
                     padding-top:8px;
                     display:block;
                     border-top:1px solid #b2b2b2;
+                    text-decoration: none;
                     &:hover{
                       color:#000;
                     }
@@ -9084,9 +9086,6 @@ html {
               &:hover{
                 >a{
                   color:#000;
-                }
-                .language-switcher-locale-url{
-                  display:block;
                 }
               }
           }
