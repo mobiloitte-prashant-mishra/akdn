@@ -1770,7 +1770,7 @@ function akdn_basic_page_accordian_style_block() {
 
         if (!empty($field_values->field_basic_page_accordian_image)) {
           $field_basic_page_accordian_image = $field_values->field_basic_page_accordian_image;
-          
+
           $image_und = $field_values->field_basic_page_accordian_image['und'] ? $field_values->field_basic_page_accordian_image['und'] : $field_values->field_basic_page_accordian_image['en'];
           $image = (isset($field_values->field_basic_page_accordian_image[$lang])) ? $field_values->field_basic_page_accordian_image[$lang] : $image_und;
 
@@ -2880,7 +2880,7 @@ function akdn_search_forms($form, &$form_state, $delta) {
       global $language;
       $text = '';
       $block = module_invoke('locale', 'block_view', 'language_content');
-      $switcher = '<li class="language_switcher"><a href="#">' . $language->native . '</a>' .  $block['content'] . '</li>';
+      $switcher = '<li class="language_switcher"><a href="javascript:void();">' . $language->native . '</a>' .  $block['content'] . '</li>';
       $default_value = "";
       if (current_path() == 'search' && isset($_GET['text'])) {
         $default_value = $_GET['text'];
