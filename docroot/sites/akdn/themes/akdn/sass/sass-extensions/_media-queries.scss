@@ -237,6 +237,17 @@
         a {
             font-size: 14px;
         }
+        .content{
+            ul{
+                li{
+                    &.language_switcher{
+                        >a{
+                           font-size:14px;
+                        }
+                    }
+                }
+            }
+        }
         .form-item-search {
             .form-control {
                 &::-webkit-input-placeholder{
@@ -651,9 +662,33 @@
     }
 
     .top-navbar {
-        padding: 18px 10px 0 0;
+        padding: 0px 10px 0 0;
         position: static;
-
+        width: 100%;
+        margin-top: 0!important;
+        max-width: 100% !important;
+        .content{
+            ul{
+                li{
+                    &.language_switcher{
+                        position: absolute;
+                        float: none;
+                        display: block;
+                        text-align: right;
+                        top: 10px;
+                        right: 0;
+                        .language-switcher-locale-url {
+                            left: 0;
+                            text-align:left;
+                        }
+                    }
+                    &:nth-child(2){
+                        border-left:none;
+                        padding:0;
+                    }
+                }
+            }
+        }
         .dropdown-menu {
             margin: -15px 0 0;
 
@@ -661,7 +696,6 @@
                 right: 80%;
             } */
         }
-
         li:last-child {
             padding-right: 0;
             display: inline-block;
@@ -1197,8 +1231,24 @@
         padding: 0 15px;
     }
 }
+html[dir='rtl']{
+    .top-navbar{
+        .content{
+            ul{
+                li.language_switcher {
+                    right: auto;
+                    left: 0;
+                    text-align: left;
+                    >a{
+                        padding-left:0;
+                    }
+                }
+            }
+        }
+    }
+}
 
-  }
+}
 
 @media screen and (max-width: 480px) {
     /*upto 480px*/
@@ -1236,7 +1286,6 @@
         padding: 0;
         margin: 0 auto 10px;
         max-width: 300px;
-
         ul {
             text-align: right;
         }
@@ -1275,7 +1324,9 @@
         a {
             font-size: 18px;
         }
-
+        .subscribe_toggle {
+            line-height: 10px;
+        }
         .dropdown-menu {
             margin: -32px 0 0;
 

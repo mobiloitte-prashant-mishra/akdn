@@ -854,7 +854,7 @@ function akdn_custom_block_info() {
       'cache' => DRUPAL_NO_CACHE,
     ),
     'page_lang_switcher' => array(
-      'info' => t('Custom Onpage Language Switcher'),
+'info' => t('Custom Onpage Language Switcher'),
       'cache' => DRUPAL_NO_CACHE,
     ),
     'where_we_work_related_info' => array(
@@ -865,6 +865,10 @@ function akdn_custom_block_info() {
       'info' => t('Custom See ALso Block'),
       'cache' => DRUPAL_NO_CACHE,
     ),
+ 'see_also_custom_block' => array(
+'info' => t('Custom See ALso Block'),
+      'cache' => DRUPAL_NO_CACHE,
+ ),
     'akaa_resources' => array(
       'info' => t('AKAA Resources Links'),
       'cache' => DRUPAL_NO_CACHE,
@@ -1767,11 +1771,14 @@ function akdn_basic_page_accordian_style_block() {
         if (!empty($field_values->field_basic_page_accordian_image)) {
           $field_basic_page_accordian_image = $field_values->field_basic_page_accordian_image;
 
-          $image = (isset($field_values->field_basic_page_accordian_image[$lang])) ? $field_values->field_basic_page_accordian_image[$lang] : $field_values->field_basic_page_accordian_image['und'];
+          $image_und = $field_values->field_basic_page_accordian_image['und'] ? $field_values->field_basic_page_accordian_image['und'] : $field_values->field_basic_page_accordian_image['en'];
+          $image = (isset($field_values->field_basic_page_accordian_image[$lang])) ? $field_values->field_basic_page_accordian_image[$lang] : $image_und;
 
-          $image_caption = (isset($image[0]['field_image_caption'][$lang])) ? $image[0]['field_image_caption'][$lang][0]['value'] : $image[0]['field_image_caption']['und'][0]['value'];
+          $image_cption_und = $image[0]['field_image_caption']['und'][0]['value'] ? $image[0]['field_image_caption']['und'][0]['value'] : $image[0]['field_image_caption']['en'][0]['value'];
+          $image_caption = (isset($image[0]['field_image_caption'][$lang])) ? $image[0]['field_image_caption'][$lang][0]['value'] : $image_cption_und;
 
-          $image_copyright = (isset($image[0]['field_image_copytight'][$lang])) ? $image[0]['field_image_copytight'][$lang][0]['value'] : $image[0]['field_image_copytight']['und'][0]['value'];
+          $image_copyright_und = $image[0]['field_image_copytight']['und'][0]['value'] ? $image[0]['field_image_copytight']['und'][0]['value'] : $image[0]['field_image_copytight']['en'][0]['value'];
+          $image_copyright = (isset($image[0]['field_image_copytight'][$lang])) ? $image[0]['field_image_copytight'][$lang][0]['value'] : $image_copyright_und;
 
 
           $field_basic_accordian_rel_links = $field_values->field_basic_accordian_rel_links;
@@ -1802,30 +1809,6 @@ function akdn_basic_page_accordian_style_block() {
           $output .= '</div>';
           $output .= '</div>';
           $output .= '</div>';
-        }
-        if (!empty($related_links)) {
-          $output .= '<div class = "according-related-heading collapse"><span class = "related-heading">' . t("Related Information") . '</span>';
-          $rel_links = '';
-          foreach ($related_links as $links) {
-            $url = link_cleanup_url($links['url']);
-            $target = $links['attributes']['target'];
-            if ($target === '_blank') {
-              $rel_links .= '<div class = "accordian_rel_links">';
-              $rel_links .= l($links['title'], $url, array('attributes' => array('target' => '_blank')));
-              $rel_links .= '</div>';
-            }
-            else {
-              $rel_links .= '<div class = "accordian_rel_links">';
-              $rel_links .= l($links['title'], $url);
-              $rel_links .= '</div>';
-            }
-          }
-          $output .= $rel_links . '</div>';
-        }
-        $output .= '</div>';
-        $output .= '<div class = "accordian-title-right-summary">';
-        if ($field_values->field_basic_page_accordian_title[$lang]) {
-          $title = $field_values->field_basic_page_accordian_title[$lang];
         }
 //        if (!empty($related_links)) {
 //          $output .= '<div class = "according-related-heading collapse"><span class = "related-heading">' . t("Related Information") . '</span>';
@@ -2128,6 +2111,7 @@ function what_we_do_news_and_resources() {
   $lang = $language->language;
   $arg = arg(1);
   $load = node_load($arg);
+
   $show = 0;
   if ($load->field_show_news_and_resources[$lang][0]['value']) {
     $show = $load->field_show_news_and_resources[$lang][0]['value'];
@@ -2310,6 +2294,7 @@ function what_we_do_news_and_resources() {
             $source = $field_media_source['und'][0]['url'];
           }
           $attribute = array('attributes' => array('target' => '_blank'));
+
           $read = l(t('View'), $source, $attribute);
         }
         if ($name == 'News') {
@@ -2868,6 +2853,10 @@ function akdn_block_forms($form, &$form_state, $delta) {
 function akdn_search_forms($form, &$form_state, $delta) {
   switch ($delta) {
     case 'akdn_search':
+      global $language;
+      $text = '';
+      $block = module_invoke('locale', 'block_view', 'language_content');
+      $switcher = '<li class="language_switcher"><a href="#">' . $language->native . '</a>' .  $block['content'] . '</li>';
       $default_value = "";
       if (current_path() == 'search' && isset($_GET['text'])) {
         $default_value = $_GET['text'];
@@ -2879,7 +2868,7 @@ function akdn_search_forms($form, &$form_state, $delta) {
           'class' => array('form-control'),
         ),
         '#default_value' => $default_value,
-        '#prefix' => '<ul><li>',
+        '#prefix' => '<ul>' . $switcher . '<li>',
         '#size' => 15,
       );
       $form['submit'] = array(
@@ -2891,8 +2880,7 @@ function akdn_search_forms($form, &$form_state, $delta) {
         ),
         '#suffix' => '</li>',
       );
-      //$text = '<li><span class="search_toggle">' . t('Search') . '</span></li>';
-      $text = '';
+      //$text .= '<li><span class="search_toggle">' . t('Search') . '</span></li>';
       $text .= ' <li>' . l(t("Subscribe"), 'subscribe', array(
             'attributes' =>
             array(
