@@ -7317,7 +7317,7 @@ map {
     margin-bottom: 10px !important;
 
     a {
-      margin-bottom: 0px;  
+      margin-bottom: 0px;
       @extend %other_activities_links;
     }
   }
@@ -8602,7 +8602,7 @@ map {
       }
     }
   }
-  
+
 }
 
 .page-press-centre {
@@ -9021,3 +9021,75 @@ html {
       width: 100%;
     }
  }
+// home page top menu styling for language switcher styling
+.top-navbar{
+  .content{
+      ul{
+        li{
+          &.language_switcher{
+            position:relative;
+            line-height: 34px;
+            min-width: 140px;
+            > a{
+              font-size:18px;
+              line-height: normal;
+              color: #b2b2b2;
+              padding-left:10px;
+              text-decoration: none;
+              &:hover{
+                color:#000;
+              }
+              &:after{
+                content: "";
+                background: url(../images/internet.svg);
+                width: 15px;
+                display: inline-block;
+                vertical-align: -1px;
+                height: 15px;
+                background-repeat: no-repeat;
+                background-size: contain;
+                margin-left: 10px;
+                margin-right: 10px;
+              }
+            }
+              .language-switcher-locale-url{
+                display:none;
+                position:absolute;
+                left:0;
+                border-bottom:1px solid #b2b2b2;
+                background: #fff;
+                z-index: 1;
+                li{
+                  display: block;
+                  border:none !important;
+                  padding-top: 4px;
+                  padding-bottom: 4px;
+                  padding-left: 10px;
+                  padding-right: 10px;
+                  &.zh-hans, &.de, &.it, &.ky, &.ms, &.fa, &.ru, &.es, &.tg, &.ur{
+                    display:none;
+                  }
+                  a{
+                    font-size:18px;
+                    line-height:normal;
+                    color:#b2b2b2;
+                    padding-top:8px;
+                    display:block;
+                    border-top:1px solid #b2b2b2;
+                    text-decoration: none;
+                    &:hover{
+                      color:#000;
+                    }
+                  }
+                }
+              }
+              &:hover{
+                >a{
+                  color:#000;
+                }
+              }
+          }
+        }
+      }
+  }
+}

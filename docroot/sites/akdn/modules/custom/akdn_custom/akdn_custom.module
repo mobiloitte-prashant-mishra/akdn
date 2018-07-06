@@ -102,19 +102,19 @@ function akdn_custom_menu() {
     'type' => MENU_NORMAL_ITEM,
     ); */
   $items['search/google-search'] = array(
-     'title' => 'Google Search',
-     'type' => MENU_CALLBACK,
-     'access callback' => TRUE,
-     'page callback' => 'akdn_custom_google_search',
-     'file' => 'includes/akdn_custom.google_search.inc',
-    );
-   $items['custom-import-handler/update/%'] = array(
-     'title' => 'syndicate Node update',
-     'page callback' => '_syndicate_node_update',
-     'page arguments' => array(2),
-     'access callback' => TRUE,
-     'type' => MENU_CALLBACK,
-   );
+    'title' => 'Google Search',
+    'type' => MENU_CALLBACK,
+    'access callback' => TRUE,
+    'page callback' => 'akdn_custom_google_search',
+    'file' => 'includes/akdn_custom.google_search.inc',
+  );
+  $items['custom-import-handler/update/%'] = array(
+    'title' => 'syndicate Node update',
+    'page callback' => '_syndicate_node_update',
+    'page arguments' => array(2),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
   $items['media-file'] = array(
     'title' => '',
     'page callback' => 'media_file',
@@ -854,7 +854,7 @@ function akdn_custom_block_info() {
       'cache' => DRUPAL_NO_CACHE,
     ),
     'page_lang_switcher' => array(
-      'info' => t('Custom Onpage Language Switcher'),
+'info' => t('Custom Onpage Language Switcher'),
       'cache' => DRUPAL_NO_CACHE,
     ),
     'where_we_work_related_info' => array(
@@ -865,6 +865,10 @@ function akdn_custom_block_info() {
       'info' => t('Custom See ALso Block'),
       'cache' => DRUPAL_NO_CACHE,
     ),
+ 'see_also_custom_block' => array(
+'info' => t('Custom See ALso Block'),
+      'cache' => DRUPAL_NO_CACHE,
+ ),
     'akaa_resources' => array(
       'info' => t('AKAA Resources Links'),
       'cache' => DRUPAL_NO_CACHE,
@@ -1331,7 +1335,6 @@ function akdn_all_areas_of_activity() {
         $output = $output_header . $output . $output_base;
       }
     }
-
   }
   return $output;
 }
@@ -1635,7 +1638,7 @@ function akdn_basic_page_link_to_style_block() {
         $output .= '<div class = "link_to_image">';
         $output .= '<div class = "image-caption-show-hide-block">';
         $output .= theme('image_style', $accordian_image);
-        if(!empty($image_caption) || !empty($image_copyright)){
+        if (!empty($image_caption) || !empty($image_copyright)) {
           $output .= '<div class="caption-copyright-wrapper">';
           $output .= '<div class="image-caption-wrapper">';
           $output .= $image_caption;
@@ -1704,6 +1707,7 @@ function akdn_basic_page_link_to_style_block() {
     return $output;
   }
 }
+
 /**
  * get latest revision of the node.
  * @param type $nid
@@ -1767,11 +1771,14 @@ function akdn_basic_page_accordian_style_block() {
         if (!empty($field_values->field_basic_page_accordian_image)) {
           $field_basic_page_accordian_image = $field_values->field_basic_page_accordian_image;
 
-          $image = (isset($field_values->field_basic_page_accordian_image[$lang])) ? $field_values->field_basic_page_accordian_image[$lang] : $field_values->field_basic_page_accordian_image['und'];
+          $image_und = $field_values->field_basic_page_accordian_image['und'] ? $field_values->field_basic_page_accordian_image['und'] : $field_values->field_basic_page_accordian_image['en'];
+          $image = (isset($field_values->field_basic_page_accordian_image[$lang])) ? $field_values->field_basic_page_accordian_image[$lang] : $image_und;
 
-          $image_caption = (isset($image[0]['field_image_caption'][$lang])) ? $image[0]['field_image_caption'][$lang][0]['value'] : $image[0]['field_image_caption']['und'][0]['value'];
+          $image_cption_und = $image[0]['field_image_caption']['und'][0]['value'] ? $image[0]['field_image_caption']['und'][0]['value'] : $image[0]['field_image_caption']['en'][0]['value'];
+          $image_caption = (isset($image[0]['field_image_caption'][$lang])) ? $image[0]['field_image_caption'][$lang][0]['value'] : $image_cption_und;
 
-          $image_copyright = (isset($image[0]['field_image_copytight'][$lang])) ? $image[0]['field_image_copytight'][$lang][0]['value'] : $image[0]['field_image_copytight']['und'][0]['value'];
+          $image_copyright_und = $image[0]['field_image_copytight']['und'][0]['value'] ? $image[0]['field_image_copytight']['und'][0]['value'] : $image[0]['field_image_copytight']['en'][0]['value'];
+          $image_copyright = (isset($image[0]['field_image_copytight'][$lang])) ? $image[0]['field_image_copytight'][$lang][0]['value'] : $image_copyright_und;
 
 
           $field_basic_accordian_rel_links = $field_values->field_basic_accordian_rel_links;
@@ -2128,6 +2135,7 @@ function what_we_do_news_and_resources() {
   $lang = $language->language;
   $arg = arg(1);
   $load = node_load($arg);
+
   $show = 0;
   if ($load->field_show_news_and_resources[$lang][0]['value']) {
     $show = $load->field_show_news_and_resources[$lang][0]['value'];
@@ -2310,6 +2318,7 @@ function what_we_do_news_and_resources() {
             $source = $field_media_source['und'][0]['url'];
           }
           $attribute = array('attributes' => array('target' => '_blank'));
+
           $read = l(t('View'), $source, $attribute);
         }
         if ($name == 'News') {
@@ -2868,6 +2877,10 @@ function akdn_block_forms($form, &$form_state, $delta) {
 function akdn_search_forms($form, &$form_state, $delta) {
   switch ($delta) {
     case 'akdn_search':
+      global $language;
+      $text = '';
+      $block = module_invoke('locale', 'block_view', 'language_content');
+      $switcher = '<li class="language_switcher"><a href="javascript:void();">' . $language->native . '</a>' .  $block['content'] . '</li>';
       $default_value = "";
       if (current_path() == 'search' && isset($_GET['text'])) {
         $default_value = $_GET['text'];
@@ -2879,7 +2892,7 @@ function akdn_search_forms($form, &$form_state, $delta) {
           'class' => array('form-control'),
         ),
         '#default_value' => $default_value,
-        '#prefix' => '<ul><li>',
+        '#prefix' => '<ul>' . $switcher . '<li>',
         '#size' => 15,
       );
       $form['submit'] = array(
@@ -2891,8 +2904,7 @@ function akdn_search_forms($form, &$form_state, $delta) {
         ),
         '#suffix' => '</li>',
       );
-      //$text = '<li><span class="search_toggle">' . t('Search') . '</span></li>';
-      $text = '';
+      //$text .= '<li><span class="search_toggle">' . t('Search') . '</span></li>';
       $text .= ' <li>' . l(t("Subscribe"), 'subscribe', array(
             'attributes' =>
             array(
@@ -3722,10 +3734,10 @@ function akdn_custom_node_load($nodes, $types) {
       }
     }
   }
-//  if((arg(0) == 'node') && (arg(2) == 'current-revision') && !empty($node) && ($node->language != $language->language) && ($node->language != 'en') && (count($node->title_field) < 2)){
-//    $alias = $node->path['alias'];
-//    drupal_goto($base_url.'/'.$node->language.'/'.$alias);
-//  }
+  if((arg(0) == 'node') && (arg(2) == 'current-revision') && !empty($node) && ($node->language != $language->language) && ($node->language != 'en') && (count($node->title_field) < 2)){
+    $alias = $node->path['alias'];
+    drupal_goto($base_url.'/'.$node->language.'/'.$alias);
+  }
 }
 
 /**
@@ -4124,38 +4136,37 @@ function akdn_custom_preprocess_views_view_field__solr_site_search__page__title_
   $row_node_object = $row->_entity_properties['entity object'];
   $title = $output = '';
   if ($row_node_object->type == 'page' || $row_node_object->type == 'custom_content') {
-    if(!empty($row_node_object->field_geography_term) || !empty($row_node_object->field_agency_term)){
-      if(isset($row_node_object->title_field['en'][0]['value']) &&
-          $row_node_object->title_field['en'][0]['value'] != NULL){
+    if (!empty($row_node_object->field_geography_term) || !empty($row_node_object->field_agency_term)) {
+      if (isset($row_node_object->title_field['en'][0]['value']) &&
+          $row_node_object->title_field['en'][0]['value'] != NULL) {
         $title = $row_node_object->title_field['en'][0]['value'];
       }
-      else{
+      else {
         $title = $row_node_object->title;
       }
     }
-    else{
-      if(isset($row_node_object->title_field['en'][0]['value']) &&
-          $row_node_object->title_field['en'][0]['value'] != NULL){
+    else {
+      if (isset($row_node_object->title_field['en'][0]['value']) &&
+          $row_node_object->title_field['en'][0]['value'] != NULL) {
         $title = $row_node_object->title_field['en'][0]['value'];
       }
-      else{
+      else {
         $title = $row_node_object->title;
       }
     }
   }
-  else{
-     if(isset($row_node_object->title_field['en'][0]['value']) &&
-          $row_node_object->title_field['en'][0]['value'] != NULL){
-        $title = $row_node_object->title_field['en'][0]['value'];
-      }
-      else{
-        $title = $row_node_object->title;
-      }
+  else {
+    if (isset($row_node_object->title_field['en'][0]['value']) &&
+        $row_node_object->title_field['en'][0]['value'] != NULL) {
+      $title = $row_node_object->title_field['en'][0]['value'];
+    }
+    else {
+      $title = $row_node_object->title;
+    }
   }
   $output .= l($title, 'node/' . $row_node_object->nid);
   $variables['output'] = $output;
 }
-
 
 /**
  * Cycle list box
@@ -4605,6 +4616,7 @@ function akdn_custom_node_update($node) {
  *
   implements hook_facet_items_alter(&$build, &$settings)
  */
+
 function akdn_custom_facet_items_alter(&$build, &$settings) {
   if ($settings->facet == "entity_type") {
     // Save Custom Page number to add on the combined facet item.
@@ -4649,10 +4661,11 @@ function akdn_custom_video_player() {
     //bightcove video
     $video_temp = explode('brightcove://', $entity->field_podcast_video[$entity->language][0]['uri']);
 
-    if(is_numeric($video_temp[1])){
+    if (is_numeric($video_temp[1])) {
       $video = $video_temp[1];
-    }else{
-      $exploded_str = explode('/',$video_temp[1]);
+    }
+    else {
+      $exploded_str = explode('/', $video_temp[1]);
       $video = $exploded_str[1];
     }
 
@@ -4673,7 +4686,7 @@ function akdn_custom_video_player() {
 //                      </video>
 //                      <script src="//players.brightcove.net/648715333001/SJCRhP7Eb_default/index.min.js"></script>
 //                </div>';
-    $output .='<video data-video-id="'.$video.'"
+    $output .= '<video data-video-id="' . $video . '"
                   data-account="648715333001"
                   data-player="rJtUYHMyl"
                   data-embed="default"
@@ -4738,10 +4751,11 @@ function akdn_custom_video_player_speech() {
   if (isset($entity->field_speech_video['und'][0]['uri'])) {
     //bightcove video
     $video_temp = explode('brightcove://', $entity->field_speech_video['und'][0]['uri']);
-    if(is_numeric($video_temp[1])){
+    if (is_numeric($video_temp[1])) {
       $video = $video_temp[1];
-    }else{
-      $exploded_str = explode('/',$video_temp[1]);
+    }
+    else {
+      $exploded_str = explode('/', $video_temp[1]);
       $video = $exploded_str[1];
     }
 
@@ -4768,7 +4782,7 @@ function akdn_custom_video_player_speech() {
 //      <param name="autoStart" value="false" />
 //    </object>
 //  </div>';
-    $output = '<video data-video-id="'.$video.'"
+    $output = '<video data-video-id="' . $video . '"
                 data-account="648715333001"
                 data-player="rJtUYHMyl"
                 data-embed="default"
@@ -4816,10 +4830,11 @@ function akdn_custom_v_p_for_archi() {
     //bightcove video
     $video_temp = explode('brightcove://', $entity->field_podcast_video[$entity->language][0]['uri']);
 
-    if(is_numeric($video_temp[1])){
+    if (is_numeric($video_temp[1])) {
       $video = $video_temp[1];
-    }else{
-      $exploded_str = explode('/',$video_temp[1]);
+    }
+    else {
+      $exploded_str = explode('/', $video_temp[1]);
       $video = $exploded_str[1];
     }
 
@@ -4858,7 +4873,7 @@ function akdn_custom_v_p_for_archi() {
 //                  style="width: 100%; height: 200px;">
 //                </video>
 //                <script src="//players.brightcove.net/648715333001/rJtUYHMyl_default/index.min.js"></script>';
-    $output = '<video data-video-id="'.$video.'"
+    $output = '<video data-video-id="' . $video . '"
       data-account="648715333001"
       data-player="rJtUYHMyl"
       data-embed="default"
@@ -5126,38 +5141,38 @@ function media_file() {
                                  AND (ff.entity_type = 'file' AND ff.bundle = 'image')")->fetchAll();
   $media_arr = array();
   foreach ($fids as $key => $value) {
-      $media_arr[] = array(
-        'fid' => $value->fid,
-        'filename' => $value->filename,
-        'filemime' => $value->filemime,
-      );
+    $media_arr[] = array(
+      'fid' => $value->fid,
+      'filename' => $value->filename,
+      'filemime' => $value->filemime,
+    );
   }
- return array(
-        'version' => $media_arr
- );
+  return array(
+    'version' => $media_arr
+  );
 }
 
 /**
  * Call back for media-file-single/%
  */
-function media_file_single($fid){
-  if(isset($fid) && is_numeric($fid)){
+function media_file_single($fid) {
+  if (isset($fid) && is_numeric($fid)) {
     $image_entity = entity_load('file', array($fid));
     $image_entity = $image_entity[$fid];
     $folder_term_name = taxonomy_term_load($image_entity->field_folder['und'][0]['tid']);
-      $media_arr = array(
-        'fid' => $image_entity->fid,
-        'filename' => $image_entity->filename,
-        'filemime' => $image_entity->filemime,
-        'uri' => $image_entity->uri,
-        'field_folder' => $image_entity->field_folder['und'][0]['tid'],
-        'field_folder_term_name' => $folder_term_name->name,
-        'field_image_copytight' => $image_entity->field_image_copytight['und'][0]['value'],
-        'field_image_caption' => $image_entity->field_image_caption['en'][0]['value'],
-      );
-      return $media_arr;
+    $media_arr = array(
+      'fid' => $image_entity->fid,
+      'filename' => $image_entity->filename,
+      'filemime' => $image_entity->filemime,
+      'uri' => $image_entity->uri,
+      'field_folder' => $image_entity->field_folder['und'][0]['tid'],
+      'field_folder_term_name' => $folder_term_name->name,
+      'field_image_copytight' => $image_entity->field_image_copytight['und'][0]['value'],
+      'field_image_caption' => $image_entity->field_image_caption['en'][0]['value'],
+    );
+    return $media_arr;
   }
-  else{
+  else {
     return 'samit';
   }
 }
@@ -5245,7 +5260,8 @@ function akdn_search_forms_internal_news_page_submit($form, &$form_state) {
     )
   );
 }
-function akdn_custom_views_post_render(&$view, &$output, &$cache){
+
+function akdn_custom_views_post_render(&$view, &$output, &$cache) {
 //  if($view->name == '')
 //  print '<pre>';
 //  print_r($output); die;
@@ -5435,10 +5451,10 @@ function akdn_custom_media_wysiwyg_token_to_markup_alter(&$element, $tag_info, $
   $file_entity = $element['content'];
   $caption = $file_entity['field_image_caption']['#items'][0]['value'];
   $copyright = $file_entity['field_image_copytight']['#items'][0]['value'];
-  if(empty($caption)){
+  if (empty($caption)) {
     unset($element['content']['field_image_caption']);
   }
-  if(empty($copyright)){
+  if (empty($copyright)) {
     unset($element['content']['field_image_copytight']);
   }
 }

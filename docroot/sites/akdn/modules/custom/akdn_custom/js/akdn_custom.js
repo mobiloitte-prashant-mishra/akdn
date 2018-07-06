@@ -322,6 +322,19 @@ jQuery(".view-id-solr_quotes .view-grouping-content").each(function(){
         });
       }*/
 
+      //language switcher
+      var width = $(window).width();
+      if(width< 768){
+        $('.top-navbar .content ul li.language_switcher > a', context).click(function(event) {
+          $(".top-navbar .content ul li.language_switcher .language-switcher-locale-url").toggle();
+          event.stopPropagation();
+        });
+        $(document, context).click(function() {
+          $(".top-navbar .content ul li.language_switcher .language-switcher-locale-url").hide();
+        });
+      }
+
+
     },
     detach: function (context, settings) {
 

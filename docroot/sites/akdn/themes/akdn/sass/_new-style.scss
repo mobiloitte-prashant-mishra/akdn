@@ -206,8 +206,7 @@ html[dir='rtl'] {
       float: left;
 
       li:first-child {
-        overflow: auto;
-        margin: 0;
+
       }
 
       li:nth-child(2) {
@@ -259,6 +258,7 @@ html[dir='rtl'] {
       margin: 12px 1px 0 7px;
       transform: rotate(90deg);
     }
+
   }
 
   .main-navbar  {

@@ -183,9 +183,9 @@ $databases = array (
 		array (
 			'default' =>
 			array (
-				'database' => 'akdn',
-				'username' => 'root',
-				'password' => 'root',
+				'database' => 'akdn3dev',
+				'username' => 's21224',
+				'password' => 'mz2ZSQtM5erFtaH',
 				'host' => 'localhost',
 				'port' => '',
 				'driver' => 'mysql',

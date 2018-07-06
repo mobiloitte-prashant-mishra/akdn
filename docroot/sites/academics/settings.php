@@ -181,11 +181,11 @@ $databases = array (
   'default' =>
   array (
     'default' =>
-    array (
-      'database' => 'academics',
-      'username' => 'root',
-      'password' => 'root',
-      'host' => 'localhost',
+  array (
+      'database' => 'akdn3academies1',
+      'username' => 's39873',
+      'password' => '9m3T72xRFhLNepf',
+      'host' => '127.0.0.1',
       'port' => '',
       'driver' => 'mysql',
       'prefix' => '',
@@ -245,7 +245,7 @@ $drupal_hash_salt = 'UY2huecCJOhaVGOxgJdQM4QWuXsPbLQiJMZU-SlfidU';
  * It is not allowed to have a trailing slash; Drupal will add it
  * for you.
  */
- $base_url = 'http://agakhanacademies.org';  // NO trailing slash!
+
 
 /**
  * PHP settings:
