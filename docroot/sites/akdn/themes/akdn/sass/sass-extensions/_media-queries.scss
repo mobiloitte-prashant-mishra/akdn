@@ -244,6 +244,13 @@
                         >a{
                            font-size:14px;
                         }
+                        .language-switcher-locale-url{
+                            li{
+                                a {
+                                    font-size: 14px;
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -1340,8 +1347,32 @@ html[dir='rtl']{
         a {
             font-size: 18px;
         }
+        .content{
+            ul{
+                li{
+                    &.language_switcher{
+                        min-width: 110px;
+                        > a {
+                            font-size: 15px;
+                            padding-left: 0;
+                        }
+                        .language-switcher-locale-url{
+                            left: -10px;
+                            width: 106%;
+                            li{
+                                a {
+                                    font-size: 15px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
         .subscribe_toggle {
-            line-height: 10px;
+            font-size: 15px;
+            position: relative;
+            top: -5px;
         }
         .dropdown-menu {
             margin: -32px 0 0;
@@ -1354,6 +1385,19 @@ html[dir='rtl']{
             .form-control {
                 float: right;
                 max-width: 140px;
+                font-size:15px;
+                &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+                  font-size:15px;
+                }
+                &::-moz-placeholder { /* Firefox 19+ */
+                  font-size:15px;
+                }
+                &:-ms-input-placeholder { /* IE 10+ */
+                  font-size:15px;
+                }
+                &:-moz-placeholder { /* Firefox 18- */
+                  font-size:15px;
+                }
             }
         }
         span.ext {
