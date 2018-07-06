@@ -9059,6 +9059,7 @@ html {
                 border-bottom:1px solid #b2b2b2;
                 background: #fff;
                 z-index: 1;
+                width:100%;
                 li{
                   display: block;
                   border:none !important;
@@ -9066,7 +9067,7 @@ html {
                   padding-bottom: 4px;
                   padding-left: 10px;
                   padding-right: 10px;
-                  &.zh-hans, &.de, &.it, &.ky, &.ms, &.fa, &.ru, &.es, &.tg, &.ur{
+                  &.zh-hans, &.de, &.it, &.ky, &.ms, &.fa, &.ru, &.es, &.tg, &.ur, &.ar, &.pt{
                     display:none;
                   }
                   a{
