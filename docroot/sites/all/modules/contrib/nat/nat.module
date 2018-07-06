@@ -644,6 +644,9 @@ function _nat_save_term($node, $hierarchy, $term, $entities, $fields) {
       $values['name_field'][$language->language]['0']['value'] = $term->name;
       $handler->setTranslation($translation, $values);
     }
+    else {
+      $term->translations->original = $node->language;
+    }
   }
 
   taxonomy_term_save($term);
