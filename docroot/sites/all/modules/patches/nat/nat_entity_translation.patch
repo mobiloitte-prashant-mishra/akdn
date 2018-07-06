@@ -11,6 +11,9 @@
 +        $term->name = array_key_exists($language->language, $term_load->name_field)?$term_load->name_field[$language->language][0]['safe_value']:$term_load->name_field['en'][0]['safe_value'];
 +        $term->language = $language->language;
 +      }
++      else {
++        $term->translations->original = $node->language;
++      }
 +    }
      $return[$term->tid] = $term;
    }
