@@ -387,3 +387,12 @@ function akdn_colorbox_imagefield($variables) {
   );
   return l($image, $options['path'], $options);
 }
+
+function akdn_block_view_alter(&$data, $block) {
+  if ($block->delta == "126") {
+    global $base_url;
+    global $language;
+    $home_page_url = $base_url . "/" . $language->language;
+    $data['content'] = str_replace("@home_page_url", $home_page_url, $data['content']);
+  }
+}
