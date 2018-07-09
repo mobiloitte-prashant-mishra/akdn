@@ -831,8 +831,11 @@ html[dir='rtl'] {
       &:after {
         margin: -6px 150px 0 0px;
       }
-
       span {
+        &:first-child{
+          font-size: 30px;
+          line-height: normal;
+        }
         &:last-child {
           padding-left: 10px;
         }
@@ -901,8 +904,12 @@ html[dir='rtl'] {
   .node-type-agency {
     .pane-hub-pages:not(.other-activities-title) {
       .pane-title {
+        display: flex;
+        flex-direction: row;
         &:after {
           margin: -7px 290px 0 0;
+          flex: 1;
+          margin: auto auto 7px;
         }
       }
     }
