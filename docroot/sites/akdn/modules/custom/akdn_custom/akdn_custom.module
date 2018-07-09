@@ -4517,7 +4517,6 @@ function akdn_custom_preprocess_views_view_field__focus_areas__what_we_do_summar
  * @return [type]             [description]
  */
 function akdn_custom_preprocess_views_view_field__hub_pages__country_hub_pages__nothing_2(&$variables) {
-  global $language;
   $row = $variables['row'];
   $node = node_load($row->nid);
   $mlid = array_shift($node->menu_node_links);

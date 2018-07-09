@@ -23,7 +23,6 @@
  */
 ?>
 <?php
-global $language;
 $row = $variables['row'];
 $output = '';
 $nid = '';
