@@ -4508,12 +4508,14 @@ function akdn_custom_preprocess_views_view_field__hub_pages__country_hub_pages__
     $output .= $view_block;
     $output .= '</div></div>';
     $link = 'node/' . $row->_field_data['nid']['entity']->nid;
+    $nid = $row->_field_data['nid']['entity']->nid;
     $output .= '<div class = "country_activity_link">';
-    if ($title == 'Aga Khan Award for Architecture') {
-      $output .= l('icon', 'architecture');
+//    if ($title == 'Aga Khan Award for Architecture') {
+    if ($nid == 24891) {
+      $output .= l('icon', 'node/9576');
     }
     else {
-      if ($title == 'Aga Khan Music Initiative') {
+      if ($nid == 24896) {
         $output .= l('icon', 'node/22106');
       }
       else {

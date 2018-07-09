@@ -25,22 +25,30 @@
 <?php
 $row = $variables['row'];
 $output = '';
+$nid = '';
+
 if ($row->_field_data['nid']['entity']->type == 'page') {
+//  print_r($row); die;
   $field_short_title = $row->_field_data['nid']['entity']->field_short_title;
   //$title = $row->_field_data['nid']['entity']->field_short_title[key($field_short_title)][0]['value'];
   $title = $row->field_field_short_title_et[0]['raw']['value'];
+  $nid =  $row->_field_data['nid']['entity']->nid;
+  //$n_lang =  $row->_field_data['nid']['entity']['nid'];
 }
 if ($row->_field_data['nid']['entity']->type == 'hub_page') {
   $title_field = $row->_field_data['nid']['entity']->title_field;
   //$title = $row->_field_data['nid']['entity']->title_field[key($title_field)][0]['value'];
   $title = $row->field_field_short_title_et[0]['raw']['value'];
+  $nid =  $row->_field_data['nid']['entity']->nid;
 }
 //$output .= '<div class = "hub_pages-title">';
-if ($title == 'Aga Khan Award for Architecture') {
-  $output .= l($title, 'architecture');
+
+//if ($title == 'Aga Khan Award for Architecture') {
+if ($nid == 24891) {
+  $output .= l($title, 'node/9576');
 }
 else {
-  if ($title == 'Aga Khan Music Initiative') {
+  if ($nid == 24896) {
     $output .= l($title, 'node/22106');
   }
   else {
