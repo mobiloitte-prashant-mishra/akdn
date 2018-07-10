@@ -405,3 +405,15 @@ jQuery(".gallery-slide a img").each(function() {
   jQuery(this).parent().attr('title', temp);
 });
 (jQuery);
+
+/*
+ * display none numeric facet filters.
+ */
+jQuery('ul.facetapi-facetapi-checkbox-links li.leaf a').each(function(){
+   var string = jQuery(this).text(); 
+   var arr = string.split('(');
+   if(jQuery.isNaN(arr[0]) == false){
+       jQuery(this).parent().css('display','none');
+   }
+   
+});
