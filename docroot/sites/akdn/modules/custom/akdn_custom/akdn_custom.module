@@ -5069,16 +5069,16 @@ function akdn_custom_form_simplenews_node_form_alter(&$form, &$form_state, &$for
         }
       }
       else {
-        $body = $value->field_newsletter_summary['und']['0']['value'];
+        $body = $value->field_newsletter_summary[key((array)$value->field_newsletter_summary)]['0']['value'];
         if ($value->type == 'article') {
           $tid = $value->field_article_cat['und'][0]['tid'];
           $term_load = taxonomy_term_load($tid);
           $term = $term_load->name;
-          $url = $value->field_media_source['und']['0']['display_url'];
+          $url = $value->field_media_source[key((array)$value->field_media_source)]['0']['display_url'];
           $result[] = array(
             'nid' => $key,
             'title' => strip_tags($value->title),
-            'image' => $value->field_newsletter_image['und']['0']['uri'],
+            'image' => $value->field_newsletter_image[key((array)$value->field_newsletter_image)]['0']['uri'],
             'body' => $body,
             'term_load' => $term,
             'url' => $url,
@@ -5088,7 +5088,7 @@ function akdn_custom_form_simplenews_node_form_alter(&$form, &$form_state, &$for
           $result[] = array(
             'nid' => $key,
             'title' => strip_tags($value->title),
-            'image' => $value->field_newsletter_image['und']['0']['uri'],
+            'image' => $value->field_newsletter_image[key((array)$value->field_newsletter_image)]['0']['uri'],
             'body' => $body,
           );
         }
