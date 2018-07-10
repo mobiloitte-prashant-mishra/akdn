@@ -14098,7 +14098,7 @@ h2.header-name a:active, h2.header-name a:focus {
   position: relative;
   width: auto;
   border-bottom: 1px solid #CCCCCC;
-  margin: -7px 0px 0 290px;
+  margin: -7px 0px 0 303px;
 }
 /* line 3352, ../sass/_akdn-redesign.scss */
 .geography-page .country-activity-tile .view-content,
@@ -22656,7 +22656,7 @@ html[dir='rtl'] .sub-navbar p.indexfix span:first-child {
 }
 /* line 839, ../sass/_new-style.scss */
 html[dir='rtl'] .sub-navbar p.indexfix span:last-child {
-  padding-left: 10px;
+  padding-left: 5px;
 }
 /* line 847, ../sass/_new-style.scss */
 html[dir='rtl'] .slide-text a {
