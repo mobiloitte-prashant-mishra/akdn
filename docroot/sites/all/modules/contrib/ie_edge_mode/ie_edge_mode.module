@@ -1,0 +1,15 @@
+<?php
+/**
+ * @file
+ * Code for the tell IE use edge render engine.
+ */
+
+/**
+ * Implements template_preprocess_page().
+ */
+function ie_edge_mode_preprocess_page(&$vars) {
+  $header = drupal_get_http_header('X-UA-Compatible');
+  if (empty($header)) {
+    drupal_add_http_header('X-UA-Compatible', 'IE=Edge');
+  }
+}

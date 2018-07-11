@@ -309,6 +309,13 @@ html[dir='rtl']{
     }
   }
 }
+.geography-page{
+  .pane-hub-pages:not(.other-activities-title){
+    .pane-title{
+        font-size:24px !important;
+    }
+  }
+}
 }
 
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
@@ -659,6 +666,13 @@ html[dir='rtl']{
           font-size:20px !important;
         }
       }
+    }
+  }
+}
+.geography-page{
+  .pane-hub-pages:not(.other-activities-title){
+    .pane-title{
+        font-size:20px !important;
     }
   }
 }
@@ -1278,6 +1292,13 @@ html[dir='rtl']{
         width: 50%;
         padding: 0 15px;
     }
+}
+.geography-page{
+  .pane-hub-pages:not(.other-activities-title){
+    .pane-title{
+        font-size:24px !important;
+    }
+  }
 }
 html[dir='rtl']{
     .top-navbar{
