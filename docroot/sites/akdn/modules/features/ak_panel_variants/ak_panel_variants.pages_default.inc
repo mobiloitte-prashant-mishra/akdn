@@ -3042,20 +3042,20 @@ if (isset($node->field_about_page)) {
         'settings' => array(
           'description' => 'Has content',
           'php' => 'global $language;
-  $lang = $language->language;
-  $arg = arg(1);
-  $node = node_load($arg);
-  $node_lang = $node->language;
+    $lang = $language->language;
+    $arg = arg(1);
+    $node = node_load($arg);
+    $node_lang = $node->language;
 
-  if ($node->field_publication_file[$lang][0]["uri"]) {
-    $select = $node->field_publication_file[$lang][0]["uri"];
-  }
- if($lang == "en" && $node_lang != "en"){
-   $show = !empty($node->field_publication_file[$lang][0]["uri"])?$node->field_publication_file[$lang][0]["uri"]:$node->field_publication_file[$node_lang][0]["uri"];
-  }
-  if (!empty($select) || !empty($show)) {
-    return true;
-  }',
+    if ($node->field_publication_file[$lang][0]["uri"]) {
+      $select = $node->field_publication_file[$lang][0]["uri"];
+    }
+   if($lang == "en" && $node_lang != "en"){
+     $show = !empty($node->field_publication_file[$lang][0]["uri"])?$node->field_publication_file[$lang][0]["uri"]:$node->field_publication_file[$node_lang][0]["uri"];
+    }
+    if (!empty($select) || !empty($show)) {
+      return true;
+    }',
         ),
         'not' => FALSE,
       ),
@@ -3278,8 +3278,9 @@ if (isset($node->field_about_page)) {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_title' => 1,
+    'override_title' => 0,
     'override_title_text' => 'LANGUAGES',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
