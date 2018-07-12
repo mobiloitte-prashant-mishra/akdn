@@ -17,28 +17,26 @@
         outline: 0 !important;
     }
 
-    input.form-submit{
-        display: block;
+    input.form-submit {
         height: 30px;
-        margin: 20px auto;
-        padding: 0;
+        padding: 0 25px 0 0;
         float: right;
-        font-size: 0;
-        border-radius: 11px;
         text-transform: uppercase;
         border: 0 none !important;
-        width: 180px !important;
         margin-left: 0 !important;
         cursor: pointer;
-        color: #333;
-        font: bold 12px/1.2 Arial,sans-serif;
-        outline: 0;
+        color: #b5995a;
+        font-size: 25px;
         overflow: visible;
         box-sizing: border-box;
         vertical-align: middle;
-        text-shadow: #fff 0 1px 1px;
-        background: url(/sites/akdn/themes/akdn/images/subscribe.png?1458165161) 0 0 no-repeat;
+        background: url(/sites/akdn/themes/akdn/images/subscribe_arrow.png) 0 0 no-repeat;
+        background-position: right center;
+        box-shadow: none;
+        font-weight: 500;
+        margin-top:15px !important;
     }
+
 
     h1.title{
         display: block;
@@ -508,7 +506,7 @@
             <div class = "form-note" id = "">
                 <p><i><?php echo t("Items marked with an asterisk"); ?> (<span class = "form-required">*</span>) <?php echo t("are required in order to complete your subscription."); ?></i></p>
             </div>
-            <div class = "subs_btn_wrap"><input type = "submit" value = "" name = "subscribe" id = "mc-embedded-subscribe" class = "form-submit" ></div>
+            <div class = "subs_btn_wrap"><input type = "submit" value = "<?php echo t('Subscribe') ?>" name = "subscribe" id = "mc-embedded-subscribe" class = "form-submit" ></div>
         </div>
     </form>
 </div>
