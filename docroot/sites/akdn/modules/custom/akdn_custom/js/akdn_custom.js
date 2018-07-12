@@ -451,7 +451,12 @@ function update_language_url(url){
     var getUrl = window.location;
     var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
     var arr = baseUrl.split('/');
+    var lang = arr[3];
+    var new_url = '';
     if (url.indexOf(arr[3] + '/') == -1) {
+        if(url.indexOf('/')){
+            return '/' + arr[3] + '/' + url;
+        }
         return '/' + arr[3] + url;
     }
 }
