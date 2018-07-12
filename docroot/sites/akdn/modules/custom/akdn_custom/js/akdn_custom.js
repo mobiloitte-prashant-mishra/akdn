@@ -434,6 +434,13 @@ jQuery('.pane-node-body a').each(function() {
        jQuery(this).attr('href', updated_href);
     }
 });
+jQuery('.accordian-summary a').each(function() {
+    var href_val = jQuery(this).attr('href');
+    var updated_href = update_language_url(href_val);
+    if(updated_href){
+       jQuery(this).attr('href', updated_href);
+    }
+});
 /*
  * append language with urls.
  * @param {type} url
