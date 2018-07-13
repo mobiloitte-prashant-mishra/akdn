@@ -36,7 +36,11 @@
         font-weight: 500;
         margin-top:15px !important;
     }
-
+    html[dir='rtl'] #mc_embed_signup_scroll .subs_btn_wrap .form-submit {
+        background: url(/sites/akdn/themes/akdn/images/subscribe_arrow_left.png) 0 0 no-repeat;
+        background-position: left center;
+        padding: 0 0 0 25px;
+    }
 
     h1.title{
         display: block;
