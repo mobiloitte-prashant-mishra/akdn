@@ -389,15 +389,24 @@ function akdn_colorbox_imagefield($variables) {
 }
 
 /**
- * Translate the Related links of publication inner page for panel
+ * Translate the Download text of publication inner page for panel
  */
 function akdn_preprocess_panels_pane(&$vars) {
-  print("<pre>".print_r($vars, true)."</pre>");exit;
-  if (isset($vars['pane']->pid) && $vars['pane']->pid == "1495") {
+  if (isset($vars['pane']->pid) && $vars['pane']->pid == "new-eccf47b0-a9df-431b-9227-efe39de24e7e") {
+    if(isset($vars['content']['#field_name'])) {
+      if ($vars['content']['#field_name'] == "field_publication_file") {
+        $vars['display']->content['new-eccf47b0-a9df-431b-9227-efe39de24e7e']->configuration['formatter_settings']['text'] = t('Download');
+      }
+    }
+  }
+
+  // Translate the Related links of publication inner page for panel
+  if (isset($vars['pane']->pid) && $vars['pane']->pid == "new-d6bbff22-6c30-438c-a158-398ae8be33b5") {
     if (isset($vars['content']['#field_name'])) {
       if ($vars['content']['#field_name'] == "field_project_links") {
         $vars['title'] = t('Related links');
       }
     }
   }
+
 }
