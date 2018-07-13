@@ -1037,22 +1037,23 @@ function _token_build_tree($token_type, array $options) {
  * @see menu_link_load()
  * @see _token_menu_link_translate()
  */
-function token_menu_link_load($mlid) {
+function token_menu_link_load($mlid, $language_code = NULL) {
   $cache = &drupal_static(__FUNCTION__, array());
 
   if (!is_numeric($mlid)) {
     return FALSE;
   }
 
-  if (!isset($cache[$mlid])) {
+  $cache_key = $mlid . $language_code;
+  if (!isset($cache[$cache_key])) {
     $item = db_query("SELECT * FROM {menu_links} ml LEFT JOIN {menu_router} m ON m.path = ml.router_path WHERE ml.mlid = :mlid", array(':mlid' => $mlid))->fetchAssoc();
     if (!empty($item)) {
-      _token_menu_link_translate($item);
+      _token_menu_link_translate($item, $language_code);
     }
-    $cache[$mlid] = $item;
+    $cache[$cache_key] = $item;
   }
 
-  return $cache[$mlid];
+  return $cache[$cache_key];
 }
 
 /**
@@ -1071,25 +1072,26 @@ function token_menu_link_load($mlid) {
  * @see book_link_load()
  * @see _token_menu_link_translate()
  */
-function token_book_link_load($mlid) {
+function token_book_link_load($mlid, $language_code = NULL) {
   $cache = &drupal_static(__FUNCTION__, array());
 
   if (!is_numeric($mlid)) {
     return FALSE;
   }
 
-  if (!isset($cache[$mlid])) {
+  $cache_key = $mlid . $language_code;
+  if (!isset($cache[$cache_key])) {
     $item = db_query("SELECT * FROM {menu_links} ml INNER JOIN {book} b ON b.mlid = ml.mlid LEFT JOIN {menu_router} m ON m.path = ml.router_path WHERE ml.mlid = :mlid", array(':mlid' => $mlid))->fetchAssoc();
     if (!empty($item)) {
-      _token_menu_link_translate($item);
+      _token_menu_link_translate($item, $language_code);
     }
-    $cache[$mlid] = $item;
+    $cache[$cache_key] = $item;
   }
 
-  return $cache[$mlid];
+  return $cache[$cache_key];
 }
 
-function _token_menu_link_translate(&$item) {
+function _token_menu_link_translate(&$item, $language_code = NULL) {
   $map = array();
 
   if (!is_array($item['options'])) {
@@ -1122,6 +1124,13 @@ function _token_menu_link_translate(&$item) {
 
     $item['access'] = TRUE;
     _menu_item_localize($item, $map, TRUE);
+    
+    if(module_exists('i18n_menu')) {
+      _i18n_menu_link_process($item);
+      if(!empty($item['i18n_menu']) && _i18n_menu_link_is_localizable($item)) {
+        _i18n_menu_link_localize($item, $language_code);
+      }
+  }
   }
 
   // Allow other customizations - e.g. adding a page-specific query string to the
@@ -1218,23 +1227,24 @@ function token_render_cache_set(&$markup, $elements) {
   $_SERVER['REQUEST_METHOD'] = $original_method;
 }
 
-function token_menu_link_load_all_parents($mlid) {
+function token_menu_link_load_all_parents($mlid, $language_code = NULL) {
   $cache = &drupal_static(__FUNCTION__, array());
 
   if (!is_numeric($mlid)) {
     return array();
   }
 
-  if (!isset($cache[$mlid])) {
-    $cache[$mlid] = array();
+  $cache_key = $mlid . $language_code;
+  if (!isset($cache[$cache_key])) {
+    $cache[$cache_key] = array();
     $plid = db_query("SELECT plid FROM {menu_links} WHERE mlid = :mlid", array(':mlid' => $mlid))->fetchField();
-    while ($plid && $parent = token_menu_link_load($plid)) {
-      $cache[$mlid] = array($plid => $parent['title']) + $cache[$mlid];
+    while ($plid && $parent = token_menu_link_load($plid, $language_code)) {
+      $cache[$cache_key] = array($plid => $parent['title']) + $cache[$cache_key];
       $plid = $parent['plid'];
     }
   }
 
-  return $cache[$mlid];
+  return $cache[$cache_key];
 }
 
 function token_taxonomy_term_load_all_parents($tid) {
@@ -1270,8 +1280,8 @@ function token_taxonomy_term_load_all_parents($tid) {
  * @see menu_node_prepare()
  * @see token_menu_link_load()
  */
-function token_node_menu_link_load($node) {
-  $cache = &drupal_static(__FUNCTIon__, array());
+function token_node_menu_link_load($node, $language_code = NULL) {
+  $cache = &drupal_static(__FUNCTION__, array());
 
   if (!isset($cache[$node->nid])) {
     $mlid = FALSE;
@@ -1291,5 +1301,5 @@ function token_node_menu_link_load($node) {
     $cache[$node->nid] = $mlid;
   }
 
-  return $cache[$node->nid] ? token_menu_link_load($cache[$node->nid]) : FALSE;
+  return $cache[$node->nid] ? token_menu_link_load($cache[$node->nid], $language_code) : FALSE;
 }
