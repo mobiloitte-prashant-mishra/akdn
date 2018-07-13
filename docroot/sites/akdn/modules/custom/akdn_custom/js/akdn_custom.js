@@ -418,40 +418,51 @@ jQuery('ul.facetapi-facetapi-checkbox-links li.leaf a').each(function(){
    
 });
 
+var base_url = window.location.origin;
+var getUrl = window.location;
+//var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
 jQuery('.accordian-main-body a').each(function() {
-    var href_val = jQuery(this).attr('href');
-    var updated_href = update_language_url(href_val);
-    if(updated_href){
-       jQuery(this).attr('href', updated_href);
-    }
+  var href_val = jQuery(this).attr('href');
+  var updated_href = update_language_url(href_val);
+  if (updated_href) {
+    jQuery(this).attr('href', updated_href);
+  }
 });
 jQuery('.basic-page-accordian-summary a').each(function() {
-    var href_val = jQuery(this).attr('href');
+  var href_val = jQuery(this).attr('href');
+  if (href_val.indexOf('http')) {
     var updated_href = update_language_url(href_val);
-    if(updated_href){
-       jQuery(this).attr('href', updated_href);
+    if (updated_href) {
+      jQuery(this).attr('href', updated_href);
     }
+  }
 });
 jQuery('.body-summary a').each(function() {
-    var href_val = jQuery(this).attr('href');
+  var href_val = jQuery(this).attr('href');
+  if (href_val.indexOf('http')) {
     var updated_href = update_language_url(href_val);
-    if(updated_href){
-       jQuery(this).attr('href', updated_href);
+    if (updated_href) {
+      jQuery(this).attr('href', updated_href);
     }
+  }
 });
 jQuery('.pane-node-body a').each(function() {
-    var href_val = jQuery(this).attr('href');
+  var href_val = jQuery(this).attr('href');
+  if (href_val.indexOf('http')) {
     var updated_href = update_language_url(href_val);
-    if(updated_href){
-       jQuery(this).attr('href', updated_href);
+    if (updated_href) {
+      jQuery(this).attr('href', updated_href);
     }
+  }
 });
 jQuery('.accordian-summary a').each(function() {
-    var href_val = jQuery(this).attr('href');
+  var href_val = jQuery(this).attr('href');
+  if (href_val.indexOf('http')) {
     var updated_href = update_language_url(href_val);
-    if(updated_href){
-       jQuery(this).attr('href', updated_href);
+    if (updated_href) {
+      jQuery(this).attr('href', updated_href);
     }
+  }
 });
 /*
  * append language with urls.
@@ -459,12 +470,12 @@ jQuery('.accordian-summary a').each(function() {
  * @returns {String}]]
  * 
  */
-function update_language_url(url){
-    var getUrl = window.location;
-    var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
-    var arr = baseUrl.split('/');
-    if (url.indexOf(arr[3] + '/') == -1) {
-        return '/' + arr[3] + url;
+function update_language_url(url) {
+  if (url.indexOf(getUrl.pathname.split('/')[1] + '/') == -1) {
+    if (url.indexOf('/')) {
+      return '/' + getUrl.pathname.split('/')[1] + '/' + url;
     }
+  }
+  return '/' + getUrl.pathname.split('/')[1] + url;
 }
 
