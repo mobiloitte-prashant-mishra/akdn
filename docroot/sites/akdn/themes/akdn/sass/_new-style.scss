@@ -915,6 +915,7 @@ html[dir='rtl'] {
   .node-type-agency {
     .pane-hub-pages:not(.other-activities-title) {
       .pane-title {
+        clear:both;
         &:after {
           margin: -7px 290px 0 0;
         }

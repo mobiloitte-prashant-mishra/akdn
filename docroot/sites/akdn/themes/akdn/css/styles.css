@@ -22673,28 +22673,33 @@ html[dir='rtl'] .what-we-do-subwrapper .readall {
   padding-left: 15;
   padding-right: 0px;
 }
-/* line 918, ../sass/_new-style.scss */
+/* line 917, ../sass/_new-style.scss */
+html[dir='rtl'] .geography-page .pane-hub-pages:not(.other-activities-title) .pane-title,
+html[dir='rtl'] .node-type-agency .pane-hub-pages:not(.other-activities-title) .pane-title {
+  clear: both;
+}
+/* line 919, ../sass/_new-style.scss */
 html[dir='rtl'] .geography-page .pane-hub-pages:not(.other-activities-title) .pane-title:after,
 html[dir='rtl'] .node-type-agency .pane-hub-pages:not(.other-activities-title) .pane-title:after {
   margin: -7px 290px 0 0;
 }
-/* line 926, ../sass/_new-style.scss */
+/* line 927, ../sass/_new-style.scss */
 html[dir='rtl'] .geography-page .www-summary .field-type-text-with-summary:before,
 html[dir='rtl'] .node-type-agency .www-summary .field-type-text-with-summary:before {
   left: initial;
   right: 0;
 }
-/* line 934, ../sass/_new-style.scss */
+/* line 935, ../sass/_new-style.scss */
 html[dir='rtl'] .geography-page .country-activity-tile .hub-pages-row,
 html[dir='rtl'] .node-type-agency .country-activity-tile .hub-pages-row {
   float: right;
 }
-/* line 937, ../sass/_new-style.scss */
+/* line 938, ../sass/_new-style.scss */
 html[dir='rtl'] .geography-page .country-activity-tile .hub-pages-row img,
 html[dir='rtl'] .node-type-agency .country-activity-tile .hub-pages-row img {
   width: 100%;
 }
-/* line 942, ../sass/_new-style.scss */
+/* line 943, ../sass/_new-style.scss */
 html[dir='rtl'] .geography-page .country-activity-tile .hub-pages-row .country_activity_link a,
 html[dir='rtl'] .node-type-agency .country-activity-tile .hub-pages-row .country_activity_link a {
   right: initial;
@@ -22704,66 +22709,66 @@ html[dir='rtl'] .node-type-agency .country-activity-tile .hub-pages-row .country
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
-/* line 949, ../sass/_new-style.scss */
+/* line 950, ../sass/_new-style.scss */
 html[dir='rtl'] .geography-page .country-activity-tile .hub-pages-row .hub_pages-title,
 html[dir='rtl'] .node-type-agency .country-activity-tile .hub-pages-row .hub_pages-title {
   padding: 10px 15px 10px 35px;
 }
-/* line 955, ../sass/_new-style.scss */
+/* line 956, ../sass/_new-style.scss */
 html[dir='rtl'] .geography-page .what-we-do-main-wrapper,
 html[dir='rtl'] .node-type-agency .what-we-do-main-wrapper {
   float: right;
 }
-/* line 960, ../sass/_new-style.scss */
+/* line 961, ../sass/_new-style.scss */
 html[dir='rtl'] .geography-page .www-body li,
 html[dir='rtl'] .node-type-agency .www-body li {
   left: initial;
   right: 1em;
 }
-/* line 965, ../sass/_new-style.scss */
+/* line 966, ../sass/_new-style.scss */
 html[dir='rtl'] .geography-page .www-body img,
 html[dir='rtl'] .node-type-agency .www-body img {
   width: 100%;
 }
-/* line 972, ../sass/_new-style.scss */
+/* line 973, ../sass/_new-style.scss */
 html[dir='rtl'] .facts-block_icon img {
   width: auto;
 }
-/* line 978, ../sass/_new-style.scss */
+/* line 979, ../sass/_new-style.scss */
 html[dir='rtl'] .see-also-brochure-image img {
   width: 100%;
 }
-/* line 983, ../sass/_new-style.scss */
+/* line 984, ../sass/_new-style.scss */
 html[dir='rtl'] .in-media-block {
   float: right;
 }
-/* line 986, ../sass/_new-style.scss */
+/* line 987, ../sass/_new-style.scss */
 html[dir='rtl'] .in-media-block:before {
   left: initial;
   right: 15px;
 }
-/* line 992, ../sass/_new-style.scss */
+/* line 993, ../sass/_new-style.scss */
 html[dir='rtl'] .grid-media-block_description {
   padding: 15px 10px 5px 0px;
 }
-/* line 995, ../sass/_new-style.scss */
+/* line 996, ../sass/_new-style.scss */
 html[dir='rtl'] .grid-media-block_description .date {
   float: right;
 }
-/* line 1002, ../sass/_new-style.scss */
+/* line 1003, ../sass/_new-style.scss */
 html[dir='rtl'] .akdn-filter-show-hide h2:after {
   float: left;
 }
-/* line 1009, ../sass/_new-style.scss */
+/* line 1010, ../sass/_new-style.scss */
 html[dir='rtl'] .akdn-filter-js-wrapper ul {
   padding-right: 18px;
   padding-left: 0;
 }
-/* line 1014, ../sass/_new-style.scss */
+/* line 1015, ../sass/_new-style.scss */
 html[dir='rtl'] .akdn-filter-js-wrapper .form-submit, html[dir='rtl'] .akdn-filter-js-wrapper .akdn-solr-rest-link {
   float: right;
 }
-/* line 1018, ../sass/_new-style.scss */
+/* line 1019, ../sass/_new-style.scss */
 html[dir='rtl'] .akdn-filter-js-wrapper .form-submit {
   margin: 0 2% 0 0;
   -moz-transform: none;
@@ -22771,55 +22776,55 @@ html[dir='rtl'] .akdn-filter-js-wrapper .form-submit {
   -webkit-transform: none;
   transform: none;
 }
-/* line 1024, ../sass/_new-style.scss */
+/* line 1025, ../sass/_new-style.scss */
 html[dir='rtl'] .akdn-filter-wrapper {
   float: right;
   padding: 0 0 0 15px;
 }
-/* line 1030, ../sass/_new-style.scss */
+/* line 1031, ../sass/_new-style.scss */
 html[dir='rtl'] .akdn-filter-wrapper .item-list li input[type="checkbox"] {
   margin: 2px -18px 0 0;
 }
-/* line 1037, ../sass/_new-style.scss */
+/* line 1038, ../sass/_new-style.scss */
 html[dir='rtl'] #backtotop {
   right: initial;
   left: 20px;
 }
-/* line 1043, ../sass/_new-style.scss */
+/* line 1044, ../sass/_new-style.scss */
 html[dir='rtl'] .publication-list-container .views-row {
   float: right;
   border-left: none;
   border-right: 1px solid #b5995a;
 }
-/* line 1048, ../sass/_new-style.scss */
+/* line 1049, ../sass/_new-style.scss */
 html[dir='rtl'] .publication-list-container .views-row:nth-child(5n-4) {
   border-right: none;
 }
-/* line 1056, ../sass/_new-style.scss */
+/* line 1057, ../sass/_new-style.scss */
 html[dir='rtl'] .all-activities-btn h2.pane-title {
   padding: 12px 10px 12px 30px !important;
 }
-/* line 1059, ../sass/_new-style.scss */
+/* line 1060, ../sass/_new-style.scss */
 html[dir='rtl'] .all-activities-btn h2.pane-title:after {
   right: initial;
   left: 10px;
 }
-/* line 1067, ../sass/_new-style.scss */
+/* line 1068, ../sass/_new-style.scss */
 html[dir='rtl'] .hub-page-press-center-right ul {
   padding-right: 0;
 }
-/* line 1073, ../sass/_new-style.scss */
+/* line 1074, ../sass/_new-style.scss */
 html[dir='rtl'] .press-release-detail .pane-email {
   float: right;
 }
-/* line 1077, ../sass/_new-style.scss */
+/* line 1078, ../sass/_new-style.scss */
 html[dir='rtl'] .press-release-detail .print_mail,
 html[dir='rtl'] .press-release-detail .pane-addthis,
 html[dir='rtl'] .press-release-detail .print_html {
   margin: 0 0 0 12px;
   float: right;
 }
-/* line 1086, ../sass/_new-style.scss */
+/* line 1087, ../sass/_new-style.scss */
 html[dir='rtl'] .presscenter-right-more-btn a:after {
   float: left;
   -moz-transform: rotate(180deg);
@@ -22827,38 +22832,38 @@ html[dir='rtl'] .presscenter-right-more-btn a:after {
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
-/* line 1092, ../sass/_new-style.scss */
+/* line 1093, ../sass/_new-style.scss */
 html[dir='rtl'] .main-navbar {
   clear: left;
 }
-/* line 1097, ../sass/_new-style.scss */
+/* line 1098, ../sass/_new-style.scss */
 html[dir='rtl'] .akdn-publication-details .pane-node-field-publication-image,
 html[dir='rtl'] .akdn-publication-details .pane-node-field-publication-file,
 html[dir='rtl'] .akdn-publication-details .related-block-info {
   float: right;
   clear: right;
 }
-/* line 1106, ../sass/_new-style.scss */
+/* line 1107, ../sass/_new-style.scss */
 html[dir='rtl'] .press-release-detail .related-block-info {
   float: right;
   clear: right;
   padding: 0 15px 0 25px;
 }
-/* line 1112, ../sass/_new-style.scss */
+/* line 1113, ../sass/_new-style.scss */
 html[dir='rtl'] .press-release-detail .pane-node-body {
   clear: left;
 }
-/* line 1117, ../sass/_new-style.scss */
+/* line 1118, ../sass/_new-style.scss */
 html[dir='rtl'] table {
   float: none;
   clear: right;
 }
-/* line 1124, ../sass/_new-style.scss */
+/* line 1125, ../sass/_new-style.scss */
 html[dir='rtl'] .gallery-thumbs ul li {
   float: right;
 }
 
-/* line 1131, ../sass/_new-style.scss */
+/* line 1132, ../sass/_new-style.scss */
 .region-footer-second {
   text-align: center;
 }
