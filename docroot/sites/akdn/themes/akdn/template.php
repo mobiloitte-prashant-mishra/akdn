@@ -392,9 +392,9 @@ function akdn_colorbox_imagefield($variables) {
  * Translate the Related links of publication inner page for panel
  */
 function akdn_preprocess_panels_pane(&$vars) {
+  print("<pre>".print_r($vars, true)."</pre>");exit;
   if (isset($vars['pane']->pid) && $vars['pane']->pid == "1495") {
     if (isset($vars['content']['#field_name'])) {
-      print("<pre>".print_r($vars['title'], true)."</pre>");exit;
       if ($vars['content']['#field_name'] == "field_project_links") {
         $vars['title'] = t('Related links');
       }
