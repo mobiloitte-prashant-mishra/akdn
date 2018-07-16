@@ -22,8 +22,23 @@ function webform_conditional_form_webform_component_edit_form_alter(&$form, &$fo
       //if there are any same page component add function to handle values
       array_unshift($form['#submit'], 'webform_condtional_component_edit_submit');
       $form['conditional']['#access'] = TRUE;
-      $form['conditional']['extra']['conditional_component']['#options'] = $form['conditional']['extra']['conditional_component']['#options'] + $triggerComponents;
-      $default_value = trim($form['conditional']['extra']['conditional_values']['#default_value']);
+      $form['conditional']['extra']['conditional_component']['#options'] =
+         (
+            is_array($form['conditional']) &&
+            array_key_exists('extra', $form['conditional']) &&
+            is_array($form['conditional']['extra']) &&
+            array_key_exists('#options', $form['conditional']['extra']['conditional_component']) &&
+            is_array($form['conditional']['extra']['conditional_component']['#options'])
+         ) ?
+            $form['conditional']['extra']['conditional_component']['#options'] + $triggerComponents :
+            $triggerComponents;
+
+      if(array_key_exists('extra', $form['conditional']) &&
+         array_key_exists('conditional_values', $form['conditional']['extra']) &&
+         array_key_exists('#default_value', $form['conditional']['extra']['conditional_values']))
+      {
+        $default_value = trim($form['conditional']['extra']['conditional_values']['#default_value']);
+      }
       if (empty($default_value)) {
         //no regular conditional values
         if (!empty($form['cid']['#value'])) {
@@ -54,8 +69,8 @@ function webform_conditional_form_webform_component_edit_form_alter(&$form, &$fo
  */
 function webform_condtional_component_edit_submit($form, &$form_state) {
   $triggerComponents = _webform_conditional_possible_trigger_components($form['nid']['#value'], $form['cid']['#value'], FALSE);
-  $values = trim($form_state['values']['extra']['conditional_values']);
-  if (array_key_exists($form_state['values']['extra']['conditional_component'], $triggerComponents)) {
+  $values = empty($form_state['values']['extra']['conditional_values']) ? '' : trim($form_state['values']['extra']['conditional_values']);
+  if (!empty($form_state['values']['extra']['conditional_component']) && array_key_exists($form_state['values']['extra']['conditional_component'], $triggerComponents)) {
     //handle with this module'
     //don't check for empty b/c 0 could only value
     if ($values !== '') {
