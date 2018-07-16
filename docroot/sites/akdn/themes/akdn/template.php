@@ -37,7 +37,7 @@ if (!empty($vars['node']) && $vars['node']->type == 'page' || $vars['node']->typ
   }
   //drupal_add_js(path_to_theme() . '/js/jquery.touchSwipe.min.js');
   // dpm($variables['node']);
-  
+
   //New page tpl for AKDN internal News page nodes
   if(!empty($vars['node']) && $vars['node']->type == 'akdn_internal_news_page'){
     $vars['theme_hook_suggestions'][] = 'page__akdn_internal_news_page';
@@ -387,3 +387,24 @@ function akdn_colorbox_imagefield($variables) {
   );
   return l($image, $options['path'], $options);
 }
+
+
+/**
+ * Translate the Download text of Events inner page for panel
+ */
+function akdn_preprocess_panels_pane(&$vars) {
+  if (isset($vars['pane']->pid) && $vars['pane']->pid == "new-9444d95a-d521-4901-905f-6828936eaf67") {
+    if (isset($vars['content']['#field_name'])) {
+      if ($vars['content']['#field_name'] == "field_event_links") {
+        $vars['title'] = t('Related links');
+      }
+    }
+  }
+
+  if (isset($vars['content']['#field_name'])) {
+    if ($vars['content']['#field_name'] == "field_event_related") {
+      $vars['title'] = t('Related Information');
+    }
+  }
+}
+
