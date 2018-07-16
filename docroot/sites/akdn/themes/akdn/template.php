@@ -388,6 +388,10 @@ function akdn_colorbox_imagefield($variables) {
   return l($image, $options['path'], $options);
 }
 
+
+/**
+ * Override the home page custom block with string
+ */
 function akdn_block_view_alter(&$data, $block) {
   if ($block->delta == "126") {
     global $base_url;
@@ -397,15 +401,36 @@ function akdn_block_view_alter(&$data, $block) {
   }
 }
 
+
 /**
  * Translate the Download text of publication inner page for panel
  */
 function akdn_preprocess_panels_pane(&$vars) {
-  if (isset($vars['pane']->pid) && $vars['pane']->pid == "1066") {
+  if (isset($vars['pane']->pid) && $vars['pane']->pid == "new-eccf47b0-a9df-431b-9227-efe39de24e7e") {
     if(isset($vars['content']['#field_name'])) {
       if ($vars['content']['#field_name'] == "field_publication_file") {
-        $vars['display']->content['1076']->configuration['formatter_settings']['text'] = t('Download');
+        $vars['display']->content['new-eccf47b0-a9df-431b-9227-efe39de24e7e']->configuration['formatter_settings']['text'] = t('Download');
       }
+    }
+  }
+  // Translate the Related links of publication inner page for panel
+  if (isset($vars['pane']->pid) && $vars['pane']->pid == "new-d6bbff22-6c30-438c-a158-398ae8be33b5") {
+    if (isset($vars['content']['#field_name'])) {
+      if ($vars['content']['#field_name'] == "field_project_links") {
+        $vars['title'] = t('Related links');
+      }
+    }
+  }
+  if (isset($vars['pane']->pid) && $vars['pane']->pid == "new-9444d95a-d521-4901-905f-6828936eaf67") {
+    if (isset($vars['content']['#field_name'])) {
+      if ($vars['content']['#field_name'] == "field_event_links") {
+        $vars['title'] = t('Related links');
+      }
+    }
+  }
+  if (isset($vars['content']['#field_name'])) {
+    if ($vars['content']['#field_name'] == "field_event_related") {
+      $vars['title'] = t('Related Information');
     }
   }
 }
