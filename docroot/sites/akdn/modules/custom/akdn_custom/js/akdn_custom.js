@@ -420,11 +420,12 @@ jQuery('ul.facetapi-facetapi-checkbox-links li.leaf a').each(function(){
 
 var base_url = window.location.origin;
 var getUrl = window.location;
+var lang = ['en', 'fr', 'ar', 'zh-hans', 'de','it','ky','ms','fa','pt','ru','es','tg','ur'];
 //var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
 jQuery('.accordian-main-body a').each(function() {
   var href_val = jQuery(this).attr('href');
   var updated_href = update_language_url(href_val);
-  if (updated_href) {
+  if ((jQuery.inArray(getUrl.pathname.split('/')[1], lang) != -1) && updated_href) {
     jQuery(this).attr('href', updated_href);
   }
 });
@@ -432,7 +433,7 @@ jQuery('.basic-page-accordian-summary a').each(function() {
   var href_val = jQuery(this).attr('href');
   if (href_val.indexOf('http')) {
     var updated_href = update_language_url(href_val);
-    if (updated_href) {
+    if ((jQuery.inArray(getUrl.pathname.split('/')[1], lang) != -1) && updated_href) {
       jQuery(this).attr('href', updated_href);
     }
   }
@@ -441,7 +442,7 @@ jQuery('.body-summary a').each(function() {
   var href_val = jQuery(this).attr('href');
   if (href_val.indexOf('http')) {
     var updated_href = update_language_url(href_val);
-    if (updated_href) {
+    if ((jQuery.inArray(getUrl.pathname.split('/')[1], lang) != -1) && updated_href) {
       jQuery(this).attr('href', updated_href);
     }
   }
@@ -450,7 +451,7 @@ jQuery('.pane-node-body a').each(function() {
   var href_val = jQuery(this).attr('href');
   if (href_val.indexOf('http')) {
     var updated_href = update_language_url(href_val);
-    if (updated_href) {
+    if ((jQuery.inArray(getUrl.pathname.split('/')[1], lang) != -1) && updated_href) {
       jQuery(this).attr('href', updated_href);
     }
   }
@@ -459,7 +460,7 @@ jQuery('.accordian-summary a').each(function() {
   var href_val = jQuery(this).attr('href');
   if (href_val.indexOf('http')) {
     var updated_href = update_language_url(href_val);
-    if (updated_href) {
+    if ((jQuery.inArray(getUrl.pathname.split('/')[1], lang) != -1) && updated_href) {
       jQuery(this).attr('href', updated_href);
     }
   }
