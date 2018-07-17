@@ -509,8 +509,8 @@
         });
 
         // add placeholders for filter inputs
-        $('.form-type-date-popup.form-item-date-filter-from input.form-text').attr('placeholder','From');
-        $('.form-type-date-popup.form-item-date-filter-to input.form-text').attr('placeholder','To');
+        // $('.form-type-date-popup.form-item-date-filter-from input.form-text').attr('placeholder','From');
+        // $('.form-type-date-popup.form-item-date-filter-to input.form-text').attr('placeholder','To');
 
         // search bar functionality
         if (!$('#edit-search').val() == 'search' || !$('#edit-search').val() == '') {

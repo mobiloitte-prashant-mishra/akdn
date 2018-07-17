@@ -2844,6 +2844,7 @@ function akdn_block_forms($form, &$form_state, $delta) {
         '#title' => t('From'),
         '#date_format' => $format,
         '#default_value' => $from,
+        '#attributes' => array('placeholder' => t('From')),
         '#date_year_range' => $start . ':+0',
       );
       $form['date_filter_to'] = array(
@@ -2852,6 +2853,7 @@ function akdn_block_forms($form, &$form_state, $delta) {
         '#title' => t('To'),
         '#date_format' => $format,
         '#default_value' => $to,
+        '#attributes' => array('placeholder' => t('To')),
         '#date_year_range' => $start . ':+0',
       );
 
