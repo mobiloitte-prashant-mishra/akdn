@@ -2844,6 +2844,7 @@ function akdn_block_forms($form, &$form_state, $delta) {
         '#title' => t('From'),
         '#date_format' => $format,
         '#default_value' => $from,
+        '#attributes' => array('placeholder' => t('From')),
         '#date_year_range' => $start . ':+0',
       );
       $form['date_filter_to'] = array(
@@ -2852,6 +2853,7 @@ function akdn_block_forms($form, &$form_state, $delta) {
         '#title' => t('To'),
         '#date_format' => $format,
         '#default_value' => $to,
+        '#attributes' => array('placeholder' => t('To')),
         '#date_year_range' => $start . ':+0',
       );
 
@@ -5603,4 +5605,15 @@ function _akdn_custom_see_also_menu() {
   }
   $output .= '</ul>';
   return $output;
+}
+
+
+/**
+ * Implements hook_views_pre_execute().
+ */
+function akdn_custom_views_pre_execute(&$view) {
+  if ($view->name == "solr_search_pages_1" && $view->current_display == "page_4") {
+    $text = t($view->field['field_publication_file']->options['settings']['text']);
+    $view->field['field_publication_file']->options['settings']['text'] = $text;
+  }
 }
