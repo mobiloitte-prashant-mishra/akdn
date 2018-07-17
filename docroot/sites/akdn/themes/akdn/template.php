@@ -409,4 +409,9 @@ function akdn_preprocess_panels_pane(&$vars) {
     }
   }
 
+  if (isset($vars['content']['#field_name'])) {
+    if ($vars['content']['#field_name'] == "field_article_link") {
+      $vars['title'] = t($vars['title']);
+    }
+  }
 }
