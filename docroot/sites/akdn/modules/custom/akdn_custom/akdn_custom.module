@@ -2330,7 +2330,7 @@ function what_we_do_news_and_resources() {
         if ($node->field_article_img[$lang]) {
           $image = $node->field_article_img[$lang];
         }
-        else if ($node->field_article_img[$node->lanugage]) {
+        elseif ($node->field_article_img[$node->lanugage]) {
           $image = $node->field_article_img[$node->lanugage];
         }
         else {
