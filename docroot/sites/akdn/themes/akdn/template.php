@@ -37,7 +37,7 @@ if (!empty($vars['node']) && $vars['node']->type == 'page' || $vars['node']->typ
   }
   //drupal_add_js(path_to_theme() . '/js/jquery.touchSwipe.min.js');
   // dpm($variables['node']);
-  
+
   //New page tpl for AKDN internal News page nodes
   if(!empty($vars['node']) && $vars['node']->type == 'akdn_internal_news_page'){
     $vars['theme_hook_suggestions'][] = 'page__akdn_internal_news_page';
@@ -392,7 +392,11 @@ function akdn_block_view_alter(&$data, $block) {
   if ($block->delta == "126") {
     global $base_url;
     global $language;
-    $home_page_url = $base_url . "/" . $language->language;
+    if ($language->language == "en") {
+      $home_page_url = $base_url . "/";
+    } else {
+      $home_page_url = $base_url . "/" . $language->language;
+    }
     $data['content'] = str_replace("@home_page_url", $home_page_url, $data['content']);
   }
 }
