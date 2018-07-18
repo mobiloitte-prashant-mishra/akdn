@@ -2583,10 +2583,10 @@ function akdn_custom_query_get_article_type_nid_and_published_date($ntid, $cat_i
  * @return [type] [description]
  */
 function akdn_breadcrumb_trail() {
+  global $language;
   path_breadcrumbs_set_breadcrumb();
   $arr = menu_get_active_trail();
   $top_menu = $arr[1];
-
   $get_breadcrumb = drupal_get_breadcrumb();
   if ((arg(1) == 'steering-committee') || (arg(1) == 'master-jury')) {
     $arg = arg(2);
@@ -2598,7 +2598,6 @@ function akdn_breadcrumb_trail() {
     $arg = arg(1);
     $node_load = node_load($arg);
   }
-
 
   if ($node_load->type == 'hub_page') {
     if ($top_menu['link_title'] == "Where we work") {
@@ -2616,7 +2615,29 @@ function akdn_breadcrumb_trail() {
     $get_breadcrumb[2] = l($get_breadcrumb[2], 'node/' . $nid);
   }
   if ($node_load->type == 'page') {
+    if (isset($arr[1]['mlid'])) {
+      $mlid = $arr[1]['mlid'];
+      $tree = menu_tree_all_data(variable_get('menu_main_links_source', 'main-menu'));
+
+      // Localize the tree.
+      if (module_exists('i18n_menu')) {
+        $tree = i18n_menu_localize_tree($tree);
+      }
+
+      foreach ($tree as $key => $value) {
+        if ($value['link']['mlid'] == $mlid) {
+          $get_breadcrumb[1] = $value['link']['title'];
+        }
+      }
+    }
     if ($top_menu['link_title'] == "Where we work") {
+      if (count($get_breadcrumb) > 3) {
+        $lan = $language->language;
+        if (isset($node_load->field_short_title[$lan])) {
+          $last_key = end(array_keys($get_breadcrumb));
+          $get_breadcrumb[$last_key] = $node_load->field_short_title[$lan][0]['value'];
+        }
+      }
       $count = count($get_breadcrumb);
       if ($count >= 5) {
         unset($get_breadcrumb[2]);
@@ -2624,23 +2645,29 @@ function akdn_breadcrumb_trail() {
       }
     }
     else {
+
       if (count($get_breadcrumb) > 3) {
-        $alias = drupal_get_path_alias($arr[2]['link_path']);
-        $link = l($arr[2]['link_title'], $alias);
-        $get_breadcrumb[2] = $link;
+        $lan = $language->language;
+        if (isset($node_load->field_short_title[$lan])) {
+          $last_key = end(array_keys($get_breadcrumb));
+          $get_breadcrumb[$last_key] = $node_load->field_short_title[$lan][0]['value'];
+        }
+        // $alias = drupal_get_path_alias($arr[2]['link_path']);
+        // $link = l($arr[2]['link_title'], $alias);
+        // $get_breadcrumb[2] = $link;
       }
       if (count($get_breadcrumb) >= 5) {
         $get_breadcrumb[3] = strip_tags($get_breadcrumb[3]);
       }
     }
   }
-
   $output = '';
   foreach ($get_breadcrumb as $key => $value) {
     if ($key == 1) {
       $value = strip_tags($value);
     }
-    $trail[] = t($value);
+    // $trail[] = t($value);
+    $trail[] = $value;
   }
   if (!empty($trail)) {
     $output = '<div class = "static_text">' . t('You are here') . '</div>';
