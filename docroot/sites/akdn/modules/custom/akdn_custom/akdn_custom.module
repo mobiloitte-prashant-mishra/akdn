@@ -2666,8 +2666,11 @@ function akdn_breadcrumb_trail() {
     if ($key == 1) {
       $value = strip_tags($value);
     }
-    // $trail[] = t($value);
-    $trail[] = $value;
+    if ($node_load->type == 'page') {
+      $trail[] = $value;
+    } else {
+      $trail[] = t($value);
+    }
   }
   if (!empty($trail)) {
     $output = '<div class = "static_text">' . t('You are here') . '</div>';
