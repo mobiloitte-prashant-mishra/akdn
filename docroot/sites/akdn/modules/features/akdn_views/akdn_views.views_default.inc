@@ -34378,7 +34378,10 @@ if ($data->node_type == "featured_content") {
 	$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php']['php_output'] = '<?php
 	global $language;
-	print $language->language;
+	if($language->language != \'en\'){
+		 print \'/\'.$language->language;
+	}
+  print \'\';
 	?>';
 	$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
@@ -34416,7 +34419,7 @@ if ($data->node_type == "featured_content") {
 	$handler->display->display_options['fields']['field_country']['table'] = 'field_data_field_country';
 	$handler->display->display_options['fields']['field_country']['field'] = 'field_country';
 	$handler->display->display_options['fields']['field_country']['alter']['alter_text'] = TRUE;
-	$handler->display->display_options['fields']['field_country']['alter']['text'] = '<a href="/[php]/press-centre/projects?f[0]=field_country:[field_country-tid]">[field_country]</a>';
+	$handler->display->display_options['fields']['field_country']['alter']['text'] = '<a href="[php]/press-centre/projects?f[0]=field_country:[field_country-tid]">[field_country]</a>';
 	$handler->display->display_options['fields']['field_country']['element_type'] = 'span';
 	$handler->display->display_options['fields']['field_country']['element_label_type'] = 'span';
 	$handler->display->display_options['fields']['field_country']['hide_empty'] = TRUE;
@@ -34427,7 +34430,7 @@ if ($data->node_type == "featured_content") {
 	$handler->display->display_options['fields']['field_agency']['table'] = 'field_data_field_agency';
 	$handler->display->display_options['fields']['field_agency']['field'] = 'field_agency';
 	$handler->display->display_options['fields']['field_agency']['alter']['alter_text'] = TRUE;
-	$handler->display->display_options['fields']['field_agency']['alter']['text'] = '<a href="/[php]/press-centre/projects?f[0]=field_agency:[field_agency-tid]">[field_agency]</a>';
+	$handler->display->display_options['fields']['field_agency']['alter']['text'] = '<a href="[php]/press-centre/projects?f[0]=field_agency:[field_agency-tid]">[field_agency]</a>';
 	$handler->display->display_options['fields']['field_agency']['element_type'] = 'span';
 	$handler->display->display_options['fields']['field_agency']['element_label_type'] = 'span';
 	$handler->display->display_options['fields']['field_agency']['hide_empty'] = TRUE;
@@ -34438,7 +34441,7 @@ if ($data->node_type == "featured_content") {
 	$handler->display->display_options['fields']['field_focus_area']['table'] = 'field_data_field_focus_area';
 	$handler->display->display_options['fields']['field_focus_area']['field'] = 'field_focus_area';
 	$handler->display->display_options['fields']['field_focus_area']['alter']['alter_text'] = TRUE;
-	$handler->display->display_options['fields']['field_focus_area']['alter']['text'] = '<a href="/[php]/press-centre/projects?f[0]=field_focus_area:[field_focus_area-tid]">[field_focus_area]</a>';
+	$handler->display->display_options['fields']['field_focus_area']['alter']['text'] = '<a href="[php]/press-centre/projects?f[0]=field_focus_area:[field_focus_area-tid]">[field_focus_area]</a>';
 	$handler->display->display_options['fields']['field_focus_area']['element_type'] = 'span';
 	$handler->display->display_options['fields']['field_focus_area']['element_label_type'] = 'span';
 	$handler->display->display_options['fields']['field_focus_area']['hide_empty'] = TRUE;
