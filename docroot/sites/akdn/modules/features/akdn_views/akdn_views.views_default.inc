@@ -34381,6 +34381,7 @@ if ($data->node_type == "featured_content") {
 	if($language->language != \'en\'){
 		 print \'/\'.$language->language;
 	}
+  print \'\';
 	?>';
 	$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
