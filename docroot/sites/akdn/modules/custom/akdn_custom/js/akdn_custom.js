@@ -334,6 +334,18 @@ jQuery(".view-id-solr_quotes .view-grouping-content").each(function(){
         });
       }
 
+    /*
+     * display none numeric facet filters.
+     */
+    jQuery('ul.facetapi-facetapi-checkbox-links li.leaf a').each(function(){
+       var string = jQuery(this).text(); 
+       console.log(string);
+       var arr = string.split('(');
+       if(jQuery.isNaN(arr[0]) == false){
+           jQuery(this).parent().css('display','none');
+       }
+
+    });
 
     },
     detach: function (context, settings) {
@@ -405,3 +417,4 @@ jQuery(".gallery-slide a img").each(function() {
   jQuery(this).parent().attr('title', temp);
 });
 (jQuery);
+
