@@ -34373,6 +34373,7 @@ if ($data->node_type == "featured_content") {
 	$handler->display->display_options['fields']['php']['table'] = 'views';
 	$handler->display->display_options['fields']['php']['field'] = 'php';
 	$handler->display->display_options['fields']['php']['label'] = '';
+	$handler->display->display_options['fields']['php']['exclude'] = TRUE;
 	$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php']['php_output'] = '<?php
