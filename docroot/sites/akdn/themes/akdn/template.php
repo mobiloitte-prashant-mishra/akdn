@@ -396,7 +396,11 @@ function akdn_block_view_alter(&$data, $block) {
   if ($block->delta == "126") {
     global $base_url;
     global $language;
-    $home_page_url = $base_url . "/" . $language->language;
+    if ($language->language == "en") {
+      $home_page_url = $base_url . "/";
+    } else {
+      $home_page_url = $base_url . "/" . $language->language;
+    }
     $data['content'] = str_replace("@home_page_url", $home_page_url, $data['content']);
   }
 }
