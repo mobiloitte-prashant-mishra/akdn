@@ -2645,7 +2645,6 @@ function akdn_breadcrumb_trail() {
       }
     }
     else {
-
       if (count($get_breadcrumb) > 3) {
         $lan = $language->language;
         if (isset($node_load->field_short_title[$lan])) {
