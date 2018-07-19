@@ -1,0 +1,5 @@
+name = IE edge mode
+description = Force internet explorer to use edge engine.
+core = 7.x
+package = CMM
+version = 7.x-1.0
