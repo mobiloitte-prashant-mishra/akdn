@@ -5604,3 +5604,17 @@ function _akdn_custom_see_also_menu() {
   $output .= '</ul>';
   return $output;
 }
+
+function akdn_custom_pathauto_alias_alter(&$alias, array &$context) {
+  global $language;
+  if ($context['language'] != $language->language) {
+    if ($context['type'] == "article") {
+      if ($context['language'] == "en") {
+        $old_alias = drupal_get_path_alias($context['source'], "en");
+        if ($old_alias != $context['source']) {
+          $alias = drupal_get_path_alias($context['source'], "en");
+        }
+      }
+    }
+  }
+}
