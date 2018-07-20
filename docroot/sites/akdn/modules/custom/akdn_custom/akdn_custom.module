@@ -5608,7 +5608,6 @@ function _akdn_custom_see_also_menu() {
 
 /**
  * Implements hook_pathauto_alias_alter().
- * Updates the english language URL alias correctly.
  */
 function akdn_custom_pathauto_alias_alter(&$alias, array &$context) {
   global $language;
