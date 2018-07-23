@@ -5630,11 +5630,17 @@ function akdn_custom_tokens($type, $tokens, array $data = array(), array $option
       // Find the desired token by name
       switch ($name) {
         case 'file-image-caption-et-custom':
-          $new = $data['file']->field_image_caption[$language->language][0]['value'];
+          if (isset($data['file']->field_image_caption[$language->language][0]['value'])) {
+            $new = $data['file']->field_image_caption[$language->language][0]['value'];
+          } else {
+            $new = $data['file']->field_image_caption["en"][0]['value'];
+          }
+          // Add the new value into the replacements array.
           $replacements[$original] = $new;
           break;
       }
     }
   }
+
   return $replacements;
 }
