@@ -5611,12 +5611,17 @@ function _akdn_custom_see_also_menu() {
  */
 function akdn_custom_pathauto_alias_alter(&$alias, array &$context) {
   global $language;
-  if ($context['type'] == "article") {
-    if ($context['language'] != $language->language) {
-      $old_alias = drupal_get_path_alias($context['source'], $context['language']);
-      if ($old_alias != $context['source']) {
-        $alias = drupal_get_path_alias($context['source'], $context['language']);
+
+  switch ($context['type']) {
+    case 'article':
+    case 'custom_content':
+    case 'page':
+      if ($context['language'] != $language->language) {
+        $old_alias = drupal_get_path_alias($context['source'], $context['language']);
+        if ($old_alias != $context['source']) {
+          $alias = drupal_get_path_alias($context['source'], $context['language']);
+        }
       }
-    }
+      break;
   }
 }
