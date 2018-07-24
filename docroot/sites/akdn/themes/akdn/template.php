@@ -407,14 +407,20 @@ function akdn_block_view_alter(&$data, $block) {
 
 
 /**
- * Translate the Download text of publication inner page for panel
+ * Translate the Download text of Events inner page for panel
  */
 function akdn_preprocess_panels_pane(&$vars) {
-  if (isset($vars['pane']->pid) && $vars['pane']->pid == "1066") {
-    if(isset($vars['content']['#field_name'])) {
-      if ($vars['content']['#field_name'] == "field_publication_file") {
-        $vars['display']->content['1076']->configuration['formatter_settings']['text'] = t('Download');
+  if (isset($vars['pane']->pid) && $vars['pane']->pid == "new-9444d95a-d521-4901-905f-6828936eaf67") {
+    if (isset($vars['content']['#field_name'])) {
+      if ($vars['content']['#field_name'] == "field_event_links") {
+        $vars['title'] = t('Related links');
       }
+    }
+  }
+
+  if (isset($vars['content']['#field_name'])) {
+    if ($vars['content']['#field_name'] == "field_event_related") {
+      $vars['title'] = t('Related Information');
     }
   }
 }
