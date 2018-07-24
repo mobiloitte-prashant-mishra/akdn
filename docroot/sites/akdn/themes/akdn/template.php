@@ -388,6 +388,10 @@ function akdn_colorbox_imagefield($variables) {
   return l($image, $options['path'], $options);
 }
 
+
+/**
+ * Implements hook_block_view_alter
+ */
 function akdn_block_view_alter(&$data, $block) {
   if ($block->delta == "126") {
     global $base_url;
@@ -398,5 +402,19 @@ function akdn_block_view_alter(&$data, $block) {
       $home_page_url = $base_url . "/" . $language->language;
     }
     $data['content'] = str_replace("@home_page_url", $home_page_url, $data['content']);
+  }
+}
+
+
+/**
+ * Translate the Download text of publication inner page for panel
+ */
+function akdn_preprocess_panels_pane(&$vars) {
+  if (isset($vars['pane']->pid) && $vars['pane']->pid == "1066") {
+    if(isset($vars['content']['#field_name'])) {
+      if ($vars['content']['#field_name'] == "field_publication_file") {
+        $vars['display']->content['1076']->configuration['formatter_settings']['text'] = t('Download');
+      }
+    }
   }
 }
