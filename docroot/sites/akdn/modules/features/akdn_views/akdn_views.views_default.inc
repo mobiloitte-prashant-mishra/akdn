@@ -15823,6 +15823,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 		'publication' => 'publication',
 		'speech' => 'speech',
 		'project' => 'project',
+  	'focus_area' => 'focus_area',
 	);
 	$handler->display->display_options['filters']['type_1']['group'] = 2;
 	/* Filter criterion: Content: Create Banner Item (field_create_featured_content) */

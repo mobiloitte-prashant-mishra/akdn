@@ -898,7 +898,8 @@ function akdn_content_types_field_group_info() {
     'label' => 'Home Page Slider',
     'weight' => '25',
     'children' => array(
-      0 => 'field_feature_image',
+      0 => 'field_create_featured_content',
+      1 => 'field_feature_image',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
