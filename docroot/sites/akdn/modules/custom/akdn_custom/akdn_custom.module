@@ -5661,7 +5661,7 @@ function akdn_custom_pathauto_alias_alter(&$alias, array &$context) {
       }
     }
   }
-
+}
 
 /**
  * Implements hook_token_info().
