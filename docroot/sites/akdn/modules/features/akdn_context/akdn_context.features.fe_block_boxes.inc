@@ -28,9 +28,15 @@ if (arg(0) == \'node\' && is_numeric(arg(1))) {
  return;
 }
 $value;
+if ($lang_name == "en") {
+  $prefix = \'/\';
+} else {
+  $prefix = \'/\' . $lang_name . \'/\';
+}
+
 switch($entity->type) {
-    case \'project\':
-    $value = \'<a href="/press-centre/projects">\' . t(\'Spotlight\') . \'</a>\';
+  case \'project\':
+    $value = \'<a href="\' . $prefix . \'press-centre/projects">\' . t(\'Spotlight\') . \'</a>\';
     break;
   case \'article\':
     reset($entity->field_article_cat);
@@ -38,59 +44,45 @@ switch($entity->type) {
     $term = taxonomy_term_load($entity->field_article_cat[$key][0][\'tid\']);
     $value = $term->name_original;
     if ($value == \'Blog\') {
-      if ($lang_name == "en") {
-        $value = \'<a href="/press-centre/news">\' . t(\'News\') . \'</a>\';
-      } else {
-        $value = \'<a href="/\' . $lang_name . \'/press-centre/news">\' . t(\'News\') . \'</a>\';
-      }
+      $value = \'<a href="\' . $prefix . \'press-centre/news">\' . t(\'News\') . \'</a>\';
     }
     elseif ($value == \'In the media\') {
-      if ($lang_name == "en") {
-        $value = \'<a href="/press-centre/in-the-media">\' . t(\'In the Media\') . \'</a>\';
-      } else {
-        $value = \'<a href="/\' . $lang_name . \'/press-centre/in-the-media">\' . t(\'In the Media\') . \'</a>\';
-      }
+      $value = \'<a href="\' . $prefix . \'press-centre/in-the-media">\' . t(\'In the Media\') . \'</a>\';
     }
     elseif ($value == \'Press Release\') {
-      if ($lang_name == "en") {
-        $value = \'<a href="/press-centre/press-releases">\' . t(\'Press Release\') . \'</a>\';
-      } else {
-        $value = \'<a href="/\' . $lang_name . \'/press-centre/press-releases">\' . t(\'Press Release\') . \'</a>\';
-      }
+      $value = \'<a href="\' . $prefix . \'press-centre/press-releases">\' . t(\'Press Release\') . \'</a>\';
     }
     elseif ($value == \'News\') {
-      if ($lang_name == "en") {
-        $value = \'<a href="/press-centre/news">\' . t(\'News\') . \'</a>\';
-      } else {
-        $value = \'<a href="/\' . $lang_name . \'/press-centre/news">\' . t(\'News\') . \'</a>\';
-      }
+      $value = \'<a href="\' . $prefix . \'press-centre/news">\' . t(\'News\') . \'</a>\';
     }
     break;
   case \'event\':
-    $value = \'<a href="/press-centre/events">\' . t(\'Event\') . \'</a>\';
+    $value = \'<a href="\' . $prefix . \'press-centre/events">\' . t(\'Event\') . \'</a>\';
     break;
   case \'gallery\':
-    $value = \'<a href="/press-centre/galleries">\' . t(\'Photographs\') . \'</a>\';
+    $value = \'<a href="\' . $prefix . \'press-centre/galleries">\' . t(\'Photographs\') . \'</a>\';
     break;
   case \'person\':
     $value = t(\'People\');
     break;
   case \'podcast\':
     $term = taxonomy_term_load($entity->field_podcast_type[\'en\'][0][\'tid\']);
-    if ($term->name) { $value = \'<a href="/press-centre/videos">\'.$term->name.\'</a>\'; }
-    else { $value = \'<a href="/press-centre/videos">\' . t(\'Video\') . \'</a>\'; }
+    if ($term->name) {
+      $value = \'<a href="\' . $prefix . \'press-centre/videos">\'.$term->name.\'</a>\';
+    } else {
+      $value = \'<a href="\' . $prefix . \'press-centre/videos">\' . t(\'Video\') . \'</a>\';
+    }
     break;
   case \'publication\':
-    $value = \'<a href="/press-centre/publications">\' . t(\'Publication\') . \'</a>\';
+    $value = \'<a href="\' . $prefix . \'press-centre/publications">\' . t(\'Publication\') . \'</a>\';
     break;
   case \'speech\':
     $event_type = $entity->field_speech_type[\'und\'][0][\'value\'];
-if($event_type == \'interview\'){
-  $value = \'<a href="/press-centre/speeches">\' . t(\'Interview\') . \'</a>\';
-}else{
-  $value = \'<a href="/press-centre/speeches">\' . t(\'Speech\') . \'</a>\';
-}
-
+    if ($event_type == \'interview\'){
+      $value = \'<a href="\' . $prefix . \'press-centre/speeches">\' . t(\'Interview\') . \'</a>\';
+    } else {
+      $value = \'<a href="\' . $prefix . \'press-centre/speeches">\' . t(\'Speech\') . \'</a>\';
+    }
     break;
   case \'speech_quote\':
     $value = t(\'Speech Quote\');
