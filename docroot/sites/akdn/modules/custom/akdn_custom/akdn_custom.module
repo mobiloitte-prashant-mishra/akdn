@@ -5615,7 +5615,7 @@ function _akdn_custom_see_also_menu() {
       break;
     case 'publication': $types = 'Publications';
       break;
-    case 'project': $types = 'Projects';
+    case 'project': $types = 'Spotlights';
       break;
     case 'gallery': $types = 'Photographs';
       break;
