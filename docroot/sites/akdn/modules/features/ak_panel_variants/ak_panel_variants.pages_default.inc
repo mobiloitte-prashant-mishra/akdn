@@ -2636,7 +2636,7 @@ if (isset($node->field_about_page)) {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'hidden',
+    'label' => 'title',
     'formatter' => 'link_default',
     'delta_limit' => '0',
     'delta_offset' => '0',
@@ -2645,6 +2645,7 @@ if (isset($node->field_about_page)) {
     'context' => 'argument_entity_id:node_1',
     'override_title' => 1,
     'override_title_text' => 'Related Links',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
