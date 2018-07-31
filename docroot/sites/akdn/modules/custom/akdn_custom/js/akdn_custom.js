@@ -334,6 +334,18 @@ jQuery(".view-id-solr_quotes .view-grouping-content").each(function(){
         });
       }
 
+    /*
+     * display none numeric facet filters.
+     */
+    jQuery('ul.facetapi-facetapi-checkbox-links li.leaf a').each(function(){
+       var string = jQuery(this).text(); 
+       console.log(string);
+       var arr = string.split('(');
+       if(jQuery.isNaN(arr[0]) == false){
+           jQuery(this).parent().css('display','none');
+       }
+
+    });
 
     },
     detach: function (context, settings) {
@@ -405,66 +417,3 @@ jQuery(".gallery-slide a img").each(function() {
   jQuery(this).parent().attr('title', temp);
 });
 (jQuery);
-
-
-var base_url = window.location.origin;
-var getUrl = window.location;
-var lang = ['en', 'fr', 'ar', 'zh-hans', 'de','it','ky','ms','fa','pt','ru','es','tg','ur'];
-//var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
-jQuery('.accordian-main-body a').each(function() {
-  var href_val = jQuery(this).attr('href');
-  var updated_href = update_language_url(href_val);
-  if ((jQuery.inArray(getUrl.pathname.split('/')[1], lang) != -1) && updated_href) {
-    jQuery(this).attr('href', updated_href);
-  }
-});
-jQuery('.basic-page-accordian-summary a').each(function() {
-  var href_val = jQuery(this).attr('href');
-  if (href_val.indexOf('http')) {
-    var updated_href = update_language_url(href_val);
-    if ((jQuery.inArray(getUrl.pathname.split('/')[1], lang) != -1) && updated_href) {
-      jQuery(this).attr('href', updated_href);
-    }
-  }
-});
-jQuery('.body-summary a').each(function() {
-  var href_val = jQuery(this).attr('href');
-  if (href_val.indexOf('http')) {
-    var updated_href = update_language_url(href_val);
-    if ((jQuery.inArray(getUrl.pathname.split('/')[1], lang) != -1) && updated_href) {
-      jQuery(this).attr('href', updated_href);
-    }
-  }
-});
-jQuery('.pane-node-body a').each(function() {
-  var href_val = jQuery(this).attr('href');
-  if (href_val.indexOf('http')) {
-    var updated_href = update_language_url(href_val);
-    if ((jQuery.inArray(getUrl.pathname.split('/')[1], lang) != -1) && updated_href) {
-      jQuery(this).attr('href', updated_href);
-    }
-  }
-});
-jQuery('.accordian-summary a').each(function() {
-  var href_val = jQuery(this).attr('href');
-  if (href_val.indexOf('http')) {
-    var updated_href = update_language_url(href_val);
-    if ((jQuery.inArray(getUrl.pathname.split('/')[1], lang) != -1) && updated_href) {
-      jQuery(this).attr('href', updated_href);
-    }
-  }
-});
-/*
- * append language with urls.
- * @param {type} url
- * @returns {String}]]
- * 
- */
-function update_language_url(url) {
-  if (url.indexOf(getUrl.pathname.split('/')[1] + '/') == -1) {
-    if (url.indexOf('/')) {
-      return '/' + getUrl.pathname.split('/')[1] + '/' + url;
-    }
-    return '/' + getUrl.pathname.split('/')[1] + url;
-  }
-}

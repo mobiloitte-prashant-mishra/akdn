@@ -37,7 +37,7 @@ if (!empty($vars['node']) && $vars['node']->type == 'page' || $vars['node']->typ
   }
   //drupal_add_js(path_to_theme() . '/js/jquery.touchSwipe.min.js');
   // dpm($variables['node']);
-  
+
   //New page tpl for AKDN internal News page nodes
   if(!empty($vars['node']) && $vars['node']->type == 'akdn_internal_news_page'){
     $vars['theme_hook_suggestions'][] = 'page__akdn_internal_news_page';
@@ -386,4 +386,60 @@ function akdn_colorbox_imagefield($variables) {
     'language' => array('language' => NULL),
   );
   return l($image, $options['path'], $options);
+}
+
+
+/**
+ * Implements hook_block_view_alter
+ */
+function akdn_block_view_alter(&$data, $block) {
+  if ($block->delta == "126") {
+    global $base_url;
+    global $language;
+    if ($language->language == "en") {
+      $home_page_url = $base_url . "/";
+    } else {
+      $home_page_url = $base_url . "/" . $language->language;
+    }
+    $data['content'] = str_replace("@home_page_url", $home_page_url, $data['content']);
+  }
+}
+
+
+/**
+ * Translate the Download text of publication inner page for panel
+ */
+function akdn_preprocess_panels_pane(&$vars) {
+  if (isset($vars['pane']->pid) && $vars['pane']->pid == "new-eccf47b0-a9df-431b-9227-efe39de24e7e") {
+    if(isset($vars['content']['#field_name'])) {
+      if ($vars['content']['#field_name'] == "field_publication_file") {
+        $vars['display']->content['new-eccf47b0-a9df-431b-9227-efe39de24e7e']->configuration['formatter_settings']['text'] = t('Download');
+      }
+    }
+  }
+  // Translate the Related links of publication inner page for panel
+  if (isset($vars['pane']->pid) && $vars['pane']->pid == "new-d6bbff22-6c30-438c-a158-398ae8be33b5") {
+    if (isset($vars['content']['#field_name'])) {
+      if ($vars['content']['#field_name'] == "field_project_links") {
+        $vars['title'] = t('Related links');
+      }
+    }
+  }
+  if (isset($vars['pane']->pid) && $vars['pane']->pid == "new-9444d95a-d521-4901-905f-6828936eaf67") {
+    if (isset($vars['content']['#field_name'])) {
+      if ($vars['content']['#field_name'] == "field_event_links") {
+        $vars['title'] = t('Related links');
+      }
+    }
+  }
+  if (isset($vars['content']['#field_name'])) {
+    if ($vars['content']['#field_name'] == "field_event_related") {
+      $vars['title'] = t('Related Information');
+    }
+  }
+  if (isset($vars['content']['#field_name'])) {
+    if ($vars['content']['#field_name'] == "field_article_link") {
+      $vars['title'] = t($vars['title']);
+    }
+  }
 }

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AKDN New Views feature.
+ */
+
+include_once 'akdn_new_views.features.inc';

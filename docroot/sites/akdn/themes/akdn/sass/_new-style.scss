@@ -373,6 +373,7 @@ html[dir='rtl'] {
         float: none;
         display: inline;
         background-color: #fff;
+        padding-bottom:10px;
       }
 
       ul {
@@ -829,12 +830,25 @@ html[dir='rtl'] {
 
     p.indexfix {
       &:after {
-        margin: -6px 150px 0 0px;
+        margin: -6px 0px 0 0px;
       }
 
       span {
         &:last-child {
           padding-left: 10px;
+          position: relative;
+          display: inline-block;
+          &:after{
+              content: "";
+              width: 8px;
+              display: block;
+              position: absolute;
+              left: 100%;
+              z-index: 0;
+              height: 25px;
+              background: white;
+              top: 0;
+          }
         }
       }
     }
@@ -901,6 +915,7 @@ html[dir='rtl'] {
   .node-type-agency {
     .pane-hub-pages:not(.other-activities-title) {
       .pane-title {
+        clear:both;
         &:after {
           margin: -7px 290px 0 0;
         }
