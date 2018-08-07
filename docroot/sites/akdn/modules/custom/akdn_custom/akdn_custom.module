@@ -854,7 +854,7 @@ function akdn_custom_block_info() {
       'cache' => DRUPAL_NO_CACHE,
     ),
     'page_lang_switcher' => array(
-'info' => t('Custom Onpage Language Switcher'),
+      'info' => t('Custom Onpage Language Switcher'),
       'cache' => DRUPAL_NO_CACHE,
     ),
     'where_we_work_related_info' => array(
@@ -864,11 +864,7 @@ function akdn_custom_block_info() {
     'see_also_custom_block' => array(
       'info' => t('Custom See ALso Block'),
       'cache' => DRUPAL_NO_CACHE,
-    ),
- 'see_also_custom_block' => array(
-'info' => t('Custom See ALso Block'),
-      'cache' => DRUPAL_NO_CACHE,
- ),
+    ), 
     'akaa_resources' => array(
       'info' => t('AKAA Resources Links'),
       'cache' => DRUPAL_NO_CACHE,
@@ -5620,9 +5616,11 @@ function _akdn_custom_see_also_menu() {
     case 'gallery': $types = 'Photographs';
       break;
   }
-
   $output = '<ul class="menu">';
   foreach ($menu_array as $key => $value) {
+    if($value == 'Projects'){
+      $value = 'Spotlights';
+    }
     $active_li = ' akdn-menu-active-trail';
     $active_a = ' akdn-menu-active';
 
@@ -5636,7 +5634,6 @@ function _akdn_custom_see_also_menu() {
   $output .= '</ul>';
   return $output;
 }
-
 
 /**
  * Implements hook_views_pre_execute().
@@ -5676,7 +5673,7 @@ function akdn_custom_token_info() {
     'name'        => t("Caption et"),
     'description' => t("Field image tranlation text."),
   );
-   return $info;
+  return $info;
 }
 
 
