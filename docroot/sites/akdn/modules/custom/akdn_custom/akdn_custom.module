@@ -5639,7 +5639,6 @@ function _akdn_custom_see_also_menu() {
   return $output;
 }
 
-
 /**
  * Implements hook_views_pre_execute().
  */
@@ -5650,7 +5649,7 @@ function akdn_custom_views_pre_execute(&$view) {
   }
 }
 
-/*   
+/*
  * Implements hook_pathauto_alias_alter().
  */
 function akdn_custom_pathauto_alias_alter(&$alias, array &$context) {
@@ -5668,4 +5667,44 @@ function akdn_custom_pathauto_alias_alter(&$alias, array &$context) {
       }
       break;
   }
+}
+
+/**
+ * Implements hook_token_info().
+ */
+function akdn_custom_token_info() {
+  $info['tokens']['file']['file-image-caption-et-custom']          = array(
+    'name'        => t("Caption et"),
+    'description' => t("Field image tranlation text."),
+  );
+  return $info;
+}
+
+
+/**
+ * Implements hook_tokens().
+ */
+function akdn_custom_tokens($type, $tokens, array $data = array(), array $options = array()) {
+  global $language;
+  $replacements = array();
+
+  if ($type == 'file') {
+    // Loop through each of the available tokens.
+    foreach ($tokens as $name => $original) {
+      // Find the desired token by name
+      switch ($name) {
+        case 'file-image-caption-et-custom':
+          if (isset($data['file']->field_image_caption[$language->language][0]['value'])) {
+            $new = $data['file']->field_image_caption[$language->language][0]['value'];
+          } else {
+            $new = $data['file']->field_image_caption["en"][0]['value'];
+          }
+          // Add the new value into the replacements array.
+          $replacements[$original] = $new;
+          break;
+      }
+    }
+  }
+
+  return $replacements;
 }
