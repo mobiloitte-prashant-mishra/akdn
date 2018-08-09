@@ -1446,22 +1446,22 @@ function akdn_right_panel_press_center_block() {
   else {
     $node = node_load($arg);
   }
-
   if (!empty($node->field_geography_term)) {
     $field_geography = $node->field_geography_term;
-    $tid = $node->field_geography_term[key($field_geography)][0]['tid'];
+    $tid = $node->field_geography_term[$lang][0]['tid'];
     $filter = 'field_country';
     $load = taxonomy_term_load($tid);
     $name = $load->name;
   }
   if (!empty($node->field_agency_term)) {
     $field_agency = $node->field_agency_term;
-    $tid = $node->field_agency_term[key($field_agency)][0]['tid'];
+    $tid = $node->field_agency_term[$lang][0]['tid'];
     $filter = 'field_agency';
     $nid = nat_get_nids($tid);
     $node_load = node_load(key($nid));
     $field_agency_acronym = $node_load->field_agency_acronym;
     $name = $node_load->field_agency_acronym[$lang][0]['value'];
+    $name = !empty($name) ? $name : $node_load->field_agency_acronym[$node_load->language][0]['value'];
   }
   $output = '';
   if (!empty($tid)) {
