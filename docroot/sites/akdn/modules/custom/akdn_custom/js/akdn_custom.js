@@ -370,20 +370,33 @@ jQuery(document).ready(function($) {
           jQuery(this).attr('href', updated_href);
         }
       });
-      jQuery('.field-name-body a').each(function() {
+      jQuery('.basic-page-accordian-summary a').each(function() {
         var href_val = jQuery(this).attr('href');
-        var updated_href = update_language_url(href_val);
-        if ((jQuery.inArray(getUrl.pathname.split('/')[1], lang) != -1) && updated_href) {
-          jQuery(this).attr('href', updated_href);
+        if (href_val.indexOf('http')) {
+          var updated_href = update_language_url(href_val);
+          if ((jQuery.inArray(getUrl.pathname.split('/')[1], lang) != -1) && updated_href) {
+            jQuery(this).attr('href', updated_href);
+          }
         }
       });
-//      jQuery('.accordian-main-body a').each(function() {
-//        var href_val = jQuery(this).attr('href');
-//        var updated_href = update_language_url(href_val);
-//        if ((jQuery.inArray(getUrl.pathname.split('/')[1], lang) != -1) && updated_href) {
-//          jQuery(this).attr('href', updated_href);
-//        }
-//      });
+      jQuery('.pane-node-body a').each(function() {
+        var href_val = jQuery(this).attr('href');
+        if (href_val.indexOf('http')) {
+          var updated_href = update_language_url(href_val);
+          if ((jQuery.inArray(getUrl.pathname.split('/')[1], lang) != -1) && updated_href) {
+            jQuery(this).attr('href', updated_href);
+          }
+        }
+      });
+      jQuery('.accordian-summary a').each(function() {
+        var href_val = jQuery(this).attr('href');
+        if (href_val.indexOf('http')) {
+          var updated_href = update_language_url(href_val);
+          if ((jQuery.inArray(getUrl.pathname.split('/')[1], lang) != -1) && updated_href) {
+            jQuery(this).attr('href', updated_href);
+          }
+        }
+      });
     },
     detach: function(context, settings) {
 
