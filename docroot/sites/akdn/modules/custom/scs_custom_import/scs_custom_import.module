@@ -515,7 +515,6 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
             // // Cycle Year mapping for all language.
             $datakey = 'cycle_year';
             $cycle_year = $source_avail_lang_node_data->{$datakey};
-            print_r($cycle_year); die;
             $cycle_year_all = explode('|||', $cycle_year);
             foreach ($cycle_year_all as $cycle_year_term) {
               $term_tid = 0;
