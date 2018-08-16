@@ -9094,3 +9094,21 @@ html {
       }
   }
 }
+
+/* for Arabic */
+.i18n-ar {
+    .sub-navbar{
+        .pane-content {
+            p{
+                text-transform: none;
+            }
+        }
+    }
+    .pane-breaking-news{
+        .view-header {
+            p{
+                text-transform: none;
+            }
+        }
+    }
+}
