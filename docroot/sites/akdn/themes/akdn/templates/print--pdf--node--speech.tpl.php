@@ -7,11 +7,11 @@
  */
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="<?php print $print['language']; ?>" xml:lang="<?php print $print['language']; ?>">
+<html xmlns="https://www.w3.org/1999/xhtml" lang="<?php print $print['language']; ?>" xml:lang="<?php print $print['language']; ?>">
 <!-- Begin Hide the Meta info and Footnotes -->
 
 <!-- For IE -->
-<script src="http://s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js"></script>
+<script src="https://s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js"></script>
 <!--script type="text/javascript" src="[JS library]"></script-->
 <!--[if (gte IE 6)&(lte IE 8)]>
   <script type="text/javascript" src="selectivizr.js"></script>
