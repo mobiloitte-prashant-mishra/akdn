@@ -13,7 +13,7 @@
    */
   Drupal.behaviors.cookiebot = {
     attach: function attach(context) {
-      $('.cookiebot-renew', context).once().on('click', function (event) {
+      $('.cookiebot-renew', context).once().click(function (event) {
         event.preventDefault();
 
         if (typeof Cookiebot === 'undefined') {

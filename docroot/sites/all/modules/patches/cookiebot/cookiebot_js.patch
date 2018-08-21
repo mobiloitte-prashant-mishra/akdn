@@ -1,0 +1,11 @@
+--- a/js/cookiebot.js	2018-08-21 14:36:17.080543000 +0530
++++ b/js/cookiebot.js	2018-08-21 14:36:44.529080436 +0530
+@@ -13,7 +13,7 @@
+    */
+   Drupal.behaviors.cookiebot = {
+     attach: function attach(context) {
+-      $('.cookiebot-renew', context).once().on('click', function (event) {
++      $('.cookiebot-renew', context).once().click(function (event) {
+         event.preventDefault();
+ 
+         if (typeof Cookiebot === 'undefined') {
