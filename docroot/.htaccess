@@ -129,6 +129,11 @@ DirectoryIndex index.php index.html index.htm
   RewriteCond %{HTTP_HOST} ^(www\.)?nic\.agakhan$ [NC,OR]
   RewriteCond %{HTTP_HOST} ^(www\.)?nic\.imamat$
   RewriteRule ^(.*)$ http://www.akdn.org/gtld/$1 [L,R=301]
+
+  RewriteEngine on
+  RewriteCond %{HTTP_HOST} ^akdn.org [NC,OR]
+  RewriteCond %{HTTP_HOST} ^www.akdn.org [NC]
+  RewriteRule ^(.*)$ https://www.akdn.org/$1 [L,R=301,NC]
   
   # Pass all requests not referring directly to files in the filesystem to
   # index.php. Clean URLs are handled in drupal_environment_initialize().
