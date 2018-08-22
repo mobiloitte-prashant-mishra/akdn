@@ -124,11 +124,11 @@ DirectoryIndex index.php index.html index.htm
   # RewriteBase /
 
   # Proxy redirect everything from "nic.akdn, nic.ismaili, nic.agakhan, nic.imamat" to "www.akdn.org/gtld"
-  RewriteCond %{HTTP_HOST} ^(www\.)?nic\.akdn$ [NC,OR]
-  RewriteCond %{HTTP_HOST} ^(www\.)?nic\.ismaili$ [NC,OR]
-  RewriteCond %{HTTP_HOST} ^(www\.)?nic\.agakhan$ [NC,OR]
-  RewriteCond %{HTTP_HOST} ^(www\.)?nic\.imamat$
-  RewriteRule ^(.*)$ https://www.akdn.org/gtld/$1 [L,R=301]
+ # RewriteCond %{HTTP_HOST} ^(www\.)?nic\.akdn$ [NC,OR]
+ # RewriteCond %{HTTP_HOST} ^(www\.)?nic\.ismaili$ [NC,OR]
+ # RewriteCond %{HTTP_HOST} ^(www\.)?nic\.agakhan$ [NC,OR]
+ # RewriteCond %{HTTP_HOST} ^(www\.)?nic\.imamat$
+ # RewriteRule ^(.*)$ https://www.akdn.org/gtld/$1 [L,R=301]
 
   RewriteCond %{HTTPS} off [OR]
   RewriteCond %{HTTP_HOST} ^akdn\.org*
