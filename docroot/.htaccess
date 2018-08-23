@@ -132,7 +132,7 @@ DirectoryIndex index.php index.html index.htm
 
 RewriteCond %{HTTPS} off
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
-RewriteCond %{REQUEST_URI} !^agakhanacademies.org
+RewriteCond %{HTTP_HOST} !^agakhanacademies.org [NC]
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [NE,L,R=301]
   
   # Pass all requests not referring directly to files in the filesystem to
