@@ -131,9 +131,10 @@ DirectoryIndex index.php index.html index.htm
   RewriteRule ^(.*)$ https://www.akdn.org/gtld/$1 [L,R=301]
 
 RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} ^www.akdn.org$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^akdn.org$ [NC,OR]
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
-RewriteCond %{HTTP_HOST} !^agakhanacademies.org [NC]
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [NE,L,R=301]
+RewriteRule ^(.*)$ https://www.akdn.org/$1 [L,R=301]
   
   # Pass all requests not referring directly to files in the filesystem to
   # index.php. Clean URLs are handled in drupal_environment_initialize().
