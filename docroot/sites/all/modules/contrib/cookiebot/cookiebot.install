@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Contains install, uninstall and update functions for Cookiebot.
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function cookiebot_uninstall() {
+  db_delete('variable')
+    ->condition('name', db_like('cookiebot') . '%', 'LIKE')
+    ->execute();
+
+  cache_clear_all('variables', 'cache_bootstrap');
+}
