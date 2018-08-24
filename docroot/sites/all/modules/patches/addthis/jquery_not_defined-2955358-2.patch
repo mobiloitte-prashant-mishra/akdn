@@ -1,0 +1,12 @@
+diff --git a/addthis.module b/addthis.module
+index d025fe1..cfeb548 100644
+--- a/addthis.module
++++ b/addthis.module
+@@ -154,7 +154,6 @@ function addthis_page_build(&$page) {
+   $addthis_js_path = drupal_get_path('module', 'addthis') . '/addthis.js';
+   $page['content']['#attached']['js'][$addthis_js_path] = array(
+     'type' => 'file',
+-    'scope' => 'footer',
+   );
+ 
+   // Include the widget js when we include on all but admin pages.
