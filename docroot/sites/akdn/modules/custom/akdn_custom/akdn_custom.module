@@ -5312,11 +5312,19 @@ function akdn_search_forms_internal_news_page_submit($form, &$form_state) {
     )
   );
 }
-
+/**
+ * hook_post_render().
+ * @param type $view
+ * @param type $output
+ * @param type $cache
+ */
 function akdn_custom_views_post_render(&$view, &$output, &$cache) {
-//  if($view->name == '')
-//  print '<pre>';
-//  print_r($output); die;
+  if ($view->name == 'people_listing' && $view->current_display == 'page') {
+    if (!strpos($output, 'pc-listing-info')) {
+      $output = substr($output, 0, strrpos($output, " "));
+      $output = $output.'<div class=empty-master-juery style="padding-left: 15px; padding-right: 15px;">'.t("The Master Jury for the current cycle will be announced in due course.").'</div></div>';
+    }
+  }
 }
 
 /**
