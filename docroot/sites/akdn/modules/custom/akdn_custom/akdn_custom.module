@@ -2332,9 +2332,12 @@ function what_we_do_news_and_resources() {
         else {
           $image = $node->field_article_img['en'];
         }
-
+        
         if (empty($image)) {
           $image = $node->field_article_img['und'];
+        }
+        if (empty($image)) {
+          $image = $node->field_article_img[$node->language];
         }
         /* displaying default image if image not uploaded for article */
         if (empty($image)) {
@@ -2358,6 +2361,9 @@ function what_we_do_news_and_resources() {
           $image = $node->field_podcast_image['und'];
         }
         if (empty($image)) {
+          $image = $node->field_podcast_image[$node->language];
+        }
+        if (empty($image)) {
           $info = field_info_instance('node', 'field_podcast_image', 'podcast');
           $file = (array) file_load($info['settings']['default_image']);
           $image = array($file);
@@ -2377,6 +2383,9 @@ function what_we_do_news_and_resources() {
         }
         if (empty($image)) {
           $image = $node->field_gallery_images['und'];
+        }
+        if (empty($image)) {
+          $image = $node->field_gallery_images[$node->language];
         }
         if (empty($image)) {
           $info = field_info_instance('node', 'field_gallery_images', 'gallery');
@@ -2400,6 +2409,9 @@ function what_we_do_news_and_resources() {
           $image = $node->field_event_image['und'];
         }
         if (empty($image)) {
+          $image = $node->field_event_image[$node->language];
+        }
+        if (empty($image)) {
           $info = field_info_instance('node', 'field_event_image', 'event');
           $file = (array) file_load($info['settings']['default_image']);
           $image = array($file);
@@ -2419,6 +2431,9 @@ function what_we_do_news_and_resources() {
         }
         if (empty($image)) {
           $image = $node->field_publication_image['und'];
+        }
+        if (empty($image)) {
+          $image = $node->field_publication_image[$node->language];
         }
         if (empty($image)) {
           $info = field_info_instance('node', 'field_publication_image', 'publication');
@@ -2442,6 +2457,9 @@ function what_we_do_news_and_resources() {
           $image = $node->field_speech_image['und'];
         }
         if (empty($image)) {
+          $image = $node->field_speech_image[$node->language];
+        }
+        if (empty($image)) {
           $info = field_info_instance('node', 'field_speech_image', 'speech');
           $file = (array) file_load($info['settings']['default_image']);
           $image = array($file);
@@ -2461,6 +2479,9 @@ function what_we_do_news_and_resources() {
         }
         if (empty($image)) {
           $image = $node->field_project_image['und'];
+        }
+        if (empty($image)) {
+          $image = $node->field_project_image[$node->language];
         }
         if (empty($image)) {
           $info = field_info_instance('node', 'field_project_image', 'project');
