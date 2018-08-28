@@ -1446,22 +1446,22 @@ function akdn_right_panel_press_center_block() {
   else {
     $node = node_load($arg);
   }
-
   if (!empty($node->field_geography_term)) {
     $field_geography = $node->field_geography_term;
-    $tid = $node->field_geography_term[key($field_geography)][0]['tid'];
+    $tid = $node->field_geography_term[$lang][0]['tid'];
     $filter = 'field_country';
     $load = taxonomy_term_load($tid);
     $name = $load->name;
   }
   if (!empty($node->field_agency_term)) {
     $field_agency = $node->field_agency_term;
-    $tid = $node->field_agency_term[key($field_agency)][0]['tid'];
+    $tid = $node->field_agency_term[$lang][0]['tid'];
     $filter = 'field_agency';
     $nid = nat_get_nids($tid);
     $node_load = node_load(key($nid));
     $field_agency_acronym = $node_load->field_agency_acronym;
     $name = $node_load->field_agency_acronym[$lang][0]['value'];
+    $name = !empty($name) ? $name : $node_load->field_agency_acronym[$node_load->language][0]['value'];
   }
   $output = '';
   if (!empty($tid)) {
@@ -2332,9 +2332,12 @@ function what_we_do_news_and_resources() {
         else {
           $image = $node->field_article_img['en'];
         }
-
+        
         if (empty($image)) {
           $image = $node->field_article_img['und'];
+        }
+        if (empty($image)) {
+          $image = $node->field_article_img[$node->language];
         }
         /* displaying default image if image not uploaded for article */
         if (empty($image)) {
@@ -2358,6 +2361,9 @@ function what_we_do_news_and_resources() {
           $image = $node->field_podcast_image['und'];
         }
         if (empty($image)) {
+          $image = $node->field_podcast_image[$node->language];
+        }
+        if (empty($image)) {
           $info = field_info_instance('node', 'field_podcast_image', 'podcast');
           $file = (array) file_load($info['settings']['default_image']);
           $image = array($file);
@@ -2377,6 +2383,9 @@ function what_we_do_news_and_resources() {
         }
         if (empty($image)) {
           $image = $node->field_gallery_images['und'];
+        }
+        if (empty($image)) {
+          $image = $node->field_gallery_images[$node->language];
         }
         if (empty($image)) {
           $info = field_info_instance('node', 'field_gallery_images', 'gallery');
@@ -2400,6 +2409,9 @@ function what_we_do_news_and_resources() {
           $image = $node->field_event_image['und'];
         }
         if (empty($image)) {
+          $image = $node->field_event_image[$node->language];
+        }
+        if (empty($image)) {
           $info = field_info_instance('node', 'field_event_image', 'event');
           $file = (array) file_load($info['settings']['default_image']);
           $image = array($file);
@@ -2419,6 +2431,9 @@ function what_we_do_news_and_resources() {
         }
         if (empty($image)) {
           $image = $node->field_publication_image['und'];
+        }
+        if (empty($image)) {
+          $image = $node->field_publication_image[$node->language];
         }
         if (empty($image)) {
           $info = field_info_instance('node', 'field_publication_image', 'publication');
@@ -2442,6 +2457,9 @@ function what_we_do_news_and_resources() {
           $image = $node->field_speech_image['und'];
         }
         if (empty($image)) {
+          $image = $node->field_speech_image[$node->language];
+        }
+        if (empty($image)) {
           $info = field_info_instance('node', 'field_speech_image', 'speech');
           $file = (array) file_load($info['settings']['default_image']);
           $image = array($file);
@@ -2461,6 +2479,9 @@ function what_we_do_news_and_resources() {
         }
         if (empty($image)) {
           $image = $node->field_project_image['und'];
+        }
+        if (empty($image)) {
+          $image = $node->field_project_image[$node->language];
         }
         if (empty($image)) {
           $info = field_info_instance('node', 'field_project_image', 'project');
