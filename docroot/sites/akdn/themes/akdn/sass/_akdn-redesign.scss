@@ -37,7 +37,11 @@
     display: block;
   }
 }
-
+.view-id-akdn_logo_with_title img{
+    width: auto;
+    margin: 0 auto;
+    display: block;
+}
 .top-navbar {
   @extend %font_arial;
 
