@@ -2792,6 +2792,7 @@ function akdn_context_context_default_contexts() {
   $context->conditions = array(
     'node' => array(
       'values' => array(
+        'custom_content' => 'custom_content',
         'page' => 'page',
       ),
       'options' => array(
