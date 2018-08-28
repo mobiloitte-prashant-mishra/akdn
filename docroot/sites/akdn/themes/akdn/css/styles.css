@@ -16580,6 +16580,10 @@ map area {
 .node-type-custom-content .block-akdn-breadcrumb-trail {
   display: none;
 }
+/* line 6132, ../sass/_akdn-redesign.scss */
+.node-type-custom-content .block-akdn-logo-with-title-block {
+  padding-bottom: 30px;
+}
 
 /* line 6137, ../sass/_akdn-redesign.scss */
 .basic-page-custom-logo {

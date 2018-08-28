@@ -51,8 +51,15 @@ function akdn_new_views_views_default_views() {
   $handler->display->display_options['arguments']['nid']['default_argument_options']['code'] = '$node = node_load(arg(1));
   $plid = $node->menu_node_links[key($node->menu_node_links)]->plid;
   $menu = menu_link_load($plid);
-  $array = explode(\'/\',$menu[\'link_path\']);
-  return $array[1];';
+  if($menu[\'depth\'] == 2){
+     $array = explode(\'/\',$menu[\'link_path\']);
+  }
+  if($menu[\'depth\'] == 3){
+     $menu_1 = menu_link_load($menu[\'plid\']);
+     $array = explode(\'/\',$menu_1[\'link_path\']);
+  }
+
+    return $array[1];';
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
