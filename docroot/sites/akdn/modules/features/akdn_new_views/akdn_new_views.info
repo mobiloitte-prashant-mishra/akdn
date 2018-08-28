@@ -11,4 +11,5 @@ dependencies[] = views
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
 features[rules_config][] = rules_change_url_on_the_basis_of_language_alias
+features[views_view][] = akdn_logo_with_title
 features_exclude[dependencies][ctools] = ctools
