@@ -29943,7 +29943,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
 	$handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
 	/* Field: Content: Body */
-	$handler->display->display_options['fields']['body']['id'] = 'body';
+	$handler->display->display_press_centre_listing_slideshowsoptions['fields']['body']['id'] = 'body';
 	$handler->display->display_options['fields']['body']['table'] = 'field_data_body';
 	$handler->display->display_options['fields']['body']['field'] = 'body';
 	$handler->display->display_options['fields']['body']['label'] = '';
@@ -30330,28 +30330,23 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_2']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php
-		global $language;
-		$lang = $lanugage->language;
-		      $node = $data->_field_data[\'nid\'][\'entity\'];
-		      if($node->language != \'en\'){
-		           $node_lang = \'/\'.$node->language;
-		       }else{
-		           $node_lang = \'\';
-		       }
+	global $language;
+	$lang = \'\';
+	if($language->language != \'en\'){
+		$lang = \'/\'.$language->language;
+	}
 		if ($data->node_type == "featured_content") {
 			if (!empty($data->field_field_feature_link)) {
-		          $url_temp = $node_lang.\'/\'.\'$data->field_field_feature_link[0]["raw"]["url"]\';
-			  $url = "<a href=$url_temp>";
+			  $url = "<a href=\'$lang/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
 			  print $url;
 			}
 			else { return \'\'; }
 		} else {
 			$alias = drupal_get_path_alias(\'node/\'.$data->nid);
-		        $url_temp =$node_lang.\'/\'.$alias;;
-			$url = "<a href=$url_temp>";
+			$url = "<a href=\'$lang/$alias\'>";
 			print $url;
 		}
-	?>';
+		?>';
 	$handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
 	/* Field: Global: Custom text */
@@ -30770,24 +30765,19 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php
 		global $language;
-		$lang = $lanugage->language;
-		      $node = $data->_field_data[\'nid\'][\'entity\'];
-		      if($node->language != \'en\'){
-		           $node_lang = \'/\'.$node->language;
-		       }else{
-		           $node_lang = \'\';
-		       }
+		$lang = \'\';
+		      if($language->language != \'en\'){
+		         $lang = \'/\'.$language->language;
+		      }
 		if ($data->node_type == "featured_content") {
 			if (!empty($data->field_field_feature_link)) {
-		          $url_temp = $node_lang.\'/\'.\'$data->field_field_feature_link[0]["raw"]["url"]\';
-			  $url = "<a href=$url_temp>";
+			  $url = "<a href=\'$lang/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
 			  print $url;
 			}
 			else { return \'\'; }
 		} else {
 			$alias = drupal_get_path_alias(\'node/\'.$data->nid);
-		        $url_temp =$node_lang.\'/\'.$alias;;
-			$url = "<a href=$url_temp>";
+			$url = "<a href=\'$lang/$alias\'>";
 			print $url;
 		}
 		?>';
@@ -31169,12 +31159,17 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_2']['exclude'] = TRUE;
 	$handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php
+	global $language;
+		$lang = \'\';
+		      if($language->language != \'en\'){
+		         $lang = \'/\'.$language->language;
+		      }
 		 if ($data->node_field_data_field_speech_reference_nid) {
 			$node_path = drupal_get_path_alias(\'node/\' . $data->node_field_data_field_speech_reference_nid );
-			  $url = "<a class=\'speech-link\' href=\'/$node_path\' class=\'views-more-link\'>";
+			  $url = "<a class=\'speech-link\' href=\'$lang/$node_path\' class=\'views-more-link\'>";
 			} else {
 		 $node_path = drupal_get_path_alias(\'node/\' . $data->nid );
-		 $url = "<a href=\'/$node_path\' class=\'views-more-link\'>";
+		 $url = "<a href=\'$lang/$node_path\' class=\'views-more-link\'>";
 			}
 			print $url;
 		?>';
@@ -31558,14 +31553,19 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_2']['exclude'] = TRUE;
 	$handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php
+	global $language;
+		$lang = \'\';
+		      if($language->language != \'en\'){
+		         $lang = \'/\'.$language->language;
+		      }
 		if ($data->node_type == "featured_content") {
 			if (!empty($data->field_field_feature_link)) {
-			  $url = "<a href=\'/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\' class=\'views-more-link\'>";
+			  $url = "<a href=\'$lang/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\' class=\'views-more-link\'>";
 			  print $url;
 			}
 			else { return \'\'; }
 		} else {
-			$url = "<a href=\'/node/{$data->nid}\' class=\'views-more-link\'>";
+			$url = "<a href=\'$lang/node/{$data->nid}\' class=\'views-more-link\'>";
 			print $url;
 		}
 		?>';
@@ -31970,14 +31970,19 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_2']['exclude'] = TRUE;
 	$handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php
+	global $language;
+		$lang = \'\';
+		      if($language->language != \'en\'){
+		         $lang = \'/\'.$language->language;
+		      }
 		if ($data->node_type == "featured_content") {
 			if (!empty($data->field_field_feature_link)) {
-			  $url = "<a href=\'/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\' class=\'views-more-link\'>";
+			  $url = "<a href=\'$lang/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\' class=\'views-more-link\'>";
 			  print $url;
 			}
 			else { return \'\'; }
 		} else {
-			$url = "<a href=\'/node/{$data->nid}\' class=\'views-more-link\'>";
+			$url = "<a href=\'$lang/node/{$data->nid}\' class=\'views-more-link\'>";
 			print $url;
 		}
 		?>';
@@ -32379,14 +32384,19 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_2']['exclude'] = TRUE;
 	$handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php
+	global $language;
+		$lang = \'\';
+		      if($language->language != \'en\'){
+		         $lang = \'/\'.$language->language;
+		      }
 		if ($data->node_type == "featured_content") {
 			if (!empty($data->field_field_feature_link)) {
-			  $url = "<a href=\'/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+			  $url = "<a href=\'$lang/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
 			  print $url;
 			}
 			else { return \'\'; }
 		} else {
-			$url = "<a href=\'/node/{$data->nid}\'>";
+			$url = "<a href=\'$lang/node/{$data->nid}\'>";
 			print $url;
 		}
 		?>';
@@ -32769,14 +32779,19 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_2']['exclude'] = TRUE;
 	$handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php
+	global $language;
+	$lang = \'\';
+	if($language->language != \'en\'){
+		$lang = \'/\'.$language->language;
+	}
 		if ($data->node_type == "featured_content") {
 			if (!empty($data->field_field_feature_link)) {
-			  $url = "<a href=\'/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\' class=\'views-more-link\'>";
+			  $url = "<a href=\'$lang/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\' class=\'views-more-link\'>";
 			  print $url;
 			}
 			else { return \'\'; }
 		} else {
-			$url = "<a href=\'/node/{$data->nid}\' class=\'views-more-link\'>";
+			$url = "<a href=\'$lang/node/{$data->nid}\' class=\'views-more-link\'>";
 			print $url;
 		}
 		?>';
@@ -33200,14 +33215,19 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_2']['exclude'] = TRUE;
 	$handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php
+	global $language;
+		$lang = \'\';
+		      if($language->language != \'en\'){
+		         $lang = \'/\'.$language->language;
+		      }
 		if ($data->node_type == "featured_content") {
 			if (!empty($data->field_field_feature_link)) {
-			  $url = "<a href=\'/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\' class=\'views-more-link\'>";
+			  $url = "<a href=\'$lang/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\' class=\'views-more-link\'>";
 			  print $url;
 			}
 			else { return \'\'; }
 		} else {
-			$url = "<a href=\'/node/{$data->nid}\' class=\'views-more-link\'>";
+			$url = "<a href=\'$lang/node/{$data->nid}\' class=\'views-more-link\'>";
 			print $url;
 		}
 		?>';
@@ -33630,14 +33650,19 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_2']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php
+	global $language;
+		$lang = \'\';
+		      if($lanugage->language != \'en\'){
+		         $lang = \'/\'.$lanugage->language;
+		      }
 		if ($data->node_type == "featured_content") {
 			if (!empty($data->field_field_feature_link)) {
-			  $url = "<a href=\'/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+			  $url = "<a href=\'$lang/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
 			  print $url;
 			}
 			else { return \'\'; }
 		} else {
-			$url = "<a href=\'/node/{$data->nid}\'>";
+			$url = "<a href=\'$lang/node/{$data->nid}\'>";
 			print $url;
 		}
 		?>';
