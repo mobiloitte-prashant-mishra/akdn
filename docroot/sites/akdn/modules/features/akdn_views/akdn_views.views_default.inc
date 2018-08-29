@@ -29937,7 +29937,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
 	$handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
 	/* Field: Content: Body */
-	$handler->display->display_options['fields']['body']['id'] = 'body';
+	$handler->display->display_press_centre_listing_slideshowsoptions['fields']['body']['id'] = 'body';
 	$handler->display->display_options['fields']['body']['table'] = 'field_data_body';
 	$handler->display->display_options['fields']['body']['field'] = 'body';
 	$handler->display->display_options['fields']['body']['label'] = '';
@@ -30327,7 +30327,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	global $language;
 	$lang = \'\';
 	if($language->language != \'en\'){
-		$lang = \'/\'.$lanugage->language;
+		$lang = \'/\'.$language->language;
 	}
 		if ($data->node_type == "featured_content") {
 			if (!empty($data->field_field_feature_link)) {
@@ -30760,8 +30760,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php
 		global $language;
 		$lang = \'\';
-		      if($lanugage->language != \'en\'){
-		         $lang = \'/\'.$lanugage->language;
+		      if($language->language != \'en\'){
+		         $lang = \'/\'.$language->language;
 		      }
 		if ($data->node_type == "featured_content") {
 			if (!empty($data->field_field_feature_link)) {
@@ -31155,8 +31155,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php
 	global $language;
 		$lang = \'\';
-		      if($lanugage->language != \'en\'){
-		         $lang = \'/\'.$lanugage->language;
+		      if($language->language != \'en\'){
+		         $lang = \'/\'.$language->language;
 		      }
 		 if ($data->node_field_data_field_speech_reference_nid) {
 			$node_path = drupal_get_path_alias(\'node/\' . $data->node_field_data_field_speech_reference_nid );
@@ -31549,8 +31549,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php
 	global $language;
 		$lang = \'\';
-		      if($lanugage->language != \'en\'){
-		         $lang = \'/\'.$lanugage->language;
+		      if($language->language != \'en\'){
+		         $lang = \'/\'.$language->language;
 		      }
 		if ($data->node_type == "featured_content") {
 			if (!empty($data->field_field_feature_link)) {
@@ -31966,8 +31966,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php
 	global $language;
 		$lang = \'\';
-		      if($lanugage->language != \'en\'){
-		         $lang = \'/\'.$lanugage->language;
+		      if($language->language != \'en\'){
+		         $lang = \'/\'.$language->language;
 		      }
 		if ($data->node_type == "featured_content") {
 			if (!empty($data->field_field_feature_link)) {
@@ -32380,8 +32380,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php
 	global $language;
 		$lang = \'\';
-		      if($lanugage->language != \'en\'){
-		         $lang = \'/\'.$lanugage->language;
+		      if($language->language != \'en\'){
+		         $lang = \'/\'.$language->language;
 		      }
 		if ($data->node_type == "featured_content") {
 			if (!empty($data->field_field_feature_link)) {
@@ -32776,7 +32776,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	global $language;
 	$lang = \'\';
 	if($language->language != \'en\'){
-		$lang = \'/\'.$lanugage->language;
+		$lang = \'/\'.$language->language;
 	}
 		if ($data->node_type == "featured_content") {
 			if (!empty($data->field_field_feature_link)) {
@@ -33211,8 +33211,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php
 	global $language;
 		$lang = \'\';
-		      if($lanugage->language != \'en\'){
-		         $lang = \'/\'.$lanugage->language;
+		      if($language->language != \'en\'){
+		         $lang = \'/\'.$language->language;
 		      }
 		if ($data->node_type == "featured_content") {
 			if (!empty($data->field_field_feature_link)) {
