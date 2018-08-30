@@ -969,6 +969,10 @@ function akdn_custom_block_info() {
       'info' => t('AKDN Search URLS Blocks'),
       'cache' => DRUPAL_NO_CACHE,
     ),
+    'home_news_and_resources' => array(
+      'info' => t('Home News and Resources'),
+      'cache' => DRUPAL_NO_CACHE,
+    ),
   );
   return $blocks;
 }
@@ -1167,10 +1171,121 @@ function akdn_custom_block_view($delta = '') {
       $search_urls = '<div class="akdn_search_urls_block">' . $search_url . '</div>';
       $block['content'] = $search_urls;
       break;
+    case 'home_news_and_resources':
+      $block['content'] = home_news_and_resources();
+      break;
   }
   return $block;
 }
 
+function home_news_and_resources(){
+  $node_ids = db_query("SELECT node.nid from node node ORDER BY node.changed DESC LIMIT 6")->fetchAll();
+  print '<pre>';
+  foreach($node_ids as $nid){
+    $node = node_load(206796);
+    $node_wrapper = entity_metadata_wrapper('node', $node);
+    $type = node_type_get_name($node);
+    
+    $url_type = $node->type;
+    $title = $node->title;
+
+    $read = l(t('View'), 'node/' . $node->nid);
+     
+    switch ($node->type) {
+      case 'article':
+        $article_cat = $node_wrapper->field_article_cat->value(); 
+        $type = $article_cat->name;
+        if($type == 'In the media'){
+          $source_arr = $node_wrapper->field_media_source->value();
+          $source = $source_arr['url'];
+          $read = l(t('View'), $source);
+        }
+        $image = $node_wrapper->field_article_img->value();
+        if (empty($image)) {
+          $info = field_info_instance('node', 'field_article_img', 'event');
+          $file = (array) file_load($info['settings']['default_image']);
+          $image = array($file);
+        }
+        $url_type = str_replace(' ','-',strtolower($type));
+        
+        if($type == 'press release'){
+          $url_type = 'press-releases';
+        }
+        break;
+      case 'event':
+        $image = $node_wrapper->field_event_image->value();
+        if (empty($image)) {
+          $info = field_info_instance('node', 'field_event_image', 'event');
+          $file = (array) file_load($info['settings']['default_image']);
+          $image = array($file);
+        }
+        break;
+      case 'gallery':
+        $image = $node_wrapper->field_gallery_images->value();
+        if (empty($image)) {
+          $info = field_info_instance('node', 'field_gallery_images', 'event');
+          $file = (array) file_load($info['settings']['default_image']);
+          $image = array($file);
+        }
+        break;
+      case 'podcast':
+        $image = $node_wrapper->field_podcast_image->value();
+        if (empty($image)) {
+          $info = field_info_instance('node', 'field_podcast_image', 'event');
+          $file = (array) file_load($info['settings']['default_image']);
+          $image = array($file);
+        }
+        break;
+      case 'publication':
+        $image = $node_wrapper->field_publication_image->value();
+        if (empty($image)) {
+          $info = field_info_instance('node', 'field_publication_image', 'event');
+          $file = (array) file_load($info['settings']['default_image']);
+          $image = array($file);
+        }
+        break;
+      case 'speech':
+        $image = $node_wrapper->field_speech_image->value();
+        if (empty($image)) {
+          $info = field_info_instance('node', 'field_speech_image', 'event');
+          $file = (array) file_load($info['settings']['default_image']);
+          $image = array($file);
+        }
+        break;
+      case 'project':
+        $image = $node_wrapper->field_project_image->value();
+        if (empty($image)) {
+          $info = field_info_instance('node', 'field_project_image', 'event');
+          $file = (array) file_load($info['settings']['default_image']);
+          $image = array($file);
+        }
+        break;
+    }
+    
+    
+    $readall = l(t('View all'), 'press-centre/'.$url_type);
+//    print_r($readall); die;
+    if (!empty($image)) {
+        $accordian_image = array(
+          'style_name' => 'social_sharing_image',
+          'path' => $image[0]['uri'],
+          'width' => '',
+          'height' => '',
+          'alt' => $image[0]['alt'],
+          'title' => $image[0]['title'],
+        );
+        $img = theme('image_style', $accordian_image);
+        if ($type == 'In the media') {
+          $output .= '<div class= "image">' . l($img, $source, array('attributes' => array('target' => '_blank'), 'html' => TRUE)) . '</div>';
+        }
+        else {
+          $output .= '<div class= "image">' . l($img, 'node/' . $node->nid, array('html' => TRUE)) . '</div>';
+        }
+      }
+  }
+    
+  return 'kunal';
+}
 /**
  * @Return Custom Content Type Breadcrumb Trail
  *
