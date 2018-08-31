@@ -1198,7 +1198,7 @@ function home_news_and_resources(){
     $type = node_type_get_name($node);
 
     // use for redirecting url for view all in english
-    $url_type = t($node->type, array(), array('langcode' => 'en'));
+    $url_type = $node->type;
 
     // title of the node
     $short_title = $wrapper_translated->field_short_title->value();
@@ -1214,8 +1214,8 @@ function home_news_and_resources(){
         $type = $article_cat->name;
         
         //for url
-        $url_type = $article_cat->name_field['en'][0]['value'];
-        if ($url_type == 'In the media') {
+        $article_type = $article_cat->name_field['en'][0]['value'];
+        if ($article_type == 'In the media') {
           $source_arr = $wrapper_translated->field_media_source->value();
           $source = $source_arr['url'];
           $read = l(t('View'), $source);
@@ -1228,10 +1228,10 @@ function home_news_and_resources(){
           $image = array($file);
         }
         
-        if ($url_type == 'press release') {
+        if ($article_type == 'press release') {
           $url_type = 'press-releases';
         }
-        $url_type = str_replace(' ', '-', strtolower($url_type));
+        $url_type = str_replace(' ', '-', strtolower($article_type));
         break;
       case 'event':
         $image = $wrapper_translated->field_event_image->value();
