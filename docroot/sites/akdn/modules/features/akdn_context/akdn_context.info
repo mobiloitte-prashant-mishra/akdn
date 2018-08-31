@@ -97,6 +97,7 @@ features[context][] = speech_themes
 features[context][] = speech_themes_listing
 features[context][] = speeches
 features[context][] = speeches_listing_pages
+features[context][] = akdn_logo_with_title
 features[ctools][] = context:context:3
 features[ctools][] = field_group:field_group:1
 features[ctools][] = strongarm:strongarm:1
