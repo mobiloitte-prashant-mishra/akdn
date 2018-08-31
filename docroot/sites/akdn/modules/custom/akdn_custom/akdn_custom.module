@@ -1186,7 +1186,7 @@ function home_news_and_resources(){
   $output = '';
   $node_ids = db_query("SELECT DISTINCT n.nid, pd.field_publish_date_value from node n 
                   LEFT JOIN field_data_field_publish_date pd ON n.nid = pd.entity_id 
-                  WHERE n.type IN ('article','event','gallery', 'podcast','publication', 'speech', 'project') 
+                  WHERE n.type IN ('article','event','gallery', 'podcast','publication', 'speech', 'project') AND n.status = 1 
                   ORDER BY pd.field_publish_date_value DESC LIMIT 3")->fetchAll();
 
   $output = '<div class="what-we-do-main-wrapper">';
@@ -1197,8 +1197,8 @@ function home_news_and_resources(){
     $wrapper_translated = $node_wrapper->language($language->language);
     $type = node_type_get_name($node);
 
-    // use for redirecting url for view all
-    $url_type = $node->type;
+    // use for redirecting url for view all in english
+    $url_type = t($node->type, array(), array('langcode' => 'en'));
 
     // title of the node
     $short_title = $wrapper_translated->field_short_title->value();
@@ -1212,7 +1212,10 @@ function home_news_and_resources(){
       case 'article':
         $article_cat = $wrapper_translated->field_article_cat->value();
         $type = $article_cat->name;
-        if ($type == 'In the media') {
+        
+        //for url
+        $url_type = $article_cat->name_field['en'][0]['value'];
+        if ($url_type == 'In the media') {
           $source_arr = $wrapper_translated->field_media_source->value();
           $source = $source_arr['url'];
           $read = l(t('View'), $source);
@@ -1224,11 +1227,11 @@ function home_news_and_resources(){
           $file = (array) file_load($info['settings']['default_image']);
           $image = array($file);
         }
-        $url_type = str_replace(' ', '-', strtolower($type));
-
-        if ($type == 'press release') {
+        
+        if ($url_type == 'press release') {
           $url_type = 'press-releases';
         }
+        $url_type = str_replace(' ', '-', strtolower($url_type));
         break;
       case 'event':
         $image = $wrapper_translated->field_event_image->value();
