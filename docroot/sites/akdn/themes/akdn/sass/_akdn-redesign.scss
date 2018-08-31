@@ -9111,4 +9111,11 @@ html {
             }
         }
     }
+    &.akdn-publication-details{
+        .pane-node-field-publication-file{
+            a{
+                letter-spacing: normal;
+            }
+        }
+    }
 }

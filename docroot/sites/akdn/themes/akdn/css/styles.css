@@ -19358,6 +19358,10 @@ html.js fieldset.collapsed {
 .i18n-ar .pane-breaking-news .view-header p {
   text-transform: none;
 }
+/* line 9116, ../sass/_akdn-redesign.scss */
+.i18n-ar.akdn-publication-details .pane-node-field-publication-file a {
+  letter-spacing: normal;
+}
 
 /*
 * Media Queries
