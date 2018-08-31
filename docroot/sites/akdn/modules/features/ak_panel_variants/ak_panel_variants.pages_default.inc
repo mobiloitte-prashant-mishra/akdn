@@ -18018,12 +18018,12 @@ function ak_panel_variants_default_page_manager_pages() {
       0 => array(
         'name' => 'php',
         'settings' => array(
-          'description' => '',
+          'description' => 'Language check',
           'php' => 'global $language;
-  if($language->language == \'en\'){
-     return TRUE;
-  }
-  return FALSE;',
+    if($language->language == \'en\'){
+       return TRUE;
+    }
+    return FALSE;',
         ),
         'not' => FALSE,
       ),
@@ -18070,12 +18070,12 @@ function ak_panel_variants_default_page_manager_pages() {
       0 => array(
         'name' => 'php',
         'settings' => array(
-          'description' => '',
+          'description' => 'Language check',
           'php' => 'global $language;
-  if($language->language == \'fr\'){
-     return TRUE;
-  }
-  return FALSE;',
+    if($language->language == \'fr\'){
+       return TRUE;
+    }
+    return FALSE;',
         ),
         'not' => FALSE,
       ),
@@ -18120,12 +18120,12 @@ function ak_panel_variants_default_page_manager_pages() {
       0 => array(
         'name' => 'php',
         'settings' => array(
-          'description' => '',
+          'description' => 'Language check',
           'php' => 'global $language;
-  if($language->language == \'pt\'){
-     return TRUE;
-  }
-  return FALSE;',
+    if($language->language == \'pt\'){
+       return TRUE;
+    }
+    return FALSE;',
         ),
         'not' => FALSE,
       ),
@@ -18170,12 +18170,12 @@ function ak_panel_variants_default_page_manager_pages() {
       0 => array(
         'name' => 'php',
         'settings' => array(
-          'description' => '',
+          'description' => 'Language check',
           'php' => 'global $language;
-  if($language->language == \'ar\'){
-     return TRUE;
-  }
-  return FALSE;',
+    if($language->language == \'ar\'){
+       return TRUE;
+    }
+    return FALSE;',
         ),
         'not' => FALSE,
       ),
