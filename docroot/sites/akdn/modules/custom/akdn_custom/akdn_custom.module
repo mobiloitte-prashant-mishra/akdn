@@ -1177,51 +1177,70 @@ function akdn_custom_block_view($delta = '') {
   }
   return $block;
 }
-
+/**
+ * Home page news and resources page.
+ * @return string
+ */
 function home_news_and_resources(){
-  $node_ids = db_query("SELECT node.nid from node node ORDER BY node.changed DESC LIMIT 6")->fetchAll();
-  print '<pre>';
-  foreach($node_ids as $nid){
-    $node = node_load(206796);
-    $node_wrapper = entity_metadata_wrapper('node', $node);
-    $type = node_type_get_name($node);
-    
-    $url_type = $node->type;
-    $title = $node->title;
+  global $language;
+  $output = '';
+  $node_ids = db_query("SELECT DISTINCT n.nid, pd.field_publish_date_value from node n 
+                  LEFT JOIN field_data_field_publish_date pd ON n.nid = pd.entity_id 
+                  WHERE n.type IN ('article','event','gallery', 'podcast','publication', 'speech', 'project') 
+                  ORDER BY pd.field_publish_date_value DESC LIMIT 3")->fetchAll();
 
-    $read = l(t('View'), 'node/' . $node->nid);
-     
+  $output = '<div class="what-we-do-main-wrapper">';
+
+  foreach ($node_ids as $nid) {
+    $node = node_load($nid->nid);
+    $node_wrapper = entity_metadata_wrapper('node', $node);
+    $wrapper_translated = $node_wrapper->language($language->language);
+    $type = node_type_get_name($node);
+
+    // use for redirecting url for view all
+    $url_type = $node->type;
+
+    // title of the node
+    $short_title = $wrapper_translated->field_short_title->value();
+
+    // url for node redirecting
+    $node_url = 'node/' . $node->nid;
+    $output .= '<div class="what-we-do-inner-wrapper" style="height: 426px;">';
+    $output .= '<div class="what-we-do-subwrapper">';
+    
     switch ($node->type) {
       case 'article':
-        $article_cat = $node_wrapper->field_article_cat->value(); 
+        $article_cat = $wrapper_translated->field_article_cat->value();
         $type = $article_cat->name;
-        if($type == 'In the media'){
-          $source_arr = $node_wrapper->field_media_source->value();
+        if ($type == 'In the media') {
+          $source_arr = $wrapper_translated->field_media_source->value();
           $source = $source_arr['url'];
           $read = l(t('View'), $source);
+          $node_url = $source;
         }
-        $image = $node_wrapper->field_article_img->value();
+        $image = $wrapper_translated->field_article_img->value();
         if (empty($image)) {
           $info = field_info_instance('node', 'field_article_img', 'event');
           $file = (array) file_load($info['settings']['default_image']);
           $image = array($file);
         }
-        $url_type = str_replace(' ','-',strtolower($type));
-        
-        if($type == 'press release'){
+        $url_type = str_replace(' ', '-', strtolower($type));
+
+        if ($type == 'press release') {
           $url_type = 'press-releases';
         }
         break;
       case 'event':
-        $image = $node_wrapper->field_event_image->value();
+        $image = $wrapper_translated->field_event_image->value();
         if (empty($image)) {
           $info = field_info_instance('node', 'field_event_image', 'event');
           $file = (array) file_load($info['settings']['default_image']);
           $image = array($file);
         }
+        $url_type = 'events';
         break;
       case 'gallery':
-        $image = $node_wrapper->field_gallery_images->value();
+        $image = $wrapper_translated->field_gallery_images->value();
         if (empty($image)) {
           $info = field_info_instance('node', 'field_gallery_images', 'event');
           $file = (array) file_load($info['settings']['default_image']);
@@ -1229,15 +1248,19 @@ function home_news_and_resources(){
         }
         break;
       case 'podcast':
-        $image = $node_wrapper->field_podcast_image->value();
+        $image = $wrapper_translated->field_podcast_image->value();
+        $image[] = $image;
         if (empty($image)) {
           $info = field_info_instance('node', 'field_podcast_image', 'event');
           $file = (array) file_load($info['settings']['default_image']);
           $image = array($file);
         }
+        $type = t('Video');
+        $url_type = 'videos';
         break;
       case 'publication':
-        $image = $node_wrapper->field_publication_image->value();
+        $image = $wrapper_translated->field_publication_image->value();
+        $image[] = $image;
         if (empty($image)) {
           $info = field_info_instance('node', 'field_publication_image', 'event');
           $file = (array) file_load($info['settings']['default_image']);
@@ -1245,7 +1268,7 @@ function home_news_and_resources(){
         }
         break;
       case 'speech':
-        $image = $node_wrapper->field_speech_image->value();
+        $image = $wrapper_translated->field_speech_image->value();
         if (empty($image)) {
           $info = field_info_instance('node', 'field_speech_image', 'event');
           $file = (array) file_load($info['settings']['default_image']);
@@ -1253,7 +1276,7 @@ function home_news_and_resources(){
         }
         break;
       case 'project':
-        $image = $node_wrapper->field_project_image->value();
+        $image = $wrapper_translated->field_project_image->value();
         if (empty($image)) {
           $info = field_info_instance('node', 'field_project_image', 'event');
           $file = (array) file_load($info['settings']['default_image']);
@@ -1261,30 +1284,36 @@ function home_news_and_resources(){
         }
         break;
     }
-    
-    
-    $readall = l(t('View all'), 'press-centre/'.$url_type);
-//    print_r($readall); die;
+    $read = l(t('View'), $node_url);
+    $readall = l(t('View all'), 'press-centre/' . $url_type);
     if (!empty($image)) {
-        $accordian_image = array(
-          'style_name' => 'social_sharing_image',
-          'path' => $image[0]['uri'],
-          'width' => '',
-          'height' => '',
-          'alt' => $image[0]['alt'],
-          'title' => $image[0]['title'],
-        );
-        $img = theme('image_style', $accordian_image);
-        if ($type == 'In the media') {
-          $output .= '<div class= "image">' . l($img, $source, array('attributes' => array('target' => '_blank'), 'html' => TRUE)) . '</div>';
-        }
-        else {
-          $output .= '<div class= "image">' . l($img, 'node/' . $node->nid, array('html' => TRUE)) . '</div>';
-        }
+      $accordian_image = array(
+        'style_name' => 'social_sharing_image',
+        'path' => $image[0]['uri'],
+        'width' => '',
+        'height' => '',
+        'alt' => $image[0]['alt'],
+        'title' => $image[0]['title'],
+      );
+
+      $img = theme('image_style', $accordian_image);
+      if ($type == 'In the media') {
+        $output .= '<div class= "image">' . l($img, $source, array('attributes' => array('target' => '_blank'), 'html' => TRUE)) . '</div>';
       }
+      else {
+        $output .= '<div class= "image">' . l($img, 'node/' . $node->nid, array('html' => TRUE)) . '</div>';
+      }
+    }
+    $output .= '<div class= "type">' . $type . '</div>';
+    $output .= '<div class= "date">' . date('d F Y', $nid->field_publish_date_value) . '</div>';
+    $output .= '<div class= "title">' . l($short_title, $node_url) . '</div>';
+    $output .= '<span class= "read">[' . $read . '</span>';
+    $output .= '<span class= "readall">' . " | " . $readall . ']</span>';
+    $output .= '</div></div>';
   }
-    
-  return 'kunal';
+
+  $output .='</div>';
+  return $output;
 }
 /**
  * @Return Custom Content Type Breadcrumb Trail
