@@ -115,6 +115,39 @@ function akdn_new_views_fe_nodequeue_export_fields() {
     'roles' => array(),
     'count' => 0,
   );
+  
+   // Exported nodequeues: akdn_home_page_carousel_russian
+  $nodequeues['akdn_home_page_carousel_russian'] = array(
+    'name' => 'akdn_home_page_carousel_russian',
+    'title' => 'AKDN Home Page Carousel Russian',
+    'subqueue_title' => '',
+    'size' => 20,
+    'link' => '',
+    'link_remove' => '',
+    'owner' => 'nodequeue',
+    'show_in_ui' => 1,
+    'show_in_tab' => 1,
+    'show_in_links' => 0,
+    'reference' => 0,
+    'reverse' => 0,
+    'i18n' => 1,
+    'insert_at_front' => 0,
+    'subqueues' => 1,
+    'types' => array(
+      0 => 'article',
+      1 => 'event',
+      2 => 'featured_content',
+      3 => 'focus_area',
+      4 => 'gallery',
+      5 => 'page',
+      6 => 'podcast',
+      7 => 'project',
+      8 => 'publication',
+      9 => 'speech',
+    ),
+    'roles' => array(),
+    'count' => 0,
+  );
 
   return $nodequeues;
 }
