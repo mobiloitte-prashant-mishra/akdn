@@ -13,6 +13,7 @@ features[ctools][] = views:views_default:3.0
 features[fe_nodequeue][] = akdn_home_page_carousel_french
 features[fe_nodequeue][] = akdn_home_page_carousel_portugue
 features[fe_nodequeue][] = akdn_home_page_carousel_arabic
+features[fe_nodequeue][] = akdn_home_page_carousel_russian
 features[features_api][] = api:2
 features[rules_config][] = rules_change_url_on_the_basis_of_language_alias
 features[views_view][] = akdn_logo_with_title
