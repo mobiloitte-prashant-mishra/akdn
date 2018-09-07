@@ -1630,9 +1630,9 @@ function akdn_right_panel_press_center_block() {
         $view->set_display('page_4');
         $view->build('page_4');
         $query = $view->query->getSearchApiQuery();
-        $filter = $query->createFilter('AND');
-        $filter->condition('field_country', $tid, '=');
-        $query->filter($filter);
+//        $filter = $query->createFilter('AND');
+//        $filter->condition('field_country', $tid, '=');
+//        $query->filter($filter);
         $view->execute();
         $result = $view->result;
         $count = count($result);
@@ -1674,6 +1674,7 @@ function akdn_right_panel_press_center_block() {
  *
  */
 function akdn_geography_agency_logo_title() {
+  global $language;
   $arr = menu_get_active_trail();
   $output = '';
   $top_menu = $arr[1];
@@ -1699,7 +1700,7 @@ function akdn_geography_agency_logo_title() {
   if (isset($node->field_agency_logo_with_title) && !empty($node->field_agency_logo_with_title)) {
     $text = theme_image_style(array(
       'style_name' => 'agency_listing_logo_full',
-      'path' => $node->field_agency_logo_with_title['und'][0]['uri']
+      'path' => $node->field_agency_logo_with_title[$language->language][0]['uri']
     ));
     $output .= '<div class = "logo-image">';
     $output .= l($text, 'node/' . $nid, $options);
