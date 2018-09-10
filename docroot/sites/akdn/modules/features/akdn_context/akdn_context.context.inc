@@ -1006,17 +1006,23 @@ function akdn_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'views-62fe5c5de13a4e77370771295bbfebd5' => array(
+          'module' => 'views',
+          'delta' => '62fe5c5de13a4e77370771295bbfebd5',
+          'region' => 'branding',
+          'weight' => '-10',
+        ),
         'akdn_custom-page_lang_switcher' => array(
           'module' => 'akdn_custom',
           'delta' => 'page_lang_switcher',
           'region' => 'branding',
-          'weight' => '-8',
+          'weight' => '-9',
         ),
         'akdn_custom-custom_content_breadcrumb' => array(
           'module' => 'akdn_custom',
           'delta' => 'custom_content_breadcrumb',
           'region' => 'branding',
-          'weight' => '-7',
+          'weight' => '-8',
         ),
       ),
     ),
