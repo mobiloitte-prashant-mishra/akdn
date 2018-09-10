@@ -37,7 +37,11 @@
     display: block;
   }
 }
-
+.view-id-akdn_logo_with_title img{
+    width: auto;
+    margin: 0 auto;
+    display: block;
+}
 .top-navbar {
   @extend %font_arial;
 
@@ -6124,6 +6128,9 @@ map {
 .node-type-custom-content {
   .block-akdn-breadcrumb-trail {
     display: none;
+  }
+  .block-akdn-logo-with-title-block{
+      padding-bottom: 30px;
   }
 }
 
