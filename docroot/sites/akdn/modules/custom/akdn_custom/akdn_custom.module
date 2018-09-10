@@ -1184,9 +1184,11 @@ function akdn_custom_block_view($delta = '') {
 function home_news_and_resources(){
   global $language;
   $output = '';
-  $node_ids = db_query("SELECT DISTINCT n.nid, pd.field_publish_date_value from node n 
-                  LEFT JOIN field_data_field_publish_date pd ON n.nid = pd.entity_id 
-                  WHERE n.type IN ('article','event','gallery', 'podcast','publication', 'speech', 'project') AND n.status = 1 
+
+  $node_ids = db_query("SELECT n.nid, n.type, pd.field_publish_date_value from node n 
+                  LEFT JOIN entity_translation et ON n.nid = et.entity_id 
+                  LEFT JOIN field_data_field_publish_date pd ON et.entity_id = pd.entity_id 
+                  WHERE n.type IN ('article','event','gallery', 'podcast','publication', 'speech', 'project') AND n.status = 1 AND et.language = '$language->language'
                   ORDER BY pd.field_publish_date_value DESC LIMIT 3")->fetchAll();
 
   $output = '<div class="what-we-do-main-wrapper">';
