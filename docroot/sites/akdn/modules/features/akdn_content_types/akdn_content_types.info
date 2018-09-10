@@ -204,6 +204,7 @@ features[field_instance][] = node-agency-title_field
 features[field_instance][] = node-focus_area-body
 features[field_instance][] = node-focus_area-field_about_page
 features[field_instance][] = node-focus_area-field_add_agency_what_we_do
+features[field_instance][] = node-focus_area-field_create_featured_content
 features[field_instance][] = node-focus_area-field_custom_agency_text
 features[field_instance][] = node-focus_area-field_enable_project_slider
 features[field_instance][] = node-focus_area-field_fact_sheet_reference

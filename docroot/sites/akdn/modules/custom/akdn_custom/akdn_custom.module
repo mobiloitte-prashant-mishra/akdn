@@ -854,7 +854,7 @@ function akdn_custom_block_info() {
       'cache' => DRUPAL_NO_CACHE,
     ),
     'page_lang_switcher' => array(
-'info' => t('Custom Onpage Language Switcher'),
+      'info' => t('Custom Onpage Language Switcher'),
       'cache' => DRUPAL_NO_CACHE,
     ),
     'where_we_work_related_info' => array(
@@ -864,11 +864,7 @@ function akdn_custom_block_info() {
     'see_also_custom_block' => array(
       'info' => t('Custom See ALso Block'),
       'cache' => DRUPAL_NO_CACHE,
-    ),
- 'see_also_custom_block' => array(
-'info' => t('Custom See ALso Block'),
-      'cache' => DRUPAL_NO_CACHE,
- ),
+    ), 
     'akaa_resources' => array(
       'info' => t('AKAA Resources Links'),
       'cache' => DRUPAL_NO_CACHE,
@@ -1450,22 +1446,22 @@ function akdn_right_panel_press_center_block() {
   else {
     $node = node_load($arg);
   }
-
   if (!empty($node->field_geography_term)) {
     $field_geography = $node->field_geography_term;
-    $tid = $node->field_geography_term[key($field_geography)][0]['tid'];
+    $tid = $node->field_geography_term[$lang][0]['tid'];
     $filter = 'field_country';
     $load = taxonomy_term_load($tid);
     $name = $load->name;
   }
   if (!empty($node->field_agency_term)) {
     $field_agency = $node->field_agency_term;
-    $tid = $node->field_agency_term[key($field_agency)][0]['tid'];
+    $tid = $node->field_agency_term[$lang][0]['tid'];
     $filter = 'field_agency';
     $nid = nat_get_nids($tid);
     $node_load = node_load(key($nid));
     $field_agency_acronym = $node_load->field_agency_acronym;
     $name = $node_load->field_agency_acronym[$lang][0]['value'];
+    $name = !empty($name) ? $name : $node_load->field_agency_acronym[$node_load->language][0]['value'];
   }
   $output = '';
   if (!empty($tid)) {
@@ -2336,9 +2332,12 @@ function what_we_do_news_and_resources() {
         else {
           $image = $node->field_article_img['en'];
         }
-
+        
         if (empty($image)) {
           $image = $node->field_article_img['und'];
+        }
+        if (empty($image)) {
+          $image = $node->field_article_img[$node->language];
         }
         /* displaying default image if image not uploaded for article */
         if (empty($image)) {
@@ -2362,6 +2361,9 @@ function what_we_do_news_and_resources() {
           $image = $node->field_podcast_image['und'];
         }
         if (empty($image)) {
+          $image = $node->field_podcast_image[$node->language];
+        }
+        if (empty($image)) {
           $info = field_info_instance('node', 'field_podcast_image', 'podcast');
           $file = (array) file_load($info['settings']['default_image']);
           $image = array($file);
@@ -2381,6 +2383,9 @@ function what_we_do_news_and_resources() {
         }
         if (empty($image)) {
           $image = $node->field_gallery_images['und'];
+        }
+        if (empty($image)) {
+          $image = $node->field_gallery_images[$node->language];
         }
         if (empty($image)) {
           $info = field_info_instance('node', 'field_gallery_images', 'gallery');
@@ -2404,6 +2409,9 @@ function what_we_do_news_and_resources() {
           $image = $node->field_event_image['und'];
         }
         if (empty($image)) {
+          $image = $node->field_event_image[$node->language];
+        }
+        if (empty($image)) {
           $info = field_info_instance('node', 'field_event_image', 'event');
           $file = (array) file_load($info['settings']['default_image']);
           $image = array($file);
@@ -2423,6 +2431,9 @@ function what_we_do_news_and_resources() {
         }
         if (empty($image)) {
           $image = $node->field_publication_image['und'];
+        }
+        if (empty($image)) {
+          $image = $node->field_publication_image[$node->language];
         }
         if (empty($image)) {
           $info = field_info_instance('node', 'field_publication_image', 'publication');
@@ -2446,6 +2457,9 @@ function what_we_do_news_and_resources() {
           $image = $node->field_speech_image['und'];
         }
         if (empty($image)) {
+          $image = $node->field_speech_image[$node->language];
+        }
+        if (empty($image)) {
           $info = field_info_instance('node', 'field_speech_image', 'speech');
           $file = (array) file_load($info['settings']['default_image']);
           $image = array($file);
@@ -2465,6 +2479,9 @@ function what_we_do_news_and_resources() {
         }
         if (empty($image)) {
           $image = $node->field_project_image['und'];
+        }
+        if (empty($image)) {
+          $image = $node->field_project_image[$node->language];
         }
         if (empty($image)) {
           $info = field_info_instance('node', 'field_project_image', 'project');
@@ -5617,14 +5634,16 @@ function _akdn_custom_see_also_menu() {
       break;
     case 'publication': $types = 'Publications';
       break;
-    case 'project': $types = 'Projects';
+    case 'project': $types = 'Spotlights';
       break;
     case 'gallery': $types = 'Photographs';
       break;
   }
-
   $output = '<ul class="menu">';
   foreach ($menu_array as $key => $value) {
+    if($value == 'Projects'){
+      $value = 'Spotlights';
+    }
     $active_li = ' akdn-menu-active-trail';
     $active_a = ' akdn-menu-active';
 
@@ -5639,7 +5658,6 @@ function _akdn_custom_see_also_menu() {
   return $output;
 }
 
-
 /**
  * Implements hook_views_pre_execute().
  */
@@ -5648,4 +5666,64 @@ function akdn_custom_views_pre_execute(&$view) {
     $text = t($view->field['field_publication_file']->options['settings']['text']);
     $view->field['field_publication_file']->options['settings']['text'] = $text;
   }
+}
+
+/*
+ * Implements hook_pathauto_alias_alter().
+ */
+function akdn_custom_pathauto_alias_alter(&$alias, array &$context) {
+  global $language;
+
+  switch ($context['type']) {
+    case 'article':
+    case 'custom_content':
+    case 'page':
+      if ($context['language'] != $language->language) {
+        $old_alias = drupal_get_path_alias($context['source'], $context['language']);
+        if ($old_alias != $context['source']) {
+          $alias = drupal_get_path_alias($context['source'], $context['language']);
+        }
+      }
+      break;
+  }
+}
+
+/**
+ * Implements hook_token_info().
+ */
+function akdn_custom_token_info() {
+  $info['tokens']['file']['file-image-caption-et-custom']          = array(
+    'name'        => t("Caption et"),
+    'description' => t("Field image tranlation text."),
+  );
+  return $info;
+}
+
+
+/**
+ * Implements hook_tokens().
+ */
+function akdn_custom_tokens($type, $tokens, array $data = array(), array $options = array()) {
+  global $language;
+  $replacements = array();
+
+  if ($type == 'file') {
+    // Loop through each of the available tokens.
+    foreach ($tokens as $name => $original) {
+      // Find the desired token by name
+      switch ($name) {
+        case 'file-image-caption-et-custom':
+          if (isset($data['file']->field_image_caption[$language->language][0]['value'])) {
+            $new = $data['file']->field_image_caption[$language->language][0]['value'];
+          } else {
+            $new = $data['file']->field_image_caption["en"][0]['value'];
+          }
+          // Add the new value into the replacements array.
+          $replacements[$original] = $new;
+          break;
+      }
+    }
+  }
+
+  return $replacements;
 }

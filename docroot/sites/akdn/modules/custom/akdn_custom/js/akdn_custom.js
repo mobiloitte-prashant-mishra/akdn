@@ -195,6 +195,9 @@ jQuery(".view-id-solr_quotes .view-grouping-content").each(function(){
         //$(ap_views_id+" #edit-field-related-artists-nid-wrapper .chzn-choices").prepend("<option>Select Artists</option>");
         // $(ap_views_id+" #edit-field-performance-year-tid-wrapper select, "+ap_views_id+" #edit-field-artist-country-origin-tid-wrapper select, "+ap_views_id+" #edit-field-artist-related-instruments-nid-wrapper select").chosen();
     }
+    // click hide and show summary field
+    jQuery('.field-type-text-with-summary a.link-edit-summary').click();
+    jQuery('.field-type-text-with-summary a.link-edit-summary').click();
 });
 
 (function ($) {
@@ -339,7 +342,6 @@ jQuery(".view-id-solr_quotes .view-grouping-content").each(function(){
      */
     jQuery('ul.facetapi-facetapi-checkbox-links li.leaf a').each(function(){
        var string = jQuery(this).text(); 
-       console.log(string);
        var arr = string.split('(');
        if(jQuery.isNaN(arr[0]) == false){
            jQuery(this).parent().css('display','none');
