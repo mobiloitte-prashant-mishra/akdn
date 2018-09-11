@@ -9097,4 +9097,9 @@ html {
 
 html[dir='rtl'] .grid-media-block_description .source{
     direction: ltr;
+    border-right: 1px solid #888888;
+    float: right;
+    margin-right: 5px;
+    padding-right: 5px;
+    max-width: 250px;
 }
