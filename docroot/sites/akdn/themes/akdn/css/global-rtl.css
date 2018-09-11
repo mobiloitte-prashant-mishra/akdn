@@ -110,7 +110,3 @@ html[dir='rtl'] .view-focus-areas.view-display-id-page .views-row .views-field-f
   float: right;
   margin: 0 0 0 20px;
 }
-
-html[dir='rtl'] .grid-media-block_description .source{
-    direction: ltr;
-}

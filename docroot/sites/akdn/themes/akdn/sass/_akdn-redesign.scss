@@ -9094,3 +9094,7 @@ html {
       }
   }
 }
+
+html[dir='rtl'] .grid-media-block_description .source{
+    direction: ltr;
+}
