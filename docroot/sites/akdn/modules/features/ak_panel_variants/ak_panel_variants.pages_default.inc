@@ -18020,10 +18020,10 @@ function ak_panel_variants_default_page_manager_pages() {
         'settings' => array(
           'description' => 'Language check',
           'php' => 'global $language;
-        if($language->language == \'en\'){
-           return TRUE;
-        }
-        return FALSE;',
+          if($language->language == \'en\'){
+             return TRUE;
+          }
+          return FALSE;',
         ),
         'not' => FALSE,
       ),
@@ -18072,10 +18072,10 @@ function ak_panel_variants_default_page_manager_pages() {
         'settings' => array(
           'description' => 'Language check',
           'php' => 'global $language;
-        if($language->language == \'fr\'){
-           return TRUE;
-        }
-        return FALSE;',
+          if($language->language == \'fr\'){
+             return TRUE;
+          }
+          return FALSE;',
         ),
         'not' => FALSE,
       ),
@@ -18102,7 +18102,10 @@ function ak_panel_variants_default_page_manager_pages() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'banner-slideshow-views-no-title homepage-slideshow',
+  );
   $pane->extras = array();
   $pane->position = 3;
   $pane->locks = array();
@@ -18122,10 +18125,10 @@ function ak_panel_variants_default_page_manager_pages() {
         'settings' => array(
           'description' => 'Language check',
           'php' => 'global $language;
-        if($language->language == \'pt\'){
-           return TRUE;
-        }
-        return FALSE;',
+          if($language->language == \'pt\'){
+             return TRUE;
+          }
+          return FALSE;',
         ),
         'not' => FALSE,
       ),
@@ -18152,7 +18155,10 @@ function ak_panel_variants_default_page_manager_pages() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'banner-slideshow-views-no-title homepage-slideshow',
+  );
   $pane->extras = array();
   $pane->position = 4;
   $pane->locks = array();
@@ -18172,10 +18178,10 @@ function ak_panel_variants_default_page_manager_pages() {
         'settings' => array(
           'description' => 'Language check',
           'php' => 'global $language;
-        if($language->language == \'ar\'){
-           return TRUE;
-        }
-        return FALSE;',
+          if($language->language == \'ar\'){
+             return TRUE;
+          }
+          return FALSE;',
         ),
         'not' => FALSE,
       ),
@@ -18202,7 +18208,10 @@ function ak_panel_variants_default_page_manager_pages() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'banner-slideshow-views-no-title homepage-slideshow',
+  );
   $pane->extras = array();
   $pane->position = 5;
   $pane->locks = array();
@@ -18222,10 +18231,10 @@ function ak_panel_variants_default_page_manager_pages() {
         'settings' => array(
           'description' => 'Language check',
           'php' => 'global $language;
-        if($language->language == \'ru\'){
-           return TRUE;
-        }
-        return FALSE;',
+          if($language->language == \'ru\'){
+             return TRUE;
+          }
+          return FALSE;',
         ),
         'not' => FALSE,
       ),
@@ -18252,7 +18261,10 @@ function ak_panel_variants_default_page_manager_pages() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'banner-slideshow-views-no-title homepage-slideshow',
+  );
   $pane->extras = array();
   $pane->position = 6;
   $pane->locks = array();
@@ -18354,10 +18366,10 @@ function ak_panel_variants_default_page_manager_pages() {
         'settings' => array(
           'description' => 'Language check',
           'php' => 'global $language;
-        if($language->language != \'en\'){
-           return TRUE;
-        }
-        return FALSE;',
+          if($language->language != \'en\'){
+             return TRUE;
+          }
+          return FALSE;',
         ),
         'not' => FALSE,
       ),
@@ -18470,10 +18482,10 @@ function ak_panel_variants_default_page_manager_pages() {
         'settings' => array(
           'description' => 'Language check',
           'php' => 'global $language;
-        if($language->language == \'en\'){
-           return TRUE;
-        }
-        return FALSE;',
+          if($language->language == \'en\'){
+             return TRUE;
+          }
+          return FALSE;',
         ),
         'not' => FALSE,
       ),
@@ -18519,10 +18531,10 @@ function ak_panel_variants_default_page_manager_pages() {
         'settings' => array(
           'description' => 'Language check',
           'php' => 'global $language;
-        if($language->language == \'en\'){
-           return TRUE;
-        }
-        return FALSE;',
+          if($language->language == \'en\'){
+             return TRUE;
+          }
+          return FALSE;',
         ),
         'not' => FALSE,
       ),
@@ -18571,10 +18583,10 @@ function ak_panel_variants_default_page_manager_pages() {
         'settings' => array(
           'description' => 'Language check',
           'php' => 'global $language;
-        if($language->language == \'en\'){
-           return TRUE;
-        }
-        return FALSE;',
+          if($language->language == \'en\'){
+             return TRUE;
+          }
+          return FALSE;',
         ),
         'not' => FALSE,
       ),
@@ -18624,10 +18636,10 @@ function ak_panel_variants_default_page_manager_pages() {
         'settings' => array(
           'description' => 'Language check',
           'php' => 'global $language;
-        if($language->language == \'en\'){
-           return TRUE;
-        }
-        return FALSE;',
+          if($language->language == \'en\'){
+             return TRUE;
+          }
+          return FALSE;',
         ),
         'not' => FALSE,
       ),
