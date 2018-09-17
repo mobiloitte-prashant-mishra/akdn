@@ -348,7 +348,25 @@ jQuery(".view-id-solr_quotes .view-grouping-content").each(function(){
        }
 
     });
+//    $('.field-name-body a').click(function(){
+//      var lang = $('html').attr('lang');
+////      $.session.set('node_redirect_lang', lang);
+//      $.cookie('node_redirect_lang', lang, { expires: 7, path: '/' });
+////      console.log($.cookie("node_redirect_lang"));
+//    });
+      var getUrl = window.location;
+      $('.field-name-body a').each(function() {
+        var lang = $('html').attr('lang');
+        var href_val = $(this).attr('href');
+        if (href_val.indexOf('http') != 0) {
+          var updated_href = update_language_url(href_val);
+          if ((getUrl.pathname.split('/')[1] == lang) && updated_href) {
+            $(this).attr('href', updated_href);
+          }
+        }
+      });
 
+      
     },
     detach: function (context, settings) {
 
@@ -356,6 +374,17 @@ jQuery(".view-id-solr_quotes .view-grouping-content").each(function(){
   };
 
 }(jQuery));
+
+function update_language_url(url) {
+  var globalUrl = window.location;
+  
+  if (url.indexOf(globalUrl.pathname.split('/')[1] + '/') == -1) {
+    if (url.indexOf('/')) {
+      return '/' + globalUrl.pathname.split('/')[1] + '/' + url;
+    }
+    return '/' + globalUrl.pathname.split('/')[1] + url;
+  }
+}
 
 function accordian_click(param) {
   jQuery('.accordian-icon').removeClass('active');
