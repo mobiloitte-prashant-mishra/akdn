@@ -1483,9 +1483,9 @@ function akdn_right_panel_press_center_block() {
         $view->set_display('page_4');
         $view->build('page_4');
         $query = $view->query->getSearchApiQuery();
-//        $filter = $query->createFilter('AND');
-//        $filter->condition('field_country', $tid, '=');
-//        $query->filter($filter);
+        $filter = $query->createFilter('AND');
+        $filter->condition('field_country', $tid, '=');
+        $query->filter($filter);
         $view->execute();
         $result = $view->result;
         $count = count($result);
