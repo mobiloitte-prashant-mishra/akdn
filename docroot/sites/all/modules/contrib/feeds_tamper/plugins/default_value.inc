@@ -25,6 +25,6 @@ function feeds_tamper_default_value_form($importer, $element_key, $settings) {
   return $form;
 }
 
-function feeds_tamper_default_value_callback($source, $item_key, $element_key, &$field, $settings, $source) {
+function feeds_tamper_default_value_callback($result, $item_key, $element_key, &$field, $settings, $source) {
   $field = $settings['default_value'];
 }

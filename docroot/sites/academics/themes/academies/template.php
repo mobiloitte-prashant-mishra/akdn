@@ -213,15 +213,18 @@ function academies_menu_local_tasks(&$variables) {
 
 }
 
-
+/**
+ * hook_preprocess_html().
+ * @param type $vars
+ */
 // Determine the taxonomy for the current page to select top navigation css
 function academies_preprocess_html(&$vars) {
-	$node=node_load(arg(1));
-  if($node->type == 'page') {
-    $vars['classes_array'][]= 'image-right-align';
+  $arg = arg(1);
+  $node = is_numeric($arg) ? node_load($arg) : array();
+  if (!empty($node) && $node->type == 'page') {
+    $vars['classes_array'][] = 'image-right-align';
   }
-	if(!empty($node->field_academy_name_taxonomy['und']['0']['tid'])) {
-		$vars['classes_array'][]='term-' . $node->field_academy_name_taxonomy['und']['0']['tid'];
-	}
+  if (!empty($node->field_academy_name_taxonomy['und']['0']['tid'])) {
+    $vars['classes_array'][] = 'term-' . $node->field_academy_name_taxonomy['und']['0']['tid'];
+  }
 }
-
