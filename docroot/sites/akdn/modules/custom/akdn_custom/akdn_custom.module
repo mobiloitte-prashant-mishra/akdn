@@ -5696,6 +5696,10 @@ function akdn_custom_token_info() {
     'name'        => t("Caption et"),
     'description' => t("Field image tranlation text."),
   );
+  $info['tokens']['file']['file-image-copyright-et-custom']          = array(
+    'name'        => t("Copyright et"),
+    'description' => t("Field image tranlation copyright text."),
+  );
   return $info;
 }
 
@@ -5721,6 +5725,14 @@ function akdn_custom_tokens($type, $tokens, array $data = array(), array $option
           // Add the new value into the replacements array.
           $replacements[$original] = $new;
           break;
+        case 'file-image-copyright-et-custom':
+          if (isset($data['file']->field_image_copytight[$language->language][0]['value'])) {
+            $new = $data['file']->field_image_copytight[$language->language][0]['value'];
+          } else {
+            $new = $data['file']->field_image_copytight["en"][0]['value'];
+          }
+          // Add the new value into the replacements array.
+          $replacements[$original] = $new;  
       }
     }
   }
