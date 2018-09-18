@@ -5727,12 +5727,12 @@ function akdn_custom_tokens($type, $tokens, array $data = array(), array $option
           break;
         case 'file-image-copyright-et-custom':
           if (isset($data['file']->field_image_copytight[$language->language][0]['value'])) {
-            $new = $data['file']->field_image_copytight[$language->language][0]['value'];
+            $cp_rt_new = $data['file']->field_image_copytight[$language->language][0]['value'];
           } else {
-            $new = $data['file']->field_image_copytight["en"][0]['value'];
+            $cp_rt_new = $data['file']->field_image_copytight["en"][0]['value'];
           }
           // Add the new value into the replacements array.
-          $replacements[$original] = $new;  
+          $replacements[$original] = $cp_rt_new;  
       }
     }
   }
