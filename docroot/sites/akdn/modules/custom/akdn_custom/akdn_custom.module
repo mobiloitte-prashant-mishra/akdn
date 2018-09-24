@@ -5589,9 +5589,10 @@ function config_blocks_display($node_obj) {
           if ($status == 1) {
             $url = 'https://the.ismaili/ismaili-rss.xml';
             $request = drupal_http_request($url);
-            if (_isValidXML(trim($request->data))) {
-              $data = new SimpleXMLElement(trim($request->data));
-              if ($request->data) {
+            $request_data = preg_replace('#<script(.*?)>(.*?)</script>#is', '', $request->data);
+            if (_isValidXML(trim($request_data))) {
+              $data = new SimpleXMLElement(trim($request_data));
+              if ($request_data) {
                 $return_str .= "<div class='akdn_social_media_content clearfix'><h3>{$title}</h3>" . theme('ismaili_feed', array('output' => $data->node)) . "</div>";
               }
             }
