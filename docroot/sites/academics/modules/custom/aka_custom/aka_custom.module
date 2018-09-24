@@ -117,5 +117,10 @@ function aka_custom_menu_block_tree_alter(&$tree, &$config) {
       menu_tree_add_active_path($tree);
       $config['menu_name'] = 'menu-hyderabad-menu';
     }
+    if(!empty($str) && ($str[0] == 'maputo') && ($str[1] == 'spotlight')){
+      $tree = menu_tree_all_data('menu-maputo-menu');
+      menu_tree_add_active_path($tree);
+      $config['menu_name'] = 'menu-maputo-menu';
+    }
   }
 }
