@@ -1006,9 +1006,9 @@ function akdn_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-de1834bd8186ca16a179b613d68b1538' => array(
+        'views-62fe5c5de13a4e77370771295bbfebd5' => array(
           'module' => 'views',
-          'delta' => 'de1834bd8186ca16a179b613d68b1538',
+          'delta' => '62fe5c5de13a4e77370771295bbfebd5',
           'region' => 'branding',
           'weight' => '-10',
         ),
@@ -2788,6 +2788,39 @@ function akdn_context_context_default_contexts() {
   // Included for use with string extractors like potx.
   t('layout');
   $export['speeches_listing_pages'] = $context;
+  
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'akdn_logo_with_title';
+  $context->description = '';
+  $context->tag = '';
+  $context->conditions = array(
+    'node' => array(
+      'values' => array(
+        'custom_content' => 'custom_content',
+        'page' => 'page',
+      ),
+      'options' => array(
+        'node_form' => '0',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views-akdn_logo_with_title-block' => array(
+          'module' => 'views',
+          'delta' => 'akdn_logo_with_title-block',
+          'region' => 'branding',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+  $export['akdn_logo_with_title'] = $context;
+
 
   return $export;
 }

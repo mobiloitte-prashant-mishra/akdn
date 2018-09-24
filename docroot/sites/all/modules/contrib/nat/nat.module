@@ -330,6 +330,14 @@ function nat_get_terms($nid) {
     WHERE n.nid = :nid", array(':nid' => $nid)
   );
   foreach ($result as $term) {
+    if (module_exists('entity_translation')) {
+      global $language;
+      $term_load = taxonomy_term_load($term->tid);
+      if(array_key_exists('name_field', $term_load)){
+        $term->name = array_key_exists($language->language, $term_load->name_field)?$term_load->name_field[$language->language][0]['safe_value']:$term_load->name_field['en'][0]['safe_value'];
+        $term->language = $language->language;
+      }
+    }
     $return[$term->tid] = $term;
   }
 
@@ -621,6 +629,23 @@ function _nat_save_term($node, $hierarchy, $term, $entities, $fields) {
     $resolved_fields = _nat_field_associate($node, $entities, $term_field, $node_field);
     foreach ($resolved_fields as $term_field_resolved => $node_field_resolved) {
       $term->$term_field_resolved = $node_field_resolved;
+    }
+  }
+  if (module_exists('entity_translation')) {
+    global $language;
+    if (($term->translations->original != $language->language) && isset($term->tid) && $term->tid) {
+      $translation = array(
+        'translate' => 0,
+        'status' => 1,
+        'language' => $language->language,
+        'source' => $term->translations->original,
+      );
+      $handler = entity_translation_get_handler('taxonomy_term', $term, TRUE);
+      $values['name_field'][$language->language]['0']['value'] = $term->name;
+      $handler->setTranslation($translation, $values);
+    }
+    else {
+      $term->translations->original = $node->language;
     }
   }
 

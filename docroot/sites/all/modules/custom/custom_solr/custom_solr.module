@@ -302,7 +302,7 @@ function custom_solr_entity_type_callback($node) {
     $type = custom_solr_get_article_category_name($node->field_article_cat);
   }
   if ($node->type == 'podcast') {
-    $type = "Video";
+    $type = t("Video");
   }
   $type = str_ireplace("_", " ", $type);
   
@@ -310,7 +310,7 @@ function custom_solr_entity_type_callback($node) {
   //#AKDN-1225 Change the display name for akmi_artists and akmi_performance
   if ($node->type == 'page' || $node->type == 'custom_content' || 
 	  $node->type == 'akmi_artists' || $node->type == 'akmi_performance') {
-    $type = "Info Page";
+    $type = t("Info Page");
   }
   
   return $type;
@@ -330,7 +330,7 @@ function custom_solr_get_article_category_name($data) {
   if ($cat > 0) {
     $term = taxonomy_term_load($cat);
 	  $name = $term->name;
-		$name = ($cat == 2516) ? "Media" : $name;
+		$name = ($cat == 2516) ? t("Media") : $name;
   }
   return $name;
 }

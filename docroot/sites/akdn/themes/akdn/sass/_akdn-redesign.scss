@@ -37,7 +37,11 @@
     display: block;
   }
 }
-
+.view-id-akdn_logo_with_title img{
+    width: auto;
+    margin: 0 auto;
+    display: block;
+}
 .top-navbar {
   @extend %font_arial;
 
@@ -733,9 +737,9 @@ h1.title {
 
   a {
     display: inline-block;
-    padding: 0 10px;
+    padding: 0 8px;
     color: #000;
-    font-size: 16px;
+    font-size: 15px;
     font-family: arial !important;
     cursor: pointer;
     border-right: 1px solid #999999;
@@ -2857,6 +2861,9 @@ ul.primary li {
           font-size: 14px;
       }
     }
+    .akdn-solr-type-of-node{
+         color: #888888;
+      }
   }
 
   /*akdn filter for search page specific */
@@ -3328,7 +3335,7 @@ h2.header-name a {
     .pane-title {
       @extend %font_times;
 
-      font-size: 28px;
+      font-size: 30px;
       text-transform: uppercase;
       margin: 15px 0 30px;
 
@@ -3343,7 +3350,7 @@ h2.header-name a {
         position: relative;
         width: auto;
         border-bottom: 1px solid #CCCCCC;
-        margin: -7px 0px 0 290px;
+        margin: -7px 0px 0 303px;
       }
     }
   }
@@ -6125,6 +6132,9 @@ map {
   .block-akdn-breadcrumb-trail {
     display: none;
   }
+  .block-akdn-logo-with-title-block{
+      padding-bottom: 30px;
+  }
 }
 
 .basic-page-custom-logo {
@@ -7317,7 +7327,7 @@ map {
     margin-bottom: 10px !important;
 
     a {
-      margin-bottom: 0px;  
+      margin-bottom: 0px;
       @extend %other_activities_links;
     }
   }
@@ -8602,6 +8612,7 @@ map {
       }
     }
   }
+
 }
 
 .page-press-centre {
@@ -8754,11 +8765,11 @@ map {
     background-color: rgba(0, 0, 0, 0.5);
   }
 }
-.front{
+.front,.akmi-homepage{
     #colorbox{
         #cboxContent{
             #cboxPrevious, #cboxNext, #cboxCurrent{
-                display: none !important; 
+                display: none !important;
             }
         }
     }
@@ -9020,3 +9031,110 @@ html {
       width: 100%;
     }
  }
+// home page top menu styling for language switcher styling
+.top-navbar{
+  .content{
+      ul{
+        li{
+          &.language_switcher{
+            position:relative;
+            line-height: 34px;
+            min-width: 140px;
+            > a{
+              font-size:18px;
+              line-height: normal;
+              color: #b2b2b2;
+              padding-left:10px;
+              text-decoration: none;
+              &:hover{
+                color:#000;
+              }
+              &:after{
+                content: "";
+                background: url(../images/internet.svg);
+                width: 15px;
+                display: inline-block;
+                vertical-align: -1px;
+                height: 15px;
+                background-repeat: no-repeat;
+                background-size: contain;
+                margin-left: 10px;
+                margin-right: 10px;
+              }
+            }
+              .language-switcher-locale-url{
+                display:none;
+                position:absolute;
+                left:0;
+                border-bottom:1px solid #b2b2b2;
+                background: #fff;
+                z-index: 1;
+                width:100%;
+                li{
+                  display: block;
+                  border:none !important;
+                  padding-top: 4px;
+                  padding-bottom: 4px;
+                  padding-left: 10px;
+                  padding-right: 10px;
+                  &.zh-hans, &.de, &.it, &.ky, &.ms, &.fa, &.ru, &.es, &.tg, &.ur, &.ar, &.pt{
+                    display:none;
+                  }
+                  a{
+                    font-size:18px;
+                    line-height:normal;
+                    color:#b2b2b2;
+                    padding-top:8px;
+                    display:block;
+                    border-top:1px solid #b2b2b2;
+                    text-decoration: none;
+                    &:hover{
+                      color:#000;
+                    }
+                  }
+                }
+              }
+              &:hover{
+                >a{
+                  color:#000;
+                }
+              }
+          }
+        }
+      }
+  }
+}
+
+/* for Arabic */
+.i18n-ar {
+    .sub-navbar{
+        .pane-content {
+            p{
+                text-transform: none;
+            }
+        }
+    }
+    .pane-breaking-news{
+        .view-header {
+            p{
+                text-transform: none;
+            }
+        }
+    }
+    &.akdn-publication-details{
+        .pane-node-field-publication-file{
+            a{
+                letter-spacing: normal;
+            }
+        }
+    }
+}
+html[dir='rtl'] .grid-media-block_description .source{
+    direction: ltr;
+    border-right: 1px solid #888888;
+    border-left: 0px;
+    float: right;
+    margin-right: 5px;
+    padding-right: 5px;
+    max-width: 250px; 
+}

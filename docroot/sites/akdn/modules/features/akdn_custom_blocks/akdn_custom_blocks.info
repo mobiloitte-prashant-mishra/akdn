@@ -10,5 +10,6 @@ dependencies[] = akmi_custom
 dependencies[] = delta_blocks
 dependencies[] = fe_block
 dependencies[] = views
+features[fe_block_boxes][] = site_logo
+features[fe_block_settings][] = block-site_logo
 features[features_api][] = api:2
-mtime = 1463496335

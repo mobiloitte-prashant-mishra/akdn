@@ -9,7 +9,8 @@
  */
 
 #admin-menu {
-  background: #101010 url(images/bkg.png) bottom left repeat-x;
+  /*background: #101010 url(images/bkg.png) bottom left repeat-x;*/
+  background: #101010 bottom left repeat-x;
   font-size: 9px;
   font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
   left: 0;
@@ -155,7 +156,8 @@ body.admin-menu {
 
 /* Second-and-more-level hovering */
 #admin-menu .dropdown li li.expandable {
-  background: #45454A url(images/arrow.png) no-repeat 145px 6px;
+  /*background: #45454A url(images/arrow.png) no-repeat 145px 6px;*/
+  background: #45454A no-repeat 145px 6px;
 }
 #admin-menu .dropdown li li:hover,
 #admin-menu .dropdown li li.iehover {

@@ -6,11 +6,11 @@
   <title><?php print $head_title; ?></title>
   <?php print $styles; ?>
   <!--[if lt IE 9]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
   <!-- For IE -->
-  <script src="http://s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js"></script>
+  <script src="https://s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js"></script>
   <!--script type="text/javascript" src="[JS library]"></script-->
   <!--[if (gte IE 6)&(lte IE 8)]>
   <script type="text/javascript" src="selectivizr.js"></script>

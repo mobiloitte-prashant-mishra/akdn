@@ -102,3 +102,25 @@ function batch_admin_image_path_change_finished($success, $results, $operations)
     drupal_set_message($message, 'error');
   }
 }
+
+/**
+ * hook_menu_block_tree_alter().
+ * @param type $tree
+ * @param string $config
+ */
+function aka_custom_menu_block_tree_alter(&$tree, &$config) {
+  if(arg(0) == 'node' && is_numeric(arg(1)) && !arg(2)){
+    $alias = drupal_get_path_alias('node/' . arg(1));
+    $str = explode('/', $alias);
+    if(!empty($str) && ($str[0] == 'hyderabad') && ($str[1] == 'spotlight')){
+      $tree = menu_tree_all_data('menu-hyderabad-menu');
+      menu_tree_add_active_path($tree);
+      $config['menu_name'] = 'menu-hyderabad-menu';
+    }
+    if(!empty($str) && ($str[0] == 'maputo') && ($str[1] == 'spotlight')){
+      $tree = menu_tree_all_data('menu-maputo-menu');
+      menu_tree_add_active_path($tree);
+      $config['menu_name'] = 'menu-maputo-menu';
+    }
+  }
+}
