@@ -5433,7 +5433,6 @@ function config_blocks_display($node_obj) {
           $title = t('NEWS FROM THE ISMAILI COMMUNITY');
           if ($status == 1) {
             $url = 'https://the.ismaili/ismaili-rss.xml';
-            new SimpleXmlIterator($obj->data);
             $request = drupal_http_request($url);
             $request_data = preg_replace('#<script(.*?)>(.*?)</script>#is', '', $request->data);
             if (_isValidXML(trim($request_data))) {
