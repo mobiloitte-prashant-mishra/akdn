@@ -666,8 +666,10 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
       // Remove the delete button.
       $lang = $form['body']['#language'];
       // enable rich text editor on summary
-      $form['body'][$lang][0]['summary']['#type'] = 'text_format';
-      $form['body'][$lang][0]['summary']['#format'] = 'full_html';
+      $form['body'][$lang][0]['#format'] = 'full_html';
+//      $form['body'][$lang][0]['summary']['#type'] = 'text_format';
+//      $form['body'][$lang][0]['summary']['#format'] = 'full_html';
+
       $form['#after_build'][] = 'akdn_custom_node_form_after_build';
       $actions = $form['actions']['submit']['#submit'];
       array_unshift($actions, "akdn_custom_node_form_submit");
