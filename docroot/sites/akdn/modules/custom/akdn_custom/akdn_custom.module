@@ -661,36 +661,42 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
 //  }
   // Check that we're on a node edit form.
   if (isset($form['type']) && isset($form['type']['#value']) && $form['type']['#value'] . '_node_form' == $form_id) {
-
-    if (!empty($form['body'])) {
-      // Remove the delete button.
-      $lang = $form['body']['#language'];
-      // enable rich text editor on summary
-      $form['body'][$lang][0]['summary']['#type'] = 'text_format';
-      $form['body'][$lang][0]['summary']['#format'] = 'full_html';
-      $form['#after_build'][] = 'akdn_custom_node_form_after_build';
-      $actions = $form['actions']['submit']['#submit'];
-      array_unshift($actions, "akdn_custom_node_form_submit");
-      $form['actions']['submit']['#submit'] = $actions;
-      $save_edit_actions = $form['actions']['save_edit']['#submit'];
-      array_unshift($save_edit_actions, "akdn_custom_node_form_submit");
-      $form['actions']['save_edit']['#submit'] = $save_edit_actions;
-      // hide duplicate hide summary link
-      drupal_add_css('#body-add-more-wrapper .form-type-textarea label span:nth-child(2) {display:none;}', $option['type'] = 'inline');
-      $script = 'jQuery(document).ready(function(){ jQuery("div[class$=\'-0-value\'] .link-edit-summary").click();
-        jQuery("div[class|=\'form-item-body-\']").hide();
-      });';
-      drupal_add_js($script, 'inline');
-      // Check if this is a new node and if it has the entity translation form
-      if (empty($form['nid']['#value']) && isset($form['language']['#options'])) {
+//    $script = 'jQuery(document).ready(function(){ jQuery(".link-edit-summary").click(); });';
+//    drupal_add_js($script, 'inline');
+//    if (!empty($form['body'])) {
+//      // Remove the delete button.
+//      $lang = $form['body']['#language'];
+////      print '<pre>';
+////      print_r($form['body']); die;
+//      // enable rich text editor on summary
+////      $form['body'][$lang][0]['#format'] = 'full_html';
+//      $form['body'][$lang][0]['summary']['#type'] = 'text_format';
+////      $form['body'][$lang][0]['summary']['#format'] = 'full_html';
+//
+//      $form['#after_build'][] = 'akdn_custom_node_form_after_build';
+//      $actions = $form['actions']['submit']['#submit'];
+//      array_unshift($actions, "akdn_custom_node_form_submit");
+//      $form['actions']['submit']['#submit'] = $actions;
+//      $save_edit_actions = $form['actions']['save_edit']['#submit'];
+//      array_unshift($save_edit_actions, "akdn_custom_node_form_submit");
+//      $form['actions']['save_edit']['#submit'] = $save_edit_actions;
+//      // hide duplicate hide summary link
+//      drupal_add_css('#body-add-more-wrapper .form-type-textarea label span:nth-child(2) {display:none;}', $option['type'] = 'inline');
+//      $script = 'jQuery(document).ready(function(){ jQuery("div[class$=\'-0-value\'] .link-edit-summary").click();
+//        jQuery("div[class|=\'form-item-body-\']").hide();
+//      });';
+//      drupal_add_js($script, 'inline');
+//      // Check if this is a new node and if it has the entity translation form
+//     
+//
+//      hide($form['field_date_decade']); //hide date decade field from node edit form
+//      if ($form_id == 'breaking_news_node_form' || $form_id == 'facts_block_node_form' || $form_id == 'akmi_artists_node_form') {
+//        $form['body'][LANGUAGE_NONE][0]['summary']['#access'] = FALSE;
+//      }
+//    }
+     if (empty($form['nid']['#value']) && isset($form['language']['#options'])) {
         $form['language']['#default_value'] = 'en';
       }
-
-      hide($form['field_date_decade']); //hide date decade field from node edit form
-      if ($form_id == 'breaking_news_node_form' || $form_id == 'facts_block_node_form' || $form_id == 'akmi_artists_node_form') {
-        $form['body'][LANGUAGE_NONE][0]['summary']['#access'] = FALSE;
-      }
-    }
   }
 
   $form_to_type_map = array(
@@ -5883,6 +5889,7 @@ function akdn_custom_tokens($type, $tokens, array $data = array(), array $option
 
   return $replacements;
 }
+
 /**
  * hook_switch_links_alter().
  * @param type $links
@@ -5898,4 +5905,17 @@ function akdn_custom_language_switch_links_alter(&$links, $type, $path) {
       $links[$lang] = $value;
     }
   } 
+}
+
+/**
+ * Implements hook_js_alter().
+ *
+ *  Make summary always expanded for field of "Long text and summary" type.
+ */
+function akdn_custom_js_alter(&$javascript) {
+  $js_path = drupal_get_path('module', 'text') . '/text.js';
+
+  if (isset($javascript[$js_path])) {
+    unset($javascript[$js_path]);
+  }
 }
