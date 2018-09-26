@@ -661,7 +661,8 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
 //  }
   // Check that we're on a node edit form.
   if (isset($form['type']) && isset($form['type']['#value']) && $form['type']['#value'] . '_node_form' == $form_id) {
-
+//    $script = 'jQuery(document).ready(function(){ jQuery(".link-edit-summary").click(); });';
+//    drupal_add_js($script, 'inline');
 //    if (!empty($form['body'])) {
 //      // Remove the delete button.
 //      $lang = $form['body']['#language'];
@@ -5733,4 +5734,17 @@ function akdn_custom_tokens($type, $tokens, array $data = array(), array $option
   }
 
   return $replacements;
+}
+
+/**
+ * Implements hook_js_alter().
+ *
+ *  Make summary always expanded for field of "Long text and summary" type.
+ */
+function akdn_custom_js_alter(&$javascript) {
+  $js_path = drupal_get_path('module', 'text') . '/text.js';
+
+  if (isset($javascript[$js_path])) {
+    unset($javascript[$js_path]);
+  }
 }
