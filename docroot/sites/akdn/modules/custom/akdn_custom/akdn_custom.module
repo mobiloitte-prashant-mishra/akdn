@@ -1966,15 +1966,22 @@ function akdn_basic_page_accordian_style_block() {
           $rel_links = '';
           foreach ($related_links as $links) {
             $url = link_cleanup_url($links['url']);
+            
+            $path = get_source_url_alias_redirect($url);
+            $alias = drupal_get_path_alias($path, $lang);
+            if(empty($alias)){
+              $alias = $url;
+            }
+            
             $target = $links['attributes']['target'];
             if ($target === '_blank') {
               $rel_links .= '<div class = "accordian_rel_links">';
-              $rel_links .= l($links['title'], $url, array('attributes' => array('target' => '_blank')));
+              $rel_links .= l($links['title'], $alias, array('attributes' => array('target' => '_blank')));
               $rel_links .= '</div>';
             }
             else {
               $rel_links .= '<div class = "accordian_rel_links">';
-              $rel_links .= l($links['title'], $url);
+              $rel_links .= l($links['title'], $alias);
               $rel_links .= '</div>';
             }
           }
@@ -5918,4 +5925,18 @@ function akdn_custom_js_alter(&$javascript) {
   if (isset($javascript[$js_path])) {
     unset($javascript[$js_path]);
   }
+}
+/**
+ * 
+ * @param type $alias
+ * @return type
+ */
+function get_source_url_alias_redirect($alias){
+  $result = db_select('redirect', 'r')
+    ->fields('r',array('redirect'))
+    ->condition('source',$alias,'=')
+    ->distinct()->execute()
+    ->fetchAll();
+  
+  return $result[0]->redirect;
 }
