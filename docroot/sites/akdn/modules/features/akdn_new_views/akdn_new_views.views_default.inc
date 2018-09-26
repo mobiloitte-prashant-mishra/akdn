@@ -142,5 +142,62 @@ if(arg(0) == \'node\' && arg(2) == \'draft\'){
   $handler->display->display_options['block_description'] = 'AKDN logo with title';
   $export['akdn_logo_with_title'] = $view;
 
+  $view = new view();
+  $view->name = 'akdn_node_attachment';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'AKDN Node Attachment';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['css_class'] = 'pane-node-field-attachment';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Entity translation: Attachment: translated */
+  $handler->display->display_options['fields']['field_attachment_et']['id'] = 'field_attachment_et';
+  $handler->display->display_options['fields']['field_attachment_et']['table'] = 'field_data_field_attachment';
+  $handler->display->display_options['fields']['field_attachment_et']['field'] = 'field_attachment_et';
+  $handler->display->display_options['fields']['field_attachment_et']['label'] = '';
+  $handler->display->display_options['fields']['field_attachment_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_attachment_et']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_attachment_et']['type'] = 'file_download_link';
+  $handler->display->display_options['fields']['field_attachment_et']['settings'] = array(
+    'text' => '[file:extension]',
+  );
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Content: Attachment (field_attachment:language) */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'field_data_field_attachment';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $handler->display->display_options['block_description'] = 'AKDN Node Attachment';
+  $export['akdn_node_attachment'] = $view;
+
+
   return $export;
 }
