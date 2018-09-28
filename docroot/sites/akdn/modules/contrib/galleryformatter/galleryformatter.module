@@ -251,7 +251,9 @@ function galleryformatter_field_formatter_view($entity_type, $entity, $field, $i
     else{
       $renderitems['slides'][$delta]['caption'] = reset($item['field_image_caption']['en'])['value'];
     }
+    watchdog("gallery_123", '<pre>' . print_r($item, true) . '</pre>');
     $copyright = reset($item['field_image_copytight'][LANGUAGE_NONE]);
+    
 
     if (!empty($copyright)) {
       $renderitems['slides'][$delta]['copyright'] = $copyright['value'];
