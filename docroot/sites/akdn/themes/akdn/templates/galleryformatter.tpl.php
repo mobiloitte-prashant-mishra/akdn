@@ -28,12 +28,8 @@
           <?php if (!empty($data['caption']) || !empty($data['copyright'])): ?>
             <div class="panel-overlay">
               <div class="overlay-inner">
-                <?php watchdog("log_name", '<pre>' . print_r($data, true) . '</pre>'); ?>
                 <?php if ($data['caption']): ?><h4><?php print $data['caption']; ?></h4><?php endif; ?>
-                <?php if ($data['copyright']): ?><h3><?php 
-                
-                print $data['copyright']; 
-                ?></h3><?php endif; ?>
+                <?php if ($data['copyright']): ?><h3><?php print $data['copyright']; ?></h3><?php endif; ?>
               </div>
             </div>
           <?php endif; ?>
