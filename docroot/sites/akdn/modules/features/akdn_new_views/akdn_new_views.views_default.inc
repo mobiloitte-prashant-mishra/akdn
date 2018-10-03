@@ -23,6 +23,7 @@ function akdn_new_views_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['css_class'] = 'agencies_logo';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'view revisions';
@@ -47,6 +48,8 @@ function akdn_new_views_views_default_views() {
   $handler->display->display_options['fields']['field_agency_logo-revision_id']['table'] = 'field_revision_field_agency_logo';
   $handler->display->display_options['fields']['field_agency_logo-revision_id']['field'] = 'field_agency_logo-revision_id';
   $handler->display->display_options['fields']['field_agency_logo-revision_id']['label'] = '';
+  $handler->display->display_options['fields']['field_agency_logo-revision_id']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_agency_logo-revision_id']['element_class'] = 'agencies_logo';
   $handler->display->display_options['fields']['field_agency_logo-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_agency_logo-revision_id']['empty'] = '<div class = "basic-page-custom-logo-title">[field_short_title-revision_id]</div>';
   $handler->display->display_options['fields']['field_agency_logo-revision_id']['click_sort_column'] = 'fid';
