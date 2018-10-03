@@ -9138,3 +9138,12 @@ html[dir='rtl'] .grid-media-block_description .source{
     padding-right: 5px;
     max-width: 250px; 
 }
+
+.i18n-ar {
+    &.press-release-detail-type {
+        .pane-node-field-attachment{
+           margin-left: 15px;
+           float: right;
+        }
+    }
+}
