@@ -4800,11 +4800,14 @@ function akdn_custom_search_api_solr_search_results_alter(array &$results, Searc
  */
 
 function akdn_custom_video_player_speech() {
+  global $language;
+  $lang = $language->langugage;
   $drupal_get_path = drupal_get_path('module', 'akdn_custom');
   $entity = menu_get_object();
-  if (isset($entity->field_speech_video['und'][0]['uri'])) {
+//  print_r($entity); die;
+  if (isset($entity->field_speech_video[$lang][0]['uri'])) {
     //bightcove video
-    $video_temp = explode('brightcove://', $entity->field_speech_video['und'][0]['uri']);
+    $video_temp = explode('brightcove://', $entity->field_speech_video[$lang][0]['uri']);
     if (is_numeric($video_temp[1])) {
       $video = $video_temp[1];
     }
@@ -4814,7 +4817,7 @@ function akdn_custom_video_player_speech() {
     }
 
     //youtube
-    $youtube_temp = explode('youtube://v/', $entity->field_speech_video['und'][0]['uri']);
+    $youtube_temp = explode('youtube://v/', $entity->field_speech_video[$lang][0]['uri']);
     $youtube_video_id = $youtube_temp[1];
   }
   if (!empty($video)) {
@@ -4858,13 +4861,13 @@ function akdn_custom_video_player_speech() {
   else {
     //@TODO change this later for vimeo and other video file player
     $output = '';
-    if (isset($entity->field_speech_video['und'][0]['uri'])) {
+    if (isset($entity->field_speech_video[$lang][0]['uri'])) {
       $output .= '<div class="video_player"">
         <video id="video_player_1" class="video-js vjs-default-skin"
                controls preload="auto" width="300" height="200"
                poster="http://video-js.zencoder.com/oceans-clip.png"
                data-setup=\'{"controls":true}\'>
-            <source src="' . $entity->field_speech_video['und'][0]['uri'] . '" type=\'video/mp4\' />
+            <source src="' . $entity->field_speech_video[$lang][0]['uri'] . '" type=\'video/mp4\' />
         </video>
     </div>';
     }
