@@ -983,13 +983,13 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
           // [AKDN-1447]Check $video_source_data must not be empty
           // other vise it add empty() file.
           if(!empty($video_source_data)){
-            $file_url = $video_source_data->path;
+            $file_url = (string)$video_source_data->path;
             if (!empty($video_fid)) {
               if($video_fid == '291506'){
-//                print_r($video_source_data); die;
-//                print_r($video_source_data); die;
+//                print_r($video_source_data);
+//                print_r((string)$video_source_data->file_name); die;
               }
-              $file = file_save_data(file_get_contents($file_url), file_default_scheme() . '://' . $video_source_data->file_name, FILE_EXISTS_RENAME);
+              $file = file_save_data(file_get_contents($file_url), file_default_scheme() . '://' . (string)$video_source_data->file_name, FILE_EXISTS_RENAME);
               if($video_fid == '291506'){
 //                  print '<pre>';
 //              print_r($file); die;
