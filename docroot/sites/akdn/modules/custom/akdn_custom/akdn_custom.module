@@ -4964,7 +4964,7 @@ function akdn_custom_video_player_speech() {
   $lang = $language->language;
   $drupal_get_path = drupal_get_path('module', 'akdn_custom');
   $entity = menu_get_object();
-//  print_r($entity->field_speech_video[$lang][0]['uri']); die;
+  
   if (isset($entity->field_speech_video[$lang][0]['uri'])) {
     //bightcove video
     $video_temp = explode('brightcove://', $entity->field_speech_video[$lang][0]['uri']);

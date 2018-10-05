@@ -961,7 +961,7 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
               $file = file_save_data(file_get_contents($file_url), file_default_scheme() . '://' . $audio_source_data->file_name, FILE_EXISTS_RENAME);
               $files_data[$file->fid] = $audio_source_data;
 
-              $node->field_speech_audio['und'][0] = array(
+              $node->field_speech_audio[$available_lang][0] = array(
                 'fid' => $file->fid,
                 'display' => 1,
                 'description' => '',
@@ -974,25 +974,38 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
             }
           }
           // Video file speech image related processing.
+
           $datakey = 'video';
-          $video_fid = $source_avail_lang_node_data->{$datakey};
+          $video_fid = (string)$source_avail_lang_node_data->video;
           $video_source_data = _scs_custom_get_file_data_from_fid($video_fid);
+                  
+          
           // [AKDN-1447]Check $video_source_data must not be empty
           // other vise it add empty() file.
           if(!empty($video_source_data)){
             $file_url = $video_source_data->path;
             if (!empty($video_fid)) {
+              if($video_fid == '291506'){
+//                print_r($video_source_data); die;
+//                print_r($video_source_data); die;
+              }
               $file = file_save_data(file_get_contents($file_url), file_default_scheme() . '://' . $video_source_data->file_name, FILE_EXISTS_RENAME);
+              if($video_fid == '291506'){
+//                  print '<pre>';
+//              print_r($file); die;
+              }
               $files_data[$file->fid] = $video_source_data;
 
-              $node->field_speech_video['und'][0] = array(
+              $node->field_speech_video[$available_lang][0] = array(
                 'fid' => $file->fid,
                 'display' => 1,
                 'description' => '',
                 'uri' => $file->uri,
                 'filename' => $file->filename,
+//                'type' => (string)$video_source_data->type,
+//                'filemime' => strtolower((string)$video_source_data->mime_type),
                 'type' => $file->type,
-                'filemime' => $file->filemime,
+                'filemime' => $file->filemime,                
                 'status' => $file->status,
               );
             }
