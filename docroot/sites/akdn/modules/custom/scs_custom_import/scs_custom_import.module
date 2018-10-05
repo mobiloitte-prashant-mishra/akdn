@@ -961,7 +961,7 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
               $file = file_save_data(file_get_contents($file_url), file_default_scheme() . '://' . $audio_source_data->file_name, FILE_EXISTS_RENAME);
               $files_data[$file->fid] = $audio_source_data;
 
-              $node->field_speech_audio['und'][0] = array(
+              $node->field_speech_audio[$available_lang][0] = array(
                 'fid' => $file->fid,
                 'display' => 1,
                 'description' => '',
@@ -974,12 +974,11 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
             }
           }
           // Video file speech image related processing.
+//          print '<pre>';
+//          print_r($source_avail_lang_node_data); die;
           $datakey = 'video';
-          $video_fid = $source_avail_lang_node_data->{$datakey};
+          $video_fid = $source_avail_lang_node_data->video;
           $video_source_data = _scs_custom_get_file_data_from_fid($video_fid);
-//          dsm($node_language);
-//          dsm($video_source_data);
-//          dsm($node);
           // [AKDN-1447]Check $video_source_data must not be empty
           // other vise it add empty() file.
           if(!empty($video_source_data)){
@@ -988,9 +987,7 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
               $file = file_save_data(file_get_contents($file_url), file_default_scheme() . '://' . $video_source_data->file_name, FILE_EXISTS_RENAME);
               $files_data[$file->fid] = $video_source_data;
 
-//              dsm($video_source_data);
-//dsm($node);
-              $node->field_speech_video[$node_language][0] = array(
+              $node->field_speech_video[$available_lang][0] = array(
                 'fid' => $file->fid,
                 'display' => 1,
                 'description' => '',
@@ -1000,10 +997,8 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
                 'filemime' => $file->filemime,
                 'status' => $file->status,
               );
-//              watchdog("node_last", '<pre>' . print_r( $node, true) . '</pre>');
             }
           }
-//          dsm($node);
           // Related Links related processing.
           $datakey = 'related_links';
           $related_links = $source_avail_lang_node_data->{$datakey};
