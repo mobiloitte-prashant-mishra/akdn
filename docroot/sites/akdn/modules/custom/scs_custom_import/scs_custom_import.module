@@ -975,9 +975,10 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
           }
           // Video file speech image related processing.
 //          print '<pre>';
-//          print_r($source_avail_lang_node_data); die;
+//          print_r($source_avail_lang_node_data->video[0]); die;
+//          print_r((string)$source_avail_lang_node_data->video); die;
           $datakey = 'video';
-          $video_fid = $source_avail_lang_node_data->video;
+          $video_fid = (string)$source_avail_lang_node_data->video;
           $video_source_data = _scs_custom_get_file_data_from_fid($video_fid);
           // [AKDN-1447]Check $video_source_data must not be empty
           // other vise it add empty() file.
