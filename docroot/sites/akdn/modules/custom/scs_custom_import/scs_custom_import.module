@@ -987,7 +987,7 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
             if (!empty($video_fid)) {
               if($video_fid == '291506'){
 //                print_r($video_source_data); die;
-//                print_r((string)$video_source_data->mime_type); die;
+//                print_r($video_source_data); die;
               }
               $file = file_save_data(file_get_contents($file_url), file_default_scheme() . '://' . $video_source_data->file_name, FILE_EXISTS_RENAME);
               if($video_fid == '291506'){
@@ -1002,8 +1002,10 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
                 'description' => '',
                 'uri' => $file->uri,
                 'filename' => $file->filename,
-                'type' => (string)$video_source_data->type,
-                'filemime' => (string)$video_source_data->mime_type,
+//                'type' => (string)$video_source_data->type,
+//                'filemime' => strtolower((string)$video_source_data->mime_type),
+                'type' => $file->type,
+                'filemime' => $file->filemime,                
                 'status' => $file->status,
               );
             }
