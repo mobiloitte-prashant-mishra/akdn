@@ -1350,17 +1350,18 @@ function akdn_custom_content_breadcrumb() {
     $output .= '<span>';
     if (!empty($crumb['url'])) {
       $link = link_cleanup_url($crumb['url']);
-      $output .= l($crumb['title'], '/' . $link, array('fragment' => '', 'external' => TRUE, 'HTML' => TRUE));
+      $output .= l(t($crumb['title']), '/' . $link, array('fragment' => '', 'external' => TRUE, 'HTML' => TRUE));
     }
     else {
-      $output .= $crumb['title'];
+      $output .= t($crumb['title']);
     }
+
     $output .= '</span>';
     if ($i < $count) {
       $output .= '<span class="delimiter">|</span>';
     }
     $i++;
-  }
+  } 
   return $output;
 }
 

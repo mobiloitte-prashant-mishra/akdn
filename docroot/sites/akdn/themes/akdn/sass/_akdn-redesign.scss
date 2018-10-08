@@ -6166,6 +6166,7 @@ map {
   .breadcrumb {
     span:not(.delimiter) {
       padding: 0 3px;
+      float: right;
 
       &:last-child {
         color: #b49759;
