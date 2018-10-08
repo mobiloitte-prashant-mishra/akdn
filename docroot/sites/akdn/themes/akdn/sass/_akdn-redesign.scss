@@ -6162,8 +6162,7 @@ map {
 .node-type-custom-content {
   .breadcrumb {
     span:not(.delimiter) {
-      padding: 0 3px;
-      float: right;
+      padding: 0 3px;      
 
       &:last-child {
         color: #b49759;
@@ -9101,4 +9100,13 @@ html {
         }
       }
   }
+}
+.i18n-ar{
+    .node-type-custom-content {
+        .breadcrumb {
+            span:not(.delimiter) {
+                float: right;
+            }
+        }
+    }
 }
