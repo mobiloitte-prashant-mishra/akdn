@@ -2514,7 +2514,7 @@ function what_we_do_news_and_resources() {
       }
       $output .= '<div class= "type">' . $type . '</div>';
       $field_publish_date = $node->field_publish_date;
-      $output .= '<div class= "date">' . date('d F Y', $node->field_publish_date[key($field_publish_date)][0]['value']) . '</div>';
+      $output .= '<div class= "date">' . format_date($node->field_publish_date[key($field_publish_date)][0]['value'], 'custom', 'd F Y', 'Europe/Paris', $lang) . '</div>';
       if ($name == 'In the media') {
         $field_short_title = $node->field_short_title;
         if ($node->field_short_title[$lang][0]['value']) {
