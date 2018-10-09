@@ -1315,7 +1315,7 @@ function home_news_and_resources(){
       }
     }
     $output .= '<div class= "type">' . $type . '</div>';
-    $output .= '<div class= "date">' . date('d F Y', $nid->field_publish_date_value) . '</div>';
+    $output .= '<div class= "date">' . format_date($nid->field_publish_date_value, 'custom', 'd F Y', 'Europe/Paris', $lang) . '</div>';
     $output .= '<div class= "title">' . l($short_title, $node_url) . '</div>';
     $output .= '<span class= "read">[' . $read . '</span>';
     $output .= '<span class= "readall">' . " | " . $readall . ']</span>';
@@ -2676,7 +2676,7 @@ function what_we_do_news_and_resources() {
       }
       $output .= '<div class= "type">' . $type . '</div>';
       $field_publish_date = $node->field_publish_date;
-      $output .= '<div class= "date">' . date('d F Y', $node->field_publish_date[key($field_publish_date)][0]['value']) . '</div>';
+      $output .= '<div class= "date">' . format_date($node->field_publish_date[key($field_publish_date)][0]['value'], 'custom', 'd F Y', 'Europe/Paris', $lang) . '</div>';
       if ($name == 'In the media') {
         $field_short_title = $node->field_short_title;
         if ($node->field_short_title[$lang][0]['value']) {
@@ -5890,6 +5890,7 @@ function akdn_custom_tokens($type, $tokens, array $data = array(), array $option
       // Find the desired token by name
       switch ($name) {
         case 'file-image-caption-et-custom':
+          $new = $data['file']->field_image_caption[$language->language][0]['value'];
           if (isset($data['file']->field_image_caption[$language->language][0]['value'])) {
             $new = $data['file']->field_image_caption[$language->language][0]['value'];
           } else {
