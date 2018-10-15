@@ -88,7 +88,7 @@ function akdn_custom_menu() {
     'type' => MENU_CALLBACK
   );
   //@TODO make this dynamic
-  $items['node/24266'] = array(
+  /*$items['node/24266'] = array(
     'page callback' => 'akdn_custom_open_pdf_file',
     'access arguments' => array('access content'),
     'type' => MENU_CALLBACK
