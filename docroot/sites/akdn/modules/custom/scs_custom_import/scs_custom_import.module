@@ -847,6 +847,7 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
             $datakey = 'speech_image_' . $available_lang;
             $article_image_fid = $source_avail_lang_node_data->{$datakey};
             $article_image_source_data = _scs_custom_get_file_data_from_fid($article_image_fid);
+            $files_array = json_decode(json_encode($files_data), 1);
             if (!empty($article_image_source_data)) {
               $files_array = json_decode(json_encode($files_data), 1);
               if (!in_array_r($article_image_source_data->path, $files_array)) {
@@ -977,26 +978,44 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
           $datakey = 'video';
           $video_fid = $source_avail_lang_node_data->{$datakey};
           $video_source_data = _scs_custom_get_file_data_from_fid($video_fid);
+//          print '<pre>';
+//          print_r($source_avail_lang_node_data); die;
+          
           // [AKDN-1447]Check $video_source_data must not be empty
           // other vise it add empty() file.
           if(!empty($video_source_data)){
             $file_url = $video_source_data->path;
+            $filename = $video_source_data->file_name;
+             if (strpos($file_url, 'youtube.com') > -1) {
+               $filename = $video_source_data->file_name.'jpg';
+             }
             if (!empty($video_fid)) {
               $file = file_save_data(file_get_contents($file_url), file_default_scheme() . '://' . $video_source_data->file_name, FILE_EXISTS_RENAME);
               $files_data[$file->fid] = $video_source_data;
-
-              $node->field_speech_video['und'][0] = array(
+              $uri = $file->uri;
+              $mime = $file->filemime;
+              $filetype = $file->type;
+              
+              if (strpos($file_url, 'youtube.com') > -1) {
+                $explode = explode('v=', (string) $file_url);
+                $uri = 'youtube://v/' . $explode[1];
+                $mime = 'video/youtube';
+                $filetype = 'video';
+              }
+              $node->field_speech_video[$available_lang][0] = array(
                 'fid' => $file->fid,
                 'display' => 1,
                 'description' => '',
-                'uri' => $file->uri,
+                'uri' => $uri,
                 'filename' => $file->filename,
-                'type' => $file->type,
-                'filemime' => $file->filemime,
+                'type' => $filetype,
+                'filemime' => $mime,
                 'status' => $file->status,
               );
+//              print_r($node->field_speech_video); die;
             }
           }
+          
           // Related Links related processing.
           $datakey = 'related_links';
           $related_links = $source_avail_lang_node_data->{$datakey};
