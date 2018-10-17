@@ -88,7 +88,7 @@ function akdn_custom_menu() {
     'type' => MENU_CALLBACK
   );
   //@TODO make this dynamic
-  $items['node/24266'] = array(
+  /*$items['node/24266'] = array(
     'page callback' => 'akdn_custom_open_pdf_file',
     'access arguments' => array('access content'),
     'type' => MENU_CALLBACK
@@ -492,6 +492,18 @@ function akdn_custom_node_view($node, $view_mode, $langcode) {
     $node->content['body'][0]['#markup'] = $node->content['body'][0]['#markup'] . '<table cellspacing="0" cellpadding="0" border="0" width="100%" style="border:0;"><tr><td style="padding:15px;border:0;">' . $template . '</td></tr></table>';
     return $node;
   }
+
+  if($node->type == 'fact_sheet'){
+    $field_upload = $node->field_upload_factsheet;
+    $field_upload_factsheet = $node->field_upload_factsheet[key($field_upload)][0]['uri'];
+    $file_url = file_create_url($field_upload_factsheet);
+  	  if (empty($node->nid) || empty($node) || !$node->status || !file_exists($field_upload_factsheet)) {
+  	    return drupal_access_denied();
+  	  }
+  	  else{
+  	  drupal_goto($file_url);
+  	  }
+    }
 }
 
 /**
@@ -870,7 +882,7 @@ function akdn_custom_block_info() {
     'see_also_custom_block' => array(
       'info' => t('Custom See ALso Block'),
       'cache' => DRUPAL_NO_CACHE,
-    ), 
+    ),
     'akaa_resources' => array(
       'info' => t('AKAA Resources Links'),
       'cache' => DRUPAL_NO_CACHE,
@@ -2217,12 +2229,12 @@ function news_and_resources_top_links() {
     $name = $term[0]->name;
     $ntid = $term[0]->tid;
 
-    if ($node->field_news_and_resources_link[$lang]) {
+    // if ($node->field_news_and_resources_link[$lang]) {
       $links = $node->field_news_and_resources_link[$lang];
-    }
-    else {
-      $links = $node->field_news_and_resources_link['und'];
-    }
+    // }
+    // else {
+    //   $links = $node->field_news_and_resources_link['und'];
+    // }
     $output = '';
     $output .= t('<p><span>N</span><span>ews & Resources</span></p><ul>');
     foreach ($links as $value) {
@@ -2495,7 +2507,7 @@ function what_we_do_news_and_resources() {
         else {
           $image = $node->field_article_img['en'];
         }
-        
+
         if (empty($image)) {
           $image = $node->field_article_img['und'];
         }
