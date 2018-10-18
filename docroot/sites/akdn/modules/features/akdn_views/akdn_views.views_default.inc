@@ -15346,22 +15346,22 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['slideshow_type'] = 'views_slideshow_cycle';
 	$handler->display->display_options['style_options']['slideshow_skin'] = 'default';
 	$handler->display->display_options['style_options']['skin_info'] = array(
-		'class' => 'default',
-		'name' => 'Default',
-		'module' => 'views_slideshow',
-		'path' => '',
-		'stylesheets' => array(),
+	  'class' => 'default',
+	  'name' => 'Default',
+	  'module' => 'views_slideshow',
+	  'path' => '',
+	  'stylesheets' => array(),
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'field_feature_image' => 0,
-		'title' => 0,
-		'body' => 0,
-		'field_feature_link' => 0,
-		'nothing' => 0,
-		'nothing_1' => 0,
-		'counter' => 0,
+	  'field_feature_image' => 0,
+	  'title' => 0,
+	  'body' => 0,
+	  'field_feature_link' => 0,
+	  'nothing' => 0,
+	  'nothing_1' => 0,
+	  'counter' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -15370,13 +15370,13 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'counter' => 'counter',
-		'field_feature_image' => 0,
-		'title' => 0,
-		'body' => 0,
-		'field_feature_link' => 0,
-		'nothing' => 0,
-		'nothing_1' => 0,
+	  'counter' => 'counter',
+	  'field_feature_image' => 0,
+	  'title' => 0,
+	  'body' => 0,
+	  'field_feature_link' => 0,
+	  'nothing' => 0,
+	  'nothing_1' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -15398,10 +15398,10 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['relationships']['nodequeue_rel']['required'] = TRUE;
 	$handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
 	$handler->display->display_options['relationships']['nodequeue_rel']['names'] = array(
-		'featured_content' => 'featured_content',
-		'featured_artefacts' => 0,
-		'featured_articles' => 0,
-		'featured_exhibition' => 0,
+	  'featured_content' => 'featured_content',
+	  'featured_artefacts' => 0,
+	  'featured_articles' => 0,
+	  'featured_exhibition' => 0,
 	);
 	/* Relationship: Content: Images (field_project_image:fid) */
 	$handler->display->display_options['relationships']['field_project_image_fid']['id'] = 'field_project_image_fid';
@@ -15423,8 +15423,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_feature_image']['hide_alter_empty'] = FALSE;
 	$handler->display->display_options['fields']['field_feature_image']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_feature_image']['settings'] = array(
-		'image_style' => 'featured_content',
-		'image_link' => '',
+	  'image_style' => 'featured_content',
+	  'image_link' => '',
 	);
 	/* Field: Content: Title */
 	$handler->display->display_options['fields']['title']['id'] = 'title';
@@ -15447,7 +15447,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['body']['hide_alter_empty'] = FALSE;
 	$handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
 	$handler->display->display_options['fields']['body']['settings'] = array(
-		'trim_length' => '50',
+	  'trim_length' => '50',
 	);
 	/* Field: Content: Caption */
 	$handler->display->display_options['fields']['field_caption']['id'] = 'field_caption';
@@ -15458,7 +15458,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_caption']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_caption']['type'] = 'text_trimmed';
 	$handler->display->display_options['fields']['field_caption']['settings'] = array(
-		'trim_length' => '104',
+	  'trim_length' => '104',
 	);
 	/* Field: Content: Purchase Link */
 	$handler->display->display_options['fields']['field_feature_link']['id'] = 'field_feature_link';
@@ -15475,12 +15475,12 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_feature_image]</div>
-					<div class="slide-text"><h3>[title]</h3>
-					[field_caption]
-					[field_feature_link]
-					</div>
+						<div class="slide-text"><h3>[title]</h3>
+						[field_caption]
+						[field_feature_link]
+						</div>
 
-					';
+						';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	/* Field: Global: Custom text */
 	$handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
@@ -15507,8 +15507,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_project_image']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_project_image']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_project_image']['settings'] = array(
-		'image_style' => 'featured_content',
-		'image_link' => '',
+	  'image_style' => 'featured_content',
+	  'image_link' => '',
 	);
 	$handler->display->display_options['fields']['field_project_image']['delta_offset'] = '0';
 	/* Sort criterion: Content: Sticky */
@@ -15521,15 +15521,15 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['sorts']['created']['field'] = 'created';
 	$handler->display->display_options['filter_groups']['operator'] = 'OR';
 	$handler->display->display_options['filter_groups']['groups'] = array(
-		1 => 'AND',
-		2 => 'AND',
+	  1 => 'AND',
+	  2 => 'AND',
 	);
 	/* Filter criterion: Content: Type */
 	$handler->display->display_options['filters']['type']['id'] = 'type';
 	$handler->display->display_options['filters']['type']['table'] = 'node';
 	$handler->display->display_options['filters']['type']['field'] = 'type';
 	$handler->display->display_options['filters']['type']['value'] = array(
-		'featured_content' => 'featured_content',
+	  'featured_content' => 'featured_content',
 	);
 	$handler->display->display_options['filters']['type']['group'] = 1;
 	/* Filter criterion: Content: Published or admin */
@@ -15542,13 +15542,13 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['type_1']['table'] = 'node';
 	$handler->display->display_options['filters']['type_1']['field'] = 'type';
 	$handler->display->display_options['filters']['type_1']['value'] = array(
-		'article' => 'article',
-		'event' => 'event',
-		'gallery' => 'gallery',
-		'podcast' => 'podcast',
-		'project' => 'project',
-		'publication' => 'publication',
-		'speech' => 'speech',
+	  'article' => 'article',
+	  'event' => 'event',
+	  'gallery' => 'gallery',
+	  'podcast' => 'podcast',
+	  'project' => 'project',
+	  'publication' => 'publication',
+	  'speech' => 'speech',
 	);
 	$handler->display->display_options['filters']['type_1']['group'] = 2;
 	/* Filter criterion: Content: Create Banner Item (field_create_featured_content) */
@@ -15557,7 +15557,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['field_create_featured_content_value']['field'] = 'field_create_featured_content_value';
 	$handler->display->display_options['filters']['field_create_featured_content_value']['operator'] = 'not';
 	$handler->display->display_options['filters']['field_create_featured_content_value']['value'] = array(
-		0 => '0',
+	  0 => '0',
 	);
 	$handler->display->display_options['filters']['field_create_featured_content_value']['group'] = 2;
 	/* Filter criterion: Content: Published or admin */
@@ -15581,27 +15581,27 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['slideshow_type'] = 'flexslider_views_slideshow';
 	$handler->display->display_options['style_options']['slideshow_skin'] = 'default';
 	$handler->display->display_options['style_options']['skin_info'] = array(
-		'class' => 'default',
-		'name' => 'Default',
-		'module' => 'views_slideshow',
-		'path' => '',
-		'stylesheets' => array(),
+	  'class' => 'default',
+	  'name' => 'Default',
+	  'module' => 'views_slideshow',
+	  'path' => '',
+	  'stylesheets' => array(),
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'field_feature_image' => 0,
-		'field_project_image' => 0,
-		'title_field' => 0,
-		'field_caption' => 0,
-		'field_image_caption' => 0,
-		'field_image_caption_1' => 0,
-		'type' => 0,
-		'field_feature_link' => 0,
-		'view_node' => 0,
-		'php' => 0,
-		'php_1' => 0,
-		'nothing' => 0,
+	  'field_feature_image' => 0,
+	  'field_project_image' => 0,
+	  'title_field' => 0,
+	  'field_caption' => 0,
+	  'field_image_caption' => 0,
+	  'field_image_caption_1' => 0,
+	  'type' => 0,
+	  'field_feature_link' => 0,
+	  'view_node' => 0,
+	  'php' => 0,
+	  'php_1' => 0,
+	  'nothing' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -15610,18 +15610,18 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'field_feature_image' => 0,
-		'field_project_image' => 0,
-		'title_field' => 0,
-		'field_caption' => 0,
-		'field_image_caption' => 0,
-		'field_image_caption_1' => 0,
-		'type' => 0,
-		'field_feature_link' => 0,
-		'view_node' => 0,
-		'php' => 0,
-		'php_1' => 0,
-		'nothing' => 0,
+	  'field_feature_image' => 0,
+	  'field_project_image' => 0,
+	  'title_field' => 0,
+	  'field_caption' => 0,
+	  'field_image_caption' => 0,
+	  'field_image_caption_1' => 0,
+	  'type' => 0,
+	  'field_feature_link' => 0,
+	  'view_node' => 0,
+	  'php' => 0,
+	  'php_1' => 0,
+	  'nothing' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -15650,8 +15650,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_feature_image_et']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_feature_image_et']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_feature_image_et']['settings'] = array(
-		'image_style' => 'banner_item_standard_home_page',
-		'image_link' => '',
+	  'image_style' => 'banner_item_standard_home_page',
+	  'image_link' => '',
 	);
 	/* Field: Entity translation: Images: translated */
 	$handler->display->display_options['fields']['field_project_image_et']['id'] = 'field_project_image_et';
@@ -15662,8 +15662,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_project_image_et']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_project_image_et']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_project_image_et']['settings'] = array(
-		'image_style' => 'banner_item_standard_home_page',
-		'image_link' => '',
+	  'image_style' => 'banner_item_standard_home_page',
+	  'image_link' => '',
 	);
 	$handler->display->display_options['fields']['field_project_image_et']['delta_offset'] = '0';
 	/* Field: Entity translation: Title: translated */
@@ -15696,7 +15696,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_caption']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_caption']['type'] = 'text_plain';
 	$handler->display->display_options['fields']['field_caption']['settings'] = array(
-		'trim_length' => '150',
+	  'trim_length' => '150',
 	);
 	/* Field: Content: Type */
 	$handler->display->display_options['fields']['type']['id'] = 'type';
@@ -15731,25 +15731,25 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php']['php_output'] = '<?php
-					global $language;
-					$lang = $language->language;
-					if($lang != \'en\'){
-					$langu = \'/\'.$lang.\'/\';}
-					else{
-					$langu = \'/\';}
-					if ($data->node_type == "featured_content") {
-						if (!empty($data->field_field_feature_link)) {
-							$url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+						global $language;
+						$lang = $language->language;
+						if($lang != \'en\'){
+						$langu = \'/\'.$lang.\'/\';}
+						else{
+						$langu = \'/\';}
+						if ($data->node_type == "featured_content") {
+							if (!empty($data->field_field_feature_link)) {
+								$url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+								print $url;
+							}
+							else { print \' <a class="banner-no-link">\'; }
+						} else {
+							$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
+							$node_url = $langu.$node_path;
+							$url =  " <a href= \'$node_url\'>";
 							print $url;
 						}
-						else { print \' <a class="banner-no-link">\'; }
-					} else {
-						$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
-						$node_url = $langu.$node_path;
-						$url =  " <a href= \'$node_url\'>";
-						print $url;
-					}
-					?>';
+						?>';
 	$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
 	/* Field: Global: PHP */
@@ -15761,7 +15761,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_2']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php echo t("AGA KHAN DEVELOPMENT NETWORK");?></h3>
-					';
+						';
 	$handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
 	/* Field: Global: PHP */
@@ -15781,10 +15781,10 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[php][field_feature_image_et][field_project_image_et]</div></a>
-					<div class="slide-text">
-					<h3>[php_2]</h3>
-					[title_field_et] [php][php_3]</a>
-					</div>';
+						<div class="slide-text">
+						<h3>[php_2]</h3>
+						[title_field_et] [php][php_3]</a>
+						</div>';
 	$handler->display->display_options['fields']['nothing']['alter']['max_length'] = '104';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	$handler->display->display_options['defaults']['sorts'] = FALSE;
@@ -15796,8 +15796,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['defaults']['filter_groups'] = FALSE;
 	$handler->display->display_options['filter_groups']['operator'] = 'OR';
 	$handler->display->display_options['filter_groups']['groups'] = array(
-		1 => 'AND',
-		2 => 'AND',
+	  1 => 'AND',
+	  2 => 'AND',
 	);
 	$handler->display->display_options['defaults']['filters'] = FALSE;
 	/* Filter criterion: Content: Type */
@@ -15805,7 +15805,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['type']['table'] = 'node';
 	$handler->display->display_options['filters']['type']['field'] = 'type';
 	$handler->display->display_options['filters']['type']['value'] = array(
-		'featured_content' => 'featured_content',
+	  'featured_content' => 'featured_content',
 	);
 	$handler->display->display_options['filters']['type']['group'] = 1;
 	/* Filter criterion: Content: Published or admin */
@@ -15818,15 +15818,15 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['type_1']['table'] = 'node';
 	$handler->display->display_options['filters']['type_1']['field'] = 'type';
 	$handler->display->display_options['filters']['type_1']['value'] = array(
-		'article' => 'article',
-		'page' => 'page',
-		'event' => 'event',
-		'gallery' => 'gallery',
-		'podcast' => 'podcast',
-		'publication' => 'publication',
-		'speech' => 'speech',
-		'project' => 'project',
-		'focus_area' => 'focus_area',
+	  'article' => 'article',
+	  'page' => 'page',
+	  'event' => 'event',
+	  'gallery' => 'gallery',
+	  'podcast' => 'podcast',
+	  'publication' => 'publication',
+	  'speech' => 'speech',
+	  'project' => 'project',
+	  'focus_area' => 'focus_area',
 	);
 	$handler->display->display_options['filters']['type_1']['group'] = 2;
 	/* Filter criterion: Content: Create Banner Item (field_create_featured_content) */
@@ -15834,7 +15834,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['field_create_featured_content_value']['table'] = 'field_data_field_create_featured_content';
 	$handler->display->display_options['filters']['field_create_featured_content_value']['field'] = 'field_create_featured_content_value';
 	$handler->display->display_options['filters']['field_create_featured_content_value']['value'] = array(
-		1 => '1',
+	  1 => '1',
 	);
 	$handler->display->display_options['filters']['field_create_featured_content_value']['group'] = 2;
 	/* Filter criterion: Content: Published or admin */
@@ -15858,27 +15858,27 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['slideshow_type'] = 'flexslider_views_slideshow';
 	$handler->display->display_options['style_options']['slideshow_skin'] = 'default';
 	$handler->display->display_options['style_options']['skin_info'] = array(
-		'class' => 'default',
-		'name' => 'Default',
-		'module' => 'views_slideshow',
-		'path' => '',
-		'stylesheets' => array(),
+	  'class' => 'default',
+	  'name' => 'Default',
+	  'module' => 'views_slideshow',
+	  'path' => '',
+	  'stylesheets' => array(),
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'nid' => 0,
-		'field_feature_image' => 0,
-		'field_project_image' => 0,
-		'title' => 0,
-		'body' => 0,
-		'php' => 0,
-		'php_1' => 0,
-		'field_caption' => 0,
-		'field_feature_link' => 0,
-		'nothing' => 0,
-		'nothing_1' => 0,
-		'counter' => 0,
+	  'nid' => 0,
+	  'field_feature_image' => 0,
+	  'field_project_image' => 0,
+	  'title' => 0,
+	  'body' => 0,
+	  'php' => 0,
+	  'php_1' => 0,
+	  'field_caption' => 0,
+	  'field_feature_link' => 0,
+	  'nothing' => 0,
+	  'nothing_1' => 0,
+	  'counter' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -15887,18 +15887,18 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'nid' => 0,
-		'field_feature_image' => 0,
-		'field_project_image' => 0,
-		'title' => 0,
-		'body' => 0,
-		'php' => 0,
-		'php_1' => 0,
-		'field_caption' => 0,
-		'field_feature_link' => 0,
-		'nothing' => 0,
-		'nothing_1' => 0,
-		'counter' => 0,
+	  'nid' => 0,
+	  'field_feature_image' => 0,
+	  'field_project_image' => 0,
+	  'title' => 0,
+	  'body' => 0,
+	  'php' => 0,
+	  'php_1' => 0,
+	  'field_caption' => 0,
+	  'field_feature_link' => 0,
+	  'nothing' => 0,
+	  'nothing_1' => 0,
+	  'counter' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -15970,8 +15970,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_feature_image_et']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_feature_image_et']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_feature_image_et']['settings'] = array(
-		'image_style' => 'featured_content',
-		'image_link' => 'content',
+	  'image_style' => 'featured_content',
+	  'image_link' => 'content',
 	);
 	/* Field: Content: Slideshow Image */
 	$handler->display->display_options['fields']['field_feature_image']['id'] = 'field_feature_image';
@@ -15983,8 +15983,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_feature_image']['hide_alter_empty'] = FALSE;
 	$handler->display->display_options['fields']['field_feature_image']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_feature_image']['settings'] = array(
-		'image_style' => 'featured_content',
-		'image_link' => 'content',
+	  'image_style' => 'featured_content',
+	  'image_link' => 'content',
 	);
 	/* Field: Entity translation: Images: translated */
 	$handler->display->display_options['fields']['field_project_image_et']['id'] = 'field_project_image_et';
@@ -15995,8 +15995,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_project_image_et']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_project_image_et']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_project_image_et']['settings'] = array(
-		'image_style' => 'featured_content',
-		'image_link' => 'content',
+	  'image_style' => 'featured_content',
+	  'image_link' => 'content',
 	);
 	$handler->display->display_options['fields']['field_project_image_et']['group_rows'] = FALSE;
 	$handler->display->display_options['fields']['field_project_image_et']['delta_offset'] = '0';
@@ -16009,8 +16009,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_project_image']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_project_image']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_project_image']['settings'] = array(
-		'image_style' => 'featured_content',
-		'image_link' => 'content',
+	  'image_style' => 'featured_content',
+	  'image_link' => 'content',
 	);
 	$handler->display->display_options['fields']['field_project_image']['group_rows'] = FALSE;
 	$handler->display->display_options['fields']['field_project_image']['delta_offset'] = '0';
@@ -16049,7 +16049,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['body']['hide_alter_empty'] = FALSE;
 	$handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
 	$handler->display->display_options['fields']['body']['settings'] = array(
-		'trim_length' => '50',
+	  'trim_length' => '50',
 	);
 	/* Field: Entity translation: Body: translated */
 	$handler->display->display_options['fields']['body_et']['id'] = 'body_et';
@@ -16060,7 +16060,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['body_et']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['body_et']['type'] = 'text_summary_or_trimmed';
 	$handler->display->display_options['fields']['body_et']['settings'] = array(
-		'trim_length' => '50',
+	  'trim_length' => '50',
 	);
 	/* Field: File: Caption */
 	$handler->display->display_options['fields']['field_image_caption']['id'] = 'field_image_caption';
@@ -16095,35 +16095,35 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php']['php_output'] = '<?php
-					global $language;
-					$lang = $language->language;
-					if ($data->node_type == "featured_content") {
-						if (!empty($data->field_field_feature_link)) {
-							$url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>" . t(\'More\') . "</a>";
+						global $language;
+						$lang = $language->language;
+						if ($data->node_type == "featured_content") {
+							if (!empty($data->field_field_feature_link)) {
+								$url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>" . t(\'More\') . "</a>";
+								print $url;
+							}
+							else { print \' <a class="banner-no-link">\' . t(\'More\') . \'</a>\'; }
+						} else {
+							$tid = isset($data->_field_data[\'nid\'][\'entity\']->field_article_cat[$lang][0][\'tid\']) ? $data->_field_data[\'nid\'][\'entity\']->field_article_cat[$lang][0][\'tid\'] : $data->_field_data[\'nid\'][\'entity\']->field_article_cat[\'en\'][0][\'tid\'];
+							if(empty($tid)){
+								$tid = $data->_field_data[\'nid\'][\'entity\']->field_article_cat[\'und\'][0][\'tid\'];
+							}
+							$term = taxonomy_term_load($tid);
+							$name = $term->name;
+							if($name == \'In the media\') {
+							$node_path =  isset($data->_field_data[\'nid\'][\'entity\']->field_media_source[$lang][0][\'url\']) ? $data->_field_data[\'nid\'][\'entity\']->field_media_source[$lang][0][\'url\'] : $data->_field_data[\'nid\'][\'entity\']->field_media_source[\'en\'][0][\'url\'] ;
+							if(empty($node_path)){
+								$node_path =  $data->_field_data[\'nid\'][\'entity\']->field_media_source[\'und\'][0][\'url\'] ;
+							}
+							$url =  " <a href=\'$node_path\' target=\'_blank\'>" . t(\'More\') . "</a>";
 							print $url;
+						} else {
+							$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
+							$url =  "<a href=\'/$node_path\'>" . t(\'More\') . "</a>";
+							print $url;
+							}
 						}
-						else { print \' <a class="banner-no-link">\' . t(\'More\') . \'</a>\'; }
-					} else {
-						$tid = isset($data->_field_data[\'nid\'][\'entity\']->field_article_cat[$lang][0][\'tid\']) ? $data->_field_data[\'nid\'][\'entity\']->field_article_cat[$lang][0][\'tid\'] : $data->_field_data[\'nid\'][\'entity\']->field_article_cat[\'en\'][0][\'tid\'];
-						if(empty($tid)){
-							$tid = $data->_field_data[\'nid\'][\'entity\']->field_article_cat[\'und\'][0][\'tid\'];
-						}
-						$term = taxonomy_term_load($tid);
-						$name = $term->name;
-						if($name == \'In the media\') {
-						$node_path =  isset($data->_field_data[\'nid\'][\'entity\']->field_media_source[$lang][0][\'url\']) ? $data->_field_data[\'nid\'][\'entity\']->field_media_source[$lang][0][\'url\'] : $data->_field_data[\'nid\'][\'entity\']->field_media_source[\'en\'][0][\'url\'] ;
-						if(empty($node_path)){
-							$node_path =  $data->_field_data[\'nid\'][\'entity\']->field_media_source[\'und\'][0][\'url\'] ;
-						}
-						$url =  " <a href=\'$node_path\' target=\'_blank\'>" . t(\'More\') . "</a>";
-						print $url;
-					} else {
-						$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
-						$url =  "<a href=\'/$node_path\'>" . t(\'More\') . "</a>";
-						print $url;
-						}
-					}
-					?>';
+						?>';
 	$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
 	/* Field: Global: PHP */
@@ -16135,35 +16135,35 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-					global $language;
-							$lang = $language->language;
-							$array = $data->field_field_caption;
-							if ($data->node_type == \'article\') {
-						$array = (isset($data->field_field_image_caption[$lang])) ?  $data->field_field_image_caption[$lang] : $data->field_field_image_caption;
-								//$array = $data->field_field_image_caption;
-							}
-							if (empty($array)) {
-								if ($data->node_type == \'project\') {
-						$array = (isset($data->field_field_image_caption_1[$lang])) ?  $data->field_field_image_caption_1[$lang] : $data->field_field_image_caption_1;
-									//$array = $data->field_field_image_caption_1;
-								}
-								else {
-						$array = (isset($data->field_field_image_caption[$lang])) ?  $data->field_field_image_caption[$lang] : $data->field_field_image_caption;
+						global $language;
+								$lang = $language->language;
+								$array = $data->field_field_caption;
+								if ($data->node_type == \'article\') {
+							$array = (isset($data->field_field_image_caption[$lang])) ?  $data->field_field_image_caption[$lang] : $data->field_field_image_caption;
 									//$array = $data->field_field_image_caption;
 								}
-							}
-							$value = \'\';
-							if (isset($array[0][\'rendered\'][\'#markup\'])) {
-								$value = $array[0][\'rendered\'][\'#markup\'];
-							}
+								if (empty($array)) {
+									if ($data->node_type == \'project\') {
+							$array = (isset($data->field_field_image_caption_1[$lang])) ?  $data->field_field_image_caption_1[$lang] : $data->field_field_image_caption_1;
+										//$array = $data->field_field_image_caption_1;
+									}
+									else {
+							$array = (isset($data->field_field_image_caption[$lang])) ?  $data->field_field_image_caption[$lang] : $data->field_field_image_caption;
+										//$array = $data->field_field_image_caption;
+									}
+								}
+								$value = \'\';
+								if (isset($array[0][\'rendered\'][\'#markup\'])) {
+									$value = $array[0][\'rendered\'][\'#markup\'];
+								}
 
-							$alter[\'max_length\'] = 75;
-							$alter[\'word_boundary\'] = 1;
-							$alter[\'ellipsis\'] = 1;
-							$alter[\'html\'] = 1;
-							$value = views_trim_text($alter, $value);
-							print $value;
-					?>';
+								$alter[\'max_length\'] = 75;
+								$alter[\'word_boundary\'] = 1;
+								$alter[\'ellipsis\'] = 1;
+								$alter[\'html\'] = 1;
+								$value = views_trim_text($alter, $value);
+								print $value;
+						?>';
 	$handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
 	/* Field: Content: Caption */
@@ -16180,7 +16180,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_caption']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_caption']['type'] = 'text_plain';
 	$handler->display->display_options['fields']['field_caption']['settings'] = array(
-		'trim_length' => '125',
+	  'trim_length' => '125',
 	);
 	/* Field: Content: Purchase Link */
 	$handler->display->display_options['fields']['field_feature_link']['id'] = 'field_feature_link';
@@ -16199,10 +16199,10 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide [field_article_cat]">[field_project_image_et][field_feature_image_et]</div>
-					<div class="slide-text"><h3>[title_field_et]</h3>
-					[php_1]
-					[php]
-					</div>';
+						<div class="slide-text"><h3>[title_field_et]</h3>
+						[php_1]
+						[php]
+						</div>';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	/* Field: Global: Custom text */
 	$handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
@@ -16257,10 +16257,10 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['arguments']['nid_1']['default_action'] = 'default';
 	$handler->display->display_options['arguments']['nid_1']['default_argument_type'] = 'php';
 	$handler->display->display_options['arguments']['nid_1']['default_argument_options']['code'] = '$exclude_nid = \'\';
-					if (function_exists(\'akdn_custom_nodes_to_exclude_pagewise\')) {
-						$exclude_nid = akdn_custom_nodes_to_exclude_pagewise();
-					}
-					return $exclude_nid;';
+						if (function_exists(\'akdn_custom_nodes_to_exclude_pagewise\')) {
+							$exclude_nid = akdn_custom_nodes_to_exclude_pagewise();
+						}
+						return $exclude_nid;';
 	$handler->display->display_options['arguments']['nid_1']['summary']['number_of_records'] = '0';
 	$handler->display->display_options['arguments']['nid_1']['summary']['format'] = 'default_summary';
 	$handler->display->display_options['arguments']['nid_1']['summary_options']['items_per_page'] = '25';
@@ -16274,14 +16274,14 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['type']['table'] = 'node';
 	$handler->display->display_options['filters']['type']['field'] = 'type';
 	$handler->display->display_options['filters']['type']['value'] = array(
-		'article' => 'article',
-		'page' => 'page',
-		'event' => 'event',
-		'gallery' => 'gallery',
-		'podcast' => 'podcast',
-		'project' => 'project',
-		'publication' => 'publication',
-		'speech' => 'speech',
+	  'article' => 'article',
+	  'page' => 'page',
+	  'event' => 'event',
+	  'gallery' => 'gallery',
+	  'podcast' => 'podcast',
+	  'project' => 'project',
+	  'publication' => 'publication',
+	  'speech' => 'speech',
 	);
 	$handler->display->display_options['filters']['type']['group'] = 1;
 	/* Filter criterion: Content: Create Banner Item (field_create_featured_content) */
@@ -16289,7 +16289,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['field_create_featured_content_value']['table'] = 'field_data_field_create_featured_content';
 	$handler->display->display_options['filters']['field_create_featured_content_value']['field'] = 'field_create_featured_content_value';
 	$handler->display->display_options['filters']['field_create_featured_content_value']['value'] = array(
-		1 => '1',
+	  1 => '1',
 	);
 	$handler->display->display_options['filters']['field_create_featured_content_value']['group'] = 1;
 	/* Filter criterion: Content: Published */
@@ -16303,24 +16303,24 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['language']['table'] = 'field_data_field_feature_image';
 	$handler->display->display_options['filters']['language']['field'] = 'language';
 	$handler->display->display_options['filters']['language']['value'] = array(
-		'all' => 'all',
-		'***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
-		'***DEFAULT_LANGUAGE***' => '***DEFAULT_LANGUAGE***',
-		'und' => 'und',
-		'en' => 'en',
-		'fr' => 'fr',
-		'ar' => 'ar',
-		'zh-hans' => 'zh-hans',
-		'de' => 'de',
-		'it' => 'it',
-		'ky' => 'ky',
-		'ms' => 'ms',
-		'fa' => 'fa',
-		'pt' => 'pt',
-		'ru' => 'ru',
-		'es' => 'es',
-		'tg' => 'tg',
-		'ur' => 'ur',
+	  'all' => 'all',
+	  '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+	  '***DEFAULT_LANGUAGE***' => '***DEFAULT_LANGUAGE***',
+	  'und' => 'und',
+	  'en' => 'en',
+	  'fr' => 'fr',
+	  'ar' => 'ar',
+	  'zh-hans' => 'zh-hans',
+	  'de' => 'de',
+	  'it' => 'it',
+	  'ky' => 'ky',
+	  'ms' => 'ms',
+	  'fa' => 'fa',
+	  'pt' => 'pt',
+	  'ru' => 'ru',
+	  'es' => 'es',
+	  'tg' => 'tg',
+	  'ur' => 'ur',
 	);
 
 	/* Display: Flexslider Manual A/G/FA Block */
@@ -16336,27 +16336,27 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['slideshow_type'] = 'flexslider_views_slideshow';
 	$handler->display->display_options['style_options']['slideshow_skin'] = 'default';
 	$handler->display->display_options['style_options']['skin_info'] = array(
-		'class' => 'default',
-		'name' => 'Default',
-		'module' => 'views_slideshow',
-		'path' => '',
-		'stylesheets' => array(),
+	  'class' => 'default',
+	  'name' => 'Default',
+	  'module' => 'views_slideshow',
+	  'path' => '',
+	  'stylesheets' => array(),
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'field_feature_image' => 0,
-		'field_project_image' => 0,
-		'title_field' => 0,
-		'field_caption' => 0,
-		'field_feature_link' => 0,
-		'view_node' => 0,
-		'type' => 0,
-		'field_image_caption' => 0,
-		'field_image_caption_1' => 0,
-		'php' => 0,
-		'php_1' => 0,
-		'nothing' => 0,
+	  'field_feature_image' => 0,
+	  'field_project_image' => 0,
+	  'title_field' => 0,
+	  'field_caption' => 0,
+	  'field_feature_link' => 0,
+	  'view_node' => 0,
+	  'type' => 0,
+	  'field_image_caption' => 0,
+	  'field_image_caption_1' => 0,
+	  'php' => 0,
+	  'php_1' => 0,
+	  'nothing' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -16365,18 +16365,18 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'field_feature_image' => 0,
-		'field_project_image' => 0,
-		'title_field' => 0,
-		'field_caption' => 0,
-		'field_feature_link' => 0,
-		'view_node' => 0,
-		'type' => 0,
-		'field_image_caption' => 0,
-		'field_image_caption_1' => 0,
-		'php' => 0,
-		'php_1' => 0,
-		'nothing' => 0,
+	  'field_feature_image' => 0,
+	  'field_project_image' => 0,
+	  'title_field' => 0,
+	  'field_caption' => 0,
+	  'field_feature_link' => 0,
+	  'view_node' => 0,
+	  'type' => 0,
+	  'field_image_caption' => 0,
+	  'field_image_caption_1' => 0,
+	  'php' => 0,
+	  'php_1' => 0,
+	  'nothing' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -16432,8 +16432,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_feature_image']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_feature_image']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_feature_image']['settings'] = array(
-		'image_style' => 'featured_content',
-		'image_link' => '',
+	  'image_style' => 'featured_content',
+	  'image_link' => '',
 	);
 	/* Field: Content: Images */
 	$handler->display->display_options['fields']['field_project_image']['id'] = 'field_project_image';
@@ -16446,8 +16446,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_project_image']['hide_empty'] = TRUE;
 	$handler->display->display_options['fields']['field_project_image']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_project_image']['settings'] = array(
-		'image_style' => 'featured_content',
-		'image_link' => '',
+	  'image_style' => 'featured_content',
+	  'image_link' => '',
 	);
 	$handler->display->display_options['fields']['field_project_image']['group_rows'] = FALSE;
 	$handler->display->display_options['fields']['field_project_image']['delta_offset'] = '0';
@@ -16478,7 +16478,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_caption']['alter']['trim'] = TRUE;
 	$handler->display->display_options['fields']['field_caption']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_caption']['settings'] = array(
-		'trim_length' => '150',
+	  'trim_length' => '150',
 	);
 	/* Field: Content: Purchase Link */
 	$handler->display->display_options['fields']['field_feature_link']['id'] = 'field_feature_link';
@@ -16536,17 +16536,17 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php
 
-					if ($data->node_type == "featured_content") {
-						if (!empty($data->field_field_feature_link)) {
-							$url = "<a href=\'/".drupal_get_path_alias($data->field_field_feature_link[0][\'raw\'][\'url\'])."\'>";
+						if ($data->node_type == "featured_content") {
+							if (!empty($data->field_field_feature_link)) {
+								$url = "<a href=\'/".drupal_get_path_alias($data->field_field_feature_link[0][\'raw\'][\'url\'])."\'>";
+								print $url;
+							}
+							else { return \'\'; }
+						} else {
+							$url = "<a href=\'/".drupal_get_path_alias(\'node/\'.$data->nid)."\'>";
 							print $url;
 						}
-						else { return \'\'; }
-					} else {
-						$url = "<a href=\'/".drupal_get_path_alias(\'node/\'.$data->nid)."\'>";
-						print $url;
-					}
-					?>';
+						?>';
 	$handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
 	/* Field: &#039;More&#039; Link Custom PHP */
@@ -16559,17 +16559,17 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php']['php_output'] = '<?php
-					if ($data->node_type == "featured_content") {
-						if (!empty($data->field_field_feature_link)) {
-							$url = " <a href=\'/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+						if ($data->node_type == "featured_content") {
+							if (!empty($data->field_field_feature_link)) {
+								$url = " <a href=\'/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+								print $url;
+							}
+							else { print \' <a class="banner-no-link">\'; }
+						} else {
+							$url = " <a href=\'/node/{$data->nid}\'>";
 							print $url;
 						}
-						else { print \' <a class="banner-no-link">\'; }
-					} else {
-						$url = " <a href=\'/node/{$data->nid}\'>";
-						print $url;
-					}
-					?>';
+						?>';
 	$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
 	/* Field: Caption Custom PHP */
@@ -16582,34 +16582,34 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-					global $language;
-					$lang = $language->language;
-					$array = $data->field_field_caption;
-					if ($data->node_type == \'article\') {
-						$array = (isset($data->field_field_image_caption[$lang])) ?  $data->field_field_image_caption[$lang] : $data->field_field_image_caption;
-					}
-					if (empty($array)) {
-						if ($data->node_type == \'project\') {
-							$array = (isset($data->field_field_image_caption_1[$lang])) ?  $data->field_field_image_caption_1[$lang] : $data->field_field_image_caption_1;
-						}
-						else {
+						global $language;
+						$lang = $language->language;
+						$array = $data->field_field_caption;
+						if ($data->node_type == \'article\') {
 							$array = (isset($data->field_field_image_caption[$lang])) ?  $data->field_field_image_caption[$lang] : $data->field_field_image_caption;
 						}
-					}
-					if (isset($array[0][\'rendered\'][\'#markup\'])) {
-						$val = $array[0][\'rendered\'][\'#markup\'];
-						if (strlen($val) <= 125) {
-						$value = rtrim($val) . "...";
-						} else {
-							$pos = strpos($val, \' \', 125);
-							$value = substr($val,0,$pos) . "...";
+						if (empty($array)) {
+							if ($data->node_type == \'project\') {
+								$array = (isset($data->field_field_image_caption_1[$lang])) ?  $data->field_field_image_caption_1[$lang] : $data->field_field_image_caption_1;
+							}
+							else {
+								$array = (isset($data->field_field_image_caption[$lang])) ?  $data->field_field_image_caption[$lang] : $data->field_field_image_caption;
+							}
 						}
-					}
-					else {
-						$value = \'\';
-					}
-					print $value;
-					?>';
+						if (isset($array[0][\'rendered\'][\'#markup\'])) {
+							$val = $array[0][\'rendered\'][\'#markup\'];
+							if (strlen($val) <= 125) {
+							$value = rtrim($val) . "...";
+							} else {
+								$pos = strpos($val, \' \', 125);
+								$value = substr($val,0,$pos) . "...";
+							}
+						}
+						else {
+							$value = \'\';
+						}
+						print $value;
+						?>';
 	$handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
 	/* Field: Global: Custom text */
@@ -16618,11 +16618,11 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[php_2][field_feature_image][field_project_image]</a></div>
-					<div class="slide-text">
-					<h3>[php][title_field]</a></h3>
-					[php_1]
-					[php]| More </a>
-					</div>';
+						<div class="slide-text">
+						<h3>[php][title_field]</a></h3>
+						[php_1]
+						[php]| More </a>
+						</div>';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	/* Field: Entity translation: Slideshow Image: translated */
 	$handler->display->display_options['fields']['field_feature_image_et']['id'] = 'field_feature_image_et';
@@ -16634,8 +16634,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_feature_image_et']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_feature_image_et']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_feature_image_et']['settings'] = array(
-		'image_style' => 'featured_content',
-		'image_link' => '',
+	  'image_style' => 'featured_content',
+	  'image_link' => '',
 	);
 	/* Field: Entity translation: Images: translated */
 	$handler->display->display_options['fields']['field_project_image_et']['id'] = 'field_project_image_et';
@@ -16647,8 +16647,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_project_image_et']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_project_image_et']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_project_image_et']['settings'] = array(
-		'image_style' => 'featured_content',
-		'image_link' => '',
+	  'image_style' => 'featured_content',
+	  'image_link' => '',
 	);
 	$handler->display->display_options['fields']['field_project_image_et']['group_rows'] = FALSE;
 	$handler->display->display_options['fields']['field_project_image_et']['delta_offset'] = '0';
@@ -16685,8 +16685,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['defaults']['filter_groups'] = FALSE;
 	$handler->display->display_options['filter_groups']['operator'] = 'OR';
 	$handler->display->display_options['filter_groups']['groups'] = array(
-		1 => 'AND',
-		2 => 'AND',
+	  1 => 'AND',
+	  2 => 'AND',
 	);
 	$handler->display->display_options['defaults']['filters'] = FALSE;
 	/* Filter criterion: Content: Type */
@@ -16695,14 +16695,14 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['type_3']['field'] = 'type';
 	$handler->display->display_options['filters']['type_3']['relationship'] = 'field_featured_content_nodes_nid';
 	$handler->display->display_options['filters']['type_3']['value'] = array(
-		'architecture_project' => 'architecture_project',
-		'article' => 'article',
-		'event' => 'event',
-		'gallery' => 'gallery',
-		'podcast' => 'podcast',
-		'project' => 'project',
-		'publication' => 'publication',
-		'speech' => 'speech',
+	  'architecture_project' => 'architecture_project',
+	  'article' => 'article',
+	  'event' => 'event',
+	  'gallery' => 'gallery',
+	  'podcast' => 'podcast',
+	  'project' => 'project',
+	  'publication' => 'publication',
+	  'speech' => 'speech',
 	);
 	$handler->display->display_options['filters']['type_3']['group'] = 1;
 	/* Filter criterion: Content: Type */
@@ -16711,7 +16711,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['type_1']['field'] = 'type';
 	$handler->display->display_options['filters']['type_1']['relationship'] = 'field_featured_content_nodes_nid';
 	$handler->display->display_options['filters']['type_1']['value'] = array(
-		'featured_content' => 'featured_content',
+	  'featured_content' => 'featured_content',
 	);
 	$handler->display->display_options['filters']['type_1']['group'] = 2;
 	/* Filter criterion: Content: Create Banner Item (field_create_featured_content) */
@@ -16720,8 +16720,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['field_create_featured_content_value']['field'] = 'field_create_featured_content_value';
 	$handler->display->display_options['filters']['field_create_featured_content_value']['operator'] = 'not';
 	$handler->display->display_options['filters']['field_create_featured_content_value']['value'] = array(
-		'all' => 'all',
-		0 => '0',
+	  'all' => 'all',
+	  0 => '0',
 	);
 
 	/* Display: Block */
@@ -16761,22 +16761,22 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['slideshow_type'] = 'flexslider_views_slideshow';
 	$handler->display->display_options['style_options']['slideshow_skin'] = 'default';
 	$handler->display->display_options['style_options']['skin_info'] = array(
-		'class' => 'default',
-		'name' => 'Default',
-		'module' => 'views_slideshow',
-		'path' => '',
-		'stylesheets' => array(),
+	  'class' => 'default',
+	  'name' => 'Default',
+	  'module' => 'views_slideshow',
+	  'path' => '',
+	  'stylesheets' => array(),
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'field_project_image' => 0,
-		'field_project_image_caption' => 0,
-		'field_caption' => 0,
-		'field_image_caption' => 0,
-		'field_feature_link' => 0,
-		'php' => 0,
-		'nothing' => 0,
+	  'field_project_image' => 0,
+	  'field_project_image_caption' => 0,
+	  'field_caption' => 0,
+	  'field_image_caption' => 0,
+	  'field_feature_link' => 0,
+	  'php' => 0,
+	  'nothing' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -16785,13 +16785,13 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'field_project_image' => 0,
-		'field_project_image_caption' => 0,
-		'field_caption' => 0,
-		'field_image_caption' => 0,
-		'field_feature_link' => 0,
-		'php' => 0,
-		'nothing' => 0,
+	  'field_project_image' => 0,
+	  'field_project_image_caption' => 0,
+	  'field_caption' => 0,
+	  'field_image_caption' => 0,
+	  'field_feature_link' => 0,
+	  'php' => 0,
+	  'nothing' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -16847,8 +16847,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_project_image']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_project_image']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_project_image']['settings'] = array(
-		'image_style' => '',
-		'image_link' => '',
+	  'image_style' => '',
+	  'image_link' => '',
 	);
 	$handler->display->display_options['fields']['field_project_image']['delta_offset'] = '0';
 	/* Field: Content: Caption */
@@ -16870,7 +16870,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_caption']['alter']['trim'] = TRUE;
 	$handler->display->display_options['fields']['field_caption']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_caption']['settings'] = array(
-		'trim_length' => '150',
+	  'trim_length' => '150',
 	);
 	/* Field: File: Caption */
 	$handler->display->display_options['fields']['field_image_caption']['id'] = 'field_image_caption';
@@ -16892,27 +16892,27 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_2']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php
-					$array = $data->field_field_caption;
-					if (empty($array)) {
-						if ($data->node_type == \'project\') {
-							$array = $data->field_field_image_caption_1;
+						$array = $data->field_field_caption;
+						if (empty($array)) {
+							if ($data->node_type == \'project\') {
+								$array = $data->field_field_image_caption_1;
+							}
+							else {
+								$array = $data->field_field_image_caption;
+							}
 						}
-						else {
-							$array = $data->field_field_image_caption;
+						$value = \'\';
+						if (isset($array[0][\'rendered\'][\'#markup\'])) {
+							$value = $array[0][\'rendered\'][\'#markup\'];
 						}
-					}
-					$value = \'\';
-					if (isset($array[0][\'rendered\'][\'#markup\'])) {
-						$value = $array[0][\'rendered\'][\'#markup\'];
-					}
 
-					$alter[\'max_length\'] = 104;
-					$alter[\'word_boundary\'] = 1;
-					$alter[\'ellipsis\'] = 1;
-					$alter[\'html\'] = 1;
-					$value = views_trim_text($alter, $value);
-					print $value;
-					?>';
+						$alter[\'max_length\'] = 104;
+						$alter[\'word_boundary\'] = 1;
+						$alter[\'ellipsis\'] = 1;
+						$alter[\'html\'] = 1;
+						$value = views_trim_text($alter, $value);
+						print $value;
+						?>';
 	$handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
 	/* Field: Content: Purchase Link */
@@ -16933,18 +16933,18 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-					if ($data->node_type == "featured_content") {
-						if (!empty($data->field_field_feature_link)) {
-							$url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+						if ($data->node_type == "featured_content") {
+							if (!empty($data->field_field_feature_link)) {
+								$url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+								print $url;
+							}
+							else { print \' <a class="banner-no-link">\'; }
+						} else {
+							$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
+							$url =  " <a href=\'/$node_path\'>";
 							print $url;
 						}
-						else { print \' <a class="banner-no-link">\'; }
-					} else {
-						$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
-						$url =  " <a href=\'/$node_path\'>";
-						print $url;
-					}
-					?>';
+						?>';
 	$handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
 	/* Field: Custom Caption PHP */
@@ -16957,21 +16957,21 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php']['php_output'] = '<?php
-					$array = $data->field_field_project_image_caption;
-					if (empty($array)) {
-						$array = $data->field_field_image_caption;
-					}
+						$array = $data->field_field_project_image_caption;
+						if (empty($array)) {
+							$array = $data->field_field_image_caption;
+						}
 
-					if (isset($array[0][\'rendered\'][\'#markup\'])) {
-						$val = $array[0][\'rendered\'][\'#markup\'];
-						$temp = truncate_utf8($val, 125, $wordsafe = TRUE, $add_ellipsis = FALSE, $min_wordsafe_length = 1);
-						$value = rtrim($temp) . "...";
-					}
-					else {
-						$value = \'\';
-					}
-					print $value;
-					?>';
+						if (isset($array[0][\'rendered\'][\'#markup\'])) {
+							$val = $array[0][\'rendered\'][\'#markup\'];
+							$temp = truncate_utf8($val, 125, $wordsafe = TRUE, $add_ellipsis = FALSE, $min_wordsafe_length = 1);
+							$value = rtrim($temp) . "...";
+						}
+						else {
+							$value = \'\';
+						}
+						print $value;
+						?>';
 	$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
 	/* Field: Global: Custom text */
@@ -16980,9 +16980,9 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_project_image]</div>
-					<div class="slide-text">
-					[php]
-					</div>';
+						<div class="slide-text">
+						[php]
+						</div>';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	$handler->display->display_options['defaults']['sorts'] = FALSE;
 	/* Sort criterion: Content: Sticky */
@@ -17016,7 +17016,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['type']['table'] = 'node';
 	$handler->display->display_options['filters']['type']['field'] = 'type';
 	$handler->display->display_options['filters']['type']['value'] = array(
-		'project' => 'project',
+	  'project' => 'project',
 	);
 	$handler->display->display_options['filters']['type']['group'] = 1;
 	/* Filter criterion: Content: Published or admin */
@@ -17029,7 +17029,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['language']['table'] = 'field_data_field_project_image';
 	$handler->display->display_options['filters']['language']['field'] = 'language';
 	$handler->display->display_options['filters']['language']['value'] = array(
-		'***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+	  '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
 	);
 
 	/* Display: Flexslider Hub Page Block */
@@ -17047,22 +17047,22 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['slideshow_type'] = 'flexslider_views_slideshow';
 	$handler->display->display_options['style_options']['slideshow_skin'] = 'default';
 	$handler->display->display_options['style_options']['skin_info'] = array(
-		'class' => 'default',
-		'name' => 'Default',
-		'module' => 'views_slideshow',
-		'path' => '',
-		'stylesheets' => array(),
+	  'class' => 'default',
+	  'name' => 'Default',
+	  'module' => 'views_slideshow',
+	  'path' => '',
+	  'stylesheets' => array(),
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'field_feature_image' => 0,
-		'title' => 0,
-		'body' => 0,
-		'field_feature_link' => 0,
-		'nothing' => 0,
-		'nothing_1' => 0,
-		'counter' => 0,
+	  'field_feature_image' => 0,
+	  'title' => 0,
+	  'body' => 0,
+	  'field_feature_link' => 0,
+	  'nothing' => 0,
+	  'nothing_1' => 0,
+	  'counter' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -17071,13 +17071,13 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'field_feature_image' => 0,
-		'title' => 0,
-		'body' => 0,
-		'field_feature_link' => 0,
-		'nothing' => 0,
-		'nothing_1' => 0,
-		'counter' => 0,
+	  'field_feature_image' => 0,
+	  'title' => 0,
+	  'body' => 0,
+	  'field_feature_link' => 0,
+	  'nothing' => 0,
+	  'nothing_1' => 0,
+	  'counter' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -17114,8 +17114,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_feature_image']['hide_alter_empty'] = FALSE;
 	$handler->display->display_options['fields']['field_feature_image']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_feature_image']['settings'] = array(
-		'image_style' => 'featured_content',
-		'image_link' => 'content',
+	  'image_style' => 'featured_content',
+	  'image_link' => 'content',
 	);
 	/* Field: Content: Title */
 	$handler->display->display_options['fields']['title_field']['id'] = 'title_field';
@@ -17135,7 +17135,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_caption']['alter']['trim'] = TRUE;
 	$handler->display->display_options['fields']['field_caption']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_caption']['settings'] = array(
-		'trim_length' => '150',
+	  'trim_length' => '150',
 	);
 	/* Field: Content: Purchase Link */
 	$handler->display->display_options['fields']['field_feature_link']['id'] = 'field_feature_link';
@@ -17169,17 +17169,17 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php']['php_output'] = '<?php
-					if ($data->node_type == "featured_content") {
-						if (!empty($data->field_field_feature_link)) {
-							$url = " <a href=\'/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+						if ($data->node_type == "featured_content") {
+							if (!empty($data->field_field_feature_link)) {
+								$url = " <a href=\'/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+								print $url;
+							}
+							else { print \' <a class="banner-no-link">\'; }
+						} else {
+							$url = " <a href=\'/node/{$data->nid}\'>";
 							print $url;
 						}
-						else { print \' <a class="banner-no-link">\'; }
-					} else {
-						$url = " <a href=\'/node/{$data->nid}\'>";
-						print $url;
-					}
-					?>';
+						?>';
 	$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
 	/* Field: Global: Custom text */
@@ -17188,10 +17188,10 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_feature_image]</div>
-					<div class="slide-text"><h3>[php][title_field]</a></h3>
-					[field_caption]
-					[php]| More </a>
-					</div>';
+						<div class="slide-text"><h3>[php][title_field]</a></h3>
+						[field_caption]
+						[php]| More </a>
+						</div>';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	$handler->display->display_options['defaults']['sorts'] = FALSE;
 	/* Sort criterion: Content: Sticky */
@@ -17230,7 +17230,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['field_create_featured_content_value']['table'] = 'field_data_field_create_featured_content';
 	$handler->display->display_options['filters']['field_create_featured_content_value']['field'] = 'field_create_featured_content_value';
 	$handler->display->display_options['filters']['field_create_featured_content_value']['value'] = array(
-		1 => '1',
+	  1 => '1',
 	);
 	$handler->display->display_options['filters']['field_create_featured_content_value']['group'] = 1;
 	/* Filter criterion: Content: Type */
@@ -17238,14 +17238,14 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['type']['table'] = 'node';
 	$handler->display->display_options['filters']['type']['field'] = 'type';
 	$handler->display->display_options['filters']['type']['value'] = array(
-		'article' => 'article',
-		'page' => 'page',
-		'event' => 'event',
-		'gallery' => 'gallery',
-		'podcast' => 'podcast',
-		'project' => 'project',
-		'publication' => 'publication',
-		'speech' => 'speech',
+	  'article' => 'article',
+	  'page' => 'page',
+	  'event' => 'event',
+	  'gallery' => 'gallery',
+	  'podcast' => 'podcast',
+	  'project' => 'project',
+	  'publication' => 'publication',
+	  'speech' => 'speech',
 	);
 	$handler->display->display_options['filters']['type']['group'] = 1;
 	/* Filter criterion: Content: Published or admin */
@@ -17267,22 +17267,22 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['slideshow_type'] = 'flexslider_views_slideshow';
 	$handler->display->display_options['style_options']['slideshow_skin'] = 'default';
 	$handler->display->display_options['style_options']['skin_info'] = array(
-		'class' => 'default',
-		'name' => 'Default',
-		'module' => 'views_slideshow',
-		'path' => '',
-		'stylesheets' => array(),
+	  'class' => 'default',
+	  'name' => 'Default',
+	  'module' => 'views_slideshow',
+	  'path' => '',
+	  'stylesheets' => array(),
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'field_feature_image' => 0,
-		'title' => 0,
-		'body' => 0,
-		'field_feature_link' => 0,
-		'nothing' => 0,
-		'nothing_1' => 0,
-		'counter' => 0,
+	  'field_feature_image' => 0,
+	  'title' => 0,
+	  'body' => 0,
+	  'field_feature_link' => 0,
+	  'nothing' => 0,
+	  'nothing_1' => 0,
+	  'counter' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -17291,13 +17291,13 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'field_feature_image' => 0,
-		'title' => 0,
-		'body' => 0,
-		'field_feature_link' => 0,
-		'nothing' => 0,
-		'nothing_1' => 0,
-		'counter' => 0,
+	  'field_feature_image' => 0,
+	  'title' => 0,
+	  'body' => 0,
+	  'field_feature_link' => 0,
+	  'nothing' => 0,
+	  'nothing_1' => 0,
+	  'counter' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -17323,9 +17323,9 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['relationships']['nodequeue_rel']['required'] = TRUE;
 	$handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
 	$handler->display->display_options['relationships']['nodequeue_rel']['names'] = array(
-		'press_centre' => 'press_centre',
-		'featured_content' => 0,
-		'agency_listing_page_publications' => 0,
+	  'press_centre' => 'press_centre',
+	  'featured_content' => 0,
+	  'agency_listing_page_publications' => 0,
 	);
 	/* Relationship: Content: Images (field_project_image:fid) */
 	$handler->display->display_options['relationships']['field_project_image_fid']['id'] = 'field_project_image_fid';
@@ -17348,8 +17348,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_feature_image']['hide_empty'] = TRUE;
 	$handler->display->display_options['fields']['field_feature_image']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_feature_image']['settings'] = array(
-		'image_style' => 'featured_content',
-		'image_link' => 'content',
+	  'image_style' => 'featured_content',
+	  'image_link' => 'content',
 	);
 	/* Field: Content: Images */
 	$handler->display->display_options['fields']['field_project_image']['id'] = 'field_project_image';
@@ -17361,8 +17361,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_project_image']['hide_empty'] = TRUE;
 	$handler->display->display_options['fields']['field_project_image']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_project_image']['settings'] = array(
-		'image_style' => 'featured_content',
-		'image_link' => 'content',
+	  'image_style' => 'featured_content',
+	  'image_link' => 'content',
 	);
 	$handler->display->display_options['fields']['field_project_image']['group_rows'] = FALSE;
 	$handler->display->display_options['fields']['field_project_image']['delta_offset'] = '0';
@@ -17384,7 +17384,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_caption']['alter']['trim'] = TRUE;
 	$handler->display->display_options['fields']['field_caption']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_caption']['settings'] = array(
-		'trim_length' => '150',
+	  'trim_length' => '150',
 	);
 	/* Field: File: Caption */
 	$handler->display->display_options['fields']['field_image_caption']['id'] = 'field_image_caption';
@@ -17441,18 +17441,18 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php']['php_output'] = '<?php
-					if ($data->node_type == "featured_content") {
-						if (!empty($data->field_field_feature_link)) {
-							$url = " <a href=\'/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+						if ($data->node_type == "featured_content") {
+							if (!empty($data->field_field_feature_link)) {
+								$url = " <a href=\'/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+								print $url;
+							}
+							else { print \' <a class="banner-no-link">\'; }
+						} else {
+							$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
+							$url = " <a href=\'/$node_path\'>";
 							print $url;
 						}
-						else { print \' <a class="banner-no-link">\'; }
-					} else {
-						$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
-						$url = " <a href=\'/$node_path\'>";
-						print $url;
-					}
-					?>';
+						?>';
 	$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
 	/* Field: Caption Custom PHP */
@@ -17465,33 +17465,33 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-					$array = $data->field_field_caption;
-					if ($data->node_type == \'article\') {
-						$array =$data->field_field_image_caption;
-					}
-					if (empty($array)) {
-						if ($data->node_type == \'project\') {
-							$array = $data->field_field_image_caption_1;
+						$array = $data->field_field_caption;
+						if ($data->node_type == \'article\') {
+							$array =$data->field_field_image_caption;
+						}
+						if (empty($array)) {
+							if ($data->node_type == \'project\') {
+								$array = $data->field_field_image_caption_1;
+							}
+							else {
+								$array = $data->field_field_image_caption;
+							}
+						}
+
+						if (isset($array[0][\'rendered\'][\'#markup\'])) {
+							$val = $array[0][\'rendered\'][\'#markup\'];
+							if (strlen($val) <= 125) {
+							$value = rtrim($val) . "...";
+							} else {
+								$pos = strpos($val, \' \', 125);
+								$value = substr($val,0,$pos) . "...";
+							}
 						}
 						else {
-							$array = $data->field_field_image_caption;
+							$value = \'\';
 						}
-					}
-
-					if (isset($array[0][\'rendered\'][\'#markup\'])) {
-						$val = $array[0][\'rendered\'][\'#markup\'];
-						if (strlen($val) <= 125) {
-						$value = rtrim($val) . "...";
-						} else {
-							$pos = strpos($val, \' \', 125);
-							$value = substr($val,0,$pos) . "...";
-						}
-					}
-					else {
-						$value = \'\';
-					}
-					print $value;
-					?>';
+						print $value;
+						?>';
 	$handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
 	/* Field: Global: Custom text */
@@ -17500,12 +17500,12 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_feature_image][field_project_image]</div>
-					<div class="slide-text">
-					[php_1]
-					[php]  More </a>
-					</div>
+						<div class="slide-text">
+						[php_1]
+						[php]  More </a>
+						</div>
 
-					';
+						';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	$handler->display->display_options['defaults']['sorts'] = FALSE;
 	/* Sort criterion: Nodequeue: Position */
@@ -17533,27 +17533,27 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['slideshow_type'] = 'flexslider_views_slideshow';
 	$handler->display->display_options['style_options']['slideshow_skin'] = 'default';
 	$handler->display->display_options['style_options']['skin_info'] = array(
-		'class' => 'default',
-		'name' => 'Default',
-		'module' => 'views_slideshow',
-		'path' => '',
-		'stylesheets' => array(),
+	  'class' => 'default',
+	  'name' => 'Default',
+	  'module' => 'views_slideshow',
+	  'path' => '',
+	  'stylesheets' => array(),
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'field_feature_image' => 0,
-		'field_project_image' => 0,
-		'title_field' => 0,
-		'field_caption' => 0,
-		'field_image_caption' => 0,
-		'field_image_caption_1' => 0,
-		'type' => 0,
-		'field_feature_link' => 0,
-		'view_node' => 0,
-		'php' => 0,
-		'php_1' => 0,
-		'nothing' => 0,
+	  'field_feature_image' => 0,
+	  'field_project_image' => 0,
+	  'title_field' => 0,
+	  'field_caption' => 0,
+	  'field_image_caption' => 0,
+	  'field_image_caption_1' => 0,
+	  'type' => 0,
+	  'field_feature_link' => 0,
+	  'view_node' => 0,
+	  'php' => 0,
+	  'php_1' => 0,
+	  'nothing' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -17562,18 +17562,18 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'field_feature_image' => 0,
-		'field_project_image' => 0,
-		'title_field' => 0,
-		'field_caption' => 0,
-		'field_image_caption' => 0,
-		'field_image_caption_1' => 0,
-		'type' => 0,
-		'field_feature_link' => 0,
-		'view_node' => 0,
-		'php' => 0,
-		'php_1' => 0,
-		'nothing' => 0,
+	  'field_feature_image' => 0,
+	  'field_project_image' => 0,
+	  'title_field' => 0,
+	  'field_caption' => 0,
+	  'field_image_caption' => 0,
+	  'field_image_caption_1' => 0,
+	  'type' => 0,
+	  'field_feature_link' => 0,
+	  'view_node' => 0,
+	  'php' => 0,
+	  'php_1' => 0,
+	  'nothing' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -17599,11 +17599,11 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['relationships']['nodequeue_rel']['required'] = TRUE;
 	$handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
 	$handler->display->display_options['relationships']['nodequeue_rel']['names'] = array(
-		'about_us_slides' => 'about_us_slides',
-		'featured_content' => 0,
-		'agency_listing_page_publications' => 0,
-		'press_centre' => 0,
-		'speech_themes' => 0,
+	  'about_us_slides' => 'about_us_slides',
+	  'featured_content' => 0,
+	  'agency_listing_page_publications' => 0,
+	  'press_centre' => 0,
+	  'speech_themes' => 0,
 	);
 	/* Relationship: Content: Images (field_project_image:fid) */
 	$handler->display->display_options['relationships']['field_project_image_fid']['id'] = 'field_project_image_fid';
@@ -17626,8 +17626,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_feature_image']['hide_empty'] = TRUE;
 	$handler->display->display_options['fields']['field_feature_image']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_feature_image']['settings'] = array(
-		'image_style' => 'featured_content',
-		'image_link' => 'content',
+	  'image_style' => 'featured_content',
+	  'image_link' => 'content',
 	);
 	/* Field: Content: Images */
 	$handler->display->display_options['fields']['field_project_image']['id'] = 'field_project_image';
@@ -17639,8 +17639,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_project_image']['hide_empty'] = TRUE;
 	$handler->display->display_options['fields']['field_project_image']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_project_image']['settings'] = array(
-		'image_style' => 'featured_content',
-		'image_link' => 'content',
+	  'image_style' => 'featured_content',
+	  'image_link' => 'content',
 	);
 	$handler->display->display_options['fields']['field_project_image']['delta_offset'] = '0';
 	/* Field: Content: Title */
@@ -17661,7 +17661,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_caption']['alter']['trim'] = TRUE;
 	$handler->display->display_options['fields']['field_caption']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_caption']['settings'] = array(
-		'trim_length' => '150',
+	  'trim_length' => '150',
 	);
 	/* Field: File: Caption */
 	$handler->display->display_options['fields']['field_image_caption']['id'] = 'field_image_caption';
@@ -17718,19 +17718,19 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php']['php_output'] = '<?php
-					if ($data->node_type == "featured_content") {
-						if (!empty($data->field_field_feature_link)) {
-						$node_path = drupal_get_path_alias(\'node/\' . $data->field_field_feature_link[0][\'raw\'][\'url\']);
-						$url = " <a href=\'/$node_path\'>";
+						if ($data->node_type == "featured_content") {
+							if (!empty($data->field_field_feature_link)) {
+							$node_path = drupal_get_path_alias(\'node/\' . $data->field_field_feature_link[0][\'raw\'][\'url\']);
+							$url = " <a href=\'/$node_path\'>";
+								print $url;
+							}
+							else { print \' <a class="banner-no-link">\'; }
+						} else {
+							$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
+							$url = " <a href=\'/$node_path\'>";
 							print $url;
 						}
-						else { print \' <a class="banner-no-link">\'; }
-					} else {
-						$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
-						$url = " <a href=\'/$node_path\'>";
-						print $url;
-					}
-					?>';
+						?>';
 	$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
 	/* Field: Caption Custom PHP */
@@ -17743,30 +17743,30 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-					$array = $data->field_field_caption;
-					if (empty($array)) {
-						if ($data->node_type == \'project\') {
-							$array = $data->field_field_image_caption_1;
+						$array = $data->field_field_caption;
+						if (empty($array)) {
+							if ($data->node_type == \'project\') {
+								$array = $data->field_field_image_caption_1;
+							}
+							else {
+								$array = $data->field_field_image_caption;
+							}
+						}
+
+						if (isset($array[0][\'rendered\'][\'#markup\'])) {
+							$val = $array[0][\'rendered\'][\'#markup\'];
+							if (strlen($val) <= 125) {
+							$value = rtrim($val) . "...";
+							} else {
+								$pos = strpos($val, \' \', 125);
+								$value = substr($val,0,$pos) . "...";
+							}
 						}
 						else {
-							$array = $data->field_field_image_caption;
+							$value = \'\';
 						}
-					}
-
-					if (isset($array[0][\'rendered\'][\'#markup\'])) {
-						$val = $array[0][\'rendered\'][\'#markup\'];
-						if (strlen($val) <= 125) {
-						$value = rtrim($val) . "...";
-						} else {
-							$pos = strpos($val, \' \', 125);
-							$value = substr($val,0,$pos) . "...";
-						}
-					}
-					else {
-						$value = \'\';
-					}
-					print $value;
-					?>';
+						print $value;
+						?>';
 	$handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
 	/* Field: Global: Custom text */
@@ -17775,12 +17775,12 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_feature_image][field_project_image]</div>
-					<div class="slide-text">
-					[php_1]
-					[php]| More </a>
-					</div>
+						<div class="slide-text">
+						[php_1]
+						[php]| More </a>
+						</div>
 
-					';
+						';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	$handler->display->display_options['defaults']['sorts'] = FALSE;
 	/* Sort criterion: Nodequeue: Position */
@@ -17802,27 +17802,27 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['slideshow_type'] = 'flexslider_views_slideshow';
 	$handler->display->display_options['style_options']['slideshow_skin'] = 'default';
 	$handler->display->display_options['style_options']['skin_info'] = array(
-		'class' => 'default',
-		'name' => 'Default',
-		'module' => 'views_slideshow',
-		'path' => '',
-		'stylesheets' => array(),
+	  'class' => 'default',
+	  'name' => 'Default',
+	  'module' => 'views_slideshow',
+	  'path' => '',
+	  'stylesheets' => array(),
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'field_feature_image' => 0,
-		'field_project_image' => 0,
-		'title_field' => 0,
-		'field_caption' => 0,
-		'field_image_caption' => 0,
-		'field_image_caption_1' => 0,
-		'type' => 0,
-		'field_feature_link' => 0,
-		'view_node' => 0,
-		'php' => 0,
-		'php_1' => 0,
-		'nothing' => 0,
+	  'field_feature_image' => 0,
+	  'field_project_image' => 0,
+	  'title_field' => 0,
+	  'field_caption' => 0,
+	  'field_image_caption' => 0,
+	  'field_image_caption_1' => 0,
+	  'type' => 0,
+	  'field_feature_link' => 0,
+	  'view_node' => 0,
+	  'php' => 0,
+	  'php_1' => 0,
+	  'nothing' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -17831,18 +17831,18 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'field_feature_image' => 0,
-		'field_project_image' => 0,
-		'title_field' => 0,
-		'field_caption' => 0,
-		'field_image_caption' => 0,
-		'field_image_caption_1' => 0,
-		'type' => 0,
-		'field_feature_link' => 0,
-		'view_node' => 0,
-		'php' => 0,
-		'php_1' => 0,
-		'nothing' => 0,
+	  'field_feature_image' => 0,
+	  'field_project_image' => 0,
+	  'title_field' => 0,
+	  'field_caption' => 0,
+	  'field_image_caption' => 0,
+	  'field_image_caption_1' => 0,
+	  'type' => 0,
+	  'field_feature_link' => 0,
+	  'view_node' => 0,
+	  'php' => 0,
+	  'php_1' => 0,
+	  'nothing' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -17869,13 +17869,13 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['relationships']['nodequeue_rel']['required'] = TRUE;
 	$handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
 	$handler->display->display_options['relationships']['nodequeue_rel']['names'] = array(
-		'akaa_home_page_slideshow' => 'akaa_home_page_slideshow',
-		'featured_content' => 0,
-		'agency_listing_page_publications' => 0,
-		'press_centre' => 0,
-		'about_us_slides' => 0,
-		'speech_themes' => 0,
-		'thematic_area' => 0,
+	  'akaa_home_page_slideshow' => 'akaa_home_page_slideshow',
+	  'featured_content' => 0,
+	  'agency_listing_page_publications' => 0,
+	  'press_centre' => 0,
+	  'about_us_slides' => 0,
+	  'speech_themes' => 0,
+	  'thematic_area' => 0,
 	);
 	/* Relationship: Content: Images (field_project_image:fid) */
 	$handler->display->display_options['relationships']['field_project_image_fid']['id'] = 'field_project_image_fid';
@@ -17898,8 +17898,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_feature_image']['hide_empty'] = TRUE;
 	$handler->display->display_options['fields']['field_feature_image']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_feature_image']['settings'] = array(
-		'image_style' => 'featured_content',
-		'image_link' => '',
+	  'image_style' => 'featured_content',
+	  'image_link' => '',
 	);
 	/* Field: Entity translation: Slideshow Image: translated */
 	$handler->display->display_options['fields']['field_feature_image_et']['id'] = 'field_feature_image_et';
@@ -17910,8 +17910,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_feature_image_et']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_feature_image_et']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_feature_image_et']['settings'] = array(
-		'image_style' => 'featured_content',
-		'image_link' => '',
+	  'image_style' => 'featured_content',
+	  'image_link' => '',
 	);
 	/* Field: Content: Images */
 	$handler->display->display_options['fields']['field_project_image']['id'] = 'field_project_image';
@@ -17923,8 +17923,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_project_image']['hide_empty'] = TRUE;
 	$handler->display->display_options['fields']['field_project_image']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_project_image']['settings'] = array(
-		'image_style' => 'featured_content',
-		'image_link' => '',
+	  'image_style' => 'featured_content',
+	  'image_link' => '',
 	);
 	$handler->display->display_options['fields']['field_project_image']['delta_limit'] = '1';
 	$handler->display->display_options['fields']['field_project_image']['delta_offset'] = '0';
@@ -17956,7 +17956,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_caption']['alter']['trim'] = TRUE;
 	$handler->display->display_options['fields']['field_caption']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_caption']['settings'] = array(
-		'trim_length' => '150',
+	  'trim_length' => '150',
 	);
 	/* Field: File: Caption */
 	$handler->display->display_options['fields']['field_image_caption']['id'] = 'field_image_caption';
@@ -18002,30 +18002,30 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-					$array = $data->field_field_caption;
-					if (empty($array)) {
-						if ($data->node_type == \'project\') {
-							$array = $data->field_field_image_caption_1;
+						$array = $data->field_field_caption;
+						if (empty($array)) {
+							if ($data->node_type == \'project\') {
+								$array = $data->field_field_image_caption_1;
+							}
+							else {
+								$array = $data->field_field_image_caption;
+							}
+						}
+
+						if (isset($array[0][\'rendered\'][\'#markup\'])) {
+							$val = $array[0][\'rendered\'][\'#markup\'];
+							if (strlen($val) <= 125) {
+							$value = rtrim($val) . "...";
+							} else {
+								$pos = strpos($val, \' \', 125);
+								$value = substr($val,0,$pos) . "...";
+							}
 						}
 						else {
-							$array = $data->field_field_image_caption;
+							$value = \'\';
 						}
-					}
-
-					if (isset($array[0][\'rendered\'][\'#markup\'])) {
-						$val = $array[0][\'rendered\'][\'#markup\'];
-						if (strlen($val) <= 125) {
-						$value = rtrim($val) . "...";
-						} else {
-							$pos = strpos($val, \' \', 125);
-							$value = substr($val,0,$pos) . "...";
-						}
-					}
-					else {
-						$value = \'\';
-					}
-					print $value;
-					?>';
+						print $value;
+						?>';
 	$handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
 	/* Field: &#039;More&#039; Link Custom PHP */
@@ -18038,25 +18038,25 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php']['php_output'] = '<?php
-					global $language;
-					$lang = $language->language;
-					if($lang != \'en\'){ $langu = \'/\'.$lang.\'/\';}
-					else{
-					$langu = \'/\';
-					}
-					if ($data->node_type == "featured_content") {
-						if (!empty($data->field_field_feature_link)) {
-							$url = " <a href=\'/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+						global $language;
+						$lang = $language->language;
+						if($lang != \'en\'){ $langu = \'/\'.$lang.\'/\';}
+						else{
+						$langu = \'/\';
+						}
+						if ($data->node_type == "featured_content") {
+							if (!empty($data->field_field_feature_link)) {
+								$url = " <a href=\'/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+								print $url;
+							}
+							else { print \' <a class="banner-no-link">\'; }
+						} else {
+							$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
+							$urlz = $langu.$node_path;
+							$url =  " <a href=\'$urlz\'>";
 							print $url;
 						}
-						else { print \' <a class="banner-no-link">\'; }
-					} else {
-						$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
-						$urlz = $langu.$node_path;
-						$url =  " <a href=\'$urlz\'>";
-						print $url;
-					}
-					?>';
+						?>';
 	$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
 	/* Field: Global: Custom text */
@@ -18065,12 +18065,12 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[php][field_feature_image_et]</a></div>
-					<div class="slide-text">
-					[php_1]
-					[php]More</a>
-					</div>
+						<div class="slide-text">
+						[php_1]
+						[php]More</a>
+						</div>
 
-					';
+						';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	$handler->display->display_options['defaults']['sorts'] = FALSE;
 	/* Sort criterion: Nodequeue: Position */
@@ -18081,8 +18081,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['defaults']['filter_groups'] = FALSE;
 	$handler->display->display_options['filter_groups']['operator'] = 'OR';
 	$handler->display->display_options['filter_groups']['groups'] = array(
-		1 => 'AND',
-		2 => 'AND',
+	  1 => 'AND',
+	  2 => 'AND',
 	);
 	$handler->display->display_options['defaults']['filters'] = FALSE;
 	/* Filter criterion: Content: Type */
@@ -18090,7 +18090,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['type']['table'] = 'node';
 	$handler->display->display_options['filters']['type']['field'] = 'type';
 	$handler->display->display_options['filters']['type']['value'] = array(
-		'featured_content' => 'featured_content',
+	  'featured_content' => 'featured_content',
 	);
 	$handler->display->display_options['filters']['type']['group'] = 1;
 	/* Filter criterion: Content: Published or admin */
@@ -18103,14 +18103,14 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['type_1']['table'] = 'node';
 	$handler->display->display_options['filters']['type_1']['field'] = 'type';
 	$handler->display->display_options['filters']['type_1']['value'] = array(
-		'architecture_project' => 'architecture_project',
-		'article' => 'article',
-		'event' => 'event',
-		'gallery' => 'gallery',
-		'podcast' => 'podcast',
-		'project' => 'project',
-		'publication' => 'publication',
-		'speech' => 'speech',
+	  'architecture_project' => 'architecture_project',
+	  'article' => 'article',
+	  'event' => 'event',
+	  'gallery' => 'gallery',
+	  'podcast' => 'podcast',
+	  'project' => 'project',
+	  'publication' => 'publication',
+	  'speech' => 'speech',
 	);
 	$handler->display->display_options['filters']['type_1']['group'] = 2;
 	/* Filter criterion: Content: Create Banner Item (field_create_featured_content) */
@@ -18119,7 +18119,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['field_create_featured_content_value']['field'] = 'field_create_featured_content_value';
 	$handler->display->display_options['filters']['field_create_featured_content_value']['operator'] = 'not';
 	$handler->display->display_options['filters']['field_create_featured_content_value']['value'] = array(
-		0 => '0',
+	  0 => '0',
 	);
 	$handler->display->display_options['filters']['field_create_featured_content_value']['group'] = 2;
 	/* Filter criterion: Content: Published or admin */
@@ -18141,22 +18141,22 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['slideshow_type'] = 'flexslider_views_slideshow';
 	$handler->display->display_options['style_options']['slideshow_skin'] = 'default';
 	$handler->display->display_options['style_options']['skin_info'] = array(
-		'class' => 'default',
-		'name' => 'Default',
-		'module' => 'views_slideshow',
-		'path' => '',
-		'stylesheets' => array(),
+	  'class' => 'default',
+	  'name' => 'Default',
+	  'module' => 'views_slideshow',
+	  'path' => '',
+	  'stylesheets' => array(),
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'field_feature_image' => 0,
-		'title' => 0,
-		'body' => 0,
-		'field_feature_link' => 0,
-		'nothing' => 0,
-		'nothing_1' => 0,
-		'counter' => 0,
+	  'field_feature_image' => 0,
+	  'title' => 0,
+	  'body' => 0,
+	  'field_feature_link' => 0,
+	  'nothing' => 0,
+	  'nothing_1' => 0,
+	  'counter' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -18165,13 +18165,13 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'field_feature_image' => 0,
-		'title' => 0,
-		'body' => 0,
-		'field_feature_link' => 0,
-		'nothing' => 0,
-		'nothing_1' => 0,
-		'counter' => 0,
+	  'field_feature_image' => 0,
+	  'title' => 0,
+	  'body' => 0,
+	  'field_feature_link' => 0,
+	  'nothing' => 0,
+	  'nothing_1' => 0,
+	  'counter' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -18218,8 +18218,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_feature_image']['hide_alter_empty'] = FALSE;
 	$handler->display->display_options['fields']['field_feature_image']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_feature_image']['settings'] = array(
-		'image_style' => 'featured_content',
-		'image_link' => '',
+	  'image_style' => 'featured_content',
+	  'image_link' => '',
 	);
 	/* Field: Content: Title */
 	$handler->display->display_options['fields']['title_field']['id'] = 'title_field';
@@ -18273,17 +18273,17 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php']['php_output'] = '<?php
-					if ($data->node_type == "featured_content") {
-						if (!empty($data->field_field_feature_link)) {
-							$url = " <a href=\'/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+						if ($data->node_type == "featured_content") {
+							if (!empty($data->field_field_feature_link)) {
+								$url = " <a href=\'/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+								print $url;
+							}
+							else { print \' <a class="banner-no-link">\'; }
+						} else {
+							$url = " <a href=\'/node/{$data->nid}\'>";
 							print $url;
 						}
-						else { print \' <a class="banner-no-link">\'; }
-					} else {
-						$url = " <a href=\'/node/{$data->nid}\'>";
-						print $url;
-					}
-					?>';
+						?>';
 	$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
 	/* Field: Caption Custom PHP */
@@ -18296,25 +18296,25 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-					$array = $data->field_field_caption;
-					if (empty($array) && $data->node_type == \'project\') {
-						 $array = $data->field_field_image_caption_1;
-					}
-					if (isset($array[0][\'rendered\'][\'#markup\'])) {
-						$val = $array[0][\'rendered\'][\'#markup\'];
-						if (strlen($val) > 125) {
-							$pos = strpos($val, \' \', 100);
-							$value = substr($val,0,$pos) . "...";
+						$array = $data->field_field_caption;
+						if (empty($array) && $data->node_type == \'project\') {
+							 $array = $data->field_field_image_caption_1;
+						}
+						if (isset($array[0][\'rendered\'][\'#markup\'])) {
+							$val = $array[0][\'rendered\'][\'#markup\'];
+							if (strlen($val) > 125) {
+								$pos = strpos($val, \' \', 100);
+								$value = substr($val,0,$pos) . "...";
+							}
+							else {
+								$value = rtrim($val) . "...";
+							}
 						}
 						else {
-							$value = rtrim($val) . "...";
+							$value = \'\';
 						}
-					}
-					else {
-						$value = \'\';
-					}
-					print $value;
-					?>';
+						print $value;
+						?>';
 	$handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
 	/* Field: Global: PHP */
@@ -18326,17 +18326,17 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php
 
-					if ($data->node_type == "featured_content") {
-						if (!empty($data->field_field_feature_link)) {
-							$url = "<a href=\'/".drupal_get_path_alias($data->field_field_feature_link[0][\'raw\'][\'url\'])."\'>";
+						if ($data->node_type == "featured_content") {
+							if (!empty($data->field_field_feature_link)) {
+								$url = "<a href=\'/".drupal_get_path_alias($data->field_field_feature_link[0][\'raw\'][\'url\'])."\'>";
+								print $url;
+							}
+							else { return \'\'; }
+						} else {
+							$url = "<a href=\'/".drupal_get_path_alias(\'node/\'.$data->nid)."\'>";
 							print $url;
 						}
-						else { return \'\'; }
-					} else {
-						$url = "<a href=\'/".drupal_get_path_alias(\'node/\'.$data->nid)."\'>";
-						print $url;
-					}
-					?>';
+						?>';
 	$handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
 	/* Field: Global: Custom text */
@@ -18345,12 +18345,12 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[php_2][field_feature_image]</a></div>
-					<div class="slide-text">
-					[php_1]
-					[php]More</a>
-					</div>
+						<div class="slide-text">
+						[php_1]
+						[php]More</a>
+						</div>
 
-					';
+						';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	/* Field: Content: Caption */
 	$handler->display->display_options['fields']['field_caption']['id'] = 'field_caption';
@@ -18393,7 +18393,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['type']['table'] = 'node';
 	$handler->display->display_options['filters']['type']['field'] = 'type';
 	$handler->display->display_options['filters']['type']['value'] = array(
-		'architecture_project' => 'architecture_project',
+	  'architecture_project' => 'architecture_project',
 	);
 	$handler->display->display_options['filters']['type']['group'] = 1;
 	/* Filter criterion: Content: Create Banner Item (field_create_featured_content) */
@@ -18401,7 +18401,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['field_create_featured_content_value_1']['table'] = 'field_data_field_create_featured_content';
 	$handler->display->display_options['filters']['field_create_featured_content_value_1']['field'] = 'field_create_featured_content_value';
 	$handler->display->display_options['filters']['field_create_featured_content_value_1']['value'] = array(
-		1 => '1',
+	  1 => '1',
 	);
 	$handler->display->display_options['filters']['field_create_featured_content_value_1']['group'] = 1;
 	/* Filter criterion: Content: Published or admin */
@@ -18414,7 +18414,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['field_winner_value']['table'] = 'field_data_field_winner';
 	$handler->display->display_options['filters']['field_winner_value']['field'] = 'field_winner_value';
 	$handler->display->display_options['filters']['field_winner_value']['value'] = array(
-		1 => '1',
+	  1 => '1',
 	);
 	$handler->display->display_options['filters']['field_winner_value']['group'] = 1;
 
@@ -18431,22 +18431,22 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['slideshow_type'] = 'flexslider_views_slideshow';
 	$handler->display->display_options['style_options']['slideshow_skin'] = 'default';
 	$handler->display->display_options['style_options']['skin_info'] = array(
-		'class' => 'default',
-		'name' => 'Default',
-		'module' => 'views_slideshow',
-		'path' => '',
-		'stylesheets' => array(),
+	  'class' => 'default',
+	  'name' => 'Default',
+	  'module' => 'views_slideshow',
+	  'path' => '',
+	  'stylesheets' => array(),
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'field_feature_image' => 0,
-		'title' => 0,
-		'body' => 0,
-		'field_feature_link' => 0,
-		'nothing' => 0,
-		'nothing_1' => 0,
-		'counter' => 0,
+	  'field_feature_image' => 0,
+	  'title' => 0,
+	  'body' => 0,
+	  'field_feature_link' => 0,
+	  'nothing' => 0,
+	  'nothing_1' => 0,
+	  'counter' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -18455,13 +18455,13 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'field_feature_image' => 0,
-		'title' => 0,
-		'body' => 0,
-		'field_feature_link' => 0,
-		'nothing' => 0,
-		'nothing_1' => 0,
-		'counter' => 0,
+	  'field_feature_image' => 0,
+	  'title' => 0,
+	  'body' => 0,
+	  'field_feature_link' => 0,
+	  'nothing' => 0,
+	  'nothing_1' => 0,
+	  'counter' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -18517,8 +18517,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_feature_image']['hide_alter_empty'] = FALSE;
 	$handler->display->display_options['fields']['field_feature_image']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_feature_image']['settings'] = array(
-		'image_style' => 'featured_content',
-		'image_link' => '',
+	  'image_style' => 'featured_content',
+	  'image_link' => '',
 	);
 	/* Field: Content: Images */
 	$handler->display->display_options['fields']['field_project_image']['id'] = 'field_project_image';
@@ -18530,8 +18530,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_project_image']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_project_image']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_project_image']['settings'] = array(
-		'image_style' => 'featured_content',
-		'image_link' => '',
+	  'image_style' => 'featured_content',
+	  'image_link' => '',
 	);
 	$handler->display->display_options['fields']['field_project_image']['delta_limit'] = '1';
 	$handler->display->display_options['fields']['field_project_image']['delta_offset'] = '0';
@@ -18555,7 +18555,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_caption']['alter']['trim'] = TRUE;
 	$handler->display->display_options['fields']['field_caption']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_caption']['settings'] = array(
-		'trim_length' => '150',
+	  'trim_length' => '150',
 	);
 	/* Field: File: Caption */
 	$handler->display->display_options['fields']['field_image_caption']['id'] = 'field_image_caption';
@@ -18604,17 +18604,17 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php']['php_output'] = '<?php
-					if ($data->node_type == "featured_content") {
-						if (!empty($data->field_field_feature_link)) {
-							$url = " <a href=\'/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+						if ($data->node_type == "featured_content") {
+							if (!empty($data->field_field_feature_link)) {
+								$url = " <a href=\'/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+								print $url;
+							}
+							else { print \' <a class="banner-no-link">\'; }
+						} else {
+							$url = " <a href=\'/node/{$data->nid}\'>";
 							print $url;
 						}
-						else { print \' <a class="banner-no-link">\'; }
-					} else {
-						$url = " <a href=\'/node/{$data->nid}\'>";
-						print $url;
-					}
-					?>';
+						?>';
 	$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
 	/* Field: Caption Custom PHP */
@@ -18627,30 +18627,30 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-					$array = $data->field_field_caption;
-					if (empty($array)) {
-						if ($data->node_type == \'project\') {
-							$array = $data->field_field_image_caption_1;
+						$array = $data->field_field_caption;
+						if (empty($array)) {
+							if ($data->node_type == \'project\') {
+								$array = $data->field_field_image_caption_1;
+							}
+							else {
+								$array = $data->field_field_caption;
+							}
+						}
+
+						if (isset($array[0][\'rendered\'][\'#markup\'])) {
+							$val = $array[0][\'rendered\'][\'#markup\'];
+							if (strlen($val) <= 125) {
+							$value = rtrim($val) . "...";
+							} else {
+								$pos = strpos($val, \' \', 125);
+								$value = substr($val,0,$pos) . "...";
+							}
 						}
 						else {
-							$array = $data->field_field_caption;
+							$value = \'\';
 						}
-					}
-
-					if (isset($array[0][\'rendered\'][\'#markup\'])) {
-						$val = $array[0][\'rendered\'][\'#markup\'];
-						if (strlen($val) <= 125) {
-						$value = rtrim($val) . "...";
-						} else {
-							$pos = strpos($val, \' \', 125);
-							$value = substr($val,0,$pos) . "...";
-						}
-					}
-					else {
-						$value = \'\';
-					}
-					print $value;
-					?>';
+						print $value;
+						?>';
 	$handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
 	/* Field: Global: PHP */
@@ -18662,17 +18662,17 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php
 
-					if ($data->node_type == "featured_content") {
-						if (!empty($data->field_field_feature_link)) {
-							$url = "<a href=\'/".drupal_get_path_alias($data->field_field_feature_link[0][\'raw\'][\'url\'])."\'>";
+						if ($data->node_type == "featured_content") {
+							if (!empty($data->field_field_feature_link)) {
+								$url = "<a href=\'/".drupal_get_path_alias($data->field_field_feature_link[0][\'raw\'][\'url\'])."\'>";
+								print $url;
+							}
+							else { return \'\'; }
+						} else {
+							$url = "<a href=\'/".drupal_get_path_alias(\'node/\'.$data->nid)."\'>";
 							print $url;
 						}
-						else { return \'\'; }
-					} else {
-						$url = "<a href=\'/".drupal_get_path_alias(\'node/\'.$data->nid)."\'>";
-						print $url;
-					}
-					?>';
+						?>';
 	$handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
 	/* Field: Global: Custom text */
@@ -18681,12 +18681,12 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[php_2][field_project_image]</a></div>
-					<div class="slide-text">
-					[php_1]
-					[php]| More </a>
-					</div>
+						<div class="slide-text">
+						[php_1]
+						[php]| More </a>
+						</div>
 
-					';
+						';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	/* Field: Content: Caption */
 	$handler->display->display_options['fields']['field_caption_1']['id'] = 'field_caption_1';
@@ -18734,14 +18734,14 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['type']['field'] = 'type';
 	$handler->display->display_options['filters']['type']['relationship'] = 'field_featured_content_nodes_nid';
 	$handler->display->display_options['filters']['type']['value'] = array(
-		'architecture_project' => 'architecture_project',
-		'article' => 'article',
-		'event' => 'event',
-		'gallery' => 'gallery',
-		'podcast' => 'podcast',
-		'project' => 'project',
-		'publication' => 'publication',
-		'speech' => 'speech',
+	  'architecture_project' => 'architecture_project',
+	  'article' => 'article',
+	  'event' => 'event',
+	  'gallery' => 'gallery',
+	  'podcast' => 'podcast',
+	  'project' => 'project',
+	  'publication' => 'publication',
+	  'speech' => 'speech',
 	);
 	$handler->display->display_options['filters']['type']['group'] = 1;
 	/* Filter criterion: Content: Create Banner Item (field_create_featured_content) */
@@ -18750,7 +18750,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['field_create_featured_content_value']['field'] = 'field_create_featured_content_value';
 	$handler->display->display_options['filters']['field_create_featured_content_value']['relationship'] = 'field_featured_content_nodes_nid';
 	$handler->display->display_options['filters']['field_create_featured_content_value']['value'] = array(
-		1 => '1',
+	  1 => '1',
 	);
 	$handler->display->display_options['filters']['field_create_featured_content_value']['group'] = 1;
 	/* Filter criterion: Content: Published or admin */
@@ -18777,27 +18777,27 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['slideshow_type'] = 'flexslider_views_slideshow';
 	$handler->display->display_options['style_options']['slideshow_skin'] = 'default';
 	$handler->display->display_options['style_options']['skin_info'] = array(
-		'class' => 'default',
-		'name' => 'Default',
-		'module' => 'views_slideshow',
-		'path' => '',
-		'stylesheets' => array(),
+	  'class' => 'default',
+	  'name' => 'Default',
+	  'module' => 'views_slideshow',
+	  'path' => '',
+	  'stylesheets' => array(),
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'field_feature_image' => 0,
-		'field_project_image' => 0,
-		'title_field' => 0,
-		'field_caption' => 0,
-		'field_image_caption' => 0,
-		'field_image_caption_1' => 0,
-		'type' => 0,
-		'field_feature_link' => 0,
-		'view_node' => 0,
-		'php_1' => 0,
-		'php' => 0,
-		'nothing' => 0,
+	  'field_feature_image' => 0,
+	  'field_project_image' => 0,
+	  'title_field' => 0,
+	  'field_caption' => 0,
+	  'field_image_caption' => 0,
+	  'field_image_caption_1' => 0,
+	  'type' => 0,
+	  'field_feature_link' => 0,
+	  'view_node' => 0,
+	  'php_1' => 0,
+	  'php' => 0,
+	  'nothing' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -18806,18 +18806,18 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'field_feature_image' => 0,
-		'field_project_image' => 0,
-		'title_field' => 0,
-		'field_caption' => 0,
-		'field_image_caption' => 0,
-		'field_image_caption_1' => 0,
-		'type' => 0,
-		'field_feature_link' => 0,
-		'view_node' => 0,
-		'php_1' => 0,
-		'php' => 0,
-		'nothing' => 0,
+	  'field_feature_image' => 0,
+	  'field_project_image' => 0,
+	  'title_field' => 0,
+	  'field_caption' => 0,
+	  'field_image_caption' => 0,
+	  'field_image_caption_1' => 0,
+	  'type' => 0,
+	  'field_feature_link' => 0,
+	  'view_node' => 0,
+	  'php_1' => 0,
+	  'php' => 0,
+	  'nothing' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -18869,21 +18869,21 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_feature_image']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_feature_image']['type'] = 'cs_adaptive_image';
 	$handler->display->display_options['fields']['field_feature_image']['settings'] = array(
-		'image_link' => '',
-		'styles' => array(
-		  'breakpoint_1' => '979',
-		  'style_1' => 'featured_content_narrow',
-		  'breakpoint_2' => '739',
-		  'style_2' => 'featured_content_mobile',
-		  'breakpoint_3' => '479',
-		  'style_3' => 'featured_content_mobile',
-		  'breakpoint_4' => '319',
-		  'style_4' => 'featured_content_mobile',
-		  'breakpoint_5' => '',
-		  'style_5' => '',
-		  'max_style' => 'featured_content',
-		  'fallback_style' => 'featured_content',
-		),
+	  'image_link' => '',
+	  'styles' => array(
+	    'breakpoint_1' => '979',
+	    'style_1' => 'featured_content_narrow',
+	    'breakpoint_2' => '739',
+	    'style_2' => 'featured_content_mobile',
+	    'breakpoint_3' => '479',
+	    'style_3' => 'featured_content_mobile',
+	    'breakpoint_4' => '319',
+	    'style_4' => 'featured_content_mobile',
+	    'breakpoint_5' => '',
+	    'style_5' => '',
+	    'max_style' => 'featured_content',
+	    'fallback_style' => 'featured_content',
+	  ),
 	);
 	/* Field: Content: Images */
 	$handler->display->display_options['fields']['field_project_image']['id'] = 'field_project_image';
@@ -18899,8 +18899,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_project_image']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_project_image']['type'] = 'cs_adaptive_image';
 	$handler->display->display_options['fields']['field_project_image']['settings'] = array(
-		'image_style' => '',
-		'image_link' => '',
+	  'image_style' => '',
+	  'image_link' => '',
 	);
 	$handler->display->display_options['fields']['field_project_image']['group_rows'] = FALSE;
 	$handler->display->display_options['fields']['field_project_image']['delta_offset'] = '0';
@@ -18925,7 +18925,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_caption']['alter']['trim'] = TRUE;
 	$handler->display->display_options['fields']['field_caption']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_caption']['settings'] = array(
-		'trim_length' => '150',
+	  'trim_length' => '150',
 	);
 	/* Field: File: Copyright */
 	$handler->display->display_options['fields']['field_image_copytight']['id'] = 'field_image_copytight';
@@ -18990,25 +18990,25 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-					$array = $data->field_field_caption;
-					$value = \'\';
-					if ($data->field_data_field_project_image_field_project_image_fid) {
-						 $array = $data->field_field_image_caption_1;
-					}
+						$array = $data->field_field_caption;
+						$value = \'\';
+						if ($data->field_data_field_project_image_field_project_image_fid) {
+							 $array = $data->field_field_image_caption_1;
+						}
 
-					if (isset($array[0][\'rendered\'][\'#markup\'])) {
-						//$value = $array[0][\'rendered\'][\'#markup\'];
-						//$val = $array[0][\'rendered\'][\'#markup\'];
-						//$value .= rtrim($val);
-						$value .= rtrim($array[0][\'rendered\'][\'#markup\']);
-						$value .= "</br>";
-						$value .= $data->field_field_image_copytight[0][\'rendered\'][\'#markup\'];
-					}
-					else {
-					 $value = \'\';
-					}
-					print \'<div>\'.$value.\'</div>\';
-					?>';
+						if (isset($array[0][\'rendered\'][\'#markup\'])) {
+							//$value = $array[0][\'rendered\'][\'#markup\'];
+							//$val = $array[0][\'rendered\'][\'#markup\'];
+							//$value .= rtrim($val);
+							$value .= rtrim($array[0][\'rendered\'][\'#markup\']);
+							$value .= "</br>";
+							$value .= $data->field_field_image_copytight[0][\'rendered\'][\'#markup\'];
+						}
+						else {
+						 $value = \'\';
+						}
+						print \'<div>\'.$value.\'</div>\';
+						?>';
 	$handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
 	/* Field: Global: Custom text */
@@ -19018,10 +19018,10 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_project_image]</div>
-					<div class="slide-text">
-					[php_1]
-					</div>
-					';
+						<div class="slide-text">
+						[php_1]
+						</div>
+						';
 	$handler->display->display_options['fields']['nothing']['alter']['path'] = 'node/[nid]?width=950&height=500&iframe=true';
 	$handler->display->display_options['fields']['nothing']['alter']['absolute'] = TRUE;
 	$handler->display->display_options['fields']['nothing']['alter']['replace_spaces'] = TRUE;
@@ -19035,9 +19035,9 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['colorbox']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['colorbox']['trigger_field'] = 'nothing';
 	$handler->display->display_options['fields']['colorbox']['popup'] = '<div class="slide">[field_project_image]</div>
-					<div class="image-caption">
-					[php_1]
-					</div>';
+						<div class="image-caption">
+						[php_1]
+						</div>';
 	$handler->display->display_options['fields']['colorbox']['gid'] = 1;
 	$handler->display->display_options['fields']['colorbox']['width'] = '700px';
 	$handler->display->display_options['fields']['colorbox']['height'] = '600px';
@@ -19054,7 +19054,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
 	$handler->display->display_options['defaults']['filter_groups'] = FALSE;
 	$handler->display->display_options['filter_groups']['groups'] = array(
-		1 => 'OR',
+	  1 => 'OR',
 	);
 	$handler->display->display_options['defaults']['filters'] = FALSE;
 	/* Filter criterion: Content: Type */
@@ -19062,7 +19062,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['type']['table'] = 'node';
 	$handler->display->display_options['filters']['type']['field'] = 'type';
 	$handler->display->display_options['filters']['type']['value'] = array(
-		'architecture_project' => 'architecture_project',
+	  'architecture_project' => 'architecture_project',
 	);
 	$handler->display->display_options['filters']['type']['group'] = 1;
 	/* Filter criterion: File: Use in banner (field_use_in_banner) */
@@ -19071,7 +19071,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['field_use_in_banner_value']['field'] = 'field_use_in_banner_value';
 	$handler->display->display_options['filters']['field_use_in_banner_value']['relationship'] = 'field_project_image_fid';
 	$handler->display->display_options['filters']['field_use_in_banner_value']['value'] = array(
-		1 => '1',
+	  1 => '1',
 	);
 
 	/* Display: Additional Project Images */
@@ -19100,9 +19100,9 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_project_image']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_project_image']['type'] = 'image_url';
 	$handler->display->display_options['fields']['field_project_image']['settings'] = array(
-		'url_type' => '0',
-		'image_style' => '',
-		'image_link' => '',
+	  'url_type' => '0',
+	  'image_style' => '',
+	  'image_link' => '',
 	);
 	$handler->display->display_options['fields']['field_project_image']['delta_offset'] = '0';
 	$handler->display->display_options['fields']['field_project_image']['separator'] = ' ';
@@ -19134,7 +19134,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['language']['table'] = 'field_data_field_project_image';
 	$handler->display->display_options['filters']['language']['field'] = 'language';
 	$handler->display->display_options['filters']['language']['value'] = array(
-		'***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+	  '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
 	);
 
 	/* Display: Flexslider Hub Page Default */
@@ -19152,22 +19152,22 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['slideshow_type'] = 'flexslider_views_slideshow';
 	$handler->display->display_options['style_options']['slideshow_skin'] = 'default';
 	$handler->display->display_options['style_options']['skin_info'] = array(
-		'class' => 'default',
-		'name' => 'Default',
-		'module' => 'views_slideshow',
-		'path' => '',
-		'stylesheets' => array(),
+	  'class' => 'default',
+	  'name' => 'Default',
+	  'module' => 'views_slideshow',
+	  'path' => '',
+	  'stylesheets' => array(),
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'field_feature_image' => 0,
-		'title' => 0,
-		'body' => 0,
-		'field_feature_link' => 0,
-		'nothing' => 0,
-		'nothing_1' => 0,
-		'counter' => 0,
+	  'field_feature_image' => 0,
+	  'title' => 0,
+	  'body' => 0,
+	  'field_feature_link' => 0,
+	  'nothing' => 0,
+	  'nothing_1' => 0,
+	  'counter' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -19176,13 +19176,13 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'field_feature_image' => 0,
-		'title' => 0,
-		'body' => 0,
-		'field_feature_link' => 0,
-		'nothing' => 0,
-		'nothing_1' => 0,
-		'counter' => 0,
+	  'field_feature_image' => 0,
+	  'title' => 0,
+	  'body' => 0,
+	  'field_feature_link' => 0,
+	  'nothing' => 0,
+	  'nothing_1' => 0,
+	  'counter' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -19236,8 +19236,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_feature_image']['hide_alter_empty'] = FALSE;
 	$handler->display->display_options['fields']['field_feature_image']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_feature_image']['settings'] = array(
-		'image_style' => 'featured_content',
-		'image_link' => 'content',
+	  'image_style' => 'featured_content',
+	  'image_link' => 'content',
 	);
 	/* Field: Content: Images */
 	$handler->display->display_options['fields']['field_project_image']['id'] = 'field_project_image';
@@ -19248,8 +19248,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_project_image']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_project_image']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_project_image']['settings'] = array(
-		'image_style' => 'featured_content',
-		'image_link' => '',
+	  'image_style' => 'featured_content',
+	  'image_link' => '',
 	);
 	$handler->display->display_options['fields']['field_project_image']['delta_offset'] = '0';
 	/* Field: Content: Title */
@@ -19273,7 +19273,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['body']['hide_alter_empty'] = FALSE;
 	$handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
 	$handler->display->display_options['fields']['body']['settings'] = array(
-		'trim_length' => '50',
+	  'trim_length' => '50',
 	);
 	/* Field: File: Caption */
 	$handler->display->display_options['fields']['field_image_caption']['id'] = 'field_image_caption';
@@ -19302,18 +19302,18 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php']['php_output'] = '<?php
-					if ($data->node_type == "featured_content") {
-						if (!empty($data->field_field_feature_link)) {
-							$url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+						if ($data->node_type == "featured_content") {
+							if (!empty($data->field_field_feature_link)) {
+								$url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+								print $url;
+							}
+							else { print \' <a class="banner-no-link">\'; }
+						} else {
+							$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
+							$url =  " <a href=\'/$node_path\'>";
 							print $url;
 						}
-						else { print \' <a class="banner-no-link">\'; }
-					} else {
-						$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
-						$url =  " <a href=\'/$node_path\'>";
-						print $url;
-					}
-					?>';
+						?>';
 	$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
 	/* Field: Global: PHP */
@@ -19325,30 +19325,30 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-					$array = $data->field_field_caption;
-					if ($data->node_type == \'article\') {
-						$array =$data->field_field_image_caption;
-					}
-					if (empty($array)) {
-						if ($data->node_type == \'project\') {
-							$array = $data->field_field_image_caption_1;
+						$array = $data->field_field_caption;
+						if ($data->node_type == \'article\') {
+							$array =$data->field_field_image_caption;
 						}
-						else {
-							$array = $data->field_field_image_caption;
+						if (empty($array)) {
+							if ($data->node_type == \'project\') {
+								$array = $data->field_field_image_caption_1;
+							}
+							else {
+								$array = $data->field_field_image_caption;
+							}
 						}
-					}
-					$value = \'\';
-					if (isset($array[0][\'rendered\'][\'#markup\'])) {
-						$value = $array[0][\'rendered\'][\'#markup\'];
-					}
+						$value = \'\';
+						if (isset($array[0][\'rendered\'][\'#markup\'])) {
+							$value = $array[0][\'rendered\'][\'#markup\'];
+						}
 
-					$alter[\'max_length\'] = 104;
-					$alter[\'word_boundary\'] = 1;
-					$alter[\'ellipsis\'] = 1;
-					$alter[\'html\'] = 1;
-					$value = views_trim_text($alter, $value);
-					print $value;
-					?>';
+						$alter[\'max_length\'] = 104;
+						$alter[\'word_boundary\'] = 1;
+						$alter[\'ellipsis\'] = 1;
+						$alter[\'html\'] = 1;
+						$value = views_trim_text($alter, $value);
+						print $value;
+						?>';
 	$handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
 	/* Field: Content: Caption */
@@ -19362,7 +19362,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_caption']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_caption']['type'] = 'text_trimmed';
 	$handler->display->display_options['fields']['field_caption']['settings'] = array(
-		'trim_length' => '125',
+	  'trim_length' => '125',
 	);
 	/* Field: Content: Purchase Link */
 	$handler->display->display_options['fields']['field_feature_link']['id'] = 'field_feature_link';
@@ -19381,12 +19381,12 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[php][field_project_image][field_feature_image]</a></div>
-					<div class="slide-text"><h3>[title]</h3>
-					[php_1]
-					[php]| More </a>
-					</div>
+						<div class="slide-text"><h3>[title]</h3>
+						[php_1]
+						[php]| More </a>
+						</div>
 
-					';
+						';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	/* Field: Global: Custom text */
 	$handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
@@ -19432,23 +19432,23 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['arguments']['nid']['default_action'] = 'default';
 	$handler->display->display_options['arguments']['nid']['default_argument_type'] = 'php';
 	$handler->display->display_options['arguments']['nid']['default_argument_options']['code'] = '$node = menu_get_object();
-					$lang = $node->language;
-					if (isset($node->field_agency_geography)) {
-					$id = $node->field_agency_geography[$lang][0][\'nid\'];
-					}
-					if ($id == "") {
-					$id = 0;
-					}
-					return $id;
-					';
+						$lang = $node->language;
+						if (isset($node->field_agency_geography)) {
+						$id = $node->field_agency_geography[$lang][0][\'nid\'];
+						}
+						if ($id == "") {
+						$id = 0;
+						}
+						return $id;
+						';
 	$handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
 	$handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
 	$handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
 	$handler->display->display_options['defaults']['filter_groups'] = FALSE;
 	$handler->display->display_options['filter_groups']['operator'] = 'OR';
 	$handler->display->display_options['filter_groups']['groups'] = array(
-		1 => 'AND',
-		2 => 'AND',
+	  1 => 'AND',
+	  2 => 'AND',
 	);
 	$handler->display->display_options['defaults']['filters'] = FALSE;
 	/* Filter criterion: Content: Type */
@@ -19456,7 +19456,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['type_1']['table'] = 'node';
 	$handler->display->display_options['filters']['type_1']['field'] = 'type';
 	$handler->display->display_options['filters']['type_1']['value'] = array(
-		'featured_content' => 'featured_content',
+	  'featured_content' => 'featured_content',
 	);
 	$handler->display->display_options['filters']['type_1']['group'] = 1;
 	/* Filter criterion: Content: Published or admin */
@@ -19469,14 +19469,14 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['type']['table'] = 'node';
 	$handler->display->display_options['filters']['type']['field'] = 'type';
 	$handler->display->display_options['filters']['type']['value'] = array(
-		'article' => 'article',
-		'page' => 'page',
-		'event' => 'event',
-		'gallery' => 'gallery',
-		'podcast' => 'podcast',
-		'project' => 'project',
-		'publication' => 'publication',
-		'speech' => 'speech',
+	  'article' => 'article',
+	  'page' => 'page',
+	  'event' => 'event',
+	  'gallery' => 'gallery',
+	  'podcast' => 'podcast',
+	  'project' => 'project',
+	  'publication' => 'publication',
+	  'speech' => 'speech',
 	);
 	$handler->display->display_options['filters']['type']['group'] = 2;
 	/* Filter criterion: Content: Create Banner Item (field_create_featured_content) */
@@ -19484,7 +19484,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['field_create_featured_content_value']['table'] = 'field_data_field_create_featured_content';
 	$handler->display->display_options['filters']['field_create_featured_content_value']['field'] = 'field_create_featured_content_value';
 	$handler->display->display_options['filters']['field_create_featured_content_value']['value'] = array(
-		1 => '1',
+	  1 => '1',
 	);
 	$handler->display->display_options['filters']['field_create_featured_content_value']['group'] = 2;
 	/* Filter criterion: Content: Published or admin */
@@ -19508,27 +19508,27 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['slideshow_type'] = 'flexslider_views_slideshow';
 	$handler->display->display_options['style_options']['slideshow_skin'] = 'default';
 	$handler->display->display_options['style_options']['skin_info'] = array(
-		'class' => 'default',
-		'name' => 'Default',
-		'module' => 'views_slideshow',
-		'path' => '',
-		'stylesheets' => array(),
+	  'class' => 'default',
+	  'name' => 'Default',
+	  'module' => 'views_slideshow',
+	  'path' => '',
+	  'stylesheets' => array(),
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'nid' => 0,
-		'field_feature_image' => 0,
-		'field_project_image' => 0,
-		'title' => 0,
-		'body' => 0,
-		'php' => 0,
-		'php_1' => 0,
-		'field_caption' => 0,
-		'field_feature_link' => 0,
-		'nothing' => 0,
-		'nothing_1' => 0,
-		'counter' => 0,
+	  'nid' => 0,
+	  'field_feature_image' => 0,
+	  'field_project_image' => 0,
+	  'title' => 0,
+	  'body' => 0,
+	  'php' => 0,
+	  'php_1' => 0,
+	  'field_caption' => 0,
+	  'field_feature_link' => 0,
+	  'nothing' => 0,
+	  'nothing_1' => 0,
+	  'counter' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -19537,18 +19537,18 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'nid' => 0,
-		'field_feature_image' => 0,
-		'field_project_image' => 0,
-		'title' => 0,
-		'body' => 0,
-		'php' => 0,
-		'php_1' => 0,
-		'field_caption' => 0,
-		'field_feature_link' => 0,
-		'nothing' => 0,
-		'nothing_1' => 0,
-		'counter' => 0,
+	  'nid' => 0,
+	  'field_feature_image' => 0,
+	  'field_project_image' => 0,
+	  'title' => 0,
+	  'body' => 0,
+	  'php' => 0,
+	  'php_1' => 0,
+	  'field_caption' => 0,
+	  'field_feature_link' => 0,
+	  'nothing' => 0,
+	  'nothing_1' => 0,
+	  'counter' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -19590,34 +19590,34 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['relationships']['nodequeue_rel']['required'] = TRUE;
 	$handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
 	$handler->display->display_options['relationships']['nodequeue_rel']['names'] = array(
-		'about_us_carousel' => 'about_us_carousel',
-		'featured_content' => 0,
-		'agency_listing_page_publications' => 0,
-		'press_centre' => 0,
-		'about_us_slides' => 0,
-		'speech_themes' => 0,
-		'thematic_area' => 0,
-		'akaa_home_page_slideshow' => 0,
-		'about_us_left_listing' => 0,
-		'about_us_paragraph' => 0,
-		'speech_slideshow' => 0,
-		'akmi_activity_education_page_tes' => 0,
-		'akmi_archive_page' => 0,
-		'akmi_archive_page_nodequeue' => 0,
-		'akmi_audio_page' => 0,
-		'akmi_cd_dvd_page_nodequeue' => 0,
-		'akmi_event_landing_page' => 0,
-		'akmi_homepage_slideshow' => 0,
-		'akmi_performance_page' => 0,
-		'akmi_performance_programmes_page' => 0,
-		'akmi_press_center_page' => 0,
-		'akmi_production_page' => 0,
-		'akmi_publications_page' => 0,
-		'akmi_test_page_nodequeue' => 0,
-		'akmi_video_page_banner' => 0,
-		'home_page_carousel' => 0,
-		'press_center_carousel' => 0,
-		'about_us_his_highness_carousel' => 0,
+	  'about_us_carousel' => 'about_us_carousel',
+	  'featured_content' => 0,
+	  'agency_listing_page_publications' => 0,
+	  'press_centre' => 0,
+	  'about_us_slides' => 0,
+	  'speech_themes' => 0,
+	  'thematic_area' => 0,
+	  'akaa_home_page_slideshow' => 0,
+	  'about_us_left_listing' => 0,
+	  'about_us_paragraph' => 0,
+	  'speech_slideshow' => 0,
+	  'akmi_activity_education_page_tes' => 0,
+	  'akmi_archive_page' => 0,
+	  'akmi_archive_page_nodequeue' => 0,
+	  'akmi_audio_page' => 0,
+	  'akmi_cd_dvd_page_nodequeue' => 0,
+	  'akmi_event_landing_page' => 0,
+	  'akmi_homepage_slideshow' => 0,
+	  'akmi_performance_page' => 0,
+	  'akmi_performance_programmes_page' => 0,
+	  'akmi_press_center_page' => 0,
+	  'akmi_production_page' => 0,
+	  'akmi_publications_page' => 0,
+	  'akmi_test_page_nodequeue' => 0,
+	  'akmi_video_page_banner' => 0,
+	  'home_page_carousel' => 0,
+	  'press_center_carousel' => 0,
+	  'about_us_his_highness_carousel' => 0,
 	);
 	$handler->display->display_options['defaults']['fields'] = FALSE;
 	/* Field: Content: Nid */
@@ -19637,8 +19637,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_feature_image']['hide_alter_empty'] = FALSE;
 	$handler->display->display_options['fields']['field_feature_image']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_feature_image']['settings'] = array(
-		'image_style' => 'featured_content',
-		'image_link' => 'content',
+	  'image_style' => 'featured_content',
+	  'image_link' => 'content',
 	);
 	/* Field: Content: Images */
 	$handler->display->display_options['fields']['field_project_image']['id'] = 'field_project_image';
@@ -19649,8 +19649,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_project_image']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_project_image']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_project_image']['settings'] = array(
-		'image_style' => 'featured_content',
-		'image_link' => 'content',
+	  'image_style' => 'featured_content',
+	  'image_link' => 'content',
 	);
 	$handler->display->display_options['fields']['field_project_image']['delta_limit'] = '1';
 	$handler->display->display_options['fields']['field_project_image']['delta_offset'] = '0';
@@ -19676,7 +19676,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['body']['hide_alter_empty'] = FALSE;
 	$handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
 	$handler->display->display_options['fields']['body']['settings'] = array(
-		'trim_length' => '50',
+	  'trim_length' => '50',
 	);
 	/* Field: File: Caption */
 	$handler->display->display_options['fields']['field_image_caption']['id'] = 'field_image_caption';
@@ -19711,18 +19711,18 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php']['php_output'] = '<?php
-					if ($data->node_type == "featured_content") {
-						if (!empty($data->field_field_feature_link)) {
-							$url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>More</a>";
+						if ($data->node_type == "featured_content") {
+							if (!empty($data->field_field_feature_link)) {
+								$url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>More</a>";
+								print $url;
+							}
+							else { print \' <a class="banner-no-link">More</a>\'; }
+						} else {
+							$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
+							$url =  " <a href=\'/$node_path\'>More</a>";
 							print $url;
 						}
-						else { print \' <a class="banner-no-link">More</a>\'; }
-					} else {
-						$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
-						$url =  " <a href=\'/$node_path\'>More</a>";
-						print $url;
-					}
-					?>';
+						?>';
 	$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
 	/* Field: Global: PHP */
@@ -19734,30 +19734,30 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-					$array = $data->field_field_caption;
-					if ($data->node_type == \'article\') {
-						$array =$data->field_field_image_caption;
-					}
-					if (empty($array)) {
-						if ($data->node_type == \'project\') {
-							$array = $data->field_field_image_caption_1;
+						$array = $data->field_field_caption;
+						if ($data->node_type == \'article\') {
+							$array =$data->field_field_image_caption;
 						}
-						else {
-							$array = $data->field_field_image_caption;
+						if (empty($array)) {
+							if ($data->node_type == \'project\') {
+								$array = $data->field_field_image_caption_1;
+							}
+							else {
+								$array = $data->field_field_image_caption;
+							}
 						}
-					}
-					$value = \'\';
-					if (isset($array[0][\'rendered\'][\'#markup\'])) {
-						$value = $array[0][\'rendered\'][\'#markup\'];
-					}
+						$value = \'\';
+						if (isset($array[0][\'rendered\'][\'#markup\'])) {
+							$value = $array[0][\'rendered\'][\'#markup\'];
+						}
 
-					$alter[\'max_length\'] = 75;
-					$alter[\'word_boundary\'] = 1;
-					$alter[\'ellipsis\'] = 1;
-					$alter[\'html\'] = 1;
-					$value = views_trim_text($alter, $value);
-					print $value;
-					?>';
+						$alter[\'max_length\'] = 75;
+						$alter[\'word_boundary\'] = 1;
+						$alter[\'ellipsis\'] = 1;
+						$alter[\'html\'] = 1;
+						$value = views_trim_text($alter, $value);
+						print $value;
+						?>';
 	$handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
 	/* Field: Content: Caption */
@@ -19774,7 +19774,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_caption']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_caption']['type'] = 'text_plain';
 	$handler->display->display_options['fields']['field_caption']['settings'] = array(
-		'trim_length' => '125',
+	  'trim_length' => '125',
 	);
 	/* Field: Content: Purchase Link */
 	$handler->display->display_options['fields']['field_feature_link']['id'] = 'field_feature_link';
@@ -19793,12 +19793,12 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[field_project_image][field_feature_image]</div>
-					<div class="slide-text"><h3>[title]</h3>
-					[php_1]
-					[php]
-					</div>
+						<div class="slide-text"><h3>[title]</h3>
+						[php_1]
+						[php]
+						</div>
 
-					';
+						';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	/* Field: Global: Custom text */
 	$handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
@@ -19847,7 +19847,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['field_create_featured_content_value']['table'] = 'field_data_field_create_featured_content';
 	$handler->display->display_options['filters']['field_create_featured_content_value']['field'] = 'field_create_featured_content_value';
 	$handler->display->display_options['filters']['field_create_featured_content_value']['value'] = array(
-		1 => '1',
+	  1 => '1',
 	);
 	$handler->display->display_options['filters']['field_create_featured_content_value']['group'] = 1;
 	$handler->display->display_options['block_description'] = 'Flexisider Approach to Developement';
@@ -19867,27 +19867,27 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['slideshow_type'] = 'flexslider_views_slideshow';
 	$handler->display->display_options['style_options']['slideshow_skin'] = 'default';
 	$handler->display->display_options['style_options']['skin_info'] = array(
-		'class' => 'default',
-		'name' => 'Default',
-		'module' => 'views_slideshow',
-		'path' => '',
-		'stylesheets' => array(),
+	  'class' => 'default',
+	  'name' => 'Default',
+	  'module' => 'views_slideshow',
+	  'path' => '',
+	  'stylesheets' => array(),
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'field_feature_image' => 0,
-		'field_project_image' => 0,
-		'title_field' => 0,
-		'field_caption' => 0,
-		'field_image_caption' => 0,
-		'field_image_caption_1' => 0,
-		'type' => 0,
-		'field_feature_link' => 0,
-		'view_node' => 0,
-		'php' => 0,
-		'php_1' => 0,
-		'nothing' => 0,
+	  'field_feature_image' => 0,
+	  'field_project_image' => 0,
+	  'title_field' => 0,
+	  'field_caption' => 0,
+	  'field_image_caption' => 0,
+	  'field_image_caption_1' => 0,
+	  'type' => 0,
+	  'field_feature_link' => 0,
+	  'view_node' => 0,
+	  'php' => 0,
+	  'php_1' => 0,
+	  'nothing' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -19896,18 +19896,18 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'field_feature_image' => 0,
-		'field_project_image' => 0,
-		'title_field' => 0,
-		'field_caption' => 0,
-		'field_image_caption' => 0,
-		'field_image_caption_1' => 0,
-		'type' => 0,
-		'field_feature_link' => 0,
-		'view_node' => 0,
-		'php' => 0,
-		'php_1' => 0,
-		'nothing' => 0,
+	  'field_feature_image' => 0,
+	  'field_project_image' => 0,
+	  'title_field' => 0,
+	  'field_caption' => 0,
+	  'field_image_caption' => 0,
+	  'field_image_caption_1' => 0,
+	  'type' => 0,
+	  'field_feature_link' => 0,
+	  'view_node' => 0,
+	  'php' => 0,
+	  'php_1' => 0,
+	  'nothing' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -19937,8 +19937,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_feature_image']['hide_empty'] = TRUE;
 	$handler->display->display_options['fields']['field_feature_image']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_feature_image']['settings'] = array(
-		'image_style' => 'featured_content',
-		'image_link' => '',
+	  'image_style' => 'featured_content',
+	  'image_link' => '',
 	);
 	/* Field: Content: Images */
 	$handler->display->display_options['fields']['field_project_image']['id'] = 'field_project_image';
@@ -19950,8 +19950,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_project_image']['hide_empty'] = TRUE;
 	$handler->display->display_options['fields']['field_project_image']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_project_image']['settings'] = array(
-		'image_style' => 'featured_content',
-		'image_link' => '',
+	  'image_style' => 'featured_content',
+	  'image_link' => '',
 	);
 	$handler->display->display_options['fields']['field_project_image']['delta_offset'] = '0';
 	/* Field: Content: Title */
@@ -19977,7 +19977,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_caption']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_caption']['type'] = 'text_plain';
 	$handler->display->display_options['fields']['field_caption']['settings'] = array(
-		'trim_length' => '150',
+	  'trim_length' => '150',
 	);
 	/* Field: File: Caption */
 	$handler->display->display_options['fields']['field_image_caption']['id'] = 'field_image_caption';
@@ -20034,29 +20034,29 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-					$array = $data->field_field_caption;
-					if (empty($array)) {
-						if ($data->node_type == \'project\') {
-							$array = $data->field_field_image_caption_1;
+						$array = $data->field_field_caption;
+						if (empty($array)) {
+							if ($data->node_type == \'project\') {
+								$array = $data->field_field_image_caption_1;
+							}
+							else {
+								$array = $data->field_field_image_caption;
+							}
+						}
+						if (isset($array[0][\'rendered\'][\'#markup\'])) {
+							$val = $array[0][\'rendered\'][\'#markup\'];
+							if (strlen($val) <= 125) {
+							$value = rtrim($val) . "...";
+							} else {
+								$pos = strpos($val, \' \', 125);
+								$value = substr($val,0,$pos) . "...";
+							}
 						}
 						else {
-							$array = $data->field_field_image_caption;
+							$value = \'\';
 						}
-					}
-					if (isset($array[0][\'rendered\'][\'#markup\'])) {
-						$val = $array[0][\'rendered\'][\'#markup\'];
-						if (strlen($val) <= 125) {
-						$value = rtrim($val) . "...";
-						} else {
-							$pos = strpos($val, \' \', 125);
-							$value = substr($val,0,$pos) . "...";
-						}
-					}
-					else {
-						$value = \'\';
-					}
-					print $value;
-					?>';
+						print $value;
+						?>';
 	$handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
 	/* Field: &#039;More&#039; Link Custom PHP */
@@ -20069,18 +20069,18 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php']['php_output'] = '<?php
-					if ($data->node_type == "featured_content") {
-						if (!empty($data->field_field_feature_link)) {
-							$url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+						if ($data->node_type == "featured_content") {
+							if (!empty($data->field_field_feature_link)) {
+								$url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+								print $url;
+							}
+							else { print \' <a class="banner-no-link">\'; }
+						} else {
+							$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
+							$url =  " <a href=\'/$node_path\'>";
 							print $url;
 						}
-						else { print \' <a class="banner-no-link">\'; }
-					} else {
-						$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
-						$url =  " <a href=\'/$node_path\'>";
-						print $url;
-					}
-					?>';
+						?>';
 	$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
 	/* Field: Global: Custom text */
@@ -20089,11 +20089,11 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[php][field_feature_image][field_project_image]</div></a>
-					<div class="slide-text">
-					<h3>[title_field]</h3>
-					[php_1]
-					[php]More </a>
-					</div>';
+						<div class="slide-text">
+						<h3>[title_field]</h3>
+						[php_1]
+						[php]More </a>
+						</div>';
 	$handler->display->display_options['fields']['nothing']['alter']['max_length'] = '104';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	$handler->display->display_options['defaults']['sorts'] = FALSE;
@@ -20105,8 +20105,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['defaults']['filter_groups'] = FALSE;
 	$handler->display->display_options['filter_groups']['operator'] = 'OR';
 	$handler->display->display_options['filter_groups']['groups'] = array(
-		1 => 'AND',
-		2 => 'AND',
+	  1 => 'AND',
+	  2 => 'AND',
 	);
 	$handler->display->display_options['defaults']['filters'] = FALSE;
 	/* Filter criterion: Content: Type */
@@ -20114,7 +20114,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['type']['table'] = 'node';
 	$handler->display->display_options['filters']['type']['field'] = 'type';
 	$handler->display->display_options['filters']['type']['value'] = array(
-		'featured_content' => 'featured_content',
+	  'featured_content' => 'featured_content',
 	);
 	$handler->display->display_options['filters']['type']['group'] = 1;
 	/* Filter criterion: Content: Published or admin */
@@ -20127,14 +20127,14 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['type_1']['table'] = 'node';
 	$handler->display->display_options['filters']['type_1']['field'] = 'type';
 	$handler->display->display_options['filters']['type_1']['value'] = array(
-		'article' => 'article',
-		'page' => 'page',
-		'event' => 'event',
-		'gallery' => 'gallery',
-		'podcast' => 'podcast',
-		'project' => 'project',
-		'publication' => 'publication',
-		'speech' => 'speech',
+	  'article' => 'article',
+	  'page' => 'page',
+	  'event' => 'event',
+	  'gallery' => 'gallery',
+	  'podcast' => 'podcast',
+	  'project' => 'project',
+	  'publication' => 'publication',
+	  'speech' => 'speech',
 	);
 	$handler->display->display_options['filters']['type_1']['group'] = 2;
 	/* Filter criterion: Content: Create Banner Item (field_create_featured_content) */
@@ -20143,7 +20143,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['field_create_featured_content_value']['field'] = 'field_create_featured_content_value';
 	$handler->display->display_options['filters']['field_create_featured_content_value']['operator'] = 'not';
 	$handler->display->display_options['filters']['field_create_featured_content_value']['value'] = array(
-		0 => '0',
+	  0 => '0',
 	);
 	$handler->display->display_options['filters']['field_create_featured_content_value']['group'] = 2;
 	/* Filter criterion: Content: Published or admin */
@@ -20165,27 +20165,27 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['slideshow_type'] = 'flexslider_views_slideshow';
 	$handler->display->display_options['style_options']['slideshow_skin'] = 'default';
 	$handler->display->display_options['style_options']['skin_info'] = array(
-		'class' => 'default',
-		'name' => 'Default',
-		'module' => 'views_slideshow',
-		'path' => '',
-		'stylesheets' => array(),
+	  'class' => 'default',
+	  'name' => 'Default',
+	  'module' => 'views_slideshow',
+	  'path' => '',
+	  'stylesheets' => array(),
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'field_feature_image' => 0,
-		'field_project_image' => 0,
-		'title_field' => 0,
-		'field_caption' => 0,
-		'field_image_caption' => 0,
-		'field_image_caption_1' => 0,
-		'type' => 0,
-		'field_feature_link' => 0,
-		'view_node' => 0,
-		'php' => 0,
-		'php_1' => 0,
-		'nothing' => 0,
+	  'field_feature_image' => 0,
+	  'field_project_image' => 0,
+	  'title_field' => 0,
+	  'field_caption' => 0,
+	  'field_image_caption' => 0,
+	  'field_image_caption_1' => 0,
+	  'type' => 0,
+	  'field_feature_link' => 0,
+	  'view_node' => 0,
+	  'php' => 0,
+	  'php_1' => 0,
+	  'nothing' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -20194,18 +20194,18 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'field_feature_image' => 0,
-		'field_project_image' => 0,
-		'title_field' => 0,
-		'field_caption' => 0,
-		'field_image_caption' => 0,
-		'field_image_caption_1' => 0,
-		'type' => 0,
-		'field_feature_link' => 0,
-		'view_node' => 0,
-		'php' => 0,
-		'php_1' => 0,
-		'nothing' => 0,
+	  'field_feature_image' => 0,
+	  'field_project_image' => 0,
+	  'title_field' => 0,
+	  'field_caption' => 0,
+	  'field_image_caption' => 0,
+	  'field_image_caption_1' => 0,
+	  'type' => 0,
+	  'field_feature_link' => 0,
+	  'view_node' => 0,
+	  'php' => 0,
+	  'php_1' => 0,
+	  'nothing' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -20232,34 +20232,34 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['relationships']['nodequeue_rel']['required'] = TRUE;
 	$handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
 	$handler->display->display_options['relationships']['nodequeue_rel']['names'] = array(
-		'akmi_homepage_slideshow' => 'akmi_homepage_slideshow',
-		'featured_content' => 0,
-		'agency_listing_page_publications' => 0,
-		'press_centre' => 0,
-		'about_us_slides' => 0,
-		'speech_themes' => 0,
-		'thematic_area' => 0,
-		'akaa_home_page_slideshow' => 0,
-		'about_us_left_listing' => 0,
-		'about_us_paragraph' => 0,
-		'speech_slideshow' => 0,
-		'akmi_activity_education_page_tes' => 0,
-		'akmi_archive_page' => 0,
-		'akmi_archive_page_nodequeue' => 0,
-		'akmi_audio_page' => 0,
-		'akmi_cd_dvd_page_nodequeue' => 0,
-		'akmi_event_landing_page' => 0,
-		'akmi_performance_page' => 0,
-		'akmi_performance_programmes_page' => 0,
-		'akmi_press_center_page' => 0,
-		'akmi_production_page' => 0,
-		'akmi_publications_page' => 0,
-		'akmi_test_page_nodequeue' => 0,
-		'akmi_video_page_banner' => 0,
-		'about_us_carousel' => 0,
-		'home_page_carousel' => 0,
-		'press_center_carousel' => 0,
-		'about_us_his_highness_carousel' => 0,
+	  'akmi_homepage_slideshow' => 'akmi_homepage_slideshow',
+	  'featured_content' => 0,
+	  'agency_listing_page_publications' => 0,
+	  'press_centre' => 0,
+	  'about_us_slides' => 0,
+	  'speech_themes' => 0,
+	  'thematic_area' => 0,
+	  'akaa_home_page_slideshow' => 0,
+	  'about_us_left_listing' => 0,
+	  'about_us_paragraph' => 0,
+	  'speech_slideshow' => 0,
+	  'akmi_activity_education_page_tes' => 0,
+	  'akmi_archive_page' => 0,
+	  'akmi_archive_page_nodequeue' => 0,
+	  'akmi_audio_page' => 0,
+	  'akmi_cd_dvd_page_nodequeue' => 0,
+	  'akmi_event_landing_page' => 0,
+	  'akmi_performance_page' => 0,
+	  'akmi_performance_programmes_page' => 0,
+	  'akmi_press_center_page' => 0,
+	  'akmi_production_page' => 0,
+	  'akmi_publications_page' => 0,
+	  'akmi_test_page_nodequeue' => 0,
+	  'akmi_video_page_banner' => 0,
+	  'about_us_carousel' => 0,
+	  'home_page_carousel' => 0,
+	  'press_center_carousel' => 0,
+	  'about_us_his_highness_carousel' => 0,
 	);
 	/* Relationship: Content: Images (field_project_image:fid) */
 	$handler->display->display_options['relationships']['field_project_image_fid']['id'] = 'field_project_image_fid';
@@ -20282,8 +20282,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_feature_image']['hide_empty'] = TRUE;
 	$handler->display->display_options['fields']['field_feature_image']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_feature_image']['settings'] = array(
-		'image_style' => 'featured_content',
-		'image_link' => '',
+	  'image_style' => 'featured_content',
+	  'image_link' => '',
 	);
 	/* Field: Content: Images */
 	$handler->display->display_options['fields']['field_project_image']['id'] = 'field_project_image';
@@ -20295,8 +20295,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_project_image']['hide_empty'] = TRUE;
 	$handler->display->display_options['fields']['field_project_image']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_project_image']['settings'] = array(
-		'image_style' => 'featured_content',
-		'image_link' => '',
+	  'image_style' => 'featured_content',
+	  'image_link' => '',
 	);
 	$handler->display->display_options['fields']['field_project_image']['delta_limit'] = '1';
 	$handler->display->display_options['fields']['field_project_image']['delta_offset'] = '0';
@@ -20318,7 +20318,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_caption']['alter']['trim'] = TRUE;
 	$handler->display->display_options['fields']['field_caption']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_caption']['settings'] = array(
-		'trim_length' => '150',
+	  'trim_length' => '150',
 	);
 	/* Field: File: Caption */
 	$handler->display->display_options['fields']['field_image_caption']['id'] = 'field_image_caption';
@@ -20364,30 +20364,30 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-					$array = $data->field_field_caption;
-					if (empty($array)) {
-						if ($data->node_type == \'project\') {
-							$array = $data->field_field_image_caption_1;
+						$array = $data->field_field_caption;
+						if (empty($array)) {
+							if ($data->node_type == \'project\') {
+								$array = $data->field_field_image_caption_1;
+							}
+							else {
+								$array = $data->field_field_image_caption;
+							}
+						}
+
+						if (isset($array[0][\'rendered\'][\'#markup\'])) {
+							$val = $array[0][\'rendered\'][\'#markup\'];
+							if (strlen($val) <= 125) {
+							$value = rtrim($val) . "...";
+							} else {
+								$pos = strpos($val, \' \', 125);
+								$value = substr($val,0,$pos) . "...";
+							}
 						}
 						else {
-							$array = $data->field_field_image_caption;
+							$value = \'\';
 						}
-					}
-
-					if (isset($array[0][\'rendered\'][\'#markup\'])) {
-						$val = $array[0][\'rendered\'][\'#markup\'];
-						if (strlen($val) <= 125) {
-						$value = rtrim($val) . "...";
-						} else {
-							$pos = strpos($val, \' \', 125);
-							$value = substr($val,0,$pos) . "...";
-						}
-					}
-					else {
-						$value = \'\';
-					}
-					print $value;
-					?>';
+						print $value;
+						?>';
 	$handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
 	/* Field: &#039;More&#039; Link Custom PHP */
@@ -20400,18 +20400,18 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php']['php_output'] = '<?php
-					if ($data->node_type == "featured_content") {
-						if (!empty($data->field_field_feature_link)) {
-							$url = " <a href=\'/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+						if ($data->node_type == "featured_content") {
+							if (!empty($data->field_field_feature_link)) {
+								$url = " <a href=\'/{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+								print $url;
+							}
+							else { print \' <a class="banner-no-link">\'; }
+						} else {
+							$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
+							$url =  " <a href=\'/$node_path\'>";
 							print $url;
 						}
-						else { print \' <a class="banner-no-link">\'; }
-					} else {
-						$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
-						$url =  " <a href=\'/$node_path\'>";
-						print $url;
-					}
-					?>';
+						?>';
 	$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
 	/* Field: Global: Custom text */
@@ -20420,12 +20420,12 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[php][field_feature_image]</a></div>
-					<div class="slide-text">
-					[php_1]
-					[php]More</a>
-					</div>
+						<div class="slide-text">
+						[php_1]
+						[php]More</a>
+						</div>
 
-					';
+						';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	$handler->display->display_options['defaults']['sorts'] = FALSE;
 	/* Sort criterion: Nodequeue: Position */
@@ -20447,8 +20447,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['defaults']['filter_groups'] = FALSE;
 	$handler->display->display_options['filter_groups']['operator'] = 'OR';
 	$handler->display->display_options['filter_groups']['groups'] = array(
-		1 => 'AND',
-		2 => 'AND',
+	  1 => 'AND',
+	  2 => 'AND',
 	);
 	$handler->display->display_options['defaults']['filters'] = FALSE;
 	/* Filter criterion: Content: Type */
@@ -20456,7 +20456,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['type']['table'] = 'node';
 	$handler->display->display_options['filters']['type']['field'] = 'type';
 	$handler->display->display_options['filters']['type']['value'] = array(
-		'featured_content' => 'featured_content',
+	  'featured_content' => 'featured_content',
 	);
 	$handler->display->display_options['filters']['type']['group'] = 1;
 	/* Filter criterion: Content: Published or admin */
@@ -20469,14 +20469,14 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['type_1']['table'] = 'node';
 	$handler->display->display_options['filters']['type_1']['field'] = 'type';
 	$handler->display->display_options['filters']['type_1']['value'] = array(
-		'architecture_project' => 'architecture_project',
-		'article' => 'article',
-		'event' => 'event',
-		'gallery' => 'gallery',
-		'podcast' => 'podcast',
-		'project' => 'project',
-		'publication' => 'publication',
-		'speech' => 'speech',
+	  'architecture_project' => 'architecture_project',
+	  'article' => 'article',
+	  'event' => 'event',
+	  'gallery' => 'gallery',
+	  'podcast' => 'podcast',
+	  'project' => 'project',
+	  'publication' => 'publication',
+	  'speech' => 'speech',
 	);
 	$handler->display->display_options['filters']['type_1']['group'] = 2;
 	/* Filter criterion: Content: Create Banner Item (field_create_featured_content) */
@@ -20485,7 +20485,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['field_create_featured_content_value']['field'] = 'field_create_featured_content_value';
 	$handler->display->display_options['filters']['field_create_featured_content_value']['operator'] = 'not';
 	$handler->display->display_options['filters']['field_create_featured_content_value']['value'] = array(
-		0 => '0',
+	  0 => '0',
 	);
 	$handler->display->display_options['filters']['field_create_featured_content_value']['group'] = 2;
 	/* Filter criterion: Content: Published or admin */
@@ -20510,27 +20510,27 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['slideshow_type'] = 'flexslider_views_slideshow';
 	$handler->display->display_options['style_options']['slideshow_skin'] = 'default';
 	$handler->display->display_options['style_options']['skin_info'] = array(
-		'class' => 'default',
-		'name' => 'Default',
-		'module' => 'views_slideshow',
-		'path' => '',
-		'stylesheets' => array(),
+	  'class' => 'default',
+	  'name' => 'Default',
+	  'module' => 'views_slideshow',
+	  'path' => '',
+	  'stylesheets' => array(),
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'field_feature_image' => 0,
-		'field_project_image' => 0,
-		'title_field' => 0,
-		'field_caption' => 0,
-		'field_image_caption' => 0,
-		'field_image_caption_1' => 0,
-		'type' => 0,
-		'field_feature_link' => 0,
-		'view_node' => 0,
-		'php' => 0,
-		'php_1' => 0,
-		'nothing' => 0,
+	  'field_feature_image' => 0,
+	  'field_project_image' => 0,
+	  'title_field' => 0,
+	  'field_caption' => 0,
+	  'field_image_caption' => 0,
+	  'field_image_caption_1' => 0,
+	  'type' => 0,
+	  'field_feature_link' => 0,
+	  'view_node' => 0,
+	  'php' => 0,
+	  'php_1' => 0,
+	  'nothing' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -20539,18 +20539,18 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'field_feature_image' => 0,
-		'field_project_image' => 0,
-		'title_field' => 0,
-		'field_caption' => 0,
-		'field_image_caption' => 0,
-		'field_image_caption_1' => 0,
-		'type' => 0,
-		'field_feature_link' => 0,
-		'view_node' => 0,
-		'php' => 0,
-		'php_1' => 0,
-		'nothing' => 0,
+	  'field_feature_image' => 0,
+	  'field_project_image' => 0,
+	  'title_field' => 0,
+	  'field_caption' => 0,
+	  'field_image_caption' => 0,
+	  'field_image_caption_1' => 0,
+	  'type' => 0,
+	  'field_feature_link' => 0,
+	  'view_node' => 0,
+	  'php' => 0,
+	  'php_1' => 0,
+	  'nothing' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -20577,37 +20577,37 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['relationships']['nodequeue_rel']['required'] = TRUE;
 	$handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
 	$handler->display->display_options['relationships']['nodequeue_rel']['names'] = array(
-		'akdn_home_page_carousel_french' => 'akdn_home_page_carousel_french',
-		'featured_content' => 0,
-		'agency_listing_page_publications' => 0,
-		'press_centre' => 0,
-		'about_us_slides' => 0,
-		'speech_themes' => 0,
-		'thematic_area' => 0,
-		'akaa_home_page_slideshow' => 0,
-		'about_us_left_listing' => 0,
-		'about_us_paragraph' => 0,
-		'speech_slideshow' => 0,
-		'akmi_activity_education_page_tes' => 0,
-		'akmi_archive_page' => 0,
-		'akmi_archive_page_nodequeue' => 0,
-		'akmi_audio_page' => 0,
-		'akmi_cd_dvd_page_nodequeue' => 0,
-		'akmi_event_landing_page' => 0,
-		'akmi_homepage_slideshow' => 0,
-		'akmi_performance_page' => 0,
-		'akmi_performance_programmes_page' => 0,
-		'akmi_press_center_page' => 0,
-		'akmi_production_page' => 0,
-		'akmi_publications_page' => 0,
-		'akmi_test_page_nodequeue' => 0,
-		'akmi_video_page_banner' => 0,
-		'about_us_carousel' => 0,
-		'home_page_carousel' => 0,
-		'press_center_carousel' => 0,
-		'about_us_his_highness_carousel' => 0,
-		'nodeque_for_current_year' => 0,
-		'test' => 0,
+	  'akdn_home_page_carousel_french' => 'akdn_home_page_carousel_french',
+	  'featured_content' => 0,
+	  'agency_listing_page_publications' => 0,
+	  'press_centre' => 0,
+	  'about_us_slides' => 0,
+	  'speech_themes' => 0,
+	  'thematic_area' => 0,
+	  'akaa_home_page_slideshow' => 0,
+	  'about_us_left_listing' => 0,
+	  'about_us_paragraph' => 0,
+	  'speech_slideshow' => 0,
+	  'akmi_activity_education_page_tes' => 0,
+	  'akmi_archive_page' => 0,
+	  'akmi_archive_page_nodequeue' => 0,
+	  'akmi_audio_page' => 0,
+	  'akmi_cd_dvd_page_nodequeue' => 0,
+	  'akmi_event_landing_page' => 0,
+	  'akmi_homepage_slideshow' => 0,
+	  'akmi_performance_page' => 0,
+	  'akmi_performance_programmes_page' => 0,
+	  'akmi_press_center_page' => 0,
+	  'akmi_production_page' => 0,
+	  'akmi_publications_page' => 0,
+	  'akmi_test_page_nodequeue' => 0,
+	  'akmi_video_page_banner' => 0,
+	  'about_us_carousel' => 0,
+	  'home_page_carousel' => 0,
+	  'press_center_carousel' => 0,
+	  'about_us_his_highness_carousel' => 0,
+	  'nodeque_for_current_year' => 0,
+	  'test' => 0,
 	);
 	/* Relationship: Content: Images (field_project_image:fid) */
 	$handler->display->display_options['relationships']['field_project_image_fid']['id'] = 'field_project_image_fid';
@@ -20629,8 +20629,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_feature_image_et']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_feature_image_et']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_feature_image_et']['settings'] = array(
-		'image_style' => 'banner_item_standard_home_page',
-		'image_link' => '',
+	  'image_style' => 'banner_item_standard_home_page',
+	  'image_link' => '',
 	);
 	/* Field: Entity translation: Images: translated */
 	$handler->display->display_options['fields']['field_project_image_et']['id'] = 'field_project_image_et';
@@ -20641,8 +20641,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_project_image_et']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_project_image_et']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_project_image_et']['settings'] = array(
-		'image_style' => 'banner_item_standard_home_page',
-		'image_link' => '',
+	  'image_style' => 'banner_item_standard_home_page',
+	  'image_link' => '',
 	);
 	$handler->display->display_options['fields']['field_project_image_et']['delta_offset'] = '0';
 	/* Field: Entity translation: Title: translated */
@@ -20675,7 +20675,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_caption']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_caption']['type'] = 'text_plain';
 	$handler->display->display_options['fields']['field_caption']['settings'] = array(
-		'trim_length' => '150',
+	  'trim_length' => '150',
 	);
 	/* Field: Content: Type */
 	$handler->display->display_options['fields']['type']['id'] = 'type';
@@ -20710,25 +20710,25 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php']['php_output'] = '<?php
-					global $language;
-					$lang = $language->language;
-					if($lang != \'en\'){
-					$langu = \'/\'.$lang.\'/\';}
-					else{
-					$langu = \'/\';}
-					if ($data->node_type == "featured_content") {
-						if (!empty($data->field_field_feature_link)) {
-							$url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+						global $language;
+						$lang = $language->language;
+						if($lang != \'en\'){
+						$langu = \'/\'.$lang.\'/\';}
+						else{
+						$langu = \'/\';}
+						if ($data->node_type == "featured_content") {
+							if (!empty($data->field_field_feature_link)) {
+								$url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+								print $url;
+							}
+							else { print \' <a class="banner-no-link">\'; }
+						} else {
+							$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
+							$node_url = $langu.$node_path;
+							$url =  " <a href= \'$node_url\'>";
 							print $url;
 						}
-						else { print \' <a class="banner-no-link">\'; }
-					} else {
-						$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
-						$node_url = $langu.$node_path;
-						$url =  " <a href= \'$node_url\'>";
-						print $url;
-					}
-					?>';
+						?>';
 	$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
 	/* Field: Global: PHP */
@@ -20740,7 +20740,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_2']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php echo t("AGA KHAN DEVELOPMENT NETWORK");?></h3>
-					';
+						';
 	$handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
 	/* Field: Global: PHP */
@@ -20760,10 +20760,10 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[php][field_feature_image_et][field_project_image_et]</div></a>
-					<div class="slide-text">
-					<h3>[php_2]</h3>
-					[title_field_et] [php][php_3]</a>
-					</div>';
+						<div class="slide-text">
+						<h3>[php_2]</h3>
+						[title_field_et] [php][php_3]</a>
+						</div>';
 	$handler->display->display_options['fields']['nothing']['alter']['max_length'] = '104';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	$handler->display->display_options['defaults']['sorts'] = FALSE;
@@ -20775,8 +20775,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['defaults']['filter_groups'] = FALSE;
 	$handler->display->display_options['filter_groups']['operator'] = 'OR';
 	$handler->display->display_options['filter_groups']['groups'] = array(
-		1 => 'AND',
-		2 => 'AND',
+	  1 => 'AND',
+	  2 => 'AND',
 	);
 	$handler->display->display_options['defaults']['filters'] = FALSE;
 	/* Filter criterion: Content: Type */
@@ -20784,7 +20784,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['type']['table'] = 'node';
 	$handler->display->display_options['filters']['type']['field'] = 'type';
 	$handler->display->display_options['filters']['type']['value'] = array(
-		'featured_content' => 'featured_content',
+	  'featured_content' => 'featured_content',
 	);
 	$handler->display->display_options['filters']['type']['group'] = 1;
 	/* Filter criterion: Content: Published or admin */
@@ -20797,15 +20797,15 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['type_1']['table'] = 'node';
 	$handler->display->display_options['filters']['type_1']['field'] = 'type';
 	$handler->display->display_options['filters']['type_1']['value'] = array(
-		'article' => 'article',
-		'page' => 'page',
-		'event' => 'event',
-		'gallery' => 'gallery',
-		'podcast' => 'podcast',
-		'publication' => 'publication',
-		'speech' => 'speech',
-		'project' => 'project',
-		'focus_area' => 'focus_area',
+	  'article' => 'article',
+	  'page' => 'page',
+	  'event' => 'event',
+	  'gallery' => 'gallery',
+	  'podcast' => 'podcast',
+	  'publication' => 'publication',
+	  'speech' => 'speech',
+	  'project' => 'project',
+	  'focus_area' => 'focus_area',
 	);
 	$handler->display->display_options['filters']['type_1']['group'] = 2;
 	/* Filter criterion: Content: Create Banner Item (field_create_featured_content) */
@@ -20813,7 +20813,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['field_create_featured_content_value']['table'] = 'field_data_field_create_featured_content';
 	$handler->display->display_options['filters']['field_create_featured_content_value']['field'] = 'field_create_featured_content_value';
 	$handler->display->display_options['filters']['field_create_featured_content_value']['value'] = array(
-		1 => '1',
+	  1 => '1',
 	);
 	$handler->display->display_options['filters']['field_create_featured_content_value']['group'] = 2;
 	/* Filter criterion: Content: Published or admin */
@@ -20838,27 +20838,27 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['slideshow_type'] = 'flexslider_views_slideshow';
 	$handler->display->display_options['style_options']['slideshow_skin'] = 'default';
 	$handler->display->display_options['style_options']['skin_info'] = array(
-		'class' => 'default',
-		'name' => 'Default',
-		'module' => 'views_slideshow',
-		'path' => '',
-		'stylesheets' => array(),
+	  'class' => 'default',
+	  'name' => 'Default',
+	  'module' => 'views_slideshow',
+	  'path' => '',
+	  'stylesheets' => array(),
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'field_feature_image' => 0,
-		'field_project_image' => 0,
-		'title_field' => 0,
-		'field_caption' => 0,
-		'field_image_caption' => 0,
-		'field_image_caption_1' => 0,
-		'type' => 0,
-		'field_feature_link' => 0,
-		'view_node' => 0,
-		'php' => 0,
-		'php_1' => 0,
-		'nothing' => 0,
+	  'field_feature_image' => 0,
+	  'field_project_image' => 0,
+	  'title_field' => 0,
+	  'field_caption' => 0,
+	  'field_image_caption' => 0,
+	  'field_image_caption_1' => 0,
+	  'type' => 0,
+	  'field_feature_link' => 0,
+	  'view_node' => 0,
+	  'php' => 0,
+	  'php_1' => 0,
+	  'nothing' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -20867,18 +20867,18 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'field_feature_image' => 0,
-		'field_project_image' => 0,
-		'title_field' => 0,
-		'field_caption' => 0,
-		'field_image_caption' => 0,
-		'field_image_caption_1' => 0,
-		'type' => 0,
-		'field_feature_link' => 0,
-		'view_node' => 0,
-		'php' => 0,
-		'php_1' => 0,
-		'nothing' => 0,
+	  'field_feature_image' => 0,
+	  'field_project_image' => 0,
+	  'title_field' => 0,
+	  'field_caption' => 0,
+	  'field_image_caption' => 0,
+	  'field_image_caption_1' => 0,
+	  'type' => 0,
+	  'field_feature_link' => 0,
+	  'view_node' => 0,
+	  'php' => 0,
+	  'php_1' => 0,
+	  'nothing' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -20905,39 +20905,39 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['relationships']['nodequeue_rel']['required'] = TRUE;
 	$handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
 	$handler->display->display_options['relationships']['nodequeue_rel']['names'] = array(
-		'akdn_home_page_carousel_portugue' => 'akdn_home_page_carousel_portugue',
-		'featured_content' => 0,
-		'agency_listing_page_publications' => 0,
-		'press_centre' => 0,
-		'about_us_slides' => 0,
-		'speech_themes' => 0,
-		'thematic_area' => 0,
-		'akaa_home_page_slideshow' => 0,
-		'about_us_left_listing' => 0,
-		'about_us_paragraph' => 0,
-		'speech_slideshow' => 0,
-		'akmi_activity_education_page_tes' => 0,
-		'akmi_archive_page' => 0,
-		'akmi_archive_page_nodequeue' => 0,
-		'akmi_audio_page' => 0,
-		'akmi_cd_dvd_page_nodequeue' => 0,
-		'akmi_event_landing_page' => 0,
-		'akmi_homepage_slideshow' => 0,
-		'akmi_performance_page' => 0,
-		'akmi_performance_programmes_page' => 0,
-		'akmi_press_center_page' => 0,
-		'akmi_production_page' => 0,
-		'akmi_publications_page' => 0,
-		'akmi_test_page_nodequeue' => 0,
-		'akmi_video_page_banner' => 0,
-		'about_us_carousel' => 0,
-		'home_page_carousel' => 0,
-		'press_center_carousel' => 0,
-		'about_us_his_highness_carousel' => 0,
-		'nodeque_for_current_year' => 0,
-		'test' => 0,
-		'akdn_home_page_carousel_french' => 0,
-		'akdn_home_page_carousel_arabic' => 0,
+	  'akdn_home_page_carousel_portugue' => 'akdn_home_page_carousel_portugue',
+	  'featured_content' => 0,
+	  'agency_listing_page_publications' => 0,
+	  'press_centre' => 0,
+	  'about_us_slides' => 0,
+	  'speech_themes' => 0,
+	  'thematic_area' => 0,
+	  'akaa_home_page_slideshow' => 0,
+	  'about_us_left_listing' => 0,
+	  'about_us_paragraph' => 0,
+	  'speech_slideshow' => 0,
+	  'akmi_activity_education_page_tes' => 0,
+	  'akmi_archive_page' => 0,
+	  'akmi_archive_page_nodequeue' => 0,
+	  'akmi_audio_page' => 0,
+	  'akmi_cd_dvd_page_nodequeue' => 0,
+	  'akmi_event_landing_page' => 0,
+	  'akmi_homepage_slideshow' => 0,
+	  'akmi_performance_page' => 0,
+	  'akmi_performance_programmes_page' => 0,
+	  'akmi_press_center_page' => 0,
+	  'akmi_production_page' => 0,
+	  'akmi_publications_page' => 0,
+	  'akmi_test_page_nodequeue' => 0,
+	  'akmi_video_page_banner' => 0,
+	  'about_us_carousel' => 0,
+	  'home_page_carousel' => 0,
+	  'press_center_carousel' => 0,
+	  'about_us_his_highness_carousel' => 0,
+	  'nodeque_for_current_year' => 0,
+	  'test' => 0,
+	  'akdn_home_page_carousel_french' => 0,
+	  'akdn_home_page_carousel_arabic' => 0,
 	);
 	/* Relationship: Content: Images (field_project_image:fid) */
 	$handler->display->display_options['relationships']['field_project_image_fid']['id'] = 'field_project_image_fid';
@@ -20959,8 +20959,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_feature_image_et']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_feature_image_et']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_feature_image_et']['settings'] = array(
-		'image_style' => 'banner_item_standard_home_page',
-		'image_link' => '',
+	  'image_style' => 'banner_item_standard_home_page',
+	  'image_link' => '',
 	);
 	/* Field: Entity translation: Images: translated */
 	$handler->display->display_options['fields']['field_project_image_et']['id'] = 'field_project_image_et';
@@ -20971,8 +20971,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_project_image_et']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_project_image_et']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_project_image_et']['settings'] = array(
-		'image_style' => 'banner_item_standard_home_page',
-		'image_link' => '',
+	  'image_style' => 'banner_item_standard_home_page',
+	  'image_link' => '',
 	);
 	$handler->display->display_options['fields']['field_project_image_et']['delta_offset'] = '0';
 	/* Field: Entity translation: Title: translated */
@@ -21005,7 +21005,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_caption']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_caption']['type'] = 'text_plain';
 	$handler->display->display_options['fields']['field_caption']['settings'] = array(
-		'trim_length' => '150',
+	  'trim_length' => '150',
 	);
 	/* Field: Content: Type */
 	$handler->display->display_options['fields']['type']['id'] = 'type';
@@ -21040,25 +21040,25 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php']['php_output'] = '<?php
-					global $language;
-					$lang = $language->language;
-					if($lang != \'en\'){
-					$langu = \'/\'.$lang.\'/\';}
-					else{
-					$langu = \'/\';}
-					if ($data->node_type == "featured_content") {
-						if (!empty($data->field_field_feature_link)) {
-							$url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+						global $language;
+						$lang = $language->language;
+						if($lang != \'en\'){
+						$langu = \'/\'.$lang.\'/\';}
+						else{
+						$langu = \'/\';}
+						if ($data->node_type == "featured_content") {
+							if (!empty($data->field_field_feature_link)) {
+								$url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+								print $url;
+							}
+							else { print \' <a class="banner-no-link">\'; }
+						} else {
+							$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
+							$node_url = $langu.$node_path;
+							$url =  " <a href= \'$node_url\'>";
 							print $url;
 						}
-						else { print \' <a class="banner-no-link">\'; }
-					} else {
-						$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
-						$node_url = $langu.$node_path;
-						$url =  " <a href= \'$node_url\'>";
-						print $url;
-					}
-					?>';
+						?>';
 	$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
 	/* Field: Global: PHP */
@@ -21070,7 +21070,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_2']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php echo t("AGA KHAN DEVELOPMENT NETWORK");?></h3>
-					';
+						';
 	$handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
 	/* Field: Global: PHP */
@@ -21090,10 +21090,10 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[php][field_feature_image_et][field_project_image_et]</div></a>
-					<div class="slide-text">
-					<h3>[php_2]</h3>
-					[title_field_et] [php][php_3]</a>
-					</div>';
+						<div class="slide-text">
+						<h3>[php_2]</h3>
+						[title_field_et] [php][php_3]</a>
+						</div>';
 	$handler->display->display_options['fields']['nothing']['alter']['max_length'] = '104';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	$handler->display->display_options['defaults']['sorts'] = FALSE;
@@ -21105,8 +21105,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['defaults']['filter_groups'] = FALSE;
 	$handler->display->display_options['filter_groups']['operator'] = 'OR';
 	$handler->display->display_options['filter_groups']['groups'] = array(
-		1 => 'AND',
-		2 => 'AND',
+	  1 => 'AND',
+	  2 => 'AND',
 	);
 	$handler->display->display_options['defaults']['filters'] = FALSE;
 	/* Filter criterion: Content: Type */
@@ -21114,7 +21114,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['type']['table'] = 'node';
 	$handler->display->display_options['filters']['type']['field'] = 'type';
 	$handler->display->display_options['filters']['type']['value'] = array(
-		'featured_content' => 'featured_content',
+	  'featured_content' => 'featured_content',
 	);
 	$handler->display->display_options['filters']['type']['group'] = 1;
 	/* Filter criterion: Content: Published or admin */
@@ -21127,15 +21127,15 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['type_1']['table'] = 'node';
 	$handler->display->display_options['filters']['type_1']['field'] = 'type';
 	$handler->display->display_options['filters']['type_1']['value'] = array(
-		'article' => 'article',
-		'page' => 'page',
-		'event' => 'event',
-		'gallery' => 'gallery',
-		'podcast' => 'podcast',
-		'publication' => 'publication',
-		'speech' => 'speech',
-		'project' => 'project',
-		'focus_area' => 'focus_area',
+	  'article' => 'article',
+	  'page' => 'page',
+	  'event' => 'event',
+	  'gallery' => 'gallery',
+	  'podcast' => 'podcast',
+	  'publication' => 'publication',
+	  'speech' => 'speech',
+	  'project' => 'project',
+	  'focus_area' => 'focus_area',
 	);
 	$handler->display->display_options['filters']['type_1']['group'] = 2;
 	/* Filter criterion: Content: Create Banner Item (field_create_featured_content) */
@@ -21143,7 +21143,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['field_create_featured_content_value']['table'] = 'field_data_field_create_featured_content';
 	$handler->display->display_options['filters']['field_create_featured_content_value']['field'] = 'field_create_featured_content_value';
 	$handler->display->display_options['filters']['field_create_featured_content_value']['value'] = array(
-		1 => '1',
+	  1 => '1',
 	);
 	$handler->display->display_options['filters']['field_create_featured_content_value']['group'] = 2;
 	/* Filter criterion: Content: Published or admin */
@@ -21168,27 +21168,27 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['slideshow_type'] = 'flexslider_views_slideshow';
 	$handler->display->display_options['style_options']['slideshow_skin'] = 'default';
 	$handler->display->display_options['style_options']['skin_info'] = array(
-		'class' => 'default',
-		'name' => 'Default',
-		'module' => 'views_slideshow',
-		'path' => '',
-		'stylesheets' => array(),
+	  'class' => 'default',
+	  'name' => 'Default',
+	  'module' => 'views_slideshow',
+	  'path' => '',
+	  'stylesheets' => array(),
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'field_feature_image' => 0,
-		'field_project_image' => 0,
-		'title_field' => 0,
-		'field_caption' => 0,
-		'field_image_caption' => 0,
-		'field_image_caption_1' => 0,
-		'type' => 0,
-		'field_feature_link' => 0,
-		'view_node' => 0,
-		'php' => 0,
-		'php_1' => 0,
-		'nothing' => 0,
+	  'field_feature_image' => 0,
+	  'field_project_image' => 0,
+	  'title_field' => 0,
+	  'field_caption' => 0,
+	  'field_image_caption' => 0,
+	  'field_image_caption_1' => 0,
+	  'type' => 0,
+	  'field_feature_link' => 0,
+	  'view_node' => 0,
+	  'php' => 0,
+	  'php_1' => 0,
+	  'nothing' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -21197,18 +21197,18 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'field_feature_image' => 0,
-		'field_project_image' => 0,
-		'title_field' => 0,
-		'field_caption' => 0,
-		'field_image_caption' => 0,
-		'field_image_caption_1' => 0,
-		'type' => 0,
-		'field_feature_link' => 0,
-		'view_node' => 0,
-		'php' => 0,
-		'php_1' => 0,
-		'nothing' => 0,
+	  'field_feature_image' => 0,
+	  'field_project_image' => 0,
+	  'title_field' => 0,
+	  'field_caption' => 0,
+	  'field_image_caption' => 0,
+	  'field_image_caption_1' => 0,
+	  'type' => 0,
+	  'field_feature_link' => 0,
+	  'view_node' => 0,
+	  'php' => 0,
+	  'php_1' => 0,
+	  'nothing' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -21235,39 +21235,39 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['relationships']['nodequeue_rel']['required'] = TRUE;
 	$handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
 	$handler->display->display_options['relationships']['nodequeue_rel']['names'] = array(
-		'akdn_home_page_carousel_arabic' => 'akdn_home_page_carousel_arabic',
-		'featured_content' => 0,
-		'agency_listing_page_publications' => 0,
-		'press_centre' => 0,
-		'about_us_slides' => 0,
-		'speech_themes' => 0,
-		'thematic_area' => 0,
-		'akaa_home_page_slideshow' => 0,
-		'about_us_left_listing' => 0,
-		'about_us_paragraph' => 0,
-		'speech_slideshow' => 0,
-		'akmi_activity_education_page_tes' => 0,
-		'akmi_archive_page' => 0,
-		'akmi_archive_page_nodequeue' => 0,
-		'akmi_audio_page' => 0,
-		'akmi_cd_dvd_page_nodequeue' => 0,
-		'akmi_event_landing_page' => 0,
-		'akmi_homepage_slideshow' => 0,
-		'akmi_performance_page' => 0,
-		'akmi_performance_programmes_page' => 0,
-		'akmi_press_center_page' => 0,
-		'akmi_production_page' => 0,
-		'akmi_publications_page' => 0,
-		'akmi_test_page_nodequeue' => 0,
-		'akmi_video_page_banner' => 0,
-		'about_us_carousel' => 0,
-		'home_page_carousel' => 0,
-		'press_center_carousel' => 0,
-		'about_us_his_highness_carousel' => 0,
-		'nodeque_for_current_year' => 0,
-		'test' => 0,
-		'akdn_home_page_carousel_french' => 0,
-		'akdn_home_page_carousel_portugue' => 0,
+	  'akdn_home_page_carousel_arabic' => 'akdn_home_page_carousel_arabic',
+	  'featured_content' => 0,
+	  'agency_listing_page_publications' => 0,
+	  'press_centre' => 0,
+	  'about_us_slides' => 0,
+	  'speech_themes' => 0,
+	  'thematic_area' => 0,
+	  'akaa_home_page_slideshow' => 0,
+	  'about_us_left_listing' => 0,
+	  'about_us_paragraph' => 0,
+	  'speech_slideshow' => 0,
+	  'akmi_activity_education_page_tes' => 0,
+	  'akmi_archive_page' => 0,
+	  'akmi_archive_page_nodequeue' => 0,
+	  'akmi_audio_page' => 0,
+	  'akmi_cd_dvd_page_nodequeue' => 0,
+	  'akmi_event_landing_page' => 0,
+	  'akmi_homepage_slideshow' => 0,
+	  'akmi_performance_page' => 0,
+	  'akmi_performance_programmes_page' => 0,
+	  'akmi_press_center_page' => 0,
+	  'akmi_production_page' => 0,
+	  'akmi_publications_page' => 0,
+	  'akmi_test_page_nodequeue' => 0,
+	  'akmi_video_page_banner' => 0,
+	  'about_us_carousel' => 0,
+	  'home_page_carousel' => 0,
+	  'press_center_carousel' => 0,
+	  'about_us_his_highness_carousel' => 0,
+	  'nodeque_for_current_year' => 0,
+	  'test' => 0,
+	  'akdn_home_page_carousel_french' => 0,
+	  'akdn_home_page_carousel_portugue' => 0,
 	);
 	/* Relationship: Content: Images (field_project_image:fid) */
 	$handler->display->display_options['relationships']['field_project_image_fid']['id'] = 'field_project_image_fid';
@@ -21289,8 +21289,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_feature_image_et']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_feature_image_et']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_feature_image_et']['settings'] = array(
-		'image_style' => 'banner_item_standard_home_page',
-		'image_link' => '',
+	  'image_style' => 'banner_item_standard_home_page',
+	  'image_link' => '',
 	);
 	/* Field: Entity translation: Images: translated */
 	$handler->display->display_options['fields']['field_project_image_et']['id'] = 'field_project_image_et';
@@ -21301,8 +21301,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_project_image_et']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_project_image_et']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_project_image_et']['settings'] = array(
-		'image_style' => 'banner_item_standard_home_page',
-		'image_link' => '',
+	  'image_style' => 'banner_item_standard_home_page',
+	  'image_link' => '',
 	);
 	$handler->display->display_options['fields']['field_project_image_et']['delta_offset'] = '0';
 	/* Field: Entity translation: Title: translated */
@@ -21335,7 +21335,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_caption']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_caption']['type'] = 'text_plain';
 	$handler->display->display_options['fields']['field_caption']['settings'] = array(
-		'trim_length' => '150',
+	  'trim_length' => '150',
 	);
 	/* Field: Content: Type */
 	$handler->display->display_options['fields']['type']['id'] = 'type';
@@ -21370,25 +21370,25 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php']['php_output'] = '<?php
-					global $language;
-					$lang = $language->language;
-					if($lang != \'en\'){
-					$langu = \'/\'.$lang.\'/\';}
-					else{
-					$langu = \'/\';}
-					if ($data->node_type == "featured_content") {
-						if (!empty($data->field_field_feature_link)) {
-							$url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+						global $language;
+						$lang = $language->language;
+						if($lang != \'en\'){
+						$langu = \'/\'.$lang.\'/\';}
+						else{
+						$langu = \'/\';}
+						if ($data->node_type == "featured_content") {
+							if (!empty($data->field_field_feature_link)) {
+								$url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+								print $url;
+							}
+							else { print \' <a class="banner-no-link">\'; }
+						} else {
+							$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
+							$node_url = $langu.$node_path;
+							$url =  " <a href= \'$node_url\'>";
 							print $url;
 						}
-						else { print \' <a class="banner-no-link">\'; }
-					} else {
-						$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
-						$node_url = $langu.$node_path;
-						$url =  " <a href= \'$node_url\'>";
-						print $url;
-					}
-					?>';
+						?>';
 	$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
 	/* Field: Global: PHP */
@@ -21400,7 +21400,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_2']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php echo t("AGA KHAN DEVELOPMENT NETWORK");?></h3>
-					';
+						';
 	$handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
 	/* Field: Global: PHP */
@@ -21420,10 +21420,10 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[php][field_feature_image_et][field_project_image_et]</div></a>
-					<div class="slide-text">
-					<h3>[php_2]</h3>
-					[title_field_et] [php][php_3]</a>
-					</div>';
+						<div class="slide-text">
+						<h3>[php_2]</h3>
+						[title_field_et] [php][php_3]</a>
+						</div>';
 	$handler->display->display_options['fields']['nothing']['alter']['max_length'] = '104';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	$handler->display->display_options['defaults']['sorts'] = FALSE;
@@ -21435,8 +21435,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['defaults']['filter_groups'] = FALSE;
 	$handler->display->display_options['filter_groups']['operator'] = 'OR';
 	$handler->display->display_options['filter_groups']['groups'] = array(
-		1 => 'AND',
-		2 => 'AND',
+	  1 => 'AND',
+	  2 => 'AND',
 	);
 	$handler->display->display_options['defaults']['filters'] = FALSE;
 	/* Filter criterion: Content: Type */
@@ -21444,7 +21444,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['type']['table'] = 'node';
 	$handler->display->display_options['filters']['type']['field'] = 'type';
 	$handler->display->display_options['filters']['type']['value'] = array(
-		'featured_content' => 'featured_content',
+	  'featured_content' => 'featured_content',
 	);
 	$handler->display->display_options['filters']['type']['group'] = 1;
 	/* Filter criterion: Content: Published or admin */
@@ -21457,15 +21457,15 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['type_1']['table'] = 'node';
 	$handler->display->display_options['filters']['type_1']['field'] = 'type';
 	$handler->display->display_options['filters']['type_1']['value'] = array(
-		'article' => 'article',
-		'page' => 'page',
-		'event' => 'event',
-		'gallery' => 'gallery',
-		'podcast' => 'podcast',
-		'publication' => 'publication',
-		'speech' => 'speech',
-		'project' => 'project',
-		'focus_area' => 'focus_area',
+	  'article' => 'article',
+	  'page' => 'page',
+	  'event' => 'event',
+	  'gallery' => 'gallery',
+	  'podcast' => 'podcast',
+	  'publication' => 'publication',
+	  'speech' => 'speech',
+	  'project' => 'project',
+	  'focus_area' => 'focus_area',
 	);
 	$handler->display->display_options['filters']['type_1']['group'] = 2;
 	/* Filter criterion: Content: Create Banner Item (field_create_featured_content) */
@@ -21473,7 +21473,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['field_create_featured_content_value']['table'] = 'field_data_field_create_featured_content';
 	$handler->display->display_options['filters']['field_create_featured_content_value']['field'] = 'field_create_featured_content_value';
 	$handler->display->display_options['filters']['field_create_featured_content_value']['value'] = array(
-		1 => '1',
+	  1 => '1',
 	);
 	$handler->display->display_options['filters']['field_create_featured_content_value']['group'] = 2;
 	/* Filter criterion: Content: Published or admin */
@@ -21498,27 +21498,27 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['slideshow_type'] = 'flexslider_views_slideshow';
 	$handler->display->display_options['style_options']['slideshow_skin'] = 'default';
 	$handler->display->display_options['style_options']['skin_info'] = array(
-		'class' => 'default',
-		'name' => 'Default',
-		'module' => 'views_slideshow',
-		'path' => '',
-		'stylesheets' => array(),
+	  'class' => 'default',
+	  'name' => 'Default',
+	  'module' => 'views_slideshow',
+	  'path' => '',
+	  'stylesheets' => array(),
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'field_feature_image' => 0,
-		'field_project_image' => 0,
-		'title_field' => 0,
-		'field_caption' => 0,
-		'field_image_caption' => 0,
-		'field_image_caption_1' => 0,
-		'type' => 0,
-		'field_feature_link' => 0,
-		'view_node' => 0,
-		'php' => 0,
-		'php_1' => 0,
-		'nothing' => 0,
+	  'field_feature_image' => 0,
+	  'field_project_image' => 0,
+	  'title_field' => 0,
+	  'field_caption' => 0,
+	  'field_image_caption' => 0,
+	  'field_image_caption_1' => 0,
+	  'type' => 0,
+	  'field_feature_link' => 0,
+	  'view_node' => 0,
+	  'php' => 0,
+	  'php_1' => 0,
+	  'nothing' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -21527,18 +21527,18 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-		'field_feature_image' => 0,
-		'field_project_image' => 0,
-		'title_field' => 0,
-		'field_caption' => 0,
-		'field_image_caption' => 0,
-		'field_image_caption_1' => 0,
-		'type' => 0,
-		'field_feature_link' => 0,
-		'view_node' => 0,
-		'php' => 0,
-		'php_1' => 0,
-		'nothing' => 0,
+	  'field_feature_image' => 0,
+	  'field_project_image' => 0,
+	  'title_field' => 0,
+	  'field_caption' => 0,
+	  'field_image_caption' => 0,
+	  'field_image_caption_1' => 0,
+	  'type' => 0,
+	  'field_feature_link' => 0,
+	  'view_node' => 0,
+	  'php' => 0,
+	  'php_1' => 0,
+	  'nothing' => 0,
 	);
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
 	$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -21565,39 +21565,39 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['relationships']['nodequeue_rel']['required'] = TRUE;
 	$handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
 	$handler->display->display_options['relationships']['nodequeue_rel']['names'] = array(
-		'akdn_home_page_carousel_russian' => 'akdn_home_page_carousel_russian',
-		'featured_content' => 0,
-		'agency_listing_page_publications' => 0,
-		'press_centre' => 0,
-		'about_us_slides' => 0,
-		'speech_themes' => 0,
-		'thematic_area' => 0,
-		'akaa_home_page_slideshow' => 0,
-		'about_us_left_listing' => 0,
-		'about_us_paragraph' => 0,
-		'speech_slideshow' => 0,
-		'akmi_activity_education_page_tes' => 0,
-		'akmi_archive_page' => 0,
-		'akmi_archive_page_nodequeue' => 0,
-		'akmi_audio_page' => 0,
-		'akmi_cd_dvd_page_nodequeue' => 0,
-		'akmi_event_landing_page' => 0,
-		'akmi_homepage_slideshow' => 0,
-		'akmi_performance_page' => 0,
-		'akmi_performance_programmes_page' => 0,
-		'akmi_press_center_page' => 0,
-		'akmi_production_page' => 0,
-		'akmi_publications_page' => 0,
-		'akmi_test_page_nodequeue' => 0,
-		'akmi_video_page_banner' => 0,
-		'about_us_carousel' => 0,
-		'home_page_carousel' => 0,
-		'press_center_carousel' => 0,
-		'about_us_his_highness_carousel' => 0,
-		'nodeque_for_current_year' => 0,
-		'akdn_home_page_carousel_french' => 0,
-		'akdn_home_page_carousel_portugue' => 0,
-		'akdn_home_page_carousel_arabic' => 0,
+	  'akdn_home_page_carousel_russian' => 'akdn_home_page_carousel_russian',
+	  'featured_content' => 0,
+	  'agency_listing_page_publications' => 0,
+	  'press_centre' => 0,
+	  'about_us_slides' => 0,
+	  'speech_themes' => 0,
+	  'thematic_area' => 0,
+	  'akaa_home_page_slideshow' => 0,
+	  'about_us_left_listing' => 0,
+	  'about_us_paragraph' => 0,
+	  'speech_slideshow' => 0,
+	  'akmi_activity_education_page_tes' => 0,
+	  'akmi_archive_page' => 0,
+	  'akmi_archive_page_nodequeue' => 0,
+	  'akmi_audio_page' => 0,
+	  'akmi_cd_dvd_page_nodequeue' => 0,
+	  'akmi_event_landing_page' => 0,
+	  'akmi_homepage_slideshow' => 0,
+	  'akmi_performance_page' => 0,
+	  'akmi_performance_programmes_page' => 0,
+	  'akmi_press_center_page' => 0,
+	  'akmi_production_page' => 0,
+	  'akmi_publications_page' => 0,
+	  'akmi_test_page_nodequeue' => 0,
+	  'akmi_video_page_banner' => 0,
+	  'about_us_carousel' => 0,
+	  'home_page_carousel' => 0,
+	  'press_center_carousel' => 0,
+	  'about_us_his_highness_carousel' => 0,
+	  'nodeque_for_current_year' => 0,
+	  'akdn_home_page_carousel_french' => 0,
+	  'akdn_home_page_carousel_portugue' => 0,
+	  'akdn_home_page_carousel_arabic' => 0,
 	);
 	/* Relationship: Content: Images (field_project_image:fid) */
 	$handler->display->display_options['relationships']['field_project_image_fid']['id'] = 'field_project_image_fid';
@@ -21619,8 +21619,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_feature_image_et']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_feature_image_et']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_feature_image_et']['settings'] = array(
-		'image_style' => 'banner_item_standard_home_page',
-		'image_link' => '',
+	  'image_style' => 'banner_item_standard_home_page',
+	  'image_link' => '',
 	);
 	/* Field: Entity translation: Images: translated */
 	$handler->display->display_options['fields']['field_project_image_et']['id'] = 'field_project_image_et';
@@ -21631,8 +21631,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_project_image_et']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_project_image_et']['click_sort_column'] = 'fid';
 	$handler->display->display_options['fields']['field_project_image_et']['settings'] = array(
-		'image_style' => 'banner_item_standard_home_page',
-		'image_link' => '',
+	  'image_style' => 'banner_item_standard_home_page',
+	  'image_link' => '',
 	);
 	$handler->display->display_options['fields']['field_project_image_et']['delta_offset'] = '0';
 	/* Field: Entity translation: Title: translated */
@@ -21665,7 +21665,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['field_caption']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['field_caption']['type'] = 'text_plain';
 	$handler->display->display_options['fields']['field_caption']['settings'] = array(
-		'trim_length' => '150',
+	  'trim_length' => '150',
 	);
 	/* Field: Content: Type */
 	$handler->display->display_options['fields']['type']['id'] = 'type';
@@ -21700,25 +21700,25 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php']['php_output'] = '<?php
-					global $language;
-					$lang = $language->language;
-					if($lang != \'en\'){
-					$langu = \'/\'.$lang.\'/\';}
-					else{
-					$langu = \'/\';}
-					if ($data->node_type == "featured_content") {
-						if (!empty($data->field_field_feature_link)) {
-							$url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+						global $language;
+						$lang = $language->language;
+						if($lang != \'en\'){
+						$langu = \'/\'.$lang.\'/\';}
+						else{
+						$langu = \'/\';}
+						if ($data->node_type == "featured_content") {
+							if (!empty($data->field_field_feature_link)) {
+								$url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>";
+								print $url;
+							}
+							else { print \' <a class="banner-no-link">\'; }
+						} else {
+							$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
+							$node_url = $langu.$node_path;
+							$url =  " <a href= \'$node_url\'>";
 							print $url;
 						}
-						else { print \' <a class="banner-no-link">\'; }
-					} else {
-						$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
-						$node_url = $langu.$node_path;
-						$url =  " <a href= \'$node_url\'>";
-						print $url;
-					}
-					?>';
+						?>';
 	$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
 	/* Field: Global: PHP */
@@ -21730,7 +21730,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_2']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
 	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php echo t("AGA KHAN DEVELOPMENT NETWORK");?></h3>
-					';
+						';
 	$handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
 	/* Field: Global: PHP */
@@ -21750,10 +21750,10 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 	$handler->display->display_options['fields']['nothing']['label'] = '';
 	$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="slide">[php][field_feature_image_et][field_project_image_et]</div></a>
-					<div class="slide-text">
-					<h3>[php_2]</h3>
-					[title_field_et] [php][php_3]</a>
-					</div>';
+						<div class="slide-text">
+						<h3>[php_2]</h3>
+						[title_field_et] [php][php_3]</a>
+						</div>';
 	$handler->display->display_options['fields']['nothing']['alter']['max_length'] = '104';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	$handler->display->display_options['defaults']['sorts'] = FALSE;
@@ -21765,8 +21765,8 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['defaults']['filter_groups'] = FALSE;
 	$handler->display->display_options['filter_groups']['operator'] = 'OR';
 	$handler->display->display_options['filter_groups']['groups'] = array(
-		1 => 'AND',
-		2 => 'AND',
+	  1 => 'AND',
+	  2 => 'AND',
 	);
 	$handler->display->display_options['defaults']['filters'] = FALSE;
 	/* Filter criterion: Content: Type */
@@ -21774,7 +21774,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['type']['table'] = 'node';
 	$handler->display->display_options['filters']['type']['field'] = 'type';
 	$handler->display->display_options['filters']['type']['value'] = array(
-		'featured_content' => 'featured_content',
+	  'featured_content' => 'featured_content',
 	);
 	$handler->display->display_options['filters']['type']['group'] = 1;
 	/* Filter criterion: Content: Published or admin */
@@ -21787,15 +21787,15 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['type_1']['table'] = 'node';
 	$handler->display->display_options['filters']['type_1']['field'] = 'type';
 	$handler->display->display_options['filters']['type_1']['value'] = array(
-		'article' => 'article',
-		'page' => 'page',
-		'event' => 'event',
-		'gallery' => 'gallery',
-		'podcast' => 'podcast',
-		'publication' => 'publication',
-		'speech' => 'speech',
-		'project' => 'project',
-		'focus_area' => 'focus_area',
+	  'article' => 'article',
+	  'page' => 'page',
+	  'event' => 'event',
+	  'gallery' => 'gallery',
+	  'podcast' => 'podcast',
+	  'publication' => 'publication',
+	  'speech' => 'speech',
+	  'project' => 'project',
+	  'focus_area' => 'focus_area',
 	);
 	$handler->display->display_options['filters']['type_1']['group'] = 2;
 	/* Filter criterion: Content: Create Banner Item (field_create_featured_content) */
@@ -21803,7 +21803,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['field_create_featured_content_value']['table'] = 'field_data_field_create_featured_content';
 	$handler->display->display_options['filters']['field_create_featured_content_value']['field'] = 'field_create_featured_content_value';
 	$handler->display->display_options['filters']['field_create_featured_content_value']['value'] = array(
-		1 => '1',
+	  1 => '1',
 	);
 	$handler->display->display_options['filters']['field_create_featured_content_value']['group'] = 2;
 	/* Filter criterion: Content: Published or admin */
@@ -21811,7 +21811,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['filters']['status_extra_1']['table'] = 'node';
 	$handler->display->display_options['filters']['status_extra_1']['field'] = 'status_extra';
 	$handler->display->display_options['filters']['status_extra_1']['group'] = 2;
-	$handler->display->display_options['block_description'] = 'Home Page Banner Russian';
+	$handler->display->display_options['block_description'] = 'Home Page Banner Russian'; 
   $export['featured_slideshow'] = $view;
 
   $view = new view();
@@ -22861,12 +22861,12 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
-  if ($row->nid == 2221) {
-  print 9576;
-  } else {
-   print $row->nid;
-  }
-  ?>';
+    if ($row->nid == 2221) {
+    print 9576;
+    } else {
+     print $row->nid;
+    }
+    ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Field: Content: Image */
@@ -22890,7 +22890,6 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
   $handler->display->display_options['fields']['title_field']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['title_field']['alter']['path'] = 'node/[php]';
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -22974,12 +22973,12 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
-  if ($row->nid == 2221) {
-  print 9576;
-  } else {
-   print $row->nid;
-  }
-  ?>';
+    if ($row->nid == 2221) {
+    print 9576;
+    } else {
+     print $row->nid;
+    }
+    ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Field: Content: Image */
@@ -23014,7 +23013,6 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
   $handler->display->display_options['fields']['title_field']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['title_field']['alter']['path'] = 'node/[php]';
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -23121,12 +23119,12 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
-  if ($row->nid == 2221) {
-  print 9576;
-  } else {
-   print $row->nid;
-  }
-  ?>';
+    if ($row->nid == 2221) {
+    print 9576;
+    } else {
+     print $row->nid;
+    }
+    ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Field: Content: Title */
@@ -23137,7 +23135,6 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
   $handler->display->display_options['fields']['title_field']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['title_field']['alter']['path'] = 'node/[php]';
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
 
   /* Display: What We Do Summary Text */
   $handler = $view->new_display('block', 'What We Do Summary Text', 'what_we_do_summary_text');
@@ -23220,6 +23217,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
   $handler = $view->new_display('block', 'Whate We do - Agency Block', 'what_we_do_agency_block');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['defaults']['cache'] = FALSE;
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['defaults']['header'] = FALSE;
@@ -23228,7 +23226,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
   $handler->display->display_options['header']['php']['table'] = 'views';
   $handler->display->display_options['header']['php']['field'] = 'php';
   $handler->display->display_options['header']['php']['php_output'] = '<h2 class="pane-title"><?php print t("Agencies"); ?></h2>
-  ';
+    ';
   /* Header: Global: Unfiltered text */
   $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
   $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
@@ -23236,27 +23234,30 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
   $handler->display->display_options['header']['area_text_custom']['content'] = '<p>[field_custom_agency_text_et]</p>';
   $handler->display->display_options['header']['area_text_custom']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: NAT: Nid */
-  $handler->display->display_options['relationships']['nid']['id'] = 'nid';
-  $handler->display->display_options['relationships']['nid']['table'] = 'nat';
-  $handler->display->display_options['relationships']['nid']['field'] = 'nid';
+  /* Relationship: Content: Add Agencies (field_add_agency_what_we_do) */
+  $handler->display->display_options['relationships']['field_add_agency_what_we_do_tid']['id'] = 'field_add_agency_what_we_do_tid';
+  $handler->display->display_options['relationships']['field_add_agency_what_we_do_tid']['table'] = 'field_data_field_add_agency_what_we_do';
+  $handler->display->display_options['relationships']['field_add_agency_what_we_do_tid']['field'] = 'field_add_agency_what_we_do_tid';
   /* Relationship: Content: Taxonomy terms on node */
   $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
   $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
   $handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
-  $handler->display->display_options['relationships']['term_node_tid']['relationship'] = 'nid';
   $handler->display->display_options['relationships']['term_node_tid']['vocabularies'] = array(
     'agencies' => 'agencies',
     'akmi_activity' => 0,
+    'akmi_event_type' => 0,
     'akmi_pages' => 0,
+    'akmi_performance_year' => 0,
     'article_type' => 0,
     'award_cycle' => 0,
     'building_type' => 0,
     'city' => 0,
     'country' => 0,
+    'ecard_greetings' => 0,
     'countries' => 0,
     'media_folders' => 0,
     'newsletter' => 0,
+    'page_content_category' => 0,
     'person_type' => 0,
     'podcast_type' => 0,
     'publication_category' => 0,
@@ -23266,6 +23267,11 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
     'tags' => 0,
     'focus_areas' => 0,
   );
+  /* Relationship: NAT: Nid */
+  $handler->display->display_options['relationships']['nid']['id'] = 'nid';
+  $handler->display->display_options['relationships']['nid']['table'] = 'nat';
+  $handler->display->display_options['relationships']['nid']['field'] = 'nid';
+  $handler->display->display_options['relationships']['nid']['relationship'] = 'field_add_agency_what_we_do_tid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
@@ -23328,6 +23334,12 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
   $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_rel'] = '';
+  /* Field: Content: Add Agencies (field_add_agency_what_we_do:language) */
+  $handler->display->display_options['fields']['language']['id'] = 'language';
+  $handler->display->display_options['fields']['language']['table'] = 'field_data_field_add_agency_what_we_do';
+  $handler->display->display_options['fields']['language']['field'] = 'language';
+  $handler->display->display_options['fields']['language']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['language']['native_language'] = TRUE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
@@ -23357,13 +23369,28 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
     'focus_area' => 'focus_area',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Add Agencies (field_add_agency_what_we_do) */
-  $handler->display->display_options['filters']['field_add_agency_what_we_do_tid']['id'] = 'field_add_agency_what_we_do_tid';
-  $handler->display->display_options['filters']['field_add_agency_what_we_do_tid']['table'] = 'field_data_field_add_agency_what_we_do';
-  $handler->display->display_options['filters']['field_add_agency_what_we_do_tid']['field'] = 'field_add_agency_what_we_do_tid';
-  $handler->display->display_options['filters']['field_add_agency_what_we_do_tid']['operator'] = 'not empty';
-  $handler->display->display_options['filters']['field_add_agency_what_we_do_tid']['value'] = '';
-  $handler->display->display_options['filters']['field_add_agency_what_we_do_tid']['vocabulary'] = 'agencies';
+  /* Filter criterion: Content: Add Agencies (field_add_agency_what_we_do:language) */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'field_data_field_add_agency_what_we_do';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['language']['value'] = '';
+  $handler->display->display_options['filters']['language']['vocabulary'] = 'agencies';
+  /* Filter criterion: Global: PHP */
+  $handler->display->display_options['filters']['php']['id'] = 'php';
+  $handler->display->display_options['filters']['php']['table'] = 'views';
+  $handler->display->display_options['filters']['php']['field'] = 'php';
+  $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['filters']['php']['php_filter'] = 'global $language;
+  if($data->field_data_field_add_agency_what_we_do_language == und){
+  return TRUE;
+  }
+  if($language->language != $data->field_data_field_add_agency_what_we_do_language){
+
+  return  TRUE;
+  }
+
+  ';
 
   /* Display: Block 2 */
   $handler = $view->new_display('block', 'Block 2', 'block_2');
@@ -23402,7 +23429,6 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
   $handler->display->display_options['fields']['title_field']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['title_field']['alter']['path'] = 'node/[php]';
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 1;
   /* Field: Content: Type */
   $handler->display->display_options['fields']['type']['id'] = 'type';
   $handler->display->display_options['fields']['type']['table'] = 'node';
