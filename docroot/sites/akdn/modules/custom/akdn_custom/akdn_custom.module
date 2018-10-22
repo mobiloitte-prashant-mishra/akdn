@@ -5732,3 +5732,19 @@ function akdn_custom_tokens($type, $tokens, array $data = array(), array $option
 
   return $replacements;
 }
+/**
+ * hook_switch_links_alter().
+ * @param type $links
+ * @param type $type
+ * @param type $path
+ */
+function akdn_custom_language_switch_links_alter(&$links, $type, $path) {
+  if($path == 'forward'){
+    foreach($links as $lang => $value){
+      $query_str = $_SERVER['QUERY_STRING'];
+      $query_str_arr = explode('=', $query_str);
+      $value['query'] = array($query_str_arr[0]=> $query_str_arr[1]);
+      $links[$lang] = $value;
+    }
+  } 
+}
