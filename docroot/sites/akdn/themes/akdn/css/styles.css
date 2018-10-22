@@ -11384,13 +11384,13 @@ h1.title {
 }
 /* line 457, ../sass/_akdn-redesign.scss */
 .slide-text a:before {
-  content: "[";
+  /*content: "[";*/
   display: inline-block;
   margin-right: 3px;
 }
 /* line 463, ../sass/_akdn-redesign.scss */
 .slide-text a:after {
-  content: "]";
+  /*content: "]";*/
   display: inline-block;
   margin-left: 3px;
 }
