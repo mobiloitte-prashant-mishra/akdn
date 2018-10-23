@@ -14566,37 +14566,31 @@ node/9576',
     'admin_title' => 'About page information',
     'title' => '',
     'body' => '<?php
-      global $language;
-      $lang = $language->language;
-      $node = menu_get_object();
-      print '<div class = "whatsnew-right-content">';
-      if (isset($node->field_about_page)) {
-        $about = (isset($node->field_about_page[$lang])) ?  node_load($node->field_about_page[$lang][0]['nid']) : node_load($node->field_about_page['en'][0]['nid']);
-       if(empty($about)){
-          $about = node_load($node->field_about_page['en'][0]['nid']);
-       }
-        if (isset($about->nid)) {
-          print '<p class = "whats-new-gold">'.t("ABOUT THE").'</p>';
-    $short_title_language = (isset($about->field_short_title[$lang])) ?  $about->field_short_title[$lang] : $about->field_short_title['en'];
-          print '<div class = "grid-whatsnew-block_subtitle">'. $short_title_language[0]['value'] .'</div>';
-    $body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body['en'];
-          if (empty($body[0]['value'])) {
-            if(!empty($body[0]['summary'])) {
-              print '<div class="grid-whatsnew-block_body">'. $body[0]['summary']  . ' </div>';
-            }
-          }
-          else {
-            if(!empty($body[0]['summary'])) {
-              print '<div class="grid-whatsnew-block_body">'. $body[0]['summary'] .' <a  href="'. url("node/{$about->nid}") .'" class= "views-more-link">'.t("More").'</a></div>';
-            }
-            else {
-              print '<div class="grid-whatsnew-block_body">'. text_summary($body[0]['value'], $body[0]['format'], 1200) .' <a  href="'. url("node/{$about->nid}") .'" class= "views-more-link">'.t("More").'</a></div>';
-            }
-          }
-          print '</div>';
-        }
-      }
-      ?>',
+global $language;
+$lang = $language->language;
+
+$node = menu_get_object();
+
+print \'<div class = "whatsnew-right-content">\';
+if (isset($node->field_about_page)) {
+$about = (isset($node->field_about_page[$lang])) ?  node_load($node->field_about_page[$lang][0][\'nid\']) : node_load($node->field_about_page[$node->language][0][\'nid\']);
+  if (isset($about->nid)) {
+    print \'<p class = "whats-new-gold">\'.t("ABOUT THE").\'</p>\';
+$short_title_language = (isset($about->field_short_title[$lang])) ?  $about->field_short_title[$lang] : $about->field_short_title[$about->language];
+    print \'<div class = "grid-whatsnew-block_subtitle"> \'. $short_title_language[0][\'value\'] .\'</div>\';
+$body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[$about->language];
+
+    if (!empty($body[0][\'summary\']) && !empty($body[0][\'value\']))
+      print \'<div class="grid-whatsnew-block_body">\'. $body[0][\'summary\'] .\' <a class = "views-more-link-akaa" href="\'.
+      url("node/{$about->nid}") .\'">\'.t("More").\'</a></div>\';
+    else if (!empty($body[0][\'summary\']) && empty($body[0][\'value\']))
+      print \'<div class="grid-whatsnew-block_body">\'. $body[0][\'summary\'] .\'</div>\';
+    else
+      print \'<div class="grid-whatsnew-block_body">\'. text_summary($body[0][\'value\'], $body[0][\'format\'], 1200) .\' <a class = "views-more-link-akaa" href="\'.url("node/{$about->nid}") .\'">\'.t("More").\'</a></div>\';
+   }
+}
+print \'</div>\';
+?>',
     'format' => 'php_code',
     'substitute' => 0,
     'title_heading' => 'h2',
