@@ -19361,17 +19361,22 @@ html.js fieldset.collapsed {
 }
 
 /* for Arabic */
-/* line 9102, ../sass/_akdn-redesign.scss */
+/* line 9109, ../sass/_akdn-redesign.scss */
 .i18n-ar .sub-navbar .pane-content p {
   text-transform: none;
 }
-/* line 9109, ../sass/_akdn-redesign.scss */
+/* line 9116, ../sass/_akdn-redesign.scss */
 .i18n-ar .pane-breaking-news .view-header p {
   text-transform: none;
 }
-/* line 9116, ../sass/_akdn-redesign.scss */
+/* line 9123, ../sass/_akdn-redesign.scss */
 .i18n-ar.akdn-publication-details .pane-node-field-publication-file a {
   letter-spacing: normal;
+}
+/* line 9130, ../sass/_akdn-redesign.scss */
+.i18n-ar.press-release-detail-type .pane-node-field-attachment {
+  margin-left: 15px;
+  float: right;
 }
 
 /*

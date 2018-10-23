@@ -9125,4 +9125,11 @@ html {
             }
         }
     }
+
+    &.press-release-detail-type {
+        .pane-node-field-attachment{
+            margin-left: 15px;
+            float: right;
+        }
+    }
 }
