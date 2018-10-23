@@ -1,5 +1,6 @@
 <?php
 
+
 /**
  * Implements hook_init().
  */
@@ -54,6 +55,7 @@ function akdn_custom_page_language_url($nid) {
     }
   }
 }
+
 
 /**
  * Implements hook_menu().
