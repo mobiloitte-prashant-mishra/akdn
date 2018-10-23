@@ -1,5 +1,6 @@
 <?php
 
+
 /**
  * Implements hook_init().
  */
@@ -51,6 +52,17 @@ function akdn_custom_page_language_url($nid) {
     else {
       $en = 'en';
       return $en;
+    }
+  }
+}
+
+/**
+*Implements hook_taxonomy_term_load().
+*/
+function akdn_custom_taxonomy_term_load($terms){
+  foreach($terms as $key => $value){
+    if($value->vid == 13){
+      $value->name = $value->name_original;
     }
   }
 }
@@ -864,7 +876,7 @@ function akdn_custom_block_info() {
     'see_also_custom_block' => array(
       'info' => t('Custom See ALso Block'),
       'cache' => DRUPAL_NO_CACHE,
-    ), 
+    ),
     'akaa_resources' => array(
       'info' => t('AKAA Resources Links'),
       'cache' => DRUPAL_NO_CACHE,
@@ -2333,7 +2345,7 @@ function what_we_do_news_and_resources() {
         else {
           $image = $node->field_article_img['en'];
         }
-        
+
         if (empty($image)) {
           $image = $node->field_article_img['und'];
         }
