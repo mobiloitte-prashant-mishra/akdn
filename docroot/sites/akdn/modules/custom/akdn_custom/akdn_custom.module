@@ -56,16 +56,6 @@ function akdn_custom_page_language_url($nid) {
   }
 }
 
-/**
-*Implements hook_taxonomy_term_load().
-*/
-function akdn_custom_taxonomy_term_load($terms){
-  foreach($terms as $key => $value){
-    if($value->vid == 13){
-      $value->name = $value->name_original;
-    }
-  }
-}
 
 /**
  * Implements hook_menu().
