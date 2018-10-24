@@ -1282,6 +1282,7 @@ function home_news_and_resources(){
           $file = (array) file_load($info['settings']['default_image']);
           $image = array($file);
         }
+        $url_type = 'galleries';
         break;
       case 'podcast':
         $image = $wrapper_translated->field_podcast_image->value();
@@ -1302,6 +1303,7 @@ function home_news_and_resources(){
           $file = (array) file_load($info['settings']['default_image']);
           $image = array($file);
         }
+        $url_type = 'publications';
         break;
       case 'speech':
         $image = $wrapper_translated->field_speech_image->value();
@@ -1310,6 +1312,7 @@ function home_news_and_resources(){
           $file = (array) file_load($info['settings']['default_image']);
           $image = array($file);
         }
+        $url_type = 'speeches';
         break;
       case 'project':
         $image = $wrapper_translated->field_project_image->value();
@@ -1318,6 +1321,7 @@ function home_news_and_resources(){
           $file = (array) file_load($info['settings']['default_image']);
           $image = array($file);
         }
+        $url_type = 'projects';
         break;
     }
     $read = l(t('View'), $node_url);
