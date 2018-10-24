@@ -20009,18 +20009,19 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php']['php_output'] = '<?php
 		global $language;
 		$lang = $language->language;
+    $more = t(\'More\');
 		if ($data->node_type == "featured_content") {
 			if (!empty($data->field_field_feature_link)) {
-				$url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>More</a>";
+				$url = " <a href=\'{$data->field_field_feature_link[0][\'raw\'][\'url\']}\'>$more</a>";
 				print $url;
 			}
 			else {
-				print \' <a class="banner-no-link">More</a>\';
+				print \' <a class="banner-no-link">$more</a>\';
 			}
 		}
 		else {
 			$node_path = drupal_get_path_alias(\'node/\' . $data->nid);
-			$url = " <a href=\'/$lang/$node_path\'>More</a>";
+			$url = " <a href=\'/$lang/$node_path\'>$more</a>";
 			print $url;
 		}
 		?>';
@@ -20098,7 +20099,6 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 					[php_1]
 					[php]
 					</div>
-
 					';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	/* Field: Global: Custom text */
@@ -21058,8 +21058,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_2']['exclude'] = TRUE;
 	$handler->display->display_options['fields']['php_2']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
-	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php echo t("AGA KHAN DEVELOPMENT NETWORK");?></h3>
-						';
+	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php echo t("AGA KHAN DEVELOPMENT NETWORK");?></h3>';
 	$handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
 	/* Field: Global: PHP */
@@ -21388,8 +21387,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_2']['exclude'] = TRUE;
 	$handler->display->display_options['fields']['php_2']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
-	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php echo t("AGA KHAN DEVELOPMENT NETWORK");?></h3>
-						';
+	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php echo t("AGA KHAN DEVELOPMENT NETWORK");?></h3>';
 	$handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
 	/* Field: Global: PHP */
@@ -21718,8 +21716,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_2']['exclude'] = TRUE;
 	$handler->display->display_options['fields']['php_2']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
-	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php echo t("AGA KHAN DEVELOPMENT NETWORK");?></h3>
-						';
+	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php echo t("AGA KHAN DEVELOPMENT NETWORK");?></h3>';
 	$handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
 	/* Field: Global: PHP */
@@ -22048,8 +22045,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['fields']['php_2']['exclude'] = TRUE;
 	$handler->display->display_options['fields']['php_2']['element_label_colon'] = FALSE;
 	$handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
-	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php echo t("AGA KHAN DEVELOPMENT NETWORK");?></h3>
-						';
+	$handler->display->display_options['fields']['php_2']['php_output'] = '<?php echo t("AGA KHAN DEVELOPMENT NETWORK");?></h3>';
 	$handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
 	$handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
 	/* Field: Global: PHP */

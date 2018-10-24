@@ -358,7 +358,7 @@ jQuery(document).ready(function($) {
       $('.field-name-body a').each(function() {
         var lang = $('html').attr('lang');
         var href_val = $(this).attr('href');
-        if (href_val.indexOf('http') != 0) {
+        if ((href_val != undefined) && (href_val.indexOf('http') != 0)) {
           var updated_href = update_language_url(href_val);
           if ((getUrl.pathname.split('/')[1] == lang) && updated_href) {
             $(this).attr('href', updated_href);
