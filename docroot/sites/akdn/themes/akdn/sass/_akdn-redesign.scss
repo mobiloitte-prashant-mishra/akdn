@@ -9101,3 +9101,46 @@ html {
       }
   }
 }
+
+/* for Arabic */
+.i18n-ar {
+    .sub-navbar{
+        .pane-content {
+            p{
+                text-transform: none;
+            }
+        }
+    }
+    .pane-breaking-news{
+        .view-header {
+            p{
+                text-transform: none;
+            }
+        }
+    }
+    &.akdn-publication-details{
+        .pane-node-field-publication-file{
+            a{
+                letter-spacing: normal;
+            }
+        }
+    }
+
+    &.press-release-detail-type {
+        .pane-node-field-attachment{
+            margin-left: 15px;
+            float: right;
+        }
+    }
+    .grid-media-block_description {
+        .source{
+            direction: ltr;
+            border-right: 1px solid #888888;
+            border-left: 0px;
+            float: right;
+            margin-right: 5px;
+            padding-right: 5px;
+            max-width: 250px;
+        }
+    }
+}
