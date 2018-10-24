@@ -9114,6 +9114,13 @@ html {
             }
         }
     }
+    .node-type-custom-content {
+        .breadcrumb {
+            span:not(.delimiter) {
+                float: right;
+            }
+        }
+    }
     .pane-breaking-news{
         .view-header {
             p{
@@ -9128,32 +9135,24 @@ html {
             }
         }
     }
-}
-html[dir='rtl'] .grid-media-block_description .source{
-    direction: ltr;
-    border-right: 1px solid #888888;
-    border-left: 0px;
-    float: right;
-    margin-right: 5px;
-    padding-right: 5px;
-    max-width: 250px; 
-}
 
-.i18n-ar {
     &.press-release-detail-type {
         .pane-node-field-attachment{
            margin-left: 15px;
            float: right;
         }
     }
-}
-.i18n-ar{
-    .node-type-custom-content {
-        .breadcrumb {
-            span:not(.delimiter) {
-                float: right;
-            }
+    .grid-media-block_description {
+        .source{
+            direction: ltr;
+            border-right: 1px solid #888888;
+            border-left: 0px;
+            float: right;
+            margin-right: 5px;
+            padding-right: 5px;
+            max-width: 250px;
         }
     }
 }
+
 
