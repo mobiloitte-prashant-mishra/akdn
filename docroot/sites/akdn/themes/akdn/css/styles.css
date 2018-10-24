@@ -19378,6 +19378,16 @@ html.js fieldset.collapsed {
   margin-left: 15px;
   float: right;
 }
+/* line 9136, ../sass/_akdn-redesign.scss */
+.i18n-ar .grid-media-block_description .source {
+  direction: ltr;
+  border-right: 1px solid #888888;
+  border-left: 0px;
+  float: right;
+  margin-right: 5px;
+  padding-right: 5px;
+  max-width: 250px;
+}
 
 /*
 * Media Queries
