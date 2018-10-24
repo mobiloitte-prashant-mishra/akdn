@@ -2228,12 +2228,12 @@ function news_and_resources_top_links() {
     $name = $term[0]->name;
     $ntid = $term[0]->tid;
 
-    if ($node->field_news_and_resources_link[$lang]) {
+    // if ($node->field_news_and_resources_link[$lang]) {
       $links = $node->field_news_and_resources_link[$lang];
-    }
-    else {
-      $links = $node->field_news_and_resources_link['und'];
-    }
+    // }
+    // else {
+    //   $links = $node->field_news_and_resources_link['und'];
+    // }
     $output = '';
     $output .= t('<p><span>N</span><span>ews & Resources</span></p><ul>');
     foreach ($links as $value) {
