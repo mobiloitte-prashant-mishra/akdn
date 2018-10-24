@@ -4855,24 +4855,24 @@ if (isset($node->field_about_page)) {
           'settings' => array(
             'description' => 'If about us',
             'php' => 'global $language;
-  $lang = $language->language;
-  $arg = arg(1);
-  $node = node_load($arg);
+    $lang = $language->language;
+    $arg = arg(1);
+    $node = node_load($arg);
 
-  if (!empty($node->field_tags[$lang])) {
-    foreach ($node->field_tags[$lang] as $value) {
-      if (in_array(\'9006\', $value)) {
-       return true;
+    if (!empty($node->field_tags[$lang])) {
+      foreach ($node->field_tags[$lang] as $value) {
+        if (in_array(\'9006\', $value)) {
+         return true;
+        }
       }
     }
-  }
-  else if(!empty($node->field_tags[\'und\'])){
-    foreach ($node->field_tags[\'und\'] as $value) {
-      if (in_array(\'9006\', $value)) {
-       return true;
+    else if(!empty($node->field_tags[\'und\'])){
+      foreach ($node->field_tags[\'und\'] as $value) {
+        if (in_array(\'9006\', $value)) {
+         return true;
+        }
       }
-    }
-  }',
+    }',
           ),
           'not' => FALSE,
         ),
@@ -4914,23 +4914,7 @@ if (isset($node->field_about_page)) {
   $pane->shown = TRUE;
   $pane->access = array(
     'logic' => 'or',
-    'plugins' => array(
-      0 => array(
-        'name' => 'entity_field_value:node:page:field_create_featured_content',
-        'settings' => array(
-          'field_create_featured_content' => array(
-            'en' => array(
-              0 => array(
-                'value' => 1,
-              ),
-            ),
-          ),
-          'field_create_featured_content_value' => '1',
-        ),
-        'context' => 'argument_entity_id:node_1',
-        'not' => FALSE,
-      ),
-    ),
+    'plugins' => array(),
   );
   $pane->configuration = array(
     'override_pager_settings' => 0,
