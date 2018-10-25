@@ -1246,10 +1246,10 @@ function home_news_and_resources(){
           $file = (array) file_load($info['settings']['default_image']);
           $image = array($file);
         }
+        $url_type = str_replace(' ', '-', strtolower($article_type));
         if ($article_type == 'Press Release') {
           $url_type = 'press-releases';
-        }
-        $url_type = str_replace(' ', '-', strtolower($article_type));
+        }        
         break;
       case 'event':
         $image = $wrapper_translated->field_event_image->value();
