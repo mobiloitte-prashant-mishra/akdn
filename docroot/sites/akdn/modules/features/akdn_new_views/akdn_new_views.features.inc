@@ -45,11 +45,12 @@ function akdn_new_views_fe_nodequeue_export_fields() {
       7 => 'project',
       8 => 'publication',
       9 => 'speech',
+      10=> 'geography',
     ),
     'roles' => array(),
     'count' => 0,
   );
-  
+
   // Exported nodequeues: akdn_home_page_carousel_portuguese
   $nodequeues['akdn_home_page_carousel_portugue'] = array(
     'name' => 'akdn_home_page_carousel_portugue',
@@ -82,7 +83,7 @@ function akdn_new_views_fe_nodequeue_export_fields() {
     'roles' => array(),
     'count' => 0,
   );
-  
+
   // Exported nodequeues: akdn_home_page_carousel_arabic
   $nodequeues['akdn_home_page_carousel_arabic'] = array(
     'name' => 'akdn_home_page_carousel_arabic',
@@ -115,7 +116,7 @@ function akdn_new_views_fe_nodequeue_export_fields() {
     'roles' => array(),
     'count' => 0,
   );
-  
+
    // Exported nodequeues: akdn_home_page_carousel_russian
   $nodequeues['akdn_home_page_carousel_russian'] = array(
     'name' => 'akdn_home_page_carousel_russian',
