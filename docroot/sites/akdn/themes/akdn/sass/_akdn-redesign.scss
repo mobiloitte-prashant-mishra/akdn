@@ -455,13 +455,13 @@ h1.title {
     white-space: nowrap;
 
     &:before {
-      content: "[";
+      /*content: "[";*/
       display: inline-block;
       margin-right: 3px;
     }
 
     &:after {
-      content: "]";
+      /*content: "]";*/
       display: inline-block;
       margin-left: 3px;
     }
