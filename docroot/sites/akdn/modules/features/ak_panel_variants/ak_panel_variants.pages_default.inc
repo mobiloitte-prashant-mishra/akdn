@@ -591,7 +591,7 @@ akmi',
     $body = (isset($about->body[$lang])) ?  $about->body[$lang] : $about->body[\'en\'];
           if (empty($body[0][\'value\'])) {
             if(!empty($body[0][\'summary\'])) {
-              print \'<div class="grid-whatsnew-block_body">\'. $body[0][\'summary\']  . \' <a  href="\' . url("node/{$about->nid}") .\'" class= "views-more-link">\'.t("More") . \'</a></div>\';
+              print \'<div class="grid-whatsnew-block_body">\'. $body[0][\'summary\']  . \'</div>\';
             }
           }
           else {
