@@ -506,6 +506,18 @@ function akdn_custom_node_view($node, $view_mode, $langcode) {
     }
 }
 
+
+/**
+*Implements hook_taxonomy_term_load().
+*/
+function akdn_custom_taxonomy_term_load($terms){
+  foreach($terms as $key => $value){
+    if($value->vid == 13){
+      $value->name = $value->name_original;
+    }
+  }
+}
+
 /**
  * Implements hook_form_alter().
  *
