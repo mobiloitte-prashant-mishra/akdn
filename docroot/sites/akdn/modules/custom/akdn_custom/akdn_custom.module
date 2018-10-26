@@ -3543,6 +3543,10 @@ function akdn_custom_node_presave($node) {
       drupal_exit();
     }
   }
+
+  if (isset($node->nid)) {
+    cache_clear_all('field:node:' . $node->nid, 'cache_field');
+  }
 }
 
 /**
