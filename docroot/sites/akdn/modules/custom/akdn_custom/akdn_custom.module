@@ -497,12 +497,14 @@ function akdn_custom_node_view($node, $view_mode, $langcode) {
 
   if($node->type == 'fact_sheet'){
     $field_upload = $node->field_upload_factsheet;
-    $field_upload_factsheet = $node->field_upload_factsheet[key($field_upload)][0]['uri'];
+    $lang = array_key_exists($lang, $node->field_upload_factsheet) ? $lang : $node->language;
+    if(array_key_exists($lang, $node->field_upload_factsheet))
+    $field_upload_factsheet = $node->field_upload_factsheet[$lang][0]['uri'];
     $file_url = file_create_url($field_upload_factsheet);
   	  if (empty($node->nid) || empty($node) || !$node->status || !file_exists($field_upload_factsheet)) {
   	    return drupal_access_denied();
   	  }
-  	  else{
+  	  else{        
   	  drupal_goto($file_url);
   	  }
     }
@@ -3540,6 +3542,10 @@ function akdn_custom_node_presave($node) {
       drupal_goto('admin/config/system/cron/');
       drupal_exit();
     }
+  }
+
+  if (isset($node->nid)) {
+    cache_clear_all('field:node:' . $node->nid, 'cache_field');
   }
 }
 
