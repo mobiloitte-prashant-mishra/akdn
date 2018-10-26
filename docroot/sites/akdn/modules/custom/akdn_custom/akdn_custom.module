@@ -3541,7 +3541,7 @@ function akdn_custom_node_presave($node) {
   }
 
   if (isset($node->nid)) {
-    cache_clear_all('field:node:' . $node->nid, 'cache_field');
+    cache_clear_all('field:node:' . $node->nid, 'cache_page');
   }
 }
 
