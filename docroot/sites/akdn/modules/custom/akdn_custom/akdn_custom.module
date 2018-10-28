@@ -3543,6 +3543,10 @@ function akdn_custom_node_presave($node) {
   }
 }
 
+function akdn_custom_node_insert($node) {
+  drupal_flush_all_caches();
+}
+
 /**
  * Limit the available inline image styles.
  */
