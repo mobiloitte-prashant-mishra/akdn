@@ -507,6 +507,7 @@ function akdn_custom_node_view($node, $view_mode, $langcode) {
   	  }
     }
     cache_clear_all($node->nid, 'cache_page');
+    cache_clear_all($node->nid, 'cache_view');
 }
 
 
