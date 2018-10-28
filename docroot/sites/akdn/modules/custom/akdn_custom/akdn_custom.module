@@ -506,7 +506,7 @@ function akdn_custom_node_view($node, $view_mode, $langcode) {
   	  drupal_goto($file_url);
   	  }
     }
-    drupal_flush_all_caches();
+    cache_clear_all($node->nid, 'cache_page');
 }
 
 
