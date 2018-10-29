@@ -506,8 +506,16 @@ function akdn_custom_node_view($node, $view_mode, $langcode) {
   	  drupal_goto($file_url);
   	  }
     }
-}
 
+  if ($_SESSION['add_edit_node'] > 0) {
+    $core = array('cache', 'cache_page');
+    $cache_tables = array_merge(module_invoke_all('flush_caches'), $core);
+    foreach ($cache_tables as $table) {
+      cache_clear_all($node->nid, $table, TRUE);
+    }
+    $_SESSION['add_edit_node'] = 0;
+  }
+}
 
 /**
 *Implements hook_taxonomy_term_load().
@@ -3541,6 +3549,7 @@ function akdn_custom_node_presave($node) {
       drupal_exit();
     }
   }
+  $_SESSION['add_edit_node'] = 1;
 }
 
 
