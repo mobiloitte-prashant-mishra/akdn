@@ -35,6 +35,15 @@ function akdn_custom_init() {
   drupal_add_js($drupal_get_path . '/js/jquery.jcarousel.js');
   drupal_add_js($drupal_get_path . '/js/akdn_custom.js');
   drupal_add_js($drupal_get_path . '/js/jquery.parss.uncompressed.js');
+  
+  if ($_SESSION['add_edit_node'] > 0) {
+    $core = array('cache', 'cache_page');
+    $cache_tables = array_merge(module_invoke_all('flush_caches'), $core);
+    foreach ($cache_tables as $table) {
+      cache_clear_all($node->nid, $table, TRUE);
+    }
+    $_SESSION['add_edit_node'] = 0;
+  }
 }
 
 function akdn_custom_page_language_url($nid) {
@@ -504,15 +513,6 @@ function akdn_custom_node_view($node, $view_mode, $langcode) {
   	  drupal_goto($file_url);
   	  }
     }
-
-  if ($_SESSION['add_edit_node'] > 0) {
-    $core = array('cache', 'cache_page');
-    $cache_tables = array_merge(module_invoke_all('flush_caches'), $core);
-    foreach ($cache_tables as $table) {
-      cache_clear_all($node->nid, $table, TRUE);
-    }
-    $_SESSION['add_edit_node'] = 0;
-  }
 }
 
 /**
