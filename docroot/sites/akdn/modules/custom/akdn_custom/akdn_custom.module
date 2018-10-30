@@ -534,6 +534,8 @@ function akdn_custom_taxonomy_term_load($terms){
  * - Set the default language in the language switcher to english
  */
 function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
+    global $language;
+    $lang = $language->language;
   if (module_exists('vbo_multipage_selection') && function_exists('_vbo_multipage_selection_form_alter') && $form_id == 'views_form_newsletter_creation_page') {
     _vbo_multipage_selection_form_alter($form, $form_state);
   }
@@ -545,9 +547,6 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
 
   // Default images to appear in all translations - Jatin Rupeja
   if ($form_id == 'gallery_node_form' && arg(3) == 'add') {
-    global $language;
-    $lang = $language->language;
-
     if ($lang != 'en') {
       //For Body Summary
       if (empty($form['#node']->body[$lang])) {
@@ -582,9 +581,6 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
 
   // Default images to appear in all translations - Jatin Rupeja
   if ($form_id == 'article_node_form' && arg(3) == 'add') {
-    global $language;
-    $lang = $language->language;
-
     if ($lang != 'en') {
       //For Body Summary
       if (empty($form['#node']->body[$lang])) {
@@ -618,9 +614,7 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
   }
 
   if ($form_id == 'event_node_form' && arg(3) == 'add') {
-    global $language;
-    $lang = $language->language;
-
+   
     if ($lang != 'en') {
       //For Body Summary
       if (empty($form['#node']->body[$lang])) {
@@ -640,9 +634,7 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
   }
 
   if ($form_id == 'publication_node_form' && arg(3) == 'add') {
-    global $language;
-    $lang = $language->language;
-
+   
     if ($lang != 'en') {
       //For Body Summary
       if (empty($form['#node']->body[$lang])) {
@@ -729,6 +721,10 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
      if (empty($form['nid']['#value']) && isset($form['language']['#options'])) {
         $form['language']['#default_value'] = 'en';
       }
+    $body = $form['body'][$lang][0]['#default_value'];
+    $body = str_replace('field_image_copytight['.$language->language.'][0][value]','field_image_copytight[en][0][value]', $body);
+    $body = str_replace('field_image_caption['.$language->language.'][0][value]', 'field_image_caption[en][0][value]', $body);
+    $form['body'][$lang][0]['#default_value'] = $body;
   }
 
   $form_to_type_map = array(
