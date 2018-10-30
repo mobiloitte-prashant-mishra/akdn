@@ -4867,8 +4867,8 @@ function akdn_custom_node_update($node) {
   // copyright and caption for other language in body.
   if($language->language != 'en'){
     $body = $node->body[$language->language][0]['value'];
-    $body = str_replace('field_image_copytight[en][0][value]', 'field_image_copytight[fr][0][value]', $body);
-    $body = str_replace('field_image_caption[en][0][value]', 'field_image_caption[fr][0][value]', $body);
+    $body = str_replace('field_image_copytight[en][0][value]', 'field_image_copytight['.$language->language.'][0][value]', $body);
+    $body = str_replace('field_image_caption[en][0][value]', 'field_image_caption['.$language->language.'][0][value]', $body);
     $node->body[$language->language][0]['value'] = $body;
     field_attach_update('node', $node);
   }
