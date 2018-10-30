@@ -3554,6 +3554,7 @@ function akdn_custom_node_presave($node) {
   $_SESSION['add_edit_node'] = 1;
 }
 
+
 /**
  * Limit the available inline image styles.
  */
