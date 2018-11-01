@@ -429,10 +429,26 @@ function brightcove_update_7600() {
     ],
   ];
 
-  foreach ($schema as $table => $def) {
-    db_create_table($table, $def);
+  switch ($schema) {
+    case 'brightcove_client':
+      unset($schema['brightcove_client']);
+      break;
+    case 'brightcove_callback':
+      unset($schema['brightcove_callback']);
+      break;
+    case 'brightcove_video':
+      unset($schema['brightcove_video']);
+      break;
+    default:
+      return true;
   }
 
+  if (count($schema)) {
+    foreach ($schema as $table => $def) {
+      db_create_table($table, $def);
+    }
+  }
+  
   db_drop_table('brightcove_player');
   variable_del('brightcove_default_player');
 
