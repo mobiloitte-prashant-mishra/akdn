@@ -1,5 +1,6 @@
 <?php
 
+
 /**
  * Implements hook_init().
  */
@@ -35,12 +36,11 @@ function akdn_custom_init() {
   drupal_add_js($drupal_get_path . '/js/jquery.jcarousel.js');
   drupal_add_js($drupal_get_path . '/js/akdn_custom.js');
   drupal_add_js($drupal_get_path . '/js/jquery.parss.uncompressed.js');
-  
   if ($_SESSION['add_edit_node'] > 0) {
     $core = array('cache', 'cache_page');
     $cache_tables = array_merge(module_invoke_all('flush_caches'), $core);
     foreach ($cache_tables as $table) {
-      cache_clear_all($node->nid, $table, TRUE);
+      cache_clear_all("*", $table, TRUE);
     }
     $_SESSION['add_edit_node'] = 0;
   }
@@ -63,6 +63,7 @@ function akdn_custom_page_language_url($nid) {
     }
   }
 }
+
 
 /**
  * Implements hook_menu().
@@ -3542,6 +3543,7 @@ function akdn_custom_node_presave($node) {
   $_SESSION['add_edit_node'] = 1;
 }
 
+
 /**
  * Limit the available inline image styles.
  */
@@ -4735,7 +4737,6 @@ function akdn_custom_preprocess_views_view_field__focus_areas__what_we_do_summar
   if (empty($body)) {
     $body = $row->_field_data['node_field_data_field_about_page_nid']['entity']->body['en'][0]['value'];
   }
-
   if (!empty($body)) {
     $explode = explode('<!--break-->', $body);
     $output = '';
@@ -5790,7 +5791,6 @@ function _nodes_related_term_id_retrieve($tid, $pager, $limit, $order) {
   return $nodes;
 }
 
-
 /**
  * See Also Menu RHS Panel Block
  */
@@ -5871,7 +5871,6 @@ function akdn_custom_views_pre_execute(&$view) {
     $view->field['field_publication_file']->options['settings']['text'] = $text;
   }
 }
-
 
 /**
  * Implements hook_pathauto_alias_alter().
@@ -5960,7 +5959,7 @@ function akdn_custom_language_switch_links_alter(&$links, $type, $path) {
       $value['query'] = array($query_str_arr[0]=> $query_str_arr[1]);
       $links[$lang] = $value;
     }
-  }
+  } 
 }
 
 /**
