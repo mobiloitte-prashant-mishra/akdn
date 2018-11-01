@@ -323,7 +323,7 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
           unset($node->field_focus_area);
           unset($node->field_article_img);
 
-          unset($node->field_tags);
+          //unset($node->field_tags);
           foreach ($source_avail_lang as $node_avail_lang) {
             $available_lang = $node_avail_lang['lang'];
 
