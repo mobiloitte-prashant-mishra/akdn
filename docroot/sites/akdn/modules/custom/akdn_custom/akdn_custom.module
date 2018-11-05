@@ -36,7 +36,6 @@ function akdn_custom_init() {
   drupal_add_js($drupal_get_path . '/js/jquery.jcarousel.js');
   drupal_add_js($drupal_get_path . '/js/akdn_custom.js');
   drupal_add_js($drupal_get_path . '/js/jquery.parss.uncompressed.js');
-
   if ($_SESSION['add_edit_node'] > 0) {
     $core = array('cache', 'cache_page');
     $cache_tables = array_merge(module_invoke_all('flush_caches'), $core);

@@ -323,7 +323,7 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
           unset($node->field_focus_area);
           unset($node->field_article_img);
 
-          unset($node->field_tags);
+          //unset($node->field_tags);
           foreach ($source_avail_lang as $node_avail_lang) {
             $available_lang = $node_avail_lang['lang'];
 
@@ -440,7 +440,7 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
               $term_tid = 0;
               $term_tid = key(taxonomy_get_term_by_name($tag_term, $vocabulary = 'tags'));
               if ($term_tid > 0) {
-                $node->field_tags[$available_lang][]['tid'] = $term_tid;
+                $node->field_tags['und'][]['tid'] = $term_tid;
               }
               else {
                 if ($tag_term != "") {
@@ -449,10 +449,10 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
                     'name' => html_entity_decode($tag_term),
                     'vid' => $vocab->vid,
                   );
-                  $term = taxonomy_term_save($term_temp);
-                  if ($term && $term->tid > 0) {
-                    $node->field_tags[$available_lang][]['tid'] = $term->tid;
-                  }
+                  //$term = taxonomy_term_save($term_temp);
+                  //if ($term && $term->tid > 0) {
+                    //$node->field_tags[$available_lang][]['tid'] = $term->tid;
+                  //}
                 }
               }
             }
