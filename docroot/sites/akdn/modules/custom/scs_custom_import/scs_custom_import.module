@@ -449,10 +449,10 @@ function _scs_custom_import_language_batch_processing($guid, $entity_id, $node_t
                     'name' => html_entity_decode($tag_term),
                     'vid' => $vocab->vid,
                   );
-                  //$term = taxonomy_term_save($term_temp);
-                  //if ($term && $term->tid > 0) {
-                    //$node->field_tags[$available_lang][]['tid'] = $term->tid;
-                  //}
+                  $term = taxonomy_term_save($term_temp);
+                  if ($term && $term->tid > 0) {
+                    $node->field_tags['und'][]['tid'] = $term->tid;
+                  }
                 }
               }
             }
