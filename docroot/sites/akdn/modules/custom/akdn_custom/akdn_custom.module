@@ -537,6 +537,8 @@ function akdn_custom_taxonomy_term_load($terms){
  * - Set the default language in the language switcher to english
  */
 function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
+    global $language;
+    $lang = $language->language;
   if (module_exists('vbo_multipage_selection') && function_exists('_vbo_multipage_selection_form_alter') && $form_id == 'views_form_newsletter_creation_page') {
     _vbo_multipage_selection_form_alter($form, $form_state);
   }
@@ -548,9 +550,6 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
 
   // Default images to appear in all translations - Jatin Rupeja
   if ($form_id == 'gallery_node_form' && arg(3) == 'add') {
-    global $language;
-    $lang = $language->language;
-
     if ($lang != 'en') {
       //For Body Summary
       if (empty($form['#node']->body[$lang])) {
@@ -585,9 +584,6 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
 
   // Default images to appear in all translations - Jatin Rupeja
   if ($form_id == 'article_node_form' && arg(3) == 'add') {
-    global $language;
-    $lang = $language->language;
-
     if ($lang != 'en') {
       //For Body Summary
       if (empty($form['#node']->body[$lang])) {
@@ -621,9 +617,7 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
   }
 
   if ($form_id == 'event_node_form' && arg(3) == 'add') {
-    global $language;
-    $lang = $language->language;
-
+   
     if ($lang != 'en') {
       //For Body Summary
       if (empty($form['#node']->body[$lang])) {
@@ -643,9 +637,7 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
   }
 
   if ($form_id == 'publication_node_form' && arg(3) == 'add') {
-    global $language;
-    $lang = $language->language;
-
+   
     if ($lang != 'en') {
       //For Body Summary
       if (empty($form['#node']->body[$lang])) {
@@ -4825,6 +4817,7 @@ function akdn_custom_preprocess_views_view_field__entity_type(&$variables) {
  */
 
 function akdn_custom_node_update($node) {
+  global $language;
   //TODO make sure it happen only node update for AKAA only and nid 9576
   if ($node->nid == '9576' && $node->type == 'agency') {
     $path = array(
@@ -5996,4 +5989,28 @@ function get_source_url_alias_redirect($alias){
     ->fetchAll();
   
   return $result[0]->redirect;
+}
+/**
+ * hook_media_wysiwyg_format_form_prepare_alter().
+ * @global type $language
+ * @param type $form
+ * @param type $form_state
+ * @param type $file
+ */
+function akdn_custom_media_wysiwyg_format_form_prepare_alter(&$form, &$form_state, $file) {
+  global $language;
+  $lang = $language->language;
+  
+  if (array_key_exists($lang, $file->field_image_caption)) {
+    $form['options']['fields']['field_image_caption']['en'][0]['value']['#default_value'] = $file->field_image_caption[$lang][0]['value'];
+    $temp = $form['options']['fields']['field_image_caption']['en'];
+    unset($form['options']['fields']['field_image_caption']['en']);
+    $form['options']['fields']['field_image_caption'][$lang] = $temp;
+  }
+  if (array_key_exists($lang, $file->field_image_copytight)) {
+    $form['options']['fields']['field_image_copytight']['en'][0]['value']['#default_value'] = $file->field_image_copytight[$lang][0]['value'];
+    $temp = $form['options']['fields']['field_image_copytight']['en'];
+    unset($form['options']['fields']['field_image_copytight']['en']);
+    $form['options']['fields']['field_image_copytight'][$lang] = $temp;
+  }
 }
