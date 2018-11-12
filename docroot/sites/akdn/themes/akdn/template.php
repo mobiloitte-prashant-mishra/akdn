@@ -390,6 +390,7 @@ function akdn_colorbox_imagefield($variables) {
 
 
 /**
+ * Override the home page custom block with string
  * Implements hook_block_view_alter
  */
 function akdn_block_view_alter(&$data, $block) {

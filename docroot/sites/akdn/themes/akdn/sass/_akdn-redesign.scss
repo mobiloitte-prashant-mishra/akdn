@@ -737,9 +737,9 @@ h1.title {
 
   a {
     display: inline-block;
-    padding: 0 10px;
+    padding: 0 8px;
     color: #000;
-    font-size: 16px;
+    font-size: 15px;
     font-family: arial !important;
     cursor: pointer;
     border-right: 1px solid #999999;
@@ -2190,7 +2190,7 @@ $icons: facebook, twitter, youtube, instagram, vimeo, akmi;
       }
 
       a {
-        display: inline-block;
+        /*display: inline-block;*/
         margin: 0;
         padding: 0;
         color: #000;
@@ -2861,6 +2861,9 @@ ul.primary li {
           font-size: 14px;
       }
     }
+    .akdn-solr-type-of-node{
+         color: #888888;
+      }
   }
 
   /*akdn filter for search page specific */
@@ -3332,7 +3335,7 @@ h2.header-name a {
     .pane-title {
       @extend %font_times;
 
-      font-size: 28px;
+      font-size: 30px;
       text-transform: uppercase;
       margin: 15px 0 30px;
 
@@ -3347,7 +3350,7 @@ h2.header-name a {
         position: relative;
         width: auto;
         border-bottom: 1px solid #CCCCCC;
-        margin: -7px 0px 0 290px;
+        margin: -7px 0px 0 303px;
       }
     }
   }
@@ -6162,7 +6165,7 @@ map {
 .node-type-custom-content {
   .breadcrumb {
     span:not(.delimiter) {
-      padding: 0 3px;
+      padding: 0 3px;      
 
       &:last-child {
         color: #b49759;
@@ -9111,6 +9114,13 @@ html {
             }
         }
     }
+    .node-type-custom-content {
+        .breadcrumb {
+            span:not(.delimiter) {
+                float: right;
+            }
+        }
+    }
     .pane-breaking-news{
         .view-header {
             p{
@@ -9128,8 +9138,8 @@ html {
 
     &.press-release-detail-type {
         .pane-node-field-attachment{
-            margin-left: 15px;
-            float: right;
+           margin-left: 15px;
+           float: right;
         }
     }
     .grid-media-block_description {
@@ -9144,3 +9154,5 @@ html {
         }
     }
 }
+
+

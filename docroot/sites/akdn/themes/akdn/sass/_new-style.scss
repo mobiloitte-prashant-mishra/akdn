@@ -103,6 +103,10 @@ html[dir='rtl'] {
         float: right;
         margin: 0 5px;
     }
+
+    span {
+      float: right;
+    }
   }
 
   .slide-text {
@@ -206,7 +210,6 @@ html[dir='rtl'] {
       float: left;
 
       li:first-child {
-
       }
 
       li:nth-child(2) {
@@ -832,8 +835,11 @@ html[dir='rtl'] {
       &:after {
         margin: -6px 0px 0 0px;
       }
-
       span {
+        &:first-child{
+          font-size: 30px;
+          line-height: normal;
+        }
         &:last-child {
           padding-left: 10px;
           position: relative;
@@ -915,9 +921,13 @@ html[dir='rtl'] {
   .node-type-agency {
     .pane-hub-pages:not(.other-activities-title) {
       .pane-title {
+        display: flex;
+        flex-direction: row;
         clear:both;
         &:after {
-          margin: -7px 290px 0 0;
+          //margin: -7px 290px 0 0;
+          flex: 1;
+          margin: auto 5px 7px auto;
         }
       }
     }

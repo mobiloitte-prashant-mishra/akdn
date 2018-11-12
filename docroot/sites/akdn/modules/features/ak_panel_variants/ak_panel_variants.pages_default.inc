@@ -2636,7 +2636,7 @@ if (isset($node->field_about_page)) {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'hidden',
+    'label' => 'title',
     'formatter' => 'link_default',
     'delta_limit' => '0',
     'delta_offset' => '0',
@@ -2645,6 +2645,7 @@ if (isset($node->field_about_page)) {
     'context' => 'argument_entity_id:node_1',
     'override_title' => 1,
     'override_title_text' => 'Related Links',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -18079,10 +18080,10 @@ function ak_panel_variants_default_page_manager_pages() {
         'settings' => array(
           'description' => 'Language check',
           'php' => 'global $language;
-        if($language->language == \'en\'){
-           return TRUE;
-        }
-        return FALSE;',
+          if($language->language == \'en\'){
+             return TRUE;
+          }
+          return FALSE;',
         ),
         'not' => FALSE,
       ),
@@ -18131,10 +18132,10 @@ function ak_panel_variants_default_page_manager_pages() {
         'settings' => array(
           'description' => 'Language check',
           'php' => 'global $language;
-        if($language->language == \'fr\'){
-           return TRUE;
-        }
-        return FALSE;',
+          if($language->language == \'fr\'){
+             return TRUE;
+          }
+          return FALSE;',
         ),
         'not' => FALSE,
       ),
@@ -18184,10 +18185,10 @@ function ak_panel_variants_default_page_manager_pages() {
         'settings' => array(
           'description' => 'Language check',
           'php' => 'global $language;
-        if($language->language == \'pt\'){
-           return TRUE;
-        }
-        return FALSE;',
+          if($language->language == \'pt\'){
+             return TRUE;
+          }
+          return FALSE;',
         ),
         'not' => FALSE,
       ),
@@ -18237,10 +18238,10 @@ function ak_panel_variants_default_page_manager_pages() {
         'settings' => array(
           'description' => 'Language check',
           'php' => 'global $language;
-        if($language->language == \'ar\'){
-           return TRUE;
-        }
-        return FALSE;',
+          if($language->language == \'ar\'){
+             return TRUE;
+          }
+          return FALSE;',
         ),
         'not' => FALSE,
       ),
@@ -18290,10 +18291,10 @@ function ak_panel_variants_default_page_manager_pages() {
         'settings' => array(
           'description' => 'Language check',
           'php' => 'global $language;
-        if($language->language == \'ru\'){
-           return TRUE;
-        }
-        return FALSE;',
+          if($language->language == \'ru\'){
+             return TRUE;
+          }
+          return FALSE;',
         ),
         'not' => FALSE,
       ),

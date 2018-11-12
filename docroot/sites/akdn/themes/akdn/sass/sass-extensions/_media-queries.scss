@@ -295,6 +295,27 @@
             }
         }
     }
+html[dir='rtl']{
+  .sub-navbar{
+    p{
+      &.indexfix{
+        &:after {
+            margin: -12px 150px 0 0px !important;
+        }
+        span{
+          font-size:24px !important;
+        }
+      }
+    }
+  }
+}
+.geography-page{
+  .pane-hub-pages:not(.other-activities-title){
+    .pane-title{
+        font-size:24px !important;
+    }
+  }
+}
 }
 
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
@@ -540,16 +561,15 @@
         }
     }
 
-.section-top {
-    .views-field.views-field-title {
-        font-size: 18px;
-    }
+    .section-top {
+        .views-field.views-field-title {
+            font-size: 18px;
+        }
 
-    .views-field.views-field-field-facts-number {
-        font-size: 40px;
+        .views-field.views-field-field-facts-number {
+            font-size: 40px;
+        }
     }
-}
-
 
     .whatsnew-right-content {
         .view-header {
@@ -635,7 +655,27 @@
         }
     }
 }
-
+html[dir='rtl']{
+  .sub-navbar{
+    p{
+      &.indexfix{
+        &:after {
+            margin: -12px 150px 0 0px !important;
+        }
+        span{
+          font-size:20px !important;
+        }
+      }
+    }
+  }
+}
+.geography-page{
+  .pane-hub-pages:not(.other-activities-title){
+    .pane-title{
+        font-size:20px !important;
+    }
+  }
+}
 }
 @media (min-width: $screen-sm-min){
 .top-navbar{
@@ -988,7 +1028,6 @@
     }
 }
 
-
     .akdn-filter-js-wrapper {
         .akdn-filter-wrapper {
             width: 50% !important;
@@ -1254,6 +1293,13 @@
         padding: 0 15px;
     }
 }
+.geography-page{
+  .pane-hub-pages:not(.other-activities-title){
+    .pane-title{
+        font-size:24px !important;
+    }
+  }
+}
 html[dir='rtl']{
     .top-navbar{
         .content{
@@ -1268,6 +1314,18 @@ html[dir='rtl']{
                 }
             }
         }
+    }
+    .sub-navbar{
+      p{
+        &.indexfix{
+          &:after {
+              margin: -12px 150px 0 0px !important;
+          }
+          span{
+            font-size:24px !important;
+          }
+        }
+      }
     }
 }
 
