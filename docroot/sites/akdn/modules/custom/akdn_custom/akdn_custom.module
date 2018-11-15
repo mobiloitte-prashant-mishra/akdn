@@ -1999,7 +1999,9 @@ function akdn_basic_page_accordian_style_block() {
             $url = link_cleanup_url($links['url']);
             
             $path = get_source_url_alias_redirect($url);
-            $alias = drupal_get_path_alias($path, $lang);
+            if(!empty($path)){
+              $alias = drupal_get_path_alias($path, $lang);
+            }
             if(empty($alias)){
               $alias = $url;
             }
