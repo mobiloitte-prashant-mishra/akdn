@@ -196,8 +196,13 @@ jQuery(document).ready(function($) {
     // $(ap_views_id+" #edit-field-performance-year-tid-wrapper select, "+ap_views_id+" #edit-field-artist-country-origin-tid-wrapper select, "+ap_views_id+" #edit-field-artist-related-instruments-nid-wrapper select").chosen();
   }
   // click hide and show summary field
-  jQuery('.field-type-text-with-summary a.link-edit-summary').click();
-  jQuery('.field-type-text-with-summary a.link-edit-summary').click();
+//  jQuery('.field-type-text-with-summary a.link-edit-summary').click();
+//  jQuery('.field-type-text-with-summary a.link-edit-summary').click();
+  var str = window.location.pathname
+  var str_search = str.search("node/add/");
+  if(str_search == -1){
+    jQuery(".link-edit-summary").click();
+  }
 });
 
 (function($) {
