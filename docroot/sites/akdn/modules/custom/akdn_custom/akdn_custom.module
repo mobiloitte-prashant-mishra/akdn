@@ -687,18 +687,31 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
 //    drupal_add_js($script, 'inline');
 //  }
   // Check that we're on a node edit form.
+  
+//  if($form['type']['#value'] == 'page'){
+//    $form['body'][$lang][0]['summary']['#type'] = 'text_format';
+//  }
   if (isset($form['type']) && isset($form['type']['#value']) && $form['type']['#value'] . '_node_form' == $form_id) {
-//    $script = 'jQuery(document).ready(function(){ jQuery(".link-edit-summary").click(); });';
-//    drupal_add_js($script, 'inline');
+    
+    if(arg(0) == 'node' && arg(1) == 'add'){
+      $script = 'jQuery(document).ready(function(){ console.log("21313"); jQuery(".link-edit-summary").click(); });';
+      drupal_add_js($script, 'inline');
+    }else{
+      $script = 'jQuery(window).load(function(){ console.log("ssdfdsf"); jQuery(".field-name-body .link-edit-summary").click(); });';
+      drupal_add_js($script, 'inline');
+    }
+    
 //    if (!empty($form['body'])) {
 //      // Remove the delete button.
 //      $lang = $form['body']['#language'];
 ////      print '<pre>';
-////      print_r($form['body']); die;
+////      print_r($form['body'][$lang][0]['summary']); die;
 //      // enable rich text editor on summary
 ////      $form['body'][$lang][0]['#format'] = 'full_html';
 //      $form['body'][$lang][0]['summary']['#type'] = 'text_format';
-////      $form['body'][$lang][0]['summary']['#format'] = 'full_html';
+//      $form['body'][$lang][0]['summary']['#format'] = 'full_html';
+////      print '<pre>';
+////      print_r($form['body'][$lang][0]['summary']); die;
 //
 //      $form['#after_build'][] = 'akdn_custom_node_form_after_build';
 //      $actions = $form['actions']['submit']['#submit'];
@@ -5973,7 +5986,7 @@ function akdn_custom_js_alter(&$javascript) {
   $js_path = drupal_get_path('module', 'text') . '/text.js';
 
   if (isset($javascript[$js_path])) {
-    unset($javascript[$js_path]);
+    //unset($javascript[$js_path]);
   }
 }
 /**

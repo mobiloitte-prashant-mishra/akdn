@@ -1,0 +1,183 @@
+<?php
+
+/**
+ * @file
+ * The Cookiebot main module file.
+ */
+
+/**
+ * Implements hook_help().
+ */
+function cookiebot_help($path, $arg) {
+  if ($path !== 'admin/help#cookiebot') {
+    return '';
+  }
+
+  $output = file_get_contents(drupal_get_path('module', 'cookiebot') . '/README.md');
+  return module_exists('markdown') ?
+    filter_xss_admin(module_invoke('markdown', 'filter', 'process', 0, -1, $output)) :
+    '<pre>' . check_plain($output) . '</pre>';
+}
+
+/**
+ * Implements hook_menu().
+ */
+function cookiebot_menu() {
+  $items = array();
+
+  $items['admin/config/system/cookiebot'] = array(
+    'title' => 'Cookiebot configuration',
+    'description' => 'Configure your Cookiebot integration, like the Domain Group ID.',
+    'access callback' => 'user_access',
+    'access arguments' => array('administer cookiebot'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('cookiebot_settings_form'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'cookiebot.admin.inc',
+  );
+
+  // Add a special menu item for the JavaScript powered Cookiebot renew link.
+  // This is not a page that can be visited, but this item makes it possible
+  // to place this special link in Drupal's menus.
+  $items['<cookiebot-renew>'] = array(
+    'page callback' => 'drupal_not_found',
+    // Since this is a JavaScript only link everybody has access.
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function cookiebot_permission() {
+  return array(
+    'administer cookiebot' => array(
+      'title' => t('Administer Cookiebot Settings'),
+      'description' => t('Allows users to administer Cookiebot settings.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_theme().
+ */
+function cookiebot_theme($existing, $type, $theme, $path) {
+  return array(
+    'cookiebot_declaration' => array(
+      'template' => 'templates/cookiebot-declaration',
+      'variables' => array(
+        'cookiebot_src' => '',
+      ),
+    ),
+  );
+}
+
+/**
+ * Implements hook_page_alter().
+ */
+function cookiebot_page_alter(&$page) {
+  $cbid = variable_get('cookiebot_cbid', '');
+
+  if (empty($cbid)) {
+    return;
+  }
+
+  // We insert a placeholder script that sets its own attribute when the
+  // document is loaded.
+  // Currently drupal_add_js() does not support custom script attributes, and
+  // therefor this is the only way to achieve this.
+  // See https://www.drupal.org/project/drupal/issues/1664602.
+  $script = <<<JS
+  jQuery('script').last().replaceWith('<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="$cbid" type="text/javascript" async></script>');
+JS;
+  drupal_add_js($script, array('type' => 'inline'));
+  drupal_add_js(drupal_get_path('module', 'cookiebot') . '/js/cookiebot.js');
+}
+
+/**
+ * Implements hook_node_view_alter().
+ */
+function cookiebot_node_view_alter(&$build) {
+  $nid = $build['#node']->nid;
+  $declaration_node_id = variable_get('cookiebot_show_declaration_node_id', '');
+  $cbid = variable_get('cookiebot_cbid', '');
+
+  if (
+    $nid !== $declaration_node_id ||
+    $build['#view_mode'] !== 'full' ||
+    empty($cbid) ||
+    !variable_get('cookiebot_show_declaration', FALSE)
+  ) {
+    return;
+  }
+
+  // Print full cookies declaration from Cookiebot.
+  $build['cookiebot'] = array(
+    '#theme' => 'cookiebot_declaration',
+    '#cookiebot_src' => 'https://consent.cookiebot.com/' . $cbid . '/cd.js',
+  );
+}
+
+/**
+ * Implements hook_form_FROM_ID_alter() for menu_edit_item().
+ */
+function cookiebot_form_menu_edit_item_alter(&$form, &$form_state) {
+  if (!isset($form['link_path']['#default_value'])) {
+    return;
+  }
+
+  $form['link_path']['#description'] .= ' ' . t("Enter '%cookiebot-renew' to generate a link to renew Cookiebot's cookie consent status.", array('%cookiebot-renew' => '<cookiebot-renew>'));
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for menu_link().
+ */
+function cookiebot_preprocess_menu_link(&$variables) {
+  if (empty($variables['element']['#href']) || $variables['element']['#href'] !== '<cookiebot-renew>') {
+    return;
+  }
+
+  $variables['element']['#href'] = '/';
+  $variables['element']['#localized_options']['attributes']['class'][] = 'cookiebot-renew';
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function cookiebot_block_info() {
+  $blocks = array();
+
+  $blocks['cookiebot_declaration'] = array(
+    'info' => t('Cookiebot declaration'),
+    'cache' => DRUPAL_CACHE_GLOBAL,
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function cookiebot_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'cookiebot_declaration':
+      $cbid = variable_get('cookiebot_cbid', '');
+
+      if (empty($cbid)) {
+        break;
+      }
+
+      $block['content'] = array(
+        '#theme' => 'cookiebot_declaration',
+        '#cookiebot_src' => 'https://consent.cookiebot.com/' . $cbid . '/cd.js',
+      );
+      break;
+  }
+
+  return $block;
+}
