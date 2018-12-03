@@ -50,6 +50,7 @@ function akdn_custom_init() {
 function akdn_custom_mail_alter(&$message) {
 
   //if(@$message['params']['email']['headers']['Reply-To']){
+
   $message['params']['email']['headers']['Reply-To'] = $message['params']['submission']->data[1][0];
   //}
 }
