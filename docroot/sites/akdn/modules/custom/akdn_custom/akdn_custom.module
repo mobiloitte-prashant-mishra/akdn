@@ -46,6 +46,12 @@ function akdn_custom_init() {
   }
 }
 
+function akdn_custom_mail_alter(&$message) {
+
+  //print_r($message['params']['node']->webform['components'][1]);exit;
+$message['params']['node']->webform['components'][1]['name'] = $message['params']['node']->webform['components'][1]['value'];
+}
+
 function akdn_custom_page_language_url($nid) {
   global $language;
   $lang = $language->language;
@@ -720,7 +726,7 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
 //      });';
 //      drupal_add_js($script, 'inline');
 //      // Check if this is a new node and if it has the entity translation form
-//     
+//
 //
 //      hide($form['field_date_decade']); //hide date decade field from node edit form
 //      if ($form_id == 'breaking_news_node_form' || $form_id == 'facts_block_node_form' || $form_id == 'akmi_artists_node_form') {
@@ -1223,9 +1229,9 @@ function akdn_custom_block_view($delta = '') {
 function home_news_and_resources(){
   global $language;
   $output = '';
-  $node_ids = db_query("SELECT n.nid, n.type, pd.field_publish_date_value from node n 
-                  LEFT JOIN entity_translation et ON n.nid = et.entity_id 
-                  LEFT JOIN field_data_field_publish_date pd ON et.entity_id = pd.entity_id 
+  $node_ids = db_query("SELECT n.nid, n.type, pd.field_publish_date_value from node n
+                  LEFT JOIN entity_translation et ON n.nid = et.entity_id
+                  LEFT JOIN field_data_field_publish_date pd ON et.entity_id = pd.entity_id
                   WHERE n.type IN ('article','event','gallery', 'podcast','publication', 'speech', 'project') AND n.status = 1 AND et.language = '$language->language'
                   ORDER BY pd.field_publish_date_value DESC LIMIT 3")->fetchAll();
 
@@ -1252,7 +1258,7 @@ function home_news_and_resources(){
       case 'article':
         $article_cat = $wrapper_translated->field_article_cat->value();
         $type = $article_cat->name;
-        
+
         //for url
         $article_type = $article_cat->name_field['en'][0]['value'];
         if ($article_type == 'In the media') {
@@ -1270,7 +1276,7 @@ function home_news_and_resources(){
         $url_type = str_replace(' ', '-', strtolower($article_type));
         if ($article_type == 'Press Release') {
           $url_type = 'press-releases';
-        }        
+        }
         break;
       case 'event':
         $image = $wrapper_translated->field_event_image->value();
@@ -1397,7 +1403,7 @@ function akdn_custom_content_breadcrumb() {
       $output .= '<span class="delimiter">|</span>';
     }
     $i++;
-  } 
+  }
   return $output;
 }
 
@@ -2003,13 +2009,13 @@ function akdn_basic_page_accordian_style_block() {
           $rel_links = '';
           foreach ($related_links as $links) {
             $url = link_cleanup_url($links['url']);
-            
+
             $path = get_source_url_alias_redirect($url);
             $alias = drupal_get_path_alias($path, $lang);
             if(empty($alias)){
               $alias = $url;
             }
-            
+
             $target = $links['attributes']['target'];
             if ($target === '_blank') {
               $rel_links .= '<div class = "accordian_rel_links">';
@@ -5003,7 +5009,7 @@ function akdn_custom_video_player_speech() {
   $lang = $language->language;
   $drupal_get_path = drupal_get_path('module', 'akdn_custom');
   $entity = menu_get_object();
-  
+
   if (isset($entity->field_speech_video[$lang][0]['uri'])) {
     //bightcove video
     $video_temp = explode('brightcove://', $entity->field_speech_video[$lang][0]['uri']);
@@ -5944,7 +5950,7 @@ function akdn_custom_tokens($type, $tokens, array $data = array(), array $option
             $cp_rt_new = $data['file']->field_image_copytight["en"][0]['value'];
           }
           // Add the new value into the replacements array.
-          $replacements[$original] = $cp_rt_new;  
+          $replacements[$original] = $cp_rt_new;
       }
     }
   }
@@ -5966,7 +5972,7 @@ function akdn_custom_language_switch_links_alter(&$links, $type, $path) {
       $value['query'] = array($query_str_arr[0]=> $query_str_arr[1]);
       $links[$lang] = $value;
     }
-  } 
+  }
 }
 
 /**
@@ -5982,7 +5988,7 @@ function akdn_custom_js_alter(&$javascript) {
   }
 }
 /**
- * 
+ *
  * @param type $alias
  * @return type
  */
@@ -5992,6 +5998,6 @@ function get_source_url_alias_redirect($alias){
     ->condition('source',$alias,'=')
     ->distinct()->execute()
     ->fetchAll();
-  
+
   return $result[0]->redirect;
 }
