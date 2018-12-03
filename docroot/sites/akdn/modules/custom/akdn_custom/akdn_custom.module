@@ -46,10 +46,13 @@ function akdn_custom_init() {
   }
 }
 
+
 function akdn_custom_mail_alter(&$message) {
 
-  //print_r($message['params']['node']->webform['components'][1]);exit;
-$message['params']['node']->webform['components'][1]['name'] = '';
+  if(@$message['params']['email']['headers']['Reply-To']){
+  $message['params']['email']['headers']['Reply-To'] = $message['params']['submission']->data[1][0];
+  }
+  //print_r($message['params']);exit;
 }
 
 function akdn_custom_page_language_url($nid) {
