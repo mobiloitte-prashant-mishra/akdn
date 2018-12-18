@@ -5313,6 +5313,9 @@ function akdn_custom_form_simplenews_node_form_alter(&$form, &$form_state, &$for
   // admin/content/node
   if (!empty($form['#node_edit_form']) && in_array($form['type']['#value'], simplenews_get_content_types()) && $form_state['input']['op'] = t('Create newsletter') && isset($form_state['input']['nodes'])
   ) {
+    global $language;
+    $language = $language->language;
+
     $form['body'][LANGUAGE_NONE]['0']['summary'] = FALSE;
     $nodes = node_load_multiple(array_keys($form_state['input']['nodes']));
     $data_social = array();
@@ -5360,7 +5363,16 @@ function akdn_custom_form_simplenews_node_form_alter(&$form, &$form_state, &$for
         }
       }
       else {
-        $body = $value->field_newsletter_summary[key((array)$value->field_newsletter_summary)]['0']['value'];
+        if (isset($value->field_newsletter_summary[$language]['0']['value'])) {
+          $body = $value->field_newsletter_summary[$language]['0']['value'];
+        } 
+        elseif (isset($value->field_newsletter_summary['und']['0']['value'])) {
+          $body = $value->field_newsletter_summary['und']['0']['value'];
+        } 
+        else {
+          $body = $value->field_newsletter_summary[key((array)$value->field_newsletter_summary)]['0']['value'];
+        }
+
         if ($value->type == 'article') {
           $tid = $value->field_article_cat['und'][0]['tid'];
           $term_load = taxonomy_term_load($tid);
