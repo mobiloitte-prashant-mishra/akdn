@@ -5374,10 +5374,11 @@ function akdn_custom_form_simplenews_node_form_alter(&$form, &$form_state, &$for
         }
 
         if ($value->type == 'article') {
+          
           $tid = $value->field_article_cat['und'][0]['tid'];
           $term_load = taxonomy_term_load($tid);
           $term = $term_load->name;
-          $url = $value->field_media_source[key((array)$value->field_media_source)]['0']['display_url'];
+          $url = $value->field_media_source[key((array)$value->field_media_source)]['0']['url'];
           $result[] = array(
             'nid' => $key,
             'title' => strip_tags($value->title),
