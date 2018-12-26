@@ -1630,7 +1630,7 @@ function akdn_content_types_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        'news' => 'News',
+        'news' => 'Our stories',
         'press-releases' => 'Press Release',
         'in-the-media' => 'In the Media',
         'publications' => 'Publications',
@@ -1938,7 +1938,7 @@ function akdn_content_types_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        'news' => 'News',
+        'news' => 'Our stories',
         'in-the-media' => 'In the Media',
         'press-release' => 'Press Release',
         'publications' => 'Publications',

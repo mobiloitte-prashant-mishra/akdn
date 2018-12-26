@@ -316,6 +316,15 @@ function akdn_custom_views_query_alter(&$view, &$query) {
  * Implements hook_views_pre_render().
  */
 function akdn_custom_views_pre_render(&$view) {
+
+  if ($view->name == 'solr_site_search') {
+    foreach ($view->result as $result) {
+      if (isset($result->_entity_properties['entity_type']) && $result->_entity_properties['entity_type'] == 'News') {
+        $result->_entity_properties['entity_type'] = 'Our stories';
+      }
+    }
+  }
+
   // Open 'In the media type links in new tab'
   if ($view->name == 'featured_slideshow' && $view->current_display == 'block_2') {
     foreach ($view->result as $result) {
@@ -1627,7 +1636,7 @@ function akdn_right_panel_press_center_block() {
   $arg = arg(1);
   $node = array();
   $array = array(
-    'news' => t('News'),
+    'news' => t('Our stories'),
     'in-the-media' => t('In the Media'),
     'press-releases' => t('Press Releases'),
     'publications' => t('Publications'),
@@ -2274,7 +2283,7 @@ function news_and_resources_top_links() {
     $output .= t('<p><span>N</span><span>ews & Resources</span></p><ul>');
     foreach ($links as $value) {
       if ($value['value'] == 'news') {
-        $text = t('News');
+        $text = t('Our stories');
       }
       if ($value['value'] == 'in-the-media') {
         $text = t('In the Media');
@@ -2528,7 +2537,7 @@ function what_we_do_news_and_resources() {
           $read = l(t('View'), $source, $attribute);
         }
         if ($name == 'News') {
-          $type = t('News');
+          $type = t('Our stories');
           $url = 'news';
           $read = l(t('View'), 'node/' . $node->nid, $attribute);
         }
@@ -3324,7 +3333,7 @@ function akaa_get_resources_links() {
   $links[] = l(t('Publications'), 'architecture/publications');
   $links[] = l(t('Events'), 'architecture/events');
   $links[] = l(t('In the Media'), 'architecture/in-the-media');
-  $links[] = l(t('News'), 'architecture/news');
+  $links[] = l(t('Our stories'), 'architecture/news');
   $links[] = l(t('Project Locations'), 'architecture/projects/map');
 
   return $links;
@@ -4907,7 +4916,11 @@ function akdn_custom_facet_items_alter(&$build, &$settings) {
       elseif ($key == 'custom content') {
         unset($build['custom content']);
       }
+      elseif ($key == 'News') {
+        $build[$key]["#markup"] = 'Our stories';
+      }
     } // End foreach
+   
     if (array_key_exists('agency', $build)) {
       $count = $build['agency']['#count'] - 2;
       $build['agency']['#count'] = $count;
@@ -5879,6 +5892,11 @@ function _akdn_custom_see_also_menu() {
     if($value == 'Projects'){
       $value = 'Spotlights';
     }
+
+    if($value == 'News'){
+      $value = 'Our stories';
+    }
+
     $active_li = ' akdn-menu-active-trail';
     $active_a = ' akdn-menu-active';
 
