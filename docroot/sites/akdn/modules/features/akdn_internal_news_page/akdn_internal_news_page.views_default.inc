@@ -423,9 +423,13 @@ function akdn_internal_news_page_views_default_views() {
          $url_name = str_replace(\' \',\'-\',strtolower($article_type->name));
          $url = \'/press-centre/\'.$url_name.\'s\';
          $display_name = \'All \'.$article_type->name.\'s\';
-         if($article_type->name == \'In the media\' || $article_type->name == \'News\'){
+         if($article_type->name == \'In the media\'){
             $url = \'/press-centre/\'.$url_name;
-            $display_name = \'All \'.$article_type->name;
+            $display_name = \'All \'$article_type->name;
+          }
+          if($article_type->name == \'News\'){
+            $url = \'/press-centre/\'.$url_name;
+            $display_name = \'All Our stories\';
           }
          if($article_type->name == \'Spotlight\'){
             $url = \'/press-centre/projects\';
@@ -762,9 +766,13 @@ function akdn_internal_news_page_views_default_views() {
          $url_name = str_replace(\' \',\'-\',strtolower($article_type->name));
          $url = \'/press-centre/\'.$url_name.\'s\';
          $display_name = \'All \'.$article_type->name.\'s\';
-         if($article_type->name == \'In the media\' || $article_type->name == \'News\'){
+         if($article_type->name == \'In the media\'){
             $url = \'/press-centre/\'.$url_name;
             $display_name = \'All \'.$article_type->name;
+          }
+          if($article_type->name == \'News\'){
+            $url = \'/press-centre/\'.$url_name;
+            $display_name = \'All Our stories\';
           }
          if($article_type->name == \'Spotlight\'){
             $url = \'/press-centre/projects\';

@@ -316,7 +316,7 @@ function akdn_custom_views_query_alter(&$view, &$query) {
  * Implements hook_views_pre_render().
  */
 function akdn_custom_views_pre_render(&$view) {
-
+ 
   if ($view->name == 'solr_site_search') {
     foreach ($view->result as $result) {
       if (isset($result->_entity_properties['entity_type']) && $result->_entity_properties['entity_type'] == 'News') {
@@ -325,6 +325,20 @@ function akdn_custom_views_pre_render(&$view) {
     }
   }
 
+  if ($view->name == 'akdn_internal_news_pages_blocks') {
+    //print "<pre>";
+    foreach ($view->result as $result) {
+      if (isset($result->field_field_article_cat_1[0]['rendered']['#markup']) && $result->field_field_article_cat_1[0]['rendered']['#markup'] == 'News') {
+        $result->field_field_article_cat_1[0]['rendered']['#markup'] = 'Our stories';
+      }
+      //print_r($result);
+      //exit;
+      if (isset($result->field_field_article_cat[0]['rendered']['#markup']) && $result->field_field_article_cat[0]['rendered']['#markup'] == 'News') {
+        $result->field_field_article_cat[0]['rendered']['#markup'] = 'Our stories';
+      }
+    }
+  }
+  
   // Open 'In the media type links in new tab'
   if ($view->name == 'featured_slideshow' && $view->current_display == 'block_2') {
     foreach ($view->result as $result) {
