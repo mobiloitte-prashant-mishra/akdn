@@ -30,7 +30,8 @@
           print "Our stories";
         } else {
           print $primary_cat;
-        } ?>
+        } 
+        ?>
       </div>
     <?php } ?>
     <?php if ($title) { ?>
