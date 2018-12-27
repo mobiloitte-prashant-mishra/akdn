@@ -137,7 +137,7 @@ function _akaa_see_also_block() {
   }
   $cycle_tid = $node->field_cycle_year[LANGUAGE_NONE][0]['tid'];
   $array = array(
-    '2' => 'News',
+    '2' => 'Our stories',
     '2611' => 'In the media',
     '4' => 'Press Releases',
     'publication' => 'Publications',
