@@ -22653,7 +22653,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 		  <div class="slide-text">
 		  <h3>[title_field]</h3>
 		  [php_1]
-		  [php][php_2] </a>
+		  [php][php_2]</a>
 		  </div>';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	/* Field: Global: Custom text */
@@ -22665,7 +22665,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 		  <div class="slide-text">
 		  <h3>[title_field]</h3>
 		  [php_1]
-		  [php][php_2] </a>
+		  [php][php_2]</a>
 		  </div>';
 	$handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
 	$handler->display->display_options['defaults']['sorts'] = FALSE;
@@ -23041,7 +23041,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 		  <div class="slide-text">
 		  <h3>[title_field_et]</h3>
 		  [php_1]
-		  [php]More </a>
+		  [php]More</a>
 		  </div>';
 	$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 	$handler->display->display_options['defaults']['sorts'] = FALSE;
