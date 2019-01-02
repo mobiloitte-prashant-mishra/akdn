@@ -1,10 +1,10 @@
 <?php
 
-
 /**
  * Implements hook_init().
  */
 function akdn_custom_init() {
+
   global $language, $base_url;
   $lang = $language->language;
 
@@ -327,6 +327,29 @@ function akdn_custom_views_query_alter(&$view, &$query) {
  * Implements hook_views_pre_render().
  */
 function akdn_custom_views_pre_render(&$view) {
+ 
+  if ($view->name == 'solr_site_search') {
+    foreach ($view->result as $result) {
+      if (isset($result->_entity_properties['entity_type']) && $result->_entity_properties['entity_type'] == 'News') {
+        $result->_entity_properties['entity_type'] = 'Our stories';
+      }
+    }
+  }
+
+  if ($view->name == 'akdn_internal_news_pages_blocks') {
+    //print "<pre>";
+    foreach ($view->result as $result) {
+      if (isset($result->field_field_article_cat_1[0]['rendered']['#markup']) && $result->field_field_article_cat_1[0]['rendered']['#markup'] == 'News') {
+        $result->field_field_article_cat_1[0]['rendered']['#markup'] = 'Our stories';
+      }
+      //print_r($result);
+      //exit;
+      if (isset($result->field_field_article_cat[0]['rendered']['#markup']) && $result->field_field_article_cat[0]['rendered']['#markup'] == 'News') {
+        $result->field_field_article_cat[0]['rendered']['#markup'] = 'Our stories';
+      }
+    }
+  }
+  
   // Open 'In the media type links in new tab'
   if ($view->name == 'featured_slideshow' && $view->current_display == 'block_2') {
     foreach ($view->result as $result) {
@@ -523,7 +546,7 @@ function akdn_custom_node_view($node, $view_mode, $langcode) {
   	  if (empty($node->nid) || empty($node) || !$node->status || !file_exists($field_upload_factsheet)) {
   	    return drupal_access_denied();
   	  }
-  	  else{        
+  	  else{
   	  drupal_goto($file_url);
   	  }
     }
@@ -628,11 +651,7 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
   }
 
   if ($form_id == 'event_node_form' && arg(3) == 'add') {
-<<<<<<< HEAD
-   
-=======
 
->>>>>>> AKDN-1523
     if ($lang != 'en') {
       //For Body Summary
       if (empty($form['#node']->body[$lang])) {
@@ -652,11 +671,7 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
   }
 
   if ($form_id == 'publication_node_form' && arg(3) == 'add') {
-<<<<<<< HEAD
-   
-=======
 
->>>>>>> AKDN-1523
     if ($lang != 'en') {
       //For Body Summary
       if (empty($form['#node']->body[$lang])) {
@@ -706,20 +721,12 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
 //    drupal_add_js($script, 'inline');
 //  }
   // Check that we're on a node edit form.
-<<<<<<< HEAD
-  
-=======
 
->>>>>>> AKDN-1523
 //  if($form['type']['#value'] == 'page'){
 //    $form['body'][$lang][0]['summary']['#type'] = 'text_format';
 //  }
   if (isset($form['type']) && isset($form['type']['#value']) && $form['type']['#value'] . '_node_form' == $form_id) {
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> AKDN-1523
     if(arg(0) == 'node' && arg(1) == 'add'){
       $script = 'jQuery(document).ready(function(){ console.log("21313"); jQuery(".link-edit-summary").click(); });';
       drupal_add_js($script, 'inline');
@@ -727,11 +734,7 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
       $script = 'jQuery(window).load(function(){ console.log("ssdfdsf"); jQuery(".field-name-body .link-edit-summary").click(); });';
       drupal_add_js($script, 'inline');
     }
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> AKDN-1523
 //    if (!empty($form['body'])) {
 //      // Remove the delete button.
 //      $lang = $form['body']['#language'];
@@ -1657,7 +1660,7 @@ function akdn_right_panel_press_center_block() {
   $arg = arg(1);
   $node = array();
   $array = array(
-    'news' => t('News'),
+    'news' => t('Our stories'),
     'in-the-media' => t('In the Media'),
     'press-releases' => t('Press Releases'),
     'publications' => t('Publications'),
@@ -2040,15 +2043,10 @@ function akdn_basic_page_accordian_style_block() {
           $rel_links = '';
           foreach ($related_links as $links) {
             $url = link_cleanup_url($links['url']);
-<<<<<<< HEAD
-            $url_arr = parse_url($url);
-            if(isset($url_arr['scheme']) && ($url_arr['scheme'] == 'http' || $url_arr['scheme'] == 'https')){
-=======
 
             $path = get_source_url_alias_redirect($url);
             $alias = drupal_get_path_alias($path, $lang);
             if(empty($alias)){
->>>>>>> AKDN-1523
               $alias = $url;
             }else{
               $path = get_source_url_alias_redirect($url);
@@ -2311,7 +2309,7 @@ function news_and_resources_top_links() {
     $output .= t('<p><span>N</span><span>ews & Resources</span></p><ul>');
     foreach ($links as $value) {
       if ($value['value'] == 'news') {
-        $text = t('News');
+        $text = t('Our stories');
       }
       if ($value['value'] == 'in-the-media') {
         $text = t('In the Media');
@@ -2565,7 +2563,7 @@ function what_we_do_news_and_resources() {
           $read = l(t('View'), $source, $attribute);
         }
         if ($name == 'News') {
-          $type = t('News');
+          $type = t('Our stories');
           $url = 'news';
           $read = l(t('View'), 'node/' . $node->nid, $attribute);
         }
@@ -3361,7 +3359,7 @@ function akaa_get_resources_links() {
   $links[] = l(t('Publications'), 'architecture/publications');
   $links[] = l(t('Events'), 'architecture/events');
   $links[] = l(t('In the Media'), 'architecture/in-the-media');
-  $links[] = l(t('News'), 'architecture/news');
+  $links[] = l(t('Our stories'), 'architecture/news');
   $links[] = l(t('Project Locations'), 'architecture/projects/map');
 
   return $links;
@@ -4944,7 +4942,11 @@ function akdn_custom_facet_items_alter(&$build, &$settings) {
       elseif ($key == 'custom content') {
         unset($build['custom content']);
       }
+      elseif ($key == 'News') {
+        $build[$key]["#markup"] = 'Our stories';
+      }
     } // End foreach
+   
     if (array_key_exists('agency', $build)) {
       $count = $build['agency']['#count'] - 2;
       $build['agency']['#count'] = $count;
@@ -5411,10 +5413,11 @@ function akdn_custom_form_simplenews_node_form_alter(&$form, &$form_state, &$for
         }
 
         if ($value->type == 'article') {
+          
           $tid = $value->field_article_cat['und'][0]['tid'];
           $term_load = taxonomy_term_load($tid);
           $term = $term_load->name;
-          $url = $value->field_media_source[key((array)$value->field_media_source)]['0']['display_url'];
+          $url = $value->field_media_source[key((array)$value->field_media_source)]['0']['url'];
           $result[] = array(
             'nid' => $key,
             'title' => strip_tags($value->title),
@@ -5916,6 +5919,11 @@ function _akdn_custom_see_also_menu() {
     if($value == 'Projects'){
       $value = 'Spotlights';
     }
+
+    if($value == 'News'){
+      $value = 'Our stories';
+    }
+
     $active_li = ' akdn-menu-active-trail';
     $active_a = ' akdn-menu-active';
 
@@ -6057,10 +6065,7 @@ function get_source_url_alias_redirect($alias){
 
   return $result[0]->redirect;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> AKDN-1523
 /**
  * hook_media_wysiwyg_format_form_prepare_alter().
  * @global type $language
@@ -6071,11 +6076,7 @@ function get_source_url_alias_redirect($alias){
 function akdn_custom_media_wysiwyg_format_form_prepare_alter(&$form, &$form_state, $file) {
   global $language;
   $lang = $language->language;
-<<<<<<< HEAD
-  
-=======
 
->>>>>>> AKDN-1523
   if (array_key_exists($lang, $file->field_image_caption)) {
     $form['options']['fields']['field_image_caption']['en'][0]['value']['#default_value'] = $file->field_image_caption[$lang][0]['value'];
     $temp = $form['options']['fields']['field_image_caption']['en'];
@@ -6088,8 +6089,4 @@ function akdn_custom_media_wysiwyg_format_form_prepare_alter(&$form, &$form_stat
     unset($form['options']['fields']['field_image_copytight']['en']);
     $form['options']['fields']['field_image_copytight'][$lang] = $temp;
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> AKDN-1523
