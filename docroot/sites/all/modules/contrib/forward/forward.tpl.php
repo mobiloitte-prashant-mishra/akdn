@@ -30,7 +30,7 @@
           <td style="font-family:Arial,Helvetica,sans-serif; font-size:12px;">
             <?php print $forward_message; ?>
             <?php if ($message) { ?>
-            <p><?php print t('Message from Sender'); ?></p><p><?php print $message; ?></p>
+            <p><?php print t('Message from Sender : '); print $message; ?></p>
             <?php } ?>
             <?php if ($title) { ?><h2 style="font-size: 14px;"><?php print $title; ?></h2><?php } ?>
             <?php if ($submitted) { ?><p><em><?php print $submitted; ?></em></p><?php } ?>
