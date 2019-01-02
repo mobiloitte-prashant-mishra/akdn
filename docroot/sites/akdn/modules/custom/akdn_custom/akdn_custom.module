@@ -46,6 +46,17 @@ function akdn_custom_init() {
   }
 }
 
+/*Hook Mail Alter*/
+function akdn_custom_mail_alter(&$message) {
+
+  if(@$message['params']['email']['headers']['Reply-To']){
+  $message['params']['email']['headers']['Reply-To'] = $message['params']['submission']->data[1][0];
+  $message['params']['headers']['Reply-To'] = $message['params']['submission']->data[1][0];
+  $message['headers']['Reply-To'] = $message['params']['submission']->data[1][0];
+  }
+  //print_r($message['headers']);exit;
+}
+
 function akdn_custom_page_language_url($nid) {
   global $language;
   $lang = $language->language;
@@ -617,7 +628,11 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
   }
 
   if ($form_id == 'event_node_form' && arg(3) == 'add') {
+<<<<<<< HEAD
    
+=======
+
+>>>>>>> AKDN-1523
     if ($lang != 'en') {
       //For Body Summary
       if (empty($form['#node']->body[$lang])) {
@@ -637,7 +652,11 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
   }
 
   if ($form_id == 'publication_node_form' && arg(3) == 'add') {
+<<<<<<< HEAD
    
+=======
+
+>>>>>>> AKDN-1523
     if ($lang != 'en') {
       //For Body Summary
       if (empty($form['#node']->body[$lang])) {
@@ -687,12 +706,20 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
 //    drupal_add_js($script, 'inline');
 //  }
   // Check that we're on a node edit form.
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> AKDN-1523
 //  if($form['type']['#value'] == 'page'){
 //    $form['body'][$lang][0]['summary']['#type'] = 'text_format';
 //  }
   if (isset($form['type']) && isset($form['type']['#value']) && $form['type']['#value'] . '_node_form' == $form_id) {
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> AKDN-1523
     if(arg(0) == 'node' && arg(1) == 'add'){
       $script = 'jQuery(document).ready(function(){ console.log("21313"); jQuery(".link-edit-summary").click(); });';
       drupal_add_js($script, 'inline');
@@ -700,7 +727,11 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
       $script = 'jQuery(window).load(function(){ console.log("ssdfdsf"); jQuery(".field-name-body .link-edit-summary").click(); });';
       drupal_add_js($script, 'inline');
     }
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> AKDN-1523
 //    if (!empty($form['body'])) {
 //      // Remove the delete button.
 //      $lang = $form['body']['#language'];
@@ -727,7 +758,7 @@ function akdn_custom_form_alter(&$form, &$form_state, $form_id) {
 //      });';
 //      drupal_add_js($script, 'inline');
 //      // Check if this is a new node and if it has the entity translation form
-//     
+//
 //
 //      hide($form['field_date_decade']); //hide date decade field from node edit form
 //      if ($form_id == 'breaking_news_node_form' || $form_id == 'facts_block_node_form' || $form_id == 'akmi_artists_node_form') {
@@ -1230,9 +1261,9 @@ function akdn_custom_block_view($delta = '') {
 function home_news_and_resources(){
   global $language;
   $output = '';
-  $node_ids = db_query("SELECT n.nid, n.type, pd.field_publish_date_value from node n 
-                  LEFT JOIN entity_translation et ON n.nid = et.entity_id 
-                  LEFT JOIN field_data_field_publish_date pd ON et.entity_id = pd.entity_id 
+  $node_ids = db_query("SELECT n.nid, n.type, pd.field_publish_date_value from node n
+                  LEFT JOIN entity_translation et ON n.nid = et.entity_id
+                  LEFT JOIN field_data_field_publish_date pd ON et.entity_id = pd.entity_id
                   WHERE n.type IN ('article','event','gallery', 'podcast','publication', 'speech', 'project') AND n.status = 1 AND et.language = '$language->language'
                   ORDER BY pd.field_publish_date_value DESC LIMIT 3")->fetchAll();
 
@@ -1254,12 +1285,11 @@ function home_news_and_resources(){
     $node_url = 'node/' . $node->nid;
     $output .= '<div class="what-we-do-inner-wrapper" style="height: 426px;">';
     $output .= '<div class="what-we-do-subwrapper">';
-    //dsm($node->type);
     switch ($node->type) {
       case 'article':
         $article_cat = $wrapper_translated->field_article_cat->value();
         $type = $article_cat->name;
-        
+
         //for url
         $article_type = $article_cat->name_field['en'][0]['value'];
         if ($article_type == 'In the media') {
@@ -1277,7 +1307,7 @@ function home_news_and_resources(){
         $url_type = str_replace(' ', '-', strtolower($article_type));
         if ($article_type == 'Press Release') {
           $url_type = 'press-releases';
-        }        
+        }
         break;
       case 'event':
         $image = $wrapper_translated->field_event_image->value();
@@ -1404,7 +1434,7 @@ function akdn_custom_content_breadcrumb() {
       $output .= '<span class="delimiter">|</span>';
     }
     $i++;
-  } 
+  }
   return $output;
 }
 
@@ -2010,8 +2040,15 @@ function akdn_basic_page_accordian_style_block() {
           $rel_links = '';
           foreach ($related_links as $links) {
             $url = link_cleanup_url($links['url']);
+<<<<<<< HEAD
             $url_arr = parse_url($url);
             if(isset($url_arr['scheme']) && ($url_arr['scheme'] == 'http' || $url_arr['scheme'] == 'https')){
+=======
+
+            $path = get_source_url_alias_redirect($url);
+            $alias = drupal_get_path_alias($path, $lang);
+            if(empty($alias)){
+>>>>>>> AKDN-1523
               $alias = $url;
             }else{
               $path = get_source_url_alias_redirect($url);
@@ -2020,7 +2057,7 @@ function akdn_basic_page_accordian_style_block() {
                 $alias = $url;
               }
             }
-            
+
             $target = $links['attributes']['target'];
             if ($target === '_blank') {
               $rel_links .= '<div class = "accordian_rel_links">';
@@ -5015,7 +5052,7 @@ function akdn_custom_video_player_speech() {
   $lang = $language->language;
   $drupal_get_path = drupal_get_path('module', 'akdn_custom');
   $entity = menu_get_object();
-  
+
   if (isset($entity->field_speech_video[$lang][0]['uri'])) {
     //bightcove video
     $video_temp = explode('brightcove://', $entity->field_speech_video[$lang][0]['uri']);
@@ -5968,7 +6005,7 @@ function akdn_custom_tokens($type, $tokens, array $data = array(), array $option
             $cp_rt_new = $data['file']->field_image_copytight["en"][0]['value'];
           }
           // Add the new value into the replacements array.
-          $replacements[$original] = $cp_rt_new;  
+          $replacements[$original] = $cp_rt_new;
       }
     }
   }
@@ -5990,7 +6027,7 @@ function akdn_custom_language_switch_links_alter(&$links, $type, $path) {
       $value['query'] = array($query_str_arr[0]=> $query_str_arr[1]);
       $links[$lang] = $value;
     }
-  } 
+  }
 }
 
 /**
@@ -6005,8 +6042,9 @@ function akdn_custom_js_alter(&$javascript) {
     //unset($javascript[$js_path]);
   }
 }
+
 /**
- * 
+ *
  * @param type $alias
  * @return type
  */
@@ -6016,9 +6054,13 @@ function get_source_url_alias_redirect($alias){
     ->condition('source',$alias,'=')
     ->distinct()->execute()
     ->fetchAll();
-  
+
   return $result[0]->redirect;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> AKDN-1523
 /**
  * hook_media_wysiwyg_format_form_prepare_alter().
  * @global type $language
@@ -6029,7 +6071,11 @@ function get_source_url_alias_redirect($alias){
 function akdn_custom_media_wysiwyg_format_form_prepare_alter(&$form, &$form_state, $file) {
   global $language;
   $lang = $language->language;
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> AKDN-1523
   if (array_key_exists($lang, $file->field_image_caption)) {
     $form['options']['fields']['field_image_caption']['en'][0]['value']['#default_value'] = $file->field_image_caption[$lang][0]['value'];
     $temp = $form['options']['fields']['field_image_caption']['en'];
@@ -6042,4 +6088,8 @@ function akdn_custom_media_wysiwyg_format_form_prepare_alter(&$form, &$form_stat
     unset($form['options']['fields']['field_image_copytight']['en']);
     $form['options']['fields']['field_image_copytight'][$lang] = $temp;
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> AKDN-1523
