@@ -745,7 +745,7 @@ function solr_search_bundle_1_views_default_views() {
   /* Display: Press Center - news */
   $handler = $view->new_display('page', 'Press Center - news', 'page_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'News';
+  $handler->display->display_options['title'] = 'Our stories';
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: PHP */
   $handler->display->display_options['header']['php']['id'] = 'php';

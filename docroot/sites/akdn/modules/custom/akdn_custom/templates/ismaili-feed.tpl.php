@@ -26,7 +26,12 @@
     <?php } ?> 
     <?php if ($primary_cat) { ?>
       <div class="article-type">
-        <?php print $primary_cat; ?>
+        <?php if($primary_cat == 'News') {
+          print "Our stories";
+        } else {
+          print $primary_cat;
+        } 
+        ?>
       </div>
     <?php } ?>
     <?php if ($title) { ?>

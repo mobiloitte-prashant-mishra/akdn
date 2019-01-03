@@ -11072,7 +11072,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	/* Display: Award Cycle News */
 	$handler = $view->new_display('page', 'Award Cycle News', 'page');
 	$handler->display->display_options['defaults']['title'] = FALSE;
-	$handler->display->display_options['title'] = 'News';
+	$handler->display->display_options['title'] = 'Our stories';
 	$handler->display->display_options['display_description'] = 'Award Cycle News';
 	$handler->display->display_options['defaults']['pager'] = FALSE;
 	$handler->display->display_options['pager']['type'] = 'load_more';
@@ -29929,7 +29929,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$handler->display->display_options['header']['php']['empty'] = TRUE;
 	$handler->display->display_options['header']['php']['php_output'] = '<?php
 	$akdn_text = t(\'Latest On AKDN\');
-	$text = t(\'News\');
+	$text = t(\'Our stories\');
 	$content = \'<h2 class="pane-title">\'.$akdn_text.\'</h2><div class="view-header">\'.$text.\'</div>\';
 	print $content;
 	?>';
@@ -29946,7 +29946,7 @@ print  \' <h2 class = "pane-title">\'  . t(\' All @date Performances\', array(\'
 	$langu = \'/\'.$lang.\'/\';}
 	else{
 	$langu = \'/\';}
-	?><span class="presscenter-right-more-btn"><a href="<?php echo $langu;?>press-centre/news"><?php echo t("More news stories"); ?></a></span>
+	?><span class="presscenter-right-more-btn"><a href="<?php echo $langu;?>press-centre/news"><?php echo t("More stories"); ?></a></span>
 	';
 	$handler->display->display_options['defaults']['empty'] = FALSE;
 	/* No results behavior: Global: Text area */
