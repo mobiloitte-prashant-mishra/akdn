@@ -44,7 +44,7 @@ switch($entity->type) {
     $term = taxonomy_term_load($entity->field_article_cat[$key][0][\'tid\']);
     $value = $term->name_original;
     if ($value == \'Blog\') {
-      $value = \'<a href="\' . $prefix . \'press-centre/news">\' . t(\'News\') . \'</a>\';
+      $value = \'<a href="\' . $prefix . \'press-centre/news">\' . t(\'Our Stories\') . \'</a>\';
     }
     elseif ($value == \'In the media\') {
       $value = \'<a href="\' . $prefix . \'press-centre/in-the-media">\' . t(\'In the Media\') . \'</a>\';
@@ -53,7 +53,7 @@ switch($entity->type) {
       $value = \'<a href="\' . $prefix . \'press-centre/press-releases">\' . t(\'Press Release\') . \'</a>\';
     }
     elseif ($value == \'News\') {
-      $value = \'<a href="\' . $prefix . \'press-centre/news">\' . t(\'News\') . \'</a>\';
+      $value = \'<a href="\' . $prefix . \'press-centre/news">\' . t(\'Our Stories\') . \'</a>\';
     }
     break;
   case \'event\':
