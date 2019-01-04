@@ -457,13 +457,13 @@ function solr_search_bundle_1_views_default_views() {
   $handler->display->display_options['header']['php']['field'] = 'php';
   $handler->display->display_options['header']['php']['empty'] = TRUE;
   $handler->display->display_options['header']['php']['php_output'] = '<?php
-      $output = \'\';
-      $path = \'press-centre/speeches\';
-      if (function_exists(\'custom_solr_get_what_new_header\')) {
-       // $output = custom_solr_get_what_new_header($path, "What’s new", \'| View All\', 6);
-      }
-      print $output;
-      ?>';
+        $output = \'\';
+        $path = \'press-centre/speeches\';
+        if (function_exists(\'custom_solr_get_what_new_header\')) {
+         // $output = custom_solr_get_what_new_header($path, "What’s new", \'| View All\', 6);
+        }
+        print $output;
+        ?>';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Link */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
@@ -556,11 +556,11 @@ function solr_search_bundle_1_views_default_views() {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="media-desc">
-      <div class="date">[field_publish_date]</div>
-      <div class="title">[field_short_title]
-      <div class="read-more">[view_node]</div>
-      </div>
-      </div>';
+        <div class="date">[field_publish_date]</div>
+        <div class="title">[field_short_title]
+        <div class="read-more">[view_node]</div>
+        </div>
+        </div>';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['path'] = '[url]';
   $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'akdn-solr-more-link';
@@ -601,11 +601,11 @@ function solr_search_bundle_1_views_default_views() {
   $handler->display->display_options['filters']['php']['field'] = 'php';
   $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
   $handler->display->display_options['filters']['php']['php_filter'] = 'global $language;
-  $query = db_query("SELECT entity_id FROM entity_translation where entity_type = \'node\' and entity_id = $data->entity and language =\'".$language->language."\' ")->fetchField();
-  if(empty($query)){
-  return TRUE;
-  }
-  return false;';
+    $query = db_query("SELECT entity_id FROM entity_translation where entity_type = \'node\' and entity_id = $data->entity and language =\'".$language->language."\' ")->fetchField();
+    if(empty($query)){
+    return TRUE;
+    }
+    return false;';
   $handler->display->display_options['path'] = 'press-centre/speeches';
 
   /* Display: Speeches quotes */
@@ -622,13 +622,13 @@ function solr_search_bundle_1_views_default_views() {
   $handler->display->display_options['header']['php']['field'] = 'php';
   $handler->display->display_options['header']['php']['empty'] = TRUE;
   $handler->display->display_options['header']['php']['php_output'] = '<?php
-      $output = \'\';
-      $path = \'press-centre/speeches\';
-      if (function_exists(\'custom_solr_get_what_new_header\')) {
-       // $output = custom_solr_get_what_new_header($path, "What’s new", \'| View All\', 6);
-      }
-      print $output;
-      ?>';
+        $output = \'\';
+        $path = \'press-centre/speeches\';
+        if (function_exists(\'custom_solr_get_what_new_header\')) {
+         // $output = custom_solr_get_what_new_header($path, "What’s new", \'| View All\', 6);
+        }
+        print $output;
+        ?>';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Indexed Node: Speech Reference */
   $handler->display->display_options['relationships']['field_speech_reference']['id'] = 'field_speech_reference';
@@ -652,10 +652,10 @@ function solr_search_bundle_1_views_default_views() {
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
-      $pdate = $data->{\'_entity_properties\'}[\'field_quotes_publish_date\'];
-      $output = date("d F Y", $pdate);
-      print $output;
-      ?>';
+        $pdate = $data->{\'_entity_properties\'}[\'field_quotes_publish_date\'];
+        $output = date("d F Y", $pdate);
+        print $output;
+        ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Field: Indexed Node: Title */
@@ -704,8 +704,8 @@ function solr_search_bundle_1_views_default_views() {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="media-desc">
-      <div class="read-more"><a href="[url] ">Read full speech</a></div>
-      </div>';
+        <div class="read-more"><a href="[url] ">Read full speech</a></div>
+        </div>';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['path'] = '[url]';
   $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'akdn-solr-more-link';
@@ -753,13 +753,13 @@ function solr_search_bundle_1_views_default_views() {
   $handler->display->display_options['header']['php']['field'] = 'php';
   $handler->display->display_options['header']['php']['empty'] = TRUE;
   $handler->display->display_options['header']['php']['php_output'] = '<?php
-      $output = \'\';
-      $path = \'press-centre/news\';
-      if (function_exists(\'custom_solr_get_what_new_header\')) {
-        //$output = custom_solr_get_what_new_header($path, "What’s new", \'| View All\', 6);
-      }
-      print $output;
-      ?>';
+        $output = \'\';
+        $path = \'press-centre/news\';
+        if (function_exists(\'custom_solr_get_what_new_header\')) {
+          //$output = custom_solr_get_what_new_header($path, "What’s new", \'| View All\', 6);
+        }
+        print $output;
+        ?>';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Link */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
@@ -847,11 +847,11 @@ function solr_search_bundle_1_views_default_views() {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="media-desc">
-      <div class="date">[field_publish_date]</div>
-      <div class="title">[field_short_title]
-      <div class="read-more">[view_node]</div>
-      </div>
-      </div>';
+        <div class="date">[field_publish_date]</div>
+        <div class="title">[field_short_title]
+        <div class="read-more">[view_node]</div>
+        </div>
+        </div>';
   $handler->display->display_options['fields']['nothing']['alter']['path'] = '[url]';
   $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'akdn-solr-more-link';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
@@ -893,11 +893,11 @@ function solr_search_bundle_1_views_default_views() {
   $handler->display->display_options['filters']['php']['field'] = 'php';
   $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
   $handler->display->display_options['filters']['php']['php_filter'] = 'global $language;
-  $query = db_query("SELECT entity_id FROM entity_translation where entity_type = \'node\' and entity_id = $data->entity and language =\'".$language->language."\' ")->fetchField();
-  if(empty($query)){
-  return TRUE;
-  }
-  return false;';
+    $query = db_query("SELECT entity_id FROM entity_translation where entity_type = \'node\' and entity_id = $data->entity and language =\'".$language->language."\' ")->fetchField();
+    if(empty($query)){
+    return TRUE;
+    }
+    return false;';
   $handler->display->display_options['path'] = 'press-centre/news';
 
   /* Display: Projects */
@@ -918,13 +918,13 @@ function solr_search_bundle_1_views_default_views() {
   $handler->display->display_options['header']['php']['field'] = 'php';
   $handler->display->display_options['header']['php']['empty'] = TRUE;
   $handler->display->display_options['header']['php']['php_output'] = '<?php
-      $path = \'press-centre/projects\';
-      $output = \'\';
-      if (function_exists(\'custom_solr_get_what_new_header\')) {
-        //$output = custom_solr_get_what_new_header($path, "What’s new", \'| View All\', 6);
-      }
-      print $output;
-      ?>';
+        $path = \'press-centre/projects\';
+        $output = \'\';
+        if (function_exists(\'custom_solr_get_what_new_header\')) {
+          //$output = custom_solr_get_what_new_header($path, "What’s new", \'| View All\', 6);
+        }
+        print $output;
+        ?>';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Indexed Node: Image */
   $handler->display->display_options['fields']['field_project_image']['id'] = 'field_project_image';
@@ -1024,11 +1024,11 @@ function solr_search_bundle_1_views_default_views() {
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
   $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<div class="media-desc">
-      <div class="title">[field_short_title]</div>
-      <div class="title">[field_sub_title]
-      <div class="read-more">[view_node]</div>
-      </div>
-      </div>';
+        <div class="title">[field_short_title]</div>
+        <div class="title">[field_sub_title]
+        <div class="read-more">[view_node]</div>
+        </div>
+        </div>';
   $handler->display->display_options['fields']['nothing_1']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing_1']['element_class'] = 'grid-media-block_description grid-media-block_description-projects';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
@@ -1072,11 +1072,11 @@ function solr_search_bundle_1_views_default_views() {
   $handler->display->display_options['filters']['php']['field'] = 'php';
   $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
   $handler->display->display_options['filters']['php']['php_filter'] = 'global $language;
-  $query = db_query("SELECT entity_id FROM entity_translation where entity_type = \'node\' and entity_id = $data->entity and language =\'".$language->language."\' ")->fetchField();
-  if(empty($query)){
-  return TRUE;
-  }
-  return false;';
+    $query = db_query("SELECT entity_id FROM entity_translation where entity_type = \'node\' and entity_id = $data->entity and language =\'".$language->language."\' ")->fetchField();
+    if(empty($query)){
+    return TRUE;
+    }
+    return false;';
   $handler->display->display_options['path'] = 'press-centre/projects';
 
   /* Display: In The Media */
@@ -1092,13 +1092,13 @@ function solr_search_bundle_1_views_default_views() {
   $handler->display->display_options['header']['php']['field'] = 'php';
   $handler->display->display_options['header']['php']['empty'] = TRUE;
   $handler->display->display_options['header']['php']['php_output'] = '<?php
-      $path = \'press-centre/in-the-media\';
-      $output = \'\';
-      if (function_exists(\'custom_solr_get_what_new_header\')) {
-       // $output = custom_solr_get_what_new_header($path, "What’s new", \'| View All\', 6);
-      }
-      print $output;
-      ?>';
+        $path = \'press-centre/in-the-media\';
+        $output = \'\';
+        if (function_exists(\'custom_solr_get_what_new_header\')) {
+         // $output = custom_solr_get_what_new_header($path, "What’s new", \'| View All\', 6);
+        }
+        print $output;
+        ?>';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Indexed Node: URL */
   $handler->display->display_options['fields']['url']['id'] = 'url';
@@ -1187,8 +1187,8 @@ function solr_search_bundle_1_views_default_views() {
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
-    print t(\'Read\');
-    ?>';
+      print t(\'Read\');
+      ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Field: Global: Custom text */
@@ -1197,14 +1197,14 @@ function solr_search_bundle_1_views_default_views() {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="media-desc">
-      <div class="date">[field_publish_date] </div>
-      <div class="source">[field_media_source]</div>
-      <div class="title">[field_short_title]
-      <div class="read-more"><a href="[field_media_source_1]" target="_blank">[php]</a> </div>
-      </div>
+        <div class="date">[field_publish_date] </div>
+        <div class="source">[field_media_source]</div>
+        <div class="title">[field_short_title]
+        <div class="read-more"><a href="[field_media_source_1]" target="_blank">[php]</a> </div>
+        </div>
 
-      </div>
-      ';
+        </div>
+        ';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_class'] = 'grid-media-block_description grid-media-block_description-in-media';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -1252,11 +1252,11 @@ function solr_search_bundle_1_views_default_views() {
   $handler->display->display_options['filters']['php']['field'] = 'php';
   $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
   $handler->display->display_options['filters']['php']['php_filter'] = 'global $language;
-  $query = db_query("SELECT entity_id FROM entity_translation where entity_type = \'node\' and entity_id = $data->entity and language =\'".$language->language."\' ")->fetchField();
-  if(empty($query)){
-  return TRUE;
-  }
-  return false;';
+    $query = db_query("SELECT entity_id FROM entity_translation where entity_type = \'node\' and entity_id = $data->entity and language =\'".$language->language."\' ")->fetchField();
+    if(empty($query)){
+    return TRUE;
+    }
+    return false;';
   $handler->display->display_options['path'] = 'press-centre/in-the-media';
 
   /* Display: Press center - publication */
@@ -1397,11 +1397,11 @@ function solr_search_bundle_1_views_default_views() {
   $handler->display->display_options['filters']['php']['field'] = 'php';
   $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
   $handler->display->display_options['filters']['php']['php_filter'] = 'global $language;
-  $query = db_query("SELECT entity_id FROM entity_translation where entity_type = \'node\' and entity_id = $data->entity and language =\'".$language->language."\' ")->fetchField();
-  if(empty($query)){
-  return TRUE;
-  }
-  return false;';
+    $query = db_query("SELECT entity_id FROM entity_translation where entity_type = \'node\' and entity_id = $data->entity and language =\'".$language->language."\' ")->fetchField();
+    if(empty($query)){
+    return TRUE;
+    }
+    return false;';
   $handler->display->display_options['path'] = 'press-centre/publications';
 
   /* Display: In media Latest */
@@ -1579,13 +1579,13 @@ function solr_search_bundle_1_views_default_views() {
   $handler->display->display_options['footer']['area']['field'] = 'area';
   $handler->display->display_options['footer']['area']['empty'] = TRUE;
   $handler->display->display_options['footer']['area']['content'] = '<?php
-      global $language;
-      $lang = $language->language;
-      if($lang != \'en\'){
-      $langu = \'/\'.$lang.\'/\';}
-      else{
-      $langu = \'/\';}
-      ?><span class="view-more"><a href="<?php echo $langu;?>press-centre/news">More news stories</a></span>';
+        global $language;
+        $lang = $language->language;
+        if($lang != \'en\'){
+        $langu = \'/\'.$lang.\'/\';}
+        else{
+        $langu = \'/\';}
+        ?><span class="view-more"><a href="<?php echo $langu;?>press-centre/news">More news stories</a></span>';
   $handler->display->display_options['footer']['area']['format'] = 'php_code';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
@@ -1627,8 +1627,8 @@ function solr_search_bundle_1_views_default_views() {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="news-footer">
-      <span><a href="[url]">View</a></span>
-      </div>';
+        <span><a href="[url]">View</a></span>
+        </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -1755,11 +1755,11 @@ function solr_search_bundle_1_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<?php
-      $akdn_text = t(\'Latest On AKDN\');
-      $text = t(\'Press Releases\');
-      $content = \'<h2 class="pane-title">\'.$akdn_text.\'</h2><div class="view-header">\'.$text.\'</div>\';
-      print $content;
-      ?>';
+        $akdn_text = t(\'Latest On AKDN\');
+        $text = t(\'Press Releases\');
+        $content = \'<h2 class="pane-title">\'.$akdn_text.\'</h2><div class="view-header">\'.$text.\'</div>\';
+        print $content;
+        ?>';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   /* Footer: Global: Text area */
@@ -1767,12 +1767,12 @@ function solr_search_bundle_1_views_default_views() {
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
   $handler->display->display_options['footer']['area']['content'] = '<?php
-      global $language;
-      $lang = $language->language;
-      if($lang != \'en\'){
-      $langu = \'/\'.$lang.\'/\';}
-      else{
-      $langu = \'/\';}?><span class="presscenter-right-more-btn"><a href="<?php echo $langu;?>press-centre/press-releases"><?php echo t("More Press Releases")?></a></span>';
+        global $language;
+        $lang = $language->language;
+        if($lang != \'en\'){
+        $langu = \'/\'.$lang.\'/\';}
+        else{
+        $langu = \'/\';}?><span class="presscenter-right-more-btn"><a href="<?php echo $langu;?>press-centre/press-releases"><?php echo t("More Press Releases")?></a></span>';
   $handler->display->display_options['footer']['area']['format'] = 'php_code';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
@@ -1839,8 +1839,8 @@ function solr_search_bundle_1_views_default_views() {
   $handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
-      echo t(\'view\');
-      ?>';
+        echo t(\'view\');
+        ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Field: Global: Custom text */
@@ -1848,10 +1848,21 @@ function solr_search_bundle_1_views_default_views() {
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="news-footer">
-      <span><a href="[url]">[php]</a></span>
-      </div>';
+        <span><a href="[url]">[php]</a></span>
+        </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Field: Content: Link */
+  $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['label'] = '';
+  $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_node']['text'] = 'View';
+  $handler->display->display_options['fields']['view_node']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['view_node']['node_in_colorbox_height'] = '600';
+  $handler->display->display_options['fields']['view_node']['node_in_colorbox_rel'] = '';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Indexed Node: Publish Date */
   $handler->display->display_options['sorts']['field_publish_date']['id'] = 'field_publish_date';
@@ -1898,7 +1909,6 @@ function solr_search_bundle_1_views_default_views() {
     2612 => '2612',
   );
   $handler->display->display_options['block_description'] = 'Latest On AKDN (Press Release)';
-
   $export['solr_search_pages_1'] = $view;
 
   return $export;

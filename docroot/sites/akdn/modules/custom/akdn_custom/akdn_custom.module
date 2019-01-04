@@ -187,6 +187,7 @@ function akdn_custom_download_file() {
   }
 }
 
+/*open PDF*/ 
 function akdn_custom_open_pdf_file() {
   $arg = arg(1);
   $node = node_load($arg);
@@ -5404,10 +5405,10 @@ function akdn_custom_form_simplenews_node_form_alter(&$form, &$form_state, &$for
       else {
         if (isset($value->field_newsletter_summary[$language]['0']['value'])) {
           $body = $value->field_newsletter_summary[$language]['0']['value'];
-        } 
+        }
         elseif (isset($value->field_newsletter_summary['und']['0']['value'])) {
           $body = $value->field_newsletter_summary['und']['0']['value'];
-        } 
+        }
         else {
           $body = $value->field_newsletter_summary[key((array)$value->field_newsletter_summary)]['0']['value'];
         }
