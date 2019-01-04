@@ -52,7 +52,7 @@ switch($entity->type) {
     elseif ($value == \'Press Release\') {
       $value = \'<a href="\' . $prefix . \'press-centre/press-releases">\' . t(\'Press Release\') . \'</a>\';
     }
-    elseif ($value == \'News\') {
+    elseif ($value == \'Our stories\') {
       $value = \'<a href="\' . $prefix . \'press-centre/news">\' . t(\'Our Stories\') . \'</a>\';
     }
     break;
