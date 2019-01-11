@@ -6056,12 +6056,11 @@ map {
   }
 
   .panel-overlay {
-    position: absolute;
-    bottom: 0;
+    position: relative;
+    bottom: inherit;
     width: 100%;
-    padding: 10px 15px;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
+    
 
     h3, h4 {
       @extend %font_arial;
@@ -6069,8 +6068,8 @@ map {
       margin-bottom: 2px;
       font-size: 14px;
       font-weight: normal;
-      font-style: italic;
-      color: #ffffff;
+      font-style: normal;
+      color: #000;
       line-height: 18px;
     }
   }
@@ -9077,7 +9076,7 @@ html {
                   padding-bottom: 4px;
                   padding-left: 10px;
                   padding-right: 10px;
-                  &.zh-hans, &.de, &.it, &.ky, &.ms, &.fa, &.ru, &.es, &.tg, &.ur, &.ar, &.pt{
+                  &.zh-hans, &.de, &.it, &.ky, &.ms, &.fa, &.ru, &.es, &.tg, &.ur, &.ar{
                     display:none;
                   }
                   a{

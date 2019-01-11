@@ -1,0 +1,13 @@
+diff --git a/docroot/sites/akdn/modules/contrib/galleryformatter/theme/galleryformatter.tpl.php b/docroot/sites/akdn/modules/contrib/galleryformatter/theme/galleryformatter.tpl.php
+index b5dbd77..c11283f 100644
+--- a/docroot/sites/akdn/modules/contrib/galleryformatter/theme/galleryformatter.tpl.php
++++ b/docroot/sites/akdn/modules/contrib/galleryformatter/theme/galleryformatter.tpl.php
+@@ -19,7 +19,7 @@
+  */
+ ?>
+ <div class="galleryformatter galleryview galleryformatter-<?php print $settings['style'] ?>">
+-  <div class="gallery-slides" style="width: <?php print $dimensions['slides']['width']; ?>px; height: <?php print $dimensions['slides']['height']; ?>px;">
++  <div class="gallery-slides" style="width: <?php print $dimensions['slides']['width']; ?>px;">
+     <div class="gallery-frame">
+       <ul>
+       <?php foreach ($slides as $id => $data): ?>

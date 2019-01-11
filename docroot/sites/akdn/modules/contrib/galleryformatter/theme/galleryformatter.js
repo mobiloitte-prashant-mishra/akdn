@@ -65,10 +65,16 @@
       if(!$hash.is(':visible')){
         $thumbsLi.removeClass('active');
         $(this).parent().addClass('active');
-        $slides.filter(':visible').fadeOut('slow');
-        $hash.fadeIn('slow');
+        /*$slides.filter(':visible').fadeOut('slow');        
+        $hash.fadeIn('slow');*/
+        //modified deepak
+        $slides.filter(':visible').fadeOut('slow').removeClass('activeSlider');
+        $hash.fadeIn('slow').addClass('activeSlider');
+        var $ht = $('.activeSlider').height();
+        $('.gallery-slides').css("height", "auto");
+        $('.gallery-slides').css("height", $ht);
         // set the slide container's height to allow use of portrait images
-        $slideContainer.css("height",$hash.find('img').height());
+        //$slideContainer.css("height",$hash.find('img').height());
         /*
          * @FIXME
          * Need to figure out a way to update the location bar of the browser, for bookmarking etc, without making the scroll jump
@@ -100,7 +106,11 @@
         $slideToShow.show(); //  show that slide
         $thumbsLi.not($(".cloned")).find("a[href="+$locationHash+"]").parent().addClass('active'); // activate that thumbnail
         // set the slide container's height to allow use of portrait images
-        $slideContainer.css("height", $slideToShow.find('img').height());
+        //$slideContainer.css("height", $slideToShow.find('img').height());
+        //modified deepak
+        var $ht = $('.activeSlider').height();
+        $('.gallery-slides').css("height", "auto");
+        $('.gallery-slides').css("height", $ht);
       }
       // otherwise the default
       else {

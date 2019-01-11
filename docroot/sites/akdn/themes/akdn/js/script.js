@@ -872,6 +872,11 @@ $(window).load(function(){
   // fix line for block title
   $(window).load(function() {
     $('.sub-navbar p').addClass('indexfix');
+    // make slider height auto on window load
+    // $('.photograph-detail-banner .galleryformatter .gallery-slides').css('height','auto');
+        var $ht = $('.activeSlider').height();
+        $('.gallery-slides').css("height", "auto");
+        $('.gallery-slides').css("height", $ht);
   });
 
   //Remove border from custom header block
