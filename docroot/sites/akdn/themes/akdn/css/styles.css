@@ -23153,8 +23153,13 @@ div#block-views-exp-solr-site-search-page {
     left: auto;
     right: 6px;
   }
+
+  /* line 181, ../sass/_global-change.scss */
+  .press-release-photograps-detail #cboxWrapper #cboxTitle {
+    display: none !important;
+  }
 }
-/* line 184, ../sass/_global-change.scss */
+/* line 190, ../sass/_global-change.scss */
 .gallery-processed .gallery-slides .gallery-slide {
   max-width: 774px;
 }
