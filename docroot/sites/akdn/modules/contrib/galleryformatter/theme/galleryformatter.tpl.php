@@ -19,7 +19,7 @@
  */
 ?>
 <div class="galleryformatter galleryview galleryformatter-<?php print $settings['style'] ?>">
-  <div class="gallery-slides" style="width: <?php print $dimensions['slides']['width']; ?>px; height: <?php print $dimensions['slides']['height']; ?>px;">
+  <div class="gallery-slides" style="width: <?php print $dimensions['slides']['width']; ?>px;">
     <div class="gallery-frame">
       <ul>
       <?php foreach ($slides as $id => $data): ?>
