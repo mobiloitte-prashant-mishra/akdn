@@ -68,9 +68,13 @@ switch($entity->type) {
   case \'podcast\':
     $term = taxonomy_term_load($entity->field_podcast_type[\'en\'][0][\'tid\']);
     if ($term->name) {
-      $value = \'<a href="\' . $prefix . \'press-centre/videos">\'.$term->name.\'</a>\';
+       if($term->name = \'video\') { 
+            $value = \'<a href="\' . $prefix . \'press-centre/videos">\'.t(\'Video\') .\'</a>\';
+          } else {           
+            $value = \'<a href="\' . $prefix . \'press-centre/videos">\'.$term->name.\'</a>\'; 
+          }
     } else {
-      $value = \'<a href="\' . $prefix . \'press-centre/videos">\' . t(\'Video\') . \'</a>\';
+      $value = \'<a href="\' . $prefix . \'press-centre/videosb">\' . t(\'Video\') . \'</a>\';
     }
     break;
   case \'publication\':
