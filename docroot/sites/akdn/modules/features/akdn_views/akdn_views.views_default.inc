@@ -8743,6 +8743,869 @@ $handler->display->display_options['displays'] = array(
 $handler->display->display_options['attachment_position'] = 'after';
 $export['akma_home_page_latest'] = $view;
 
+// AKMA Home Page
+$view = new view();
+$view->name = 'akma_home_page';
+$view->description = '';
+$view->tag = 'default';
+$view->base_table = 'node';
+$view->human_name = 'AKMA home page';
+$view->core = 7;
+$view->api_version = '3.0';
+$view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+/* Display: Master */
+$handler = $view->new_display('default', 'Master', 'default');
+$handler->display->display_options['use_more_always'] = FALSE;
+$handler->display->display_options['access']['type'] = 'perm';
+$handler->display->display_options['cache']['type'] = 'none';
+$handler->display->display_options['query']['type'] = 'views_query';
+$handler->display->display_options['exposed_form']['type'] = 'basic';
+$handler->display->display_options['pager']['type'] = 'some';
+$handler->display->display_options['pager']['options']['items_per_page'] = '5';
+$handler->display->display_options['style_plugin'] = 'default';
+$handler->display->display_options['row_plugin'] = 'fields';
+$handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+/* Header: Global: PHP */
+$handler->display->display_options['header']['php']['id'] = 'php';
+$handler->display->display_options['header']['php']['table'] = 'views';
+$handler->display->display_options['header']['php']['field'] = 'php';
+$handler->display->display_options['header']['php']['php_output'] = '<?php
+print t(\'THE AWARD AT A GLANCE\');
+?>
+';
+/* Field: Content: social sharing links */
+$handler->display->display_options['fields']['field_social_sharing_links']['id'] = 'field_social_sharing_links';
+$handler->display->display_options['fields']['field_social_sharing_links']['table'] = 'field_data_field_social_sharing_links';
+$handler->display->display_options['fields']['field_social_sharing_links']['field'] = 'field_social_sharing_links';
+$handler->display->display_options['fields']['field_social_sharing_links']['label'] = '';
+$handler->display->display_options['fields']['field_social_sharing_links']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_social_sharing_links']['click_sort_column'] = 'url';
+$handler->display->display_options['fields']['field_social_sharing_links']['delta_offset'] = '0';
+$handler->display->display_options['fields']['field_social_sharing_links']['multi_type'] = 'ul';
+/* Field: Content: At Glance Links */
+$handler->display->display_options['fields']['field_facts_url_links']['id'] = 'field_facts_url_links';
+$handler->display->display_options['fields']['field_facts_url_links']['table'] = 'field_data_field_facts_url_links';
+$handler->display->display_options['fields']['field_facts_url_links']['field'] = 'field_facts_url_links';
+/* Sort criterion: Content: Post date */
+$handler->display->display_options['sorts']['created']['id'] = 'created';
+$handler->display->display_options['sorts']['created']['table'] = 'node';
+$handler->display->display_options['sorts']['created']['field'] = 'created';
+$handler->display->display_options['sorts']['created']['order'] = 'DESC';
+/* Contextual filter: Content: Nid */
+$handler->display->display_options['arguments']['nid']['id'] = 'nid';
+$handler->display->display_options['arguments']['nid']['table'] = 'node';
+$handler->display->display_options['arguments']['nid']['field'] = 'nid';
+$handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+$handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+$handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+$handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+$handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+/* Filter criterion: Content: Published */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Filter criterion: Content: Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'publication' => 'publication',
+);
+
+/* Display: Social Sharing Links */
+$handler = $view->new_display('block', 'Social Sharing Links', 'block');
+$handler->display->display_options['enabled'] = FALSE;
+$handler->display->display_options['defaults']['query'] = FALSE;
+$handler->display->display_options['query']['type'] = 'views_query';
+$handler->display->display_options['query']['options']['distinct'] = TRUE;
+$handler->display->display_options['defaults']['header'] = FALSE;
+/* Header: Global: Text area */
+$handler->display->display_options['header']['area']['id'] = 'area';
+$handler->display->display_options['header']['area']['table'] = 'views';
+$handler->display->display_options['header']['area']['field'] = 'area';
+$handler->display->display_options['header']['area']['content'] = '<?php echo t("<p><span>S</span><span>TAY CONNECTED TO THE AKAA</span></p>");?>';
+$handler->display->display_options['header']['area']['format'] = 'php_code';
+$handler->display->display_options['defaults']['relationships'] = FALSE;
+/* Relationship: Content: Entity translation: translations */
+$handler->display->display_options['relationships']['entity_translations']['id'] = 'entity_translations';
+$handler->display->display_options['relationships']['entity_translations']['table'] = 'node';
+$handler->display->display_options['relationships']['entity_translations']['field'] = 'entity_translations';
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Field: Content: social sharing links */
+$handler->display->display_options['fields']['field_social_sharing_links']['id'] = 'field_social_sharing_links';
+$handler->display->display_options['fields']['field_social_sharing_links']['table'] = 'field_data_field_social_sharing_links';
+$handler->display->display_options['fields']['field_social_sharing_links']['field'] = 'field_social_sharing_links';
+$handler->display->display_options['fields']['field_social_sharing_links']['label'] = '';
+$handler->display->display_options['fields']['field_social_sharing_links']['exclude'] = TRUE;
+$handler->display->display_options['fields']['field_social_sharing_links']['element_type'] = 'div';
+$handler->display->display_options['fields']['field_social_sharing_links']['element_class'] = 'sub-navbar-rightlinks';
+$handler->display->display_options['fields']['field_social_sharing_links']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_social_sharing_links']['element_wrapper_type'] = '0';
+$handler->display->display_options['fields']['field_social_sharing_links']['element_default_classes'] = FALSE;
+$handler->display->display_options['fields']['field_social_sharing_links']['click_sort_column'] = 'url';
+$handler->display->display_options['fields']['field_social_sharing_links']['delta_offset'] = '0';
+$handler->display->display_options['fields']['field_social_sharing_links']['multi_type'] = 'ul';
+/* Field: Entity translation: social sharing links: translated */
+$handler->display->display_options['fields']['field_social_sharing_links_et']['id'] = 'field_social_sharing_links_et';
+$handler->display->display_options['fields']['field_social_sharing_links_et']['table'] = 'field_data_field_social_sharing_links';
+$handler->display->display_options['fields']['field_social_sharing_links_et']['field'] = 'field_social_sharing_links_et';
+$handler->display->display_options['fields']['field_social_sharing_links_et']['label'] = '';
+$handler->display->display_options['fields']['field_social_sharing_links_et']['element_type'] = 'div';
+$handler->display->display_options['fields']['field_social_sharing_links_et']['element_class'] = 'sub-navbar-rightlinks';
+$handler->display->display_options['fields']['field_social_sharing_links_et']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_social_sharing_links_et']['element_wrapper_type'] = '0';
+$handler->display->display_options['fields']['field_social_sharing_links_et']['click_sort_column'] = 'url';
+$handler->display->display_options['fields']['field_social_sharing_links_et']['delta_offset'] = '0';
+$handler->display->display_options['fields']['field_social_sharing_links_et']['multi_type'] = 'ul';
+/* Field: Content: Nid */
+$handler->display->display_options['fields']['nid']['id'] = 'nid';
+$handler->display->display_options['fields']['nid']['table'] = 'node';
+$handler->display->display_options['fields']['nid']['field'] = 'nid';
+$handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+$handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
+$handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
+$handler->display->display_options['fields']['nid']['node_in_colorbox_rel'] = '';
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Filter criterion: Content: Published */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Filter criterion: Content: Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'agency' => 'agency',
+);
+/* Filter criterion: Content: Show Social Share Block (field_show_social_share) */
+$handler->display->display_options['filters']['field_show_social_share_value']['id'] = 'field_show_social_share_value';
+$handler->display->display_options['filters']['field_show_social_share_value']['table'] = 'field_data_field_show_social_share';
+$handler->display->display_options['filters']['field_show_social_share_value']['field'] = 'field_show_social_share_value';
+$handler->display->display_options['filters']['field_show_social_share_value']['value'] = array(
+  1 => '1',
+);
+/* Filter criterion: Entity translation: Language */
+$handler->display->display_options['filters']['language']['id'] = 'language';
+$handler->display->display_options['filters']['language']['table'] = 'entity_translation';
+$handler->display->display_options['filters']['language']['field'] = 'language';
+$handler->display->display_options['filters']['language']['relationship'] = 'entity_translations';
+$handler->display->display_options['filters']['language']['value'] = array(
+  '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+);
+$handler->display->display_options['block_description'] = 'Stay connections to the akaa';
+
+/* Display: The award at a glance */
+$handler = $view->new_display('block', 'The award at a glance', 'block_1');
+$handler->display->display_options['enabled'] = FALSE;
+$handler->display->display_options['defaults']['style_plugin'] = FALSE;
+$handler->display->display_options['style_plugin'] = 'default';
+$handler->display->display_options['defaults']['style_options'] = FALSE;
+$handler->display->display_options['defaults']['row_plugin'] = FALSE;
+$handler->display->display_options['row_plugin'] = 'fields';
+$handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+$handler->display->display_options['defaults']['row_options'] = FALSE;
+$handler->display->display_options['defaults']['header'] = FALSE;
+/* Header: Global: Text area */
+$handler->display->display_options['header']['area']['id'] = 'area';
+$handler->display->display_options['header']['area']['table'] = 'views';
+$handler->display->display_options['header']['area']['field'] = 'area';
+$handler->display->display_options['header']['area']['content'] = '<?php echo t("<p><span>T</span><span>HE AWARD AT A GLANCE</span></p>"); ?>';
+$handler->display->display_options['header']['area']['format'] = 'php_code';
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Field: Content: At Glance Links */
+$handler->display->display_options['fields']['field_facts_url_links']['id'] = 'field_facts_url_links';
+$handler->display->display_options['fields']['field_facts_url_links']['table'] = 'field_data_field_facts_url_links';
+$handler->display->display_options['fields']['field_facts_url_links']['field'] = 'field_facts_url_links';
+$handler->display->display_options['fields']['field_facts_url_links']['label'] = '';
+$handler->display->display_options['fields']['field_facts_url_links']['exclude'] = TRUE;
+$handler->display->display_options['fields']['field_facts_url_links']['element_type'] = 'div';
+$handler->display->display_options['fields']['field_facts_url_links']['element_class'] = 'sub-navbar-rightlinks';
+$handler->display->display_options['fields']['field_facts_url_links']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_facts_url_links']['element_wrapper_type'] = '0';
+$handler->display->display_options['fields']['field_facts_url_links']['element_default_classes'] = FALSE;
+$handler->display->display_options['fields']['field_facts_url_links']['click_sort_column'] = 'url';
+$handler->display->display_options['fields']['field_facts_url_links']['delta_offset'] = '0';
+$handler->display->display_options['fields']['field_facts_url_links']['multi_type'] = 'ul';
+/* Field: Entity translation: At Glance Links: translated */
+$handler->display->display_options['fields']['field_facts_url_links_et']['id'] = 'field_facts_url_links_et';
+$handler->display->display_options['fields']['field_facts_url_links_et']['table'] = 'field_data_field_facts_url_links';
+$handler->display->display_options['fields']['field_facts_url_links_et']['field'] = 'field_facts_url_links_et';
+$handler->display->display_options['fields']['field_facts_url_links_et']['label'] = '';
+$handler->display->display_options['fields']['field_facts_url_links_et']['element_type'] = 'div';
+$handler->display->display_options['fields']['field_facts_url_links_et']['element_class'] = 'sub-navbar-rightlinks';
+$handler->display->display_options['fields']['field_facts_url_links_et']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_facts_url_links_et']['element_wrapper_type'] = '0';
+$handler->display->display_options['fields']['field_facts_url_links_et']['click_sort_column'] = 'url';
+$handler->display->display_options['fields']['field_facts_url_links_et']['delta_offset'] = '0';
+$handler->display->display_options['fields']['field_facts_url_links_et']['multi_type'] = 'ul';
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Filter criterion: Content: Published */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Filter criterion: Content: Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'agency' => 'agency',
+);
+/* Filter criterion: Content: Show Fact Block (field_show_fact_block) */
+$handler->display->display_options['filters']['field_show_fact_block_value']['id'] = 'field_show_fact_block_value';
+$handler->display->display_options['filters']['field_show_fact_block_value']['table'] = 'field_data_field_show_fact_block';
+$handler->display->display_options['filters']['field_show_fact_block_value']['field'] = 'field_show_fact_block_value';
+$handler->display->display_options['filters']['field_show_fact_block_value']['value'] = array(
+  1 => '1',
+);
+$handler->display->display_options['block_description'] = 'The award at a glance';
+
+/* Display: News & Resource Links */
+$handler = $view->new_display('block', 'News & Resource Links', 'block_2');
+$handler->display->display_options['enabled'] = FALSE;
+$handler->display->display_options['defaults']['css_class'] = FALSE;
+$handler->display->display_options['defaults']['pager'] = FALSE;
+$handler->display->display_options['pager']['type'] = 'some';
+$handler->display->display_options['pager']['options']['items_per_page'] = '1';
+$handler->display->display_options['pager']['options']['offset'] = '0';
+$handler->display->display_options['defaults']['header'] = FALSE;
+/* Header: Global: PHP */
+$handler->display->display_options['header']['php']['id'] = 'php';
+$handler->display->display_options['header']['php']['table'] = 'views';
+$handler->display->display_options['header']['php']['field'] = 'php';
+$handler->display->display_options['header']['php']['php_output'] = '<?php echo t("<p><span>N</span><span>EWS & RESOURCES</span></p>"); ?>';
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Field: Global: Custom text */
+$handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+$handler->display->display_options['fields']['nothing']['table'] = 'views';
+$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+$handler->display->display_options['fields']['nothing']['label'] = '';
+$handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
+$handler->display->display_options['fields']['nothing']['alter']['text'] = '<ul>
+  <li><a href="/architecture/press-centre?f[0]=entity_type:gallery" title="AKAA Photographs">Photographs</a></li>
+   <li><a href="/architecture/press-centre?f[0]=entity_type:Video" title="AKAA Videos">Videos</a></li>
+    <li><a href="/architecture/press-centre?f[0]=entity_type:event" title="AKAA Events">Events</a></li>
+      <li><a href="/architecture/press-centre?f[0]=entity_type:speech" title="AKAA Speeches">Speeches</a></li>
+  <li><a href="/architecture/projects/map" title="AKAA Project Locations">Project Locations</a></li>
+</ul>';
+$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+/* Field: Global: PHP */
+$handler->display->display_options['fields']['php']['id'] = 'php';
+$handler->display->display_options['fields']['php']['table'] = 'views';
+$handler->display->display_options['fields']['php']['field'] = 'php';
+$handler->display->display_options['fields']['php']['label'] = '';
+$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+$handler->display->display_options['fields']['php']['php_output'] = '<ul>
+  <li><a href="/architecture/press-centre?f[0]=entity_type:gallery" title="AKAA Photographs"><?php echo t(\'Photographs\');?></a></li>
+   <li><a href="/architecture/press-centre?f[0]=entity_type:Video" title="AKAA Videos"><?php echo t(\'Videos\');?></a></li>
+    <li><a href="/architecture/press-centre?f[0]=entity_type:event" title="AKAA Events"><?php echo t(\'Events\');?></a></li>
+      <li><a href="/architecture/press-centre?f[0]=entity_type:speech" title="AKAA Speeches"><?php echo t(\'Speeches\');?></a></li>
+  <li><a href="/architecture/projects/map" title="AKAA Project Locations"><?php echo t(\'Project Locations\');?></a></li>
+</ul>';
+$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+$handler->display->display_options['defaults']['sorts'] = FALSE;
+/* Sort criterion: Content: Published */
+$handler->display->display_options['sorts']['status']['id'] = 'status';
+$handler->display->display_options['sorts']['status']['table'] = 'node';
+$handler->display->display_options['sorts']['status']['field'] = 'status';
+$handler->display->display_options['sorts']['status']['order'] = 'DESC';
+$handler->display->display_options['defaults']['arguments'] = FALSE;
+/* Contextual filter: Content: Nid */
+$handler->display->display_options['arguments']['nid']['id'] = 'nid';
+$handler->display->display_options['arguments']['nid']['table'] = 'node';
+$handler->display->display_options['arguments']['nid']['field'] = 'nid';
+$handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+$handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+$handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+$handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+$handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Filter criterion: Content: Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'agency' => 'agency',
+);
+/* Filter criterion: Content: Published or admin */
+$handler->display->display_options['filters']['status_extra']['id'] = 'status_extra';
+$handler->display->display_options['filters']['status_extra']['table'] = 'node';
+$handler->display->display_options['filters']['status_extra']['field'] = 'status_extra';
+/* Filter criterion: Content: Show Block (field_show_news_and_resources) */
+$handler->display->display_options['filters']['field_show_news_and_resources_value']['id'] = 'field_show_news_and_resources_value';
+$handler->display->display_options['filters']['field_show_news_and_resources_value']['table'] = 'field_data_field_show_news_and_resources';
+$handler->display->display_options['filters']['field_show_news_and_resources_value']['field'] = 'field_show_news_and_resources_value';
+$handler->display->display_options['filters']['field_show_news_and_resources_value']['value'] = array(
+  1 => '1',
+);
+$handler->display->display_options['block_description'] = 'AKAA  News & Resources Links';
+
+/* Display: AKMA Publication */
+$handler = $view->new_display('block', 'AKMA Publication', 'block_3');
+$handler->display->display_options['defaults']['css_class'] = FALSE;
+$handler->display->display_options['css_class'] = 'what-we-do-inner-wrapper akaa-news-resource-publication';
+$handler->display->display_options['defaults']['pager'] = FALSE;
+$handler->display->display_options['pager']['type'] = 'some';
+$handler->display->display_options['pager']['options']['items_per_page'] = '1';
+$handler->display->display_options['pager']['options']['offset'] = '0';
+$handler->display->display_options['defaults']['style_plugin'] = FALSE;
+$handler->display->display_options['style_plugin'] = 'default';
+$handler->display->display_options['defaults']['style_options'] = FALSE;
+$handler->display->display_options['defaults']['row_plugin'] = FALSE;
+$handler->display->display_options['row_plugin'] = 'fields';
+$handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+$handler->display->display_options['defaults']['row_options'] = FALSE;
+$handler->display->display_options['defaults']['header'] = FALSE;
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Field: Content: Nid */
+$handler->display->display_options['fields']['nid']['id'] = 'nid';
+$handler->display->display_options['fields']['nid']['table'] = 'node';
+$handler->display->display_options['fields']['nid']['field'] = 'nid';
+$handler->display->display_options['fields']['nid']['label'] = '';
+$handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
+$handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
+$handler->display->display_options['fields']['nid']['node_in_colorbox_rel'] = '';
+/* Field: Content: Image */
+$handler->display->display_options['fields']['field_publication_image']['id'] = 'field_publication_image';
+$handler->display->display_options['fields']['field_publication_image']['table'] = 'field_data_field_publication_image';
+$handler->display->display_options['fields']['field_publication_image']['field'] = 'field_publication_image';
+$handler->display->display_options['fields']['field_publication_image']['label'] = '';
+$handler->display->display_options['fields']['field_publication_image']['exclude'] = TRUE;
+$handler->display->display_options['fields']['field_publication_image']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_publication_image']['element_wrapper_type'] = '0';
+$handler->display->display_options['fields']['field_publication_image']['element_default_classes'] = FALSE;
+$handler->display->display_options['fields']['field_publication_image']['click_sort_column'] = 'fid';
+$handler->display->display_options['fields']['field_publication_image']['settings'] = array(
+  'image_style' => 'social_sharing_image',
+  'image_link' => 'content',
+);
+/* Field: Content: Type */
+$handler->display->display_options['fields']['type']['id'] = 'type';
+$handler->display->display_options['fields']['type']['table'] = 'node';
+$handler->display->display_options['fields']['type']['field'] = 'type';
+$handler->display->display_options['fields']['type']['label'] = '';
+$handler->display->display_options['fields']['type']['exclude'] = TRUE;
+$handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['type']['element_wrapper_type'] = '0';
+$handler->display->display_options['fields']['type']['element_default_classes'] = FALSE;
+/* Field: Content: Publish Date */
+$handler->display->display_options['fields']['field_publish_date']['id'] = 'field_publish_date';
+$handler->display->display_options['fields']['field_publish_date']['table'] = 'field_data_field_publish_date';
+$handler->display->display_options['fields']['field_publish_date']['field'] = 'field_publish_date';
+$handler->display->display_options['fields']['field_publish_date']['label'] = '';
+$handler->display->display_options['fields']['field_publish_date']['exclude'] = TRUE;
+$handler->display->display_options['fields']['field_publish_date']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_publish_date']['element_wrapper_type'] = '0';
+$handler->display->display_options['fields']['field_publish_date']['element_default_classes'] = FALSE;
+$handler->display->display_options['fields']['field_publish_date']['settings'] = array(
+  'format_type' => 'date_only',
+  'fromto' => 'both',
+  'multiple_number' => '',
+  'multiple_from' => '',
+  'multiple_to' => '',
+);
+/* Field: Content: Short Title */
+$handler->display->display_options['fields']['field_short_title']['id'] = 'field_short_title';
+$handler->display->display_options['fields']['field_short_title']['table'] = 'field_data_field_short_title';
+$handler->display->display_options['fields']['field_short_title']['field'] = 'field_short_title';
+$handler->display->display_options['fields']['field_short_title']['label'] = '';
+$handler->display->display_options['fields']['field_short_title']['exclude'] = TRUE;
+$handler->display->display_options['fields']['field_short_title']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_short_title']['element_wrapper_type'] = '0';
+$handler->display->display_options['fields']['field_short_title']['element_default_classes'] = FALSE;
+$handler->display->display_options['fields']['field_short_title']['type'] = 'title_linked';
+$handler->display->display_options['fields']['field_short_title']['settings'] = array(
+  'title_style' => '_none',
+  'title_link' => 'content',
+  'title_class' => '',
+);
+/* Field: Global: PHP */
+$handler->display->display_options['fields']['php']['id'] = 'php';
+$handler->display->display_options['fields']['php']['table'] = 'views';
+$handler->display->display_options['fields']['php']['field'] = 'php';
+$handler->display->display_options['fields']['php']['label'] = '';
+$handler->display->display_options['fields']['php']['exclude'] = TRUE;
+$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
+$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+$handler->display->display_options['fields']['php']['php_output'] = '<?php
+$content = \'\';
+$content .= \'<span class="read">[\';
+$content .= l(t(\'View\'), \'node/\'.$row->nid);
+$content .= \'</span><span class="readall"> | \';
+$content .= \'<a href ="/architecture/press-centre?f[0]=entity_type:publication">\'.t(\'View More\').\'</a>\';
+$content .= \']</span>\';
+print $content;
+?>';
+$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+/* Field: Entity translation: Image: translated */
+$handler->display->display_options['fields']['field_publication_image_et']['id'] = 'field_publication_image_et';
+$handler->display->display_options['fields']['field_publication_image_et']['table'] = 'field_data_field_publication_image';
+$handler->display->display_options['fields']['field_publication_image_et']['field'] = 'field_publication_image_et';
+$handler->display->display_options['fields']['field_publication_image_et']['label'] = '';
+$handler->display->display_options['fields']['field_publication_image_et']['exclude'] = TRUE;
+$handler->display->display_options['fields']['field_publication_image_et']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_publication_image_et']['element_wrapper_type'] = '0';
+$handler->display->display_options['fields']['field_publication_image_et']['click_sort_column'] = 'fid';
+$handler->display->display_options['fields']['field_publication_image_et']['settings'] = array(
+  'image_style' => 'social_sharing_image',
+  'image_link' => 'content',
+);
+/* Field: Entity translation: Short Title: translated */
+$handler->display->display_options['fields']['field_short_title_et']['id'] = 'field_short_title_et';
+$handler->display->display_options['fields']['field_short_title_et']['table'] = 'field_data_field_short_title';
+$handler->display->display_options['fields']['field_short_title_et']['field'] = 'field_short_title_et';
+$handler->display->display_options['fields']['field_short_title_et']['label'] = '';
+$handler->display->display_options['fields']['field_short_title_et']['exclude'] = TRUE;
+$handler->display->display_options['fields']['field_short_title_et']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_short_title_et']['element_wrapper_type'] = '0';
+$handler->display->display_options['fields']['field_short_title_et']['type'] = 'title_linked';
+$handler->display->display_options['fields']['field_short_title_et']['settings'] = array(
+  'title_style' => '_none',
+  'title_link' => 'content',
+  'title_class' => '',
+);
+/* Field: Global: Custom text */
+$handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+$handler->display->display_options['fields']['nothing']['table'] = 'views';
+$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+$handler->display->display_options['fields']['nothing']['label'] = '';
+$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="what-we-do-subwrapper">
+<div class="image">[field_publication_image_et]</div>
+<div class="type">[type]</div>
+<div class="date">[field_publish_date]</div>
+<div class="title">[field_short_title_et]</div>
+<span class="viewmore">[php]</span>
+</div>';
+$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+$handler->display->display_options['defaults']['sorts'] = FALSE;
+/* Sort criterion: Content: Publish Date (field_publish_date) */
+$handler->display->display_options['sorts']['field_publish_date_value']['id'] = 'field_publish_date_value';
+$handler->display->display_options['sorts']['field_publish_date_value']['table'] = 'field_data_field_publish_date';
+$handler->display->display_options['sorts']['field_publish_date_value']['field'] = 'field_publish_date_value';
+$handler->display->display_options['sorts']['field_publish_date_value']['order'] = 'DESC';
+$handler->display->display_options['defaults']['arguments'] = FALSE;
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Filter criterion: Content: Published */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Filter criterion: Content: Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'publication' => 'publication',
+);
+/* Filter criterion: Field: Tags (field_tags) */
+$handler->display->display_options['filters']['field_tags_tid']['id'] = 'field_tags_tid';
+$handler->display->display_options['filters']['field_tags_tid']['table'] = 'field_data_field_tags';
+$handler->display->display_options['filters']['field_tags_tid']['field'] = 'field_tags_tid';
+$handler->display->display_options['filters']['field_tags_tid']['value'] = array(
+  0 => '3881',
+);
+$handler->display->display_options['filters']['field_tags_tid']['vocabulary'] = 'tags';
+
+/* Display: AKMA Press Release */
+$handler = $view->new_display('block', 'AKMA Press Release', 'block_5');
+$handler->display->display_options['defaults']['css_class'] = FALSE;
+$handler->display->display_options['css_class'] = 'what-we-do-inner-wrapper akaa-news-resource-press-release';
+$handler->display->display_options['defaults']['pager'] = FALSE;
+$handler->display->display_options['pager']['type'] = 'some';
+$handler->display->display_options['pager']['options']['items_per_page'] = '1';
+$handler->display->display_options['pager']['options']['offset'] = '0';
+$handler->display->display_options['defaults']['header'] = FALSE;
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Field: Content: Nid */
+$handler->display->display_options['fields']['nid']['id'] = 'nid';
+$handler->display->display_options['fields']['nid']['table'] = 'node';
+$handler->display->display_options['fields']['nid']['field'] = 'nid';
+$handler->display->display_options['fields']['nid']['label'] = '';
+$handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+$handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+/* Field: Content: Article Image */
+$handler->display->display_options['fields']['field_article_img']['id'] = 'field_article_img';
+$handler->display->display_options['fields']['field_article_img']['table'] = 'field_data_field_article_img';
+$handler->display->display_options['fields']['field_article_img']['field'] = 'field_article_img';
+$handler->display->display_options['fields']['field_article_img']['label'] = '';
+$handler->display->display_options['fields']['field_article_img']['exclude'] = TRUE;
+$handler->display->display_options['fields']['field_article_img']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_article_img']['element_wrapper_type'] = '0';
+$handler->display->display_options['fields']['field_article_img']['element_default_classes'] = FALSE;
+$handler->display->display_options['fields']['field_article_img']['click_sort_column'] = 'fid';
+$handler->display->display_options['fields']['field_article_img']['settings'] = array(
+  'image_style' => 'social_sharing_image',
+  'image_link' => 'content',
+);
+$handler->display->display_options['fields']['field_article_img']['group_rows'] = FALSE;
+$handler->display->display_options['fields']['field_article_img']['delta_offset'] = '0';
+/* Field: Content: Article Type */
+$handler->display->display_options['fields']['field_article_cat']['id'] = 'field_article_cat';
+$handler->display->display_options['fields']['field_article_cat']['table'] = 'field_data_field_article_cat';
+$handler->display->display_options['fields']['field_article_cat']['field'] = 'field_article_cat';
+$handler->display->display_options['fields']['field_article_cat']['label'] = '';
+$handler->display->display_options['fields']['field_article_cat']['exclude'] = TRUE;
+$handler->display->display_options['fields']['field_article_cat']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_article_cat']['element_wrapper_type'] = '0';
+$handler->display->display_options['fields']['field_article_cat']['element_default_classes'] = FALSE;
+$handler->display->display_options['fields']['field_article_cat']['type'] = 'taxonomy_term_reference_plain';
+/* Field: Content: Publish Date */
+$handler->display->display_options['fields']['field_publish_date']['id'] = 'field_publish_date';
+$handler->display->display_options['fields']['field_publish_date']['table'] = 'field_data_field_publish_date';
+$handler->display->display_options['fields']['field_publish_date']['field'] = 'field_publish_date';
+$handler->display->display_options['fields']['field_publish_date']['label'] = '';
+$handler->display->display_options['fields']['field_publish_date']['exclude'] = TRUE;
+$handler->display->display_options['fields']['field_publish_date']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_publish_date']['element_wrapper_type'] = '0';
+$handler->display->display_options['fields']['field_publish_date']['element_default_classes'] = FALSE;
+$handler->display->display_options['fields']['field_publish_date']['settings'] = array(
+  'format_type' => 'date_only',
+  'fromto' => 'both',
+  'multiple_number' => '',
+  'multiple_from' => '',
+  'multiple_to' => '',
+);
+/* Field: Content: Short Title */
+$handler->display->display_options['fields']['field_short_title']['id'] = 'field_short_title';
+$handler->display->display_options['fields']['field_short_title']['table'] = 'field_data_field_short_title';
+$handler->display->display_options['fields']['field_short_title']['field'] = 'field_short_title';
+$handler->display->display_options['fields']['field_short_title']['label'] = '';
+$handler->display->display_options['fields']['field_short_title']['exclude'] = TRUE;
+$handler->display->display_options['fields']['field_short_title']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_short_title']['element_wrapper_type'] = '0';
+$handler->display->display_options['fields']['field_short_title']['element_default_classes'] = FALSE;
+$handler->display->display_options['fields']['field_short_title']['type'] = 'title_linked';
+$handler->display->display_options['fields']['field_short_title']['settings'] = array(
+  'title_style' => '_none',
+  'title_link' => 'content',
+  'title_class' => '',
+);
+/* Field: Global: PHP */
+$handler->display->display_options['fields']['php']['id'] = 'php';
+$handler->display->display_options['fields']['php']['table'] = 'views';
+$handler->display->display_options['fields']['php']['field'] = 'php';
+$handler->display->display_options['fields']['php']['label'] = '';
+$handler->display->display_options['fields']['php']['exclude'] = TRUE;
+$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['php']['element_wrapper_type'] = '0';
+$handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
+$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+$handler->display->display_options['fields']['php']['php_output'] = '<?php
+$content = \'\';
+$content .= \'<span class="read">[\';
+$content .= l(t(\'View\'), \'node/\'.$row->nid);
+$content .= \'</span><span class="readall"> | \';
+$content .= \'<a href ="/architecture/press-centre?f[0]=entity_type:Press Release">\'.t(\'View More\').\'</a>\';
+$content .= \']</span>\';
+print $content;
+?>';
+$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+/* Field: Entity translation: Article Image: translated */
+$handler->display->display_options['fields']['field_article_img_et']['id'] = 'field_article_img_et';
+$handler->display->display_options['fields']['field_article_img_et']['table'] = 'field_data_field_article_img';
+$handler->display->display_options['fields']['field_article_img_et']['field'] = 'field_article_img_et';
+$handler->display->display_options['fields']['field_article_img_et']['label'] = '';
+$handler->display->display_options['fields']['field_article_img_et']['exclude'] = TRUE;
+$handler->display->display_options['fields']['field_article_img_et']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_article_img_et']['element_wrapper_type'] = '0';
+$handler->display->display_options['fields']['field_article_img_et']['click_sort_column'] = 'fid';
+$handler->display->display_options['fields']['field_article_img_et']['settings'] = array(
+  'image_style' => 'social_sharing_image',
+  'image_link' => 'content',
+);
+$handler->display->display_options['fields']['field_article_img_et']['group_rows'] = FALSE;
+$handler->display->display_options['fields']['field_article_img_et']['delta_offset'] = '0';
+/* Field: Entity translation: Short Title: translated */
+$handler->display->display_options['fields']['field_short_title_et']['id'] = 'field_short_title_et';
+$handler->display->display_options['fields']['field_short_title_et']['table'] = 'field_data_field_short_title';
+$handler->display->display_options['fields']['field_short_title_et']['field'] = 'field_short_title_et';
+$handler->display->display_options['fields']['field_short_title_et']['label'] = '';
+$handler->display->display_options['fields']['field_short_title_et']['exclude'] = TRUE;
+$handler->display->display_options['fields']['field_short_title_et']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_short_title_et']['element_wrapper_type'] = '0';
+$handler->display->display_options['fields']['field_short_title_et']['type'] = 'title_linked';
+$handler->display->display_options['fields']['field_short_title_et']['settings'] = array(
+  'title_style' => '_none',
+  'title_link' => 'content',
+  'title_class' => '',
+);
+/* Field: Global: Custom text */
+$handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+$handler->display->display_options['fields']['nothing']['table'] = 'views';
+$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+$handler->display->display_options['fields']['nothing']['label'] = '';
+$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="what-we-do-subwrapper">
+<div class="image">[field_article_img_et]</div>
+<div class="type">[field_article_cat]</div>
+<div class="date">[field_publish_date]</div>
+<div class="title">[field_short_title_et]</div>
+<span class="viewmore">[php]</span>
+</div>';
+$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+$handler->display->display_options['defaults']['sorts'] = FALSE;
+/* Sort criterion: Content: Publish Date (field_publish_date) */
+$handler->display->display_options['sorts']['field_publish_date_value']['id'] = 'field_publish_date_value';
+$handler->display->display_options['sorts']['field_publish_date_value']['table'] = 'field_data_field_publish_date';
+$handler->display->display_options['sorts']['field_publish_date_value']['field'] = 'field_publish_date_value';
+$handler->display->display_options['sorts']['field_publish_date_value']['order'] = 'DESC';
+$handler->display->display_options['defaults']['arguments'] = FALSE;
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Filter criterion: Content: Published */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Filter criterion: Content: Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'article' => 'article',
+);
+/* Filter criterion: Field: Tags (field_tags) */
+$handler->display->display_options['filters']['field_tags_tid']['id'] = 'field_tags_tid';
+$handler->display->display_options['filters']['field_tags_tid']['table'] = 'field_data_field_tags';
+$handler->display->display_options['filters']['field_tags_tid']['field'] = 'field_tags_tid';
+$handler->display->display_options['filters']['field_tags_tid']['value'] = array(
+  0 => '3881',
+);
+$handler->display->display_options['filters']['field_tags_tid']['vocabulary'] = 'tags';
+/* Filter criterion: Content: Article Type (field_article_cat) */
+$handler->display->display_options['filters']['field_article_cat_tid']['id'] = 'field_article_cat_tid';
+$handler->display->display_options['filters']['field_article_cat_tid']['table'] = 'field_data_field_article_cat';
+$handler->display->display_options['filters']['field_article_cat_tid']['field'] = 'field_article_cat_tid';
+$handler->display->display_options['filters']['field_article_cat_tid']['value'] = array(
+  4 => '4',
+);
+$handler->display->display_options['filters']['field_article_cat_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_article_cat_tid']['vocabulary'] = 'article_type';
+
+/* Display: AKMA In the Media */
+$handler = $view->new_display('block', 'AKMA In the Media', 'block_4');
+$handler->display->display_options['defaults']['css_class'] = FALSE;
+$handler->display->display_options['css_class'] = 'what-we-do-inner-wrapper akaa-news-resource-row-in-media';
+$handler->display->display_options['defaults']['pager'] = FALSE;
+$handler->display->display_options['pager']['type'] = 'some';
+$handler->display->display_options['pager']['options']['items_per_page'] = '1';
+$handler->display->display_options['pager']['options']['offset'] = '0';
+$handler->display->display_options['defaults']['header'] = FALSE;
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Field: Content: Media Source */
+$handler->display->display_options['fields']['field_media_source']['id'] = 'field_media_source';
+$handler->display->display_options['fields']['field_media_source']['table'] = 'field_data_field_media_source';
+$handler->display->display_options['fields']['field_media_source']['field'] = 'field_media_source';
+$handler->display->display_options['fields']['field_media_source']['label'] = '';
+$handler->display->display_options['fields']['field_media_source']['exclude'] = TRUE;
+$handler->display->display_options['fields']['field_media_source']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_media_source']['click_sort_column'] = 'url';
+$handler->display->display_options['fields']['field_media_source']['type'] = 'link_plain';
+/* Field: Content: Nid */
+$handler->display->display_options['fields']['nid']['id'] = 'nid';
+$handler->display->display_options['fields']['nid']['table'] = 'node';
+$handler->display->display_options['fields']['nid']['field'] = 'nid';
+$handler->display->display_options['fields']['nid']['label'] = '';
+$handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+$handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+/* Field: Content: Article Image */
+$handler->display->display_options['fields']['field_article_img']['id'] = 'field_article_img';
+$handler->display->display_options['fields']['field_article_img']['table'] = 'field_data_field_article_img';
+$handler->display->display_options['fields']['field_article_img']['field'] = 'field_article_img';
+$handler->display->display_options['fields']['field_article_img']['label'] = '';
+$handler->display->display_options['fields']['field_article_img']['exclude'] = TRUE;
+$handler->display->display_options['fields']['field_article_img']['alter']['make_link'] = TRUE;
+$handler->display->display_options['fields']['field_article_img']['alter']['path'] = '[field_media_source]';
+$handler->display->display_options['fields']['field_article_img']['alter']['target'] = '_blank';
+$handler->display->display_options['fields']['field_article_img']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_article_img']['element_wrapper_type'] = '0';
+$handler->display->display_options['fields']['field_article_img']['element_default_classes'] = FALSE;
+$handler->display->display_options['fields']['field_article_img']['click_sort_column'] = 'fid';
+$handler->display->display_options['fields']['field_article_img']['settings'] = array(
+  'image_style' => 'social_sharing_image',
+  'image_link' => '',
+);
+$handler->display->display_options['fields']['field_article_img']['group_rows'] = FALSE;
+$handler->display->display_options['fields']['field_article_img']['delta_offset'] = '0';
+/* Field: Content: Article Type */
+$handler->display->display_options['fields']['field_article_cat']['id'] = 'field_article_cat';
+$handler->display->display_options['fields']['field_article_cat']['table'] = 'field_data_field_article_cat';
+$handler->display->display_options['fields']['field_article_cat']['field'] = 'field_article_cat';
+$handler->display->display_options['fields']['field_article_cat']['label'] = '';
+$handler->display->display_options['fields']['field_article_cat']['exclude'] = TRUE;
+$handler->display->display_options['fields']['field_article_cat']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_article_cat']['element_wrapper_type'] = '0';
+$handler->display->display_options['fields']['field_article_cat']['element_default_classes'] = FALSE;
+$handler->display->display_options['fields']['field_article_cat']['type'] = 'taxonomy_term_reference_plain';
+/* Field: Content: Publish Date */
+$handler->display->display_options['fields']['field_publish_date']['id'] = 'field_publish_date';
+$handler->display->display_options['fields']['field_publish_date']['table'] = 'field_data_field_publish_date';
+$handler->display->display_options['fields']['field_publish_date']['field'] = 'field_publish_date';
+$handler->display->display_options['fields']['field_publish_date']['label'] = '';
+$handler->display->display_options['fields']['field_publish_date']['exclude'] = TRUE;
+$handler->display->display_options['fields']['field_publish_date']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_publish_date']['element_wrapper_type'] = '0';
+$handler->display->display_options['fields']['field_publish_date']['element_default_classes'] = FALSE;
+$handler->display->display_options['fields']['field_publish_date']['settings'] = array(
+  'format_type' => 'date_only',
+  'fromto' => 'both',
+  'multiple_number' => '',
+  'multiple_from' => '',
+  'multiple_to' => '',
+);
+/* Field: Content: Short Title */
+$handler->display->display_options['fields']['field_short_title']['id'] = 'field_short_title';
+$handler->display->display_options['fields']['field_short_title']['table'] = 'field_data_field_short_title';
+$handler->display->display_options['fields']['field_short_title']['field'] = 'field_short_title';
+$handler->display->display_options['fields']['field_short_title']['label'] = '';
+$handler->display->display_options['fields']['field_short_title']['exclude'] = TRUE;
+$handler->display->display_options['fields']['field_short_title']['alter']['make_link'] = TRUE;
+$handler->display->display_options['fields']['field_short_title']['alter']['path'] = '[field_media_source]';
+$handler->display->display_options['fields']['field_short_title']['alter']['target'] = '_blank';
+$handler->display->display_options['fields']['field_short_title']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_short_title']['element_wrapper_type'] = '0';
+$handler->display->display_options['fields']['field_short_title']['element_default_classes'] = FALSE;
+$handler->display->display_options['fields']['field_short_title']['type'] = 'title_linked';
+$handler->display->display_options['fields']['field_short_title']['settings'] = array(
+  'title_style' => '_none',
+  'title_link' => '',
+  'title_class' => '',
+);
+/* Field: Global: PHP */
+$handler->display->display_options['fields']['php']['id'] = 'php';
+$handler->display->display_options['fields']['php']['table'] = 'views';
+$handler->display->display_options['fields']['php']['field'] = 'php';
+$handler->display->display_options['fields']['php']['label'] = '';
+$handler->display->display_options['fields']['php']['exclude'] = TRUE;
+$handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['php']['element_wrapper_type'] = '0';
+$handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
+$handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+$handler->display->display_options['fields']['php']['php_output'] = '<?php
+$node = node_load($row->nid);
+$source = reset($node->field_media_source)[0][\'url\'];
+$attribute = array(\'attributes\' => array(\'target\'=>\'_blank\'));
+$content = \'\';
+$content .= \'<span class="read">[\';
+$content .= l(t(\'View\'), $source, $attribute);
+$content .= \'</span><span class="readall"> | \';
+$content .= \'<a href ="/architecture/press-centre?f[0]=entity_type:In the media">\'.t(\'View More\').\'</a>\';
+$content .= \']</span>\';
+print $content;
+?>';
+$handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+$handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+/* Field: Entity translation: Article Image: translated */
+$handler->display->display_options['fields']['field_article_img_et']['id'] = 'field_article_img_et';
+$handler->display->display_options['fields']['field_article_img_et']['table'] = 'field_data_field_article_img';
+$handler->display->display_options['fields']['field_article_img_et']['field'] = 'field_article_img_et';
+$handler->display->display_options['fields']['field_article_img_et']['label'] = '';
+$handler->display->display_options['fields']['field_article_img_et']['exclude'] = TRUE;
+$handler->display->display_options['fields']['field_article_img_et']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_article_img_et']['element_wrapper_type'] = '0';
+$handler->display->display_options['fields']['field_article_img_et']['click_sort_column'] = 'fid';
+$handler->display->display_options['fields']['field_article_img_et']['settings'] = array(
+  'image_style' => 'social_sharing_image',
+  'image_link' => '',
+);
+$handler->display->display_options['fields']['field_article_img_et']['delta_offset'] = '0';
+/* Field: Entity translation: Short Title: translated */
+$handler->display->display_options['fields']['field_short_title_et']['id'] = 'field_short_title_et';
+$handler->display->display_options['fields']['field_short_title_et']['table'] = 'field_data_field_short_title';
+$handler->display->display_options['fields']['field_short_title_et']['field'] = 'field_short_title_et';
+$handler->display->display_options['fields']['field_short_title_et']['label'] = '';
+$handler->display->display_options['fields']['field_short_title_et']['exclude'] = TRUE;
+$handler->display->display_options['fields']['field_short_title_et']['alter']['make_link'] = TRUE;
+$handler->display->display_options['fields']['field_short_title_et']['alter']['path'] = '[field_media_source]';
+$handler->display->display_options['fields']['field_short_title_et']['alter']['target'] = '_blank';
+$handler->display->display_options['fields']['field_short_title_et']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_short_title_et']['element_wrapper_type'] = '0';
+$handler->display->display_options['fields']['field_short_title_et']['type'] = 'title_linked';
+$handler->display->display_options['fields']['field_short_title_et']['settings'] = array(
+  'title_style' => '_none',
+  'title_link' => '',
+  'title_class' => '',
+);
+/* Field: Global: Custom text */
+$handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+$handler->display->display_options['fields']['nothing']['table'] = 'views';
+$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+$handler->display->display_options['fields']['nothing']['label'] = '';
+$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="what-we-do-subwrapper">
+<div class="image">[field_article_img_et]</div>
+<div class="type">[field_article_cat]</div>
+<div class="date">[field_publish_date]</div>
+<div class="title">[field_short_title_et]</div>
+<span class="viewmore">[php]</span>
+</div>';
+$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+$handler->display->display_options['defaults']['sorts'] = FALSE;
+/* Sort criterion: Content: Publish Date (field_publish_date) */
+$handler->display->display_options['sorts']['field_publish_date_value']['id'] = 'field_publish_date_value';
+$handler->display->display_options['sorts']['field_publish_date_value']['table'] = 'field_data_field_publish_date';
+$handler->display->display_options['sorts']['field_publish_date_value']['field'] = 'field_publish_date_value';
+$handler->display->display_options['sorts']['field_publish_date_value']['order'] = 'DESC';
+$handler->display->display_options['defaults']['arguments'] = FALSE;
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Filter criterion: Content: Published */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Filter criterion: Content: Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'article' => 'article',
+);
+/* Filter criterion: Field: Tags (field_tags) */
+$handler->display->display_options['filters']['field_tags_tid']['id'] = 'field_tags_tid';
+$handler->display->display_options['filters']['field_tags_tid']['table'] = 'field_data_field_tags';
+$handler->display->display_options['filters']['field_tags_tid']['field'] = 'field_tags_tid';
+$handler->display->display_options['filters']['field_tags_tid']['value'] = array(
+  0 => '3881',
+);
+$handler->display->display_options['filters']['field_tags_tid']['vocabulary'] = 'tags';
+/* Filter criterion: Content: Article Type (field_article_cat) */
+$handler->display->display_options['filters']['field_article_cat_tid']['id'] = 'field_article_cat_tid';
+$handler->display->display_options['filters']['field_article_cat_tid']['table'] = 'field_data_field_article_cat';
+$handler->display->display_options['filters']['field_article_cat_tid']['field'] = 'field_article_cat_tid';
+$handler->display->display_options['filters']['field_article_cat_tid']['value'] = array(
+  2611 => '2611',
+);
+$handler->display->display_options['filters']['field_article_cat_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_article_cat_tid']['vocabulary'] = 'article_type';
+$export['akma_home_page'] = $view;
+
+
+
+
 
   $view = new view();
   $view->name = 'akmi_instrument_views';
