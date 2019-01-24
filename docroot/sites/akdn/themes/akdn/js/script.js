@@ -680,6 +680,7 @@
   });
   // AKAA CYCLE DROPDOWN
   $('.akaa-award-cycle-block .akaa-icon-title', context).once('akaa_cycle_icon').click(function(event){
+    console.log("test1");
     if ($(this).find('a').hasClass('activity-icon-down')) {
       $(this).toggleClass('active').closest('.view-footer').siblings('.view-content').slideToggle();
       event.preventDefault();
@@ -687,6 +688,7 @@
   });
   // AKAA CYCLE DROPDOWN
   $('.akaa-award-cycle-block .akaa-cycle-title', context).once('akaa_cycle_title').click(function(event){
+    console.log("test2");
     if ($(this).hasClass('activity-icon-down')) {
       $(this).closest('.view-header').next('.view-content').slideToggle();
       $(this).closest('.view-header').siblings('.view-footer').find('.akaa-icon-title').toggleClass('active');
@@ -695,6 +697,7 @@
   });
   // AKAA CYCLE DROPDOWN
   $('.akaa-award-cycle-block .akaa_cycle_image', context).once('akaa_cycle_image_processed').click(function(event){
+    console.log("test3");
     var $this = $(this).closest('.view-content').siblings('.attachment');
     if ($(this).hasClass('activity-icon-down')) {
       $this.find('.view-content').slideToggle();
