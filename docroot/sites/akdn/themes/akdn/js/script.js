@@ -679,7 +679,7 @@
    }
   });
   // AKAA CYCLE DROPDOWN
-  $('.akaa-award-cycle-block .akaa-icon-title', context).once('akaa_cycle_icon').click(function(event){
+  $('.akaa-award-cycle-block .akaa-icon-title').click(function(event){
     console.log("test1");
     if ($(this).find('a').hasClass('activity-icon-down')) {
       $(this).toggleClass('active').closest('.view-footer').siblings('.view-content').slideToggle();
@@ -697,7 +697,6 @@
   });
   // AKAA CYCLE DROPDOWN
   $('.akaa-award-cycle-block .akaa_cycle_image', context).once('akaa_cycle_image_processed').click(function(event){
-    console.log("test3");
     var $this = $(this).closest('.view-content').siblings('.attachment');
     if ($(this).hasClass('activity-icon-down')) {
       $this.find('.view-content').slideToggle();
