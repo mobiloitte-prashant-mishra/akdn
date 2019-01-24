@@ -7716,7 +7716,7 @@ print $content;
   $export['akmi_home_page'] = $view;
  
 //Added AKMA home page latest view
-  $view = new view();
+ $view = new view();
 $view->name = 'akma_home_page_latest';
 $view->description = '';
 $view->tag = 'default';
@@ -8390,7 +8390,7 @@ $handler->display->display_options['defaults']['header'] = FALSE;
 $handler->display->display_options['header']['area']['id'] = 'area';
 $handler->display->display_options['header']['area']['table'] = 'views';
 $handler->display->display_options['header']['area']['field'] = 'area';
-$handler->display->display_options['header']['area']['content'] = '<p><span>I</span><span>NFORMATION ON THE MUSIC INITIATIVE</span></p>';
+$handler->display->display_options['header']['area']['content'] = '<p><span>I</span><span>NFORMATION ON THE MUSIC AWARD</span></p>';
 $handler->display->display_options['header']['area']['format'] = 'full_html';
 $handler->display->display_options['header']['area']['tokenize'] = TRUE;
 $handler->display->display_options['defaults']['fields'] = FALSE;
@@ -8442,7 +8442,7 @@ $handler->display->display_options['filters']['field_tags_tid']['value'] = array
   0 => '9316',
 );
 $handler->display->display_options['filters']['field_tags_tid']['vocabulary'] = 'tags';
-$handler->display->display_options['block_description'] = 'AKMI The award at a glance';
+$handler->display->display_options['block_description'] = 'AKMA The award at a glance';
 
 /* Display: AKMA About the Award Home Page */
 $handler = $view->new_display('block', 'AKMA About the Award Home Page', 'akma_about_the_awards_home_page');
@@ -8494,20 +8494,20 @@ $handler->display->display_options['filters']['field_tags_tid']['vocabulary'] = 
 /* Display: Attachment */
 $handler = $view->new_display('attachment', 'Attachment', 'attachment_1');
 $handler->display->display_options['defaults']['css_class'] = FALSE;
-$handler->display->display_options['css_class'] = 'info-akma-block';
+$handler->display->display_options['css_class'] = 'info-akma-block view-award-cycle';
 $handler->display->display_options['pager']['type'] = 'some';
 $handler->display->display_options['defaults']['header'] = FALSE;
 /* Header: Global: Unfiltered text */
 $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
 $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
 $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
-$handler->display->display_options['header']['area_text_custom']['content'] = '<div class = "akka-cycle-title"><a href = "#">About the Awards</a></div>';
+$handler->display->display_options['header']['area_text_custom']['content'] = '<div class = "akaa-cycle-title"><h2><a href = "#">About the Awards</a></h2></div>';
 $handler->display->display_options['defaults']['footer'] = FALSE;
 /* Footer: Global: Unfiltered text */
 $handler->display->display_options['footer']['area_text_custom']['id'] = 'area_text_custom';
 $handler->display->display_options['footer']['area_text_custom']['table'] = 'views';
 $handler->display->display_options['footer']['area_text_custom']['field'] = 'area_text_custom';
-$handler->display->display_options['footer']['area_text_custom']['content'] = '<div class="akka-icon-title"><a href="#">icon</a></div>';
+$handler->display->display_options['footer']['area_text_custom']['content'] = '<div class="akaa-icon-title akaa_cycle_icon-processed"><a href="#" >icon</a></div>';
 $handler->display->display_options['defaults']['fields'] = FALSE;
 /* Field: Content: header link */
 $handler->display->display_options['fields']['field_header_link']['id'] = 'field_header_link';
@@ -8678,20 +8678,20 @@ $handler->display->display_options['filters']['field_tags_tid']['vocabulary'] = 
 /* Display: Attachment */
 $handler = $view->new_display('attachment', 'Attachment', 'attachment_2');
 $handler->display->display_options['defaults']['css_class'] = FALSE;
-$handler->display->display_options['css_class'] = 'info-akma-block';
+$handler->display->display_options['css_class'] = 'info-akma-block view-award-cycle';
 $handler->display->display_options['pager']['type'] = 'some';
 $handler->display->display_options['defaults']['header'] = FALSE;
 /* Header: Global: Unfiltered text */
 $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
 $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
 $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
-$handler->display->display_options['header']['area_text_custom']['content'] = '<div class = "akka-cycle-title"><a href = "#">2018-2019 Cycle</a></div>';
+$handler->display->display_options['header']['area_text_custom']['content'] = '<div class = "akaa-cycle-title"><h2><a href = "#">2018-2019 Cycle</a></h2></div>';
 $handler->display->display_options['defaults']['footer'] = FALSE;
 /* Footer: Global: Unfiltered text */
 $handler->display->display_options['footer']['area_text_custom']['id'] = 'area_text_custom';
 $handler->display->display_options['footer']['area_text_custom']['table'] = 'views';
 $handler->display->display_options['footer']['area_text_custom']['field'] = 'area_text_custom';
-$handler->display->display_options['footer']['area_text_custom']['content'] = '<div class="akka-icon-title"><a href="#">icon</a></div>';
+$handler->display->display_options['footer']['area_text_custom']['content'] = '<div class="akaa-icon-title akaa_cycle_icon-processed"><a href="#" >icon</a></div>';
 $handler->display->display_options['defaults']['fields'] = FALSE;
 /* Field: Content: header link */
 $handler->display->display_options['fields']['field_header_link']['id'] = 'field_header_link';
