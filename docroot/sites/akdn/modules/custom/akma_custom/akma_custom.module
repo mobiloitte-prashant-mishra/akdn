@@ -1,0 +1,327 @@
+<?php
+
+/**
+ * @file
+ * akma custom module.
+ */
+
+/**
+ * Implements hook_block_info().
+ */
+function akma_custom_block_info() {
+  $blocks = array(
+    'akma_news_resources_tiles' => array(
+      'info' => t('akma Latest News & Resources Block'),
+      'cache' => DRUPAL_NO_CACHE,
+    ),
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function akma_custom_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'akma_news_resources_tiles':
+      if ($content = _akma_custom_latest_news_resouces()) {
+        $block['content'] = $content;
+        $block['subject'] = t('akma News & Resources for home page');
+      }
+      break;
+  }
+  return $block;
+}
+
+/**
+ * Get Rhs block on press Centre.
+ */
+function akma_custom_press_centre_rhs() {
+  // For RELATED INFORMATION Block On architecture/press-centre?Year_Filter.
+  foreach ($_GET['f'] as $value) {
+    $val = explode(':', $value);
+    if ($val[0] == 'field_cycle_year') {
+      $query = new EntityFieldQuery();
+      $query->entityCondition('entity_type', 'node')
+        ->entityCondition('bundle', 'award_cycle')
+        ->fieldCondition('field_cycle_year', 'tid', $val[1], '=');
+      $result = $query->execute();
+      $node_id = reset($result[node])->nid;
+      if (isset($node_id)) {
+        $content = views_embed_view("akma_projects", "block_8", $node_id);
+      }
+    }
+  }
+  return $content;
+}
+
+/**
+ * Get latest News & Resources.
+ */
+function _akma_custom_latest_news_resouces() {
+  // Get latest Publications for akma.
+  $content = views_embed_view('akma_home_page', 'block_3');
+  // Get latest Press Release for akma.
+  $content .= views_embed_view('akma_home_page', 'block_5');
+  // Get latest In the Media for akma.
+  $content .= views_embed_view('akma_home_page', 'block_4');
+  return $content;
+}
+
+
+
+
+/**
+ * Count the number of nodes.
+ *
+ * @param int $key
+ *   Key.
+ * @param int $tid
+ *   Term id.
+ * @param int $cid
+ *   Count.
+ *
+ * @return object $result
+ *   Result object.
+ *
+ * @todo $cid is unused.
+ */
+function _akma_node_count($key, $tid, $cid) {
+  if (is_numeric($key)) {
+    $type = 'article';
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', $type)
+      ->fieldCondition('field_tags', 'tid', $tid)
+      ->fieldCondition('field_article_cat', 'tid', $key);
+    $result = $query->count()->execute();
+  }
+  else {
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', $key)
+      ->fieldCondition('field_tags', 'tid', $tid);
+    $result = $query->count()->execute();
+  }
+  return $result;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function akma_custom_form_alter(&$form, &$form_state, $form_id) {
+  // Update name of the Award winning text.
+  if ($form_id == 'views_exposed_form') {
+    if ($form_state['view']->name == 'akma_projects' && $form_state['view']->current_display == 'page') {
+      $form['field_winner_value']['#options'][1] = 'Show Award recipients only';
+      $form['combine']['#attributes'] = array('placeholder' => array(t('Enter a Keyword')));
+      $form['field_region_tid']['#attributes'] = array('placeholder' => array(t('Select a Region')));
+      $form['field_arch_country_tid']['#attributes'] = array('placeholder' => array(t('Select a Country')));
+      $form['field_city_tid']['#attributes'] = array('placeholder' => array(t('Select a City')));
+      $form['field_building_type_tid']['#attributes'] = array('placeholder' => array(t('Select a building type')));
+      $form['field_cycle_year_tid']['#options']['All'] = 'Select a Cycle';
+    }
+  }
+}
+
+/**
+ * akma_custom_theme description.
+ *
+ * @param array $existing
+ *   An array of existing implementations.
+ * @param string $type
+ *   Where the theme hook is defined: 'module', 'theme_engine', or 'theme'.
+ * @param string $theme
+ *   The actual name of theme, module, etc. that is being being processed.
+ * @param string $path
+ *   The directory path of the theme or module.
+ *
+ * @return array $themes
+ *   Returns theme array.
+ */
+function akma_custom_theme($existing, $type, $theme, $path) {
+  $themes['views_view_field__akma_projects__other_cycles_block__nothing'] = array(
+    'template' => 'templates/views-view-field--akma-projects--other-cycles-block--nothing',
+    'original hook' => 'views_view_fields',
+    'preprocess functions' => array(
+      'template_preprocess',
+      'template_preprocess_views_view_fields',
+      'akdn_custom_preprocess_views_view_field__akma_projects__other_cycles_block__nothing',
+    ),
+    'arguments' => array('view' => NULL),
+  );
+  $themes['views_view_field__akma_projects__other_arch_projects__nothing'] = array(
+    'template' => 'templates/views-view-field--akma-projects--other-arch-projects--nothing',
+    'original hook' => 'views_view_fields',
+    'preprocess functions' => array(
+      'template_preprocess',
+      'template_preprocess_views_view_fields',
+      'akdn_custom_preprocess_views_view_field__akma_projects__other_arch_projects__nothing',
+    ),
+    'arguments' => array('view' => NULL),
+  );
+  return $themes;
+}
+
+/**
+ * Shot title field of award Cycle.
+ */
+function akdn_custom_preprocess_views_view_field__akma_projects__other_arch_projects__nothing(&$variables) {
+  $row = $variables['row'];
+  $tid = reset($row->_field_data['nid']['entity']->field_cycle_year)[0]['tid'];
+  $query = db_select('field_data_field_short_title', 's');
+  $query->leftJoin('field_data_field_cycle_year', 'c', 'c.entity_id = s.entity_id');
+  $short_title_result = $query->fields('s', array('field_short_title_value'))
+    ->fields('c', array('entity_id'))
+    ->condition('c.field_cycle_year_tid', $tid, '=')
+    ->condition('c.bundle', 'award_cycle', '=')
+    ->execute()
+    ->fetchAll();
+  $short_title = explode(' ', $short_title_result[0]->field_short_title_value);
+  $variables['other_cycles_projects'] = $short_title[0];
+}
+
+/**
+ * Preprocessor function for akma_projects__other_cycles_block.
+ */
+function akdn_custom_preprocess_views_view_field__akma_projects__other_cycles_block__nothing(&$variables) {
+  $row = $variables['row'];
+
+  $cycle_id = $row->taxonomy_term_data_field_data_field_cycle_year_tid;
+  $query = db_select('field_data_field_short_title', 's');
+  $query->leftJoin('field_data_field_cycle_year', 'c', 'c.entity_id = s.entity_id');
+  $short_title_result = $query->fields('s', array('field_short_title_value'))
+    ->fields('c', array('entity_id'))
+    ->condition('c.field_cycle_year_tid', $cycle_id, '=')
+    ->condition('c.bundle', 'award_cycle', '=')
+    ->execute()
+    ->fetchAll();
+  $short_title = $short_title_result[0]->field_short_title_value;
+  $cycle_nid = $short_title_result[0]->entity_id;
+
+  $proj_short_title = reset($row->_field_data['nid']['entity']->field_short_title)[0]['value'];
+
+  $country = akma_load_term_name(reset($row->_field_data['nid']['entity']->field_arch_country)[0]['tid']);
+  $building_type = akma_load_term_name(reset($row->_field_data['nid']['entity']->field_building_type)[0]['tid']);
+  $concat_build_cout = '(' . $building_type . ' , ' . $country . ')';
+  $project_nid = $row->nid;
+  $read = l('View', 'node/' . $project_nid);
+  $readAll = l('All ' . $short_title . ' projects', 'node/' . $cycle_nid);
+
+  $output = '';
+
+  $output .= '<div class = "other_cycle">';
+  $output .= '<div class = "cycle_year">';
+  $output .= $short_title;
+  $output .= '</div>';
+  $output .= '<div class = "project_title">';
+  $output .= l($proj_short_title, 'node/' . $project_nid);
+  $output .= '</div>';
+  $output .= '<div class = "concat_build_country">';
+  $output .= $concat_build_cout;
+  $output .= '</div>';
+  $output .= '<div class = "view_links">';
+  $output .= $read . ' | ' . $readAll;
+  $output .= '</div>';
+
+  $variables['other_cycles'] = $output;
+
+}
+
+/**
+ * Gets term name from term id.
+ *
+ * @param int $tid
+ *   The term id.
+ *
+ * @return string name
+ *   The name of related term.
+ */
+function akma_load_term_name($tid) {
+  $load = taxonomy_term_load($tid);
+  return $load->name;
+}
+
+/**
+ * Award cycle Related Informations.
+ */
+function _akma_custom_award_cycle_related_informations() {
+  $nid = arg(2);
+  $node = node_load($nid);
+  if (!empty($node->field_awards_cycle_links[LANGUAGE_NONE])) {
+    $output = '';
+    $output .= '<div class="akma-award-cycle-related-info">';
+    $output .= '<ul>';
+    foreach ($node->field_awards_cycle_links[LANGUAGE_NONE] as $url_value) {
+      if ($url_value['url']) {
+        $url = url($url_value['url']);
+        $title = $url_value['title'];
+        $target = $url_value['attributes']['target'];
+        $output .= '<li><a href="' . $url . '" target="' . $target . '">' . $title . '</a></li>';
+      }
+    }
+    $output .= '</ul>';
+    $output .= '</div>';
+    return $output;
+  }
+}
+
+/**
+ * Implements hook_menu().
+ */
+function akma_custom_menu() {
+  $items['akma_custom_menu/autocomplete/%/%/%'] = array(
+    'page callback' => 'akma_custom_menu_autocomplete',
+    'page arguments' => array(2, 3, 4),
+    'access callback' => 'reference_autocomplete_access',
+    'access arguments' => array(2, 3, 4),
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+/**
+ * Menu callback for the autocomplete results.
+ */
+function akma_custom_menu_autocomplete($entity_type, $bundle, $field_name, $string = '') {
+  $field = field_info_field($field_name);
+  $instance = field_info_instance($entity_type, $field_name, $bundle);
+
+  $options = array(
+    'string' => $string,
+    'match' => $instance['widget']['settings']['autocomplete_match'],
+    'limit' => 200,
+  );
+  $references = node_reference_potential_references($field, $options);
+
+  $matches = array();
+  foreach ($references as $id => $row) {
+    // Markup is fine in autocompletion results (might happen when rendered
+    // through Views) but we want to remove hyperlinks.
+    $suggestion = preg_replace('/<a href="([^<]*)">([^<]*)<\/a>/', '$2', $row['rendered']);
+    // Add a class wrapper for a few required CSS overrides.
+    $matches[$row['title'] . " [nid:$id]"] = '<div class="reference-autocomplete">' . $suggestion . '</div>';
+  }
+
+  drupal_json_output($matches);
+}
+
+/**
+ * Function for menu_field_widget.
+ */
+function akma_custom_menu_field_widget_info() {
+  return array(
+    'node_reference_autocomplete_deluxe' => array(
+      'label'       => t('Autocomplete Deluxe'),
+      'description' => t('Display the list of referenceable nodes as a textfield with autocomplete deluxe behaviour.'),
+      'field types' => array('node_reference'),
+      'settings'    => array(
+        'autocomplete_match' => 'contains',
+        'size' => 60,
+        'autocomplete_path' => 'akma_custom_menu/autocomplete',
+      ),
+    ),
+  );
+}
