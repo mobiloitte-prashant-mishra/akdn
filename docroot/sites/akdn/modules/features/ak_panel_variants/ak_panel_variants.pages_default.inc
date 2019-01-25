@@ -9,7 +9,644 @@
  */
 function ak_panel_variants_default_page_manager_handlers() {
   $export = array();
-
+    $handler = new stdClass();
+    $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+    $handler->api_version = 1;
+    $handler->name = 'node_view__panel_context_9890a7d0-5c33-4f4a-b5fc-1815f25560e4';
+    $handler->task = 'node_view';
+    $handler->subtask = '';
+    $handler->handler = 'panel_context';
+    $handler->weight = 1;
+    $handler->conf = array(
+      'title' => 'AKMA',
+      'no_blocks' => 0,
+      'pipeline' => 'standard',
+      'body_classes_to_remove' => '',
+      'body_classes_to_add' => 'akaa-body akaa-akmi-body',
+      'css_id' => '',
+      'css' => '',
+      'contexts' => array(),
+      'relationships' => array(
+        0 => array(
+          'identifier' => 'Term from node (NAT)',
+          'keyword' => 'nat_term',
+          'name' => 'nat_term_from_node',
+          'vid' => array(
+            13 => '13',
+            61 => 0,
+            76 => 0,
+            66 => 0,
+            81 => 0,
+            2 => 0,
+            26 => 0,
+            31 => 0,
+            36 => 0,
+            41 => 0,
+            86 => 0,
+            12 => 0,
+            8 => 0,
+            56 => 0,
+            71 => 0,
+            51 => 0,
+            9 => 0,
+            15 => 0,
+            14 => 0,
+            46 => 0,
+            16 => 0,
+            1 => 0,
+            11 => 0,
+          ),
+          'concatenator' => ',',
+          'context' => 'argument_entity_id:node_1',
+          'id' => 1,
+        ),
+        1 => array(
+          'identifier' => 'Taxonomy term from Node (on Node: Agency [field_agency])',
+          'keyword' => 'taxonomy_term',
+          'name' => 'entity_from_field:field_agency-node-taxonomy_term',
+          'delta' => '0',
+          'context' => 'argument_entity_id:node_1',
+          'id' => 1,
+        ),
+      ),
+      'name' => '',
+      'access' => array(
+        'logic' => 'and',
+        'plugins' => array(
+          0 => array(
+            'name' => 'node_type',
+            'settings' => array(
+              'type' => array(
+                'agency' => 'agency',
+              ),
+            ),
+            'context' => 'argument_entity_id:node_1',
+            'not' => FALSE,
+          ),
+          1 => array(
+            'name' => 'path_visibility',
+            'settings' => array(
+              'visibility_setting' => '1',
+              'paths' => 'akma
+        node/220375',
+            ),
+            'context' => 'empty',
+            'not' => FALSE,
+          ),
+        ),
+      ),
+    );
+    $display = new panels_display();
+    $display->layout = 'omega_24_onecol';
+    $display->layout_settings = array();
+    $display->panel_settings = array(
+      'style_settings' => array(
+        'default' => NULL,
+        'middle' => NULL,
+      ),
+    );
+    $display->cache = array();
+    $display->title = '';
+    $display->uuid = 'c279c48d-9c61-4091-b01c-e281c4bd2857';
+    $display->storage_type = 'page_manager';
+    $display->storage_id = 'node_view__panel_context_9890a7d0-5c33-4f4a-b5fc-1815f25560e4';
+    $display->content = array();
+    $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-0ab66101-d9a3-494a-bdaa-a455251e7071';
+    $pane->panel = 'middle';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_agency_logo_with_title';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'image',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(
+        'image_link' => 'content',
+        'image_style' => '',
+      ),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'akaa-logotitle',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '0ab66101-d9a3-494a-bdaa-a455251e7071';
+    $display->content['new-0ab66101-d9a3-494a-bdaa-a455251e7071'] = $pane;
+    $display->panels['middle'][0] = 'new-0ab66101-d9a3-494a-bdaa-a455251e7071';
+    $pane = new stdClass();
+    $pane->pid = 'new-06103ed0-6a02-4f27-9716-9f5552b64e67';
+    $pane->panel = 'middle';
+    $pane->type = 'block';
+    $pane->subtype = 'akdn_custom-akdn_breadcrumb_trail';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '06103ed0-6a02-4f27-9716-9f5552b64e67';
+    $display->content['new-06103ed0-6a02-4f27-9716-9f5552b64e67'] = $pane;
+    $display->panels['middle'][1] = 'new-06103ed0-6a02-4f27-9716-9f5552b64e67';
+    $pane = new stdClass();
+    $pane->pid = 'new-31a487d8-5bc5-481b-a392-351d3b34dfa3';
+    $pane->panel = 'middle';
+    $pane->type = 'views';
+    $pane->subtype = 'featured_slideshow_manual';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 1,
+      'use_pager' => 0,
+      'nodes_per_page' => '0',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'block_4',
+      'context' => array(
+        0 => 'argument_entity_id:node_1.vid',
+      ),
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'pane-featured-slideshow banner-slideshow-views-no-title',
+    );
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '31a487d8-5bc5-481b-a392-351d3b34dfa3';
+    $display->content['new-31a487d8-5bc5-481b-a392-351d3b34dfa3'] = $pane;
+    $display->panels['middle'][2] = 'new-31a487d8-5bc5-481b-a392-351d3b34dfa3';
+    $pane = new stdClass();
+    $pane->pid = 'new-6dd094a6-8091-43eb-8387-c725d24929c4';
+    $pane->panel = 'middle';
+    $pane->type = 'block';
+    $pane->subtype = 'akmi_custom-akmi_homepage_aboutus';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '<none>',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'whatsnew-right',
+    );
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = '6dd094a6-8091-43eb-8387-c725d24929c4';
+    $display->content['new-6dd094a6-8091-43eb-8387-c725d24929c4'] = $pane;
+    $display->panels['middle'][3] = 'new-6dd094a6-8091-43eb-8387-c725d24929c4';
+    $pane = new stdClass();
+    $pane->pid = 'new-6307f1f8-b636-468c-94a2-604667e79056';
+    $pane->panel = 'middle';
+    $pane->type = 'block';
+    $pane->subtype = 'block-141';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '<none>',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'test',
+    );
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = '6307f1f8-b636-468c-94a2-604667e79056';
+    $display->content['new-6307f1f8-b636-468c-94a2-604667e79056'] = $pane;
+    $display->panels['middle'][4] = 'new-6307f1f8-b636-468c-94a2-604667e79056';
+    $pane = new stdClass();
+    $pane->pid = 'new-6912e295-269c-4ee7-90ec-ea67a4995678';
+    $pane->panel = 'middle';
+    $pane->type = 'views';
+    $pane->subtype = 'akma_home_page_latest';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '5',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'info_akma_header',
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'sub-navbar',
+    );
+    $pane->extras = array();
+    $pane->position = 5;
+    $pane->locks = array();
+    $pane->uuid = '6912e295-269c-4ee7-90ec-ea67a4995678';
+    $display->content['new-6912e295-269c-4ee7-90ec-ea67a4995678'] = $pane;
+    $display->panels['middle'][5] = 'new-6912e295-269c-4ee7-90ec-ea67a4995678';
+    $pane = new stdClass();
+    $pane->pid = 'new-f0beefcb-e382-42b9-8a55-1438840f0ab5';
+    $pane->panel = 'middle';
+    $pane->type = 'block';
+    $pane->subtype = 'block-141';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '<none>',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => array(
+        'title' => array(
+          'prefix' => '',
+          'suffix' => '',
+        ),
+        'content' => array(
+          'prefix' => '<div class="akaa-award-cycle-wrapper" style="float:none">',
+          'suffix' => '',
+        ),
+        'theme' => 0,
+      ),
+      'style' => 'wrapper_raw',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 6;
+    $pane->locks = array();
+    $pane->uuid = 'f0beefcb-e382-42b9-8a55-1438840f0ab5';
+    $display->content['new-f0beefcb-e382-42b9-8a55-1438840f0ab5'] = $pane;
+    $display->panels['middle'][6] = 'new-f0beefcb-e382-42b9-8a55-1438840f0ab5';
+    $pane = new stdClass();
+    $pane->pid = 'new-d21b8ea0-4290-49eb-b12d-c3d26a747775';
+    $pane->panel = 'middle';
+    $pane->type = 'views';
+    $pane->subtype = 'akma_home_page_latest';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '5',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'akma_about_the_awards_home_page',
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'akaa-award-cycle-block',
+    );
+    $pane->extras = array();
+    $pane->position = 7;
+    $pane->locks = array();
+    $pane->uuid = 'd21b8ea0-4290-49eb-b12d-c3d26a747775';
+    $display->content['new-d21b8ea0-4290-49eb-b12d-c3d26a747775'] = $pane;
+    $display->panels['middle'][7] = 'new-d21b8ea0-4290-49eb-b12d-c3d26a747775';
+    $pane = new stdClass();
+    $pane->pid = 'new-5a5e8d14-33a2-4625-8957-57feeab1af4d';
+    $pane->panel = 'middle';
+    $pane->type = 'views';
+    $pane->subtype = 'akma_home_page_latest';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '5',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'block_2',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'akaa-award-cycle-block',
+    );
+    $pane->extras = array();
+    $pane->position = 8;
+    $pane->locks = array();
+    $pane->uuid = '5a5e8d14-33a2-4625-8957-57feeab1af4d';
+    $display->content['new-5a5e8d14-33a2-4625-8957-57feeab1af4d'] = $pane;
+    $display->panels['middle'][8] = 'new-5a5e8d14-33a2-4625-8957-57feeab1af4d';
+    $pane = new stdClass();
+    $pane->pid = 'new-0de422f8-2456-45b9-a4ed-94f846ebe8c8';
+    $pane->panel = 'middle';
+    $pane->type = 'views';
+    $pane->subtype = 'award_cycle';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '1',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'block_8',
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'akaa-award-cycle-block akaa-award-cycle-block-short-video',
+    );
+    $pane->extras = array();
+    $pane->position = 9;
+    $pane->locks = array();
+    $pane->uuid = '0de422f8-2456-45b9-a4ed-94f846ebe8c8';
+    $display->content['new-0de422f8-2456-45b9-a4ed-94f846ebe8c8'] = $pane;
+    $display->panels['middle'][9] = 'new-0de422f8-2456-45b9-a4ed-94f846ebe8c8';
+    $pane = new stdClass();
+    $pane->pid = 'new-7a0c44a9-d9a2-4b30-b370-cf6af5085e77';
+    $pane->panel = 'middle';
+    $pane->type = 'block';
+    $pane->subtype = 'block-146';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '<none>',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => array(
+        'title' => array(
+          'prefix' => '',
+          'suffix' => '',
+        ),
+        'content' => array(
+          'prefix' => '',
+          'suffix' => '</div>',
+        ),
+        'theme' => 0,
+      ),
+      'style' => 'wrapper_raw',
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'testing',
+    );
+    $pane->extras = array();
+    $pane->position = 10;
+    $pane->locks = array();
+    $pane->uuid = '7a0c44a9-d9a2-4b30-b370-cf6af5085e77';
+    $display->content['new-7a0c44a9-d9a2-4b30-b370-cf6af5085e77'] = $pane;
+    $display->panels['middle'][10] = 'new-7a0c44a9-d9a2-4b30-b370-cf6af5085e77';
+    $pane = new stdClass();
+    $pane->pid = 'new-ffd693f0-b6e3-489b-82ae-c90963724b82';
+    $pane->panel = 'middle';
+    $pane->type = 'block';
+    $pane->subtype = 'block-141';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '<none>',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => array(
+        'title' => array(
+          'prefix' => '',
+          'suffix' => '',
+        ),
+        'content' => array(
+          'prefix' => '<div class="what-we-do-main-wrapper">',
+          'suffix' => '',
+        ),
+        'theme' => 0,
+      ),
+      'style' => 'wrapper_raw',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 11;
+    $pane->locks = array();
+    $pane->uuid = 'ffd693f0-b6e3-489b-82ae-c90963724b82';
+    $display->content['new-ffd693f0-b6e3-489b-82ae-c90963724b82'] = $pane;
+    $display->panels['middle'][11] = 'new-ffd693f0-b6e3-489b-82ae-c90963724b82';
+    $pane = new stdClass();
+    $pane->pid = 'new-188c6cc5-2f0b-47e5-a996-fb150ca23247';
+    $pane->panel = 'middle';
+    $pane->type = 'views';
+    $pane->subtype = 'akma_home_page';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 1,
+      'use_pager' => 0,
+      'nodes_per_page' => '1',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'block_2',
+      'context' => array(
+        0 => '',
+      ),
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'sub-navbar',
+    );
+    $pane->extras = array();
+    $pane->position = 12;
+    $pane->locks = array();
+    $pane->uuid = '188c6cc5-2f0b-47e5-a996-fb150ca23247';
+    $display->content['new-188c6cc5-2f0b-47e5-a996-fb150ca23247'] = $pane;
+    $display->panels['middle'][12] = 'new-188c6cc5-2f0b-47e5-a996-fb150ca23247';
+    $pane = new stdClass();
+    $pane->pid = 'new-71020e8a-c665-470c-89d6-c1493ad6378a';
+    $pane->panel = 'middle';
+    $pane->type = 'block';
+    $pane->subtype = 'akma_custom-akma_news_resources_tiles';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '<none>',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 13;
+    $pane->locks = array();
+    $pane->uuid = '71020e8a-c665-470c-89d6-c1493ad6378a';
+    $display->content['new-71020e8a-c665-470c-89d6-c1493ad6378a'] = $pane;
+    $display->panels['middle'][13] = 'new-71020e8a-c665-470c-89d6-c1493ad6378a';
+    $pane = new stdClass();
+    $pane->pid = 'new-2383b100-6df2-4913-a9bf-fe3cbcbe1a4d';
+    $pane->panel = 'middle';
+    $pane->type = 'block';
+    $pane->subtype = 'block-146';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '<none>',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => array(
+        'title' => array(
+          'prefix' => '',
+          'suffix' => '',
+        ),
+        'content' => array(
+          'prefix' => '',
+          'suffix' => '</div>',
+        ),
+        'theme' => 0,
+      ),
+      'style' => 'wrapper_raw',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 14;
+    $pane->locks = array();
+    $pane->uuid = '2383b100-6df2-4913-a9bf-fe3cbcbe1a4d';
+    $display->content['new-2383b100-6df2-4913-a9bf-fe3cbcbe1a4d'] = $pane;
+    $display->panels['middle'][14] = 'new-2383b100-6df2-4913-a9bf-fe3cbcbe1a4d';
+    $pane = new stdClass();
+    $pane->pid = 'new-023dc511-881a-4681-8e13-d6115d425721';
+    $pane->panel = 'middle';
+    $pane->type = 'block';
+    $pane->subtype = 'block-146';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '<none>',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 15;
+    $pane->locks = array();
+    $pane->uuid = '023dc511-881a-4681-8e13-d6115d425721';
+    $display->content['new-023dc511-881a-4681-8e13-d6115d425721'] = $pane;
+    $display->panels['middle'][15] = 'new-023dc511-881a-4681-8e13-d6115d425721';
+    $display->hide_title = PANELS_TITLE_FIXED;
+    $display->title_pane = 'new-0ab66101-d9a3-494a-bdaa-a455251e7071';
+    $handler->conf['display'] = $display;
+  $export['node_view__panel_context_9890a7d0-5c33-4f4a-b5fc-1815f25560e4'] = $handler;
+// END OF AKMA HOME PAGE PANEL
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
@@ -78,7 +715,9 @@ architecture
 node/22106
 node/9576
 our-agencies/aga-khan-music-initiative
-akmi',
+akmi
+akma
+node/208691',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -1176,7 +1815,6 @@ akmi',
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
-
   $export['node_view_panel_context'] = $handler;
 
   $handler = new stdClass();

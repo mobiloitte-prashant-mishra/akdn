@@ -13,6 +13,7 @@ features[ctools][] = page_manager:pages_default:1
 features[ctools][] = panels:layouts:1
 features[ctools][] = panels_mini:panels_default:1
 features[features_api][] = api:2
+features[page_manager_handlers][] = node_view__panel_context_9890a7d0-5c33-4f4a-b5fc-1815f25560e4
 features[page_manager_handlers][] = node_view_panel_context
 features[page_manager_handlers][] = node_view_panel_context_10
 features[page_manager_handlers][] = node_view_panel_context_11
